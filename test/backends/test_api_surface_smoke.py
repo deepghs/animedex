@@ -50,35 +50,142 @@ def _envelope_factory(body: dict, status: int = 200) -> Any:
 
 
 # Minimal but valid envelope payload for each AniList query type.
+# Populate at least one row per list-returning query so the mapper's
+# row-projection branches actually execute (gives the smoke test
+# real coverage, not just function-entry coverage).
 ANILIST_PAYLOADS = {
     "show": {"data": {"Media": {"id": 1, "title": {"romaji": "x"}}}},
-    "search": {"data": {"Page": {"pageInfo": {"total": 0}, "media": []}}},
+    "search": {"data": {"Page": {"pageInfo": {"total": 1}, "media": [{"id": 1, "title": {"romaji": "x"}}]}}},
     "character": {"data": {"Character": {"id": 1, "name": {"full": "x"}}}},
-    "character_search": {"data": {"Page": {"pageInfo": {"total": 0}, "characters": []}}},
+    "character_search": {
+        "data": {"Page": {"pageInfo": {"total": 1}, "characters": [{"id": 1, "name": {"full": "x"}}]}},
+    },
     "staff": {"data": {"Staff": {"id": 1, "name": {"full": "x"}}}},
-    "staff_search": {"data": {"Page": {"pageInfo": {"total": 0}, "staff": []}}},
+    "staff_search": {
+        "data": {"Page": {"pageInfo": {"total": 1}, "staff": [{"id": 1, "name": {"full": "x"}}]}},
+    },
     "studio": {"data": {"Studio": {"id": 1, "name": "x"}}},
-    "studio_search": {"data": {"Page": {"pageInfo": {"total": 0}, "studios": []}}},
-    "schedule": {"data": {"Page": {"pageInfo": {"total": 0}, "media": []}}},
-    "trending": {"data": {"Page": {"media": []}}},
-    "user": {"data": {"User": {"id": 1, "name": "x"}}},
-    "user_search": {"data": {"Page": {"pageInfo": {"total": 0}, "users": []}}},
+    "studio_search": {"data": {"Page": {"pageInfo": {"total": 1}, "studios": [{"id": 1, "name": "x"}]}}},
+    "schedule": {"data": {"Page": {"pageInfo": {"total": 1}, "media": [{"id": 1, "title": {"romaji": "x"}}]}}},
+    "trending": {"data": {"Page": {"media": [{"id": 1, "title": {"romaji": "x"}}]}}},
+    "user": {
+        "data": {
+            "User": {
+                "id": 1,
+                "name": "x",
+                "avatar": {"large": "u"},
+                "siteUrl": "u",
+                "statistics": {
+                    "anime": {"count": 1, "meanScore": 90, "minutesWatched": 100},
+                    "manga": {"count": 1, "meanScore": 80, "chaptersRead": 10},
+                },
+            }
+        }
+    },
+    "user_search": {"data": {"Page": {"pageInfo": {"total": 1}, "users": [{"id": 1, "name": "x", "avatar": {"medium": "m"}}]}}},
     "genre_collection": {"data": {"GenreCollection": ["Action"]}},
-    "media_tag_collection": {"data": {"MediaTagCollection": []}},
-    "site_statistics": {"data": {"SiteStatistics": {}}},
-    "external_link_source_collection": {"data": {"ExternalLinkSourceCollection": []}},
-    "airing_schedule": {"data": {"Page": {"pageInfo": {"total": 0}, "airingSchedules": []}}},
-    "media_trend": {"data": {"Page": {"pageInfo": {"total": 0}, "mediaTrends": []}}},
-    "review": {"data": {"Page": {"pageInfo": {"total": 0}, "reviews": []}}},
-    "recommendation": {"data": {"Page": {"pageInfo": {"total": 0}, "recommendations": []}}},
-    "thread": {"data": {"Page": {"threads": []}}},
-    "thread_comment": {"data": {"Page": {"threadComments": []}}},
-    "activity": {"data": {"Page": {"activities": []}}},
-    "activity_reply": {"data": {"Page": {"activityReplies": []}}},
-    "following": {"data": {"Page": {"following": []}}},
-    "follower": {"data": {"Page": {"followers": []}}},
-    "media_list_public": {"data": {"Page": {"mediaList": []}}},
-    "media_list_collection_public": {"data": {"MediaListCollection": {"user": {"id": 1, "name": "x"}, "lists": []}}},
+    "media_tag_collection": {"data": {"MediaTagCollection": [{"id": 1, "name": "x"}]}},
+    "site_statistics": {
+        "data": {
+            "SiteStatistics": {
+                "users": {"nodes": [{"date": 0, "count": 1, "change": 0}]},
+                "anime": {"nodes": [{"date": 0, "count": 1, "change": 0}]},
+                "manga": {"nodes": []},
+                "characters": {"nodes": []},
+                "staff": {"nodes": []},
+                "reviews": {"nodes": []},
+            }
+        }
+    },
+    "external_link_source_collection": {
+        "data": {"ExternalLinkSourceCollection": [{"id": 1, "site": "Crunchyroll", "type": "STREAMING"}]},
+    },
+    "airing_schedule": {
+        "data": {
+            "Page": {
+                "pageInfo": {"total": 1, "hasNextPage": False},
+                "airingSchedules": [
+                    {
+                        "id": 1,
+                        "airingAt": 0,
+                        "episode": 1,
+                        "timeUntilAiring": 0,
+                        "media": {"id": 1, "title": {"romaji": "x"}},
+                    }
+                ],
+            }
+        }
+    },
+    "media_trend": {
+        "data": {"Page": {"pageInfo": {"total": 1}, "mediaTrends": [{"date": 0, "trending": 0}]}},
+    },
+    "review": {
+        "data": {
+            "Page": {
+                "pageInfo": {"total": 1},
+                "reviews": [{"id": 1, "summary": "x", "score": 90, "user": {"name": "n"}}],
+            }
+        }
+    },
+    "recommendation": {
+        "data": {
+            "Page": {
+                "pageInfo": {"total": 1},
+                "recommendations": [
+                    {
+                        "id": 1,
+                        "rating": 1,
+                        "media": {"id": 1, "title": {"romaji": "x"}},
+                        "mediaRecommendation": {"id": 2, "title": {"romaji": "y"}},
+                    }
+                ],
+            }
+        }
+    },
+    "thread": {
+        "data": {
+            "Page": {
+                "threads": [
+                    {"id": 1, "title": "t", "body": "b", "user": {"name": "u"}, "createdAt": 0}
+                ]
+            }
+        }
+    },
+    "thread_comment": {
+        "data": {"Page": {"threadComments": [{"id": 1, "comment": "c", "user": {"name": "u"}, "createdAt": 0}]}},
+    },
+    "activity": {
+        "data": {
+            "Page": {
+                "activities": [
+                    {"id": 1, "text": "t", "user": {"name": "u"}, "createdAt": 0},
+                    {"id": 2, "status": "watched", "user": {"name": "u"}, "media": {"title": {"romaji": "x"}}, "createdAt": 0},
+                ]
+            }
+        }
+    },
+    "activity_reply": {
+        "data": {"Page": {"activityReplies": [{"id": 1, "text": "t", "user": {"name": "u"}, "createdAt": 0}]}},
+    },
+    "following": {"data": {"Page": {"following": [{"id": 1, "name": "x"}]}}},
+    "follower": {"data": {"Page": {"followers": [{"id": 1, "name": "x"}]}}},
+    "media_list_public": {
+        "data": {
+            "Page": {
+                "mediaList": [
+                    {"id": 1, "status": "CURRENT", "score": 9, "progress": 5, "media": {"id": 1, "title": {"romaji": "x"}}}
+                ]
+            }
+        }
+    },
+    "media_list_collection_public": {
+        "data": {
+            "MediaListCollection": {
+                "user": {"id": 1, "name": "x"},
+                "lists": [{"name": "Watching", "status": "CURRENT", "entries": [{"id": 1}]}],
+            }
+        }
+    },
 }
 
 
