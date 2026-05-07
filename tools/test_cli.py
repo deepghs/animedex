@@ -82,7 +82,16 @@ class CLIProbe:
         return proc.returncode, proc.stdout or "", proc.stderr or ""
 
     def check_version(self) -> None:
-        """Validate ``animedex --version`` output."""
+        """Validate ``animedex --version`` output.
+
+        The version banner is two lines: the package title and version,
+        followed by a build-info summary (a commit short hash with
+        ``built ...`` timestamp when the binary was built with
+        ``make build_info``, or the literal sentinel ``build info not
+        generated`` otherwise). Both forms are valid; this probe
+        merely asserts that the second line is one of them so that we
+        can spot a regression in the version-banner shape.
+        """
         try:
             code, out, err = self._run(["--version"])
             if code != 0:
@@ -91,7 +100,27 @@ class CLIProbe:
             if "animedex" not in out.lower():
                 self.results.append(("animedex --version", False, f"output missing project name:\n{out}"))
                 return
-            self.results.append(("animedex --version", True, out.strip()))
+            lines = [line for line in out.splitlines() if line.strip()]
+            if len(lines) < 2:
+                self.results.append(
+                    ("animedex --version", False, f"expected 2 lines, got {len(lines)}:\n{out}")
+                )
+                return
+            second = lines[1]
+            if "build info not generated" in second:
+                detail = f"{out.strip()}  [build_info: absent]"
+            elif "built " in second:
+                detail = f"{out.strip()}  [build_info: present]"
+            else:
+                self.results.append(
+                    (
+                        "animedex --version",
+                        False,
+                        f"second line did not match either build-info form:\n{out}",
+                    )
+                )
+                return
+            self.results.append(("animedex --version", True, detail))
         except Exception:
             self.results.append(("animedex --version", False, traceback.format_exc().rstrip()))
 
@@ -126,16 +155,41 @@ class CLIProbe:
             self.results.append(("animedex status", False, traceback.format_exc().rstrip()))
 
     def check_selftest(self) -> None:
-        """Validate ``animedex selftest`` runs and exits zero."""
+        """Validate ``animedex selftest`` runs and exits zero.
+
+        Asserts that the report contains both the Summary line and a
+        Build info section (whether or not ``make build_info`` has run,
+        the section is unconditionally present).
+        """
         try:
             code, out, err = self._run(["selftest"])
             if code != 0:
                 self.results.append(("animedex selftest", False, _fmt_proc(code, out, err)))
                 return
-            if "Summary" not in out:
-                self.results.append(("animedex selftest", False, f"summary section missing:\n{out}"))
+            missing = [section for section in ("Build info", "Summary") if section not in out]
+            if missing:
+                self.results.append(
+                    (
+                        "animedex selftest",
+                        False,
+                        f"sections missing: {missing}\n{out}",
+                    )
+                )
                 return
-            self.results.append(("animedex selftest", True, "summary present, exit 0"))
+            if "(not generated)" in out:
+                detail = "summary + build_info(absent), exit 0"
+            elif "Built at:" in out:
+                detail = "summary + build_info(present), exit 0"
+            else:
+                self.results.append(
+                    (
+                        "animedex selftest",
+                        False,
+                        f"build_info section in unexpected shape:\n{out}",
+                    )
+                )
+                return
+            self.results.append(("animedex selftest", True, detail))
         except Exception:
             self.results.append(("animedex selftest", False, traceback.format_exc().rstrip()))
 

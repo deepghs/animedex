@@ -1226,3 +1226,8 @@ fabric.properties
 /env
 .env*
 /.dc_auth.json
+# Generated per-build metadata (regenerated from git state by
+# `make build_info` / `tools/generate_build_info.py`). The loader at
+# animedex/config/buildmeta.py treats this file as optional, so the
+# package functions whether or not it is present.
+animedex/config/build_info.py

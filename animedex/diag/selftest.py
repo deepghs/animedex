@@ -131,6 +131,26 @@ def _format_package_lines() -> List[str]:
         return [f"  {CHECK_FAIL} cannot read animedex metadata: {exc}", *(f"    {line}" for line in tb.splitlines())]
 
 
+def _format_build_info_lines() -> List[str]:
+    """Compose the build-info section using :mod:`animedex.config.buildmeta`.
+
+    The block is informational rather than a check: a missing build_info
+    file is normal in a fresh checkout and does not constitute a failure.
+
+    :return: Pre-formatted indented lines for the section body.
+    :rtype: List[str]
+    """
+    try:
+        from animedex.config.buildmeta import format_block
+
+        return format_block().splitlines()
+    except Exception:
+        return [
+            f"  {CHECK_FAIL} cannot load animedex.config.buildmeta",
+            *(f"      {line}" for line in traceback.format_exc().rstrip().splitlines()),
+        ]
+
+
 def _check_module_imports() -> List[Tuple[str, bool, str]]:
     """Attempt to import every module in :data:`_REQUIRED_MODULES`.
 
@@ -294,6 +314,7 @@ def run_selftest(stream: io.TextIOBase = None) -> int:
 
         _emit_section(stream, "Environment", _format_environment_lines())
         _emit_section(stream, "Package", _format_package_lines())
+        _emit_section(stream, "Build info", _format_build_info_lines())
 
         passed_total = 0
         failed_total = 0

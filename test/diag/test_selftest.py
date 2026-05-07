@@ -21,9 +21,21 @@ class TestRunSelftest:
         assert "animedex selftest" in report
         assert "Environment" in report
         assert "Package" in report
+        assert "Build info" in report
         assert "Module imports" in report
         assert "CLI subcommands" in report
         assert "Summary" in report
+
+    def test_build_info_section_handles_both_states(self):
+        # The Build info section is unconditional. With the
+        # generated build_info.py present, the report contains
+        # "Built at:"; without it, "(not generated)" appears.
+        buf = io.StringIO()
+        run_selftest(stream=buf)
+        report = buf.getvalue()
+        assert ("Built at:" in report) or ("(not generated)" in report), (
+            f"Build info section in unexpected shape:\n{report}"
+        )
 
     def test_report_lists_required_modules(self):
         buf = io.StringIO()

@@ -1,15 +1,16 @@
-.PHONY: help package clean test unittest lint format format-check docs rst_auto build test_cli
+.PHONY: help package clean test unittest lint format format-check docs rst_auto build build_info build_info_clean test_cli
 
 PYTHON := $(shell which python)
 
-PROJ_DIR     := .
-DOC_DIR      := ${PROJ_DIR}/docs
-DOC_SOURCE   := ${DOC_DIR}/source
-BUILD_DIR    := ${PROJ_DIR}/build
-DIST_DIR     := ${PROJ_DIR}/dist
-TEST_DIR     := ${PROJ_DIR}/test
-SRC_DIR      := ${PROJ_DIR}/animedex
-TOOLS_DIR    := ${PROJ_DIR}/tools
+PROJ_DIR        := .
+DOC_DIR         := ${PROJ_DIR}/docs
+DOC_SOURCE      := ${DOC_DIR}/source
+BUILD_DIR       := ${PROJ_DIR}/build
+DIST_DIR        := ${PROJ_DIR}/dist
+TEST_DIR        := ${PROJ_DIR}/test
+SRC_DIR         := ${PROJ_DIR}/animedex
+TOOLS_DIR       := ${PROJ_DIR}/tools
+BUILD_INFO_FILE := ${SRC_DIR}/config/build_info.py
 
 # PyInstaller output. Windows adds the .exe suffix; honour ${IS_WIN} when
 # CI sets it, otherwise infer from the operating system.
@@ -40,6 +41,9 @@ help:
 	@echo "Building and packaging:"
 	@echo "  make package         Build sdist and wheel into dist/"
 	@echo "  make build           Build a standalone PyInstaller binary into dist/"
+	@echo "                       (depends on build_info; auto-runs it first)"
+	@echo "  make build_info      Regenerate animedex/config/build_info.py from git state"
+	@echo "  make build_info_clean Remove the generated build_info.py"
 	@echo "  make clean           Remove build/, dist/, *.egg-info, .spec, doc build/"
 	@echo ""
 	@echo "Testing:"
@@ -60,16 +64,26 @@ help:
 package:
 	$(PYTHON) -m build --sdist --wheel --outdir ${DIST_DIR}
 
-# Build a single-file standalone binary using PyInstaller.
-# Requires `pip install -r requirements-build.txt` and editable install.
-build:
-	$(PYTHON) -m PyInstaller \
-		--onefile \
-		--name animedex \
-		--noconfirm \
-		--clean \
-		--collect-submodules animedex \
-		animedex_cli.py
+# (Re-)generate the per-build metadata module from the working tree's
+# git state. The output file (animedex/config/build_info.py) is
+# .gitignore'd and consumed by animedex.config.buildmeta. The package
+# functions whether or not this file exists.
+build_info:
+	$(PYTHON) tools/generate_build_info.py -o ${BUILD_INFO_FILE}
+
+build_info_clean:
+	rm -f ${BUILD_INFO_FILE}
+
+# Build a single-file standalone binary using PyInstaller via a generated
+# spec file (tools/generate_spec.py + tools/resources.py). The spec
+# captures excludes, hidden imports, and the data manifest, so future
+# bundled assets are picked up without changing this target. build_info
+# runs first so animedex/config/build_info.py is on disk when the spec
+# is rendered (it is listed in HIDDEN_IMPORTS) and PyInstaller can
+# include it in the bundle.
+build: build_info
+	$(PYTHON) -m tools.generate_spec -o animedex.spec
+	$(PYTHON) -m PyInstaller animedex.spec --noconfirm --clean
 	@echo "Built: ${PYINSTALLER_BIN}"
 
 # Subprocess-based smoke test of the freshly built binary. Imports nothing
@@ -78,7 +92,7 @@ build:
 test_cli:
 	$(PYTHON) -m tools.test_cli ${PYINSTALLER_BIN}
 
-clean:
+clean: build_info_clean
 	rm -rf ${DIST_DIR} ${BUILD_DIR} *.egg-info animedex.spec
 	$(MAKE) -C "${DOC_DIR}" clean
 

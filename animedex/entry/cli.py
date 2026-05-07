@@ -11,12 +11,54 @@ import sys
 
 import click
 
+from animedex.config.buildmeta import format_short as _format_build_short
 from animedex.config.meta import __DESCRIPTION__, __TITLE__, __VERSION__
 from animedex.diag.selftest import run_selftest
 
 
+def _format_version_banner() -> str:
+    """Compose the multi-line banner shown by ``animedex --version``.
+
+    Includes the package title and version on the first line, then a
+    second line that summarises the in-binary build metadata when
+    available (commit short hash, tag, clean/dirty, build timestamp).
+    On a fresh checkout where ``make build_info`` has not been run, the
+    second line announces that the metadata is not generated rather
+    than pretending to know.
+
+    :return: Multi-line banner string with no trailing newline.
+    :rtype: str
+    """
+    return f"{__TITLE__} {__VERSION__}\n{_format_build_short()}"
+
+
+def _print_version(ctx: click.Context, param: click.Option, value: bool) -> None:
+    """Click eager callback that prints :func:`_format_version_banner` and exits.
+
+    :param ctx: Click command context for the active invocation.
+    :type ctx: click.Context
+    :param param: The ``--version`` option metadata; unused.
+    :type param: click.Option
+    :param value: ``True`` when the user passed ``--version``.
+    :type value: bool
+    :return: ``None`` (exits via :meth:`click.Context.exit` when triggered).
+    :rtype: None
+    """
+    if not value or ctx.resilient_parsing:
+        return
+    click.echo(_format_version_banner())
+    ctx.exit()
+
+
 @click.group(name=__TITLE__, help=__DESCRIPTION__)
-@click.version_option(__VERSION__, prog_name=__TITLE__)
+@click.option(
+    "--version",
+    is_flag=True,
+    callback=_print_version,
+    expose_value=False,
+    is_eager=True,
+    help="Show animedex's version and build information.",
+)
 def cli() -> None:
     """The animedex top-level command group."""
 
