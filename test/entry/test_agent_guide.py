@@ -39,6 +39,30 @@ class TestAgentGuideOption:
         assert result.exit_code == 0
         assert isinstance(result.output, str)
 
+    def test_no_blocks_message(self, monkeypatch):
+        """Force ``collect_agent_guidance`` to return ``[]`` to drive
+        the "no blocks" message branch of ``_print_agent_guide``."""
+        from animedex.entry import animedex_cli, cli as cli_module
+
+        monkeypatch.setattr(
+            "animedex.policy.lint.collect_agent_guidance",
+            lambda group: [],
+        )
+        # Re-import inside the eager callback by patching the policy
+        # module location used at call time. The callback in
+        # ``_print_agent_guide`` does ``from animedex.policy.lint import
+        # collect_agent_guidance``, so patch that path on the policy
+        # module object itself.
+        import animedex.policy.lint as lint_mod
+
+        monkeypatch.setattr(lint_mod, "collect_agent_guidance", lambda group: [])
+
+        runner = CliRunner()
+        result = runner.invoke(animedex_cli, ["--agent-guide"])
+        assert result.exit_code == 0
+        assert "No Agent Guidance blocks found" in result.output
+        assert cli_module is not None  # smoke
+
 
 class TestAgentGuideOnSyntheticGroup:
     def test_collected_blocks_include_command(self):

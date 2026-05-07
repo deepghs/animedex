@@ -113,6 +113,54 @@ class TestKeyringStore:
         store = KeyringTokenStore(service="animedex-tests")
         assert store.get("anything") is None
 
+    def test_delete_dispatches_and_drops_known_key(self, monkeypatch):
+        from animedex.auth.keyring_store import KeyringTokenStore
+
+        deletions = []
+
+        class FakeKeyringModule:
+            @staticmethod
+            def get_password(service, key):
+                return None
+
+            @staticmethod
+            def set_password(service, key, value):
+                pass
+
+            @staticmethod
+            def delete_password(service, key):
+                deletions.append((service, key))
+
+        monkeypatch.setattr("animedex.auth.keyring_store._keyring", FakeKeyringModule)
+        store = KeyringTokenStore(service="animedex-tests")
+        store.set("anilist", "value")
+        assert "anilist" in store.keys()
+        store.delete("anilist")
+        assert deletions == [("animedex-tests", "anilist")]
+        assert "anilist" not in store.keys()
+
+    def test_keys_reflects_set_only(self, monkeypatch):
+        from animedex.auth.keyring_store import KeyringTokenStore
+
+        class FakeKeyringModule:
+            @staticmethod
+            def get_password(service, key):
+                return None
+
+            @staticmethod
+            def set_password(service, key, value):
+                pass
+
+            @staticmethod
+            def delete_password(service, key):
+                pass
+
+        monkeypatch.setattr("animedex.auth.keyring_store._keyring", FakeKeyringModule)
+        store = KeyringTokenStore()
+        store.set("a", "1")
+        store.set("b", "2")
+        assert sorted(store.keys()) == ["a", "b"]
+
 
 class TestSelftest:
     def test_selftest_runs(self):

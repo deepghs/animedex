@@ -146,6 +146,6 @@ def selftest() -> bool:
             enforce_read_only("anilist", method, "/")
         except ApiError as exc:
             assert exc.reason == "read-only"
-        else:
+        else:  # pragma: no cover - defensive selftest assertion
             raise AssertionError(f"{method} should have been rejected")
     return True

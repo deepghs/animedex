@@ -85,6 +85,6 @@ def selftest() -> bool:
             apply_jq("{}", ".x")
         except ApiError as exc:
             assert exc.reason == "jq-missing"
-        else:
+        else:  # pragma: no cover - defensive selftest assertion
             raise AssertionError("expected ApiError on missing jq")
     return True

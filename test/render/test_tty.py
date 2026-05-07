@@ -73,6 +73,43 @@ class TestPickRenderer:
         assert decoded["id"] == "anilist:154587"
 
 
+class TestRenderTtyFullFields:
+    def test_includes_score_and_streaming(self):
+        from animedex.models.anime import (
+            Anime,
+            AnimeRating,
+            AnimeStreamingLink,
+            AnimeTitle,
+        )
+        from animedex.render.tty import render_tty
+
+        a = Anime(
+            id="anilist:1",
+            title=AnimeTitle(romaji="x"),
+            score=AnimeRating(score=9.0, scale=10.0),
+            streaming=[AnimeStreamingLink(provider="X", url="https://x.invalid/x")],
+            ids={},
+            source=SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+        )
+        out = render_tty(a)
+        assert "Score: 9.0" in out
+        assert "Streaming: X" in out
+
+
+class TestRenderTtyNonAnime:
+    def test_falls_back_with_source_marker(self):
+        from animedex.models.quote import Quote
+        from animedex.render.tty import render_tty
+
+        q = Quote(
+            text="x",
+            source=SourceTag(backend="animechan", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+        )
+        out = render_tty(q)
+        assert "Quote" in out
+        assert "[src: animechan]" in out
+
+
 class TestSelftest:
     def test_selftest_runs(self):
         from animedex.render import tty

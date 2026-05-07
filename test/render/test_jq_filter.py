@@ -62,6 +62,24 @@ class TestApplyJq:
             jq_filter.apply_jq("{}", ".x")
         assert ei.value.reason == "jq-missing"
 
+    def test_jq_failed_raises_typed_error(self, monkeypatch):
+        from animedex.models.common import ApiError
+        from animedex.render import jq_filter
+
+        def fake_run(args, **kwargs):
+            class R:
+                returncode = 5
+                stdout = b""
+
+            return R()
+
+        monkeypatch.setattr("animedex.render.jq_filter._jq_path", lambda: "/usr/bin/jq")
+        monkeypatch.setattr("animedex.render.jq_filter._subprocess_run", fake_run)
+
+        with pytest.raises(ApiError) as ei:
+            jq_filter.apply_jq("{}", ".x")
+        assert ei.value.reason == "jq-failed"
+
 
 class TestSelftest:
     def test_selftest_runs_without_real_jq(self, monkeypatch):
@@ -70,4 +88,12 @@ class TestSelftest:
         # selftest must succeed even when jq is absent, because the
         # frozen-binary smoke environment has no jq installed.
         monkeypatch.setattr("animedex.render.jq_filter._jq_path", lambda: None)
+        assert jq_filter.selftest() is True
+
+    def test_selftest_runs_with_jq_present(self, monkeypatch):
+        from animedex.render import jq_filter
+
+        # When jq is on PATH the selftest skips the missing-binary
+        # branch but still has to return cleanly.
+        monkeypatch.setattr("animedex.render.jq_filter._jq_path", lambda: "/usr/bin/jq")
         assert jq_filter.selftest() is True

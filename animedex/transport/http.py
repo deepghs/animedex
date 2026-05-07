@@ -152,6 +152,6 @@ def selftest() -> bool:
         client.request("DELETE", "/x")
     except ApiError as exc:
         assert exc.reason == "read-only"
-    else:
+    else:  # pragma: no cover - defensive selftest assertion
         raise AssertionError("DELETE should have been rejected by the firewall")
     return True

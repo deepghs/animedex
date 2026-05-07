@@ -60,6 +60,49 @@ class TestRenderJson:
         assert isinstance(render_json(_anime()), str)
 
 
+class TestMergedSources:
+    def test_merged_sources_list_aggregates_into_meta(self):
+        """Cross-source aggregate path: a model carrying ``sources``
+        as a list (Phase 5 aggregate shape) should emit each backend
+        in ``_meta.sources_consulted``."""
+        from typing import List
+
+        from animedex.models.common import AnimedexModel
+        from animedex.render.json_renderer import render_json
+
+        class Merged(AnimedexModel):
+            id: str
+            sources: List[SourceTag]
+
+        merged = Merged(
+            id="x:1",
+            sources=[
+                SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+                SourceTag(backend="jikan", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+            ],
+        )
+        decoded = json.loads(render_json(merged, include_source=True))
+        assert decoded["_meta"]["sources_consulted"] == ["anilist", "jikan"]
+
+
+class TestDropMetaRecursion:
+    def test_drops_meta_inside_nested_dicts_and_lists(self):
+        from animedex.render.json_renderer import _drop_meta
+
+        payload = {
+            "_meta": {"sources_consulted": ["a"]},
+            "items": [
+                {"x": 1, "_meta": {"sources_consulted": ["b"]}},
+                {"y": 2, "nested": {"_meta": {"sources_consulted": ["c"]}, "z": 3}},
+            ],
+        }
+        out = _drop_meta(payload)
+        assert "_meta" not in out
+        assert "_meta" not in out["items"][0]
+        assert "_meta" not in out["items"][1]["nested"]
+        assert out["items"][1]["nested"]["z"] == 3
+
+
 class TestSelftest:
     def test_selftest_runs(self):
         from animedex.render import json_renderer

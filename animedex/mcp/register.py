@@ -52,7 +52,7 @@ def register_animedex_tools(server: Any, *, group: Optional[click.Group] = None)
         command = group
         for token in entry["command"].split():
             command = command.commands[token] if isinstance(command, click.Group) else None
-            if command is None:
+            if command is None:  # pragma: no cover - defensive; collect_agent_guidance only emits paths it just walked.
                 break
         handler = command.callback if isinstance(command, click.Command) else None
         server.add_tool(
@@ -85,7 +85,7 @@ def selftest() -> bool:
 
     @click.group()
     def root():
-        pass
+        pass  # pragma: no cover - click never invokes the group body
 
     @root.command()
     def hello() -> None:

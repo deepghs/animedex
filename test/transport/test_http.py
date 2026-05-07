@@ -128,6 +128,42 @@ class TestHttpClientRateLimiter:
         assert fake_clock["slept"] > 0
 
 
+class TestPathJoining:
+    def test_absolute_url_passes_through(self, fake_clock):
+        from animedex.transport.http import HttpClient
+
+        client = HttpClient(backend="anilist", base_url="https://api.invalid")
+        assert client._join("https://other.invalid/x") == "https://other.invalid/x"
+
+    def test_relative_path_gains_leading_slash(self, fake_clock):
+        from animedex.transport.http import HttpClient
+
+        client = HttpClient(backend="anilist", base_url="https://api.invalid")
+        assert client._join("v2/x") == "https://api.invalid/v2/x"
+
+
+class TestExtraHeadersPassThrough:
+    @responses.activate
+    def test_caller_supplied_header_kept(self, fake_clock):
+        from animedex.transport.http import HttpClient
+
+        responses.add(responses.GET, "https://api.invalid/x", json={}, status=200)
+        client = HttpClient(backend="anilist", base_url="https://api.invalid")
+        client.get("/x", headers={"X-Custom": "value"})
+
+        assert responses.calls[0].request.headers["X-Custom"] == "value"
+
+
+class TestPostHelper:
+    def test_post_dispatches_through_request(self, fake_clock):
+        from animedex.transport.http import HttpClient
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.POST, "https://api.invalid/", json={}, status=200)
+            client = HttpClient(backend="anilist", base_url="https://api.invalid")
+            client.post("/")
+
+
 class TestSelftest:
     def test_selftest_runs(self):
         from animedex.transport import http

@@ -132,6 +132,13 @@ class TestApiError:
         assert "rate-limited" in s
         assert "fail" in s
 
+    def test_string_form_without_backend_or_reason(self):
+        """The bare-message branch of ``__str__``."""
+        from animedex.models.common import ApiError
+
+        err = ApiError("just a message")
+        assert str(err) == "just a message"
+
 
 class TestAnimedexModelBase:
     def test_subclass_inherits_frozen_and_extra_ignore(self):

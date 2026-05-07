@@ -127,9 +127,30 @@ class TestPathResolution:
         assert str(path).startswith(str(tmp_path))
 
 
+class TestContextManager:
+    def test_with_block_closes(self, tmp_path):
+        from animedex.cache.sqlite import SqliteCache
+
+        with SqliteCache(path=tmp_path / "ctx-cache.sqlite") as c:
+            c.set("anilist", "k", b"v", ttl_seconds=60)
+        # The connection should be closed; a second open should still
+        # see the row durably.
+        with SqliteCache(path=tmp_path / "ctx-cache.sqlite") as c2:
+            assert c2.get("anilist", "k") == b"v"
+
+
 class TestSelftest:
     def test_selftest_runs(self, tmp_path, monkeypatch):
         monkeypatch.setattr("animedex.cache.sqlite._user_cache_dir", lambda: str(tmp_path))
         from animedex.cache import sqlite
 
+        assert sqlite.selftest() is True
+
+    def test_selftest_idempotent_across_runs(self, tmp_path, monkeypatch):
+        """Two consecutive selftest invocations exercise the
+        ``if path.exists(): os.remove(path)`` cleanup branch."""
+        monkeypatch.setattr("animedex.cache.sqlite._user_cache_dir", lambda: str(tmp_path))
+        from animedex.cache import sqlite
+
+        assert sqlite.selftest() is True
         assert sqlite.selftest() is True

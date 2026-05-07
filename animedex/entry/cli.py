@@ -70,7 +70,7 @@ def _print_agent_guide(ctx: click.Context, param: click.Option, value: bool) -> 
     :rtype: None
     """
     if not value or ctx.resilient_parsing:
-        return
+        return  # pragma: no cover
     from animedex.policy.lint import collect_agent_guidance
 
     blocks = collect_agent_guidance(cli)

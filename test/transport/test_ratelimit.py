@@ -98,6 +98,13 @@ class TestTokenBucket:
         b = TokenBucket(capacity=1, refill_per_second=4.0)
         assert b.with_rate("normal") is b
 
+    def test_unknown_rate_mode_rejected(self, fake_clock):
+        from animedex.transport.ratelimit import TokenBucket
+
+        b = TokenBucket(capacity=1, refill_per_second=4.0)
+        with pytest.raises(ValueError):
+            b.with_rate("turbo")
+
 
 class TestRegistry:
     def test_registry_returns_same_bucket_per_backend(self):

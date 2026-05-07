@@ -168,6 +168,111 @@ class TestExtractAgentGuidance:
         assert extract_agent_guidance(cmd) is None
 
 
+class TestNestedGroups:
+    def test_lint_recurses_into_subgroups(self):
+        from animedex.policy.lint import lint_group
+
+        @click.group()
+        def root():
+            pass
+
+        @click.group()
+        def sub():
+            pass
+
+        @sub.command()
+        def bad() -> None:
+            """One-liner only - no policy blocks."""
+
+        root.add_command(sub, "sub")
+
+        problems = lint_group(root)
+        # The flat command name should reflect nesting: "sub bad".
+        assert any("sub bad" in entry["command"] for entry in problems)
+
+    def test_collect_agent_guidance_recurses(self):
+        from animedex.policy.lint import collect_agent_guidance
+
+        @click.group()
+        def root():
+            pass
+
+        @click.group()
+        def sub():
+            pass
+
+        @sub.command()
+        def echo() -> None:
+            """Nested.
+
+            Backend: _selftest.
+
+            Rate limit: 1 req/s.
+
+            --- LLM Agent Guidance ---
+            nested guidance.
+            --- End ---
+            """
+
+        root.add_command(sub, "sub")
+
+        out = collect_agent_guidance(root)
+        assert any(entry["command"] == "sub echo" for entry in out)
+
+
+class TestResolveCallableNoCallback:
+    def test_no_callback_falls_back_to_command(self):
+        """Exercise the ``callback is None`` branch of ``_resolve_callable``.
+
+        The branch matters when a Click :class:`click.Command` has had
+        its callback cleared (e.g. some Click groups). The fallback
+        should return the command object itself without raising.
+        """
+        from animedex.policy.lint import _resolve_callable
+
+        @click.command()
+        def cmd() -> None:
+            """doc"""
+
+        cmd.callback = None
+        resolved = _resolve_callable(cmd)
+        assert resolved is cmd
+
+
+class TestMain:
+    def test_main_returns_zero_on_clean(self, capsys):
+        """`animedex_cli` itself is policy-clean as of Phase 0."""
+        from animedex.policy.lint import main
+
+        rc = main()
+        captured = capsys.readouterr()
+        assert rc == 0
+        assert "OK" in captured.out
+
+    def test_main_returns_one_on_violation(self, capsys, monkeypatch):
+        from animedex.policy import lint
+
+        @click.group()
+        def fake_root():
+            pass
+
+        @fake_root.command()
+        def bad() -> None:
+            """Lacks the required blocks."""
+
+        # Replace the resolved animedex_cli with our policy-violating
+        # synthetic group; main() imports through animedex.entry so we
+        # patch that surface.
+        import animedex.entry as entry_pkg
+
+        monkeypatch.setattr(entry_pkg, "animedex_cli", fake_root, raising=False)
+        rc = lint.main()
+        captured = capsys.readouterr()
+        assert rc == 1
+        assert "FAIL" in captured.err
+        assert "bad" in captured.err
+
+
 class TestSelftest:
     def test_selftest_runs(self):
         from animedex.policy import lint

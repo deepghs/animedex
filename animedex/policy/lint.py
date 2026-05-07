@@ -100,7 +100,9 @@ def extract_agent_guidance(command: click.Command) -> Optional[str]:
     if begin < 0:
         return None
     end = text.find(_AGENT_GUIDANCE_END, begin)
-    if end < 0:
+    if (
+        end < 0
+    ):  # pragma: no cover - guarded by the lint itself; a docstring with the begin marker but no end marker would already fail check_command_docstring before reaching this helper.
         return None
     block = text[begin + len(_AGENT_GUIDANCE_BEGIN) : end]
     return block.strip()

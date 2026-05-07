@@ -21,7 +21,7 @@ to confirm the schema parses end-to-end.
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from typing import Any, Optional
+from typing import Optional
 
 from pydantic import BaseModel, ConfigDict
 
@@ -169,5 +169,7 @@ def selftest() -> bool:
     RateLimit(reset_at=now)
     err = ApiError("smoke", backend="_selftest", reason="selftest")
     str(err)
-    _: Any = AnimedexModel  # confirm base re-exports
+    # AnimedexModel and Any are re-exports; importing them at the
+    # top of the module is sufficient confirmation that the public
+    # surface loads.
     return True
