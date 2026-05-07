@@ -25,12 +25,13 @@ the standard library globally.
 
 from __future__ import annotations
 
+import json
 import os
 import sqlite3
 import threading
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Optional, Union
+from typing import Dict, Optional, Tuple, Union
 
 from platformdirs import user_cache_dir
 
@@ -93,7 +94,7 @@ class SqliteCache:
     :type path: pathlib.Path or str or None
     """
 
-    _SCHEMA = """
+    _SCHEMA_V1 = """
         CREATE TABLE IF NOT EXISTS cache_rows (
             backend     TEXT NOT NULL,
             signature   TEXT NOT NULL,
@@ -102,6 +103,15 @@ class SqliteCache:
             PRIMARY KEY (backend, signature)
         ) WITHOUT ROWID;
     """
+
+    _CACHE_META_SCHEMA = """
+        CREATE TABLE IF NOT EXISTS cache_meta (
+            key   TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        );
+    """
+
+    _CURRENT_SCHEMA_VERSION = 2
 
     def __init__(self, path: Optional[Union[Path, str]] = None) -> None:
         self.path = Path(path) if path is not None else default_cache_path()
@@ -119,8 +129,59 @@ class SqliteCache:
         self._conn.execute("PRAGMA synchronous=NORMAL")
         self._lock = threading.Lock()
         with self._lock:
-            self._conn.execute(self._SCHEMA)
+            self._conn.execute(self._SCHEMA_V1)
+            self._conn.execute(self._CACHE_META_SCHEMA)
+            self._migrate_schema_locked()
             self._conn.commit()
+
+    def _read_schema_version_locked(self) -> int:
+        """Return the persisted schema version, defaulting to 1.
+
+        Pre-v2 databases lack the ``cache_meta`` table at the time of
+        creation; the v2 init populates it on first open.
+
+        :return: Schema version integer.
+        :rtype: int
+        """
+        row = self._conn.execute("SELECT value FROM cache_meta WHERE key = 'schema_version'").fetchone()
+        if row is None:
+            # Detect a pre-existing v1 cache_rows table to distinguish a
+            # fresh db from a legacy one. A fresh db has cache_meta empty
+            # and cache_rows empty too; we treat that as v1 about-to-be-
+            # upgraded, which is harmless because the migration is
+            # ALTER TABLE add-column with NULL defaults.
+            return 1
+        return int(row[0])
+
+    def _migrate_schema_locked(self) -> None:
+        """Bring the schema up to :attr:`_CURRENT_SCHEMA_VERSION`.
+
+        v1 → v2 adds two nullable columns (``response_headers``,
+        ``fetched_at``) so cache hits can reconstruct the full
+        ``RawResponse`` envelope. Old rows show ``NULL`` for both,
+        which the get_with_meta helper translates to an empty headers
+        dict and a ``None`` fetched_at.
+        """
+        current = self._read_schema_version_locked()
+
+        if current < 2:
+            # Add columns; ignore errors when columns already exist
+            # (re-run resilience).
+            for stmt in (
+                "ALTER TABLE cache_rows ADD COLUMN response_headers BLOB",
+                "ALTER TABLE cache_rows ADD COLUMN fetched_at INTEGER",
+            ):
+                try:
+                    self._conn.execute(stmt)
+                except sqlite3.OperationalError:
+                    pass
+            current = 2
+
+        # Persist the schema version.
+        self._conn.execute(
+            "INSERT OR REPLACE INTO cache_meta (key, value) VALUES ('schema_version', ?)",
+            (str(current),),
+        )
 
     def close(self) -> None:
         """Close the underlying SQLite connection.
@@ -144,7 +205,12 @@ class SqliteCache:
         return int(_utcnow().timestamp())
 
     def set(self, backend: str, signature: str, payload: bytes, *, ttl_seconds: int) -> None:
-        """Store or overwrite a row.
+        """Store or overwrite a row (v1 wrapper).
+
+        Exists for callers that don't need the v2 metadata. Internally
+        delegates to :meth:`set_with_meta` with ``response_headers={}``,
+        so a subsequent ``get_with_meta`` returns a valid row with
+        ``fetched_at=now`` and an empty headers dict.
 
         :param backend: Backend identifier (e.g. ``"anilist"``).
         :type backend: str
@@ -161,10 +227,52 @@ class SqliteCache:
         :return: ``None``.
         :rtype: None
         """
+        self.set_with_meta(backend, signature, payload, response_headers={}, ttl_seconds=ttl_seconds)
+
+    def set_with_meta(
+        self,
+        backend: str,
+        signature: str,
+        payload: bytes,
+        *,
+        response_headers: Dict[str, str],
+        ttl_seconds: int,
+    ) -> None:
+        """Store or overwrite a row with v2 metadata.
+
+        :param backend: Backend identifier.
+        :type backend: str
+        :param signature: Caller-derived row signature.
+        :type signature: str
+        :param payload: Raw bytes to store.
+        :type payload: bytes
+        :param response_headers: Response headers dict; persisted as
+                                  JSON-encoded bytes so cache hits in
+                                  ``--debug`` mode can reconstruct the
+                                  full envelope.
+        :type response_headers: dict[str, str]
+        :param ttl_seconds: Lifetime in seconds.
+        :type ttl_seconds: int
+        :return: ``None``.
+        :rtype: None
+        """
+        headers_blob = json.dumps(response_headers, ensure_ascii=False).encode("utf-8")
+        fetched_at_seconds = self._now_seconds()
         with self._lock:
             self._conn.execute(
-                "INSERT OR REPLACE INTO cache_rows (backend, signature, payload, expires_at) VALUES (?, ?, ?, ?)",
-                (backend, signature, payload, self._expires_at_seconds(ttl_seconds)),
+                """
+                INSERT OR REPLACE INTO cache_rows
+                    (backend, signature, payload, expires_at, response_headers, fetched_at)
+                VALUES (?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    backend,
+                    signature,
+                    payload,
+                    self._expires_at_seconds(ttl_seconds),
+                    headers_blob,
+                    fetched_at_seconds,
+                ),
             )
             self._conn.commit()
 
@@ -183,17 +291,48 @@ class SqliteCache:
         :return: Cached payload or ``None`` when missing / expired.
         :rtype: bytes or None
         """
+        out = self.get_with_meta(backend, signature)
+        if out is None:
+            return None
+        payload, _hdrs, _fetched_at = out
+        return payload
+
+    def get_with_meta(self, backend: str, signature: str) -> Optional[Tuple[bytes, Dict[str, str], Optional[datetime]]]:
+        """Look up a row including v2 metadata.
+
+        :param backend: Backend identifier.
+        :type backend: str
+        :param signature: Caller-derived row signature.
+        :type signature: str
+        :return: ``(payload, response_headers, fetched_at)`` triple
+                 on hit, ``None`` when missing or expired. Migrated
+                 v1 rows return an empty headers dict and
+                 ``fetched_at=None``.
+        :rtype: tuple or None
+        """
         with self._lock:
             row = self._conn.execute(
-                "SELECT payload, expires_at FROM cache_rows WHERE backend = ? AND signature = ?",
+                """
+                SELECT payload, expires_at, response_headers, fetched_at
+                FROM cache_rows WHERE backend = ? AND signature = ?
+                """,
                 (backend, signature),
             ).fetchone()
         if row is None:
             return None
-        payload, expires_at = row
+        payload, expires_at, headers_blob, fetched_at_seconds = row
         if expires_at <= self._now_seconds():
             return None
-        return payload
+        headers: Dict[str, str] = {}
+        if headers_blob:
+            try:
+                headers = json.loads(headers_blob)
+            except (ValueError, TypeError):
+                headers = {}
+        fetched_at = (
+            datetime.fromtimestamp(fetched_at_seconds, tz=timezone.utc) if fetched_at_seconds is not None else None
+        )
+        return payload, headers, fetched_at
 
     def purge_expired(self) -> int:
         """Delete every expired row.

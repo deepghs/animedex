@@ -184,6 +184,89 @@ class TestContextManager:
             assert c2.get("anilist", "k") == b"v"
 
 
+class TestSchemaV2Metadata:
+    """v2 schema: cache rows carry response_headers + fetched_at so a
+    cache-hit can reconstruct the full RawResponse envelope."""
+
+    def test_set_with_meta_then_get_with_meta(self, cache, fake_clock):
+        headers = {"Content-Type": "application/json", "X-RateLimit-Remaining": "29"}
+        cache.set_with_meta("anilist", "sig:1", b'{"ok":true}', response_headers=headers, ttl_seconds=60)
+
+        out = cache.get_with_meta("anilist", "sig:1")
+        assert out is not None
+        payload, hdrs, fetched_at = out
+        assert payload == b'{"ok":true}'
+        assert hdrs == headers
+        # fetched_at should be the time we wrote (per fake clock).
+        assert fetched_at == fake_clock["now"]
+
+    def test_get_with_meta_returns_none_when_missing(self, cache, fake_clock):
+        assert cache.get_with_meta("anilist", "sig:nonexistent") is None
+
+    def test_get_with_meta_returns_none_when_expired(self, cache, fake_clock):
+        cache.set_with_meta("anilist", "sig:1", b"x", response_headers={}, ttl_seconds=60)
+        fake_clock["advance"](120)
+        assert cache.get_with_meta("anilist", "sig:1") is None
+
+    def test_legacy_set_and_get_still_work(self, cache, fake_clock):
+        """Pre-v2 ``set/get`` API stays as a thin wrapper."""
+        cache.set("anilist", "sig:1", b"x", ttl_seconds=60)
+        assert cache.get("anilist", "sig:1") == b"x"
+        # The metadata accessor should still work and return None
+        # headers + the fetched_at the v1 wrapper recorded.
+        out = cache.get_with_meta("anilist", "sig:1")
+        assert out is not None
+        payload, hdrs, fetched_at = out
+        assert payload == b"x"
+        assert hdrs == {} or hdrs is None or hdrs == {}
+        assert fetched_at == fake_clock["now"]
+
+
+class TestSchemaMigration:
+    """A pre-existing v1 db must be readable as v2 after open."""
+
+    def test_v1_db_is_upgraded_in_place(self, tmp_path):
+        import sqlite3
+
+        from animedex.cache.sqlite import SqliteCache
+
+        path = tmp_path / "legacy.sqlite"
+        # Manually create a v1-shaped db: only the original schema.
+        conn = sqlite3.connect(str(path))
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS cache_rows (
+                backend     TEXT NOT NULL,
+                signature   TEXT NOT NULL,
+                payload     BLOB NOT NULL,
+                expires_at  INTEGER NOT NULL,
+                PRIMARY KEY (backend, signature)
+            ) WITHOUT ROWID;
+            """
+        )
+        conn.execute(
+            "INSERT INTO cache_rows (backend, signature, payload, expires_at) VALUES (?,?,?,?)",
+            ("anilist", "legacy-row", b"legacy-payload", 9999999999),
+        )
+        conn.commit()
+        conn.close()
+
+        # Open with v2 SqliteCache - should ALTER TABLE add the new
+        # columns and read the legacy row back.
+        cache = SqliteCache(path=path)
+        try:
+            assert cache.get("anilist", "legacy-row") == b"legacy-payload"
+            out = cache.get_with_meta("anilist", "legacy-row")
+            assert out is not None
+            payload, hdrs, fetched_at = out
+            assert payload == b"legacy-payload"
+            # Migrated rows have NULL meta.
+            assert not hdrs
+            assert fetched_at is None
+        finally:
+            cache.close()
+
+
 class TestSelftest:
     def test_selftest_runs(self, tmp_path, monkeypatch):
         monkeypatch.setattr("animedex.cache.sqlite._user_cache_dir", lambda: str(tmp_path))
