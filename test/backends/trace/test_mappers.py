@@ -79,7 +79,7 @@ class TestQuotaPrivacy:
 class TestSearch:
     @pytest.mark.parametrize("path", sorted((FIXTURES / "search").glob("*.yaml")))
     def test_search_fixture_parses_into_hits(self, path, monkeypatch):
-        fix = yaml.safe_load(path.read_text())
+        fix = yaml.safe_load(path.read_text(encoding="utf-8"))
         body = fix["response"].get("body_json")
         if body is None or not body.get("result"):
             pytest.skip("search fixture has no hits")

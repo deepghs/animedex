@@ -36,7 +36,7 @@ def _src() -> SourceTag:
 
 
 def _load(path: Path) -> dict:
-    fix = yaml.safe_load(path.read_text())
+    fix = yaml.safe_load(path.read_text(encoding="utf-8"))
     return fix["response"]["body_json"]
 
 

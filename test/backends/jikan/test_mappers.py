@@ -33,7 +33,7 @@ def _src() -> SourceTag:
 
 
 def _load(path: Path) -> dict:
-    return yaml.safe_load(path.read_text())["response"]["body_json"]
+    return yaml.safe_load(path.read_text(encoding="utf-8"))["response"]["body_json"]
 
 
 @pytest.mark.parametrize("path", sorted((FIXTURES / "anime_full").glob("*.yaml")))
