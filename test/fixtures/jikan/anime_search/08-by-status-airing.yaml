@@ -1,0 +1,439 @@
+metadata:
+  captured_at: '2026-05-07T11:02:43Z'
+  label: by-status-airing
+  backend: jikan
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime?status=airing&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:02:43 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 129
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 385
+        per_page: 3
+    data:
+    - mal_id: 21
+      url: https://myanimelist.net/anime/21/One_Piece
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1244/138851.jpg
+          small_image_url: https://myanimelist.net/images/anime/1244/138851t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1244/138851l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1244/138851.webp
+          small_image_url: https://myanimelist.net/images/anime/1244/138851t.webp
+          large_image_url: https://myanimelist.net/images/anime/1244/138851l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/-tviZNY6CSw?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: One Piece
+      - type: Synonym
+        title: OP
+      - type: Japanese
+        title: ONE PIECE
+      - type: English
+        title: One Piece
+      title: One Piece
+      title_english: One Piece
+      title_japanese: ONE PIECE
+      title_synonyms:
+      - OP
+      type: TV
+      source: Manga
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '1999-10-20T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 20
+            month: 10
+            year: 1999
+          to:
+            day: null
+            month: null
+            year: null
+        string: Oct 20, 1999 to ?
+      duration: 24 min
+      rating: PG-13 - Teens 13 or older
+      score: 8.73
+      scored_by: 1529013
+      rank: 55
+      popularity: 17
+      members: 2677653
+      favorites: 251780
+      synopsis: |-
+        Barely surviving in a barrel after passing through a terrible whirlpool at sea, carefree Monkey D. Luffy ends up aboard a ship under attack by fearsome pirates. Despite being a naive-looking teenager, he is not to be underestimated. Unmatched in battle, Luffy is a pirate himself who resolutely pursues the coveted One Piece treasure and the King of the Pirates title that comes with it.
+
+        The late King of the Pirates, Gol D. Roger, stirred up the world before his death by disclosing the whereabouts of his hoard of riches and daring everyone to obtain it. Ever since then, countless powerful pirates have sailed dangerous seas for the prized One Piece only to never return. Although Luffy lacks a crew and a proper ship, he is endowed with a superhuman ability and an unbreakable spirit that make him not only a formidable adversary but also an inspiration to many.
+
+        As he faces numerous challenges with a big smile on his face, Luffy gathers one-of-a-kind companions to join him in his ambitious endeavor, together embracing perils and wonders on their once-in-a-lifetime adventure.
+
+        [Written by MAL Rewrite]
+      background: The anime had a hiatus from October 13, 2024, to April 6, 2025. The anime switched to a seasonal release
+        model starting from April 5, 2026. The airing time was Wednesdays 19:00 between October 20, 1999 - March 2001. The
+        airing time was changed to Sundays 19:30 between April 2001 - December 2004. The airing time was changed to Sundays
+        9:30 between October 6, 2006 - October 13, 2024. The airing time was again changed to Sundays 23:15 on April 6, 2025.
+        Several anime-original arcs have been adapted into light novels, and the series has inspired 50+ video games as of
+        2023. In June 2004, One Piece was licensed in North America by 4Kids Entertainment, which partnered with Viz Media
+        for home video distribution. As One Piece proved unsuitable for their target demographic, 4Kids Entertainment censored
+        the show to meet their standards, and, in December 2006, they stopped its production. In April 2007, Funimation took
+        over the series licensing, providing an uncut version that remained faithful to the original release. In Japan, the
+        anime's first 574 episodes were released exclusively on DVD by Avex Pictures from February 21, 2001, to December 4,
+        2013. Blu-rays also became available with the DVDs starting on January 8, 2014. In North America, Viz Media released
+        the anime on DVD between February 28, 2006, and June 26, 2007. Funimation has re-released and continued the series
+        since May 27, 2008. From March 23, 2021, the DVDs were accompanied by Blu-rays as well.
+      season: fall
+      year: 1999
+      broadcast:
+        day: Sundays
+        time: '23:15'
+        timezone: Asia/Tokyo
+        string: Sundays at 23:15 (JST)
+      producers:
+      - mal_id: 169
+        type: anime
+        name: Fuji TV
+        url: https://myanimelist.net/anime/producer/169/Fuji_TV
+      - mal_id: 416
+        type: anime
+        name: TAP
+        url: https://myanimelist.net/anime/producer/416/TAP
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      - mal_id: 252
+        type: anime
+        name: 4Kids Entertainment
+        url: https://myanimelist.net/anime/producer/252/4Kids_Entertainment
+      studios:
+      - mal_id: 18
+        type: anime
+        name: Toei Animation
+        url: https://myanimelist.net/anime/producer/18/Toei_Animation
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 235
+      url: https://myanimelist.net/anime/235/Meitantei_Conan
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/7/75199.jpg
+          small_image_url: https://myanimelist.net/images/anime/7/75199t.jpg
+          large_image_url: https://myanimelist.net/images/anime/7/75199l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/7/75199.webp
+          small_image_url: https://myanimelist.net/images/anime/7/75199t.webp
+          large_image_url: https://myanimelist.net/images/anime/7/75199l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Meitantei Conan
+      - type: Synonym
+        title: Detective Conan
+      - type: Japanese
+        title: 名探偵コナン
+      - type: English
+        title: Case Closed
+      - type: German
+        title: Case Closed
+      title: Meitantei Conan
+      title_english: Case Closed
+      title_japanese: 名探偵コナン
+      title_synonyms:
+      - Detective Conan
+      type: TV
+      source: Manga
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '1996-01-08T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 8
+            month: 1
+            year: 1996
+          to:
+            day: null
+            month: null
+            year: null
+        string: Jan 8, 1996 to ?
+      duration: 24 min
+      rating: PG-13 - Teens 13 or older
+      score: 8.18
+      scored_by: 170453
+      rank: 482
+      popularity: 725
+      members: 378179
+      favorites: 16065
+      synopsis: |-
+        Shinichi Kudou, a high school student of astounding talent in detective work, is well known for having solved several challenging cases. One day, when Shinichi spots two suspicious men and decides to follow them, he inadvertently becomes witness to a disturbing illegal activity. Unfortunately, he is caught in the act, so the men dose him with an experimental drug formulated by their criminal organization, leaving him to his death. However, to his own astonishment, Shinichi lives to see another day, but now in the body of a seven-year-old child.
+
+        Perfectly preserving his original intelligence, he hides his real identity from everyone, including his childhood friend Ran Mouri and her father, private detective Kogorou Mouri. To this end, he takes on the alias of Conan Edogawa, inspired by the mystery writers Arthur Conan Doyle and Ranpo Edogawa.
+
+        Shinichi, as Conan, starts secretly solving the senior Mouri's cases from behind the scenes with his still exceptional sleuthing skills, while covertly investigating the organization responsible for his current state, hoping to reverse the drug's effects someday.
+
+        [Written by MAL Rewrite]
+      background: In 2003, FUNimation licensed the first 104 episodes of the series for North American production under the
+        name Case Closed. They later decided to stop pursuing more episodes past episode 123 due to poor sales. In 2014, Crunchyroll
+        obtained a license to stream simulcast episodes of Detective Conan on their website starting with episode 754. Winner
+        of the Animation Award (DIVE Award) of the 2010 Japanese Movie Critics Awards.
+      season: winter
+      year: 1996
+      broadcast:
+        day: Saturdays
+        time: '18:00'
+        timezone: Asia/Tokyo
+        string: Saturdays at 18:00 (JST)
+      producers:
+      - mal_id: 76
+        type: anime
+        name: Yomiuri Telecasting
+        url: https://myanimelist.net/anime/producer/76/Yomiuri_Telecasting
+      - mal_id: 1430
+        type: anime
+        name: Shogakukan
+        url: https://myanimelist.net/anime/producer/1430/Shogakukan
+      - mal_id: 1506
+        type: anime
+        name: Audio Planning U
+        url: https://myanimelist.net/anime/producer/1506/Audio_Planning_U
+      - mal_id: 1846
+        type: anime
+        name: Tokyo Movie
+        url: https://myanimelist.net/anime/producer/1846/Tokyo_Movie
+      - mal_id: 3017
+        type: anime
+        name: Polydor Records
+        url: https://myanimelist.net/anime/producer/3017/Polydor_Records
+      - mal_id: 3242
+        type: anime
+        name: Zet
+        url: https://myanimelist.net/anime/producer/3242/Zet
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      studios:
+      - mal_id: 73
+        type: anime
+        name: TMS Entertainment
+        url: https://myanimelist.net/anime/producer/73/TMS_Entertainment
+      genres:
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 7
+        type: anime
+        name: Mystery
+        url: https://myanimelist.net/anime/genre/7/Mystery
+      explicit_genres: []
+      themes:
+      - mal_id: 39
+        type: anime
+        name: Detective
+        url: https://myanimelist.net/anime/genre/39/Detective
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 966
+      url: https://myanimelist.net/anime/966/Crayon_Shin-chan
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/10/59897.jpg
+          small_image_url: https://myanimelist.net/images/anime/10/59897t.jpg
+          large_image_url: https://myanimelist.net/images/anime/10/59897l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/10/59897.webp
+          small_image_url: https://myanimelist.net/images/anime/10/59897t.webp
+          large_image_url: https://myanimelist.net/images/anime/10/59897l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Crayon Shin-chan
+      - type: Japanese
+        title: クレヨンしんちゃん
+      - type: English
+        title: Shin Chan
+      - type: German
+        title: Shin Chan
+      - type: Spanish
+        title: Shin Chan
+      title: Crayon Shin-chan
+      title_english: Shin Chan
+      title_japanese: クレヨンしんちゃん
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '1992-04-13T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 13
+            month: 4
+            year: 1992
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 13, 1992 to ?
+      duration: 21 min
+      rating: G - All Ages
+      score: 7.83
+      scored_by: 44115
+      rank: 1094
+      popularity: 2481
+      members: 94544
+      favorites: 1420
+      synopsis: |-
+        There is no such thing as an uneventful day in the life of kindergartener Shinnosuke "Shin-chan" Nohara. The five-year-old is a cut above the most troublesome, perverted, and shameless kid one can imagine. Shin-chan is almost always engaged in questionable activities such as forgetting about a friend during hide and seek, sumo wrestling for love, performing various gags including the notorious "elephant" in public, and flirting with college girls. The exemplary troublemaker has done it all and has no plans to stop anytime soon.
+
+        Crayon Shin-chan follows the daily shenanigans of Shin-chan with his group of friends, parading around as the self-proclaimed "Kasukabe Defense Force." The adults witnessing these shenanigans unfold can't help but adore Shin-chan, as he keeps them entertained while unintentionally solving their daily troubles through his mindless antics—leaving himself as the only problem they do not know what to do with.
+
+        [Written by MAL Rewrite]
+      background: The first English dubbed version was produced with many famous voice actors through 2001–2002 by Vitello
+        Productions. In 2004, Phuuz Entertainment produced a continuation of the Vitello dub with different Los Angeles-based
+        voice actors. The Phuuz and Vitello dub aired in the United Kingdom, Australia, and Republic of Ireland, and translations
+        of these dubs aired in Europe and Latin America. The dubs were close to the original but had seen some censorship.
+        The English dubbed version by Funimation was produced in 2005, featuring a Texas-based cast of voice actors, and was
+        altered in comparison to the original—sexual references, dark humor, and references to popular American culture were
+        added later on. Additionally, many non-existent backstories and different personalities were created. Crayon Shin-chan
+        has also been adapted into video games, mobile games and tons of anime movies.
+      season: spring
+      year: 1992
+      broadcast:
+        day: Fridays
+        time: '19:30'
+        timezone: Asia/Tokyo
+        string: Fridays at 19:30 (JST)
+      producers:
+      - mal_id: 55
+        type: anime
+        name: TV Asahi
+        url: https://myanimelist.net/anime/producer/55/TV_Asahi
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 247
+        type: anime
+        name: Shin-Ei Animation
+        url: https://myanimelist.net/anime/producer/247/Shin-Ei_Animation
+      genres:
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 9
+        type: anime
+        name: Ecchi
+        url: https://myanimelist.net/anime/genre/9/Ecchi
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+  body_text: null
+  body_b64: null

@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-07T11:17:35Z'
+  label: zun
+  backend: danbooru
+  path_slug: artists_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artists.json?search%5Bname%5D=zun&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:35 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: '2'
+    Connection: keep-alive
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=BUaL68jDVbEFci6FnzetvX0CVwKNI73CMIkPCH6oNkTIeCTrBuZeZInB1Bn033MfhqtmFZfw%2BnUh1y3HN6nelTeJR0KdXAcukyf1Bd5iqQM3uOdy9t28Ob5ccw2JvGwWw6Z3Vehrc4px2g9P944JEjhq6%2F8dV4Rz2dsjYFc39QWptY%2BlPn19i%2BG3ScBKSLzKkkvQhNEEkOT4yaLbf%2BSVUtnr3JhJHdXxFiRr9HKfW4as9e1x1nYep8E9GYwekH13AhU%2B5eOz6shUcdL9LWY4pEJVK%2BY5sMMvOxmqkwQW2s4%3D--LoTkb5ROjRso3tTB--6wTh1Irwm44yfZcKZFr%2FYg%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:35 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd1ae5b7719ee-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.2808, rails.cpu_time;dur=1.57, rails.idle_time;dur=0.7107,
+      rails.sql_time;dur=0.8074, rails.view_time;dur=0.7259, rails.allocations;count=1425, request.allocations;count=1936,
+      request.gc_time;dur=0.0717, request.gc_count;count=0, request.cpu_time;dur=2.2168, request.total_time;dur=2.9277, request.queue_time_0;dur=1.5929,
+      request.queue_time_1;dur=-796.0
+    x-runtime: '0.0029276962280273436'
+    via: 141.101.86.23, gura, ame/danbooru-768bdd4cff-7jmtf
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=q38lSTzozl7hoD10UVG9%2F3QYVEtSjZfGIOz9OEHTmfNN1KEoPUm4lalnQQ6trITlFrPDjfSwOwkZh8Qp9FPxNicbZK9c%2B%2Fj12wUHopS6xZMt%2F1FFjGfjK0HTWGfhdAAqCPWsdg%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd1ae5b7719ee-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json: []
+  body_text: null
+  body_b64: null

@@ -1,0 +1,52 @@
+metadata:
+  captured_at: '2026-05-07T11:17:52Z'
+  label: touhou-rating-e
+  backend: danbooru
+  path_slug: counts
+request:
+  method: GET
+  url: https://danbooru.donmai.us/counts/posts.json?tags=touhou+rating:e
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:52 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"684b7d9f85845616cf8180e46e754d3c"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=zrToqk9%2B8Gn0NADN1j9RvJ6NE%2BCDX4JrTKg3z0FswjVYJ5zMsRXqyNaOWwLhTQS%2Fs%2FyDh2BkHv%2BagPsd7lwdGFQAD2bOUh0wYafh9I%2FuCM7kY52ean3lOOH0JqKhXBIPPzTvIQBeLrjO%2FD2nM51jXK89uOJVzDecQ7Ky5ZYt3oUax%2B4tVUov118a5nL9%2F6YfGXbec3V1XQkFsYjmrjK9LBr6qfRwPKNsMs%2Fe9cD5e0c3wXBI6PNAbISpRjJyLgRjs52ENiwlg8RNJILMCxu9TSFoTDwxLR3gtNFaMGo0YL4%3D--J%2BIz1OeiH%2Fly5qXH--KP6UDnEihauqa%2BUkRCBcnw%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:51 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd2174df514a3-KIX
+    server-timing: sql.queries;count=2, cache.reads;count=1, cache.keys_read;count=1, cache.keys_hit;count=1, cache.total_time;dur=0.4774,
+      rails.total_time;dur=3.798, rails.cpu_time;dur=2.8521, rails.idle_time;dur=0.9458, rails.sql_time;dur=0.7934, rails.view_time;dur=0.0561,
+      rails.allocations;count=1862, request.allocations;count=2351, request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.6634,
+      request.total_time;dur=4.6092, request.queue_time_0;dur=2.1076, request.queue_time_1;dur=99.9999
+    x-runtime: '0.004609237670898438'
+    via: 172.70.233.113, gura, ame/danbooru-768bdd4cff-xbttn
+    strict-transport-security: max-age=31536000; preload
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=aTmD4FSw%2BCVC320huscFHN7Qdm6w%2FRV%2BdoS%2Fjk1lDufCvpDlBdrLUw3oBi%2FVl149gYteZj8hrSYhM4rqzlrrlaZNDAkAOXonwMZNzubyzOEVsVNOpas8NUqucsuctZ%2BoMR2KkQ%3D%3D"}]}'
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: 9f7fd2174df514a3-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    counts:
+      posts: 58505
+  body_text: null
+  body_b64: null

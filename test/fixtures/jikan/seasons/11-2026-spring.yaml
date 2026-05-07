@@ -1,0 +1,442 @@
+metadata:
+  captured_at: '2026-05-07T11:03:32Z'
+  label: 2026-spring
+  backend: jikan
+  path_slug: seasons
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/seasons/2026/spring?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:03:32 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:seasons:3d6a0551c3f8c78f3d738da427515d4888cbad33
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 53
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 158
+        per_page: 3
+    data:
+    - mal_id: 51553
+      url: https://myanimelist.net/anime/51553/Tongari_Boushi_no_Atelier
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1726/155542.jpg
+          small_image_url: https://myanimelist.net/images/anime/1726/155542t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1726/155542l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1726/155542.webp
+          small_image_url: https://myanimelist.net/images/anime/1726/155542t.webp
+          large_image_url: https://myanimelist.net/images/anime/1726/155542l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/d1reryPOMX0?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Tongari Boushi no Atelier
+      - type: Synonym
+        title: Atelier of Witch Hat
+      - type: Japanese
+        title: とんがり帽子のアトリエ
+      - type: English
+        title: Witch Hat Atelier
+      title: Tongari Boushi no Atelier
+      title_english: Witch Hat Atelier
+      title_japanese: とんがり帽子のアトリエ
+      title_synonyms:
+      - Atelier of Witch Hat
+      type: TV
+      source: Manga
+      episodes: 13
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-06T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 6
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 6, 2026 to ?
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.76
+      scored_by: 37491
+      rank: 49
+      popularity: 1094
+      members: 256984
+      favorites: 2521
+      synopsis: "Coco, a humble dressmaker's daughter, has always been fascinated by magic and the witches who cast it, despite\
+        \ the strict precautions they take to hide their methods from the public. However, when Coco takes advantage of a\
+        \ golden chance to spy on the skilled witch Qifrey, she realizes that her favorite picture book was a disguised magic\
+        \ book all along! In her excitement, she immediately starts testing out the various spells.\n\nWhen a spell causes\
+        \ a disaster in her home, Qifrey rescues her just in time and decides to train her, realizing that she is the first\
+        \ lead he has found that could help him track down the Brimmed Caps—a dangerous group of heretics who experiment with\
+        \ forbidden body-altering magic and spread magical artifacts among the commoners. But before Coco and Qifrey can confront\
+        \ the Brimmed Caps, she is going to have to improve her magical skills and learn to get along with Qifrey's other\
+        \ apprentices. \n\n[Written by MAL Rewrite]"
+      background: Beginning with episode 2, each episode was streamed one week in advance of the TV broadcast starting on
+        April 6, 2026, on Abema. Regular broadcasting began on April 6, 2026.
+      season: spring
+      year: 2026
+      broadcast:
+        day: Mondays
+        time: '23:00'
+        timezone: Asia/Tokyo
+        string: Mondays at 23:00 (JST)
+      producers:
+      - mal_id: 159
+        type: anime
+        name: Kodansha
+        url: https://myanimelist.net/anime/producer/159/Kodansha
+      - mal_id: 1284
+        type: anime
+        name: Avex Pictures
+        url: https://myanimelist.net/anime/producer/1284/Avex_Pictures
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      - mal_id: 1747
+        type: anime
+        name: Twin Engine
+        url: https://myanimelist.net/anime/producer/1747/Twin_Engine
+      - mal_id: 1856
+        type: anime
+        name: dugout
+        url: https://myanimelist.net/anime/producer/1856/dugout
+      licensors: []
+      studios:
+      - mal_id: 2674
+        type: anime
+        name: BUG FILMS
+        url: https://myanimelist.net/anime/producer/2674/BUG_FILMS
+      genres:
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+    - mal_id: 61316
+      url: https://myanimelist.net/anime/61316/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_4th_Season
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1540/155824.jpg
+          small_image_url: https://myanimelist.net/images/anime/1540/155824t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1540/155824l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1540/155824.webp
+          small_image_url: https://myanimelist.net/images/anime/1540/155824t.webp
+          large_image_url: https://myanimelist.net/images/anime/1540/155824l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/jVl4bY81iIs?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Re:Zero kara Hajimeru Isekai Seikatsu 4th Season
+      - type: Synonym
+        title: 'Re: Life in a different world from zero'
+      - type: Synonym
+        title: ReZero
+      - type: Japanese
+        title: Re:ゼロから始める異世界生活 4th season
+      - type: English
+        title: Re:ZERO -Starting Life in Another World- Season 4
+      title: Re:Zero kara Hajimeru Isekai Seikatsu 4th Season
+      title_english: Re:ZERO -Starting Life in Another World- Season 4
+      title_japanese: Re:ゼロから始める異世界生活 4th season
+      title_synonyms:
+      - 'Re: Life in a different world from zero'
+      - ReZero
+      type: TV
+      source: Light novel
+      episodes: 19
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-08T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 8
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 8, 2026 to ?
+      duration: 23 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.92
+      scored_by: 29039
+      rank: 22
+      popularity: 1309
+      members: 213682
+      favorites: 1879
+      synopsis: |-
+        In the deadly battle at the Watergate City of Priestella, Subaru and his allies barely emerged victorious—but their triumph came at a great cost. Through the "Authority of Gluttony," Rem was put into suspended animation, while Crusch's memories and even Julius’s name were devoured. As he searches for a way to save them, Subaru learns of the "Sage" Shaula—an all-seeing being said to possess every form of knowledge. His next destination is the Pleiades Watchtower, home to the Sage, the farthest tower standing in the vast, uncharted desert known as the Auguria Dunes—a place so perilous that even the mightiest "Sword Saint," Reinhard, failed to conquer it. The fury of nature, unknown magical beasts, and unimaginable dangers lie ahead. Together with his friends, Subaru embarks on a life-risking journey to reclaim what was lost.
+
+        (Source: Kadokawa, edited)
+      background: Re:Zero kara Hajimeru Isekai Seikatsu 4th Season is comprised of two arcs. The first eleven episodes are
+        subtitled Soushitsu-hen (Loss Arc). The latter eight, subtitled Dakkan-hen (Recapture Arc), began airing on August
+        12, 2026.
+      season: spring
+      year: 2026
+      broadcast:
+        day: Wednesdays
+        time: '22:00'
+        timezone: Asia/Tokyo
+        string: Wednesdays at 22:00 (JST)
+      producers:
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 306
+        type: anime
+        name: Magic Capsule
+        url: https://myanimelist.net/anime/producer/306/Magic_Capsule
+      - mal_id: 647
+        type: anime
+        name: Memory-Tech
+        url: https://myanimelist.net/anime/producer/647/Memory-Tech
+      - mal_id: 1333
+        type: anime
+        name: Hakuhodo DY Music & Pictures
+        url: https://myanimelist.net/anime/producer/1333/Hakuhodo_DY_Music___Pictures
+      - mal_id: 1696
+        type: anime
+        name: Kadokawa
+        url: https://myanimelist.net/anime/producer/1696/Kadokawa
+      - mal_id: 2927
+        type: anime
+        name: DAXEL
+        url: https://myanimelist.net/anime/producer/2927/DAXEL
+      licensors: []
+      studios:
+      - mal_id: 314
+        type: anime
+        name: White Fox
+        url: https://myanimelist.net/anime/producer/314/White_Fox
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 62
+        type: anime
+        name: Isekai
+        url: https://myanimelist.net/anime/genre/62/Isekai
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      - mal_id: 78
+        type: anime
+        name: Time Travel
+        url: https://myanimelist.net/anime/genre/78/Time_Travel
+      demographics: []
+    - mal_id: 59708
+      url: https://myanimelist.net/anime/59708/Youkoso_Jitsuryoku_Shijou_Shugi_no_Kyoushitsu_e_4th_Season__2-nensei-hen_1_Gakki
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1176/153626.jpg
+          small_image_url: https://myanimelist.net/images/anime/1176/153626t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1176/153626l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1176/153626.webp
+          small_image_url: https://myanimelist.net/images/anime/1176/153626t.webp
+          large_image_url: https://myanimelist.net/images/anime/1176/153626l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/QtIvKG8q5iM?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 4th Season: 2-nensei-hen 1 Gakki'
+      - type: Synonym
+        title: Welcome to the Classroom of the Elite
+      - type: Synonym
+        title: You-jitsu 4th Season
+      - type: Synonym
+        title: 'Classroom of the Elite IV: Year 2'
+      - type: Japanese
+        title: ようこそ実力至上主義の教室へ 4th Season 2年生編1学期
+      - type: English
+        title: 'Classroom of the Elite 4th Season: Second Year, First Semester'
+      title: 'Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 4th Season: 2-nensei-hen 1 Gakki'
+      title_english: 'Classroom of the Elite 4th Season: Second Year, First Semester'
+      title_japanese: ようこそ実力至上主義の教室へ 4th Season 2年生編1学期
+      title_synonyms:
+      - Welcome to the Classroom of the Elite
+      - You-jitsu 4th Season
+      - 'Classroom of the Elite IV: Year 2'
+      type: TV
+      source: Light novel
+      episodes: 16
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-01T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 1
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 1, 2026 to ?
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.13
+      scored_by: 20462
+      rank: 558
+      popularity: 1480
+      members: 187704
+      favorites: 1135
+      synopsis: |-
+        As Ayanokouji and his classmates begin their second year at the Advanced Nurturing High School, they're greeted by a fresh gauntlet of exams and a fresh batch of rather unique first-year students. They'll have to get to know each other quickly, because the first special exam pairs the first-years with the second-years on a written test—with only the second-years facing expulsion if their team performs poorly! Worse yet? It seems one of the new first-years is also from the White Room. Can Ayanokouji avoid expulsion while sussing out the identity of this hidden foe?
+
+        (Source: Crunchyroll)
+      background: ''
+      season: spring
+      year: 2026
+      broadcast:
+        day: Wednesdays
+        time: '21:30'
+        timezone: Asia/Tokyo
+        string: Wednesdays at 21:30 (JST)
+      producers:
+      - mal_id: 101
+        type: anime
+        name: Studio Hibari
+        url: https://myanimelist.net/anime/producer/101/Studio_Hibari
+      - mal_id: 104
+        type: anime
+        name: Lantis
+        url: https://myanimelist.net/anime/producer/104/Lantis
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 213
+        type: anime
+        name: Half H.P Studio
+        url: https://myanimelist.net/anime/producer/213/Half_HP_Studio
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 1345
+        type: anime
+        name: Sammy
+        url: https://myanimelist.net/anime/producer/1345/Sammy
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      - mal_id: 1680
+        type: anime
+        name: BS NTV
+        url: https://myanimelist.net/anime/producer/1680/BS_NTV
+      - mal_id: 2425
+        type: anime
+        name: Bandai Namco Music Live
+        url: https://myanimelist.net/anime/producer/2425/Bandai_Namco_Music_Live
+      licensors: []
+      studios:
+      - mal_id: 456
+        type: anime
+        name: Lerche
+        url: https://myanimelist.net/anime/producer/456/Lerche
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics: []
+  body_text: null
+  body_b64: null

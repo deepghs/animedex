@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-07T11:18:51Z'
+  label: steins-gate
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Steins+Gate&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=vagGtFn63xeyFthk; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:51 GMT, __ddg10_=1778152731;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:51 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:38:51 GMT, __ddg1_=Am6NHd7nwux0brn4tB2S; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:18:51 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:18:51 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"2a135c522817528e4a6dcde592508360"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: d8067315-b79f-4ec0-9d34-7dfa430dd397
+    X-Runtime: '0.046237'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 11577
+    name: 'Steins;Gate Movie: Fuka Ryouiki no Dejà vu'
+    russian: 'Врата Штейна: Зона загрузки дежавю'
+    image:
+      original: /system/animes/original/11577.jpg?1711975181
+      preview: /system/animes/preview/11577.jpg?1711975181
+      x96: /system/animes/x96/11577.jpg?1711975181
+      x48: /system/animes/x48/11577.jpg?1711975181
+    url: /animes/z11577-steins-gate-movie-fuka-ryouiki-no-dej-vu
+    kind: movie
+    score: '8.45'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2013-04-20'
+    released_on: null
+  - id: 32188
+    name: 'Steins;Gate: Kyoukaimenjou no Missing Link - Divide By Zero'
+    russian: 'Врата Штейна: Найти недостающее звено — Деление на ноль'
+    image:
+      original: /system/animes/original/32188.jpg?1711975191
+      preview: /system/animes/preview/32188.jpg?1711975191
+      x96: /system/animes/x96/32188.jpg?1711975191
+      x48: /system/animes/x48/32188.jpg?1711975191
+    url: /animes/z32188-steins-gate-kyoukaimenjou-no-missing-link-divide-by-zero
+    kind: tv_special
+    score: '8.27'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2015-12-03'
+    released_on: null
+  body_text: null
+  body_b64: null

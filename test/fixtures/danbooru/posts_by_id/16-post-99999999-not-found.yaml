@@ -1,0 +1,55 @@
+metadata:
+  captured_at: '2026-05-07T11:17:20Z'
+  label: post-99999999-not-found
+  backend: danbooru
+  path_slug: posts_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts/99999999.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    Date: Thu, 07 May 2026 11:17:20 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    Cache-Control: no-cache
+    Set-Cookie: _danbooru2_session=uIEMizl%2BjX%2FmNika430l2YSinWT0GsYmOyuTFxIfr6K7Cy8%2BVMHCpVLcKx880vEqiv7arO4sk7dPYrWb4rMkpsXJE0eCjFyXsutLoPc3ZXx0HaEWxWyw1s%2FGYLBuYX4bdOKK4v2d9FazKg20y78awNCFWyXo3oAd%2FPls21oJ2zT8%2FHDetAK9XneHfx7AE6EL%2B0j89kuogYRi2HK%2B06RObGDL3tfq%2FnVRffJRBxUyabD%2FxhOFpSEpYx3uzY0BQqqvArBMcc5jKTDcAJLBmYcPp8Q6dv4ikj3Oo0MICRxWeyE%3D--eBWSgQMLW%2B4d2mBj--rP8UnvlQ71lgCpvyLFHCoQ%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:20 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd150ba3bffa4-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=4.2116, rails.cpu_time;dur=2.7379, rails.idle_time;dur=1.4737,
+      rails.sql_time;dur=1.6354, rails.view_time;dur=0.2776, rails.allocations;count=2453, request.allocations;count=2926,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.4861, request.total_time;dur=5.0076, request.queue_time_0;dur=1.713,
+      request.queue_time_1;dur=97.9998
+    x-runtime: '0.005007591247558594'
+    via: 172.70.233.113, gura, ame/danbooru-768bdd4cff-7jmtf
+    strict-transport-security: max-age=31536000; preload
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=vrVQrnoRh3HepdGmFaL%2FlEbIiwdPbDKnVL4iLjAijutmPyDOsp6z7rQnQyzTV7FZn176uZh9SC8kUFxokOreuHN0%2BBl62kVkXwRlT7mee8AKTutWMW3bBSu3uIzys%2BMIVKy1aw%3D%3D"}]}'
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: 9f7fd150ba3bffa4-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    success: false
+    error: ActiveRecord::RecordNotFound
+    message: That record was not found.
+    backtrace:
+    - app/controllers/posts_controller.rb:32:in 'PostsController#show'
+    - app/logical/rack_server_timing.rb:19:in 'RackServerTiming#call'
+  body_text: null
+  body_b64: null

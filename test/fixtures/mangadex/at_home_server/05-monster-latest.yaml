@@ -1,0 +1,80 @@
+metadata:
+  captured_at: '2026-05-07T11:10:19Z'
+  label: monster-latest
+  backend: mangadex
+  path_slug: at_home_server
+request:
+  method: GET
+  url: https://api.mangadex.org/at-home/server/880d380a-bd83-4000-9974-73b4cf229c62
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Thu, 07 May 2026 11:10:19 GMT
+    x-ratelimit-remaining: '35'
+    x-ratelimit-retry-after: '1778152219'
+    x-ratelimit-limit: '40'
+    x-ratelimit-retry-in: '0'
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '1196'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x1
+    x-request-id: 0c854c66-e701-4149-a43e-d6731f780e00
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    baseUrl: https://cmdxd98sb0x3yprd.mangadex.network
+    chapter:
+      hash: 5890f12450844073e2e877785a75358f
+      data:
+      - 1-59b85b27ae9084808b4a43b89a1aeaba5e33580d444c17cf14c4291996f4db18.png
+      - 2-58d4371c49e70808ebb6a0056f654e0170c5eb03e76c13a9e294b09a425df71b.png
+      - 3-64c8f4bc0ca5b6eaf71f4be3719c0313e9d38b4bcf71722fc5fa284d4a467712.png
+      - 4-789ab1de342a12a7ec6454d48d0f0f7544617fe03e4bf8e0eb3432d13e0670ac.png
+      - 5-123234b553ffe1c0676e6fdbd060625eb85342e4e4a028a8346144e22e0f2132.png
+      - 6-693dfc9ff688122913bd718a2b151d392088b671cae2ece9bff6f5ad1c004d76.png
+      - 7-7f63d1a34b9469670cd9b2ea74a92a7b69065be95c9a9f1a9150198fdf1e248e.png
+      - 8-68d75c848dd0401e95c092cffe56ea43f9344c04232a06c832df1eab96840cea.png
+      - 9-1fd47d4ddfedbbc38cf7118dc56d2a745ba2b3e89b4f3c71aa61947f5e566844.png
+      - 10-8b80dd169b7a13c3c5a8d0d2ff43538c4f050de411827b8dc5e2b6ed6f23a737.png
+      - 11-c185e3a5b7b6a38339c43af8627c7a2cb078cdcda7a28db159ac67c4ce1c913c.png
+      - 12-48ffad9c580f575b61d455f03966ca36a6226317e7e24911e2a191e95933b73a.png
+      - 13-cbd1b733aef98c5cf31075f4a76bab6b5661f6508eda956bc09da7caa110871b.png
+      dataSaver:
+      - 1-709ba777e115aec604f92b3ea4eedf7a1ec537c5b42194db1cbfe9f9b52fd42d.jpg
+      - 2-ead151dc1c4714d6c78f5c7079a5d9c4c1360b698f14d848bb8d74a7ddeb5707.jpg
+      - 3-61085563d8cb211a3580da949cce4957e92da7330d216136c3717d039b58123d.jpg
+      - 4-6e71442be9953118a7c7426e8903bae55988f77da2ab3289eaac559ce2654c9d.jpg
+      - 5-a9d4f80087cfb19efd2cd1c80d296aaef15a732b83eb5d22ee040990aeaf0255.jpg
+      - 6-8a81afe60ea8fb9fd9c0093af509088e9eccb412e56820c02b337cc40a96dc8b.jpg
+      - 7-e8bd255a7a03700e7cffdb4a3348ef5aecfbdf5279c1815250992653aaf85758.jpg
+      - 8-06fc1e2c7d5b9880fef868e61aec12d436a63dc30a063c99be7a5a7ac047e4e0.jpg
+      - 9-427d885657eb68405f9e42d8ad6c9840dcaeadbde689846c6dc3c066404be0ed.jpg
+      - 10-88c5b0324666cfaa778b17c13164bccff94f8302b569aee396010d95c6e58528.jpg
+      - 11-a121a25d7f5d577c9eb4ee64c2ec5b64197030179d61e5449385ce7c82c5c55a.jpg
+      - 12-1f370302220a307adbd74a6add4eb2b9eebc95cb0e85f385de6d55ee7be99bb4.jpg
+      - 13-f9de16fec1b20ec8c4183d3ffc988e191041bce76921c92fce7b8d97092cbb50.jpg
+  body_text: null
+  body_b64: null

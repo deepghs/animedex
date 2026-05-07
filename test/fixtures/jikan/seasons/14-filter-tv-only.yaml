@@ -1,0 +1,452 @@
+metadata:
+  captured_at: '2026-05-07T11:03:40Z'
+  label: filter-tv-only
+  backend: jikan
+  path_slug: seasons
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/seasons/2024/spring?filter=tv&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:03:40 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:seasons:373e78ba07b09b1c23beb1ee9b8c7f6d93ed5c0b
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 24
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 71
+        per_page: 3
+    data:
+    - mal_id: 55701
+      url: https://myanimelist.net/anime/55701/Kimetsu_no_Yaiba__Hashira_Geiko-hen
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1565/142711.jpg
+          small_image_url: https://myanimelist.net/images/anime/1565/142711t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1565/142711l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1565/142711.webp
+          small_image_url: https://myanimelist.net/images/anime/1565/142711t.webp
+          large_image_url: https://myanimelist.net/images/anime/1565/142711l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/Tf31dGdlWxE?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Kimetsu no Yaiba: Hashira Geiko-hen'
+      - type: Japanese
+        title: 鬼滅の刃 柱稽古編
+      - type: English
+        title: 'Demon Slayer: Kimetsu no Yaiba Hashira Training Arc'
+      title: 'Kimetsu no Yaiba: Hashira Geiko-hen'
+      title_english: 'Demon Slayer: Kimetsu no Yaiba Hashira Training Arc'
+      title_japanese: 鬼滅の刃 柱稽古編
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 8
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2024-05-12T00:00:00+00:00'
+        to: '2024-06-30T00:00:00+00:00'
+        prop:
+          from:
+            day: 12
+            month: 5
+            year: 2024
+          to:
+            day: 30
+            month: 6
+            year: 2024
+        string: May 12, 2024 to Jun 30, 2024
+      duration: 29 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.02
+      scored_by: 452593
+      rank: 722
+      popularity: 300
+      members: 773569
+      favorites: 4959
+      synopsis: |-
+        After a series of mighty clashes with Upper Rank Demons, the Ubuyashiki clan prepares for one last battle with the hellish forces of Muzan Kibutsuji. In order to finally defeat the Demon leader once and for all, the clan devises a training camp for the Demon Slayer Corps, one led by the remaining Hashira—the most elite warriors in the organization. Each Hashira forms a specialized exercise that will hone both their own abilities and the skills of the ordinary soldiers.
+
+        Tanjirou Kamado, a boy at the heart of the brewing conflict, recovers from wounds received in a recent fight. While his half-Demon sister Nezuko is studied by researchers like Shinobu Kochou, Tanjirou embarks to train with the Hashira, seeking mastery in each of their assigned areas of expertise to be best prepared for the coming war—skills vital to Tanjirou, as he has vowed to be the very warrior who will eliminate Muzan for good.
+
+        [Written by MAL Rewrite]
+      background: 'Kimetsu no Yaiba: Hashira Geiko-hen adapts chapters 128 to 139 of the original manga. The series was released
+        on Blu-ray and DVD in four volumes from July 3, 2024, to October 2, 2024.'
+      season: spring
+      year: 2024
+      broadcast:
+        day: Sundays
+        time: '23:15'
+        timezone: Asia/Tokyo
+        string: Sundays at 23:15 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      licensors:
+      - mal_id: 493
+        type: anime
+        name: Aniplex of America
+        url: https://myanimelist.net/anime/producer/493/Aniplex_of_America
+      studios:
+      - mal_id: 43
+        type: anime
+        name: ufotable
+        url: https://myanimelist.net/anime/producer/43/ufotable
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      explicit_genres: []
+      themes:
+      - mal_id: 13
+        type: anime
+        name: Historical
+        url: https://myanimelist.net/anime/genre/13/Historical
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 52588
+      url: https://myanimelist.net/anime/52588/Kaijuu_8-gou
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1370/140362.jpg
+          small_image_url: https://myanimelist.net/images/anime/1370/140362t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1370/140362l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1370/140362.webp
+          small_image_url: https://myanimelist.net/images/anime/1370/140362t.webp
+          large_image_url: https://myanimelist.net/images/anime/1370/140362l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/7n_mFVPeApw?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Kaijuu 8-gou
+      - type: Synonym
+        title: 8Kaijuu
+      - type: Synonym
+        title: 'Monster #8'
+      - type: Synonym
+        title: Kaiju No. Eight
+      - type: Synonym
+        title: 'Kaiju #8'
+      - type: Japanese
+        title: 怪獣8号
+      - type: English
+        title: Kaiju No. 8
+      title: Kaijuu 8-gou
+      title_english: Kaiju No. 8
+      title_japanese: 怪獣8号
+      title_synonyms:
+      - 8Kaijuu
+      - 'Monster #8'
+      - Kaiju No. Eight
+      - 'Kaiju #8'
+      type: TV
+      source: Manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2024-04-13T00:00:00+00:00'
+        to: '2024-06-29T00:00:00+00:00'
+        prop:
+          from:
+            day: 13
+            month: 4
+            year: 2024
+          to:
+            day: 29
+            month: 6
+            year: 2024
+        string: Apr 13, 2024 to Jun 29, 2024
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.21
+      scored_by: 420654
+      rank: 428
+      popularity: 323
+      members: 727832
+      favorites: 6640
+      synopsis: |-
+        After the destruction of their hometown, childhood friends Kafka Hibino and Mina Ashiro make a pact to become officers in the Defense Force—a militarized organization tasked with protecting Japan from colossal monsters known as "kaijuu." Decades later, the 32-year-old Kafka has all but given up on his dreams of heroism. Instead, he cleans up the remains of the slaughtered kaijuu after they are defeated by valiant soldiers—including Mina, who has successfully achieved their shared goal.
+
+        Upon meeting his new coworker, Reno Ichikawa, Kafka faces a mirror of his past self: an ambitious young man whose one desire is to fight as a member of the Defense Force. Unfortunately, the two are soon involved in a freak encounter with a rogue kaijuu. Though Kafka demonstrates his innate heroic nature and rescues Reno from certain doom, he is left gravely injured.
+
+        While both men recover in a hospital, Kafka is seemingly attacked by another one of the beasts. As a result, he gains the ability to transform into a humanoid kaijuu with the strength and powers of the massive monsters menacing Japan. Dubbed "Kaijuu No. 8" by the military, Kafka resolves to use his newfound gifts for the greater good. Tied together by mutual respect, Kafka and Reno set out to join warriors like Mina at the forefront of the Defense Force.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2024
+      broadcast:
+        day: Saturdays
+        time: '23:00'
+        timezone: Asia/Tokyo
+        string: Saturdays at 23:00 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 47
+        type: anime
+        name: Khara
+        url: https://myanimelist.net/anime/producer/47/Khara
+      - mal_id: 323
+        type: anime
+        name: Nippon Columbia
+        url: https://myanimelist.net/anime/producer/323/Nippon_Columbia
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      - mal_id: 1858
+        type: anime
+        name: Sonilude
+        url: https://myanimelist.net/anime/producer/1858/Sonilude
+      - mal_id: 2229
+        type: anime
+        name: Toho Music
+        url: https://myanimelist.net/anime/producer/2229/Toho_Music
+      licensors: []
+      studios:
+      - mal_id: 10
+        type: anime
+        name: Production I.G
+        url: https://myanimelist.net/anime/producer/10/Production_IG
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      explicit_genres: []
+      themes:
+      - mal_id: 50
+        type: anime
+        name: Adult Cast
+        url: https://myanimelist.net/anime/genre/50/Adult_Cast
+      - mal_id: 38
+        type: anime
+        name: Military
+        url: https://myanimelist.net/anime/genre/38/Military
+      - mal_id: 82
+        type: anime
+        name: Urban Fantasy
+        url: https://myanimelist.net/anime/genre/82/Urban_Fantasy
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 55888
+      url: https://myanimelist.net/anime/55888/Mushoku_Tensei_II__Isekai_Ittara_Honki_Dasu_Part_2
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1876/141251.jpg
+          small_image_url: https://myanimelist.net/images/anime/1876/141251t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1876/141251l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1876/141251.webp
+          small_image_url: https://myanimelist.net/images/anime/1876/141251t.webp
+          large_image_url: https://myanimelist.net/images/anime/1876/141251l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/L5broLUI1m4?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2'
+      - type: Synonym
+        title: 'Jobless Reincarnation: I Will Seriously Try If I Go To Another World'
+      - type: Synonym
+        title: 'Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season Part 2'
+      - type: Japanese
+        title: 無職転生 II ～異世界行ったら本気だす～ (第2クール)
+      - type: English
+        title: 'Mushoku Tensei: Jobless Reincarnation Season 2 Part 2'
+      title: 'Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2'
+      title_english: 'Mushoku Tensei: Jobless Reincarnation Season 2 Part 2'
+      title_japanese: 無職転生 II ～異世界行ったら本気だす～ (第2クール)
+      title_synonyms:
+      - 'Jobless Reincarnation: I Will Seriously Try If I Go To Another World'
+      - 'Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season Part 2'
+      type: TV
+      source: Light novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2024-04-08T00:00:00+00:00'
+        to: '2024-07-01T00:00:00+00:00'
+        prop:
+          from:
+            day: 8
+            month: 4
+            year: 2024
+          to:
+            day: 1
+            month: 7
+            year: 2024
+        string: Apr 8, 2024 to Jul 1, 2024
+      duration: 23 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.39
+      scored_by: 330284
+      rank: 238
+      popularity: 436
+      members: 571973
+      favorites: 4650
+      synopsis: |-
+        Following the faceless god Hitogami's advice seems to have worked wonders for Rudeus Greyrat. After enrolling into the University of Magic as he was told, Rudeus reunites with his childhood friend Sylphiette, who put a valiant effort into curing his condition. The two grow ever closer together and decide to host a wedding party, inviting the friends they have made over the years to announce and formalize their relationship.
+
+        For all his recent blessings, however, Rudeus' troubles are far from over. The research he is helping Shizuka Nanahoshi conduct hits a bottleneck, sending her into a deep slump much like he experienced in his previous life. Furthermore, a letter from his father, Paul, brings complications to Rudeus' relationships, and Sylphiette still knows next to nothing about his real background. In the face of these issues, Rudeus will have to apply the lessons he has learned in this new world to navigate through the challenges that come with living a life to its fullest.
+
+        [Written by MAL Rewrite]
+      background: 'Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2 was released on Blu-ray in two volumes from July 17,
+        2024, to September 18, 2024.'
+      season: spring
+      year: 2024
+      broadcast:
+        day: Mondays
+        time: 00:00
+        timezone: Asia/Tokyo
+        string: Mondays at 00:00 (JST)
+      producers:
+      - mal_id: 61
+        type: anime
+        name: Frontier Works
+        url: https://myanimelist.net/anime/producer/61/Frontier_Works
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1333
+        type: anime
+        name: Hakuhodo DY Music & Pictures
+        url: https://myanimelist.net/anime/producer/1333/Hakuhodo_DY_Music___Pictures
+      - mal_id: 1416
+        type: anime
+        name: BS11
+        url: https://myanimelist.net/anime/producer/1416/BS11
+      - mal_id: 1444
+        type: anime
+        name: Egg Firm
+        url: https://myanimelist.net/anime/producer/1444/Egg_Firm
+      - mal_id: 1696
+        type: anime
+        name: Kadokawa
+        url: https://myanimelist.net/anime/producer/1696/Kadokawa
+      - mal_id: 2289
+        type: anime
+        name: GREE Entertainment
+        url: https://myanimelist.net/anime/producer/2289/GREE_Entertainment
+      licensors: []
+      studios:
+      - mal_id: 1993
+        type: anime
+        name: Studio Bind
+        url: https://myanimelist.net/anime/producer/1993/Studio_Bind
+      genres:
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 9
+        type: anime
+        name: Ecchi
+        url: https://myanimelist.net/anime/genre/9/Ecchi
+      explicit_genres: []
+      themes:
+      - mal_id: 62
+        type: anime
+        name: Isekai
+        url: https://myanimelist.net/anime/genre/62/Isekai
+      - mal_id: 72
+        type: anime
+        name: Reincarnation
+        url: https://myanimelist.net/anime/genre/72/Reincarnation
+      demographics: []
+  body_text: null
+  body_b64: null

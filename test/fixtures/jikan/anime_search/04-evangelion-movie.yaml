@@ -1,0 +1,475 @@
+metadata:
+  captured_at: '2026-05-07T11:02:32Z'
+  label: evangelion-movie
+  backend: jikan
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime?q=Evangelion&type=movie&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:02:32 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 3
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 7
+        per_page: 3
+    data:
+    - mal_id: 32
+      url: https://myanimelist.net/anime/32/Shinseiki_Evangelion_Movie__Air_Magokoro_wo_Kimi_ni
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1404/98182.jpg
+          small_image_url: https://myanimelist.net/images/anime/1404/98182t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1404/98182l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1404/98182.webp
+          small_image_url: https://myanimelist.net/images/anime/1404/98182t.webp
+          large_image_url: https://myanimelist.net/images/anime/1404/98182l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/v1pWyWIu8x4?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni'
+      - type: Synonym
+        title: 'Shinseiki Evangelion Gekijouban: The End of Evangelion'
+      - type: Synonym
+        title: EoE
+      - type: Japanese
+        title: 新世紀エヴァンゲリオン劇場版 Air / まごころを, 君に
+      - type: English
+        title: 'Neon Genesis Evangelion: The End of Evangelion'
+      title: 'Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni'
+      title_english: 'Neon Genesis Evangelion: The End of Evangelion'
+      title_japanese: 新世紀エヴァンゲリオン劇場版 Air / まごころを, 君に
+      title_synonyms:
+      - 'Shinseiki Evangelion Gekijouban: The End of Evangelion'
+      - EoE
+      type: Movie
+      source: Original
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '1997-07-19T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 19
+            month: 7
+            year: 1997
+          to:
+            day: null
+            month: null
+            year: null
+        string: Jul 19, 1997
+      duration: 1 hr 26 min
+      rating: R+ - Mild Nudity
+      score: 8.57
+      scored_by: 696423
+      rank: 127
+      popularity: 178
+      members: 1042131
+      favorites: 32464
+      synopsis: |-
+        Shinji Ikari is left emotionally comatose after the death of a dear friend. With his son mentally unable to pilot the humanoid robot Evangelion Unit-01, Gendou Ikari's NERV races against the shadow organization SEELE to see who can enact their ultimate plan first. SEELE desires to create a godlike being by fusing their own souls into an Evangelion unit, while Gendou wishes to revert all of humanity into one primordial being so that he can be reunited with Yui, his deceased wife.
+
+        SEELE unleashes its military forces in a lethal invasion of NERV headquarters. As SEELE's forces cut down NERV's scientists and security personnel, Asuka Langley Souryuu pilots Evangelion Unit-02 in a desperate last stand against SEELE's heaviest weaponry.
+
+        The battle rages on, and a depressed Shinji hides deep within NERV's headquarters. With the fate of the world resting in Shinji's hands, Captain Misato Katsuragi hunts for the teenage boy as society crumbles around them.
+
+        [Written by MAL Rewrite]
+      background: 'Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni is an alternate version of the series ending, which
+        either supplements or replaces episodes 25 and 26, depending on how they are viewed. The movie was awarded the Animage
+        Anime Grand Prix prize for 1997, the Japan Academy Prize for Biggest Public Sensation of the Year, and Special Audience
+        Choice Award by the 1997 Animation Kobe.'
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 18
+        type: anime
+        name: Toei Animation
+        url: https://myanimelist.net/anime/producer/18/Toei_Animation
+      - mal_id: 92
+        type: anime
+        name: Starchild Records
+        url: https://myanimelist.net/anime/producer/92/Starchild_Records
+      - mal_id: 113
+        type: anime
+        name: Kadokawa Shoten
+        url: https://myanimelist.net/anime/producer/113/Kadokawa_Shoten
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 167
+        type: anime
+        name: Sega
+        url: https://myanimelist.net/anime/producer/167/Sega
+      - mal_id: 717
+        type: anime
+        name: TV Tokyo Music
+        url: https://myanimelist.net/anime/producer/717/TV_Tokyo_Music
+      - mal_id: 1344
+        type: anime
+        name: King Records
+        url: https://myanimelist.net/anime/producer/1344/King_Records
+      - mal_id: 1461
+        type: anime
+        name: Audio Tanaka
+        url: https://myanimelist.net/anime/producer/1461/Audio_Tanaka
+      licensors:
+      - mal_id: 783
+        type: anime
+        name: GKIDS
+        url: https://myanimelist.net/anime/producer/783/GKIDS
+      - mal_id: 947
+        type: anime
+        name: Manga Entertainment
+        url: https://myanimelist.net/anime/producer/947/Manga_Entertainment
+      studios:
+      - mal_id: 6
+        type: anime
+        name: Gainax
+        url: https://myanimelist.net/anime/producer/6/Gainax
+      - mal_id: 10
+        type: anime
+        name: Production I.G
+        url: https://myanimelist.net/anime/producer/10/Production_IG
+      genres:
+      - mal_id: 5
+        type: anime
+        name: Avant Garde
+        url: https://myanimelist.net/anime/genre/5/Avant_Garde
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 18
+        type: anime
+        name: Mecha
+        url: https://myanimelist.net/anime/genre/18/Mecha
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      demographics: []
+    - mal_id: 2759
+      url: https://myanimelist.net/anime/2759/Evangelion_Movie_1__Jo
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/7/74975.jpg
+          small_image_url: https://myanimelist.net/images/anime/7/74975t.jpg
+          large_image_url: https://myanimelist.net/images/anime/7/74975l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/7/74975.webp
+          small_image_url: https://myanimelist.net/images/anime/7/74975t.webp
+          large_image_url: https://myanimelist.net/images/anime/7/74975l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/ETNj92NPIh4?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Evangelion Movie 1: Jo'
+      - type: Synonym
+        title: 'Evangelion Shin Gekijouban: Jo'
+      - type: Synonym
+        title: 'Rebuild of Evangelion: 1.0 You Are (Not) Alone'
+      - type: Synonym
+        title: 'Evangelion: 1.01 You Are (Not) Alone'
+      - type: Synonym
+        title: 'Evangelion: 1.11 You Are (Not) Alone'
+      - type: Japanese
+        title: ヱヴァンゲリヲン新劇場版:序
+      - type: English
+        title: 'Evangelion: 1.0 You Are (Not) Alone'
+      - type: German
+        title: 'Evangelion: 1.11 You Are (Not) Alone.'
+      - type: Spanish
+        title: 'Evangelion: 1.11 You Are (Not) Alone'
+      - type: French
+        title: 'Evangelion: 1.11 You Are (Not) Alone'
+      title: 'Evangelion Movie 1: Jo'
+      title_english: 'Evangelion: 1.0 You Are (Not) Alone'
+      title_japanese: ヱヴァンゲリヲン新劇場版:序
+      title_synonyms:
+      - 'Evangelion Shin Gekijouban: Jo'
+      - 'Rebuild of Evangelion: 1.0 You Are (Not) Alone'
+      - 'Evangelion: 1.01 You Are (Not) Alone'
+      - 'Evangelion: 1.11 You Are (Not) Alone'
+      type: Movie
+      source: Original
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2007-09-01T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 1
+            month: 9
+            year: 2007
+          to:
+            day: null
+            month: null
+            year: null
+        string: Sep 1, 2007
+      duration: 1 hr 41 min
+      rating: R+ - Mild Nudity
+      score: 8
+      scored_by: 380964
+      rank: 749
+      popularity: 402
+      members: 618627
+      favorites: 2102
+      synopsis: |-
+        In a post-apocalyptic world, the last remaining human settlement in Japan is the heavily fortified city of Tokyo-3. Fourteen-year-old Shinji Ikari is brought to the headquarters of NERV, an underground organization lead by his estranged father, Gendou. He requests that Shinji become a pilot of an "Evangelion," a colossal android built to fight against monstrous and destructive alien creatures known as "Angels" that wreak havoc on the planet and threaten the survival of the remaining human race.
+
+        Although initially reluctant, Shinji is swayed by the idea of reconciling with his father, and agrees to aid in mankind's perilous endeavor against its alien threat, as the pilot of Evangelion Unit-01. Thrust into the midst of a dangerous battlefield, Shinji must find the necessary courage and resolve to face against the Angels' incursions before it is too late.
+
+        [Written by MAL Rewrite]
+      background: '1.01: An additional 266 enhancements from 1.0. 1.11: 2 minutes longer than 1.0 and 1.01 and created by
+        processing the master digital data instead of the 35mm film. In 2007, the film was awarded the DCAJ Chairperson Award
+        during the 22nd Digital Contents Grand Prix. In 2008, the film won the Tokyo International Anime Fair award for anime
+        of the year (with Hideaki Anno receiving the best director award for it), the Toukaimura Genpachi Award at the 7th
+        Annual Japanese Otaku Awards and the Theatrical Film Award at the 13th Animation Kobe Awards.'
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers: []
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      - mal_id: 783
+        type: anime
+        name: GKIDS
+        url: https://myanimelist.net/anime/producer/783/GKIDS
+      studios:
+      - mal_id: 47
+        type: anime
+        name: Khara
+        url: https://myanimelist.net/anime/producer/47/Khara
+      genres:
+      - mal_id: 46
+        type: anime
+        name: Award Winning
+        url: https://myanimelist.net/anime/genre/46/Award_Winning
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 18
+        type: anime
+        name: Mecha
+        url: https://myanimelist.net/anime/genre/18/Mecha
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      demographics: []
+    - mal_id: 3784
+      url: https://myanimelist.net/anime/3784/Evangelion_Movie_2__Ha
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/5/74983.jpg
+          small_image_url: https://myanimelist.net/images/anime/5/74983t.jpg
+          large_image_url: https://myanimelist.net/images/anime/5/74983l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/5/74983.webp
+          small_image_url: https://myanimelist.net/images/anime/5/74983t.webp
+          large_image_url: https://myanimelist.net/images/anime/5/74983l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Evangelion Movie 2: Ha'
+      - type: Synonym
+        title: 'Evangelion Shin Gekijouban: Ha'
+      - type: Synonym
+        title: 'Rebuild of Evangelion: 2.0 You Can (Not) Advance'
+      - type: Synonym
+        title: Evangelion 2.22
+      - type: Japanese
+        title: ヱヴァンゲリヲン新劇場版:破
+      - type: English
+        title: 'Evangelion: 2.0 You Can (Not) Advance'
+      - type: German
+        title: 'Evangelion: 2.22 You Can (Not) Advance'
+      - type: Spanish
+        title: 'Evangelion: 2.22 You Can (not) Advance'
+      - type: French
+        title: 'Evangelion: 2.22 You Can (Not) Advance'
+      title: 'Evangelion Movie 2: Ha'
+      title_english: 'Evangelion: 2.0 You Can (Not) Advance'
+      title_japanese: ヱヴァンゲリヲン新劇場版:破
+      title_synonyms:
+      - 'Evangelion Shin Gekijouban: Ha'
+      - 'Rebuild of Evangelion: 2.0 You Can (Not) Advance'
+      - Evangelion 2.22
+      type: Movie
+      source: Original
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2009-06-27T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 27
+            month: 6
+            year: 2009
+          to:
+            day: null
+            month: null
+            year: null
+        string: Jun 27, 2009
+      duration: 1 hr 52 min
+      rating: R+ - Mild Nudity
+      score: 8.3
+      scored_by: 366237
+      rank: 319
+      popularity: 422
+      members: 594060
+      favorites: 3609
+      synopsis: |-
+        When the threat of the Angel menace escalates, mankind's defense force is pushed to its limits, with NERV at the forefront of the struggle. Shinji Ikari and his partner Rei Ayanami are assisted by two new pilots: the fiery Asuka Langley Shikinami and the mysterious Mari Illustrious Makinami.
+
+        With the aid of their mechanized Evangelion units, equipped with weapons perfect for engaging their monstrous opponents, the four young souls fight desperately to protect their loved ones and prevent an impending apocalypse. But when startling secrets are brought to light, will the heroes' greatest challenge prove to be the monsters...or humanity itself?
+
+        [Written by MAL Rewrite]
+      background: 'Evangelion Movie 2: Ha won first place in the animation category of the French Lyon Asian Film Festival,
+        narrowly beating Symphony in August in an audience vote. It also won the Award of Excellence in the animation category
+        at the 33rd Japan Academy Awards and, consequently, nominated for Animation of the Year at the same event in 2010.'
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers: []
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      - mal_id: 783
+        type: anime
+        name: GKIDS
+        url: https://myanimelist.net/anime/producer/783/GKIDS
+      studios:
+      - mal_id: 47
+        type: anime
+        name: Khara
+        url: https://myanimelist.net/anime/producer/47/Khara
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 18
+        type: anime
+        name: Mecha
+        url: https://myanimelist.net/anime/genre/18/Mecha
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      demographics: []
+  body_text: null
+  body_b64: null

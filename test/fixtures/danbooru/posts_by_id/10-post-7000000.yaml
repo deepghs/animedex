@@ -1,0 +1,140 @@
+metadata:
+  captured_at: '2026-05-07T11:17:14Z'
+  label: post-7000000
+  backend: danbooru
+  path_slug: posts_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts/7000000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:14 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"03ac2d291c4cb064764b6aaa934be7b4"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=b0Sg3T%2BefEzXmDproQXPI6W1ciE3vt6304cHdzLnxJ1MB%2BQ7I4DjP00J4JYP283I3UHyU86laPCBheXHlf4Kvqcqsl70RT4dydp%2Fw6lNoy0LtgVIz6s3RjxNC048Ss0yXcDvvxBJkogNeNU6TSIGMIDuTdB2sKeY%2BtWv%2Bst36hiCu35KnoILAXYtFLqTOoD%2FNFA3YZ8pG0tJRUr2NnLxqZ%2BHcwTGZ4n4CyI4ZZ%2BqHN%2B67UkBLC7O1%2BqGJsjGymOCs%2F%2FWyKNUT6JUxdQhUrY0O0%2F%2BAsv%2FBZWZCcQc6%2FONGRY%3D--tGClP4heM4At7fNU--vzF2E2XQjX9DmJt1LSmHNw%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:14 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd12d7cacd427-KIX
+    server-timing: sql.queries;count=2, cache.reads;count=1, cache.keys_read;count=36, cache.keys_hit;count=36, cache.total_time;dur=0.4913,
+      rails.total_time;dur=5.0773, rails.cpu_time;dur=3.2774, rails.idle_time;dur=1.7999, rails.sql_time;dur=1.7484, rails.view_time;dur=1.4726,
+      rails.allocations;count=3858, request.allocations;count=4319, request.gc_time;dur=0.2143, request.gc_count;count=0,
+      request.cpu_time;dur=4.0618, request.total_time;dur=5.8614, request.queue_time_0;dur=1.0238, request.queue_time_1;dur=86.0
+    x-runtime: '0.005861434936523437'
+    via: 172.69.169.158, gura, ina/danbooru-768bdd4cff-mx8x5
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=CJiDWkBs4XcSrA3C3PKfaX2VuyYZE5jYBqhCtjiKe58D7vZ7y0ZuYRzQSOOfLQXShRMuoVXFg5WDLSc%2F5YEmXDz7QecU%2BxISRVYZlN5M0MMxHRU0DfMb2j9%2FTxUNJhPQFYa13g%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd12d7cacd427-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 7000000
+    created_at: '2023-12-19T21:14:47.074-05:00'
+    uploader_id: 897818
+    score: 1715
+    source: https://i.pximg.net/img-original/img/2023/03/15/00/33/39/106223109_p0.jpg
+    md5: 8d819da4871c3ca39f428999df8220ce
+    last_comment_bumped_at: '2024-06-17T12:54:23.288-04:00'
+    rating: g
+    image_width: 2000
+    image_height: 3000
+    tag_string: 4girls absurdres aged_down arch armor beishang_yutou bow bowtie braid chinese_commentary closed_mouth commentary
+      dress green_eyes hair_intakes hair_ornament hairband highres indoors long_hair looking_ahead looking_at_viewer multiple_girls
+      orange_hair portrait profile reverse:1999 sidelighting single_braid sonetto_(reverse:1999) statue upper_body watermark
+      white_dress white_hairband window
+    fav_count: 1487
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 29
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 2433964
+    up_score: 1727
+    down_score: -12
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 36
+    updated_at: '2026-03-29T11:27:22.882-04:00'
+    is_banned: false
+    pixiv_id: 106223109
+    last_commented_at: '2024-08-14T09:56:33.686-04:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 4
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 17834871
+      created_at: '2023-12-19T20:49:09.423-05:00'
+      updated_at: '2023-12-19T20:49:12.917-05:00'
+      md5: 8d819da4871c3ca39f428999df8220ce
+      file_ext: jpg
+      file_size: 2433964
+      image_width: 2000
+      image_height: 3000
+      duration: null
+      status: active
+      file_key: EB7jsl6CZ
+      is_public: true
+      pixel_hash: 835d5aa4e870bdc5920406bf6105ba01
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/8d/81/8d819da4871c3ca39f428999df8220ce.jpg
+        width: 120
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/8d/81/8d819da4871c3ca39f428999df8220ce.jpg
+        width: 240
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/8d/81/8d819da4871c3ca39f428999df8220ce.webp
+        width: 480
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/8d/81/sample-8d819da4871c3ca39f428999df8220ce.jpg
+        width: 850
+        height: 1275
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/8d/81/8d819da4871c3ca39f428999df8220ce.jpg
+        width: 2000
+        height: 3000
+        file_ext: jpg
+    tag_string_general: 4girls aged_down arch armor bow bowtie braid closed_mouth dress green_eyes hair_intakes hair_ornament
+      hairband indoors long_hair looking_ahead looking_at_viewer multiple_girls orange_hair portrait profile sidelighting
+      single_braid statue upper_body watermark white_dress white_hairband window
+    tag_string_character: sonetto_(reverse:1999)
+    tag_string_copyright: reverse:1999
+    tag_string_artist: beishang_yutou
+    tag_string_meta: absurdres chinese_commentary commentary highres
+    file_url: https://cdn.donmai.us/original/8d/81/8d819da4871c3ca39f428999df8220ce.jpg
+    large_file_url: https://cdn.donmai.us/sample/8d/81/sample-8d819da4871c3ca39f428999df8220ce.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/8d/81/8d819da4871c3ca39f428999df8220ce.jpg
+  body_text: null
+  body_b64: null

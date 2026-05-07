@@ -1,0 +1,54 @@
+metadata:
+  captured_at: '2026-05-07T11:25:14Z'
+  label: animes-list-movie
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(kind:"movie",limit:3){ id name kind }}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=fhkyXOdlof3hniuk; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:14 GMT, __ddg10_=1778153114;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:14 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:45:14 GMT, __ddg1_=Vfeo0RLsY9Qz1BFH390R; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:25:14 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:14 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"4e3e3d42af05f729b2fcb2b45182dfaa"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 7247f571-adaa-48f2-8f88-8f188d4f86a6
+    X-Runtime: '0.038503'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes:
+      - id: '57555'
+        name: 'Chainsaw Man Movie: Reze-hen'
+        kind: movie
+      - id: '39486'
+        name: 'Gintama: The Final'
+        kind: movie
+      - id: '28851'
+        name: Koe no Katachi
+        kind: movie
+  body_text: null
+  body_b64: null

@@ -1,0 +1,411 @@
+metadata:
+  captured_at: '2026-05-07T11:03:23Z'
+  label: 2025-spring
+  backend: jikan
+  path_slug: seasons
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/seasons/2025/spring?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:03:22 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:seasons:8d57759242f07718538c6791cd4dfb0e6a7fe8e7
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 90
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 270
+        per_page: 3
+    data:
+    - mal_id: 51818
+      url: https://myanimelist.net/anime/51818/Enen_no_Shouboutai__San_no_Shou
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1527/146836.jpg
+          small_image_url: https://myanimelist.net/images/anime/1527/146836t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1527/146836l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1527/146836.webp
+          small_image_url: https://myanimelist.net/images/anime/1527/146836t.webp
+          large_image_url: https://myanimelist.net/images/anime/1527/146836l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/nz-VCl7yUAw?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Enen no Shouboutai: San no Shou'
+      - type: Synonym
+        title: Enen no Shouboutai 3rd Season
+      - type: Japanese
+        title: 炎炎ノ消防隊 参ノ章
+      - type: English
+        title: Fire Force Season 3
+      title: 'Enen no Shouboutai: San no Shou'
+      title_english: Fire Force Season 3
+      title_japanese: 炎炎ノ消防隊 参ノ章
+      title_synonyms:
+      - Enen no Shouboutai 3rd Season
+      type: TV
+      source: Manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2025-04-05T00:00:00+00:00'
+        to: '2025-06-21T00:00:00+00:00'
+        prop:
+          from:
+            day: 5
+            month: 4
+            year: 2025
+          to:
+            day: 21
+            month: 6
+            year: 2025
+        string: Apr 5, 2025 to Jun 21, 2025
+      duration: 24 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.72
+      scored_by: 117295
+      rank: 1379
+      popularity: 892
+      members: 317343
+      favorites: 1869
+      synopsis: |-
+        After undergoing Benimaru Shinmon's hellish training, Shinra Kusakabe and Arthur Boyle return to Special Fire Force Company 8. However, there is no time to rest: Captain Akitaru Oubi is arrested by the military police under the influence of the White-Clad cult. Moreover, the White-Clad member Haumea—one of the eight pillars who possess Adolla Burst—has successfully brainwashed the leadership of the Tokyo Empire and infiltrated the heart of the firefighting organization. As a result, Shinra and the rest of the Company 8 squad are branded as rebels after they launch a rescue mission to save their captain and ultimately liberate Tokyo.
+
+        [Written by MAL Rewrite]
+      background: 'Enen no Shouboutai: San no Shou aired on MBS'' Animeism block.'
+      season: spring
+      year: 2025
+      broadcast:
+        day: Saturdays
+        time: 01:53
+        timezone: Asia/Tokyo
+        string: Saturdays at 01:53 (JST)
+      producers:
+      - mal_id: 143
+        type: anime
+        name: Mainichi Broadcasting System
+        url: https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System
+      - mal_id: 159
+        type: anime
+        name: Kodansha
+        url: https://myanimelist.net/anime/producer/159/Kodansha
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      - mal_id: 1542
+        type: anime
+        name: DMM.com
+        url: https://myanimelist.net/anime/producer/1542/DMMcom
+      - mal_id: 2232
+        type: anime
+        name: ADK Marketing Solutions
+        url: https://myanimelist.net/anime/producer/2232/ADK_Marketing_Solutions
+      - mal_id: 2680
+        type: anime
+        name: Sankyo
+        url: https://myanimelist.net/anime/producer/2680/Sankyo_
+      licensors: []
+      studios:
+      - mal_id: 287
+        type: anime
+        name: David Production
+        url: https://myanimelist.net/anime/producer/287/David_Production
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      explicit_genres: []
+      themes:
+      - mal_id: 82
+        type: anime
+        name: Urban Fantasy
+        url: https://myanimelist.net/anime/genre/82/Urban_Fantasy
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 60489
+      url: https://myanimelist.net/anime/60489/Takopii_no_Genzai
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1182/149879.jpg
+          small_image_url: https://myanimelist.net/images/anime/1182/149879t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1182/149879l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1182/149879.webp
+          small_image_url: https://myanimelist.net/images/anime/1182/149879t.webp
+          large_image_url: https://myanimelist.net/images/anime/1182/149879l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/SUhYB0W7gM0?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Takopii no Genzai
+      - type: Japanese
+        title: タコピーの原罪
+      - type: English
+        title: Takopi's Original Sin
+      title: Takopii no Genzai
+      title_english: Takopi's Original Sin
+      title_japanese: タコピーの原罪
+      title_synonyms: []
+      type: ONA
+      source: Manga
+      episodes: 6
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2025-06-28T00:00:00+00:00'
+        to: '2025-08-02T00:00:00+00:00'
+        prop:
+          from:
+            day: 28
+            month: 6
+            year: 2025
+          to:
+            day: 2
+            month: 8
+            year: 2025
+        string: Jun 28, 2025 to Aug 2, 2025
+      duration: 26 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.75
+      scored_by: 175543
+      rank: 51
+      popularity: 894
+      members: 316618
+      favorites: 6680
+      synopsis: |-
+        A squid-like creature, known as a Happian, leaves his home planet with the desire to spread happiness across the universe. He lands on Earth, but quickly finds himself in danger of captivity by its inhabitants. Fortunately, he is found by an unsmiling little girl named Shizuka Kuze, who feeds him and names him Takopii. Feeling indebted, Takopii decides to do everything in his power to bring a smile to her face.
+
+        The task is easier said than done, however. Shizuka is bullied by her classmates, she does not have a father, and her mother is never home—though the gravity of these issues flies over the naive Takopii's head. Even so, Shizuka does have one source of happiness: her dog Chappy. The connection Shizuka and Chappy share only increases Takopii's desire to make the girl smile.
+
+        While Takopii's attempts to lift Shizuka's spirits lead to unintended consequences, he is determined to take things into his own tentacles, test his understanding of human beings, and achieve his goal of spreading happiness.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 145
+        type: anime
+        name: TBS
+        url: https://myanimelist.net/anime/producer/145/TBS
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 306
+        type: anime
+        name: Magic Capsule
+        url: https://myanimelist.net/anime/producer/306/Magic_Capsule
+      - mal_id: 460
+        type: anime
+        name: KlockWorx
+        url: https://myanimelist.net/anime/producer/460/KlockWorx
+      - mal_id: 1261
+        type: anime
+        name: Good Smile Company
+        url: https://myanimelist.net/anime/producer/1261/Good_Smile_Company
+      - mal_id: 1390
+        type: anime
+        name: Toy's Factory
+        url: https://myanimelist.net/anime/producer/1390/Toys_Factory
+      - mal_id: 2229
+        type: anime
+        name: Toho Music
+        url: https://myanimelist.net/anime/producer/2229/Toho_Music
+      licensors: []
+      studios:
+      - mal_id: 1991
+        type: anime
+        name: Enishiya
+        url: https://myanimelist.net/anime/producer/1991/Enishiya
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      explicit_genres: []
+      themes:
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      - mal_id: 78
+        type: anime
+        name: Time Travel
+        url: https://myanimelist.net/anime/genre/78/Time_Travel
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 56038
+      url: https://myanimelist.net/anime/56038/Lazarus
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1098/150300.jpg
+          small_image_url: https://myanimelist.net/images/anime/1098/150300t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1098/150300l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1098/150300.webp
+          small_image_url: https://myanimelist.net/images/anime/1098/150300t.webp
+          large_image_url: https://myanimelist.net/images/anime/1098/150300l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/7d2ot3PQBMs?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Lazarus
+      - type: Japanese
+        title: ラザロ
+      title: Lazarus
+      title_english: null
+      title_japanese: ラザロ
+      title_synonyms: []
+      type: TV
+      source: Original
+      episodes: 13
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2025-04-06T00:00:00+00:00'
+        to: '2025-06-29T00:00:00+00:00'
+        prop:
+          from:
+            day: 6
+            month: 4
+            year: 2025
+          to:
+            day: 29
+            month: 6
+            year: 2025
+        string: Apr 6, 2025 to Jun 29, 2025
+      duration: 23 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 7.19
+      scored_by: 77840
+      rank: 3973
+      popularity: 1134
+      members: 248879
+      favorites: 1608
+      synopsis: "In the year 2048, Dr. Deniz Skinner, a scientific genius dubbed second only to Einstein, developed the revolutionary\
+        \ painkiller Hapna. Being cheap with no reported side effects, the drug gained widespread acceptance, even though\
+        \ Skinner himself silently vanished one year after launching the drug. Everyone revelled in the heaven of relief and\
+        \ ecstasy provided by Hapna, but they would suddenly come crashing down to Earth. It is now 2052, and Skinner reappears,\
+        \ giving the shocking announcement that Hapna was designed to mutate into a lethal toxin, killing anyone who had consumed\
+        \ it. While he claims to have a cure, he will only hand it over if he is physically found within 30 days. \n\nAxel\
+        \ Gilberto, a maverick youngster serving a sentence of 888 years in a high-security prison, is unwillingly recruited\
+        \ by a group calling themselves Lazarus. Composed of eccentric misfits, the group has only one task—to find Skinner.\
+        \ With no means to escape and their lives on the line, Lazarus begins the hunt to find Skinner before the countdown\
+        \ to the end of humanity ends.\n\n[Written by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2025
+      broadcast:
+        day: Sundays
+        time: '23:45'
+        timezone: Asia/Tokyo
+        string: Sundays at 23:45 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 1856
+        type: anime
+        name: dugout
+        url: https://myanimelist.net/anime/producer/1856/dugout
+      - mal_id: 2019
+        type: anime
+        name: Sola Entertainment
+        url: https://myanimelist.net/anime/producer/2019/Sola_Entertainment
+      licensors: []
+      studios:
+      - mal_id: 569
+        type: anime
+        name: MAPPA
+        url: https://myanimelist.net/anime/producer/569/MAPPA
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes: []
+      demographics: []
+  body_text: null
+  body_b64: null

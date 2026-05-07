@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-07T11:18:54Z'
+  label: cowboy-bebop
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Cowboy+Bebop&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=SrDBzGznKmH0KkFl; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:54 GMT, __ddg10_=1778152734;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:54 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:38:54 GMT, __ddg1_=Z3GsjKrWOe0XEFWPpZ1X; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:18:54 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:18:54 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"8edf69275ccd660f7ab9692d7b13b4a0"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: dbc339cb-3d1b-442b-8bcd-dd1e39557a4b
+    X-Runtime: '0.031053'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 1
+    name: Cowboy Bebop
+    russian: Ковбой Бибоп
+    image:
+      original: /system/animes/original/1.jpg?1711946754
+      preview: /system/animes/preview/1.jpg?1711946754
+      x96: /system/animes/x96/1.jpg?1711946754
+      x48: /system/animes/x48/1.jpg?1711946754
+    url: /animes/1-cowboy-bebop
+    kind: tv
+    score: '8.75'
+    status: released
+    episodes: 26
+    episodes_aired: 0
+    aired_on: '1998-04-03'
+    released_on: '1999-04-24'
+  - id: 17205
+    name: 'Cowboy Bebop: Ein no Natsuyasumi'
+    russian: 'Ковбой Бибоп: Летние каникулы Эйна'
+    image:
+      original: /system/animes/original/17205.jpg?1711946734
+      preview: /system/animes/preview/17205.jpg?1711946734
+      x96: /system/animes/x96/17205.jpg?1711946734
+      x48: /system/animes/x48/17205.jpg?1711946734
+    url: /animes/17205-cowboy-bebop-ein-no-natsuyasumi
+    kind: special
+    score: '6.34'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2012-12-21'
+    released_on: null
+  body_text: null
+  body_b64: null

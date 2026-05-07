@@ -1,0 +1,94 @@
+metadata:
+  captured_at: '2026-05-07T11:09:26Z'
+  label: naruto
+  backend: mangadex
+  path_slug: manga_feed
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/c52b2ce3-7f95-469c-96b0-479524fb7a1a/feed?translatedLanguage%5B%5D=en&limit=2&order%5Bchapter%5D=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=60, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:25 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x2
+    x-request-id: 3663dcdb-0436-40bd-82bb-73f31da5516b
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: b46a9067-c81d-4f00-8313-81f3a15b0fa0
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '3'
+        title: FOR MYSELF
+        translatedLanguage: en
+        externalUrl: https://mangaplus.shueisha.co.jp/viewer/1001281
+        isUnavailable: false
+        publishAt: '2019-07-26T11:57:58+00:00'
+        readableAt: '2019-07-26T11:57:58+00:00'
+        createdAt: '2019-07-26T11:57:58+00:00'
+        updatedAt: '2022-12-08T21:00:19+00:00'
+        version: 2
+        pages: 0
+      relationships:
+      - id: 4f1de6a2-f0c5-4ac5-bce5-02c7dbb67deb
+        type: scanlation_group
+      - id: c52b2ce3-7f95-469c-96b0-479524fb7a1a
+        type: manga
+      - id: 74d95af1-7492-4fca-bc44-10c9142703e8
+        type: user
+    - id: a7297785-1fe6-4e7a-9e38-497c087fc660
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '2'
+        title: SECRET EXECUTION
+        translatedLanguage: en
+        externalUrl: https://mangaplus.shueisha.co.jp/viewer/1001280
+        isUnavailable: false
+        publishAt: '2019-07-26T11:57:50+00:00'
+        readableAt: '2019-07-26T11:57:50+00:00'
+        createdAt: '2019-07-26T11:57:50+00:00'
+        updatedAt: '2022-12-08T21:00:14+00:00'
+        version: 2
+        pages: 0
+      relationships:
+      - id: 4f1de6a2-f0c5-4ac5-bce5-02c7dbb67deb
+        type: scanlation_group
+      - id: c52b2ce3-7f95-469c-96b0-479524fb7a1a
+        type: manga
+      - id: 74d95af1-7492-4fca-bc44-10c9142703e8
+        type: user
+    limit: 2
+    offset: 0
+    total: 3
+  body_text: null
+  body_b64: null

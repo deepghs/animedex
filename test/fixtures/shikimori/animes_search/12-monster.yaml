@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-07T11:19:02Z'
+  label: monster
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Monster&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=LNnvz5pB9q5rVtdW; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:39:02 GMT, __ddg10_=1778152742;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:39:02 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:39:02 GMT, __ddg1_=1QwcuYhWq9FrRZwGmcFA; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:19:02 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:19:02 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"075fb1e8252fa4c4b85934626d7046a4"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 90e53ada-fdc5-48c8-8321-076c1471a78c
+    X-Runtime: '0.103804'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 19
+    name: Monster
+    russian: Монстр
+    image:
+      original: /system/animes/original/19.jpg?1711964464
+      preview: /system/animes/preview/19.jpg?1711964464
+      x96: /system/animes/x96/19.jpg?1711964464
+      x48: /system/animes/x48/19.jpg?1711964464
+    url: /animes/19-monster
+    kind: tv
+    score: '8.89'
+    status: released
+    episodes: 74
+    episodes_aired: 0
+    aired_on: '2004-04-07'
+    released_on: '2005-09-28'
+  - id: 45093
+    name: Shi Shi Feng Bao
+    russian: ''
+    image:
+      original: /system/animes/original/45093.jpg?1711973067
+      preview: /system/animes/preview/45093.jpg?1711973067
+      x96: /system/animes/x96/45093.jpg?1711973067
+      x48: /system/animes/x48/45093.jpg?1711973067
+    url: /animes/45093-shi-shi-feng-bao
+    kind: movie
+    score: '0.0'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2019-10-11'
+    released_on: null
+  body_text: null
+  body_b64: null

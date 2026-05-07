@@ -1,0 +1,49 @@
+metadata:
+  captured_at: '2026-05-07T11:07:46Z'
+  label: monster-1855
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/1855/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:46 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"ce95079f9c9d07f69e0035506155064c"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 0eb47efa-91b6-4e3f-a7f0-26afa30fade4
+    x-runtime: '0.043525'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=z8uzLLh%2FJHjW71ihmcZE1rR8y%2BjwZWbtMIF3RiXJm%2BXrbtzk%2BCWuYm4mBE5Z32gGGIVERI%2FzLwBFuW3NKBxIkqWwC59BC3SF%2FIIrvs7I9EfdvUF5dPoK%2FovyUQ%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc34e6878440f-KIX
+  body_json:
+    data: []
+    meta:
+      count: 0
+    links:
+      first: https://kitsu.io/api/edge/anime/1855/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/1855/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

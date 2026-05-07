@@ -1,0 +1,32 @@
+metadata:
+  captured_at: '2026-05-07T11:03:45Z'
+  label: invalid-year-99999
+  backend: jikan
+  path_slug: seasons
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/seasons/99999/spring?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:03:45 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache, private
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+  body_json:
+    status: 404
+    type: HttpException
+    message: Not Found
+    error: null
+  body_text: null
+  body_b64: null

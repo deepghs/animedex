@@ -1,0 +1,94 @@
+metadata:
+  captured_at: '2026-05-07T11:09:23Z'
+  label: berserk
+  backend: mangadex
+  path_slug: manga_feed
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/801513ba-a712-498c-8f57-cae55b38cc92/feed?translatedLanguage%5B%5D=en&limit=2&order%5Bchapter%5D=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=60, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:23 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x1
+    x-request-id: 400687f2-fa25-4ce9-a610-5517af7945d6
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 8ceadc31-e41e-4038-8aef-d002aab344a5
+      type: chapter
+      attributes:
+        volume: null
+        chapter: '383'
+        title: Anadi-avidya
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2025-09-11T15:00:25+00:00'
+        readableAt: '2025-09-11T15:00:25+00:00'
+        createdAt: '2025-09-11T15:00:23+00:00'
+        updatedAt: '2025-09-19T23:50:53+00:00'
+        version: 4
+        pages: 24
+      relationships:
+      - id: 277df5c9-a486-40f6-8dfa-c086c6b60935
+        type: scanlation_group
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: a4c487eb-8453-4199-b3ee-59e76fc9eb42
+        type: user
+    - id: 5dc17107-dfb6-4bca-97c7-a8d9634afb86
+      type: chapter
+      attributes:
+        volume: '43'
+        chapter: '382'
+        title: Burial Chamber
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2025-06-28T08:32:51+00:00'
+        readableAt: '2025-06-28T08:32:51+00:00'
+        createdAt: '2025-06-28T08:32:50+00:00'
+        updatedAt: '2025-10-01T18:27:51+00:00'
+        version: 6
+        pages: 22
+      relationships:
+      - id: ff0eb14f-6b37-46c8-b2af-d4245a997210
+        type: scanlation_group
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 3d4df072-0316-4c9c-8a52-e40c887b86a1
+        type: user
+    limit: 2
+    offset: 0
+    total: 419
+  body_text: null
+  body_b64: null

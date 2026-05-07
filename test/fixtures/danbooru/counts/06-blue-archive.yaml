@@ -1,0 +1,52 @@
+metadata:
+  captured_at: '2026-05-07T11:17:53Z'
+  label: blue-archive
+  backend: danbooru
+  path_slug: counts
+request:
+  method: GET
+  url: https://danbooru.donmai.us/counts/posts.json?tags=blue_archive
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:53 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"4ad10c75a076393efee3574408b77c8d"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=Mn%2F%2B4%2B4zWM3Q3A8bvrWRdQelWZdHKbuMIfmvLEuM2%2BvfbroGS%2FYN58t7ECRH4p4XIkSx18Wzf9MIHIzhGW%2FxrOIyFuilji3HthFowsPEGT4QZDY1BtjleKraG51qQFHl2URPG2n4nQ5CkMYXPj19n8c3oAIubMgk2LwMvy8iggWdu9yhBavmCgeeSiD6irZR83Qf659qCt1Hj7ReKFcOn37UNPiyvK5XnmnErf4W2oKkG8wQEDG%2FeOGgUOJfPIrcroHAmQ9w9D5G1CW%2BVcBQk8E633utc%2FvBZUtxPW3Ypzg%3D--N9cEuiFLl6uh%2FxqI--MjOWy2s2JWbbAtZfkTJXGA%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:53 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd21f2b4dd3eb-KIX
+    server-timing: sql.queries;count=3, rails.total_time;dur=2.3338, rails.cpu_time;dur=1.6281, rails.idle_time;dur=0.7057,
+      rails.sql_time;dur=0.9064, rails.view_time;dur=0.0371, rails.allocations;count=1091, request.allocations;count=1574,
+      request.gc_time;dur=0.0823, request.gc_count;count=0, request.cpu_time;dur=2.4263, request.total_time;dur=3.1322, request.queue_time_0;dur=1.4186,
+      request.queue_time_1;dur=85.0
+    x-runtime: '0.0031322174072265624'
+    via: 172.69.169.158, gura, ina/danbooru-768bdd4cff-xgvf7
+    strict-transport-security: max-age=31536000; preload
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=yRFLSzhbyarYfTE8M8qN9szLWvQQEbHak1QqfZTdjcvAUtCezWW1J9xlDlWPz5MEniP%2F26QXSpZDAxnYY2KQVx8%2FpthrSMfWd6rK0Cu04FjWNU78AGX6wvQUa%2FcItzhMxU5viA%3D%3D"}]}'
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: 9f7fd21f2b4dd3eb-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    counts:
+      posts: 402399
+  body_text: null
+  body_b64: null

@@ -1,0 +1,60 @@
+metadata:
+  captured_at: '2026-05-07T11:18:11Z'
+  label: pool-10000
+  backend: danbooru
+  path_slug: pools_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/pools/10000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:18:11 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"49c8c78b8d2b7c4a94cb8cca6a3c1446"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=s7jpUEK4W7dpm%2FqriJ%2FsvVXiduSGxPsW3wpL69cZd6Xdq95KtNIfkFZxJNygTjI1XTAwwbvR9DEC%2FHGJpC08acjtpYIIC7S5UHQH2%2BpDDb2sqdDIC1yXw2zZXKy82H%2F1XCBPqEfbxQHp52kykGtTHrcK1CLp0cQVQGk0gVM%2BEG7NkON%2B7PNlwLq7F3Ru5OV2npW20KTG7mwcVe%2F57kC%2FgjNnjYeLjRQf3L44antAJwb3TCe73ukGI%2BbkP7MSQTOiwbYaSWr3dowGiey%2F28tz2gZEyXcXDWhjCF%2BFrvSdQMs%3D--MPBcbmXGiuXCYpxx--vITqTDxbMN7M1fOnP7xfDg%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:18:11 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd28e7e85d003-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=5.3868, rails.cpu_time;dur=4.7865, rails.idle_time;dur=0.6004,
+      rails.sql_time;dur=0.9612, rails.view_time;dur=0.5643, rails.allocations;count=1121, request.allocations;count=1578,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=6.5395, request.total_time;dur=7.1407, request.queue_time_0;dur=1.4825,
+      request.queue_time_1;dur=96.9999
+    x-runtime: '0.007140701293945313'
+    via: 172.69.63.183, gura, ina/danbooru-768bdd4cff-xgvf7
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=qPg%2FIfZeyfwCJ3S0ruPJfjx%2BdQEzUKEBVcCfqs4v7Gt2eTvR87Gp07nDbbVIb3R7r7Whef4eDrJ8U6LbXxOqR91kJRggjoqYvDk7pu48GZEaulW1l2m1xJTZyygdRcMTt4D13w%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd28e7e85d003-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 10000
+    name: Idolmaster_Cinderella_Girls_-_17歳(確信)_(wata_do_chinkuru)
+    created_at: '2015-05-29T03:20:53.145-04:00'
+    updated_at: '2017-10-17T23:52:47.617-04:00'
+    description: ''
+    is_active: true
+    is_deleted: true
+    post_ids: []
+    category: series
+    post_count: 0
+  body_text: null
+  body_b64: null

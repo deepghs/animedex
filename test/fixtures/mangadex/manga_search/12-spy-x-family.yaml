@@ -1,0 +1,448 @@
+metadata:
+  captured_at: '2026-05-07T11:08:56Z'
+  label: spy-x-family
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Spy%20x%20Family&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:08:56 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x2
+    x-request-id: 6f2ecc5a-d324-4e3b-9027-e0d1e68f9525
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 6b958848-c885-4735-9201-12ee77abcb3c
+      type: manga
+      attributes:
+        title:
+          ja-ro: SPY×FAMILY
+        altTitles:
+        - ja: スパイ ファミリー
+        - zh: 间谍过家家
+        - zh-hk: 間諜過家家
+        - zh-hk: 間諜家家酒
+        - ar: جاسوس x عائله
+        - cs: Špión x Rodina
+        - ka: ჯაშუში×ოჯახი
+        - de: Spy x Family
+        - hi: जासूस X परिवार
+        - hi: स्पाई×फैमिली
+        - kk: Тыңшы × Отбасы
+        - lt: ŠNIPO×ŠEIMA
+        - mn: ТАГНУУЛУ × ГЭР БҮЛ
+        - ne: जासूस×परिवार
+        - fa: جاسوس × خانواده
+        - pl: SZPIEG X RODZINA
+        - pt-br: SPY×FAMILY
+        - ru: Семья шпиона
+        - tr: CASUS × AİLE
+        - uk: Сім'я × шпигуна
+        - vi: Gia Đình Điệp Viên
+        - en: SPY×FAMILY
+        description:
+          ar: أمضى الجاسوس الخبير المسمى <الشفق> أيامه في مهام سرية ، وكل ذلك من أجل تحقيق عالم أفضل. لكن في يوم من الأيام
+            ، حصل على أمر جديد صعب للغاية من القيادة. من أجل مهمته ، يجب عليه تكوين أسرة مؤقتة وبدء حياة جديدة؟!
+          en: The master spy codenamed <Twilight> has spent most of his life on undercover missions, all for the dream of
+            a better world. Yet one day he receives a particularly difficult order from command. For his mission, he must
+            form a temporary family and start a new life?!
+          es: El hábil espía Tasogare se dedicaba diariamente a cumplir misiones especiales por un mundo mejor. Un día recibe
+            un complicado desafío... Su deber es crear una familia falsa y comenzar una nueva vida para poder cumplir la misión,
+            ¿¡pero...!? ¡¡Un Espía × Acción × Comedia de una familia peculiarl!!
+          id: “Twilight,” seorang mata-mata yang hebat, setiap hari menjalankan misi rahasia untuk menciptakan dunia yang
+            lebih baik. Suatu hari, dia mendapatkan perintah baru yang sangat sulit. Demi misi itu, dia harus memiliki keluarga
+            sementara dan memulai hidup baru sebagai seorang ayah! Mata-mata x Aksi x Komedi keluarga istimewa!
+          it: 'Twilight, una delle migliori spie al mondo, ha trascorso la vita ad affrontare missioni sotto copertura per
+            rendere il mondo un posto migliore. Un giorno però riceve un compito particolarmente difficile: dovrà formare
+            una famiglia temporanea e iniziare una nuova vita!'
+          ja: 名門校潜入のために「家族」を作れと命じられた凄腕スパイの〈黄昏〉。だが、彼が出会った“娘”は心を読む超能力者！“妻”は暗殺者で！？
+          kk: Мастер тыңшының кодтық аты<Twilight> өмірін жақсырақ әлем туралы арман үшін жасырын миссияларда өткізді. Бірақ
+            бір күні ол командадан ерекше қиын жаңа бұйрық алады. Миссиясы үшін ол уақытша отбасын құрып, жаңа өмір бастауы
+            керек пе?! Бірегей отбасы туралы тыңшылық/экшн/комедия!
+          pl: "Wyśmienity szpieg, Zmierzch, poświęcił się wykonywaniu tajnych misji z powodu marzeń o lepszym świecie. Ale\
+            \ pewnego dnia otrzymuje bardzo trudne do wykonania zadanie. Aby osiągnąć cel misji, musi założyć tymczasową rodzinę\
+            \ i prowadzić życie najzwyczajniejszego w świecie ojca!  \r\nOto opowieść o jedynej w swoim rodzaju rodzinie!"
+          ru: |-
+            Мастерский шпион с кодовым именем <Сумрак> проводит свои дни в закулисных миссиях, всё ради мечты о лучшем мире. Но однажды он получает особенно сложное новое указание от командования. Для этой миссии он обязательно должен завести фиктивную семью и начать новую жизнь! Шпионская экшен-комедия об единственной в своём роде семье!
+
+            ---
+            Хитроумный шпион по прозвищу «Сумрак» изо дня в день выполнял секретные миссии, чтобы сделать мир лучше. Однажды он получил очередное трудное задание — ради миссии ему предстоит… обзавестись временной семьёй и начать новую жизнь?! Вас ждёт яркая смесь из шпионского боевика и необычной семейной комедии!
+          th: สุดยอดสปาย "สนธยา" ได้ปฏิบัติการสอดแนมทุกๆวันเพื่อโลกที่ดีกว่า แต่แล้ววันนึงเขาก็ได้รับภารกิจสุดหิน... เพื่อการนั้นเขาจึงได้สร้างครอบครัวปลอมๆและเริ่มชีวิตใหม่!?
+            สปาย x แอคชั่น x คอเมดี้ครอบครัวสุดแนว!
+          uk: "Холоднокровний і геніальний шпигун з кодовим ім'ям «Сутінь» завжди виконував свою роботу чітко і без зайвого\
+            \ шуму. Свою професію він обрав, плекаючи мрії про кращий світ. Він звик до надзвичайно складних завдань, важливість\
+            \ яких мала найвищий рівень, виконуючи які, він наражав своє життя на небезпеку. Але цього разу… Йому була надіслана\
+            \ інформація про нову місію, для успішного виконання якої «Сутінь» повинен завести сім'ю та вдавати відповідального\
+            \ та люблячого батька на ім'я Лоід Фолджер. Так він «удочирив» дівчинку на ім'я Аня. Дівчинка відразу входить\
+            \ у роль «дочки» і радіє кожній миті, яку проводить з новим «батьком». Тепер є тато та донька, але, як же мама?\
+            \ Нею стане неповторна наймана вбивця на ім'я Юрі Бріар (позивний - \"Принцеса шипів\"). \nМанґа розкриє всі тонкощі\
+            \ та незвичайний життєвий шлях нової «сім'ї», в якій кожен легко може виконати найскладніше завдання, або усунути\
+            \ ціль, але чи зможуть вони виконувати ролі «мами», «тата» та «доньки»?"
+          vi: Mỗi người đều có một phần bí mật của mình mà họ không thể cho ai khác biết. Vào thời điểm mà tất cả các quốc
+            gia trên thế giới đang tham gia vào một cuộc chiến tranh thông tin khốc liệt xảy ra sau những cánh cửa đóng kín,
+            Ostania và Westalis đã ở trong tình trạng chiến tranh lạnh với nhau trong nhiều thập kỷ. Bộ phận Tập trung vào
+            phía Đông của Dịch vụ Tình báo Westalis (WISE) cử điệp viên tài năng nhất của họ, "Twilight", theo mật vụ tối
+            mật để điều tra các chuyển động của Donovan Desmond, chủ tịch Đảng Thống nhất Quốc gia của Ostania, người đang
+            đe dọa các nỗ lực hòa bình giữa hai quốc gia. Nhiệm vụ này được gọi là "Chiến dịch Strix". Nó bao gồm "tập hợp
+            một gia đình trong một tuần để xâm nhập vào các cuộc tụ họp xã hội được tổ chức bởi ngôi trường ưu tú mà con trai
+            Desmond theo học. "Twilight" lấy nhân dạng của bác sĩ tâm thần Loid Forger và bắt đầu tìm kiếm các thành viên
+            trong gia đình. Nhưng Anya, cô con gái mà anh nhận nuôi, hóa ra lại có khả năng đọc được suy nghĩ của mọi người,
+            trong khi vợ anh Yor lại là một sát thủ! Vì lợi ích riêng mỗi người đều giữ kín những bí mật này, họ bắt đầu sống
+            cùng nhau và không để lộ danh tính thật của mình với nhau. Hòa bình thế giới giờ đây nằm trong tay của gia đình
+            mới này khi họ dấn thân vào một cuộc phiêu lưu đầy bất ngờ.
+          pt-br: 'O brilhante espião "Twilight" se dedicava diariamente a cumprir missões secretas por um mundo melhor. Porém,
+            um dia, ele recebeu uma nova tarefa bastante complicada... Para cumprir a sua missão, ele deve formar uma família
+            temporária e começar uma nova vida, mas...?! Uma história de Espiões × Ação × Comédia de uma família bem peculiar![
+            1° TEMP.(parte 1 e 2) DO ANIME ADAPTOU ATÉ: Vol. 7, Cap 38. ][ 2° TEMP.(parte 1 e 2) DO ANIME ADAPTOU ATÉ: Vol.
+            9, Cap.58. ]'
+          zh-hk: 技藝高超的間諜<黃昏>，為了更加美好的世界,每天從事著諜報任務。有一天，司令下達了新的難題——…。為了完成任務，所臨時組建的家庭，所展開的新生活，但是！？間諜×打鬥×與眾不同的家族喜劇現在開始！！
+        isLocked: false
+        links:
+          al: '108556'
+          ap: spy-x-family
+          bl: '618908'
+          bw: series/206645/list
+          kt: '54448'
+          mu: v5is1fi
+          mal: '119161'
+          raw: https://shonenjumpplus.com/episode/10834108156648240735
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: ongoing
+        year: 2019
+        contentRating: safe
+        tags:
+        - id: 0a39b5a1-b235-4886-a747-1d05d216532d
+          type: tag
+          attributes:
+            name:
+              en: Award Winning
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 3de8c75d-8ee3-48ff-98ee-e20a65c86451
+          type: tag
+          attributes:
+            name:
+              en: Animals
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 799c202e-7daa-44eb-9cf7-8a3c0441531e
+          type: tag
+          attributes:
+            name:
+              en: Martial Arts
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: caaa44eb-cd40-4177-b930-79d3ef2afe87
+          type: tag
+          attributes:
+            name:
+              en: School Life
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: df33b754-73a3-4c54-80e6-1a74a8058539
+          type: tag
+          attributes:
+            name:
+              en: Police
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: e5301a23-ebd9-49dd-a0cb-2add944c7fe9
+          type: tag
+          attributes:
+            name:
+              en: Slice of Life
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: eabc5b4c-6aff-42f3-b657-3e90cbd00b75
+          type: tag
+          attributes:
+            name:
+              en: Supernatural
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2019-11-15T00:34:07+00:00'
+        updatedAt: '2026-04-22T06:44:53+00:00'
+        version: 120
+        availableTranslatedLanguages:
+        - pt-br
+        - vi
+        - ru
+        - es-la
+        - cs
+        - tr
+        - fr
+        - en
+        - es
+        - it
+        - ar
+        - zh-hk
+        - kk
+        - de
+        - uk
+        - hu
+        - th
+        - id
+        - lt
+        - hi
+        - ne
+        latestUploadedChapter: 3bc230ee-f60b-4c42-8977-eddbbd0abe7c
+      relationships:
+      - id: 832a0f92-2cf4-4131-ac38-9c5c69d3f388
+        type: author
+      - id: 832a0f92-2cf4-4131-ac38-9c5c69d3f388
+        type: artist
+      - id: bfd8ccdc-ff73-4e10-bb0d-186a895a542f
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '17'
+          fileName: 91a35e78-62b2-41fe-9869-ce051f2d1070.jpg
+          locale: ja
+          createdAt: '2026-04-03T12:39:59+00:00'
+          updatedAt: '2026-04-03T12:39:59+00:00'
+          version: 1
+      - id: 004ae1de-8a05-494b-b8ff-2f3e0ef4ea89
+        type: manga
+        related: doujinshi
+      - id: 0eaaecb5-8a8f-46f5-b7b3-293b7aeb9b49
+        type: manga
+        related: doujinshi
+      - id: 0ffc192d-fa0e-414e-a3c4-bc3eb9dd2d15
+        type: manga
+        related: doujinshi
+      - id: 20879317-6acd-480a-8e54-86f160ef32c5
+        type: manga
+        related: doujinshi
+      - id: 326a6ed7-383b-44f7-ac76-5a607bdee11e
+        type: manga
+        related: doujinshi
+      - id: 41a0cb7f-3c25-4b40-89b9-ca68447c2ad3
+        type: manga
+        related: doujinshi
+      - id: 6feb755d-34a4-4bd4-a642-652977db4552
+        type: manga
+        related: doujinshi
+      - id: 76eb5273-5869-4f5a-8b43-853f55efd6cd
+        type: manga
+        related: colored
+      - id: 9c414cc0-9e4e-412c-872c-eb8fe00b3e41
+        type: manga
+        related: doujinshi
+      - id: af0d84bf-9751-4412-9ae5-3d9e76691163
+        type: manga
+        related: doujinshi
+      - id: e45950fb-5e0f-4fd2-b1af-7380c7f8b735
+        type: manga
+        related: side_story
+      - id: f76a2f73-6f9c-4c23-85f1-4a59505615f4
+        type: manga
+        related: doujinshi
+    - id: 76eb5273-5869-4f5a-8b43-853f55efd6cd
+      type: manga
+      attributes:
+        title:
+          en: Spy × Family (Official Colored)
+        altTitles:
+        - en: Spy × Family - Digital Colored Comics
+        - en: Spy x Family (Official Colored)
+        - en: Spy x Family - Digital Colored Comics
+        - ja: SPY×FAMILY カラー版
+        - ja: SPY×FAMILY
+        description:
+          en: |-
+            An action-packed comedy about a fake family that includes a spy, an assassin and a telepath!
+
+            Master spy Twilight is the best at what he does when it comes to going undercover on dangerous missions in the name of a better world. But when he receives the ultimate impossible assignment—get married and have a kid—he may finally be in over his head!
+          pt-br: O mestre espião de codinome "Twilight" passou seus dias em missões secretas, tudo pelo sonho de um mundo
+            melhor. Mas um dia, ele recebe uma nova ordem particularmente difícil da central de comando. Para sua missão,
+            ele deve formar uma família temporária e começar uma nova vida!?
+        isLocked: false
+        links:
+          amz: https://www.amazon.co.jp/dp/B095HKKYSR/
+          mal: '119161'
+          raw: https://www.shueisha.co.jp/books/search/search.html?seriesid=83706
+          engtl: https://www.viz.com/spy-x-family
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: ongoing
+        year: 2021
+        contentRating: safe
+        tags:
+        - id: 0a39b5a1-b235-4886-a747-1d05d216532d
+          type: tag
+          attributes:
+            name:
+              en: Award Winning
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 320831a8-4026-470b-94f6-8353740e6f04
+          type: tag
+          attributes:
+            name:
+              en: Official Colored
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2021-11-05T15:46:40+00:00'
+        updatedAt: '2024-07-09T08:20:49+00:00'
+        version: 11
+        availableTranslatedLanguages:
+        - pt-br
+        - tr
+        latestUploadedChapter: 6cc46f28-f732-487c-8eef-83882c60bb04
+      relationships:
+      - id: 832a0f92-2cf4-4131-ac38-9c5c69d3f388
+        type: author
+      - id: 832a0f92-2cf4-4131-ac38-9c5c69d3f388
+        type: artist
+      - id: 9d08000a-99dd-4b45-b006-34de35475b88
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '6'
+          fileName: c6279b54-0830-4f3c-b8d7-b337c972ea14.jpg
+          locale: ja
+          createdAt: '2023-08-05T10:48:54+00:00'
+          updatedAt: '2023-08-05T10:48:54+00:00'
+          version: 1
+      - id: 6b958848-c885-4735-9201-12ee77abcb3c
+        type: manga
+        related: monochrome
+      - id: 673f887a-a5aa-47cc-b3c8-88b1e5f786fa
+        type: creator
+    limit: 2
+    offset: 0
+    total: 7
+  body_text: null
+  body_b64: null

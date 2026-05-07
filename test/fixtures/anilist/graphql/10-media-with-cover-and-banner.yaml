@@ -1,0 +1,51 @@
+metadata:
+  captured_at: '2026-05-07T11:00:24Z'
+  label: media-with-cover-and-banner
+  backend: anilist
+  path_slug: graphql
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Media(id:154587){ coverImage{extraLarge large medium color} bannerImage } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:00:24 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '20'
+    Set-Cookie: laravel_session=Bv6YtIqYrMlkIKG889HxyZTho5sb1xNNreVqlyau; expires=Thu, 07-May-2026 23:00:24 GMT; Max-Age=43200;
+      path=/; httponly
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=pC%2BnQZaF7DXNPtsH7Tgk7AkTDELCR13Pfi1PeS7Y%2FyNOjYCAnSo81RfLO44RvrWykPI%2BLpfeKZ%2B9ukk%2BdjpukPo22L12ALxCzwARCg531pNKQJL8MCWYf5SNTtyHCsaDP%2FPFvw%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fb8847e22d401-KIX
+  body_json:
+    data:
+      Media:
+        coverImage:
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-qQTzQnEJJ3oB.jpg
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx154587-qQTzQnEJJ3oB.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx154587-qQTzQnEJJ3oB.jpg
+          color: '#bbf1a1'
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/154587-ivXNJ23SM1xB.jpg
+  body_text: null
+  body_b64: null

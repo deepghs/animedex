@@ -1,0 +1,45 @@
+metadata:
+  captured_at: '2026-05-07T11:25:10Z'
+  label: animes-by-genre
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(genre:"Comedy",limit:3){ id name }}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=W38n672Qjh0p0sZl; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:09 GMT, __ddg10_=1778153109;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:09 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:45:09 GMT, __ddg1_=IF49k20tFuBTF0vU81TR; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:25:09 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:10 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"29109c4e7fddad7d43576ee4956a8d34"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 2be5050c-9a43-4278-8a84-6e3d23343050
+    X-Runtime: '0.047612'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes: []
+  body_text: null
+  body_b64: null

@@ -1,0 +1,193 @@
+metadata:
+  captured_at: '2026-05-07T11:08:38Z'
+  label: demon-slayer-42203-on-app
+  backend: kitsu
+  path_slug: host_app_parity
+request:
+  method: GET
+  url: https://kitsu.app/api/edge/anime/42203
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:38 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"a1db4eda20a7fcc1dd596f048a9513da"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=63072000; includeSubDomains
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 7f963e40-7c14-4830-b09a-40177cd6b06e
+    x-runtime: '0.040615'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2FqrebVMkWsAYUs6mf6t%2FNOU83zgU47G9Xwq%2FSRbQV8N6pUe6iuv0W1NHD6GTzHkQ63WA%2BO%2FaGg5w7ZqeHlPOai0QiGsoUs8B4tftx6M89s8t6T291sHaZ%2F5jdA%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc490c94e19f2-KIX
+  body_json:
+    data:
+      id: '42203'
+      type: anime
+      links:
+        self: https://kitsu.app/api/edge/anime/42203
+      attributes:
+        createdAt: '2019-03-23T18:55:16.929Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: uchinoko
+        synopsis: |-
+          Dale is a well-known and highly skilled adventurer despite being so young. One day, he's on a quest and goes deep into the woods and finds a little devil girl named Latina, who is just skin and bones. Latina is branded with the mark of a sinner, but Dale decides he can't just leave Latina there and decides to become her guardian. Thinking to himself, "Latina is too cute, I don't want to work," he ends up doting over her before he even realizes it.
+
+          (Source: Crunchyroll)
+        description: |-
+          Dale is a well-known and highly skilled adventurer despite being so young. One day, he's on a quest and goes deep into the woods and finds a little devil girl named Latina, who is just skin and bones. Latina is branded with the mark of a sinner, but Dale decides he can't just leave Latina there and decides to become her guardian. Thinking to himself, "Latina is too cute, I don't want to work," he ends up doting over her before he even realizes it.
+
+          (Source: Crunchyroll)
+        coverImageTopOffset: 0
+        titles:
+          en: If It's for My Daughter, I'd Even Defeat a Demon Lord
+          en_jp: Uchi no Musume no Tame naraba, Ore wa Moshikashitara Maou mo Taoseru kamo Shirenai.
+          ja_jp: うちの娘の為ならば、俺はもしかしたら魔王も倒せるかもしれない。
+        canonicalTitle: Uchi no Musume no Tame naraba, Ore wa Moshikashitara Maou mo Taoseru kamo Shirenai.
+        abbreviatedTitles:
+        - Uchi no Ko no Tame naraba, Ore wa Moshikashitara Maou mo Taoseru kamo Shirenai.
+        averageRating: '70.31'
+        ratingFrequencies:
+          '2': '55'
+          '3': '3'
+          '4': '40'
+          '5': '2'
+          '6': '78'
+          '7': '10'
+          '8': '256'
+          '9': '22'
+          '10': '353'
+          '11': '37'
+          '12': '622'
+          '13': '82'
+          '14': '1442'
+          '15': '126'
+          '16': '676'
+          '17': '88'
+          '18': '308'
+          '19': '29'
+          '20': '487'
+        userCount: 11302
+        favoritesCount: 39
+        startDate: '2019-07-04'
+        endDate: '2019-09-19'
+        nextRelease: null
+        popularityRank: 1477
+        ratingRank: 5235
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: ''
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/42203/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/42203/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/42203/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/42203/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/42203/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        episodeCount: 12
+        episodeLength: 23
+        totalLength: 284
+        youtubeVideoId: aJT6_qQBYs8
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/genres
+            related: https://kitsu.app/api/edge/anime/42203/genres
+        categories:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/categories
+            related: https://kitsu.app/api/edge/anime/42203/categories
+        castings:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/castings
+            related: https://kitsu.app/api/edge/anime/42203/castings
+        installments:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/installments
+            related: https://kitsu.app/api/edge/anime/42203/installments
+        mappings:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/mappings
+            related: https://kitsu.app/api/edge/anime/42203/mappings
+        reviews:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/reviews
+            related: https://kitsu.app/api/edge/anime/42203/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/media-relationships
+            related: https://kitsu.app/api/edge/anime/42203/media-relationships
+        characters:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/characters
+            related: https://kitsu.app/api/edge/anime/42203/characters
+        staff:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/staff
+            related: https://kitsu.app/api/edge/anime/42203/staff
+        productions:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/productions
+            related: https://kitsu.app/api/edge/anime/42203/productions
+        quotes:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/quotes
+            related: https://kitsu.app/api/edge/anime/42203/quotes
+        episodes:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/episodes
+            related: https://kitsu.app/api/edge/anime/42203/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/streaming-links
+            related: https://kitsu.app/api/edge/anime/42203/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/anime-productions
+            related: https://kitsu.app/api/edge/anime/42203/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/anime-characters
+            related: https://kitsu.app/api/edge/anime/42203/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.app/api/edge/anime/42203/relationships/anime-staff
+            related: https://kitsu.app/api/edge/anime/42203/anime-staff
+  body_text: null
+  body_b64: null

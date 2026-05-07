@@ -1,0 +1,285 @@
+metadata:
+  captured_at: '2026-05-07T11:09:57Z'
+  label: manga-by-content-rating
+  backend: mangadex
+  path_slug: manga_meta
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?contentRating%5B%5D=safe&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:57 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x2
+    x-request-id: 685cd67b-7022-4149-b798-bad3cf05d203
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 5c60d071-882d-4cf8-8ae9-277a331c9cfb
+      type: manga
+      attributes:
+        title:
+          en: Houtai Gokko
+        altTitles:
+        - ja: 包帯ごっこ
+        - en: Bandage Play
+        description:
+          en: Hirose Itsuki is a high school girl who is afraid of getting hurt. One day, Hino, a celebrity at school who
+            quit basketball because of an injury, asks her, "Do you know any good ways to pass the time?" Hino asks her if
+            she knows of any good ways to pass the time, and they end up studying together. Itsuki then gradually becomes
+            aware of Hino. A pure love story of a medical student begins!
+        isLocked: false
+        links:
+          al: '170133'
+          ap: houtai-gokko
+          bw: series/455302/list
+          mu: qdc8z5q
+          amz: https://www.amazon.co.jp/-/en/dp/B0CN64HHFG
+          ebj: https://ebookjapan.yahoo.co.jp/books/769857/A004245135/
+          mal: '163685'
+          raw: https://margaret.shueisha.co.jp/viewer/yamagata/houtai/latest/index.html
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shoujo
+        status: ongoing
+        year: 2022
+        contentRating: safe
+        tags:
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: caaa44eb-cd40-4177-b930-79d3ef2afe87
+          type: tag
+          attributes:
+            name:
+              en: School Life
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: e5301a23-ebd9-49dd-a0cb-2add944c7fe9
+          type: tag
+          attributes:
+            name:
+              en: Slice of Life
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2023-08-26T11:25:30+00:00'
+        updatedAt: '2025-02-05T15:55:27+00:00'
+        version: 13
+        availableTranslatedLanguages:
+        - en
+        latestUploadedChapter: 0f6f380a-e633-4c83-a015-b609eb622f73
+      relationships:
+      - id: 2596842a-c403-4f6c-a736-12f057cf450f
+        type: author
+      - id: 2596842a-c403-4f6c-a736-12f057cf450f
+        type: artist
+      - id: a570016e-47cf-44d1-b3d9-54f006c550b1
+        type: cover_art
+      - id: 92f1689d-35c0-4fa3-ad0a-ef01bd16032e
+        type: creator
+    - id: 2fec6641-beb1-4ae9-a32f-204dd06688ac
+      type: manga
+      attributes:
+        title:
+          ja-ro: Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken
+        altTitles:
+        - ja: お隣の天使様にいつの間にか駄目人間にされていた件
+        - en: The Angel Next Door Spoils Me Rotten
+        - id: Tetangga Bidadari Terlalu Memanjakanku
+        - pl: Aniołek z Sąsiedztwa Niezwykle Mnie Rozpieszcza
+        - pt-br: Meu Anjo de Vizinha Me Mima Demais
+        - ru: Ангел по соседству меня балует
+        - uk: Сусідський ангел сильно мене балує
+        - vi: Thiên sứ nhà bên
+        - ja-ro: OtoTen
+        - ro: Îngerul de după usă mă răsfață prea mult
+        - tr: Melek Komşum Beni Şımartıyor
+        description:
+          en: Mahiru is a beautiful girl whose classmates all call her an "angel." Not only is she a star athlete with perfect
+            grades—she's also drop-dead gorgeous. Amane‚ an average guy and self-admitted slob‚ has never thought much of
+            the divine beauty‚ despite attending the same school. Everything changes‚ however‚ when he happens to see Mahiru
+            sitting alone in a park during a rainstorm.
+          ja: 高校生の藤宮周が住むマンションの隣には、「天使様」と呼ばれる学校で一番の美少女・椎名真昼が住んでいる。特に関わり合いのなかった二人だが、雨の中ずぶ濡れになっていた彼女に傘を貸したことから、不思議な交流が始まった。自堕落な一人暮らしを送る周を見かねて、なにかと世話を焼く真昼。お互いに興味ないと言い合う二人は、それでも少しずつ距離を縮めていく……。
+          pl: Mahiru jest piękną dziewczyną, którą koledzy z klasy nazywają "aniołkiem". Jest nie tylko świetnie wysportowana
+            i ma doskonałe oceny - jest także zabójczo piękna. Amane, przeciętny facet i samozwańczy niechluj, nigdy nie myślał
+            zbyt wiele o tej boskiej piękności, mimo że uczęszczał do tej samej szkoły. Wszystko zmienia się jednak, gdy widzi
+            Mahiru siedzącą samotnie w parku podczas ulewy. Tak zaczyna się dziwna relacja między tą nieprawdopodobną parą!
+          tr: Mahiru, sınıf arkadaşları tarafından "melek" olarak nitelendirilen güzel bir kız. Notları mükemmel olan yıldız
+            bir sporcu olmasının yanında tepeden tırnağa mükemmel bir görünüşe sahip. Kendini tembel olarak gören sıradan
+            bir adam olan Amane, aynı okula gitmesine rağmen bu kutsal güzellik hakkında özel bir düşünceye sahip değildi.
+            Ancak her şey bir yağmur fırtınasında Mahiru'yu parkta otururken görmesiyle değişti.
+          vi: Fujimiya Amane sống một mình trong căn hộ của mình, và cô gái xinh nhất ở trường cậu, Shiina Mahiru, lại là
+            hàng xóm của cậu. Họ hầu như chẳng bao giờ nói chuyện với nhau cho tới một ngày trời mưa cậu thấy cô không cầm
+            theo ô và cho cô mượn. Để cảm ơn thì cô đã thường xuyên giúp anh làm việc nhà, từ đó mối quan hệ của họ bắt đầu
+            nảy nở.
+          pt-br: |-
+            Fujimiya Amane, um estudante do ensino médio, mora sozinho em seu apartamento. Ao lado dele mora Shiina Mahiru, a garota mais bonita da escola. Alguém que todos chamam de "anjo". Eles nunca conversam de verdade, mas quando Amane empresta seu guarda-chuva a Mahiru em um dia chuvoso, o relacionamento deles começa a florescer.
+
+            Em pouco tempo Mahiru descobre que Amane negligencia sua cozinha e limpeza, e ela se sente obrigada a intervir.
+
+            Embora eles não tenham nenhum interesse um pelo outro, eles lentamente se aproximam...
+
+            Esta é a história de amor agridoce de um jovem e sua bela vizinha de língua afiada.
+        isLocked: false
+        links:
+          al: '122337'
+          ap: the-angel-next-door-spoils-me-rotten
+          bl: '20046528'
+          bw: series/365466/list
+          kt: otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-2022
+          mu: sehzuo5
+          nu: otonari-no-tenshi-sama-ni-itsu-no-ma-ni-ka-dame-ningen-ni-sareteita-ken-ln
+          mal: '130934'
+          raw: https://magazine.jp.square-enix.com/mangaup/original/tendame/
+          engtl: https://global.manga-up.com/manga/204
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: ongoing
+        year: 2022
+        contentRating: safe
+        tags:
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: caaa44eb-cd40-4177-b930-79d3ef2afe87
+          type: tag
+          attributes:
+            name:
+              en: School Life
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: ea2bc92d-1c26-4930-9b7c-d5c0dc1b6869
+          type: tag
+          attributes:
+            name:
+              en: Cooking
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: f4122d1c-3b44-44d0-9936-ff7502c39ad3
+          type: tag
+          attributes:
+            name:
+              en: Adaptation
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2022-01-05T18:03:22+00:00'
+        updatedAt: '2026-05-02T17:17:26+00:00'
+        version: 79
+        availableTranslatedLanguages:
+        - id
+        - uk
+        - pt-br
+        - fr
+        - en
+        - pl
+        - tr
+        - ru
+        - my
+        - vi
+        - it
+        - de
+        - ro
+        - zh
+        - es
+        - es-la
+        latestUploadedChapter: 775e4f6e-ea04-4279-84fc-a86024650b64
+      relationships:
+      - id: 0edd2663-49bc-48d6-a05c-c92a655b9c13
+        type: author
+      - id: e09549fd-07eb-4fe1-9c1d-d7dcf43c03e8
+        type: artist
+      - id: c8180e96-2d3d-4a9a-ace5-174dd55f36b4
+        type: cover_art
+      - id: 8516915a-51a2-44e0-a915-aff325216a26
+        type: manga
+        related: side_story
+      - id: ba797a39-eddc-4033-9533-341961a1a12a
+        type: manga
+        related: colored
+      - id: c9146d61-80d0-48f6-a794-de56d728171b
+        type: manga
+        related: preserialization
+      - id: 6d0ca397-136d-4448-ae5d-895c2c504472
+        type: creator
+    limit: 2
+    offset: 0
+    total: 71238
+  body_text: null
+  body_b64: null

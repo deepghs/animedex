@@ -1,0 +1,57 @@
+metadata:
+  captured_at: '2026-05-07T11:18:53Z'
+  label: ghibli
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Ghibli&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=ua5u8LKBQVvmWBvO; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:52 GMT, __ddg10_=1778152732;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:52 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:38:52 GMT, __ddg1_=hpXM8YcXeIhpW0waMn1p; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:18:52 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:18:53 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"ccbeb36f4c9611b46983a2a40f8a5c1f"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 2fe29368-20b4-478a-9fca-081e978f0203
+    X-Runtime: '0.023488'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 24975
+    name: Ghibli ga Ippai Special Short Short
+    russian: Короткометражные фильмы студии «Гибли»
+    image:
+      original: /system/animes/original/24975.jpg?1711950939
+      preview: /system/animes/preview/24975.jpg?1711950939
+      x96: /system/animes/x96/24975.jpg?1711950939
+      x48: /system/animes/x48/24975.jpg?1711950939
+    url: /animes/24975-ghibli-ga-ippai-special-short-short
+    kind: special
+    score: '5.69'
+    status: released
+    episodes: 10
+    episodes_aired: 10
+    aired_on: '2005-11-16'
+    released_on: null
+  body_text: null
+  body_b64: null

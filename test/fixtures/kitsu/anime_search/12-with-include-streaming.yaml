@@ -1,0 +1,267 @@
+metadata:
+  captured_at: '2026-05-07T11:06:51Z'
+  label: with-include-streaming
+  backend: kitsu
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Frieren&include=streamingLinks&page%5Blimit%5D=1
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:06:51 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"c25ac37ddbafdf4677335a2682ea3093"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 02b88ed1-e94b-460f-a7dc-403a4a6f73d6
+    x-runtime: '0.085268'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=yQQ5fE4UYjYXNE%2Bpi2gPdqjOSSpR4lXZh6kTi4gvZvTvYBvOQeo6zg7WdULTuXZ%2F%2FStz5gbFTnrEIHHYIv9wFuS7x3TYRGIxj%2F1IK9CfRm%2B0Vphhuc6%2Bd0m4zg%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc1f8aa2dd341-KIX
+  body_json:
+    data:
+    - id: '46474'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/46474
+      attributes:
+        createdAt: '2022-09-13T05:36:19.002Z'
+        updatedAt: '2026-05-07T10:03:54.348Z'
+        slug: sousou-no-frieren
+        synopsis: |-
+          After the party of heroes defeated the Demon King, they restored peace to the land and returned to lives of solitude. Generations pass, and the elven mage Frieren comes face to face with humanity’s mortality. She takes on a new apprentice and promises to fulfill old friends’ dying wishes. Can an elven mind make peace with the nature of life and death? Frieren embarks on her quest to find out.
+
+          (Source: Crunchyroll)
+        description: |-
+          After the party of heroes defeated the Demon King, they restored peace to the land and returned to lives of solitude. Generations pass, and the elven mage Frieren comes face to face with humanity’s mortality. She takes on a new apprentice and promises to fulfill old friends’ dying wishes. Can an elven mind make peace with the nature of life and death? Frieren embarks on her quest to find out.
+
+          (Source: Crunchyroll)
+        coverImageTopOffset: 0
+        titles:
+          en: 'Frieren: Beyond Journey’s End'
+          en_jp: Sousou no Frieren
+          it_it: 'Frieren: Oltre la Fine del Viaggio'
+          ja_jp: 葬送のフリーレン
+          ko_kr: 장송의 프리렌
+          pt_br: Frieren e a Jornada para o Além
+          th_th: คำอธิษฐานในวันที่จากลา Frieren
+          zh_cn: 葬送的芙莉蓮
+        canonicalTitle: Sousou no Frieren
+        abbreviatedTitles:
+        - Frieren at the Funeral
+        averageRating: '88.76'
+        ratingFrequencies:
+          '2': '187'
+          '3': '2'
+          '4': '13'
+          '5': '1'
+          '6': '16'
+          '7': '5'
+          '8': '269'
+          '9': '3'
+          '10': '44'
+          '11': '10'
+          '12': '77'
+          '13': '16'
+          '14': '716'
+          '15': '85'
+          '16': '635'
+          '17': '289'
+          '18': '1413'
+          '19': '417'
+          '20': '5043'
+        userCount: 19902
+        favoritesCount: 676
+        startDate: '2023-09-29'
+        endDate: '2024-03-22'
+        nextRelease: null
+        popularityRank: 838
+        ratingRank: 2
+        ageRating: PG
+        ageRatingGuide: Teens 13 or Older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/46474/poster_image/tiny-f77201d59d7f322510e3d28bc1930e29.jpeg
+          large: https://media.kitsu.app/anime/46474/poster_image/large-ec9b98dd5fbf8f92532d1edb45f9e882.jpeg
+          small: https://media.kitsu.app/anime/46474/poster_image/small-2dc1165f5acd773939c7befb0949d258.jpeg
+          medium: https://media.kitsu.app/anime/46474/poster_image/medium-23e1293e41a0b54b6621eb589c3f0d62.jpeg
+          original: https://media.kitsu.app/anime/46474/poster_image/99d7df09d8cb9360b1e02825372ce612.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/46474/cover_image/tiny-dccb49f6ea01f1fc1f93b10b6bc2608c.jpeg
+          large: https://media.kitsu.app/anime/46474/cover_image/large-167edf3e01fac59ce6aacfeb47df5634.jpeg
+          small: https://media.kitsu.app/anime/46474/cover_image/small-2467fb0c4f1283988febe4abd715a9b8.jpeg
+          original: https://media.kitsu.app/anime/46474/cover_image/883c308356a4db76a9c0af900ada96ed.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 28
+        episodeLength: 24
+        totalLength: null
+        youtubeVideoId: qgQunxD0qCk
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/genres
+            related: https://kitsu.io/api/edge/anime/46474/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/categories
+            related: https://kitsu.io/api/edge/anime/46474/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/castings
+            related: https://kitsu.io/api/edge/anime/46474/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/installments
+            related: https://kitsu.io/api/edge/anime/46474/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/46474/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/46474/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/46474/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/characters
+            related: https://kitsu.io/api/edge/anime/46474/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/staff
+            related: https://kitsu.io/api/edge/anime/46474/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/productions
+            related: https://kitsu.io/api/edge/anime/46474/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/46474/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/46474/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/46474/streaming-links
+          data:
+          - type: streamingLinks
+            id: '8559'
+          - type: streamingLinks
+            id: '7325'
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/46474/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/46474/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/46474/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/46474/anime-staff
+    included:
+    - id: '8559'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/8559
+      attributes:
+        createdAt: '2025-03-01T01:01:45.335Z'
+        updatedAt: '2025-03-01T01:01:45.335Z'
+        url: https://www.netflix.com/title/81726714
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/8559/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/8559/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/8559/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/8559/media
+    - id: '7325'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/7325
+      attributes:
+        createdAt: '2023-10-02T11:12:36.505Z'
+        updatedAt: '2023-10-02T11:12:36.505Z'
+        url: https://www.crunchyroll.com/series/GG5H5XQX4/frieren-beyond-journeys-end
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/7325/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/7325/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/7325/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/7325/media
+    meta:
+      count: 6
+    links:
+      first: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Frieren&include=streamingLinks&page%5Blimit%5D=1&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Frieren&include=streamingLinks&page%5Blimit%5D=1&page%5Boffset%5D=1
+      last: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Frieren&include=streamingLinks&page%5Blimit%5D=1&page%5Boffset%5D=5
+  body_text: null
+  body_b64: null

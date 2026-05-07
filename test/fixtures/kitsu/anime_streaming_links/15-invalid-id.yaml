@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-07T11:07:50Z'
+  label: invalid-id
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/9999999999/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    Date: Thu, 07 May 2026 11:07:50 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: no-cache
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 49d56b54-d84d-46f2-8564-cd714077d641
+    x-runtime: '0.037570'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Ln0VsxGSYwmMOgX11ULkCtgcqOz3KE7vScqwVawISUxtBL6F%2BU4k4GLeka7hqjrEG35M0FISzkpu8D6wRgHCtdZw3oqKZlw0YZdhKSJcO0zXaHupFztmUUz8Hw%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc367ad42e37d-NRT
+  body_json:
+    errors:
+    - title: Record not found
+      detail: The record identified by 9999999999 could not be found.
+      code: '404'
+      status: '404'
+  body_text: null
+  body_b64: null

@@ -1,0 +1,102 @@
+metadata:
+  captured_at: '2026-05-07T11:10:10Z'
+  label: berserk-latest
+  backend: mangadex
+  path_slug: at_home_server
+request:
+  method: GET
+  url: https://api.mangadex.org/at-home/server/8ceadc31-e41e-4038-8aef-d002aab344a5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Thu, 07 May 2026 11:10:10 GMT
+    x-ratelimit-remaining: '39'
+    x-ratelimit-retry-after: '1778152210'
+    x-ratelimit-limit: '40'
+    x-ratelimit-retry-in: '0'
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x2
+    x-request-id: 59237f15-5c0a-467e-8ff2-0bed78bf2a76
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    baseUrl: https://cmdxd98sb0x3yprd.mangadex.network
+    chapter:
+      hash: 7441ed60767fb31628197d076b345579
+      data:
+      - 1-207024d80eec7a279687b4a1736ab6e0b92b9153e3cad563578d33d6ddeabc06.png
+      - 2-6c7208fef0638f3e6a5cb897ec9aeda35b981f97b02df1ef581baecc892c0e64.png
+      - 3-9e5a5765a3dcb5deaba1c8366050569e726c89067b5f22dfb88014a18237a03f.png
+      - 4-fc23833eaaa2b94953b74cfdab3976417bc7533bf685bd6aa5a1769d35a8c45c.png
+      - 5-04a74f40d1cccad9ba3e78a2e6539cc60417dda3d9f500553fc6f538f14285cd.png
+      - 6-8ac86bbcb7bd744ec7f7e33bd483bdc1ebe89bd312f0c568daf88918b341fa28.png
+      - 7-384e5aba55743eb618b79ae4df049cec1bec3ab58afcd02fe19156458a63de24.png
+      - 8-2cb9386872427b29b70b8173df679f8b18a06d93472f0a3947d87dc538781154.png
+      - 9-75bb290edf6b6fa69b09c51320bd677b87281f095200c6ed8f83bc97fd2fb073.png
+      - 10-a590fd60272e03e79bf4628833bf403bd47a31fa6077c79c9bf82ed4ad37bd9d.png
+      - 11-7ae9ea848af34c768e4446e5bf1e5bb570e99ba07e7cb9b04754c3497458b46c.png
+      - 12-8c8dfc7fb9dec5fae175e5adeaf702063f5c4f08fa78dfb54e1fad80152999f6.png
+      - 13-58369ad599e3501b4e8723b4c5923636507588ab24d47f1b2f3dce88fb8db6f1.png
+      - 14-488aa2b70c176ab7129440bee5babca24da48d14914bcdbc93090737ea127408.png
+      - 15-a3a098f5b1457a55aa2d4fee5da78e498af1dd35153d6349851d7fb46c93efd5.png
+      - 16-b55497f5415150c3df1911c5237bf9107d98388ccd55ee41f577d6d1a51bf899.png
+      - 17-c896f93385b1660ca911431d3817f867238b588b373a139eef95127fd10f304f.png
+      - 18-678184ea7fa7f9596356b32c3bdf0b3ea6403f0de445c55696210870c39f8448.png
+      - 19-751e54994915441d9955fe769b652543c9458c7171a5468e5ff850255a80802d.png
+      - 20-9dcb9bb0f0eba75eec091800a9c81bcf11612cdc638d072ba24c85bf91e39b6b.png
+      - 21-1e40757fa4ddc1712c39d9185463d7a1dba71202616df471a3b1dedb601210ec.png
+      - 22-729de65a399137045a1bab389768a23a23546176739fde80ddadc06bd1113965.png
+      - 23-dad99c210a9355f2a0f69c4690d135ef74adc6a508909709daa3d1abb878c703.png
+      - 24-18f3b991c4e8ade205351aa2a492ff4d526aed73ffecbbbfca564751fa0e86b2.png
+      dataSaver:
+      - 1-5bbe8e49cc939063cdfc7efd9b8b942c5d9fd20407119c233b89c85abe97f155.jpg
+      - 2-8c2c6acda03c95a45299b5e64dbfdaef23780a236cdf0a1b89492158eaa21a9a.jpg
+      - 3-d1c124d7d0136f3f7810c3b42186c61b1870754f6d3037ca336adae4d0c67209.jpg
+      - 4-154155ee0db76e119ea0a2a9692b4012e28fe7704e27a832e7ccbd1a0da97983.jpg
+      - 5-6becc7532639c998a8df989f3fddef6c96cf0058796fede96b2db382aac4ed96.jpg
+      - 6-89ba3ca67ada69c2457c1d67d5dee48f8dc779bc7b7de6553977e6b61f1bdd1e.jpg
+      - 7-9fd10f0aebbf7e9b3c07903e728fbc1614f23ea196331e2e400281c6db8164ee.jpg
+      - 8-5994e16b87700402d943cdbc7f63d818a843b7e88871d82c9e435d22400bdd5b.jpg
+      - 9-8263edc58aa7d9cf9b6ac2429adf2fb2457418e7a16ce5fb696ed304b0ff13f6.jpg
+      - 10-d4895bc0b409967cf667000d0b15191027d41b681da93ec95545745c8276007d.jpg
+      - 11-742d1911d1cc97a7f3ad262e65d5b7bccc10fdd39794737d456c5b6168d88c57.jpg
+      - 12-55d1d078405756d7d1e37e61563c90ab87a62df2caec1af2358413ddddc6a0e9.jpg
+      - 13-a84a37eaeba14e2b8648fa1b9c31d302b8154ca75d673d2d7ba8f29906675576.jpg
+      - 14-9c804f25621d27d1d9a0ec6e43ecc57f9483b9078e89116e30261fd3a4b16dd8.jpg
+      - 15-2291214a4d35fdec96d490546e912c76745b6e8df763f6db3e274132acc613e5.jpg
+      - 16-498086273f9081f785b752b16a9c4229e17ac1cc48e2c68a08e4a1d313c3eb8d.jpg
+      - 17-e6d6c4955c550114213713aba68e2c47876f4e9f95a068e070518e172256872b.jpg
+      - 18-eb3dfa63e6b8ddddfce615a7fe67a4e0f3f7c18bf0707ab6f5ad1ffc2856ab79.jpg
+      - 19-67f64b8e8b32b1122454704b0eb6d40780582c4aff4bd4a388d948f7f6a67ecc.jpg
+      - 20-0a86e95d4da800073451f8cc6611dd0c33b3c6a707aa04f8d4b55c4b637ea94b.jpg
+      - 21-8fe7e4272c1447f6bbfc566c2d40484ddeb42fa55d035769acf3aad4b5734c63.jpg
+      - 22-4a7e438fadaa7596498da4e1a014bc9ca52215592a1cc73876d7db98177add7e.jpg
+      - 23-1ff8b0840a0e297a13ec44e707d80473f41ef9fdbc38c27e468bbbe33722349d.jpg
+      - 24-d2fab18ce6bea5dd6c3e2a42ff0f8e2db995fa6bca0cd4f77dce2fcae3baafeb.jpg
+  body_text: null
+  body_b64: null

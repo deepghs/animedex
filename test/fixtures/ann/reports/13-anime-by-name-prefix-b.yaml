@@ -1,0 +1,42 @@
+metadata:
+  captured_at: '2026-05-07T11:27:08Z'
+  label: anime-by-name-prefix-b
+  backend: ann
+  path_slug: reports
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/reports.xml?id=155&type=anime&name=B&nlist=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:27:07 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:27:07 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Cache-Control: private, max-age=0, must-revalidate
+    Set-Cookie: ann5_session_id=jXzbM9ejZOc5GWum3rAc7esJ3OnMMDoU-1778153227677; Path=/; secure; HttpOnly; Domain=.animenewsnetwork.com;
+      SameSite=Lax
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: 9f7fdfa77fb8f57e-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <report skipped="0" listed="5"><args><type>anime</type><name>B</name><licensed></licensed><search></search></args>
+    <item><id>39290</id><gid>3449073417</gid><type>TV</type><name>Berserk of Gluttony</name><precision>TV 2</precision></item>
+    <item><id>39107</id><gid>3043492846</gid><type>ONA</type><name>Beyblade X Shin Mirai Hen</name><precision>ONA</precision><vintage>2026-04-17</vintage></item>
+    <item><id>39030</id><gid>1559752221</gid><type>TV</type><name>Black Channel</name><precision>TV</precision></item>
+    <item><id>38845</id><gid>2252806311</gid><type>ONA</type><name>BAKI-DOU: The Invincible Samurai</name><precision>ONA 2</precision></item>
+    <item><id>38743</id><gid>3123493016</gid><type>TV</type><name>Butt Detective</name><precision>TV 10</precision><vintage>2026-04-04</vintage></item></report>
+  body_b64: null

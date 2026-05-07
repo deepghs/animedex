@@ -1,0 +1,45 @@
+metadata:
+  captured_at: '2026-05-07T11:25:11Z'
+  label: animes-by-year
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(season:"2023_fall",limit:3){ id name season status }}'
+  raw_body_b64: null
+response:
+  status: 500
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=RYIeuisJd1Kq7Bd8; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:11 GMT, __ddg10_=1778153111;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:11 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:45:11 GMT, __ddg1_=7b0fWUh3SjuZOFNaDQ0o; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:25:11 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:11 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    Cache-Control: no-cache
+    X-Request-Id: 13f37255-cb65-4dce-bc4d-5c9c48f8733f
+    X-Runtime: '0.005931'
+    vary: Origin, Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    errors:
+    - exception: InvalidParameterError
+      message: Invalid season value "2023_fall"
+  body_text: null
+  body_b64: null

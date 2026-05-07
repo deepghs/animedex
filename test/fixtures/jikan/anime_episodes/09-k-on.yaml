@@ -1,0 +1,167 @@
+metadata:
+  captured_at: '2026-05-07T11:04:53Z'
+  label: k-on
+  backend: jikan
+  path_slug: anime_episodes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/5680/episodes?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:04:53 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:763bb5f5e9488038b8ae18046dfd9d8962181ae4
+    expires: Fri, 08 May 2026 11:04:53 GMT
+    last-modified: Thu, 07 May 2026 11:04:53 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - mal_id: 1
+      url: https://myanimelist.net/anime/5680/K-On/episode/1
+      title: Disband the Club!
+      title_japanese: 廃部！
+      title_romanji: Haibu! 
+      aired: '2009-04-03T00:00:00+00:00'
+      score: 4.34
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=76801
+    - mal_id: 2
+      url: https://myanimelist.net/anime/5680/K-On/episode/2
+      title: Instruments!
+      title_japanese: 楽器！
+      title_romanji: Gakki! 
+      aired: '2009-04-10T00:00:00+00:00'
+      score: 4.44
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=78268
+    - mal_id: 3
+      url: https://myanimelist.net/anime/5680/K-On/episode/3
+      title: Cram Session!
+      title_japanese: 特訓！
+      title_romanji: Tokkun! 
+      aired: '2009-04-17T00:00:00+00:00'
+      score: 4.51
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=79700
+    - mal_id: 4
+      url: https://myanimelist.net/anime/5680/K-On/episode/4
+      title: Training Camp!
+      title_japanese: 合宿！
+      title_romanji: Gasshuku! 
+      aired: '2009-04-24T00:00:00+00:00'
+      score: 4.54
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=81054
+    - mal_id: 5
+      url: https://myanimelist.net/anime/5680/K-On/episode/5
+      title: Advisor!
+      title_japanese: 顧問！
+      title_romanji: Komon! 
+      aired: '2009-05-01T00:00:00+00:00'
+      score: 4.71
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=82503
+    - mal_id: 6
+      url: https://myanimelist.net/anime/5680/K-On/episode/6
+      title: School Festival!
+      title_japanese: 学園祭！
+      title_romanji: Gakuensai! 
+      aired: '2009-05-08T00:00:00+00:00'
+      score: 4.63
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=83924
+    - mal_id: 7
+      url: https://myanimelist.net/anime/5680/K-On/episode/7
+      title: Christmas!
+      title_japanese: クリスマス！
+      title_romanji: Christmas! 
+      aired: '2009-05-15T00:00:00+00:00'
+      score: 4.47
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=85158
+    - mal_id: 8
+      url: https://myanimelist.net/anime/5680/K-On/episode/8
+      title: Freshman Reception!
+      title_japanese: 新歓！
+      title_romanji: Shinkan! 
+      aired: '2009-05-21T00:00:00+00:00'
+      score: 4.63
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=86300
+    - mal_id: 9
+      url: https://myanimelist.net/anime/5680/K-On/episode/9
+      title: New Club Member!
+      title_japanese: 新入部員！
+      title_romanji: Shinnyuu Buin! 
+      aired: '2009-05-29T00:00:00+00:00'
+      score: 4.49
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=87899
+    - mal_id: 10
+      url: https://myanimelist.net/anime/5680/K-On/episode/10
+      title: Another Training Camp!
+      title_japanese: また合宿！
+      title_romanji: Mata Gasshuku! 
+      aired: '2009-06-05T00:00:00+00:00'
+      score: 4.47
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=89576
+    - mal_id: 11
+      url: https://myanimelist.net/anime/5680/K-On/episode/11
+      title: Crisis!
+      title_japanese: ピンチ！
+      title_romanji: Pinch! 
+      aired: '2009-06-12T00:00:00+00:00'
+      score: 4.4
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=91012
+    - mal_id: 12
+      url: https://myanimelist.net/anime/5680/K-On/episode/12
+      title: Light Music!
+      title_japanese: 軽音！
+      title_romanji: Kei On! 
+      aired: '2009-06-19T00:00:00+00:00'
+      score: 4.69
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=93229
+    - mal_id: 13
+      url: https://myanimelist.net/anime/5680/K-On/episode/13
+      title: Winter Days!
+      title_japanese: 冬の日！
+      title_romanji: Fuyu no Hi! 
+      aired: '2009-06-26T00:00:00+00:00'
+      score: 4.43
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=94684
+  body_text: null
+  body_b64: null

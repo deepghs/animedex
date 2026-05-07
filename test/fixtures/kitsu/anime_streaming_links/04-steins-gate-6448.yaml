@@ -1,0 +1,112 @@
+metadata:
+  captured_at: '2026-05-07T11:07:31Z'
+  label: steins-gate-6448
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/6448/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:31 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"580289050fc6724d21934ef3dfc3ccc6"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 296a1bb4-73a3-440f-aede-678e05d276e5
+    x-runtime: '0.255913'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=rdX5%2FwbGTi9G4M9ttN37oWkZbvFvCbemXihx412V9LUY1czX56IqYHOxIupxFdrH4lAVCCv6sPHHx7d39dRSEghre%2B696LSqxnCafn6MfOvINrKl0y%2Fyze9rkw%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc2ef6823fcb6-KIX
+  body_json:
+    data:
+    - id: '1682'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/1682
+      attributes:
+        createdAt: null
+        updatedAt: null
+        url: http://www.crunchyroll.com/hunter-x-hunter
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/1682/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/1682/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/1682/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/1682/media
+    - id: '1683'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/1683
+      attributes:
+        createdAt: null
+        updatedAt: null
+        url: https://www.hulu.com/hunter-x-hunter
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/1683/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/1683/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/1683/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/1683/media
+    - id: '6703'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/6703
+      attributes:
+        createdAt: '2023-02-17T22:53:23.648Z'
+        updatedAt: '2023-02-17T22:53:23.648Z'
+        url: https://www.youtube.com/watch?v=7zOI5o7tabA&list=PLDDFkfLheQ9izDhrHzKo4gdKwHRQGYbhn
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/6703/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/6703/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/6703/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/6703/media
+    meta:
+      count: 3
+    links:
+      first: https://kitsu.io/api/edge/anime/6448/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/6448/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

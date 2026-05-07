@@ -1,0 +1,228 @@
+metadata:
+  captured_at: '2026-05-07T11:17:04Z'
+  label: genshin-impact
+  backend: danbooru
+  path_slug: posts_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts.json?tags=genshin_impact&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:03 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"fc52ac9a11c63bb4eddc1b6829d40f27"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=Ke5hiKEhAYGgm%2FL%2BHjKiImt67SfHYgcr55t2mBEBbm7XG34QHX8pTedcYG9I%2FTAa9VPI3qpqV8AIxjCKRXnGg0F7aTzeimzBTGjOybIpKCadWqqv1w9Ji%2Bn9wQ5mKJXRKcelsDAjx1q8Mp%2BgSrPpCixPf6xf%2BBX2AiCXfgXhUjj5F58WzRGtga0O4kZpqtvgUMv0Yg6bqOE%2Ba7%2BPwO6uWumJ98aZtSyPA4uHe1wOeox%2BTrEnT6c2k5nsL0n7q7QuMV%2FX7aS1wwusGUTrXkqL8m9x1m5cJPZlfnqynKssCSo%3D--7jOFibvphJQB6aEi--yCYcA5N5B04hMmrYFSb%2F8Q%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:03 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd0ea0ad2c8ba-KIX
+    server-timing: sql.queries;count=5, cache.reads;count=2, cache.keys_read;count=56, cache.keys_hit;count=56, cache.total_time;dur=0.9527,
+      rails.total_time;dur=9.783, rails.cpu_time;dur=6.6663, rails.idle_time;dur=3.1166, rails.sql_time;dur=3.0251, rails.view_time;dur=3.4138,
+      rails.allocations;count=5328, request.allocations;count=5850, request.gc_time;dur=0.1564, request.gc_count;count=0,
+      request.cpu_time;dur=7.4382, request.total_time;dur=10.5974, request.queue_time_0;dur=1.3704, request.queue_time_1;dur=99.0
+    x-runtime: '0.01059735107421875'
+    via: 172.70.233.113, gura, ame/danbooru-768bdd4cff-7jmtf
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=z0EnBDyj1Mybq3zPJgScnM4un1a4JmsRAr%2B69Zv6ZF%2FuiGhUXS5FtuZyp%2FKAukRNX1FO9mXS078IWwvz47oo8OVhi%2BsHLiAqFoyaMe%2B46t0skgmAJTScb3cEArRrCBXP1K0wpg%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd0ea0ad2c8ba-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 11323407
+    created_at: '2026-05-07T07:03:30.277-04:00'
+    uploader_id: 1314269
+    score: 3
+    source: https://www.bilibili.com/opus/1199639478824599590
+    md5: 641189505e5574e7098849ce4b10b314
+    last_comment_bumped_at: null
+    rating: g
+    image_width: 3000
+    image_height: 6000
+    tag_string: 1girl absurdres ahoge berserker_r bloomers chinese_commentary closed_eyes commentary_request cowboy_shot dress
+      genshin_impact hair_between_eyes hair_ornament highres long_hair nahida_(genshin_impact) parted_lips pointy_ears side_ponytail
+      sidelocks solo white_bloomers white_dress white_hair
+    fav_count: 2
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 17
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 8886769
+    up_score: 3
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 24
+    updated_at: '2026-05-07T07:08:34.193-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: null
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 4
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 48169059
+      created_at: '2026-05-07T07:03:17.516-04:00'
+      updated_at: '2026-05-07T07:03:20.034-04:00'
+      md5: 641189505e5574e7098849ce4b10b314
+      file_ext: jpg
+      file_size: 8886769
+      image_width: 3000
+      image_height: 6000
+      duration: null
+      status: active
+      file_key: b7mSkccfa
+      is_public: true
+      pixel_hash: 13cfeb0c47c43fa3b870ef9f5c1dcb56
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/64/11/641189505e5574e7098849ce4b10b314.jpg
+        width: 90
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/64/11/641189505e5574e7098849ce4b10b314.jpg
+        width: 180
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/64/11/641189505e5574e7098849ce4b10b314.webp
+        width: 360
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/64/11/sample-641189505e5574e7098849ce4b10b314.jpg
+        width: 850
+        height: 1700
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/64/11/641189505e5574e7098849ce4b10b314.jpg
+        width: 3000
+        height: 6000
+        file_ext: jpg
+    tag_string_general: 1girl ahoge bloomers closed_eyes cowboy_shot dress hair_between_eyes hair_ornament long_hair parted_lips
+      pointy_ears side_ponytail sidelocks solo white_bloomers white_dress white_hair
+    tag_string_character: nahida_(genshin_impact)
+    tag_string_copyright: genshin_impact
+    tag_string_artist: berserker_r
+    tag_string_meta: absurdres chinese_commentary commentary_request highres
+    file_url: https://cdn.donmai.us/original/64/11/641189505e5574e7098849ce4b10b314.jpg
+    large_file_url: https://cdn.donmai.us/sample/64/11/sample-641189505e5574e7098849ce4b10b314.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/64/11/641189505e5574e7098849ce4b10b314.jpg
+  - id: 11323318
+    created_at: '2026-05-07T06:44:42.048-04:00'
+    uploader_id: 799766
+    score: 0
+    source: https://x.com/haya_pik/status/2017538352933667137
+    md5: d0df10e780239f67a363e16907acf0b8
+    last_comment_bumped_at: null
+    rating: g
+    image_width: 2584
+    image_height: 4093
+    tag_string: 1boy :q absurdres arm_tattoo black_hair blonde_hair chest_tattoo commentary_request cup earrings genshin_impact
+      green_eyes green_hair green_kimono hair_between_eyes haya_pik headband highres holding holding_cup japanese_clothes
+      jewelry kimono kinich_(genshin_impact) long_sleeves male_focus multicolored_hair spiked_ear_piercing streaked_hair tattoo
+      tongue tongue_out
+    fav_count: 0
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: 1054326
+    tag_count_general: 26
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 4182550
+    up_score: 0
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 32
+    updated_at: '2026-05-07T06:49:43.197-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: null
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 3
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 48168876
+      created_at: '2026-05-07T06:38:46.097-04:00'
+      updated_at: '2026-05-07T06:38:51.968-04:00'
+      md5: d0df10e780239f67a363e16907acf0b8
+      file_ext: jpg
+      file_size: 4182550
+      image_width: 2584
+      image_height: 4093
+      duration: null
+      status: active
+      file_key: GaVrRvmHk
+      is_public: true
+      pixel_hash: 1982ad9d3d4fc5c24b3858725b269ade
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/d0/df/d0df10e780239f67a363e16907acf0b8.jpg
+        width: 114
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/d0/df/d0df10e780239f67a363e16907acf0b8.jpg
+        width: 227
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/d0/df/d0df10e780239f67a363e16907acf0b8.webp
+        width: 455
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/d0/df/sample-d0df10e780239f67a363e16907acf0b8.jpg
+        width: 850
+        height: 1346
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/d0/df/d0df10e780239f67a363e16907acf0b8.jpg
+        width: 2584
+        height: 4093
+        file_ext: jpg
+    tag_string_general: 1boy :q arm_tattoo black_hair blonde_hair chest_tattoo cup earrings green_eyes green_hair green_kimono
+      hair_between_eyes headband holding holding_cup japanese_clothes jewelry kimono long_sleeves male_focus multicolored_hair
+      spiked_ear_piercing streaked_hair tattoo tongue tongue_out
+    tag_string_character: kinich_(genshin_impact)
+    tag_string_copyright: genshin_impact
+    tag_string_artist: haya_pik
+    tag_string_meta: absurdres commentary_request highres
+    file_url: https://cdn.donmai.us/original/d0/df/d0df10e780239f67a363e16907acf0b8.jpg
+    large_file_url: https://cdn.donmai.us/sample/d0/df/sample-d0df10e780239f67a363e16907acf0b8.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/d0/df/d0df10e780239f67a363e16907acf0b8.jpg
+  body_text: null
+  body_b64: null

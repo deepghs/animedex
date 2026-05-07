@@ -1,0 +1,77 @@
+metadata:
+  captured_at: '2026-05-07T11:18:09Z'
+  label: pool-1000
+  backend: danbooru
+  path_slug: pools_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/pools/1000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:18:09 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"9dc65610fbe4fe5207b84a84e02970c8"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=bi2ycvvad5e2m%2BZsKRoQPrfqoX17jpVNpefTVb3E3A2Zai2Yr5FF4X16iRRHhpwjza%2BjJR42vmofRk%2F5N0KjlanLqCPh%2Bh5EcKJ0V25%2FFm%2FIO4zQx1pyFmMZ5KbWRoxhdAfDB7KxbhtY%2B75cb6KV77bB1EYUvPL2Oj2ZkJAQaYn9Nz1K0RGTQ9gGimbsBQ8Bnsiq4U%2FN29TmynNaAGVvk%2B353gBjrLKS%2B6i0AjmeDLYTPcPDSBvzw%2BnOGVzznwFlLcc3HVtOAOoY2OpH8ZUYEQlTKb2a05wn7d7w%2BYrvgRY%3D--8WCjPG8VCvceg3tt--ngI4%2B4HxIpFi5fqaE9hRQQ%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:18:08 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd2811aa78340-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.3944, rails.cpu_time;dur=2.1001, rails.idle_time;dur=0.2942,
+      rails.sql_time;dur=0.4276, rails.view_time;dur=0.2295, rails.allocations;count=1140, request.allocations;count=1598,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.9012, request.total_time;dur=3.1951, request.queue_time_0;dur=0.7265,
+      request.queue_time_1;dur=99.9999
+    x-runtime: '0.0031950836181640625'
+    via: 172.70.233.113, gura, ina/danbooru-768bdd4cff-mx8x5
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=EDP9hd5a4sefBOqu9L6G8Y6uaHkQMLnqYv7EAJNupCX1PALS9exwZc5HMtqr%2B5fwDF%2BDqeZkWkFRv6YGbcxBs8m7L%2FR0fijH8Cv8JYGHFzBIT8Zo0QGjlfyPv7ZUHrEOrwvo9w%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd2811aa78340-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 1000
+    name: K-On!_-_Tehepero_(Bakutendou)
+    created_at: '2009-09-19T14:47:25.977-04:00'
+    updated_at: '2017-08-19T16:24:52.965-04:00'
+    description: 'Artist: [[Bakutendou]]'
+    is_active: false
+    is_deleted: false
+    post_ids:
+    - 528140
+    - 526147
+    - 526255
+    - 526258
+    - 526153
+    - 526154
+    - 526134
+    - 526138
+    - 526161
+    - 526250
+    - 528136
+    - 526251
+    - 526149
+    - 526143
+    - 526157
+    - 526262
+    - 526264
+    category: series
+    post_count: 17
+  body_text: null
+  body_b64: null

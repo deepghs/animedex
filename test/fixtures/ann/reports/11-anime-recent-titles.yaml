@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-07T11:27:04Z'
+  label: anime-recent-titles
+  backend: ann
+  path_slug: reports
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/reports.xml?id=148&nlist=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:27:04 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:27:03 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Cache-Control: private, max-age=0, must-revalidate
+    Set-Cookie: ann5_session_id=xxA5Srx5U9kJgGdJJMDKYDKlnMJmWA2M-1778153223988; Path=/; secure; HttpOnly; Domain=.animenewsnetwork.com;
+      SameSite=Lax
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: 9f7fdf914a6a96a3-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <report skipped="0" listed="10">
+    <item><anime href="/encyclopedia/anime.php?id=39391">Kanojo no Tomodachi (TV)</anime><date_added>2026-05-06 19:25:45</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39378">Looney Tunes Gokko (ONA)</anime><date_added>2026-05-04 05:14:01</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39371">Gotōbun no Hanayome (OAV)</anime><date_added>2026-05-02 08:55:14</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39367">Gotōbun no Hanayome: Shunkashūtō (TV)</anime><date_added>2026-05-02 08:24:38</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39364">My Hero Academia: I am a hero too (special)</anime><date_added>2026-05-02 05:33:27</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39362">PAC-MAN: Snack Breaks (U.S. ONA)</anime><date_added>2026-05-01 21:30:21</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39356">Dinners with My Darling (TV)</anime><date_added>2026-05-01 04:34:09</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39355">World&#039;s Strongest Witch (TV)</anime><date_added>2026-05-01 01:52:34</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39353">Jujutsu Kaisen ≡ Saishū 3 Kan Hatsubai Kinen Special PV (ONA)</anime><date_added>2026-05-01 00:02:59</date_added></item>
+    <item><anime href="/encyclopedia/anime.php?id=39352">Silent Möbius Gaiden: Bakumatsu Anbu Shimatsu-Ki (live-action OAV)</anime><date_added>2026-04-30 22:26:00</date_added></item></report>
+  body_b64: null

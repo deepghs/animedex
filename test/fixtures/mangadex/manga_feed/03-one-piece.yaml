@@ -1,0 +1,94 @@
+metadata:
+  captured_at: '2026-05-07T11:09:25Z'
+  label: one-piece
+  backend: mangadex
+  path_slug: manga_feed
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/32d76d19-8a05-4db0-9fc2-e0b0648fe9d0/feed?translatedLanguage%5B%5D=en&limit=2&order%5Bchapter%5D=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=60, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:25 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x1
+    x-request-id: ae12cd4a-c7f3-4d25-9320-1c84b249c244
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: f7d2cb75-83b2-426b-bdbd-032870c30abb
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '15'
+        title: Dungeon Boss
+        translatedLanguage: en
+        externalUrl: https://www.webnovel.com/comic/15227640605485101/45196977385821028
+        isUnavailable: false
+        publishAt: '2023-09-05T17:14:12+00:00'
+        readableAt: '2023-09-05T17:14:12+00:00'
+        createdAt: '2023-09-05T17:14:12+00:00'
+        updatedAt: '2023-09-05T17:14:12+00:00'
+        version: 2
+        pages: 0
+      relationships:
+      - id: 0b52e04c-d2ff-49cc-8b49-fdb4443bf544
+        type: scanlation_group
+      - id: 32d76d19-8a05-4db0-9fc2-e0b0648fe9d0
+        type: manga
+      - id: 3f1f10cc-af14-4de1-bc4c-0439c3fd6e5b
+        type: user
+    - id: dc43e051-6cd0-4ee5-877b-3bdfc0d08656
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '14'
+        title: Wolf Slayer
+        translatedLanguage: en
+        externalUrl: https://www.webnovel.com/comic/15227640605485101/45196920192288234
+        isUnavailable: false
+        publishAt: '2023-09-05T17:14:11+00:00'
+        readableAt: '2023-09-05T17:14:11+00:00'
+        createdAt: '2023-09-05T17:14:10+00:00'
+        updatedAt: '2023-09-05T17:14:11+00:00'
+        version: 2
+        pages: 0
+      relationships:
+      - id: 0b52e04c-d2ff-49cc-8b49-fdb4443bf544
+        type: scanlation_group
+      - id: 32d76d19-8a05-4db0-9fc2-e0b0648fe9d0
+        type: manga
+      - id: 3f1f10cc-af14-4de1-bc4c-0439c3fd6e5b
+        type: user
+    limit: 2
+    offset: 0
+    total: 24
+  body_text: null
+  body_b64: null

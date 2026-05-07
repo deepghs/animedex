@@ -1,0 +1,72 @@
+metadata:
+  captured_at: '2026-05-07T11:17:40Z'
+  label: any-banned
+  backend: danbooru
+  path_slug: artists_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artists.json?search%5Bis_banned%5D=true&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:40 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"691c1562fd3fcf53b8b011f48568cee2"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=OQK5IhK1DAzVLHRaWiPsVLdwEsEpYdxYiKbg0iBVEsIhJt%2BWeBv6najSXHeDvh4SwT%2Bof6rgWkD6WLLHmsT6kXYsZSkMKTLcNdgQHr2vqUwwo2qLhiwk2VylRKZN%2FyEDOoFPCUHGhNzalsnGa7EsCVBQlsDxqiY6uEzSWE6y8MaXA%2BTbgPg2JISsHoHoaOc%2BYxpbe%2B4zOm%2FvsqNQc883Yebr3K660HkoanQ9xuALiAP7fKP5GI7H27hLkYitJ0vxU8LJTGmHu7prMjLXjkkTeKR22I5PGuGN8r1ds6xQT9U%3D--Q4Yi2S8ntEqK3jtU--AnEuh9jJqaR2oc5Lq49mPg%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:40 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd1cf3f618326-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=168.9114, rails.cpu_time;dur=2.2471, rails.idle_time;dur=166.6643,
+      rails.sql_time;dur=166.8091, rails.view_time;dur=167.1068, rails.allocations;count=1623, request.allocations;count=2132,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.0206, request.total_time;dur=169.6852, request.queue_time_0;dur=1.2195,
+      request.queue_time_1;dur=100.9998
+    x-runtime: '0.1696851806640625'
+    via: 172.70.233.113, gura, gura/danbooru-768bdd4cff-txl6f
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=GLjfQop2H2HonD0I0y3GEXPctICNibx8LRXCPyyOn13weO7%2FK16xGYZ3mDmI%2FyhrDVzV1Jl8zV8BoExQXTZ5Oo8tFETXG%2Bo6vAw5t0%2FZNB6Hc0i1G9JIWfy4CC7B2ffPRBJMBg%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd1cf3f618326-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 586258
+    created_at: '2025-11-21T19:10:12.326-05:00'
+    name: feichengtaifeitang
+    updated_at: '2026-02-03T02:23:31.688-05:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: true
+    other_names:
+    - hinaru_taihitou
+    - 非成太妃糖
+  - id: 493326
+    created_at: '2024-12-30T07:59:23.938-05:00'
+    name: y6882100033
+    updated_at: '2026-02-03T02:00:39.141-05:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: true
+    other_names:
+    - D62962630
+    - Y6882100033
+    - y6882100011
+    - 造景惡魔之庭
+  body_text: null
+  body_b64: null

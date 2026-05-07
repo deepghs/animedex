@@ -1,0 +1,386 @@
+metadata:
+  captured_at: '2026-05-07T11:06:45Z'
+  label: steins-gate
+  backend: kitsu
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Steins+Gate&page%5Blimit%5D=2
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:06:45 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"07bafb6410ff9dc1a4ac3b271e6dc66d"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 7a7e06a9-bfda-4225-94ea-c124e09884da
+    x-runtime: '0.181573'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=gmubmXi0jn3iRuybB9f6V9dVKyCNVbPRyG5cz3WieKw%2F6011letvOk9Xqj80EUoJtmmctCaTUSPzAk9D63Wbx1jURB%2BqiGKGlVrnxkLsMuGIJ7wLxQMQIoTHYg%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc1d18f6ade49-NRT
+  body_json:
+    data:
+    - id: '5646'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/5646
+      attributes:
+        createdAt: '2013-02-20T17:27:06.531Z'
+        updatedAt: '2026-05-07T09:33:43.684Z'
+        slug: steins-gate
+        synopsis: |-
+          The self-proclaimed mad scientist Rintarou Okabe rents out a room in a rickety old building in Akihabara, where he indulges himself in his hobby of inventing prospective "future gadgets" with fellow lab members: Mayuri Shiina, his air-headed childhood friend, and Hashida Itaru, a perverted hacker nicknamed "Daru." The three pass the time by tinkering with their most promising contraption yet, a machine dubbed the "Phone Microwave," which performs the strange function of morphing bananas into piles of green gel.
+
+          Though miraculous in itself, the phenomenon doesn't provide anything concrete in Okabe's search for a scientific breakthrough; that is, until the lab members are spurred into action by a string of mysterious happenings before stumbling upon an unexpected success—the Phone Microwave can send emails to the past, altering the flow of history.
+
+          Adapted from the critically acclaimed visual novel by 5pb. and Nitroplus, Steins;Gate takes Okabe through the depths of scientific theory and practicality. Forced across the diverging threads of past and present, Okabe must shoulder the burdens that come with holding the key to the realm of time.
+
+          (Source: MAL Rewrite)
+        description: |-
+          The self-proclaimed mad scientist Rintarou Okabe rents out a room in a rickety old building in Akihabara, where he indulges himself in his hobby of inventing prospective "future gadgets" with fellow lab members: Mayuri Shiina, his air-headed childhood friend, and Hashida Itaru, a perverted hacker nicknamed "Daru." The three pass the time by tinkering with their most promising contraption yet, a machine dubbed the "Phone Microwave," which performs the strange function of morphing bananas into piles of green gel.
+
+          Though miraculous in itself, the phenomenon doesn't provide anything concrete in Okabe's search for a scientific breakthrough; that is, until the lab members are spurred into action by a string of mysterious happenings before stumbling upon an unexpected success—the Phone Microwave can send emails to the past, altering the flow of history.
+
+          Adapted from the critically acclaimed visual novel by 5pb. and Nitroplus, Steins;Gate takes Okabe through the depths of scientific theory and practicality. Forced across the diverging threads of past and present, Okabe must shoulder the burdens that come with holding the key to the realm of time.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 120
+        titles:
+          en: Steins;Gate
+          en_jp: Steins;Gate
+          en_us: Steins;Gate
+          ja_jp: STEINS;GATE
+        canonicalTitle: Steins;Gate
+        abbreviatedTitles:
+        - シュタゲ
+        averageRating: '82.32'
+        ratingFrequencies:
+          '2': '6187'
+          '3': '126'
+          '4': '643'
+          '5': '87'
+          '6': '400'
+          '7': '84'
+          '8': '9564'
+          '9': '108'
+          '10': '1048'
+          '11': '156'
+          '12': '2767'
+          '13': '225'
+          '14': '14820'
+          '15': '514'
+          '16': '9799'
+          '17': '1214'
+          '18': '16954'
+          '19': '1435'
+          '20': '62898'
+        userCount: 236736
+        favoritesCount: 9300
+        startDate: '2011-04-06'
+        endDate: '2011-09-14'
+        nextRelease: null
+        popularityRank: 24
+        ratingRank: 169
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/5646/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/5646/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/5646/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/5646/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/5646/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/5646/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/5646/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/5646/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/5646/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 24
+        episodeLength: 24
+        totalLength: 576
+        youtubeVideoId: 27OZc-ku6is
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/genres
+            related: https://kitsu.io/api/edge/anime/5646/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/categories
+            related: https://kitsu.io/api/edge/anime/5646/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/castings
+            related: https://kitsu.io/api/edge/anime/5646/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/installments
+            related: https://kitsu.io/api/edge/anime/5646/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/5646/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/5646/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/5646/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/characters
+            related: https://kitsu.io/api/edge/anime/5646/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/staff
+            related: https://kitsu.io/api/edge/anime/5646/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/productions
+            related: https://kitsu.io/api/edge/anime/5646/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/5646/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/5646/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/5646/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/5646/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/5646/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/5646/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/5646/anime-staff
+    - id: '10788'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/10788
+      attributes:
+        createdAt: '2015-03-29T04:45:30.122Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: steins-gate-0
+        synopsis: |-
+          A divergent continuation of the original Steins;Gate ending, Steins;Gate 0 explores an alternate worldline where Okabe abandons time travel. While attempting to forget past traumas and get his life back on track, he meets an AI that re-opens old wounds.
+
+          (Source: Crunchyroll)
+        description: |-
+          A divergent continuation of the original Steins;Gate ending, Steins;Gate 0 explores an alternate worldline where Okabe abandons time travel. While attempting to forget past traumas and get his life back on track, he meets an AI that re-opens old wounds.
+
+          (Source: Crunchyroll)
+        coverImageTopOffset: 160
+        titles:
+          en: Steins;Gate 0
+          en_jp: Steins;Gate 0
+          ja_jp: シュタインズ・ゲート ゼロ
+        canonicalTitle: Steins;Gate 0
+        abbreviatedTitles: []
+        averageRating: '82.11'
+        ratingFrequencies:
+          '2': '698'
+          '3': '9'
+          '4': '76'
+          '5': '9'
+          '6': '104'
+          '7': '15'
+          '8': '830'
+          '9': '30'
+          '10': '309'
+          '11': '48'
+          '12': '629'
+          '13': '97'
+          '14': '2523'
+          '15': '277'
+          '16': '3400'
+          '17': '605'
+          '18': '3615'
+          '19': '480'
+          '20': '7318'
+        userCount: 56811
+        favoritesCount: 398
+        startDate: '2018-04-12'
+        endDate: '2018-09-27'
+        nextRelease: null
+        popularityRank: 232
+        ratingRank: 261
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: ''
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/10788/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/10788/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/10788/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/10788/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/10788/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/10788/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/10788/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/10788/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/10788/original.jpeg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 23
+        episodeLength: null
+        totalLength: 23
+        youtubeVideoId: NhExBlBnmQI
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/genres
+            related: https://kitsu.io/api/edge/anime/10788/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/categories
+            related: https://kitsu.io/api/edge/anime/10788/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/castings
+            related: https://kitsu.io/api/edge/anime/10788/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/installments
+            related: https://kitsu.io/api/edge/anime/10788/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/10788/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/10788/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/10788/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/characters
+            related: https://kitsu.io/api/edge/anime/10788/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/staff
+            related: https://kitsu.io/api/edge/anime/10788/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/productions
+            related: https://kitsu.io/api/edge/anime/10788/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/10788/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/10788/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/10788/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/10788/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/10788/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/10788/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/10788/anime-staff
+    meta:
+      count: 7
+    links:
+      first: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Steins+Gate&page%5Blimit%5D=2&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Steins+Gate&page%5Blimit%5D=2&page%5Boffset%5D=2
+      last: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Steins+Gate&page%5Blimit%5D=2&page%5Boffset%5D=5
+  body_text: null
+  body_b64: null

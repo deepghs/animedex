@@ -1,0 +1,388 @@
+metadata:
+  captured_at: '2026-05-07T11:06:48Z'
+  label: k-on
+  backend: kitsu
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime?filter%5Btext%5D=K-On&page%5Blimit%5D=2
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:06:48 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"c442ef3bb305d6d316a1f5a265afe973"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 7c2e12db-1456-45b5-be7b-7ed070421fcf
+    x-runtime: '0.087869'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=LHFuFGMfVjeSYJC6oaRfbA5Zp3zzSaPi4Fzy5U2jR8H5po9lTgi4JPJfab4HygIR5PxAz%2BDzApKJNzq3QK7vpYgdWIyLXUfDd40kvW5jkgdqSNNqv%2FRNE%2FwI6A%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc1e54f6bdb4f-NRT
+  body_json:
+    data:
+    - id: '4240'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/4240
+      attributes:
+        createdAt: '2013-02-20T17:05:09.834Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: k-on
+        synopsis: |-
+          Hirasawa Yui, a young, carefree girl entering high school, has her imagination instantly captured when she sees a poster advertising the "Light Music Club." Being the carefree girl that she is, she quickly signs up; however, Yui has a problem, she is unable to play an instrument.
+
+          When Yui goes to the clubroom to explain, she's greeted by the other members: Ritsu, Mio, and Tsumugi. Although disheartened at Yui's lack of musical know-how, they still try to convince her to stay to prevent the club's disbandment. After playing Yui a short piece which re-ignites her imagination, they succeed in keeping their new member and guitarist.
+
+          Along with the tasks of school and homework, Yui begins to learn the guitar with the help of the other band members, experiencing many mishaps along the way. However, with the school festival drawing near and Yui getting stuck with her practice, will the Light Music Club be ready in time for their debut?
+
+          [Written by MAL Rewrite]
+        description: |-
+          Hirasawa Yui, a young, carefree girl entering high school, has her imagination instantly captured when she sees a poster advertising the "Light Music Club." Being the carefree girl that she is, she quickly signs up; however, Yui has a problem, she is unable to play an instrument.
+
+          When Yui goes to the clubroom to explain, she's greeted by the other members: Ritsu, Mio, and Tsumugi. Although disheartened at Yui's lack of musical know-how, they still try to convince her to stay to prevent the club's disbandment. After playing Yui a short piece which re-ignites her imagination, they succeed in keeping their new member and guitarist.
+
+          Along with the tasks of school and homework, Yui begins to learn the guitar with the help of the other band members, experiencing many mishaps along the way. However, with the school festival drawing near and Yui getting stuck with her practice, will the Light Music Club be ready in time for their debut?
+
+          [Written by MAL Rewrite]
+        coverImageTopOffset: 0
+        titles:
+          en: K-ON!
+          en_jp: K-On!
+          ja_jp: けいおん!
+        canonicalTitle: K-On!
+        abbreviatedTitles:
+        - Keion
+        - K-ON! Season 1
+        averageRating: '78.24'
+        ratingFrequencies:
+          '2': '207'
+          '3': '3'
+          '4': '249'
+          '5': '5'
+          '6': '234'
+          '7': '12'
+          '8': '892'
+          '9': '22'
+          '10': '1397'
+          '11': '40'
+          '12': '3224'
+          '13': '127'
+          '14': '7600'
+          '15': '344'
+          '16': '9229'
+          '17': '445'
+          '18': '5338'
+          '19': '163'
+          '20': '7004'
+        userCount: 70665
+        favoritesCount: 1446
+        startDate: '2009-04-03'
+        endDate: '2009-06-26'
+        nextRelease: null
+        popularityRank: 166
+        ratingRank: 1261
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: ''
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/4240/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/4240/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/4240/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/4240/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/4240/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/4240/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/4240/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/4240/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/4240/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 13
+        episodeLength: 24
+        totalLength: 312
+        youtubeVideoId: 5JZD2JHVks4
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/genres
+            related: https://kitsu.io/api/edge/anime/4240/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/categories
+            related: https://kitsu.io/api/edge/anime/4240/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/castings
+            related: https://kitsu.io/api/edge/anime/4240/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/installments
+            related: https://kitsu.io/api/edge/anime/4240/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/4240/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/4240/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/4240/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/characters
+            related: https://kitsu.io/api/edge/anime/4240/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/staff
+            related: https://kitsu.io/api/edge/anime/4240/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/productions
+            related: https://kitsu.io/api/edge/anime/4240/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/4240/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/4240/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/4240/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/4240/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/4240/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/4240/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/4240/anime-staff
+    - id: '5124'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/5124
+      attributes:
+        createdAt: '2013-02-20T17:18:46.720Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: k-on-season-2
+        synopsis: |-
+          For two full years, Yui, Mio, Ritsu and Tsumugi have worked together to keep the struggling Light Music Club alive. With a new school year there are new and scary challenges ahead!
+
+          (Source: HIDIVE)
+        description: |-
+          For two full years, Yui, Mio, Ritsu and Tsumugi have worked together to keep the struggling Light Music Club alive. With a new school year there are new and scary challenges ahead!
+
+          (Source: HIDIVE)
+        coverImageTopOffset: 25
+        titles:
+          en: K-ON! Season 2
+          en_jp: K-On!!
+          ja_jp: けいおん!!
+        canonicalTitle: K-On!!
+        abbreviatedTitles:
+        - Keion 2
+        - K-On!! 2nd Season
+        averageRating: '81.29'
+        ratingFrequencies:
+          '2': '217'
+          '3': '2'
+          '4': '147'
+          '5': '5'
+          '6': '117'
+          '7': '4'
+          '8': '505'
+          '9': '6'
+          '10': '696'
+          '11': '19'
+          '12': '1778'
+          '13': '74'
+          '14': '4293'
+          '15': '176'
+          '16': '5844'
+          '17': '341'
+          '18': '4434'
+          '19': '183'
+          '20': '6961'
+        userCount: 50473
+        favoritesCount: 969
+        startDate: '2010-04-07'
+        endDate: '2010-09-29'
+        nextRelease: null
+        popularityRank: 265
+        ratingRank: 532
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: ''
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/5124/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/5124/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/5124/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/5124/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/5124/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/5124/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/5124/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/5124/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/5124/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 26
+        episodeLength: 24
+        totalLength: 624
+        youtubeVideoId: BfoUo18iw74
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/genres
+            related: https://kitsu.io/api/edge/anime/5124/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/categories
+            related: https://kitsu.io/api/edge/anime/5124/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/castings
+            related: https://kitsu.io/api/edge/anime/5124/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/installments
+            related: https://kitsu.io/api/edge/anime/5124/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/5124/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/5124/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/5124/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/characters
+            related: https://kitsu.io/api/edge/anime/5124/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/staff
+            related: https://kitsu.io/api/edge/anime/5124/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/productions
+            related: https://kitsu.io/api/edge/anime/5124/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/5124/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/5124/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/5124/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/5124/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/5124/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/5124/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/5124/anime-staff
+    meta:
+      count: 32
+    links:
+      first: https://kitsu.io/api/edge/anime?filter%5Btext%5D=K-On&page%5Blimit%5D=2&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/anime?filter%5Btext%5D=K-On&page%5Blimit%5D=2&page%5Boffset%5D=2
+      last: https://kitsu.io/api/edge/anime?filter%5Btext%5D=K-On&page%5Blimit%5D=2&page%5Boffset%5D=30
+  body_text: null
+  body_b64: null

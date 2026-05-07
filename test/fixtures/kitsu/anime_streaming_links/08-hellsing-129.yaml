@@ -1,0 +1,49 @@
+metadata:
+  captured_at: '2026-05-07T11:07:37Z'
+  label: hellsing-129
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/129/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:37 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"8a184dd59528543faf7dcba5b5522a0d"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 87cd6b6e-2d56-4a4e-9864-68680a9debb2
+    x-runtime: '0.070527'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=R91mD1HEbwunS4M8%2BW2IVRSladqaQOQQgapu%2BtpKXZwVt7mALZEnLrmnKvSmin64xL06kUL8LvcZ2T2Wo3I%2FnrrgGMlPSILDCHFvBOawJb%2BUHvYDrEvJFYwmBQ%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc31768b2dd96-KIX
+  body_json:
+    data: []
+    meta:
+      count: 0
+    links:
+      first: https://kitsu.io/api/edge/anime/129/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/129/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

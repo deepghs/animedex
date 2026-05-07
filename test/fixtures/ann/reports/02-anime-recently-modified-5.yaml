@@ -1,0 +1,42 @@
+metadata:
+  captured_at: '2026-05-07T11:26:48Z'
+  label: anime-recently-modified-5
+  backend: ann
+  path_slug: reports
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/reports.xml?id=155&type=anime&nlist=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:26:48 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:26:48 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Cache-Control: private, max-age=0, must-revalidate
+    Set-Cookie: ann5_session_id=Xg5OBA1h386mLNSbHLWsbiMGq8YeiC2i-1778153208298; Path=/; secure; HttpOnly; Domain=.animenewsnetwork.com;
+      SameSite=Lax
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: 9f7fdf2e1bd4ffa4-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <report skipped="0" listed="5"><args><type>anime</type><name></name><licensed></licensed><search></search></args>
+    <item><id>39391</id><gid>2912612500</gid><type>TV</type><name>Kanojo no Tomodachi</name><precision>TV</precision><vintage>2026</vintage></item>
+    <item><id>39378</id><gid>1544849086</gid><type>ONA</type><name>Looney Tunes Gokko</name><precision>ONA</precision><vintage>2026-04-30</vintage></item>
+    <item><id>39371</id><gid>1826505240</gid><type>OAV</type><name>Gotōbun no Hanayome</name><precision>OAV</precision></item>
+    <item><id>39367</id><gid>2704327020</gid><type>TV</type><name>Gotōbun no Hanayome: Shunkashūtō</name><precision>TV</precision></item>
+    <item><id>39364</id><gid>3359940989</gid><type>special</type><name>My Hero Academia: I am a hero too</name><precision>special</precision></item></report>
+  body_b64: null

@@ -1,0 +1,42 @@
+metadata:
+  captured_at: '2026-05-07T11:25:02Z'
+  label: invalid-99999999
+  backend: shikimori
+  path_slug: videos
+request:
+  method: GET
+  url: https://shikimori.io/api/animes/99999999/videos
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=aDITPUEZLFlsPBUD; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:01 GMT, __ddg10_=1778153101;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:01 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:45:01 GMT, __ddg1_=jvjdxNobsRIWMCSKWZMQ; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:25:01 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:02 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    Cache-Control: no-cache
+    X-Request-Id: c966230c-b8de-4c0a-908b-149241010569
+    X-Runtime: '0.004609'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    message: Страница не найдена
+    code: 404
+  body_text: null
+  body_b64: null

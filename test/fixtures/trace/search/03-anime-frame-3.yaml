@@ -1,0 +1,1109 @@
+metadata:
+  captured_at: '2026-05-07T11:15:44Z'
+  label: anime-frame-3
+  backend: trace
+  path_slug: search
+request:
+  method: GET
+  url: https://api.trace.moe/search?anilistInfo&url=https%3A%2F%2Fi.imgur.com%2FaD7tA3W.jpg
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:15:44 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    access-control-allow-credentials: 'true'
+    access-control-allow-headers: Content-Type, x-trace-secret
+    access-control-allow-methods: GET, POST, OPTIONS
+    access-control-allow-origin: '*'
+    alt-svc: h3=":443"; ma=86400
+    Content-Encoding: gzip
+    etag: W/"6238-XZI3ALP+jQOYw1tbuBbQrd2VaMI"
+    ratelimit-limit: '100'
+    ratelimit-policy: 100;w=60
+    ratelimit-remaining: '82'
+    ratelimit-reset: '17'
+    vary: Origin, Accept-Encoding
+    via: 1.1 Caddy
+    x-ratelimit-limit: '100'
+    x-ratelimit-remaining: '82'
+    x-ratelimit-reset: '1778152561'
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    X-Content-Type-Options: nosniff
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=xYfGzE590zggeS8xU%2FiOupE5ZR8qGQDrM3fZmTXraE%2FR36fkzS90ZQkgN%2B%2BPtaLMfSnc195Q7V9uzchaoaE0zwgpwuGmOSo7UDvuwXpLZqgYAVH%2B8iy73SrHtqnGqgg%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fcef3cab97e85-KIX
+  body_json:
+    frameCount: 1678055588
+    error: ''
+    result:
+    - anilist:
+        id: 2929
+        type: ANIME
+        idMal: 2929
+        title:
+          native: MOONLIGHT MILE 2ndシーズン -Touch down-
+          romaji: MOONLIGHT MILE 2nd Season -Touch down-
+          chinese: Moonlight 2 Touch Down
+          english: null
+        format: TV
+        genres:
+        - Adventure
+        - Drama
+        - Sci-Fi
+        season: FALL
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 13
+          year: 2007
+          month: 12
+        isAdult: false
+        siteUrl: https://anilist.co/anime/2929
+        studios:
+          edges:
+          - node:
+              id: 101
+              name: Studio Hibari
+              siteUrl: https://anilist.co/studio/101
+            isMain: true
+          - node:
+              id: 170
+              name: Imagica
+              siteUrl: https://anilist.co/studio/170
+            isMain: false
+          - node:
+              id: 7019
+              name: Amuse Soft Entertainment
+              siteUrl: https://anilist.co/studio/7019
+            isMain: false
+          - node:
+              id: 33
+              name: WOWOW
+              siteUrl: https://anilist.co/studio/33
+            isMain: false
+          - node:
+              id: 460
+              name: KLOCKWORX
+              siteUrl: https://anilist.co/studio/460
+            isMain: false
+        duration: 24
+        episodes: 14
+        synonyms:
+        - Moonlight Mile sezon 2 - Lądowanie
+        relations:
+          edges:
+          - node:
+              id: 1941
+              title:
+                native: MOONLIGHT MILE 1stシーズン -Lift off-
+            relationType: PREQUEL
+          - node:
+              id: 30681
+              title:
+                native: MOONLIGHT MILE
+            relationType: ADAPTATION
+        seasonInt: 74
+        startDate:
+          day: 13
+          year: 2007
+          month: 9
+        coverImage:
+          color: '#1a2878'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b2929-kltYZeHi3DQf.png
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b2929-kltYZeHi3DQf.png
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b2929-kltYZeHi3DQf.png
+        popularity: 1162
+        seasonYear: 2007
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/2929-asF8kEpsdsAC.jpg
+        externalLinks: []
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - 月光旅程 2
+        - 月光之旅 2
+      filename: '[OUR][MOONLIGHT MILE 2nd][05][JP_GB][1280X720].mp4'
+      episode: 5
+      from: 832.7494
+      at: 836.7534
+      to: 836.8368
+      duration: 1499.9583
+      similarity: 0.9579447428385417
+      video: https://api.trace.moe/video/5QICtUz1rqfnBPhhlvAtIG
+      image: https://api.trace.moe/image/5QICtUz1rqfnBPhhlvAtIG
+    - anilist:
+        id: 102005
+        type: ANIME
+        idMal: 37739
+        title:
+          native: フューチャーカード 神バディファイト
+          romaji: Future Card Shin Buddyfight
+          chinese: 未來卡片 神戰鬥夥伴
+          english: Future Card Buddyfight Ace
+        format: TV
+        genres:
+        - Action
+        - Sci-Fi
+        season: SUMMER
+        source: OTHER
+        status: FINISHED
+        endDate:
+          day: 27
+          year: 2019
+          month: 4
+        isAdult: false
+        siteUrl: https://anilist.co/anime/102005
+        studios:
+          edges: []
+        duration: 25
+        episodes: 47
+        synonyms: []
+        relations:
+          edges:
+          - node:
+              id: 101385
+              title:
+                native: フューチャーカード バディファイト バッツ オールスターファイト
+            relationType: PREQUEL
+          - node:
+              id: 114794
+              title:
+                native: フューチャーカード 神バディファイト
+            relationType: ADAPTATION
+        seasonInt: 183
+        startDate:
+          day: 2
+          year: 2018
+          month: 6
+        coverImage:
+          color: '#1aa1d6'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx102005-SiZzzsV0KwtL.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx102005-SiZzzsV0KwtL.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx102005-SiZzzsV0KwtL.jpg
+        popularity: 1312
+        seasonYear: 2018
+        bannerImage: null
+        externalLinks:
+        - id: 36367
+          url: https://www.crunchyroll.com/future-card-buddyfight
+          site: Crunchyroll
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: '[Leopard-Raws] Future Card Shin Buddyfight - 40 RAW (TX 1280x720 x264 AAC).mp4'
+      episode: 40
+      from: 760.093
+      at: 760.802
+      to: 760.802
+      duration: 1494.848
+      similarity: 0.9570433859731636
+      video: https://api.trace.moe/video/Si3cyGamP0MLVlSSGu1exIM
+      image: https://api.trace.moe/image/Si3cyGamP0MLVlSSGu1exIM
+    - anilist:
+        id: 202955
+        type: ANIME
+        idMal: 63019
+        title:
+          native: プリズム輪舞曲
+          romaji: Prism Rondo
+          chinese: 稜鏡戀曲
+          english: Love Through A Prism
+        format: ONA
+        genres:
+        - Drama
+        - Romance
+        season: WINTER
+        source: ORIGINAL
+        status: FINISHED
+        endDate:
+          day: 15
+          year: 2026
+          month: 1
+        isAdult: false
+        siteUrl: https://anilist.co/anime/202955
+        studios:
+          edges:
+          - node:
+              id: 6787
+              name: Netflix
+              siteUrl: https://anilist.co/studio/6787
+            isMain: false
+          - node:
+              id: 858
+              name: WIT STUDIO
+              siteUrl: https://anilist.co/studio/858
+            isMain: true
+        duration: 24
+        episodes: 20
+        synonyms:
+        - ปริซึมแห่งรัก
+        - El amor a través de un prisma
+        - Prin prisma dragostei
+        - Pelo Prisma do Amor
+        - 프리즘 윤무곡
+        - Il prisma dell'amore
+        - Έρωτας Μέσα από ένα Πρίσμα
+        - Le Prisme de l'amour
+        - 稜鏡戀曲
+        - 棱镜恋曲
+        - 'حبّ يمر عبر منشور زجاجي '
+        - Призма любви
+        relations:
+          edges:
+          - node:
+              id: 205279
+              title:
+                native: プリズム輪舞曲
+            relationType: ADAPTATION
+        seasonInt: 261
+        startDate:
+          day: 15
+          year: 2026
+          month: 1
+        coverImage:
+          color: '#e4bb43'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b202955-TFyTd1zFT1v7.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b202955-TFyTd1zFT1v7.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b202955-TFyTd1zFT1v7.jpg
+        popularity: 26515
+        seasonYear: 2026
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/202955-NGyGdH5wvSpB.jpg
+        externalLinks:
+        - id: 139209
+          url: https://www.netflix.com/title/81498882
+          site: Netflix
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: '[Erai-raws] Prism Rondo - 19 [720p NF WEB-DL AVC EAC3][MultiSub][E218B26C].mkv'
+      episode: 19
+      from: 843.593
+      at: 847.18
+      to: 858.232
+      duration: 1825.472
+      similarity: 0.9530307246189491
+      video: https://api.trace.moe/video/2vriZajOuwlmSR33ZDMMHbX
+      image: https://api.trace.moe/image/2vriZajOuwlmSR33ZDMMHbX
+    - anilist:
+        id: 8247
+        type: ANIME
+        idMal: 8247
+        title:
+          native: BLEACH 地獄篇
+          romaji: 'BLEACH: Jigoku-hen'
+          chinese: 劇場版 BLEACH 地獄篇
+          english: 'Bleach the Movie: Hell Verse'
+        format: MOVIE
+        genres:
+        - Action
+        - Supernatural
+        season: FALL
+        source: ORIGINAL
+        status: FINISHED
+        endDate:
+          day: 4
+          year: 2010
+          month: 12
+        isAdult: false
+        siteUrl: https://anilist.co/anime/8247
+        studios:
+          edges:
+          - node:
+              id: 1
+              name: Studio Pierrot
+              siteUrl: https://anilist.co/studio/1
+            isMain: true
+          - node:
+              id: 119
+              name: Viz Media
+              siteUrl: https://anilist.co/studio/119
+            isMain: false
+        duration: 93
+        episodes: 1
+        synonyms:
+        - Bleach Movie 4
+        - 'Bleach: The Hell Chapter'
+        - 'بليتش: قصيدة الجحيم'
+        relations:
+          edges:
+          - node:
+              id: 53355
+              title:
+                native: BLEACH 地獄篇 - The Unforgivens
+            relationType: ADAPTATION
+          - node:
+              id: 269
+              title:
+                native: BLEACH
+            relationType: PARENT
+          - node:
+              id: 141703
+              title:
+                native: BLEACH 地獄篇
+            relationType: ADAPTATION
+          - node:
+              id: 53355
+              title:
+                native: BLEACH 地獄篇 - The Unforgivens
+            relationType: PREQUEL
+        seasonInt: 104
+        startDate:
+          day: 4
+          year: 2010
+          month: 12
+        coverImage:
+          color: '#f1a150'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx8247-VppsQKlgXoXr.png
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx8247-VppsQKlgXoXr.png
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx8247-VppsQKlgXoXr.png
+        popularity: 41553
+        seasonYear: 2010
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/8247-M9lIhb1pWRTn.jpg
+        externalLinks:
+        - id: 8453
+          url: http://www.netflix.com/title/70260383
+          site: Netflix
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - 劇場版 BLEACH 死神
+        - 劇場版 BLEACH 境·界
+        - 劇場版 BLEACH 漂靈
+      filename: '[ReinForce] Gekijouban Bleach ~Jigoku-hen~ (BDRip 1920x1036 x264 FLAC).mp4'
+      episode: null
+      from: 4390.6782
+      at: 4390.9282
+      to: 4393.2222
+      duration: 5633.6
+      similarity: 0.9525845060161516
+      video: https://api.trace.moe/video/ZhYYXEBXMvpgfCnqqbhF9ioR
+      image: https://api.trace.moe/image/ZhYYXEBXMvpgfCnqqbhF9ioR
+    - anilist:
+        id: 20770
+        type: ANIME
+        idMal: 25013
+        title:
+          native: 暁のヨナ
+          romaji: Akatsuki no Yona
+          chinese: 晨曦公主
+          english: Yona of the Dawn
+        format: TV
+        genres:
+        - Action
+        - Adventure
+        - Comedy
+        - Drama
+        - Fantasy
+        - Romance
+        season: FALL
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 24
+          year: 2015
+          month: 3
+        isAdult: false
+        siteUrl: https://anilist.co/anime/20770
+        studios:
+          edges:
+          - node:
+              id: 1
+              name: Studio Pierrot
+              siteUrl: https://anilist.co/studio/1
+            isMain: true
+          - node:
+              id: 6259
+              name: TOKYO MX
+              siteUrl: https://anilist.co/studio/6259
+            isMain: false
+          - node:
+              id: 6679
+              name: Docomo Anime Store
+              siteUrl: https://anilist.co/studio/6679
+            isMain: false
+          - node:
+              id: 148
+              name: Hakusensha
+              siteUrl: https://anilist.co/studio/148
+            isMain: false
+          - node:
+              id: 29
+              name: VAP
+              siteUrl: https://anilist.co/studio/29
+            isMain: false
+          - node:
+              id: 751
+              name: Marvelous
+              siteUrl: https://anilist.co/studio/751
+            isMain: false
+          - node:
+              id: 238
+              name: AT-X
+              siteUrl: https://anilist.co/studio/238
+            isMain: false
+          - node:
+              id: 7081
+              name: Age Global Networks
+              siteUrl: https://anilist.co/studio/7081
+            isMain: false
+          - node:
+              id: 7082
+              name: TOP-INSIGHT
+              siteUrl: https://anilist.co/studio/7082
+            isMain: false
+          - node:
+              id: 711
+              name: Delfi Sound
+              siteUrl: https://anilist.co/studio/711
+            isMain: false
+        duration: 24
+        episodes: 24
+        synonyms:
+        - AkaYona
+        - Йона на заре
+        - Ёна на заре
+        - Рассвет Йоны
+        - Yona, princesse de l'aube
+        relations:
+          edges:
+          - node:
+              id: 51525
+              title:
+                native: 暁のヨナ
+            relationType: ADAPTATION
+          - node:
+              id: 21138
+              title:
+                native: 暁のヨナ OVA
+            relationType: SIDE_STORY
+          - node:
+              id: 204293
+              title:
+                native: 暁のヨナ (続編)
+            relationType: SEQUEL
+        seasonInt: 144
+        startDate:
+          day: 7
+          year: 2014
+          month: 10
+        coverImage:
+          color: '#f1bb50'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20770-brCDvhTXlums.png
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx20770-brCDvhTXlums.png
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20770-brCDvhTXlums.png
+        popularity: 204921
+        seasonYear: 2014
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/20770-tZZMsglzAUAe.jpg
+        externalLinks:
+        - id: 532
+          url: http://marv.jp/special/yona/
+          site: Official Site
+        - id: 573
+          url: http://www.crunchyroll.com/yona
+          site: Crunchyroll
+        - id: 43311
+          url: https://twitter.com/yona_anime
+          site: Twitter
+        - id: 122986
+          url: https://www.hulu.com/series/815cd76d-fa30-4e4a-8a5b-d4704b827580
+          site: Hulu
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - 拂曉的尤娜
+      filename: Akatsuki no Yona - 17 (BD 1280x720 x264 AAC).mp4
+      episode: 17
+      from: 898.0638
+      at: 898.4809
+      to: 899.0231
+      duration: 1423.1718
+      similarity: 0.9504155289893057
+      video: https://api.trace.moe/video/A29EG1We83S1drzzg93tLRM
+      image: https://api.trace.moe/image/A29EG1We83S1drzzg93tLRM
+    - anilist:
+        id: 158791
+        type: ANIME
+        idMal: 53848
+        title:
+          native: め組の大吾 救国のオレンジ
+          romaji: 'Megumi no Daigo: Kyuukoku no Orange'
+          chinese: 烈焰先鋒 救國的橘衣消防員
+          english: 'Firefighter Daigo: Rescuer in Orange'
+        format: TV
+        genres:
+        - Action
+        - Drama
+        - Thriller
+        season: FALL
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 23
+          year: 2024
+          month: 3
+        isAdult: false
+        siteUrl: https://anilist.co/anime/158791
+        studios:
+          edges:
+          - node:
+              id: 112
+              name: Brain's Base
+              siteUrl: https://anilist.co/studio/112
+            isMain: true
+          - node:
+              id: 112
+              name: Brain's Base
+              siteUrl: https://anilist.co/studio/112
+            isMain: false
+          - node:
+              id: 6421
+              name: Crunchyroll
+              siteUrl: https://anilist.co/studio/6421
+            isMain: false
+          - node:
+              id: 76
+              name: Yomiuri TV
+              siteUrl: https://anilist.co/studio/76
+            isMain: false
+          - node:
+              id: 159
+              name: Kodansha
+              siteUrl: https://anilist.co/studio/159
+            isMain: false
+        duration: 24
+        episodes: 23
+        synonyms:
+        - 'Firefighter! Daigo of Fire Company M: The Orange of National Salvation'
+        - 烈焰先鋒 救國的橘衣消防員
+        relations:
+          edges:
+          - node:
+              id: 124903
+              title:
+                native: め組の大吾 救国のオレンジ
+            relationType: ADAPTATION
+          - node:
+              id: 3147
+              title:
+                native: め組の大吾 火事場のバカヤロー
+            relationType: PREQUEL
+        seasonInt: 234
+        startDate:
+          day: 30
+          year: 2023
+          month: 9
+        coverImage:
+          color: '#e4ae5d'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158791-MjVI8OkR8z7k.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx158791-MjVI8OkR8z7k.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158791-MjVI8OkR8z7k.jpg
+        popularity: 11460
+        seasonYear: 2023
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/158791-wj9hbRc0lslE.jpg
+        externalLinks:
+        - id: 63130
+          url: https://meguminodaigo.com/
+          site: Official Site
+        - id: 63131
+          url: https://twitter.com/megumi_animeoff
+          site: Twitter
+        - id: 69774
+          url: https://www.crunchyroll.com/series/G0XHWM1MK/firefighter-daigo-rescuer-in-orange
+          site: Crunchyroll
+        - id: 79519
+          url: https://www.youtube.com/playlist?list=PLxSscENEp7JjUyg2zOamli_yuodl2aQFO
+          site: YouTube
+        - id: 89428
+          url: https://www.tiktok.com/@megumi_animeoff
+          site: TikTok
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: '[Ohys-Raws] Megumi no Daigo Kyuukoku no Orange - 07 (NTV 1920x1080 x264 AAC).mp4'
+      episode: 7
+      from: 1222.5547
+      at: 1222.5547
+      to: 1222.8883
+      duration: 1450.0266
+      similarity: 0.9493481168559953
+      video: https://api.trace.moe/video/rwUimRjBaIvhlLJJIZ6iNQK
+      image: https://api.trace.moe/image/rwUimRjBaIvhlLJJIZ6iNQK
+    - anilist:
+        id: 8041
+        type: ANIME
+        idMal: 8041
+        title:
+          native: 仙人部落
+          romaji: Sennin Buraku
+          chinese: 仙人部落
+          english: Hermit Village
+        format: TV_SHORT
+        genres:
+        - Comedy
+        - Ecchi
+        season: FALL
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 23
+          year: 1964
+          month: 2
+        isAdult: false
+        siteUrl: https://anilist.co/anime/8041
+        studios:
+          edges:
+          - node:
+              id: 191
+              name: Eiken
+              siteUrl: https://anilist.co/studio/191
+            isMain: true
+        duration: 15
+        episodes: 23
+        synonyms: []
+        relations:
+          edges:
+          - node:
+              id: 109840
+              title:
+                native: 仙人部落
+            relationType: ADAPTATION
+        seasonInt: 634
+        startDate:
+          day: 4
+          year: 1963
+          month: 9
+        coverImage:
+          color: '#e4505d'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b8041-TKyTyUXSlP3Z.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b8041-TKyTyUXSlP3Z.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b8041-TKyTyUXSlP3Z.jpg
+        popularity: 447
+        seasonYear: 1963
+        bannerImage: null
+        externalLinks:
+        - id: 44297
+          url: https://eiken-anime.jp/works/%e4%bb%99%e4%ba%ba%e9%83%a8%e8%90%bd/
+          site: Official Site
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: '[Leopard-Raws] Sennin Buraku - 05 RAW (JIGE 960x720 x264 AAC).mp4'
+      episode: 5
+      from: 393.5598
+      at: 394.6442
+      to: 396.1875
+      duration: 698.005
+      similarity: 0.9492964501474418
+      video: https://api.trace.moe/video/ORSxKdFqSeIOmupp32oIRc
+      image: https://api.trace.moe/image/ORSxKdFqSeIOmupp32oIRc
+    - anilist:
+        id: 187901
+        type: ANIME
+        idMal: 61196
+        title:
+          native: デッドアカウント
+          romaji: Dead Account
+          chinese: Dead Account
+          english: Dead Account
+        format: TV
+        genres:
+        - Action
+        - Supernatural
+        season: WINTER
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 28
+          year: 2026
+          month: 3
+        isAdult: false
+        siteUrl: https://anilist.co/anime/187901
+        studios:
+          edges:
+          - node:
+              id: 118
+              name: SynergySP
+              siteUrl: https://anilist.co/studio/118
+            isMain: true
+          - node:
+              id: 323
+              name: Nippon Columbia
+              siteUrl: https://anilist.co/studio/323
+            isMain: false
+          - node:
+              id: 159
+              name: Kodansha
+              siteUrl: https://anilist.co/studio/159
+            isMain: false
+          - node:
+              id: 55
+              name: TV Asahi
+              siteUrl: https://anilist.co/studio/55
+            isMain: false
+          - node:
+              id: 6424
+              name: Sammy
+              siteUrl: https://anilist.co/studio/6424
+            isMain: false
+          - node:
+              id: 6421
+              name: Crunchyroll
+              siteUrl: https://anilist.co/studio/6421
+            isMain: false
+          - node:
+              id: 118
+              name: SynergySP
+              siteUrl: https://anilist.co/studio/118
+            isMain: false
+          - node:
+              id: 6891
+              name: Bushiroad Move
+              siteUrl: https://anilist.co/studio/6891
+            isMain: false
+          - node:
+              id: 719
+              name: Studio Mausu
+              siteUrl: https://anilist.co/studio/719
+            isMain: false
+        duration: 24
+        episodes: 12
+        synonyms:
+        - デドアカ
+        - เดดแอ็กเคานต์ พิฆาตบัญชีมรณะ
+        relations:
+          edges:
+          - node:
+              id: 160460
+              title:
+                native: デッドアカウント
+            relationType: ADAPTATION
+        seasonInt: 261
+        startDate:
+          day: 10
+          year: 2026
+          month: 1
+        coverImage:
+          color: '#35bbf1'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187901-T91HmZAaNwOF.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx187901-T91HmZAaNwOF.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187901-T91HmZAaNwOF.jpg
+        popularity: 20295
+        seasonYear: 2026
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/187901-03I5T8QVX1FG.jpg
+        externalLinks:
+        - id: 108908
+          url: https://x.com/DDAC_WM/
+          site: Twitter
+        - id: 108909
+          url: https://dead-account.com
+          site: Official Site
+        - id: 141618
+          url: https://www.crunchyroll.com/series/GT00365559/dead-account
+          site: Crunchyroll
+        - id: 144477
+          url: https://www.bilibili.tv/en/media/2288703
+          site: Bilibili TV
+        - id: 144478
+          url: https://www.youtube.com/playlist?list=PLxSscENEp7JiQXR4zJbzIwxsiMHu_HSZK
+          site: YouTube
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - 死亡帳號
+      filename: '[SubsPlease] Dead Account - 01 (720p) [AD60A1AB].mkv'
+      episode: 1
+      from: 377.961
+      at: 378.086
+      to: 378.337
+      duration: 1417.021
+      similarity: 0.9492624694225835
+      video: https://api.trace.moe/video/upgxc9XBfTV7Tg11vqaLKj0
+      image: https://api.trace.moe/image/upgxc9XBfTV7Tg11vqaLKj0
+    - anilist:
+        id: 122441
+        type: ANIME
+        idMal: 42627
+        title:
+          native: ピーチボーイリバーサイド
+          romaji: Peach Boy Riverside
+          chinese: Peach Boy Riverside
+          english: Peach Boy Riverside
+        format: TV
+        genres:
+        - Adventure
+        - Fantasy
+        season: SUMMER
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 16
+          year: 2021
+          month: 9
+        isAdult: false
+        siteUrl: https://anilist.co/anime/122441
+        studios:
+          edges:
+          - node:
+              id: 406
+              name: Asahi Production
+              siteUrl: https://anilist.co/studio/406
+            isMain: true
+          - node:
+              id: 159
+              name: Kodansha
+              siteUrl: https://anilist.co/studio/159
+            isMain: false
+          - node:
+              id: 6994
+              name: BS Nippon
+              siteUrl: https://anilist.co/studio/6994
+            isMain: false
+          - node:
+              id: 64
+              name: Sotsu
+              siteUrl: https://anilist.co/studio/64
+            isMain: false
+          - node:
+              id: 6417
+              name: AQUA ARIS
+              siteUrl: https://anilist.co/studio/6417
+            isMain: false
+          - node:
+              id: 460
+              name: KLOCKWORX
+              siteUrl: https://anilist.co/studio/460
+            isMain: false
+          - node:
+              id: 6944
+              name: Toei Agency
+              siteUrl: https://anilist.co/studio/6944
+            isMain: false
+          - node:
+              id: 6715
+              name: Toy's Factory
+              siteUrl: https://anilist.co/studio/6715
+            isMain: false
+          - node:
+              id: 29
+              name: VAP
+              siteUrl: https://anilist.co/studio/29
+            isMain: false
+          - node:
+              id: 6674
+              name: GREE
+              siteUrl: https://anilist.co/studio/6674
+            isMain: false
+          - node:
+              id: 6259
+              name: TOKYO MX
+              siteUrl: https://anilist.co/studio/6259
+            isMain: false
+          - node:
+              id: 6995
+              name: Exa International
+              siteUrl: https://anilist.co/studio/6995
+            isMain: false
+          - node:
+              id: 6996
+              name: A3
+              siteUrl: https://anilist.co/studio/6996
+            isMain: false
+        duration: 24
+        episodes: 12
+        synonyms:
+        - พีชบอยริเวอร์ไซด์
+        relations:
+          edges:
+          - node:
+              id: 95895
+              title:
+                native: ピーチボーイリバーサイド
+            relationType: ADAPTATION
+          - node:
+              id: 152001
+              title:
+                native: ピーチボーイリバーサイド ミニアニメ
+            relationType: OTHER
+        seasonInt: 213
+        startDate:
+          day: 1
+          year: 2021
+          month: 7
+        coverImage:
+          color: '#a15de4'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx122441-5qlQC5Ka8k9W.png
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx122441-5qlQC5Ka8k9W.png
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx122441-5qlQC5Ka8k9W.png
+        popularity: 57804
+        seasonYear: 2021
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/122441-nKGOnvqkpAxm.jpg
+        externalLinks:
+        - id: 21729
+          url: https://peachboyriverside.com/
+          site: Official Site
+        - id: 21730
+          url: https://twitter.com/peachboy_anime
+          site: Twitter
+        - id: 35160
+          url: https://www.crunchyroll.com/series/GG5H5XM84/peach-boy-riverside
+          site: Crunchyroll
+        - id: 37570
+          url: https://www.youtube.com/playlist?list=PLxSscENEp7Jh8mDfdlDbC1fVDFoAMiDR4
+          site: YouTube
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - 桃子男孩渡海而來
+      filename: '[Ohys-Raws] Peach Boy Riverside - 11 (AT-X 1280x720 x264 AAC).mp4'
+      episode: 11
+      from: 761.7193
+      at: 762.053
+      to: 762.0947
+      duration: 1440.128
+      similarity: 0.9490625418868719
+      video: https://api.trace.moe/video/ulhscZAPVTV7Tg11vGWSwGK
+      image: https://api.trace.moe/image/ulhscZAPVTV7Tg11vGWSwGK
+    - anilist:
+        id: 122441
+        type: ANIME
+        idMal: 42627
+        title:
+          native: ピーチボーイリバーサイド
+          romaji: Peach Boy Riverside
+          chinese: Peach Boy Riverside
+          english: Peach Boy Riverside
+        format: TV
+        genres:
+        - Adventure
+        - Fantasy
+        season: SUMMER
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 16
+          year: 2021
+          month: 9
+        isAdult: false
+        siteUrl: https://anilist.co/anime/122441
+        studios:
+          edges:
+          - node:
+              id: 406
+              name: Asahi Production
+              siteUrl: https://anilist.co/studio/406
+            isMain: true
+          - node:
+              id: 159
+              name: Kodansha
+              siteUrl: https://anilist.co/studio/159
+            isMain: false
+          - node:
+              id: 6994
+              name: BS Nippon
+              siteUrl: https://anilist.co/studio/6994
+            isMain: false
+          - node:
+              id: 64
+              name: Sotsu
+              siteUrl: https://anilist.co/studio/64
+            isMain: false
+          - node:
+              id: 6417
+              name: AQUA ARIS
+              siteUrl: https://anilist.co/studio/6417
+            isMain: false
+          - node:
+              id: 460
+              name: KLOCKWORX
+              siteUrl: https://anilist.co/studio/460
+            isMain: false
+          - node:
+              id: 6944
+              name: Toei Agency
+              siteUrl: https://anilist.co/studio/6944
+            isMain: false
+          - node:
+              id: 6715
+              name: Toy's Factory
+              siteUrl: https://anilist.co/studio/6715
+            isMain: false
+          - node:
+              id: 29
+              name: VAP
+              siteUrl: https://anilist.co/studio/29
+            isMain: false
+          - node:
+              id: 6674
+              name: GREE
+              siteUrl: https://anilist.co/studio/6674
+            isMain: false
+          - node:
+              id: 6259
+              name: TOKYO MX
+              siteUrl: https://anilist.co/studio/6259
+            isMain: false
+          - node:
+              id: 6995
+              name: Exa International
+              siteUrl: https://anilist.co/studio/6995
+            isMain: false
+          - node:
+              id: 6996
+              name: A3
+              siteUrl: https://anilist.co/studio/6996
+            isMain: false
+        duration: 24
+        episodes: 12
+        synonyms:
+        - พีชบอยริเวอร์ไซด์
+        relations:
+          edges:
+          - node:
+              id: 95895
+              title:
+                native: ピーチボーイリバーサイド
+            relationType: ADAPTATION
+          - node:
+              id: 152001
+              title:
+                native: ピーチボーイリバーサイド ミニアニメ
+            relationType: OTHER
+        seasonInt: 213
+        startDate:
+          day: 1
+          year: 2021
+          month: 7
+        coverImage:
+          color: '#a15de4'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx122441-5qlQC5Ka8k9W.png
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx122441-5qlQC5Ka8k9W.png
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx122441-5qlQC5Ka8k9W.png
+        popularity: 57804
+        seasonYear: 2021
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/122441-nKGOnvqkpAxm.jpg
+        externalLinks:
+        - id: 21729
+          url: https://peachboyriverside.com/
+          site: Official Site
+        - id: 21730
+          url: https://twitter.com/peachboy_anime
+          site: Twitter
+        - id: 35160
+          url: https://www.crunchyroll.com/series/GG5H5XM84/peach-boy-riverside
+          site: Crunchyroll
+        - id: 37570
+          url: https://www.youtube.com/playlist?list=PLxSscENEp7Jh8mDfdlDbC1fVDFoAMiDR4
+          site: YouTube
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - 桃子男孩渡海而來
+      filename: '[Ohys-Raws] Peach Boy Riverside - 11 (AT-X 1280x720 x264 AAC) v2.mp4'
+      episode: 11
+      from: 761.7193
+      at: 762.053
+      to: 762.0947
+      duration: 1440.128
+      similarity: 0.9490625418868719
+      video: https://api.trace.moe/video/PksCqKlcJ6t5KdII2FeZRTG
+      image: https://api.trace.moe/image/PksCqKlcJ6t5KdII2FeZRTG
+  body_text: null
+  body_b64: null

@@ -1,0 +1,55 @@
+metadata:
+  captured_at: '2026-05-07T11:25:25Z'
+  label: bad-query
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ NotARealField }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=6ZKTmmS1zjb1c73R; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:24 GMT, __ddg10_=1778153124;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:24 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:45:24 GMT, __ddg1_=oX742cVYUxhCEsb9MweS; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:25:24 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:24 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"0e76c0ee887851bfce4da5d98d06efd5"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: c5117d00-aaa1-4993-a4c1-e142fa9ff899
+    X-Runtime: '0.002780'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    errors:
+    - message: Field 'NotARealField' doesn't exist on type 'Query'
+      locations:
+      - line: 1
+        column: 3
+      path:
+      - query
+      - NotARealField
+      extensions:
+        code: undefinedField
+        typeName: Query
+        fieldName: NotARealField
+  body_text: null
+  body_b64: null

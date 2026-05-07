@@ -1,0 +1,80 @@
+metadata:
+  captured_at: '2026-05-07T11:17:30Z'
+  label: meta-category
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Bcategory%5D=5&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:30 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"9660dd4585afc38f76e669d46f230c50"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=%2Bvfu0tbAHuCwYbWqIQbg6vRNHdgZQcA9lYY2DceXOmT5FiaqW2F%2F9sOxgID1Zlnw3qdjQHchs19sNrtuM0GO%2BXZp0F3ZOULaTOqBOK3pDrnm3ScTJCB2An4CQwWseo4GBgNw9M9GsneRdeeXBDE%2BpK0tLBozBpE97h9OMt%2B8nD%2FNBFdHn0f%2FBVJUkGNrRSU7WPaZKmVW57XKUpX03o%2BbhT8rV%2Fn2m20a8knwso3FKNB5sR1HY%2B8%2BfS4XbWoUjCttlhklQk7P%2Fsiub2IwNi%2FIiGkatmSzt09noWmAiW7lkyE%3D--FX98phMPrCn2%2FVzt--DSoz6f8NPCMAtZU5HhuXUg%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:30 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd1906b3ecffb-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=6.0978, rails.cpu_time;dur=2.255, rails.idle_time;dur=3.8427,
+      rails.sql_time;dur=4.004, rails.view_time;dur=4.3011, rails.allocations;count=1617, request.allocations;count=2133,
+      request.gc_time;dur=0.1907, request.gc_count;count=0, request.cpu_time;dur=2.9475, request.total_time;dur=6.7904, request.queue_time_0;dur=1.5218,
+      request.queue_time_1;dur=97.0001
+    x-runtime: '0.0067904205322265624'
+    via: 172.69.63.183, gura, ame/danbooru-768bdd4cff-xbttn
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=dTYbfOrbfRmrExwX6MpKQC9ZwrGrmBk4nRg07Yihzopw9kQi%2BIhaQ%2BgDzCYsjRGhJz3dIMOzd4YQ3J3eHQJQC%2FF3Bw7U1PK4N6mqoPibjKo3OgvGgaQAK%2FuDYLOiHGU5yK6UkA%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd1906b3ecffb-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2620632
+    name: cosplay-referenced
+    post_count: 89
+    category: 5
+    created_at: '2026-05-05T16:51:23.032-04:00'
+    updated_at: '2026-05-05T16:51:23.032-04:00'
+    is_deprecated: false
+    words:
+    - cosplay
+    - referenced
+  - id: 2619909
+    name: hair_study
+    post_count: 1
+    category: 5
+    created_at: '2026-05-04T16:25:51.321-04:00'
+    updated_at: '2026-05-04T16:25:51.321-04:00'
+    is_deprecated: false
+    words:
+    - hair
+    - study
+  - id: 2619809
+    name: plate_(medium)
+    post_count: 8
+    category: 5
+    created_at: '2026-05-04T13:55:55.353-04:00'
+    updated_at: '2026-05-04T13:55:55.353-04:00'
+    is_deprecated: false
+    words:
+    - plate
+    - medium
+  body_text: null
+  body_b64: null

@@ -1,0 +1,66 @@
+metadata:
+  captured_at: '2026-05-07T11:00:55Z'
+  label: trending-anime
+  backend: anilist
+  path_slug: graphql
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Page(perPage:5){ media(sort:TRENDING_DESC,type:ANIME){ id title{romaji} popularity } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:00:55 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '9'
+    Set-Cookie: laravel_session=ijWzDbqbnjgKEcWmh6TtkvzMTWRUDO99eYY05ycJ; expires=Thu, 07-May-2026 23:00:54 GMT; Max-Age=43200;
+      path=/; httponly
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=jPCdtWJFgGKqyQ5ChP4rBUYroIbdAxANkfiKRm3O5SFazNybSVkJCzin4pCMf4bH23FFJUzQUeWnXs%2BZs9TQpeClyI0lKzJGkWNjS18kwsUiYDs5fK8blffeEtJkmE%2BTRSprVg%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fb942c8ee006e-KIX
+  body_json:
+    data:
+      Page:
+        media:
+        - id: 189046
+          title:
+            romaji: Re:Zero kara Hajimeru Isekai Seikatsu 4th Season
+          popularity: 81506
+        - id: 180745
+          title:
+            romaji: Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 4th Season 2-nensei-hen Ichi Gakki
+          popularity: 75937
+        - id: 147105
+          title:
+            romaji: Tongari Boushi no Atelier
+          popularity: 125386
+        - id: 21
+          title:
+            romaji: ONE PIECE
+          popularity: 689723
+        - id: 199588
+          title:
+            romaji: Otaku ni Yasashii Gal wa Inai!?
+          popularity: 34171
+  body_text: null
+  body_b64: null

@@ -1,0 +1,63 @@
+metadata:
+  captured_at: '2026-05-07T11:25:20Z'
+  label: animes-with-genres-field
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(ids:"52991"){ id name genres { id name kind }}}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=r42ULfgXDzdc8Spa; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:20 GMT, __ddg10_=1778153120;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:20 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:45:20 GMT, __ddg1_=SD6W3ZwxpbMHTUXnVqFb; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:25:20 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:20 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"b9d803bf766477587c5c0dbf1849a1ee"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: c9ca30a8-8129-4527-b8ee-e9f044a4c209
+    X-Runtime: '0.009582'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes:
+      - id: '52991'
+        name: Sousou no Frieren
+        genres:
+        - id: '27'
+          name: Shounen
+          kind: demographic
+        - id: '2'
+          name: Adventure
+          kind: genre
+        - id: '8'
+          name: Drama
+          kind: genre
+        - id: '10'
+          name: Fantasy
+          kind: genre
+        - id: '114'
+          name: Award Winning
+          kind: theme
+  body_text: null
+  body_b64: null

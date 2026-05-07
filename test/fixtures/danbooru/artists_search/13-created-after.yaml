@@ -1,0 +1,68 @@
+metadata:
+  captured_at: '2026-05-07T11:17:45Z'
+  label: created-after
+  backend: danbooru
+  path_slug: artists_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artists.json?search%5Bcreated_at%5D=%3E2020-01-01&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:45 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"dd994f76aefe2e45c6bbf6fb84615b7f"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=W5r3egWHOQVQaeOu9ZNgQe7EfagtKbHXwykFXg8%2FsletcAOd%2BR7Sz8ALLCaY0Mee7nKiR6jvlZVhC6eQH%2FVtjZxc22jxibXb1xvBwqk3qySs4MuS4KDtNDNBsGiHBCmp1WcDA6q8e9ce88pF9RZDlP8TTfCT9PRtjpWsRyaeEUz1PKNt%2BgjiGLcDDmGOEFdOF8wej6NuzmTwkEEc2s4RQ1EGIvRyY2Rx9aFiLAQ9azjw3ZORYJe4D9QHmEskmfmOryWkh4IrDuUs1qAyRbehaKq38HdMqHMcmTbyDkl44MM%3D--IE68fkQQhmEovLdN--2mm0Lps402%2FeQGjEGM0Ing%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:45 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd1edc905b105-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.8875, rails.cpu_time;dur=3.1056, rails.idle_time;dur=0.7819,
+      rails.sql_time;dur=0.7367, rails.view_time;dur=1.0893, rails.allocations;count=1938, request.allocations;count=2448,
+      request.gc_time;dur=0.1203, request.gc_count;count=0, request.cpu_time;dur=3.7148, request.total_time;dur=4.4966, request.queue_time_0;dur=1.3757,
+      request.queue_time_1;dur=92.0
+    x-runtime: '0.00449664306640625'
+    via: 141.101.86.23, gura, gura/danbooru-768bdd4cff-txl6f
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=R%2FgzoA4oAa8uKmiR42ihrml12bwB3cZUrnGVJjz0kCKr1FowENl6zupZhzN9hg%2B1y1I5XcbDdYWvvMpqmRAjX3z95ySl2MtPQBgcDlqvkHH0ZoBsLXGvMzpH%2FVh08gD%2BPu52Sg%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd1edc905b105-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 636964
+    created_at: '2026-05-07T07:16:21.580-04:00'
+    name: pedriboy
+    updated_at: '2026-05-07T07:16:21.590-04:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: false
+    other_names: []
+  - id: 636963
+    created_at: '2026-05-07T07:10:01.951-04:00'
+    name: mumukokosan
+    updated_at: '2026-05-07T07:10:01.955-04:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: false
+    other_names:
+    - むぎむぎ
+    - mugimugi
+  body_text: null
+  body_b64: null

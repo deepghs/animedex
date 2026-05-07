@@ -1,0 +1,80 @@
+metadata:
+  captured_at: '2026-05-07T11:17:21Z'
+  label: touhou-prefix
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Bname_matches%5D=touhou*&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:21 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"4341d3b8bbe1e1f50533008bf96d43cf"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=IRDjUVtHdEtBDTklxeF99tBWJXbXhH5ulHJOxqoWZbktsPiqTY7aqZCc7CEAPwj%2FZ5WXaVWDPRiutLik4K636hrDt21T950T8jIkuFWwfSBmGdM%2Fw1wOJZqYoqPnGatZNFhYfXltQWinioZwfyISsOkzxzl%2Fwng58qR6NexjZBAxo5JYYikglXEUHGyUrryETi9Mha1TbLDBixNgSUKYWysZQouVx92rBS9fCDxcJtkj17MFO3zCmBIfcKPkSZsuyMrOGypDLi6zIgS8A0nkxOW6i2sHK%2BjwTF8U4m4NAAk%3D--5d%2FIIZ6U6EGQ4p8B--ZsyXX2kzU0HRO5kXRWBk5g%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:21 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd155caadd003-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=5.1071, rails.cpu_time;dur=3.179, rails.idle_time;dur=1.9281,
+      rails.sql_time;dur=2.1673, rails.view_time;dur=2.8043, rails.allocations;count=1604, request.allocations;count=2112,
+      request.gc_time;dur=0.166, request.gc_count;count=0, request.cpu_time;dur=4.5021, request.total_time;dur=6.4154, request.queue_time_0;dur=0.8786,
+      request.queue_time_1;dur=96.9999
+    x-runtime: '0.006415435791015625'
+    via: 172.69.63.183, gura, gura/danbooru-768bdd4cff-r5hzw
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=2xOZDSy%2B7q%2BRIba3hsKSSN448qJ%2FO9KdcpQHFvdm%2BmppQWkVrBrPRagswvlBCTEF6ft50iv1Rkq8AQGdS3PpuhxRn9lqEWPLI8AyJClhbKmKl1Ky%2FaxY%2FxGJn3hP3A1a5qei1g%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd155caadd003-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2606184
+    name: touhou_futanari_scarlet_escape
+    post_count: 101
+    category: 3
+    created_at: '2026-04-19T08:51:12.297-04:00'
+    updated_at: '2026-04-19T08:51:12.297-04:00'
+    is_deprecated: false
+    words:
+    - touhou
+    - futanari
+    - scarlet
+    - escape
+  - id: 2600518
+    name: touhoufest
+    post_count: 3
+    category: 3
+    created_at: '2026-04-11T20:23:58.811-04:00'
+    updated_at: '2026-04-11T20:23:58.811-04:00'
+    is_deprecated: false
+    words:
+    - touhoufest
+  - id: 2595245
+    name: touhou2
+    post_count: 0
+    category: 0
+    created_at: '2026-04-05T15:28:44.913-04:00'
+    updated_at: '2026-04-05T15:28:44.913-04:00'
+    is_deprecated: false
+    words:
+    - touhou2
+  body_text: null
+  body_b64: null

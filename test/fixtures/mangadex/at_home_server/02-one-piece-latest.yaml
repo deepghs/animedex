@@ -1,0 +1,54 @@
+metadata:
+  captured_at: '2026-05-07T11:10:12Z'
+  label: one-piece-latest
+  backend: mangadex
+  path_slug: at_home_server
+request:
+  method: GET
+  url: https://api.mangadex.org/at-home/server/f7d2cb75-83b2-426b-bdbd-032870c30abb
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Thu, 07 May 2026 11:10:12 GMT
+    x-ratelimit-remaining: '38'
+    x-ratelimit-retry-after: '1778152212'
+    x-ratelimit-limit: '40'
+    x-ratelimit-retry-in: '0'
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '124'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x2
+    x-request-id: 4d53de4f-2e24-418f-8a1c-d7937cf89718
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    baseUrl: https://cmdxd98sb0x3yprd.mangadex.network
+    chapter:
+      hash: ''
+      data: []
+      dataSaver: []
+  body_text: null
+  body_b64: null

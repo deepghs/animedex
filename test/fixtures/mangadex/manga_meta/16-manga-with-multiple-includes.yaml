@@ -1,0 +1,153 @@
+metadata:
+  captured_at: '2026-05-07T11:09:58Z'
+  label: manga-with-multiple-includes
+  backend: mangadex
+  path_slug: manga_meta
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Frieren&includes%5B%5D=cover_art&includes%5B%5D=author&limit=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:58 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x2
+    x-request-id: 05397077-3704-4a94-ba84-85b3d9739911
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: d1e038c4-d931-4525-9b1b-b943e2a7d7e1
+      type: manga
+      attributes:
+        title:
+          ja-ro: Frieren Cinnamoroll Kamigata
+        altTitles:
+        - pt-br: Fern Amarra o Cabelo de Frieren.
+        - en: Fern ties Frieren’s hair
+        - ja: フリーレンシナモロール髪型
+        description: {}
+        isLocked: false
+        links:
+          raw: https://twitter.com/i/status/2021936596204056645
+        officialLinks: null
+        originalLanguage: ko
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: null
+        status: completed
+        year: 2026
+        contentRating: safe
+        tags:
+        - id: 0234a31e-a729-4e28-9d6a-3f87c4966b9e
+          type: tag
+          attributes:
+            name:
+              en: Oneshot
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: e197df38-d0e7-43b5-9b09-2842d0c326dd
+          type: tag
+          attributes:
+            name:
+              en: Web Comic
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2026-02-17T05:49:24+00:00'
+        updatedAt: '2026-02-20T12:33:03+00:00'
+        version: 4
+        availableTranslatedLanguages:
+        - en
+        - zh-hk
+        - pt-br
+        - zh
+        - ru
+        - fr
+        latestUploadedChapter: f14361ec-e4d9-4804-a2ba-e24c6d5c837f
+      relationships:
+      - id: 6ad516a3-be52-47e2-994b-7d191625be49
+        type: author
+        attributes:
+          name: FriFri1213
+          imageUrl: null
+          biography: {}
+          twitter: https://twitter.com/FriFri1213
+          pixiv: null
+          melonBook: null
+          fanBox: null
+          booth: null
+          namicomi: null
+          nicoVideo: null
+          skeb: null
+          fantia: null
+          tumblr: null
+          youtube: null
+          weibo: null
+          naver: null
+          website: null
+          createdAt: '2026-02-16T07:42:32+00:00'
+          updatedAt: '2026-03-24T10:02:25+00:00'
+          version: 2
+      - id: 6ad516a3-be52-47e2-994b-7d191625be49
+        type: artist
+      - id: 6cf446fb-4295-4289-8182-7821d6bbab5b
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '1'
+          fileName: 6a264b94-e30e-4d1d-8f75-817aa7e478b9.jpg
+          locale: ko
+          createdAt: '2026-02-17T05:49:26+00:00'
+          updatedAt: '2026-02-17T05:49:26+00:00'
+          version: 1
+      - id: b0b721ff-c388-4486-aa0f-c2b0bb321512
+        type: manga
+        related: based_on
+      - id: 6f6a4d7c-3344-47a5-af94-181ee786faaf
+        type: creator
+    limit: 1
+    offset: 0
+    total: 11
+  body_text: null
+  body_b64: null

@@ -1,0 +1,105 @@
+metadata:
+  captured_at: '2026-05-07T11:08:14Z'
+  label: monster-1855
+  backend: kitsu
+  path_slug: anime_mappings
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/1855/mappings?page%5Blimit%5D=10
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:14 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"5c08bee249ac0e50ae244fc160c2c5eb"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 6ae35514-c7fa-4724-9fe8-f80d5721961a
+    x-runtime: '0.048743'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=VAYMllAc83mcZ9oRTODDL67ow%2FLXIKBtJLHWfQfoh1aozPmfkZFNWAIKeJDHXV1wu7u55r47kFRhhsaVOwvJ%2BauJYrVUFJX5Z0Thu4S5%2FAHvZEtUmC%2Fvwd0Ilg%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc3fcbb48d3fd-KIX
+  body_json:
+    data:
+    - id: '4326'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/4326
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: myanimelist/anime
+        externalId: '2056'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/4326/relationships/item
+            related: https://kitsu.io/api/edge/mappings/4326/item
+    - id: '57538'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/57538
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: anidb
+        externalId: '4027'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/57538/relationships/item
+            related: https://kitsu.io/api/edge/mappings/57538/item
+    - id: '72831'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/72831
+      attributes:
+        createdAt: '2018-01-24T03:57:35.070Z'
+        updatedAt: '2018-01-24T03:57:35.070Z'
+        externalSite: aozora
+        externalId: m4M84Hk0qD
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/72831/relationships/item
+            related: https://kitsu.io/api/edge/mappings/72831/item
+    - id: '267996'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/267996
+      attributes:
+        createdAt: '2020-05-21T20:14:48.946Z'
+        updatedAt: '2020-05-21T20:14:48.946Z'
+        externalSite: anilist/anime
+        externalId: '2056'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/267996/relationships/item
+            related: https://kitsu.io/api/edge/mappings/267996/item
+    meta:
+      count: 4
+    links:
+      first: https://kitsu.io/api/edge/anime/1855/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/1855/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

@@ -1,0 +1,493 @@
+metadata:
+  captured_at: '2026-05-07T11:02:46Z'
+  label: by-rating-r
+  backend: jikan
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime?rating=r&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:02:45 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 417
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 1250
+        per_page: 3
+    data:
+    - mal_id: 19
+      url: https://myanimelist.net/anime/19/Monster
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/10/18793.jpg
+          small_image_url: https://myanimelist.net/images/anime/10/18793t.jpg
+          large_image_url: https://myanimelist.net/images/anime/10/18793l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/10/18793.webp
+          small_image_url: https://myanimelist.net/images/anime/10/18793t.webp
+          large_image_url: https://myanimelist.net/images/anime/10/18793l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Monster
+      - type: Japanese
+        title: モンスター
+      - type: English
+        title: Monster
+      title: Monster
+      title_english: Monster
+      title_japanese: モンスター
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 74
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2004-04-07T00:00:00+00:00'
+        to: '2005-09-28T00:00:00+00:00'
+        prop:
+          from:
+            day: 7
+            month: 4
+            year: 2004
+          to:
+            day: 28
+            month: 9
+            year: 2005
+        string: Apr 7, 2004 to Sep 28, 2005
+      duration: 24 min per ep
+      rating: R+ - Mild Nudity
+      score: 8.89
+      scored_by: 511645
+      rank: 27
+      popularity: 115
+      members: 1327741
+      favorites: 62033
+      synopsis: "Dr. Kenzou Tenma, an elite neurosurgeon recently engaged to his hospital director's daughter, is well on\
+        \ his way to ascending the hospital hierarchy. That is until one night, a seemingly small event changes Dr. Tenma's\
+        \ life forever. While preparing to perform surgery on someone, he gets a call from the hospital director telling him\
+        \ to switch patients and instead perform life-saving brain surgery on a famous performer. His fellow doctors, fiancée,\
+        \ and the hospital director applaud his accomplishment; but because of the switch, a poor immigrant worker is dead,\
+        \ causing Dr. Tenma to have a crisis of conscience.\n\nSo when a similar situation arises, Dr. Tenma stands his ground\
+        \ and chooses to perform surgery on the young boy Johan Liebert instead of the town's mayor. Unfortunately, this choice\
+        \ leads to serious ramifications for Dr. Tenma—losing his social standing being one of them. However, with the mysterious\
+        \ death of the director and two other doctors, Dr. Tenma's position is restored. With no evidence to convict him,\
+        \ he is released and goes on to attain the position of hospital director. \n\nNine years later when Dr. Tenma saves\
+        \ the life of a criminal, his past comes back to haunt him—once again, he comes face to face with the monster he operated\
+        \ on. He must now embark on a quest of pursuit to make amends for the havoc spread by the one he saved.\n\n[Written\
+        \ by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2004
+      broadcast:
+        day: Wednesdays
+        time: 00:40
+        timezone: Asia/Tokyo
+        string: Wednesdays at 00:40 (JST)
+      producers:
+      - mal_id: 29
+        type: anime
+        name: VAP
+        url: https://myanimelist.net/anime/producer/29/VAP
+      - mal_id: 1003
+        type: anime
+        name: Nippon Television Network
+        url: https://myanimelist.net/anime/producer/1003/Nippon_Television_Network
+      - mal_id: 3172
+        type: anime
+        name: Arts Pro
+        url: https://myanimelist.net/anime/producer/3172/Arts_Pro
+      licensors:
+      - mal_id: 119
+        type: anime
+        name: VIZ Media
+        url: https://myanimelist.net/anime/producer/119/VIZ_Media
+      - mal_id: 467
+        type: anime
+        name: Discotek Media
+        url: https://myanimelist.net/anime/producer/467/Discotek_Media
+      studios:
+      - mal_id: 11
+        type: anime
+        name: Madhouse
+        url: https://myanimelist.net/anime/producer/11/Madhouse
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 7
+        type: anime
+        name: Mystery
+        url: https://myanimelist.net/anime/genre/7/Mystery
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 50
+        type: anime
+        name: Adult Cast
+        url: https://myanimelist.net/anime/genre/50/Adult_Cast
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+    - mal_id: 26
+      url: https://myanimelist.net/anime/26/Texhnolyze
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1027/131977.jpg
+          small_image_url: https://myanimelist.net/images/anime/1027/131977t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1027/131977l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1027/131977.webp
+          small_image_url: https://myanimelist.net/images/anime/1027/131977t.webp
+          large_image_url: https://myanimelist.net/images/anime/1027/131977l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/Z19QTGvwg9I?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Texhnolyze
+      - type: Synonym
+        title: Technolyze
+      - type: Japanese
+        title: TEXHNOLYZE
+      - type: English
+        title: Texhnolyze
+      title: Texhnolyze
+      title_english: Texhnolyze
+      title_japanese: TEXHNOLYZE
+      title_synonyms:
+      - Technolyze
+      type: TV
+      source: Original
+      episodes: 22
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2003-04-17T00:00:00+00:00'
+        to: '2003-09-25T00:00:00+00:00'
+        prop:
+          from:
+            day: 17
+            month: 4
+            year: 2003
+          to:
+            day: 25
+            month: 9
+            year: 2003
+        string: Apr 17, 2003 to Sep 25, 2003
+      duration: 23 min per ep
+      rating: R+ - Mild Nudity
+      score: 7.77
+      scored_by: 64109
+      rank: 1269
+      popularity: 969
+      members: 290135
+      favorites: 5703
+      synopsis: |-
+        In the dark underground city of Lux, people live in fear and despair under the rule of various criminal factions. Almost secluded from the surface, the gangs' only interaction with the outer world is their mining operation of "raffia," which is the raison d'être of the city.
+
+        Available only in Lux, this rare substance is the basis of "texhnolyze" transplants that permit humans to replace parts of their body with cybernetic prostheses. The latter have the particularity not to trigger an immune response in their hosts and the "Class" has the privilege to conduct research on them. This elusive organization, also in charge of the raffia production, delegates its executive authority to a group called Organo led by Keigo Oonishi—a self-righteous man with texhnolyzed legs who is rumored to hear the "voice of the city."
+
+        The fragile balance of powers in Lux is disturbed when a mysterious visitor named Kazuho Yoshii begins committing a series of crimes that puts the gangs at each other's throats. In the midst of the chaos, new actors emerge: Ichise, an ex-boxer mutilated by Organo and recently texhnolyzed by Eriko "Doc" Kamata; and Ran, a young florist who can see the future. While Lux steadily plunges into insanity, both Ichise and Ran find themselves involved in the greatest crisis the city has ever faced.
+
+        [Written by MAL Rewrite]
+      background: Texhnolyze was released on DVD in six volumes by Geneon Entertainment Inc. from April 6, 2004 to February
+        22, 2005. Funimation Entertainment later republished the series in a complete DVD collection on August 28, 2012.
+      season: spring
+      year: 2003
+      broadcast:
+        day: Thursdays
+        time: 03:28
+        timezone: Asia/Tokyo
+        string: Thursdays at 03:28 (JST)
+      producers:
+      - mal_id: 86
+        type: anime
+        name: Group TAC
+        url: https://myanimelist.net/anime/producer/86/Group_TAC
+      - mal_id: 160
+        type: anime
+        name: Rondo Robe
+        url: https://myanimelist.net/anime/producer/160/Rondo_Robe
+      - mal_id: 169
+        type: anime
+        name: Fuji TV
+        url: https://myanimelist.net/anime/producer/169/Fuji_TV
+      - mal_id: 204
+        type: anime
+        name: Pioneer LDC
+        url: https://myanimelist.net/anime/producer/204/Pioneer_LDC
+      - mal_id: 211
+        type: anime
+        name: Rakuonsha
+        url: https://myanimelist.net/anime/producer/211/Rakuonsha
+      - mal_id: 1459
+        type: anime
+        name: Geneon Entertainment USA
+        url: https://myanimelist.net/anime/producer/1459/Geneon_Entertainment_USA
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 11
+        type: anime
+        name: Madhouse
+        url: https://myanimelist.net/anime/producer/11/Madhouse
+      genres:
+      - mal_id: 5
+        type: anime
+        name: Avant Garde
+        url: https://myanimelist.net/anime/genre/5/Avant_Garde
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 7
+        type: anime
+        name: Mystery
+        url: https://myanimelist.net/anime/genre/7/Mystery
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 50
+        type: anime
+        name: Adult Cast
+        url: https://myanimelist.net/anime/genre/50/Adult_Cast
+      - mal_id: 68
+        type: anime
+        name: Organized Crime
+        url: https://myanimelist.net/anime/genre/68/Organized_Crime
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      demographics: []
+    - mal_id: 32
+      url: https://myanimelist.net/anime/32/Shinseiki_Evangelion_Movie__Air_Magokoro_wo_Kimi_ni
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1404/98182.jpg
+          small_image_url: https://myanimelist.net/images/anime/1404/98182t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1404/98182l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1404/98182.webp
+          small_image_url: https://myanimelist.net/images/anime/1404/98182t.webp
+          large_image_url: https://myanimelist.net/images/anime/1404/98182l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/v1pWyWIu8x4?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni'
+      - type: Synonym
+        title: 'Shinseiki Evangelion Gekijouban: The End of Evangelion'
+      - type: Synonym
+        title: EoE
+      - type: Japanese
+        title: 新世紀エヴァンゲリオン劇場版 Air / まごころを, 君に
+      - type: English
+        title: 'Neon Genesis Evangelion: The End of Evangelion'
+      title: 'Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni'
+      title_english: 'Neon Genesis Evangelion: The End of Evangelion'
+      title_japanese: 新世紀エヴァンゲリオン劇場版 Air / まごころを, 君に
+      title_synonyms:
+      - 'Shinseiki Evangelion Gekijouban: The End of Evangelion'
+      - EoE
+      type: Movie
+      source: Original
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '1997-07-19T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 19
+            month: 7
+            year: 1997
+          to:
+            day: null
+            month: null
+            year: null
+        string: Jul 19, 1997
+      duration: 1 hr 26 min
+      rating: R+ - Mild Nudity
+      score: 8.57
+      scored_by: 696423
+      rank: 127
+      popularity: 178
+      members: 1042131
+      favorites: 32464
+      synopsis: |-
+        Shinji Ikari is left emotionally comatose after the death of a dear friend. With his son mentally unable to pilot the humanoid robot Evangelion Unit-01, Gendou Ikari's NERV races against the shadow organization SEELE to see who can enact their ultimate plan first. SEELE desires to create a godlike being by fusing their own souls into an Evangelion unit, while Gendou wishes to revert all of humanity into one primordial being so that he can be reunited with Yui, his deceased wife.
+
+        SEELE unleashes its military forces in a lethal invasion of NERV headquarters. As SEELE's forces cut down NERV's scientists and security personnel, Asuka Langley Souryuu pilots Evangelion Unit-02 in a desperate last stand against SEELE's heaviest weaponry.
+
+        The battle rages on, and a depressed Shinji hides deep within NERV's headquarters. With the fate of the world resting in Shinji's hands, Captain Misato Katsuragi hunts for the teenage boy as society crumbles around them.
+
+        [Written by MAL Rewrite]
+      background: 'Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni is an alternate version of the series ending, which
+        either supplements or replaces episodes 25 and 26, depending on how they are viewed. The movie was awarded the Animage
+        Anime Grand Prix prize for 1997, the Japan Academy Prize for Biggest Public Sensation of the Year, and Special Audience
+        Choice Award by the 1997 Animation Kobe.'
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 18
+        type: anime
+        name: Toei Animation
+        url: https://myanimelist.net/anime/producer/18/Toei_Animation
+      - mal_id: 92
+        type: anime
+        name: Starchild Records
+        url: https://myanimelist.net/anime/producer/92/Starchild_Records
+      - mal_id: 113
+        type: anime
+        name: Kadokawa Shoten
+        url: https://myanimelist.net/anime/producer/113/Kadokawa_Shoten
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 167
+        type: anime
+        name: Sega
+        url: https://myanimelist.net/anime/producer/167/Sega
+      - mal_id: 717
+        type: anime
+        name: TV Tokyo Music
+        url: https://myanimelist.net/anime/producer/717/TV_Tokyo_Music
+      - mal_id: 1344
+        type: anime
+        name: King Records
+        url: https://myanimelist.net/anime/producer/1344/King_Records
+      - mal_id: 1461
+        type: anime
+        name: Audio Tanaka
+        url: https://myanimelist.net/anime/producer/1461/Audio_Tanaka
+      licensors:
+      - mal_id: 783
+        type: anime
+        name: GKIDS
+        url: https://myanimelist.net/anime/producer/783/GKIDS
+      - mal_id: 947
+        type: anime
+        name: Manga Entertainment
+        url: https://myanimelist.net/anime/producer/947/Manga_Entertainment
+      studios:
+      - mal_id: 6
+        type: anime
+        name: Gainax
+        url: https://myanimelist.net/anime/producer/6/Gainax
+      - mal_id: 10
+        type: anime
+        name: Production I.G
+        url: https://myanimelist.net/anime/producer/10/Production_IG
+      genres:
+      - mal_id: 5
+        type: anime
+        name: Avant Garde
+        url: https://myanimelist.net/anime/genre/5/Avant_Garde
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 18
+        type: anime
+        name: Mecha
+        url: https://myanimelist.net/anime/genre/18/Mecha
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      demographics: []
+  body_text: null
+  body_b64: null

@@ -1,0 +1,125 @@
+metadata:
+  captured_at: '2026-05-07T11:09:55Z'
+  label: manga-random
+  backend: mangadex
+  path_slug: manga_meta
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/random
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Thu, 07 May 2026 11:09:54 GMT
+    x-ratelimit-remaining: '59'
+    x-ratelimit-retry-after: '1778152194'
+    x-ratelimit-limit: '60'
+    x-ratelimit-retry-in: '0'
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x2
+    x-request-id: 75dac525-2309-4490-b3e6-336816daaaa1
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: entity
+    data:
+      id: fa6f7d80-5b88-4f1f-93d5-96e2a7614e4b
+      type: manga
+      attributes:
+        title:
+          en: Story of Duel Masters
+        altTitles:
+        - ja: ストーリー・オブ デュエル マスターズ
+        - ja: ストーリー・オブ デュエル マスターズ アウトレイジ
+        - ja: ストーリーオブデュエルマスターズ
+        description:
+          en: The world of the cards in the popular TCG, Duel Masters, has been completely turned into a manga by Shigekatsu
+            Ihara! The creatures that appear on the cards unfold a passionate story!!
+        isLocked: false
+        links:
+          mu: 6fc038o
+          raw: https://www.corocoro.jp/title/455
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: '2'
+        lastChapter: '11'
+        publicationDemographic: shounen
+        status: completed
+        year: 2013
+        contentRating: safe
+        tags:
+        - id: 36fd93ea-e8b8-445e-b836-358f02b3d33d
+          type: tag
+          attributes:
+            name:
+              en: Monsters
+            description: []
+            group: theme
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: []
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2023-01-31T08:18:56+00:00'
+        updatedAt: '2024-12-23T01:05:18+00:00'
+        version: 4
+        availableTranslatedLanguages: []
+        latestUploadedChapter: null
+      relationships:
+      - id: 637fb738-d4e6-4e5c-bdd5-4f94f884c327
+        type: author
+      - id: 637fb738-d4e6-4e5c-bdd5-4f94f884c327
+        type: artist
+      - id: 8c7a0795-79af-44f7-bb20-2aecafe7330e
+        type: cover_art
+      - id: 34db0911-26a5-4ac4-9824-8b8454f3e68b
+        type: manga
+        related: sequel
+      - id: 3ebd2a2f-6c41-4215-a654-9592099f7ae1
+        type: manga
+        related: same_franchise
+      - id: 7347b742-b130-4607-8963-c1331d2156c8
+        type: manga
+        related: side_story
+      - id: eb82c265-b4bc-4d28-aa86-a3a755fbdfb5
+        type: manga
+        related: same_franchise
+      - id: f7220c29-6a96-4fdf-b32a-990dea7f1b60
+        type: manga
+        related: side_story
+      - id: ecf379e6-bc34-42c4-b25d-63698875cdfb
+        type: creator
+  body_text: null
+  body_b64: null

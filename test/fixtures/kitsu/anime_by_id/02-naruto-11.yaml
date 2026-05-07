@@ -1,0 +1,208 @@
+metadata:
+  captured_at: '2026-05-07T11:07:01Z'
+  label: naruto-11
+  backend: kitsu
+  path_slug: anime_by_id
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/11
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:01 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"29d63c274603181e49219dd9b3c5ad4c"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 4b71abf6-651e-4dd3-9404-dac3fae36432
+    x-runtime: '0.040867'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=dBet2X4EhkU682cRX8TcX28k9QUym4SGdPLfskjspRvOfWTHnFZTzIUjTIvYop0cEqb1%2Bum8UmqL8aGt7M8IdEbRNinxqNoAK2TWHsbHZWQUEBywUFcanVyFgA%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc2328a6321a5-NRT
+  body_json:
+    data:
+      id: '11'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/11
+      attributes:
+        createdAt: '2013-02-20T16:00:24.797Z'
+        updatedAt: '2026-05-07T10:18:33.474Z'
+        slug: naruto
+        synopsis: |-
+          Moments prior to Naruto Uzumaki's birth, a huge demon known as the Kyuubi, the Nine-Tailed Fox, attacked Konohagakure, the Hidden Leaf Village, and wreaked havoc. In order to put an end to the Kyuubi's rampage, the leader of the village, the Fourth Hokage, sacrificed his life and sealed the monstrous beast inside the newborn Naruto.
+          Now, Naruto is a hyperactive and knuckle-headed ninja still living in Konohagakure. Shunned because of the Kyuubi inside him, Naruto struggles to find his place in the village, while his burning desire to become the Hokage of Konohagakure leads him not only to some great new friends, but also some deadly foes.
+          [Written by MAL Rewrite]
+        description: |-
+          Moments prior to Naruto Uzumaki's birth, a huge demon known as the Kyuubi, the Nine-Tailed Fox, attacked Konohagakure, the Hidden Leaf Village, and wreaked havoc. In order to put an end to the Kyuubi's rampage, the leader of the village, the Fourth Hokage, sacrificed his life and sealed the monstrous beast inside the newborn Naruto.
+          Now, Naruto is a hyperactive and knuckle-headed ninja still living in Konohagakure. Shunned because of the Kyuubi inside him, Naruto struggles to find his place in the village, while his burning desire to become the Hokage of Konohagakure leads him not only to some great new friends, but also some deadly foes.
+          [Written by MAL Rewrite]
+        coverImageTopOffset: 209
+        titles:
+          en: Naruto
+          en_jp: Naruto
+          ja_jp: ナルト
+        canonicalTitle: Naruto
+        abbreviatedTitles:
+        - NARUTO
+        averageRating: '80.19'
+        ratingFrequencies:
+          '2': '710'
+          '3': '3'
+          '4': '506'
+          '5': '18'
+          '6': '542'
+          '7': '34'
+          '8': '2628'
+          '9': '54'
+          '10': '2990'
+          '11': '109'
+          '12': '6673'
+          '13': '337'
+          '14': '19058'
+          '15': '801'
+          '16': '14577'
+          '17': '1163'
+          '18': '9784'
+          '19': '532'
+          '20': '27409'
+        userCount: 164243
+        favoritesCount: 4654
+        startDate: '2002-10-03'
+        endDate: '2007-02-08'
+        nextRelease: null
+        popularityRank: 41
+        ratingRank: 782
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/11/poster_image/tiny-47d378c5faf258491fd1a2025fc1507c.jpeg
+          large: https://media.kitsu.app/anime/11/poster_image/large-5e901605066f7f2727f49d01859bbfe4.jpeg
+          small: https://media.kitsu.app/anime/11/poster_image/small-db4debb693482e09f5d9615864b99b3d.jpeg
+          medium: https://media.kitsu.app/anime/11/poster_image/medium-410cee5d114a5f70d69e795755e8348a.jpeg
+          original: https://media.kitsu.app/anime/11/poster_image/4512d403727b2a19a6eb7e7a959be0c3.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/11/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/11/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/11/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/11/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 220
+        episodeLength: 23
+        totalLength: 5060
+        youtubeVideoId: j2hiC9BmJlQ
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/genres
+            related: https://kitsu.io/api/edge/anime/11/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/categories
+            related: https://kitsu.io/api/edge/anime/11/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/castings
+            related: https://kitsu.io/api/edge/anime/11/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/installments
+            related: https://kitsu.io/api/edge/anime/11/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/11/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/11/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/11/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/characters
+            related: https://kitsu.io/api/edge/anime/11/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/staff
+            related: https://kitsu.io/api/edge/anime/11/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/productions
+            related: https://kitsu.io/api/edge/anime/11/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/11/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/11/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/11/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/11/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/11/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/11/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/11/anime-staff
+  body_text: null
+  body_b64: null

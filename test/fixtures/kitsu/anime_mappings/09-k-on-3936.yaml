@@ -1,0 +1,175 @@
+metadata:
+  captured_at: '2026-05-07T11:08:07Z'
+  label: k-on-3936
+  backend: kitsu
+  path_slug: anime_mappings
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/3936/mappings?page%5Blimit%5D=10
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:06 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"da5d991ecbd531fb1fbea661f526e019"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: ac81a757-4cec-4513-a44e-d0841941f292
+    x-runtime: '0.137832'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2B6AXa5Wn1ijz2errIdSVOQHg3C1Xj%2BEIM50IE7vk8BMtPcB7Kp4UHe67rtibGCNaGPXGw6fg962V%2Fpq4VSI40tLe%2BsFYpVS2%2FCF6asuDZEZQR2e0kMp5ZcZTuw%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc3cd493196ac-KIX
+  body_json:
+    data:
+    - id: '412'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/412
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: myanimelist/anime
+        externalId: '5114'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/412/relationships/item
+            related: https://kitsu.io/api/edge/mappings/412/item
+    - id: '12438'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/12438
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: thetvdb/series
+        externalId: '85249'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/12438/relationships/item
+            related: https://kitsu.io/api/edge/mappings/12438/item
+    - id: '14533'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/14533
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: thetvdb/season
+        externalId: '41193'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/14533/relationships/item
+            related: https://kitsu.io/api/edge/mappings/14533/item
+    - id: '58851'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/58851
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: anidb
+        externalId: '6107'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/58851/relationships/item
+            related: https://kitsu.io/api/edge/mappings/58851/item
+    - id: '64484'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/64484
+      attributes:
+        createdAt: '2017-09-09T07:00:55.752Z'
+        updatedAt: '2017-09-09T07:00:55.752Z'
+        externalSite: thetvdb
+        externalId: 85249/1
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/64484/relationships/item
+            related: https://kitsu.io/api/edge/mappings/64484/item
+    - id: '67522'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/67522
+      attributes:
+        createdAt: '2017-11-23T10:09:50.887Z'
+        updatedAt: '2017-11-23T10:09:50.887Z'
+        externalSite: hulu
+        externalId: '50001086'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/67522/relationships/item
+            related: https://kitsu.io/api/edge/mappings/67522/item
+    - id: '76698'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/76698
+      attributes:
+        createdAt: '2018-01-24T03:59:10.301Z'
+        updatedAt: '2018-01-24T03:59:10.301Z'
+        externalSite: aozora
+        externalId: QDeIjqTmEN
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/76698/relationships/item
+            related: https://kitsu.io/api/edge/mappings/76698/item
+    - id: '76699'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/76699
+      attributes:
+        createdAt: '2018-01-24T03:59:10.319Z'
+        updatedAt: '2018-01-24T03:59:10.319Z'
+        externalSite: trakt
+        externalId: '31771'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/76699/relationships/item
+            related: https://kitsu.io/api/edge/mappings/76699/item
+    - id: '255056'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/255056
+      attributes:
+        createdAt: '2020-05-02T15:46:57.348Z'
+        updatedAt: '2020-05-02T15:46:57.348Z'
+        externalSite: anilist/anime
+        externalId: '5114'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/255056/relationships/item
+            related: https://kitsu.io/api/edge/mappings/255056/item
+    meta:
+      count: 9
+    links:
+      first: https://kitsu.io/api/edge/anime/3936/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/3936/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

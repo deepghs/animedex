@@ -1,0 +1,60 @@
+metadata:
+  captured_at: '2026-05-07T11:18:07Z'
+  label: pool-100
+  backend: danbooru
+  path_slug: pools_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/pools/100.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:18:07 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"9384f41d7bd788c5be5e6945958e2e6d"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=k5IsoiUUB9ZZio3x30Xa8fywfGxOgIQZNTWlIwn%2B4SxYJ%2BOmweBx9kL9cbduQkxDWuttuvS6hCE%2Fq%2FKb8OPpiMjggLjBzTDN5pxPk6ZpFOsjcuvOmmlPZ0KIGmsR73YKChYIVS0f%2FGGn1UQS6tCi8QO1%2BeAMskkcQo3bZ6MYQxuJdnBnXXPCU4zJ%2B6Gszyu9YD%2BwrVCAzrR%2B0QT7AIYeMjX0S%2FegDFloAeoPz8wcjAJpPcenJS7z4lbf6u%2FhWkMOVdqrRxLhez6yH1Jh0ibjw%2FSvsQzfzgnp1Cp6BNG4l68%3D--xKoG0JA156uqe9tc--jCeYiX1D87fgB%2BPTidfZXQ%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:18:07 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd2789bd417bc-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=1.9193, rails.cpu_time;dur=1.5645, rails.idle_time;dur=0.3549,
+      rails.sql_time;dur=0.5062, rails.view_time;dur=0.1661, rails.allocations;count=1120, request.allocations;count=1578,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.2352, request.total_time;dur=2.59, request.queue_time_0;dur=1.3776,
+      request.queue_time_1;dur=90.9998
+    x-runtime: '0.002590003967285156'
+    via: 172.70.233.113, gura, ame/danbooru-768bdd4cff-xbttn
+    strict-transport-security: max-age=31536000; preload
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=lbQsan105i5hsW9c4Cn92NsZJDGwERtv263%2F4Z2cdaU%2FxpFuh5Dp9kCx3ZfGsM84eQVDkWBVFsrj%2BXhscpb6hvgSh6186h%2FLo%2BV5I20a1jedYpc65LykXEaN6OeTUzKXg4b27A%3D%3D"}]}'
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: 9f7fd2789bd417bc-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 100
+    name: Nakaba_1
+    created_at: '2008-01-16T11:37:24.896-05:00'
+    updated_at: '2017-10-17T23:56:03.210-04:00'
+    description: ''
+    is_active: true
+    is_deleted: true
+    post_ids: []
+    category: series
+    post_count: 0
+  body_text: null
+  body_b64: null

@@ -1,0 +1,327 @@
+metadata:
+  captured_at: '2026-05-07T11:08:48Z'
+  label: vinland-saga
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Vinland%20Saga&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:08:48 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x1
+    x-request-id: 6854c8b3-e207-42f9-a5af-b17352ba2529
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 5d1fc77e-706a-4fc5-bea8-486c9be0145d
+      type: manga
+      attributes:
+        title:
+          ja-ro: Vinland Saga
+        altTitles:
+        - ja: ヴィンランド・サガ
+        - zh: 海盗战记
+        - zh-hk: 海盜戰記
+        - ar: فينلاند ساغا
+        - kk: Винланд дастаны
+        - pl: Saga Winlandzka
+        - ru: Сага о Винланде
+        - tr: Vinland Destanı
+        - uk: Сага про Вінланд
+        - ur: وِنلینڈ ساگا
+        - vi: Truyền thuyết miền đất hứa
+        description:
+          en: |-
+            As a child, Thorfinn sat at the feet of the great Leif Ericson and thrilled to wild tales of a land far to the west. But his youthful fantasies were shattered by a mercenary raid. Raised by the Vikings who murdered his family, Thorfinn became a terrifying warrior, forever seeking to kill the band's leader, Askeladd, and avenge his father. Sustaining Thorfinn through his ordeal are his pride in his family and his dreams of a fertile westward land, a land without war or slavery... the land Leif called Vinland.
+            ___
+            - **Won the Japan Media Arts Award Division Grand Prize in 2009**
+            - **Won the 36th Kodansha Manga Award for General Manga in 2012**
+          ja: 千年期の終わり頃、あらゆる地に現れ暴虐の限りを尽くした最強の民族、ヴァイキング。そのなかにあってなお、最強と謳われた伝説の戦士が息子をひとり授かった。トルフィンと名づけられた彼は、幼くして戦場を生き場所とし、血煙の彼方に幻の大陸“ヴィンランド”を目指す！！
+          ru: Эта история случилась в начале XI века, когда викинги, безраздельно господствовавшие в северных морях, грабили
+            побережья Франции и Англии. В эпоху, где оружие значило больше, нежели слова, маленький мальчик невольно оказывается
+            косвенной причиной гибели своего отца. Повзрослев и став на путь воина, он жаждет честного поединка с убийцей
+            отца – легендарным главарём отряда викингов-наемников, но возраст и отсутствие опыта не позволяют ему сделать
+            это. Чтобы не упускать своего врага из виду, юноша вступает в его отряд и в награду за выполнение тяжелого боевого
+            задания требует поединка с ним, но терпит поражение. Юноша продолжает прилагать все усилия, чтобы осуществить
+            свою месть. Внезапно он оказывается вовлечён в куда более кровавое столкновение…
+          tr: Çocukken Thorfinn, büyük Leif Ericson'un ayaklarının dibinde oturur ve batıdaki uzak diyarların vahşi masallarıyla
+            heyecanlanırdı. Ama gençlik hayalleri bir paralı asker baskınıyla paramparça oldu. Ailesini öldüren Vikingler
+            tarafından yetiştirilen Thorfinn, grubun lideri Askeladd'ı öldürmek ve babasının intikamını almak isteyen korkunç
+            bir savaşçı oldu. Thorfinn'i çileli yaşamı boyunca ayakta tutan, ailesiyle olan gururu ve batıdaki bereketli topraklara,
+            savaşın ve köleliğin olmadığı bir ülkeye, Leif'in Vinland adını verdiği topraklara dair hayalleridir.
+          pt-br: Thorfinn é filho de Thors, um lendário guerreiro viking, mas que após anos no campo de batalha, descobre
+            uma coisa mais maravilhosa que matar seus iguais. Viver sua própria vida, em paz. Mas os ventos lhe trazem uma
+            notícia que atrapalhará seus dias de paz, e Thorfinn, seu filho, pouco sabe desta vida passada de guerra de seu
+            pai. Após descobrir o passado de seu pai, Thorfinn se revolta contra ele, e sai para a guerra junto de seu pai,
+            mas quando reconhece o verdadeiro valor dele, já é tarde demais. Agora Thorfinn deverá seguir sua própria vida,
+            seguindo valores que seu pai lhe ensinou, mas sem perder sua coragem. Este é só o começo desta grande saga de
+            Thorfinn que acompanha os Vikings no século XI!
+        isLocked: false
+        links:
+          al: '30642'
+          ap: vinland-saga
+          bw: series/3555/list
+          kt: '1456'
+          mu: cql4c43
+          amz: https://www.amazon.co.jp/dp/B074C9PB88
+          cdj: https://www.cdjapan.co.jp/product/NEOBK-3091300
+          ebj: https://ebookjapan.yahoo.co.jp/books/107593
+          mal: '642'
+          raw: https://pocket.shonenmagazine.com/episode/10834108156664007671
+          engtl: https://kmanga.kodansha.com/title/10215/episode/323180
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: '29'
+        lastChapter: '220'
+        publicationDemographic: seinen
+        status: completed
+        year: 2005
+        contentRating: suggestive
+        tags:
+        - id: 0a39b5a1-b235-4886-a747-1d05d216532d
+          type: tag
+          attributes:
+            name:
+              en: Award Winning
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 33771934-028e-4cb3-8744-691e866a923e
+          type: tag
+          attributes:
+            name:
+              en: Historical
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 5fff9cde-849c-4d78-aab0-0d52b2ee1d25
+          type: tag
+          attributes:
+            name:
+              en: Survival
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b1e97889-25b4-4258-b28b-cd7f4d28ea9b
+          type: tag
+          attributes:
+            name:
+              en: Philosophical
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b29d6a3d-1569-4e7a-8caf-7557bc92cd5d
+          type: tag
+          attributes:
+            name:
+              en: Gore
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: f8f62932-27da-4fe4-8ee1-6779a8c5edba
+          type: tag
+          attributes:
+            name:
+              en: Tragedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2018-01-25T10:53:04+00:00'
+        updatedAt: '2026-01-14T21:08:54+00:00'
+        version: 78
+        availableTranslatedLanguages:
+        - es-la
+        - en
+        - pt-br
+        - ru
+        - ro
+        - ar
+        - id
+        - cs
+        - uk
+        - tr
+        - es
+        - it
+        latestUploadedChapter: 1ef1714c-c287-455f-9cf3-b7265cfbbe92
+      relationships:
+      - id: f5d4fca1-d573-4383-af08-c06b0794ba4e
+        type: author
+      - id: f5d4fca1-d573-4383-af08-c06b0794ba4e
+        type: artist
+      - id: 8008870a-f990-4756-8e13-0b0114bf2318
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '29'
+          fileName: 7fa60f5d-285a-40c5-8a1d-9cf375eaf897.jpg
+          locale: ja
+          createdAt: '2025-09-12T13:52:05+00:00'
+          updatedAt: '2025-09-12T13:52:05+00:00'
+          version: 1
+      - id: 08cd6a32-c1e4-4a26-94a5-92bac648b9ac
+        type: manga
+        related: alternate_story
+      - id: 9eec6ba5-68a4-4b42-9bc1-8b7472f62ed5
+        type: manga
+        related: alternate_story
+      - id: b8fb0553-79d8-4f0d-a0dc-9fa9d452b986
+        type: manga
+        related: colored
+      - id: c6969b83-32b4-4218-8934-4d9663607b5b
+        type: manga
+        related: spin_off
+    - id: 9eec6ba5-68a4-4b42-9bc1-8b7472f62ed5
+      type: manga
+      attributes:
+        title:
+          en: Animalland Saga
+        altTitles:
+        - ja: あにまるらんど・さが
+        - en: Vinland Saga - Animalland Saga
+        description:
+          en: Animal parody of the manga Vinland Saga
+          pt-br: Uma paródia de Vinland Saga, porém com animais!
+        isLocked: false
+        links:
+          al: '162262'
+          mu: 7l7vhnf
+          raw: https://twitter.com/i/events/1151040367761903616
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: '24'
+        publicationDemographic: null
+        status: completed
+        year: 2019
+        contentRating: safe
+        tags:
+        - id: 33771934-028e-4cb3-8744-691e866a923e
+          type: tag
+          attributes:
+            name:
+              en: Historical
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 3de8c75d-8ee3-48ff-98ee-e20a65c86451
+          type: tag
+          attributes:
+            name:
+              en: Animals
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2020-02-26T13:57:18+00:00'
+        updatedAt: '2023-07-23T16:58:35+00:00'
+        version: 10
+        availableTranslatedLanguages:
+        - pt-br
+        - es-la
+        - en
+        - fr
+        - ru
+        latestUploadedChapter: d264f504-4a9f-4429-9849-068c17df904a
+      relationships:
+      - id: 9376c81f-d21a-4f4f-a979-bb3c55e552a5
+        type: author
+      - id: 9376c81f-d21a-4f4f-a979-bb3c55e552a5
+        type: artist
+      - id: fda65d36-26ae-4fc8-b0c6-729d2b755692
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '0'
+          fileName: b5d46c1c-3a6f-4e2e-9cfc-489941d17b1b.jpg
+          locale: ja
+          createdAt: '2023-01-20T00:48:35+00:00'
+          updatedAt: '2023-04-06T18:44:45+00:00'
+          version: 2
+      - id: 08cd6a32-c1e4-4a26-94a5-92bac648b9ac
+        type: manga
+        related: sequel
+      - id: 5d1fc77e-706a-4fc5-bea8-486c9be0145d
+        type: manga
+        related: alternate_story
+    limit: 2
+    offset: 0
+    total: 3
+  body_text: null
+  body_b64: null

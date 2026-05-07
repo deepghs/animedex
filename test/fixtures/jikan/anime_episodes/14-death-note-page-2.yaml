@@ -1,0 +1,37 @@
+metadata:
+  captured_at: '2026-05-07T11:05:07Z'
+  label: death-note-page-2
+  backend: jikan
+  path_slug: anime_episodes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/1535/episodes?page=2&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:05:07 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:05208c18e555dbd9bb0399c6d297a7b91b74b5f3
+    expires: Fri, 08 May 2026 11:05:07 GMT
+    last-modified: Thu, 07 May 2026 11:05:07 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data: []
+  body_text: null
+  body_b64: null

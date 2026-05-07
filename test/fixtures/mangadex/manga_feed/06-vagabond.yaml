@@ -1,0 +1,94 @@
+metadata:
+  captured_at: '2026-05-07T11:09:28Z'
+  label: vagabond
+  backend: mangadex
+  path_slug: manga_feed
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/d1a9fdeb-f713-407f-960c-8326b586e6fd/feed?translatedLanguage%5B%5D=en&limit=2&order%5Bchapter%5D=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=60, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:28 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '490'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x1
+    x-request-id: e373cdcd-6108-470d-a821-35c85cec7089
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 0754c218-0240-4752-a688-5e7d9bc74b55
+      type: chapter
+      attributes:
+        volume: '38'
+        chapter: '327'
+        title: The Man Named Tadoki
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2018-03-19T02:20:43+00:00'
+        readableAt: '2018-03-19T02:20:43+00:00'
+        createdAt: '2018-03-19T02:20:43+00:00'
+        updatedAt: '2018-03-19T02:20:43+00:00'
+        version: 1
+        pages: 19
+      relationships:
+      - id: 401339cb-ae61-44b4-8543-479ea78ab0e2
+        type: scanlation_group
+      - id: d1a9fdeb-f713-407f-960c-8326b586e6fd
+        type: manga
+      - id: a01808b4-9a44-428c-b6b3-85a7f292e866
+        type: user
+    - id: d10d4340-47f3-4002-9762-e148885243db
+      type: chapter
+      attributes:
+        volume: '38'
+        chapter: '326'
+        title: To Be A Samurai
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2018-03-19T02:20:24+00:00'
+        readableAt: '2018-03-19T02:20:24+00:00'
+        createdAt: '2018-03-19T02:20:24+00:00'
+        updatedAt: '2018-03-19T02:20:24+00:00'
+        version: 1
+        pages: 28
+      relationships:
+      - id: 401339cb-ae61-44b4-8543-479ea78ab0e2
+        type: scanlation_group
+      - id: d1a9fdeb-f713-407f-960c-8326b586e6fd
+        type: manga
+      - id: a01808b4-9a44-428c-b6b3-85a7f292e866
+        type: user
+    limit: 2
+    offset: 0
+    total: 114
+  body_text: null
+  body_b64: null

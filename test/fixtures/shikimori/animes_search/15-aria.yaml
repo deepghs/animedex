@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-07T11:19:06Z'
+  label: aria
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Aria&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=BuqIu3QUszXW4Rk7; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:39:06 GMT, __ddg10_=1778152746;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:39:06 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:39:06 GMT, __ddg1_=B0dyANcG6UVODIlXB388; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:19:06 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:19:06 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"0a2f3f1eddad528895201ebd1648f0aa"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: adb7a995-3d83-4252-9c53-c27db0da5f5c
+    X-Runtime: '0.085221'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 5160
+    name: 'Wake Up! Aria: Majokko Virgin Kiki Ippatsu'
+    russian: Проснись, Ария!
+    image:
+      original: /system/animes/original/5160.jpg?1711979922
+      preview: /system/animes/preview/5160.jpg?1711979922
+      x96: /system/animes/x96/5160.jpg?1711979922
+      x48: /system/animes/x48/5160.jpg?1711979922
+    url: /animes/5160-wake-up-aria-majokko-virgin-kiki-ippatsu
+    kind: ova
+    score: '4.66'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '1998-02-20'
+    released_on: null
+  - id: 10604
+    name: 'Hidan no Aria: Butei ga Kitarite Onsen Kenshuu'
+    russian: 'Ария по прозвищу Алая Пуля: Спецвыпуск'
+    image:
+      original: /system/animes/original/10604.jpg?1711953499
+      preview: /system/animes/preview/10604.jpg?1711953499
+      x96: /system/animes/x96/10604.jpg?1711953499
+      x48: /system/animes/x48/10604.jpg?1711953499
+    url: /animes/10604-hidan-no-aria-butei-ga-kitarite-onsen-kenshuu
+    kind: special
+    score: '6.74'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2011-12-21'
+    released_on: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,91 @@
+metadata:
+  captured_at: '2026-05-07T11:08:42Z'
+  label: frieren-streaming-on-app
+  backend: kitsu
+  path_slug: host_app_parity
+request:
+  method: GET
+  url: https://kitsu.app/api/edge/anime/46474/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:42 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"50894d2d0fb19aa7286c172776974486"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=63072000; includeSubDomains
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: d234c75f-9b7d-4f10-9dfd-526bfff28d0a
+    x-runtime: '0.079569'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=cSYfMEoQMU4YK4CePJyP%2FwXF2F7iIqrl0sNHh3VfX%2BSBZg8QF2cqkvxr2Edn5I7Aj4UYFk7BLM77G6nKe58BgpNrlc5W%2Bg6Ae7xTdTfJ9LVMtyYvXXowUcX8MQ%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc4add9b77a2c-KIX
+  body_json:
+    data:
+    - id: '7325'
+      type: streamingLinks
+      links:
+        self: https://kitsu.app/api/edge/streaming-links/7325
+      attributes:
+        createdAt: '2023-10-02T11:12:36.505Z'
+        updatedAt: '2023-10-02T11:12:36.505Z'
+        url: https://www.crunchyroll.com/series/GG5H5XQX4/frieren-beyond-journeys-end
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.app/api/edge/streaming-links/7325/relationships/streamer
+            related: https://kitsu.app/api/edge/streaming-links/7325/streamer
+        media:
+          links:
+            self: https://kitsu.app/api/edge/streaming-links/7325/relationships/media
+            related: https://kitsu.app/api/edge/streaming-links/7325/media
+    - id: '8559'
+      type: streamingLinks
+      links:
+        self: https://kitsu.app/api/edge/streaming-links/8559
+      attributes:
+        createdAt: '2025-03-01T01:01:45.335Z'
+        updatedAt: '2025-03-01T01:01:45.335Z'
+        url: https://www.netflix.com/title/81726714
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.app/api/edge/streaming-links/8559/relationships/streamer
+            related: https://kitsu.app/api/edge/streaming-links/8559/streamer
+        media:
+          links:
+            self: https://kitsu.app/api/edge/streaming-links/8559/relationships/media
+            related: https://kitsu.app/api/edge/streaming-links/8559/media
+    meta:
+      count: 2
+    links:
+      first: https://kitsu.app/api/edge/anime/46474/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.app/api/edge/anime/46474/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

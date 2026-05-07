@@ -1,0 +1,41 @@
+metadata:
+  captured_at: '2026-05-07T11:19:08Z'
+  label: nonexistent-zzzz
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=ZZZZNonexistent&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=doSBp3GeSnU3xoGp; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:39:07 GMT, __ddg10_=1778152747;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:39:07 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:39:07 GMT, __ddg1_=1CKoqqHa6ZHPowDiq1Gd; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:19:07 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:19:08 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 855b5a2e-43ab-4cf0-a3a6-40ad459f84d0
+    X-Runtime: '0.017590'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json: []
+  body_text: null
+  body_b64: null

@@ -1,0 +1,55 @@
+metadata:
+  captured_at: '2026-05-07T11:18:10Z'
+  label: pool-5000
+  backend: danbooru
+  path_slug: pools_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/pools/5000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    Date: Thu, 07 May 2026 11:18:10 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    Cache-Control: no-cache
+    Set-Cookie: _danbooru2_session=MCbEJZdXehtfRiWkOu6wGNFYsdut1TuO0lEYXHvBbHRVxCEv8reOadLt6xKo1%2FIAtYerm9JemnrEzqeuYs0XkXfmAIasW9GLMb1jFlJQOgJ0KTkTbsSYBbQjyl5ibQKTtV6ZGwMtb951b3yvTQ0BnRTSsXjUZjoxt24ky7%2BR43liNHm0VWuiXOD6Ql04NTEaElPqaLRLvbWyOuXxlXO10hqXCEe9tyimSrhALMT8zD2ph3Y4GcYrcw%2FiGEMNw1ig8l3wcG4RYkPkHrQZOo5cTRbba62oIjQc%2BbV6MNyc330%3D--OOgVkeSG7%2F1OLSYm--T3HYaUSZN8VFgQ10QdGkhQ%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:18:10 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd28908e2d402-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.0844, rails.cpu_time;dur=1.4318, rails.idle_time;dur=0.6526,
+      rails.sql_time;dur=0.7792, rails.view_time;dur=0.212, rails.allocations;count=1224, request.allocations;count=1688,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.015, request.total_time;dur=2.6682, request.queue_time_0;dur=1.9555,
+      request.queue_time_1;dur=-659.9998
+    x-runtime: '0.0026681594848632813'
+    via: 172.69.169.159, gura, ame/danbooru-768bdd4cff-7jmtf
+    strict-transport-security: max-age=31536000; preload
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=HoFFPuLM71Byt3Fm05LaunFrWBsI8hwXaGJVrfrGhxrmR9H207%2FnsxAa84EDLApoTY8e3hpMr%2F%2BQAMQMZIVYjl2rB3dBrsblTS9ObeMdjCzuWelhd%2BBz4YzqfLdvDXXSIxJggg%3D%3D"}]}'
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: 9f7fd28908e2d402-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    success: false
+    error: ActiveRecord::RecordNotFound
+    message: That record was not found.
+    backtrace:
+    - app/controllers/pools_controller.rb:19:in 'PoolsController#show'
+    - app/logical/rack_server_timing.rb:19:in 'RackServerTiming#call'
+  body_text: null
+  body_b64: null

@@ -1,0 +1,49 @@
+metadata:
+  captured_at: '2026-05-07T11:25:41Z'
+  label: id-5000
+  backend: ann
+  path_slug: by_id
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=5000
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:25:41 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:25:41 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Access-Control-Allow-Origin: '*'
+    Cache-Control: public
+    Expires: Fri, 08 May 2026 11:25:41 GMT
+    X-Ann: skip state commit
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: 9f7fdd8d8bc4966b-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <ann><anime id="5000" gid="2056435461" type="movie" name="Sora no Momotarō" precision="movie" generated-on="2026-05-07T11:25:41Z">
+    <info gid="1680183037" type="Picture" src="https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A5000-6.jpg" width="200" height="137"><img src="https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A5000-6.jpg" width="200" height="137"/></info>
+    <info gid="3691179035" type="Main title" lang="JA">Sora no Momotarō</info>
+    <info gid="1287771460" type="Alternative title" lang="EN">Momotaro of the Sky</info>
+    <info gid="1511852710" type="Alternative title" lang="JA">空の桃太郎</info>
+    <info gid="3372463838" type="Plot Summary">Momotaro has been requested to fight off the Wild Eagle enemy which has suddenly appeared. He takes to the skies in his airplane, accompanied by a dog, a monkey , and a pheasant, and heads for an island some 10,000 kilometers away. One of the island people promises to prepare the two refuels that the plane requires during its flight to the island. The first refuel will be found on a giant tortoise shell, and the second is a refuel station especially positioned on the back of a whale which will come to surface. Momotaro&#039;s plane is attacked by the Wild Eagle out of the blue as it approaches the island, but after an exciting dogfight in the air, he successfully fights off the enemy.</info>
+    <info gid="2539409012" type="Running time">11</info>
+    <info type="Vintage">1931-10-01</info>
+    <info gid="1242834343" type="Premiere date">1931-10-01 (Japan)</info>
+    <ratings nb_votes="11" weighted_score="5.8698"/>
+    <staff gid="3040679775"><task>Director</task><person id="38738">Yasuji Murata</person></staff>
+    <credit gid="359018865"><task>Production</task><company id="3756">Yokohama Cinema Shōkai</company></credit></anime></ann>
+  body_b64: null

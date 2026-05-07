@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-07T11:18:56Z'
+  label: demon-slayer
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Demon+Slayer&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=VH77Xf5NZLO6WR9N; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:56 GMT, __ddg10_=1778152736;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:56 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:38:56 GMT, __ddg1_=JPsMGsQGFYDU5felSxe0; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:18:56 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:18:56 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"edf4f14b3e5f087e322047f2462955c3"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: bbe664af-fbbf-4cb2-8030-b602f5470bae
+    X-Runtime: '0.100230'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 32606
+    name: Onigiri
+    russian: Онигири
+    image:
+      original: /system/animes/original/32606.jpg?1704561122
+      preview: /system/animes/preview/32606.jpg?1704561122
+      x96: /system/animes/x96/32606.jpg?1704561122
+      x48: /system/animes/x48/32606.jpg?1704561122
+    url: /animes/z32606-onigiri
+    kind: tv
+    score: '5.34'
+    status: released
+    episodes: 13
+    episodes_aired: 13
+    aired_on: '2016-04-07'
+    released_on: '2016-06-30'
+  - id: 40456
+    name: 'Kimetsu no Yaiba Movie: Mugen Ressha-hen'
+    russian: 'Клинок, рассекающий демонов: Бесконечный поезд. Фильм'
+    image:
+      original: /system/animes/original/40456.jpg?1711958541
+      preview: /system/animes/preview/40456.jpg?1711958541
+      x96: /system/animes/x96/40456.jpg?1711958541
+      x48: /system/animes/x48/40456.jpg?1711958541
+    url: /animes/z40456-kimetsu-no-yaiba-movie-mugen-ressha-hen
+    kind: movie
+    score: '8.54'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2020-10-16'
+    released_on: null
+  body_text: null
+  body_b64: null

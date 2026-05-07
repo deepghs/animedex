@@ -1,0 +1,287 @@
+metadata:
+  captured_at: '2026-05-07T11:04:39Z'
+  label: attack-on-titan
+  backend: jikan
+  path_slug: anime_episodes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/16498/episodes?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:04:39 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:40013acb49b11848c51bf52af7533459c697858c
+    expires: Fri, 08 May 2026 11:04:39 GMT
+    last-modified: Thu, 07 May 2026 11:04:39 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - mal_id: 1
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/1
+      title: 'To You, 2,000 Years in the Future: The Fall of Shiganshina (1)'
+      title_japanese: 二千年後の君へ ―シガンシナ陥落①―
+      title_romanji: 'Nisen-nengo no Kimi e: Shiganshina Kanraku (1) '
+      aired: '2013-04-07T00:00:00+00:00'
+      score: 4.54
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=581821
+    - mal_id: 2
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/2
+      title: 'That Day: The Fall of Shiganshina (2)'
+      title_japanese: その日 ―シガンシナ陥落②―
+      title_romanji: 'Sono Hi: Zhiganshina Kanraku (2) '
+      aired: '2013-04-14T00:00:00+00:00'
+      score: 4.48
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=585447
+    - mal_id: 3
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/3
+      title: 'A Dim Light in the Darkness of Despair: Humanity Rises Again (1)'
+      title_japanese: 絶望の中で鈍く光る ―人類の再起①―
+      title_romanji: 'Zetsubou no Naka de Nibuku Hikaru: Jinrui no Saiki (1) '
+      aired: '2013-04-21T00:00:00+00:00'
+      score: 4.48
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=588789
+    - mal_id: 4
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/4
+      title: 'Night of the Graduation Ceremony: Humanity Rises Again (2)'
+      title_japanese: 解散式の夜 ―人類の再起②―
+      title_romanji: 'Kaisanshiki no Yoru: Jinrui no Saiki (2) '
+      aired: '2013-04-28T00:00:00+00:00'
+      score: 4.66
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=592143
+    - mal_id: 5
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/5
+      title: 'First Battle: Battle of Trost (1)'
+      title_japanese: 初陣 ―トロスト区攻防戦①―
+      title_romanji: 'Uijin: Trost-ku Koubousen (1) '
+      aired: '2013-05-05T00:00:00+00:00'
+      score: 4.7
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=595725
+    - mal_id: 6
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/6
+      title: 'The World the Girl Saw: Battle for Trost (2)'
+      title_japanese: 少女が見た世界 ―トロスト区攻防戦②―
+      title_romanji: 'Shoujo ga Mita Sekai: Trost-ku Koubousen (2) '
+      aired: '2013-05-12T00:00:00+00:00'
+      score: 4.62
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=598871
+    - mal_id: 7
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/7
+      title: 'The Small Blade: The Battle for Trost (3)'
+      title_japanese: 小さな刃 ―トロスト区攻防戦③―
+      title_romanji: 'Chiisana Yaiba: Trost-ku Koubousen (3) '
+      aired: '2013-05-19T00:00:00+00:00'
+      score: 4.73
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=601915
+    - mal_id: 8
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/8
+      title: 'Hearing the Heartbeat: The Battle for Trost (4)'
+      title_japanese: 心臓の鼓動が聞こえる ―トロスト区攻防戦④―
+      title_romanji: 'Shinzou no Kodou ga Kikoeru: Trost-ku Koubousen (4) '
+      aired: '2013-05-26T00:00:00+00:00'
+      score: 4.75
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=605275
+    - mal_id: 9
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/9
+      title: 'Where the Left Arm Went: The Battle for Trost (5)'
+      title_japanese: 左腕の行方 ―トロスト区攻防戦⑤―
+      title_romanji: 'Hidari Ude no Yukue: Trost-ku Koubousen (5) '
+      aired: '2013-06-02T00:00:00+00:00'
+      score: 4.71
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=608693
+    - mal_id: 10
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/10
+      title: 'Response: The Battle for Trost (6)'
+      title_japanese: 応える ―トロスト区攻防戦⑥―
+      title_romanji: 'Kotaeru: Trost-ku Koubousen (6) '
+      aired: '2013-06-09T00:00:00+00:00'
+      score: 4.37
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=612331
+    - mal_id: 11
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/11
+      title: 'Icon: The Battle for Trost (7)'
+      title_japanese: 偶像 ―トロスト区攻防戦⑦―
+      title_romanji: 'Guuzou: Trost-ku Koubousen (7) '
+      aired: '2013-06-16T00:00:00+00:00'
+      score: 4.4
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=615805
+    - mal_id: 12
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/12
+      title: 'Wound: The Battle for Trost (8)'
+      title_japanese: 傷 ―トロスト区攻防戦⑧―
+      title_romanji: 'Kizu: Trost-ku Koubousen (8) '
+      aired: '2013-06-23T00:00:00+00:00'
+      score: 4.28
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=619335
+    - mal_id: 13
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/13
+      title: 'Primal Desires: The Battle for Trost (9)'
+      title_japanese: 原初的欲求 ―トロスト区攻防戦⑨―
+      title_romanji: 'Genshoteki Yokkyuu: Trost-ku Koubousen (9) '
+      aired: '2013-06-30T00:00:00+00:00'
+      score: 4.64
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=623151
+    - mal_id: 14
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/14
+      title: 'Still Can''t See: Night Before the Counteroffensive (1)'
+      title_japanese: まだ目を見れない ―反撃前夜①―
+      title_romanji: 'Mada me wo Mirenai: Hangeki Zenya (1) '
+      aired: '2013-07-14T00:00:00+00:00'
+      score: 4.57
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=630693
+    - mal_id: 15
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/15
+      title: 'Special Ops Squad: Night Before the Counteroffensive (2)'
+      title_japanese: 特別作戦班 ―反撃前夜②―
+      title_romanji: 'Tokubetsu Sakusen-han: Hangeki Zenya (2) '
+      aired: '2013-07-21T00:00:00+00:00'
+      score: 4.43
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=634533
+    - mal_id: 16
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/16
+      title: 'What Should Be Done: Night Before the Counteroffensive (3)'
+      title_japanese: 今、何をすべきか ―反撃前夜③―
+      title_romanji: 'Ima, Nani wo Subeki ka: Hangeki Zenya (3) '
+      aired: '2013-07-28T00:00:00+00:00'
+      score: 4.51
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=638313
+    - mal_id: 17
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/17
+      title: 'Female Titan: 57th Expedition Beyond the Walls (1)'
+      title_japanese: 女型の巨人 ―第57回壁外調査①―
+      title_romanji: 'Megata no Kyojin: Dai 57-kai Hekigai Chousa (1) '
+      aired: '2013-08-04T00:00:00+00:00'
+      score: 4.76
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=642101
+    - mal_id: 18
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/18
+      title: 'Forest of Giant Trees: 57th Expedition Beyond the Walls (2)'
+      title_japanese: 巨大樹の森 ―第57回壁外調査②―
+      title_romanji: 'Kyodaiju no Mori: Dai 57-kai Hekigai Chousa (2) '
+      aired: '2013-08-11T00:00:00+00:00'
+      score: 4.68
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=646089
+    - mal_id: 19
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/19
+      title: 'Bite: 57th Expedition Beyond the Walls (3)'
+      title_japanese: 噛み付く ―第57回壁外調査③―
+      title_romanji: 'Kamitsuku: Dai 57-kai Hekigai Chousa (3) '
+      aired: '2013-08-18T00:00:00+00:00'
+      score: 4.59
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=649741
+    - mal_id: 20
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/20
+      title: 'Erwin Smith: 57th Expedition Beyond the Walls (4)'
+      title_japanese: エルヴィン・スミス ―第57回壁外調査④―
+      title_romanji: 'Erwin Smith: Dai 57-kai Hekigai Chousa (4) '
+      aired: '2013-08-25T00:00:00+00:00'
+      score: 4.62
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=653709
+    - mal_id: 21
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/21
+      title: 'Crushing Blow: 57th Expedition Beyond the Walls (5)'
+      title_japanese: 鉄槌 ―第57回壁外調査⑤―
+      title_romanji: 'Tettsui: Dai 57-kai Hekigai Chousa (5) '
+      aired: '2013-09-01T00:00:00+00:00'
+      score: 4.82
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=656997
+    - mal_id: 22
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/22
+      title: 'The Defeated: 57th Expedition Beyond the Walls (6)'
+      title_japanese: 敗者達 ―第57回壁外調査⑥―
+      title_romanji: 'Haisha-tachi: Dai 57-kai Hekigai Chousa (6) '
+      aired: '2013-09-08T00:00:00+00:00'
+      score: 4.68
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=659661
+    - mal_id: 23
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/23
+      title: 'Smile: Raid on Stohess District (1)'
+      title_japanese: 微笑み ―ストヘス区急襲①―
+      title_romanji: 'Hohoemi: Stohess-ku Kyuushuu (1) '
+      aired: '2013-09-15T00:00:00+00:00'
+      score: 4.65
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=662531
+    - mal_id: 24
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/24
+      title: 'Mercy: Raid on Stohess District (2)'
+      title_japanese: 慈悲 ―ストヘス区急襲②―
+      title_romanji: 'Jihi: Stohess-ku Kyuushuu (2) '
+      aired: '2013-09-22T00:00:00+00:00'
+      score: 4.71
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=665805
+    - mal_id: 25
+      url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/25
+      title: 'The Wall: Raid on Stohess District (3)'
+      title_japanese: 壁 ―ストヘス区急襲③―
+      title_romanji: 'Kabe: Stohess-ku Kyuushuu (3) '
+      aired: '2013-09-29T00:00:00+00:00'
+      score: 4.57
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=669005
+  body_text: null
+  body_b64: null

@@ -1,0 +1,112 @@
+metadata:
+  captured_at: '2026-05-07T11:07:29Z'
+  label: attack-on-titan-7442
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/7442/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:29 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"8d206d4f158dee7a9759dc792ea47a33"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: c38ec0bf-1ecb-473e-a8b2-74ab8901c9a0
+    x-runtime: '0.057531'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ayXOOykdJp8NTla196kZhi%2F2Y9%2Bfii81OJ01I2Gh1t6DdBohV%2BxvscfKifZyG98Y2%2F8bCWWjis0%2BE0lU8yOy9ZEgp8agATLfUT2yTUSKGqWStyNrru0ChOHRzA%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc2e65e302390-KIX
+  body_json:
+    data:
+    - id: '100'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/100
+      attributes:
+        createdAt: null
+        updatedAt: '2017-09-29T22:24:39.444Z'
+        url: https://www.netflix.com/title/70299043
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/100/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/100/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/100/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/100/media
+    - id: '102'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/102
+      attributes:
+        createdAt: null
+        updatedAt: '2017-09-29T22:24:57.053Z'
+        url: https://www.hulu.com/attack-on-titan
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/102/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/102/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/102/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/102/media
+    - id: '103'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/103
+      attributes:
+        createdAt: null
+        updatedAt: null
+        url: http://www.crunchyroll.com/attack-on-titan
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/103/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/103/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/103/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/103/media
+    meta:
+      count: 3
+    links:
+      first: https://kitsu.io/api/edge/anime/7442/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/7442/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

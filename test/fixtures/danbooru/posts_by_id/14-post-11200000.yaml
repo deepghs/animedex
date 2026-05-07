@@ -1,0 +1,144 @@
+metadata:
+  captured_at: '2026-05-07T11:17:18Z'
+  label: post-11200000
+  backend: danbooru
+  path_slug: posts_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts/11200000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:18 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"8f61a131ea5b29993fdba9a1f324f69d"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=scwYwpXmtNndmE0VlwDpn8yf8ndGXbAGvyzjCuWIjkIAVDYORKfYI2rlnwYnrJHkRs2FQ8SDQXsTcYYwIl%2BVWHH6WRUiWfa3eDa52SPcN7H9TB4dDkRhEodYb3InVXf%2B3y3Mi9Oiqppi1Rs85rRoS93k6W85jO98gHM1NyL8DYZOnHuLusEdU8%2B1B98xsaX09u8%2B9qHqtxcfFuu5oWIBUcBzIql6jQhb2NLZgBiCk2yIDfMUyxiseg3MF%2BsJJ%2FN8YCNJnUwVuEJQKh%2BAvFdJ7hkqV6hWSAPjGUJ6fT8aV5Q%3D--NbhLlX%2B71FiHdzv5--54p1a4WbS2Ks1VPN0CpUdA%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:18 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd1472dae1a19-KIX
+    server-timing: sql.queries;count=2, cache.reads;count=1, cache.keys_read;count=66, cache.keys_hit;count=66, cache.total_time;dur=0.5791,
+      rails.total_time;dur=4.5663, rails.cpu_time;dur=3.0506, rails.idle_time;dur=1.5157, rails.sql_time;dur=1.4184, rails.view_time;dur=1.5781,
+      rails.allocations;count=4761, request.allocations;count=5214, request.gc_time;dur=0.1174, request.gc_count;count=0,
+      request.cpu_time;dur=3.7013, request.total_time;dur=5.2168, request.queue_time_0;dur=1.2538, request.queue_time_1;dur=96.0
+    x-runtime: '0.005216796875'
+    via: 141.101.86.23, gura, ame/danbooru-768bdd4cff-7jmtf
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2BJnwwibGnpQ66ncJhVVjp5cvSlCvbh5siLYSf9JbmRsvUkL73IV8Q92qPVWkHgVKv%2F1d%2F9VsJT28EpdtN8W0%2Bl3tG4vDEkwTX1Z%2BmR7yP2EZNaEi%2FkrXDWwOgzPONxHfeNy3HA%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd1472dae1a19-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 11200000
+    created_at: '2026-04-19T18:26:23.190-04:00'
+    uploader_id: 875665
+    score: 23
+    source: https://i.pximg.net/img-original/img/2026/04/19/21/08/10/143752546_p0.jpg
+    md5: 1fc429fad4d7a11d888025f0ea1a8ee8
+    last_comment_bumped_at: null
+    rating: e
+    image_width: 2791
+    image_height: 4096
+    tag_string: '!? 1boy 1girl absurdres animal_ears arm_under_breasts blush bow bowtie breasts cardigan cat_ears censored
+      cleavage closed_eyes collarbone collared_shirt comic commentary_request completely_nude day exhibitionism fang flying_sweatdrops
+      gradient_hair hair_ornament hair_ribbon hairclip highres indoors large_breasts long_hair looking_down low_ponytail mosaic_censoring
+      multicolored_hair navel nijisanji nipples nude one_eye_closed open_mouth pink_eyes pink_hair ponytail public_indecency
+      pussy red_bow red_bowtie red_ribbon ribbon shiina_yuika shiina_yuika_(1st_costume) shirt siiotuu smile solo_focus speech_bubble
+      stomach thighs tongue translation_request virtual_youtuber white_shirt window yellow_cardigan'
+    fav_count: 22
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 58
+    tag_count_artist: 1
+    tag_count_character: 2
+    tag_count_copyright: 1
+    file_size: 4454566
+    up_score: 23
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 66
+    updated_at: '2026-04-19T18:26:23.190-04:00'
+    is_banned: false
+    pixiv_id: 143752546
+    last_commented_at: null
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 4
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 47860046
+      created_at: '2026-04-19T18:12:59.194-04:00'
+      updated_at: '2026-04-19T18:13:01.653-04:00'
+      md5: 1fc429fad4d7a11d888025f0ea1a8ee8
+      file_ext: jpg
+      file_size: 4454566
+      image_width: 2791
+      image_height: 4096
+      duration: null
+      status: active
+      file_key: ohWBl0RF7
+      is_public: true
+      pixel_hash: 1724c79178987eea17b04c0113abafb5
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/1f/c4/1fc429fad4d7a11d888025f0ea1a8ee8.jpg
+        width: 123
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/1f/c4/1fc429fad4d7a11d888025f0ea1a8ee8.jpg
+        width: 245
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/1f/c4/1fc429fad4d7a11d888025f0ea1a8ee8.webp
+        width: 491
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/1f/c4/sample-1fc429fad4d7a11d888025f0ea1a8ee8.jpg
+        width: 850
+        height: 1247
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/1f/c4/1fc429fad4d7a11d888025f0ea1a8ee8.jpg
+        width: 2791
+        height: 4096
+        file_ext: jpg
+    tag_string_general: '!? 1boy 1girl animal_ears arm_under_breasts blush bow bowtie breasts cardigan cat_ears censored cleavage
+      closed_eyes collarbone collared_shirt comic completely_nude day exhibitionism fang flying_sweatdrops gradient_hair hair_ornament
+      hair_ribbon hairclip indoors large_breasts long_hair looking_down low_ponytail mosaic_censoring multicolored_hair navel
+      nipples nude one_eye_closed open_mouth pink_eyes pink_hair ponytail public_indecency pussy red_bow red_bowtie red_ribbon
+      ribbon shirt smile solo_focus speech_bubble stomach thighs tongue virtual_youtuber white_shirt window yellow_cardigan'
+    tag_string_character: shiina_yuika shiina_yuika_(1st_costume)
+    tag_string_copyright: nijisanji
+    tag_string_artist: siiotuu
+    tag_string_meta: absurdres commentary_request highres translation_request
+    file_url: https://cdn.donmai.us/original/1f/c4/1fc429fad4d7a11d888025f0ea1a8ee8.jpg
+    large_file_url: https://cdn.donmai.us/sample/1f/c4/sample-1fc429fad4d7a11d888025f0ea1a8ee8.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/1f/c4/1fc429fad4d7a11d888025f0ea1a8ee8.jpg
+  body_text: null
+  body_b64: null

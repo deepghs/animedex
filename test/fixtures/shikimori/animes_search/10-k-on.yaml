@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-07T11:19:00Z'
+  label: k-on
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=K-On&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=Rw0qzmd6FWFEttC9; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:59 GMT, __ddg10_=1778152739;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:38:59 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:38:59 GMT, __ddg1_=ec2QHRAVSPp5uvc3qncf; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:18:59 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:19:00 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"4c65fd22c789a8d5cd8ce5df4390988c"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 7b915abb-535e-4dcc-83b9-7378c5f29f6c
+    X-Runtime: '0.119601'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 16143
+    name: 'One Piece: Kinkyuu Kikaku One Piece Kanzen Kouryakuhou'
+    russian: 'Ван-Пис: Запасной план. Идеальный метод захвата Ван-Пис'
+    image:
+      original: /system/animes/original/16143.jpg?1711967533
+      preview: /system/animes/preview/16143.jpg?1711967533
+      x96: /system/animes/x96/16143.jpg?1711967533
+      x48: /system/animes/x48/16143.jpg?1711967533
+    url: /animes/16143-one-piece-kinkyuu-kikaku-one-piece-kanzen-kouryakuhou
+    kind: tv_special
+    score: '7.04'
+    status: released
+    episodes: 1
+    episodes_aired: 1
+    aired_on: '1999-12-22'
+    released_on: null
+  - id: 32380
+    name: 'Kono Subarashii Sekai ni Shukufuku wo!: Kono Subarashii Choker ni Shukufuku wo!'
+    russian: Этот замечательный мир! Этот замечательный ошейник!
+    image:
+      original: /system/animes/original/32380.jpg?1711959588
+      preview: /system/animes/preview/32380.jpg?1711959588
+      x96: /system/animes/x96/32380.jpg?1711959588
+      x48: /system/animes/x48/32380.jpg?1711959588
+    url: /animes/32380-kono-subarashii-sekai-ni-shukufuku-wo-kono-subarashii-choker-ni-shukufuku-wo
+    kind: ova
+    score: '7.83'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2016-06-24'
+    released_on: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:07:36Z'
+  label: madoka-7311
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/7311/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:36 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"3085adb20192494f3eb2315d688e8421"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: b6006d46-c08d-47dc-a3b5-4017d918312b
+    x-runtime: '0.036372'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=AbJ%2B5FEDWq1oDGdpmZAJPTtRDOXzIse9t2IG%2FddPeFBWfC2nU4K44j2EqhHOEPx%2F4eUiu5bYJskyzeOaIzVNfkCWpuD0%2BgkfLbsUkZ0TL9IfTxD6WdhIXA6MCw%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc30e6cc31955-KIX
+  body_json:
+    data:
+    - id: '1385'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/1385
+      attributes:
+        createdAt: null
+        updatedAt: null
+        url: http://www.crunchyroll.com/symphogear
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/1385/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/1385/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/1385/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/1385/media
+    meta:
+      count: 1
+    links:
+      first: https://kitsu.io/api/edge/anime/7311/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/7311/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

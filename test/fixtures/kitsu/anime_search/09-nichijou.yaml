@@ -1,0 +1,384 @@
+metadata:
+  captured_at: '2026-05-07T11:06:47Z'
+  label: nichijou
+  backend: kitsu
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Nichijou&page%5Blimit%5D=2
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:06:47 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"f56b93eab0aaa513ffabf58a6bf2845a"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: cc9eb5e4-7d1d-49d2-92bf-1c1353ea3b8b
+    x-runtime: '0.106922'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=76ZdV81NON8j9iDslx0dVk9GYpucr%2BOra6qsJRBr5iBFdwGHW6GFJ31g%2FHyySrLlSiYsXZifTqwyXo0%2FzTQmCLJLrM%2F75w4ugi9C3HUbbw0pn5yy3kHW9TqbXg%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc1dbabf50af0-NRT
+  body_json:
+    data:
+    - id: '6062'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/6062
+      attributes:
+        createdAt: '2013-02-20T17:33:46.921Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: nichijou
+        synopsis: "Nichijou primarily focuses on the daily antics of a trio of childhood friends—high school girls Mio Naganohara,\
+          \ Yuuko Aioi and Mai Minakami—whose stories soon intertwine with the young genius Hakase Shinonome, her robot caretaker\
+          \ Nano, and their talking cat Sakamoto. With every passing day, the lives of these six, as well as of the many people\
+          \ around them, experience both the calms of normal life and the insanity of the absurd. Walking to school, being\
+          \ bitten by a talking crow, spending time with friends, and watching the principal suplex a deer: they are all in\
+          \ a day's work in the extraordinary everyday lives of those in Nichijou. \n[Written by MAL Rewrite]"
+        description: "Nichijou primarily focuses on the daily antics of a trio of childhood friends—high school girls Mio\
+          \ Naganohara, Yuuko Aioi and Mai Minakami—whose stories soon intertwine with the young genius Hakase Shinonome,\
+          \ her robot caretaker Nano, and their talking cat Sakamoto. With every passing day, the lives of these six, as well\
+          \ as of the many people around them, experience both the calms of normal life and the insanity of the absurd. Walking\
+          \ to school, being bitten by a talking crow, spending time with friends, and watching the principal suplex a deer:\
+          \ they are all in a day's work in the extraordinary everyday lives of those in Nichijou. \n[Written by MAL Rewrite]"
+        coverImageTopOffset: 250
+        titles:
+          en: Nichijou - My Ordinary Life
+          en_jp: Nichijou
+          en_us: Nichijou - My Ordinary Life
+          ja_jp: 日常
+        canonicalTitle: Nichijou
+        abbreviatedTitles:
+        - Everyday
+        averageRating: '82.06'
+        ratingFrequencies:
+          '2': '978'
+          '3': '12'
+          '4': '129'
+          '5': '13'
+          '6': '157'
+          '7': '10'
+          '8': '1144'
+          '9': '15'
+          '10': '614'
+          '11': '45'
+          '12': '1238'
+          '13': '110'
+          '14': '4737'
+          '15': '254'
+          '16': '5904'
+          '17': '467'
+          '18': '5785'
+          '19': '288'
+          '20': '11791'
+        userCount: 84950
+        favoritesCount: 2083
+        startDate: '2011-04-03'
+        endDate: '2011-09-25'
+        nextRelease: null
+        popularityRank: 125
+        ratingRank: 289
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/6062/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/6062/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/6062/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/6062/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/6062/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/6062/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/6062/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/6062/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/6062/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 26
+        episodeLength: 23
+        totalLength: 598
+        youtubeVideoId: 3bMAMumxt6Q
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/genres
+            related: https://kitsu.io/api/edge/anime/6062/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/categories
+            related: https://kitsu.io/api/edge/anime/6062/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/castings
+            related: https://kitsu.io/api/edge/anime/6062/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/installments
+            related: https://kitsu.io/api/edge/anime/6062/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/6062/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/6062/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/6062/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/characters
+            related: https://kitsu.io/api/edge/anime/6062/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/staff
+            related: https://kitsu.io/api/edge/anime/6062/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/productions
+            related: https://kitsu.io/api/edge/anime/6062/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/6062/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/6062/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/6062/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/6062/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/6062/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/6062/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/6062/anime-staff
+    - id: '5512'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/5512
+      attributes:
+        createdAt: '2013-02-20T17:24:55.350Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: nichijou-episode-0
+        synopsis: While the title suggests a story of simple, everyday school life, the contents are more the opposite. The
+          setting is a strange school where you may see the principal wrestle a deer or a robot's arm hide a rollcake. However
+          there are still normal stories, like making a card castle or taking a test you didn't study for.
+        description: While the title suggests a story of simple, everyday school life, the contents are more the opposite.
+          The setting is a strange school where you may see the principal wrestle a deer or a robot's arm hide a rollcake.
+          However there are still normal stories, like making a card castle or taking a test you didn't study for.
+        coverImageTopOffset: 266
+        titles:
+          en: My Ordinary Life Episode 0
+          en_jp: 'Nichijou: Nichijou no 0-wa'
+          en_us: My Ordinary Life Episode 0
+          ja_jp: 日常の０話
+        canonicalTitle: 'Nichijou: Nichijou no 0-wa'
+        abbreviatedTitles:
+        - Nichijou Episode 0
+        - Nichijou OVA
+        - Everyday
+        averageRating: '73.3'
+        ratingFrequencies:
+          '2': '10'
+          '3': '0'
+          '4': '25'
+          '5': '1'
+          '6': '43'
+          '7': '3'
+          '8': '155'
+          '9': '0'
+          '10': '346'
+          '11': '5'
+          '12': '727'
+          '13': '11'
+          '14': '1531'
+          '15': '59'
+          '16': '1168'
+          '17': '29'
+          '18': '482'
+          '19': '6'
+          '20': '512'
+        userCount: 9003
+        favoritesCount: 9
+        startDate: '2011-03-12'
+        endDate: '2011-03-12'
+        nextRelease: null
+        popularityRank: 1803
+        ratingRank: 3319
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: OVA
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/5512/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/5512/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/5512/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/5512/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/5512/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/5512/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/5512/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/5512/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/5512/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 1
+        episodeLength: 22
+        totalLength: 22
+        youtubeVideoId: null
+        showType: OVA
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/genres
+            related: https://kitsu.io/api/edge/anime/5512/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/categories
+            related: https://kitsu.io/api/edge/anime/5512/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/castings
+            related: https://kitsu.io/api/edge/anime/5512/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/installments
+            related: https://kitsu.io/api/edge/anime/5512/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/5512/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/5512/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/5512/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/characters
+            related: https://kitsu.io/api/edge/anime/5512/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/staff
+            related: https://kitsu.io/api/edge/anime/5512/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/productions
+            related: https://kitsu.io/api/edge/anime/5512/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/5512/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/5512/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/5512/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/5512/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/5512/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/5512/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/5512/anime-staff
+    meta:
+      count: 31
+    links:
+      first: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Nichijou&page%5Blimit%5D=2&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Nichijou&page%5Blimit%5D=2&page%5Boffset%5D=2
+      last: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Nichijou&page%5Blimit%5D=2&page%5Boffset%5D=29
+  body_text: null
+  body_b64: null

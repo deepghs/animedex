@@ -1,0 +1,215 @@
+metadata:
+  captured_at: '2026-05-07T11:08:27Z'
+  label: steins-gate-6448-on-app
+  backend: kitsu
+  path_slug: host_app_parity
+request:
+  method: GET
+  url: https://kitsu.app/api/edge/anime/6448
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:27 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"edae1dfe7d407bde02e32baf6935f6ed"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=63072000; includeSubDomains
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: f2ded8f7-b9e9-455f-9e0d-87d893122061
+    x-runtime: '0.359739'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=L4PlKVO2wFDx3lOFXbyz238K2hLeXK6vZlhD1tiCrJgRhXV%2BpYSu7uCJuwrN7DiNm9Ivekept%2BySRslNcai6wr2IEWbuJyPlCUDgVGh1VBmHJdztvcbr7kAMeg%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc44d19768d00-KIX
+  body_json:
+    data:
+      id: '6448'
+      type: anime
+      links:
+        self: https://kitsu.app/api/edge/anime/6448
+      attributes:
+        createdAt: '2013-02-20T17:39:58.670Z'
+        updatedAt: '2026-05-07T10:18:08.969Z'
+        slug: hunter-x-hunter-2011
+        synopsis: |-
+          Hunter x Hunter is set in a world where Hunters exist to perform all manner of dangerous tasks like capturing criminals and bravely searching for lost treasures in uncharted territories. Twelve-year-old Gon Freecss is determined to become the best Hunter possible in hopes of finding his father, who was a Hunter himself and had long ago abandoned his young son. However, Gon soon realizes the path to achieving his goals is far more challenging than he could have ever imagined.
+
+          Along the way to becoming an official Hunter, Gon befriends the lively doctor-in-training Leorio, vengeful Kurapika, and rebellious ex-assassin Killua. To attain their own goals and desires, together the four of them take the Hunter Exam, notorious for its low success rate and high probability of death. Throughout their journey, Gon and his friends embark on an adventure that puts them through many hardships and struggles. They will meet a plethora of monsters, creatures, and characters—all while learning what being a Hunter truly means.
+
+          (Source: MAL Rewrite)
+        description: |-
+          Hunter x Hunter is set in a world where Hunters exist to perform all manner of dangerous tasks like capturing criminals and bravely searching for lost treasures in uncharted territories. Twelve-year-old Gon Freecss is determined to become the best Hunter possible in hopes of finding his father, who was a Hunter himself and had long ago abandoned his young son. However, Gon soon realizes the path to achieving his goals is far more challenging than he could have ever imagined.
+
+          Along the way to becoming an official Hunter, Gon befriends the lively doctor-in-training Leorio, vengeful Kurapika, and rebellious ex-assassin Killua. To attain their own goals and desires, together the four of them take the Hunter Exam, notorious for its low success rate and high probability of death. Throughout their journey, Gon and his friends embark on an adventure that puts them through many hardships and struggles. They will meet a plethora of monsters, creatures, and characters—all while learning what being a Hunter truly means.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 130
+        titles:
+          en: Hunter x Hunter (2011)
+          en_jp: Hunter x Hunter (2011)
+          en_us: Hunter x Hunter
+          ja_jp: HUNTER×HUNTER ハンターハンター
+        canonicalTitle: Hunter x Hunter (2011)
+        abbreviatedTitles:
+        - HUNTER×HUNTER ハンターハンター
+        - HxH (2011)
+        - Hantā Hantā (2011)
+        averageRating: '84.17'
+        ratingFrequencies:
+          '2': '10701'
+          '3': '276'
+          '4': '937'
+          '5': '171'
+          '6': '579'
+          '7': '182'
+          '8': '16287'
+          '9': '239'
+          '10': '1492'
+          '11': '390'
+          '12': '3111'
+          '13': '450'
+          '14': '34666'
+          '15': '1041'
+          '16': '11632'
+          '17': '2344'
+          '18': '17677'
+          '19': '2655'
+          '20': '143265'
+        userCount: 404709
+        favoritesCount: 7857
+        startDate: '2011-10-02'
+        endDate: '2014-09-24'
+        nextRelease: null
+        popularityRank: 9
+        ratingRank: 49
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/6448/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/6448/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/6448/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/6448/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/6448/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 155
+              large:
+                width: 550
+                height: 776
+              small:
+                width: 284
+                height: 400
+              medium:
+                width: 390
+                height: 551
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/6448/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/6448/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/6448/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/6448/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 148
+        episodeLength: 23
+        totalLength: 3549
+        youtubeVideoId: fda6QzBA2mI
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/genres
+            related: https://kitsu.app/api/edge/anime/6448/genres
+        categories:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/categories
+            related: https://kitsu.app/api/edge/anime/6448/categories
+        castings:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/castings
+            related: https://kitsu.app/api/edge/anime/6448/castings
+        installments:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/installments
+            related: https://kitsu.app/api/edge/anime/6448/installments
+        mappings:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/mappings
+            related: https://kitsu.app/api/edge/anime/6448/mappings
+        reviews:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/reviews
+            related: https://kitsu.app/api/edge/anime/6448/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/media-relationships
+            related: https://kitsu.app/api/edge/anime/6448/media-relationships
+        characters:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/characters
+            related: https://kitsu.app/api/edge/anime/6448/characters
+        staff:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/staff
+            related: https://kitsu.app/api/edge/anime/6448/staff
+        productions:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/productions
+            related: https://kitsu.app/api/edge/anime/6448/productions
+        quotes:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/quotes
+            related: https://kitsu.app/api/edge/anime/6448/quotes
+        episodes:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/episodes
+            related: https://kitsu.app/api/edge/anime/6448/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/streaming-links
+            related: https://kitsu.app/api/edge/anime/6448/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/anime-productions
+            related: https://kitsu.app/api/edge/anime/6448/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/anime-characters
+            related: https://kitsu.app/api/edge/anime/6448/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.app/api/edge/anime/6448/relationships/anime-staff
+            related: https://kitsu.app/api/edge/anime/6448/anime-staff
+  body_text: null
+  body_b64: null

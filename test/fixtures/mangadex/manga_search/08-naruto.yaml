@@ -1,0 +1,329 @@
+metadata:
+  captured_at: '2026-05-07T11:08:52Z'
+  label: naruto
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Naruto&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:08:52 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x1
+    x-request-id: 42960d62-e291-44ac-8ca9-dff5e9799ef9
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 275c3ee8-bdeb-4070-a333-6add23a8415a
+      type: manga
+      attributes:
+        title:
+          ja-ro: Renge to Naruto!
+        altTitles:
+        - ja: れんげとなると！
+        - en: Renge and Naruto!
+        - vi: Renge và Naruto
+        description:
+          en: It's been a few months since the neighborhood Chinese restaurant closed down, and when I stopped by for the
+            first time in a while, I found that it had been transformed into a flashy, mysterious restaurant with its old
+            signboard still intact. When I went inside, there was a gal there...
+          ja: 近所の町中華が閉店して数カ月、久々に立ち寄るとそこはかつての看板のまま、ド派手な謎の店に変わっていた。中に入るとそこには1人のギャルがいて……。ギャルがもてなす町中華の物語だ。
+          pt-br: Já se passaram alguns meses desde o fechamento do restaurante chinês do bairro, e quando passei por lá pela
+            primeira vez em um tempo, descobri que ele tinha se transformado em um restaurante chamativo e misterioso, mantendo
+            ainda seu antigo letreiro. Ao entrar, deparei-me com uma garçonete... Esta é uma história sobre um restaurante
+            em Chinatown onde as garçonetes são acolhedoras.
+        isLocked: false
+        links:
+          al: '171704'
+          ap: renge-to-naruto
+          bl: '20080074'
+          bw: series/462574
+          kt: '70325'
+          mu: lmdk2h4
+          amz: https://www.amazon.co.jp/dp/B0CXN6TV9C
+          ebj: https://ebookjapan.yahoo.co.jp/books/821114
+          mal: '164473'
+          raw: https://bigcomics.jp/episodes/fc6b387ea771c
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: seinen
+        status: ongoing
+        year: 2023
+        contentRating: erotica
+        tags:
+        - id: 3b60b75c-a2d7-4860-ab56-05f391bb889c
+          type: tag
+          attributes:
+            name:
+              en: Psychological
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 97893a4c-12af-4dac-b6be-0dffb353568e
+          type: tag
+          attributes:
+            name:
+              en: Sexual Violence
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: e5301a23-ebd9-49dd-a0cb-2add944c7fe9
+          type: tag
+          attributes:
+            name:
+              en: Slice of Life
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: ea2bc92d-1c26-4930-9b7c-d5c0dc1b6869
+          type: tag
+          attributes:
+            name:
+              en: Cooking
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: fad12b5e-68ba-460e-b933-9ae8318f5b65
+          type: tag
+          attributes:
+            name:
+              en: Gyaru
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2023-10-28T14:27:59+00:00'
+        updatedAt: '2026-05-02T22:08:28+00:00'
+        version: 36
+        availableTranslatedLanguages:
+        - vi
+        - pt-br
+        - en
+        latestUploadedChapter: 59eaa81f-5e89-49dd-a3a0-1a0603437603
+      relationships:
+      - id: ebf7e791-6515-47c8-a3d7-143023a06cae
+        type: author
+      - id: ebf7e791-6515-47c8-a3d7-143023a06cae
+        type: artist
+      - id: b7b36126-cc26-4e53-835e-c91143b20719
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '6'
+          fileName: 85119f1e-5223-4eda-a463-4942d15d518c.jpg
+          locale: ja
+          createdAt: '2026-03-27T13:19:03+00:00'
+          updatedAt: '2026-03-27T13:19:03+00:00'
+          version: 1
+      - id: c3a21d7c-5c46-4367-9895-b8b04d6912e6
+        type: creator
+    - id: 99a704b4-e338-464a-8fc7-f67d69caaf22
+      type: manga
+      attributes:
+        title:
+          en: 'Uzumaki : Illegitimate'
+        altTitles:
+        - en: 'Naruto: Daughter'
+        description:
+          en: '[FanMade] A re imagined look into the world of Naruto, Following life after the war, children inherit the past''s
+            legacy, hopes, and it''s consequences. A new Era begins, a strong resolve is needed, will she have what it takes
+            to brandish the name UZUMAKI.'
+        isLocked: false
+        links:
+          engtl: https://digitalinkstudios.xyz
+        officialLinks: null
+        originalLanguage: en
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: null
+        status: ongoing
+        year: 2023
+        contentRating: safe
+        tags:
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 3de8c75d-8ee3-48ff-98ee-e20a65c86451
+          type: tag
+          attributes:
+            name:
+              en: Animals
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 489dd859-9b61-4c37-af75-5b18e88daafc
+          type: tag
+          attributes:
+            name:
+              en: Ninja
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 5ca48985-9a9d-4bd8-be29-80dc0303db72
+          type: tag
+          attributes:
+            name:
+              en: Crime
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 891cf039-b895-47f0-9229-bef4c96eccd4
+          type: tag
+          attributes:
+            name:
+              en: Self-Published
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: b13b2a48-c720-44a9-9c77-39c9979373fb
+          type: tag
+          attributes:
+            name:
+              en: Doujinshi
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: e197df38-d0e7-43b5-9b09-2842d0c326dd
+          type: tag
+          attributes:
+            name:
+              en: Web Comic
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2025-11-28T23:50:48+00:00'
+        updatedAt: '2026-03-27T16:33:16+00:00'
+        version: 8
+        availableTranslatedLanguages:
+        - en
+        latestUploadedChapter: 1676628d-f047-416b-ae34-62af310cf0e5
+      relationships:
+      - id: 2bf112ae-0a00-4094-8144-6dee3910ca46
+        type: author
+      - id: 2bf112ae-0a00-4094-8144-6dee3910ca46
+        type: artist
+      - id: 01bfd666-9773-4e44-9925-77e3338b49f3
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '3'
+          fileName: 1054ced8-015d-4439-a3d0-c6bef38e458e.png
+          locale: en
+          createdAt: '2026-03-27T16:36:03+00:00'
+          updatedAt: '2026-03-27T16:36:03+00:00'
+          version: 1
+      - id: 6b1eb93e-473a-4ab3-9922-1a66d2a29a4a
+        type: manga
+        related: based_on
+      - id: 77a47433-f9a8-4701-9a26-4bb3006fd50d
+        type: creator
+    limit: 2
+    offset: 0
+    total: 62
+  body_text: null
+  body_b64: null

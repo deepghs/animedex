@@ -1,0 +1,2411 @@
+metadata:
+  captured_at: '2026-05-07T11:04:27Z'
+  label: evangelion
+  backend: jikan
+  path_slug: anime_characters
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/30/characters
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:04:27 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:e32caafe953674c69c12e2e14539996278a7e302
+    expires: Thu, 07 May 2026 13:31:30 GMT
+    last-modified: Wed, 06 May 2026 13:31:30 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: EXPIRED
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - character:
+        mal_id: 86
+        url: https://myanimelist.net/character/86/Rei_Ayanami
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/314932.jpg?s=3686e6c4d76595fb1f71b0390d7997a2
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/314932.webp?s=3686e6c4d76595fb1f71b0390d7997a2
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/314932t.webp?s=3686e6c4d76595fb1f71b0390d7997a2
+        name: Ayanami, Rei
+      role: Main
+      favorites: 21870
+      voice_actors:
+      - person:
+          mal_id: 14
+          url: https://myanimelist.net/people/14/Megumi_Hayashibara
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/63419.jpg?s=601b4dcc01cb37560ff4478d0ca0956b
+          name: Hayashibara, Megumi
+        language: Japanese
+      - person:
+          mal_id: 873
+          url: https://myanimelist.net/people/873/Amanda_Winn_Lee
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/938.jpg?s=98afce61fe0a51bdefba7514d9e00e75
+          name: Lee, Amanda Winn
+        language: English
+      - person:
+          mal_id: 981
+          url: https://myanimelist.net/people/981/Valentina_Mari
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/1040.jpg?s=54617fd55219cbf5f19e0659a1f461fc
+          name: Mari, Valentina
+        language: Italian
+      - person:
+          mal_id: 1178
+          url: https://myanimelist.net/people/1178/Stéphanie_Lafforgue
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/68567.jpg?s=dafcd87f810a79756a1398d397770464
+          name: Lafforgue, Stéphanie
+        language: French
+      - person:
+          mal_id: 1217
+          url: https://myanimelist.net/people/1217/Marie_Bierstedt
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/2755.jpg?s=57507f5ef13ae256cac22524260707e5
+          name: Bierstedt, Marie
+        language: German
+      - person:
+          mal_id: 7259
+          url: https://myanimelist.net/people/7259/Gaby_Ugarte
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/73888.jpg?s=5756e0f26d5267dc803ba80732214b12
+          name: Ugarte, Gaby
+        language: Spanish
+      - person:
+          mal_id: 11834
+          url: https://myanimelist.net/people/11834/Priscilla_Concepcion
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/68347.jpg?s=7f791c53751feb495ad717d771c07acc
+          name: Concepcion, Priscilla
+        language: Portuguese (BR)
+      - person:
+          mal_id: 15135
+          url: https://myanimelist.net/people/15135/Do_Yeong_Song
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/16033.jpg?s=24a0db6239898cd8e623d1c63dc100b2
+          name: Song, Do Yeong
+        language: Korean
+      - person:
+          mal_id: 18327
+          url: https://myanimelist.net/people/18327/Circe_Luna
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/20825.jpg?s=b4da4e52d83749209228929984137f5c
+          name: Luna, Circe
+        language: Spanish
+      - person:
+          mal_id: 30567
+          url: https://myanimelist.net/people/30567/Joël_Mulachs
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/31177.jpg?s=fbde13a2af6fc34f5eaa257b37c2da49
+          name: Mulachs, Joël
+        language: Spanish
+      - person:
+          mal_id: 43793
+          url: https://myanimelist.net/people/43793/Ryan_Bartley
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/47361.jpg?s=dbebc1813d43d8e192d1e470b29ca728
+          name: Bartley, Ryan
+        language: English
+      - person:
+          mal_id: 55403
+          url: https://myanimelist.net/people/55403/Élisabeth_Ventura
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/65180.jpg?s=7f76d467117dce5c4c479323cf00d194
+          name: Ventura, Élisabeth
+        language: French
+      - person:
+          mal_id: 42689
+          url: https://myanimelist.net/people/42689/Lucrezia_Marricchi
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/46261.jpg?s=d842a49617d0000065b5ac373f4a3f9e
+          name: Marricchi, Lucrezia
+        language: Italian
+      - person:
+          mal_id: 9249
+          url: https://myanimelist.net/people/9249/Olivia_Dutron
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/65622.jpg?s=f59fb0ef684adac6aee3f8fbdad2d6e4
+          name: Dutron, Olivia
+        language: French
+      - person:
+          mal_id: 62909
+          url: https://myanimelist.net/people/62909/Laura_Pastor
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/58606.jpg?s=7b6819cbdbce751ba09532c9db375dcd
+          name: Pastor, Laura
+        language: Spanish
+    - character:
+        mal_id: 89
+        url: https://myanimelist.net/character/89/Shinji_Ikari
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/225177.jpg?s=6ac886f090e501714d54b820680ad7e1
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/225177.webp?s=6ac886f090e501714d54b820680ad7e1
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/225177t.webp?s=6ac886f090e501714d54b820680ad7e1
+        name: Ikari, Shinji
+      role: Main
+      favorites: 21209
+      voice_actors:
+      - person:
+          mal_id: 150
+          url: https://myanimelist.net/people/150/Spike_Spencer
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/36487.jpg?s=1cba3de55c3f166f8f322914de2c6518
+          name: Spencer, Spike
+        language: English
+      - person:
+          mal_id: 287
+          url: https://myanimelist.net/people/287/Megumi_Ogata
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/75924.jpg?s=c227169eacc4877598e6445a3c06715a
+          name: Ogata, Megumi
+        language: Japanese
+      - person:
+          mal_id: 776
+          url: https://myanimelist.net/people/776/Daniele_Raffaeli
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/21655.jpg?s=fa7e908a5ec2b2b6d83df9ce0a95b59e
+          name: Raffaeli, Daniele
+        language: Italian
+      - person:
+          mal_id: 1108
+          url: https://myanimelist.net/people/1108/Fábio_Lucindo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/69304.jpg?s=297445949d65f68d5415ee57654224c7
+          name: Lucindo, Fábio
+        language: Portuguese (BR)
+      - person:
+          mal_id: 1584
+          url: https://myanimelist.net/people/1584/Donald_Reignoux
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/72174.jpg?s=4163d6f419c7956740c0fbc51e9d6b9f
+          name: Reignoux, Donald
+        language: French
+      - person:
+          mal_id: 7694
+          url: https://myanimelist.net/people/7694/Víctor_Ugarte
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/70314.jpg?s=5b9ebe16b909e4d093e57a1d158e8586
+          name: Ugarte, Víctor
+        language: Spanish
+      - person:
+          mal_id: 12320
+          url: https://myanimelist.net/people/12320/Hannes_Maurer
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/57185.jpg?s=20e87afdaae4a8f61f8b3a69a4a616b0
+          name: Maurer, Hannes
+        language: German
+      - person:
+          mal_id: 14753
+          url: https://myanimelist.net/people/14753/Su_Jin_Kang
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/15289.jpg?s=e4cdc303194dd85fe103835106019630
+          name: Kang, Su Jin
+        language: Korean
+      - person:
+          mal_id: 18975
+          url: https://myanimelist.net/people/18975/Albert_Trifol_Segarra
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/82714.jpg?s=4eb84525c5c6853ecb99d8c7923091fe
+          name: Trifol Segarra, Albert
+        language: Spanish
+      - person:
+          mal_id: 47385
+          url: https://myanimelist.net/people/47385/Casey_Mongillo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/58004.jpg?s=2dcab2efc5d9c8c7b2f303a9e055a1de
+          name: Mongillo, Casey
+        language: English
+      - person:
+          mal_id: 36980
+          url: https://myanimelist.net/people/36980/Christian_Zeiger
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/85347.jpg?s=a2d569f3b248a2ce8a30e4740b0de1bb
+          name: Zeiger, Christian
+        language: German
+      - person:
+          mal_id: 57192
+          url: https://myanimelist.net/people/57192/Xóchitl_Ugarte
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/68282.jpg?s=6b217537c0179e7c28746ff81b6b9e5a
+          name: Ugarte, Xóchitl
+        language: Spanish
+      - person:
+          mal_id: 55751
+          url: https://myanimelist.net/people/55751/Stefano_Broccoletti
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/66100.jpg?s=140cc5aa987badd83b5d3e5dfd012cfd
+          name: Broccoletti, Stefano
+        language: Italian
+      - person:
+          mal_id: 57093
+          url: https://myanimelist.net/people/57093/David_Dos_Santos
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/71246.jpg?s=ea8bdfb1968de512a3d8c73e20afde0c
+          name: Dos Santos, David
+        language: French
+      - person:
+          mal_id: 80013
+          url: https://myanimelist.net/people/80013/Carlos_Larios
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/82908.jpg?s=d890bb933818235c7983fdff9fa9cb67
+          name: Larios, Carlos
+        language: Spanish
+    - character:
+        mal_id: 1259
+        url: https://myanimelist.net/character/1259/Misato_Katsuragi
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/515181.jpg?s=92e2a933ea958ad8a2b94bd692c50dee
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/515181.webp?s=92e2a933ea958ad8a2b94bd692c50dee
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/515181t.webp?s=92e2a933ea958ad8a2b94bd692c50dee
+        name: Katsuragi, Misato
+      role: Main
+      favorites: 18318
+      voice_actors:
+      - person:
+          mal_id: 9
+          url: https://myanimelist.net/people/9/Kotono_Mitsuishi
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/89910.jpg?s=20951d0f926b85dd0c217b154d80c07d
+          name: Mitsuishi, Kotono
+        language: Japanese
+      - person:
+          mal_id: 194
+          url: https://myanimelist.net/people/194/Allison_Keith
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/153.jpg?s=90dc942d1faad67e2bb95e0bbe6dcb5a
+          name: Keith, Allison
+        language: English
+      - person:
+          mal_id: 765
+          url: https://myanimelist.net/people/765/Stella_Musy
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/813.jpg?s=86ac6ff7ebc7ee0d7d75f202840d0684
+          name: Musy, Stella
+        language: Italian
+      - person:
+          mal_id: 6111
+          url: https://myanimelist.net/people/6111/Julia_Kaufmann
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/2748.jpg?s=9b0bf5e943b627055f23889f28e375e3
+          name: Kaufmann, Julia
+        language: German
+      - person:
+          mal_id: 9241
+          url: https://myanimelist.net/people/9241/Laurence_Bréheret
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/30937.jpg?s=28286dc06cde01dc5af0a88ce6b3ea6a
+          name: Bréheret, Laurence
+        language: French
+      - person:
+          mal_id: 10491
+          url: https://myanimelist.net/people/10491/Toni_Rodríguez
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/63436.jpg?s=86f508d458e12f35ef55dee57d3f4ad5
+          name: Rodríguez, Toni
+        language: Spanish
+      - person:
+          mal_id: 11785
+          url: https://myanimelist.net/people/11785/Vanessa_Alves
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/68240.jpg?s=e889e970adb33bf8fe9f6b04d6ece997
+          name: Alves, Vanessa
+        language: Portuguese (BR)
+      - person:
+          mal_id: 43864
+          url: https://myanimelist.net/people/43864/Lene_Bastos
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/61220.jpg?s=b1fa7cca3667c92d6be1784acd0ff12f
+          name: Bastos, Lene
+        language: Portuguese (BR)
+      - person:
+          mal_id: 45867
+          url: https://myanimelist.net/people/45867/María_Moscardó
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/49418.jpg?s=2cdc767416eea67ff036585be57c29b7
+          name: Moscardó, María
+        language: Spanish
+      - person:
+          mal_id: 1435
+          url: https://myanimelist.net/people/1435/Carrie_Keranen
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/37365.jpg?s=03b270c1073cf892865b96077d9b0225
+          name: Keranen, Carrie
+        language: English
+      - person:
+          mal_id: 14483
+          url: https://myanimelist.net/people/14483/Priscila_Franco
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/69146.jpg?s=81cfbb8f368c1cf89674b3aac0ebbbcf
+          name: Franco, Priscila
+        language: Portuguese (BR)
+      - person:
+          mal_id: 57222
+          url: https://myanimelist.net/people/57222/Marisol_Romero
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/73228.jpg?s=3e5775700d2205d6db80114c5cfc9c0c
+          name: Romero, Marisol
+        language: Spanish
+      - person:
+          mal_id: 778
+          url: https://myanimelist.net/people/778/Domitilla_DAmico
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/15191.jpg?s=3d84603ba92afa62b285181b797e53a5
+          name: D'Amico, Domitilla
+        language: Italian
+    - character:
+        mal_id: 94
+        url: https://myanimelist.net/character/94/Asuka_Langley_Souryuu
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/12/79465.jpg?s=9551d38debcab623eaf0b633be75e9b9
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/12/79465.webp?s=9551d38debcab623eaf0b633be75e9b9
+            small_image_url: https://cdn.myanimelist.net/images/characters/12/79465t.webp?s=9551d38debcab623eaf0b633be75e9b9
+        name: Souryuu, Asuka Langley
+      role: Main
+      favorites: 30691
+      voice_actors:
+      - person:
+          mal_id: 145
+          url: https://myanimelist.net/people/145/Tiffany_Grant
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/19267.jpg?s=00b00d8b80aad8939ee710a62d313d33
+          name: Grant, Tiffany
+        language: English
+      - person:
+          mal_id: 458
+          url: https://myanimelist.net/people/458/Yuuko_Miyamura
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/79174.jpg?s=dbf10746871e551b88300b8e28f32138
+          name: Miyamura, Yuuko
+        language: Japanese
+      - person:
+          mal_id: 766
+          url: https://myanimelist.net/people/766/Ilaria_Latini
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/44856.jpg?s=590a76d4898c496d2b778d6d4a2f324b
+          name: Latini, Ilaria
+        language: Italian
+      - person:
+          mal_id: 1445
+          url: https://myanimelist.net/people/1445/Fernanda_Bullara
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/61918.jpg?s=215d32379ebdaddb7e414b71180ba519
+          name: Bullara, Fernanda
+        language: Portuguese (BR)
+      - person:
+          mal_id: 6118
+          url: https://myanimelist.net/people/6118/Julia_Ziffer
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/71472.jpg?s=03587ada60389de0930e1754f628155b
+          name: Ziffer, Julia
+        language: German
+      - person:
+          mal_id: 8812
+          url: https://myanimelist.net/people/8812/Mi_Sook_Jeong
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/89231.jpg?s=b26d4977500ad4a3bdae042bdcd2ced8
+          name: Jeong, Mi Sook
+        language: Korean
+      - person:
+          mal_id: 11308
+          url: https://myanimelist.net/people/11308/Norma_Echevarría
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/10234.jpg?s=05d30b33ddc42ed9f5a705e232f30ede
+          name: Echevarría, Norma
+        language: Spanish
+      - person:
+          mal_id: 43568
+          url: https://myanimelist.net/people/43568/Ana_Pallejà
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/47212.jpg?s=e97d843473970f8515128fa220e5216a
+          name: Pallejà, Ana
+        language: Spanish
+      - person:
+          mal_id: 48071
+          url: https://myanimelist.net/people/48071/Vera_Bosch
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/52811.jpg?s=875f9389f7ea3dd0e7476738aba68022
+          name: Bosch, Vera
+        language: Spanish
+      - person:
+          mal_id: 50106
+          url: https://myanimelist.net/people/50106/Stephanie_Mckeon
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/58306.jpg?s=5e2a639a38e4781c9dbbcf8c1cf71c1d
+          name: Mckeon, Stephanie
+        language: English
+      - person:
+          mal_id: 11624
+          url: https://myanimelist.net/people/11624/Nallely_Solís
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/62678.jpg?s=eefc9c885b25fce8e9f7799b9272f01b
+          name: Solís, Nallely
+        language: Spanish
+      - person:
+          mal_id: 55402
+          url: https://myanimelist.net/people/55402/Émilie_Rault
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/65179.jpg?s=459664fa33be9929a2232a551ca45b75
+          name: Rault, Émilie
+        language: French
+      - person:
+          mal_id: 12400
+          url: https://myanimelist.net/people/12400/Georgina_Sánchez
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/70393.jpg?s=c4a1bc6eb5daa468dc5f82932559ad3a
+          name: Sánchez, Georgina
+        language: Spanish
+      - person:
+          mal_id: 18871
+          url: https://myanimelist.net/people/18871/Marjolaine_Poulain
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/68343.jpg?s=038ba498ce362d1356b903d6e3a99c4f
+          name: Poulain, Marjolaine
+        language: French
+      - person:
+          mal_id: 42616
+          url: https://myanimelist.net/people/42616/Sara_Labidi
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/45970.jpg?s=35ea42d94ef77be4ea48a21afb591709
+          name: Labidi, Sara
+        language: Italian
+      - person:
+          mal_id: 44237
+          url: https://myanimelist.net/people/44237/Johanna_Dost
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/47697.jpg?s=2e914c48d44ec10ca28ff3b2431edd1c
+          name: Dost, Johanna
+        language: German
+      - person:
+          mal_id: 86228
+          url: https://myanimelist.net/people/86228/Shi-yoon_Park
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/85719.jpg?s=273bf35408f35452cf14340fdcc9d59c
+          name: Park, Shi-yoon
+        language: Korean
+    - character:
+        mal_id: 1250
+        url: https://myanimelist.net/character/1250/Kensuke_Aida
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/13/145217.jpg?s=b36093dbea85ca0e5ce2b33a00c3a71e
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/13/145217.webp?s=b36093dbea85ca0e5ce2b33a00c3a71e
+            small_image_url: https://cdn.myanimelist.net/images/characters/13/145217t.webp?s=b36093dbea85ca0e5ce2b33a00c3a71e
+        name: Aida, Kensuke
+      role: Supporting
+      favorites: 163
+      voice_actors:
+      - person:
+          mal_id: 694
+          url: https://myanimelist.net/people/694/Tetsuya_Iwanaga
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/87415.jpg?s=bff498c33f279029f1daa7485e86aa21
+          name: Iwanaga, Tetsuya
+        language: Japanese
+      - person:
+          mal_id: 1462
+          url: https://myanimelist.net/people/1462/Irwin_Daayán
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/70686.jpg?s=ea699240e268e8a461caffc4e40ac7fa
+          name: Daayán, Irwin
+        language: Spanish
+      - person:
+          mal_id: 1661
+          url: https://myanimelist.net/people/1661/Gerrit_Schmidt-Foß
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/2734.jpg?s=1377c2c2fe03246633d7c7f101193dad
+          name: Schmidt-Foß, Gerrit
+        language: German
+      - person:
+          mal_id: 6420
+          url: https://myanimelist.net/people/6420/Stefano_Crescentini
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/37231.jpg?s=0064e44a3503b9fcb18199be2b053deb
+          name: Crescentini, Stefano
+        language: Italian
+      - person:
+          mal_id: 7556
+          url: https://myanimelist.net/people/7556/Kurt_Stoll
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/78718.jpg?s=f20904ae986496b5750c8cf2265d581a
+          name: Stoll, Kurt
+        language: English
+      - person:
+          mal_id: 43867
+          url: https://myanimelist.net/people/43867/Rafael_Barioni
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/82087.jpg?s=4c3e89a5dd15902f3ee0e03b5dbcd415
+          name: Barioni, Rafael
+        language: Portuguese (BR)
+      - person:
+          mal_id: 46537
+          url: https://myanimelist.net/people/46537/Claudi_Domingo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/50179.jpg?s=097cbfd9b877b8a5d5c5cfd1845e588b
+          name: Domingo, Claudi
+        language: Spanish
+      - person:
+          mal_id: 1085
+          url: https://myanimelist.net/people/1085/Benjamin_Diskin
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/6315.jpg?s=5b77b6c2de0f42137a115b6347508777
+          name: Diskin, Benjamin
+        language: English
+      - person:
+          mal_id: 55044
+          url: https://myanimelist.net/people/55044/Gabriel_Bismuth-Bienaimé
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/72024.jpg?s=713234203335916edc12563c8d1a7ffe
+          name: Bismuth-Bienaimé, Gabriel
+        language: French
+      - person:
+          mal_id: 22477
+          url: https://myanimelist.net/people/22477/Gabriel_Ortiz
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/72369.jpg?s=ea27b827689abf04a3b25c3d81b05bbe
+          name: Ortiz, Gabriel
+        language: Spanish
+      - person:
+          mal_id: 11521
+          url: https://myanimelist.net/people/11521/Yuri_Chesman
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/64740.jpg?s=93a317325d77ac84ee15cfb502b15b48
+          name: Chesman, Yuri
+        language: Portuguese (BR)
+      - person:
+          mal_id: 44068
+          url: https://myanimelist.net/people/44068/Riccardo_Suarez
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/87054.jpg?s=948182a441ad50798898858da76076f3
+          name: Suarez, Riccardo
+        language: Italian
+      - person:
+          mal_id: 52914
+          url: https://myanimelist.net/people/52914/Álex_Saudinós
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/52390.jpg?s=0cfbb738dc81b8f50356cfe9750ca962
+          name: Saudinós, Álex
+        language: Spanish
+      - person:
+          mal_id: 61587
+          url: https://myanimelist.net/people/61587/Romain_Douilly
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c
+          name: Douilly, Romain
+        language: French
+    - character:
+        mal_id: 1251
+        url: https://myanimelist.net/character/1251/Ritsuko_Akagi
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/13/108139.jpg?s=bd8a11674d1670110baef5199bfe2831
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/13/108139.webp?s=bd8a11674d1670110baef5199bfe2831
+            small_image_url: https://cdn.myanimelist.net/images/characters/13/108139t.webp?s=bd8a11674d1670110baef5199bfe2831
+        name: Akagi, Ritsuko
+      role: Supporting
+      favorites: 789
+      voice_actors:
+      - person:
+          mal_id: 130
+          url: https://myanimelist.net/people/130/Yuriko_Yamaguchi
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/63904.jpg?s=4018e7554b1535d2fd702398a231b1aa
+          name: Yamaguchi, Yuriko
+        language: Japanese
+      - person:
+          mal_id: 597
+          url: https://myanimelist.net/people/597/Sue_Ulu
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/630.jpg?s=f61a39f5b23d22679051d3f040063a2b
+          name: Ulu, Sue
+        language: English
+      - person:
+          mal_id: 5137
+          url: https://myanimelist.net/people/5137/Silvia_Suzy_Pereira
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/64597.jpg?s=79083e7d79288ced27548bafbfc85e01
+          name: Pereira, Silvia Suzy
+        language: Portuguese (BR)
+      - person:
+          mal_id: 6715
+          url: https://myanimelist.net/people/6715/Liliana_Sorrentino
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/3454.jpg?s=e6865917e62e77783c61714ad9530db6
+          name: Sorrentino, Liliana
+        language: Italian
+      - person:
+          mal_id: 15593
+          url: https://myanimelist.net/people/15593/Mun_Ja_Choi
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/16929.jpg?s=14f4908f3935b18b8806821fb13eec87
+          name: Choi, Mun Ja
+        language: Korean
+      - person:
+          mal_id: 12095
+          url: https://myanimelist.net/people/12095/Cecília_Lemes
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/62399.jpg?s=f92cc1e39d7f0f3c29199e7bcb717182
+          name: Lemes, Cecília
+        language: Portuguese (BR)
+      - person:
+          mal_id: 35665
+          url: https://myanimelist.net/people/35665/Erica_Lindbeck
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/42360.jpg?s=cf5dbb930c3ca00b34dfcd2e878b9b30
+          name: Lindbeck, Erica
+        language: English
+      - person:
+          mal_id: 28671
+          url: https://myanimelist.net/people/28671/Marie_Chevalot
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/78350.jpg?s=61017049310cbc46c990dfcc3b5afba7
+          name: Chevalot, Marie
+        language: French
+      - person:
+          mal_id: 763
+          url: https://myanimelist.net/people/763/Barbara_De_Bortoli
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/810.jpg?s=47f7aa653249affdf1456ab4304b0dd7
+          name: De Bortoli, Barbara
+        language: Italian
+      - person:
+          mal_id: 59303
+          url: https://myanimelist.net/people/59303/América_Torres
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/73473.jpg?s=652554c2b13b4b3a4654aa5f4b75e857
+          name: Torres, América
+        language: Spanish
+      - person:
+          mal_id: 60083
+          url: https://myanimelist.net/people/60083/Sandra_Jara
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/70889.jpg?s=dc3ca685c9f6fcceef3943e442322861
+          name: Jara, Sandra
+        language: Spanish
+      - person:
+          mal_id: 60984
+          url: https://myanimelist.net/people/60984/Maria_Eugenia_López_Guerrero
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/71220.jpg?s=b214d0607e5e786afeca1ae5e6d667f3
+          name: López Guerrero, Maria Eugenia
+        language: Spanish
+      - person:
+          mal_id: 63706
+          url: https://myanimelist.net/people/63706/Gabriela_Gómez
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/73575.jpg?s=da4e46aef08e1e25c7a69b1381dff315
+          name: Gómez, Gabriela
+        language: Spanish
+      - person:
+          mal_id: 62046
+          url: https://myanimelist.net/people/62046/Marie-Annick_Mahé
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c
+          name: Mahé, Marie-Annick
+        language: French
+    - character:
+        mal_id: 19207
+        url: https://myanimelist.net/character/19207/Naoko_Akagi
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/6/109293.jpg?s=c4239e6a75354933c74b8e86235572fd
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/6/109293.webp?s=c4239e6a75354933c74b8e86235572fd
+            small_image_url: https://cdn.myanimelist.net/images/characters/6/109293t.webp?s=c4239e6a75354933c74b8e86235572fd
+        name: Akagi, Naoko
+      role: Supporting
+      favorites: 3
+      voice_actors:
+      - person:
+          mal_id: 155
+          url: https://myanimelist.net/people/155/Mika_Doi
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/58157.jpg?s=fba0eace6a13cc1a15d07ebd3f77c104
+          name: Doi, Mika
+        language: Japanese
+      - person:
+          mal_id: 161
+          url: https://myanimelist.net/people/161/Laura_Chapman
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/21787.jpg?s=601840d83e64395abc1b785e98de3720
+          name: Chapman, Laura
+        language: English
+      - person:
+          mal_id: 5490
+          url: https://myanimelist.net/people/5490/Alessandra_Araújo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/64739.jpg?s=8d1d74354abe6d424b92fb94032133dc
+          name: Araújo, Alessandra
+        language: Portuguese (BR)
+      - person:
+          mal_id: 45398
+          url: https://myanimelist.net/people/45398/Rosely_Gonçalves
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/61221.jpg?s=767e7ac7ad2b9c1f835587dfcdc507a4
+          name: Gonçalves, Rosely
+        language: Portuguese (BR)
+      - person:
+          mal_id: 6102
+          url: https://myanimelist.net/people/6102/Heide_Domanowski
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/2741.jpg?s=1332015fbca8cfb13357f1e610eff924
+          name: Domanowski, Heide
+        language: German
+      - person:
+          mal_id: 56067
+          url: https://myanimelist.net/people/56067/Françoise_Cadol
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/66376.jpg?s=1d2181e5563b9573b192513a12a0d07c
+          name: Cadol, Françoise
+        language: French
+      - person:
+          mal_id: 24931
+          url: https://myanimelist.net/people/24931/Rachele_Paolelli
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/38237.jpg?s=ad2cdbfba37984a26870ab8e66435be4
+          name: Paolelli, Rachele
+        language: Italian
+      - person:
+          mal_id: 66948
+          url: https://myanimelist.net/people/66948/Yolanda_Pérez_Padrón
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/81807.jpg?s=b348696e96f9c5dfd4cd819d30b83143
+          name: Pérez Padrón, Yolanda
+        language: Spanish
+      - person:
+          mal_id: 62046
+          url: https://myanimelist.net/people/62046/Marie-Annick_Mahé
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c
+          name: Mahé, Marie-Annick
+        language: French
+      - person:
+          mal_id: 78775
+          url: https://myanimelist.net/people/78775/Rebeca_Patiño
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/82400.jpg?s=69f6956e78c3842c8ae4da841fe68867
+          name: Patiño, Rebeca
+        language: Spanish
+    - character:
+        mal_id: 1252
+        url: https://myanimelist.net/character/1252/Shigeru_Aoba
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/145219.jpg?s=10122d05a3393a348bd33a3f4ea44108
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/145219.webp?s=10122d05a3393a348bd33a3f4ea44108
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/145219t.webp?s=10122d05a3393a348bd33a3f4ea44108
+        name: Aoba, Shigeru
+      role: Supporting
+      favorites: 38
+      voice_actors:
+      - person:
+          mal_id: 43
+          url: https://myanimelist.net/people/43/Vic_Mignogna
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/29839.jpg?s=7f78b7ef7ec6f46d1c8e68931766a808
+          name: Mignogna, Vic
+        language: English
+      - person:
+          mal_id: 160
+          url: https://myanimelist.net/people/160/Takehito_Koyasu
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/63375.jpg?s=76b093ad00fbab48b06778a3da3ec0b1
+          name: Koyasu, Takehito
+        language: Japanese
+      - person:
+          mal_id: 871
+          url: https://myanimelist.net/people/871/Jason_C_Lee
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/939.jpg?s=a81eb5ed6ae922cd5d80cf21e883261a
+          name: Lee, Jason C.
+        language: English
+      - person:
+          mal_id: 1229
+          url: https://myanimelist.net/people/1229/Vittorio_Guerrieri
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/6123.jpg?s=d4449cbea8d9b60af1349a6dfdb2d1ce
+          name: Guerrieri, Vittorio
+        language: Italian
+      - person:
+          mal_id: 7303
+          url: https://myanimelist.net/people/7303/Adrien_Solis
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/33923.jpg?s=42f87e7d8775b2ecae88d15a82fe7cbf
+          name: Solis, Adrien
+        language: French
+      - person:
+          mal_id: 7974
+          url: https://myanimelist.net/people/7974/Wellington_Lima
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/60262.jpg?s=5c7ea79d6f0cac04c873185e09cb31ae
+          name: Lima, Wellington
+        language: Portuguese (BR)
+      - person:
+          mal_id: 9166
+          url: https://myanimelist.net/people/9166/Rainer_Fritzsche
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/6821.jpg?s=f573b7db260690bc9276713d6ee44a5e
+          name: Fritzsche, Rainer
+        language: German
+      - person:
+          mal_id: 10734
+          url: https://myanimelist.net/people/10734/Tony_Joudrier
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/69134.jpg?s=96d164231a3f054436823411e292af37
+          name: Joudrier, Tony
+        language: French
+      - person:
+          mal_id: 47980
+          url: https://myanimelist.net/people/47980/Billy_Kametz
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/55855.jpg?s=8705e8579d1f9f2d857ceebb7d8256ba
+          name: Kametz, Billy
+        language: English
+      - person:
+          mal_id: 1616
+          url: https://myanimelist.net/people/1616/Benoît_du_Pac
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/32079.jpg?s=1ce8ab1eec5454a766ca83088ca4a3b9
+          name: du Pac, Benoît
+        language: French
+      - person:
+          mal_id: 42673
+          url: https://myanimelist.net/people/42673/Raffaele_Carpentieri
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/46242.jpg?s=b96cb1e3374c6c9d943ca98355bfce45
+          name: Carpentieri, Raffaele
+        language: Italian
+      - person:
+          mal_id: 60378
+          url: https://myanimelist.net/people/60378/Ricardo_Tejedo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/73476.jpg?s=388da836e474ef847634b5652572cdff
+          name: Tejedo, Ricardo
+        language: Spanish
+      - person:
+          mal_id: 82946
+          url: https://myanimelist.net/people/82946/Alex_Meseguer
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/84270.jpg?s=1f205aaf133e287b166a84fa76f92195
+          name: Meseguer, Alex
+        language: Spanish
+      - person:
+          mal_id: 91857
+          url: https://myanimelist.net/people/91857/Rodrigo_Carralero
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c
+          name: Carralero, Rodrigo
+        language: Spanish
+    - character:
+        mal_id: 1253
+        url: https://myanimelist.net/character/1253/Kouzou_Fuyutsuki
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/10/145223.jpg?s=fd22b461b9c2739326583ef85e1caf59
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/10/145223.webp?s=fd22b461b9c2739326583ef85e1caf59
+            small_image_url: https://cdn.myanimelist.net/images/characters/10/145223t.webp?s=fd22b461b9c2739326583ef85e1caf59
+        name: Fuyutsuki, Kouzou
+      role: Supporting
+      favorites: 66
+      voice_actors:
+      - person:
+          mal_id: 333
+          url: https://myanimelist.net/people/333/Motomu_Kiyokawa
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/31905.jpg?s=3e87a9b622ac7fa60d200a164503a8a4
+          name: Kiyokawa, Motomu
+        language: Japanese
+      - person:
+          mal_id: 1629
+          url: https://myanimelist.net/people/1629/Mathieu_Rivolier
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/68011.jpg?s=ff3a6e46f478ef68085e52a0c37883a3
+          name: Rivolier, Mathieu
+        language: French
+      - person:
+          mal_id: 5531
+          url: https://myanimelist.net/people/5531/Guil_Lunde
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c
+          name: Lunde, Guil
+        language: English
+      - person:
+          mal_id: 35833
+          url: https://myanimelist.net/people/35833/Oliviero_Dinelli
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/37697.jpg?s=68dcf890eab9185ec17006c819206f3c
+          name: Dinelli, Oliviero
+        language: Italian
+      - person:
+          mal_id: 43708
+          url: https://myanimelist.net/people/43708/João_Batista
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/58886.jpg?s=bcd0c45f43da95c5ac012eb8d2f05822
+          name: Batista, João
+        language: Portuguese (BR)
+      - person:
+          mal_id: 43721
+          url: https://myanimelist.net/people/43721/Sidney_Lilla
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/49893.jpg?s=f4dba43b99deed0dbd3c108407503687
+          name: Lilla, Sidney
+        language: Portuguese (BR)
+      - person:
+          mal_id: 14487
+          url: https://myanimelist.net/people/14487/Carlos_Campanile
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/40745.jpg?s=591ba292d84ec5e9d7d1b5596f3a6668
+          name: Campanile, Carlos
+        language: Portuguese (BR)
+      - person:
+          mal_id: 59214
+          url: https://myanimelist.net/people/59214/Jesse_Conde
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/69913.jpg?s=03f448f2af4a6bb42a34ecfaac57916f
+          name: Conde, Jesse
+        language: Spanish
+      - person:
+          mal_id: 60481
+          url: https://myanimelist.net/people/60481/Hervé_Jolly
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/70923.jpg?s=054e38ae93ee52f7e245f57fbbebd478
+          name: Jolly, Hervé
+        language: French
+      - person:
+          mal_id: 60964
+          url: https://myanimelist.net/people/60964/Rolando_de_Castro
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/71416.jpg?s=f33e2a119aba3823b71885fb249fbb76
+          name: de Castro, Rolando
+        language: Spanish
+      - person:
+          mal_id: 60977
+          url: https://myanimelist.net/people/60977/John_Paul_Karliak
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/71285.jpg?s=57bfc008d82c9cca4c8fed2c705fca8d
+          name: Karliak, John Paul
+        language: English
+      - person:
+          mal_id: 80468
+          url: https://myanimelist.net/people/80468/Luis_Fernando_Ríos
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/83080.jpg?s=01f7b4f1cc8e32fa0744d7a53ee5fb1b
+          name: Ríos, Luis Fernando
+        language: Spanish
+    - character:
+        mal_id: 1254
+        url: https://myanimelist.net/character/1254/Hikari_Horaki
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/3/145215.jpg?s=6dc6b176cb81e55ff60a7af045ba6053
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/3/145215.webp?s=6dc6b176cb81e55ff60a7af045ba6053
+            small_image_url: https://cdn.myanimelist.net/images/characters/3/145215t.webp?s=6dc6b176cb81e55ff60a7af045ba6053
+        name: Horaki, Hikari
+      role: Supporting
+      favorites: 21
+      voice_actors:
+      - person:
+          mal_id: 289
+          url: https://myanimelist.net/people/289/Junko_Iwao
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/30549.jpg?s=200d1b2851e991aa7cc703abc01863db
+          name: Iwao, Junko
+        language: Japanese
+      - person:
+          mal_id: 767
+          url: https://myanimelist.net/people/767/Federica_De_Bortoli
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/811.jpg?s=43a81ad717d6ccbd7bcb175ddec49bd8
+          name: De Bortoli, Federica
+        language: Italian
+      - person:
+          mal_id: 1442
+          url: https://myanimelist.net/people/1442/Tatiane_Keplmair
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/69880.jpg?s=4fcb671dee443f2c43b0648e19d6e0e9
+          name: Keplmair, Tatiane
+        language: Portuguese (BR)
+      - person:
+          mal_id: 6138
+          url: https://myanimelist.net/people/6138/Ilona_Otto
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/2769.jpg?s=d887386dea11895ca1d04643417197c3
+          name: Otto, Ilona
+        language: German
+      - person:
+          mal_id: 9747
+          url: https://myanimelist.net/people/9747/Susan_Sindberg
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/28019.jpg?s=f81b97dcd58d0260cd9d332788767e9e
+          name: Sindberg, Susan
+        language: French
+      - person:
+          mal_id: 11454
+          url: https://myanimelist.net/people/11454/Márcia_Regina
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/63752.jpg?s=4528d52c93538e86093e8b6ecf716ea7
+          name: Regina, Márcia
+        language: Portuguese (BR)
+      - person:
+          mal_id: 12393
+          url: https://myanimelist.net/people/12393/Carol_Amerson
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/40459.jpg?s=8541447be460b9a24c22704b19e1b894
+          name: Amerson, Carol
+        language: English
+      - person:
+          mal_id: 37861
+          url: https://myanimelist.net/people/37861/Abby_Trott
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/58531.jpg?s=b829114357279c26d5d9ffda4e15a89c
+          name: Trott, Abby
+        language: English
+      - person:
+          mal_id: 55526
+          url: https://myanimelist.net/people/55526/Lila_Lacombe
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/80659.jpg?s=ec1afe6341af9ce3953a5e215209acdd
+          name: Lacombe, Lila
+        language: French
+      - person:
+          mal_id: 1662
+          url: https://myanimelist.net/people/1662/Ana_Lobo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/68479.jpg?s=ab8091046da392a5a87586308db6eb39
+          name: Lobo, Ana
+        language: Spanish
+      - person:
+          mal_id: 57220
+          url: https://myanimelist.net/people/57220/Adriana_Núñez
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/68308.jpg?s=0aa9dfd2a6f1d261631a1cbaa318b90a
+          name: Núñez, Adriana
+        language: Spanish
+      - person:
+          mal_id: 57483
+          url: https://myanimelist.net/people/57483/Sarah_Souza
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/68883.jpg?s=c1d8755b14719ed23ec7dd11985fccd9
+          name: Souza, Sarah
+        language: Spanish
+      - person:
+          mal_id: 42650
+          url: https://myanimelist.net/people/42650/Agnese_Marteddu
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/46013.jpg?s=f6c96bb2fa5bc12ca95ddbaa89084311
+          name: Marteddu, Agnese
+        language: Italian
+      - person:
+          mal_id: 1631
+          url: https://myanimelist.net/people/1631/Brigitte_Aubry
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/67913.jpg?s=821b563a950e59ad732fe2da3040c260
+          name: Aubry, Brigitte
+        language: French
+      - person:
+          mal_id: 56314
+          url: https://myanimelist.net/people/56314/Naïké_Fauveau
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/76604.jpg?s=e55df47a210bd9c598f51fa9f0e40d2d
+          name: Fauveau, Naïké
+        language: French
+      - person:
+          mal_id: 86436
+          url: https://myanimelist.net/people/86436/Seon-yeong_Son
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/85851.jpg?s=71b40940222ef118386af6a5425fd6c1
+          name: Son, Seon-yeong
+        language: Korean
+    - character:
+        mal_id: 1255
+        url: https://myanimelist.net/character/1255/Makoto_Hyuuga
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/290508.jpg?s=2605b3313b6f5f97ce56e94b3c4527c2
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/290508.webp?s=2605b3313b6f5f97ce56e94b3c4527c2
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/290508t.webp?s=2605b3313b6f5f97ce56e94b3c4527c2
+        name: Hyuuga, Makoto
+      role: Supporting
+      favorites: 15
+      voice_actors:
+      - person:
+          mal_id: 322
+          url: https://myanimelist.net/people/322/Hiro_Yuuki
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/27091.jpg?s=f511ab95d841c6547fa341697ce2352e
+          name: Yuuki, Hiro
+        language: Japanese
+      - person:
+          mal_id: 5486
+          url: https://myanimelist.net/people/5486/Enzo_Fortuny
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/73804.jpg?s=c54d44a4ab05c807a865f8c4851a590f
+          name: Fortuny, Enzo
+        language: Spanish
+      - person:
+          mal_id: 6497
+          url: https://myanimelist.net/people/6497/Matt_Greenfield
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/10086.jpg?s=e2d375e61f5738fb82162c81b4782ee7
+          name: Greenfield, Matt
+        language: English
+      - person:
+          mal_id: 7350
+          url: https://myanimelist.net/people/7350/Alfredo_Rollo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/79734.jpg?s=9de7362478bc71a1eadbf32f7d249737
+          name: Rollo, Alfredo
+        language: Portuguese (BR)
+      - person:
+          mal_id: 11530
+          url: https://myanimelist.net/people/11530/Alexandre_Marconato
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/72227.jpg?s=ae88b806be8cdb25ebb81dcaa796fa3a
+          name: Marconato, Alexandre
+        language: Portuguese (BR)
+      - person:
+          mal_id: 20476
+          url: https://myanimelist.net/people/20476/Eduard_Itchart
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/88866.jpg?s=d53387f0cbbc05d68a787a654e4e1156
+          name: Itchart, Eduard
+        language: Spanish
+      - person:
+          mal_id: 27507
+          url: https://myanimelist.net/people/27507/Cyril_Aubin
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/29261.jpg?s=c73af6ab7be4d8f84d23b7aac95805c9
+          name: Aubin, Cyril
+        language: French
+      - person:
+          mal_id: 1215
+          url: https://myanimelist.net/people/1215/Frank_Schröder
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/47678.jpg?s=8aed84a9932519975780c82b890b1d5e
+          name: Schröder, Frank
+        language: German
+      - person:
+          mal_id: 50972
+          url: https://myanimelist.net/people/50972/Daniel_MK_Cohen
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/58623.jpg?s=64af9f363a96f5b546d9abf2350eb4cc
+          name: Cohen, Daniel MK
+        language: English
+      - person:
+          mal_id: 33725
+          url: https://myanimelist.net/people/33725/Taric_Mehani
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/34743.jpg?s=fdd225dbec7bb44720812905811dce2b
+          name: Mehani, Taric
+        language: French
+      - person:
+          mal_id: 52931
+          url: https://myanimelist.net/people/52931/Ricardo_Escobar
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/53229.jpg?s=2f8921e06edd7d7047645737fbc6cbca
+          name: Escobar, Ricardo
+        language: Spanish
+      - person:
+          mal_id: 9253
+          url: https://myanimelist.net/people/9253/Francesco_Bulckaen
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/7385.jpg?s=4f1c981adf437ded11e5aa240bfd7aea
+          name: Bulckaen, Francesco
+        language: Italian
+      - person:
+          mal_id: 1678
+          url: https://myanimelist.net/people/1678/Davide_Chevalier
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/1577.jpg?s=f3c2a2e9adbc0c7edcbcb6f803e63834
+          name: Chevalier, Davide
+        language: Italian
+      - person:
+          mal_id: 60157
+          url: https://myanimelist.net/people/60157/Roberto_Mendiola
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/70632.jpg?s=00bb50f8c10d7990d528c178eeccd57c
+          name: Mendiola, Roberto
+        language: Spanish
+    - character:
+        mal_id: 1256
+        url: https://myanimelist.net/character/1256/Maya_Ibuki
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/7/78694.jpg?s=57f59966a66355360a1544bb25a77580
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/7/78694.webp?s=57f59966a66355360a1544bb25a77580
+            small_image_url: https://cdn.myanimelist.net/images/characters/7/78694t.webp?s=57f59966a66355360a1544bb25a77580
+        name: Ibuki, Maya
+      role: Supporting
+      favorites: 150
+      voice_actors:
+      - person:
+          mal_id: 159
+          url: https://myanimelist.net/people/159/Monica_Rial
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/37923.jpg?s=404223ca84c96f83d491f45acf82eb10
+          name: Rial, Monica
+        language: English
+      - person:
+          mal_id: 209
+          url: https://myanimelist.net/people/209/Miki_Nagasawa
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/74237.jpg?s=7c13eb140e1f41384ad911b01000d92a
+          name: Nagasawa, Miki
+        language: Japanese
+      - person:
+          mal_id: 763
+          url: https://myanimelist.net/people/763/Barbara_De_Bortoli
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/810.jpg?s=47f7aa653249affdf1456ab4304b0dd7
+          name: De Bortoli, Barbara
+        language: Italian
+      - person:
+          mal_id: 1660
+          url: https://myanimelist.net/people/1660/Alma_Wilhelme
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/1566.jpg?s=06b51bfaf010c2d79346d3e2bb300db9
+          name: Wilhelme, Alma
+        language: Spanish
+      - person:
+          mal_id: 6108
+          url: https://myanimelist.net/people/6108/Maria_Koschny
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/2744.jpg?s=3302f4cebe1aa9219fa8f9bd62019d6a
+          name: Koschny, Maria
+        language: German
+      - person:
+          mal_id: 7326
+          url: https://myanimelist.net/people/7326/Nuria_Trifol
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/87217.jpg?s=68cbd64fa3af4902f7fa8850a97e2967
+          name: Trifol, Nuria
+        language: Spanish
+      - person:
+          mal_id: 29083
+          url: https://myanimelist.net/people/29083/Kendra_Benham
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c
+          name: Benham, Kendra
+        language: English
+      - person:
+          mal_id: 31335
+          url: https://myanimelist.net/people/31335/Mariana_Ortiz
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/32219.jpg?s=56388a04172eb662a43cc3798f5d2fd4
+          name: Ortiz, Mariana
+        language: Spanish
+      - person:
+          mal_id: 11518
+          url: https://myanimelist.net/people/11518/Fátima_Noya
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/34225.jpg?s=a54556051335f6ca0f42df9f5f1108d9
+          name: Noya, Fátima
+        language: Portuguese (BR)
+      - person:
+          mal_id: 12344
+          url: https://myanimelist.net/people/12344/Christine_Marie_Cabanos
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/43360.jpg?s=b6cea10ce37e7e9bd4ee608419628c41
+          name: Cabanos, Christine Marie
+        language: English
+      - person:
+          mal_id: 21893
+          url: https://myanimelist.net/people/21893/Marie_Nonnenmacher
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/71214.jpg?s=b5e5e78b6b436cb9fdb6cbbb6cf681bc
+          name: Nonnenmacher, Marie
+        language: French
+      - person:
+          mal_id: 1415
+          url: https://myanimelist.net/people/1415/Eva_Padoan
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/1355.jpg?s=53ccb48b4e69ee6cd90af5dd4e1721f1
+          name: Padoan, Eva
+        language: Italian
+      - person:
+          mal_id: 59021
+          url: https://myanimelist.net/people/59021/Arianne_Deviègue
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/69866.jpg?s=ed520e4289b5ec9d95d8d9f872648e4a
+          name: Deviègue, Arianne
+        language: French
+      - person:
+          mal_id: 62221
+          url: https://myanimelist.net/people/62221/Anette_Ugalde
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/72270.jpg?s=5d8dc2629eff35bcfc2a300e8094103a
+          name: Ugalde, Anette
+        language: Spanish
+      - person:
+          mal_id: 43777
+          url: https://myanimelist.net/people/43777/Caroline_Mozzone
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/67530.jpg?s=cc2a80358849d2e0f556316e0dceb65d
+          name: Mozzone, Caroline
+        language: French
+    - character:
+        mal_id: 1258
+        url: https://myanimelist.net/character/1258/Yui_Ikari
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/12/108140.jpg?s=a7e899188c9f60977641c0cb1e692fe4
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/12/108140.webp?s=a7e899188c9f60977641c0cb1e692fe4
+            small_image_url: https://cdn.myanimelist.net/images/characters/12/108140t.webp?s=a7e899188c9f60977641c0cb1e692fe4
+        name: Ikari, Yui
+      role: Supporting
+      favorites: 118
+      voice_actors:
+      - person:
+          mal_id: 14
+          url: https://myanimelist.net/people/14/Megumi_Hayashibara
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/63419.jpg?s=601b4dcc01cb37560ff4478d0ca0956b
+          name: Hayashibara, Megumi
+        language: Japanese
+      - person:
+          mal_id: 596
+          url: https://myanimelist.net/people/596/Kim_Sevier
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/40195.jpg?s=c77655af1dc5c3e9bcb764901aba5021
+          name: Sevier, Kim
+        language: English
+      - person:
+          mal_id: 981
+          url: https://myanimelist.net/people/981/Valentina_Mari
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/1040.jpg?s=54617fd55219cbf5f19e0659a1f461fc
+          name: Mari, Valentina
+        language: Italian
+      - person:
+          mal_id: 1178
+          url: https://myanimelist.net/people/1178/Stéphanie_Lafforgue
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/68567.jpg?s=dafcd87f810a79756a1398d397770464
+          name: Lafforgue, Stéphanie
+        language: French
+      - person:
+          mal_id: 33479
+          url: https://myanimelist.net/people/33479/Isabel_de_Sá
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/66294.jpg?s=ba3df39984fffc5ed06a6bd24f2ad4ea
+          name: de Sá, Isabel
+        language: Portuguese (BR)
+      - person:
+          mal_id: 43793
+          url: https://myanimelist.net/people/43793/Ryan_Bartley
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/47361.jpg?s=dbebc1813d43d8e192d1e470b29ca728
+          name: Bartley, Ryan
+        language: English
+      - person:
+          mal_id: 56736
+          url: https://myanimelist.net/people/56736/Adriana_Casas
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/70856.jpg?s=c3aebbdf3f15037ad23fa3d6d31f07e0
+          name: Casas, Adriana
+        language: Spanish
+      - person:
+          mal_id: 56314
+          url: https://myanimelist.net/people/56314/Naïké_Fauveau
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/76604.jpg?s=e55df47a210bd9c598f51fa9f0e40d2d
+          name: Fauveau, Naïké
+        language: French
+      - person:
+          mal_id: 42689
+          url: https://myanimelist.net/people/42689/Lucrezia_Marricchi
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/46261.jpg?s=d842a49617d0000065b5ac373f4a3f9e
+          name: Marricchi, Lucrezia
+        language: Italian
+      - person:
+          mal_id: 12094
+          url: https://myanimelist.net/people/12094/Marli_Bortoletto
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/59458.jpg?s=731c560bc5569332b8cf3cc7f396f4f2
+          name: Bortoletto, Marli
+        language: Portuguese (BR)
+      - person:
+          mal_id: 55403
+          url: https://myanimelist.net/people/55403/Élisabeth_Ventura
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/65180.jpg?s=7f76d467117dce5c4c479323cf00d194
+          name: Ventura, Élisabeth
+        language: French
+      - person:
+          mal_id: 61063
+          url: https://myanimelist.net/people/61063/Belinda_Martínez_Miranda
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/71217.jpg?s=e2b89777edf16e82a53993325fc385b0
+          name: Martínez Miranda, Belinda
+        language: Spanish
+    - character:
+        mal_id: 1257
+        url: https://myanimelist.net/character/1257/Gendou_Ikari
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/53131.jpg?s=9a919510d2ed89ed2db9fc8077f14c71
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/53131.webp?s=9a919510d2ed89ed2db9fc8077f14c71
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/53131t.webp?s=9a919510d2ed89ed2db9fc8077f14c71
+        name: Ikari, Gendou
+      role: Supporting
+      favorites: 1723
+      voice_actors:
+      - person:
+          mal_id: 201
+          url: https://myanimelist.net/people/201/John_Swasey
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/84635.jpg?s=59373b6994a3535c974b4f2d0ca406bd
+          name: Swasey, John
+        language: English
+      - person:
+          mal_id: 284
+          url: https://myanimelist.net/people/284/Fumihiko_Tachiki
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/44589.jpg?s=27d594d56982e1c1b691f88aee7b1ca6
+          name: Tachiki, Fumihiko
+        language: Japanese
+      - person:
+          mal_id: 1095
+          url: https://myanimelist.net/people/1095/Massimo_Corvo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/37707.jpg?s=22273f4b65206d47e6948d7dca6690fa
+          name: Corvo, Massimo
+        language: Italian
+      - person:
+          mal_id: 1669
+          url: https://myanimelist.net/people/1669/Erich_Räuker
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/2751.jpg?s=d017fc51e3286e3abab2db93c087006e
+          name: Räuker, Erich
+        language: German
+      - person:
+          mal_id: 5534
+          url: https://myanimelist.net/people/5534/Tristan_MacAvery
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/41587.jpg?s=555867e74d42e649653573cf9e6a1a22
+          name: MacAvery, Tristan
+        language: English
+      - person:
+          mal_id: 11695
+          url: https://myanimelist.net/people/11695/Fábio_Moura
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/80446.jpg?s=e0b4acc606a2a795d768758184454af4
+          name: Moura, Fábio
+        language: Portuguese (BR)
+      - person:
+          mal_id: 29203
+          url: https://myanimelist.net/people/29203/Joan_Carles_Gustems
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/30557.jpg?s=2b00dbd9e0d4a3e3b75844167e51d385
+          name: Gustems, Joan Carles
+        language: Spanish
+      - person:
+          mal_id: 39799
+          url: https://myanimelist.net/people/39799/Ray_Chase
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/47194.jpg?s=fa0f6dee515ac01718c8197c32a8ef3d
+          name: Chase, Ray
+        language: English
+      - person:
+          mal_id: 14337
+          url: https://myanimelist.net/people/14337/Luis_Bajo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/49316.jpg?s=f55049266ebb997a5cbaeb2d91d8a448
+          name: Bajo, Luis
+        language: Spanish
+      - person:
+          mal_id: 31617
+          url: https://myanimelist.net/people/31617/Julien_Kramer
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/84874.jpg?s=daf6361f39842ff913f28eb774fa38ee
+          name: Kramer, Julien
+        language: French
+      - person:
+          mal_id: 13299
+          url: https://myanimelist.net/people/13299/Idzi_Dutkiewicz
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/68499.jpg?s=1b8d362f26846c6f578167b713243e6e
+          name: Dutkiewicz, Idzi
+        language: Spanish
+      - person:
+          mal_id: 56689
+          url: https://myanimelist.net/people/56689/Humberto_Solórzano
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/67569.jpg?s=6e8c58a7e3484cc1a1cf3ef57f7f93f9
+          name: Solórzano, Humberto
+        language: Spanish
+      - person:
+          mal_id: 1234
+          url: https://myanimelist.net/people/1234/Roberto_Draghetti
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/2532.jpg?s=98dcfafe71d374b12d8c21e23811076f
+          name: Draghetti, Roberto
+        language: Italian
+      - person:
+          mal_id: 65678
+          url: https://myanimelist.net/people/65678/Michel_Roy
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/75224.jpg?s=56ec9e244ae55065860fd8f262321030
+          name: Roy, Michel
+        language: French
+    - character:
+        mal_id: 1260
+        url: https://myanimelist.net/character/1260/Ryouji_Kaji
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/60206.jpg?s=39bb95f5433f8a8568111a25e05d2aff
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/60206.webp?s=39bb95f5433f8a8568111a25e05d2aff
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/60206t.webp?s=39bb95f5433f8a8568111a25e05d2aff
+        name: Kaji, Ryouji
+      role: Supporting
+      favorites: 1359
+      voice_actors:
+      - person:
+          mal_id: 11
+          url: https://myanimelist.net/people/11/Kouichi_Yamadera
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/73614.jpg?s=643eee95220ed1edde3cb796861fafec
+          name: Yamadera, Kouichi
+        language: Japanese
+      - person:
+          mal_id: 1094
+          url: https://myanimelist.net/people/1094/Francesco_Prando
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/1141.jpg?s=88e939fb200420152d101970f7bf0d1f
+          name: Prando, Francesco
+        language: Italian
+      - person:
+          mal_id: 5605
+          url: https://myanimelist.net/people/5605/Cássius_Romero
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/68349.jpg?s=1dd4f6605cd9cb13e9bc2b1a451b37b3
+          name: Romero, Cássius
+        language: Portuguese (BR)
+      - person:
+          mal_id: 6312
+          url: https://myanimelist.net/people/6312/Aaron_Krohn
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/49372.jpg?s=461a81e71b07594f6025f078fbdbcddc
+          name: Krohn, Aaron
+        language: English
+      - person:
+          mal_id: 43647
+          url: https://myanimelist.net/people/43647/Marco_Antônio_Abreu
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/76584.jpg?s=6743a777fff90f9535442f984555fb09
+          name: Abreu, Marco Antônio
+        language: Portuguese (BR)
+      - person:
+          mal_id: 45872
+          url: https://myanimelist.net/people/45872/Marcel_Collé
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/85536.jpg?s=26af98b4e1d5ce86aa230c9034a2f9f8
+          name: Collé, Marcel
+        language: German
+      - person:
+          mal_id: 46304
+          url: https://myanimelist.net/people/46304/Greg_Chun
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/49888.jpg?s=c5c8c49e814cd06723d8b63204d8333e
+          name: Chun, Greg
+        language: English
+      - person:
+          mal_id: 43704
+          url: https://myanimelist.net/people/43704/Fábio_Azevedo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/77477.jpg?s=3d23ccef3d344331658cb1474fbfeb09
+          name: Azevedo, Fábio
+        language: Portuguese (BR)
+      - person:
+          mal_id: 55996
+          url: https://myanimelist.net/people/55996/Anatole_de_Bodinat
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/66288.jpg?s=ec394c8e1f2b9e38bc390343adab2207
+          name: de Bodinat, Anatole
+        language: French
+      - person:
+          mal_id: 57252
+          url: https://myanimelist.net/people/57252/Enrique_Cervantes
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/68397.jpg?s=b64c3133609bd36e6cb2e2ab02bfc904
+          name: Cervantes, Enrique
+        language: Spanish
+      - person:
+          mal_id: 42624
+          url: https://myanimelist.net/people/42624/Emanuele_Ruzza
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/45983.jpg?s=9a77f73b9b5a0dfae2076e21d4bdf6b1
+          name: Ruzza, Emanuele
+        language: Italian
+      - person:
+          mal_id: 59836
+          url: https://myanimelist.net/people/59836/Patrick_Laplace
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/70293.jpg?s=2f3eabcb0085c07e7141fcc09b9b69cf
+          name: Laplace, Patrick
+        language: French
+      - person:
+          mal_id: 63705
+          url: https://myanimelist.net/people/63705/Gerardo_García
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/73600.jpg?s=4ca8dfbd63767284cf50c6a4b7b1d649
+          name: García, Gerardo
+        language: Spanish
+      - person:
+          mal_id: 87368
+          url: https://myanimelist.net/people/87368/José_Luis_Mediavilla
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/88944.jpg?s=0a2bed6581d66560e77db635105fdde8
+          name: Mediavilla, José Luis
+        language: Spanish
+    - character:
+        mal_id: 17620
+        url: https://myanimelist.net/character/17620/Keel_Lorentz
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/2/109297.jpg?s=d371ad595d24c0904a69e0a6c2734874
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/2/109297.webp?s=d371ad595d24c0904a69e0a6c2734874
+            small_image_url: https://cdn.myanimelist.net/images/characters/2/109297t.webp?s=d371ad595d24c0904a69e0a6c2734874
+        name: Lorentz, Keel
+      role: Supporting
+      favorites: 5
+      voice_actors:
+      - person:
+          mal_id: 1436
+          url: https://myanimelist.net/people/1436/Mugihito
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/56764.jpg?s=0ae30196870a112052d49a936b3ce776
+          name: Mugihito
+        language: Japanese
+      - person:
+          mal_id: 12394
+          url: https://myanimelist.net/people/12394/Rick_Peeples
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/22211.jpg?s=397d52ad47bbdf65de51f6d7d90fd591
+          name: Peeples, Rick
+        language: English
+      - person:
+          mal_id: 13341
+          url: https://myanimelist.net/people/13341/Gianni_Musy
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/37687.jpg?s=fc2159b53a5b3c6e30d99394bc90056f
+          name: Musy, Gianni
+        language: Italian
+      - person:
+          mal_id: 29623
+          url: https://myanimelist.net/people/29623/Gérard_Boucaron
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/65520.jpg?s=b1ff121f989f2ddd241850ba980d96e5
+          name: Boucaron, Gérard
+        language: French
+      - person:
+          mal_id: 43719
+          url: https://myanimelist.net/people/43719/Antônio_Moreno
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/67278.jpg?s=c832d79a38e6cb9f1e631bb7e69006e4
+          name: Moreno, Antônio
+        language: Portuguese (BR)
+      - person:
+          mal_id: 44292
+          url: https://myanimelist.net/people/44292/César_Emílio
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/69876.jpg?s=f184a4147aee4e1d681f62783e8a84bf
+          name: Emílio, César
+        language: Portuguese (BR)
+      - person:
+          mal_id: 56071
+          url: https://myanimelist.net/people/56071/José_Luccioni
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/66403.jpg?s=0c8cfa54bafdf0ac99fc1baa9eaff473
+          name: Luccioni, José
+        language: French
+      - person:
+          mal_id: 44053
+          url: https://myanimelist.net/people/44053/Edoardo_Siravo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/47502.jpg?s=880b167c3b0bc20bdbb72507ec73fb89
+          name: Siravo, Edoardo
+        language: Italian
+      - person:
+          mal_id: 62144
+          url: https://myanimelist.net/people/62144/Pedro_DAguillón_Jr
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/73320.jpg?s=e9e8c067f50d9774341575b1565278e9
+          name: D'Aguillón Jr., Pedro
+        language: Spanish
+      - person:
+          mal_id: 66275
+          url: https://myanimelist.net/people/66275/Glauco_Onorato
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c
+          name: Onorato, Glauco
+        language: Italian
+    - character:
+        mal_id: 1261
+        url: https://myanimelist.net/character/1261/Kaworu_Nagisa
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/3/175413.jpg?s=5ee20b6aa1f53fea531625a5a4dbff2a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/3/175413.webp?s=5ee20b6aa1f53fea531625a5a4dbff2a
+            small_image_url: https://cdn.myanimelist.net/images/characters/3/175413t.webp?s=5ee20b6aa1f53fea531625a5a4dbff2a
+        name: Nagisa, Kaworu
+      role: Supporting
+      favorites: 9495
+      voice_actors:
+      - person:
+          mal_id: 17
+          url: https://myanimelist.net/people/17/Akira_Ishida
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/62624.jpg?s=e177139a222a21c2cd73e39e54187aef
+          name: Ishida, Akira
+        language: Japanese
+      - person:
+          mal_id: 192
+          url: https://myanimelist.net/people/192/Greg_Ayres
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/12455.jpg?s=a34115be18946ae76075034079a167b7
+          name: Ayres, Greg
+        language: English
+      - person:
+          mal_id: 764
+          url: https://myanimelist.net/people/764/Massimiliano_Alto
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/812.jpg?s=32dddaa0a553c9a0d6f5f1234e153513
+          name: Alto, Massimiliano
+        language: Italian
+      - person:
+          mal_id: 1001
+          url: https://myanimelist.net/people/1001/Markus_Pfeiffer
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/21671.jpg?s=3a302581e81d72dac477dc9b1b3f4c51
+          name: Pfeiffer, Markus
+        language: German
+      - person:
+          mal_id: 11521
+          url: https://myanimelist.net/people/11521/Yuri_Chesman
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/64740.jpg?s=93a317325d77ac84ee15cfb502b15b48
+          name: Chesman, Yuri
+        language: Portuguese (BR)
+      - person:
+          mal_id: 43570
+          url: https://myanimelist.net/people/43570/Jordi_Pons
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/43776.jpg?s=04727e076e13c1159b3a9ec4f17cfa76
+          name: Pons, Jordi
+        language: Spanish
+      - person:
+          mal_id: 21469
+          url: https://myanimelist.net/people/21469/Ernesto_Lezama
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/24639.jpg?s=a5602f2f8b05a85abd8793ee1a41e71b
+          name: Lezama, Ernesto
+        language: Spanish
+      - person:
+          mal_id: 25401
+          url: https://myanimelist.net/people/25401/Clifford_Chapin
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/80353.jpg?s=4e6845c571c3ccbfa5a2d09791ed411d
+          name: Chapin, Clifford
+        language: English
+      - person:
+          mal_id: 52961
+          url: https://myanimelist.net/people/52961/Kyle_Sturdivant
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/questionmark_23.gif?s=f7dcbc4a4603d18356d3dfef8abd655c
+          name: Sturdivant, Kyle
+        language: English
+      - person:
+          mal_id: 13583
+          url: https://myanimelist.net/people/13583/Alexis_Tomassian
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/86063.jpg?s=50649bb5ff8e3b8f2bfbb6a81c0b99e8
+          name: Tomassian, Alexis
+        language: French
+      - person:
+          mal_id: 13263
+          url: https://myanimelist.net/people/13263/Edson_Matus
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/47853.jpg?s=ce9b564855c5d1cb252c11fb05d988b4
+          name: Matus, Edson
+        language: Spanish
+      - person:
+          mal_id: 15567
+          url: https://myanimelist.net/people/15567/Gabriele_Patriarca
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/16891.jpg?s=2cac7595faa48064d36d99e17551e63a
+          name: Patriarca, Gabriele
+        language: Italian
+      - person:
+          mal_id: 58031
+          url: https://myanimelist.net/people/58031/Olivier_Jankovic
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/69290.jpg?s=59dc979a43bf677b5c12d08a6f9517c1
+          name: Jankovic, Olivier
+        language: French
+      - person:
+          mal_id: 45272
+          url: https://myanimelist.net/people/45272/Jeremias_Koschorz
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/48551.jpg?s=15d5ee7ff948845e196bb9a93d8fbc6a
+          name: Koschorz, Jeremias
+        language: German
+      - person:
+          mal_id: 77605
+          url: https://myanimelist.net/people/77605/António_Vaz_Mendes
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/81893.jpg?s=c6396dc10a329d50a427d0b4cc0a3aa3
+          name: Vaz Mendes, António
+        language: Portuguese (BR)
+    - character:
+        mal_id: 1892
+        url: https://myanimelist.net/character/1892/Pen_Pen
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/7/346982.jpg?s=62399cb26e61d91eb2a712428e2e0a1a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/7/346982.webp?s=62399cb26e61d91eb2a712428e2e0a1a
+            small_image_url: https://cdn.myanimelist.net/images/characters/7/346982t.webp?s=62399cb26e61d91eb2a712428e2e0a1a
+        name: Pen Pen
+      role: Supporting
+      favorites: 2399
+      voice_actors:
+      - person:
+          mal_id: 14
+          url: https://myanimelist.net/people/14/Megumi_Hayashibara
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/63419.jpg?s=601b4dcc01cb37560ff4478d0ca0956b
+          name: Hayashibara, Megumi
+        language: Japanese
+      - person:
+          mal_id: 888
+          url: https://myanimelist.net/people/888/Mandy_Clark
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/28189.jpg?s=b255d529b1c9d79a2c0c165a70fe37ff
+          name: Clark, Mandy
+        language: English
+      - person:
+          mal_id: 1650
+          url: https://myanimelist.net/people/1650/Cherami_Leigh
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/47505.jpg?s=70a4eeaa04501d3a866693fb2f80e0fb
+          name: Leigh, Cherami
+        language: English
+      - person:
+          mal_id: 56593
+          url: https://myanimelist.net/people/56593/Diego_Becerril
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/73474.jpg?s=49dca75c1a1af79b4e90c0f1f167ae91
+          name: Becerril, Diego
+        language: Spanish
+      - person:
+          mal_id: 57252
+          url: https://myanimelist.net/people/57252/Enrique_Cervantes
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/68397.jpg?s=b64c3133609bd36e6cb2e2ab02bfc904
+          name: Cervantes, Enrique
+        language: Spanish
+    - character:
+        mal_id: 40969
+        url: https://myanimelist.net/character/40969/Kyouko_Zeppelin_Souryuu
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/6/122523.jpg?s=84113fff3e03d7d7f47dd4d78ce407f2
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/6/122523.webp?s=84113fff3e03d7d7f47dd4d78ce407f2
+            small_image_url: https://cdn.myanimelist.net/images/characters/6/122523t.webp?s=84113fff3e03d7d7f47dd4d78ce407f2
+        name: Souryuu, Kyouko Zeppelin
+      role: Supporting
+      favorites: 2
+      voice_actors:
+      - person:
+          mal_id: 1295
+          url: https://myanimelist.net/people/1295/Maria_Kawamura
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/57958.jpg?s=948361f6bf734821b44b8020c1a40de4
+          name: Kawamura, Maria
+        language: Japanese
+      - person:
+          mal_id: 9747
+          url: https://myanimelist.net/people/9747/Susan_Sindberg
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/28019.jpg?s=f81b97dcd58d0260cd9d332788767e9e
+          name: Sindberg, Susan
+        language: French
+      - person:
+          mal_id: 7593
+          url: https://myanimelist.net/people/7593/Adriana_Pissardini
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/60128.jpg?s=d36fee7de60bf7fe6289c01c9fa5e83e
+          name: Pissardini, Adriana
+        language: Portuguese (BR)
+      - person:
+          mal_id: 43318
+          url: https://myanimelist.net/people/43318/Francesca_Fiorentini
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/47020.jpg?s=a58b650707a212b7851833ba47ea7a61
+          name: Fiorentini, Francesca
+        language: Italian
+      - person:
+          mal_id: 56686
+          url: https://myanimelist.net/people/56686/Mildred_Barrera
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/70861.jpg?s=e2934d86660ec0bf53a9e5450c0f2204
+          name: Barrera, Mildred
+        language: Spanish
+      - person:
+          mal_id: 9249
+          url: https://myanimelist.net/people/9249/Olivia_Dutron
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/65622.jpg?s=f59fb0ef684adac6aee3f8fbdad2d6e4
+          name: Dutron, Olivia
+        language: French
+      - person:
+          mal_id: 43705
+          url: https://myanimelist.net/people/43705/Sandra_Mara_Azevedo
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/68354.jpg?s=a2cf3eda780db5a1d0a728d13f93f4b8
+          name: Azevedo, Sandra Mara
+        language: Portuguese (BR)
+      - person:
+          mal_id: 40048
+          url: https://myanimelist.net/people/40048/Yvonne_Aguirre
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/40412.jpg?s=587abdd6c0a2f0fa03732af67c81955d
+          name: Aguirre, Yvonne
+        language: English
+    - character:
+        mal_id: 1262
+        url: https://myanimelist.net/character/1262/Touji_Suzuhara
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/276382.jpg?s=0a9845d8e711af3ef66277d60747194b
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/276382.webp?s=0a9845d8e711af3ef66277d60747194b
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/276382t.webp?s=0a9845d8e711af3ef66277d60747194b
+        name: Suzuhara, Touji
+      role: Supporting
+      favorites: 164
+      voice_actors:
+      - person:
+          mal_id: 1
+          url: https://myanimelist.net/people/1/Tomokazu_Seki
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/85360.jpg?s=b35e7489e11b54fee04fbbcbc69b2edb
+          name: Seki, Tomokazu
+        language: Japanese
+      - person:
+          mal_id: 780
+          url: https://myanimelist.net/people/780/Corrado_Conforti
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/49580.jpg?s=f0546d2b4bfc7f0f70098c138e83f7fb
+          name: Conforti, Corrado
+        language: Italian
+      - person:
+          mal_id: 5138
+          url: https://myanimelist.net/people/5138/Vagner_Fagundes
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/75284.jpg?s=cdea5cdd1331587131c9f60554f65f87
+          name: Fagundes, Vagner
+        language: Portuguese (BR)
+      - person:
+          mal_id: 6112
+          url: https://myanimelist.net/people/6112/Julien_Haggége
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/2749.jpg?s=74bb39307a6f797e2af344e03ce4b496
+          name: Haggége, Julien
+        language: German
+      - person:
+          mal_id: 18973
+          url: https://myanimelist.net/people/18973/Ángel_de_Gracia
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/82349.jpg?s=0fa76748b889e2c468b2385afdea727c
+          name: de Gracia, Ángel
+        language: Spanish
+      - person:
+          mal_id: 10
+          url: https://myanimelist.net/people/10/Johnny_Yong_Bosch
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/68487.jpg?s=969ff401e5da5e12a758f04dcb653b33
+          name: Bosch, Johnny Yong
+        language: English
+      - person:
+          mal_id: 55126
+          url: https://myanimelist.net/people/55126/Adrien_Larmande
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/72156.jpg?s=8d5da9fbb629055d6e0b080da75010b8
+          name: Larmande, Adrien
+        language: French
+      - person:
+          mal_id: 55496
+          url: https://myanimelist.net/people/55496/Olivier_Korol
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/65619.jpg?s=ca79511404c037531b671701b9d7c84d
+          name: Korol, Olivier
+        language: French
+      - person:
+          mal_id: 57329
+          url: https://myanimelist.net/people/57329/Carlos_Hernández
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/71487.jpg?s=ef04f02f771bd3e70346ec1de2fae53c
+          name: Hernández, Carlos
+        language: Spanish
+      - person:
+          mal_id: 21349
+          url: https://myanimelist.net/people/21349/Alex_Polidori
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/24483.jpg?s=a09e90dd07ab95f926ebe429e227d6b8
+          name: Polidori, Alex
+        language: Italian
+      - person:
+          mal_id: 13959
+          url: https://myanimelist.net/people/13959/Jorge_Saudinós
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/50457.jpg?s=86b28658783bd3df9f984945ac4f96a2
+          name: Saudinós, Jorge
+        language: Spanish
+    - character:
+        mal_id: 3721
+        url: https://myanimelist.net/character/3721/Shiro_Tokita
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/122497.jpg?s=441535ca342a6e059af535bd73ec9213
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/122497.webp?s=441535ca342a6e059af535bd73ec9213
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/122497t.webp?s=441535ca342a6e059af535bd73ec9213
+        name: Tokita, Shiro
+      role: Supporting
+      favorites: 1
+      voice_actors:
+      - person:
+          mal_id: 337
+          url: https://myanimelist.net/people/337/Houchuu_Ootsuka
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/80423.jpg?s=e68f9e25b6b73d6e1d8941bd5e9aad51
+          name: Ootsuka, Houchuu
+        language: Japanese
+      - person:
+          mal_id: 12051
+          url: https://myanimelist.net/people/12051/Rob_Bundy
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/41975.jpg?s=b53349d95e54b4238295a718d33522d2
+          name: Bundy, Rob
+        language: English
+      - person:
+          mal_id: 7438
+          url: https://myanimelist.net/people/7438/Mauro_Eduardo_Lima
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/67731.jpg?s=c0e553201987981128bbc9b2d26e9f7c
+          name: Lima, Mauro Eduardo
+        language: Portuguese (BR)
+      - person:
+          mal_id: 8882
+          url: https://myanimelist.net/people/8882/Elcio_Sodre
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/76031.jpg?s=c66e42840900e26ac315280abca952eb
+          name: Sodre, Elcio
+        language: Portuguese (BR)
+      - person:
+          mal_id: 57117
+          url: https://myanimelist.net/people/57117/David_Krüger
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/70624.jpg?s=77389e8b4939f1d87151ef6d254359d5
+          name: Krüger, David
+        language: French
+  body_text: null
+  body_b64: null

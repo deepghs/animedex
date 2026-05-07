@@ -1,0 +1,64 @@
+metadata:
+  captured_at: '2026-05-07T11:00:32Z'
+  label: search-manga-berserk
+  backend: anilist
+  path_slug: graphql
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Page(perPage:3){ media(search:"Berserk",type:MANGA){ id title{romaji} chapters volumes status } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:00:32 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '17'
+    Set-Cookie: laravel_session=NMSRzyJb9kw7MdGA5Sz5KaxHdoftQdvL5GCBp8tK; expires=Thu, 07-May-2026 23:00:32 GMT; Max-Age=43200;
+      path=/; httponly
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=idWs2I199CBBdE50Qb%2B%2FFGWNKP91IbbodYwjiSa7eSPWto4HoHoUkqwMkLXk%2F1X2kpIV71KpYtDVKmc8vSY8JHz%2B6hs6YS0lGQt1I6BVY8PbeaCbCTTYOsWGvbHQhiNK0LmK0w%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fb8b4bfbad417-KIX
+  body_json:
+    data:
+      Page:
+        media:
+        - id: 30002
+          title:
+            romaji: Berserk
+          chapters: null
+          volumes: null
+          status: RELEASING
+        - id: 33706
+          title:
+            romaji: Delicacy
+          chapters: 11
+          volumes: 1
+          status: FINISHED
+        - id: 101625
+          title:
+            romaji: 'Boushoku no Berserk: Ore Dake Level to Iu Gainen wo Toppa Suru THE COMIC'
+          chapters: null
+          volumes: null
+          status: RELEASING
+  body_text: null
+  body_b64: null

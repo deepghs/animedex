@@ -1,0 +1,51 @@
+metadata:
+  captured_at: '2026-05-07T11:15:04Z'
+  label: call-02
+  backend: trace
+  path_slug: me
+request:
+  method: GET
+  url: https://api.trace.moe/me
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:15:04 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    access-control-allow-credentials: 'true'
+    access-control-allow-headers: Content-Type, x-trace-secret
+    access-control-allow-methods: GET, POST, OPTIONS
+    access-control-allow-origin: '*'
+    alt-svc: h3=":443"; ma=86400
+    etag: W/"4e-vOQRYzMm08pipA66BdNdfizHmVQ"
+    ratelimit-limit: '100'
+    ratelimit-policy: 100;w=60
+    ratelimit-remaining: '98'
+    ratelimit-reset: '57'
+    vary: Origin
+    via: 1.1 Caddy
+    x-ratelimit-limit: '100'
+    x-ratelimit-remaining: '98'
+    x-ratelimit-reset: '1778152561'
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    X-Content-Type-Options: nosniff
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=UQ7Sjw3mlSsr89ka7u7X2r3rNcww%2FSTYQGGKouyn%2BrRWV%2FPbxe6JMjLGHOwcassvoGDfddKiRHwkhpwwSYL%2FjTgVm%2B4l%2F1HZQe16Xux5m%2Ft55K%2BttYhw8GICdMY12po%3D"}]}'
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: 9f7fcdf7db987e85-KIX
+  body_json:
+    id: 45.78.62.209
+    priority: 0
+    concurrency: 1
+    quota: 100
+    quotaUsed: '2'
+  body_text: null
+  body_b64: null

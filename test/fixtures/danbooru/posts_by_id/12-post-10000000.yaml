@@ -1,0 +1,146 @@
+metadata:
+  captured_at: '2026-05-07T11:17:17Z'
+  label: post-10000000
+  backend: danbooru
+  path_slug: posts_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts/10000000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:17 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"95e5a7f0800ba45996754df1f2d3bfe8"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=Qqo3bD4xnFzfOjnSxDqsXX%2BVMyzoVibwwk%2BG24qFXV6XAdW9z4w8t45VmNMddnH1B%2B2oK1MjgspD91BGO4Zhccu7F0Sh%2B4ch0GwboH6kv5wvqAnf8nysXqrCOTz5A5kza6x%2FK9kdxBO61BAjtQXHSbMapu3ap8P1802kBYdY80gl%2FUju88djuY5wQ0x0fToSlQEDvnB2h8%2BCof4dg4bA7QmicUossxBwWj84a0l%2Bpv1WoHDejcnNVkd6lllfOlOvom3%2FXf60%2BjFnyHyzQWb74mv5aPcH8jt7m9vEX3pqxOc%3D--qgotjLfotl3sbgLX--E%2BQr1EVQajkFMe5fthTy5w%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:16 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd13c2c4f833b-KIX
+    server-timing: sql.queries;count=2, cache.reads;count=1, cache.keys_read;count=68, cache.keys_hit;count=68, cache.total_time;dur=0.6857,
+      rails.total_time;dur=4.946, rails.cpu_time;dur=2.9181, rails.idle_time;dur=2.0279, rails.sql_time;dur=1.8207, rails.view_time;dur=1.5127,
+      rails.allocations;count=4818, request.allocations;count=5274, request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.5638,
+      request.total_time;dur=5.5919, request.queue_time_0;dur=1.0982, request.queue_time_1;dur=95.0
+    x-runtime: '0.00559185791015625'
+    via: 172.70.233.113, gura, ina/danbooru-768bdd4cff-mx8x5
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=SM4QurRd0TRGNo3qC3f%2BpqEi1b9XcsihQX5LDJinl5uwFVOwuNkyj3kXfVgc7A51nPkaqUVAJuah5p6FGGn218BbGJSbP%2BViUfacjAUt2rRmnSEB3vlpDfi2qSMMSDEAdR2eQQ%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd13c2c4f833b-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 10000000
+    created_at: '2025-09-21T10:45:01.835-04:00'
+    uploader_id: 483328
+    score: 1731
+    source: https://i.pximg.net/img-original/img/2025/09/12/10/30/53/134997618_p0.jpg
+    md5: 90c1b56a6882ae61bd8f7ff44a1d3dd4
+    last_comment_bumped_at: '2026-01-12T09:58:47.296-05:00'
+    rating: s
+    image_width: 2501
+    image_height: 3623
+    tag_string: 1girl absurdres animal_ear_fluff animal_ears arm_warmers bandaid bandaid_hair_ornament belt blonde_hair blue_eyes
+      breasts collarbone commentary crop_top cropped_shirt crossed_bangs dog_ears dog_girl double-parted_bangs fake_horns
+      fingernails groin hair_between_eyes hair_intakes hair_ornament hairband hand_up highres hololive hololive_english horn_hairband
+      horns light_blush looking_at_viewer lowleg lowleg_pants midriff mococo_abyssgard mococo_abyssgard_(1st_costume) multicolored_hair
+      nail_polish navel pants parted_lips pink_belt pink_hair pink_hairband pink_nails risu_(risuuu_q) shirt short_hair short_sleeves
+      shorts simple_background single_bare_shoulder small_breasts solo stomach straight-on streaked_hair t-shirt two_side_up
+      upper_body virtual_youtuber white_background white_shirt white_shorts x_hair_ornament
+    fav_count: 1556
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 60
+    tag_count_artist: 1
+    tag_count_character: 2
+    tag_count_copyright: 2
+    file_size: 2525679
+    up_score: 1759
+    down_score: -28
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 68
+    updated_at: '2026-04-29T16:12:01.659-04:00'
+    is_banned: false
+    pixiv_id: 134997618
+    last_commented_at: '2026-01-12T09:58:47.296-05:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 3
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 32267623
+      created_at: '2025-09-11T21:30:58.915-04:00'
+      updated_at: '2025-09-11T21:31:00.611-04:00'
+      md5: 90c1b56a6882ae61bd8f7ff44a1d3dd4
+      file_ext: jpg
+      file_size: 2525679
+      image_width: 2501
+      image_height: 3623
+      duration: null
+      status: active
+      file_key: x0KRjSruw
+      is_public: true
+      pixel_hash: 899570c4cd216c830dc398d1b423f202
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/90/c1/90c1b56a6882ae61bd8f7ff44a1d3dd4.jpg
+        width: 124
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/90/c1/90c1b56a6882ae61bd8f7ff44a1d3dd4.jpg
+        width: 249
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/90/c1/90c1b56a6882ae61bd8f7ff44a1d3dd4.webp
+        width: 497
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/90/c1/sample-90c1b56a6882ae61bd8f7ff44a1d3dd4.jpg
+        width: 850
+        height: 1231
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/90/c1/90c1b56a6882ae61bd8f7ff44a1d3dd4.jpg
+        width: 2501
+        height: 3623
+        file_ext: jpg
+    tag_string_general: 1girl animal_ear_fluff animal_ears arm_warmers bandaid bandaid_hair_ornament belt blonde_hair blue_eyes
+      breasts collarbone crop_top cropped_shirt crossed_bangs dog_ears dog_girl double-parted_bangs fake_horns fingernails
+      groin hair_between_eyes hair_intakes hair_ornament hairband hand_up horn_hairband horns light_blush looking_at_viewer
+      lowleg lowleg_pants midriff multicolored_hair nail_polish navel pants parted_lips pink_belt pink_hair pink_hairband
+      pink_nails shirt short_hair short_sleeves shorts simple_background single_bare_shoulder small_breasts solo stomach straight-on
+      streaked_hair t-shirt two_side_up upper_body virtual_youtuber white_background white_shirt white_shorts x_hair_ornament
+    tag_string_character: mococo_abyssgard mococo_abyssgard_(1st_costume)
+    tag_string_copyright: hololive hololive_english
+    tag_string_artist: risu_(risuuu_q)
+    tag_string_meta: absurdres commentary highres
+    file_url: https://cdn.donmai.us/original/90/c1/90c1b56a6882ae61bd8f7ff44a1d3dd4.jpg
+    large_file_url: https://cdn.donmai.us/sample/90/c1/sample-90c1b56a6882ae61bd8f7ff44a1d3dd4.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/90/c1/90c1b56a6882ae61bd8f7ff44a1d3dd4.jpg
+  body_text: null
+  body_b64: null

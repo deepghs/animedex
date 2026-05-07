@@ -1,0 +1,425 @@
+metadata:
+  captured_at: '2026-05-07T11:08:57Z'
+  label: jujutsu-kaisen
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Jujutsu%20Kaisen&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:08:57 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x1
+    x-request-id: 47b542fd-b50a-4b62-9829-e57fa8d0e655
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 0fc8f12b-a8fc-4e83-bcc8-711b1b123214
+      type: manga
+      attributes:
+        title:
+          ja-ro: Jujutsu Kaisen - The Possession (Doujinshi)
+        altTitles:
+        - ja: The Possession (呪術廻戦)
+        - ja-ro: The Possession (Jujutsu Kaisen )
+        - es: La Posesión (Jujutsu Kaisen )
+        - es-la: La Posesión (Jujutsu Kaisen )
+        description:
+          es: Sukuna y Kenjaku regresaron después de muchos años para vengarse de los chicos que los derrotaron, y como parte
+            de su plan toman posesión de los cuerpos de Nobara y Maki para luchar contra Itadori y Yuta.
+          es-la: Sukuna y Kenjaku regresaron después de muchos años para vengarse de los chicos que los derrotaron, y como
+            parte de su plan toman posesión de los cuerpos de Nobara y Maki para luchar contra Itadori y Yuta.
+        isLocked: false
+        links: {}
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: ongoing
+        year: 2026
+        contentRating: erotica
+        tags:
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 5fff9cde-849c-4d78-aab0-0d52b2ee1d25
+          type: tag
+          attributes:
+            name:
+              en: Survival
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 81183756-1453-4c81-aa9e-f6e1b63be016
+          type: tag
+          attributes:
+            name:
+              en: Samurai
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b13b2a48-c720-44a9-9c77-39c9979373fb
+          type: tag
+          attributes:
+            name:
+              en: Doujinshi
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: e5301a23-ebd9-49dd-a0cb-2add944c7fe9
+          type: tag
+          attributes:
+            name:
+              en: Slice of Life
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2026-04-24T21:20:48+00:00'
+        updatedAt: '2026-04-24T21:26:00+00:00'
+        version: 3
+        availableTranslatedLanguages:
+        - es-la
+        - es
+        latestUploadedChapter: 1235d2c2-3657-4544-b1bf-cae8a6458903
+      relationships:
+      - id: 591f6731-93c5-41ae-80c4-4ff956679e8c
+        type: author
+      - id: 591f6731-93c5-41ae-80c4-4ff956679e8c
+        type: artist
+      - id: 04901540-77bd-447d-8c05-8b153c0107db
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '1'
+          fileName: 359dbd2a-cf20-48cc-bbeb-eef28b942522.png
+          locale: ja
+          createdAt: '2026-04-24T21:24:24+00:00'
+          updatedAt: '2026-04-24T21:24:24+00:00'
+          version: 1
+      - id: 7850406c-5d0b-4a05-b184-122c5cfa8c43
+        type: manga
+        related: alternate_story
+      - id: 3a37de04-37d4-4ab2-ac9c-27232fd8bbd6
+        type: creator
+    - id: 8b58f452-4d8a-4aad-a050-349e83fecccb
+      type: manga
+      attributes:
+        title:
+          ja-ro: 'Jujutsu Kaisen 0: Toukyou Toritsu Jujutsu Koutou Senmon Gakkou'
+        altTitles:
+        - ja: 呪術廻戦 0 東京都立呪術高等専門学校
+        - en: Jujutsu Kaisen 0
+        - en: 'Revolving Battles Of Sorcery 0: Toukyou Metropolitan Sorcery Technical High School'
+        - en: 'Revolving Battles Of Curse Arts 0: Toukyou Metropolitan Curse Arts Technical High School'
+        - en: 'Jujutsu Kaisen 0: Tokyo Metropolitan Magic Technical School'
+        - en: Sorcery Fight 0
+        - uk: 'Магічна Битва 0: Токійська старша школа магічних мистецтв'
+        - es: Jujutsu Kaisen 0 - Escuela de Bachillerato Técnico de Brujería de Tokio
+        - fr: Jujutsu Kaisen 0 - L'école d'exorcisme de Tokyo
+        - et: 'Jujutsu Kaisen 0: Technikum Jujutsu w Tokio'
+        - id: 'Jujutsu Kaisen 0: Tokyo Metropolitan Jujutsu Teknik Koleji'
+        - ja: 東京都立呪術高等専門学校
+        - ja-ro: Toukyou Toritsu Jujutsu Koutou Senmon Gakkou
+        - en: Tokyo Metropolitan Magic Technical School
+        - ru: Токийская столичная магическо-техническая школа
+        - zh: 東京都立咒術高等專門學校
+        - zh-hk: 都立呪術高等専門学校
+        - az: Jujutsu Kaisen 0
+        - az: 'Jujutsu Kaisen 0: Tokyo Metropoliteni Lənətli Texnika Məktəbi'
+        description:
+          az: |-
+            Okkotsu Yuuta əsəbi və qorxaq bir lisey şagirdidir. Lakin onun böyük bir problemi var — uşaqlıq sevgisi Rika artıq bir lənətə çevrilib və onu tərk etmir. Rika adi bir lənət olmadığı üçün bu vəziyyət Gojo Satoru adlı müəllimin diqqətini çəkir. O, Tokyo Metropoliteni Lənətli Texnika Məktəbində dərs deyir — burada gələcək lənət ovçuları yetişdirilir.
+
+            Gojo Yuuta-nı bu məktəbə qoşulmağa razı salır. Bəs Yuuta onu izləyən bu təhlükəli lənətlə üzləşmək üçün kifayət qədər güclənə biləcəkmi?
+          en: |-
+            Okkotsu Yuuta is a nervous high school student suffering from a serious problem—his childhood love Rika has turned into a curse and won't leave him alone. Since Rika's no ordinary curse, his plight is noticed by Gojou Satoru, a teacher at Jujutsu Technical School, a school where fledgling exorcists learn how to combat curses. Gojou convinces Yuuta to enroll, but can he learn enough in time to confront the curse that haunts him? (Edited VIZ)
+
+            The official predecessor miniseries to Gege Akutami's hit serialization, *Jujutsu Kaisen*!
+          ru: Приквел манги "Магическая Битва", что рассказывает историю Оккоцу Юута, который был проклят могущественным духом
+            "Оримото Рика" и хочет научиться ее контролировать.
+          uk: 'Усе життя Оккоцу Юуту переслідує привид - жорстоке чудовисько, одержиме його захистом, яке нещадно вбиває та
+            калічить усіх його кривдників. Після чергового інциденту його затримують люди, які називають себе магами: вони
+            захищають цей світ від подібних створінь, лишаючись у тіні. І в одного з них, Ґоджьо Сатору, уже є на хлопця свої
+            плани: тепер Юута має перевестися до Токійської старшої магічної школи та взяти під контроль своє "прокляття",
+            щоб допомагати іншим. Утім, протягом першого року навчання Оккоцу доведеться дізнатися, що у світі магів існують
+            монстри набагато страшніші, ніж прокляття...'
+        isLocked: false
+        links:
+          al: '105469'
+          ap: jujutsu-kaisen-0
+          bl: '560243'
+          bw: ded0daf220-98cd-4d79-8ccc-de3059ed16e6
+          kt: '54710'
+          mu: 5zqq2to
+          amz: https://www.amazon.co.jp/dp/4088816722
+          cdj: https://www.cdjapan.co.jp/product/NEOBK-2296259
+          ebj: https://ebookjapan.yahoo.co.jp/books/514692/A002078859/
+          mal: '115710'
+          raw: https://shonenjumpplus.com/episode/10834108156631749950
+          engtl: https://www.viz.com/read/manga/jujutsu-kaisen/product/6537
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: '0'
+        lastChapter: '4'
+        publicationDemographic: shounen
+        status: completed
+        year: 2017
+        contentRating: safe
+        tags:
+        - id: 36fd93ea-e8b8-445e-b836-358f02b3d33d
+          type: tag
+          attributes:
+            name:
+              en: Monsters
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 3b60b75c-a2d7-4860-ab56-05f391bb889c
+          type: tag
+          attributes:
+            name:
+              en: Psychological
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 3bb26d85-09d5-4d2e-880c-c34b974339e9
+          type: tag
+          attributes:
+            name:
+              en: Ghosts
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 799c202e-7daa-44eb-9cf7-8a3c0441531e
+          type: tag
+          attributes:
+            name:
+              en: Martial Arts
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: a1f53773-c69a-4ce5-8cab-fffcd90b1565
+          type: tag
+          attributes:
+            name:
+              en: Magic
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: b29d6a3d-1569-4e7a-8caf-7557bc92cd5d
+          type: tag
+          attributes:
+            name:
+              en: Gore
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: caaa44eb-cd40-4177-b930-79d3ef2afe87
+          type: tag
+          attributes:
+            name:
+              en: School Life
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: cdad7e68-1419-41dd-bdce-27753074a640
+          type: tag
+          attributes:
+            name:
+              en: Horror
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: da2d50ca-3018-4cc0-ac7a-6b7d472a29ea
+          type: tag
+          attributes:
+            name:
+              en: Delinquents
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: eabc5b4c-6aff-42f3-b657-3e90cbd00b75
+          type: tag
+          attributes:
+            name:
+              en: Supernatural
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: ee968100-4191-4968-93d3-f82d72be7e46
+          type: tag
+          attributes:
+            name:
+              en: Mystery
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: f8f62932-27da-4fe4-8ee1-6779a8c5edba
+          type: tag
+          attributes:
+            name:
+              en: Tragedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2019-08-02T00:52:59+00:00'
+        updatedAt: '2026-04-24T10:09:03+00:00'
+        version: 20
+        availableTranslatedLanguages:
+        - it
+        - id
+        - pt-br
+        - es-la
+        - tr
+        - zh-hk
+        - ru
+        - en
+        - hu
+        - sr
+        - fr
+        - ro
+        - az
+        - uk
+        latestUploadedChapter: f4f5ddf6-a120-4d0a-92c7-ea5d15337ec6
+      relationships:
+      - id: 94be1d47-54d0-42c6-b42b-439605e3793f
+        type: author
+      - id: 94be1d47-54d0-42c6-b42b-439605e3793f
+        type: artist
+      - id: 641dc1ef-39b6-4f61-a2e5-b6286cf5d467
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '0'
+          fileName: 5ca09bcb-458f-4fed-975b-d490b7e82722.jpg
+          locale: ja
+          createdAt: '2024-07-21T05:49:36+00:00'
+          updatedAt: '2024-07-21T05:49:36+00:00'
+          version: 1
+      - id: 0bf66865-4791-4119-866d-6cb7cc8dfd86
+        type: manga
+        related: spin_off
+      - id: c52b2ce3-7f95-469c-96b0-479524fb7a1a
+        type: manga
+        related: sequel
+      - id: c52b2ce3-7f95-469c-96b0-479524fb7a1a
+        type: manga
+        related: serialization
+      - id: f3f59f12-351a-4de7-bd51-696d0764d64e
+        type: manga
+        related: sequel
+    limit: 2
+    offset: 0
+    total: 45
+  body_text: null
+  body_b64: null

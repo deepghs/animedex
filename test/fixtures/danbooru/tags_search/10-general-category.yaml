@@ -1,0 +1,80 @@
+metadata:
+  captured_at: '2026-05-07T11:17:27Z'
+  label: general-category
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Bcategory%5D=0&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:27 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"5c2dcf7e8405209e2ac959ddc908f5f1"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=bt7Y%2Fek1HtmLQN5vb1o6cxdU%2FDR8yGLMatkqj%2BB1hBGXVWZ98d2I3UVVfeChjkQsS5FTd6AoC5XXnsGOkectME%2FQba9JJ1NwD7OGw6PLi127aBM00tB9G2rWegk4S%2BpKrTVOrBW%2BvhxIDWdU4kzn6sDcm%2BKxR4owMcvjYEbrtorhTmDaecrT%2BE4cIMQDkTXHDuh6cT7zZenhd%2BC5l%2BZeCgytS%2FA53qNDhv3L8UwxJ%2BfLas4C%2FfMUpdcNksiIl6pBNPvEfqtn8qry7ujC3awwQMEZVP5tYO0vmZaafPRYo%2FU%3D--vsUcKP8fjP1nuSzU--1bnEjAGmX5WormOYbDpwzQ%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:27 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd17cf9028d1d-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.275, rails.cpu_time;dur=2.5738, rails.idle_time;dur=0.7012,
+      rails.sql_time;dur=0.8574, rails.view_time;dur=1.3011, rails.allocations;count=1564, request.allocations;count=2080,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.3792, request.total_time;dur=4.0806, request.queue_time_0;dur=0.8934,
+      request.queue_time_1;dur=89.9999
+    x-runtime: '0.004080574035644532'
+    via: 172.70.233.113, gura, gura/danbooru-768bdd4cff-r5hzw
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=IjK6uoK6hXzXcjLsU1JFKfkjttpWUHbBEXPBEu5GqlWAHf4wXCTMV3GDFa6Bma6h3rn5I6kLjJh3I5E6MrXA4EhvMsMaAub%2B2msIl9kxnumrvyzDX%2FNEpsepPlKJM75KHOpCTA%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd17cf9028d1d-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2621844
+    name: chicken_kyiv
+    post_count: 1
+    category: 0
+    created_at: '2026-05-07T07:07:50.993-04:00'
+    updated_at: '2026-05-07T07:07:50.993-04:00'
+    is_deprecated: false
+    words:
+    - chicken
+    - kyiv
+  - id: 2621837
+    name: eventhorizonfrontierrpg
+    post_count: 1
+    category: 0
+    created_at: '2026-05-07T06:36:17.634-04:00'
+    updated_at: '2026-05-07T06:36:17.634-04:00'
+    is_deprecated: false
+    words:
+    - eventhorizonfrontierrpg
+  - id: 2621832
+    name: fur-purple_sky
+    post_count: 0
+    category: 0
+    created_at: '2026-05-07T06:27:11.947-04:00'
+    updated_at: '2026-05-07T06:27:11.947-04:00'
+    is_deprecated: false
+    words:
+    - fur
+    - purple
+    - sky
+  body_text: null
+  body_b64: null

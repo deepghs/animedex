@@ -1,0 +1,191 @@
+metadata:
+  captured_at: '2026-05-07T11:07:13Z'
+  label: madoka-7311
+  backend: kitsu
+  path_slug: anime_by_id
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/7311
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:13 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"319832ec07dfb4b277896318873ae93b"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 380fcc7f-7b56-4bb7-84fe-b4ff0c9aa5da
+    x-runtime: '0.042894'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=YFKuwZpUlQa74nuf9205enCfbS0BwlATAsDnBY5Fz8cgzhretZD%2FwT4SvZrWLgBk3E4mVXugr9qvAllGbJCEpAosc1Es8tnBXrI4%2BIOFiFtpjtmICAfrXr54eg%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc27f6da200a3-KIX
+  body_json:
+    data:
+      id: '7311'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/7311
+      attributes:
+        createdAt: '2013-02-20T17:53:46.468Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: senki-zesshou-symphogear-g-in-the-distance-that-day-when-the-star-became-music
+        synopsis: |-
+          Peace had seemed to return to the world when Hibiki, Tsubasa, and Chris had saved the planet from the Luna Attack with their song. However, 3 months later at a joint concert between Tsubasa Kazanari and foreign superstar Maria Cadenzavna Eve, the Symphogear team is faced with her dangerous declaration of war against the world. Maria and her allies Kirika and Shirabe have a fearful power backing them: The power of a dark Symphogear.
+          (Source: ANN)
+        description: |-
+          Peace had seemed to return to the world when Hibiki, Tsubasa, and Chris had saved the planet from the Luna Attack with their song. However, 3 months later at a joint concert between Tsubasa Kazanari and foreign superstar Maria Cadenzavna Eve, the Symphogear team is faced with her dangerous declaration of war against the world. Maria and her allies Kirika and Shirabe have a fearful power backing them: The power of a dark Symphogear.
+          (Source: ANN)
+        coverImageTopOffset: 0
+        titles:
+          en_jp: Senki Zesshou Symphogear G
+          en_us: Symphogear G
+          ja_jp: 戦姫絶唱シンフォギアG
+        canonicalTitle: Senki Zesshou Symphogear G
+        abbreviatedTitles:
+        - Senhime Zesshou Symphogear G
+        averageRating: '73.68'
+        ratingFrequencies:
+          '2': '21'
+          '3': '0'
+          '4': '23'
+          '5': '0'
+          '6': '34'
+          '7': '1'
+          '8': '100'
+          '9': '3'
+          '10': '161'
+          '11': '7'
+          '12': '377'
+          '13': '19'
+          '14': '694'
+          '15': '36'
+          '16': '632'
+          '17': '23'
+          '18': '306'
+          '19': '6'
+          '20': '336'
+        userCount: 6346
+        favoritesCount: 76
+        startDate: '2013-07-05'
+        endDate: '2013-09-27'
+        nextRelease: null
+        popularityRank: 2350
+        ratingRank: 3121
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/7311/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/7311/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/7311/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/7311/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/7311/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        episodeCount: 13
+        episodeLength: 23
+        totalLength: 299
+        youtubeVideoId: Dxt9pEZKDaw
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/genres
+            related: https://kitsu.io/api/edge/anime/7311/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/categories
+            related: https://kitsu.io/api/edge/anime/7311/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/castings
+            related: https://kitsu.io/api/edge/anime/7311/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/installments
+            related: https://kitsu.io/api/edge/anime/7311/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/7311/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/7311/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/7311/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/characters
+            related: https://kitsu.io/api/edge/anime/7311/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/staff
+            related: https://kitsu.io/api/edge/anime/7311/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/productions
+            related: https://kitsu.io/api/edge/anime/7311/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/7311/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/7311/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/7311/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/7311/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/7311/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/7311/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/7311/anime-staff
+  body_text: null
+  body_b64: null

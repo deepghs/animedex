@@ -1,0 +1,50 @@
+metadata:
+  captured_at: '2026-05-07T11:25:53Z'
+  label: id-38838-frieren
+  backend: ann
+  path_slug: by_id
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=38838
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:25:52 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:25:52 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Access-Control-Allow-Origin: '*'
+    Cache-Control: public
+    Expires: Fri, 08 May 2026 11:25:52 GMT
+    X-Ann: skip state commit
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: 9f7fddd35fffd1cb-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <ann><anime id="38838" gid="1430465840" type="TV" name="Frieren: Beyond Journey&#039;s End" precision="TV 3" generated-on="2026-05-07T11:25:52Z">
+    <related-prev rel="sequel of" id="33628"/>
+    <info gid="2946895597" type="Picture" src="https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A38838-2946895597.1774679085.jpg" width="142" height="200"><img src="https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A38838-2946895597.1774679085.jpg" width="142" height="200"/><img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A38838-2946895597.1774679085.jpg" width="426" height="600"/></info>
+    <info gid="3711497358" type="Main title" lang="EN">Frieren: Beyond Journey&#039;s End</info>
+    <info gid="1306463769" type="Alternative title" lang="JA">Sōsō no Frieren Ōgonkyō Hen</info>
+    <info gid="1562970375" type="Alternative title" lang="JA">葬送のフリーレン 黄金郷編</info>
+    <info gid="1772223333" type="Genres">adventure</info>
+    <info gid="2766121011" type="Genres">fantasy</info>
+    <info gid="1654102851" type="Themes">demons</info>
+    <info gid="1106660196" type="Vintage">2027-10</info>
+    <info gid="1995319711" type="Official website" lang="JA" href="https://frieren-anime.jp/">アニメ『葬送のフリーレン』公式サイト</info>
+    <staff gid="337350641"><task>Original creator</task><person id="208753">Tsukasa Abe</person></staff>
+    <staff gid="1634881531"><task>Original creator</task><person id="208754">Kanehito Yamada</person></staff></anime></ann>
+  body_b64: null

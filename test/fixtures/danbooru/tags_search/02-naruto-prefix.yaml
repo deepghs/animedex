@@ -1,0 +1,90 @@
+metadata:
+  captured_at: '2026-05-07T11:17:21Z'
+  label: naruto-prefix
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Bname_matches%5D=naruto*&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:21 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"ad0b81d4920379763a94e0bc8d519e1c"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=Re4Io4%2Fc1xpmpaZomOBaVWxeIJS%2B4QIvLGhn%2FI3lymfG8y%2BgdsMjz7X4697VmOKfICoXNfNY%2B0NQN6L5Vh%2FjZmc26NXJKt3ClKOl5u8NujwFkCJcbvz%2F67bXGhLx7SfTeyxZanhtLAkZLGnr0JBA8duqQy8JvpdDs7x2JSSm1iZp9U0cGEbtMBxPebg%2FWv0dogyTssr9ASfOiFKPWOlg5YUKYcopUjOUtvY9fO%2FgARkUMSLhQw8gnmKP%2FkV4YlP0ZTdX7lr8UYy0b1KgsD9QAlvQegnISsTefOaFo1%2FkYrM%3D--3bhDQFWLLUj40HGp--NUUmGIZ18WjoMJWBBCgvOg%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:21 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd159c90f8cf8-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.6756, rails.cpu_time;dur=2.1265, rails.idle_time;dur=1.5491,
+      rails.sql_time;dur=1.6958, rails.view_time;dur=1.9588, rails.allocations;count=1628, request.allocations;count=2142,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.7826, request.total_time;dur=4.3317, request.queue_time_0;dur=1.2367,
+      request.queue_time_1;dur=92.0
+    x-runtime: '0.004331718444824219'
+    via: 172.70.233.113, gura, gura/danbooru-768bdd4cff-txl6f
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=5cqgSRfWUHgB5J65pt4DOlzO2KFosQESx8JW%2BzOBKqP8OAJAKU%2FLjMXKVQSX7bjEXseteuvspFC1yy16rB8vq1YAKlNG0KVJYwSYvWFFE35lGja4t6KaskZyVjEjYRo%2FhBfPOg%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd159c90f8cf8-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2563279
+    name: naruto_shippuden_the_movie:_the_lost_tower
+    post_count: 0
+    category: 3
+    created_at: '2026-02-25T19:20:50.238-05:00'
+    updated_at: '2026-02-25T19:20:50.254-05:00'
+    is_deprecated: false
+    words:
+    - naruto
+    - shippuden
+    - the
+    - movie
+    - the
+    - lost
+    - tower
+  - id: 2563278
+    name: naruto_shippuden_the_movie:_bonds
+    post_count: 0
+    category: 3
+    created_at: '2026-02-25T19:20:48.770-05:00'
+    updated_at: '2026-02-25T19:20:48.781-05:00'
+    is_deprecated: false
+    words:
+    - naruto
+    - shippuden
+    - the
+    - movie
+    - bonds
+  - id: 2563277
+    name: naruto_shippuden_the_movie
+    post_count: 0
+    category: 3
+    created_at: '2026-02-25T19:20:47.485-05:00'
+    updated_at: '2026-02-25T19:20:47.502-05:00'
+    is_deprecated: false
+    words:
+    - naruto
+    - shippuden
+    - the
+    - movie
+  body_text: null
+  body_b64: null

@@ -1,0 +1,133 @@
+metadata:
+  captured_at: '2026-05-07T11:17:11Z'
+  label: post-500000
+  backend: danbooru
+  path_slug: posts_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts/500000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:11 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"397887122e7ab88506b61c25c304a4ab"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: _danbooru2_session=2%2BBpi64T4psYr4oy3Ue2AhH2v78CqfeMxqRWr3FQVxlZrPScMQP4pov6TwGAxS9q6Ws0Oxji%2FfapTJ6zrpRlSRhmTyE4PNRis1zME2vtJN%2FNHPAFZgHtA%2BFlxRg0BLHPb45IcfjaTm%2F8jkHSYKhdbvLa6fxn4WFUJomdC8XmNDbiV2i6NbaFiLlra7400Ld0K%2BS2oXYf145lUL1BtPLeuQRmeHYk51jr6LvmbaRNfIPYH93lloq7IylOklCGB08zXo%2FT3fk0XaDkKMDZ5uPU3wSJFZQlZN4MoHz5kYZXxno%3D--qTfczHmIRXaP5vdh--jCm7yf1Fpwli9Gy%2FQIUbPA%3D%3D;
+      domain=donmai.us; path=/; expires=Mon, 07 May 2046 11:17:11 GMT; secure; httponly; samesite=lax
+    x-request-id: 9f7fd11c0b20d423-KIX
+    server-timing: sql.queries;count=2, cache.reads;count=1, cache.keys_read;count=26, cache.keys_hit;count=26, cache.total_time;dur=0.4259,
+      rails.total_time;dur=5.893, rails.cpu_time;dur=4.1541, rails.idle_time;dur=1.7388, rails.sql_time;dur=1.7378, rails.view_time;dur=1.4009,
+      rails.allocations;count=3559, request.allocations;count=4012, request.gc_time;dur=0.2198, request.gc_count;count=0,
+      request.cpu_time;dur=5.0062, request.total_time;dur=6.7447, request.queue_time_0;dur=1.6987, request.queue_time_1;dur=86.0
+    x-runtime: '0.00674468994140625'
+    via: 172.69.169.158, gura, ame/danbooru-768bdd4cff-xbttn
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=XtsBkZKUBjcn3j8fx%2BqR8b41968qYhED%2BCeO2lmx7ytf3Vnw6swBnNVFSLff79IARHI%2FCeY3dyiO%2F0fae6I4XqmVAUuvJgizreL6gQGYzjTTIK7ZftYcE%2Fu7N15hfhX%2FgBLRnw%3D%3D"}]}'
+    Server: cloudflare
+    CF-RAY: 9f7fd11c0b20d423-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 500000
+    created_at: '2009-08-09T03:01:02.884-04:00'
+    uploader_id: 114469
+    score: -8
+    source: ''
+    md5: 9f33aa89a48f4ca1f08594aff1b2e7c4
+    last_comment_bumped_at: '2009-08-11T17:23:44.086-04:00'
+    rating: e
+    image_width: 600
+    image_height: 800
+    tag_string: 1boy 1girl after_sex black_hair blush breasts brown_eyes censored cum cum_on_body cum_on_breasts facial hair_ornament
+      hairclip hetero huge_breasts iroha_(samurai_spirits) looking_at_viewer maid_headdress nipples paizuri penis samurai_spirits
+      short_hair solo_focus water_beryl
+    fav_count: 30
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 23
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 267240
+    up_score: 12
+    down_score: -20
+    is_pending: false
+    is_flagged: false
+    is_deleted: true
+    tag_count: 26
+    updated_at: '2025-09-23T03:04:34.048-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: '2021-12-28T23:35:38.895-05:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 0
+    has_large: false
+    has_visible_children: false
+    media_asset:
+      id: 478188
+      created_at: '2009-08-09T03:01:02.884-04:00'
+      updated_at: '2023-02-24T02:59:11.418-05:00'
+      md5: 9f33aa89a48f4ca1f08594aff1b2e7c4
+      file_ext: jpg
+      file_size: 267240
+      image_width: 600
+      image_height: 800
+      duration: null
+      status: active
+      file_key: kpmECJ3ji
+      is_public: true
+      pixel_hash: 1ac4fb4c115cc3297f49797691486ee4
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/9f/33/9f33aa89a48f4ca1f08594aff1b2e7c4.jpg
+        width: 135
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/9f/33/9f33aa89a48f4ca1f08594aff1b2e7c4.jpg
+        width: 270
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/9f/33/9f33aa89a48f4ca1f08594aff1b2e7c4.webp
+        width: 540
+        height: 720
+        file_ext: webp
+      - type: original
+        url: https://cdn.donmai.us/original/9f/33/9f33aa89a48f4ca1f08594aff1b2e7c4.jpg
+        width: 600
+        height: 800
+        file_ext: jpg
+    tag_string_general: 1boy 1girl after_sex black_hair blush breasts brown_eyes censored cum cum_on_body cum_on_breasts facial
+      hair_ornament hairclip hetero huge_breasts looking_at_viewer maid_headdress nipples paizuri penis short_hair solo_focus
+    tag_string_character: iroha_(samurai_spirits)
+    tag_string_copyright: samurai_spirits
+    tag_string_artist: water_beryl
+    tag_string_meta: ''
+    file_url: https://cdn.donmai.us/original/9f/33/9f33aa89a48f4ca1f08594aff1b2e7c4.jpg
+    large_file_url: https://cdn.donmai.us/original/9f/33/9f33aa89a48f4ca1f08594aff1b2e7c4.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/9f/33/9f33aa89a48f4ca1f08594aff1b2e7c4.jpg
+  body_text: null
+  body_b64: null

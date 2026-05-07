@@ -1,0 +1,46 @@
+metadata:
+  captured_at: '2026-05-07T11:00:48Z'
+  label: bad-query-error-envelope
+  backend: anilist
+  path_slug: graphql
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ NotARealField }'
+  raw_body_b64: null
+response:
+  status: 400
+  headers:
+    Date: Thu, 07 May 2026 11:00:48 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '11'
+    Set-Cookie: laravel_session=CgRH7PJZypgq7ViN6xMhV63y4YXaV2lS7Yi45aDa; expires=Thu, 07-May-2026 23:00:48 GMT; Max-Age=43200;
+      path=/; httponly
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=TFcc29UZ%2Fjd3Oke3KX%2BF2T06wOoKdhYpSI0nlImuYt0bzQQwiHlKtiQHVGEmKjum2gwK1TvHG3My3X2nQ0fVDCim4%2FxezlzHJO8vQ0oTxpcQwyrhpOv7T8DacvRychIITe6Vzg%3D%3D"}]}'
+    CF-RAY: 9f7fb9195b567620-KIX
+  body_json:
+    errors:
+    - message: Cannot query field "NotARealField" on type "Query".
+      status: 400
+      locations:
+      - line: 1
+        column: 3
+    data: null
+  body_text: null
+  body_b64: null

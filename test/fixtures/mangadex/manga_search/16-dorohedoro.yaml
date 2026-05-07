@@ -1,0 +1,337 @@
+metadata:
+  captured_at: '2026-05-07T11:09:02Z'
+  label: dorohedoro
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Dorohedoro&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:01 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x2
+    x-request-id: 5e73854e-1933-4084-9bba-2de6923ebfdc
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 34f45c13-2b78-4900-8af2-d0bb551101f4
+      type: manga
+      attributes:
+        title:
+          en: Dorohedoro
+        altTitles:
+        - ru: Дорохедоро
+        - he: דורוהדורו
+        - ja: ドロヘドロ
+        - zh: 异兽魔都
+        - ko: 도로헤도로
+        - uk: Дорохедоро
+        description:
+          en: "This is the story of Kaiman, a guy who does not remember who he was before he was transfigured by a Magic user.\
+            \ \nThis transformation left him with a reptile's head, and a desire to find out the truth about who he really\
+            \ is. \nAccompanied by Nikaido, his female companion, he tracks down Magic Users in \"The Hole\" and unceremoniously\
+            \ \nchomps down on their head, hoping to find out who it was that put him in this state. \nOne by one, they witness\
+            \ this \"second man\" inside the head of Kaiman, and after pulling them back out of his mouth \nhe asks them all\
+            \ a question \"What did the guy inside my head say?\"  \n\n\n---"
+          ru: "В городе, настолько мрачном, что все называют его Дырой, люди живут в постоянном страхе. Воздух и земля пропитаны\
+            \ магическим дымом, и никто уже не удивляется тому, что от выпавшего дождика начнут вдруг прохожие валиться штабелями\
+            \ или городское кладбище превратится в поле битвы людей против зомби. Маги, из-за которых творится вся эта чертовщина,\
+            \ периодически делают вылазки в Дыру и испытывают на жителях свои приёмчики. После одной такой вылазки Никайдо,\
+            \ сборщик трупов, находит огромное бездыханное тело какого-то бедняги с головой крокодила. Кайман (так называет\
+            \ его Никайдо) удаётся выжить, но очнувшись, он понимает, что потерял память. Кайман вместе с Никайдо начинают\
+            \ охоту на магов, чтобы вернуть себе человеческий облик и потерянные воспоминания.  \n  \n\n\n---\n\n**Links:**\
+            \  \n- [Anime Season 1 on ANN](https://www.animenewsnetwork.com/encyclopedia/anime.php?id=22562)"
+        isLocked: false
+        links:
+          al: '31133'
+          ap: dorohedoro
+          bl: '564072'
+          bw: series/181936/list
+          kt: '2435'
+          mu: xfuhued
+          mal: '1133'
+          engtl: https://www.viz.com/vizmanga/chapters/dorohedoro
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: '23'
+        lastChapter: '167'
+        publicationDemographic: seinen
+        status: completed
+        year: 2000
+        contentRating: suggestive
+        tags:
+        - id: 256c8bd9-4904-4360-bf4f-508a76d67183
+          type: tag
+          attributes:
+            name:
+              en: Sci-Fi
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 39730448-9a5f-48a2-85b0-a70db87b1233
+          type: tag
+          attributes:
+            name:
+              en: Demons
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 631ef465-9aba-4afb-b0fc-ea10efe274a8
+          type: tag
+          attributes:
+            name:
+              en: Zombies
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 9467335a-1b83-4497-9231-765337a00b96
+          type: tag
+          attributes:
+            name:
+              en: Post-Apocalyptic
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: a1f53773-c69a-4ce5-8cab-fffcd90b1565
+          type: tag
+          attributes:
+            name:
+              en: Magic
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: b29d6a3d-1569-4e7a-8caf-7557bc92cd5d
+          type: tag
+          attributes:
+            name:
+              en: Gore
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: cdad7e68-1419-41dd-bdce-27753074a640
+          type: tag
+          attributes:
+            name:
+              en: Horror
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdc58593-87dd-415e-bbc0-2ec27bf404cc
+          type: tag
+          attributes:
+            name:
+              en: Fantasy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2018-03-07T15:45:44+00:00'
+        updatedAt: '2026-05-05T12:47:54+00:00'
+        version: 44
+        availableTranslatedLanguages:
+        - vi
+        - en
+        - pt-br
+        - ru
+        - zh
+        - it
+        - uk
+        - pl
+        - ar
+        - tr
+        - es-la
+        - fa
+        - id
+        - fr
+        latestUploadedChapter: 638fe3de-92bc-4013-a02f-06cae918cebe
+      relationships:
+      - id: ab4d6a21-55c7-42d3-aa58-8f150ad495a2
+        type: author
+      - id: ab4d6a21-55c7-42d3-aa58-8f150ad495a2
+        type: artist
+      - id: d0f47e09-a2aa-4f7e-aa04-0e9decf3f2bb
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '1'
+          fileName: d004bed4-9bab-4ded-b1ec-116a8371f294.jpg
+          locale: ja
+          createdAt: '2021-05-23T06:31:52+00:00'
+          updatedAt: '2021-05-23T06:31:52+00:00'
+          version: 2
+      - id: a289003f-5462-46ad-8d34-ae278aba8e35
+        type: manga
+        related: side_story
+    - id: a289003f-5462-46ad-8d34-ae278aba8e35
+      type: manga
+      attributes:
+        title:
+          en: Dorohedoro All Star Directory Complete Edition
+        altTitles:
+        - en: 'Dorohedoro: All Star Meikan Complete Edition'
+        - ja: ドロヘドロオールスター名鑑完全版
+        - zh: 异兽魔都全明星名鉴完全版
+        description:
+          en: Celebrating the completion of the popular serial series "Dorohedoro" for 18 years! A Character reference book,
+            which includes all character information, manga, artworks, and covers, etc. It is a book that you can enjoy Dorohedoro
+            World until the end!
+        isLocked: false
+        links: {}
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: null
+        lastChapter: null
+        publicationDemographic: null
+        status: completed
+        year: null
+        contentRating: safe
+        tags:
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 3b60b75c-a2d7-4860-ab56-05f391bb889c
+          type: tag
+          attributes:
+            name:
+              en: Psychological
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b29d6a3d-1569-4e7a-8caf-7557bc92cd5d
+          type: tag
+          attributes:
+            name:
+              en: Gore
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: cdad7e68-1419-41dd-bdce-27753074a640
+          type: tag
+          attributes:
+            name:
+              en: Horror
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: eabc5b4c-6aff-42f3-b657-3e90cbd00b75
+          type: tag
+          attributes:
+            name:
+              en: Supernatural
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: ee968100-4191-4968-93d3-f82d72be7e46
+          type: tag
+          attributes:
+            name:
+              en: Mystery
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2020-12-11T10:39:08+00:00'
+        updatedAt: '2023-11-29T00:35:34+00:00'
+        version: 5
+        availableTranslatedLanguages:
+        - zh
+        - en
+        latestUploadedChapter: 4b612b06-f22c-4f98-bf1b-fffb081af276
+      relationships:
+      - id: ab4d6a21-55c7-42d3-aa58-8f150ad495a2
+        type: author
+      - id: 5cc296a0-b514-4fec-9f38-12a00b97f21f
+        type: cover_art
+        attributes:
+          description: ''
+          volume: null
+          fileName: 2c0426b2-bb13-4a40-96ee-be2cef322ae1.jpg
+          locale: ja
+          createdAt: '2021-05-24T18:22:20+00:00'
+          updatedAt: '2021-05-24T18:22:20+00:00'
+          version: 1
+      - id: 34f45c13-2b78-4900-8af2-d0bb551101f4
+        type: manga
+        related: main_story
+    limit: 2
+    offset: 0
+    total: 2
+  body_text: null
+  body_b64: null

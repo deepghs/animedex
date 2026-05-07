@@ -1,0 +1,54 @@
+metadata:
+  captured_at: '2026-05-07T11:25:13Z'
+  label: animes-list-tv
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(kind:"tv",limit:3){ id name kind }}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: __ddg8_=3ihdqygyC2IcTaxO; Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:12 GMT, __ddg10_=1778153112;
+      Domain=.shikimori.io; Path=/; Expires=Thu, 07-May-2026 11:45:12 GMT, __ddg9_=45.78.62.209; Domain=.shikimori.io; Path=/;
+      Expires=Thu, 07-May-2026 11:45:12 GMT, __ddg1_=UhfzVfqd6A2sOEdrfYGQ; Domain=.shikimori.io; HttpOnly; Path=/; Expires=Fri,
+      07-May-2027 11:25:12 GMT
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:12 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"06ed15f5b983005d35aba1616dfa78c0"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 3e8381db-cbf9-45ad-80d8-8601e6972515
+    X-Runtime: '0.059095'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes:
+      - id: '52991'
+        name: Sousou no Frieren
+        kind: tv
+      - id: '5114'
+        name: 'Fullmetal Alchemist: Brotherhood'
+        kind: tv
+      - id: '9253'
+        name: Steins;Gate
+        kind: tv
+  body_text: null
+  body_b64: null

@@ -1,0 +1,42 @@
+metadata:
+  captured_at: '2026-05-07T11:26:56Z'
+  label: manga-recently-modified
+  backend: ann
+  path_slug: reports
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/reports.xml?id=155&type=manga&nlist=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:26:56 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:26:56 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Cache-Control: private, max-age=0, must-revalidate
+    Set-Cookie: ann5_session_id=pmLKuBndIUrO7sVm0F7rBSaa5VhjLmOU-1778153216641; Path=/; secure; HttpOnly; Domain=.animenewsnetwork.com;
+      SameSite=Lax
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: 9f7fdf632a5a9623-KIX
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <report skipped="0" listed="5"><args><type>manga</type><name></name><licensed></licensed><search></search></args>
+    <item><id>39395</id><gid>1810332165</gid><type>manga</type><name>Ore, Yūsha janai Desu kara</name><precision>manga</precision><vintage>2021-07-14</vintage></item>
+    <item><id>39394</id><gid>836005429</gid><type>manga</type><name>Cradled By the Wild Blue Yonder</name><precision>manga</precision><vintage>2022-01-25 to 2023-03-24</vintage></item>
+    <item><id>39393</id><gid>185107359</gid><type>manga</type><name>Paradise of Eternal Night</name><precision>manga</precision><vintage>2019-11-25 to 2020-09-25</vintage></item>
+    <item><id>39392</id><gid>2296252591</gid><type>manga</type><name>An Unmapped Country, Somewhere In This World</name><precision>manga</precision><vintage>2016-05-25 to 2017-03-24</vintage></item>
+    <item><id>39390</id><gid>3651919423</gid><type>manga</type><name>Koi Nanka Hajimaranai</name><precision>manga</precision><vintage>2005-01-24 to 2007-03-24</vintage></item></report>
+  body_b64: null

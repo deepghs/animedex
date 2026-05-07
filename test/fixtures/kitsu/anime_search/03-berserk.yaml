@@ -1,0 +1,396 @@
+metadata:
+  captured_at: '2026-05-07T11:06:37Z'
+  label: berserk
+  backend: kitsu
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Berserk&page%5Blimit%5D=2
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:06:37 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"c4458c5d78665681dec74f729b776358"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 6c1fcfa2-4baa-490b-9bbf-61486c0ffe0f
+    x-runtime: '0.255493'
+    x-xss-protection: 1; mode=block
+    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    cf-cache-status: DYNAMIC
+    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=N%2FQtK5JuplXzh%2F6unSAkGE8zV6fyQ1vUuTA9EWyo6WkK0%2B422AWNJk2vVKxP759d8qNyptaADe1iEtqPWe2W%2BwcKKJgSwFjfyB%2F4szx9n5s1LesGuu6bRJK82Q%3D%3D"}]}'
+    Content-Encoding: gzip
+    CF-RAY: 9f7fc19c3bcef57e-KIX
+  body_json:
+    data:
+    - id: '24'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/24
+      attributes:
+        createdAt: '2013-02-20T16:00:36.899Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: berserk
+        synopsis: |-
+          Born from the corpse of his mother, a young mercenary known only as Guts, embraces the battlefield as his only means of survival. Day in and day out, putting his life on the line just to make enough to get by, he moves from one bloodshed to the next.
+
+          After a run-in with the Band of the Hawk, a formidable troop of mercenaries, Guts is recruited by their charismatic leader Griffith, nicknamed the "White Hawk." As he quickly climbed the ranks in order to become the head of the offensive faction, Guts proves to be a mighty addition to Griffith's force, taking Midland by storm. However, while the band's quest for recognition continues, Guts slowly realizes that the world is not as black-and-white as he once assumed.
+
+          Set in the medieval era, Berserk is a dark, gritty tale that follows one man's struggle to find his own path, while supporting another's lust for power, and the unimaginable tragedy that begins to turn the wheels of fate.
+
+          (Source: MAL Rewrite)
+        description: |-
+          Born from the corpse of his mother, a young mercenary known only as Guts, embraces the battlefield as his only means of survival. Day in and day out, putting his life on the line just to make enough to get by, he moves from one bloodshed to the next.
+
+          After a run-in with the Band of the Hawk, a formidable troop of mercenaries, Guts is recruited by their charismatic leader Griffith, nicknamed the "White Hawk." As he quickly climbed the ranks in order to become the head of the offensive faction, Guts proves to be a mighty addition to Griffith's force, taking Midland by storm. However, while the band's quest for recognition continues, Guts slowly realizes that the world is not as black-and-white as he once assumed.
+
+          Set in the medieval era, Berserk is a dark, gritty tale that follows one man's struggle to find his own path, while supporting another's lust for power, and the unimaginable tragedy that begins to turn the wheels of fate.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 100
+        titles:
+          en: Berserk
+          en_jp: Kenpuu Denki Berserk
+          en_us: Berserk
+          ja_jp: 剣風伝奇ベルセルク
+        canonicalTitle: Kenpuu Denki Berserk
+        abbreviatedTitles:
+        - Kenpuu Denki Berserk
+        - Kenfu Denki Berserk
+        - Sword-Wind Chronicle Berserk
+        - 'Berserk: The Chronicles of Wind Blades'
+        - 'Berserk: Sword-Wind Tales'
+        - 'Berserk: SWORD-WIND ROMANCE'
+        averageRating: '82.19'
+        ratingFrequencies:
+          '2': '805'
+          '3': '12'
+          '4': '77'
+          '5': '11'
+          '6': '84'
+          '7': '14'
+          '8': '746'
+          '9': '18'
+          '10': '323'
+          '11': '20'
+          '12': '920'
+          '13': '60'
+          '14': '3094'
+          '15': '195'
+          '16': '4290'
+          '17': '362'
+          '18': '4284'
+          '19': '261'
+          '20': '8284'
+        userCount: 53811
+        favoritesCount: 1421
+        startDate: '1997-10-08'
+        endDate: '1998-04-01'
+        nextRelease: null
+        popularityRank: 250
+        ratingRank: 218
+        ageRating: R
+        ageRatingGuide: Mild Nudity
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/24/poster_image/tiny-879767468a01d6d78e1943b9822ca9c2.jpeg
+          large: https://media.kitsu.app/anime/24/poster_image/large-8b69ef8e3f4f4359af304e9b664eef0f.jpeg
+          small: https://media.kitsu.app/anime/24/poster_image/small-d8c9fc7e7bf5e3ffde5c931b5b25ae72.jpeg
+          medium: https://media.kitsu.app/anime/24/poster_image/medium-221f1cd380a46ac845efb99b27df4eaf.jpeg
+          original: https://media.kitsu.app/anime/24/poster_image/e528552f3cc8e28a95d8ea98991b380d.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/24/cover_image/tiny-140c4c2bb2475e55e205c869339c4fd4.jpeg
+          large: https://media.kitsu.app/anime/24/cover_image/large-dd199f0138be52f6818e20c3094f9be0.jpeg
+          small: https://media.kitsu.app/anime/24/cover_image/small-ca2f9aa3d4b23bf97bb02ee8d4cd73be.jpeg
+          original: https://media.kitsu.app/anime/24/cover_image/7e8f13e950295d64746899ca93c39eb3.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 25
+        episodeLength: 25
+        totalLength: 625
+        youtubeVideoId: dVPzv9qwKl0
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/genres
+            related: https://kitsu.io/api/edge/anime/24/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/categories
+            related: https://kitsu.io/api/edge/anime/24/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/castings
+            related: https://kitsu.io/api/edge/anime/24/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/installments
+            related: https://kitsu.io/api/edge/anime/24/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/24/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/24/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/24/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/characters
+            related: https://kitsu.io/api/edge/anime/24/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/staff
+            related: https://kitsu.io/api/edge/anime/24/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/productions
+            related: https://kitsu.io/api/edge/anime/24/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/24/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/24/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/24/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/24/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/24/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/24/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/24/anime-staff
+    - id: '11655'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/11655
+      attributes:
+        createdAt: '2015-12-22T05:03:04.119Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: berserk-2016
+        synopsis: |-
+          Now branded for death and destined to be hunted by demons until the day he dies, Guts embarks on a journey to defy such a gruesome fate, as waves of beasts relentlessly pursue him. Steeling his resolve, he takes up the monstrous blade Dragonslayer and vows to exact vengeance on the one responsible, hunting down the very man he once looked up to and considered a friend.
+
+          Along the way, he encounters some unlikely allies, such as a small elf named Puck, and Isidro, a young thief looking to learn swordsmanship from the former mercenary. As the ragtag group slowly comes together after having decided to join Guts in his quest, they will face incredible danger unlike anything they have ever experienced before.
+
+          (Source: MAL Rewrite)
+        description: |-
+          Now branded for death and destined to be hunted by demons until the day he dies, Guts embarks on a journey to defy such a gruesome fate, as waves of beasts relentlessly pursue him. Steeling his resolve, he takes up the monstrous blade Dragonslayer and vows to exact vengeance on the one responsible, hunting down the very man he once looked up to and considered a friend.
+
+          Along the way, he encounters some unlikely allies, such as a small elf named Puck, and Isidro, a young thief looking to learn swordsmanship from the former mercenary. As the ragtag group slowly comes together after having decided to join Guts in his quest, they will face incredible danger unlike anything they have ever experienced before.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 50
+        titles:
+          en: Berserk (2016)
+          en_jp: Berserk
+          en_us: Berserk
+          ja_jp: ベルセルク
+        canonicalTitle: Berserk
+        abbreviatedTitles: []
+        averageRating: '60.24'
+        ratingFrequencies:
+          '2': '675'
+          '3': '33'
+          '4': '448'
+          '5': '23'
+          '6': '465'
+          '7': '24'
+          '8': '834'
+          '9': '17'
+          '10': '649'
+          '11': '37'
+          '12': '1051'
+          '13': '60'
+          '14': '1515'
+          '15': '58'
+          '16': '897'
+          '17': '45'
+          '18': '473'
+          '19': '19'
+          '20': '861'
+        userCount: 22151
+        favoritesCount: 181
+        startDate: '2016-07-01'
+        endDate: '2016-09-16'
+        nextRelease: null
+        popularityRank: 752
+        ratingRank: 11407
+        ageRating: R
+        ageRatingGuide: 17+ (violence & profanity)
+        subtype: TV
+        status: finished
+        tba: ''
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/11655/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/11655/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/11655/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/11655/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/11655/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/11655/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/11655/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/11655/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/11655/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 12
+        episodeLength: 24
+        totalLength: 288
+        youtubeVideoId: XQr7LvFZrlE
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/genres
+            related: https://kitsu.io/api/edge/anime/11655/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/categories
+            related: https://kitsu.io/api/edge/anime/11655/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/castings
+            related: https://kitsu.io/api/edge/anime/11655/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/installments
+            related: https://kitsu.io/api/edge/anime/11655/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/11655/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/11655/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/11655/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/characters
+            related: https://kitsu.io/api/edge/anime/11655/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/staff
+            related: https://kitsu.io/api/edge/anime/11655/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/productions
+            related: https://kitsu.io/api/edge/anime/11655/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/11655/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/11655/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/11655/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/11655/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/11655/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/11655/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/11655/anime-staff
+    meta:
+      count: 19
+    links:
+      first: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Berserk&page%5Blimit%5D=2&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Berserk&page%5Blimit%5D=2&page%5Boffset%5D=2
+      last: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Berserk&page%5Blimit%5D=2&page%5Boffset%5D=17
+  body_text: null
+  body_b64: null

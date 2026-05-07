@@ -1,0 +1,242 @@
+metadata:
+  captured_at: '2026-05-07T11:09:00Z'
+  label: blame
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Blame&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:00 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: HTTP/1.1 AS-EAST-J2x1
+    x-request-id: 8385d557-18ba-4838-950c-bfa8edbb915a
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 8d8579ee-0f4b-42ac-9b86-45f08c493ec7
+      type: manga
+      attributes:
+        title:
+          ja-ro: Warui no wa Shakai da
+        altTitles:
+        - ja: 悪いのは社会だ
+        - en: Blame Society
+        - en: Society Is To Blame
+        - en: It's Society's Fault
+        description:
+          en: Maki meets a man named Tomonori who pays well. What does the word “dole” that he often uses mean? This is the
+            story of a woman who falls for a scumbag man who nests on the dark side of society.
+          ja: とものりという男のせいで、人生が狂わされたマキ。なぜ、マキは彼に惹かれたのか？ そもそも、とものりは何者なのか？
+        isLocked: false
+        links:
+          al: '189092'
+          ap: warui-no-wa-shakai-da
+          bw: series/524151
+          mu: zi2gwi2
+          amz: https://www.amazon.co.jp/dp/B0FCC6HPHS
+          ebj: https://ebookjapan.yahoo.co.jp/books/905682/
+          mal: '180258'
+          raw: https://comic-zenon.com/episode/2550912965179920237
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: '3'
+        lastChapter: '22'
+        publicationDemographic: josei
+        status: completed
+        year: 2025
+        contentRating: safe
+        tags:
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 5ca48985-9a9d-4bd8-be29-80dc0303db72
+          type: tag
+          attributes:
+            name:
+              en: Crime
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: f8f62932-27da-4fe4-8ee1-6779a8c5edba
+          type: tag
+          attributes:
+            name:
+              en: Tragedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2025-01-26T08:40:38+00:00'
+        updatedAt: '2026-02-02T06:47:57+00:00'
+        version: 15
+        availableTranslatedLanguages:
+        - en
+        latestUploadedChapter: 3d91a053-b54a-42a9-b915-d81c016c5856
+      relationships:
+      - id: 52c757b3-f437-43ca-b912-3926fe4b42d9
+        type: author
+      - id: 28c02fe4-dd0b-4380-9d8b-b8a49064cbfa
+        type: artist
+      - id: a5d1d9a1-b577-4587-9d5d-8877ab99b269
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '3'
+          fileName: 37f056e0-e0fd-4961-a34b-a3d4ef5cce38.jpg
+          locale: ja
+          createdAt: '2026-03-17T02:56:58+00:00'
+          updatedAt: '2026-03-17T02:56:58+00:00'
+          version: 1
+      - id: 4bf80b7d-a82e-4e0d-9dc2-108ca51bddf1
+        type: creator
+    - id: 72f5fd80-ce3a-4156-b625-40424a3903d3
+      type: manga
+      attributes:
+        title:
+          ja-ro: Zenbu Osake no Sei ni Shite
+        altTitles:
+        - ja: ぜんぶお酒のせいにして
+        - en: Blame It All on the Alcohol
+        - es-la: Todo es culpa del alcohol
+        - uk: У всьому винен алкоголь
+        - vi: Là Tại Bia Rượu Hết!
+        description:
+          en: I, who reunited with my former classmate Hajime Aosaki at a pub, became drinking buddies with her. As I was
+            looking after her, who's a bad drunk, an unexpected situation unfolded today...?!
+        isLocked: false
+        links:
+          al: '173507'
+          ap: zenbu-osake-no-sei-ni-shite
+          mu: ksx6fw3
+          mal: '166243'
+          raw: https://tonarinoyj.jp/episode/14079602755643779910
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: null
+        status: completed
+        year: 2024
+        contentRating: safe
+        tags:
+        - id: 0234a31e-a729-4e28-9d6a-3f87c4966b9e
+          type: tag
+          attributes:
+            name:
+              en: Oneshot
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 92d6d951-ca5e-429c-ac78-451071cbf064
+          type: tag
+          attributes:
+            name:
+              en: Office Workers
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: e5301a23-ebd9-49dd-a0cb-2add944c7fe9
+          type: tag
+          attributes:
+            name:
+              en: Slice of Life
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2024-01-17T14:18:28+00:00'
+        updatedAt: '2026-02-22T09:51:33+00:00'
+        version: 16
+        availableTranslatedLanguages:
+        - vi
+        - uk
+        - pt-br
+        - en
+        - es-la
+        - id
+        - tr
+        - it
+        latestUploadedChapter: 7d5368a7-8565-4ec1-8733-f7a6df302166
+      relationships:
+      - id: 69b231b2-8559-4f55-b2a1-5df6411bbe46
+        type: author
+      - id: 69b231b2-8559-4f55-b2a1-5df6411bbe46
+        type: artist
+      - id: a9265252-5d5b-4772-86ee-0cd717d0faa6
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '1'
+          fileName: bf31e3ed-a3d9-4a9b-a544-5638df8446b3.jpg
+          locale: ja
+          createdAt: '2024-01-17T14:23:53+00:00'
+          updatedAt: '2024-01-17T14:23:53+00:00'
+          version: 1
+      - id: 180bfee7-8119-4f90-8337-4d280f4b37f1
+        type: creator
+    limit: 2
+    offset: 0
+    total: 15
+  body_text: null
+  body_b64: null
