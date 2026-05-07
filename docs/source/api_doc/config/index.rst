@@ -9,6 +9,8 @@ animedex.config
 .. toctree::
     :maxdepth: 3
 
+    build_info
     buildmeta
     meta
+    profile
 
