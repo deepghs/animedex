@@ -105,6 +105,11 @@ def cli() -> None:
     """The animedex top-level command group."""
 
 
+from animedex.entry.api_cli import api_group as _api_group  # noqa: E402
+
+cli.add_command(_api_group)
+
+
 @cli.command(name="status")
 def status_command() -> None:
     """Print a placeholder status banner.
