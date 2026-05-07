@@ -15,7 +15,9 @@ import io
 from typing import Any
 
 from animedex.models.anime import Anime
+from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import AnimedexModel
+from animedex.models.trace import TraceHit, TraceQuota
 from animedex.render.json_renderer import render_json
 
 
@@ -51,12 +53,94 @@ def _format_anime_tty(anime: Anime) -> str:
     return out.getvalue()
 
 
+def _format_character_tty(c: Character) -> str:
+    src = f"[src: {c.source.backend}]"
+    out = io.StringIO()
+    print(f"{c.name} {src}", file=out)
+    if c.name_native:
+        print(f"  Native: {c.name_native}", file=out)
+    if c.name_alternatives:
+        print(f"  Alt names: {', '.join(c.name_alternatives)}", file=out)
+    print(f"  ID: {c.id}", file=out)
+    if c.role:
+        print(f"  Role: {c.role}", file=out)
+    if c.gender:
+        print(f"  Gender: {c.gender}", file=out)
+    if c.age:
+        print(f"  Age: {c.age}", file=out)
+    if c.favourites is not None:
+        print(f"  Favourites: {c.favourites}", file=out)
+    return out.getvalue()
+
+
+def _format_staff_tty(s: Staff) -> str:
+    src = f"[src: {s.source.backend}]"
+    out = io.StringIO()
+    print(f"{s.name} {src}", file=out)
+    if s.name_native:
+        print(f"  Native: {s.name_native}", file=out)
+    print(f"  ID: {s.id}", file=out)
+    if s.occupations:
+        print(f"  Occupations: {', '.join(s.occupations)}", file=out)
+    if s.language:
+        print(f"  Language: {s.language}", file=out)
+    if s.home_town:
+        print(f"  Home town: {s.home_town}", file=out)
+    if s.years_active:
+        print(f"  Years active: {s.years_active}", file=out)
+    if s.favourites is not None:
+        print(f"  Favourites: {s.favourites}", file=out)
+    return out.getvalue()
+
+
+def _format_studio_tty(s: Studio) -> str:
+    src = f"[src: {s.source.backend}]"
+    out = io.StringIO()
+    print(f"{s.name} {src}", file=out)
+    print(f"  ID: {s.id}", file=out)
+    if s.is_animation_studio is not None:
+        print(f"  Animation studio: {s.is_animation_studio}", file=out)
+    if s.favourites is not None:
+        print(f"  Favourites: {s.favourites}", file=out)
+    return out.getvalue()
+
+
+def _format_trace_hit_tty(h: TraceHit) -> str:
+    src = f"[src: {h.source.backend}]"
+    title = "(unknown)"
+    if h.anilist_title is not None:
+        title = h.anilist_title.romaji
+    out = io.StringIO()
+    print(f"{title} (anilist:{h.anilist_id}) {src}", file=out)
+    if h.episode is not None:
+        print(f"  Episode: {h.episode}", file=out)
+    print(f"  Frame: {h.frame_at_seconds:.2f}s (scene {h.start_at_seconds:.2f}–{h.end_at_seconds:.2f}s)", file=out)
+    print(f"  Similarity: {h.similarity:.4f}", file=out)
+    if h.episode_filename:
+        print(f"  Source: {h.episode_filename}", file=out)
+    if h.preview_video_url:
+        print(f"  Preview: {h.preview_video_url}", file=out)
+    return out.getvalue()
+
+
+def _format_trace_quota_tty(q: TraceQuota) -> str:
+    src = f"[src: {q.source.backend}]"
+    out = io.StringIO()
+    print(f"Trace.moe quota {src}", file=out)
+    print(f"  Tier priority: {q.priority}", file=out)
+    print(f"  Concurrency:   {q.concurrency}", file=out)
+    print(f"  Used / quota:  {q.quota_used} / {q.quota}", file=out)
+    return out.getvalue()
+
+
 def render_tty(model: AnimedexModel) -> str:
     """Render a model into the human-friendly TTY form.
 
-    Currently dispatches on type: :class:`Anime` gets a
-    multi-line block; other models fall back to a default
-    representation that still carries the source marker.
+    Dispatches on type: :class:`Anime`, :class:`Character`,
+    :class:`Staff`, :class:`Studio`, :class:`TraceHit`, and
+    :class:`TraceQuota` each get a multi-line block. Other models
+    fall back to a default representation that still carries the
+    source marker.
 
     :param model: The :class:`AnimedexModel` instance to render.
     :type model: AnimedexModel
@@ -65,6 +149,16 @@ def render_tty(model: AnimedexModel) -> str:
     """
     if isinstance(model, Anime):
         return _format_anime_tty(model)
+    if isinstance(model, Character):
+        return _format_character_tty(model)
+    if isinstance(model, Staff):
+        return _format_staff_tty(model)
+    if isinstance(model, Studio):
+        return _format_studio_tty(model)
+    if isinstance(model, TraceHit):
+        return _format_trace_hit_tty(model)
+    if isinstance(model, TraceQuota):
+        return _format_trace_quota_tty(model)
     src = getattr(model, "source", None)
     src_marker = f"[src: {src.backend}]" if src is not None else "[src: ?]"
     return f"{type(model).__name__} {src_marker}\n{model.model_dump_json()}\n"

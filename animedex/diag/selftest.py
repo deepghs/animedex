@@ -121,6 +121,13 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.api.shikimori",
     "animedex.api.trace",
     "animedex.render.raw",
+    # Phase 2: backend-specific high-level Python APIs.
+    "animedex.backends",
+    "animedex.backends.anilist",
+    "animedex.backends.anilist.models",
+    "animedex.backends.jikan",
+    "animedex.backends.jikan.models",
+    "animedex.backends.trace",
 )
 
 

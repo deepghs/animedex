@@ -106,8 +106,14 @@ def cli() -> None:
 
 
 from animedex.entry.api import api_group as _api_group  # noqa: E402
+from animedex.entry.anilist import anilist_group as _anilist_group  # noqa: E402
+from animedex.entry.jikan import jikan_group as _jikan_group  # noqa: E402
+from animedex.entry.trace import trace_group as _trace_group  # noqa: E402
 
 cli.add_command(_api_group)
+cli.add_command(_anilist_group)
+cli.add_command(_jikan_group)
+cli.add_command(_trace_group)
 
 
 @cli.command(name="status")

@@ -20,6 +20,13 @@ SourceTag
     :members: backend,fetched_at,cached,rate_limited
 
 
+PartialDate
+-----------------------------------------------------
+
+.. autoclass:: PartialDate
+    :members: year,month,day
+
+
 Pagination
 -----------------------------------------------------
 

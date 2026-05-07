@@ -21,7 +21,7 @@ survives every later hop (cache, render, JSON pipeline).
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime
 from typing import Dict, List, Literal, Optional
 
 from animedex.models.common import AnimedexModel, SourceTag
@@ -86,6 +86,32 @@ class AnimeStreamingLink(AnimedexModel):
 
     provider: str
     url: str
+
+
+class NextAiringEpisode(AnimedexModel):
+    """The next-up unaired episode for a currently-airing series.
+
+    Populated from AniList's ``nextAiringEpisode`` block. The same
+    information is occasionally available via Jikan's ``broadcast``
+    field but with less precision (a weekday + time-of-day, not an
+    absolute timestamp); the mapper for Jikan leaves this field
+    ``None`` and surfaces broadcast info via ``JikanAnime.broadcast``.
+
+    :ivar airing_at: Exact UTC timestamp the episode airs.
+    :vartype airing_at: datetime.datetime
+    :ivar time_until_airing_seconds: Server-computed delta from the
+                                       moment of the API call. The
+                                       receiver should treat this as
+                                       advisory; ``airing_at`` is the
+                                       authoritative value.
+    :vartype time_until_airing_seconds: int
+    :ivar episode: Sequence number of the upcoming episode.
+    :vartype episode: int
+    """
+
+    airing_at: datetime
+    time_until_airing_seconds: int
+    episode: int
 
 
 class Anime(AnimedexModel):
@@ -161,6 +187,16 @@ class Anime(AnimedexModel):
     :ivar popularity: Popularity metric; the meaning is upstream-
                        specific (rank, favourites, member count).
     :vartype popularity: int or None
+    :ivar favourites: Count of users who marked the title as favourite
+                       (AniList-only; Jikan reports this separately).
+    :vartype favourites: int or None
+    :ivar trending: AniList trending rank at fetch time. Lower is
+                     more-trending; ``None`` from non-AniList sources.
+    :vartype trending: int or None
+    :ivar next_airing_episode: Upcoming episode for currently-airing
+                                series. ``None`` for finished /
+                                upcoming-but-no-schedule shows.
+    :vartype next_airing_episode: NextAiringEpisode or None
     :ivar ids: Cross-service identifier map (e.g. ``{"mal":
                 "52991", "kitsu": "47390"}``).
     :vartype ids: dict[str, str]
@@ -192,6 +228,9 @@ class Anime(AnimedexModel):
     is_adult: Optional[bool] = None
     age_rating: Optional[str] = None
     popularity: Optional[int] = None
+    favourites: Optional[int] = None
+    trending: Optional[int] = None
+    next_airing_episode: Optional[NextAiringEpisode] = None
     ids: Dict[str, str]
     source: SourceTag
 
@@ -235,6 +274,11 @@ def selftest() -> bool:
         is_adult=False,
         age_rating="PG-13",
         popularity=1,
+        favourites=1,
+        trending=1,
+        next_airing_episode=NextAiringEpisode(
+            airing_at=datetime.now(timezone.utc), time_until_airing_seconds=3600, episode=2
+        ),
         ids={"_selftest": "1"},
         source=src,
     )

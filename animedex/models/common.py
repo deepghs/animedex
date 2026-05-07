@@ -73,6 +73,29 @@ class SourceTag(AnimedexModel):
     rate_limited: bool = False
 
 
+class PartialDate(AnimedexModel):
+    """A date where any of year/month/day may be unknown.
+
+    AniList's ``dateOfBirth`` / ``startDate`` / ``endDate`` shapes
+    return ``{ year, month, day }`` with each component independently
+    nullable. A character may have a known birth-month but no day; a
+    series may be year-only when the exact air date isn't recorded.
+    :class:`datetime.date` cannot represent that, so this lighter-
+    weight type stands in.
+
+    :ivar year: Calendar year when known.
+    :vartype year: int or None
+    :ivar month: Calendar month (1-12) when known.
+    :vartype month: int or None
+    :ivar day: Day of month (1-31) when known.
+    :vartype day: int or None
+    """
+
+    year: Optional[int] = None
+    month: Optional[int] = None
+    day: Optional[int] = None
+
+
 class Pagination(AnimedexModel):
     """Page cursor accompanying list responses.
 
@@ -165,6 +188,9 @@ def selftest() -> bool:
     now = datetime.now(timezone.utc)
     SourceTag(backend="_selftest", fetched_at=now)
     SourceTag.model_validate({"backend": "_selftest", "fetched_at": now.isoformat()})
+    PartialDate(year=2026, month=5, day=7)
+    PartialDate(year=2026)
+    PartialDate()
     Pagination(page=1, per_page=20, has_next=False)
     RateLimit(reset_at=now)
     err = ApiError("smoke", backend="_selftest", reason="selftest")

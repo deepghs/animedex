@@ -30,6 +30,7 @@ class TestTraceHitMinimal:
             anilist_id=154587,
             similarity=0.95,
             start_at_seconds=12.0,
+            frame_at_seconds=13.2,
             end_at_seconds=14.5,
             source=_src(),
         )
@@ -48,6 +49,7 @@ class TestTraceHitFull:
             similarity=0.93,
             episode="1.5",
             start_at_seconds=12.0,
+            frame_at_seconds=13.2,
             end_at_seconds=14.5,
             preview_video_url="https://x.invalid/preview.mp4",
             preview_image_url="https://x.invalid/preview.jpg",
@@ -66,6 +68,7 @@ class TestSimilarityRange:
                 anilist_id=1,
                 similarity=1.5,
                 start_at_seconds=0.0,
+                frame_at_seconds=0.5,
                 end_at_seconds=1.0,
                 source=_src(),
             )
@@ -77,6 +80,7 @@ class TestSimilarityRange:
             anilist_id=1,
             similarity=0.0,
             start_at_seconds=0.0,
+            frame_at_seconds=0.0,
             end_at_seconds=1.0,
             source=_src(),
         )
@@ -91,6 +95,7 @@ class TestRoundTrip:
             similarity=0.95,
             episode="1",
             start_at_seconds=12.0,
+            frame_at_seconds=13.2,
             end_at_seconds=14.5,
             source=_src(),
         )
