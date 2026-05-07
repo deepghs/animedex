@@ -58,11 +58,17 @@ html_show_sourcelink = True
 # -- Autodoc -----------------------------------------------------------------
 
 autodoc_member_order = "bysource"
+# ``tools/auto_rst.py`` emits an explicit ``.. autodata:: NAME`` /
+# ``.. autofunction:: NAME`` / ``.. autoclass:: NAME`` directive for
+# every public member, so we deliberately leave ``members`` out of the
+# default options to keep ``automodule`` from re-documenting members
+# at the module-page level. (The Sphinx default with no ``members``
+# key is "show only the module docstring", which is what we want.
+# Setting ``members: False`` explicitly is a known Sphinx footgun -
+# autodoc internally iterates the value and crashes on the boolean.)
 autodoc_default_options = {
-    "members": True,
     "undoc-members": False,
     "show-inheritance": True,
-    "special-members": "__init__",
 }
 autosummary_generate = True
 

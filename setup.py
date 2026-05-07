@@ -107,6 +107,7 @@ setup(
     },
     project_urls={
         "Homepage": "https://github.com/deepghs/animedex",
+        "Documentation": "https://animedex.readthedocs.io/en/latest/",
         "Source": "https://github.com/deepghs/animedex",
         "Bug Reports": "https://github.com/deepghs/animedex/issues",
         "CI": "https://github.com/deepghs/animedex/actions",

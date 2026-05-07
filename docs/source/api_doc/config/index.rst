@@ -9,11 +9,6 @@ animedex.config
 .. toctree::
     :maxdepth: 3
 
+    buildmeta
     meta
-
-\_\_all\_\_
------------------------------------------------------
-
-.. autodata:: __all__
-
 

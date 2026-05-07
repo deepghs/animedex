@@ -61,7 +61,12 @@ help:
 	@echo "  make docs            Build the Sphinx HTML site (docs/build/html/)"
 	@echo ""
 
-package:
+# Build sdist + wheel. The build_info module is regenerated first so
+# the resulting distribution carries the same per-build metadata that
+# the PyInstaller binary does. MANIFEST.in lists the file explicitly,
+# because it is .gitignore'd and would otherwise be omitted from the
+# sdist.
+package: build_info
 	$(PYTHON) -m build --sdist --wheel --outdir ${DIST_DIR}
 
 # (Re-)generate the per-build metadata module from the working tree's

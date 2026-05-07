@@ -1,8 +1,39 @@
 # animedex
 
+<div align="center">
+
+[![PyPI](https://img.shields.io/pypi/v/animedex)](https://pypi.org/project/animedex/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/animedex)
+![PyPI - Implementation](https://img.shields.io/pypi/implementation/animedex)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/animedex)
+
+![Loc](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/narugo1992/84fb1b7646cd29b1305e90e3cad6f392/raw/loc.json)
+![Comments](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/narugo1992/84fb1b7646cd29b1305e90e3cad6f392/raw/comments.json)
+[![codecov](https://codecov.io/gh/deepghs/animedex/graph/badge.svg)](https://codecov.io/gh/deepghs/animedex)
+[![Documentation Status](https://readthedocs.org/projects/animedex/badge/?version=latest)](https://animedex.readthedocs.io/en/latest/)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/deepghs/animedex)
+
+[![Code Test](https://github.com/deepghs/animedex/workflows/Code%20Test/badge.svg)](https://github.com/deepghs/animedex/actions?query=workflow%3A%22Code+Test%22)
+[![Release Test](https://github.com/deepghs/animedex/workflows/Release%20Test/badge.svg)](https://github.com/deepghs/animedex/actions?query=workflow%3A%22Release+Test%22)
+[![Badge Creation](https://github.com/deepghs/animedex/workflows/Badge%20Creation/badge.svg)](https://github.com/deepghs/animedex/actions?query=workflow%3A%22Badge+Creation%22)
+[![Package Release](https://github.com/deepghs/animedex/workflows/Package%20Release/badge.svg)](https://github.com/deepghs/animedex/actions?query=workflow%3A%22Package+Release%22)
+
+[![GitHub stars](https://img.shields.io/github/stars/deepghs/animedex)](https://github.com/deepghs/animedex/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/deepghs/animedex)](https://github.com/deepghs/animedex/network)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/deepghs/animedex)
+[![GitHub issues](https://img.shields.io/github/issues/deepghs/animedex)](https://github.com/deepghs/animedex/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/deepghs/animedex)](https://github.com/deepghs/animedex/pulls)
+[![Contributors](https://img.shields.io/github/contributors/deepghs/animedex)](https://github.com/deepghs/animedex/graphs/contributors)
+[![GitHub license](https://img.shields.io/github/license/deepghs/animedex)](https://github.com/deepghs/animedex/blob/main/LICENSE)
+[![Status: WIP](https://img.shields.io/badge/status-WIP%20%28scaffold%20only%29-orange.svg)](./plans)
+
+</div>
+
+---
+
 > A read-only, multi-source, `gh`-flavored command-line interface for anime and manga metadata, designed to be used both by humans and by LLM agents (Codex, Claude, and friends).
 
-[![Build status](https://github.com/deepghs/animedex/actions/workflows/test.yml/badge.svg)](https://github.com/deepghs/animedex/actions/workflows/test.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](./LICENSE) [![Status: WIP](https://img.shields.io/badge/status-WIP%20%28scaffold%20only%29-orange.svg)](./plans)
+Documentation: <https://animedex.readthedocs.io/en/latest/>
 
 ## Status: work in progress
 
@@ -63,7 +94,8 @@ plans/                   Staged design documents - read these in order
   02-design-policy-as-docstring.md
   03-cli-architecture-gh-flavored.md
   04-roadmap-and-mvp.md
-docs/                    Documentation source (not yet wired up)
+  05-python-api.md
+docs/                    Sphinx source -> https://animedex.readthedocs.io/en/latest/
 .github/workflows/       CI: test, release, release-test
 AGENTS.md                Repository policy for human + agent contributors
 CLAUDE.md                Symlink to AGENTS.md
@@ -81,7 +113,7 @@ LICENSE                  Apache-2.0
 If you are an LLM agent (e.g. Codex or Claude) working in this repo:
 
 - Read `AGENTS.md` first; it is the binding policy for any change you make.
-- Read the four plan documents in order before proposing implementations. The plans tell you not just *what* to build but *why* certain things are out of scope (e.g. writes, NSFW gating flags, content moderation in code rather than docs).
+- Read the five plan documents in order before proposing implementations. The plans tell you not just *what* to build but *why* certain things are out of scope (e.g. writes, NSFW gating flags, content moderation in code rather than docs).
 - When implementing a CLI command, follow the docstring template in `plans/02-design-policy-as-docstring.md` section 3. The lint check enforces it.
 
 ## Install

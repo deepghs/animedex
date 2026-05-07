@@ -9,7 +9,7 @@ itself throws an unexpected exception, so that:
 
 * a stripped binary built with PyInstaller can be smoke-tested in a
   clean environment without a Python interpreter installed (see
-  ``plans/04-roadmap-and-mvp.md`` and ``.github/workflows/release_test.yml``);
+  ``.github/workflows/release_test.yml``);
 * an LLM agent invoking ``animedex selftest`` always gets a parseable
   status block back, regardless of why something failed.
 
@@ -65,10 +65,7 @@ SUBSECTION_RULE = "-" * 60
 # tag taxonomies, schema files, etc.) or upstream-dependent paths
 # actually work. Modules that ship static resources, binary blobs, or
 # I/O entry points MUST therefore grow a ``selftest()`` that exercises
-# the resource end-to-end. See ``AGENTS.md`` section 7 / 8 for the
-# binding rule and ``plans/02-design-policy-as-docstring.md`` for the
-# ``--- LLM Agent Guidance ---`` block that lives on top of every
-# such function.
+# the resource end-to-end.
 _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex",
     "animedex.config",

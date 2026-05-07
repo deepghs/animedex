@@ -1,0 +1,52 @@
+name: Badge Creation
+
+on:
+  push:
+    branches: [ main, 'badge/*', 'doc/*' ]
+  workflow_dispatch:
+
+jobs:
+  update-badges:
+    name: Update Badges
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        python-version:
+          - '3.11'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+          submodules: 'recursive'
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install cloc
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y cloc
+      - name: Compute the metrics
+        run: |
+          cloc .
+          echo "CODE_LINES=$(./cloc.sh --loc)" >> "$GITHUB_ENV"
+          echo "COMMENT_LINES=$(./cloc.sh --percentage)%" >> "$GITHUB_ENV"
+      - name: Update Lines-of-Code badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ secrets.BADGE_GIST_ID }}
+          filename: loc.json
+          label: Lines of Code
+          message: ${{ env.CODE_LINES }}
+          color: lightgrey
+      - name: Update Comments badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ secrets.BADGE_GIST_ID }}
+          filename: comments.json
+          label: Comments
+          message: ${{ env.COMMENT_LINES }}
+          color: green

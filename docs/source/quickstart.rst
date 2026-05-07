@@ -2,10 +2,9 @@ Quickstart
 ==========
 
 .. warning::
-   This page is a placeholder. The CLI is in scaffolding state and the
-   commands shown below either do not yet exist or are stubs that
-   print a "work in progress" notice. Please refer to the staged
-   plans under ``plans/`` for the intended end state.
+   This page is a forward-looking sketch. The CLI is in scaffolding
+   state: most of the commands shown below are not yet wired up. They
+   represent the final intended interaction model.
 
 The intended interaction model
 ------------------------------
@@ -69,5 +68,22 @@ Output formats
    animedex anilist show 154587 --jq '.title.romaji'
    animedex anilist show 154587 --web              # open the AniList page
 
-For the full canonical command tree and the design rationale, read
-``plans/03-cli-architecture-gh-flavored.md`` in the repository.
+Python library use
+------------------
+
+The same surface is reachable from Python:
+
+.. code-block:: python
+
+   from animedex.backends import anilist, jikan
+   from animedex import search
+
+   a = anilist.show(154587)
+   m = jikan.show(int(a.ids["mal"]))
+   results = search("Frieren")
+   for r in results:
+       print(r.title.romaji, r.source.backend)
+
+   # raw passthrough, programmatic equivalent of ``animedex api ...``
+   from animedex.api import call
+   data = call("anilist", "query { Media(id: 154587) { title { romaji } } }")
