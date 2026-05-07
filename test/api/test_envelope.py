@@ -129,6 +129,31 @@ class TestRedactHeaders:
         assert "1234567890" not in out
         assert "1111BBBB" not in out
 
+    def test_cookie_value_with_empty_pair_is_skipped(self):
+        """Trailing ``;`` produces an empty pair after split; the
+        cookie redactor skips it instead of crashing."""
+        from animedex.api._envelope import redact_headers
+
+        headers = {"Cookie": "session=abcd1234567890XYZabcd1234XYZ99;; "}
+        out = redact_headers(headers)["Cookie"]
+        assert "session=" in out
+        # No stray semicolons from empty pairs.
+        assert ";;" not in out
+
+    def test_cookie_pair_without_equals_is_redacted_whole(self):
+        """A bare cookie flag (e.g. ``HttpOnly`` standalone, or a
+        malformed pair) gets redacted as a single value, not split."""
+        from animedex.api._envelope import redact_headers
+
+        headers = {"Cookie": "abcd1234567890XYZabcd1234XYZ99; flagonly"}
+        out = redact_headers(headers)["Cookie"]
+        # "flagonly" (8 chars) below the fingerprint threshold, so it
+        # becomes the bracketed redacted-len form.
+        assert "<redacted len=8>" in out
+        # The first pair (30 chars, no '=') goes through the
+        # fingerprint form too.
+        assert "abcd...YZ99" in out
+
     def test_returns_new_dict(self):
         from animedex.api._envelope import redact_headers
 
