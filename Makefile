@@ -112,8 +112,15 @@ unittest:
 		$(if ${MIN_COVERAGE},--cov-fail-under=${MIN_COVERAGE},) \
 		$(if ${WORKERS},-n ${WORKERS},)
 
+# `make lint` mirrors the rules the CI workflow enforces. flake8 only
+# screens for severity-1 issues (E9 syntax errors, F-class undefined
+# names); style/line-length is owned by `ruff format` (see `make
+# format-check`). The docstring policy lint (plan 02 §4) walks the
+# registered Click group and rejects backend commands that miss the
+# Backend / Rate limit / --- LLM Agent Guidance --- triplet.
 lint:
-	flake8 ${SRC_DIR} ${TEST_DIR}
+	flake8 ${SRC_DIR} --count --select=E9,F63,F7,F82 --show-source --statistics
+	$(PYTHON) -m animedex.policy.lint
 
 # Reformat the tree in place (intended pre-commit hook).
 format:

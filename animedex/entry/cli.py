@@ -50,6 +50,40 @@ def _print_version(ctx: click.Context, param: click.Option, value: bool) -> None
     ctx.exit()
 
 
+def _print_agent_guide(ctx: click.Context, param: click.Option, value: bool) -> None:
+    """Click eager callback for ``--agent-guide``.
+
+    Walks the registered command tree and prints every command's
+    :func:`animedex.policy.lint.extract_agent_guidance` block, so an
+    LLM agent shelling out without an MCP layer can read the
+    catalogue with a single invocation. Exits cleanly when no
+    commands have guidance (e.g. during Phase 0 before any backend
+    has shipped).
+
+    :param ctx: Click command context for the active invocation.
+    :type ctx: click.Context
+    :param param: The ``--agent-guide`` option metadata; unused.
+    :type param: click.Option
+    :param value: ``True`` when the user passed ``--agent-guide``.
+    :type value: bool
+    :return: ``None`` (exits via :meth:`click.Context.exit` when triggered).
+    :rtype: None
+    """
+    if not value or ctx.resilient_parsing:
+        return
+    from animedex.policy.lint import collect_agent_guidance
+
+    blocks = collect_agent_guidance(cli)
+    if not blocks:
+        click.echo("No Agent Guidance blocks found (no backends are wired up yet).")
+    else:
+        for entry in blocks:
+            click.echo(f"=== {entry['command']} ===")
+            click.echo(entry["guidance"])
+            click.echo("")
+    ctx.exit()
+
+
 @click.group(name=__TITLE__, help=__DESCRIPTION__)
 @click.option(
     "--version",
@@ -58,6 +92,14 @@ def _print_version(ctx: click.Context, param: click.Option, value: bool) -> None
     expose_value=False,
     is_eager=True,
     help="Show animedex's version and build information.",
+)
+@click.option(
+    "--agent-guide",
+    is_flag=True,
+    callback=_print_agent_guide,
+    expose_value=False,
+    is_eager=True,
+    help="Print every command's --- LLM Agent Guidance --- block and exit.",
 )
 def cli() -> None:
     """The animedex top-level command group."""
@@ -70,6 +112,18 @@ def status_command() -> None:
     The real implementation will report the health, anonymous quota, and
     auth state of each backend (AniList, Jikan, Kitsu, MangaDex, Trace.moe,
     Danbooru, Shikimori, ANN, AniDB, Ghibli, NekosBest, Waifu.im, AnimeChan).
+
+    Backend: animedex (local; this command does not contact any
+    upstream).
+
+    Rate limit: not applicable (local-only).
+
+    --- LLM Agent Guidance ---
+    Use this command at session start to confirm the CLI is
+    functional and to peek at the environment-derived banner.
+    During Phase 0 it returns a placeholder; once backends ship it
+    will list per-backend liveness. Cheap to call; do not rate-limit.
+    --- End ---
     """
     click.echo(f"{__TITLE__} v{__VERSION__} - work in progress.")
     click.echo("No backends are wired up yet. See plans/ in the repository.")
@@ -90,6 +144,21 @@ def selftest_command() -> None:
     * ``0`` - every check passed.
     * ``1`` - one or more checks failed (the report still printed).
     * ``2`` - the runner itself crashed (should be unreachable).
+
+    Backend: animedex (local; smoke tests do not contact any
+    upstream).
+
+    Rate limit: not applicable (local-only).
+
+    --- LLM Agent Guidance ---
+    Use this when you suspect the install or the binary is broken.
+    The output is grep-friendly: each check produces a one-line
+    ``[OK]`` or ``[FAIL]`` record so you do not need to parse a
+    traceback. Exit 0 means healthy; exit 1 means one or more
+    checks failed; exit 2 means the runner itself crashed (should
+    be unreachable). Call this before assuming a real backend is
+    misbehaving - a substrate-level break shows up here first.
+    --- End ---
     """
     code = run_selftest()
     sys.exit(code)
