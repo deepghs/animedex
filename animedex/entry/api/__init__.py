@@ -33,16 +33,37 @@ from animedex.render.raw import render_body, render_debug, render_head, render_i
 _DEFAULT_CACHE = None
 
 
+def _close_default_cache() -> None:
+    """Close the lazy default cache singleton if it was constructed.
+
+    Registered via :func:`atexit` on first use of
+    :func:`_default_cache` so the SQLite connection releases cleanly
+    on interpreter shutdown (review m4). Idempotent: a second call
+    after teardown is a no-op.
+    """
+    global _DEFAULT_CACHE
+    if _DEFAULT_CACHE is not None:
+        try:
+            _DEFAULT_CACHE.close()
+        except Exception:
+            # Defensive: a connection that already failed to close
+            # should not surface a traceback during interpreter
+            # teardown. The file handle gets released by the OS
+            # regardless.
+            pass
+        _DEFAULT_CACHE = None
+
+
 def _default_cache():
     """Lazy singleton :class:`SqliteCache` at the default platform path.
 
     Created on first use so paths that pass ``--no-cache`` everywhere
     or that run in unit tests never instantiate it.
 
-    The first construction registers an :func:`atexit` hook that
-    closes the SQLite connection cleanly on interpreter shutdown
-    (review m4). Without it a long-running embedding (Jupyter, MCP
-    server, future REPL) would leak the file handle.
+    The first construction registers :func:`_close_default_cache` as
+    an :func:`atexit` hook (review m4). Without it a long-running
+    embedding (Jupyter, MCP server, future REPL) would leak the file
+    handle.
 
     :return: A reusable ``SqliteCache`` instance.
     :rtype: SqliteCache
@@ -54,20 +75,6 @@ def _default_cache():
         from animedex.cache.sqlite import SqliteCache
 
         _DEFAULT_CACHE = SqliteCache()
-
-        def _close_default_cache() -> None:
-            global _DEFAULT_CACHE
-            if _DEFAULT_CACHE is not None:
-                try:
-                    _DEFAULT_CACHE.close()
-                except Exception:
-                    # Defensive: a connection that already failed to
-                    # close should not surface a traceback during
-                    # interpreter teardown. The file handle gets
-                    # released by the OS regardless.
-                    pass
-                _DEFAULT_CACHE = None
-
         atexit.register(_close_default_cache)
     return _DEFAULT_CACHE
 
