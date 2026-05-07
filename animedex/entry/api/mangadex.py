@@ -16,6 +16,12 @@ api_mangadex = make_get_only_subcommand(
     as `{"result":"error","errors":[{"id","status","title","detail"}]}`.
 
     \b
+    Docs:
+      https://api.mangadex.org/docs/             Swagger / endpoint reference
+      https://api.mangadex.org/docs/2-limitations/   rate limits + headers
+      https://api.mangadex.org/docs/swagger.html    interactive Swagger UI
+
+    \b
     Common paths:
       /manga?title=Frieren                   search by title
       /manga/{uuid}                          fetch one

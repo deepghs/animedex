@@ -53,6 +53,12 @@ def api_trace(
     PATH=`/search`; the bytes are sent as the POST body.
 
     \b
+    Docs:
+      https://soruly.github.io/trace.moe-api/    endpoint reference
+      https://github.com/soruly/trace.moe-api    project repo
+      https://trace.moe/                          web UI
+
+    \b
     Common paths:
       /me                                    quota state (free)
       /search?url=<encoded-image-url>        search by URL

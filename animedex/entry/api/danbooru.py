@@ -14,6 +14,12 @@ api_danbooru = make_get_only_subcommand(
     injects `animedex/<version>` automatically and that passes.
 
     \b
+    Docs:
+      https://danbooru.donmai.us/wiki_pages/help:api          API help
+      https://danbooru.donmai.us/wiki_pages/help:cheatsheet   tag DSL cheatsheet
+      https://danbooru.donmai.us/wiki_pages/help:posts        /posts endpoint
+
+    \b
     Tag DSL on /posts.json:
       tag                            must include
       -tag                           must exclude

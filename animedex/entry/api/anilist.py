@@ -45,6 +45,12 @@ def api_anilist(
     Character, Staff, Studio, Page, AiringSchedule, ...).
 
     \b
+    Docs:
+      https://docs.anilist.co/                              official reference
+      https://anilist.gitbook.io/anilist-apiv2-docs/        GitBook mirror
+      https://anilist.co/graphiql                           live schema browser
+
+    \b
     Examples:
       animedex api anilist '{ Media(id:154587){ title{romaji english} } }'
       animedex api anilist '{ Page(perPage:5){ media(search:"Frieren"){ id title{romaji} } } }'

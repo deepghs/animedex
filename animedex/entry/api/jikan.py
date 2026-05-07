@@ -15,6 +15,12 @@ api_jikan = make_get_only_subcommand(
     upstream MyAnimeList page is missing, not that Jikan is down.
 
     \b
+    Docs:
+      https://docs.api.jikan.moe/             OpenAPI / endpoint reference
+      https://jikan.moe/                       project homepage
+      https://github.com/jikan-me/jikan-api-docs   docs source repo
+
+    \b
     Common paths:
       /anime/{mal_id}                fetch one anime
       /anime?q=Frieren&type=tv       search

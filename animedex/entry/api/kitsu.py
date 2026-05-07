@@ -17,6 +17,12 @@ api_kitsu = make_get_only_subcommand(
     data; this command targets `.io` by default.
 
     \b
+    Docs:
+      https://kitsu.docs.apiary.io/                Apiary reference
+      https://hummingbird-me.github.io/api-docs/   markdown mirror
+      https://jsonapi.org/                          JSON:API spec
+
+    \b
     Common paths:
       /anime?filter[text]=Frieren           search
       /anime/{id}                            fetch one

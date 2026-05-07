@@ -51,6 +51,12 @@ def api_shikimori(
     identical data.
 
     \b
+    Docs:
+      https://shikimori.io/api/doc                 REST v1/v2 reference
+      https://shikimori.io/api/doc/graphql         GraphQL schema reference
+      https://shikimori.io/api/doc/2.0             v2 reference (preferred)
+
+    \b
     Common REST paths:
       /api/animes/{id}                      fetch one
       /api/animes?search=Frieren&limit=2    search

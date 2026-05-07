@@ -170,7 +170,8 @@ When you wire up a new backend (or a new endpoint on an existing one):
 5. Cache: choose a sensible default TTL and document it in the docstring.
 6. Rate limit: configure the backend's token bucket from a single place; do not duplicate caps across files.
 7. **Add a `selftest()` callable** to the backend's package and register the package in `_SELFTEST_TARGETS` inside `animedex/diag/selftest.py`. See section 9 below; this is non-negotiable for any backend that ships static assets, schemas, or I/O entry points.
-8. Update `plans/03-cli-architecture-gh-flavored.md` if the new backend changes the canonical command tree.
+8. **Include a `Docs:` section in the human-CLI-help half of the docstring** (the part *before* `\f`) that lists 1-3 canonical upstream documentation URLs as a `\b`-protected indented block. This serves two audiences. A human running `animedex api <backend> --help` gets a clickable jump-off point to the upstream's reference. An LLM agent shelling out reads the same help text and now has a usable URL it can `WebFetch` for the live API specification, which is more authoritative and more current than anything baked into the agent's training data. Keep the URL list short (the most-canonical reference first, optional secondaries — Swagger UI, GitHub repo, GraphiQL playground — in declining order). Add the same URL to the per-backend row of the `Per-backend docs` table at the bottom of the `animedex api --help` group docstring.
+9. Update `plans/03-cli-architecture-gh-flavored.md` if the new backend changes the canonical command tree.
 9. Refresh API docs with `make rst_auto` so the generated reST in `docs/source/api_doc/` is in sync.
 
 ## 9. Diagnostic Coverage (selftest must evolve with the code)

@@ -220,6 +220,17 @@ def api_group() -> None:
       animedex api kitsu '/anime?filter[text]=Frieren&page[limit]=2' -i
       animedex api shikimori /api/graphql --graphql '{ animes(ids:"52991"){ id name }}'
       animedex api jikan /anime/52991 --debug | jq '{cache, timing}'
+
+    \b
+    Per-backend docs (each subcommand's --help has more detail):
+      anilist    https://docs.anilist.co/
+      jikan      https://docs.api.jikan.moe/
+      kitsu      https://kitsu.docs.apiary.io/
+      mangadex   https://api.mangadex.org/docs/
+      trace      https://soruly.github.io/trace.moe-api/
+      danbooru   https://danbooru.donmai.us/wiki_pages/help:api
+      shikimori  https://shikimori.io/api/doc
+      ann        https://www.animenewsnetwork.com/encyclopedia/api.php
     \f
 
     Backend: animedex (local; routes to one of 8 upstream backends).

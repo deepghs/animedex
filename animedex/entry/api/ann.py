@@ -17,6 +17,11 @@ api_ann = make_get_only_subcommand(
     indicator, not an error.
 
     \b
+    Docs:
+      https://www.animenewsnetwork.com/encyclopedia/api.php    API reference
+      https://www.animenewsnetwork.com/encyclopedia/           browsable encyclopedia
+
+    \b
     Common paths:
       /api.xml?anime=4                    fetch by id
       /api.xml?anime=~Frieren              substring search by title
