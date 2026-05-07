@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-07T15:14:46Z'
+  label: nekomata1037
+  backend: jikan
+  path_slug: users_by_name
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/users/nekomata1037
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:14:46 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=300
+    x-request-fingerprint: request:users:2d78932976f85737d1894613a81f96bded2a4726
+    expires: Thu, 07 May 2026 15:19:46 GMT
+    last-modified: Thu, 07 May 2026 15:14:46 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      mal_id: 4901676
+      username: Nekomata1037
+      url: https://myanimelist.net/profile/Nekomata1037
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/userimages/c60f80dc-16b8-4e48-8a21-8583c31152c3_225w?s=e0676f7c639a50cef402f2ce39cfc2d3
+        webp:
+          image_url: https://cdn.myanimelist.net/s/common/userimages/c60f80dc-16b8-4e48-8a21-8583c31152c3_225w?s=e0676f7c639a50cef402f2ce39cfc2d3
+      last_online: '2026-04-01T15:55:00+00:00'
+      gender: Male
+      birthday: '1998-11-23T00:00:00+00:00'
+      location: Pakistan
+      joined: '2015-09-27T00:00:00+00:00'
+  body_text: null
+  body_b64: null

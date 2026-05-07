@@ -1,0 +1,252 @@
+metadata:
+  captured_at: '2026-05-07T14:58:17Z'
+  label: media-anohana
+  backend: anilist
+  path_slug: phase2_media
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Media(id: $id) {
+          id idMal
+          title { romaji english native }
+          type format status episodes duration
+          season seasonYear
+          startDate { year month day }
+          endDate { year month day }
+          genres tags { name rank }
+          averageScore meanScore popularity favourites trending
+          isAdult countryOfOrigin
+          description(asHtml: false)
+          source
+          coverImage { extraLarge large medium color }
+          bannerImage
+          trailer { id site thumbnail }
+          studios { edges { isMain node { id name isAnimationStudio } } }
+          nextAiringEpisode { airingAt timeUntilAiring episode }
+          externalLinks { id site type url language }
+          streamingEpisodes { title thumbnail url site }
+        }
+      }
+    variables:
+      id: 9989
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:17 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '21'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Media:
+        id: 9989
+        idMal: 9989
+        title:
+          romaji: Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.
+          english: 'Anohana: The Flower We Saw That Day'
+          native: あの日見た花の名前を僕達はまだ知らない。
+        type: ANIME
+        format: TV
+        status: FINISHED
+        episodes: 11
+        duration: 22
+        season: SPRING
+        seasonYear: 2011
+        startDate:
+          year: 2011
+          month: 4
+          day: 15
+        endDate:
+          year: 2011
+          month: 6
+          day: 24
+        genres:
+        - Drama
+        - Romance
+        - Slice of Life
+        - Supernatural
+        tags:
+        - name: Coming of Age
+          rank: 95
+        - name: Tragedy
+          rank: 93
+        - name: Ghost
+          rank: 92
+        - name: Rehabilitation
+          rank: 84
+        - name: Hikikomori
+          rank: 79
+        - name: Love Triangle
+          rank: 78
+        - name: Male Protagonist
+          rank: 77
+        - name: Found Family
+          rank: 75
+        - name: Rural
+          rank: 75
+        - name: Primarily Teen Cast
+          rank: 73
+        - name: Heterosexual
+          rank: 68
+        - name: Female Protagonist
+          rank: 64
+        - name: Kuudere
+          rank: 56
+        - name: Tsundere
+          rank: 48
+        - name: Crossdressing
+          rank: 42
+        - name: Bullying
+          rank: 37
+        averageScore: 80
+        meanScore: 80
+        popularity: 378149
+        favourites: 12201
+        trending: 3
+        isAdult: false
+        countryOfOrigin: JP
+        description: |-
+          Jinta Yadomi and his group of childhood friends have become estranged after a tragic accident split them apart. Now in their high school years, a sudden surprise forces each of them to confront their guilt over what happened that day and come to terms with the ghosts of their past. <br><br>
+          (Source: NIS America)
+        source: ORIGINAL
+        coverImage:
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9989-hImMg6kCMm6I.jpg
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx9989-hImMg6kCMm6I.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx9989-hImMg6kCMm6I.jpg
+          color: '#0d78e4'
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/9989-pyr6rXlV1oAm.jpg
+        trailer:
+          id: oDWkt8wcYh8
+          site: youtube
+          thumbnail: https://i.ytimg.com/vi/oDWkt8wcYh8/hqdefault.jpg
+        studios:
+          edges:
+          - isMain: false
+            node:
+              id: 17
+              name: Aniplex
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 53
+              name: Dentsu
+              isAnimationStudio: false
+          - isMain: true
+            node:
+              id: 561
+              name: A-1 Pictures
+              isAnimationStudio: true
+          - isMain: false
+            node:
+              id: 169
+              name: Fuji TV
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 769
+              name: Fujipacific Music
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 493
+              name: Aniplex of America
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 6548
+              name: Hanabee Entertainment
+              isAnimationStudio: false
+        nextAiringEpisode: null
+        externalLinks:
+        - id: 338
+          site: Crunchyroll
+          type: STREAMING
+          url: http://www.crunchyroll.com/anohana-the-flower-we-saw-that-day
+          language: null
+        - id: 6283
+          site: Netflix
+          type: STREAMING
+          url: https://www.netflix.com/browse?jbv=80075178&jbp=0&jbr=11
+          language: null
+        - id: 67103
+          site: Twitter
+          type: SOCIAL
+          url: https://twitter.com/anohana_project
+          language: Japanese
+        - id: 67104
+          site: Official Site
+          type: INFO
+          url: https://www.anohana.jp/tv/
+          language: Japanese
+        streamingEpisodes:
+        - title: Episode 1 - Super Peace Busters
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/b4a169079d0628fe2d4e12eceaaf55921574028126_full.jpg
+          url: http://www.crunchyroll.com/watch/GRW4WZQMY/super-peace-busters
+          site: Crunchyroll
+        - title: Episode 2 - The Hero Menma
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/f3b77b580184ac2b80077debd67844631574028370_full.jpg
+          url: http://www.crunchyroll.com/watch/G60X512GR/the-hero-menma
+          site: Crunchyroll
+        - title: Episode 3 - Menma Search Party
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/390cb85f5dfbbfa0ad1876bb2848f0a61574028489_full.jpg
+          url: http://www.crunchyroll.com/watch/G679X7ZMY/menma-search-party
+          site: Crunchyroll
+        - title: Episode 4 - A White Dress, A Blue Ribbon
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/b346e0ebaf22f7d117c64b115ca9e3601574028669_full.jpg
+          url: http://www.crunchyroll.com/watch/GYXJG1526/a-white-dress-a-blue-ribbon
+          site: Crunchyroll
+        - title: Episode 5 - Tunnels
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/8cb620a96a9dee45da147f630892c0871574028791_full.jpg
+          url: http://www.crunchyroll.com/watch/GR1XWNZZR/tunnels
+          site: Crunchyroll
+        - title: Episode 6 - Forget Me, Forget Me Not
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/785482d6d7bb9e00116d1a863bc3c75a1574028909_full.jpg
+          url: http://www.crunchyroll.com/watch/GYNVNP2ZR/forget-me-forget-me-not
+          site: Crunchyroll
+        - title: Episode 7 - True Wish
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/3125279ac84ba65809a13f733af7dbb61574028976_full.jpg
+          url: http://www.crunchyroll.com/watch/G6MEJD25R/true-wish
+          site: Crunchyroll
+        - title: Episode 8 - I Wonder
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/97170c22bd7daeab5ea630e73e324b081574029160_full.jpg
+          url: http://www.crunchyroll.com/watch/G63K07ZN6/i-wonder
+          site: Crunchyroll
+        - title: Episode 9 - Menma and the Rest
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/b90a4b4bf2ff0e97eefecca38289388c1574029147_full.jpg
+          url: http://www.crunchyroll.com/watch/GR24G1286/menma-and-the-rest
+          site: Crunchyroll
+        - title: Episode 10 - Fireworks
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/90376570f8bccd42317743d34b439ff51574079687_full.jpg
+          url: http://www.crunchyroll.com/watch/GYW4WZPM6/fireworks
+          site: Crunchyroll
+        - title: Episode 11 - The Flower That Bloomed That Summer
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/e0b740a24fe14acf525ad1519a6270d41574079934_full.jpg
+          url: http://www.crunchyroll.com/watch/GR0X518GY/the-flower-that-bloomed-that-summer
+          site: Crunchyroll
+  body_text: null
+  body_b64: null

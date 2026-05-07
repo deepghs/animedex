@@ -1,0 +1,82 @@
+metadata:
+  captured_at: '2026-05-07T15:10:09Z'
+  label: review-by-media
+  backend: anilist
+  path_slug: phase2_longtail
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Page(page:1,perPage:5){ reviews(mediaId:154587, sort:RATING_DESC){ id summary score rating ratingAmount user{
+      name } } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 15:10:08 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '26'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        reviews:
+        - id: 23847
+          summary: Fascinating, fulfilling, and full of feelings—a trek where every step matters.
+          score: 100
+          rating: 314
+          ratingAmount: 356
+          user:
+            name: befalt
+        - id: 23858
+          summary: Cherish yesterday, dream tomorrow, live today
+          score: 100
+          rating: 225
+          ratingAmount: 256
+          user:
+            name: Fireality
+        - id: 24171
+          summary: At it's best, Frieren can be compassionate and contemplative, yet it's tainted by abhorrent themes and
+            a lack of focus
+          score: 65
+          rating: 135
+          ratingAmount: 336
+          user:
+            name: chain
+        - id: 23857
+          summary: This Anime Will Make You Appreciate Life.
+          score: 100
+          rating: 86
+          ratingAmount: 103
+          user:
+            name: ArielAnime
+        - id: 24028
+          summary: What it means to be human, as taught by an elf.
+          score: 100
+          rating: 85
+          ratingAmount: 100
+          user:
+            name: flashpool
+  body_text: null
+  body_b64: null

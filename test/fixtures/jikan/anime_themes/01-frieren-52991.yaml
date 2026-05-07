@@ -1,0 +1,40 @@
+metadata:
+  captured_at: '2026-05-07T15:12:37Z'
+  label: frieren-52991
+  backend: jikan
+  path_slug: anime_themes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/52991/themes
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:12:37 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:de1ab601e3b51950edf72333b0ea103150b4c12a
+    expires: Fri, 08 May 2026 10:10:39 GMT
+    last-modified: Thu, 07 May 2026 10:10:39 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: EXPIRED
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      openings:
+      - '1: "Yuusha (勇者)" by YOASOBI (eps 1-16)'
+      - '2: "Haru (晴る)" by Yorushika (ヨルシカ) (eps 17-28)'
+      endings:
+      - '1: "Anytime Anywhere" by milet (eps 1-14,16-28)'
+      - 'S1: "bliss" by milet (eps Special Broadcast: 1-4)'
+  body_text: null
+  body_b64: null

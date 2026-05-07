@@ -1,0 +1,40 @@
+metadata:
+  captured_at: '2026-05-07T15:15:00Z'
+  label: nekomata1037
+  backend: jikan
+  path_slug: users_about
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/users/nekomata1037/about
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:14:59 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=300
+    x-request-fingerprint: request:users:5afe79cf3b7a3d84a078230ebac0b29f70e44928
+    expires: Thu, 07 May 2026 15:19:46 GMT
+    last-modified: Thu, 07 May 2026 15:14:46 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      about: "<div style=\"text-align: center;\"><a href=\"https://jikan.moe\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\
+        ><img class=\"userimg\" src=\"https://image.myanimelist.net/ui/VH8yjfZaernJrd07ntsOiuLgF20A2z-S5jTcRPI9LT9jgxwyBEmWHxSTSUE7RneNAr3QhIk3xv9dHc-7747FsjG47A-XujIGIRvfZEH0OqHiZ04KSuEGFP-YPWj2lUe6_xtGXBM-tWCyvqoLfxSaaaup3-tkIqyuOPJl54_AS2nCCTqA7x8trMbLOVWmknEr9OY5IZ54C6MzDD2wPVaS8YgZTZLwHUf_vs3o-pM23es\"\
+        ></a></div><br>\r\nI've made an unofficial MyAnimeList RESTful API. You can check it out here:<br>\r\n<a href=\"https://jikan.moe\"\
+        \ target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://jikan.moe</a><br>\r\n<br>\r\nForum: <a href=\"https://myanimelist.net/forum/?topicid=1616529\"\
+        \ rel=\"nofollow\">https://myanimelist.net/forum/?topicid=1616529</a><br>\r\nGitHub: <a href=\"https://github.com/jikan-me/jikan\"\
+        \ target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://github.com/jikan-me/jikan</a>"
+  body_text: null
+  body_b64: null

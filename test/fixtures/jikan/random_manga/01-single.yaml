@@ -1,0 +1,100 @@
+metadata:
+  captured_at: '2026-05-07T15:15:42Z'
+  label: single
+  backend: jikan
+  path_slug: random_manga
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/random/manga
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:15:42 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache, no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+    pragma: no-cache
+    expires: Thu, 07 May 2026 15:15:41 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      mal_id: 143332
+      url: https://myanimelist.net/manga/143332/Naisho_no_Ecchi_Gokko
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/manga/3/311299.jpg
+          small_image_url: https://myanimelist.net/images/manga/3/311299t.jpg
+          large_image_url: https://myanimelist.net/images/manga/3/311299l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/manga/3/311299.webp
+          small_image_url: https://myanimelist.net/images/manga/3/311299t.webp
+          large_image_url: https://myanimelist.net/images/manga/3/311299l.webp
+      approved: true
+      titles:
+      - type: Default
+        title: Naisho no Ecchi Gokko
+      - type: Japanese
+        title: ないしょのえっちごっこ
+      - type: English
+        title: Secret Immoral Play
+      title: Naisho no Ecchi Gokko
+      title_english: Secret Immoral Play
+      title_japanese: ないしょのえっちごっこ
+      title_synonyms: []
+      type: Manga
+      chapters: 3
+      volumes: null
+      status: Finished
+      publishing: false
+      published:
+        from: '2018-08-21T00:00:00+00:00'
+        to: '2021-12-21T00:00:00+00:00'
+        prop:
+          from:
+            day: 21
+            month: 8
+            year: 2018
+          to:
+            day: 21
+            month: 12
+            year: 2021
+        string: Aug 21, 2018 to Dec 21, 2021
+      score: null
+      scored: null
+      scored_by: null
+      rank: null
+      popularity: 79586
+      members: 22
+      favorites: 0
+      synopsis: null
+      background: null
+      authors:
+      - mal_id: 23079
+        type: people
+        name: Dynamite moca
+        url: https://myanimelist.net/people/23079/Dynamite_moca
+      serializations:
+      - mal_id: 348
+        type: manga
+        name: Comic LO
+        url: https://myanimelist.net/manga/magazine/348/Comic_LO
+      genres:
+      - mal_id: 12
+        type: manga
+        name: Hentai
+        url: https://myanimelist.net/manga/genre/12/Hentai
+      explicit_genres: []
+      themes: []
+      demographics: []
+  body_text: null
+  body_b64: null

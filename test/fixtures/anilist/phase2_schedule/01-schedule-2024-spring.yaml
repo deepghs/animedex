@@ -1,0 +1,148 @@
+metadata:
+  captured_at: '2026-05-07T14:59:08Z'
+  label: schedule-2024-spring
+  backend: anilist
+  path_slug: phase2_schedule
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id title { romaji english } status format episodes season seasonYear
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2024
+      season: SPRING
+      perPage: 8
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:59:08 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '23'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 153288
+          title:
+            romaji: Kaijuu 8-gou
+            english: Kaiju No. 8
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 166240
+          title:
+            romaji: 'Kimetsu no Yaiba: Hashira Geiko-hen'
+            english: 'Demon Slayer: Kimetsu no Yaiba Hashira Training Arc'
+          status: FINISHED
+          format: TV
+          episodes: 8
+          season: SPRING
+          seasonYear: 2024
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 166873
+          title:
+            romaji: 'Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2'
+            english: 'Mushoku Tensei: Jobless Reincarnation Season 2 Part 2'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 163270
+          title:
+            romaji: WIND BREAKER
+            english: WIND BREAKER
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2024
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 136804
+          title:
+            romaji: Kono Subarashii Sekai ni Shukufuku wo! 3
+            english: KONOSUBA -God's blessing on this wonderful world! 3
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2024
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 163139
+          title:
+            romaji: Boku no Hero Academia 7
+            english: My Hero Academia Season 7
+          status: FINISHED
+          format: TV
+          episodes: 21
+          season: SPRING
+          seasonYear: 2024
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 156822
+          title:
+            romaji: Tensei Shitara Slime Datta Ken 3rd Season
+            english: That Time I Got Reincarnated as a Slime Season 3
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2024
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 174788
+          title:
+            romaji: Look Back
+            english: LOOK BACK
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2024
+          averageScore: 86
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

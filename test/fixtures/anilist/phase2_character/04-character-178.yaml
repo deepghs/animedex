@@ -1,0 +1,94 @@
+metadata:
+  captured_at: '2026-05-07T14:58:33Z'
+  label: character-178
+  backend: anilist
+  path_slug: phase2_character
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Character(id: $id) {
+          id
+          name { full native alternative }
+          image { large medium }
+          description(asHtml: false)
+          gender age dateOfBirth { year month day }
+          bloodType favourites
+          media(perPage: 3) { edges { characterRole node { id title { romaji } } } }
+        }
+      }
+    variables:
+      id: 178
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:33 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '16'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Character:
+        id: 178
+        name:
+          full: Hiyono Yuizaki
+          native: 結崎ひよの
+          alternative:
+          - Hiyoko
+        image:
+          large: https://s4.anilist.co/file/anilistcdn/character/large/b178-Rcxzw9diOUvx.png
+          medium: https://s4.anilist.co/file/anilistcdn/character/medium/b178-Rcxzw9diOUvx.png
+        description: |-
+          The infamous school journalist, Hiyono is the bubbly and energetic sidekick of Ayumu, always stuck to his side. Very clever and a quick-thinker, her confidence borders dangerously on overconfidence. She is extroverted and is Ayumu's polar opposite, serving as one of the series' few comic-relief characters.
+
+          Her skill with computers are as amazing as her hacking abilities and she has access to over one hundred resources. She blackmails Wataya often, and is very fond of Ayumu's cooking. Hiyono is also one of the few who whole-heartedly believe in Ayumu; she also has a great deal of faith and loyalty in him that carries on for the whole series. She attends Tsukiomi High School alongside with Ayumu Narumi.
+
+          (Source: Wikipedia)
+
+          ~!In the manga, it is later revealed she is not "Hiyono". She was part of Kiyotaka's mechanics to support Ayumu into opposing him. She later leaves to Germany for another assignment and is shown at the end visiting Ayumu in the hospital.!~
+        gender: Female
+        age: null
+        dateOfBirth:
+          year: null
+          month: null
+          day: null
+        bloodType: null
+        favourites: 31
+        media:
+          edges:
+          - characterRole: MAIN
+            node:
+              id: 341
+              title:
+                romaji: 'Spiral: Suiri no Kizuna'
+          - characterRole: SUPPORTING
+            node:
+              id: 30534
+              title:
+                romaji: 'Spiral: Suiri no Kizuna'
+  body_text: null
+  body_b64: null

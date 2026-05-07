@@ -1,0 +1,88 @@
+metadata:
+  captured_at: '2026-05-07T14:58:24Z'
+  label: character-edward-elric
+  backend: anilist
+  path_slug: phase2_character
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Character(id: $id) {
+          id
+          name { full native alternative }
+          image { large medium }
+          description(asHtml: false)
+          gender age dateOfBirth { year month day }
+          bloodType favourites
+          media(perPage: 3) { edges { characterRole node { id title { romaji } } } }
+        }
+      }
+    variables:
+      id: 36
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:24 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '19'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Character:
+        id: 36
+        name:
+          full: Phyllo
+          native: フィロ
+          alternative: []
+        image:
+          large: https://s4.anilist.co/file/anilistcdn/character/large/36.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/character/medium/36.jpg
+        description: ' Class: Harvest Cleric Real Name: Kojirou Nakamura  Phyllo appears as a small Tu Tribe character dressed
+          in a dark gray robe. He has the ability to hover when he moves and wields a gnarled wooden staff when forced into
+          combat. Despite his rather cute appearance he nevertheless has a wise aura about him.  Phyllo has become a sort
+          of landmark in The World R:2. He can almost always be found sitting on the same bridge in the Root Town of Mac Anu.
+          People of all classes, levels, and ideals come to ask him for advice, making him one of the most well known players
+          in the game. His level is quite high, so he is able to wander through the game without having to worry about attacks
+          by PKers.  In the real world Phyllo is a 62 year old man named Kojirou Nakamura. He lives alone with a pet dog and
+          2 cats for companionship.'
+        gender: Male
+        age: '62'
+        dateOfBirth:
+          year: null
+          month: null
+          day: null
+        bloodType: null
+        favourites: 8
+        media:
+          edges:
+          - characterRole: MAIN
+            node:
+              id: 873
+              title:
+                romaji: .hack//Roots
+  body_text: null
+  body_b64: null

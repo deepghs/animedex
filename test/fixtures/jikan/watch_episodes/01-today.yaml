@@ -1,0 +1,228 @@
+metadata:
+  captured_at: '2026-05-07T15:16:06Z'
+  label: today
+  backend: jikan
+  path_slug: watch_episodes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/watch/episodes
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:16:06 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:watch:d0bb38d2940164dfa4e067be41ed1969cff2c399
+    expires: Fri, 08 May 2026 03:00:03 GMT
+    last-modified: Thu, 07 May 2026 03:00:03 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - entry:
+        mal_id: 63087
+        url: https://myanimelist.net/anime/63087/Yami_Shibai_16
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1666/154215.jpg
+            small_image_url: https://myanimelist.net/images/anime/1666/154215t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1666/154215l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1666/154215.webp
+            small_image_url: https://myanimelist.net/images/anime/1666/154215t.webp
+            large_image_url: https://myanimelist.net/images/anime/1666/154215l.webp
+        title: Yami Shibai 16
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/63087/Yami_Shibai_16/episode/13
+        title: Episode 13
+        premium: true
+      - mal_id: 12
+        url: https://myanimelist.net/anime/63087/Yami_Shibai_16/episode/12
+        title: Episode 12
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 59978
+        url: https://myanimelist.net/anime/59978/Sousou_no_Frieren_2nd_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Sousou no Frieren 2nd Season
+      episodes:
+      - mal_id: 1
+        url: https://myanimelist.net/anime/59978/Sousou_no_Frieren_2nd_Season/episode/1
+        title: Episode 1
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 6811
+        url: https://myanimelist.net/anime/6811/InuYasha__Kanketsu-hen
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: 'InuYasha: Kanketsu-hen'
+      episodes:
+      - mal_id: 26
+        url: https://myanimelist.net/anime/6811/InuYasha__Kanketsu-hen/episode/26
+        title: Episode 26
+        premium: true
+      - mal_id: 25
+        url: https://myanimelist.net/anime/6811/InuYasha__Kanketsu-hen/episode/25
+        title: Episode 25
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 249
+        url: https://myanimelist.net/anime/249/InuYasha
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: InuYasha
+      episodes:
+      - mal_id: 167
+        url: https://myanimelist.net/anime/249/InuYasha/episode/167
+        title: Episode 167
+        premium: true
+      - mal_id: 166
+        url: https://myanimelist.net/anime/249/InuYasha/episode/166
+        title: Episode 166
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 55150
+        url: https://myanimelist.net/anime/55150/Yarinaoshi_Reijou_wa_Ryuutei_Heika_wo_Kouryakuchuu
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1672/148866.jpg
+            small_image_url: https://myanimelist.net/images/anime/1672/148866t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1672/148866l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1672/148866.webp
+            small_image_url: https://myanimelist.net/images/anime/1672/148866t.webp
+            large_image_url: https://myanimelist.net/images/anime/1672/148866l.webp
+        title: Yarinaoshi Reijou wa Ryuutei Heika wo Kouryakuchuu
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/55150/Yarinaoshi_Reijou_wa_Ryuutei_Heika_wo_Kouryakuchuu/episode/12
+        title: Episode 12
+        premium: true
+      - mal_id: 11
+        url: https://myanimelist.net/anime/55150/Yarinaoshi_Reijou_wa_Ryuutei_Heika_wo_Kouryakuchuu/episode/11
+        title: Episode 11
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 56700
+        url: https://myanimelist.net/anime/56700/Jidou_Hanbaiki_ni_Umarekawatta_Ore_wa_Meikyuu_wo_Samayou_2nd_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1297/150516.jpg
+            small_image_url: https://myanimelist.net/images/anime/1297/150516t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1297/150516l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1297/150516.webp
+            small_image_url: https://myanimelist.net/images/anime/1297/150516t.webp
+            large_image_url: https://myanimelist.net/images/anime/1297/150516l.webp
+        title: Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 2nd Season
+      episodes:
+      - mal_id: 1
+        url: https://myanimelist.net/anime/56700/Jidou_Hanbaiki_ni_Umarekawatta_Ore_wa_Meikyuu_wo_Samayou_2nd_Season/episode/1
+        title: Episode 1
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 55830
+        url: https://myanimelist.net/anime/55830/Fate_strange_Fake
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1752/150192.jpg
+            small_image_url: https://myanimelist.net/images/anime/1752/150192t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1752/150192l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1752/150192.webp
+            small_image_url: https://myanimelist.net/images/anime/1752/150192t.webp
+            large_image_url: https://myanimelist.net/images/anime/1752/150192l.webp
+        title: Fate/strange Fake
+      episodes:
+      - mal_id: 6
+        url: https://myanimelist.net/anime/55830/Fate_strange_Fake/episode/6
+        title: Episode 6
+        premium: true
+      - mal_id: 5
+        url: https://myanimelist.net/anime/55830/Fate_strange_Fake/episode/5
+        title: Episode 5
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 59843
+        url: https://myanimelist.net/anime/59843/AldnoahZero__Ame_no_Danshou_-_The_Penultimate_Truth
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: 'Aldnoah.Zero: Ame no Danshou - The Penultimate Truth'
+      episodes:
+      - mal_id: 1
+        url: https://myanimelist.net/anime/59843/AldnoahZero__Ame_no_Danshou_-_The_Penultimate_Truth/episode/1
+        title: Episode 1
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 60666
+        url: https://myanimelist.net/anime/60666/AldnoahZero_Re_
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Aldnoah.Zero (Re+)
+      episodes:
+      - mal_id: 1
+        url: https://myanimelist.net/anime/60666/AldnoahZero_Re_/episode/1
+        title: Episode 1
+        premium: true
+      region_locked: true
+  body_text: null
+  body_b64: null

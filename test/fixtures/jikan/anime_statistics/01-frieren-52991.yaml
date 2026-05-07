@@ -1,0 +1,71 @@
+metadata:
+  captured_at: '2026-05-07T15:12:15Z'
+  label: frieren-52991
+  backend: jikan
+  path_slug: anime_statistics
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/52991/statistics
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:12:15 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:0ae58476dcc27df8a1c7cea8ee9d89388f8cdf49
+    expires: Fri, 08 May 2026 15:12:15 GMT
+    last-modified: Thu, 07 May 2026 15:12:15 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: EXPIRED
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      watching: 237250
+      completed: 933443
+      on_hold: 28368
+      dropped: 23346
+      plan_to_watch: 209711
+      total: 1432118
+      scores:
+      - score: 1
+        votes: 28352
+        percentage: 3.2
+      - score: 2
+        votes: 1715
+        percentage: 0.2
+      - score: 3
+        votes: 1377
+        percentage: 0.2
+      - score: 4
+        votes: 2548
+        percentage: 0.3
+      - score: 5
+        votes: 5816
+        percentage: 0.7
+      - score: 6
+        votes: 10907
+        percentage: 1.2
+      - score: 7
+        votes: 32515
+        percentage: 3.7
+      - score: 8
+        votes: 100368
+        percentage: 11.4
+      - score: 9
+        votes: 225912
+        percentage: 25.6
+      - score: 10
+        votes: 473328
+        percentage: 53.6
+  body_text: null
+  body_b64: null

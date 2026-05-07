@@ -1,0 +1,76 @@
+metadata:
+  captured_at: '2026-05-07T15:13:20Z'
+  label: berserk-2
+  backend: jikan
+  path_slug: manga_relations
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/manga/2/relations
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:13:20 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:manga:e4443f78023b8f95f07464256f06b7715c3c343f
+    expires: Fri, 08 May 2026 01:04:29 GMT
+    last-modified: Thu, 07 May 2026 01:04:29 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - relation: Adaptation
+      entry:
+      - mal_id: 33
+        type: anime
+        name: Kenpuu Denki Berserk
+        url: https://myanimelist.net/anime/33/Kenpuu_Denki_Berserk
+      - mal_id: 10218
+        type: anime
+        name: 'Berserk: Ougon Jidai-hen I - Haou no Tamago'
+        url: https://myanimelist.net/anime/10218/Berserk__Ougon_Jidai-hen_I_-_Haou_no_Tamago
+      - mal_id: 12113
+        type: anime
+        name: 'Berserk: Ougon Jidai-hen II - Doldrey Kouryaku'
+        url: https://myanimelist.net/anime/12113/Berserk__Ougon_Jidai-hen_II_-_Doldrey_Kouryaku
+      - mal_id: 12115
+        type: anime
+        name: 'Berserk: Ougon Jidai-hen III - Kourin'
+        url: https://myanimelist.net/anime/12115/Berserk__Ougon_Jidai-hen_III_-_Kourin
+      - mal_id: 32379
+        type: anime
+        name: Berserk
+        url: https://myanimelist.net/anime/32379/Berserk
+      - mal_id: 34055
+        type: anime
+        name: Berserk 2nd Season
+        url: https://myanimelist.net/anime/34055/Berserk_2nd_Season
+      - mal_id: 52976
+        type: anime
+        name: 'Berserk: Ougon Jidai-hen - Memorial Edition'
+        url: https://myanimelist.net/anime/52976/Berserk__Ougon_Jidai-hen_-_Memorial_Edition
+    - relation: Spin-Off
+      entry:
+      - mal_id: 106677
+        type: manga
+        name: 'Shousetsu Berserk: Enryuu no Kishi'
+        url: https://myanimelist.net/manga/106677/Shousetsu_Berserk__Enryuu_no_Kishi
+    - relation: Other
+      entry:
+      - mal_id: 92299
+        type: manga
+        name: 'Berserk: Shinen no Kami 2'
+        url: https://myanimelist.net/manga/92299/Berserk__Shinen_no_Kami_2
+  body_text: null
+  body_b64: null

@@ -1,0 +1,156 @@
+metadata:
+  captured_at: '2026-05-07T14:59:02Z'
+  label: search-frieren
+  backend: anilist
+  path_slug: phase2_search
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($q: String, $page: Int, $perPage: Int) {
+        Page(page: $page, perPage: $perPage) {
+          pageInfo { total currentPage hasNextPage perPage }
+          media(search: $q, type: ANIME, sort: SEARCH_MATCH) {
+            id idMal
+            title { romaji english native }
+            type format status episodes
+            season seasonYear averageScore popularity isAdult
+            coverImage { large color }
+          }
+        }
+      }
+    variables:
+      q: Frieren
+      page: 1
+      perPage: 5
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:59:02 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '25'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+          currentPage: 1
+          hasNextPage: true
+          perPage: 5
+        media:
+        - id: 154587
+          idMal: 52991
+          title:
+            romaji: Sousou no Frieren
+            english: 'Frieren: Beyond Journey’s End'
+            native: 葬送のフリーレン
+          type: ANIME
+          format: TV
+          status: FINISHED
+          episodes: 28
+          season: FALL
+          seasonYear: 2023
+          averageScore: 91
+          popularity: 419057
+          isAdult: false
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx154587-qQTzQnEJJ3oB.jpg
+            color: '#bbf1a1'
+        - id: 182255
+          idMal: 59978
+          title:
+            romaji: Sousou no Frieren 2nd Season
+            english: 'Frieren: Beyond Journey’s End Season 2'
+            native: 葬送のフリーレン 第2期
+          type: ANIME
+          format: TV
+          status: FINISHED
+          episodes: 10
+          season: WINTER
+          seasonYear: 2026
+          averageScore: 88
+          popularity: 179444
+          isAdult: false
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182255-butzrqd4I0aC.jpg
+            color: '#5dc9f1'
+        - id: 209939
+          idMal: 63816
+          title:
+            romaji: Sousou no Frieren 3rd Season
+            english: null
+            native: 葬送のフリーレン 第3期
+          type: ANIME
+          format: TV
+          status: NOT_YET_RELEASED
+          episodes: null
+          season: FALL
+          seasonYear: 2027
+          averageScore: null
+          popularity: 26741
+          isAdult: false
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209939-g2Njkml1rheG.jpg
+            color: '#f1e4c9'
+        - id: 170068
+          idMal: 56885
+          title:
+            romaji: 'Sousou no Frieren: ●● no Mahou'
+            english: null
+            native: 葬送のフリーレン ～●●の魔法～
+          type: ANIME
+          format: ONA
+          status: FINISHED
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          averageScore: 73
+          popularity: 9611
+          isAdult: false
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx170068-ijY3tCP8KoWP.jpg
+            color: '#bbd678'
+        - id: 189513
+          idMal: null
+          title:
+            romaji: 'Sousou no Frieren: ●● no Mahou Part 2'
+            english: null
+            native: 葬送のフリーレン ～●●の魔法～ 2クール
+          type: ANIME
+          format: ONA
+          status: FINISHED
+          episodes: 6
+          season: SPRING
+          seasonYear: 2025
+          averageScore: 70
+          popularity: 3958
+          isAdult: false
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189513-1R9Sryve0K53.png
+            color: '#aee45d'
+  body_text: null
+  body_b64: null

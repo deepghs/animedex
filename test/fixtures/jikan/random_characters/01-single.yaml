@@ -1,0 +1,54 @@
+metadata:
+  captured_at: '2026-05-07T15:15:44Z'
+  label: single
+  backend: jikan
+  path_slug: random_characters
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/random/characters
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:15:44 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache, no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+    pragma: no-cache
+    expires: Thu, 07 May 2026 15:15:43 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      mal_id: 225625
+      url: https://myanimelist.net/character/225625/Eifie
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/characters/12/504426.jpg
+        webp:
+          image_url: https://myanimelist.net/images/characters/12/504426.webp
+          small_image_url: https://myanimelist.net/images/characters/12/504426t.webp
+      name: Eifie
+      name_kanji: エーフィ
+      nicknames:
+      - Espeon
+      favorites: 5
+      about: |-
+        Espeon is a quadrupedal, feline-like mammalian Pokémon with slender legs and dainty paws. It is covered in fine, lilac fur. Its ears are large, and it has purple eyes with white pupils. There are tufts of fur near its eyes, and a small, red gem embedded in its forehead. It also has a thin, forked tail.
+
+        Espeon's fine, velvety fur is so sensitive that it can sense minuscule shifts in the air, allowing it to predict various things, such as the weather and its enemies' thoughts and movements. When doing so, the tip of its tail quivers. Espeon shows extreme loyalty to any Pokémon Trainer that it considers worthy, even being said to have awakened its precognitive powers from its desire to protect its Trainer. Some people, however, instead say that its abilities, while originally absent, were born from its need to keep itself safe. It has a caring personality, as it is known to guide people trough forests to keep them from getting lost. The gem on Espeon's forehead glows when it unleashes psychic energy from it and darkens when all of its energy has been exhausted. It builds up its psychic power by bathing in the sunlight, so it is not good at battling at night. It is rare in the wild, instead being more commonly found in urban areas, under the ownership of other Trainers. As mentioned in Pokémon Sleep, Espeon is known to sleep deeply during the night, so it might be easier than anticipated to come across one resting at this time.
+
+        Evolution
+        Espeon evolves from .
+
+        (Source: Bulbapedia)
+  body_text: null
+  body_b64: null

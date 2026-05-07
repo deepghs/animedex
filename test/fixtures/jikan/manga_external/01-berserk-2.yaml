@@ -1,0 +1,40 @@
+metadata:
+  captured_at: '2026-05-07T15:13:26Z'
+  label: berserk-2
+  backend: jikan
+  path_slug: manga_external
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/manga/2/external
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:13:23 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:manga:188297052c7e6a41a6ccdb42eabe5155f3979cac
+    expires: Fri, 08 May 2026 01:04:29 GMT
+    last-modified: Thu, 07 May 2026 01:04:29 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - name: Official Site
+      url: https://magazine.younganimal.com/title/?id=32
+    - name: Wikipedia
+      url: http://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%82%BB%E3%83%AB%E3%82%AF_%28%E6%BC%AB%E7%94%BB%29
+    - name: Wikipedia
+      url: https://en.wikipedia.org/wiki/Berserk_(manga)
+  body_text: null
+  body_b64: null

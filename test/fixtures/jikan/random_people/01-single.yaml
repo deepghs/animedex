@@ -1,0 +1,45 @@
+metadata:
+  captured_at: '2026-05-07T15:15:47Z'
+  label: single
+  backend: jikan
+  path_slug: random_people
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/random/people
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:15:46 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache, no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+    pragma: no-cache
+    expires: Thu, 07 May 2026 15:15:45 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      mal_id: 51836
+      url: https://myanimelist.net/people/51836/Maro_Yanagiya
+      website_url: null
+      images:
+        jpg:
+          image_url: https://myanimelist.net/img/sp/icon/apple-touch-icon-256.png
+      name: Maro Yanagiya
+      given_name: 真呂
+      family_name: 柳矢
+      alternate_names: []
+      birthday: null
+      favorites: 0
+      about: 'Twitter: @yanagiyamaro'
+  body_text: null
+  body_b64: null

@@ -1,0 +1,45 @@
+metadata:
+  captured_at: '2026-05-07T15:15:50Z'
+  label: single
+  backend: jikan
+  path_slug: random_users
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/random/users
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:15:50 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache, no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+    pragma: no-cache
+    expires: Thu, 07 May 2026 15:15:49 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      mal_id: 7816440
+      username: Flash10
+      url: https://myanimelist.net/profile/Flash10
+      images:
+        jpg:
+          image_url: null
+        webp:
+          image_url: ''
+      last_online: '2019-02-17T20:09:00+00:00'
+      gender: null
+      birthday: null
+      location: null
+      joined: '2019-02-16T00:00:00+00:00'
+  body_text: null
+  body_b64: null

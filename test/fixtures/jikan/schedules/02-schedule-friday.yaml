@@ -1,0 +1,592 @@
+metadata:
+  captured_at: '2026-05-07T15:00:23Z'
+  label: schedule-friday
+  backend: jikan
+  path_slug: schedules
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/schedules?filter=friday&limit=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:00:23 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:schedules:c3c00057a7bc47c318902e847920f28707a79467
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 4
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 5
+        total: 18
+        per_page: 5
+    data:
+    - mal_id: 63709
+      url: https://myanimelist.net/anime/63709/Komekami_Girls
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1392/156024.jpg
+          small_image_url: https://myanimelist.net/images/anime/1392/156024t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1392/156024l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1392/156024.webp
+          small_image_url: https://myanimelist.net/images/anime/1392/156024t.webp
+          large_image_url: https://myanimelist.net/images/anime/1392/156024l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/Xqc-0SgApHw?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Komekami! Girls
+      - type: Synonym
+        title: Komekami! Gaaruzu
+      - type: Japanese
+        title: こめかみっ！ Girls
+      title: Komekami! Girls
+      title_english: null
+      title_japanese: こめかみっ！ Girls
+      title_synonyms:
+      - Komekami! Gaaruzu
+      type: TV
+      source: Other
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-03T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 3
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 3, 2026 to ?
+      duration: 23 min
+      rating: PG-13 - Teens 13 or older
+      score: null
+      scored_by: null
+      rank: 18026
+      popularity: 13717
+      members: 1492
+      favorites: 5
+      synopsis: |-
+        This is the story of the seven-sister unit "Komekami! Girls," children of the rice deity, born from the tradition: "In a single grain of rice, seven gods reside."
+
+        When their mother(the deity of rice, or the rice-god queen) was called back in haste to the celestial realm and no longer able to return to the earthly realm they search for her traces using Usa City (Oita Prefecture) as their base, and teleport to Hachiman shrines throughout Kyushu island. As they solve local problems, they learn about food, take part in cooking battles, and grow.
+      background: ''
+      season: spring
+      year: 2026
+      broadcast:
+        day: Fridays
+        time: 01:50
+        timezone: Asia/Tokyo
+        string: Fridays at 01:50 (JST)
+      producers: []
+      licensors: []
+      studios:
+      - mal_id: 3303
+        type: anime
+        name: Daily Plan.net
+        url: https://myanimelist.net/anime/producer/3303/Daily_Plannet
+      - mal_id: 3304
+        type: anime
+        name: SO-DO Creative
+        url: https://myanimelist.net/anime/producer/3304/SO-DO_Creative
+      genres: []
+      explicit_genres: []
+      themes: []
+      demographics: []
+    - mal_id: 1960
+      url: https://myanimelist.net/anime/1960/Sore_Ike_Anpanman
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1902/111797.jpg
+          small_image_url: https://myanimelist.net/images/anime/1902/111797t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1902/111797l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1902/111797.webp
+          small_image_url: https://myanimelist.net/images/anime/1902/111797t.webp
+          large_image_url: https://myanimelist.net/images/anime/1902/111797l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Sore Ike! Anpanman
+      - type: Synonym
+        title: Soreike! Anpanman
+      - type: Synonym
+        title: Go! Anpanman
+      - type: Synonym
+        title: Anpanman TV
+      - type: Japanese
+        title: それいけ！アンパンマン
+      title: Sore Ike! Anpanman
+      title_english: null
+      title_japanese: それいけ！アンパンマン
+      title_synonyms:
+      - Soreike! Anpanman
+      - Go! Anpanman
+      - Anpanman TV
+      type: TV
+      source: Picture book
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '1988-10-03T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 3
+            month: 10
+            year: 1988
+          to:
+            day: null
+            month: null
+            year: null
+        string: Oct 3, 1988 to ?
+      duration: 24 min
+      rating: PG - Children
+      score: 6.96
+      scored_by: 1872
+      rank: 5328
+      popularity: 9344
+      members: 5351
+      favorites: 39
+      synopsis: "One night, a Star of Life falls down the chimney of a bakery nestled deep in the forest, causing the dough\
+        \ in the oven to come to life. The dough becomes Anpanman, a superhero made of anpan (a sweet roll with bean jam filling).\
+        \ Together with his friends, Anpanman fights his rival Baikinman and helps the malnourished. \n\n(Source: ANN)"
+      background: ''
+      season: fall
+      year: 1988
+      broadcast:
+        day: Fridays
+        time: '16:20'
+        timezone: Asia/Tokyo
+        string: Fridays at 16:20 (JST)
+      producers:
+      - mal_id: 64
+        type: anime
+        name: Sotsu
+        url: https://myanimelist.net/anime/producer/64/Sotsu
+      - mal_id: 1003
+        type: anime
+        name: Nippon Television Network
+        url: https://myanimelist.net/anime/producer/1003/Nippon_Television_Network
+      licensors: []
+      studios:
+      - mal_id: 73
+        type: anime
+        name: TMS Entertainment
+        url: https://myanimelist.net/anime/producer/73/TMS_Entertainment
+      genres:
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 15
+        type: anime
+        name: Kids
+        url: https://myanimelist.net/anime/genre/15/Kids
+    - mal_id: 56566
+      url: https://myanimelist.net/anime/56566/Beyblade_X
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1394/145458.jpg
+          small_image_url: https://myanimelist.net/images/anime/1394/145458t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1394/145458l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1394/145458.webp
+          small_image_url: https://myanimelist.net/images/anime/1394/145458t.webp
+          large_image_url: https://myanimelist.net/images/anime/1394/145458l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/SXdTmFshlFs?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Beyblade X
+      - type: Japanese
+        title: ベイブレードエックス
+      title: Beyblade X
+      title_english: null
+      title_japanese: ベイブレードエックス
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2023-10-06T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 6
+            month: 10
+            year: 2023
+          to:
+            day: null
+            month: null
+            year: null
+        string: Oct 6, 2023 to ?
+      duration: 24 min
+      rating: PG - Children
+      score: 6.88
+      scored_by: 1907
+      rank: 5751
+      popularity: 8337
+      members: 7115
+      favorites: 64
+      synopsis: |-
+        At the heart of X City stands the impressive X Tower, an interconnected twin-skyscraper structure that symbolizes the pinnacle of every Beyblade player's dream. The building serves as the official headquarters for professional Beybattles, where competitors strive to ascend all one hundred floors; at its summit, the reigning champions, Team Pendragon, await contenders worthy of challenging their title.
+
+        Bird Kazami, an amateur Blader, arrives in the city eager to turn professional. However, he and his teammates are crushed in their first qualifying match, prompting his companions to give up and disband their team. Fortunately, Bird is soon approached by the easygoing Ekusu Kurosu. In disguise as "Kamen X" to hide his identity as a former member of the undefeated Team Pendragon, Ekusu wants to climb the tower all over again. To complete their new group, they recruit skilled Beyblade expert and savvy social media influencer Multi Nanairo.
+
+        Driven by their individual goals, the trio wins their preliminary rounds, launching their careers as Team Persona. Bird and his new friends must navigate the world of corporate sponsorships, earn the fickle public's support, and defeat many formidable opponents—all in their quest to reach X Tower's peak.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: fall
+      year: 2023
+      broadcast:
+        day: Fridays
+        time: '18:25'
+        timezone: Asia/Tokyo
+        string: Fridays at 18:25 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      licensors: []
+      studios:
+      - mal_id: 28
+        type: anime
+        name: OLM
+        url: https://myanimelist.net/anime/producer/28/OLM
+      genres:
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 30
+        type: anime
+        name: Sports
+        url: https://myanimelist.net/anime/genre/30/Sports
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 15
+        type: anime
+        name: Kids
+        url: https://myanimelist.net/anime/genre/15/Kids
+    - mal_id: 62981
+      url: https://myanimelist.net/anime/62981/Kami_no_Shizuku
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1045/155698.jpg
+          small_image_url: https://myanimelist.net/images/anime/1045/155698t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1045/155698l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1045/155698.webp
+          small_image_url: https://myanimelist.net/images/anime/1045/155698t.webp
+          large_image_url: https://myanimelist.net/images/anime/1045/155698l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/Oz5EkYVJbBc?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Kami no Shizuku
+      - type: Synonym
+        title: Les Gouttes de Dieu
+      - type: Japanese
+        title: 神の雫
+      - type: English
+        title: The Drops of God
+      title: Kami no Shizuku
+      title_english: The Drops of God
+      title_japanese: 神の雫
+      title_synonyms:
+      - Les Gouttes de Dieu
+      type: TV
+      source: Manga
+      episodes: 24
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-10T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 10
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 10, 2026 to ?
+      duration: 24 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 6.11
+      scored_by: 913
+      rank: 10387
+      popularity: 8212
+      members: 7400
+      favorites: 9
+      synopsis: |-
+        Shizuku Kanzaki is the only son of world-renowned wine critic Yutaka Kanzaki. From a young age, Shizuku has been subjected to strange education from his father all for the sake of wine. From learning to gracefully decant a drink to intently remembering the smell of leather belts and pencils, the training causes him to grow resentful of everything related to wine. Discontent with his father, he leaves home to become an average sales representative for a beer company, refusing to ever touch wine again.
+
+        When his father suddenly passes away, Shizuku finds himself being dragged back into the world he hates so much. As part of his father's will, the one who will inherit his prized wine collection and estate will be the person who can correctly identify the "12 Apostles" of wines as well as the legendary "Drops of God." In order to inherit the assets, Shizuku has one year to complete the task, but he finds the proposition ridiculous when he is the only living relative of Yutaka.
+
+        What Yutaka failed to tell his son before his death was that he had adopted Issei Tomine into the family a week prior to his passing. Issei is a famous veteran wine critic competing against Shizuku to claim the estate for himself. With no formal training in wine tasting, Shizuku stands no chance against "The Prince of Wine" and is at risk of losing everything in this competition. Will he be able to correctly identify the elusive "Drops of God" before he runs out of time?
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2026
+      broadcast:
+        day: Fridays
+        time: '23:30'
+        timezone: Asia/Tokyo
+        string: Fridays at 23:30 (JST)
+      producers:
+      - mal_id: 144
+        type: anime
+        name: Pony Canyon
+        url: https://myanimelist.net/anime/producer/144/Pony_Canyon
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 1412
+        type: anime
+        name: Kansai TV
+        url: https://myanimelist.net/anime/producer/1412/Kansai_TV
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      - mal_id: 1680
+        type: anime
+        name: BS NTV
+        url: https://myanimelist.net/anime/producer/1680/BS_NTV
+      - mal_id: 3239
+        type: anime
+        name: Studio Sound Bee
+        url: https://myanimelist.net/anime/producer/3239/Studio_Sound_Bee
+      licensors: []
+      studios:
+      - mal_id: 41
+        type: anime
+        name: Satelight
+        url: https://myanimelist.net/anime/producer/41/Satelight
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 47
+        type: anime
+        name: Gourmet
+        url: https://myanimelist.net/anime/genre/47/Gourmet
+      - mal_id: 7
+        type: anime
+        name: Mystery
+        url: https://myanimelist.net/anime/genre/7/Mystery
+      explicit_genres: []
+      themes:
+      - mal_id: 50
+        type: anime
+        name: Adult Cast
+        url: https://myanimelist.net/anime/genre/50/Adult_Cast
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+    - mal_id: 59835
+      url: https://myanimelist.net/anime/59835/Kirio_Fanclub
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1066/155831.jpg
+          small_image_url: https://myanimelist.net/images/anime/1066/155831t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1066/155831l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1066/155831.webp
+          small_image_url: https://myanimelist.net/images/anime/1066/155831t.webp
+          large_image_url: https://myanimelist.net/images/anime/1066/155831l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/n3c6bAOhVUg?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Kirio Fanclub
+      - type: Japanese
+        title: 霧尾ファンクラブ
+      - type: English
+        title: Kirio Fan Club
+      title: Kirio Fanclub
+      title_english: Kirio Fan Club
+      title_japanese: 霧尾ファンクラブ
+      title_synonyms: []
+      type: TV
+      source: Web manga
+      episodes: 12
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-03T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 3
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 3, 2026 to ?
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 6.22
+      scored_by: 1506
+      rank: 9779
+      popularity: 6617
+      members: 12633
+      favorites: 13
+      synopsis: |-
+        Obsessed with their rather ordinary classmate Ken Kirio, high school students Aimi Miyoshi and Nami Sometani form a peculiar friendship. Every time the girls hang out, they talk about Kirio and fantasize about interacting with the boy they usually just observe from afar. Aimi and Nami are mostly satisfied with the status quo, but they occasionally cannot help but be jealous of those who get to be near their crush—though this still rarely leads them to approach him directly.
+
+        [Written by MAL Rewrite]
+      background: Kirio Fanclub aired on MBS and TBS' Super Animeism Turbo block.
+      season: spring
+      year: 2026
+      broadcast:
+        day: Fridays
+        time: 00:26
+        timezone: Asia/Tokyo
+        string: Fridays at 00:26 (JST)
+      producers:
+      - mal_id: 143
+        type: anime
+        name: Mainichi Broadcasting System
+        url: https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System
+      - mal_id: 144
+        type: anime
+        name: Pony Canyon
+        url: https://myanimelist.net/anime/producer/144/Pony_Canyon
+      - mal_id: 1688
+        type: anime
+        name: Parco
+        url: https://myanimelist.net/anime/producer/1688/Parco
+      - mal_id: 2098
+        type: anime
+        name: Mixer
+        url: https://myanimelist.net/anime/producer/2098/Mixer
+      - mal_id: 3056
+        type: anime
+        name: Jitsugyo no Nihon Sha
+        url: https://myanimelist.net/anime/producer/3056/Jitsugyo_no_Nihon_Sha
+      - mal_id: 3239
+        type: anime
+        name: Studio Sound Bee
+        url: https://myanimelist.net/anime/producer/3239/Studio_Sound_Bee
+      - mal_id: 3310
+        type: anime
+        name: viviON
+        url: https://myanimelist.net/anime/producer/3310/viviON
+      licensors:
+      - mal_id: 376
+        type: anime
+        name: Sentai Filmworks
+        url: https://myanimelist.net/anime/producer/376/Sentai_Filmworks
+      studios:
+      - mal_id: 41
+        type: anime
+        name: Satelight
+        url: https://myanimelist.net/anime/producer/41/Satelight
+      genres:
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics: []
+  body_text: null
+  body_b64: null

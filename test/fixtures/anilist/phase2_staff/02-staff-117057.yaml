@@ -1,0 +1,98 @@
+metadata:
+  captured_at: '2026-05-07T14:58:40Z'
+  label: staff-117057
+  backend: anilist
+  path_slug: phase2_staff
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Staff(id: $id) {
+          id
+          name { full native alternative }
+          image { large medium }
+          description(asHtml: false)
+          primaryOccupations gender age dateOfBirth { year month day }
+          yearsActive homeTown languageV2 favourites
+          staffMedia(perPage: 3) { edges { staffRole node { id title { romaji } } } }
+          characters(perPage: 3) { nodes { id name { full } } }
+        }
+      }
+    variables:
+      id: 117057
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:40 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '14'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Staff:
+        id: 117057
+        name:
+          full: Masato Yamasaki
+          native: 山咲まさと
+          alternative: []
+        image:
+          large: https://s4.anilist.co/file/anilistcdn/staff/large/n117057-sUJ8vAh4Q2LE.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/staff/medium/n117057-sUJ8vAh4Q2LE.jpg
+        description: '[Twitter](https://twitter.com/m_yama_3) | [Pixiv](https://www.pixiv.net/en/users/183467)'
+        primaryOccupations:
+        - Writer
+        gender: null
+        age: null
+        dateOfBirth:
+          year: null
+          month: 11
+          day: 10
+        yearsActive: []
+        homeTown: null
+        languageV2: Japanese
+        favourites: 19
+        staffMedia:
+          edges:
+          - staffRole: Story
+            node:
+              id: 33834
+              title:
+                romaji: Triangle
+          - staffRole: Story
+            node:
+              id: 44966
+              title:
+                romaji: M Onna Senka
+          - staffRole: Story
+            node:
+              id: 46487
+              title:
+                romaji: 'Chikage: Ai to Eros no Dendousha'
+        characters:
+          nodes: []
+  body_text: null
+  body_b64: null

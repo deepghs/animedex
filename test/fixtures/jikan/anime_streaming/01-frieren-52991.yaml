@@ -1,0 +1,52 @@
+metadata:
+  captured_at: '2026-05-07T15:12:42Z'
+  label: frieren-52991
+  backend: jikan
+  path_slug: anime_streaming
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/52991/streaming
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:12:42 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:d62babfb29e11ca150430b56a41c1974d902de0b
+    expires: Fri, 08 May 2026 10:10:39 GMT
+    last-modified: Thu, 07 May 2026 10:10:39 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - name: Crunchyroll
+      url: http://www.crunchyroll.com/series-283731
+    - name: Netflix
+      url: https://www.netflix.com/
+    - name: Aniplus TV
+      url: http://www.aniplustv.com/
+    - name: Bahamut Anime Crazy
+      url: https://ani.gamer.com.tw/
+    - name: Bilibili Global
+      url: https://www.bilibili.tv/en/index
+    - name: CatchPlay
+      url: https://www.catchplay.com/
+    - name: MeWatch
+      url: https://www.mewatch.sg/
+    - name: Muse Asia
+      url: https://www.youtube.com/channel/UCGbshtvS9t-8CW11W7TooQg
+    - name: iQIYI
+      url: https://www.iq.com/
+  body_text: null
+  body_b64: null

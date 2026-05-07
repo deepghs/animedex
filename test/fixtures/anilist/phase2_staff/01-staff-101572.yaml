@@ -1,0 +1,100 @@
+metadata:
+  captured_at: '2026-05-07T14:58:37Z'
+  label: staff-101572
+  backend: anilist
+  path_slug: phase2_staff
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Staff(id: $id) {
+          id
+          name { full native alternative }
+          image { large medium }
+          description(asHtml: false)
+          primaryOccupations gender age dateOfBirth { year month day }
+          yearsActive homeTown languageV2 favourites
+          staffMedia(perPage: 3) { edges { staffRole node { id title { romaji } } } }
+          characters(perPage: 3) { nodes { id name { full } } }
+        }
+      }
+    variables:
+      id: 101572
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:37 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '15'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Staff:
+        id: 101572
+        name:
+          full: Brian Jepson
+          native: null
+          alternative: []
+        image:
+          large: https://s4.anilist.co/file/anilistcdn/staff/large/6572.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/staff/medium/6572.jpg
+        description: 'Brian Jepson is an American voice actor who works for ADV Films along with various other companies including
+          Retro Studios, creators of the Wii video game Metroid Prime 3: Corruption. Brian also works as a graphic designer
+          and stage actor.    Born in Houston, Texas, Brian currently resides in Austin, Texas.    Brian attended Sharpstown
+          High School and then The University of Texas at Austin. He graduated from UT in 1992.    Brian is a member of Austin''s
+          Beatles Tribute Band, The Eggmen. The Eggmen won the Austin Chronicle''s Music Award for ''Best Cover Band'' seven
+          times from 2000 through 2009.    Brian is a founding member of the Rutles tribute band OUCH!    Brian is also a
+          member of The Nairobi Trio, an Austin-based band whose original music and stage show is planted firmly between Liverpool
+          and Luckenbach, musically.    Brian is a graphic designer as well as a veteran stage performer. He is a member of
+          the Austin, TX theater company Onstage Theatre Co.    Brian is married and lives with his wife Courtney in Austin.'
+        primaryOccupations:
+        - Voice Actor
+        gender: Male
+        age: 55
+        dateOfBirth:
+          year: 1970
+          month: 8
+          day: 27
+        yearsActive: []
+        homeTown: null
+        languageV2: English
+        favourites: 0
+        staffMedia:
+          edges: []
+        characters:
+          nodes:
+          - id: 1698
+            name:
+              full: Lionel Taylor
+          - id: 2247
+            name:
+              full: Oscha
+          - id: 3045
+            name:
+              full: Agito Makishima
+  body_text: null
+  body_b64: null

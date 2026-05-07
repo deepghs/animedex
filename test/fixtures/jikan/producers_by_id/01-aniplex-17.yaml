@@ -1,0 +1,52 @@
+metadata:
+  captured_at: '2026-05-07T15:14:10Z'
+  label: aniplex-17
+  backend: jikan
+  path_slug: producers_by_id
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/producers/17
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:14:10 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:producers:666d0d68dfb104695e4afadac323eca9f9449f78
+    expires: Thu, 07 May 2026 16:54:54 GMT
+    last-modified: Wed, 06 May 2026 16:54:54 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      mal_id: 17
+      url: https://myanimelist.net/anime/producer/17/Aniplex
+      titles:
+      - type: Default
+        title: Aniplex
+      - type: Japanese
+        title: アニプレックス
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/company_logos/ba2241ea-7f83-45b6-9360-1f1d4de0d65a_600x600_i?s=369f1423117062ab3c7f4c7a90b2005a
+      favorites: 4486
+      established: '1995-09-01T00:00:00+00:00'
+      about: |-
+        Aniplex is a diversified entertainment company operating worldwide with focus on the planning and production of anime video and music content, its distribution in theaters and broadcast syndication as well as their respective physical and digital products, development of related game apps and merchandise such as figurines and apparel, stage production of musicals and live events, and operating the digital store "Aniplex Online" which provides hand-picked items for sale.
+        Aniplex' fully-owned subsidiaries include the anime production A-1 Pictures, mobile game app developer Quatro A, and Aniplex of America which leads the animation business outside of Japan.
+
+        (Source: Official Website)
+      count: 694
+  body_text: null
+  body_b64: null
