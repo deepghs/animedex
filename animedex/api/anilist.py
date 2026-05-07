@@ -39,6 +39,7 @@ def call(
     rate: str = "normal",
     follow_redirects: bool = True,
     user_agent: Optional[str] = None,
+    timeout_seconds: Optional[float] = None,
     cache=None,
     session=None,
     rate_limit_registry=None,
@@ -61,6 +62,9 @@ def call(
     :type follow_redirects: bool
     :param user_agent: Override the project default UA.
     :type user_agent: str or None
+    :param timeout_seconds: HTTP timeout in seconds; ``None`` falls
+                              back to the dispatcher's default (30 s).
+    :type timeout_seconds: float or None
     :param cache: SqliteCache instance.
     :param session: requests.Session.
     :param rate_limit_registry: RateLimitRegistry.
@@ -86,6 +90,7 @@ def call(
         rate=rate,
         follow_redirects=follow_redirects,
         user_agent=user_agent,
+        timeout_seconds=timeout_seconds,
         cache=cache,
         session=session,
         rate_limit_registry=rate_limit_registry,
@@ -93,8 +98,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the AniList passthrough; relies on the firewall path
-    (no real HTTP needed)."""
-    raw = _dispatch_call(backend="anilist", path="/", method="DELETE", cache=None)
-    assert raw.firewall_rejected is not None
-    return True
+    """Smoke-test the AniList passthrough (firewall + signature)."""
+    from animedex.api._dispatch import selftest_backend_shim
+
+    return selftest_backend_shim("anilist", call, extra_params=("query", "variables"))

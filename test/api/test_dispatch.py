@@ -245,7 +245,8 @@ class TestRequestSnapshotRedaction:
         raw = call(
             backend="jikan",
             path="/anime/52991",
-            headers={"Authorization": "Bearer aaaaaaaaaaaaaaaaaaaaa"},
+            # 30-char token so the fingerprint form fires (threshold is 24).
+            headers={"Authorization": "Bearer aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
             cache=cache,
         )
 
@@ -253,9 +254,104 @@ class TestRequestSnapshotRedaction:
         # captures the actual outgoing headers in responses.calls), but
         # the envelope's request.headers must NOT contain the raw
         # value.
-        assert "aaaaaaaaaaaaaaaaaaaa" not in raw.request.headers["Authorization"]
+        assert "aaaaaaaaaaaaaaaaaaaaaa" not in raw.request.headers["Authorization"]
         assert raw.request.headers["Authorization"].startswith("Bearer ")
         assert "(len=" in raw.request.headers["Authorization"]
+
+
+class TestResponseHeaderRedaction:
+    """Per review M3: response_headers must be redacted at every site
+    where they enter a :class:`RawResponse` envelope. Same vector as M1
+    (Shikimori's ``__ddg9_=<client-IP>`` cookie) but at runtime
+    instead of in checked-in fixtures.
+    """
+
+    @responses.activate
+    def test_set_cookie_in_live_envelope_is_redacted(self, fake_clock, cache):
+        from animedex.api._dispatch import call
+
+        responses.add(
+            responses.GET,
+            "https://api.jikan.moe/v4/anime/52991",
+            json={"data": {}},
+            status=200,
+            headers={"Set-Cookie": "session=abcd1234567890XYZabcd1234XYZ99; ddg=198.51.100.99"},
+        )
+
+        raw = call(backend="jikan", path="/anime/52991", cache=cache, no_cache=True)
+
+        assert "1234567890" not in raw.response_headers["Set-Cookie"]
+        assert "198.51.100.99" not in raw.response_headers["Set-Cookie"]
+
+    @responses.activate
+    def test_authorization_echo_in_live_envelope_is_redacted(self, fake_clock, cache):
+        from animedex.api._dispatch import call
+
+        # Some upstreams echo Authorization back in response headers.
+        responses.add(
+            responses.GET,
+            "https://api.jikan.moe/v4/anime/52991",
+            json={},
+            status=200,
+            headers={"Authorization": "Bearer abcd1234567890XYZabcd1234XYZ99"},
+        )
+
+        raw = call(backend="jikan", path="/anime/52991", cache=cache, no_cache=True)
+
+        assert "1234567890" not in raw.response_headers["Authorization"]
+
+    @responses.activate
+    def test_set_cookie_in_cache_write_is_redacted(self, fake_clock, cache):
+        """The redaction must happen before the cache row is written;
+        otherwise an attacker reading the SQLite file sees raw
+        Set-Cookie."""
+        from animedex.api._dispatch import call
+
+        responses.add(
+            responses.GET,
+            "https://api.jikan.moe/v4/anime/52991",
+            json={"data": {}},
+            status=200,
+            headers={"Set-Cookie": "session=abcd1234567890XYZabcd1234XYZ99"},
+        )
+
+        # Write to cache.
+        call(backend="jikan", path="/anime/52991", cache=cache)
+
+        # Read raw row out of cache to verify what was written.
+        from animedex.api._dispatch import _signature
+
+        sig = _signature("GET", "https://api.jikan.moe/v4/anime/52991", None, None, None)
+        hit = cache.get_with_meta("jikan", sig)
+        assert hit is not None
+        _, hdrs, _ = hit
+        assert "1234567890" not in hdrs.get("Set-Cookie", "")
+
+    @responses.activate
+    def test_set_cookie_on_cache_hit_path_is_redacted(self, fake_clock, cache):
+        """Even if the cache row was written before this fix landed,
+        the cache-hit reconstruction path must still emit a redacted
+        envelope."""
+        from animedex.api._dispatch import _signature
+
+        # Manually plant a cache row with un-redacted Set-Cookie (the
+        # legacy state).
+        sig = _signature("GET", "https://api.jikan.moe/v4/anime/52991", None, None, None)
+        cache.set_with_meta(
+            "jikan",
+            sig,
+            b'{"data":{}}',
+            response_headers={"Set-Cookie": "session=abcd1234567890XYZabcd1234XYZ99; ddg=198.51.100.99"},
+            ttl_seconds=3600,
+        )
+
+        from animedex.api._dispatch import call
+
+        raw = call(backend="jikan", path="/anime/52991", cache=cache)
+
+        assert raw.cache.hit is True
+        assert "1234567890" not in raw.response_headers["Set-Cookie"]
+        assert "198.51.100.99" not in raw.response_headers["Set-Cookie"]
 
 
 class TestUnknownBackendRouting:
@@ -276,3 +372,153 @@ class TestUnknownBackendRouting:
 
         with pytest.raises(KeyError):
             resolve_base_url("not-a-backend")
+
+
+class TestConfigThreading:
+    """Per review m3: ``_dispatch.call`` must accept
+    ``config: Optional[Config] = None`` as lowest-priority defaults so
+    that downstream Python users get the documented surface from
+    ``plans/05 §4``. Explicit kwargs always win over ``config``.
+    """
+
+    @responses.activate
+    def test_config_user_agent_used_when_kwarg_absent(self, fake_clock, cache):
+        from animedex.api._dispatch import call
+        from animedex.config import Config
+
+        responses.add(responses.GET, "https://api.jikan.moe/v4/anime/52991", json={}, status=200)
+
+        cfg = Config(user_agent="my-bot/9.9 (+contact)")
+        raw = call(backend="jikan", path="/anime/52991", cache=cache, no_cache=True, config=cfg)
+
+        # The on-the-wire request used the config's UA.
+        sent_ua = responses.calls[-1].request.headers.get("User-Agent", "")
+        assert sent_ua == "my-bot/9.9 (+contact)"
+        # And the request snapshot reflects the same.
+        assert raw.request.headers["User-Agent"] == "my-bot/9.9 (+contact)"
+
+    @responses.activate
+    def test_explicit_user_agent_overrides_config(self, fake_clock, cache):
+        from animedex.api._dispatch import call
+        from animedex.config import Config
+
+        responses.add(responses.GET, "https://api.jikan.moe/v4/anime/52991", json={}, status=200)
+
+        cfg = Config(user_agent="config-ua/1.0")
+        raw = call(
+            backend="jikan",
+            path="/anime/52991",
+            cache=cache,
+            no_cache=True,
+            user_agent="kwarg-ua/2.0",
+            config=cfg,
+        )
+
+        assert raw.request.headers["User-Agent"] == "kwarg-ua/2.0"
+
+    @responses.activate
+    def test_config_timeout_seconds_used_when_kwarg_absent(self, fake_clock, cache, monkeypatch):
+        """Config.timeout_seconds becomes the dispatcher's effective
+        timeout when the kwarg is None."""
+        from animedex.api._dispatch import call
+        from animedex.config import Config
+
+        responses.add(responses.GET, "https://api.jikan.moe/v4/anime/52991", json={}, status=200)
+
+        captured = {}
+        import requests as _r
+
+        original = _r.Session.request
+
+        def _rec(self, *a, **kw):
+            captured["timeout"] = kw.get("timeout")
+            return original(self, *a, **kw)
+
+        monkeypatch.setattr(_r.Session, "request", _rec)
+
+        cfg = Config(timeout_seconds=7.5)
+        call(backend="jikan", path="/anime/52991", cache=cache, no_cache=True, config=cfg)
+
+        assert captured["timeout"] == 7.5
+
+    @responses.activate
+    def test_config_cache_ttl_used_when_kwarg_absent(self, fake_clock, cache):
+        """Config.cache_ttl_seconds becomes the cache write TTL when
+        the kwarg is None."""
+        from animedex.api._dispatch import _signature, call
+        from animedex.config import Config
+
+        responses.add(responses.GET, "https://api.jikan.moe/v4/anime/52991", json={}, status=200)
+
+        cfg = Config(cache_ttl_seconds=42)
+        call(backend="jikan", path="/anime/52991", cache=cache, config=cfg)
+
+        # Read TTL bookkeeping straight from the SQLite row (the cache
+        # API doesn't expose the raw expires_at). Dispatcher writes
+        # expires_at = fetched_at + ttl_seconds, so the difference
+        # equals the configured TTL.
+        sig = _signature("GET", "https://api.jikan.moe/v4/anime/52991", None, None, None)
+        with cache._lock:
+            row = cache._conn.execute(
+                "SELECT expires_at, fetched_at FROM cache_rows WHERE backend=? AND signature=?",
+                ("jikan", sig),
+            ).fetchone()
+        assert row is not None
+        ttl_written = row[0] - row[1]
+        assert ttl_written == 42
+
+
+class TestSignatureCanonicalisation:
+    """Per review m1: cache-key signature must be invariant to the
+    order of multi-value query parameters. MangaDex
+    ``includes[]=cover_art&includes[]=author`` and
+    ``includes[]=author&includes[]=cover_art`` are semantically
+    identical to upstream but were producing different signatures.
+    """
+
+    def test_list_params_order_invariant(self):
+        from animedex.api._dispatch import _signature
+
+        a = _signature(
+            "GET",
+            "https://api.mangadex.org/manga",
+            {"includes[]": ["cover_art", "author"]},
+            None,
+            None,
+        )
+        b = _signature(
+            "GET",
+            "https://api.mangadex.org/manga",
+            {"includes[]": ["author", "cover_art"]},
+            None,
+            None,
+        )
+        assert a == b
+
+    def test_dict_keys_order_invariant(self):
+        from animedex.api._dispatch import _signature
+
+        a = _signature("GET", "https://x.invalid/", {"a": 1, "b": 2}, None, None)
+        b = _signature("GET", "https://x.invalid/", {"b": 2, "a": 1}, None, None)
+        assert a == b
+
+    def test_json_body_list_order_remains_significant(self):
+        """JSON-body lists are NOT canonicalised: REST mutation bodies
+        often carry ordered semantics (e.g. ordered relations, page
+        cursors). Treating them as sets would risk cache poisoning -
+        two semantically different requests sharing a cache key. Only
+        query params are canonicalised."""
+        from animedex.api._dispatch import _signature
+
+        a = _signature("POST", "https://x.invalid/", None, {"ids": [1, 3, 2]}, None)
+        b = _signature("POST", "https://x.invalid/", None, {"ids": [3, 2, 1]}, None)
+        assert a != b
+
+    def test_distinct_param_values_still_differ(self):
+        """Canonicalisation must not collapse genuinely different
+        requests."""
+        from animedex.api._dispatch import _signature
+
+        a = _signature("GET", "https://x.invalid/", {"q": "a"}, None, None)
+        b = _signature("GET", "https://x.invalid/", {"q": "b"}, None, None)
+        assert a != b

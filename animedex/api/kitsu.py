@@ -38,6 +38,7 @@ def call(
     rate: str = "normal",
     follow_redirects: bool = True,
     user_agent: Optional[str] = None,
+    timeout_seconds: Optional[float] = None,
     base_url: Optional[str] = None,
     cache=None,
     session=None,
@@ -58,6 +59,7 @@ def call(
         rate=rate,
         follow_redirects=follow_redirects,
         user_agent=user_agent,
+        timeout_seconds=timeout_seconds,
         base_url=base_url,
         cache=cache,
         session=session,
@@ -66,6 +68,7 @@ def call(
 
 
 def selftest() -> bool:
-    raw = _dispatch_call(backend="kitsu", path="/anime/1", method="DELETE", cache=None)
-    assert raw.firewall_rejected is not None
-    return True
+    """Smoke-test the Kitsu passthrough (firewall + signature)."""
+    from animedex.api._dispatch import selftest_backend_shim
+
+    return selftest_backend_shim("kitsu", call, extra_params=("path", "base_url"))

@@ -187,3 +187,126 @@ def test_fixture_replay(backend, path_slug, factory, fixture_path):
         import json as _json
 
         assert _json.loads(envelope.body_text) == expected_body_json
+
+
+class TestPerBackendShimAcceptsTimeoutSeconds:
+    """Per review m6: every per-backend shim must accept
+    ``timeout_seconds`` and thread it down to
+    :func:`animedex.api._dispatch.call`.
+    Otherwise a Python caller via
+    ``from animedex.api import jikan; jikan.call(path=..., timeout_seconds=5.0)``
+    cannot override the 30 s default.
+    """
+
+    @pytest.fixture
+    def captured(self, monkeypatch):
+        """Patch ``_dispatch.call`` so each shim's call records its
+        kwargs into a list that the test can inspect."""
+        captured: list = []
+
+        def _fake_dispatch_call(**kwargs):
+            captured.append(kwargs)
+
+            class _Stub:
+                pass
+
+            return _Stub()
+
+        # Patch every per-backend module's bound ``_dispatch_call``.
+        for mod_name in ("anilist", "ann", "danbooru", "jikan", "kitsu", "mangadex", "shikimori", "trace"):
+            monkeypatch.setattr(f"animedex.api.{mod_name}._dispatch_call", _fake_dispatch_call)
+        return captured
+
+    def test_anilist_threads_timeout_seconds(self, captured):
+        from animedex.api import anilist
+
+        anilist.call(query="{ ok }", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_jikan_threads_timeout_seconds(self, captured):
+        from animedex.api import jikan
+
+        jikan.call(path="/anime/52991", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_kitsu_threads_timeout_seconds(self, captured):
+        from animedex.api import kitsu
+
+        kitsu.call(path="/anime/1", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_mangadex_threads_timeout_seconds(self, captured):
+        from animedex.api import mangadex
+
+        mangadex.call(path="/manga/abc", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_trace_threads_timeout_seconds(self, captured):
+        from animedex.api import trace
+
+        trace.call(path="/me", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_danbooru_threads_timeout_seconds(self, captured):
+        from animedex.api import danbooru
+
+        danbooru.call(path="/posts/1.json", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_shikimori_threads_timeout_seconds(self, captured):
+        from animedex.api import shikimori
+
+        shikimori.call(path="/api/animes/1", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_ann_threads_timeout_seconds(self, captured):
+        from animedex.api import ann
+
+        ann.call(path="/api.xml?id=1", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_default_omits_timeout_seconds_to_use_dispatcher_default(self, captured):
+        """When the caller does not pass ``timeout_seconds``, the shim
+        should not pass it down (or should pass ``None``), so the
+        dispatcher's 30 s default applies. Either form is acceptable."""
+        from animedex.api import jikan
+
+        jikan.call(path="/anime/52991")
+        ts = captured[-1].get("timeout_seconds", "not-passed")
+        assert ts in ("not-passed", None, 30.0)
+
+
+class TestSelftestBackendShimHelper:
+    """Per review m5 + AGENTS §9.1: each per-backend selftest must
+    catch a rename / signature breakage of the module's public ``call``.
+    Driven by the shared :func:`animedex.api._dispatch.selftest_backend_shim`
+    helper.
+    """
+
+    def test_helper_passes_when_call_signature_is_intact(self):
+        from animedex.api._dispatch import selftest_backend_shim
+        from animedex.api import jikan
+
+        assert selftest_backend_shim("jikan", jikan.call, extra_params=("path",)) is True
+
+    def test_helper_raises_when_call_drops_a_required_param(self):
+        from animedex.api._dispatch import selftest_backend_shim
+
+        # Stub callable missing every cross-cutting kwarg.
+        def stub_call(path):
+            raise NotImplementedError
+
+        with pytest.raises(AssertionError, match="lost expected params"):
+            selftest_backend_shim("jikan", stub_call, extra_params=("path",))
+
+    def test_helper_raises_when_extra_param_missing(self):
+        from animedex.api._dispatch import selftest_backend_shim
+
+        def call(
+            path, no_cache=False, cache_ttl=None, rate="normal", timeout_seconds=None, user_agent=None, cache=None
+        ):
+            raise NotImplementedError
+
+        # ``query`` is required by the AniList shim but absent here.
+        with pytest.raises(AssertionError, match="query"):
+            selftest_backend_shim("anilist", call, extra_params=("query", "variables"))

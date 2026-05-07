@@ -105,6 +105,22 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.mcp",
     "animedex.mcp.tool_decorator",
     "animedex.mcp.register",
+    # Phase 1: animedex api raw passthrough. Each per-backend module
+    # ships a selftest() that exercises its read-only firewall path;
+    # the dispatcher and envelope have their own end-to-end smokes;
+    # the raw renderer's selftest checks the four output modes.
+    "animedex.api",
+    "animedex.api._envelope",
+    "animedex.api._dispatch",
+    "animedex.api.anilist",
+    "animedex.api.ann",
+    "animedex.api.danbooru",
+    "animedex.api.jikan",
+    "animedex.api.kitsu",
+    "animedex.api.mangadex",
+    "animedex.api.shikimori",
+    "animedex.api.trace",
+    "animedex.render.raw",
 )
 
 

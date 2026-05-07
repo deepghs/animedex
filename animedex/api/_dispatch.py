@@ -18,7 +18,10 @@ from __future__ import annotations
 
 import time
 from datetime import datetime  # noqa: F401  - re-exported via type hints
-from typing import Any, Dict, Optional
+from typing import TYPE_CHECKING, Any, Dict, Optional
+
+if TYPE_CHECKING:
+    from animedex.config import Config
 
 import requests
 
@@ -53,6 +56,12 @@ _BASE_URLS = {
 
 _BODY_PREVIEW_BYTES = 4096
 
+# Default HTTP timeout when neither the caller nor the per-backend
+# shim supplies one. 30 s is conservative for the slowest upstream
+# (ANN's encyclopedia XML can take ~10 s on a cold cache); shorter
+# values are exposed via the ``timeout_seconds`` kwarg.
+_DEFAULT_TIMEOUT_SECONDS = 30.0
+
 
 def resolve_base_url(backend: str) -> str:
     """Return the canonical base URL for ``backend``.
@@ -74,8 +83,50 @@ def _join(base_url: str, path: str) -> str:
     return base_url.rstrip("/") + path
 
 
+def _canonicalise_params(obj: Any) -> Any:
+    """Recursively normalise a query-param structure for cache-key hashing.
+
+    Multi-value query parameters (e.g. MangaDex's
+    ``includes[]=cover_art&includes[]=author``) are
+    semantically set-typed for every backend the project targets, so
+    ``includes[]=author&includes[]=cover_art`` should produce the same
+    cache key. ``json.dumps(sort_keys=True)`` stabilises dict key
+    order but leaves list order alone; this helper sorts list values
+    too so the signature is order-invariant.
+
+    Per review m1: applied **only** to ``params`` and **not** to
+    ``json_body``. JSON request bodies often carry ordered semantics
+    (paginated cursors, mutation order, ordered relations), and
+    treating them as sets would risk cache poisoning - two distinct
+    requests sharing a cache key.
+
+    :param obj: The params structure (dict / list / scalar).
+    :return: A structure with every list sorted (using string-keyed
+             ordering for cross-type stability).
+    :rtype: Any
+    """
+    import json as _json
+
+    if isinstance(obj, dict):
+        return {k: _canonicalise_params(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        # Sort by the JSON serialisation of each element so mixed-type
+        # lists (e.g. ``[1, "a"]``) sort deterministically across
+        # Python versions.
+        return sorted(
+            (_canonicalise_params(x) for x in obj),
+            key=lambda x: _json.dumps(x, sort_keys=True, ensure_ascii=False),
+        )
+    return obj
+
+
 def _signature(method: str, url: str, params: Optional[dict], json_body: Optional[Any], body: Optional[bytes]) -> str:
-    """Compose a stable cache key for this request shape."""
+    """Compose a stable cache key for this request shape.
+
+    The hash is order-invariant for query-param lists (see
+    :func:`_canonicalise_params`); JSON bodies and raw bodies are
+    hashed verbatim because their order may carry semantics.
+    """
     import hashlib
     import json as _json
 
@@ -85,7 +136,7 @@ def _signature(method: str, url: str, params: Optional[dict], json_body: Optiona
     h.update(url.encode("utf-8"))
     if params:
         h.update(b"|p:")
-        h.update(_json.dumps(params, sort_keys=True).encode("utf-8"))
+        h.update(_json.dumps(_canonicalise_params(params), sort_keys=True).encode("utf-8"))
     if json_body is not None:
         h.update(b"|j:")
         h.update(_json.dumps(json_body, sort_keys=True).encode("utf-8"))
@@ -125,12 +176,13 @@ def call(
     no_cache: bool = False,
     cache_ttl: Optional[int] = None,
     rate: str = "normal",
-    timeout_seconds: float = 30.0,
+    timeout_seconds: Optional[float] = None,
     user_agent: Optional[str] = None,
     base_url: Optional[str] = None,
     session: Optional[requests.Session] = None,
     cache: Optional[SqliteCache] = None,
     rate_limit_registry: Optional[RateLimitRegistry] = None,
+    config: Optional["Config"] = None,
 ) -> RawResponse:
     """Issue one request and return its complete envelope.
 
@@ -158,8 +210,9 @@ def call(
     :type cache_ttl: int or None
     :param rate: ``"normal"`` or ``"slow"``.
     :type rate: str
-    :param timeout_seconds: HTTP timeout.
-    :type timeout_seconds: float
+    :param timeout_seconds: HTTP timeout in seconds. ``None`` falls
+                              back to the project-default 30 s.
+    :type timeout_seconds: float or None
     :param user_agent: Override for the project default UA.
     :type user_agent: str or None
     :param base_url: Override for the backend's canonical base URL.
@@ -173,10 +226,29 @@ def call(
     :param rate_limit_registry: Rate-limit registry; defaults to
                                   :func:`animedex.transport.ratelimit.default_registry`.
     :type rate_limit_registry: RateLimitRegistry or None
+    :param config: Optional :class:`~animedex.config.Config` whose
+                    ``user_agent``, ``timeout_seconds``, and
+                    ``cache_ttl_seconds`` fields supply defaults when
+                    the matching kwarg is not given (or is ``None``).
+                    Explicit kwargs always win. Per
+                    ``plans/05 §4`` every public API function honours
+                    this kwarg.
+    :type config: Config or None
     :return: Full envelope.
     :rtype: RawResponse
     """
     t_start = time.monotonic()
+
+    # 0. Resolve config-supplied defaults. Explicit kwargs win; the
+    # config only fills in fields the caller left at the sentinel
+    # (``None``). Per review m3 / plans/05 §4.
+    if config is not None:
+        if user_agent is None:
+            user_agent = config.user_agent
+        if timeout_seconds is None:
+            timeout_seconds = config.timeout_seconds
+        if cache_ttl is None:
+            cache_ttl = config.cache_ttl_seconds
 
     # 1. Resolve URL + headers; build the redacted request snapshot.
     if base_url is None and backend in _BASE_URLS:
@@ -231,12 +303,17 @@ def call(
         hit = cache.get_with_meta(backend, sig)
         if hit is not None:
             payload, hdrs, fetched_at = hit
+            # Defence in depth: the cache-write path already redacts
+            # response headers (review M3), but legacy rows written
+            # before that fix landed may still contain raw Set-Cookie
+            # / Authorization values. Redact at read time too so an
+            # un-redacted row never escapes into a RawResponse.
             return _cache_hit_envelope(
                 backend=backend,
                 request_snapshot=request_snapshot,
                 signature=sig,
                 payload=payload,
-                response_headers=hdrs or {},
+                response_headers=redact_headers(hdrs or {}),
                 fetched_at=fetched_at,
                 cache_ttl_seconds=cache_ttl if cache_ttl is not None else default_ttl_seconds("metadata"),
                 t_start=t_start,
@@ -259,18 +336,20 @@ def call(
         params=params,
         json=json_body,
         data=raw_body,
-        timeout=timeout_seconds,
+        timeout=timeout_seconds if timeout_seconds is not None else _DEFAULT_TIMEOUT_SECONDS,
         allow_redirects=follow_redirects,
     )
     request_ms = (time.monotonic() - t_pre_req) * 1000.0
 
-    # 6. Capture redirect hops from response.history.
+    # 6. Capture redirect hops from response.history. Redirect
+    # response headers can carry the same credentials as the final
+    # hop (Set-Cookie, Authorization), so redact them too.
     redirects = []
     for hop in response.history:
         redirects.append(
             RawRedirectHop(
                 status=hop.status_code,
-                headers=dict(hop.headers),
+                headers=redact_headers(dict(hop.headers)),
                 from_url=hop.url,
                 to_url=hop.headers.get("Location", ""),
                 elapsed_ms=hop.elapsed.total_seconds() * 1000.0 if hop.elapsed else 0.0,
@@ -284,14 +363,20 @@ def call(
     except UnicodeDecodeError:
         body_text = None
 
-    # 8. Cache write (only on cacheable responses).
+    # 8. Redact response headers once, then reuse the redacted dict
+    # for both the cache write and the live envelope. Cache rows are
+    # treated as sensitive as the debug output: an attacker reading
+    # the SQLite file otherwise sees raw Set-Cookie / Authorization.
+    redacted_response_headers = redact_headers(dict(response.headers))
+
+    # 9. Cache write (only on cacheable responses).
     if not cache_lookup_skipped and 200 <= response.status_code < 300:
         ttl = cache_ttl if cache_ttl is not None else default_ttl_seconds("metadata")
         cache.set_with_meta(
             backend,
             sig,
             body_bytes,
-            response_headers=dict(response.headers),
+            response_headers=redacted_response_headers,
             ttl_seconds=ttl,
         )
 
@@ -301,12 +386,63 @@ def call(
         request=request_snapshot,
         redirects=redirects,
         status=response.status_code,
-        response_headers=dict(response.headers),
+        response_headers=redacted_response_headers,
         body_bytes=body_bytes,
         body_text=body_text,
         timing=RawTiming(total_ms=total_ms, rate_limit_wait_ms=wait_ms, request_ms=request_ms),
         cache=RawCacheInfo(hit=False, key=sig if not cache_lookup_skipped else None),
     )
+
+
+def selftest_backend_shim(backend: str, call_fn: Any, *, extra_params: tuple = ()) -> bool:
+    """Shared offline smoke check for every per-backend shim.
+
+    Per review m5 + AGENTS §9.1: a per-backend ``selftest`` that only
+    exercises the firewall rejection path tells us nothing about
+    whether the backend's own ``call`` was renamed, removed, or had
+    its signature broken. This helper bundles two checks:
+
+    * **Firewall path** - a ``DELETE`` to the backend is rejected by
+      :func:`enforce_read_only` before leaving the host. Confirms the
+      read-only contract still wires up.
+    * **Signature shape** - ``call_fn`` is callable, has a Pythonic
+      keyword surface, and exposes the cross-cutting kwargs every
+      shim must thread (``no_cache``, ``cache_ttl``, ``rate``,
+      ``timeout_seconds``, ``user_agent``, ``cache``). A rename
+      that drops one of these is a regression.
+
+    :param backend: Backend identifier passed to the firewall check.
+    :type backend: str
+    :param call_fn: The shim's public ``call`` function.
+    :type call_fn: Callable
+    :param extra_params: Backend-specific kwargs that must also be
+                          present (e.g. ``("query", "variables")``
+                          for anilist, ``("path",)`` for the REST
+                          shims). Generic kwargs are checked
+                          unconditionally.
+    :type extra_params: tuple of str
+    :return: ``True`` on success; raises on failure so the runner
+             prints a useful traceback.
+    :rtype: bool
+    """
+    import inspect
+
+    raw = call(backend=backend, path="/_animedex_selftest", method="DELETE", cache=None)
+    assert raw.firewall_rejected is not None, f"{backend} firewall did not reject DELETE"
+
+    sig = inspect.signature(call_fn)
+    expected = {
+        "no_cache",
+        "cache_ttl",
+        "rate",
+        "timeout_seconds",
+        "user_agent",
+        "cache",
+        *extra_params,
+    }
+    missing = expected - set(sig.parameters)
+    assert not missing, f"{call_fn.__module__}.{call_fn.__name__} lost expected params: {sorted(missing)}"
+    return True
 
 
 def _firewall_envelope(
@@ -325,7 +461,7 @@ def _firewall_envelope(
         status=0,
         response_headers={},
         body_bytes=b"",
-        body_text=None,
+        body_text="",
         timing=RawTiming(total_ms=total_ms, rate_limit_wait_ms=0.0, request_ms=0.0),
         cache=RawCacheInfo(hit=False),
         firewall_rejected={"reason": reason, "message": message},

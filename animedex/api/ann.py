@@ -42,6 +42,7 @@ def call(
     rate: str = "normal",
     follow_redirects: bool = True,
     user_agent: Optional[str] = None,
+    timeout_seconds: Optional[float] = None,
     cache=None,
     session=None,
     rate_limit_registry=None,
@@ -58,6 +59,7 @@ def call(
         rate=rate,
         follow_redirects=follow_redirects,
         user_agent=user_agent,
+        timeout_seconds=timeout_seconds,
         cache=cache,
         session=session,
         rate_limit_registry=rate_limit_registry,
@@ -65,6 +67,7 @@ def call(
 
 
 def selftest() -> bool:
-    raw = _dispatch_call(backend="ann", path="/api.xml?anime=1", method="DELETE", cache=None)
-    assert raw.firewall_rejected is not None
-    return True
+    """Smoke-test the ANN passthrough (firewall + signature)."""
+    from animedex.api._dispatch import selftest_backend_shim
+
+    return selftest_backend_shim("ann", call, extra_params=("path",))

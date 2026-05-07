@@ -176,7 +176,8 @@ class TestRenderDebug:
         )
         from animedex.render.raw import render_debug
 
-        original_headers = {"Authorization": "Bearer abcd1234567890XYZ12", "User-Agent": "animedex/0.0.1"}
+        # 30-char token so the fingerprint form fires (threshold is 24).
+        original_headers = {"Authorization": "Bearer abcd1234567890XYZabcd1234XYZ99", "User-Agent": "animedex/0.0.1"}
         env = RawResponse(
             backend="anilist",
             request=RawRequest(method="GET", url="https://x.invalid/", headers=redact_headers(original_headers)),
@@ -190,7 +191,7 @@ class TestRenderDebug:
 
         out = render_debug(env)
         decoded = json.loads(out)
-        assert "abcd1234567890XYZ12" not in out  # raw value never appears
+        assert "abcd1234567890XYZabcd1234" not in out  # raw value never appears
         assert "(len=" in decoded["request"]["headers"]["Authorization"]
 
     def test_cache_hit_envelope_has_zero_request_ms(self, envelope_cache_hit):
@@ -270,7 +271,7 @@ class TestRenderDebug:
             status=0,
             response_headers={},
             body_bytes=b"",
-            body_text=None,
+            body_text="",
             timing=RawTiming(total_ms=0.5, rate_limit_wait_ms=0, request_ms=0),
             cache=RawCacheInfo(hit=False),
             firewall_rejected={"reason": "read-only", "message": "DELETE / not permitted on anilist"},
@@ -280,6 +281,68 @@ class TestRenderDebug:
         decoded = json.loads(out)
         assert decoded["firewall_rejected"]["reason"] == "read-only"
         assert decoded["status"] == 0
+
+
+class TestRenderDebugBinaryBody:
+    """Regression for review M2: render_debug crashed on any non-UTF-8
+    body because pydantic v2's default bytes serialiser tries
+    .decode('utf-8') before the renderer's truncation logic runs."""
+
+    def test_jpeg_header_bytes_render_to_base64(self):
+        from animedex.api._envelope import (
+            RawCacheInfo,
+            RawRequest,
+            RawResponse,
+            RawTiming,
+        )
+        from animedex.render.raw import render_debug
+
+        env = RawResponse(
+            backend="trace",
+            request=RawRequest(method="GET", url="https://api.trace.moe/x", headers={}),
+            status=200,
+            response_headers={"Content-Type": "image/jpeg"},
+            body_bytes=b"\xff\xd8\xff\xe0",  # JPEG SOI + APP0 marker
+            body_text=None,
+            timing=RawTiming(total_ms=1, rate_limit_wait_ms=0, request_ms=1),
+            cache=RawCacheInfo(hit=False),
+        )
+
+        # Should not raise; should emit base64 in body_bytes.
+        out = render_debug(env)
+        import base64
+
+        decoded = json.loads(out)
+        assert decoded["body_text"] is None
+        # body_bytes is rendered as base64 in --debug mode for binary.
+        assert decoded["body_bytes"] == base64.b64encode(b"\xff\xd8\xff\xe0").decode("ascii")
+
+    def test_png_bytes_truncate_under_default_cap(self):
+        """Larger binary body still truncates without crashing."""
+        from animedex.api._envelope import (
+            RawCacheInfo,
+            RawRequest,
+            RawResponse,
+            RawTiming,
+        )
+        from animedex.render.raw import render_debug
+
+        big_jpeg = b"\xff\xd8\xff\xe0" + (b"\x00" * 100_000)
+        env = RawResponse(
+            backend="trace",
+            request=RawRequest(method="GET", url="https://x.invalid/", headers={}),
+            status=200,
+            response_headers={},
+            body_bytes=big_jpeg,
+            body_text=None,
+            timing=RawTiming(total_ms=1, rate_limit_wait_ms=0, request_ms=1),
+            cache=RawCacheInfo(hit=False),
+        )
+
+        out = render_debug(env)
+        decoded = json.loads(out)
+        assert decoded["body_truncated_at_bytes"] is not None
+        assert len(decoded["body_bytes"]) <= 65536
 
 
 class TestSelftest:

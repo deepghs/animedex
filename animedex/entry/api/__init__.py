@@ -39,14 +39,36 @@ def _default_cache():
     Created on first use so paths that pass ``--no-cache`` everywhere
     or that run in unit tests never instantiate it.
 
+    The first construction registers an :func:`atexit` hook that
+    closes the SQLite connection cleanly on interpreter shutdown
+    (review m4). Without it a long-running embedding (Jupyter, MCP
+    server, future REPL) would leak the file handle.
+
     :return: A reusable ``SqliteCache`` instance.
     :rtype: SqliteCache
     """
     global _DEFAULT_CACHE
     if _DEFAULT_CACHE is None:
+        import atexit
+
         from animedex.cache.sqlite import SqliteCache
 
         _DEFAULT_CACHE = SqliteCache()
+
+        def _close_default_cache() -> None:
+            global _DEFAULT_CACHE
+            if _DEFAULT_CACHE is not None:
+                try:
+                    _DEFAULT_CACHE.close()
+                except Exception:
+                    # Defensive: a connection that already failed to
+                    # close should not surface a traceback during
+                    # interpreter teardown. The file handle gets
+                    # released by the OS regardless.
+                    pass
+                _DEFAULT_CACHE = None
+
+        atexit.register(_close_default_cache)
     return _DEFAULT_CACHE
 
 

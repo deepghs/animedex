@@ -22,13 +22,24 @@ class TestRedactCredentialValue:
 
         assert redact_credential_value("abc") == "<redacted len=3>"
         assert redact_credential_value("abcdefghi") == "<redacted len=9>"
+        # Per review m2: raise the fingerprint threshold to 24 chars
+        # so a fingerprinted token has >=16 unrevealed chars in the
+        # middle (was 4, brute-forceable). 12-char tokens now stay
+        # fully redacted.
         assert redact_credential_value("abcdefghijk") == "<redacted len=11>"
+        assert redact_credential_value("abcdef123456") == "<redacted len=12>"
+        assert redact_credential_value("abcdef1234567890XYZ123") == "<redacted len=22>"
+        assert redact_credential_value("abcdef1234567890XYZ12AB") == "<redacted len=23>"
 
     def test_long_value_uses_fingerprint_form(self):
         from animedex.api._envelope import redact_credential_value
 
-        out = redact_credential_value("abcd123456789012xyz9")
-        assert out == "abcd...xyz9 (len=20)"
+        # 24 chars: 4 head + 16 hidden + 4 tail = (len=24)
+        out_24 = redact_credential_value("abcd12345678abcd1234xyzw")
+        assert out_24 == "abcd...xyzw (len=24)"
+        # Longer tokens unchanged in form
+        out_25 = redact_credential_value("abcd1234567890XYZ12abXY99")
+        assert out_25 == "abcd...XY99 (len=25)"
 
     def test_jwt_style_value_keeps_unique_suffix(self):
         from animedex.api._envelope import redact_credential_value
@@ -66,10 +77,13 @@ class TestRedactHeaders:
     def test_credential_headers_redacted(self, header_name):
         from animedex.api._envelope import redact_headers
 
-        headers = {header_name: "abcd1234567890XYZ12"}
+        # Use a 30-char value so the fingerprint form (head+tail) fires;
+        # below the 24-char threshold the value would get the
+        # <redacted len=N> form which doesn't preserve "(len=...)".
+        headers = {header_name: "abcd1234567890XYZ12abcd1234567"}
         redacted = redact_headers(headers)
         assert "1234567890" not in redacted[header_name]
-        assert "(len=19)" in redacted[header_name]
+        assert "(len=30)" in redacted[header_name]
 
     @pytest.mark.parametrize(
         "header_name",
@@ -91,7 +105,7 @@ class TestRedactHeaders:
     def test_authorization_bearer_keeps_scheme_prefix(self):
         from animedex.api._envelope import redact_headers
 
-        headers = {"Authorization": "Bearer abcd1234567890XYZ12"}
+        headers = {"Authorization": "Bearer abcd1234567890XYZ12abcd1234567"}
         out = redact_headers(headers)["Authorization"]
         assert out.startswith("Bearer ")
         assert "1234567890" not in out
@@ -223,7 +237,7 @@ class TestRawResponse:
             status=0,
             response_headers={},
             body_bytes=b"",
-            body_text=None,
+            body_text="",
             timing=RawTiming(total_ms=0.1, rate_limit_wait_ms=0, request_ms=0),
             cache=RawCacheInfo(hit=False),
             firewall_rejected={"reason": "read-only", "message": "DELETE not permitted"},
@@ -249,3 +263,65 @@ class TestRawResponse:
             cache=RawCacheInfo(hit=False),
         )
         assert RawResponse.model_validate_json(r.model_dump_json()) == r
+
+
+class TestBodyTextBytesInvariant:
+    """Per review m7: ``body_text`` and ``body_bytes`` must agree.
+
+    Either ``body_text == body_bytes.decode('utf-8')`` or
+    ``body_text is None`` (the bytes are not valid UTF-8). Anything
+    else means cache-hit reconstruction has drifted from the live-call
+    path, or a caller has hand-built an inconsistent envelope.
+    """
+
+    def _envelope_kwargs(self):
+        from animedex.api._envelope import RawCacheInfo, RawRequest, RawTiming
+
+        return dict(
+            backend="anilist",
+            request=RawRequest(method="GET", url="https://x.invalid/", headers={}),
+            status=200,
+            response_headers={},
+            timing=RawTiming(total_ms=0.1, rate_limit_wait_ms=0, request_ms=0.1),
+            cache=RawCacheInfo(hit=False),
+        )
+
+    def test_text_must_match_bytes(self):
+        from pydantic import ValidationError
+
+        from animedex.api._envelope import RawResponse
+
+        with pytest.raises(ValidationError, match="body_text.*body_bytes"):
+            RawResponse(body_bytes=b'{"a":1}', body_text="something else", **self._envelope_kwargs())
+
+    def test_text_must_be_none_when_bytes_are_not_utf8(self):
+        from pydantic import ValidationError
+
+        from animedex.api._envelope import RawResponse
+
+        with pytest.raises(ValidationError, match="body_text.*body_bytes"):
+            RawResponse(body_bytes=b"\xff\xd8\xff\xe0", body_text="not none", **self._envelope_kwargs())
+
+    def test_matching_text_and_bytes_passes(self):
+        from animedex.api._envelope import RawResponse
+
+        # Sanity: the happy path remains constructible.
+        r = RawResponse(body_bytes=b'{"ok":true}', body_text='{"ok":true}', **self._envelope_kwargs())
+        assert r.body_text == '{"ok":true}'
+
+    def test_none_text_with_binary_bytes_passes(self):
+        from animedex.api._envelope import RawResponse
+
+        r = RawResponse(body_bytes=b"\xff\xd8\xff\xe0", body_text=None, **self._envelope_kwargs())
+        assert r.body_text is None
+
+    def test_none_text_with_decodable_bytes_rejected(self):
+        from pydantic import ValidationError
+
+        from animedex.api._envelope import RawResponse
+
+        # Bytes ARE valid UTF-8, so body_text must be the decoded form
+        # (not None). Catches the live-call/cache-hit drift the
+        # invariant is meant to lock down.
+        with pytest.raises(ValidationError, match="body_text.*body_bytes"):
+            RawResponse(body_bytes=b'{"ok":true}', body_text=None, **self._envelope_kwargs())
