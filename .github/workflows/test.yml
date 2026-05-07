@@ -45,6 +45,11 @@ jobs:
         with:
           fetch-depth: 20
           submodules: 'recursive'
+      - name: Install make on Windows
+        if: ${{ contains(matrix.os, 'windows') }}
+        shell: bash
+        run: |
+          choco install make --no-progress -y
       - name: Set up python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
