@@ -15,11 +15,20 @@ The submodules are:
   :class:`~animedex.models.common.RateLimit`,
   :class:`~animedex.models.common.ApiError`,
   :class:`~animedex.models.common.AnimedexModel`).
-
-Domain models (anime, manga, character) layer on top and arrive as
-their respective submodules ship.
+* :mod:`animedex.models.anime` - anime records
+  (:class:`~animedex.models.anime.Anime`, :class:`AnimeTitle`,
+  :class:`AnimeRating`, :class:`AnimeStreamingLink`).
+* :mod:`animedex.models.manga` - manga records
+  (:class:`~animedex.models.manga.Manga`, :class:`Chapter`,
+  :class:`AtHomeServer`).
+* :mod:`animedex.models.character` - cast and crew records
+  (:class:`~animedex.models.character.Character`,
+  :class:`~animedex.models.character.Staff`,
+  :class:`~animedex.models.character.Studio`).
 """
 
+from animedex.models.anime import Anime, AnimeRating, AnimeStreamingLink, AnimeTitle
+from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import (
     AnimedexModel,
     ApiError,
@@ -27,11 +36,22 @@ from animedex.models.common import (
     RateLimit,
     SourceTag,
 )
+from animedex.models.manga import AtHomeServer, Chapter, Manga
 
 __all__ = [
     "AnimedexModel",
+    "Anime",
+    "AnimeRating",
+    "AnimeStreamingLink",
+    "AnimeTitle",
     "ApiError",
+    "AtHomeServer",
+    "Chapter",
+    "Character",
+    "Manga",
     "Pagination",
     "RateLimit",
     "SourceTag",
+    "Staff",
+    "Studio",
 ]
