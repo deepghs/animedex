@@ -8,7 +8,28 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_kitsu = make_get_only_subcommand(
     name="kitsu",
     backend_module_name="kitsu",
-    docstring="""Pass through to Kitsu (JSON:API).
+    docstring="""Issue a Kitsu GET request (JSON:API).
+
+    The dispatcher injects `Accept: application/vnd.api+json`
+    automatically. Pagination uses `page[offset]=N&page[limit]=M`;
+    set includes via `?include=streamingLinks,mappings`. Both
+    `kitsu.io/api/edge` and `kitsu.app/api/edge` serve identical
+    data; this command targets `.io` by default.
+
+    \b
+    Common paths:
+      /anime?filter[text]=Frieren           search
+      /anime/{id}                            fetch one
+      /anime/{id}/streaming-links            legal streaming destinations
+      /anime/{id}/mappings                   cross-source ID map (anilist/mal/...)
+      /manga?filter[text]=Berserk            manga search
+
+    \b
+    Examples:
+      animedex api kitsu /anime/46474
+      animedex api kitsu '/anime?filter[text]=Frieren&include=streamingLinks&page[limit]=1'
+      animedex api kitsu /anime/46474/mappings --debug | jq '.body_text | fromjson | .data[].attributes'
+    \f
 
     Backend: Kitsu (kitsu.io/api/edge canonical; kitsu.app/api/edge
     accepted as alias).

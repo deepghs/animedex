@@ -42,7 +42,29 @@ def api_shikimori(
     no_follow,
     debug_full_body,
 ):
-    """Pass through to Shikimori (REST + GraphQL).
+    """Issue a Shikimori REST or GraphQL request.
+
+    REST default: GET against `/api/...`. GraphQL: pass PATH=
+    `/api/graphql` and `--graphql 'query'`; the wrapper sets
+    method=POST and `Content-Type: application/json`. Both
+    `shikimori.io` (canonical) and `shikimori.one` (fallback) serve
+    identical data.
+
+    \b
+    Common REST paths:
+      /api/animes/{id}                      fetch one
+      /api/animes?search=Frieren&limit=2    search
+      /api/calendar                          airing calendar
+      /api/animes/{id}/screenshots          screenshot list
+      /api/animes/{id}/videos               PV/OP/ED list
+
+    \b
+    Examples:
+      animedex api shikimori /api/animes/52991
+      animedex api shikimori '/api/animes?search=Frieren&limit=2' -i
+      animedex api shikimori /api/calendar
+      animedex api shikimori /api/graphql --graphql '{ animes(ids:"52991"){ id name score } }'
+    \f
 
     Backend: Shikimori (shikimori.io; .one accepted fallback).
 

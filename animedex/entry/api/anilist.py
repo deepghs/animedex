@@ -35,7 +35,23 @@ def api_anilist(
     no_follow,
     debug_full_body,
 ):
-    """Pass through to AniList GraphQL.
+    """Issue a single AniList GraphQL query.
+
+    QUERY is a complete GraphQL document; quote it. Variables go
+    through `--variables` as a JSON object. The 30/min rate limit
+    (currently degraded from 90/min) is enforced client-side; the
+    second consecutive overshoot blocks until a token is available.
+    Anonymous reads cover the entire public schema (Media,
+    Character, Staff, Studio, Page, AiringSchedule, ...).
+
+    \b
+    Examples:
+      animedex api anilist '{ Media(id:154587){ title{romaji english} } }'
+      animedex api anilist '{ Page(perPage:5){ media(search:"Frieren"){ id title{romaji} } } }'
+      animedex api anilist 'query($s:String){ Page(perPage:2){ media(search:$s){ id }}}' \\
+          --variables '{"s":"Naruto"}'
+      animedex api anilist '{ Media(id:154587){ id } }' --debug | jq '.timing,.cache'
+    \f
 
     Backend: AniList (graphql.anilist.co).
 

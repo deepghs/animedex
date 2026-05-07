@@ -8,7 +8,28 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_jikan = make_get_only_subcommand(
     name="jikan",
     backend_module_name="jikan",
-    docstring="""Pass through to Jikan v4 (anonymous MAL view).
+    docstring="""Issue a Jikan v4 GET request (anonymous MAL view).
+
+    PATH is the URL path under `/v4`. Pagination is `?page=N&limit=M`;
+    the response carries a `pagination` envelope. A 404 means the
+    upstream MyAnimeList page is missing, not that Jikan is down.
+
+    \b
+    Common paths:
+      /anime/{mal_id}                fetch one anime
+      /anime?q=Frieren&type=tv       search
+      /seasons/{year}/{season}       seasonal listings
+      /anime/{id}/characters         cast
+      /anime/{id}/episodes           episode list
+      /random/anime                  random pick
+
+    \b
+    Examples:
+      animedex api jikan /anime/52991
+      animedex api jikan '/anime?q=Frieren&type=tv&limit=3'
+      animedex api jikan /seasons/2026/spring -I
+      animedex api jikan /anime/52991/characters --debug | jq '.timing'
+    \f
 
     Backend: Jikan v4 (api.jikan.moe/v4).
 

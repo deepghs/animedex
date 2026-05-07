@@ -184,7 +184,43 @@ def _resolve_cache(no_cache: bool):
 
 @click.group(name="api")
 def api_group() -> None:
-    """Raw HTTP/GraphQL passthrough to upstream APIs.
+    """Raw HTTP / GraphQL passthrough to one of the 8 upstream backends.
+
+    Each subcommand wraps one backend's raw API surface. The
+    dispatcher injects the project `User-Agent`, runs the read-only
+    firewall, applies a per-backend rate-limit token bucket, and
+    consults the local SQLite cache before issuing the request.
+
+    \b
+    Output modes (mutually exclusive):
+      (default)         response body only (gh-api equivalent)
+      -i, --include     status line + response headers + body
+      -I, --head        status line + response headers (no body)
+      --debug           full RawResponse envelope as indented JSON;
+                        includes the request snapshot (credentials
+                        fingerprint-redacted), redirect chain, per-
+                        call timing breakdown, and cache provenance
+
+    \b
+    Other behaviour:
+      --no-follow             disable 3xx auto-following
+      --debug-full-body       opt out of the 64 KiB body cap in --debug
+      --no-cache              skip cache lookup and write
+      --cache TTL_SECONDS     override default cache TTL
+      --rate {normal,slow}    voluntary slowdown (slow halves refill)
+      -H, --header K:V        add request header (repeatable)
+
+    Per AGENTS.md §0, a caller-supplied `User-Agent` via `--header`
+    overrides the project default verbatim.
+
+    \b
+    Examples:
+      animedex api jikan /anime/52991
+      animedex api anilist '{ Media(id:154587){ title{romaji} } }'
+      animedex api kitsu '/anime?filter[text]=Frieren&page[limit]=2' -i
+      animedex api shikimori /api/graphql --graphql '{ animes(ids:"52991"){ id name }}'
+      animedex api jikan /anime/52991 --debug | jq '{cache, timing}'
+    \f
 
     Backend: animedex (local; routes to one of 8 upstream backends).
 
@@ -196,25 +232,14 @@ def api_group() -> None:
     covered by the higher-level commands. Each subcommand wraps one
     backend's raw HTTP/GraphQL surface; the dispatcher injects the
     project User-Agent, runs the read-only firewall, applies rate
-    limiting, and consults the local cache. The output flags are
-    shared:
+    limiting, and consults the local cache. The output flags
+    (-i / -I / --debug) are shared and mutually exclusive. Use
+    --debug when you need to inspect the full envelope (redirect
+    chain, timing, cache provenance, fingerprint-redacted request
+    headers) - this is the "data + debug" mode.
 
-    * default (no flag): print the response body.
-    * ``-i`` / ``--include``: print status line + response headers +
-      blank line + body (curl-style).
-    * ``-I`` / ``--head``: print status line + response headers only.
-    * ``--debug``: print the full RawResponse envelope as indented
-      JSON; includes the request snapshot (with credentials
-      fingerprint-redacted), redirect chain, timing breakdown, and
-      cache provenance. Use this when you need to debug a flaky
-      upstream call.
-
-    The output flags are mutually exclusive. Use ``--no-follow`` to
-    disable 3xx auto-following. Use ``--debug-full-body`` to opt out
-    of the 64 KiB body truncation in ``--debug`` mode.
-
-    Caller-supplied User-Agent in ``--header User-Agent: ...``
-    overrides the project default per AGENTS.md §0.
+    Caller-supplied User-Agent via --header overrides the project
+    default per AGENTS.md §0.
     --- End ---
     """
 

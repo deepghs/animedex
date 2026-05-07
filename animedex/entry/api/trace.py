@@ -44,7 +44,28 @@ def api_trace(
     no_follow,
     debug_full_body,
 ):
-    """Pass through to Trace.moe.
+    """Issue a Trace.moe request (screenshot reverse search).
+
+    Anonymous tier: concurrency 1, quota 100 searches/month.
+    `GET /me` reports the current quota state and is free; every
+    `/search` call consumes one from the monthly budget. To search
+    by image upload pass `--input <file>` (or `-` for stdin) with
+    PATH=`/search`; the bytes are sent as the POST body.
+
+    \b
+    Common paths:
+      /me                                    quota state (free)
+      /search?url=<encoded-image-url>        search by URL
+      /search?anilistInfo&url=<encoded>      search + AniList metadata
+      /search                                POST upload (use --input)
+
+    \b
+    Examples:
+      animedex api trace /me
+      animedex api trace '/search?anilistInfo&url=https%3A%2F%2Fi.imgur.com%2FzLxHIeo.jpg'
+      animedex api trace /search --input ./screenshot.jpg
+      cat screenshot.jpg | animedex api trace /search --input -
+    \f
 
     Backend: Trace.moe (api.trace.moe).
 

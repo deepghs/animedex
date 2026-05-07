@@ -8,7 +8,28 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_mangadex = make_get_only_subcommand(
     name="mangadex",
     backend_module_name="mangadex",
-    docstring="""Pass through to MangaDex.
+    docstring="""Issue a MangaDex GET request.
+
+    UA is mandatory at the wire (empty UA returns HTTP 400); the
+    dispatcher injects `animedex/<version>` automatically. Pagination
+    is `?limit=N&offset=M` with `offset+limit<=10000`. Errors land
+    as `{"result":"error","errors":[{"id","status","title","detail"}]}`.
+
+    \b
+    Common paths:
+      /manga?title=Frieren                   search by title
+      /manga/{uuid}                          fetch one
+      /manga/{uuid}/feed?translatedLanguage[]=en   chapter feed
+      /at-home/server/{chapter-uuid}         page-image base URL (40/min cap)
+      /manga/tag                             tag taxonomy
+      /cover?manga[]={uuid}                  cover assets
+
+    \b
+    Examples:
+      animedex api mangadex '/manga?title=Berserk&limit=2'
+      animedex api mangadex /manga/801513ba-a712-498c-8f57-cae55b38cc92
+      animedex api mangadex '/manga/801513ba-a712-498c-8f57-cae55b38cc92/feed?translatedLanguage[]=en&limit=1'
+    \f
 
     Backend: MangaDex (api.mangadex.org).
 
