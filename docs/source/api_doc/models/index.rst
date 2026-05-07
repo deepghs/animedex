@@ -10,9 +10,12 @@ animedex.models
     :maxdepth: 3
 
     anime
+    art
     character
     common
     manga
+    quote
+    trace
 
 \_\_all\_\_
 -----------------------------------------------------

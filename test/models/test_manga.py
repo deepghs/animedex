@@ -1,11 +1,11 @@
 """
 Tests for :mod:`animedex.models.manga`.
 
-Mirrors the anime suite: pin field names, optional defaults, and JSON
-round-trip. The ``AtHomeServer`` model is exercised because it carries
-the short-lived base URL and per-page hashes that the Phase 6 reader
-will rely on - it is part of the public model contract from day one,
-even though the reader itself ships later.
+Mirrors the anime suite: pins the public field set, optional
+defaults, JSON round-trip. ``AtHomeServer`` is exercised because
+it carries the short-lived base URL and per-page hashes that the
+Phase 6 reader relies on - pinning the shape now keeps the public
+model contract stable through that release.
 """
 
 from __future__ import annotations
@@ -24,19 +24,31 @@ def _src(backend: str = "mangadex") -> SourceTag:
     return SourceTag(backend=backend, fetched_at=datetime(2026, 5, 7, 10, 0, 0, tzinfo=timezone.utc))
 
 
-class TestManga:
-    def test_minimal_construction(self):
+class TestMangaMinimal:
+    def test_construction_with_only_required(self):
         from animedex.models.manga import Manga
 
         m = Manga(id="mangadex:abc-123", title="Frieren", ids={"al": "154587"}, source=_src())
 
         assert m.id == "mangadex:abc-123"
         assert m.title == "Frieren"
+
+    def test_optional_defaults(self):
+        from animedex.models.manga import Manga
+
+        m = Manga(id="mangadex:abc", title="x", ids={}, source=_src())
         assert m.chapters == []
         assert m.cover_url is None
         assert m.languages == []
+        assert m.description is None
+        assert m.status is None
+        assert m.format is None
+        assert m.genres == []
+        assert m.tags == []
 
-    def test_full_construction(self):
+
+class TestMangaFull:
+    def test_construction_with_all_fields(self):
         from animedex.models.manga import Chapter, Manga
 
         m = Manga(
@@ -54,19 +66,62 @@ class TestManga:
                 ),
             ],
             languages=["en", "ja"],
+            description="An elf mage's journey after the demon king has fallen.",
+            status="ongoing",
+            format="MANGA",
+            genres=["Fantasy", "Drama"],
+            tags=["Elves"],
             ids={"al": "154587"},
             source=_src(),
         )
 
         assert m.cover_url is not None
         assert len(m.chapters) == 1
-        assert m.chapters[0].number == "1"
+        assert m.status == "ongoing"
+        assert m.format == "MANGA"
 
     def test_round_trip_json(self):
         from animedex.models.manga import Manga
 
-        m = Manga(id="mangadex:abc", title="x", ids={}, source=_src())
+        m = Manga(
+            id="mangadex:abc",
+            title="x",
+            description="y",
+            status="completed",
+            format="ONE_SHOT",
+            genres=["Comedy"],
+            ids={},
+            source=_src(),
+        )
         assert Manga.model_validate_json(m.model_dump_json()) == m
+
+
+class TestMangaStatusValidation:
+    def test_known_status_accepted(self):
+        from animedex.models.manga import Manga
+
+        for value in ("ongoing", "completed", "hiatus", "cancelled", "unknown"):
+            Manga(id="x:1", title="x", ids={}, source=_src(), status=value)
+
+    def test_unknown_status_rejected(self):
+        from animedex.models.manga import Manga
+
+        with pytest.raises(Exception):
+            Manga(id="x:1", title="x", ids={}, source=_src(), status="bogus")
+
+
+class TestMangaFormatValidation:
+    def test_known_formats_accepted(self):
+        from animedex.models.manga import Manga
+
+        for value in ("MANGA", "NOVEL", "ONE_SHOT", "DOUJINSHI", "MANHWA", "MANHUA"):
+            Manga(id="x:1", title="x", ids={}, source=_src(), format=value)
+
+    def test_unknown_format_rejected(self):
+        from animedex.models.manga import Manga
+
+        with pytest.raises(Exception):
+            Manga(id="x:1", title="x", ids={}, source=_src(), format="BOGUS")
 
 
 class TestChapter:
@@ -88,7 +143,6 @@ class TestChapter:
 
 class TestAtHomeServer:
     def test_construction(self):
-        """Reflects the ``GET /at-home/server/{chapter}`` envelope."""
         from animedex.models.manga import AtHomeServer
 
         s = AtHomeServer(

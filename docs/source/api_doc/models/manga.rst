@@ -6,6 +6,18 @@ animedex.models.manga
 .. automodule:: animedex.models.manga
 
 
+MangaStatus
+-----------------------------------------------------
+
+.. autodata:: MangaStatus
+
+
+MangaFormat
+-----------------------------------------------------
+
+.. autodata:: MangaFormat
+
+
 Chapter
 -----------------------------------------------------
 
@@ -17,7 +29,7 @@ Manga
 -----------------------------------------------------
 
 .. autoclass:: Manga
-    :members: id,title,cover_url,chapters,languages,ids,source
+    :members: id,title,cover_url,chapters,languages,description,status,format,genres,tags,ids,source
 
 
 AtHomeServer

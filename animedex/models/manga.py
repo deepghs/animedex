@@ -1,17 +1,27 @@
 """
 Manga domain models.
 
-Mirrors the anime side. :class:`AtHomeServer` is included from day
-one because the Phase 6 reader path consumes it; defining the shape
-here keeps the public model surface stable from MVP through the
-reader release.
+Mirrors the anime side. :class:`Manga` is the cross-source common
+projection (MangaDex provides the lion's share of fields; AniList
+also exposes manga but with thinner coverage). :class:`AtHomeServer`
+is included from day one because the Phase 6 reader path consumes
+it; defining the shape now keeps the public model surface stable
+through that release.
 """
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import List, Literal, Optional
 
 from animedex.models.common import AnimedexModel, SourceTag
+
+
+#: Manga publication status.
+MangaStatus = Literal["ongoing", "completed", "hiatus", "cancelled", "unknown"]
+
+#: Manga format / kind. Includes the broader Asian-comics taxonomy
+#: because AniList classifies them at this granularity.
+MangaFormat = Literal["MANGA", "NOVEL", "ONE_SHOT", "DOUJINSHI", "MANHWA", "MANHUA"]
 
 
 class Chapter(AnimedexModel):
@@ -54,6 +64,17 @@ class Manga(AnimedexModel):
     :vartype chapters: list of Chapter
     :ivar languages: Languages with at least one translated chapter.
     :vartype languages: list of str
+    :ivar description: Synopsis / description.
+    :vartype description: str or None
+    :ivar status: Publication status, normalised to
+                   :data:`MangaStatus`.
+    :vartype status: str or None
+    :ivar format: Media format, normalised to :data:`MangaFormat`.
+    :vartype format: str or None
+    :ivar genres: Broad genre tags.
+    :vartype genres: list of str
+    :ivar tags: Long-tail descriptive tags.
+    :vartype tags: list of str
     :ivar ids: Cross-service identifier map.
     :vartype ids: dict[str, str]
     :ivar source: Provenance tag.
@@ -65,6 +86,11 @@ class Manga(AnimedexModel):
     cover_url: Optional[str] = None
     chapters: List[Chapter] = []
     languages: List[str] = []
+    description: Optional[str] = None
+    status: Optional[MangaStatus] = None
+    format: Optional[MangaFormat] = None
+    genres: List[str] = []
+    tags: List[str] = []
     ids: dict
     source: SourceTag
 
@@ -115,6 +141,11 @@ def selftest() -> bool:
         cover_url="https://x.invalid/c.jpg",
         chapters=[chap],
         languages=["en"],
+        description="d",
+        status="ongoing",
+        format="MANGA",
+        genres=["g"],
+        tags=["t"],
         ids={"_selftest": "1"},
         source=src,
     )
