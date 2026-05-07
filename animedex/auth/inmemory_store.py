@@ -53,5 +53,5 @@ def selftest() -> bool:
     store.delete("_selftest")
     store.delete("_selftest")  # idempotent
     assert store.get("_selftest") is None
-    InMemoryTokenStore({"a": "b"}).get("a") == "b"
+    assert InMemoryTokenStore({"a": "b"}).get("a") == "b"
     return True

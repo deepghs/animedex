@@ -15,7 +15,7 @@ defined in ``plans/03 §9`` so that "what does this command do" and
 
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Optional
 
 try:
     from typing import Literal
@@ -76,7 +76,7 @@ class Config(BaseModel):
     source_attribution: bool = True
     user_agent: Optional[str] = None
     timeout_seconds: float = 30.0
-    token_store: Any = None
+    token_store: Optional[TokenStore] = None
 
     def effective_token_store(self) -> TokenStore:
         """Resolve :attr:`token_store` to a usable

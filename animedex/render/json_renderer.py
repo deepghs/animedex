@@ -4,27 +4,16 @@ JSON renderer with optional source attribution.
 When :func:`render_json` is called with ``include_source=True`` (the
 default), the resulting JSON carries a top-level ``_meta`` block and
 preserves the ``source`` field from the model. Setting
-``include_source=False`` strips the meta block (per ``plans/03 §9``
-``--source-attribution=off``); the per-field ``source`` keys remain
-in place because they are part of the model schema and removing them
-selectively is the renderer's job, not pydantic's.
+``include_source=False`` returns the model's clean
+:meth:`pydantic.BaseModel.model_dump` form: per-field ``source`` keys
+remain (they are part of the schema), but no ``_meta`` is injected.
 """
 
 from __future__ import annotations
 
 import json
-from typing import Any
 
 from animedex.models.common import AnimedexModel
-
-
-def _drop_meta(payload: Any) -> Any:
-    if isinstance(payload, dict):
-        cleaned = {key: _drop_meta(value) for key, value in payload.items() if key != "_meta"}
-        return cleaned
-    if isinstance(payload, list):
-        return [_drop_meta(item) for item in payload]
-    return payload
 
 
 def render_json(model: AnimedexModel, *, include_source: bool = True) -> str:
@@ -63,8 +52,6 @@ def render_json(model: AnimedexModel, *, include_source: bool = True) -> str:
                 if isinstance(entry, dict) and entry.get("backend"):
                     sources.append(entry["backend"])
         payload["_meta"] = {"sources_consulted": sources}
-    else:
-        payload = _drop_meta(payload)
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 

@@ -11,7 +11,7 @@ through that release.
 
 from __future__ import annotations
 
-from typing import List, Literal, Optional
+from typing import Dict, List, Literal, Optional
 
 from animedex.models.common import AnimedexModel, SourceTag
 
@@ -91,7 +91,7 @@ class Manga(AnimedexModel):
     format: Optional[MangaFormat] = None
     genres: List[str] = []
     tags: List[str] = []
-    ids: dict
+    ids: Dict[str, str]
     source: SourceTag
 
 

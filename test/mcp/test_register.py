@@ -34,6 +34,8 @@ class TestRegisterAnimedexTools:
         # Reaching this line means the module imported cleanly.
 
     def test_registers_one_tool_per_command_with_guidance(self):
+        """Names use the dotted ``animedex.<command-path>`` convention
+        documented in :func:`animedex.mcp.tool_decorator.mcp_tool`."""
         from animedex.mcp.register import register_animedex_tools
 
         @click.group()
@@ -57,8 +59,37 @@ class TestRegisterAnimedexTools:
         register_animedex_tools(server, group=root)
 
         assert len(server.tools) == 1
-        assert server.tools[0]["name"] == "echo"
+        assert server.tools[0]["name"] == "animedex.echo"
         assert "Synthetic guidance" in server.tools[0]["description"]
+
+    def test_nested_subgroups_yield_dotted_names(self):
+        from animedex.mcp.register import register_animedex_tools
+
+        @click.group()
+        def root():
+            pass
+
+        @click.group()
+        def sub():
+            pass
+
+        @sub.command()
+        def show() -> None:
+            """Nested.
+
+            Backend: _selftest.
+
+            Rate limit: 1 req/s.
+
+            --- LLM Agent Guidance ---
+            nested.
+            --- End ---
+            """
+
+        root.add_command(sub, "sub")
+        server = _FakeServer()
+        register_animedex_tools(server, group=root)
+        assert any(tool["name"] == "animedex.sub.show" for tool in server.tools)
 
     def test_skips_command_without_agent_guidance(self):
         from animedex.mcp.register import register_animedex_tools
@@ -85,10 +116,11 @@ class TestRegisterAnimedexTools:
         # Phase 0 wires Agent Guidance blocks for the built-in
         # `status` / `selftest` utilities; backend commands arrive in
         # later phases. The contract here is "registration succeeds
-        # against the real animedex_cli without raising".
+        # against the real animedex_cli without raising", and names are
+        # the dotted ``animedex.<command-path>`` convention.
         registered_names = [tool["name"] for tool in server.tools]
-        assert "status" in registered_names
-        assert "selftest" in registered_names
+        assert "animedex.status" in registered_names
+        assert "animedex.selftest" in registered_names
         assert animedex_cli is not None  # smoke
 
 

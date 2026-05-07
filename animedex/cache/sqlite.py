@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import os
 import sqlite3
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional, Union
@@ -105,9 +106,21 @@ class SqliteCache:
     def __init__(self, path: Optional[Union[Path, str]] = None) -> None:
         self.path = Path(path) if path is not None else default_cache_path()
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        self._conn = sqlite3.connect(str(self.path))
-        self._conn.execute(self._SCHEMA)
-        self._conn.commit()
+        # check_same_thread=False so backend retry/backoff helpers running on
+        # worker threads do not hit sqlite3.ProgrammingError. We pair it with
+        # an in-process _lock to serialise access across threads sharing this
+        # SqliteCache instance; SQLite itself does not serialise concurrent
+        # `execute` calls on the same connection.
+        # journal_mode=WAL allows multiple animedex invocations on the same
+        # machine (a CLI and `animedex mcp serve`, say) to coexist instead of
+        # locking each other out via the default rollback journal.
+        self._conn = sqlite3.connect(str(self.path), check_same_thread=False)
+        self._conn.execute("PRAGMA journal_mode=WAL")
+        self._conn.execute("PRAGMA synchronous=NORMAL")
+        self._lock = threading.Lock()
+        with self._lock:
+            self._conn.execute(self._SCHEMA)
+            self._conn.commit()
 
     def close(self) -> None:
         """Close the underlying SQLite connection.
@@ -115,7 +128,8 @@ class SqliteCache:
         :return: ``None``.
         :rtype: None
         """
-        self._conn.close()
+        with self._lock:
+            self._conn.close()
 
     def __enter__(self) -> "SqliteCache":
         return self
@@ -147,11 +161,12 @@ class SqliteCache:
         :return: ``None``.
         :rtype: None
         """
-        self._conn.execute(
-            "INSERT OR REPLACE INTO cache_rows (backend, signature, payload, expires_at) VALUES (?, ?, ?, ?)",
-            (backend, signature, payload, self._expires_at_seconds(ttl_seconds)),
-        )
-        self._conn.commit()
+        with self._lock:
+            self._conn.execute(
+                "INSERT OR REPLACE INTO cache_rows (backend, signature, payload, expires_at) VALUES (?, ?, ?, ?)",
+                (backend, signature, payload, self._expires_at_seconds(ttl_seconds)),
+            )
+            self._conn.commit()
 
     def get(self, backend: str, signature: str) -> Optional[bytes]:
         """Look up a row.
@@ -168,10 +183,11 @@ class SqliteCache:
         :return: Cached payload or ``None`` when missing / expired.
         :rtype: bytes or None
         """
-        row = self._conn.execute(
-            "SELECT payload, expires_at FROM cache_rows WHERE backend = ? AND signature = ?",
-            (backend, signature),
-        ).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT payload, expires_at FROM cache_rows WHERE backend = ? AND signature = ?",
+                (backend, signature),
+            ).fetchone()
         if row is None:
             return None
         payload, expires_at = row
@@ -185,12 +201,13 @@ class SqliteCache:
         :return: Number of rows removed.
         :rtype: int
         """
-        cur = self._conn.execute(
-            "DELETE FROM cache_rows WHERE expires_at <= ?",
-            (self._now_seconds(),),
-        )
-        self._conn.commit()
-        return cur.rowcount
+        with self._lock:
+            cur = self._conn.execute(
+                "DELETE FROM cache_rows WHERE expires_at <= ?",
+                (self._now_seconds(),),
+            )
+            self._conn.commit()
+            return cur.rowcount
 
 
 def selftest() -> bool:

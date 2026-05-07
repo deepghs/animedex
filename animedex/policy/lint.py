@@ -24,6 +24,8 @@ from typing import Any, Dict, List, Optional
 
 import click
 
+from animedex.models.common import ApiError
+
 
 _AGENT_GUIDANCE_BEGIN = "--- LLM Agent Guidance ---"
 _AGENT_GUIDANCE_END = "--- End ---"
@@ -87,23 +89,33 @@ def lint_group(group: click.Group) -> List[Dict[str, Any]]:
 
 
 def extract_agent_guidance(command: click.Command) -> Optional[str]:
-    """Extract the ``--- LLM Agent Guidance ---`` block, if present.
+    """Extract the ``--- LLM Agent Guidance ---`` block.
+
+    Returns ``None`` when the block is absent (the command never
+    declared one). Raises :class:`ApiError` with
+    ``reason="malformed-guidance"`` when the begin marker is present
+    but the end marker is missing - silent skip would let a typo'd
+    docstring quietly disappear from the ``--agent-guide`` listing,
+    which does not run :func:`check_command_docstring` first.
 
     :param command: A Click :class:`click.Command`.
     :type command: click.Command
-    :return: Text between the begin and end delimiters, stripped.
-             ``None`` when the block is absent or malformed.
+    :return: Text between the begin and end delimiters, stripped, or
+             ``None`` when the block is absent.
     :rtype: str or None
+    :raises ApiError: When the begin marker is present without a
+                       matching end marker (``reason="malformed-guidance"``).
     """
     text = _docstring(command)
     begin = text.find(_AGENT_GUIDANCE_BEGIN)
     if begin < 0:
         return None
     end = text.find(_AGENT_GUIDANCE_END, begin)
-    if (
-        end < 0
-    ):  # pragma: no cover - guarded by the lint itself; a docstring with the begin marker but no end marker would already fail check_command_docstring before reaching this helper.
-        return None
+    if end < 0:
+        raise ApiError(
+            f"docstring contains '{_AGENT_GUIDANCE_BEGIN}' without a matching '{_AGENT_GUIDANCE_END}' closer",
+            reason="malformed-guidance",
+        )
     block = text[begin + len(_AGENT_GUIDANCE_BEGIN) : end]
     return block.strip()
 

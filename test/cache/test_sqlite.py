@@ -127,6 +127,51 @@ class TestPathResolution:
         assert str(path).startswith(str(tmp_path))
 
 
+class TestConcurrency:
+    def test_threaded_access_does_not_raise(self, tmp_path):
+        """A worker thread accessing the cache must not hit
+        ``sqlite3.ProgrammingError`` from the default
+        ``check_same_thread=True``."""
+        import threading
+
+        from animedex.cache.sqlite import SqliteCache
+
+        cache = SqliteCache(path=tmp_path / "thread.sqlite")
+        errors = []
+
+        def worker(i):
+            try:
+                cache.set("anilist", f"k{i}", b"v", ttl_seconds=60)
+                assert cache.get("anilist", f"k{i}") == b"v"
+            except Exception as exc:
+                errors.append(exc)
+
+        threads = [threading.Thread(target=worker, args=(i,)) for i in range(5)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+
+        assert errors == [], f"thread errors: {errors!r}"
+
+    def test_two_connections_on_same_path_coexist(self, tmp_path):
+        """A second :class:`SqliteCache` on the same path must read
+        what the first wrote without locking it out (WAL mode)."""
+        from animedex.cache.sqlite import SqliteCache
+
+        path = tmp_path / "shared.sqlite"
+        a = SqliteCache(path=path)
+        try:
+            a.set("anilist", "k", b"hello", ttl_seconds=60)
+            b = SqliteCache(path=path)
+            try:
+                assert b.get("anilist", "k") == b"hello"
+            finally:
+                b.close()
+        finally:
+            a.close()
+
+
 class TestContextManager:
     def test_with_block_closes(self, tmp_path):
         from animedex.cache.sqlite import SqliteCache

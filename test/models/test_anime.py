@@ -222,6 +222,24 @@ class TestAnimeFormatValidation:
             )
 
 
+class TestIdsTyping:
+    """Per ``plans/05 §3`` ids is ``dict[str, str]``. Backends emit
+    int ids occasionally (MAL via Jikan); we want pydantic to refuse
+    them at the boundary so a downstream ``a.ids["mal"].startswith(...)``
+    fails at parse time, not at render time."""
+
+    def test_int_value_rejected(self):
+        from animedex.models.anime import Anime, AnimeTitle
+
+        with pytest.raises(Exception):
+            Anime(
+                id="x:1",
+                title=AnimeTitle(romaji="x"),
+                ids={"mal": 12345},
+                source=_src(),
+            )
+
+
 class TestRoundTrip:
     def test_round_trip_json(self):
         from animedex.models.anime import Anime, AnimeRating, AnimeTitle

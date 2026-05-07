@@ -139,6 +139,34 @@ class TestKeyringStore:
         assert deletions == [("animedex-tests", "anilist")]
         assert "anilist" not in store.keys()
 
+    def test_delete_missing_is_idempotent(self, monkeypatch):
+        """Per the TokenStore Protocol contract: deleting a missing entry is not an error.
+
+        Real OS keyring backends (Secret Service, Windows Credential Locker)
+        raise :class:`keyring.errors.PasswordDeleteError` when the entry is
+        absent; the store must swallow that to honour the Protocol.
+        """
+        import keyring.errors
+
+        from animedex.auth.keyring_store import KeyringTokenStore
+
+        class FakeKeyringRaisesOnMissing:
+            @staticmethod
+            def set_password(service, key, value):
+                pass
+
+            @staticmethod
+            def get_password(service, key):
+                return None
+
+            @staticmethod
+            def delete_password(service, key):
+                raise keyring.errors.PasswordDeleteError("not found")
+
+        monkeypatch.setattr("animedex.auth.keyring_store._keyring", FakeKeyringRaisesOnMissing)
+        store = KeyringTokenStore()
+        store.delete("never-set")  # must not raise
+
     def test_keys_reflects_set_only(self, monkeypatch):
         from animedex.auth.keyring_store import KeyringTokenStore
 

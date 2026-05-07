@@ -16,7 +16,7 @@ This is the top-level rule and overrides every later guideline if they ever conf
 - We do warn. Every command's docstring states the upstream, its rate limit, its content classification (where relevant), and its legal posture (where relevant). Warnings are informational; they never block.
 - Agents read these docstrings; their alignment training does the rest. See `plans/02-design-policy-as-docstring.md`.
 
-The only constraints animedex enforces unilaterally are **technical contracts** - rate limits the upstream actually punishes, mandatory headers, the project-scope read-only HTTP method set. These are physical realities, not value choices, and the user cannot opt out because doing so would simply break the upstream interaction.
+The only constraints animedex enforces **unilaterally and unconditionally** are the rate limits the upstream actually punishes, the project-scope read-only HTTP method set on the `animedex api` passthrough, and the MangaDex `Via`-header strip (a forbidden header, not a missing one). These are physical realities, not value choices, and the user cannot opt out because doing so would simply break the upstream interaction. Other technical contracts - notably the `User-Agent` headers Shikimori, MangaDex, and Danbooru require - are **default-injected** by the transport layer so the unflagged path satisfies them, but a caller who **explicitly** supplies their own value (perhaps to identify their own bot, perhaps to test, perhaps to break themselves on purpose) is exercising informed choice and inherits the upstream's response. The default keeps users safe; the override keeps them sovereign. We do not treat a caller-supplied UA as something to override on their behalf.
 
 Over-protection is itself a bug. When in doubt, choose the option that respects the user's stated intent.
 
@@ -294,7 +294,7 @@ def function_name(param1: Type1, param2: Type2 = default) -> ReturnType:
 
 ### Backend-command-specific extension
 
-Every CLI subcommand or MCP tool function adds three structural blocks inside its docstring (this is what the lint enforces):
+Every CLI subcommand or MCP tool function adds three structural blocks inside its docstring (this is what the lint enforces). The rule applies uniformly to **every** Click command in the registered tree, including the substrate utilities (`status`, `selftest`) that do not contact a remote backend. For those, name the backend honestly as `animedex (local)` and the rate limit as `not applicable`; the Agent Guidance block still describes when an agent should reach for the command and what to expect from it. The motivation is consistency: agents read the catalogue once at session start (via `animedex --agent-guide` or the MCP tool listing), and a hole in the catalogue would let a substrate command silently disappear from an agent's mental model. Carving an exemption for "non-backend commands" is also a slippery slope toward "this command is too small to document"; we do not take that slope.
 
 ```python
 def search_art(tags: str, limit: int = 20) -> "ArtSearchResult":

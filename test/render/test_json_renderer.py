@@ -60,6 +60,30 @@ class TestRenderJson:
         assert isinstance(render_json(_anime()), str)
 
 
+class TestDisableSourceAttributionIsObservable:
+    """When ``include_source=False`` the output is the model's clean
+    JSON dump — same as ``model.model_dump_json()`` modulo separators.
+    The earlier vacuous test only asserted ``"_meta" not in out``,
+    which would pass even if the disable path were a no-op.
+    """
+
+    def test_disabled_output_equals_model_dump(self):
+        from animedex.models.anime import Anime, AnimeTitle
+        from animedex.models.common import SourceTag
+        from animedex.render.json_renderer import render_json
+
+        a = Anime(
+            id="anilist:154587",
+            title=AnimeTitle(romaji="x"),
+            ids={"mal": "52991"},
+            source=SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+        )
+        decoded_off = json.loads(render_json(a, include_source=False))
+        decoded_dump = json.loads(a.model_dump_json())
+        assert decoded_off == decoded_dump
+        assert "_meta" not in decoded_off
+
+
 class TestMergedSources:
     def test_merged_sources_list_aggregates_into_meta(self):
         """Cross-source aggregate path: a model carrying ``sources``
@@ -83,24 +107,6 @@ class TestMergedSources:
         )
         decoded = json.loads(render_json(merged, include_source=True))
         assert decoded["_meta"]["sources_consulted"] == ["anilist", "jikan"]
-
-
-class TestDropMetaRecursion:
-    def test_drops_meta_inside_nested_dicts_and_lists(self):
-        from animedex.render.json_renderer import _drop_meta
-
-        payload = {
-            "_meta": {"sources_consulted": ["a"]},
-            "items": [
-                {"x": 1, "_meta": {"sources_consulted": ["b"]}},
-                {"y": 2, "nested": {"_meta": {"sources_consulted": ["c"]}, "z": 3}},
-            ],
-        }
-        out = _drop_meta(payload)
-        assert "_meta" not in out
-        assert "_meta" not in out["items"][0]
-        assert "_meta" not in out["items"][1]["nested"]
-        assert out["items"][1]["nested"]["z"] == 3
 
 
 class TestSelftest:

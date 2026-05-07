@@ -78,6 +78,16 @@ class HttpClient:
         return self.base_url + path
 
     def _prepare_headers(self, extra_headers: Optional[dict]) -> dict:
+        # Header policy:
+        # - User-Agent: P1b (plan 02 §1, §7). Project default is injected;
+        #   a caller-supplied User-Agent in extra_headers overrides it
+        #   verbatim. We do not police caller intent here - if a caller
+        #   passes "browser/x" they get "browser/x" on the wire, and
+        #   Shikimori's 403 is their feedback. Same principle as
+        #   `rating:e` queries elsewhere in the codebase.
+        # - Via: P1a (plan 02 §7). MangaDex forbids this header; we strip
+        #   it unconditionally regardless of caller intent because the
+        #   request would otherwise fail outright.
         headers = {"User-Agent": self.user_agent}
         if extra_headers:
             for key, value in extra_headers.items():

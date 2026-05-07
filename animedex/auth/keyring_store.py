@@ -18,6 +18,7 @@ swapped in.
 from __future__ import annotations
 
 import keyring as _keyring
+import keyring.errors as _keyring_errors
 from typing import Iterable, Optional
 
 
@@ -46,7 +47,15 @@ class KeyringTokenStore:
         return _keyring.get_password(self._service, backend)
 
     def delete(self, backend: str) -> None:
-        _keyring.delete_password(self._service, backend)
+        # Per the TokenStore Protocol contract (animedex.auth.store.delete),
+        # deleting a missing entry is not an error. Most OS keyring backends
+        # (Secret Service on Linux, Credential Locker on Windows) raise
+        # PasswordDeleteError when the entry is absent; swallow that to honour
+        # the Protocol's idempotency guarantee.
+        try:
+            _keyring.delete_password(self._service, backend)
+        except _keyring_errors.PasswordDeleteError:
+            pass
         self._known_keys.discard(backend)
 
     def keys(self) -> Iterable[str]:

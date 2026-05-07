@@ -22,7 +22,7 @@ survives every later hop (cache, render, JSON pipeline).
 from __future__ import annotations
 
 from datetime import date
-from typing import List, Literal, Optional
+from typing import Dict, List, Literal, Optional
 
 from animedex.models.common import AnimedexModel, SourceTag
 
@@ -192,7 +192,7 @@ class Anime(AnimedexModel):
     is_adult: Optional[bool] = None
     age_rating: Optional[str] = None
     popularity: Optional[int] = None
-    ids: dict
+    ids: Dict[str, str]
     source: SourceTag
 
 

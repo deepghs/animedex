@@ -167,6 +167,19 @@ class TestExtractAgentGuidance:
         cmd = _missing_agent_guidance()
         assert extract_agent_guidance(cmd) is None
 
+    def test_malformed_block_raises(self):
+        """Begin marker without end marker must fail loud, not silently
+        return ``None``. ``--agent-guide`` does not run the lint first,
+        so a typo'd docstring would make the command silently disappear
+        from the catalogue without this guard."""
+        from animedex.models.common import ApiError
+        from animedex.policy.lint import extract_agent_guidance
+
+        cmd = _missing_agent_guidance_end()
+        with pytest.raises(ApiError) as ei:
+            extract_agent_guidance(cmd)
+        assert ei.value.reason == "malformed-guidance"
+
 
 class TestNestedGroups:
     def test_lint_recurses_into_subgroups(self):

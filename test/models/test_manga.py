@@ -124,6 +124,14 @@ class TestMangaFormatValidation:
             Manga(id="x:1", title="x", ids={}, source=_src(), format="BOGUS")
 
 
+class TestMangaIdsTyping:
+    def test_int_value_rejected(self):
+        from animedex.models.manga import Manga
+
+        with pytest.raises(Exception):
+            Manga(id="x:1", title="x", ids={"mal": 12345}, source=_src())
+
+
 class TestChapter:
     def test_minimal_construction(self):
         from animedex.models.manga import Chapter

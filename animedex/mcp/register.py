@@ -8,6 +8,12 @@ and calls the duck-typed server object's ``add_tool`` method with
 the command name, the guidance block as the tool description, and
 the underlying callable as the handler.
 
+Tool name convention: ``animedex.<dotted-command-path>``. A top-level
+command ``status`` registers as ``"animedex.status"``; a nested
+``backends jikan search`` registers as ``"animedex.backends.jikan.search"``.
+This matches the example in :func:`animedex.mcp.tool_decorator.mcp_tool`'s
+docstring so the two MCP-side surfaces use the same ID space.
+
 The registration is explicit (the caller passes the server in)
 because ``import animedex`` should never spin up an MCP server as a
 side effect. The signature is duck-typed so unit tests can pass a
@@ -55,8 +61,11 @@ def register_animedex_tools(server: Any, *, group: Optional[click.Group] = None)
             if command is None:  # pragma: no cover - defensive; collect_agent_guidance only emits paths it just walked.
                 break
         handler = command.callback if isinstance(command, click.Command) else None
+        # Convert the space-joined Click path ("backends jikan search")
+        # into the dotted form documented by `mcp_tool` ("animedex.backends.jikan.search").
+        tool_name = "animedex." + ".".join(entry["command"].split())
         server.add_tool(
-            name=entry["command"],
+            name=tool_name,
             description=entry["guidance"],
             handler=handler,
         )
@@ -103,6 +112,6 @@ def selftest() -> bool:
     server = _FakeServer()
     count = register_animedex_tools(server, group=root)
     assert count == 1
-    assert server.tools[0][0] == "hello"
+    assert server.tools[0][0] == "animedex.hello"
     assert "smoke guidance" in server.tools[0][1]
     return True
