@@ -49,6 +49,7 @@ A single command, modelled on [`gh`](https://cli.github.com/), that:
 3. Names the source of every piece of data it returns. There is no "magic merged answer"; every field carries `[src: anilist]` / `[src: jikan]` / etc. so you always know who told you what.
 4. Treats safety policy as **documentation, not flags**. See [`plans/02-design-policy-as-docstring.md`](./plans/02-design-policy-as-docstring.md).
 5. Provides a `gh api`-style raw passthrough (`animedex api <backend>`) so anything not covered by a high-level command is still one HTTP call away.
+6. Doubles as a **first-class Python library**, not just a CLI. `import animedex` gives you the same source-attributed dataclasses, the same backends, and the same raw passthrough that the command line exposes. The CLI is a thin presentation layer over the library, so anything you can do at the prompt you can do programmatically. See [`plans/05-python-api.md`](./plans/05-python-api.md).
 
 ## Repository map
 

@@ -112,6 +112,7 @@ The project is currently a scaffold. The implementation order, scope, and design
 - `plans/02-design-policy-as-docstring.md` derives the inform-do-not-gate principle from section 0 and specifies how the guidance lives inside docstrings rather than command-line flags.
 - `plans/03-cli-architecture-gh-flavored.md` defines the canonical command tree and the `animedex api` raw passthrough.
 - `plans/04-roadmap-and-mvp.md` orders the work.
+- `plans/05-python-api.md` describes the Pythonic library surface that lives alongside the CLI; the CLI is a thin presentation layer over the library, and downstream Python users target the library directly.
 
 ## 6. Project Scope (binding)
 
@@ -125,7 +126,7 @@ These are project-scope decisions, not value judgements. A user who wants differ
 ## 7. Style and Tooling
 
 - Python source targets Python 3.7+.
-- Code comments and docstrings are reST (Sphinx-style). See section 9 for the docstring template, examples, and pitfalls.
+- Code comments and docstrings are reST (Sphinx-style). See section 10 for the docstring template, examples, and pitfalls.
 - Keep dependencies minimal; new runtime dependencies require a brief justification in the commit body.
 - Tests under `test/` mirror the layout of `animedex/` exactly so that `make unittest RANGE_DIR=<sub-path>` covers both source and matching tests in a single invocation. When you add a module under `animedex/<x>/<y>.py`, add the matching test file at `test/<x>/test_<y>.py` and the matching `__init__.py` files.
 - Source line length is **120 columns** (configured in `ruff.toml`). The reformatter is `ruff format`; the linter is `ruff check` plus `flake8` for the historical error subset enforced in CI.
@@ -150,15 +151,53 @@ The "re-run tests after format" rule is not paranoia. `ruff format` is conservat
 When you wire up a new backend (or a new endpoint on an existing one):
 
 1. Add the per-command function under `animedex/backends/<name>/...` (the directory will be created when the first backend is implemented).
-2. Each public function must have a reST-style docstring (see section 9) containing three structural blocks: `Backend: ...`, `Rate limit: ...`, and `--- LLM Agent Guidance --- ... --- End ---`. The lint check (when present) enforces this.
+2. Each public function must have a reST-style docstring (see section 10) containing three structural blocks: `Backend: ...`, `Rate limit: ...`, and `--- LLM Agent Guidance --- ... --- End ---`. The lint check (when present) enforces this.
 3. Register the command on the `animedex` Click group, and also via the MCP registration helper.
 4. Source attribution: every record returned must include `_source = "<backend-name>"`.
 5. Cache: choose a sensible default TTL and document it in the docstring.
 6. Rate limit: configure the backend's token bucket from a single place; do not duplicate caps across files.
-7. Update `plans/03-cli-architecture-gh-flavored.md` if the new backend changes the canonical command tree.
-8. Refresh API docs with `make rst_auto` so the generated reST in `docs/source/api_doc/` is in sync.
+7. **Add a `selftest()` callable** to the backend's package and register the package in `_SELFTEST_TARGETS` inside `animedex/diag/selftest.py`. See section 9 below; this is non-negotiable for any backend that ships static assets, schemas, or I/O entry points.
+8. Update `plans/03-cli-architecture-gh-flavored.md` if the new backend changes the canonical command tree.
+9. Refresh API docs with `make rst_auto` so the generated reST in `docs/source/api_doc/` is in sync.
 
-## 9. Python Docstring Style Guide
+## 9. Diagnostic Coverage (selftest must evolve with the code)
+
+The `animedex selftest` command and the `animedex.diag.run_selftest()` runner are how we discover that a built artifact is broken in environments we cannot easily debug into - typically a PyInstaller binary running on a teammate's laptop or a CI box without Python. Their value depends entirely on whether the checks they run reflect *what the code actually does*. So:
+
+### Rule 9.1 - smoke, not just import
+
+A bare `importlib.import_module("animedex.foo")` proves only that the module's source loads. It says nothing about whether bundled assets are reachable, schemas parse, defaults round-trip, or computed paths point at real files. As soon as a module gains:
+
+- A static resource (e.g. a JSON snapshot, a CSV taxonomy, a bundled tag list, a YAML schema, a precompiled lexer table);
+- A binary asset (e.g. a wasm blob, a model weights file, a font, an image);
+- An I/O entry point with platform-specific paths (cache directories, OS keyring entries, lockfiles);
+- A non-trivial top-level constant computed from one of the above;
+
+… that module **must** define a top-level callable named `selftest()` that exercises the resource. The `animedex/diag/selftest.py` runner picks it up automatically when the module is registered in `_SELFTEST_TARGETS`. Bare imports are tolerated for pure-logic modules with no resources or side effects, and are reported as `(import only)` in the diagnostic so the gap is visible.
+
+### Rule 9.2 - what `selftest()` is allowed to do
+
+The convention:
+
+- Returning normally (or returning `True`) means the module is healthy.
+- Raising any exception means the module is broken. The traceback ends up in the selftest report verbatim.
+- Returning `False` means the module flagged itself broken without bothering to raise. Use this only when the failure is so well-understood that a traceback would be noise.
+
+Smoke tests must be **fast and offline** by default. The reference cost budget is "completes in under 100ms even on a cold start". Do not perform live HTTP probes, do not open sockets, do not warm caches. The reason: `animedex selftest` runs from a stripped binary in CI's clean smoke stage with no network access guaranteed; that stage must stay green.
+
+If a backend has a meaningful online check (e.g. AniList GraphQL liveness, MangaDex At-Home server probe, Trace.moe quota status), expose it via a separate callable named `selftest_online()` and call it from a dedicated CLI flag (e.g. a future `animedex selftest --online`). The default offline path always runs; the online path is opt-in.
+
+### Rule 9.3 - keep `_SELFTEST_TARGETS` and the docstring honest
+
+- When you add a module that warrants smoke testing, append it to `_SELFTEST_TARGETS` in `animedex/diag/selftest.py`. The list is intentionally explicit rather than auto-discovered: a missing module is a deliberate signal that someone should check whether smoke is actually unnecessary, and not just a discovery oversight.
+- When you add a `selftest()` to a module, document its assertions in the function's reST docstring (see section 10): a future contributor must be able to read the docstring and know what guarantee they are receiving.
+- Whenever a smoke test is added or upgraded, run `make build && make test_cli` to confirm the new check still works against the frozen binary, not just against the dev install.
+
+### Rule 9.4 - selftest is part of code review
+
+A pull request that adds a static resource without an accompanying smoke test should not land. Reviewers must check for this explicitly; the lint cannot, because "module gained an asset" is not a syntactic property. If you find yourself shipping resources without smoke coverage, document the reason in the commit body rather than slipping it past review.
+
+## 10. Python Docstring Style Guide
 
 Use **reStructuredText (reST)** format exclusively, following PEP 257 and Sphinx standards. Every public module, class, function, and method gets a docstring; reST roles cross-link them.
 
@@ -368,7 +407,7 @@ Do not use single backticks for inline code in reST - they render as a default-r
 - [ ] Inline markup has valid boundaries on both sides.
 - [ ] For backend commands: `Backend:` / `Rate limit:` lines + the `--- LLM Agent Guidance --- ... --- End ---` block are present.
 
-## 10. Documentation Workflow
+## 11. Documentation Workflow
 
 ### Generate reST API docs from source
 
@@ -387,11 +426,13 @@ make docs                           # docs/build/html/
 
 The Sphinx build is in `docs/`. `docs/source/conf.py` configures autodoc, `sphinx_rtd_theme`, and intersphinx; `docs/source/index.rst` is the top-level page; `docs/source/api_doc/index.rst` is regenerated by `make rst_auto`.
 
-## 11. When in Doubt
+## 12. When in Doubt
 
-- For *behaviour* questions: re-read the four files in `plans/` in order.
-- For *style* questions: this file's section 9 is the source of truth.
+- For *behaviour* questions: re-read the files in `plans/` in order.
+- For *style* questions: this file's section 10 is the source of truth.
 - For *scope* questions: section 6 above.
 - For *value* questions ("should we forbid X?"): section 0 above is the answer. The default is "inform the user; do not gate".
+- For *diagnostic-coverage* questions: section 9 above.
+- For *Python API* questions: see `plans/05-python-api.md`.
 
 If the answer is not in any of those, propose an update to the relevant document in the same change that introduces the new behaviour. The plans and AGENTS.md are versioned alongside the code; they must not drift.

@@ -46,13 +46,34 @@ SECTION_RULE = "=" * 60
 SUBSECTION_RULE = "-" * 60
 
 
-# Modules whose import we expect to succeed in any environment that
-# successfully launched ``animedex selftest`` at all. New top-level
-# modules / packages should be added here as they appear.
-_REQUIRED_MODULES: Tuple[str, ...] = (
+# Per-module smoke-test registry.
+#
+# Each entry is the dotted name of a module the diagnostic *must*
+# verify. The runner does two things for every entry:
+#
+# 1. ``importlib.import_module(name)`` - confirms the module can load.
+# 2. If the imported module exposes a callable named ``selftest``,
+#    the runner invokes it. The convention is:
+#
+#       * returning ``None`` or ``True`` -> the module is healthy;
+#       * raising any exception          -> the module is broken;
+#       * returning ``False``            -> the module flagged itself
+#         broken without bothering with a traceback.
+#
+# A bare import is already enough to catch package-layout regressions,
+# but it says *nothing* about whether bundled assets (JSON snapshots,
+# tag taxonomies, schema files, etc.) or upstream-dependent paths
+# actually work. Modules that ship static resources, binary blobs, or
+# I/O entry points MUST therefore grow a ``selftest()`` that exercises
+# the resource end-to-end. See ``AGENTS.md`` section 7 / 8 for the
+# binding rule and ``plans/02-design-policy-as-docstring.md`` for the
+# ``--- LLM Agent Guidance ---`` block that lives on top of every
+# such function.
+_SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex",
     "animedex.config",
     "animedex.config.meta",
+    "animedex.config.buildmeta",
     "animedex.entry",
     "animedex.entry.cli",
     "animedex.diag",
@@ -151,20 +172,50 @@ def _format_build_info_lines() -> List[str]:
         ]
 
 
-def _check_module_imports() -> List[Tuple[str, bool, str]]:
-    """Attempt to import every module in :data:`_REQUIRED_MODULES`.
+def _check_module_smoke() -> List[Tuple[str, bool, str]]:
+    """Import every module in :data:`_SELFTEST_TARGETS` and run its
+    optional ``selftest()`` callable.
 
-    :return: A list of ``(module_name, ok, detail)`` triples where
-             ``detail`` is the failure traceback when ``ok`` is ``False``.
+    The label attached to each result records which depth was reached:
+
+    * ``"<module> (import only)"`` - import succeeded, no ``selftest``
+      callable was defined; the module is implicitly healthy at the
+      "package can be loaded" level.
+    * ``"<module> (smoke)"`` - import succeeded *and* ``selftest()``
+      ran successfully end-to-end.
+    * ``"<module> (import)"`` with ``ok=False`` - the import itself
+      failed; the module is broken before any smoke can run.
+    * ``"<module> (smoke)"`` with ``ok=False`` - import succeeded but
+      ``selftest()`` raised or returned ``False``.
+
+    :return: A list of ``(label, ok, detail)`` triples where ``detail``
+             is the failure traceback or sentinel string when
+             ``ok=False``, or an empty string on success.
     :rtype: List[Tuple[str, bool, str]]
     """
     results: List[Tuple[str, bool, str]] = []
-    for name in _REQUIRED_MODULES:
+    for name in _SELFTEST_TARGETS:
         try:
-            importlib.import_module(name)
-            results.append((name, True, ""))
+            mod = importlib.import_module(name)
         except Exception:
-            results.append((name, False, traceback.format_exc().rstrip()))
+            results.append((f"{name} (import)", False, traceback.format_exc().rstrip()))
+            continue
+
+        smoke = getattr(mod, "selftest", None)
+        if not callable(smoke):
+            results.append((f"{name} (import only)", True, ""))
+            continue
+
+        try:
+            outcome = smoke()
+        except Exception:
+            results.append((f"{name} (smoke)", False, traceback.format_exc().rstrip()))
+            continue
+
+        if outcome is False:
+            results.append((f"{name} (smoke)", False, "selftest() returned False"))
+        else:
+            results.append((f"{name} (smoke)", True, ""))
     return results
 
 
@@ -320,7 +371,7 @@ def run_selftest(stream: io.TextIOBase = None) -> int:
         failed_total = 0
 
         for title, fn, label in (
-            ("Module imports", _check_module_imports, "module-import runner"),
+            ("Module smoke tests", _check_module_smoke, "module-smoke runner"),
             ("CLI subcommands", _check_cli_subcommands, "cli-subcommand runner"),
         ):
             results = _safely(fn, label)
