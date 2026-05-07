@@ -82,7 +82,9 @@ ANILIST_PAYLOADS = {
             }
         }
     },
-    "user_search": {"data": {"Page": {"pageInfo": {"total": 1}, "users": [{"id": 1, "name": "x", "avatar": {"medium": "m"}}]}}},
+    "user_search": {
+        "data": {"Page": {"pageInfo": {"total": 1}, "users": [{"id": 1, "name": "x", "avatar": {"medium": "m"}}]}}
+    },
     "genre_collection": {"data": {"GenreCollection": ["Action"]}},
     "media_tag_collection": {"data": {"MediaTagCollection": [{"id": 1, "name": "x"}]}},
     "site_statistics": {
@@ -143,13 +145,7 @@ ANILIST_PAYLOADS = {
         }
     },
     "thread": {
-        "data": {
-            "Page": {
-                "threads": [
-                    {"id": 1, "title": "t", "body": "b", "user": {"name": "u"}, "createdAt": 0}
-                ]
-            }
-        }
+        "data": {"Page": {"threads": [{"id": 1, "title": "t", "body": "b", "user": {"name": "u"}, "createdAt": 0}]}}
     },
     "thread_comment": {
         "data": {"Page": {"threadComments": [{"id": 1, "comment": "c", "user": {"name": "u"}, "createdAt": 0}]}},
@@ -159,7 +155,13 @@ ANILIST_PAYLOADS = {
             "Page": {
                 "activities": [
                     {"id": 1, "text": "t", "user": {"name": "u"}, "createdAt": 0},
-                    {"id": 2, "status": "watched", "user": {"name": "u"}, "media": {"title": {"romaji": "x"}}, "createdAt": 0},
+                    {
+                        "id": 2,
+                        "status": "watched",
+                        "user": {"name": "u"},
+                        "media": {"title": {"romaji": "x"}},
+                        "createdAt": 0,
+                    },
                 ]
             }
         }
@@ -173,7 +175,13 @@ ANILIST_PAYLOADS = {
         "data": {
             "Page": {
                 "mediaList": [
-                    {"id": 1, "status": "CURRENT", "score": 9, "progress": 5, "media": {"id": 1, "title": {"romaji": "x"}}}
+                    {
+                        "id": 1,
+                        "status": "CURRENT",
+                        "score": 9,
+                        "progress": 5,
+                        "media": {"id": 1, "title": {"romaji": "x"}},
+                    }
                 ]
             }
         }
