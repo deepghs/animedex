@@ -1,0 +1,51 @@
+metadata:
+  captured_at: '2026-05-07T11:25:17Z'
+  label: animes-by-status-ongoing
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(status:"ongoing",limit:3){ id name status }}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:17 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"66da14d25d156b4901698645d2b490f3"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 0609e43c-465e-4a78-817c-379f1881cf5c
+    X-Runtime: '0.006712'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes:
+      - id: '61469'
+        name: 'Steel Ball Run: JoJo no Kimyou na Bouken'
+        status: ongoing
+      - id: '61316'
+        name: Re:Zero kara Hajimeru Isekai Seikatsu 4th Season
+        status: ongoing
+      - id: '51553'
+        name: Tongari Boushi no Atelier
+        status: ongoing
+  body_text: null
+  body_b64: null

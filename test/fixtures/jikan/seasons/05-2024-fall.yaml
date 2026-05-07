@@ -1,0 +1,449 @@
+metadata:
+  captured_at: '2026-05-07T11:03:17Z'
+  label: 2024-fall
+  backend: jikan
+  path_slug: seasons
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/seasons/2024/fall?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:03:16 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:seasons:d1a1e1b48c96f4cc3e2f91482aeabf347df1512e
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 105
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 313
+        per_page: 3
+    data:
+    - mal_id: 57334
+      url: https://myanimelist.net/anime/57334/Dandadan
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1584/143719.jpg
+          small_image_url: https://myanimelist.net/images/anime/1584/143719t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1584/143719l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1584/143719.webp
+          small_image_url: https://myanimelist.net/images/anime/1584/143719t.webp
+          large_image_url: https://myanimelist.net/images/anime/1584/143719l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/V3xNYDFsnN8?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Dandadan
+      - type: Japanese
+        title: ダンダダン
+      - type: English
+        title: Dan Da Dan
+      title: Dandadan
+      title_english: Dan Da Dan
+      title_japanese: ダンダダン
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2024-10-04T00:00:00+00:00'
+        to: '2024-12-20T00:00:00+00:00'
+        prop:
+          from:
+            day: 4
+            month: 10
+            year: 2024
+          to:
+            day: 20
+            month: 12
+            year: 2024
+        string: Oct 4, 2024 to Dec 20, 2024
+      duration: 23 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.41
+      scored_by: 592658
+      rank: 219
+      popularity: 201
+      members: 970225
+      favorites: 15616
+      synopsis: |-
+        Reeling from her recent breakup, Momo Ayase, a popular high schooler, shows kindness to her socially awkward schoolmate, Ken Takakura, by standing up to his bullies. Takakura misunderstands her intentions, believing he has made a new friend who shares his obsession with aliens and UFOs. However, Momo's own eccentric occult beliefs lie in the supernatural realm; she thinks aliens do not exist. A rivalry quickly brews as each becomes determined to prove the other wrong.
+
+        Despite their initial clash over their opposing beliefs, Momo and Takakura form an unexpected but intimate friendship, a bond forged in a series of supernatural battles and bizarre encounters with urban legends and paranormal entities. As both develop unique superhuman abilities, they learn to supplement each other's weaknesses, leading them to wonder if their newfound partnership may be about more than just survival.
+
+        [Written by MAL Rewrite]
+      background: Dandadan aired on MBS and TBS' Super Animeism Turbo block.
+      season: fall
+      year: 2024
+      broadcast:
+        day: Fridays
+        time: 00:26
+        timezone: Asia/Tokyo
+        string: Fridays at 00:26 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 62
+        type: anime
+        name: Shogakukan-Shueisha Productions
+        url: https://myanimelist.net/anime/producer/62/Shogakukan-Shueisha_Productions
+      - mal_id: 143
+        type: anime
+        name: Mainichi Broadcasting System
+        url: https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      licensors:
+      - mal_id: 783
+        type: anime
+        name: GKIDS
+        url: https://myanimelist.net/anime/producer/783/GKIDS
+      studios:
+      - mal_id: 1591
+        type: anime
+        name: Science SARU
+        url: https://myanimelist.net/anime/producer/1591/Science_SARU
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 54857
+      url: https://myanimelist.net/anime/54857/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_3rd_Season
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1706/144725.jpg
+          small_image_url: https://myanimelist.net/images/anime/1706/144725t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1706/144725l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1706/144725.webp
+          small_image_url: https://myanimelist.net/images/anime/1706/144725t.webp
+          large_image_url: https://myanimelist.net/images/anime/1706/144725l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/qMJNdQFPaHk?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season
+      - type: Synonym
+        title: 'Re: Life in a different world from zero 3rd Season'
+      - type: Synonym
+        title: ReZero 3rd Season
+      - type: Synonym
+        title: Re:Zero - Starting Life in Another World 3
+      - type: Japanese
+        title: Re:ゼロから始める異世界生活 3rd season
+      - type: English
+        title: Re:ZERO -Starting Life in Another World- Season 3
+      title: Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season
+      title_english: Re:ZERO -Starting Life in Another World- Season 3
+      title_japanese: Re:ゼロから始める異世界生活 3rd season
+      title_synonyms:
+      - 'Re: Life in a different world from zero 3rd Season'
+      - ReZero 3rd Season
+      - Re:Zero - Starting Life in Another World 3
+      type: TV
+      source: Light novel
+      episodes: 16
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2024-10-02T00:00:00+00:00'
+        to: '2025-03-26T00:00:00+00:00'
+        prop:
+          from:
+            day: 2
+            month: 10
+            year: 2024
+          to:
+            day: 26
+            month: 3
+            year: 2025
+        string: Oct 2, 2024 to Mar 26, 2025
+      duration: 28 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.42
+      scored_by: 231780
+      rank: 214
+      popularity: 519
+      members: 501364
+      favorites: 6562
+      synopsis: |-
+        One year after the events at the Sanctuary, Subaru Natsuki trains hard to better face future challenges. The peaceful days come to an end when Emilia receives an invitation to a meeting in the Watergate City of Priestella from none other than Anastasia Hoshin, one of her rivals in the royal selection. Considering the meeting's significance and the potential dangers Emilia could face, Subaru and his friends accompany her.
+
+        However, as Subaru reconnects with old associates and companions in Priestella, new formidable foes emerge. Driven by fanatical motivations and engaging in ruthless methods to achieve their ambitions, the new enemy targets Emilia and threaten the very existence of the city. Rallying his allies, Subaru must give his all once more to stop their nefarious goals from becoming a concrete reality.
+
+        [Written by MAL Rewrite]
+      background: Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season is comprised of two arcs. The first eight episodes are
+        subtitled Shuugeki-hen (Attack Arc). The latter eight, subtitled Hangeki-hen (Counterattack Arc), began airing on
+        February 5, 2025. The series was released on Blu-ray and DVD in five volumes from January 24, 2025, to June 25, 2025.
+      season: fall
+      year: 2024
+      broadcast:
+        day: Wednesdays
+        time: '22:30'
+        timezone: Asia/Tokyo
+        string: Wednesdays at 22:30 (JST)
+      producers:
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 306
+        type: anime
+        name: Magic Capsule
+        url: https://myanimelist.net/anime/producer/306/Magic_Capsule
+      - mal_id: 647
+        type: anime
+        name: Memory-Tech
+        url: https://myanimelist.net/anime/producer/647/Memory-Tech
+      - mal_id: 1333
+        type: anime
+        name: Hakuhodo DY Music & Pictures
+        url: https://myanimelist.net/anime/producer/1333/Hakuhodo_DY_Music___Pictures
+      - mal_id: 1696
+        type: anime
+        name: Kadokawa
+        url: https://myanimelist.net/anime/producer/1696/Kadokawa
+      - mal_id: 2927
+        type: anime
+        name: DAXEL
+        url: https://myanimelist.net/anime/producer/2927/DAXEL
+      licensors: []
+      studios:
+      - mal_id: 314
+        type: anime
+        name: White Fox
+        url: https://myanimelist.net/anime/producer/314/White_Fox
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 62
+        type: anime
+        name: Isekai
+        url: https://myanimelist.net/anime/genre/62/Isekai
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      - mal_id: 78
+        type: anime
+        name: Time Travel
+        url: https://myanimelist.net/anime/genre/78/Time_Travel
+      demographics: []
+    - mal_id: 54865
+      url: https://myanimelist.net/anime/54865/Blue_Lock_vs_U-20_Japan
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1584/144860.jpg
+          small_image_url: https://myanimelist.net/images/anime/1584/144860t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1584/144860l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1584/144860.webp
+          small_image_url: https://myanimelist.net/images/anime/1584/144860t.webp
+          large_image_url: https://myanimelist.net/images/anime/1584/144860l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/g9gB5OCtIT4?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Blue Lock vs. U-20 Japan
+      - type: Synonym
+        title: Blue Lock 2nd Season
+      - type: Japanese
+        title: ブルーロック VS. U-20 JAPAN
+      - type: English
+        title: Blue Lock Season 2
+      title: Blue Lock vs. U-20 Japan
+      title_english: Blue Lock Season 2
+      title_japanese: ブルーロック VS. U-20 JAPAN
+      title_synonyms:
+      - Blue Lock 2nd Season
+      type: TV
+      source: Manga
+      episodes: 14
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2024-10-06T00:00:00+00:00'
+        to: '2024-12-28T00:00:00+00:00'
+        prop:
+          from:
+            day: 6
+            month: 10
+            year: 2024
+          to:
+            day: 28
+            month: 12
+            year: 2024
+        string: Oct 6, 2024 to Dec 28, 2024
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.5
+      scored_by: 177785
+      rank: 2214
+      popularity: 830
+      members: 337383
+      favorites: 2349
+      synopsis: |-
+        The next phase of the controversial Blue Lock project is underway with the candidate pool being dwindled down to just 35. Out of the remaining strikers, only a select few will be chosen to play in an upcoming exhibition game against the current U-20 Japanese soccer team. Playing in this match comes with a caveat: winning will grant the players the right to represent the nation as the new U-20 team, but losing will bring an end to Blue Lock in its entirety. Among the ones left in the running is Yoichi Isagi, who is coming to terms with his own abilities.
+
+        To further complicate matters, the six best players in the pool have already been named to the starting lineup and the remaining 29 will have to duke it out to claim a coveted spot. Each candidate must select a top six pairing to team up with for the selection to prove their competence. But if this mishmash of strikers wants to overthrow the current U-20 team, they will need to find a way to combine their playstyles effectively.
+
+        [Written by MAL Rewrite]
+      background: Blue Lock vs. U-20 Japan aired on TV Asahi's IMAnimation block. It was released on Blu-ray in two volumes
+        from March 26, 2025, to May 28, 2025.
+      season: fall
+      year: 2024
+      broadcast:
+        day: Saturdays
+        time: '23:30'
+        timezone: Asia/Tokyo
+        string: Saturdays at 23:30 (JST)
+      producers:
+      - mal_id: 55
+        type: anime
+        name: TV Asahi
+        url: https://myanimelist.net/anime/producer/55/TV_Asahi
+      - mal_id: 104
+        type: anime
+        name: Lantis
+        url: https://myanimelist.net/anime/producer/104/Lantis
+      - mal_id: 159
+        type: anime
+        name: Kodansha
+        url: https://myanimelist.net/anime/producer/159/Kodansha
+      - mal_id: 1390
+        type: anime
+        name: Toy's Factory
+        url: https://myanimelist.net/anime/producer/1390/Toys_Factory
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      - mal_id: 1639
+        type: anime
+        name: Chiptune
+        url: https://myanimelist.net/anime/producer/1639/Chiptune
+      - mal_id: 1992
+        type: anime
+        name: Bandai Spirits
+        url: https://myanimelist.net/anime/producer/1992/Bandai_Spirits
+      - mal_id: 2074
+        type: anime
+        name: Bit grooove promotion
+        url: https://myanimelist.net/anime/producer/2074/Bit_grooove_promotion
+      - mal_id: 2424
+        type: anime
+        name: Bandai Namco Filmworks
+        url: https://myanimelist.net/anime/producer/2424/Bandai_Namco_Filmworks
+      - mal_id: 2425
+        type: anime
+        name: Bandai Namco Music Live
+        url: https://myanimelist.net/anime/producer/2425/Bandai_Namco_Music_Live
+      licensors: []
+      studios:
+      - mal_id: 441
+        type: anime
+        name: 8bit
+        url: https://myanimelist.net/anime/producer/441/8bit
+      genres:
+      - mal_id: 30
+        type: anime
+        name: Sports
+        url: https://myanimelist.net/anime/genre/30/Sports
+      explicit_genres: []
+      themes:
+      - mal_id: 77
+        type: anime
+        name: Team Sports
+        url: https://myanimelist.net/anime/genre/77/Team_Sports
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+  body_text: null
+  body_b64: null

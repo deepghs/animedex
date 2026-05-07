@@ -1,0 +1,46 @@
+metadata:
+  captured_at: '2026-05-07T11:25:06Z'
+  label: animes-aot
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(ids:"16498"){ id name score status }}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:05 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"2df362af7e4c8fe44bde17224ccede65"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: ea3be5fb-8d05-4ed6-a475-da3fa47bad7c
+    X-Runtime: '0.007423'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes:
+      - id: '16498'
+        name: Shingeki no Kyojin
+        score: 8.57
+        status: released
+  body_text: null
+  body_b64: null

@@ -1,0 +1,50 @@
+metadata:
+  captured_at: '2026-05-07T11:09:40Z'
+  label: dorohedoro
+  backend: mangadex
+  path_slug: manga_feed
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/0f558d10-5466-44e7-b9bd-4055ddff3b7c/feed?translatedLanguage%5B%5D=en&limit=2&order%5Bchapter%5D=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=60, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:40 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '90'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: f675faae-38f1-4532-993e-0e7e0d00289b
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data: []
+    limit: 2
+    offset: 0
+    total: 0
+  body_text: null
+  body_b64: null

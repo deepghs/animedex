@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:18:50Z'
+  label: evangelion
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Evangelion&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:18:49 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"58718a5a1a29a2d238a4fedb3c57fc01"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 86a5f821-5031-43cd-9241-4983bb47a097
+    X-Runtime: '0.039635'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 2759
+    name: 'Evangelion Movie 1: Jo'
+    russian: 'Евангелион 1.11: Ты (не) один'
+    image:
+      original: /system/animes/original/2759.jpg?1711949085
+      preview: /system/animes/preview/2759.jpg?1711949085
+      x96: /system/animes/x96/2759.jpg?1711949085
+      x48: /system/animes/x48/2759.jpg?1711949085
+    url: /animes/2759-evangelion-movie-1-jo
+    kind: movie
+    score: '8.0'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2007-09-01'
+    released_on: null
+  - id: 3786
+    name: Shin Evangelion Movie:||
+    russian: 'Евангелион 3.0+1.01: Как-то раз'
+    image:
+      original: /system/animes/original/3786.jpg?1711973338
+      preview: /system/animes/preview/3786.jpg?1711973338
+      x96: /system/animes/x96/3786.jpg?1711973338
+      x48: /system/animes/x48/3786.jpg?1711973338
+    url: /animes/3786-shin-evangelion-movie
+    kind: movie
+    score: '8.58'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2021-03-08'
+    released_on: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,112 @@
+metadata:
+  captured_at: '2026-05-07T11:07:43Z'
+  label: vinland-saga-41370
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/41370/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:43 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"cc8a6d668321b1cc833a12ba6e982314"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 3a87304a-bcf8-430f-be53-b95d6cc33874
+    x-runtime: '0.048577'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '3492'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/3492
+      attributes:
+        createdAt: '2019-04-06T07:24:27.432Z'
+        updatedAt: '2019-04-06T07:24:27.432Z'
+        url: https://www.crunchyroll.com/demon-slayer-kimetsu-no-yaiba
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/3492/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/3492/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/3492/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/3492/media
+    - id: '3501'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/3501
+      attributes:
+        createdAt: '2019-04-07T21:49:05.204Z'
+        updatedAt: '2019-04-07T21:49:05.204Z'
+        url: https://www.hulu.com/demon-slayer-kimetsu-no-yaiba
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/3501/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/3501/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/3501/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/3501/media
+    - id: '5746'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/5746
+      attributes:
+        createdAt: '2021-11-06T03:38:13.462Z'
+        updatedAt: '2021-11-06T03:38:13.462Z'
+        url: https://www.netflix.com/watch/81091413
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/5746/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/5746/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/5746/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/5746/media
+    meta:
+      count: 3
+    links:
+      first: https://kitsu.io/api/edge/anime/41370/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/41370/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

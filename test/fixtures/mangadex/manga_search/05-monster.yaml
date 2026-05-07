@@ -1,0 +1,450 @@
+metadata:
+  captured_at: '2026-05-07T11:08:49Z'
+  label: monster
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Monster&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:08:49 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: aef86346-76a1-4406-bc50-ea93a60c1d97
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: abd0bc20-063a-45a0-91b2-8b7049701d4a
+      type: manga
+      attributes:
+        title:
+          ja-ro: Saikyou Onmyouji no Isekai Tenseiki ~Geboku no Youkaidomo ni Kurabete Monster ga Yowai Sugirundaga~
+        altTitles:
+        - ja: 最強陰陽師の異世界転生記～下僕の妖怪どもに比べてモンスターが弱すぎるんだが～（コミック）
+        - en: The Reincarnation of the Strongest Exorcist in Another World
+        - zh: 最强阴阳师的异世界转生记
+        - zh-hk: 最強陰陽師的異世界轉生記 ～怪物比我的下僕妖怪弱太多了～
+        description:
+          en: "Haruyoshi Kuga's power as the strongest exorcist is all for naught when he is betrayed by his closest ally.\
+            \ With his dying breath, he casts the secret Spell of Reincarnation — when he next opens his eyes, he finds himself\
+            \ in a different world altogether, reincarnated as Seika Lamprogue, the son of a family of magic scholars! He\
+            \ quickly learns that the magic in this new world is quite unlike the sorcery he learned in his past life and\
+            \ that he can't use it. Fortunately for him, with his mastery of curses and the hordes of youkai at his disposal,\
+            \ he doesn't need to. \n\nHaruyoshi (now Seika) is determined not to repeat his past mistakes in his second life\
+            \ by smartly laying low and avoiding flaunting his power. Yet accomplishing his goals and without drawing attention\
+            \ to himself proves to be easier said than done — will his powers be enough to live a happy life?!\n___\n[Official\
+            \ English Light Novel](https://j-novel.club/series/the-reincarnation-of-the-strongest-exorcist-in-another-world)"
+          ja: 仲間の裏切りにより死に瀕していた最強の陰陽師ハルヨシは、来世こそ幸せになりたいと願い、転生の秘術を試みた。術が成功し、転生した先はなんと異世界だった！魔法使いの大家の一族に生まれるも、魔力なしの判定。しかし、間近で目にした魔法は陰陽術の足下にも及ばなくて……あれ、魔法いらないんじゃない！？――極めた陰陽術と従えたあまたの妖怪がいれば異世界生活も楽勝！
+        isLocked: false
+        links:
+          al: '123544'
+          ap: the-reincarnation-of-the-strongest-exorcist-in-another-world
+          bl: '20026617'
+          bw: series/250418/list
+          kt: '57916'
+          mu: syokaxs
+          nu: the-reincarnation-of-the-strongest-exorcist-in-another-world-these-monsters-are-too-weak-compared-to-my-monsters
+          amz: https://www.amazon.co.jp/dp/B0FFDFMSWH
+          cdj: https://www.cdjapan.co.jp/product/NEOBK-2516840
+          ebj: https://ebookjapan.yahoo.co.jp/books/598734
+          mal: '131025'
+          raw: https://gaugau.futabanet.jp/list/work/5dd4fcf177656139da050000
+          engtl: https://j-novel.club/series/the-reincarnation-of-the-strongest-exorcist-in-another-world-manga
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: ongoing
+        year: 2020
+        contentRating: suggestive
+        tags:
+        - id: 0bc90acb-ccc1-44ca-a34a-b9f3a73259d0
+          type: tag
+          attributes:
+            name:
+              en: Reincarnation
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 36fd93ea-e8b8-445e-b836-358f02b3d33d
+          type: tag
+          attributes:
+            name:
+              en: Monsters
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 39730448-9a5f-48a2-85b0-a70db87b1233
+          type: tag
+          attributes:
+            name:
+              en: Demons
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: a1f53773-c69a-4ce5-8cab-fffcd90b1565
+          type: tag
+          attributes:
+            name:
+              en: Magic
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: ace04997-f6bd-436e-b261-779182193d3d
+          type: tag
+          attributes:
+            name:
+              en: Isekai
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: caaa44eb-cd40-4177-b930-79d3ef2afe87
+          type: tag
+          attributes:
+            name:
+              en: School Life
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: cdc58593-87dd-415e-bbc0-2ec27bf404cc
+          type: tag
+          attributes:
+            name:
+              en: Fantasy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: eabc5b4c-6aff-42f3-b657-3e90cbd00b75
+          type: tag
+          attributes:
+            name:
+              en: Supernatural
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: f4122d1c-3b44-44d0-9936-ff7502c39ad3
+          type: tag
+          attributes:
+            name:
+              en: Adaptation
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2020-07-18T18:13:32+00:00'
+        updatedAt: '2026-04-25T14:02:57+00:00'
+        version: 37
+        availableTranslatedLanguages:
+        - fr
+        - en
+        - es-la
+        - id
+        - pt-br
+        - vi
+        - ru
+        - ar
+        latestUploadedChapter: 7f4dd956-9c4f-4638-b4ef-6faec857c6c1
+      relationships:
+      - id: 4f8fd6fe-5b0b-4387-9c8c-4a3e3b1281eb
+        type: author
+      - id: be80c33a-f69a-43bc-881d-e23cb208d6ed
+        type: artist
+      - id: 15b18038-3c8a-4f86-a68e-764627ffed2d
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '11'
+          fileName: e1ee3d07-402c-4db4-a92d-3629331e8a63.jpg
+          locale: ja
+          createdAt: '2025-12-10T00:30:28+00:00'
+          updatedAt: '2025-12-10T00:30:28+00:00'
+          version: 1
+    - id: 9d351a80-5037-4334-a020-6985899f5b1f
+      type: manga
+      attributes:
+        title:
+          ja-ro: Maou ni Natta node, Dungeon Tsukutte Jingai Musume to Honobono Suru
+        altTitles:
+        - ja: 魔王になったので、ダンジョン造って人外娘とほのぼのする
+        - en: Now I'm a Demon Lord! Happily Ever After with Monster Girls in My Dungeon
+        - ko: 마왕이 됐으므로 던전을 만들고 인외아가씨와 훈훈해진다
+        - zh: 魔王建造地下城转生到异世界建造人外娘
+        - zh-hk: 魔王建造地下城轉生到異世界建造人外娘
+        - ru: Я стал Повелителем Демонов и создал подземелье, чтобы проводить время с девушками-монстрами
+        - vi: Sau Khi Tôi Là 1 Ma Vương, Tôi Sẽ Xây Dựng Hầm Ngục Cùng Với Các Nô Lệ!
+        - ro: Acum Sunt Un Demon Lord! Fericit Până La Adânci Bătrâneți Alături De Fete Monstruoase În Temnița Mea
+        description:
+          en: "Before I realized, I had become the guardian of a dungeon, a Demon Lord. I was suddenly in a dangerous world\
+            \ with giant monsters loitering around, fighting for their existence. So I thought to go about developing the\
+            \ dungeon in order to not die, but for some reason I was having quite the good time... How did it turn out like\
+            \ this?  \n  \nThe protagonist, Yuki, having to live in that world now, uses his bold and sharp senses and spends\
+            \ time with a supreme dragon girl and a vampire girl, sometimes laughing, sometimes being angry, passing days\
+            \ doing what he likes."
+          ja: 異世界転生したユキは、気付くとダンジョンの魔王になっていた!? チートな強さで人外娘達を助けたり、超便利なカタログ通販（？）でダンジョンに凶悪な罠を仕掛けたりとやりたい放題。自由と平和を守るため、快適＆最凶ダンジョン造りを目指せ！
+            人気WEB小説コミカライズ!!
+          vi: Trước khi nhận ra, tôi đã trở thành người bảo vệ của một ngục tối, một Chúa Quỷ. Tôi bỗng nhiên bị cuốn vào
+            một thế giới nguy hiểm với những con quái vật khổng lồ lang thang quanh đó, chiến đấu để tồn tại. Vì vậy, tôi
+            quyết định phát triển ngục tối để không bị chết, nhưng không hiểu sao tôi lại cảm thấy khá thích thú với việc
+            này... Làm sao mà lại trở thành như vậy? Nhân vật chính, Yuki, buộc phải sống trong thế giới này, sử dụng khả
+            năng nhạy bén và tinh tế của mình, cùng thời gian bên một cô gái rồng tối thượng và một cô gái ma cà rồng, đôi
+            khi cười, đôi khi tức giận, trải qua những ngày tháng làm những gì mình thích
+          es-la: Antes de darme cuenta, me había convertido en el guardián de una mazmorra, un Señor Demonio. De repente,
+            estaba en un mundo peligroso con monstruos gigantes holgazaneando, luchando por la existencia de la mazmorra para
+            no morir, pero por alguna razón estaba pasando un buen momento ... ¿Cómo resultó esto? El protagonista, Yuki,
+            usa sus sentidos audaces y agudos y pasa el tiempo con una niña dragón suprema y una niña vampiro; A veces riendo,
+            a veces enojándose, pasando días haciendo lo que le gusta.
+          pt-br: |-
+            Antes que eu percebesse, eu havia me tornado o guardião de uma masmorra, um Lorde Demônio.  De repente, eu estava em um mundo perigoso com monstros gigantes vagando por aí, lutando por sua existência, então pensei em desenvolver a masmorra para não morrer, mas – por algum motivo eu estava me divertindo bastante….  Como ficou assim?
+
+             O protagonista, Yuki, tendo que viver naquele mundo agora, usa seus sentidos ousados ​​e afiados e passa o tempo com uma suprema garota dragão e uma garota vampira;  Às vezes rindo, às vezes com raiva, passando dias fazendo o que gosta.
+        isLocked: false
+        links:
+          al: '106233'
+          ap: now-im-a-demon-lord-happily-ever-after-with-monster-girls-in-my-dungeon
+          bl: '578756'
+          bw: series/187574
+          kt: '51273'
+          mu: 4867hdi
+          nu: a-demon-lords-tale-dungeons-monster-girls-and-heartwarming-bliss
+          amz: https://www.amazon.co.jp/dp/B07YVML4CD
+          ebj: https://ebookjapan.yahoo.co.jp/books/520076/
+          mal: '115200'
+          raw: https://comic-walker.com/contents/detail/KDCW_FS01200334010000_68/
+          engtl: https://j-novel.club/series/now-i-m-a-demon-lord-happily-ever-after-with-monster-girls-in-my-dungeon-manga
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: ongoing
+        year: 2018
+        contentRating: suggestive
+        tags:
+        - id: 0bc90acb-ccc1-44ca-a34a-b9f3a73259d0
+          type: tag
+          attributes:
+            name:
+              en: Reincarnation
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 2d1f5d56-a1e5-4d0d-a961-2193588b08ec
+          type: tag
+          attributes:
+            name:
+              en: Loli
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: a1f53773-c69a-4ce5-8cab-fffcd90b1565
+          type: tag
+          attributes:
+            name:
+              en: Magic
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: aafb99c1-7f60-43fa-b75f-fc9502ce29c7
+          type: tag
+          attributes:
+            name:
+              en: Harem
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: ace04997-f6bd-436e-b261-779182193d3d
+          type: tag
+          attributes:
+            name:
+              en: Isekai
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdc58593-87dd-415e-bbc0-2ec27bf404cc
+          type: tag
+          attributes:
+            name:
+              en: Fantasy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: dd1f77c5-dea9-4e2b-97ae-224af09caf99
+          type: tag
+          attributes:
+            name:
+              en: Monster Girls
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: e5301a23-ebd9-49dd-a0cb-2add944c7fe9
+          type: tag
+          attributes:
+            name:
+              en: Slice of Life
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: f4122d1c-3b44-44d0-9936-ff7502c39ad3
+          type: tag
+          attributes:
+            name:
+              en: Adaptation
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2019-05-14T09:36:57+00:00'
+        updatedAt: '2026-05-02T17:12:16+00:00'
+        version: 57
+        availableTranslatedLanguages:
+        - fr
+        - es-la
+        - vi
+        - pt-br
+        - en
+        - ru
+        - ro
+        - es
+        latestUploadedChapter: abeab885-a160-434f-8788-4498900d4e08
+      relationships:
+      - id: 465fa405-05e2-46bf-85c8-afb9a46aceb0
+        type: author
+      - id: cfae909b-7ff4-4641-b6fc-8e5bcf8ed2da
+        type: artist
+      - id: 584501eb-1c15-4bdd-ab60-f3ebd7d32e65
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '12'
+          fileName: c29f3693-006c-4df3-bf78-cad11cabc639.jpg
+          locale: ja
+          createdAt: '2025-12-04T16:05:03+00:00'
+          updatedAt: '2025-12-04T16:05:03+00:00'
+          version: 1
+    limit: 2
+    offset: 0
+    total: 565
+  body_text: null
+  body_b64: null

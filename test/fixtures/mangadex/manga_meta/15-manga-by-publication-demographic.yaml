@@ -1,0 +1,297 @@
+metadata:
+  captured_at: '2026-05-07T11:09:57Z'
+  label: manga-by-publication-demographic
+  backend: mangadex
+  path_slug: manga_meta
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?publicationDemographic%5B%5D=seinen&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:57 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 1c81b120-961c-4632-9959-3f47a1f2813a
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 82bf73a9-401b-4f07-9dd1-be9a720ccb19
+      type: manga
+      attributes:
+        title:
+          ja-ro: Outen no Mon
+        altTitles:
+        - zh: 应天之门
+        - ja: 応天の門
+        - zh-hk: 應天之門
+        - en: Ōten Gate
+        description:
+          en: "Heian period Japan. The Fujiwara family is plotting to seize power at the court, when two maids suddenly go\
+            \ missing from the capital. The emperor fears that it is the work of a demon, and orders Ariwara no Narihira to\
+            \ work with a young man. The boy's name is Sugawara no Michizane.   \nSugawara no Michizane, a shut-in student,\
+            \ and Ariwara no Narihira, a Kyoto playboy, are twenty years apart in age. They are different in status and birth,\
+            \ yet work together to solve the mysteries of Kyoto!"
+          ja: ひきこもり学生の菅原道真と京で噂の艶男・在原業平――身分も生まれも違う、およそ20歳差のふたりが京で起こる怪奇を解決!?　「回游の森」「SP」の気鋭・灰原薬がおくる、平安クライム・サスペンス！
+        isLocked: false
+        links:
+          al: '91461'
+          ap: outen-no-mon
+          bw: series/96886/list
+          kt: '30746'
+          mu: 8an9jmw
+          mal: '71697'
+          raw: https://kuragebunch.com/episode/13933686331620138885
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: seinen
+        status: ongoing
+        year: 2013
+        contentRating: safe
+        tags:
+        - id: 33771934-028e-4cb3-8744-691e866a923e
+          type: tag
+          attributes:
+            name:
+              en: Historical
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: ee968100-4191-4968-93d3-f82d72be7e46
+          type: tag
+          attributes:
+            name:
+              en: Mystery
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2018-11-24T23:32:46+00:00'
+        updatedAt: '2026-04-14T08:48:49+00:00'
+        version: 18
+        availableTranslatedLanguages:
+        - en
+        latestUploadedChapter: 3f755ba9-d553-42f8-b4c2-bacfbc013c5b
+      relationships:
+      - id: 9aca2036-26f3-4123-8197-3dfb72fbbd54
+        type: author
+      - id: 9aca2036-26f3-4123-8197-3dfb72fbbd54
+        type: artist
+      - id: b4ffb9df-6864-4f71-8980-da861391d55f
+        type: cover_art
+    - id: 8a3aeff4-8d5b-471e-94f3-fe0f9425d94d
+      type: manga
+      attributes:
+        title:
+          ja-ro: Zettai Shinanai Stella-hime
+        altTitles:
+        - ja: 絶対死なないステラ姫
+        - en: Stella, the Princess Who Will Never Die
+        description:
+          en: After losing her father, the king of Hillvalley, Princess Stella is thrown into the middle of a succession crisis.
+            Her stepsister Illusia wastes no time in trying to assassinate Stella and seize the throne, but all her attempts
+            mysteriously go awry. Little does anyone know that the young princess has a hidden protector... in the most unlikely
+            of places!
+          ja: ヒルバレー王国の王女・ステラ姫は、実父の国王を喪い、後継者争いの真っ只中にいた。義姉のイシュジアは執拗にステラを暗殺しようと狙うが、不可思議な現象によって毎回阻まれる。そして、驚愕の事実が明らかになったのだが……！？
+        isLocked: false
+        links:
+          al: '195285'
+          ap: zettai-shinanai-stella-hime
+          bl: '1736143'
+          bw: series/501641
+          kt: stella-must-die
+          mu: 5fem5td
+          amz: https://www.amazon.co.jp/dp/B0DPG98912
+          ebj: https://ebookjapan.yahoo.co.jp/books/865126
+          mal: '184225'
+          raw: https://comic-days.com/episode/2550912964546522818
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: seinen
+        status: ongoing
+        year: 2024
+        contentRating: safe
+        tags:
+        - id: 0bc90acb-ccc1-44ca-a34a-b9f3a73259d0
+          type: tag
+          attributes:
+            name:
+              en: Reincarnation
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 36fd93ea-e8b8-445e-b836-358f02b3d33d
+          type: tag
+          attributes:
+            name:
+              en: Monsters
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 5fff9cde-849c-4d78-aab0-0d52b2ee1d25
+          type: tag
+          attributes:
+            name:
+              en: Survival
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: a1f53773-c69a-4ce5-8cab-fffcd90b1565
+          type: tag
+          attributes:
+            name:
+              en: Magic
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: ace04997-f6bd-436e-b261-779182193d3d
+          type: tag
+          attributes:
+            name:
+              en: Isekai
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b29d6a3d-1569-4e7a-8caf-7557bc92cd5d
+          type: tag
+          attributes:
+            name:
+              en: Gore
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdad7e68-1419-41dd-bdce-27753074a640
+          type: tag
+          attributes:
+            name:
+              en: Horror
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdc58593-87dd-415e-bbc0-2ec27bf404cc
+          type: tag
+          attributes:
+            name:
+              en: Fantasy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: eabc5b4c-6aff-42f3-b657-3e90cbd00b75
+          type: tag
+          attributes:
+            name:
+              en: Supernatural
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: ee968100-4191-4968-93d3-f82d72be7e46
+          type: tag
+          attributes:
+            name:
+              en: Mystery
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2024-12-30T15:30:11+00:00'
+        updatedAt: '2026-04-20T15:10:09+00:00'
+        version: 26
+        availableTranslatedLanguages:
+        - id
+        - en
+        latestUploadedChapter: 0c16d7c0-5c1f-452e-b247-1a735531064f
+      relationships:
+      - id: 0f68e8dc-7ce6-44ab-b880-32f708cb46ca
+        type: author
+      - id: 461e1f85-9105-4b05-a123-c8d9bce50dd2
+        type: artist
+      - id: dea74c6f-8915-4c90-9af0-cdfb3661da83
+        type: cover_art
+      - id: 27bde0e8-71b0-4bf2-8e25-2902a7b2dd4b
+        type: creator
+    limit: 2
+    offset: 0
+    total: 15068
+  body_text: null
+  body_b64: null

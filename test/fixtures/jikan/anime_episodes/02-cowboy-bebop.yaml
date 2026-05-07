@@ -1,0 +1,297 @@
+metadata:
+  captured_at: '2026-05-07T11:04:34Z'
+  label: cowboy-bebop
+  backend: jikan
+  path_slug: anime_episodes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/1/episodes?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:04:34 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:9abc3f02f11682c0f4ac18d6dd375063ee86aabf
+    expires: Fri, 08 May 2026 11:04:34 GMT
+    last-modified: Thu, 07 May 2026 11:04:34 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - mal_id: 1
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/1
+      title: Asteroid Blues
+      title_japanese: アステロイド・ブルース
+      title_romanji: Asteroid Blues 
+      aired: '1998-10-24T00:00:00+00:00'
+      score: 4.33
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=29264
+    - mal_id: 2
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/2
+      title: Stray Dog Strut
+      title_japanese: 野良犬のストラット
+      title_romanji: Nora Inu no Strut 
+      aired: '1998-04-03T00:00:00+00:00'
+      score: 4.19
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=29323
+    - mal_id: 3
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/3
+      title: Honky Tonk Women
+      title_japanese: ホンキィ・トンク・ウィメン
+      title_romanji: Honky Tonk Women 
+      aired: '1998-04-10T00:00:00+00:00'
+      score: 4.28
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=29334
+    - mal_id: 4
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/4
+      title: Gateway Shuffle
+      title_japanese: ゲイトウェイ・シャッフル
+      title_romanji: Gateway Shuffle 
+      aired: '1998-11-14T00:00:00+00:00'
+      score: 4.23
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=50217
+    - mal_id: 5
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/5
+      title: Ballad of Fallen Angels
+      title_japanese: 堕天使たちのバラッド
+      title_romanji: Datenshi-tachi no Ballad 
+      aired: '1998-11-21T00:00:00+00:00'
+      score: 4.62
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=22879
+    - mal_id: 6
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/6
+      title: Sympathy for the Devil
+      title_japanese: 悪魔を憐れむ歌
+      title_romanji: Akuma wo Awaremu Uta 
+      aired: '1998-11-28T00:00:00+00:00'
+      score: 4.12
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=101049
+    - mal_id: 7
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/7
+      title: Heavy Metal Queen
+      title_japanese: ヘヴィ・メタル・クイーン
+      title_romanji: Heavy Metal Queen 
+      aired: '1998-04-17T00:00:00+00:00'
+      score: 4.23
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=101265
+    - mal_id: 8
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/8
+      title: Waltz for Venus
+      title_japanese: ワルツ・フォー・ヴィーナス
+      title_romanji: Waltz for Venus 
+      aired: '1998-04-24T00:00:00+00:00'
+      score: 4.52
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=101271
+    - mal_id: 9
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/9
+      title: Jamming with Edward
+      title_japanese: ジャミング・ウィズ・エドワード
+      title_romanji: Jamming with Edward 
+      aired: '1998-05-01T00:00:00+00:00'
+      score: 4.27
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=101461
+    - mal_id: 10
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/10
+      title: Ganymede Elegy
+      title_japanese: ガニメデ慕情
+      title_romanji: Ganymede Bojou 
+      aired: '1998-05-08T00:00:00+00:00'
+      score: 4.44
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=23465
+    - mal_id: 11
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/11
+      title: Toys in the Attic
+      title_japanese: 闇夜のヘヴィ・ロック
+      title_romanji: Yamiyo no Heavy Rock 
+      aired: '1998-05-15T00:00:00+00:00'
+      score: 4.26
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=35320
+    - mal_id: 12
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/12
+      title: Jupiter Jazz (Part 1)
+      title_japanese: ジュピター・ジャズ（前編）
+      title_romanji: Jupiter Jazz (Zenpen) 
+      aired: '1998-05-22T00:00:00+00:00'
+      score: 4.45
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=36204
+    - mal_id: 13
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/13
+      title: Jupiter Jazz (Part 2)
+      title_japanese: ジュピター・ジャズ（後編）
+      title_romanji: Jupiter Jazz (Kouhen) 
+      aired: '1998-05-29T00:00:00+00:00'
+      score: 4.57
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=24084
+    - mal_id: 14
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/14
+      title: Bohemian Rhapsody
+      title_japanese: ボヘミアン・ラプソディ
+      title_romanji: Bohemian Rhapsody 
+      aired: '1998-06-05T00:00:00+00:00'
+      score: 4.22
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=28761
+    - mal_id: 15
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/15
+      title: My Funny Valentine
+      title_japanese: マイ・ファニー・ヴァレンタイン
+      title_romanji: My Funny Valentine 
+      aired: '1998-06-12T00:00:00+00:00'
+      score: 4.34
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=85746
+    - mal_id: 16
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/16
+      title: Black Dog Serenade
+      title_japanese: ブラック・ドッグ・セレナーデ
+      title_romanji: Black Dog Serenade 
+      aired: '1999-02-13T00:00:00+00:00'
+      score: 4.31
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=133101
+    - mal_id: 17
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/17
+      title: Mushroom Samba
+      title_japanese: マッシュルーム・サンバ
+      title_romanji: Mushroom Samba 
+      aired: '1999-02-20T00:00:00+00:00'
+      score: 4.5
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=52861
+    - mal_id: 18
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/18
+      title: Speak Like a Child
+      title_japanese: スピーク・ライク・ア・チャイルド
+      title_romanji: Speak Like a Child 
+      aired: '1998-06-19T00:00:00+00:00'
+      score: 4.62
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=24885
+    - mal_id: 19
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/19
+      title: Wild Horses
+      title_japanese: ワイルド・ホーセス
+      title_romanji: Wild Horses 
+      aired: '1999-03-06T00:00:00+00:00'
+      score: 4.15
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=60625
+    - mal_id: 20
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/20
+      title: Pierrot le Fou
+      title_japanese: 道化師の鎮魂歌
+      title_romanji: Doukeshi no Requiem 
+      aired: '1999-03-13T00:00:00+00:00'
+      score: 4.44
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=40846
+    - mal_id: 21
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/21
+      title: Boogie Woogie Feng Shui
+      title_japanese: ブギ・ウギ・フンシェイ
+      title_romanji: Boogie Woogie Feng Shui 
+      aired: '1999-03-20T00:00:00+00:00'
+      score: 3.87
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=99628
+    - mal_id: 22
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/22
+      title: Cowboy Funk
+      title_japanese: カウボーイ・ファンク
+      title_romanji: Cowboy Funk 
+      aired: '1999-03-27T00:00:00+00:00'
+      score: 4.4
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=62654
+    - mal_id: 23
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/23
+      title: Brain Scratch
+      title_japanese: ブレイン・スクラッチ
+      title_romanji: Brain Scratch 
+      aired: '1999-04-03T00:00:00+00:00'
+      score: 4.39
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=6487
+    - mal_id: 24
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/24
+      title: Hard Luck Woman
+      title_japanese: ハード・ラック・ウーマン
+      title_romanji: Hard Luck Woman 
+      aired: '1999-04-10T00:00:00+00:00'
+      score: 4.77
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=41342
+    - mal_id: 25
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/25
+      title: The Real Folk Blues (Part 1)
+      title_japanese: ザ・リアル・フォークブルース（前編）
+      title_romanji: The Real Folk Blues (Zenpen) 
+      aired: '1999-04-17T00:00:00+00:00'
+      score: 4.7
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=64109
+    - mal_id: 26
+      url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/26
+      title: The Real Folk Blues (Part 2)
+      title_japanese: ザ・リアル・フォークブルース（後編）
+      title_romanji: The Real Folk Blues (Kouhen) 
+      aired: '1999-04-24T00:00:00+00:00'
+      score: 4.69
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=24838
+  body_text: null
+  body_b64: null

@@ -1,0 +1,54 @@
+metadata:
+  captured_at: '2026-05-07T11:27:27Z'
+  label: invalid-shape-8
+  backend: mangadex
+  path_slug: at_home_server
+request:
+  method: GET
+  url: https://api.mangadex.org/at-home/server/00000000-0000-0000-0000-000000000008
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Thu, 07 May 2026 11:27:27 GMT
+    x-ratelimit-remaining: '34'
+    x-ratelimit-retry-after: '1778153247'
+    x-ratelimit-limit: '40'
+    x-ratelimit-retry-in: '0'
+    content-encoding: gzip
+    x-cache: MISS
+    content-length: '176'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: a5c19170-7de6-45cd-b351-a99da35cb525
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: error
+    errors:
+    - id: 770a6444-c695-570d-bfd2-a0eec2e95ce9
+      status: 404
+      title: not_found_http_exception
+      detail: Chapter with ID 00000000-0000-0000-0000-000000000008 not found.
+      context: null
+  body_text: null
+  body_b64: null

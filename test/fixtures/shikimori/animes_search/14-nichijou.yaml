@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:19:05Z'
+  label: nichijou
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Nichijou&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:19:05 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"2742ac6f4284590bc263bbd067f064b0"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 13b78ac8-a82b-45cd-8020-3bcb7654b59c
+    X-Runtime: '0.041164'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 10165
+    name: Nichijou
+    russian: Мелочи жизни
+    image:
+      original: /system/animes/original/10165.jpg?1711966129
+      preview: /system/animes/preview/10165.jpg?1711966129
+      x96: /system/animes/x96/10165.jpg?1711966129
+      x48: /system/animes/x48/10165.jpg?1711966129
+    url: /animes/10165-nichijou
+    kind: tv
+    score: '8.47'
+    status: released
+    episodes: 26
+    episodes_aired: 26
+    aired_on: '2011-04-03'
+    released_on: '2011-09-25'
+  - id: 10807
+    name: 'Nichijou: Original Jikai Yokoku'
+    russian: 'Мелочи жизни: Спецвыпуски'
+    image:
+      original: /system/animes/original/10807.jpg?1711966129
+      preview: /system/animes/preview/10807.jpg?1711966129
+      x96: /system/animes/x96/10807.jpg?1711966129
+      x48: /system/animes/x48/10807.jpg?1711966129
+    url: /animes/10807-nichijou-original-jikai-yokoku
+    kind: special
+    score: '7.05'
+    status: released
+    episodes: 25
+    episodes_aired: 0
+    aired_on: '2011-06-24'
+    released_on: '2012-06-29'
+  body_text: null
+  body_b64: null

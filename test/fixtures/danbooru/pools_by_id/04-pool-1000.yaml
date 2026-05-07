@@ -1,0 +1,76 @@
+metadata:
+  captured_at: '2026-05-07T11:18:09Z'
+  label: pool-1000
+  backend: danbooru
+  path_slug: pools_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/pools/1000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:18:09 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"9dc65610fbe4fe5207b84a84e02970c8"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd2811aa78340-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.3944, rails.cpu_time;dur=2.1001, rails.idle_time;dur=0.2942,
+      rails.sql_time;dur=0.4276, rails.view_time;dur=0.2295, rails.allocations;count=1140, request.allocations;count=1598,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.9012, request.total_time;dur=3.1951, request.queue_time_0;dur=0.7265,
+      request.queue_time_1;dur=99.9999
+    x-runtime: '0.0031950836181640625'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 1000
+    name: K-On!_-_Tehepero_(Bakutendou)
+    created_at: '2009-09-19T14:47:25.977-04:00'
+    updated_at: '2017-08-19T16:24:52.965-04:00'
+    description: 'Artist: [[Bakutendou]]'
+    is_active: false
+    is_deleted: false
+    post_ids:
+    - 528140
+    - 526147
+    - 526255
+    - 526258
+    - 526153
+    - 526154
+    - 526134
+    - 526138
+    - 526161
+    - 526250
+    - 528136
+    - 526251
+    - 526149
+    - 526143
+    - 526157
+    - 526262
+    - 526264
+    category: series
+    post_count: 17
+  body_text: null
+  body_b64: null

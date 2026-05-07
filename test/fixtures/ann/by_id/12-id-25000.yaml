@@ -1,0 +1,36 @@
+metadata:
+  captured_at: '2026-05-07T11:25:48Z'
+  label: id-25000
+  backend: ann
+  path_slug: by_id
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=25000
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:25:48 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:25:48 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Access-Control-Allow-Origin: '*'
+    Cache-Control: public
+    Expires: Fri, 08 May 2026 11:25:48 GMT
+    X-Ann: skip state commit
+    cf-cache-status: DYNAMIC
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: <ann><warning>no result for anime=25000</warning></ann>
+  body_b64: null

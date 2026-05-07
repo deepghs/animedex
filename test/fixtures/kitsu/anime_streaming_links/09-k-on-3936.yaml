@@ -1,0 +1,133 @@
+metadata:
+  captured_at: '2026-05-07T11:07:39Z'
+  label: k-on-3936
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/3936/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:39 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"3a1f4a21546bbc7a0e9bab52011e187f"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 51cc6a7e-a9ee-45c9-b240-9428ad88356d
+    x-runtime: '0.054490'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '2199'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/2199
+      attributes:
+        createdAt: '2017-11-13T14:26:22.585Z'
+        updatedAt: '2017-11-13T14:26:22.585Z'
+        url: https://www.hulu.com/fullmetal-alchemist-brotherhood
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/2199/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/2199/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/2199/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/2199/media
+    - id: '2200'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/2200
+      attributes:
+        createdAt: '2017-11-13T14:26:46.490Z'
+        updatedAt: '2017-11-13T14:26:46.490Z'
+        url: http://www.crunchyroll.com/fullmetal-alchemist-brotherhood
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/2200/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/2200/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/2200/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/2200/media
+    - id: '2258'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/2258
+      attributes:
+        createdAt: '2018-02-06T12:45:04.901Z'
+        updatedAt: '2018-02-06T12:45:04.901Z'
+        url: https://www.amazon.com/dp/B002T8C202/
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/2258/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/2258/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/2258/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/2258/media
+    - id: '3532'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/3532
+      attributes:
+        createdAt: '2019-04-18T21:54:09.140Z'
+        updatedAt: '2019-04-18T21:54:09.140Z'
+        url: https://www.netflix.com/title/70204981
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/3532/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/3532/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/3532/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/3532/media
+    meta:
+      count: 4
+    links:
+      first: https://kitsu.io/api/edge/anime/3936/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/3936/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

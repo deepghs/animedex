@@ -1,0 +1,477 @@
+metadata:
+  captured_at: '2026-05-07T11:03:28Z'
+  label: 2025-fall
+  backend: jikan
+  path_slug: seasons
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/seasons/2025/fall?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:03:28 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:seasons:54901f8b3dc09b87baaaaf7a512c7963ef946ade
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 94
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 281
+        per_page: 3
+    data:
+    - mal_id: 52807
+      url: https://myanimelist.net/anime/52807/One_Punch_Man_3
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1168/148347.jpg
+          small_image_url: https://myanimelist.net/images/anime/1168/148347t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1168/148347l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1168/148347.webp
+          small_image_url: https://myanimelist.net/images/anime/1168/148347t.webp
+          large_image_url: https://myanimelist.net/images/anime/1168/148347l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/2GU7Ye78h6E?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: One Punch Man 3
+      - type: Synonym
+        title: One Punch Man 3rd Season
+      - type: Synonym
+        title: OPM 3
+      - type: Japanese
+        title: ワンパンマン 3
+      - type: English
+        title: One-Punch Man Season 3
+      title: One Punch Man 3
+      title_english: One-Punch Man Season 3
+      title_japanese: ワンパンマン 3
+      title_synonyms:
+      - One Punch Man 3rd Season
+      - OPM 3
+      type: TV
+      source: Web manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2025-10-12T00:00:00+00:00'
+        to: '2025-12-28T00:00:00+00:00'
+        prop:
+          from:
+            day: 12
+            month: 10
+            year: 2025
+          to:
+            day: 28
+            month: 12
+            year: 2025
+        string: Oct 12, 2025 to Dec 28, 2025
+      duration: 24 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 4.76
+      scored_by: 113735
+      rank: 14587
+      popularity: 613
+      members: 437838
+      favorites: 7443
+      synopsis: |-
+        Earth is saved by heroes for now, but the large-scale battle between the Hero Association and the Monster Association is far from over. The dangerous hero hunter Garou is still on the loose despite the efforts to capture him, and the Monster Association has abducted a notable figure, leaving the Hero Association in turmoil. With a strict deadline for the rescue, the heroes set out in search of the monsters' hideout.
+
+        Though he is heavily injured, Garou is recruited by the Monster Association in the hope of making him a part of the leadership. In order to ascend the ranks, the hero hunter must first prove that he is ready to give up on his humanity by killing a hero. It does not take long for Garou to find his victim, but that very person is the oblivious Saitama, who effortlessly knocks him out.
+
+        This humiliating defeat causes Garou to be branded as a traitor by the monsters. Moreover, the next clash between the two associations approaches rapidly. As both sides are ready to engage in any tactics and use any pawns at their disposal, the safety of the world is at their mercy.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: fall
+      year: 2025
+      broadcast:
+        day: Sundays
+        time: '23:45'
+        timezone: Asia/Tokyo
+        string: Sundays at 23:45 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 104
+        type: anime
+        name: Lantis
+        url: https://myanimelist.net/anime/producer/104/Lantis
+      - mal_id: 306
+        type: anime
+        name: Magic Capsule
+        url: https://myanimelist.net/anime/producer/306/Magic_Capsule
+      - mal_id: 1261
+        type: anime
+        name: Good Smile Company
+        url: https://myanimelist.net/anime/producer/1261/Good_Smile_Company
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      - mal_id: 1501
+        type: anime
+        name: JR East Marketing & Communications
+        url: https://myanimelist.net/anime/producer/1501/JR_East_Marketing___Communications
+      - mal_id: 1992
+        type: anime
+        name: Bandai Spirits
+        url: https://myanimelist.net/anime/producer/1992/Bandai_Spirits
+      - mal_id: 2232
+        type: anime
+        name: ADK Marketing Solutions
+        url: https://myanimelist.net/anime/producer/2232/ADK_Marketing_Solutions
+      - mal_id: 2424
+        type: anime
+        name: Bandai Namco Filmworks
+        url: https://myanimelist.net/anime/producer/2424/Bandai_Namco_Filmworks
+      - mal_id: 2425
+        type: anime
+        name: Bandai Namco Music Live
+        url: https://myanimelist.net/anime/producer/2425/Bandai_Namco_Music_Live
+      licensors:
+      - mal_id: 119
+        type: anime
+        name: VIZ Media
+        url: https://myanimelist.net/anime/producer/119/VIZ_Media
+      studios:
+      - mal_id: 7
+        type: anime
+        name: J.C.Staff
+        url: https://myanimelist.net/anime/producer/7/JCStaff
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      explicit_genres: []
+      themes:
+      - mal_id: 50
+        type: anime
+        name: Adult Cast
+        url: https://myanimelist.net/anime/genre/50/Adult_Cast
+      - mal_id: 20
+        type: anime
+        name: Parody
+        url: https://myanimelist.net/anime/genre/20/Parody
+      - mal_id: 31
+        type: anime
+        name: Super Power
+        url: https://myanimelist.net/anime/genre/31/Super_Power
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+    - mal_id: 59027
+      url: https://myanimelist.net/anime/59027/Spy_x_Family_Season_3
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1697/151793.jpg
+          small_image_url: https://myanimelist.net/images/anime/1697/151793t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1697/151793l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1697/151793.webp
+          small_image_url: https://myanimelist.net/images/anime/1697/151793t.webp
+          large_image_url: https://myanimelist.net/images/anime/1697/151793l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/9-JreaprnO0?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Spy x Family Season 3
+      - type: Japanese
+        title: SPY×FAMILY Season 3
+      - type: English
+        title: Spy x Family Season 3
+      title: Spy x Family Season 3
+      title_english: Spy x Family Season 3
+      title_japanese: SPY×FAMILY Season 3
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 13
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2025-10-04T00:00:00+00:00'
+        to: '2025-12-27T00:00:00+00:00'
+        prop:
+          from:
+            day: 4
+            month: 10
+            year: 2025
+          to:
+            day: 27
+            month: 12
+            year: 2025
+        string: Oct 4, 2025 to Dec 27, 2025
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.21
+      scored_by: 129769
+      rank: 436
+      popularity: 810
+      members: 343737
+      favorites: 1867
+      synopsis: |-
+        Despite occasional setbacks, Operation Strix has remained on track to extract sensitive information from the enigmatic politician Donovan Desmond. To this end, spy Loid Forger has managed to maintain his pretend family consisting of his telepathic daughter, Anya; assassin wife, Yor; and their clairvoyant dog, Bond. Still the only one aware of everyone's true identities, Anya tries to sustain the family's cohesion while working to befriend Donovan's son Damian, her Eden Academy classmate.
+
+        However, Anya's efforts instead earn her another Tonitrus Bolt, bringing her closer to getting expelled and jeopardizing the operation's success. Hearing the news, Loid faints from shock. In his unconsciousness, he reminisces about his tragic past and his journey to becoming a spy. Realizing what Operation Strix means to him and the world, Loid finds renewed motivation. Although they each work toward their own covert goals, the Forgers continue to cherish their chaotic yet blissful family life.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: fall
+      year: 2025
+      broadcast:
+        day: Saturdays
+        time: '23:00'
+        timezone: Asia/Tokyo
+        string: Saturdays at 23:00 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 62
+        type: anime
+        name: Shogakukan-Shueisha Productions
+        url: https://myanimelist.net/anime/producer/62/Shogakukan-Shueisha_Productions
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1294
+        type: anime
+        name: Sound Team Don Juan
+        url: https://myanimelist.net/anime/producer/1294/Sound_Team_Don_Juan
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      - mal_id: 2229
+        type: anime
+        name: Toho Music
+        url: https://myanimelist.net/anime/producer/2229/Toho_Music
+      - mal_id: 3210
+        type: anime
+        name: Verygoo
+        url: https://myanimelist.net/anime/producer/3210/Verygoo
+      licensors: []
+      studios:
+      - mal_id: 858
+        type: anime
+        name: Wit Studio
+        url: https://myanimelist.net/anime/producer/858/Wit_Studio
+      - mal_id: 1835
+        type: anime
+        name: CloverWorks
+        url: https://myanimelist.net/anime/producer/1835/CloverWorks
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      explicit_genres: []
+      themes:
+      - mal_id: 53
+        type: anime
+        name: Childcare
+        url: https://myanimelist.net/anime/genre/53/Childcare
+      - mal_id: 31
+        type: anime
+        name: Super Power
+        url: https://myanimelist.net/anime/genre/31/Super_Power
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 60098
+      url: https://myanimelist.net/anime/60098/Boku_no_Hero_Academia__Final_Season
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1959/151055.jpg
+          small_image_url: https://myanimelist.net/images/anime/1959/151055t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1959/151055l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1959/151055.webp
+          small_image_url: https://myanimelist.net/images/anime/1959/151055t.webp
+          large_image_url: https://myanimelist.net/images/anime/1959/151055l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/wQgQij8Ry4g?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Boku no Hero Academia: Final Season'
+      - type: Synonym
+        title: My Hero Academia 8
+      - type: Japanese
+        title: 僕のヒーローアカデミア FINAL SEASON
+      - type: English
+        title: My Hero Academia Final Season
+      title: 'Boku no Hero Academia: Final Season'
+      title_english: My Hero Academia Final Season
+      title_japanese: 僕のヒーローアカデミア FINAL SEASON
+      title_synonyms:
+      - My Hero Academia 8
+      type: TV
+      source: Manga
+      episodes: 11
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2025-10-04T00:00:00+00:00'
+        to: '2025-12-13T00:00:00+00:00'
+        prop:
+          from:
+            day: 4
+            month: 10
+            year: 2025
+          to:
+            day: 13
+            month: 12
+            year: 2025
+        string: Oct 4, 2025 to Dec 13, 2025
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.71
+      scored_by: 157696
+      rank: 63
+      popularity: 919
+      members: 306129
+      favorites: 2958
+      synopsis: |-
+        The final stages of an all-out war between heroes and villains unfold as the world watches its symbols of peace and destruction collide. When All Might is critically injured, global fear takes hold as the fate of society hangs in the balance, and the threat of All For One and Tomura Shigaraki makes it clear that the conflict is far from over.
+
+        As hope begins to fade, Izuku "Deku" Midoriya stands at the forefront, refusing to let the war end in despair. Pushed beyond his limits and supported by Katsuki Bakugou and other heroes fighting beside him, Deku becomes the central force opposing collapse. The conflict becomes a defining turning point for society—one where the future will be entrusted to the victorious side.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: fall
+      year: 2025
+      broadcast:
+        day: Saturdays
+        time: '17:30'
+        timezone: Asia/Tokyo
+        string: Saturdays at 17:30 (JST)
+      producers:
+      - mal_id: 4
+        type: anime
+        name: Bones
+        url: https://myanimelist.net/anime/producer/4/Bones
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 76
+        type: anime
+        name: Yomiuri Telecasting
+        url: https://myanimelist.net/anime/producer/76/Yomiuri_Telecasting
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 757
+        type: anime
+        name: Sony Music Entertainment
+        url: https://myanimelist.net/anime/producer/757/Sony_Music_Entertainment
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      - mal_id: 1499
+        type: anime
+        name: Techno Sound
+        url: https://myanimelist.net/anime/producer/1499/Techno_Sound
+      - mal_id: 2229
+        type: anime
+        name: Toho Music
+        url: https://myanimelist.net/anime/producer/2229/Toho_Music
+      licensors: []
+      studios:
+      - mal_id: 3045
+        type: anime
+        name: Bones Film
+        url: https://myanimelist.net/anime/producer/3045/Bones_Film
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      - mal_id: 31
+        type: anime
+        name: Super Power
+        url: https://myanimelist.net/anime/genre/31/Super_Power
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+  body_text: null
+  body_b64: null

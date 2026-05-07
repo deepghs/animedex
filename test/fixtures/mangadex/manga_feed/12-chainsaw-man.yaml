@@ -1,0 +1,94 @@
+metadata:
+  captured_at: '2026-05-07T11:09:37Z'
+  label: chainsaw-man
+  backend: mangadex
+  path_slug: manga_feed
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/a77742b1-befd-49a4-bff5-1ad4e6b0ef7b/feed?translatedLanguage%5B%5D=en&limit=2&order%5Bchapter%5D=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=60, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:37 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '553'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: e78af7a4-51c4-495b-a937-dc67a17a482c
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 48bd1595-f11e-47b1-b5a0-1a0b767a2457
+      type: chapter
+      attributes:
+        volume: null
+        chapter: '232'
+        title: Thank You, Chainsaw Man
+        translatedLanguage: en
+        externalUrl: https://mangaplus.shueisha.co.jp/viewer/1028085
+        isUnavailable: false
+        publishAt: '2026-03-25T01:08:29+00:00'
+        readableAt: '2026-03-25T01:08:29+00:00'
+        createdAt: '2026-03-25T01:08:26+00:00'
+        updatedAt: '2026-03-25T01:08:29+00:00'
+        version: 2
+        pages: 0
+      relationships:
+      - id: 4f1de6a2-f0c5-4ac5-bce5-02c7dbb67deb
+        type: scanlation_group
+      - id: a77742b1-befd-49a4-bff5-1ad4e6b0ef7b
+        type: manga
+      - id: 74d95af1-7492-4fca-bc44-10c9142703e8
+        type: user
+    - id: 1c0519ab-4d46-46c1-b9de-e9b173613cb4
+      type: chapter
+      attributes:
+        volume: null
+        chapter: '231'
+        title: Goodbye, Pochita
+        translatedLanguage: en
+        externalUrl: https://mangaplus.shueisha.co.jp/viewer/1028084
+        isUnavailable: false
+        publishAt: '2026-03-10T15:05:23+00:00'
+        readableAt: '2026-03-10T15:05:23+00:00'
+        createdAt: '2026-03-10T15:05:23+00:00'
+        updatedAt: '2026-03-10T15:05:23+00:00'
+        version: 2
+        pages: 0
+      relationships:
+      - id: 4f1de6a2-f0c5-4ac5-bce5-02c7dbb67deb
+        type: scanlation_group
+      - id: a77742b1-befd-49a4-bff5-1ad4e6b0ef7b
+        type: manga
+      - id: 74d95af1-7492-4fca-bc44-10c9142703e8
+        type: user
+    limit: 2
+    offset: 0
+    total: 107
+  body_text: null
+  body_b64: null

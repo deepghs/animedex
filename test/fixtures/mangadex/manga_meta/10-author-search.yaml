@@ -1,0 +1,143 @@
+metadata:
+  captured_at: '2026-05-07T11:09:52Z'
+  label: author-search
+  backend: mangadex
+  path_slug: manga_meta
+request:
+  method: GET
+  url: https://api.mangadex.org/author?name=Yamada&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:52 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '840'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 03fc2a2c-7a0e-429c-88d8-9d799ccb0825
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 90d96b46-1337-4161-868a-faa6815b9c4e
+      type: author
+      attributes:
+        name: Yamada
+        imageUrl: null
+        biography:
+          en: |-
+            **Alt names**:
+            ヤマダ
+        twitter: https://twitter.com/yamada_mkra
+        pixiv: https://www.pixiv.net/users/4905268
+        melonBook: null
+        fanBox: https://yamada-mkra.fanbox.cc/
+        booth: null
+        namicomi: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: http://dnsksrn.web.fc2.com/
+        createdAt: '2021-04-19T21:59:45+00:00'
+        updatedAt: '2023-06-05T06:41:14+00:00'
+        version: 2
+      relationships:
+      - id: b91ce52d-6b0f-4395-963c-aefec784b7ae
+        type: manga
+      - id: 377f3d49-8059-405d-8d3e-07cb28e9bfc6
+        type: manga
+      - id: 61f0be29-44e1-41cc-a99c-55930d7e9178
+        type: manga
+      - id: 70f9c9ca-3f1b-4cd0-89d6-84e2f995f355
+        type: manga
+      - id: fca2f739-dda0-4497-b3fb-9dae069c980c
+        type: manga
+      - id: 7c08f074-2951-4ad0-b3a1-fbb5a3c6efd3
+        type: manga
+      - id: 9e7c3c25-ddb8-4b88-9090-38787cfd87af
+        type: manga
+    - id: 33cd8d27-2774-4c18-943e-bd00afbae139
+      type: author
+      attributes:
+        name: Ken Yamadaka
+        imageUrl: null
+        biography: {}
+        twitter: null
+        pixiv: null
+        melonBook: null
+        fanBox: null
+        booth: null
+        namicomi: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: null
+        createdAt: '2023-11-14T17:57:05+00:00'
+        updatedAt: '2023-11-14T17:57:05+00:00'
+        version: 1
+      relationships:
+      - id: a6443a84-843e-4396-85b6-fbdf20ea8930
+        type: manga
+    - id: 33d069d3-59e9-4f7c-ae10-b48d5865e7b7
+      type: author
+      attributes:
+        name: Yamada Sariko
+        imageUrl: null
+        biography: {}
+        twitter: null
+        pixiv: null
+        melonBook: null
+        fanBox: null
+        booth: null
+        namicomi: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: null
+        createdAt: '2021-04-19T21:59:45+00:00'
+        updatedAt: '2021-04-19T21:59:45+00:00'
+        version: 1
+      relationships:
+      - id: 6af5bf72-620e-4a7e-9d94-da195bfba7e8
+        type: manga
+    limit: 3
+    offset: 0
+    total: 138
+  body_text: null
+  body_b64: null

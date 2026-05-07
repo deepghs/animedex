@@ -1,0 +1,89 @@
+metadata:
+  captured_at: '2026-05-07T11:26:06Z'
+  label: ghibli
+  backend: ann
+  path_slug: substring_search
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=~Ghibli
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:26:06 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:26:06 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Access-Control-Allow-Origin: '*'
+    Cache-Control: public
+    Expires: Fri, 08 May 2026 11:26:06 GMT
+    X-Ann: skip state commit
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <ann><anime id="6171" gid="2993034966" type="omnibus" name="Ghibli Museum Shorts" precision="omnibus" generated-on="2026-05-07T11:26:06Z">
+    <related-next id="6168" rel="part"/>
+    <related-next id="6169" rel="part"/>
+    <related-next id="6170" rel="part"/>
+    <related-next id="15174" rel="part"/>
+    <related-next id="15175" rel="part"/>
+    <related-next id="2942" rel="part"/>
+    <related-next id="2941" rel="part"/>
+    <related-next id="4574" rel="part"/>
+    <related-next id="15176" rel="part"/>
+    <related-next id="20506" rel="part"/>
+    <info gid="1128477591" type="Main title" lang="EN">Ghibli Museum Shorts</info>
+    <info gid="2549589420" type="Official website" lang="JA" href="http://www.ghibli-museum.jp/welcome/cinema/">映像展示室 土星座 - 三鷹の森 ジブリ美術館</info>
+    <news datetime="2016-06-01T22:00:00Z" href="https://www.animenewsnetwork.com:/news/2016-06-01/producer-nishimura-hayao-miyazaki-is-planning-3-more-ghibli-museum-shorts/.102700">Producer Nishimura: Hayao Miyazaki Is Planning 3 More Ghibli Museum Shorts</news></anime><anime id="4814" gid="511420193" type="special" name="Ghiblies" precision="special" generated-on="2026-05-07T11:26:06Z">
+    <info gid="2458381287" type="Picture" src="https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A4814-5.jpg" width="183" height="200"><img src="https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A4814-5.jpg" width="183" height="200"/><img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A4814-5.jpg" width="225" height="246"/></info>
+    <info gid="1303849562" type="Main title" lang="EN">Ghiblies</info>
+    <info gid="3721870825" type="Alternative title" lang="JA">ギブリーズ</info>
+    <info gid="130600054" type="Genres">comedy</info>
+    <info gid="3622687936" type="Genres">slice of life</info>
+    <info gid="3400220304" type="Themes">parody</info>
+    <info gid="567624088" type="Objectionable content">AA</info>
+    <info gid="940336710" type="Plot Summary">This rare Ghibli Comedy is a look into who the people making the films are. Plotlines run from office jokes to Nonaka&#039;s first love, bringing together a short feature of random events.</info>
+    <info gid="1307248634" type="Running time">37</info>
+    <info gid="2846753119" type="Vintage">2000-04-08 to 2002-07-19</info>
+    <info gid="2280610871" type="Vintage">2001-01-20 (Ep.1, Italy - Future Film Festival)</info>
+    <info gid="2777909890" type="Vintage">2016-12-03 (Ep. 2, USA)</info>
+    <info gid="1428693891" type="Ending Theme">&quot;No Women No Cry&quot; by Tine</info>
+    <ratings nb_votes="115" weighted_score="6.6101" bayesian_score="6.69144"/>
+    <release date="2017-04-18" href="https://www.animenewsnetwork.com/encyclopedia/releases.php?id=33626">Ocean Waves (Sub.Blu-ray + DVD)</release>
+    <release date="2022-10-11" href="https://www.animenewsnetwork.com/encyclopedia/releases.php?id=44068">Ocean Waves (Sub.Blu-ray + DVD)</release>
+    <release date="2017-04-18" href="https://www.animenewsnetwork.com/encyclopedia/releases.php?id=33603">Ocean Waves (Sub.DVD)</release>
+    <news datetime="2002-03-31T01:44:45Z" href="https://www.animenewsnetwork.com/news/2002-03-30/neko-no-ongaeshi">Neko no Ongaeshi</news>
+    <news datetime="2016-11-14T17:55:03Z" href="https://www.animenewsnetwork.com:/news/2016-11-14/spirited-away-to-screen-in-us-theaters-with-ghiblies-2-short-film/.108804">&lt;cite&gt;Spirited Away&lt;/cite&gt; to Screen in US Theaters With &#039;Ghiblies 2&#039; Short Film</news>
+    <news datetime="2016-12-08T15:50:00Z" href="https://www.animenewsnetwork.com:/news/2016-12-08/gkids-streams-ghiblies-episode-2-clip-adds-3rd-day-of-spirited-away-screenings/.109305">GKids Streams &lt;cite&gt;Ghiblies: Episode 2&lt;/cite&gt; Clip, Adds 3rd Day of &lt;cite&gt;Spirited Away&lt;/cite&gt; Screenings</news>
+    <news datetime="2016-12-10T23:45:00Z" href="https://www.animenewsnetwork.com:/news/2016-12-10/spirited-away-subtitled-screenings-ranked-no.5-at-monday-u.s-box-office/.109581">&lt;cite&gt;Spirited Away&#039;s&lt;/cite&gt; Subtitled Screenings Ranked #5 at Monday&#039;s U.S. Box Office</news>
+    <news datetime="2021-10-22T14:58:42Z" href="https://www.animenewsnetwork.com:/news/2021-10-22/japan-new-ghibli-collection-set-offers-1st-ghiblies-short-on-bd-dvd-for-1st-time/.178736">Japan&#039;s New Ghibli Collection Set Offers 1st &#039;Ghiblies&#039; Short on BD/DVD for 1st Time</news>
+    <staff gid="326459386"><task>Director</task><person id="1919">Yoshiyuki Momose</person></staff>
+    <staff gid="965411285"><task>Script</task><person id="1919">Yoshiyuki Momose</person></staff>
+    <staff gid="1193032054"><task>Music</task><person id="41534">Manto Watanobe</person></staff>
+    <staff gid="2463011816"><task>Original Character Design</task><person id="1186">Toshio Suzuki</person></staff>
+    <staff gid="754163087"><task>Character Design</task><person id="1730">Toshio Kawaguchi</person></staff>
+    <staff gid="1231716894"><task>Art Director</task><person id="1813">Noboru Yoshida</person></staff>
+    <staff gid="2971122401"><task>Cgi Director</task><person id="1920">Mitsunori Kataama</person></staff>
+    <staff gid="802786551"><task>Producer</task><person id="244740">Hiroyuki Watanabe</person></staff>
+    <cast gid="2371704548" lang="JA"><role>Toshi-chan</role><person id="2040">Kaoru Kobayashi</person></cast>
+    <cast gid="1467127571" lang="JA"><role>Nonaka-kun</role><person id="2041">Masahiko Nishimura</person></cast>
+    <cast gid="1859836555" lang="JA"><role>Hotaru-chan</role><person id="17035">Tomoe Shinohara</person></cast>
+    <cast gid="961576807" lang="JA"><role>Oku-chan</role><person id="17495">Arata Furuta</person></cast>
+    <cast gid="2468411996" lang="JA"><role>Toku-san</role><person id="19813">Satoru Saitō</person></cast>
+    <cast gid="2269688521" lang="JA"><role>Kome-chan</role><person id="30287">Koji Imada</person></cast>
+    <cast gid="1353422119" lang="JA"><role>Yukari-san</role><person id="93512">Kyōka Suzuki</person></cast>
+    <credit gid="3830777250"><task>Production</task><company id="60">Studio Ghibli</company></credit></anime></ann>
+  body_b64: null

@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:19:04Z'
+  label: madoka
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Madoka&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:19:04 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"75814b312dcfed2e92945d61af58fb44"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: f93feedc-07f3-4709-bc33-5c45af9bcdbc
+    X-Runtime: '0.030170'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 9756
+    name: Mahou Shoujo Madoka★Magica
+    russian: Девочка-волшебница Мадока★Волшебство
+    image:
+      original: /system/animes/original/9756.jpg?1711962488
+      preview: /system/animes/preview/9756.jpg?1711962488
+      x96: /system/animes/x96/9756.jpg?1711962488
+      x48: /system/animes/x48/9756.jpg?1711962488
+    url: /animes/9756-mahou-shoujo-madoka-magica
+    kind: tv
+    score: '8.38'
+    status: released
+    episodes: 12
+    episodes_aired: 12
+    aired_on: '2011-01-07'
+    released_on: '2011-04-22'
+  - id: 11981
+    name: 'Mahou Shoujo Madoka★Magica Movie 3: Hangyaku no Monogatari'
+    russian: 'Девочка-волшебница Мадока★Волшебный фильм 3: История восстания'
+    image:
+      original: /system/animes/original/11981.jpg?1711962325
+      preview: /system/animes/preview/11981.jpg?1711962325
+      x96: /system/animes/x96/11981.jpg?1711962325
+      x48: /system/animes/x48/11981.jpg?1711962325
+    url: /animes/11981-mahou-shoujo-madoka-magica-movie-3-hangyaku-no-monogatari
+    kind: movie
+    score: '8.5'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2013-10-26'
+    released_on: null
+  body_text: null
+  body_b64: null

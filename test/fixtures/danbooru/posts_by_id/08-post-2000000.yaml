@@ -1,0 +1,143 @@
+metadata:
+  captured_at: '2026-05-07T11:17:13Z'
+  label: post-2000000
+  backend: danbooru
+  path_slug: posts_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts/2000000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:13 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"81d0eacb351213b0a3d137423cf36598"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd1249b90fcb6-KIX
+    server-timing: sql.queries;count=2, cache.reads;count=1, cache.keys_read;count=55, cache.keys_hit;count=55, cache.total_time;dur=0.5967,
+      rails.total_time;dur=4.9771, rails.cpu_time;dur=3.4495, rails.idle_time;dur=1.5276, rails.sql_time;dur=1.4181, rails.view_time;dur=1.8734,
+      rails.allocations;count=4451, request.allocations;count=4907, request.gc_time;dur=0.3982, request.gc_count;count=0,
+      request.cpu_time;dur=4.1276, request.total_time;dur=5.6554, request.queue_time_0;dur=0.4756, request.queue_time_1;dur=-441.0
+    x-runtime: '0.0056553955078125'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 2000000
+    created_at: '2015-05-01T10:27:45.577-04:00'
+    uploader_id: 366860
+    score: 314
+    source: http://seiga.nicovideo.jp/seiga/im4615073
+    md5: c4419c450503daec95d3e1d6d538360a
+    last_comment_bumped_at: '2015-05-05T18:40:02.560-04:00'
+    rating: q
+    image_width: 1200
+    image_height: 1200
+    tag_string: 1girl artist_logo artist_name backlighting black_hair black_socks blue_neckerchief blue_ribbon blue_sailor_collar
+      blue_skirt breasts brown_eyes cloritin closed_mouth collarbone commentary_request dutch_angle fubuki_(kancolle) full_body
+      hand_on_own_crotch highres kantai_collection kneehighs logo long_hair looking_at_viewer low_ponytail midriff miniskirt
+      navel neckerchief panties pantyshot partial_commentary pleated_skirt ponytail ribbon sailor_collar school_uniform serafuku
+      shirt short_sleeves sidelocks sitting skirt sleeve_cuffs small_breasts smile socks solo spread_legs straight_hair underwear
+      white_panties white_shirt
+    fav_count: 329
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 49
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 144927
+    up_score: 292
+    down_score: -4
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 55
+    updated_at: '2024-11-14T23:53:35.946-05:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: '2018-01-28T01:13:27.847-05:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 3
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 1968484
+      created_at: '2015-05-01T10:27:45.577-04:00'
+      updated_at: '2023-02-25T14:33:07.486-05:00'
+      md5: c4419c450503daec95d3e1d6d538360a
+      file_ext: jpg
+      file_size: 144927
+      image_width: 1200
+      image_height: 1200
+      duration: null
+      status: active
+      file_key: KR4C2Gvwy
+      is_public: true
+      pixel_hash: 43605759ead7588d72cc1d86ad48c748
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/c4/41/c4419c450503daec95d3e1d6d538360a.jpg
+        width: 180
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/c4/41/c4419c450503daec95d3e1d6d538360a.jpg
+        width: 360
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/c4/41/c4419c450503daec95d3e1d6d538360a.webp
+        width: 720
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/c4/41/sample-c4419c450503daec95d3e1d6d538360a.jpg
+        width: 850
+        height: 850
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/c4/41/c4419c450503daec95d3e1d6d538360a.jpg
+        width: 1200
+        height: 1200
+        file_ext: jpg
+    tag_string_general: 1girl artist_logo artist_name backlighting black_hair black_socks blue_neckerchief blue_ribbon blue_sailor_collar
+      blue_skirt breasts brown_eyes closed_mouth collarbone dutch_angle full_body hand_on_own_crotch kneehighs logo long_hair
+      looking_at_viewer low_ponytail midriff miniskirt navel neckerchief panties pantyshot pleated_skirt ponytail ribbon sailor_collar
+      school_uniform serafuku shirt short_sleeves sidelocks sitting skirt sleeve_cuffs small_breasts smile socks solo spread_legs
+      straight_hair underwear white_panties white_shirt
+    tag_string_character: fubuki_(kancolle)
+    tag_string_copyright: kantai_collection
+    tag_string_artist: cloritin
+    tag_string_meta: commentary_request highres partial_commentary
+    file_url: https://cdn.donmai.us/original/c4/41/c4419c450503daec95d3e1d6d538360a.jpg
+    large_file_url: https://cdn.donmai.us/sample/c4/41/sample-c4419c450503daec95d3e1d6d538360a.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/c4/41/c4419c450503daec95d3e1d6d538360a.jpg
+  body_text: null
+  body_b64: null

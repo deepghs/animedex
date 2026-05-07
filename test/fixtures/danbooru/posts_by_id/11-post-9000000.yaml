@@ -1,0 +1,142 @@
+metadata:
+  captured_at: '2026-05-07T11:17:16Z'
+  label: post-9000000
+  backend: danbooru
+  path_slug: posts_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts/9000000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:16 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"5e4a253201fe11a0e141ec422ed593a8"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd1382c14fcb4-KIX
+    server-timing: sql.queries;count=2, cache.reads;count=1, cache.keys_read;count=52, cache.keys_hit;count=52, cache.total_time;dur=0.5286,
+      rails.total_time;dur=4.3183, rails.cpu_time;dur=2.5406, rails.idle_time;dur=1.7777, rails.sql_time;dur=1.6437, rails.view_time;dur=1.2639,
+      rails.allocations;count=4334, request.allocations;count=4790, request.gc_time;dur=0.0193, request.gc_count;count=0,
+      request.cpu_time;dur=3.0725, request.total_time;dur=4.8503, request.queue_time_0;dur=1.2481, request.queue_time_1;dur=96.9999
+    x-runtime: '0.004850311279296875'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 9000000
+    created_at: '2025-03-15T09:01:16.309-04:00'
+    uploader_id: 819950
+    score: 1491
+    source: https://twitter.com/ura1134/status/1423293083941146630
+    md5: b1b0efa202c6b413100bcbc1ab3933f1
+    last_comment_bumped_at: '2025-04-27T18:36:27.486-04:00'
+    rating: g
+    image_width: 2444
+    image_height: 2444
+    tag_string: 1girl ;q absurdres bad_id bad_twitter_id blonde_hair blush bow chaos_marie_(grimms_notes) cleavage_cutout
+      closed_mouth clothing_cutout commentary commission diamond_necklace dot_nose eyelashes flat_chest flat_color gem grimms_notes
+      hair_bow hair_ribbon happy heart heart-shaped_pupils highres jewelry light_blush long_hair looking_at_viewer one_eye_closed
+      pendant pink_background pink_bow pink_eyes pink_ribbon puffy_short_sleeves puffy_sleeves ribbon short_sleeves simple_background
+      smile solo star_(symbol) striped_bow symbol-shaped_pupils symbol_in_eye tongue tongue_out upper_body ura1134
+    fav_count: 1303
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: 900734
+    tag_count_general: 43
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 409154
+    up_score: 1511
+    down_score: -20
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 52
+    updated_at: '2025-07-02T18:48:24.671-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: '2025-04-27T18:36:27.486-04:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 6
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 25209130
+      created_at: '2025-03-15T01:36:30.566-04:00'
+      updated_at: '2025-03-15T01:36:40.127-04:00'
+      md5: b1b0efa202c6b413100bcbc1ab3933f1
+      file_ext: jpg
+      file_size: 409154
+      image_width: 2444
+      image_height: 2444
+      duration: null
+      status: active
+      file_key: bYXTK7LgU
+      is_public: true
+      pixel_hash: 6cea8b54f1f16fc2720c80933e999344
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/b1/b0/b1b0efa202c6b413100bcbc1ab3933f1.jpg
+        width: 180
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/b1/b0/b1b0efa202c6b413100bcbc1ab3933f1.jpg
+        width: 360
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/b1/b0/b1b0efa202c6b413100bcbc1ab3933f1.webp
+        width: 720
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/b1/b0/sample-b1b0efa202c6b413100bcbc1ab3933f1.jpg
+        width: 850
+        height: 850
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/b1/b0/b1b0efa202c6b413100bcbc1ab3933f1.jpg
+        width: 2444
+        height: 2444
+        file_ext: jpg
+    tag_string_general: 1girl ;q blonde_hair blush bow cleavage_cutout closed_mouth clothing_cutout diamond_necklace dot_nose
+      eyelashes flat_chest flat_color gem hair_bow hair_ribbon happy heart heart-shaped_pupils jewelry light_blush long_hair
+      looking_at_viewer one_eye_closed pendant pink_background pink_bow pink_eyes pink_ribbon puffy_short_sleeves puffy_sleeves
+      ribbon short_sleeves simple_background smile solo star_(symbol) striped_bow symbol-shaped_pupils symbol_in_eye tongue
+      tongue_out upper_body
+    tag_string_character: chaos_marie_(grimms_notes)
+    tag_string_copyright: grimms_notes
+    tag_string_artist: ura1134
+    tag_string_meta: absurdres bad_id bad_twitter_id commentary commission highres
+    file_url: https://cdn.donmai.us/original/b1/b0/b1b0efa202c6b413100bcbc1ab3933f1.jpg
+    large_file_url: https://cdn.donmai.us/sample/b1/b0/sample-b1b0efa202c6b413100bcbc1ab3933f1.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/b1/b0/b1b0efa202c6b413100bcbc1ab3933f1.jpg
+  body_text: null
+  body_b64: null

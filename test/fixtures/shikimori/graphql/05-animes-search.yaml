@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-07T11:25:08Z'
+  label: animes-search
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(search:"Frieren",limit:3){ id name }}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:08 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"70111ad1d06555b237cc2192b86184b8"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 3258124d-6033-4c44-8ced-3ebb47c137ee
+    X-Runtime: '0.018374'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes:
+      - id: '52991'
+        name: Sousou no Frieren
+      - id: '56885'
+        name: 'Sousou no Frieren: ●● no Mahou'
+      - id: '63816'
+        name: 'Sousou no Frieren: Ougonkyou-hen'
+  body_text: null
+  body_b64: null

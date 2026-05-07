@@ -1,0 +1,50 @@
+metadata:
+  captured_at: '2026-05-07T11:09:47Z'
+  label: manga-statistics-frieren
+  backend: mangadex
+  path_slug: manga_meta
+request:
+  method: GET
+  url: https://api.mangadex.org/statistics/manga/67be7e1c-b2c2-4a73-8d83-3ddca4b1c6fc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Thu, 07 May 2026 11:09:47 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    content-length: '182'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: b4ca641e-84a8-4d78-8f93-9fc379b3ddea
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: error
+    errors:
+    - id: 770a6444-c695-570d-bfd2-a0eec2e95ce9
+      status: 404
+      title: not_found_http_exception
+      detail: Manga `67be7e1c-b2c2-4a73-8d83-3ddca4b1c6fc` not found.
+      context: null
+  body_text: null
+  body_b64: null

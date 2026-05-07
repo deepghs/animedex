@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:18:48Z'
+  label: attack-on-titan
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Attack+on+Titan&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:18:48 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"19bee630eef2205e9c0713f36312334a"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: a360ac50-9e80-45f5-a5a3-aa85d218f44a
+    X-Runtime: '0.165352'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 16498
+    name: Shingeki no Kyojin
+    russian: Атака титанов
+    image:
+      original: /system/animes/original/16498.jpg?1711973439
+      preview: /system/animes/preview/16498.jpg?1711973439
+      x96: /system/animes/x96/16498.jpg?1711973439
+      x48: /system/animes/x48/16498.jpg?1711973439
+    url: /animes/16498-shingeki-no-kyojin
+    kind: tv
+    score: '8.57'
+    status: released
+    episodes: 25
+    episodes_aired: 25
+    aired_on: '2013-04-07'
+    released_on: '2013-09-29'
+  - id: 35122
+    name: Shingeki no Kyotou
+    russian: 'Атака титанов: Оборона Skytree'
+    image:
+      original: /system/animes/original/35122.jpg?1711973493
+      preview: /system/animes/preview/35122.jpg?1711973493
+      x96: /system/animes/x96/35122.jpg?1711973493
+      x48: /system/animes/x48/35122.jpg?1711973493
+    url: /animes/35122-shingeki-no-kyotou
+    kind: movie
+    score: '6.38'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2017-04-10'
+    released_on: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,133 @@
+metadata:
+  captured_at: '2026-05-07T11:07:28Z'
+  label: naruto-11
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/11/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:28 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"dbbacc7df2fadd24f773568e03989490"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: ee34f0b9-48a9-4a02-a120-18d4e08c7072
+    x-runtime: '0.052035'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '967'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/967
+      attributes:
+        createdAt: null
+        updatedAt: '2017-07-15T04:34:43.214Z'
+        url: https://www.netflix.com/title/70205012
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/967/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/967/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/967/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/967/media
+    - id: '968'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/968
+      attributes:
+        createdAt: null
+        updatedAt: null
+        url: http://www.hulu.com/naruto
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/968/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/968/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/968/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/968/media
+    - id: '969'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/969
+      attributes:
+        createdAt: null
+        updatedAt: null
+        url: http://www.crunchyroll.com/naruto
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/969/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/969/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/969/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/969/media
+    - id: '6702'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/6702
+      attributes:
+        createdAt: '2023-02-17T22:52:20.638Z'
+        updatedAt: '2023-02-17T22:52:20.638Z'
+        url: https://www.youtube.com/watch?v=L0jof4vJdxE&list=PLDDFkfLheQ9hNru7WoTa26dpn6o9-AEJK
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/6702/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/6702/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/6702/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/6702/media
+    meta:
+      count: 4
+    links:
+      first: https://kitsu.io/api/edge/anime/11/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/11/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

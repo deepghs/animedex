@@ -1,0 +1,91 @@
+metadata:
+  captured_at: '2026-05-07T11:08:11Z'
+  label: vinland-saga-41370
+  backend: kitsu
+  path_slug: anime_mappings
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/41370/mappings?page%5Blimit%5D=10
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:11 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"9abca3cbc4c223fbc5a993a420a8a2ab"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 4178b271-e7fc-40aa-bf96-9c3f4b40a9e8
+    x-runtime: '0.122764'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '237613'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/237613
+      attributes:
+        createdAt: '2018-08-03T18:43:21.422Z'
+        updatedAt: '2018-08-03T18:43:21.422Z'
+        externalSite: myanimelist/anime
+        externalId: '38000'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/237613/relationships/item
+            related: https://kitsu.io/api/edge/mappings/237613/item
+    - id: '237614'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/237614
+      attributes:
+        createdAt: '2018-08-03T18:43:36.579Z'
+        updatedAt: '2018-08-03T18:43:36.579Z'
+        externalSite: anidb
+        externalId: '14107'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/237614/relationships/item
+            related: https://kitsu.io/api/edge/mappings/237614/item
+    - id: '254554'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/254554
+      attributes:
+        createdAt: '2020-05-02T14:54:28.485Z'
+        updatedAt: '2020-05-02T14:54:28.485Z'
+        externalSite: anilist/anime
+        externalId: '101922'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/254554/relationships/item
+            related: https://kitsu.io/api/edge/mappings/254554/item
+    meta:
+      count: 3
+    links:
+      first: https://kitsu.io/api/edge/anime/41370/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/41370/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

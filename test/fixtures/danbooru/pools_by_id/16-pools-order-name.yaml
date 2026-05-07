@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-07T11:18:19Z'
+  label: pools-order-name
+  backend: danbooru
+  path_slug: pools_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/pools.json?search%5Border%5D=name&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:18:19 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"0e85d31447074338d376583d54b8e322"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd2bfeec9d3ef-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=13.1208, rails.cpu_time;dur=2.4998, rails.idle_time;dur=10.621,
+      rails.sql_time;dur=10.7872, rails.view_time;dur=11.1192, rails.allocations;count=1492, request.allocations;count=2005,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.4185, request.total_time;dur=14.0395, request.queue_time_0;dur=1.1139,
+      request.queue_time_1;dur=84.9998
+    x-runtime: '0.014039535522460938'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 15693
+    name: 00-Please_Flush
+    created_at: '2020-01-31T00:26:01.064-05:00'
+    updated_at: '2020-12-18T06:51:19.112-05:00'
+    description: ''
+    is_active: true
+    is_deleted: true
+    post_ids: []
+    category: series
+    post_count: 0
+  - id: 10702
+    name: 00_-_Please_Flush_Pool
+    created_at: '2015-12-12T02:39:28.433-05:00'
+    updated_at: '2020-12-18T06:50:51.153-05:00'
+    description: "This is a dummy pool to catch all accidental pool additions.\r\n\r\nApparently, users sometimes accidentally\
+      \ add posts to the first pool that shows up in the [i]Add to pool → See full list[/i] listing. This pool’s name was\
+      \ chosen to always show up first and thus catch all accidental additions instead of letting them go into some random\
+      \ other pool. [b]This pool must be marked as active for that to work.[/b] See forum #132379.\r\n\r\nIf you see any posts\
+      \ in this pool, feel free to remove them."
+    is_active: true
+    is_deleted: true
+    post_ids: []
+    category: collection
+    post_count: 0
+  body_text: null
+  body_b64: null

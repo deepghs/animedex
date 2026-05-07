@@ -1,0 +1,467 @@
+metadata:
+  captured_at: '2026-05-07T11:02:48Z'
+  label: min-score-9
+  backend: jikan
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime?min_score=9&limit=3&order_by=score&sort=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:02:48 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 5
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 13
+        per_page: 3
+    data:
+    - mal_id: 52991
+      url: https://myanimelist.net/anime/52991/Sousou_no_Frieren
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1015/138006.jpg
+          small_image_url: https://myanimelist.net/images/anime/1015/138006t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1015/138006l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1015/138006.webp
+          small_image_url: https://myanimelist.net/images/anime/1015/138006t.webp
+          large_image_url: https://myanimelist.net/images/anime/1015/138006l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/ZEkwCGJ3o7M?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Sousou no Frieren
+      - type: Synonym
+        title: Frieren at the Funeral
+      - type: Synonym
+        title: Frieren The Slayer
+      - type: Japanese
+        title: 葬送のフリーレン
+      - type: English
+        title: 'Frieren: Beyond Journey''s End'
+      title: Sousou no Frieren
+      title_english: 'Frieren: Beyond Journey''s End'
+      title_japanese: 葬送のフリーレン
+      title_synonyms:
+      - Frieren at the Funeral
+      - Frieren The Slayer
+      type: TV
+      source: Manga
+      episodes: 28
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2023-09-29T00:00:00+00:00'
+        to: '2024-03-22T00:00:00+00:00'
+        prop:
+          from:
+            day: 29
+            month: 9
+            year: 2023
+          to:
+            day: 22
+            month: 3
+            year: 2024
+        string: Sep 29, 2023 to Mar 22, 2024
+      duration: 24 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 9.27
+      scored_by: 882662
+      rank: 1
+      popularity: 104
+      members: 1431842
+      favorites: 89236
+      synopsis: |-
+        During their decade-long quest to defeat the Demon King, the members of the hero's party—Himmel himself, the priest Heiter, the dwarf warrior Eisen, and the elven mage Frieren—forge bonds through adventures and battles, creating unforgettable precious memories for most of them.
+
+        However, the time that Frieren spends with her comrades is equivalent to merely a fraction of her life, which has lasted over a thousand years. When the party disbands after their victory, Frieren casually returns to her "usual" routine of collecting spells across the continent. Due to her different sense of time, she seemingly holds no strong feelings toward the experiences she went through.
+
+        As the years pass, Frieren gradually realizes how her days in the hero's party truly impacted her. Witnessing the deaths of two of her former companions, Frieren begins to regret having taken their presence for granted; she vows to better understand humans and create real personal connections. Although the story of that once memorable journey has long ended, a new tale is about to begin.
+
+        [Written by MAL Rewrite]
+      background: Sousou no Frieren was released on Blu-ray and DVD in seven volumes from January 24, 2024, to July 17, 2024.
+        The series aired on Nippon TV's Friday Anime Night block.
+      season: fall
+      year: 2023
+      broadcast:
+        day: Fridays
+        time: '23:00'
+        timezone: Asia/Tokyo
+        string: Fridays at 23:00 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 62
+        type: anime
+        name: Shogakukan-Shueisha Productions
+        url: https://myanimelist.net/anime/producer/62/Shogakukan-Shueisha_Productions
+      - mal_id: 1003
+        type: anime
+        name: Nippon Television Network
+        url: https://myanimelist.net/anime/producer/1003/Nippon_Television_Network
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1430
+        type: anime
+        name: Shogakukan
+        url: https://myanimelist.net/anime/producer/1430/Shogakukan
+      licensors:
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      studios:
+      - mal_id: 11
+        type: anime
+        name: Madhouse
+        url: https://myanimelist.net/anime/producer/11/Madhouse
+      genres:
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 46
+        type: anime
+        name: Award Winning
+        url: https://myanimelist.net/anime/genre/46/Award_Winning
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 61469
+      url: https://myanimelist.net/anime/61469/Steel_Ball_Run__JoJo_no_Kimyou_na_Bouken
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1448/154111.jpg
+          small_image_url: https://myanimelist.net/images/anime/1448/154111t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1448/154111l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1448/154111.webp
+          small_image_url: https://myanimelist.net/images/anime/1448/154111t.webp
+          large_image_url: https://myanimelist.net/images/anime/1448/154111l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/TWw06YDOQy0?si=SxzUyy3Q-7R6PxzG?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Steel Ball Run: JoJo no Kimyou na Bouken'
+      - type: Synonym
+        title: 'JoJo''s Bizarre Adventure Part 7: Steel Ball Run'
+      - type: Synonym
+        title: 'JoJo no Kimyou na Bouken Part 7: Steel Ball Run'
+      - type: Synonym
+        title: SBR
+      - type: Japanese
+        title: スティール・ボール・ラン ジョジョの奇妙な冒険
+      - type: English
+        title: 'Steel Ball Run: JoJo''s Bizarre Adventure'
+      title: 'Steel Ball Run: JoJo no Kimyou na Bouken'
+      title_english: 'Steel Ball Run: JoJo''s Bizarre Adventure'
+      title_japanese: スティール・ボール・ラン ジョジョの奇妙な冒険
+      title_synonyms:
+      - 'JoJo''s Bizarre Adventure Part 7: Steel Ball Run'
+      - 'JoJo no Kimyou na Bouken Part 7: Steel Ball Run'
+      - SBR
+      type: ONA
+      source: Manga
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-03-19T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 19
+            month: 3
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Mar 19, 2026 to ?
+      duration: 47 min
+      rating: R - 17+ (violence & profanity)
+      score: 9.14
+      scored_by: 91622
+      rank: 2
+      popularity: 1386
+      members: 201481
+      favorites: 6741
+      synopsis: |-
+        In the American Old West, the world's greatest race is about to begin. Thousands line up in San Diego to travel over six thousand kilometers for a chance to win the grand prize of fifty million dollars. With the era of the horse reaching its end, contestants are allowed to use any kind of vehicle they wish. Competitors will have to endure grueling conditions, traveling up to a hundred kilometers a day through uncharted wastelands. The Steel Ball Run is truly a one-of-a-kind event.
+
+        The youthful Johnny Joestar, a crippled former horse racer, has come to San Diego to watch the start of the race. There he encounters Gyro Zeppeli, a racer with two steel balls at his waist instead of a gun. Johnny witnesses Gyro using one of his steel balls to unleash a fantastical power, compelling a man to fire his gun at himself during a duel. In the midst of the action, Johnny happens to touch the steel ball and feels a power surging through his legs, allowing him to stand up for the first time in two years. Vowing to find the secret of the steel balls, Johnny decides to compete in the race, and so begins his bizarre adventure across America on the Steel Ball Run.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 415
+        type: anime
+        name: Warner Bros. Japan
+        url: https://myanimelist.net/anime/producer/415/Warner_Bros_Japan
+      - mal_id: 719
+        type: anime
+        name: Studio Mausu
+        url: https://myanimelist.net/anime/producer/719/Studio_Mausu
+      - mal_id: 1783
+        type: anime
+        name: ONEMUSIC
+        url: https://myanimelist.net/anime/producer/1783/ONEMUSIC
+      licensors: []
+      studios:
+      - mal_id: 287
+        type: anime
+        name: David Production
+        url: https://myanimelist.net/anime/producer/287/David_Production
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 7
+        type: anime
+        name: Mystery
+        url: https://myanimelist.net/anime/genre/7/Mystery
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      explicit_genres: []
+      themes:
+      - mal_id: 13
+        type: anime
+        name: Historical
+        url: https://myanimelist.net/anime/genre/13/Historical
+      - mal_id: 3
+        type: anime
+        name: Racing
+        url: https://myanimelist.net/anime/genre/3/Racing
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 5114
+      url: https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1208/94745.jpg
+          small_image_url: https://myanimelist.net/images/anime/1208/94745t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1208/94745l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1208/94745.webp
+          small_image_url: https://myanimelist.net/images/anime/1208/94745t.webp
+          large_image_url: https://myanimelist.net/images/anime/1208/94745l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/1ac3_YdSSy0?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Fullmetal Alchemist: Brotherhood'
+      - type: Synonym
+        title: 'Hagane no Renkinjutsushi: Fullmetal Alchemist'
+      - type: Synonym
+        title: Fullmetal Alchemist (2009)
+      - type: Synonym
+        title: FMA
+      - type: Synonym
+        title: FMAB
+      - type: Japanese
+        title: 鋼の錬金術師 FULLMETAL ALCHEMIST
+      - type: English
+        title: 'Fullmetal Alchemist: Brotherhood'
+      - type: French
+        title: Fullmetal Alchemist Brotherhood
+      title: 'Fullmetal Alchemist: Brotherhood'
+      title_english: 'Fullmetal Alchemist: Brotherhood'
+      title_japanese: 鋼の錬金術師 FULLMETAL ALCHEMIST
+      title_synonyms:
+      - 'Hagane no Renkinjutsushi: Fullmetal Alchemist'
+      - Fullmetal Alchemist (2009)
+      - FMA
+      - FMAB
+      type: TV
+      source: Manga
+      episodes: 64
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2009-04-05T00:00:00+00:00'
+        to: '2010-07-04T00:00:00+00:00'
+        prop:
+          from:
+            day: 5
+            month: 4
+            year: 2009
+          to:
+            day: 4
+            month: 7
+            year: 2010
+        string: Apr 5, 2009 to Jul 4, 2010
+      duration: 24 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 9.11
+      scored_by: 2310289
+      rank: 3
+      popularity: 3
+      members: 3680216
+      favorites: 242464
+      synopsis: |-
+        After a horrific alchemy experiment goes wrong in the Elric household, brothers Edward and Alphonse are left in a catastrophic new reality. Ignoring the alchemical principle banning human transmutation, the boys attempted to bring their recently deceased mother back to life. Instead, they suffered brutal personal loss: Alphonse's body disintegrated while Edward lost a leg and then sacrificed an arm to keep Alphonse's soul in the physical realm by binding it to a hulking suit of armor.
+
+        The brothers are rescued by their neighbor Pinako Rockbell and her granddaughter Winry. Known as a bio-mechanical engineering prodigy, Winry creates prosthetic limbs for Edward by utilizing "automail," a tough, versatile metal used in robots and combat armor. After years of training, the Elric brothers set off on a quest to restore their bodies by locating the Philosopher's Stone—a powerful gem that allows an alchemist to defy the traditional laws of Equivalent Exchange.
+
+        As Edward becomes an infamous alchemist and gains the nickname "Fullmetal," the boys' journey embroils them in a growing conspiracy that threatens the fate of the world.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2009
+      broadcast:
+        day: Sundays
+        time: '17:00'
+        timezone: Asia/Tokyo
+        string: Sundays at 17:00 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 58
+        type: anime
+        name: Square Enix
+        url: https://myanimelist.net/anime/producer/58/Square_Enix
+      - mal_id: 143
+        type: anime
+        name: Mainichi Broadcasting System
+        url: https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System
+      - mal_id: 1499
+        type: anime
+        name: Techno Sound
+        url: https://myanimelist.net/anime/producer/1499/Techno_Sound
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      - mal_id: 493
+        type: anime
+        name: Aniplex of America
+        url: https://myanimelist.net/anime/producer/493/Aniplex_of_America
+      studios:
+      - mal_id: 4
+        type: anime
+        name: Bones
+        url: https://myanimelist.net/anime/producer/4/Bones
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes:
+      - mal_id: 38
+        type: anime
+        name: Military
+        url: https://myanimelist.net/anime/genre/38/Military
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+  body_text: null
+  body_b64: null

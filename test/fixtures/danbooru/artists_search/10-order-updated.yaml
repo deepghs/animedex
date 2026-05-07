@@ -1,0 +1,66 @@
+metadata:
+  captured_at: '2026-05-07T11:17:42Z'
+  label: order-updated
+  backend: danbooru
+  path_slug: artists_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artists.json?search%5Border%5D=updated_at&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:42 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"e209b6b7b1d068ff3d67b5bf103834fa"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd1dd8b89440f-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=78.9439, rails.cpu_time;dur=2.3117, rails.idle_time;dur=76.6322,
+      rails.sql_time;dur=76.7847, rails.view_time;dur=77.3132, rails.allocations;count=25115, request.allocations;count=25625,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.251, request.total_time;dur=79.8835, request.queue_time_0;dur=0.6793,
+      request.queue_time_1;dur=95.0
+    x-runtime: '0.0798834686279297'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 636964
+    created_at: '2026-05-07T07:16:21.580-04:00'
+    name: pedriboy
+    updated_at: '2026-05-07T07:16:21.590-04:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: false
+    other_names: []
+  - id: 602581
+    created_at: '2026-01-24T21:46:22.417-05:00'
+    name: shandian_yz
+    updated_at: '2026-05-07T07:16:05.067-04:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: false
+    other_names:
+    - 闪电yz
+  body_text: null
+  body_b64: null

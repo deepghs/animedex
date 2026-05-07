@@ -1,0 +1,76 @@
+metadata:
+  captured_at: '2026-05-07T11:17:32Z'
+  label: order-count-desc
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Border%5D=count&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:32 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"8a057ad9ab81cf53bd537f5d329f9256"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd19beccc1a10-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.452, rails.cpu_time;dur=1.7362, rails.idle_time;dur=0.7158,
+      rails.sql_time;dur=0.836, rails.view_time;dur=1.0646, rails.allocations;count=1597, request.allocations;count=2112,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.3051, request.total_time;dur=3.0208, request.queue_time_0;dur=12.861,
+      request.queue_time_1;dur=96.0
+    x-runtime: '0.003020843505859375'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 470575
+    name: 1girl
+    post_count: 7820278
+    category: 0
+    created_at: '2013-02-27T22:39:31.882-05:00'
+    updated_at: '2019-12-26T19:19:43.276-05:00'
+    is_deprecated: false
+    words:
+    - 1girl
+  - id: 1566
+    name: highres
+    post_count: 7447927
+    category: 5
+    created_at: '2013-02-27T22:54:13.454-05:00'
+    updated_at: '2019-08-29T20:54:31.900-04:00'
+    is_deprecated: false
+    words:
+    - highres
+  - id: 212816
+    name: solo
+    post_count: 6549924
+    category: 0
+    created_at: '2013-02-28T11:42:53.574-05:00'
+    updated_at: '2019-12-26T19:20:15.092-05:00'
+    is_deprecated: false
+    words:
+    - solo
+  body_text: null
+  body_b64: null

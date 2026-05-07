@@ -1,0 +1,143 @@
+metadata:
+  captured_at: '2026-05-07T11:17:13Z'
+  label: post-5000000
+  backend: danbooru
+  path_slug: posts_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts/5000000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:13 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"9ff88d31903e0222e6053f441a3cbdb1"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd128bdabfcb0-KIX
+    server-timing: sql.queries;count=2, cache.reads;count=1, cache.keys_read;count=61, cache.keys_hit;count=61, cache.total_time;dur=0.741,
+      rails.total_time;dur=5.3459, rails.cpu_time;dur=3.8659, rails.idle_time;dur=1.48, rails.sql_time;dur=1.3734, rails.view_time;dur=1.8429,
+      rails.allocations;count=4595, request.allocations;count=5052, request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=4.6331,
+      request.total_time;dur=6.1129, request.queue_time_0;dur=1.1935, request.queue_time_1;dur=99.0002
+    x-runtime: '0.0061128692626953125'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 5000000
+    created_at: '2021-12-23T17:16:33.760-05:00'
+    uploader_id: 767110
+    score: 430
+    source: https://i.pximg.net/img-original/img/2021/12/21/17/22/14/94916560_p3.jpg
+    md5: 1141d4f4c3577ba93c047b9d411c9d3f
+    last_comment_bumped_at: '2023-10-28T10:51:27.388-04:00'
+    rating: s
+    image_width: 2326
+    image_height: 3096
+    tag_string: 1girl absurdres bare_shoulders black_collar black_gloves black_jacket black_streaks blood blood_on_breasts
+      blood_on_clothes blood_on_face blue_sky blush bow breasts check_commentary cleavage collar commentary_request covered_eyes
+      day eye_mask facing_viewer fingerless_gloves gloves grey_hair hair_ornament hands_up highres hololive hood hood_up jacket
+      large_breasts long_sleeves mask medium_hair multicolored_hair n4rai off_shoulder open_clothes open_jacket outdoors parted_lips
+      partial_commentary pendant_collar plaid_bow red_bow sakamata_chloe sakamata_chloe_(1st_costume) shirt sky smile solo
+      streaked_hair teeth upper_body upper_teeth_only virtual_youtuber white_shirt x_hair_ornament
+    fav_count: 409
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: 4989904
+    has_children: false
+    approver_id: null
+    tag_count_general: 52
+    tag_count_artist: 1
+    tag_count_character: 2
+    tag_count_copyright: 1
+    file_size: 4458340
+    up_score: 439
+    down_score: -9
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 61
+    updated_at: '2026-03-03T02:46:59.116-05:00'
+    is_banned: false
+    pixiv_id: 94916560
+    last_commented_at: '2023-10-28T10:51:27.388-04:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 5
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 5064008
+      created_at: '2021-12-23T15:38:14.656-05:00'
+      updated_at: '2023-03-02T04:58:42.884-05:00'
+      md5: 1141d4f4c3577ba93c047b9d411c9d3f
+      file_ext: jpg
+      file_size: 4458340
+      image_width: 2326
+      image_height: 3096
+      duration: null
+      status: active
+      file_key: adb7Dr7Sl
+      is_public: true
+      pixel_hash: 5294ea4add7eade9e5983094c32f4baa
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/11/41/1141d4f4c3577ba93c047b9d411c9d3f.jpg
+        width: 135
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/11/41/1141d4f4c3577ba93c047b9d411c9d3f.jpg
+        width: 270
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/11/41/1141d4f4c3577ba93c047b9d411c9d3f.webp
+        width: 541
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/11/41/sample-1141d4f4c3577ba93c047b9d411c9d3f.jpg
+        width: 850
+        height: 1131
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/11/41/1141d4f4c3577ba93c047b9d411c9d3f.jpg
+        width: 2326
+        height: 3096
+        file_ext: jpg
+    tag_string_general: 1girl bare_shoulders black_collar black_gloves black_jacket black_streaks blood blood_on_breasts blood_on_clothes
+      blood_on_face blue_sky blush bow breasts cleavage collar covered_eyes day eye_mask facing_viewer fingerless_gloves gloves
+      grey_hair hair_ornament hands_up hood hood_up jacket large_breasts long_sleeves mask medium_hair multicolored_hair off_shoulder
+      open_clothes open_jacket outdoors parted_lips pendant_collar plaid_bow red_bow shirt sky smile solo streaked_hair teeth
+      upper_body upper_teeth_only virtual_youtuber white_shirt x_hair_ornament
+    tag_string_character: sakamata_chloe sakamata_chloe_(1st_costume)
+    tag_string_copyright: hololive
+    tag_string_artist: n4rai
+    tag_string_meta: absurdres check_commentary commentary_request highres partial_commentary
+    file_url: https://cdn.donmai.us/original/11/41/1141d4f4c3577ba93c047b9d411c9d3f.jpg
+    large_file_url: https://cdn.donmai.us/sample/11/41/sample-1141d4f4c3577ba93c047b9d411c9d3f.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/11/41/1141d4f4c3577ba93c047b9d411c9d3f.jpg
+  body_text: null
+  body_b64: null

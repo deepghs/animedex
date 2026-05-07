@@ -1,0 +1,382 @@
+metadata:
+  captured_at: '2026-05-07T11:08:46Z'
+  label: frieren
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Frieren&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:08:46 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: b4c0c541-0d69-4163-9244-6670a86e4355
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: d1e038c4-d931-4525-9b1b-b943e2a7d7e1
+      type: manga
+      attributes:
+        title:
+          ja-ro: Frieren Cinnamoroll Kamigata
+        altTitles:
+        - pt-br: Fern Amarra o Cabelo de Frieren.
+        - en: Fern ties Frieren’s hair
+        - ja: フリーレンシナモロール髪型
+        description: {}
+        isLocked: false
+        links:
+          raw: https://twitter.com/i/status/2021936596204056645
+        officialLinks: null
+        originalLanguage: ko
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: null
+        status: completed
+        year: 2026
+        contentRating: safe
+        tags:
+        - id: 0234a31e-a729-4e28-9d6a-3f87c4966b9e
+          type: tag
+          attributes:
+            name:
+              en: Oneshot
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: e197df38-d0e7-43b5-9b09-2842d0c326dd
+          type: tag
+          attributes:
+            name:
+              en: Web Comic
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2026-02-17T05:49:24+00:00'
+        updatedAt: '2026-02-20T12:33:03+00:00'
+        version: 4
+        availableTranslatedLanguages:
+        - en
+        - zh-hk
+        - pt-br
+        - zh
+        - ru
+        - fr
+        latestUploadedChapter: f14361ec-e4d9-4804-a2ba-e24c6d5c837f
+      relationships:
+      - id: 6ad516a3-be52-47e2-994b-7d191625be49
+        type: author
+      - id: 6ad516a3-be52-47e2-994b-7d191625be49
+        type: artist
+      - id: 6cf446fb-4295-4289-8182-7821d6bbab5b
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '1'
+          fileName: 6a264b94-e30e-4d1d-8f75-817aa7e478b9.jpg
+          locale: ko
+          createdAt: '2026-02-17T05:49:26+00:00'
+          updatedAt: '2026-02-17T05:49:26+00:00'
+          version: 1
+      - id: b0b721ff-c388-4486-aa0f-c2b0bb321512
+        type: manga
+        related: based_on
+      - id: 6f6a4d7c-3344-47a5-af94-181ee786faaf
+        type: creator
+    - id: b0b721ff-c388-4486-aa0f-c2b0bb321512
+      type: manga
+      attributes:
+        title:
+          ja-ro: Sousou no Frieren
+        altTitles:
+        - en: 'Frieren: Beyond Journey''s End'
+        - en: Frieren at the Funeral
+        - ru: Фрирен, провожающая в последний путь
+        - ja: 葬送のフリーレン
+        - zh-hk: 葬送的芙莉蓮
+        - ko: 장송의 프리렌
+        - th: คำอธิษฐานในวันที่จากลา Frieren
+        - el: 'Φρίρεν: Πέρα από το Τέλος του Ταξιδιού'
+        - de: 'Frieren: Nach dem Ende der Reise'
+        - en: 'Frieren: Remnants Of The Departed'
+        - es-la: 'Frieren: Más allá del final'
+        - es-la: 'Frieren: Más allá del fin del viaje'
+        - vi: Pháp Sư Tiễn Táng Frieren
+        description:
+          el: Έχοντας νικήσει τον βασιλιά των δαιμόνων, το ταξίδι μιας δεκαετίας φτάνει στο τέλος του και μια νέα εποχή ειρήνης
+            ξεκινά. Η ζωή όμως συνεχίζεται, ειδικά για την Φρίρεν, πως ως ξωτικό έχει ακόμα αιώνες ζωής μπροστά της. Με τις
+            δεκαετίες να περνάνε, η Φρίρεν έρχεται αντιμέτωπη με την μεταβλητότητα του κόσμου και την παροδικότητα των ανθρώπων.
+            Μετά από μια τελευταία συνάντηση με όλη την παλιά της ομάδα, συνειδητοποιεί ότι ο χρόνος που πέρασε με τους φίλους
+            της ήταν υπερβολικά σύντομος και ότι δεν θα έχει ποτέ την ευκαιρία να τους μάθει καλύτερα. Έρχοντας αντιμέτωπη
+            με την αλήθεια αυτή, η Φρίρεν αποφασίζει να ξεκινήσει ένα ακόμα ταξίδι αλλά αυτή τη φορά έχοντας σκοπό να μάθει
+            το τι σημαίνει να είσαι άνθρωπος.
+          en: The adventure is over but life goes on for an elf mage just beginning to learn what living is all about. Elf
+            mage Frieren and her courageous fellow adventurers have defeated the Demon King and brought peace to the land.
+            With the great struggle over, they all go their separate ways to live a quiet life. But as an elf, Frieren, nearly
+            immortal, will long outlive the rest of her former party. How will she come to terms with the mortality of her
+            friends? How can she find fulfillment in her own life, and can she learn to understand what life means to the
+            humans around her? Frieren begins a new journey to find the answer.
+          es: Frieren es una elfa, y como para todos los de su raza, los años pasan en un suspiro… pero no es así para sus
+            antiguos compañeros de batalla, a los que Frieren verá morir y envejecer. De repente Frieren se da cuenta de que
+            pese a que la vida avanza a un ritmo más lento para ella, las experiencias con sus seres queridos se le escapan
+            de las manos. Un aire nostálgico envuelve a este manga fantástico tan entrañable que ha vendido ya más de 2,5
+            millones de copias en Japón.
+          fr: |-
+            Que deviennent les héros une fois le mal vaincu ?
+            Dans ce coffret collector : un jeu de 54 cartes entièrement personnalisé aux couleurs de la série et le manga avec une jaquette alternative réversible !
+
+            Alors que Frieren et ses compagnons font halte dans la citadelle de Heiß, Stark propose à Fern d'aller en rendez-vous, sur le ton de la plaisanterie... et contre toute attente, la jeune fille accepte ! Sur les conseils de l'elfe, qui n'y connaît pas grand-chose, le guerrier emmène donc son amie faire le tour de la ville, ce qui leur permet de se rapprocher un peu.
+
+            Après cette pause bienvenue, les trois aventuriers repartent sur les routes et arrivent au haut-plateau du Nord, une zone extrêmement dangereuse où pullulent aussi bien des monstres coriaces que des démons retors... Parviendront-ils à survivre dans cette région hostile ?
+          vi: Tổ đội anh hùng đã đánh bại được quỷ vương và kết thúc cuộc hành trình của họ. Nhưng thế chưa phải là hết, cuộc
+            đời của cô nàng pháp sư Elf này sẽ còn rất dài, hơn cả những người đồng đội cũ của cô, một cuộc phiêu lưu mới
+            để cô trải qua nhiều cung bậc cảm xúc, cũng như là học hỏi thêm về con người.
+          es-la: Tras cumplir su misión de derrotar al Rey Demonio, la maga elfo Frieren, el héroe Himmel, el sacerdote Heiter
+            y el guerrero Eisen regresan a casa después de un viaje de una década donde disolverán su grupo y tomarán sus
+            propios caminos. Pero el tiempo pasa de forma distinta para los elfos, Frieren comienza a ser testigo de como
+            sus excompañeros sufren sus estragos y comienzan a morir lentamente y uno a uno. Antes de fallecer, Heiter el
+            sacerdote, le impone a Frieren un aprendiz humana llamada Fern. Llevados por la afición que tiene la alfa por
+            recolectar hechizos mágicos, ambos emprenderán una aventura, llena de magia e introspección, que los llevará a
+            revisitar lugares que había conocido en su anterior travesía, mientras enfrenta el pesar que le causa descubrir
+            todas las posibilidades que ha desperdiciado en su viaje que le hubiesen posibilitado entablar una relación más
+            cercana con sus compañeros ahora fallecidos.
+          zh-hk: 在打倒了魔王的勇者一行人当中，魔法使芙莉莲是精灵，她和其他三人有不一样的地方。 生活在“之后”的世界里，她感受到了什么—— 留下来的人们所编织的葬送与祈祷又意味着什么—— 故事从“冒险的结束”开始。 这是讲述英雄们的活法的，后日谈奇幻作品！
+        isLocked: true
+        links:
+          al: '118586'
+          ap: frieren-beyond-journeys-end
+          bw: series/260459/list
+          kt: '56355'
+          mu: ugf5dzu
+          amz: https://www.amazon.co.jp/dp/B08KNX1RSQ
+          ebj: https://ebookjapan.yahoo.co.jp/books/601441/
+          mal: '126287'
+          raw: https://www.sunday-webry.com/detail.php?title_id=1093
+          engtl: https://www.viz.com/vizmanga/chapters/frieren-the-journeys-end
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: hiatus
+        year: 2020
+        contentRating: safe
+        tags:
+        - id: 0a39b5a1-b235-4886-a747-1d05d216532d
+          type: tag
+          attributes:
+            name:
+              en: Award Winning
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 36fd93ea-e8b8-445e-b836-358f02b3d33d
+          type: tag
+          attributes:
+            name:
+              en: Monsters
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 39730448-9a5f-48a2-85b0-a70db87b1233
+          type: tag
+          attributes:
+            name:
+              en: Demons
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: a1f53773-c69a-4ce5-8cab-fffcd90b1565
+          type: tag
+          attributes:
+            name:
+              en: Magic
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdc58593-87dd-415e-bbc0-2ec27bf404cc
+          type: tag
+          attributes:
+            name:
+              en: Fantasy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: e5301a23-ebd9-49dd-a0cb-2add944c7fe9
+          type: tag
+          attributes:
+            name:
+              en: Slice of Life
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2020-06-30T04:20:01+00:00'
+        updatedAt: '2026-02-20T21:12:29+00:00'
+        version: 74
+        availableTranslatedLanguages:
+        - pt-br
+        - es-la
+        - tr
+        - ar
+        - vi
+        - id
+        - ru
+        - en
+        - it
+        - cs
+        - th
+        - el
+        - fr
+        - uk
+        latestUploadedChapter: ae58cfae-d520-4813-b05b-decd65a85a12
+      relationships:
+      - id: b3136811-9761-4606-93cf-583a00dde5e9
+        type: author
+      - id: ff98c5c0-daca-4c97-8c3d-1e2b98d04d9b
+        type: artist
+      - id: baf9cd12-10cb-4596-a17a-1f9b9bace8ca
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '15'
+          fileName: b9a049b0-186b-4714-a83e-bb965458914a.jpg
+          locale: ja
+          createdAt: '2026-02-07T17:47:41+00:00'
+          updatedAt: '2026-02-07T17:47:41+00:00'
+          version: 1
+      - id: 03f3f742-e2da-4f3c-b057-0bb9da6757ee
+        type: manga
+        related: doujinshi
+      - id: 11180e45-12ba-47e4-a985-cb88c217195b
+        type: manga
+        related: doujinshi
+      - id: 140458f7-be02-424b-98ac-1aa0cd9f45f9
+        type: manga
+        related: doujinshi
+      - id: 1d55e985-8379-41bc-aeca-acd069bcadd0
+        type: manga
+        related: doujinshi
+      - id: 1e46de27-70a0-4aca-8192-b5a3c589ddfd
+        type: manga
+        related: doujinshi
+      - id: 2062949e-2ff0-402b-9919-e35084208be6
+        type: manga
+        related: doujinshi
+      - id: 48e38031-2e40-43ad-9766-09fe9864e388
+        type: manga
+        related: doujinshi
+      - id: 5d938a16-b45b-4922-b77e-7ccf8dbf38b4
+        type: manga
+        related: doujinshi
+      - id: 72819479-d7c8-4e92-b62b-e58e9c8b4421
+        type: manga
+        related: doujinshi
+      - id: 81335419-9d87-4a01-a1ea-de6348f19b38
+        type: manga
+        related: doujinshi
+      - id: 829d5943-a4eb-47e3-9dce-ef2d6c519e12
+        type: manga
+        related: doujinshi
+      - id: 8af7e88b-2586-4a89-a6ab-16028c821b1a
+        type: manga
+        related: doujinshi
+      - id: 8edc81f2-bb70-4100-9df7-2552a14e5d75
+        type: manga
+        related: doujinshi
+      - id: 9906dfa8-52c9-40ac-8eef-1099a85c8611
+        type: manga
+        related: spin_off
+      - id: a3f81ae7-31b1-4319-9d4c-47d387c8b23e
+        type: manga
+        related: doujinshi
+      - id: b256dd98-1e69-4348-af24-8df8ddad6db2
+        type: manga
+        related: doujinshi
+      - id: b5097dd6-a42f-4dba-b281-0609378e939f
+        type: manga
+        related: doujinshi
+      - id: d1e038c4-d931-4525-9b1b-b943e2a7d7e1
+        type: manga
+        related: doujinshi
+      - id: e5afc3bc-c054-4b71-a182-a7e5ae9a4417
+        type: manga
+        related: doujinshi
+      - id: ee794d7d-322e-450f-bff3-1f52ded9a039
+        type: manga
+        related: doujinshi
+      - id: f90624a8-7964-44da-bd33-78a4c748ef6e
+        type: manga
+        related: doujinshi
+    limit: 2
+    offset: 0
+    total: 11
+  body_text: null
+  body_b64: null

@@ -1,0 +1,101 @@
+metadata:
+  captured_at: '2026-05-07T11:18:17Z'
+  label: pools-search-by-cat
+  backend: danbooru
+  path_slug: pools_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/pools.json?search%5Bcategory%5D=series&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:18:17 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"a3dd92cbe265fa63956caaca837278aa"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd2b3af110067-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.571, rails.cpu_time;dur=1.8993, rails.idle_time;dur=0.6717,
+      rails.sql_time;dur=0.8, rails.view_time;dur=1.1165, rails.allocations;count=1518, request.allocations;count=2031, request.gc_time;dur=0.0,
+      request.gc_count;count=0, request.cpu_time;dur=2.5288, request.total_time;dur=3.2008, request.queue_time_0;dur=0.4306,
+      request.queue_time_1;dur=86.0
+    x-runtime: '0.003200798034667969'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Content-Security-Policy-Report-Only: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 29823
+    name: Blue_Archive_x_Jujutsu_Kaisen-_Jujutsu_Kaisen's_volume_cover_with_Blue_Archive_character_(J_a_c_k)
+    created_at: '2026-05-07T03:47:07.447-04:00'
+    updated_at: '2026-05-07T06:50:28.668-04:00'
+    description: Incomplete. Some volumes aren't drawn
+    is_active: true
+    is_deleted: false
+    post_ids:
+    - 11322496
+    - 11322533
+    - 11322570
+    - 11322577
+    - 11322582
+    - 11322593
+    - 11322600
+    - 11322608
+    - 11322627
+    - 11322651
+    - 11322663
+    - 11322713
+    - 11322736
+    - 11322840
+    - 11322845
+    - 11322866
+    - 11322886
+    - 11323185
+    - 11322891
+    - 11323195
+    - 11322899
+    - 11322913
+    - 11322914
+    - 11322916
+    - 11322929
+    - 11322937
+    - 11322940
+    category: series
+    post_count: 27
+  - id: 29826
+    name: Original_-_催眠おじさんのオナホコレクション_(mamerakkkkko)
+    created_at: '2026-05-07T06:03:50.463-04:00'
+    updated_at: '2026-05-07T06:03:56.479-04:00'
+    description: This pool was automatically generated
+    is_active: true
+    is_deleted: false
+    post_ids:
+    - 11279823
+    - 11301535
+    - 11315964
+    - 11323113
+    category: series
+    post_count: 4
+  body_text: null
+  body_b64: null

@@ -1,0 +1,1678 @@
+metadata:
+  captured_at: '2026-05-07T11:19:15Z'
+  label: limit-3
+  backend: shikimori
+  path_slug: calendar
+request:
+  method: GET
+  url: https://shikimori.io/api/calendar?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:19:15 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"482f1b0ec811dab25297f89ab262daa0"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: e94e5208-c242-4eb8-b5d5-5459b522f8d9
+    X-Runtime: '0.749644'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - next_episode: 1
+    next_episode_at: '2026-05-07T09:00:00.000+03:00'
+    duration: null
+    anime:
+      id: 62718
+      name: Xingchen Bian 7th Season
+      russian: Дорогой звёзд 7
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62718-xingchen-bian-7th-season
+      kind: ona
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 0
+      aired_on: '2026-05-07'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-07T15:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 60028
+      name: Himekishi wa Barbaroi no Yome
+      russian: Принцесса-рыцарь — невеста варвара
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/60028-himekishi-wa-barbaroi-no-yome
+      kind: tv
+      score: '6.88'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 4
+      aired_on: '2026-04-09'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-07T16:00:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 62568
+      name: 'Dr. Stone: Science Future Part 3'
+      russian: 'Доктор Стоун: Научное будущее. Часть 3'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62568-dr-stone-science-future-part-3
+      kind: tv
+      score: '8.29'
+      status: ongoing
+      episodes: 13
+      episodes_aired: 5
+      aired_on: '2026-04-02'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-07T16:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 58832
+      name: Kujima Utaeba Ie Hororo
+      russian: Дом, в котором щебечет Кудзима
+      image:
+        original: /system/animes/original/58832.jpg?1715330050
+        preview: /system/animes/preview/58832.jpg?1715330050
+        x96: /system/animes/x96/58832.jpg?1715330050
+        x48: /system/animes/x48/58832.jpg?1715330050
+      url: /animes/58832-kujima-utaeba-ie-hororo
+      kind: tv
+      score: '6.28'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 4
+      aired_on: '2026-04-09'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-07T17:56:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 60852
+      name: Koori no Jouheki
+      russian: Ледяная стена
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/60852-koori-no-jouheki
+      kind: tv
+      score: '7.78'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-02'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-07T18:26:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 59835
+      name: Kirio Fanclub
+      russian: Фан-клуб Кирио
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/59835-kirio-fanclub
+      kind: tv
+      score: '6.23'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-07T18:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 59443
+      name: Reincarnation no Kaben
+      russian: Лепестки реинкарнации
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/59443-reincarnation-no-kaben
+      kind: tv
+      score: '6.11'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-07T19:00:00.000+03:00'
+    duration: 780
+    anime:
+      id: 63304
+      name: 'Mamonogurai no Boukensha: Ore dake Mamono wo Kuratte Tsuyoku Naru'
+      russian: 'Авантюрист, пожирающий демонов: Я единственный, кто становится сильнее, пожирая монстров'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63304-mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru
+      kind: tv
+      score: '3.96'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-07T19:28:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 61943
+      name: Haibara-kun no Tsuyokute Seishun New Game
+      russian: Вторая юность Хайбары
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61943-haibara-kun-no-tsuyokute-seishun-new-game
+      kind: tv
+      score: '6.68'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-07T19:45:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 58820
+      name: Awajima Hyakkei
+      russian: Сто видов Авадзимы
+      image:
+        original: /system/animes/original/58820.jpg?1715238971
+        preview: /system/animes/preview/58820.jpg?1715238971
+        x96: /system/animes/x96/58820.jpg?1715238971
+        x48: /system/animes/x48/58820.jpg?1715238971
+      url: /animes/58820-awajima-hyakkei
+      kind: tv
+      score: '6.97'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 4
+      aired_on: '2026-04-10'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-07T19:50:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 63709
+      name: Komekami! Girls
+      russian: Рисовые богини
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63709-komekami-girls
+      kind: tv
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-07T19:58:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 62964
+      name: Mata Korosarete Shimatta no desu ne, Tantei-sama
+      russian: Вас снова убили, мистер детектив
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62964-mata-korosarete-shimatta-no-desu-ne-tantei-sama
+      kind: tv
+      score: '6.29'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 254
+    next_episode_at: '2026-05-08T01:40:00.000+03:00'
+    duration: 60
+    anime:
+      id: 50250
+      name: Chiikawa
+      russian: Тикава
+      image:
+        original: /system/animes/original/50250.jpg?1718941610
+        preview: /system/animes/preview/50250.jpg?1718941610
+        x96: /system/animes/x96/50250.jpg?1718941610
+        x48: /system/animes/x48/50250.jpg?1718941610
+      url: /animes/50250-chiikawa
+      kind: tv
+      score: '8.61'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 253
+      aired_on: '2022-04-04'
+      released_on: null
+  - next_episode: 101
+    next_episode_at: '2026-05-08T12:25:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 56566
+      name: Beyblade X
+      russian: Бейблэйд X
+      image:
+        original: /system/animes/original/56566.jpg?1718584734
+        preview: /system/animes/preview/56566.jpg?1718584734
+        x96: /system/animes/x96/56566.jpg?1718584734
+        x48: /system/animes/x48/56566.jpg?1718584734
+      url: /animes/56566-beyblade-x
+      kind: tv
+      score: '6.88'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 100
+      aired_on: '2023-10-06'
+      released_on: null
+  - next_episode: 137
+    next_episode_at: '2026-05-08T12:55:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 53876
+      name: Pokemon (2023)
+      russian: Покемон (2023)
+      image:
+        original: /system/animes/original/53876.jpg?1718402214
+        preview: /system/animes/preview/53876.jpg?1718402214
+        x96: /system/animes/x96/53876.jpg?1718402214
+        x48: /system/animes/x48/53876.jpg?1718402214
+      url: /animes/53876-pokemon-2023
+      kind: tv
+      score: '7.46'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 136
+      aired_on: '2023-04-14'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-08T16:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 56876
+      name: Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken 2
+      russian: Ангел по соседству 2
+      image:
+        original: /system/animes/original/56876.jpg?1712582130
+        preview: /system/animes/preview/56876.jpg?1712582130
+        x96: /system/animes/x96/56876.jpg?1712582130
+        x48: /system/animes/x48/56876.jpg?1712582130
+      url: /animes/56876-otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-2
+      kind: tv
+      score: '7.81'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-08T17:00:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 59970
+      name: Tensei shitara Slime Datta Ken 4th Season
+      russian: О моём перерождении в слизь 4
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/59970-tensei-shitara-slime-datta-ken-4th-season
+      kind: tv
+      score: '8.13'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 4
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-08T17:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62068
+      name: Snowball Earth
+      russian: Земля-снежок
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62068-snowball-earth
+      kind: tv
+      score: '6.66'
+      status: ongoing
+      episodes: 13
+      episodes_aired: 5
+      aired_on: '2026-04-03'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-08T17:30:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 62981
+      name: Kami no Shizuku
+      russian: Слёзы Бога
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62981-kami-no-shizuku
+      kind: tv
+      score: '6.11'
+      status: ongoing
+      episodes: 24
+      episodes_aired: 4
+      aired_on: '2026-04-10'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-08T19:00:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 56646
+      name: 'Hokuto no Ken: Fist of the North Star'
+      russian: Кулак Северной звезды (2026)
+      image:
+        original: /system/animes/original/56646.jpg?1718306279
+        preview: /system/animes/preview/56646.jpg?1718306279
+        x96: /system/animes/x96/56646.jpg?1718306279
+        x48: /system/animes/x48/56646.jpg?1718306279
+      url: /animes/56646-hokuto-no-ken-fist-of-the-north-star
+      kind: tv
+      score: '6.38'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 6
+      aired_on: '2026-04-11'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-08T19:53:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 62485
+      name: Kanojo, Okarishimasu 5th Season
+      russian: Девушка на час 5
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62485-kanojo-okarishimasu-5th-season
+      kind: tv
+      score: '5.92'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-11'
+      released_on: null
+  - next_episode: 138
+    next_episode_at: '2026-05-09T01:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 50418
+      name: Ninjala (TV)
+      russian: Ниндзяла
+      image:
+        original: /system/animes/original/50418.jpg?1717859898
+        preview: /system/animes/preview/50418.jpg?1717859898
+        x96: /system/animes/x96/50418.jpg?1717859898
+        x48: /system/animes/x48/50418.jpg?1717859898
+      url: /animes/50418-ninjala-tv
+      kind: tv
+      score: '5.59'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 137
+      aired_on: '2022-01-08'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T03:00:00.000+03:00'
+    duration: 1200
+    anime:
+      id: 63762
+      name: Oshiri Tantei 10th Season
+      russian: Детектив Ягодички 10
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63762-oshiri-tantei-10th-season
+      kind: tv
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-04'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T03:25:00.000+03:00'
+    duration: 60
+    anime:
+      id: 60153
+      name: Rilakkuma
+      russian: Рилаккума
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/60153-rilakkuma
+      kind: tv
+      score: '6.16'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-04'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-09T11:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 57466
+      name: 'Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen - Ryoushu no Youjo'
+      russian: 'Власть книжного червя: Приёмная дочь лорда'
+      image:
+        original: /system/animes/original/57466.jpg?1717702879
+        preview: /system/animes/preview/57466.jpg?1717702879
+        x96: /system/animes/x96/57466.jpg?1717702879
+        x48: /system/animes/x48/57466.jpg?1717702879
+      url: /animes/57466-honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo
+      kind: tv
+      score: '7.98'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 4
+      aired_on: '2026-04-04'
+      released_on: null
+  - next_episode: 1201
+    next_episode_at: '2026-05-09T12:00:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 235
+      name: Meitantei Conan
+      russian: Детектив Конан
+      image:
+        original: /system/animes/original/235.jpg?1717859752
+        preview: /system/animes/preview/235.jpg?1717859752
+        x96: /system/animes/x96/235.jpg?1717859752
+        x48: /system/animes/x48/235.jpg?1717859752
+      url: /animes/z235-meitantei-conan
+      kind: tv
+      score: '8.18'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 1200
+      aired_on: '1996-01-08'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T12:25:00.000+03:00'
+    duration: 1500
+    anime:
+      id: 60310
+      name: Mairimashita! Iruma-kun 4th Season
+      russian: Добро пожаловать в ад, Ирума! 4
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/60310-mairimashita-iruma-kun-4th-season
+      kind: tv
+      score: '8.04'
+      status: ongoing
+      episodes: 24
+      episodes_aired: 5
+      aired_on: '2026-04-04'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-09T15:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 60444
+      name: Yowayowa Sensei
+      russian: Учитель Ёваёва
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/60444-yowayowa-sensei
+      kind: tv
+      score: '6.53'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 4
+      aired_on: '2026-04-11'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-09T16:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62825
+      name: Saikyou no Shokugyou wa Yuusha demo Kenja demo Naku Kanteishi (Kari) Rashii desu yo?
+      russian: Похоже, сильнейшая профессия — это не герой или мудрец, а (временный) инспектор?
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62825-saikyou-no-shokugyou-wa-yuusha-demo-kenja-demo-naku-kanteishi-kari-rashii-desu-yo
+      kind: tv
+      score: '6.24'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 6
+      aired_on: '2026-04-04'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-09T17:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62391
+      name: Kill Ao
+      russian: Убивая юность
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62391-kill-ao
+      kind: tv
+      score: '7.57'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 4
+      aired_on: '2026-04-11'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T17:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62001
+      name: Yomi no Tsugai
+      russian: Цугаи загробного мира
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62001-yomi-no-tsugai
+      kind: tv
+      score: '8.01'
+      status: ongoing
+      episodes: 24
+      episodes_aired: 5
+      aired_on: '2026-04-04'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T17:30:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 62164
+      name: Akane-banashi
+      russian: Сказание об Аканэ
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62164-akane-banashi
+      kind: tv
+      score: '7.89'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-04'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T17:45:00.000+03:00'
+    duration: 1500
+    anime:
+      id: 62048
+      name: Mao
+      russian: Мао
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62048-mao
+      kind: tv
+      score: '7.08'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-04'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-09T18:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 61443
+      name: 'Shunkashuutou Daikousha: Haru no Mai'
+      russian: 'Агенты четырёх сезонов: Весенний танец'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61443-shunkashuutou-daikousha-haru-no-mai
+      kind: tv
+      score: '7.72'
+      status: ongoing
+      episodes: 14
+      episodes_aired: 6
+      aired_on: '2026-03-29'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T18:30:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 62913
+      name: Needy Girl Overdose
+      russian: 'Зависимая девушка: Передозировка'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62913-needy-girl-overdose
+      kind: tv
+      score: '6.99'
+      status: ongoing
+      episodes: 13
+      episodes_aired: 5
+      aired_on: '2026-04-05'
+      released_on: null
+  - next_episode: 17
+    next_episode_at: '2026-05-09T18:55:00.000+03:00'
+    duration: 1320
+    anime:
+      id: 61217
+      name: Yuusha no Kuzu
+      russian: Герой-мерзавец
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61217-yuusha-no-kuzu
+      kind: tv
+      score: '6.62'
+      status: ongoing
+      episodes: 24
+      episodes_aired: 16
+      aired_on: '2026-01-11'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T19:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 61501
+      name: Kanan-sama wa Akumade Choroi
+      russian: Канан до чёртиков проста
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61501-kanan-sama-wa-akumade-choroi
+      kind: tv
+      score: '7.05'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-05'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-09T19:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62050
+      name: Kami no Niwatsuki Kusunoki-tei
+      russian: Божественный сад у поместья Кусуноки
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62050-kami-no-niwatsuki-kusunoki-tei
+      kind: tv
+      score: '7.41'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-05'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-09T20:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62018
+      name: Ichijouma Mankitsugurashi!
+      russian: Жизнь в манга-кафе на одном татами!
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62018-ichijouma-mankitsugurashi
+      kind: tv
+      score: '6.45'
+      status: ongoing
+      episodes: 11
+      episodes_aired: 4
+      aired_on: '2026-04-12'
+      released_on: null
+  - next_episode: 1
+    next_episode_at: '2026-05-10T01:00:00.000+03:00'
+    duration: 120
+    anime:
+      id: 62933
+      name: Shou 3 Ashibe QQ Goma-chan
+      russian: 'Третьеклассник Асибэ: QQ Гома'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62933-shou-3-ashibe-qq-goma-chan
+      kind: tv
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 0
+      aired_on: '2026-04-12'
+      released_on: null
+  - next_episode: 1
+    next_episode_at: '2026-05-10T01:00:00.000+03:00'
+    duration: 60
+    anime:
+      id: 63383
+      name: Kumarba Season 3
+      russian: Кумарба 3
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63383-kumarba-season-3
+      kind: tv
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 0
+      aired_on: '2026-04-12'
+      released_on: null
+  - next_episode: 58
+    next_episode_at: '2026-05-10T02:00:00.000+03:00'
+    duration: 60
+    anime:
+      id: 60534
+      name: Koupen-chan
+      russian: Копэн
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/60534-koupen-chan
+      kind: tv
+      score: '7.54'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 57
+      aired_on: '2025-04-06'
+      released_on: null
+  - next_episode: 16
+    next_episode_at: '2026-05-10T02:30:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 63042
+      name: Meitantei Precure!
+      russian: 'Хорошенькое лекарство: Звёздный детектив'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63042-meitantei-precure
+      kind: tv
+      score: '7.6'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 15
+      aired_on: '2026-02-01'
+      released_on: null
+  - next_episode: 30
+    next_episode_at: '2026-05-10T03:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 61269
+      name: Digimon Beatbreak
+      russian: 'Дигимоны: Битбрейк'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61269-digimon-beatbreak
+      kind: tv
+      score: '7.21'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 29
+      aired_on: '2025-10-05'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-10T03:30:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 63352
+      name: Onegai AiPri
+      russian: Пожалуйста, Айпри
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63352-onegai-aipri
+      kind: tv
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-05'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-10T10:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 59983
+      name: Tsue to Tsurugi no Wistoria Season 2
+      russian: Меч и жезл Вистории 2
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/59983-tsue-to-tsurugi-no-wistoria-season-2
+      kind: tv
+      score: '8.24'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 4
+      aired_on: '2026-04-12'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-10T11:00:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 60055
+      name: Yozakura-san Chi no Daisakusen 2nd Season
+      russian: 'Операция: Семейка Ёдзакура 2'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/60055-yozakura-san-chi-no-daisakusen-2nd-season
+      kind: tv
+      score: '7.66'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 4
+      aired_on: '2026-04-12'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-10T11:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 58877
+      name: 'Diamond no Ace: Act II Second Season'
+      russian: 'Путь аса: Акт II 2'
+      image:
+        original: /system/animes/original/58877.jpg?1716048481
+        preview: /system/animes/preview/58877.jpg?1716048481
+        x96: /system/animes/x96/58877.jpg?1716048481
+        x48: /system/animes/x48/58877.jpg?1716048481
+      url: /animes/58877-diamond-no-ace-act-ii-second-season
+      kind: tv
+      score: '8.08'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-05'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-10T16:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62342
+      name: Maid-san wa Taberu dake
+      russian: Горничная, которая просто любит покушать
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62342-maid-san-wa-taberu-dake
+      kind: tv
+      score: '6.74'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 6
+      aired_on: '2026-04-05'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-10T16:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 59176
+      name: Mahou no Shimai Lulutto Lilly
+      russian: Волшебные сёстры Лулутто Лилли
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/59176-mahou-no-shimai-lulutto-lilly
+      kind: tv
+      score: '6.84'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-05'
+      released_on: null
+  - next_episode: 1161
+    next_episode_at: '2026-05-10T17:15:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 21
+      name: One Piece
+      russian: Ван-Пис
+      image:
+        original: /system/animes/original/21.jpg?1718520367
+        preview: /system/animes/preview/21.jpg?1718520367
+        x96: /system/animes/x96/21.jpg?1718520367
+        x48: /system/animes/x48/21.jpg?1718520367
+      url: /animes/21-one-piece
+      kind: tv
+      score: '8.73'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 1160
+      aired_on: '1999-10-20'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-10T17:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62171
+      name: Kuroneko to Majo no Kyoushitsu
+      russian: Чёрная кошка и класс ведьм
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62171-kuroneko-to-majo-no-kyoushitsu
+      kind: tv
+      score: '6.7'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 4
+      aired_on: '2026-04-12'
+      released_on: null
+  - next_episode: 9
+    next_episode_at: '2026-05-10T18:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 59393
+      name: Niwatori Fighter
+      russian: Боевой петух
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/59393-niwatori-fighter
+      kind: tv
+      score: '6.83'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 8
+      aired_on: '2026-04-06'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-10T18:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62852
+      name: 'Ghost Concert: Missing Songs'
+      russian: 'Концерт призрака: Исчезнувшие песни'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62852-ghost-concert-missing-songs
+      kind: tv
+      score: '5.56'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-06'
+      released_on: null
+  - next_episode: 3
+    next_episode_at: '2026-05-10T19:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 54871
+      name: Shin Nippon History
+      russian: Новая история Японии
+      image:
+        original: /system/animes/original/54871.jpg?1717859921
+        preview: /system/animes/preview/54871.jpg?1717859921
+        x96: /system/animes/x96/54871.jpg?1717859921
+        x48: /system/animes/x48/54871.jpg?1717859921
+      url: /animes/54871-shin-nippon-history
+      kind: tv
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 2
+      aired_on: '2020-01-06'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-10T19:00:00.000+03:00'
+    duration: 300
+    anime:
+      id: 62983
+      name: Marika-chan no Koukando wa Bukkowareteiru
+      russian: Уровень симпатии Марики ненормально высокий!
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62983-marika-chan-no-koukando-wa-bukkowareteiru
+      kind: tv
+      score: '5.36'
+      status: ongoing
+      episodes: 8
+      episodes_aired: 4
+      aired_on: '2026-04-06'
+      released_on: null
+  - next_episode: 51
+    next_episode_at: '2026-05-11T12:25:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 37096
+      name: Puzzle & Dragon
+      russian: Игры и драконы
+      image:
+        original: /system/animes/original/37096.jpg?1717947942
+        preview: /system/animes/preview/37096.jpg?1717947942
+        x96: /system/animes/x96/37096.jpg?1717947942
+        x48: /system/animes/x48/37096.jpg?1717947942
+      url: /animes/37096-puzzle-dragon
+      kind: tv
+      score: '6.27'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 50
+      aired_on: '2018-04-02'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-11T16:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 61687
+      name: Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku.
+      russian: Дневник наблюдений за моей невестой, провозгласившей себя злодейкой
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61687-jishou-akuyaku-reijou-na-konyakusha-no-kansatsu-kiroku
+      kind: tv
+      score: '7.32'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-06'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-11T16:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62146
+      name: Isekai Nonbiri Nouka 2
+      russian: Фермерская жизнь в ином мире 2
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62146-isekai-nonbiri-nouka-2
+      kind: tv
+      score: '7.52'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-06'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-11T17:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 51553
+      name: Tongari Boushi no Atelier
+      russian: Ателье колдовских колпаков
+      image:
+        original: /system/animes/original/51553.jpg?1714590953
+        preview: /system/animes/preview/51553.jpg?1714590953
+        x96: /system/animes/x96/51553.jpg?1714590953
+        x48: /system/animes/x48/51553.jpg?1714590953
+      url: /animes/51553-tongari-boushi-no-atelier
+      kind: tv
+      score: '8.76'
+      status: ongoing
+      episodes: 13
+      episodes_aired: 6
+      aired_on: '2026-04-06'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-11T17:24:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 61425
+      name: Ponkotsu Fuuki Iin to Skirt-take ga Futekisetsu na JK no Hanashi
+      russian: Бесполезный дежурный и школьница со слишком короткой юбкой
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61425-ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi
+      kind: tv
+      score: '7.53'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-06'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-11T18:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62331
+      name: Liar Game
+      russian: Игра лжецов
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62331-liar-game
+      kind: tv
+      score: '6.46'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-07'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-11T18:00:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 63375
+      name: Nippon Sangoku
+      russian: Троецарствие Японии
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63375-nippon-sangoku
+      kind: tv
+      score: '8.46'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-07'
+      released_on: null
+  - next_episode: 124
+    next_episode_at: '2026-05-12T12:45:00.000+03:00'
+    duration: 600
+    anime:
+      id: 42295
+      name: 'Fushigi Dagashiya: Zenitendou'
+      russian: Таинственный магазин сладостей «Дзэнитэндо»
+      image:
+        original: /system/animes/original/42295.jpg?1717890414
+        preview: /system/animes/preview/42295.jpg?1717890414
+        x96: /system/animes/x96/42295.jpg?1717890414
+        x48: /system/animes/x48/42295.jpg?1717890414
+      url: /animes/42295-fushigi-dagashiya-zenitendou
+      kind: tv
+      score: '6.13'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 123
+      aired_on: '2020-09-08'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-12T15:55:00.000+03:00'
+    duration: 240
+    anime:
+      id: 63469
+      name: Hyakki Yakoushou
+      russian: Обитель демонов
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63469-hyakki-yakoushou
+      kind: tv
+      score: '5.3'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-07'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-12T16:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 61931
+      name: Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu. Season 2
+      russian: Королева, ставшая причиной трагедии, сделает для народа всё, что в её силах 2
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61931-higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2
+      kind: tv
+      score: '7.25'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-07'
+      released_on: null
+  - next_episode: 5
+    next_episode_at: '2026-05-12T17:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 61839
+      name: Aishiteru Game wo Owarasetai
+      russian: Я хочу закончить эту игру любви
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61839-aishiteru-game-wo-owarasetai
+      kind: tv
+      score: '7.3'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 4
+      aired_on: '2026-04-14'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-12T17:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62601
+      name: Marriagetoxin
+      russian: Брачный токсин
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62601-marriagetoxin
+      kind: tv
+      score: '7.59'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-07'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-12T17:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 56734
+      name: Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta
+      russian: Я подружился со второй самой симпатичной девушкой в классе
+      image:
+        original: /system/animes/original/56734.jpg?1711310678
+        preview: /system/animes/preview/56734.jpg?1711310678
+        x96: /system/animes/x96/56734.jpg?1711310678
+        x48: /system/animes/x48/56734.jpg?1711310678
+      url: /animes/56734-class-de-2-banme-ni-kawaii-onnanoko-to-tomodachi-ni-natta
+      kind: tv
+      score: '7.81'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 5
+      aired_on: '2026-04-07'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-12T17:30:00.000+03:00'
+    duration: 1440
+    anime:
+      id: 61013
+      name: Replica datte, Koi wo Suru.
+      russian: Даже копия способна влюбиться
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61013-replica-datte-koi-wo-suru
+      kind: tv
+      score: '7.01'
+      status: ongoing
+      episodes: 13
+      episodes_aired: 5
+      aired_on: '2026-04-07'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-12T18:00:00.000+03:00'
+    duration: 1500
+    anime:
+      id: 53732
+      name: Hidarikiki no Eren
+      russian: Левша Эрен
+      image:
+        original: /system/animes/original/53732.jpg?1714587356
+        preview: /system/animes/preview/53732.jpg?1714587356
+        x96: /system/animes/x96/53732.jpg?1714587356
+        x48: /system/animes/x48/53732.jpg?1714587356
+      url: /animes/53732-hidarikiki-no-eren
+      kind: tv
+      score: '6.24'
+      status: ongoing
+      episodes: 13
+      episodes_aired: 5
+      aired_on: '2026-04-08'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-12T19:29:00.000+03:00'
+    duration: 1320
+    anime:
+      id: 63014
+      name: Tadaima, Ojamasaremasu!
+      russian: Я вернулась! Надеюсь, не слишком помешаю
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63014-tadaima-ojamasaremasu
+      kind: tv
+      score: '6.5'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-08'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-12T19:59:00.000+03:00'
+    duration: 1320
+    anime:
+      id: 63376
+      name: Megami "Isekai Tensei Nani ni Naritai desu ka" Ore "Yuusha no Rokkotsu de"
+      russian: 'Богиня: «Кем хочешь переродиться в другом мире?» — Я: «Ребром героя!»'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63376-megami-isekai-tensei-nani-ni-naritai-desu-ka-ore-yuusha-no-rokkotsu-de
+      kind: tv
+      score: '6.46'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-08'
+      released_on: null
+  - next_episode: 2
+    next_episode_at: '2026-05-13T01:05:00.000+03:00'
+    duration: 120
+    anime:
+      id: 61765
+      name: Chibi Godzilla no Gyakushuu 3rd Season
+      russian: Тиби-Годзилла наносит ответный удар 3
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61765-chibi-godzilla-no-gyakushuu-3rd-season
+      kind: tv
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 1
+      aired_on: '2025-07-02'
+      released_on: null
+  - next_episode: 10
+    next_episode_at: '2026-05-13T15:30:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 59708
+      name: 'Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 4th Season: 2-nensei-hen 1 Gakki'
+      russian: 'Добро пожаловать в класс превосходства 4: Второй год — Первый семестр'
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/59708-youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4th-season-2-nensei-hen-1-gakki
+      kind: tv
+      score: '8.13'
+      status: ongoing
+      episodes: 16
+      episodes_aired: 9
+      aired_on: '2026-04-01'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-13T15:55:00.000+03:00'
+    duration: 300
+    anime:
+      id: 63433
+      name: Daikenja Riddle no Jikan Gyakkou
+      russian: Регрессия великого мудреца Риддла
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63433-daikenja-riddle-no-jikan-gyakkou
+      kind: tv
+      score: '4.11'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 6
+      aired_on: '2026-04-01'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-13T16:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 61316
+      name: Re:Zero kara Hajimeru Isekai Seikatsu 4th Season
+      russian: Re:Zero. Жизнь с нуля в альтернативном мире 4
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61316-re-zero-kara-hajimeru-isekai-seikatsu-4th-season
+      kind: tv
+      score: '8.92'
+      status: ongoing
+      episodes: 19
+      episodes_aired: 5
+      aired_on: '2026-04-08'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-13T16:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62512
+      name: Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou 3rd Season
+      russian: Я переродился торговым автоматом и скитаюсь по лабиринту 3
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62512-jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season
+      kind: tv
+      score: '6.62'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 6
+      aired_on: '2026-04-01'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-13T17:30:00.000+03:00'
+    duration: 1320
+    anime:
+      id: 61831
+      name: Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? Season 2
+      russian: Что будет делать сильнейший король в своей второй жизни? 2
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/61831-saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru-season-2
+      kind: tv
+      score: '5.68'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 6
+      aired_on: '2026-04-01'
+      released_on: null
+  - next_episode: 6
+    next_episode_at: '2026-05-13T17:45:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62604
+      name: Otaku ni Yasashii Gal wa Inai!?
+      russian: Где те девушки, что были бы добры к отаку?
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62604-otaku-ni-yasashii-gal-wa-inai
+      kind: tv
+      score: '7.6'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 5
+      aired_on: '2026-04-08'
+      released_on: null
+  - next_episode: 7
+    next_episode_at: '2026-05-13T18:00:00.000+03:00'
+    duration: 1380
+    anime:
+      id: 62893
+      name: Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken
+      russian: Рыба, которую я упустила, большая, но я поймала другую, которая ещё больше
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/62893-nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken
+      kind: tv
+      score: '7.3'
+      status: ongoing
+      episodes: 12
+      episodes_aired: 6
+      aired_on: '2026-04-02'
+      released_on: null
+  - next_episode: 4
+    next_episode_at: '2026-05-13T18:55:00.000+03:00'
+    duration: 180
+    anime:
+      id: 63276
+      name: Candy Caries
+      russian: Конфетный кариес
+      image:
+        original: /assets/globals/missing_original.jpg
+        preview: /assets/globals/missing_preview.jpg
+        x96: /assets/globals/missing_x96.jpg
+        x48: /assets/globals/missing_x48.jpg
+      url: /animes/63276-candy-caries
+      kind: tv
+      score: '0.0'
+      status: ongoing
+      episodes: 0
+      episodes_aired: 3
+      aired_on: '2026-04-16'
+      released_on: null
+  body_text: null
+  body_b64: null

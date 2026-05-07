@@ -1,0 +1,391 @@
+metadata:
+  captured_at: '2026-05-07T11:06:41Z'
+  label: evangelion
+  backend: kitsu
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Evangelion&page%5Blimit%5D=2
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:06:40 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"6385997eaeb9ae3a139fd010186eb2b1"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 63864109-ff7a-4fa4-a89e-7ac9fa7a2f59
+    x-runtime: '0.069884'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '3250'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/3250
+      attributes:
+        createdAt: '2013-02-20T16:50:03.182Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: evangelion-2-0-you-can-not-advance
+        synopsis: |-
+          When the threat of the Angel menace escalates, mankind's defense force is pushed to its limits, with Nerv at the forefront of the struggle. Shinji Ikari and his partner Rei Ayanami are assisted by two new pilots: the fiery Asuka Langley Shikinami and the mysterious Mari Illustrious Makinami.
+
+          With the aid of their mechanized Evangelion units, equipped with weapons perfect for engaging their monstrous opponents, the four young souls fight desperately to protect their loved ones and prevent an impending apocalypse. But when startling secrets are brought to light, will the heroes' greatest challenge prove to be the monsters...or humanity itself?
+
+          (Source: MAL Rewrite)
+        description: |-
+          When the threat of the Angel menace escalates, mankind's defense force is pushed to its limits, with Nerv at the forefront of the struggle. Shinji Ikari and his partner Rei Ayanami are assisted by two new pilots: the fiery Asuka Langley Shikinami and the mysterious Mari Illustrious Makinami.
+
+          With the aid of their mechanized Evangelion units, equipped with weapons perfect for engaging their monstrous opponents, the four young souls fight desperately to protect their loved ones and prevent an impending apocalypse. But when startling secrets are brought to light, will the heroes' greatest challenge prove to be the monsters...or humanity itself?
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 0
+        titles:
+          en: 'Evangelion: 2.0 You Can (Not) Advance'
+          en_jp: 'Evangelion: 2.0 You Can (Not) Advance'
+          en_us: 'Evangelion: 2.0 You Can (Not) Advance'
+          ja_jp: ヱヴァンゲリヲン新劇場版:破
+        canonicalTitle: 'Evangelion: 2.0 You Can (Not) Advance'
+        abbreviatedTitles:
+        - 'Rebuild of Evangelion: 2.0 You Can (Not) Advance'
+        - Evangelion 2.22
+        - 'Evangelion Shin Gekijouban: Ha'
+        averageRating: '82.02'
+        ratingFrequencies:
+          '2': '618'
+          '3': '11'
+          '4': '116'
+          '5': '6'
+          '6': '100'
+          '7': '13'
+          '8': '743'
+          '9': '12'
+          '10': '405'
+          '11': '26'
+          '12': '1247'
+          '13': '63'
+          '14': '3505'
+          '15': '198'
+          '16': '5245'
+          '17': '437'
+          '18': '5025'
+          '19': '199'
+          '20': '8095'
+        userCount: 47912
+        favoritesCount: 469
+        startDate: '2009-07-27'
+        endDate: '2009-07-27'
+        nextRelease: null
+        popularityRank: 290
+        ratingRank: 308
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: movie
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/3250/poster_image/tiny-051d69c6ff71e036dc1b20d1a689af63.jpeg
+          large: https://media.kitsu.app/anime/3250/poster_image/large-862805f10b5eb3664c6debd517751fde.jpeg
+          small: https://media.kitsu.app/anime/3250/poster_image/small-07b6abd4bd1514cbda169f5198602b82.jpeg
+          medium: https://media.kitsu.app/anime/3250/poster_image/medium-703c5168de3eebb60c787a4dc66375ce.jpeg
+          original: https://media.kitsu.app/anime/3250/poster_image/8e892d357145b23f1d6b38acce09a25c.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/3250/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/3250/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/3250/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/3250/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 1
+        episodeLength: 112
+        totalLength: 112
+        youtubeVideoId: ncZ9Vd4YYFk
+        showType: movie
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/genres
+            related: https://kitsu.io/api/edge/anime/3250/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/categories
+            related: https://kitsu.io/api/edge/anime/3250/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/castings
+            related: https://kitsu.io/api/edge/anime/3250/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/installments
+            related: https://kitsu.io/api/edge/anime/3250/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/3250/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/3250/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/3250/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/characters
+            related: https://kitsu.io/api/edge/anime/3250/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/staff
+            related: https://kitsu.io/api/edge/anime/3250/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/productions
+            related: https://kitsu.io/api/edge/anime/3250/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/3250/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/3250/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/3250/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/3250/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/3250/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/3250/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/3250/anime-staff
+    - id: '2519'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/2519
+      attributes:
+        createdAt: '2013-02-20T16:39:28.082Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: evangelion-1-0-you-are-not-alone
+        synopsis: After the second impact, all that remains of Japan is Tokyo-3, a city that's being attacked by giant creatures
+          that seek to eradicate the human kind, called Angels. After not seeing his father for more than eight years, Shinji
+          Ikari receives a phone call in which he is told to urgently come to the NERV Headquarters, an organization that
+          deals with the destruction of the Angels through the use of giant mechs called Evas. Shinji's objective is to pilot
+          the Eva Unit 01 while teaming up with the Eva Unit 00 pilot, Ayanami Rei.
+        description: After the second impact, all that remains of Japan is Tokyo-3, a city that's being attacked by giant
+          creatures that seek to eradicate the human kind, called Angels. After not seeing his father for more than eight
+          years, Shinji Ikari receives a phone call in which he is told to urgently come to the NERV Headquarters, an organization
+          that deals with the destruction of the Angels through the use of giant mechs called Evas. Shinji's objective is
+          to pilot the Eva Unit 01 while teaming up with the Eva Unit 00 pilot, Ayanami Rei.
+        coverImageTopOffset: -1
+        titles:
+          en: 'Evangelion: 1.0 You Are (Not) Alone'
+          en_jp: 'Evangelion: 1.0 You Are (Not) Alone'
+          en_us: 'Evangelion: 1.0 You Are (Not) Alone'
+          ja_jp: ヱヴァンゲリヲン新劇場版:序
+        canonicalTitle: 'Evangelion: 1.0 You Are (Not) Alone'
+        abbreviatedTitles:
+        - 'Rebuild of Evangelion: 1.0 You Are (Not) Alone'
+        - 'Evangelion: 1.01 You Are (Not) Alone'
+        - 'Evangelion: 1.11 You Are (Not) Alone'
+        - 'Evangelion Shin Gekijouban: Jo'
+        averageRating: '80.0'
+        ratingFrequencies:
+          '2': '159'
+          '3': '3'
+          '4': '86'
+          '5': '3'
+          '6': '106'
+          '7': '4'
+          '8': '353'
+          '9': '14'
+          '10': '571'
+          '11': '20'
+          '12': '1698'
+          '13': '73'
+          '14': '4546'
+          '15': '219'
+          '16': '6833'
+          '17': '334'
+          '18': '3850'
+          '19': '73'
+          '20': '4741'
+        userCount: 41498
+        favoritesCount: 274
+        startDate: '2007-09-01'
+        endDate: '2007-09-01'
+        nextRelease: null
+        popularityRank: 358
+        ratingRank: 823
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: movie
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/2519/poster_image/tiny-2f0b8f286a19beb22a87e42565f57a47.jpeg
+          large: https://media.kitsu.app/anime/2519/poster_image/large-0247eda99fcbbb3fec57558d72a317f5.jpeg
+          small: https://media.kitsu.app/anime/2519/poster_image/small-39b16b1997f6870789a7d7a97cfb5240.jpeg
+          medium: https://media.kitsu.app/anime/2519/poster_image/medium-c4867aa34cf60a7aeed5cacc21e5f066.jpeg
+          original: https://media.kitsu.app/anime/2519/poster_image/7bb8a2dd4d679732f8461e367a9bca5a.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/2519/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/2519/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/2519/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/2519/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 1
+        episodeLength: 100
+        totalLength: 100
+        youtubeVideoId: ETNj92NPIh4
+        showType: movie
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/genres
+            related: https://kitsu.io/api/edge/anime/2519/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/categories
+            related: https://kitsu.io/api/edge/anime/2519/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/castings
+            related: https://kitsu.io/api/edge/anime/2519/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/installments
+            related: https://kitsu.io/api/edge/anime/2519/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/2519/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/2519/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/2519/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/characters
+            related: https://kitsu.io/api/edge/anime/2519/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/staff
+            related: https://kitsu.io/api/edge/anime/2519/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/productions
+            related: https://kitsu.io/api/edge/anime/2519/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/2519/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/2519/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/2519/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/2519/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/2519/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/2519/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/2519/anime-staff
+    meta:
+      count: 24
+    links:
+      first: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Evangelion&page%5Blimit%5D=2&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Evangelion&page%5Blimit%5D=2&page%5Boffset%5D=2
+      last: https://kitsu.io/api/edge/anime?filter%5Btext%5D=Evangelion&page%5Blimit%5D=2&page%5Boffset%5D=22
+  body_text: null
+  body_b64: null

@@ -1,0 +1,231 @@
+metadata:
+  captured_at: '2026-05-07T11:16:47Z'
+  label: score-lt-10
+  backend: danbooru
+  path_slug: posts_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts.json?tags=touhou+score:%3C10&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:16:47 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"8d68eeb97970927954007dfff1be3125"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd07dcfd88d16-KIX
+    server-timing: sql.queries;count=12, cache.reads;count=4, cache.keys_read;count=78, cache.total_time;dur=1.7751, cache.writes;count=1,
+      cache.keys_written;count=1, cache.keys_hit;count=77, rails.total_time;dur=1130.0641, rails.cpu_time;dur=11.6086, rails.idle_time;dur=1118.4555,
+      rails.sql_time;dur=1118.913, rails.view_time;dur=6.7743, rails.allocations;count=38551, request.allocations;count=39054,
+      request.gc_time;dur=3.2961, request.gc_count;count=0, request.cpu_time;dur=12.4198, request.total_time;dur=1130.877,
+      request.queue_time_0;dur=1.1828, request.queue_time_1;dur=92.0
+    x-runtime: '1.1308769683837891'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 11323461
+    created_at: '2026-05-07T07:14:28.077-04:00'
+    uploader_id: 1087973
+    score: 0
+    source: https://x.com/uzuki000/status/2052345639342878730
+    md5: d99cb09769404b2d8c1625106e256f38
+    last_comment_bumped_at: null
+    rating: g
+    image_width: 2185
+    image_height: 2185
+    tag_string: 2girls apron black_hat black_skirt black_vest blonde_hair bow bowtie braid brown_hair chibi chibi_only commentary_request
+      detached_sleeves frilled_bow frilled_hair_tubes frills green_bow green_bowtie hair_bow hair_tubes hakurei_reimu hat
+      hat_bow heart highres kirisame_marisa long_hair multiple_girls pointing red_bow red_eyes red_skirt ribbon-trimmed_sleeves
+      ribbon_trim side_braid single_braid skirt skirt_set spoken_heart touhou translation_request uzuki_(amayadori) vest waist_apron
+      white_apron white_bow witch_hat
+    fav_count: 0
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 41
+    tag_count_artist: 1
+    tag_count_character: 2
+    tag_count_copyright: 1
+    file_size: 502871
+    up_score: 0
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 48
+    updated_at: '2026-05-07T07:15:21.758-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: null
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 3
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 48169098
+      created_at: '2026-05-07T07:12:57.161-04:00'
+      updated_at: '2026-05-07T07:12:58.594-04:00'
+      md5: d99cb09769404b2d8c1625106e256f38
+      file_ext: jpg
+      file_size: 502871
+      image_width: 2185
+      image_height: 2185
+      duration: null
+      status: active
+      file_key: XTpRPdsVw
+      is_public: true
+      pixel_hash: befbd6679c4bfef713b13f04180b57d4
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/d9/9c/d99cb09769404b2d8c1625106e256f38.jpg
+        width: 180
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/d9/9c/d99cb09769404b2d8c1625106e256f38.jpg
+        width: 360
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/d9/9c/d99cb09769404b2d8c1625106e256f38.webp
+        width: 720
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/d9/9c/sample-d99cb09769404b2d8c1625106e256f38.jpg
+        width: 850
+        height: 850
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/d9/9c/d99cb09769404b2d8c1625106e256f38.jpg
+        width: 2185
+        height: 2185
+        file_ext: jpg
+    tag_string_general: 2girls apron black_hat black_skirt black_vest blonde_hair bow bowtie braid brown_hair chibi chibi_only
+      detached_sleeves frilled_bow frilled_hair_tubes frills green_bow green_bowtie hair_bow hair_tubes hat hat_bow heart
+      long_hair multiple_girls pointing red_bow red_eyes red_skirt ribbon-trimmed_sleeves ribbon_trim side_braid single_braid
+      skirt skirt_set spoken_heart vest waist_apron white_apron white_bow witch_hat
+    tag_string_character: hakurei_reimu kirisame_marisa
+    tag_string_copyright: touhou
+    tag_string_artist: uzuki_(amayadori)
+    tag_string_meta: commentary_request highres translation_request
+    file_url: https://cdn.donmai.us/original/d9/9c/d99cb09769404b2d8c1625106e256f38.jpg
+    large_file_url: https://cdn.donmai.us/sample/d9/9c/sample-d99cb09769404b2d8c1625106e256f38.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/d9/9c/d99cb09769404b2d8c1625106e256f38.jpg
+  - id: 11323439
+    created_at: '2026-05-07T07:09:20.542-04:00'
+    uploader_id: 1087973
+    score: 0
+    source: https://x.com/gonglijeongli/status/2052342880128385244
+    md5: 6531266e52393498017b77650b897849
+    last_comment_bumped_at: null
+    rating: g
+    image_width: 1450
+    image_height: 2048
+    tag_string: 1girl boots cape commentary_request dress gonglijeongli hairband highres long_sleeves looking_at_viewer medium_hair
+      multicolored_dress multicolored_hairband open_mouth patchwork_clothes pink_boots pouch purple_eyes purple_hair rainbow
+      rainbow_gradient smile solo tenkyuu_chimata touhou two-sided_cape two-sided_fabric white_cape
+    fav_count: 0
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 23
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 601926
+    up_score: 0
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 28
+    updated_at: '2026-05-07T07:10:25.126-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: null
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 2
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 48169053
+      created_at: '2026-05-07T07:02:01.759-04:00'
+      updated_at: '2026-05-07T07:02:03.233-04:00'
+      md5: 6531266e52393498017b77650b897849
+      file_ext: jpg
+      file_size: 601926
+      image_width: 1450
+      image_height: 2048
+      duration: null
+      status: active
+      file_key: lQlCzbuQH
+      is_public: true
+      pixel_hash: dfde2944bdb17d2abaad8319751ab91e
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/65/31/6531266e52393498017b77650b897849.jpg
+        width: 127
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/65/31/6531266e52393498017b77650b897849.jpg
+        width: 255
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/65/31/6531266e52393498017b77650b897849.webp
+        width: 510
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/65/31/sample-6531266e52393498017b77650b897849.jpg
+        width: 850
+        height: 1201
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/65/31/6531266e52393498017b77650b897849.jpg
+        width: 1450
+        height: 2048
+        file_ext: jpg
+    tag_string_general: 1girl boots cape dress hairband long_sleeves looking_at_viewer medium_hair multicolored_dress multicolored_hairband
+      open_mouth patchwork_clothes pink_boots pouch purple_eyes purple_hair rainbow rainbow_gradient smile solo two-sided_cape
+      two-sided_fabric white_cape
+    tag_string_character: tenkyuu_chimata
+    tag_string_copyright: touhou
+    tag_string_artist: gonglijeongli
+    tag_string_meta: commentary_request highres
+    file_url: https://cdn.donmai.us/original/65/31/6531266e52393498017b77650b897849.jpg
+    large_file_url: https://cdn.donmai.us/sample/65/31/sample-6531266e52393498017b77650b897849.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/65/31/6531266e52393498017b77650b897849.jpg
+  body_text: null
+  body_b64: null

@@ -1,0 +1,51 @@
+metadata:
+  captured_at: '2026-05-07T11:25:16Z'
+  label: animes-by-status-released
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(status:"released",limit:3){ id name status }}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:15 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"0598a1a06c7b4eb1935b9401f53a730e"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 8723525f-c8cc-40e0-9619-f53ad17ff7f3
+    X-Runtime: '0.079734'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes:
+      - id: '52991'
+        name: Sousou no Frieren
+        status: released
+      - id: '5114'
+        name: 'Fullmetal Alchemist: Brotherhood'
+        status: released
+      - id: '57555'
+        name: 'Chainsaw Man Movie: Reze-hen'
+        status: released
+  body_text: null
+  body_b64: null

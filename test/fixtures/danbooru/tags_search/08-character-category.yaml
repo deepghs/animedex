@@ -1,0 +1,80 @@
+metadata:
+  captured_at: '2026-05-07T11:17:26Z'
+  label: character-category
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Bcategory%5D=4&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:26 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"10ae533ce20a15526d08aae46220ebd7"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd1746c2a96af-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.3589, rails.cpu_time;dur=2.5077, rails.idle_time;dur=0.8512,
+      rails.sql_time;dur=0.9933, rails.view_time;dur=1.3544, rails.allocations;count=1585, request.allocations;count=2119,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.3728, request.total_time;dur=4.2585, request.queue_time_0;dur=1.3006,
+      request.queue_time_1;dur=101.0001
+    x-runtime: '0.004258544921875'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2621843
+    name: ms._pig
+    post_count: 1
+    category: 4
+    created_at: '2026-05-07T07:05:31.659-04:00'
+    updated_at: '2026-05-07T07:05:41.754-04:00'
+    is_deprecated: false
+    words:
+    - ms
+    - pig
+  - id: 2621842
+    name: cinnawoman_bun
+    post_count: 1
+    category: 4
+    created_at: '2026-05-07T07:03:55.751-04:00'
+    updated_at: '2026-05-07T07:04:00.709-04:00'
+    is_deprecated: false
+    words:
+    - cinnawoman
+    - bun
+  - id: 2621840
+    name: prince_john_(disney)
+    post_count: 1
+    category: 4
+    created_at: '2026-05-07T06:50:21.242-04:00'
+    updated_at: '2026-05-07T06:50:32.775-04:00'
+    is_deprecated: false
+    words:
+    - prince
+    - john
+    - disney
+  body_text: null
+  body_b64: null

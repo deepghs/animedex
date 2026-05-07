@@ -1,0 +1,231 @@
+metadata:
+  captured_at: '2026-05-07T11:16:37Z'
+  label: touhou-rating-g-order-score
+  backend: danbooru
+  path_slug: posts_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts.json?tags=touhou+rating:g+order:score&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:16:36 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"e1eecaf7e34a07271645abcd1adc4c91"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd02eef078382-KIX
+    server-timing: sql.queries;count=8, cache.reads;count=4, cache.keys_read;count=83, cache.total_time;dur=1.5144, cache.writes;count=1,
+      cache.keys_written;count=1, cache.keys_hit;count=82, rails.total_time;dur=3048.1481, rails.cpu_time;dur=8.2571, rails.idle_time;dur=3039.891,
+      rails.sql_time;dur=3039.8078, rails.view_time;dur=2.6938, rails.allocations;count=62468, request.allocations;count=62976,
+      request.gc_time;dur=3.6608, request.gc_count;count=0, request.cpu_time;dur=8.836, request.total_time;dur=3048.7281,
+      request.queue_time_0;dur=1.0056, request.queue_time_1;dur=90.9998
+    x-runtime: '3.048728088378906'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 10609487
+    created_at: '2026-01-14T18:47:16.324-05:00'
+    uploader_id: 819950
+    score: 965
+    source: https://i.pximg.net/img-original/img/2026/01/10/21/34/04/139767728_p0.jpg
+    md5: 4d4704609dd68a4c6e4480656bdb414f
+    last_comment_bumped_at: '2026-01-21T17:09:08.865-05:00'
+    rating: g
+    image_width: 1700
+    image_height: 2400
+    tag_string: 1girl absurdres artist_name blue_dress blue_gem blue_hair blue_theme cirno closed_mouth colored_eyelashes
+      commentary dress eyelashes furrowed_brow gem hair_between_eyes hair_ribbon highres ice ice_wings looking_at_viewer madeno
+      neck_ribbon red_ribbon ribbon shirt smile solo touhou twitter_username upper_body watermark white_shirt wings
+    fav_count: 818
+    file_ext: jpg
+    last_noted_at: '2026-01-15T10:33:43.099-05:00'
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 28
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 412244
+    up_score: 981
+    down_score: -16
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 34
+    updated_at: '2026-01-27T04:25:02.866-05:00'
+    is_banned: false
+    pixiv_id: 139767728
+    last_commented_at: '2026-05-06T17:10:30.675-04:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 3
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 41488548
+      created_at: '2026-01-14T18:39:07.759-05:00'
+      updated_at: '2026-01-14T18:39:09.293-05:00'
+      md5: 4d4704609dd68a4c6e4480656bdb414f
+      file_ext: jpg
+      file_size: 412244
+      image_width: 1700
+      image_height: 2400
+      duration: null
+      status: active
+      file_key: xVDf1CKvA
+      is_public: true
+      pixel_hash: 68015d740177a4b4f17eb4de279dfe29
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/4d/47/4d4704609dd68a4c6e4480656bdb414f.jpg
+        width: 128
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/4d/47/4d4704609dd68a4c6e4480656bdb414f.jpg
+        width: 255
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/4d/47/4d4704609dd68a4c6e4480656bdb414f.webp
+        width: 510
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/4d/47/sample-4d4704609dd68a4c6e4480656bdb414f.jpg
+        width: 850
+        height: 1200
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/4d/47/4d4704609dd68a4c6e4480656bdb414f.jpg
+        width: 1700
+        height: 2400
+        file_ext: jpg
+    tag_string_general: 1girl artist_name blue_dress blue_gem blue_hair blue_theme closed_mouth colored_eyelashes dress eyelashes
+      furrowed_brow gem hair_between_eyes hair_ribbon ice ice_wings looking_at_viewer neck_ribbon red_ribbon ribbon shirt
+      smile solo twitter_username upper_body watermark white_shirt wings
+    tag_string_character: cirno
+    tag_string_copyright: touhou
+    tag_string_artist: madeno
+    tag_string_meta: absurdres commentary highres
+    file_url: https://cdn.donmai.us/original/4d/47/4d4704609dd68a4c6e4480656bdb414f.jpg
+    large_file_url: https://cdn.donmai.us/sample/4d/47/sample-4d4704609dd68a4c6e4480656bdb414f.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/4d/47/4d4704609dd68a4c6e4480656bdb414f.jpg
+  - id: 999999
+    created_at: '2011-09-20T11:22:48.006-04:00'
+    uploader_id: 340321
+    score: 662
+    source: https://i.pximg.net/img-original/img/2011/09/09/09/09/30/21630938_p0.jpg
+    md5: e0264c0293ef5712ebe1b92f19d76586
+    last_comment_bumped_at: '2025-09-24T07:59:20.135-04:00'
+    rating: g
+    image_width: 1000
+    image_height: 2082
+    tag_string: 1girl ;d annotation_request blue_background blue_bow blue_dress blue_eyes blue_hair bow cirno cirno_day collared_shirt
+      commentary dress flat_chest gradient_background h-arukiti hair_bow hakkyou_set_(meme) highres ice ice_wings ippon_manzoku_bar
+      long_dress looking_at_viewer meme multiple_persona neck_ribbon one_eye_closed open_mouth pinafore_dress puffy_short_sleeves
+      puffy_sleeves red_ribbon ribbon shirt short_hair short_sleeves sleeveless sleeveless_dress smile touhou translated white_background
+      white_shirt wide_shot wings
+    fav_count: 654
+    file_ext: jpg
+    last_noted_at: '2022-05-20T19:49:22.229-04:00'
+    parent_id: null
+    has_children: false
+    approver_id: 11
+    tag_count_general: 40
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 1409360
+    up_score: 648
+    down_score: -2
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 47
+    updated_at: '2025-05-22T15:48:50.638-04:00'
+    is_banned: false
+    pixiv_id: 21630938
+    last_commented_at: '2025-09-24T07:59:20.135-04:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 4
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 970267
+      created_at: '2011-09-20T11:22:48.006-04:00'
+      updated_at: '2023-02-24T18:49:48.267-05:00'
+      md5: e0264c0293ef5712ebe1b92f19d76586
+      file_ext: jpg
+      file_size: 1409360
+      image_width: 1000
+      image_height: 2082
+      duration: null
+      status: active
+      file_key: C2PEprXOl
+      is_public: true
+      pixel_hash: 2c509486d92d33977255f4e8e11567b1
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/e0/26/e0264c0293ef5712ebe1b92f19d76586.jpg
+        width: 86
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/e0/26/e0264c0293ef5712ebe1b92f19d76586.jpg
+        width: 173
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/e0/26/e0264c0293ef5712ebe1b92f19d76586.webp
+        width: 346
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/e0/26/sample-e0264c0293ef5712ebe1b92f19d76586.jpg
+        width: 850
+        height: 1770
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/e0/26/e0264c0293ef5712ebe1b92f19d76586.jpg
+        width: 1000
+        height: 2082
+        file_ext: jpg
+    tag_string_general: 1girl ;d blue_background blue_bow blue_dress blue_eyes blue_hair bow cirno_day collared_shirt dress
+      flat_chest gradient_background hair_bow hakkyou_set_(meme) ice ice_wings ippon_manzoku_bar long_dress looking_at_viewer
+      meme multiple_persona neck_ribbon one_eye_closed open_mouth pinafore_dress puffy_short_sleeves puffy_sleeves red_ribbon
+      ribbon shirt short_hair short_sleeves sleeveless sleeveless_dress smile white_background white_shirt wide_shot wings
+    tag_string_character: cirno
+    tag_string_copyright: touhou
+    tag_string_artist: h-arukiti
+    tag_string_meta: annotation_request commentary highres translated
+    file_url: https://cdn.donmai.us/original/e0/26/e0264c0293ef5712ebe1b92f19d76586.jpg
+    large_file_url: https://cdn.donmai.us/sample/e0/26/sample-e0264c0293ef5712ebe1b92f19d76586.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/e0/26/e0264c0293ef5712ebe1b92f19d76586.jpg
+  body_text: null
+  body_b64: null

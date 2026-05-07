@@ -1,0 +1,71 @@
+metadata:
+  captured_at: '2026-05-07T11:17:40Z'
+  label: any-banned
+  backend: danbooru
+  path_slug: artists_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artists.json?search%5Bis_banned%5D=true&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:40 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"691c1562fd3fcf53b8b011f48568cee2"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd1cf3f618326-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=168.9114, rails.cpu_time;dur=2.2471, rails.idle_time;dur=166.6643,
+      rails.sql_time;dur=166.8091, rails.view_time;dur=167.1068, rails.allocations;count=1623, request.allocations;count=2132,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.0206, request.total_time;dur=169.6852, request.queue_time_0;dur=1.2195,
+      request.queue_time_1;dur=100.9998
+    x-runtime: '0.1696851806640625'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 586258
+    created_at: '2025-11-21T19:10:12.326-05:00'
+    name: feichengtaifeitang
+    updated_at: '2026-02-03T02:23:31.688-05:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: true
+    other_names:
+    - hinaru_taihitou
+    - 非成太妃糖
+  - id: 493326
+    created_at: '2024-12-30T07:59:23.938-05:00'
+    name: y6882100033
+    updated_at: '2026-02-03T02:00:39.141-05:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: true
+    other_names:
+    - D62962630
+    - Y6882100033
+    - y6882100011
+    - 造景惡魔之庭
+  body_text: null
+  body_b64: null

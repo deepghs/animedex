@@ -1,0 +1,76 @@
+metadata:
+  captured_at: '2026-05-07T11:17:33Z'
+  label: order-name-asc
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Border%5D=name&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:33 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"7905404e127ef546f0b63054a317621a"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd1a00c750067-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=12.905, rails.cpu_time;dur=12.2378, rails.idle_time;dur=0.6672,
+      rails.sql_time;dur=1.3749, rails.view_time;dur=4.203, rails.allocations;count=1478, request.allocations;count=1994,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=15.7728, request.total_time;dur=16.4419, request.queue_time_0;dur=1.6489,
+      request.queue_time_1;dur=86.9999
+    x-runtime: '0.016441940307617187'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 1404624
+    name: 낑두
+    post_count: 0
+    category: 1
+    created_at: '2017-02-04T18:40:41.712-05:00'
+    updated_at: '2019-08-18T19:18:42.979-04:00'
+    is_deprecated: false
+    words:
+    - 낑두
+  - id: 1366483
+    name: 몬스터철들이기
+    post_count: 0
+    category: 1
+    created_at: '2016-05-11T10:11:24.724-04:00'
+    updated_at: '2019-09-02T10:01:59.008-04:00'
+    is_deprecated: false
+    words:
+    - 몬스터철들이기
+  - id: 402062
+    name: '!'
+    post_count: 52650
+    category: 0
+    created_at: '2013-02-28T14:11:28.208-05:00'
+    updated_at: '2019-09-01T09:16:20.452-04:00'
+    is_deprecated: false
+    words:
+    - '!'
+  body_text: null
+  body_b64: null

@@ -1,0 +1,235 @@
+metadata:
+  captured_at: '2026-05-07T11:08:58Z'
+  label: my-hero-academia
+  backend: mangadex
+  path_slug: manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=My%20Hero%20Academia&limit=2&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:08:58 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '1944'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 537a269c-3b54-45d9-849c-42717fcec6c0
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 1a051bb3-094e-4494-aa2e-fdac29b9ab5b
+      type: manga
+      attributes:
+        title:
+          en: Boku no Hero Academia (Official Colored)
+        altTitles:
+        - ja: 僕のヒーローアカデミア カラー版
+        - en: My Hero Academia (Official Colored)
+        - en: My Hero Academia - Digital Colored Comics
+        description:
+          en: "Midoriya inherits the superpower of the world’s greatest hero, but greatness won’t come easy. \nWhat would\
+            \ the world be like if 80 percent of the population manifested superpowers called Quirks? Heroes and villains\
+            \ would be battling it out everywhere! Being a hero would mean learning to use your power, but where would you\
+            \ go to study? The Hero Academy, of course! But what would you do if you were one of the 20 percent who were born\
+            \ Quirkless?"
+        isLocked: false
+        links:
+          amz: https://www.amazon.co.jp/dp/B085G5295H
+          mal: '75989'
+          raw: https://www.shueisha.co.jp/books/search/search.html?seriesid=98521
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: ongoing
+        year: 2014
+        contentRating: safe
+        tags:
+        - id: 320831a8-4026-470b-94f6-8353740e6f04
+          type: tag
+          attributes:
+            name:
+              en: Official Colored
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 7064a261-a137-4d3a-8848-2d385de3a99c
+          type: tag
+          attributes:
+            name:
+              en: Superhero
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2024-07-09T11:51:47+00:00'
+        updatedAt: '2026-04-20T02:00:59+00:00'
+        version: 8
+        availableTranslatedLanguages:
+        - es-la
+        latestUploadedChapter: ffa67c3a-e274-4164-9e1b-0e213bafcb59
+      relationships:
+      - id: 02795b9a-2128-403c-b03e-e25dc3e3b0a2
+        type: author
+      - id: 02795b9a-2128-403c-b03e-e25dc3e3b0a2
+        type: artist
+      - id: 7e8dd1f4-25ec-464a-bd75-6d4871b7c2a8
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '4'
+          fileName: 18a95ee2-f981-48e6-a2d9-12d22d185b2d.jpg
+          locale: ja
+          createdAt: '2024-07-09T11:51:57+00:00'
+          updatedAt: '2024-07-09T11:51:57+00:00'
+          version: 1
+      - id: 4f3bcae4-2d96-4c9d-932c-90181d9c873e
+        type: manga
+        related: monochrome
+      - id: 6f79c90d-fa6d-4783-aba3-38144f951fa9
+        type: manga
+        related: alternate_version
+      - id: c28deee0-46d1-4ed8-bb42-ce12be46ada1
+        type: creator
+    - id: 749fa016-0834-4de6-a568-ab2966d41332
+      type: manga
+      attributes:
+        title:
+          ja-ro: My Hero Academia - Sairoku TodoBaku (Doujinshi)
+        altTitles: []
+        description:
+          en: 'Pairing: Todoroki Shouto x Bakugou Katsuki'
+        isLocked: false
+        links: {}
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: '4'
+        lastChapter: ''
+        publicationDemographic: null
+        status: completed
+        year: 2018
+        contentRating: erotica
+        tags:
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 4d32cc48-9f00-4cca-9b5a-a839f0764984
+          type: tag
+          attributes:
+            name:
+              en: Comedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 5920b825-4181-4a17-beeb-9918b0ff7a30
+          type: tag
+          attributes:
+            name:
+              en: Boys' Love
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b13b2a48-c720-44a9-9c77-39c9979373fb
+          type: tag
+          attributes:
+            name:
+              en: Doujinshi
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: caaa44eb-cd40-4177-b930-79d3ef2afe87
+          type: tag
+          attributes:
+            name:
+              en: School Life
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2025-12-09T14:53:44+00:00'
+        updatedAt: '2025-12-09T14:53:52+00:00'
+        version: 2
+        availableTranslatedLanguages:
+        - en
+        latestUploadedChapter: c4118601-cec9-4317-a11d-6529f5aeac49
+      relationships:
+      - id: 773a3c5b-8897-46ee-8b84-e21d93a9a1a6
+        type: author
+      - id: 773a3c5b-8897-46ee-8b84-e21d93a9a1a6
+        type: artist
+      - id: 64d2d1b4-d06a-40f2-ae94-f05d983ab697
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '1'
+          fileName: d6e2459b-ed50-4bb5-b757-fd03b9187b89.png
+          locale: ja
+          createdAt: '2025-12-09T14:53:48+00:00'
+          updatedAt: '2025-12-09T14:53:48+00:00'
+          version: 1
+      - id: b0db63f6-e90c-4ae2-9719-1ebfef3755c6
+        type: creator
+    limit: 2
+    offset: 0
+    total: 78
+  body_text: null
+  body_b64: null

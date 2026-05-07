@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:18:46Z'
+  label: naruto
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Naruto&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:18:46 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"c9fc10ad899acf1bd2f8b508571ef169"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 665c5a31-77e0-49cd-885d-a233427496f1
+    X-Runtime: '0.035770'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 20
+    name: Naruto
+    russian: Наруто
+    image:
+      original: /system/animes/original/20.jpg?1711965679
+      preview: /system/animes/preview/20.jpg?1711965679
+      x96: /system/animes/x96/20.jpg?1711965679
+      x48: /system/animes/x48/20.jpg?1711965679
+    url: /animes/z20-naruto
+    kind: tv
+    score: '8.02'
+    status: released
+    episodes: 220
+    episodes_aired: 0
+    aired_on: '2002-10-03'
+    released_on: '2007-02-08'
+  - id: 10686
+    name: 'Naruto: Honoo no Chuunin Shiken! Naruto vs. Konohamaru!!'
+    russian: 'Наруто: Пылающий экзамен на тюнина! Наруто против Конохамару!'
+    image:
+      original: /system/animes/original/10686.jpg?1711965712
+      preview: /system/animes/preview/10686.jpg?1711965712
+      x96: /system/animes/x96/10686.jpg?1711965712
+      x48: /system/animes/x48/10686.jpg?1711965712
+    url: /animes/z10686-naruto-honoo-no-chuunin-shiken-naruto-vs-konohamaru
+    kind: movie
+    score: '7.18'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2011-07-30'
+    released_on: null
+  body_text: null
+  body_b64: null

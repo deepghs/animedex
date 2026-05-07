@@ -1,0 +1,66 @@
+metadata:
+  captured_at: '2026-05-07T11:17:42Z'
+  label: order-name-asc
+  backend: danbooru
+  path_slug: artists_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artists.json?search%5Border%5D=name&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:42 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"5eb5bc2412287f136dc2b956d47a6ead"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd1d97c7e00b0-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.4559, rails.cpu_time;dur=1.9338, rails.idle_time;dur=0.5221,
+      rails.sql_time;dur=0.6281, rails.view_time;dur=0.9058, rails.allocations;count=1449, request.allocations;count=1981,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.641, request.total_time;dur=3.229, request.queue_time_0;dur=0.8366,
+      request.queue_time_1;dur=85.0
+    x-runtime: '0.00322900390625'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 169353
+    created_at: '2018-05-19T09:06:05.097-04:00'
+    name: .
+    updated_at: '2024-10-22T22:43:05.894-04:00'
+    is_deleted: true
+    group_name: ''
+    is_banned: false
+    other_names:
+    - grave_accent_(period)
+  - id: 628935
+    created_at: '2026-04-15T21:37:42.959-04:00'
+    name: '.....'
+    updated_at: '2026-04-15T22:16:49.361-04:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: false
+    other_names: []
+  body_text: null
+  body_b64: null

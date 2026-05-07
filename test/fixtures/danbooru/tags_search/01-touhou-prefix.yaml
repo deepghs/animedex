@@ -1,0 +1,79 @@
+metadata:
+  captured_at: '2026-05-07T11:17:21Z'
+  label: touhou-prefix
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Bname_matches%5D=touhou*&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:21 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"4341d3b8bbe1e1f50533008bf96d43cf"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd155caadd003-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=5.1071, rails.cpu_time;dur=3.179, rails.idle_time;dur=1.9281,
+      rails.sql_time;dur=2.1673, rails.view_time;dur=2.8043, rails.allocations;count=1604, request.allocations;count=2112,
+      request.gc_time;dur=0.166, request.gc_count;count=0, request.cpu_time;dur=4.5021, request.total_time;dur=6.4154, request.queue_time_0;dur=0.8786,
+      request.queue_time_1;dur=96.9999
+    x-runtime: '0.006415435791015625'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2606184
+    name: touhou_futanari_scarlet_escape
+    post_count: 101
+    category: 3
+    created_at: '2026-04-19T08:51:12.297-04:00'
+    updated_at: '2026-04-19T08:51:12.297-04:00'
+    is_deprecated: false
+    words:
+    - touhou
+    - futanari
+    - scarlet
+    - escape
+  - id: 2600518
+    name: touhoufest
+    post_count: 3
+    category: 3
+    created_at: '2026-04-11T20:23:58.811-04:00'
+    updated_at: '2026-04-11T20:23:58.811-04:00'
+    is_deprecated: false
+    words:
+    - touhoufest
+  - id: 2595245
+    name: touhou2
+    post_count: 0
+    category: 0
+    created_at: '2026-04-05T15:28:44.913-04:00'
+    updated_at: '2026-04-05T15:28:44.913-04:00'
+    is_deprecated: false
+    words:
+    - touhou2
+  body_text: null
+  body_b64: null

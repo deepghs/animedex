@@ -1,0 +1,82 @@
+metadata:
+  captured_at: '2026-05-07T11:25:34Z'
+  label: id-100
+  backend: ann
+  path_slug: by_id
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=100
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:25:33 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:25:33 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Access-Control-Allow-Origin: '*'
+    Cache-Control: public
+    Expires: Fri, 08 May 2026 11:25:33 GMT
+    X-Ann: skip state commit
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <ann><anime id="100" gid="3940154476" type="OAV" name="Adventures of Kotetsu" precision="OAV" generated-on="2026-05-07T11:25:33Z">
+    <related-prev rel="adapted from" id="4451"/>
+    <info gid="1409399557" type="Picture" src="https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A100-23.jpg" width="200" height="200"><img src="https://cdn.animenewsnetwork.com/thumbnails/fit200x200/encyc/A100-23.jpg" width="200" height="200"/><img src="https://cdn.animenewsnetwork.com/thumbnails/max500x600/encyc/A100-23.jpg" width="290" height="290"/></info>
+    <info gid="1677150410" type="Main title" lang="EN">The Adventures of Kotetsu</info>
+    <info gid="3511624435" type="Alternative title" lang="JA">Kotetsu no Daibōken</info>
+    <info gid="3461310556" type="Alternative title" lang="JA">小鉄の大冒険</info>
+    <info gid="3009868724" type="Genres">action</info>
+    <info gid="1728006940" type="Genres">comedy</info>
+    <info gid="2240669451" type="Themes">fanservice</info>
+    <info gid="3935999790" type="Objectionable content">TA</info>
+    <info gid="3419520843" type="Plot Summary">While walking through the streets of Tokyo, Linn Suzuki comes across a strange device sticking up from the sidewalk. Suddenly, she is set upon by thugs and is helped by a beautiful stranger who takes them all down. It seems young Linn has fled Deep Kyoto from her cruel mistress and has traveled to Edo where she hopes to find her long lost brother, who was last seen working for the Kuon Detective Agency. By chance, this stranger happens to be Miho Kuon and lets Linn stay with her (nicknaming her Kotetsu, or Little Tetsu after her brother, Tetsujin). However, a mysterious agency called the Syndicate are after Miho and Linn is now in the thick of things.</info>
+    <info gid="282693649" type="Running time">30</info>
+    <info gid="2756007866" type="Number of episodes">2</info>
+    <info gid="2151963588" type="Vintage">1996-12-13 to 1997-01-10</info>
+    <ratings nb_votes="142" weighted_score="5.9204" bayesian_score="6.04122"/>
+    <review href="https://www.animenewsnetwork.com/review/adventures-of-kotetsu/vhs">Adventures of Kotetsu VHS</review>
+    <release date="1999-05-11" href="https://www.animenewsnetwork.com/encyclopedia/releases.php?id=900">The Adventures of Kotetsu (Dub.VHS)</release>
+    <release date="1999-05-11" href="https://www.animenewsnetwork.com/encyclopedia/releases.php?id=44065">The Adventures of Kotetsu (Sub.VHS)</release>
+    <news datetime="1999-04-16T04:00:00Z" href="https://www.animenewsnetwork.com/news/1999-04-16/adv-announces-gasaraki-festival">ADV announces Gasaraki, festival</news>
+    <news datetime="2002-07-22T13:19:42Z" href="https://www.animenewsnetwork.com/news/2002-07-22/tokuma-hands-daiei-to-kadokawa">Tokuma Hands Daiei to Kadokawa</news>
+    <staff gid="2262936682"><task>Director</task><person id="77">Yūji Moriyama</person></staff>
+    <staff gid="2454733324"><task>Screenplay</task><person id="3772">Yūji Kawahara</person></staff>
+    <staff gid="2687334054"><task>Storyboard</task><person id="77">Yūji Moriyama</person></staff>
+    <staff gid="596766085"><task>Unit Director</task><person id="7588">Tetsuya Watanabe</person></staff>
+    <staff gid="2606483598"><task>Music</task><person id="3110">Kuniaki Haishima</person></staff>
+    <staff gid="1280997649"><task>Original Manga</task><person id="13284">Minoru Tachikawa</person></staff>
+    <staff gid="2620029461"><task>Character Design</task><person id="345">Yōko Kikuchi</person></staff>
+    <staff gid="1356737428"><task>Art Director</task><person id="20299">Satoshi Shibata</person></staff>
+    <staff gid="2654683799"><task>Animation Director</task><person id="345">Yōko Kikuchi</person></staff>
+    <staff gid="1140191912"><task>Sound Director</task><person id="979">Yoshikazu Iwanami</person></staff>
+    <staff gid="2512330109"><task>Director of Photography</task><person id="6555">Akio Saitō</person></staff>
+    <staff gid="3944265219"><task>Producer</task><person id="348">Tetsuya Ikeda</person></staff>
+    <cast gid="2396179971" lang="EN"><role>Lynn &#039;Kotetsu&#039; Suzuki</role><person id="13713">Kay Hest</person></cast>
+    <cast gid="631233895" lang="JA"><role>Miho Kuon</role><person id="542">Kikuko Inoue</person></cast>
+    <cast gid="2051414840" lang="JA"><role>Tatsuya Mikado</role><person id="543">Masami Kikuchi</person></cast>
+    <cast gid="1305074157" lang="JA"><role>Azami Daimonji</role><person id="657">Kae Araki</person></cast>
+    <cast gid="2544046906" lang="JA"><role>Kenichi Mukai</role><person id="659">Shinichirō Miki</person></cast>
+    <cast gid="899927310" lang="JA"><role>Kagari</role><person id="827">Mako Hyōdō</person></cast>
+    <cast gid="1198077503" lang="JA"><role>Kotetsu</role><person id="828">Yūko Miyamura</person></cast>
+    <cast gid="1335014312" lang="JA"><role>Ryōno Kanzaka</role><person id="1471">Jūrōta Kosugi</person></cast>
+    <credit gid="3638613490"><task>Animation Production</task><company id="2944">Project Team Sarah</company></credit>
+    <credit gid="2518278421"><task>Production</task><company id="77">Daiei Co. Ltd.</company></credit>
+    <credit gid="3168457881"><task>Production</task><company id="2186">Palm Tree</company></credit>
+    <credit gid="237932670"><task>Production</task><company id="2651">Wani Books</company></credit>
+    <credit gid="897922317"><task>Production</task><company id="2944">Project Team Sarah</company></credit></anime></ann>
+  body_b64: null

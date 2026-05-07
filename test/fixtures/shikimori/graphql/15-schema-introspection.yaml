@@ -1,0 +1,44 @@
+metadata:
+  captured_at: '2026-05-07T11:25:23Z'
+  label: schema-introspection
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ __schema { queryType { name } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:23 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"d8d486d100c24abe1a9b0959ab0e593a"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 1cece239-a19e-4394-8c52-fd96495dd9be
+    X-Runtime: '0.005088'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      __schema:
+        queryType:
+          name: Query
+  body_text: null
+  body_b64: null

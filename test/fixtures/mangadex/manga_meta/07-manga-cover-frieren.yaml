@@ -1,0 +1,50 @@
+metadata:
+  captured_at: '2026-05-07T11:09:49Z'
+  label: manga-cover-frieren
+  backend: mangadex
+  path_slug: manga_meta
+request:
+  method: GET
+  url: https://api.mangadex.org/cover?manga%5B%5D=67be7e1c-b2c2-4a73-8d83-3ddca4b1c6fc&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Thu, 07 May 2026 11:09:49 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '90'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 8c054364-ccf7-4b3e-ad36-5af27775a98b
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data: []
+    limit: 3
+    offset: 0
+    total: 0
+  body_text: null
+  body_b64: null

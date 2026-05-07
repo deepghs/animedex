@@ -69,7 +69,9 @@ _RULES: Dict[str, Dict[str, Callable[[str], bool]]] = {
     },
     "shikimori": {
         "GET": _allow,
-        "POST": _deny,
+        # Shikimori exposes both REST (GET only) and GraphQL on
+        # ``POST /api/graphql``; whitelist that one path.
+        "POST": _path_equals("/api/graphql"),
     },
     "ann": {
         "GET": _allow,

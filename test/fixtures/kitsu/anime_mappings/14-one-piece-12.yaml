@@ -1,0 +1,147 @@
+metadata:
+  captured_at: '2026-05-07T11:08:15Z'
+  label: one-piece-12
+  backend: kitsu
+  path_slug: anime_mappings
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/12/mappings?page%5Blimit%5D=10
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:15 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"386f591d488d173c468c59f3e853aba0"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 5506c200-da39-4e3e-8e18-bb9189450645
+    x-runtime: '0.031484'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1175'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/1175
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: myanimelist/anime
+        externalId: '21'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/1175/relationships/item
+            related: https://kitsu.io/api/edge/mappings/1175/item
+    - id: '12654'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/12654
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: thetvdb/series
+        externalId: '81797'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/12654/relationships/item
+            related: https://kitsu.io/api/edge/mappings/12654/item
+    - id: '59295'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/59295
+      attributes:
+        createdAt: null
+        updatedAt: null
+        externalSite: anidb
+        externalId: '69'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/59295/relationships/item
+            related: https://kitsu.io/api/edge/mappings/59295/item
+    - id: '66063'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/66063
+      attributes:
+        createdAt: '2017-09-09T07:06:03.175Z'
+        updatedAt: '2018-05-03T01:00:44.550Z'
+        externalSite: thetvdb
+        externalId: '81797'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/66063/relationships/item
+            related: https://kitsu.io/api/edge/mappings/66063/item
+    - id: '68371'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/68371
+      attributes:
+        createdAt: '2018-01-24T03:55:42.981Z'
+        updatedAt: '2018-01-24T03:55:42.981Z'
+        externalSite: aozora
+        externalId: UJAusIBpD8
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/68371/relationships/item
+            related: https://kitsu.io/api/edge/mappings/68371/item
+    - id: '68372'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/68372
+      attributes:
+        createdAt: '2018-01-24T03:55:42.998Z'
+        updatedAt: '2018-01-24T03:55:42.998Z'
+        externalSite: trakt
+        externalId: '37696'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/68372/relationships/item
+            related: https://kitsu.io/api/edge/mappings/68372/item
+    - id: '254544'
+      type: mappings
+      links:
+        self: https://kitsu.io/api/edge/mappings/254544
+      attributes:
+        createdAt: '2020-05-02T14:54:26.082Z'
+        updatedAt: '2020-05-02T14:54:26.082Z'
+        externalSite: anilist/anime
+        externalId: '21'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.io/api/edge/mappings/254544/relationships/item
+            related: https://kitsu.io/api/edge/mappings/254544/item
+    meta:
+      count: 7
+    links:
+      first: https://kitsu.io/api/edge/anime/12/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/12/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

@@ -1,0 +1,157 @@
+metadata:
+  captured_at: '2026-05-07T11:05:02Z'
+  label: madoka
+  backend: jikan
+  path_slug: anime_episodes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/9756/episodes?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:05:02 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:21e860dfad2e7ed2843470d8f1c1c83f84f321a0
+    expires: Fri, 08 May 2026 11:05:02 GMT
+    last-modified: Thu, 07 May 2026 11:05:02 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - mal_id: 1
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/1
+      title: As If I Met Her in My Dream...
+      title_japanese: 夢の中で会った、ような…
+      title_romanji: Yume no Naka de Atta, You na... 
+      aired: '2011-01-07T00:00:00+00:00'
+      score: 4.18
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=279728
+    - mal_id: 2
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/2
+      title: That Would Be Truly Wonderful
+      title_japanese: それはとっても嬉しいなって
+      title_romanji: Sore wa Tottemo Ureshii Natte 
+      aired: '2011-01-14T00:00:00+00:00'
+      score: 4.27
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=280611
+    - mal_id: 3
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/3
+      title: I'm Not Afraid of Anything Anymore
+      title_japanese: もう何も怖くない
+      title_romanji: Mou Nani mo Kowakunai 
+      aired: '2011-01-21T00:00:00+00:00'
+      score: 4.6
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=281635
+    - mal_id: 4
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/4
+      title: Miracles and Magic Are Real
+      title_japanese: 奇跡も、魔法も、あるんだよ
+      title_romanji: Kiseki mo, Mahou mo, Arun da yo 
+      aired: '2011-01-28T00:00:00+00:00'
+      score: 4.49
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=282497
+    - mal_id: 5
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/5
+      title: There's No Way I'll Ever Regret It
+      title_japanese: 後悔なんて、あるわけない
+      title_romanji: Koukai nante, Aru Wakenai 
+      aired: '2011-02-04T00:00:00+00:00'
+      score: 4.5
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=283627
+    - mal_id: 6
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/6
+      title: This Just Can't Be Right
+      title_japanese: こんなの絶対おかしいよ
+      title_romanji: Konna no Zettai Okashii yo 
+      aired: '2011-02-11T00:00:00+00:00'
+      score: 4.65
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=284610
+    - mal_id: 7
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/7
+      title: Can You Face Your True Feelings?
+      title_japanese: 本当の気持ちと向き合えますか？
+      title_romanji: Hontou no Kimochi to Mukiaemasu ka? 
+      aired: '2011-02-18T00:00:00+00:00'
+      score: 4.68
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=285462
+    - mal_id: 8
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/8
+      title: I Was Stupid, So Stupid
+      title_japanese: あたしって、ほんとバカ
+      title_romanji: Atashitte, Honto Baka 
+      aired: '2011-02-25T00:00:00+00:00'
+      score: 4.79
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=286325
+    - mal_id: 9
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/9
+      title: I'd Never Allow That To Happen
+      title_japanese: そんなの、あたしが許さない
+      title_romanji: Sonna no, Atashi ga Yurusanai 
+      aired: '2011-03-04T00:00:00+00:00'
+      score: 4.7
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=287238
+    - mal_id: 10
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/10
+      title: I Won't Rely On Anyone Anymore
+      title_japanese: もう誰にも頼らない
+      title_romanji: Mou Dare ni mo Tayoranai 
+      aired: '2011-03-11T00:00:00+00:00'
+      score: 4.87
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=288028
+    - mal_id: 11
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/11
+      title: The Only Thing I Have Left To Guide Me
+      title_japanese: 最後に残った道しるべ
+      title_romanji: Saigo ni Nokotta Michishirube 
+      aired: '2011-04-22T00:00:00+00:00'
+      score: 4.79
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=293387
+    - mal_id: 12
+      url: https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka★Magica/episode/12
+      title: My Very Best Friend
+      title_japanese: わたしの、最高の友達
+      title_romanji: Watashi no, Saikou no Tomodachi 
+      aired: '2011-04-22T00:00:00+00:00'
+      score: 4.63
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=293392
+  body_text: null
+  body_b64: null

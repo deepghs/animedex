@@ -1,0 +1,95 @@
+metadata:
+  captured_at: '2026-05-07T11:09:50Z'
+  label: manga-cover-berserk
+  backend: mangadex
+  path_slug: manga_meta
+request:
+  method: GET
+  url: https://api.mangadex.org/cover?manga%5B%5D=801513ba-a712-498c-8f57-cae55b38cc92&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:50 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '536'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: f0070fa9-720b-4338-89a6-e785805915ab
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 21f53254-4aef-429f-b3cf-ebd8d198f0fc
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '1'
+        fileName: 88b10820-0309-44c5-9a40-c799865ad968.jpg
+        locale: uk
+        createdAt: '2025-09-04T08:16:38+00:00'
+        updatedAt: '2025-09-04T08:16:38+00:00'
+        version: 1
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 8bdace17-7d3d-4b8c-8915-cc6b7781ce12
+        type: user
+    - id: bab715d9-1b6a-4f50-8fea-ac5628ebfd8e
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '43'
+        fileName: 81e1c82d-6672-400c-8c58-4ff9bfb89031.jpg
+        locale: ja
+        createdAt: '2025-08-22T11:23:23+00:00'
+        updatedAt: '2025-08-22T11:23:23+00:00'
+        version: 1
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: f73d34f6-f678-4f8b-9dff-5c759d5fc767
+        type: user
+    - id: 1a6657f3-107a-45d4-94c2-efdbf17a2259
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '1.1'
+        fileName: b877b5d0-f5fd-4b7b-b7c1-51eb1faf28a5.jpg
+        locale: ja
+        createdAt: '2024-05-06T17:30:02+00:00'
+        updatedAt: '2025-09-10T13:54:20+00:00'
+        version: 2
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: f73d34f6-f678-4f8b-9dff-5c759d5fc767
+        type: user
+    limit: 3
+    offset: 0
+    total: 112
+  body_text: null
+  body_b64: null

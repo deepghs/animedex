@@ -1,0 +1,297 @@
+metadata:
+  captured_at: '2026-05-07T11:04:46Z'
+  label: demon-slayer
+  backend: jikan
+  path_slug: anime_episodes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/38000/episodes?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:04:45 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:3580ec1f60e69ab5c188bcbc8b7258c140b14fe5
+    expires: Fri, 08 May 2026 11:04:45 GMT
+    last-modified: Thu, 07 May 2026 11:04:45 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - mal_id: 1
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/1
+      title: Cruelty
+      title_japanese: 残酷
+      title_romanji: Zankoku 
+      aired: '2019-04-06T00:00:00+00:00'
+      score: 4.28
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1775930
+    - mal_id: 2
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/2
+      title: Trainer Sakonji Urokodaki
+      title_japanese: 育手・鱗滝左近次
+      title_romanji: Muneyasu Urokodaki Sakonji 
+      aired: '2019-04-13T00:00:00+00:00'
+      score: 4.29
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1777172
+    - mal_id: 3
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/3
+      title: Sabito and Makomo
+      title_japanese: 錆兎と真菰
+      title_romanji: Sabito to Makomo 
+      aired: '2019-04-20T00:00:00+00:00'
+      score: 4.33
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1778370
+    - mal_id: 4
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/4
+      title: Final Selection
+      title_japanese: 最終選別
+      title_romanji: Saishuu Senbetsu 
+      aired: '2019-04-27T00:00:00+00:00'
+      score: 4.56
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1779511
+    - mal_id: 5
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/5
+      title: My Own Steel
+      title_japanese: 己の鋼
+      title_romanji: Ore no Hagane 
+      aired: '2019-05-04T00:00:00+00:00'
+      score: 4.46
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1780630
+    - mal_id: 6
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/6
+      title: Swordsman Accompanying a Demon
+      title_japanese: 鬼を連れた剣士
+      title_romanji: Oni wo Tsureta Kenshi 
+      aired: '2019-05-11T00:00:00+00:00'
+      score: 4.4
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1781778
+    - mal_id: 7
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/7
+      title: Muzan Kibutsuji
+      title_japanese: 鬼舞辻 無惨
+      title_romanji: Kibutsuji Muzan 
+      aired: '2019-05-18T00:00:00+00:00'
+      score: 4.52
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1782821
+    - mal_id: 8
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/8
+      title: The Smell of Enchanting Blood
+      title_japanese: 幻惑の血の香り
+      title_romanji: Genwaku no Chi no Kaori 
+      aired: '2019-05-25T00:00:00+00:00'
+      score: 4.45
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1783876
+    - mal_id: 9
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/9
+      title: Temari Demon and Arrow Demon
+      title_japanese: 手毬鬼と矢印鬼
+      title_romanji: Temari Oni to Yajirushi Oni 
+      aired: '2019-06-01T00:00:00+00:00'
+      score: 4.42
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1785013
+    - mal_id: 10
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/10
+      title: Together Forever
+      title_japanese: ずっと一緒にいる
+      title_romanji: Zutto Issho ni Iru 
+      aired: '2019-06-08T00:00:00+00:00'
+      score: 4.39
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1786141
+    - mal_id: 11
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/11
+      title: Tsuzumi Mansion
+      title_japanese: 鼓お屋敷
+      title_romanji: Tsuzumi no Yashiki 
+      aired: '2019-06-15T00:00:00+00:00'
+      score: 3.88
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1787228
+    - mal_id: 12
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/12
+      title: The Boar Bares Its Fangs, Zenitsu Sleeps
+      title_japanese: 猪は牙を剥き、善逸は眠る
+      title_romanji: 'Inoshishi wa Kiba wo Muki: Zenitsu wa Nemuru '
+      aired: '2019-06-22T00:00:00+00:00'
+      score: 4.32
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1788215
+    - mal_id: 13
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/13
+      title: Something More Important Than Life
+      title_japanese: 命より大事なもの
+      title_romanji: Inochi yori Daiji na Mono 
+      aired: '2019-06-29T00:00:00+00:00'
+      score: 4.32
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1789405
+    - mal_id: 14
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/14
+      title: The House with the Wisteria Family Crest
+      title_japanese: 藤の花の家紋の家
+      title_romanji: Fuji no Hana no Kamon no Ie 
+      aired: '2019-07-06T00:00:00+00:00'
+      score: 4.18
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1790702
+    - mal_id: 15
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/15
+      title: Mount Natagumo
+      title_japanese: 那多蜘蛛山
+      title_romanji: Natagumo Yama 
+      aired: '2019-07-13T00:00:00+00:00'
+      score: 4.29
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1791985
+    - mal_id: 16
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/16
+      title: Letting Someone Else Go First
+      title_japanese: 自分ではない誰かを前へ
+      title_romanji: Jibun de wa Nai Dareka wo Mae e 
+      aired: '2019-07-20T00:00:00+00:00'
+      score: 4.56
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1793295
+    - mal_id: 17
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/17
+      title: You Must Master a Single Thing
+      title_japanese: ひとつのことを極め抜け
+      title_romanji: Hitotsu no Koto wo Kiwamenuke 
+      aired: '2019-07-27T00:00:00+00:00'
+      score: 4.6
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1794414
+    - mal_id: 18
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/18
+      title: A Forged Bond
+      title_japanese: 偽物の絆
+      title_romanji: Nisemono no Kizuna 
+      aired: '2019-08-03T00:00:00+00:00'
+      score: 4.64
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1795464
+    - mal_id: 19
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/19
+      title: Hinokami
+      title_japanese: ヒノカミ
+      title_romanji: Hinokami 
+      aired: '2019-08-10T00:00:00+00:00'
+      score: 4.85
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1796671
+    - mal_id: 20
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/20
+      title: Pretend Family
+      title_japanese: 寄せ集めの家族
+      title_romanji: Yoseatsume no Kazoku 
+      aired: '2019-08-17T00:00:00+00:00'
+      score: 4.56
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1797764
+    - mal_id: 21
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/21
+      title: Against Corps Rules
+      title_japanese: 隊律違反
+      title_romanji: Tairitsu Ihan 
+      aired: '2019-08-24T00:00:00+00:00'
+      score: 4.61
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1798778
+    - mal_id: 22
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/22
+      title: Master of the Mansion
+      title_japanese: お館様
+      title_romanji: Oyakata-sama 
+      aired: '2019-08-31T00:00:00+00:00'
+      score: 4.48
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1799738
+    - mal_id: 23
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/23
+      title: Hashira Meeting
+      title_japanese: 柱合会議
+      title_romanji: Hashira Gou Kaigi 
+      aired: '2019-09-07T00:00:00+00:00'
+      score: 4.42
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1800716
+    - mal_id: 24
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/24
+      title: Rehabilitation Training
+      title_japanese: 機能回復訓練
+      title_romanji: Kinou Kaifuku Kunren 
+      aired: '2019-09-14T00:00:00+00:00'
+      score: 4.4
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1801668
+    - mal_id: 25
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/25
+      title: Tsuguko, Kanao Tsuyuri
+      title_japanese: 継ぐ子 栗花落カナヲ
+      title_romanji: Tsuguko, Tsuyuri Kanao 
+      aired: '2019-09-21T00:00:00+00:00'
+      score: 4.52
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1802635
+    - mal_id: 26
+      url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/26
+      title: New Mission
+      title_japanese: 改める任務
+      title_romanji: Aratanaru Ninmu 
+      aired: '2019-09-28T00:00:00+00:00'
+      score: 4.52
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=1803782
+  body_text: null
+  body_b64: null

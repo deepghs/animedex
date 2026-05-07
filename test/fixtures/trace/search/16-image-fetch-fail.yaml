@@ -1,0 +1,986 @@
+metadata:
+  captured_at: '2026-05-07T11:16:30Z'
+  label: image-fetch-fail
+  backend: trace
+  path_slug: search
+request:
+  method: GET
+  url: https://api.trace.moe/search?anilistInfo&url=https%3A%2F%2Fi.imgur.com%2Fnonexistent-xyz.jpg
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:16:30 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    access-control-allow-credentials: 'true'
+    access-control-allow-headers: Content-Type, x-trace-secret
+    access-control-allow-methods: GET, POST, OPTIONS
+    access-control-allow-origin: '*'
+    alt-svc: h3=":443"; ma=86400
+    Content-Encoding: gzip
+    etag: W/"5abb-XokHZfG66i+UErgaNi4tSpT7PfQ"
+    ratelimit-limit: '100'
+    ratelimit-policy: 100;w=60
+    ratelimit-remaining: '91'
+    ratelimit-reset: '34'
+    vary: Origin, Accept-Encoding
+    via: <scrubbed-at-capture>
+    x-ratelimit-limit: '100'
+    x-ratelimit-remaining: '91'
+    x-ratelimit-reset: '1778152622'
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    X-Content-Type-Options: nosniff
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    frameCount: 1678055588
+    error: ''
+    result:
+    - anilist:
+        id: 162720
+        type: ANIME
+        idMal: 54716
+        title:
+          native: キボウノチカラ～オトナプリキュア'23～
+          romaji: 'Kibou no Chikara: Otona Precure ''23'
+          chinese: 希望的力量～大人光之美少女‘23～
+          english: Power of Hope ~Precure Full Bloom~
+        format: TV
+        genres:
+        - Action
+        - Drama
+        - Fantasy
+        - Mahou Shoujo
+        - Slice of Life
+        season: FALL
+        source: ORIGINAL
+        status: FINISHED
+        endDate:
+          day: 23
+          year: 2023
+          month: 12
+        isAdult: false
+        siteUrl: https://anilist.co/anime/162720
+        studios:
+          edges:
+          - node:
+              id: 18
+              name: Toei Animation
+              siteUrl: https://anilist.co/studio/18
+            isMain: true
+          - node:
+              id: 37
+              name: Studio DEEN
+              siteUrl: https://anilist.co/studio/37
+            isMain: true
+        duration: 25
+        episodes: 12
+        synonyms:
+        - Power of Hope ~Grown-Up Precure '23~
+        - Yes! Precure 5 GoGo! (Zoku-hen)
+        - Yes!プリキュア5GoGo! (続編)
+        relations:
+          edges:
+          - node:
+              id: 3692
+              title:
+                native: Yes!プリキュア5GoGo!
+            relationType: PREQUEL
+          - node:
+              id: 1534
+              title:
+                native: ふたりはプリキュア Splash☆Star
+            relationType: PREQUEL
+          - node:
+              id: 1929
+              title:
+                native: ふたりはプリキュア Max Heart
+            relationType: CHARACTER
+        seasonInt: 234
+        startDate:
+          day: 7
+          year: 2023
+          month: 10
+        coverImage:
+          color: '#50aef1'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx162720-bVrHEs2nUlBo.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx162720-bVrHEs2nUlBo.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx162720-bVrHEs2nUlBo.jpg
+        popularity: 4043
+        seasonYear: 2023
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/162720-i38ZoiqJKQRn.jpg
+        externalLinks:
+        - id: 68554
+          url: https://otonaprecure2023.com/
+          site: Official Site
+        - id: 68555
+          url: https://twitter.com/precure_15th
+          site: Twitter
+        - id: 79988
+          url: https://www.crunchyroll.com/series/GXJHM3G84/power-of-hope-precure-full-bloom
+          site: Crunchyroll
+        - id: 81094
+          url: https://www.iq.com/album/1lh5n65ovz5
+          site: iQ
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: '[Ohys-Raws] Kibou no Chikara Otona Precure `23 - 03 (NHKE 1920x1080 x264 AAC).mp4'
+      episode: 3
+      from: 1183.4323
+      at: 1183.5574
+      to: 1183.6407
+      duration: 1500.0533
+      similarity: 0.3952613980162377
+      video: https://api.trace.moe/video/SeVqyHBeK0MLVlSSGMXz6nT
+      image: https://api.trace.moe/image/SeVqyHBeK0MLVlSSGMXz6nT
+    - anilist:
+        id: 4703
+        type: ANIME
+        idMal: 4703
+        title:
+          native: Yes! プリキュア５GoGo! お菓子の国のハッピーバースデイ♪
+          romaji: Yes! Precure 5 GoGo! Okashi no Kuni no Happy Birthday♪
+          chinese: 電影 Yes! 光之美少女5GoGo! 甜點王國中的歡樂生日♪
+          english: null
+        format: MOVIE
+        genres:
+        - Action
+        - Fantasy
+        - Mahou Shoujo
+        - Romance
+        season: FALL
+        source: ORIGINAL
+        status: FINISHED
+        endDate:
+          day: 8
+          year: 2008
+          month: 11
+        isAdult: false
+        siteUrl: https://anilist.co/anime/4703
+        studios:
+          edges:
+          - node:
+              id: 18
+              name: Toei Animation
+              siteUrl: https://anilist.co/studio/18
+            isMain: true
+        duration: 75
+        episodes: 1
+        synonyms:
+        - 'Eiga Yes! Pretty Cure 5 GoGo!: Okashi no Kuni no Happy Birthday'
+        - 'Eiga Yes! Pretty Cure 5 GoGo!: Happy Birthday in the Sweets Kingdom'
+        - Yes! Pretty Cure 5 GoGo! - Buon compleanno carissima Nozomi
+        relations:
+          edges:
+          - node:
+              id: 10549
+              title:
+                native: プリキュアオールスターズ GoGoドリームライブ!
+            relationType: SIDE_STORY
+          - node:
+              id: 3692
+              title:
+                native: Yes!プリキュア5GoGo!
+            relationType: PARENT
+        seasonInt: 84
+        startDate:
+          day: 8
+          year: 2008
+          month: 11
+        coverImage:
+          color: '#f1c95d'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx4703-1VToRbHzHTCy.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx4703-1VToRbHzHTCy.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4703-1VToRbHzHTCy.jpg
+        popularity: 2459
+        seasonYear: 2008
+        bannerImage: null
+        externalLinks:
+        - id: 34212
+          url: https://www.toei-anim.co.jp/movie/2008_precure5gogo/
+          site: Official Site
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: 映画 Yes!プリキュア5GoGo! お菓子の国のハッピーバースディ (DVD 848x480 H264 AAC).mp4
+      episode: null
+      from: 3206.0803
+      at: 3206.1638
+      to: 3206.2056
+      duration: 4293.568
+      similarity: 0.3892130533854167
+      video: https://api.trace.moe/video/4c2x3Uf0dRjrxL2RRjccGpe
+      image: https://api.trace.moe/image/4c2x3Uf0dRjrxL2RRjccGpe
+    - anilist:
+        id: 740
+        type: ANIME
+        idMal: 740
+        title:
+          native: 美少女戦士セーラームーン R
+          romaji: Bishoujo Senshi Sailor Moon R
+          chinese: Sailor Moon R
+          english: Sailor Moon R
+        format: TV
+        genres:
+        - Action
+        - Fantasy
+        - Mahou Shoujo
+        - Romance
+        - Supernatural
+        season: SPRING
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 12
+          year: 1994
+          month: 3
+        isAdult: false
+        siteUrl: https://anilist.co/anime/740
+        studios:
+          edges:
+          - node:
+              id: 18
+              name: Toei Animation
+              siteUrl: https://anilist.co/studio/18
+            isMain: true
+          - node:
+              id: 55
+              name: TV Asahi
+              siteUrl: https://anilist.co/studio/55
+            isMain: false
+          - node:
+              id: 119
+              name: Viz Media
+              siteUrl: https://anilist.co/studio/119
+            isMain: false
+          - node:
+              id: 6454
+              name: Madman Entertainment
+              siteUrl: https://anilist.co/studio/6454
+            isMain: false
+        duration: 24
+        episodes: 43
+        synonyms:
+        - Pretty Soldier Sailor Moon R
+        - Sailor Moon, la luna splende
+        relations:
+          edges:
+          - node:
+              id: 530
+              title:
+                native: 美少女戦士セーラームーン
+            relationType: PREQUEL
+          - node:
+              id: 532
+              title:
+                native: 美少女戦士セーラームーン S
+            relationType: SEQUEL
+          - node:
+              id: 30092
+              title:
+                native: 美少女戦士セーラームーン
+            relationType: ADAPTATION
+          - node:
+              id: 531
+              title:
+                native: 美少女戦士セーラームーンＲ THE MOVIE
+            relationType: SIDE_STORY
+          - node:
+              id: 14751
+              title:
+                native: 美少女戦士セーラームーンCrystal
+            relationType: ALTERNATIVE
+        seasonInt: 932
+        startDate:
+          day: 6
+          year: 1993
+          month: 3
+        coverImage:
+          color: '#f1d60d'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx740-XZhoxj6aJjNc.png
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx740-XZhoxj6aJjNc.png
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx740-XZhoxj6aJjNc.png
+        popularity: 34157
+        seasonYear: 1993
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/740-AhvRJvteYZoM.jpg
+        externalLinks:
+        - id: 1777
+          url: http://www.hulu.com/sailor-moon
+          site: Hulu
+        - id: 66758
+          url: https://www.youtube.com/playlist?list=PLDDFkfLheQ9g-9QS1CgfAnP5kHwc--qYO
+          site: YouTube
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - 美少女戰士 R
+      filename: '[Leopard-Raws] Sailor Moon R - 26 RAW (BSP 1440x1080 x264 AAC).mp4'
+      episode: 26
+      from: 425.9672
+      at: 427.5521
+      to: 427.9692
+      duration: 1440
+      similarity: 0.3846086090686274
+      video: https://api.trace.moe/video/v4hObIcHy7218A99v33A4WY
+      image: https://api.trace.moe/image/v4hObIcHy7218A99v33A4WY
+    - anilist:
+        id: 21207
+        type: ANIME
+        idMal: 30845
+        title:
+          native: アイカツ！ミュージックアワード みんなで賞をもらっちゃいまSHOW！
+          romaji: 'Aikatsu! Music Award: Minna de Shou wo Moraima SHOW!'
+          chinese: 星夢學園！音樂大獎 大家一起來獲獎吧Show！
+          english: null
+        format: MOVIE
+        genres:
+        - Music
+        season: SUMMER
+        source: ORIGINAL
+        status: FINISHED
+        endDate:
+          day: 22
+          year: 2015
+          month: 8
+        isAdult: false
+        siteUrl: https://anilist.co/anime/21207
+        studios:
+          edges:
+          - node:
+              id: 6116
+              name: Bandai Namco Pictures
+              siteUrl: https://anilist.co/studio/6116
+            isMain: true
+        duration: 56
+        episodes: 1
+        synonyms: []
+        relations:
+          edges:
+          - node:
+              id: 20794
+              title:
+                native: アイカツ! 3
+            relationType: PARENT
+        seasonInt: 153
+        startDate:
+          day: 22
+          year: 2015
+          month: 8
+        coverImage:
+          color: '#0daee4'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21207-Q3EKwxpEgzZO.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21207-Q3EKwxpEgzZO.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21207-Q3EKwxpEgzZO.jpg
+        popularity: 1671
+        seasonYear: 2015
+        bannerImage: null
+        externalLinks:
+        - id: 857
+          url: http://www.aikatsu.com/event/ma2015/
+          site: Official Site
+        - id: 2748
+          url: https://twitter.com/aikatsu_anime
+          site: Twitter
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: '[BeanSub&FZSD][Gekijouban_Aikatsu!_02][BDRip][Aikatsu!_Music_Award-Minna_de_Shou_o_Moraccha_Ima_Show!][CHT][720P][AVC_AAC](22F3BA86).mp4'
+      episode: 2
+      from: 2900.1055
+      at: 2900.1055
+      to: 2900.1055
+      duration: 3385.507
+      similarity: 0.3697439754710478
+      video: https://api.trace.moe/video/ao1GiJuTAeMFOplrrVLbJ7Zm
+      image: https://api.trace.moe/image/ao1GiJuTAeMFOplrrVLbJ7Zm
+    - anilist:
+        id: 1482
+        type: ANIME
+        idMal: 1482
+        title:
+          native: ディー・グレイマン
+          romaji: D.Gray-man
+          chinese: 驅魔少年
+          english: D.Gray-man
+        format: TV
+        genres:
+        - Action
+        - Adventure
+        - Drama
+        - Fantasy
+        season: FALL
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 30
+          year: 2008
+          month: 9
+        isAdult: false
+        siteUrl: https://anilist.co/anime/1482
+        studios:
+          edges:
+          - node:
+              id: 16
+              name: TV Tokyo
+              siteUrl: https://anilist.co/studio/16
+            isMain: false
+          - node:
+              id: 17
+              name: Aniplex
+              siteUrl: https://anilist.co/studio/17
+            isMain: false
+          - node:
+              id: 53
+              name: Dentsu
+              siteUrl: https://anilist.co/studio/53
+            isMain: false
+          - node:
+              id: 73
+              name: TMS Entertainment
+              siteUrl: https://anilist.co/studio/73
+            isMain: true
+          - node:
+              id: 102
+              name: Funimation
+              siteUrl: https://anilist.co/studio/102
+            isMain: false
+          - node:
+              id: 213
+              name: Half H.P Studio
+              siteUrl: https://anilist.co/studio/213
+            isMain: false
+          - node:
+              id: 757
+              name: Sony Music Entertainment
+              siteUrl: https://anilist.co/studio/757
+            isMain: false
+        duration: 23
+        episodes: 103
+        synonyms:
+        - D. Gray-man
+        - D. Grey-man
+        relations:
+          edges:
+          - node:
+              id: 30024
+              title:
+                native: ディー・グレイマン
+            relationType: ADAPTATION
+          - node:
+              id: 21558
+              title:
+                native: ディー・グレイマン ハロー
+            relationType: SEQUEL
+          - node:
+              id: 39114
+              title:
+                native: D.Gray-man reverse
+            relationType: ADAPTATION
+        seasonInt: 64
+        startDate:
+          day: 3
+          year: 2006
+          month: 10
+        coverImage:
+          color: '#e4ae5d'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1482-6jc8ZVSmHuLo.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx1482-6jc8ZVSmHuLo.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1482-6jc8ZVSmHuLo.jpg
+        popularity: 111436
+        seasonYear: 2006
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/1482-nmGoqdGfaKEt.jpg
+        externalLinks:
+        - id: 1448
+          url: http://www.hulu.com/d-gray-man
+          site: Hulu
+        - id: 53052
+          url: https://www.crunchyroll.com/dgray-man
+          site: Crunchyroll
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - D·格雷少年
+      filename: '[MapleSnow][D.Gray-man][072][Jpn_Big5][X264_AAC].mp4'
+      episode: 72
+      from: 1009.176
+      at: 1011.345
+      to: 1011.428
+      duration: 1390.0991
+      similarity: 0.3624786376953125
+      video: https://api.trace.moe/video/0HL2xAhFk2UrQ9yyIQLWC4v
+      image: https://api.trace.moe/image/0HL2xAhFk2UrQ9yyIQLWC4v
+    - anilist:
+        id: 5753
+        type: ANIME
+        idMal: 5753
+        title:
+          native: プリキュアオールスターズDX みんなともだちっ☆奇跡の全員大集合!
+          romaji: 'Precure All Stars DX: Minna Tomodachi☆Kiseki no Zenin Daishuugou!'
+          chinese: 光之美少女 All Stars DX 大家都是朋友☆奇蹟的全員大集合！
+          english: null
+        format: MOVIE
+        genres:
+        - Action
+        - Fantasy
+        - Mahou Shoujo
+        season: WINTER
+        source: ORIGINAL
+        status: FINISHED
+        endDate:
+          day: 20
+          year: 2009
+          month: 3
+        isAdult: false
+        siteUrl: https://anilist.co/anime/5753
+        studios:
+          edges:
+          - node:
+              id: 18
+              name: Toei Animation
+              siteUrl: https://anilist.co/studio/18
+            isMain: true
+        duration: 70
+        episodes: 1
+        synonyms:
+        - Pretty Cure All Stars DX
+        - 'Eiga Precure All Stars DX: Minna Tomodachi - Kiseki no Zenin Daishuugou!'
+        relations:
+          edges:
+          - node:
+              id: 8133
+              title:
+                native: プリキュアオールスターズDX2 希望の光☆レインボージュエルを守れ!
+            relationType: SEQUEL
+          - node:
+              id: 603
+              title:
+                native: ふたりはプリキュア
+            relationType: CHARACTER
+          - node:
+              id: 5684
+              title:
+                native: フレッシュプリキュア！
+            relationType: CHARACTER
+          - node:
+              id: 1534
+              title:
+                native: ふたりはプリキュア Splash☆Star
+            relationType: CHARACTER
+          - node:
+              id: 1932
+              title:
+                native: Yes! プリキュア5
+            relationType: CHARACTER
+          - node:
+              id: 10549
+              title:
+                native: プリキュアオールスターズ GoGoドリームライブ!
+            relationType: PREQUEL
+        seasonInt: 91
+        startDate:
+          day: 20
+          year: 2009
+          month: 3
+        coverImage:
+          color: '#e4e40d'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5753-Ml3W5o1JlDV1.png
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx5753-Ml3W5o1JlDV1.png
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5753-Ml3W5o1JlDV1.png
+        popularity: 2716
+        seasonYear: 2009
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/5753-RNSrzfgx9DS3.jpg
+        externalLinks:
+        - id: 34215
+          url: https://www.toei-anim.co.jp/movie/2009_precure_allstars/
+          site: Official Site
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: 映画 プリキュアオールスターズDX みんなともだちっ☆奇跡の全員大集合！(DVD 848x480 H264 AAC).mp4
+      episode: null
+      from: 1100.5582
+      at: 1100.6416
+      to: 1100.6833
+      duration: 4228.821
+      similarity: 0.3618560791015625
+      video: https://api.trace.moe/video/HBvGfnqtWlkRlF44ICToe7w
+      image: https://api.trace.moe/image/HBvGfnqtWlkRlF44ICToe7w
+    - anilist:
+        id: 3551
+        type: ANIME
+        idMal: 3551
+        title:
+          native: ドラゴン・ライダー
+          romaji: Dragon Rider
+          chinese: ドラゴン・ライダー
+          english: Dragon Rider
+        format: OVA
+        genres:
+        - Hentai
+        season: FALL
+        source: null
+        status: FINISHED
+        endDate:
+          day: 26
+          year: 1996
+          month: 1
+        isAdult: true
+        siteUrl: https://anilist.co/anime/3551
+        studios:
+          edges:
+          - node:
+              id: 45
+              name: Pink Pineapple
+              siteUrl: https://anilist.co/studio/45
+            isMain: false
+          - node:
+              id: 250
+              name: Media Blasters
+              siteUrl: https://anilist.co/studio/250
+            isMain: false
+        duration: 30
+        episodes: 2
+        synonyms: []
+        relations:
+          edges: []
+        seasonInt: 954
+        startDate:
+          day: 27
+          year: 1995
+          month: 10
+        coverImage:
+          color: '#f1a150'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/3551.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/3551.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/3551.jpg
+        popularity: 481
+        seasonYear: 1995
+        bannerImage: null
+        externalLinks: []
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: ドラゴンライダー 上巻.mp4
+      episode: null
+      from: 1252.3344
+      at: 1252.3344
+      to: 1252.3344
+      duration: 1781.034
+      similarity: 0.35034173703661153
+      video: https://api.trace.moe/video/z0yR1PmhzwVbKDRRv6DgfNJ
+      image: https://api.trace.moe/image/z0yR1PmhzwVbKDRRv6DgfNJ
+    - anilist:
+        id: 1482
+        type: ANIME
+        idMal: 1482
+        title:
+          native: ディー・グレイマン
+          romaji: D.Gray-man
+          chinese: 驅魔少年
+          english: D.Gray-man
+        format: TV
+        genres:
+        - Action
+        - Adventure
+        - Drama
+        - Fantasy
+        season: FALL
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 30
+          year: 2008
+          month: 9
+        isAdult: false
+        siteUrl: https://anilist.co/anime/1482
+        studios:
+          edges:
+          - node:
+              id: 16
+              name: TV Tokyo
+              siteUrl: https://anilist.co/studio/16
+            isMain: false
+          - node:
+              id: 17
+              name: Aniplex
+              siteUrl: https://anilist.co/studio/17
+            isMain: false
+          - node:
+              id: 53
+              name: Dentsu
+              siteUrl: https://anilist.co/studio/53
+            isMain: false
+          - node:
+              id: 73
+              name: TMS Entertainment
+              siteUrl: https://anilist.co/studio/73
+            isMain: true
+          - node:
+              id: 102
+              name: Funimation
+              siteUrl: https://anilist.co/studio/102
+            isMain: false
+          - node:
+              id: 213
+              name: Half H.P Studio
+              siteUrl: https://anilist.co/studio/213
+            isMain: false
+          - node:
+              id: 757
+              name: Sony Music Entertainment
+              siteUrl: https://anilist.co/studio/757
+            isMain: false
+        duration: 23
+        episodes: 103
+        synonyms:
+        - D. Gray-man
+        - D. Grey-man
+        relations:
+          edges:
+          - node:
+              id: 30024
+              title:
+                native: ディー・グレイマン
+            relationType: ADAPTATION
+          - node:
+              id: 21558
+              title:
+                native: ディー・グレイマン ハロー
+            relationType: SEQUEL
+          - node:
+              id: 39114
+              title:
+                native: D.Gray-man reverse
+            relationType: ADAPTATION
+        seasonInt: 64
+        startDate:
+          day: 3
+          year: 2006
+          month: 10
+        coverImage:
+          color: '#e4ae5d'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1482-6jc8ZVSmHuLo.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx1482-6jc8ZVSmHuLo.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1482-6jc8ZVSmHuLo.jpg
+        popularity: 111436
+        seasonYear: 2006
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/1482-nmGoqdGfaKEt.jpg
+        externalLinks:
+        - id: 1448
+          url: http://www.hulu.com/d-gray-man
+          site: Hulu
+        - id: 53052
+          url: https://www.crunchyroll.com/dgray-man
+          site: Crunchyroll
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - D·格雷少年
+      filename: '[MapleSnow][D.Gray-man][067][Jpn_Big5][X264_AAC].mp4'
+      episode: 67
+      from: 809.184
+      at: 809.517
+      to: 813.521
+      duration: 1370.0778
+      similarity: 0.3185235715379902
+      video: https://api.trace.moe/video/iPVfCCegdxKaZNbb7lwiO2l
+      image: https://api.trace.moe/image/iPVfCCegdxKaZNbb7lwiO2l
+    - anilist:
+        id: 187464
+        type: ANIME
+        idMal: 61159
+        title:
+          native: 東島丹三郎は仮面ライダーになりたい
+          romaji: Toujima Tanzaburou wa Kamen Rider ni Naritai
+          chinese: 東島丹三郎想成為假面騎士
+          english: Tojima Wants to Be a Kamen Rider
+        format: TV
+        genres:
+        - Action
+        - Comedy
+        season: FALL
+        source: MANGA
+        status: FINISHED
+        endDate:
+          day: 22
+          year: 2026
+          month: 3
+        isAdult: false
+        siteUrl: https://anilist.co/anime/187464
+        studios:
+          edges:
+          - node:
+              id: 17
+              name: Aniplex
+              siteUrl: https://anilist.co/studio/17
+            isMain: false
+          - node:
+              id: 839
+              name: LIDENFILMS
+              siteUrl: https://anilist.co/studio/839
+            isMain: true
+          - node:
+              id: 6421
+              name: Crunchyroll
+              siteUrl: https://anilist.co/studio/6421
+            isMain: false
+          - node:
+              id: 6102
+              name: Kinoshita Group
+              siteUrl: https://anilist.co/studio/6102
+            isMain: false
+          - node:
+              id: 6259
+              name: TOKYO MX
+              siteUrl: https://anilist.co/studio/6259
+            isMain: false
+        duration: 24
+        episodes: 24
+        synonyms:
+        - Tojima Tanzaburo Wants To Be A Masked Rider
+        - โทจิมะอยากเป็นคาเมนไรเดอร์
+        - 토지마 탄자부로는 가면라이더가 되고 싶어
+        relations:
+          edges:
+          - node:
+              id: 123356
+              title:
+                native: 東島丹三郎は仮面ライダーになりたい
+            relationType: ADAPTATION
+        seasonInt: 254
+        startDate:
+          day: 5
+          year: 2025
+          month: 10
+        coverImage:
+          color: '#e4bb43'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187464-NJtK3VC54vPm.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx187464-NJtK3VC54vPm.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx187464-NJtK3VC54vPm.jpg
+        popularity: 21938
+        seasonYear: 2025
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/187464-JRW0ASx02H83.jpg
+        externalLinks:
+        - id: 108258
+          url: https://tojima-rider.com/
+          site: Official Site
+        - id: 108259
+          url: https://x.com/tojima_rider
+          site: Twitter
+        - id: 124337
+          url: https://www.crunchyroll.com/series/GT00364945/tojima-wants-to-be-a-kamen-rider
+          site: Crunchyroll
+        - id: 132708
+          url: https://www.bilibili.tv/en/media/2246609
+          site: Bilibili TV
+        countryOfOrigin: JP
+        synonyms_chinese: []
+      filename: '[SubsPlease] Toujima Tanzaburou wa Kamen Rider ni Naritai - 05v2 (720p) [58AFA985].mkv'
+      episode: 5
+      from: 552.928
+      at: 552.928
+      to: 552.928
+      duration: 1430.117
+      similarity: 0.3107523600260417
+      video: https://api.trace.moe/video/ap8vi27WQMFOplrrVxjDNqh
+      image: https://api.trace.moe/image/ap8vi27WQMFOplrrVxjDNqh
+    - anilist:
+        id: 185213
+        type: ANIME
+        idMal: 60449
+        title:
+          native: 機動戦士Gundam GQuuuuuuX
+          romaji: Kidou Senshi Gundam GQuuuuuuX
+          chinese: Mobile Suit Gundam GQuuuuuuX
+          english: Mobile Suit Gundam GQuuuuuuX
+        format: TV
+        genres:
+        - Action
+        - Drama
+        - Mecha
+        - Sci-Fi
+        season: SPRING
+        source: ORIGINAL
+        status: FINISHED
+        endDate:
+          day: 25
+          year: 2025
+          month: 6
+        isAdult: false
+        siteUrl: https://anilist.co/anime/185213
+        studios:
+          edges:
+          - node:
+              id: 47
+              name: Studio Khara
+              siteUrl: https://anilist.co/studio/47
+            isMain: true
+          - node:
+              id: 14
+              name: Sunrise
+              siteUrl: https://anilist.co/studio/14
+            isMain: true
+          - node:
+              id: 7137
+              name: Bandai Namco Filmworks
+              siteUrl: https://anilist.co/studio/7137
+            isMain: false
+          - node:
+              id: 6620
+              name: Nippon Television Network
+              siteUrl: https://anilist.co/studio/6620
+            isMain: false
+        duration: 25
+        episodes: 12
+        synonyms:
+        - 機動戦士Gundam ジークアクス
+        - Mobile Suit Gundam GQuuuuuuX -Beginning-
+        relations:
+          edges:
+          - node:
+              id: 80
+              title:
+                native: 機動戦士ガンダム
+            relationType: PARENT
+        seasonInt: 252
+        startDate:
+          day: 9
+          year: 2025
+          month: 4
+        coverImage:
+          color: '#1ad61a'
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185213-RKQN0qxKlqd6.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx185213-RKQN0qxKlqd6.jpg
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx185213-RKQN0qxKlqd6.jpg
+        popularity: 31585
+        seasonYear: 2025
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/185213-btMTsXAx2y0A.jpg
+        externalLinks:
+        - id: 104464
+          url: https://en.gundam.info/about-gundam/series-pages/gquuuuuux/
+          site: Official Site
+        - id: 104465
+          url: https://www.gundam.info/feature/gquuuuuux/
+          site: Official Site
+        - id: 104466
+          url: https://x.com/g_gquuuuuux
+          site: Twitter
+        - id: 108182
+          url: https://www.amazon.com/dp/B0DMYC8F4V
+          site: Amazon Prime Video
+        countryOfOrigin: JP
+        synonyms_chinese:
+        - 機動戰士鋼彈 GQuuuuuuX
+      filename: '[NanakoRaws] Kidou Senshi Gundam GQuuuuuuX - 12 END (NTV 1920x1080 x265 AAC).mkv'
+      episode: 12
+      from: 713.087
+      at: 713.171
+      to: 713.254
+      duration: 1500.01
+      similarity: 0.3020077574486826
+      video: https://api.trace.moe/video/pFcYN7VoAPfZ07ttiJWJB6A
+      image: https://api.trace.moe/image/pFcYN7VoAPfZ07ttiJWJB6A
+  body_text: null
+  body_b64: null

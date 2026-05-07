@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:18:09Z'
+  label: pool-2000
+  backend: danbooru
+  path_slug: pools_by_id
+request:
+  method: GET
+  url: https://danbooru.donmai.us/pools/2000.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:18:09 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"8ac0ce93786cc5b94873df8d7269c105"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd2851e761a29-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.4312, rails.cpu_time;dur=2.0607, rails.idle_time;dur=0.3705,
+      rails.sql_time;dur=0.4775, rails.view_time;dur=0.2256, rails.allocations;count=1134, request.allocations;count=1591,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.8681, request.total_time;dur=3.2385, request.queue_time_0;dur=1.4129,
+      request.queue_time_1;dur=94.0001
+    x-runtime: '0.003238494873046875'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 2000
+    name: Touhou_-_A-i-D_(gustav_(telomere_na))
+    created_at: '2010-07-22T21:18:56.258-04:00'
+    updated_at: '2011-03-05T14:54:07.812-05:00'
+    description: 'Artist: [[gustav_(telomere_na)]]'
+    is_active: false
+    is_deleted: false
+    post_ids:
+    - 711778
+    - 711780
+    - 711781
+    - 711782
+    - 711784
+    - 711785
+    - 711786
+    - 711787
+    - 711788
+    - 711789
+    - 711792
+    category: series
+    post_count: 11
+  body_text: null
+  body_b64: null

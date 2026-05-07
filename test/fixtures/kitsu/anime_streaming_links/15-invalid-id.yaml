@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-07T11:07:50Z'
+  label: invalid-id
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/9999999999/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    Date: Thu, 07 May 2026 11:07:50 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: no-cache
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 49d56b54-d84d-46f2-8564-cd714077d641
+    x-runtime: '0.037570'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    errors:
+    - title: Record not found
+      detail: The record identified by 9999999999 could not be found.
+      code: '404'
+      status: '404'
+  body_text: null
+  body_b64: null

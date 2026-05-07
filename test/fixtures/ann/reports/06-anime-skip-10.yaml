@@ -1,0 +1,41 @@
+metadata:
+  captured_at: '2026-05-07T11:26:55Z'
+  label: anime-skip-10
+  backend: ann
+  path_slug: reports
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/reports.xml?id=155&type=anime&nlist=5&nskip=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:26:55 GMT
+    Content-Type: text/xml;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    vary: accept-encoding
+    X-Frame-Options: SAMEORIGIN
+    Received-At: 2026-05-07 11:26:54 UTC
+    Strict-Transport-Security: max-age=31536000
+    Permissions-Policy: geolocation=(), camera=(), microphone=()
+    Cache-Control: private, max-age=0, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: |-
+    <report skipped="10" listed="5"><args><type>anime</type><name></name><licensed></licensed><search></search></args>
+    <item><id>39298</id><gid>2726717827</gid><type>TV</type><name>Kagurabachi</name><precision>TV</precision><vintage>2027-04</vintage></item>
+    <item><id>39290</id><gid>3449073417</gid><type>TV</type><name>Berserk of Gluttony</name><precision>TV 2</precision></item>
+    <item><id>39284</id><gid>1464628617</gid><type>TV</type><name>Chikyū Daisuki! Kikkun</name><precision>TV</precision><vintage>2026-07</vintage></item>
+    <item><id>39283</id><gid>1153388178</gid><type>TV</type><name>World Trigger</name><precision>TV 2026</precision></item>
+    <item><id>39245</id><gid>2499017404</gid><type>movie</type><name>Sound! Euphonium, The Final Movie Part 2</name><precision>movie</precision><vintage>2026-09-11</vintage></item></report>
+  body_b64: null

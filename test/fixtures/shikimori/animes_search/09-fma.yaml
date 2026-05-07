@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:18:58Z'
+  label: fma
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Fullmetal+Alchemist&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:18:58 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"488b51bf109fe41eae33a9a48efa9797"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: d3232119-2ce0-4ede-ada5-3b6ac20c8e51
+    X-Runtime: '0.032138'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 121
+    name: Fullmetal Alchemist
+    russian: Стальной алхимик
+    image:
+      original: /system/animes/original/121.jpg?1711949852
+      preview: /system/animes/preview/121.jpg?1711949852
+      x96: /system/animes/x96/121.jpg?1711949852
+      x48: /system/animes/x48/121.jpg?1711949852
+    url: /animes/z121-fullmetal-alchemist
+    kind: tv
+    score: '8.12'
+    status: released
+    episodes: 51
+    episodes_aired: 0
+    aired_on: '2003-10-04'
+    released_on: '2004-10-02'
+  - id: 10842
+    name: 'Fullmetal Alchemist: The Sacred Star of Milos Specials'
+    russian: 'Стальной алхимик: Священная звезда Милоса — Спецвыпуски'
+    image:
+      original: /system/animes/original/10842.jpg?1711949785
+      preview: /system/animes/preview/10842.jpg?1711949785
+      x96: /system/animes/x96/10842.jpg?1711949785
+      x48: /system/animes/x48/10842.jpg?1711949785
+    url: /animes/10842-fullmetal-alchemist-the-sacred-star-of-milos-specials
+    kind: ona
+    score: '6.78'
+    status: released
+    episodes: 4
+    episodes_aired: 0
+    aired_on: '2011-06-10'
+    released_on: '2011-06-30'
+  body_text: null
+  body_b64: null

@@ -344,3 +344,51 @@ class TestSqliteSelftestCleanupBranch:
         assert leftover.exists()
 
         assert sqlite.selftest() is True
+
+
+@pytest.mark.unittest
+class TestSelftestRegistryCompleteness:
+    """Per review M4 + AGENTS §9.3: every module that defines a
+    top-level :func:`selftest` callable must be registered in
+    :data:`animedex.diag.selftest._SELFTEST_TARGETS`. Otherwise the
+    runner never executes the smoke test, defeating the entire point
+    of the diagnostic.
+    """
+
+    def test_every_selftest_bearing_module_is_registered(self):
+        """Walk the ``animedex/`` source tree, find every module
+        that defines a ``def selftest`` at module level, and assert
+        each one is in ``_SELFTEST_TARGETS``."""
+        import re
+        from pathlib import Path
+
+        from animedex.diag.selftest import _SELFTEST_TARGETS
+
+        repo_root = Path(__file__).resolve().parents[2]
+        pkg_root = repo_root / "animedex"
+        registered = set(_SELFTEST_TARGETS)
+        unregistered: list[str] = []
+
+        # Match top-level ``def selftest(`` (no leading whitespace).
+        pattern = re.compile(r"^def\s+selftest\s*\(", re.MULTILINE)
+
+        for src in pkg_root.rglob("*.py"):
+            try:
+                text = src.read_text(encoding="utf-8")
+            except OSError:
+                continue
+            if not pattern.search(text):
+                continue
+            rel = src.relative_to(repo_root).with_suffix("")
+            parts = list(rel.parts)
+            if parts[-1] == "__init__":
+                parts = parts[:-1]
+            module_name = ".".join(parts)
+            if module_name not in registered:
+                unregistered.append(module_name)
+
+        assert not unregistered, (
+            "These modules expose a top-level selftest() but are not in "
+            f"animedex.diag.selftest._SELFTEST_TARGETS: {sorted(unregistered)}. "
+            "Add each one to the tuple per AGENTS §9.3."
+        )

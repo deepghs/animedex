@@ -1,0 +1,51 @@
+metadata:
+  captured_at: '2026-05-07T11:18:03Z'
+  label: multi-cirno
+  backend: danbooru
+  path_slug: counts
+request:
+  method: GET
+  url: https://danbooru.donmai.us/counts/posts.json?tags=touhou+cirno
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:18:03 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"5208c84b1600643821b28663d4823a07"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd2606afed3d1-KIX
+    server-timing: sql.queries;count=5, cache.reads;count=1, cache.keys_read;count=1, cache.total_time;dur=0.514, cache.writes;count=1,
+      cache.keys_written;count=1, rails.total_time;dur=69.1698, rails.cpu_time;dur=2.7164, rails.idle_time;dur=66.4534, rails.sql_time;dur=66.3559,
+      rails.view_time;dur=0.0423, rails.allocations;count=2239, request.allocations;count=2726, request.gc_time;dur=0.0, request.gc_count;count=0,
+      request.cpu_time;dur=3.2977, request.total_time;dur=69.7514, request.queue_time_0;dur=0.8051, request.queue_time_1;dur=99.0
+    x-runtime: '0.06975135803222657'
+    via: <scrubbed-at-capture>
+    strict-transport-security: max-age=31536000; preload
+    Report-To: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    counts:
+      posts: 39017
+  body_text: null
+  body_b64: null

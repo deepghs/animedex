@@ -1,0 +1,420 @@
+metadata:
+  captured_at: '2026-05-07T11:02:38Z'
+  label: ova-format
+  backend: jikan
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime?q=Hellsing&type=ova&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:02:38 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 2
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 4
+        per_page: 3
+    data:
+    - mal_id: 777
+      url: https://myanimelist.net/anime/777/Hellsing_Ultimate
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1012/143965.jpg
+          small_image_url: https://myanimelist.net/images/anime/1012/143965t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1012/143965l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1012/143965.webp
+          small_image_url: https://myanimelist.net/images/anime/1012/143965t.webp
+          large_image_url: https://myanimelist.net/images/anime/1012/143965l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/58zw4Q0ZRAM?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Hellsing Ultimate
+      - type: Japanese
+        title: HELLSING OVA
+      - type: English
+        title: Hellsing Ultimate
+      title: Hellsing Ultimate
+      title_english: Hellsing Ultimate
+      title_japanese: HELLSING OVA
+      title_synonyms: []
+      type: OVA
+      source: Manga
+      episodes: 10
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2006-02-10T00:00:00+00:00'
+        to: '2012-12-26T00:00:00+00:00'
+        prop:
+          from:
+            day: 10
+            month: 2
+            year: 2006
+          to:
+            day: 26
+            month: 12
+            year: 2012
+        string: Feb 10, 2006 to Dec 26, 2012
+      duration: 49 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.34
+      scored_by: 525852
+      rank: 284
+      popularity: 182
+      members: 1019215
+      favorites: 23721
+      synopsis: |-
+        There exist creatures of darkness and evil that plague the night, devouring any human unfortunate enough to be caught in their grasp. On the other side is Hellsing, an organization dedicated to destroying these supernatural forces that threaten the very existence of humanity. At its head is Integra Fairbrook Wingates Hellsing, who commands a powerful military and spends her life fighting the undead.
+
+        Integra's vast army, however, pales in comparison with her ultimate weapon: the vampire Alucard, who works against his own kind as an exterminator for Hellsing. With his new vampire servant, Seras Victoria, at his side, Alucard must battle not only monsters, but all those who stand to oppose Hellsing, be they in the guise of good or evil.
+
+        In a battle for mankind's survival, Hellsing Ultimate proves that appearances are not all they may seem, and sometimes the greatest weapon can come in the form of one's worst nightmare.
+
+        [Written by MAL Rewrite]
+      background: Hellsing Ultimate was initially licensed and distributed by Geneon Entertainment USA up until their closure
+        in late 2007. FUNimation Entertainment later picked up the series and finished dubbing it in late 2014.
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 42
+        type: anime
+        name: GDH
+        url: https://myanimelist.net/anime/producer/42/GDH
+      - mal_id: 1459
+        type: anime
+        name: Geneon Entertainment USA
+        url: https://myanimelist.net/anime/producer/1459/Geneon_Entertainment_USA
+      - mal_id: 1553
+        type: anime
+        name: Shounen Gahousha
+        url: https://myanimelist.net/anime/producer/1553/Shounen_Gahousha
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 11
+        type: anime
+        name: Madhouse
+        url: https://myanimelist.net/anime/producer/11/Madhouse
+      - mal_id: 41
+        type: anime
+        name: Satelight
+        url: https://myanimelist.net/anime/producer/41/Satelight
+      - mal_id: 894
+        type: anime
+        name: Graphinica
+        url: https://myanimelist.net/anime/producer/894/Graphinica
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 14
+        type: anime
+        name: Horror
+        url: https://myanimelist.net/anime/genre/14/Horror
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      explicit_genres: []
+      themes:
+      - mal_id: 50
+        type: anime
+        name: Adult Cast
+        url: https://myanimelist.net/anime/genre/50/Adult_Cast
+      - mal_id: 58
+        type: anime
+        name: Gore
+        url: https://myanimelist.net/anime/genre/58/Gore
+      - mal_id: 38
+        type: anime
+        name: Military
+        url: https://myanimelist.net/anime/genre/38/Military
+      - mal_id: 32
+        type: anime
+        name: Vampire
+        url: https://myanimelist.net/anime/genre/32/Vampire
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+    - mal_id: 6904
+      url: https://myanimelist.net/anime/6904/Hellsing__Digest_for_Freaks
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/7/26935.jpg
+          small_image_url: https://myanimelist.net/images/anime/7/26935t.jpg
+          large_image_url: https://myanimelist.net/images/anime/7/26935l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/7/26935.webp
+          small_image_url: https://myanimelist.net/images/anime/7/26935t.webp
+          large_image_url: https://myanimelist.net/images/anime/7/26935l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Hellsing: Digest for Freaks'
+      - type: Synonym
+        title: 'Hellsing I OVA: Digest for Fleaks'
+      - type: Japanese
+        title: HELLSING I OVA DIGEST FOR FREAKS
+      title: 'Hellsing: Digest for Freaks'
+      title_english: null
+      title_japanese: HELLSING I OVA DIGEST FOR FREAKS
+      title_synonyms:
+      - 'Hellsing I OVA: Digest for Fleaks'
+      type: OVA
+      source: Manga
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2006-01-22T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 22
+            month: 1
+            year: 2006
+          to:
+            day: null
+            month: null
+            year: null
+        string: Jan 22, 2006
+      duration: 28 min
+      rating: R - 17+ (violence & profanity)
+      score: 7.59
+      scored_by: 16665
+      rank: 1834
+      popularity: 3683
+      members: 48166
+      favorites: 70
+      synopsis: This OVA is a summary of the first three episodes of Hellsing, with the animation style of Hellsing Ultimate
+        and following the events of the Hellsing manga.
+      background: 'Hellsing: Digest for Freaks is a condensed recut of Hellsing Ultimate''s first episode.'
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers: []
+      licensors: []
+      studios:
+      - mal_id: 41
+        type: anime
+        name: Satelight
+        url: https://myanimelist.net/anime/producer/41/Satelight
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 14
+        type: anime
+        name: Horror
+        url: https://myanimelist.net/anime/genre/14/Horror
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      explicit_genres: []
+      themes:
+      - mal_id: 50
+        type: anime
+        name: Adult Cast
+        url: https://myanimelist.net/anime/genre/50/Adult_Cast
+      - mal_id: 58
+        type: anime
+        name: Gore
+        url: https://myanimelist.net/anime/genre/58/Gore
+      - mal_id: 38
+        type: anime
+        name: Military
+        url: https://myanimelist.net/anime/genre/38/Military
+      - mal_id: 32
+        type: anime
+        name: Vampire
+        url: https://myanimelist.net/anime/genre/32/Vampire
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+    - mal_id: 39651
+      url: https://myanimelist.net/anime/39651/Mob_Psycho_100__Dai_Ikkai_Rei_toka_Soudansho_Ian_Ryokou_-_Kokoro_Mitasu_Iyashi_no_Tabi
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1605/119301.jpg
+          small_image_url: https://myanimelist.net/images/anime/1605/119301t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1605/119301l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1605/119301.webp
+          small_image_url: https://myanimelist.net/images/anime/1605/119301t.webp
+          large_image_url: https://myanimelist.net/images/anime/1605/119301l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/x2wIub86shk?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Mob Psycho 100: Dai Ikkai Rei toka Soudansho Ian Ryokou - Kokoro Mitasu Iyashi no Tabi'
+      - type: Synonym
+        title: 'Mob Psycho 100 II: The First Spirits and Such Company Trip ~A Journey that Mends the Heart and Heals the Soul~'
+      - type: Japanese
+        title: モブサイコ100 第一回霊とか相談所慰安旅行～ココロ満たす癒やしの旅～
+      - type: English
+        title: 'Mob Psycho 100: Spirits and Such Company Trip - A Journey That Mends the Heart and Heals the Soul'
+      title: 'Mob Psycho 100: Dai Ikkai Rei toka Soudansho Ian Ryokou - Kokoro Mitasu Iyashi no Tabi'
+      title_english: 'Mob Psycho 100: Spirits and Such Company Trip - A Journey That Mends the Heart and Heals the Soul'
+      title_japanese: モブサイコ100 第一回霊とか相談所慰安旅行～ココロ満たす癒やしの旅～
+      title_synonyms:
+      - 'Mob Psycho 100 II: The First Spirits and Such Company Trip ~A Journey that Mends the Heart and Heals the Soul~'
+      type: OVA
+      source: Original
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2019-09-25T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 25
+            month: 9
+            year: 2019
+          to:
+            day: null
+            month: null
+            year: null
+        string: Sep 25, 2019
+      duration: 24 min
+      rating: PG-13 - Teens 13 or older
+      score: 7.66
+      scored_by: 68981
+      rank: 1588
+      popularity: 2127
+      members: 119510
+      favorites: 94
+      synopsis: |-
+        The staff of the Spirits and Such Consultation Office—Arataka Reigen, Shigeo "Mob" Kageyama, Ritsu Kageyama, Katsuya Serizawa, and the spirit Ekubo—head to the Zebra Prefecture for a relaxing hot spring vacation. Their all-expenses-paid trip is sponsored by the owner of the Ibogami Hot Springs, who has asked Reigen to investigate claims of paranormal activity in the area.
+
+        On the train ride to the inn, the exhausted Reigen and Serizawa quickly fall asleep, only to wake up and discover that they have been transported to a ghostly parallel world! Bewildered about how they got there, Reigen and Serizawa must find a way to escape in time to enjoy their day off.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 415
+        type: anime
+        name: Warner Bros. Japan
+        url: https://myanimelist.net/anime/producer/415/Warner_Bros_Japan
+      - mal_id: 460
+        type: anime
+        name: KlockWorx
+        url: https://myanimelist.net/anime/producer/460/KlockWorx
+      - mal_id: 843
+        type: anime
+        name: BS Fuji
+        url: https://myanimelist.net/anime/producer/843/BS_Fuji
+      - mal_id: 1333
+        type: anime
+        name: Hakuhodo DY Music & Pictures
+        url: https://myanimelist.net/anime/producer/1333/Hakuhodo_DY_Music___Pictures
+      - mal_id: 1430
+        type: anime
+        name: Shogakukan
+        url: https://myanimelist.net/anime/producer/1430/Shogakukan
+      - mal_id: 3309
+        type: anime
+        name: Peerless Gerbera
+        url: https://myanimelist.net/anime/producer/3309/Peerless_Gerbera
+      licensors: []
+      studios:
+      - mal_id: 4
+        type: anime
+        name: Bones
+        url: https://myanimelist.net/anime/producer/4/Bones
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      explicit_genres: []
+      themes: []
+      demographics: []
+  body_text: null
+  body_b64: null

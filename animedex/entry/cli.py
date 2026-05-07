@@ -105,13 +105,25 @@ def cli() -> None:
     """The animedex top-level command group."""
 
 
+from animedex.entry.api import api_group as _api_group  # noqa: E402
+
+cli.add_command(_api_group)
+
+
 @cli.command(name="status")
 def status_command() -> None:
-    """Print a placeholder status banner.
+    """Print a one-shot status banner for the CLI.
 
-    The real implementation will report the health, anonymous quota, and
-    auth state of each backend (AniList, Jikan, Kitsu, MangaDex, Trace.moe,
-    Danbooru, Shikimori, ANN, AniDB, Ghibli, NekosBest, Waifu.im, AnimeChan).
+    During Phase 0/1 this is a placeholder. Once backends ship it
+    will report per-backend health, anonymous quota, and auth state
+    for AniList, Jikan, Kitsu, MangaDex, Trace.moe, Danbooru,
+    Shikimori, ANN, AniDB, Ghibli, NekosBest, Waifu.im, and
+    AnimeChan. Local-only; does not contact any upstream.
+
+    \b
+    Examples:
+      animedex status
+    \f
 
     Backend: animedex (local; this command does not contact any
     upstream).
@@ -131,19 +143,26 @@ def status_command() -> None:
 
 @cli.command(name="selftest")
 def selftest_command() -> None:
-    """Run the in-process self-diagnostic and exit with its status code.
+    """Run the in-process self-diagnostic.
 
-    Invokes :func:`animedex.diag.run_selftest`. The diagnostic is
-    designed to run in a stripped, no-Python environment (such as a
-    PyInstaller bundle smoke-tested by CI) and to return a
-    machine-grepable ``[OK]`` / ``[FAIL]`` block under all conditions,
-    including when individual checks crash.
+    Probes every project module's import + smoke path, every
+    registered Click subcommand's --help, and prints a grep-friendly
+    `[OK]` / `[FAIL]` table. Designed to run cleanly inside a
+    stripped PyInstaller binary on a machine that has no Python
+    interpreter installed.
 
+    \b
     Exit codes:
+      0   every check passed
+      1   one or more checks failed (report still printed)
+      2   the runner itself crashed (should be unreachable)
 
-    * ``0`` - every check passed.
-    * ``1`` - one or more checks failed (the report still printed).
-    * ``2`` - the runner itself crashed (should be unreachable).
+    \b
+    Examples:
+      animedex selftest
+      animedex selftest && echo OK
+      animedex selftest 2>&1 | grep FAIL
+    \f
 
     Backend: animedex (local; smoke tests do not contact any
     upstream).

@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T11:19:01Z'
+  label: hellsing
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Hellsing&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:19:01 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"5d28129d5e318090fbd7757014d1cb30"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 1edd0c97-544b-4d64-8c5a-62d4cad68528
+    X-Runtime: '0.029567'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 270
+    name: Hellsing
+    russian: 'Хеллсинг: Война с нечистью'
+    image:
+      original: /system/animes/original/270.jpg?1711953299
+      preview: /system/animes/preview/270.jpg?1711953299
+      x96: /system/animes/x96/270.jpg?1711953299
+      x48: /system/animes/x48/270.jpg?1711953299
+    url: /animes/270-hellsing
+    kind: tv
+    score: '7.5'
+    status: released
+    episodes: 13
+    episodes_aired: 0
+    aired_on: '2001-10-11'
+    released_on: '2002-01-17'
+  - id: 11077
+    name: 'Hellsing: The Dawn'
+    russian: 'Хеллсинг: Рассвет'
+    image:
+      original: /system/animes/original/11077.jpg?1711953301
+      preview: /system/animes/preview/11077.jpg?1711953301
+      x96: /system/animes/x96/11077.jpg?1711953301
+      x48: /system/animes/x48/11077.jpg?1711953301
+    url: /animes/11077-hellsing-the-dawn
+    kind: special
+    score: '7.11'
+    status: released
+    episodes: 3
+    episodes_aired: 0
+    aired_on: '2011-07-27'
+    released_on: '2012-12-26'
+  body_text: null
+  body_b64: null

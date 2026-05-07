@@ -1,0 +1,388 @@
+metadata:
+  captured_at: '2026-05-07T11:06:56Z'
+  label: filter-by-year
+  backend: kitsu
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime?filter%5Bseason_year%5D=2023&page%5Blimit%5D=2
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:06:56 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"1609ccb6efca9d330b973a238914460e"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 72c34995-7032-4bb2-88d3-0711d3ce1c25
+    x-runtime: '0.064062'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '45857'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/45857
+      attributes:
+        createdAt: '2022-02-12T09:50:26.675Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: jujutsu-kaisen-2
+        synopsis: |-
+          The past comes to light when second-year students Satoru Gojou and Suguru Getou are tasked with escorting young Riko Amanai to Master Tengen. But when a non-sorcerer user tries to kill them, their mission to protect the Star Plasma Vessel threatens to turn them into bitter enemies and cement their destinies—one as the world’s strongest sorcerer, and the other its most twisted curse user!
+
+          (Source: Crunchyroll)
+        description: |-
+          The past comes to light when second-year students Satoru Gojou and Suguru Getou are tasked with escorting young Riko Amanai to Master Tengen. But when a non-sorcerer user tries to kill them, their mission to protect the Star Plasma Vessel threatens to turn them into bitter enemies and cement their destinies—one as the world’s strongest sorcerer, and the other its most twisted curse user!
+
+          (Source: Crunchyroll)
+        coverImageTopOffset: 0
+        titles:
+          en: Jujutsu Kaisen Season 2
+          en_jp: Jujutsu Kaisen Season 2
+          ja_jp: 呪術廻戦 第2期
+        canonicalTitle: Jujutsu Kaisen Season 2
+        abbreviatedTitles:
+        - JJK2
+        - Jujutsu Kaisen 2nd Season
+        - 'Jujutsu Kaisen: Kaigyoku Gyokusetsu / Shibuya Jihen'
+        - 'Jujutsu Kaisen: Hidden Inventory / Premature Death'
+        - 'Jujutsu Kaisen: Shibuya Incident'
+        averageRating: '86.43'
+        ratingFrequencies:
+          '2': '336'
+          '3': '10'
+          '4': '36'
+          '5': '7'
+          '6': '48'
+          '7': '20'
+          '8': '596'
+          '9': '21'
+          '10': '123'
+          '11': '30'
+          '12': '223'
+          '13': '66'
+          '14': '2234'
+          '15': '199'
+          '16': '1338'
+          '17': '464'
+          '18': '1912'
+          '19': '389'
+          '20': '8738'
+        userCount: 31855
+        favoritesCount: 257
+        startDate: '2023-07-06'
+        endDate: '2023-12-28'
+        nextRelease: null
+        popularityRank: 497
+        ratingRank: 16
+        ageRating: R
+        ageRatingGuide: 17+ (violence & profanity)
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/45857/poster_image/tiny-32dcca95eb2092935ce75997308d188d.jpeg
+          large: https://media.kitsu.app/anime/45857/poster_image/large-1ebb56f346edda6bcde9cdffa9b89316.jpeg
+          small: https://media.kitsu.app/anime/45857/poster_image/small-27ea5f2f0c150e10bde498827d264139.jpeg
+          medium: https://media.kitsu.app/anime/45857/poster_image/medium-b9c3b3f613b0c12453409ef9ee41d5ec.jpeg
+          original: https://media.kitsu.app/anime/45857/poster_image/6a6b5472cd1b1414796c70733fe332b3.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/45857/cover_image/tiny-c7b2ae225fe89e86a0c34f4282028993.jpeg
+          large: https://media.kitsu.app/anime/45857/cover_image/large-0fcd119c157177b52ae512052b005a9b.jpeg
+          small: https://media.kitsu.app/anime/45857/cover_image/small-ad8a70b0301d4fbd955ba17e9ac5f36c.jpeg
+          original: https://media.kitsu.app/anime/45857/cover_image/7628bd46d94b8a96108292aa7e4d5571.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 23
+        episodeLength: 24
+        totalLength: 0
+        youtubeVideoId: 9OhV3IWUsxE
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/genres
+            related: https://kitsu.io/api/edge/anime/45857/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/categories
+            related: https://kitsu.io/api/edge/anime/45857/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/castings
+            related: https://kitsu.io/api/edge/anime/45857/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/installments
+            related: https://kitsu.io/api/edge/anime/45857/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/45857/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/45857/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/45857/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/characters
+            related: https://kitsu.io/api/edge/anime/45857/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/staff
+            related: https://kitsu.io/api/edge/anime/45857/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/productions
+            related: https://kitsu.io/api/edge/anime/45857/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/45857/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/45857/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/45857/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/45857/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/45857/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/45857/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/45857/anime-staff
+    - id: '45866'
+      type: anime
+      links:
+        self: https://kitsu.io/api/edge/anime/45866
+      attributes:
+        createdAt: '2022-02-13T15:15:34.519Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: kimetsu-no-yaiba-katanakaji-no-satohen
+        synopsis: |-
+          Tanjiro’s journey leads him to the Swordsmith Village, where he reunites with two Hashira, members of the Demon Slayer Corps’ highest-ranking swordsmen - Mist Hashira Muichiro Tokito and Love Hashira Mitsuri Kanroji. With the shadows of demons lurking near, a new battle begins for Tanjiro and his comrades.
+
+          Notes:
+          • The first episode has a runtime of ~49 minutes.
+          • The final episode has a runtime of ~52 minutes.
+        description: |-
+          Tanjiro’s journey leads him to the Swordsmith Village, where he reunites with two Hashira, members of the Demon Slayer Corps’ highest-ranking swordsmen - Mist Hashira Muichiro Tokito and Love Hashira Mitsuri Kanroji. With the shadows of demons lurking near, a new battle begins for Tanjiro and his comrades.
+
+          Notes:
+          • The first episode has a runtime of ~49 minutes.
+          • The final episode has a runtime of ~52 minutes.
+        coverImageTopOffset: 0
+        titles:
+          en: 'Demon Slayer: Kimetsu no Yaiba - Swordsmith Village Arc'
+          en_jp: 'Kimetsu no Yaiba: Katanakaji no Sato-hen'
+          ja_jp: 鬼滅の刃 刀鍛冶の里編
+        canonicalTitle: 'Kimetsu no Yaiba: Katanakaji no Sato-hen'
+        abbreviatedTitles:
+        - 'Kimetsu no Yaiba: Swordsmith Village Arc'
+        - KnY 3
+        - Demon Slayer Season 3
+        averageRating: '85.15'
+        ratingFrequencies:
+          '2': '406'
+          '3': '15'
+          '4': '48'
+          '5': '18'
+          '6': '69'
+          '7': '22'
+          '8': '754'
+          '9': '24'
+          '10': '227'
+          '11': '54'
+          '12': '466'
+          '13': '108'
+          '14': '2837'
+          '15': '273'
+          '16': '1627'
+          '17': '447'
+          '18': '1354'
+          '19': '241'
+          '20': '10105'
+        userCount: 31961
+        favoritesCount: 160
+        startDate: '2023-04-09'
+        endDate: '2023-06-18'
+        nextRelease: null
+        popularityRank: 493
+        ratingRank: 36
+        ageRating: R
+        ageRatingGuide: 17+ (violence & profanity)
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/45866/poster_image/tiny-04ca70634b0ea7384a73de55e06d1169.jpeg
+          large: https://media.kitsu.app/anime/45866/poster_image/large-dac43ca9e91691e1c8bbff99f45b73dd.jpeg
+          small: https://media.kitsu.app/anime/45866/poster_image/small-270046055d09511668fa770c1a682237.jpeg
+          medium: https://media.kitsu.app/anime/45866/poster_image/medium-70084372a964a6ba6919fbdb7fb74bbe.jpeg
+          original: https://media.kitsu.app/anime/45866/poster_image/a5022affc85af72ccd5790c874e31a89.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/45866/cover_image/tiny-2de06a978c50ab09aceeaf869c8c3120.jpeg
+          large: https://media.kitsu.app/anime/45866/cover_image/large-22e3fb89fb6cd52082013e82bcd1d0bd.jpeg
+          small: https://media.kitsu.app/anime/45866/cover_image/small-e2dda29e4a3ae6b6e23815807d0777bb.jpeg
+          original: https://media.kitsu.app/anime/45866/cover_image/5727c9061b29a65d8201be06b7732250.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 11
+        episodeLength: 30
+        totalLength: null
+        youtubeVideoId: 9DhuWapDDrw
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/genres
+            related: https://kitsu.io/api/edge/anime/45866/genres
+        categories:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/categories
+            related: https://kitsu.io/api/edge/anime/45866/categories
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/castings
+            related: https://kitsu.io/api/edge/anime/45866/castings
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/installments
+            related: https://kitsu.io/api/edge/anime/45866/installments
+        mappings:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/mappings
+            related: https://kitsu.io/api/edge/anime/45866/mappings
+        reviews:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/reviews
+            related: https://kitsu.io/api/edge/anime/45866/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/media-relationships
+            related: https://kitsu.io/api/edge/anime/45866/media-relationships
+        characters:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/characters
+            related: https://kitsu.io/api/edge/anime/45866/characters
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/staff
+            related: https://kitsu.io/api/edge/anime/45866/staff
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/productions
+            related: https://kitsu.io/api/edge/anime/45866/productions
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/quotes
+            related: https://kitsu.io/api/edge/anime/45866/quotes
+        episodes:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/episodes
+            related: https://kitsu.io/api/edge/anime/45866/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/streaming-links
+            related: https://kitsu.io/api/edge/anime/45866/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/anime-productions
+            related: https://kitsu.io/api/edge/anime/45866/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/anime-characters
+            related: https://kitsu.io/api/edge/anime/45866/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.io/api/edge/anime/45866/relationships/anime-staff
+            related: https://kitsu.io/api/edge/anime/45866/anime-staff
+    meta:
+      count: 912
+    links:
+      first: https://kitsu.io/api/edge/anime?filter%5Bseason_year%5D=2023&page%5Blimit%5D=2&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/anime?filter%5Bseason_year%5D=2023&page%5Blimit%5D=2&page%5Boffset%5D=2
+      last: https://kitsu.io/api/edge/anime?filter%5Bseason_year%5D=2023&page%5Blimit%5D=2&page%5Boffset%5D=910
+  body_text: null
+  body_b64: null

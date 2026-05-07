@@ -1,0 +1,51 @@
+metadata:
+  captured_at: '2026-05-07T11:15:28Z'
+  label: call-12
+  backend: trace
+  path_slug: me
+request:
+  method: GET
+  url: https://api.trace.moe/me
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:15:28 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    access-control-allow-credentials: 'true'
+    access-control-allow-headers: Content-Type, x-trace-secret
+    access-control-allow-methods: GET, POST, OPTIONS
+    access-control-allow-origin: '*'
+    alt-svc: h3=":443"; ma=86400
+    etag: W/"4e-vOQRYzMm08pipA66BdNdfizHmVQ"
+    ratelimit-limit: '100'
+    ratelimit-policy: 100;w=60
+    ratelimit-remaining: '88'
+    ratelimit-reset: '33'
+    vary: Origin
+    via: <scrubbed-at-capture>
+    x-ratelimit-limit: '100'
+    x-ratelimit-remaining: '88'
+    x-ratelimit-reset: '1778152561'
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    X-Content-Type-Options: nosniff
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    id: 203.0.113.42
+    priority: 0
+    concurrency: 1
+    quota: 100
+    quotaUsed: '2'
+  body_text: null
+  body_b64: null

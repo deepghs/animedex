@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-07T11:16:42Z'
+  label: touhou-marisa-only
+  backend: danbooru
+  path_slug: posts_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts.json?tags=touhou+marisa_kirisame&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:16:42 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: '2'
+    Connection: keep-alive
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd0622dd70fa2-KIX
+    server-timing: sql.queries;count=10, cache.reads;count=1, cache.keys_read;count=1, cache.total_time;dur=0.5913, cache.writes;count=1,
+      cache.keys_written;count=1, rails.total_time;dur=22.2829, rails.cpu_time;dur=5.8648, rails.idle_time;dur=16.4181, rails.sql_time;dur=16.8169,
+      rails.view_time;dur=0.723, rails.allocations;count=3223, request.allocations;count=3756, request.gc_time;dur=0.6393,
+      request.gc_count;count=0, request.cpu_time;dur=6.7579, request.total_time;dur=23.2488, request.queue_time_0;dur=1.5039,
+      request.queue_time_1;dur=97.0001
+    x-runtime: '0.023248809814453125'
+    via: <scrubbed-at-capture>
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json: []
+  body_text: null
+  body_b64: null

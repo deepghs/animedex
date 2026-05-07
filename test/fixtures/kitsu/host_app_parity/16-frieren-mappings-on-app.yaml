@@ -1,0 +1,77 @@
+metadata:
+  captured_at: '2026-05-07T11:08:44Z'
+  label: frieren-mappings-on-app
+  backend: kitsu
+  path_slug: host_app_parity
+request:
+  method: GET
+  url: https://kitsu.app/api/edge/anime/46474/mappings?page%5Blimit%5D=5
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:44 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"2e0c2bc896f93ca97717eb418e89fa1e"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=63072000; includeSubDomains
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: af67356c-3498-4c00-8abc-40ff936368ea
+    x-runtime: '0.070589'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '321557'
+      type: mappings
+      links:
+        self: https://kitsu.app/api/edge/mappings/321557
+      attributes:
+        createdAt: '2022-09-13T05:36:57.024Z'
+        updatedAt: '2022-09-13T05:36:57.024Z'
+        externalSite: anilist/anime
+        externalId: '154587'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.app/api/edge/mappings/321557/relationships/item
+            related: https://kitsu.app/api/edge/mappings/321557/item
+    - id: '332791'
+      type: mappings
+      links:
+        self: https://kitsu.app/api/edge/mappings/332791
+      attributes:
+        createdAt: '2023-10-15T20:40:33.695Z'
+        updatedAt: '2023-10-15T20:40:33.695Z'
+        externalSite: myanimelist/anime
+        externalId: '52991'
+      relationships:
+        item:
+          links:
+            self: https://kitsu.app/api/edge/mappings/332791/relationships/item
+            related: https://kitsu.app/api/edge/mappings/332791/item
+    meta:
+      count: 2
+    links:
+      first: https://kitsu.app/api/edge/anime/46474/mappings?page%5Blimit%5D=5&page%5Boffset%5D=0
+      last: https://kitsu.app/api/edge/anime/46474/mappings?page%5Blimit%5D=5&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

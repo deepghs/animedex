@@ -1,0 +1,75 @@
+metadata:
+  captured_at: '2026-05-07T11:00:57Z'
+  label: airing-schedule-window
+  backend: anilist
+  path_slug: graphql
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Page(perPage:5){ airingSchedules(notYetAired:true,sort:TIME){ id airingAt episode media{title{romaji}} } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:00:57 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '8'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        airingSchedules:
+        - id: 407565
+          airingAt: 1778157000
+          episode: 5
+          media:
+            title:
+              romaji: Hime Kishi wa Barbaroi no Yome
+        - id: 406048
+          airingAt: 1778158800
+          episode: 31
+          media:
+            title:
+              romaji: Ganso! Bandori-chan
+        - id: 413079
+          airingAt: 1778158800
+          episode: 6
+          media:
+            title:
+              romaji: 'Dr. STONE: SCIENCE FUTURE Part 3'
+        - id: 413124
+          airingAt: 1778158800
+          episode: 2
+          media:
+            title:
+              romaji: Iya na Kao sare nagara Opantsu Misete Moraitai Returns
+        - id: 410829
+          airingAt: 1778164200
+          episode: 5
+          media:
+            title:
+              romaji: Kujima Utaeba Ie Hororo
+  body_text: null
+  body_b64: null

@@ -1,0 +1,562 @@
+metadata:
+  captured_at: '2026-05-07T11:09:07Z'
+  label: naruto
+  backend: mangadex
+  path_slug: manga_by_id
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/c52b2ce3-7f95-469c-96b0-479524fb7a1a
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Thu, 07 May 2026 10:31:33 GMT
+    content-encoding: gzip
+    x-cache: HIT (fresh)
+    x-cache-age: '2253.351'
+    x-cache-hits: '2'
+    x-cache-rid: 895a89d2-7065-4c8b-8cf6-17cee9a1e286
+    accept-ranges: bytes
+    content-length: '7575'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 709c456e-321d-4dd0-9824-d96dd69ea055
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: entity
+    data:
+      id: c52b2ce3-7f95-469c-96b0-479524fb7a1a
+      type: manga
+      attributes:
+        title:
+          ja-ro: Jujutsu Kaisen
+        altTitles:
+        - ja: 呪術廻戦
+        - en: Revolving Battles Of Curse Arts
+        - ca: 'Jujutsu Kaisen: La guerra màgica'
+        - sr: Џуџуцу каисен
+        - cs: Jujutsu Kaisen –⁠ Prokleté války
+        - uk: Магічна битва
+        - ru: Магическая битва
+        - fa: جوجوتسو کایسن
+        - fa: ججك
+        - bn: জুজুৎসু কাইসেন
+        - hi: जादुई लडाई
+        - ka: ჯუჯუცუ კაისენი
+        - he: ג'וג'וטסו קאייזן
+        - ar: جوجوتسو كايسن
+        - ar: مكافحة السحر
+        - mn: Жүжүцү Кайсэн
+        - tr: Lanet Savaşları
+        - tr: Büyülü Dövüş Sanatları
+        - kk: Сиқырлы шайқас
+        - kk: Алас талас
+        - zh: 咒术回战
+        - zh-hk: 咒術回戰
+        - vi: Chú Thuật Hồi Chiến
+        - ko: 주술회전
+        - th: มหาเวทย์ผนึกมาร
+        - bg: Магическа Битка
+        - id: Perang Santet
+        - uz: Jodugarlar Jangi
+        - it: 'Jujutsu kaisen: Sorcery Fight'
+        - pt-br: 'Jujutsu Kaisen: Batalha de feiticeiros'
+        - es: 'Jujutsu Kaisen: Contiendas de brujería'
+        - es: Batalla de hechiceros
+        - es: 'Jujutsu Kaisen: Guerra de hechiceros'
+        description:
+          en: |-
+            For some strange reason, Itadori Yuuji, despite his insane athleticism, would rather just hang out with the Occult Club. However, he soon finds out that the occult is as real as it gets when his fellow club members are attacked!
+
+            Meanwhile, the mysterious Fushiguro Megumi is tracking down a special-grade cursed object, and his search leads him to Itadori…
+            ___
+            **Official English Volumes:** [VIZ](https://www.viz.com/shonenjump/chapters/jujutsu-kaisen)
+          fr: |-
+            Yuuji est un jeune étudiant qui excelle dans le sport, notamment dans l'athlétisme, mais qui a un immense poil dans la main. Du coup, au lieu de parfaire ses capacités physiques qui pourraient lui permettre de devenir le meilleur de l'établissement, il s'est inscrit au club de recherches occultes du lycée. Son petit train-train va changer du tout au tout lorsqu'un véritable esprit malfaiteur vient menacer son école…
+
+            ---
+
+            Maison d'édition FR : **Ki-oon**
+          ja: 類稀な身体能力を持つ高校生・虎杖悠仁（いたどりゆうじ）は、病床に伏せる祖父の見舞いを日課にしていた。だがある日学校に眠る「呪物」の封印が解かれ、化物が現れてしまう。取り残された先輩を救う為、校舎へ乗り込む虎杖だが!?
+          ru: Юдзи гений на поле! Вот только школьная активность его мало чем привлекает. Став частью клуба оккультных исследований
+            он решает зажить тихой жизнью, но все меняется, когда в школе объявляются духи.
+          tr: Yuuji bir atletizm dehasıdır ama koşuya hiç ilgisi yoktur. Bilinmezleri Araştırma Kulübünde çok mutludur. Her
+            ne kadar kulüpte eğlencesine bulunsa bile, okulda gerçek bir ruh ortaya çıkınca işler ciddiye biner! Hayat, Sugisawa
+            Şehrindeki 3 Numaralı Lisedeki çocuklar için tuhaflaşmaya başlamak üzere!
+          uk: 'Ітадорі Юуджі - надзвичайно талановитий старшокласник із Сендаю. Утім, хоч він і вправний спортсмен, його не
+            цікавлять спортивні клуби: він піклується про свого дідуся, що лежить у місцевій лікарні. Все змінюється, коли
+            через жартівливий спіритичний сеанс на Юуджі та його друзів раптово нападають моторошні чудовиська, яких дивакуватий
+            незнайомець, Фушіґуро Меґумі, чомусь називає прокляттями. Аби врятувати себе та друзів, Юуджі змушений ризикнути
+            - і так випадково стати вмістилищем легендарного, наймогутнішого короля проклять. А потім на тобі - вирок: "тебе
+            мають стратити". Ну і що робити? Тяжкий вибір, магічна школа, нові друзі й нові проблеми - так починається його
+            шлях...'
+          pt-br: Itadori Yuuji, um estudante do colegial com uma capacidade física única, tem como rotina visitar seu avô
+            que está hospitalizado. Porém, um dia, o selo de um "objeto amaldiçoado" escondido em sua escola é rompido, fazendo
+            surgir criaturas assustadoras. Para salvar seus colegas ele parte em direção ao colégio, quando algo inesperado
+            acontece...!
+        isLocked: false
+        links:
+          al: '101517'
+          ap: jujutsu-kaisen
+          bl: '522861'
+          bw: series/163351/list
+          kt: jujutsu-kaisen
+          mu: axmopy6
+          amz: https://www.amazon.co.jp/dp/4088815165
+          cdj: https://www.cdjapan.co.jp/series/5594
+          ebj: https://ebookjapan.yahoo.co.jp/books/464912
+          mal: '113138'
+          raw: https://shonenjumpplus.com/episode/10834108156650001170
+          engtl: https://mangaplus.shueisha.co.jp/titles/100034
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: '30'
+        lastChapter: '271'
+        publicationDemographic: shounen
+        status: completed
+        year: 2018
+        contentRating: suggestive
+        tags:
+        - id: 0a39b5a1-b235-4886-a747-1d05d216532d
+          type: tag
+          attributes:
+            name:
+              en: Award Winning
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 3bb26d85-09d5-4d2e-880c-c34b974339e9
+          type: tag
+          attributes:
+            name:
+              en: Ghosts
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b29d6a3d-1569-4e7a-8caf-7557bc92cd5d
+          type: tag
+          attributes:
+            name:
+              en: Gore
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: caaa44eb-cd40-4177-b930-79d3ef2afe87
+          type: tag
+          attributes:
+            name:
+              en: School Life
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: cdad7e68-1419-41dd-bdce-27753074a640
+          type: tag
+          attributes:
+            name:
+              en: Horror
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: eabc5b4c-6aff-42f3-b657-3e90cbd00b75
+          type: tag
+          attributes:
+            name:
+              en: Supernatural
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2019-06-17T23:08:00+00:00'
+        updatedAt: '2026-04-27T03:43:24+00:00'
+        version: 112
+        availableTranslatedLanguages:
+        - it
+        - en
+        - hu
+        - pt-br
+        - es-la
+        - ru
+        - cs
+        - ar
+        - vi
+        - ro
+        - uk
+        - he
+        - id
+        - zh-hk
+        - es
+        - fr
+        - kk
+        - de
+        - ka
+        - sr
+        - pt
+        - mn
+        - ms
+        - tr
+        - th
+        latestUploadedChapter: f32dc558-1670-4025-826c-c1dbf070c5ac
+      relationships:
+      - id: 94be1d47-54d0-42c6-b42b-439605e3793f
+        type: author
+      - id: 94be1d47-54d0-42c6-b42b-439605e3793f
+        type: artist
+      - id: f0367edd-e939-4ac5-ace7-a5c1c424336d
+        type: cover_art
+      - id: 00456118-6474-4121-8c00-7f1184dd34e7
+        type: manga
+        related: doujinshi
+      - id: 013d5c2c-ee65-4545-9891-fabea3a743a5
+        type: manga
+        related: doujinshi
+      - id: 02af5ba5-5c2f-4cb5-a9be-c500bd199e04
+        type: manga
+        related: doujinshi
+      - id: 0669b5e8-269b-4ad2-b8c3-0c777b81d881
+        type: manga
+        related: doujinshi
+      - id: 08842540-ebb4-4fb5-9216-4a738d4e882f
+        type: manga
+        related: doujinshi
+      - id: 098e3e42-69ae-4a7a-bff9-686417a4ee22
+        type: manga
+        related: doujinshi
+      - id: 0bf66865-4791-4119-866d-6cb7cc8dfd86
+        type: manga
+        related: spin_off
+      - id: 0c144e35-cf4f-42fb-8582-ebacc8c21828
+        type: manga
+        related: doujinshi
+      - id: 0d7a502d-3e4e-47fb-805f-6cd2f7898762
+        type: manga
+        related: doujinshi
+      - id: 105c3103-b9e8-4d14-a390-9ec87e394eae
+        type: manga
+        related: doujinshi
+      - id: 133cf996-d092-4629-a2e0-453b68d76e70
+        type: manga
+        related: doujinshi
+      - id: 140458f7-be02-424b-98ac-1aa0cd9f45f9
+        type: manga
+        related: doujinshi
+      - id: 1aa90628-741f-458a-a0b0-3bae33d4297b
+        type: manga
+        related: doujinshi
+      - id: 1b6262cd-19ad-4fbb-b592-acf733ca9456
+        type: manga
+        related: doujinshi
+      - id: 1fbb9027-1350-4302-b5a4-2c14587a4ebe
+        type: manga
+        related: doujinshi
+      - id: 22fa9b4c-505e-4bf8-9cab-ff66c84443e4
+        type: manga
+        related: doujinshi
+      - id: 2347dec6-6385-432a-b7ae-a5500c473da9
+        type: manga
+        related: doujinshi
+      - id: 27d7e82d-5257-4d75-a9b0-83123950d5e5
+        type: manga
+        related: doujinshi
+      - id: 2b0af2d2-a766-4753-a8f7-e008c00865e9
+        type: manga
+        related: doujinshi
+      - id: 2b4c2cdf-b3f3-4041-bc3f-78feb3699f68
+        type: manga
+        related: doujinshi
+      - id: 2f97312b-982e-425c-b1ed-f4f8dad84470
+        type: manga
+        related: doujinshi
+      - id: 31397254-82f7-445f-a906-5405ff447b97
+        type: manga
+        related: doujinshi
+      - id: 3457df18-7a75-4d56-8784-463d29783895
+        type: manga
+        related: doujinshi
+      - id: 349a7817-71a9-4dc8-b446-fdb03650fdcc
+        type: manga
+        related: doujinshi
+      - id: 35731f33-27fa-4794-b6ee-3b60da8b994d
+        type: manga
+        related: colored
+      - id: 371587f9-d4bf-4383-8036-26a8ebe62e4a
+        type: manga
+        related: doujinshi
+      - id: 3a0a0811-6317-48fc-82a3-6c66cbed36e5
+        type: manga
+        related: doujinshi
+      - id: 3b78a961-5f98-41f8-b329-555e43fc5c4f
+        type: manga
+        related: doujinshi
+      - id: 45b58568-0ba9-4e9d-88f0-bc54cc70b07b
+        type: manga
+        related: doujinshi
+      - id: 46415e92-6a73-4f38-8009-aa0c57d3dba7
+        type: manga
+        related: doujinshi
+      - id: 48275eb6-0327-4f84-a6c2-b234e895e859
+        type: manga
+        related: doujinshi
+      - id: 48b3eefb-f8dd-47d7-af08-2d2d39857bf2
+        type: manga
+        related: doujinshi
+      - id: 496a8b31-dcf9-4306-87b0-3cf4ff720cec
+        type: manga
+        related: doujinshi
+      - id: 4b843685-ca16-41f7-8ad5-eb29a163f2e0
+        type: manga
+        related: doujinshi
+      - id: 54ae00e1-6d62-453d-ab65-f9d8a0f92321
+        type: manga
+        related: doujinshi
+      - id: 5afa8629-8582-462a-a9cc-f41a71c50b1b
+        type: manga
+        related: doujinshi
+      - id: 5be5c574-5a2a-4cf9-9599-d4af30f824f3
+        type: manga
+        related: doujinshi
+      - id: 61740fce-b314-4522-b6c5-22d0fb01c979
+        type: manga
+        related: doujinshi
+      - id: 66caf56e-d7ac-4f78-9ddb-edfaabf77a2a
+        type: manga
+        related: doujinshi
+      - id: 674eae7f-489f-4bcf-9b27-f09fbd3b2b97
+        type: manga
+        related: doujinshi
+      - id: 67fb7e2e-95bd-4cd0-9341-0b64fd22944c
+        type: manga
+        related: doujinshi
+      - id: 6e1d8778-9bbc-41ee-b6c9-39f97b0f81bb
+        type: manga
+        related: doujinshi
+      - id: 6eaab3b8-11d6-40e7-966b-bb9b8bc4f14f
+        type: manga
+        related: doujinshi
+      - id: 7081c8c9-227f-4f00-8b26-0e56f0a1a475
+        type: manga
+        related: doujinshi
+      - id: 71c3e592-d328-4668-9ef8-71a2b332dd5c
+        type: manga
+        related: doujinshi
+      - id: 73e9bd96-40b0-4682-842e-b80b648399d0
+        type: manga
+        related: doujinshi
+      - id: 76142c38-a34a-450c-9d3c-ad5697ee5bf4
+        type: manga
+        related: doujinshi
+      - id: 7a8a8f81-34e6-4d2a-958b-84ddd71b7aae
+        type: manga
+        related: doujinshi
+      - id: 7b6d7cd8-6506-4cf8-a75d-6296ecb95737
+        type: manga
+        related: doujinshi
+      - id: 7bdc4f9c-5575-49f0-b39b-936fd7c4ccfd
+        type: manga
+        related: doujinshi
+      - id: 7c1c58dd-5364-42f3-9fea-8ff4e0707176
+        type: manga
+        related: doujinshi
+      - id: 7fa5e0e8-2ae1-4566-80e2-6818d191516e
+        type: manga
+        related: doujinshi
+      - id: 8287d5f8-d96c-4cad-9ee9-348aa2c25c36
+        type: manga
+        related: doujinshi
+      - id: 8700df63-92ef-446c-8cbb-b4077263c535
+        type: manga
+        related: doujinshi
+      - id: 872109d5-e699-46da-919c-d35898167745
+        type: manga
+        related: doujinshi
+      - id: 87c8e79b-64d8-403f-8e9f-084b2f7a8e91
+        type: manga
+        related: doujinshi
+      - id: 8b58f452-4d8a-4aad-a050-349e83fecccb
+        type: manga
+        related: prequel
+      - id: 8b58f452-4d8a-4aad-a050-349e83fecccb
+        type: manga
+        related: preserialization
+      - id: 8bb6c8df-c9fc-4c9d-a6c0-a78813a23e96
+        type: manga
+        related: doujinshi
+      - id: 9781e700-62e4-4913-89af-8120d338773e
+        type: manga
+        related: doujinshi
+      - id: 979920eb-5a86-4536-bc9a-8decd889eec1
+        type: manga
+        related: colored
+      - id: 998a7f60-35c0-4cf4-a7c5-c92a25a4109a
+        type: manga
+        related: doujinshi
+      - id: 9bcc73d9-cb0d-4000-aa5d-d01ac0063937
+        type: manga
+        related: doujinshi
+      - id: 9d316b3b-e83d-4722-92e9-a9bbb7af7826
+        type: manga
+        related: doujinshi
+      - id: 9db0566f-cfe4-4975-bc1b-b941b0f59b4f
+        type: manga
+        related: doujinshi
+      - id: a048183d-f95b-4b73-ab92-616d8ea5200b
+        type: manga
+        related: doujinshi
+      - id: a136da1b-ca6c-4bb5-afb5-89c837ae9c42
+        type: manga
+        related: doujinshi
+      - id: a1f63d53-53af-4ffd-ab7a-7a97a0d03d1c
+        type: manga
+        related: doujinshi
+      - id: a375d20a-6eb4-4e71-95a3-48d8a9847d26
+        type: manga
+        related: doujinshi
+      - id: a5678da4-1709-4212-9a67-991c4378f03d
+        type: manga
+        related: doujinshi
+      - id: a8ee1d8c-43e9-485f-9651-265e94d6b4e6
+        type: manga
+        related: doujinshi
+      - id: abb2d08f-f193-4b01-9ed7-7bbeb19f04c6
+        type: manga
+        related: doujinshi
+      - id: ac5cf087-318c-4fa8-b91e-8a3c72d4ff6d
+        type: manga
+        related: doujinshi
+      - id: b16e8dcb-158a-4bda-9f2c-7126efda80ed
+        type: manga
+        related: doujinshi
+      - id: b1f8a5e9-6796-40d5-82c5-80c4ac059bca
+        type: manga
+        related: doujinshi
+      - id: b5606c34-8ba9-4dfc-964a-fb1453f8ac71
+        type: manga
+        related: doujinshi
+      - id: b904faf7-51a8-476a-8d0f-f9a4a60c9336
+        type: manga
+        related: doujinshi
+      - id: babf17a0-e262-4d38-893b-07cc0f16e888
+        type: manga
+        related: doujinshi
+      - id: bb295305-6929-4376-9b90-f8030c81419f
+        type: manga
+        related: doujinshi
+      - id: bbc3de65-f236-42a7-80be-0f350845c5b1
+        type: manga
+        related: doujinshi
+      - id: bc60b26c-0300-4e15-80c4-b48bff445c11
+        type: manga
+        related: doujinshi
+      - id: bea7ef2b-30cf-4066-9fbd-71423ca9bb6d
+        type: manga
+        related: doujinshi
+      - id: c13e3486-e175-4dec-bc8e-faea5fcf69c0
+        type: manga
+        related: doujinshi
+      - id: c14168da-9354-4559-99fb-33bb35b6f6ca
+        type: manga
+        related: doujinshi
+      - id: cbb44b36-e9f3-4001-8ef3-4e775394e449
+        type: manga
+        related: doujinshi
+      - id: cd673835-148f-4939-901c-e2f69d38e5a2
+        type: manga
+        related: doujinshi
+      - id: d2f11fef-b607-4051-a0d6-12ae9e5e2f08
+        type: manga
+        related: doujinshi
+      - id: d54cbe66-401d-45c0-9787-8a191116e3e8
+        type: manga
+        related: doujinshi
+      - id: d60fceda-e3c8-4194-b214-a0d790769652
+        type: manga
+        related: doujinshi
+      - id: d9ef31b4-8076-4f76-959a-0413b1f31654
+        type: manga
+        related: doujinshi
+      - id: dc1a0e60-460e-4fa1-a7c9-9e12d6b3cf06
+        type: manga
+        related: doujinshi
+      - id: dced4bef-6057-4526-9d60-bd33e9d4e7b2
+        type: manga
+        related: doujinshi
+      - id: e600c6fb-3ac3-4789-a1f7-70d5f0340e9f
+        type: manga
+        related: doujinshi
+      - id: e63c6e4a-6360-4bcc-9c1a-ea5c35143a82
+        type: manga
+        related: doujinshi
+      - id: eb351c8b-8341-4260-8669-b236ccef9d19
+        type: manga
+        related: doujinshi
+      - id: ee887cb3-890d-4514-940a-873b244dc6e4
+        type: manga
+        related: doujinshi
+      - id: eefece92-39a1-436c-b03e-60a4b444b361
+        type: manga
+        related: doujinshi
+      - id: f3f59f12-351a-4de7-bd51-696d0764d64e
+        type: manga
+        related: sequel
+      - id: f48ef0c6-9ac3-49ad-a75b-6f0931358125
+        type: manga
+        related: doujinshi
+      - id: f99a1e4b-595a-453d-b911-42704327753c
+        type: manga
+        related: doujinshi
+      - id: fba45ee6-bd1c-44b6-9289-910b1b7da0dc
+        type: manga
+        related: doujinshi
+      - id: fccbee84-a5b8-49f3-8f27-be841a710299
+        type: manga
+        related: doujinshi
+      - id: ffeb900c-c7eb-43dc-8df8-b798fcd9ce05
+        type: manga
+        related: doujinshi
+  body_text: null
+  body_b64: null

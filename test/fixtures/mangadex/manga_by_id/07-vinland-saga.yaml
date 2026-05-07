@@ -1,0 +1,50 @@
+metadata:
+  captured_at: '2026-05-07T11:09:11Z'
+  label: vinland-saga
+  backend: mangadex
+  path_slug: manga_by_id
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/61dde0fa-ec1c-4c89-9eb4-0bd24eda28ea
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Thu, 07 May 2026 11:09:10 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    content-length: '181'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 91f7ff0e-bfe9-430b-9117-60bd4e947cc3
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: error
+    errors:
+    - id: 770a6444-c695-570d-bfd2-a0eec2e95ce9
+      status: 404
+      title: not_found_http_exception
+      detail: Manga `61dde0fa-ec1c-4c89-9eb4-0bd24eda28ea` not found.
+      context: null
+  body_text: null
+  body_b64: null

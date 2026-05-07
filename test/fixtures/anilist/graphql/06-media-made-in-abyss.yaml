@@ -1,0 +1,131 @@
+metadata:
+  captured_at: '2026-05-07T11:00:12Z'
+  label: media-made-in-abyss
+  backend: anilist
+  path_slug: graphql
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Media(id:97986){ id title{romaji english} isAdult genres tags{name rank} } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:00:12 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '24'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Media:
+        id: 97986
+        title:
+          romaji: Made in Abyss
+          english: Made in Abyss
+        isAdult: false
+        genres:
+        - Adventure
+        - Drama
+        - Fantasy
+        - Horror
+        - Mystery
+        - Sci-Fi
+        tags:
+        - name: Survival
+          rank: 97
+        - name: Outdoor Activities
+          rank: 95
+        - name: Primarily Child Cast
+          rank: 89
+        - name: Environmental
+          rank: 89
+        - name: Travel
+          rank: 87
+        - name: Chibi
+          rank: 85
+        - name: Body Horror
+          rank: 83
+        - name: Tragedy
+          rank: 82
+        - name: Cosmic Horror
+          rank: 81
+        - name: Curses
+          rank: 80
+        - name: Lost Civilization
+          rank: 79
+        - name: Dungeon
+          rank: 78
+        - name: Philosophy
+          rank: 78
+        - name: Seinen
+          rank: 77
+        - name: Female Protagonist
+          rank: 73
+        - name: Gore
+          rank: 71
+        - name: Amnesia
+          rank: 71
+        - name: Orphan
+          rank: 65
+        - name: Wilderness
+          rank: 64
+        - name: Male Protagonist
+          rank: 63
+        - name: Robots
+          rank: 63
+        - name: Steampunk
+          rank: 61
+        - name: Anthropomorphism
+          rank: 60
+        - name: Food
+          rank: 47
+        - name: Tanned Skin
+          rank: 38
+        - name: School
+          rank: 36
+        - name: Crossdressing
+          rank: 35
+        - name: Agender
+          rank: 34
+        - name: Religion
+          rank: 34
+        - name: Time Manipulation
+          rank: 32
+        - name: Rehabilitation
+          rank: 32
+        - name: Maids
+          rank: 31
+        - name: Femboy
+          rank: 31
+        - name: Dissociative Identities
+          rank: 31
+        - name: Amputation
+          rank: 20
+        - name: Nudity
+          rank: 20
+        - name: Eco-Horror
+          rank: 20
+  body_text: null
+  body_b64: null

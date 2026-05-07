@@ -1,0 +1,54 @@
+metadata:
+  captured_at: '2026-05-07T11:16:59Z'
+  label: multi-tag-cirno
+  backend: danbooru
+  path_slug: posts_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts.json?tags=touhou+cirno+1girl&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 422
+  headers:
+    Date: Thu, 07 May 2026 11:16:59 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: '411'
+    Connection: keep-alive
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    Cache-Control: no-cache
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd0cdf959fcb8-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=4.0548, rails.cpu_time;dur=3.5684, rails.idle_time;dur=0.4864,
+      rails.sql_time;dur=0.6052, rails.view_time;dur=0.3201, rails.allocations;count=2239, request.allocations;count=2737,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=4.2572, request.total_time;dur=4.7437, request.queue_time_0;dur=0.8187,
+      request.queue_time_1;dur=98.0
+    x-runtime: '0.004743728637695312'
+    via: <scrubbed-at-capture>
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    success: false
+    error: PostQuery::TagLimitError
+    message: You cannot search for more than 2 tags at a time.
+    backtrace:
+    - app/logical/post_query.rb:321:in 'PostQuery::ValidationMethods#validate_tag_limit!'
+    - app/logical/post_sets/post.rb:109:in 'PostSets::Post#posts'
+    - app/controllers/posts_controller.rb:21:in 'PostsController#index'
+    - app/logical/rack_server_timing.rb:19:in 'RackServerTiming#call'
+  body_text: null
+  body_b64: null

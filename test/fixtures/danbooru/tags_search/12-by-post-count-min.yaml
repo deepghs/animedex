@@ -1,0 +1,82 @@
+metadata:
+  captured_at: '2026-05-07T11:17:31Z'
+  label: by-post-count-min
+  backend: danbooru
+  path_slug: tags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tags.json?search%5Bpost_count%5D=%3E1000&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:17:31 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"d36a5771d9fd01139188e139cf32dee8"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd197ac4b19da-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=10.4329, rails.cpu_time;dur=4.0976, rails.idle_time;dur=6.3353,
+      rails.sql_time;dur=6.4861, rails.view_time;dur=6.6963, rails.allocations;count=1626, request.allocations;count=2139,
+      request.gc_time;dur=1.8358, request.gc_count;count=0, request.cpu_time;dur=4.7445, request.total_time;dur=11.08, request.queue_time_0;dur=1.4408,
+      request.queue_time_1;dur=92.9999
+    x-runtime: '0.011080047607421876'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2620588
+    name: green_assault_visor
+    post_count: 1067
+    category: 0
+    created_at: '2026-05-05T15:23:29.863-04:00'
+    updated_at: '2026-05-05T15:23:29.863-04:00'
+    is_deprecated: false
+    words:
+    - green
+    - assault
+    - visor
+  - id: 2620568
+    name: yellow_visor_cap
+    post_count: 1124
+    category: 0
+    created_at: '2026-05-05T15:11:16.201-04:00'
+    updated_at: '2026-05-05T15:11:16.201-04:00'
+    is_deprecated: false
+    words:
+    - yellow
+    - visor
+    - cap
+  - id: 2619119
+    name: bad_blogspot_link
+    post_count: 1099
+    category: 5
+    created_at: '2026-05-03T17:38:49.521-04:00'
+    updated_at: '2026-05-03T17:38:49.548-04:00'
+    is_deprecated: false
+    words:
+    - bad
+    - blogspot
+    - link
+  body_text: null
+  body_b64: null

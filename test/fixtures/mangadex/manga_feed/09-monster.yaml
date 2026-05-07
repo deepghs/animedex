@@ -1,0 +1,102 @@
+metadata:
+  captured_at: '2026-05-07T11:09:32Z'
+  label: monster
+  backend: mangadex
+  path_slug: manga_feed
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/a25e46ec-30f7-4db6-89df-cacbc1d9a900/feed?translatedLanguage%5B%5D=en&limit=2&order%5Bchapter%5D=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=60, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:32 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: c2b94bd1-6d8b-43ee-b8b3-3c104e2804ea
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 880d380a-bd83-4000-9974-73b4cf229c62
+      type: chapter
+      attributes:
+        volume: '17'
+        chapter: '127'
+        title: null
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2024-04-22T18:43:45+00:00'
+        readableAt: '2024-04-22T18:43:45+00:00'
+        createdAt: '2024-04-22T18:43:45+00:00'
+        updatedAt: '2024-04-22T18:44:13+00:00'
+        version: 3
+        pages: 13
+      relationships:
+      - id: 2015e273-89af-41f6-9488-cae400463c93
+        type: scanlation_group
+      - id: 4d41149e-0ec8-4846-82a2-88d112b9dffa
+        type: scanlation_group
+      - id: aaa9c59b-dec8-4c65-bfd8-27fe6ff7402d
+        type: scanlation_group
+      - id: a25e46ec-30f7-4db6-89df-cacbc1d9a900
+        type: manga
+      - id: f1d3a970-3760-4778-8c81-34eb83e515ff
+        type: user
+    - id: 742c1807-edcf-4bf2-8069-377c54048835
+      type: chapter
+      attributes:
+        volume: '17'
+        chapter: '126'
+        title: null
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2023-11-11T19:22:58+00:00'
+        readableAt: '2023-11-11T19:22:58+00:00'
+        createdAt: '2023-11-11T19:22:57+00:00'
+        updatedAt: '2023-11-12T02:48:50+00:00'
+        version: 5
+        pages: 15
+      relationships:
+      - id: 2015e273-89af-41f6-9488-cae400463c93
+        type: scanlation_group
+      - id: 4d41149e-0ec8-4846-82a2-88d112b9dffa
+        type: scanlation_group
+      - id: aaa9c59b-dec8-4c65-bfd8-27fe6ff7402d
+        type: scanlation_group
+      - id: a25e46ec-30f7-4db6-89df-cacbc1d9a900
+        type: manga
+      - id: f1d3a970-3760-4778-8c81-34eb83e515ff
+        type: user
+    limit: 2
+    offset: 0
+    total: 40
+  body_text: null
+  body_b64: null

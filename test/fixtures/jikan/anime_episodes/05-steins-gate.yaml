@@ -1,0 +1,277 @@
+metadata:
+  captured_at: '2026-05-07T11:04:43Z'
+  label: steins-gate
+  backend: jikan
+  path_slug: anime_episodes
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/9253/episodes?limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:04:42 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:355454817f79c398a853e0d84833e9d372cfab0b
+    expires: Fri, 08 May 2026 11:04:42 GMT
+    last-modified: Thu, 07 May 2026 11:04:42 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - mal_id: 1
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/1
+      title: Turning Point
+      title_japanese: 始まりと終わりのプロローグ
+      title_romanji: Hajimari to Owari no Prologue 
+      aired: '2011-04-06T00:00:00+00:00'
+      score: 4.19
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=290985
+    - mal_id: 2
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/2
+      title: Time Travel Paranoia
+      title_japanese: 時間跳躍のパラノイア
+      title_romanji: Jikan Chouyaku no Paranoia 
+      aired: '2011-04-13T00:00:00+00:00'
+      score: 4.31
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=292164
+    - mal_id: 3
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/3
+      title: Parallel World Paranoia
+      title_japanese: 並列過程のパラノイア
+      title_romanji: Heiretsu Katei no Paranoia 
+      aired: '2011-04-20T00:00:00+00:00'
+      score: 4.34
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=293136
+    - mal_id: 4
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/4
+      title: Interpreter Rendezvous
+      title_japanese: 空理彷徨のランデヴー
+      title_romanji: Kuuri Houkou no Rendezvous 
+      aired: '2011-04-27T00:00:00+00:00'
+      score: 4.3
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=294170
+    - mal_id: 5
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/5
+      title: Starmine Rendezvous
+      title_japanese: 電荷衝突のランデヴー
+      title_romanji: Denka Shoutotsu no Rendezvous 
+      aired: '2011-05-04T00:00:00+00:00'
+      score: 4.52
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=295299
+    - mal_id: 6
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/6
+      title: Butterfly Effect's Divergence
+      title_japanese: 蝶翼のダイバージェンス
+      title_romanji: Chouyoku no Divergence 
+      aired: '2011-05-11T00:00:00+00:00'
+      score: 4.32
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=296122
+    - mal_id: 7
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/7
+      title: Divergence Singularity
+      title_japanese: 断層のダイバージェンス
+      title_romanji: Dansou no Divergence 
+      aired: '2011-05-18T00:00:00+00:00'
+      score: 4.61
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=297132
+    - mal_id: 8
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/8
+      title: Chaos Theory Homeostasis I
+      title_japanese: 夢幻のホメオスタシス
+      title_romanji: Mugen no Homeostasis 
+      aired: '2011-05-25T00:00:00+00:00'
+      score: 4.53
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=298095
+    - mal_id: 9
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/9
+      title: Chaos Theory Homeostasis II
+      title_japanese: 幻相のホメオスタシス
+      title_romanji: Gensou no Homeostasis 
+      aired: '2011-06-01T00:00:00+00:00'
+      score: 4.69
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=299032
+    - mal_id: 10
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/10
+      title: Chaos Theory Homeostasis III
+      title_japanese: 相生のホメオスタシス
+      title_romanji: Sousei no Homeostasis 
+      aired: '2011-06-08T00:00:00+00:00'
+      score: 4.47
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=300075
+    - mal_id: 11
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/11
+      title: Dogma in Event Horizon
+      title_japanese: 時空境界のドグマ
+      title_romanji: Jikuu Kyoukai no Dogma 
+      aired: '2011-06-15T00:00:00+00:00'
+      score: 4.67
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=301091
+    - mal_id: 12
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/12
+      title: Dogma in Ergosphere
+      title_japanese: 静止限界のドグマ
+      title_romanji: Seishi Genkai no Dogma 
+      aired: '2011-06-22T00:00:00+00:00'
+      score: 4.78
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=302128
+    - mal_id: 13
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/13
+      title: Metaphysics Necrosis
+      title_japanese: 形而上のネクローシス
+      title_romanji: Keijijou no Necrosis 
+      aired: '2011-06-29T00:00:00+00:00'
+      score: 4.71
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=303151
+    - mal_id: 14
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/14
+      title: Physically Necrosis
+      title_japanese: 形而下のネクローシス
+      title_romanji: Keijika no Necrosis 
+      aired: '2011-07-06T00:00:00+00:00'
+      score: 4.78
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=304275
+    - mal_id: 15
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/15
+      title: Missing Link Necrosis
+      title_japanese: 亡環上のネクローシス
+      title_romanji: Boukanjou no Necrosis 
+      aired: '2011-07-13T00:00:00+00:00'
+      score: 4.63
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=305501
+    - mal_id: 16
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/16
+      title: Sacrificial Necrosis
+      title_japanese: 不可逆のネクローシス
+      title_romanji: Fukagyaku no Necrosis 
+      aired: '2011-07-20T00:00:00+00:00'
+      score: 4.8
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=307413
+    - mal_id: 17
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/17
+      title: Made in Complex
+      title_japanese: 虚像歪曲のコンプレックス
+      title_romanji: Kyozou Waikyoku no Complex 
+      aired: '2011-07-27T00:00:00+00:00'
+      score: 4.65
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=309583
+    - mal_id: 18
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/18
+      title: Fractal Androgynous
+      title_japanese: 自己相似のアンドロギュノス
+      title_romanji: Jiko Souji no Androgynous 
+      aired: '2011-08-03T00:00:00+00:00'
+      score: 4.52
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=312201
+    - mal_id: 19
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/19
+      title: Endless Apoptosis
+      title_japanese: 無限連鎖のアポトーシス
+      title_romanji: Mugen Rensa no Apoptosis 
+      aired: '2011-08-10T00:00:00+00:00'
+      score: 4.69
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=314649
+    - mal_id: 20
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/20
+      title: Finalize Apoptosis
+      title_japanese: 怨嗟断絶のアポトーシス
+      title_romanji: Ensa Danzetsu no Apoptosis 
+      aired: '2011-08-17T00:00:00+00:00'
+      score: 4.81
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=316976
+    - mal_id: 21
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/21
+      title: Paradox Meltdown
+      title_japanese: 因果律のメルト
+      title_romanji: Ingaritsu no Melt 
+      aired: '2011-08-24T00:00:00+00:00'
+      score: 4.73
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=319169
+    - mal_id: 22
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/22
+      title: Being Meltdown
+      title_japanese: 存在了解のメルト
+      title_romanji: Sonzai Ryoukai no Melt 
+      aired: '2011-08-31T00:00:00+00:00'
+      score: 4.82
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=321323
+    - mal_id: 23
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/23
+      title: Open the Steins Gate
+      title_japanese: 境界面上のシュタインズゲート
+      title_romanji: Kyoukaimenjou no Steins Gate 
+      aired: '2011-09-07T00:00:00+00:00'
+      score: 4.79
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=323741
+    - mal_id: 24
+      url: https://myanimelist.net/anime/9253/Steins_Gate/episode/24
+      title: Achievement Point
+      title_japanese: 終わりと始まりのプロローグ
+      title_romanji: Owari to Hajimari no Prologue 
+      aired: '2011-09-14T00:00:00+00:00'
+      score: 4.74
+      filler: false
+      recap: false
+      forum_url: https://myanimelist.net/forum/?topicid=326131
+  body_text: null
+  body_b64: null

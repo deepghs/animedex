@@ -1,0 +1,230 @@
+metadata:
+  captured_at: '2026-05-07T11:16:38Z'
+  label: touhou-rating-s
+  backend: danbooru
+  path_slug: posts_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts.json?tags=touhou+rating:s&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:16:38 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"c637814774f5fa3cbb24e1fc351088e0"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd045dc80d3e3-KIX
+    server-timing: sql.queries;count=12, cache.reads;count=4, cache.keys_read;count=79, cache.total_time;dur=2.0004, cache.writes;count=1,
+      cache.keys_written;count=1, cache.keys_hit;count=78, rails.total_time;dur=1219.9485, rails.cpu_time;dur=9.4549, rails.idle_time;dur=1210.4936,
+      rails.sql_time;dur=1210.5124, rails.view_time;dur=7.0466, rails.allocations;count=45265, request.allocations;count=45771,
+      request.gc_time;dur=3.1793, request.gc_count;count=0, request.cpu_time;dur=10.1396, request.total_time;dur=1220.6349,
+      request.queue_time_0;dur=0.5715, request.queue_time_1;dur=97.0001
+    x-runtime: '1.2206349334716797'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 11323387
+    created_at: '2026-05-07T07:00:57.168-04:00'
+    uploader_id: 1087973
+    score: 4
+    source: https://x.com/tinatamaaAA/status/2052342719465603210
+    md5: e6ab3b2eb5647bbb1155002c8db0de36
+    last_comment_bumped_at: null
+    rating: s
+    image_width: 2480
+    image_height: 3508
+    tag_string: 1girl absurdres blue_skirt breasts closed_mouth commentary detached_sleeves frilled_skirt frills frog_hair_ornament
+      green_eyes green_hair hair_between_eyes hair_ornament hair_tubes highres kochiya_sanae long_hair medium_breasts miniskirt
+      navel single_hair_tube sitting skirt smile snake_hair_ornament solo thighs tinatama touhou very_long_hair
+    fav_count: 3
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 25
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 1323839
+    up_score: 4
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 31
+    updated_at: '2026-05-07T07:08:01.913-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: null
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 3
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 48169047
+      created_at: '2026-05-07T07:00:40.974-04:00'
+      updated_at: '2026-05-07T07:00:42.623-04:00'
+      md5: e6ab3b2eb5647bbb1155002c8db0de36
+      file_ext: jpg
+      file_size: 1323839
+      image_width: 2480
+      image_height: 3508
+      duration: null
+      status: active
+      file_key: AutJr1cQj
+      is_public: true
+      pixel_hash: 232364026c640f48e88748d3ea544493
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/e6/ab/e6ab3b2eb5647bbb1155002c8db0de36.jpg
+        width: 127
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/e6/ab/e6ab3b2eb5647bbb1155002c8db0de36.jpg
+        width: 255
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/e6/ab/e6ab3b2eb5647bbb1155002c8db0de36.webp
+        width: 509
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/e6/ab/sample-e6ab3b2eb5647bbb1155002c8db0de36.jpg
+        width: 850
+        height: 1202
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/e6/ab/e6ab3b2eb5647bbb1155002c8db0de36.jpg
+        width: 2480
+        height: 3508
+        file_ext: jpg
+    tag_string_general: 1girl blue_skirt breasts closed_mouth detached_sleeves frilled_skirt frills frog_hair_ornament green_eyes
+      green_hair hair_between_eyes hair_ornament hair_tubes long_hair medium_breasts miniskirt navel single_hair_tube sitting
+      skirt smile snake_hair_ornament solo thighs very_long_hair
+    tag_string_character: kochiya_sanae
+    tag_string_copyright: touhou
+    tag_string_artist: tinatama
+    tag_string_meta: absurdres commentary highres
+    file_url: https://cdn.donmai.us/original/e6/ab/e6ab3b2eb5647bbb1155002c8db0de36.jpg
+    large_file_url: https://cdn.donmai.us/sample/e6/ab/sample-e6ab3b2eb5647bbb1155002c8db0de36.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/e6/ab/e6ab3b2eb5647bbb1155002c8db0de36.jpg
+  - id: 11323275
+    created_at: '2026-05-07T06:36:34.471-04:00'
+    uploader_id: 1087973
+    score: 2
+    source: https://i.pximg.net/img-original/img/2026/05/07/19/36/18/144488123_p0.png
+    md5: 443b63768adba43d2f7963a5f2fe7ab9
+    last_comment_bumped_at: null
+    rating: s
+    image_width: 1021
+    image_height: 1591
+    tag_string: 1girl alternate_costume belt black_jacket black_shoes black_shorts blonde_hair breasts commentary fang fishnet_thighhighs
+      fishnets hair_between_eyes hair_ribbon highres jacket leg_up long_sleeves medium_hair navel open_clothes open_jacket
+      open_mouth red_eyes red_ribbon ribbon rumia shoes shorts single_thighhigh skin_fang small_breasts smile socks solo stomach
+      thigh_belt thigh_strap thighhighs thighs touhou uumaru v white_belt white_socks zipper_pull_tab
+    fav_count: 2
+    file_ext: png
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 41
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 2201598
+    up_score: 2
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 46
+    updated_at: '2026-05-07T06:38:52.312-04:00'
+    is_banned: false
+    pixiv_id: 144488123
+    last_commented_at: null
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 2
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 48168853
+      created_at: '2026-05-07T06:36:27.462-04:00'
+      updated_at: '2026-05-07T06:36:29.246-04:00'
+      md5: 443b63768adba43d2f7963a5f2fe7ab9
+      file_ext: png
+      file_size: 2201598
+      image_width: 1021
+      image_height: 1591
+      duration: null
+      status: active
+      file_key: eqqNmfAMd
+      is_public: true
+      pixel_hash: 7e35f8333fab8fad0a2aaae5faa45b71
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/44/3b/443b63768adba43d2f7963a5f2fe7ab9.jpg
+        width: 116
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/44/3b/443b63768adba43d2f7963a5f2fe7ab9.jpg
+        width: 231
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/44/3b/443b63768adba43d2f7963a5f2fe7ab9.webp
+        width: 462
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/44/3b/sample-443b63768adba43d2f7963a5f2fe7ab9.jpg
+        width: 850
+        height: 1325
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/44/3b/443b63768adba43d2f7963a5f2fe7ab9.png
+        width: 1021
+        height: 1591
+        file_ext: png
+    tag_string_general: 1girl alternate_costume belt black_jacket black_shoes black_shorts blonde_hair breasts fang fishnet_thighhighs
+      fishnets hair_between_eyes hair_ribbon jacket leg_up long_sleeves medium_hair navel open_clothes open_jacket open_mouth
+      red_eyes red_ribbon ribbon shoes shorts single_thighhigh skin_fang small_breasts smile socks solo stomach thigh_belt
+      thigh_strap thighhighs thighs v white_belt white_socks zipper_pull_tab
+    tag_string_character: rumia
+    tag_string_copyright: touhou
+    tag_string_artist: uumaru
+    tag_string_meta: commentary highres
+    file_url: https://cdn.donmai.us/original/44/3b/443b63768adba43d2f7963a5f2fe7ab9.png
+    large_file_url: https://cdn.donmai.us/sample/44/3b/sample-443b63768adba43d2f7963a5f2fe7ab9.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/44/3b/443b63768adba43d2f7963a5f2fe7ab9.jpg
+  body_text: null
+  body_b64: null

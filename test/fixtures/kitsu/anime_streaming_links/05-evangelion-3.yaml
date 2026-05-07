@@ -1,0 +1,91 @@
+metadata:
+  captured_at: '2026-05-07T11:07:33Z'
+  label: evangelion-3
+  backend: kitsu
+  path_slug: anime_streaming_links
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/3/streaming-links
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:07:33 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"7cca381810eedbd5066d4e7164e0e998"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 7c6fe0af-0161-468e-8e0f-7e8de19671c0
+    x-runtime: '0.071655'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1515'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/1515
+      attributes:
+        createdAt: null
+        updatedAt: null
+        url: http://www.hulu.com/trigun
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/1515/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/1515/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/1515/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/1515/media
+    - id: '8534'
+      type: streamingLinks
+      links:
+        self: https://kitsu.io/api/edge/streaming-links/8534
+      attributes:
+        createdAt: '2025-02-15T10:23:20.713Z'
+        updatedAt: '2025-02-15T10:24:07.355Z'
+        url: https://www.crunchyroll.com/series/GYP58QMMY/trigun
+        subs:
+        - en
+        dubs:
+        - ja
+      relationships:
+        streamer:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/8534/relationships/streamer
+            related: https://kitsu.io/api/edge/streaming-links/8534/streamer
+        media:
+          links:
+            self: https://kitsu.io/api/edge/streaming-links/8534/relationships/media
+            related: https://kitsu.io/api/edge/streaming-links/8534/media
+    meta:
+      count: 2
+    links:
+      first: https://kitsu.io/api/edge/anime/3/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/3/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

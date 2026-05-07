@@ -1,0 +1,46 @@
+metadata:
+  captured_at: '2026-05-07T11:25:07Z'
+  label: animes-multi
+  backend: shikimori
+  path_slug: graphql
+request:
+  method: POST
+  url: https://shikimori.io/api/graphql
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ animes(ids:"1,20,30"){ id name }}'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Thu, 07 May 2026 11:25:07 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"e84ea229a6c9086400237b32ab52c6a7"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: fefa7eaa-45d6-41bf-bda5-7221c09b89df
+    X-Runtime: '0.006557'
+    vary: Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    data:
+      animes:
+      - id: '1'
+        name: Cowboy Bebop
+      - id: '30'
+        name: Shinseiki Evangelion
+  body_text: null
+  body_b64: null

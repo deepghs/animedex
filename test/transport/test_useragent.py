@@ -30,11 +30,21 @@ class TestDefaultUserAgent:
         ua = default_user_agent()
         assert __VERSION__ in ua
 
-    def test_includes_contact_email(self):
+    def test_does_not_include_contact_email(self):
+        """Per #3 Phase 1 exploration: default UA is the bare
+        ``name/version`` form, no contact suffix."""
         from animedex.transport.useragent import default_user_agent
 
         ua = default_user_agent()
-        assert "@" in ua
+        assert "@" not in ua
+        assert "(" not in ua
+
+    def test_exact_format_is_name_slash_version(self):
+        """Pin the exact shape so a future change is intentional."""
+        from animedex.config.meta import __TITLE__, __VERSION__
+        from animedex.transport.useragent import default_user_agent
+
+        assert default_user_agent() == f"{__TITLE__}/{__VERSION__}"
 
     def test_does_not_pretend_to_be_browser(self):
         """Per ``plans/02`` Danbooru contract: no Mozilla / browser spoofing."""

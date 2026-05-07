@@ -1,0 +1,800 @@
+metadata:
+  captured_at: '2026-05-07T11:04:16Z'
+  label: k-on
+  backend: jikan
+  path_slug: anime_characters
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/5680/characters
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:04:16 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:189ddb1b1e1c7d9ba31624156310b786af3addd0
+    expires: Fri, 08 May 2026 08:37:21 GMT
+    last-modified: Thu, 07 May 2026 08:37:21 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: HIT
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - character:
+        mal_id: 19566
+        url: https://myanimelist.net/character/19566/Mio_Akiyama
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/48547.jpg?s=cc5ab1310b7f663aad2050da6c4664c9
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/48547.webp?s=cc5ab1310b7f663aad2050da6c4664c9
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/48547t.webp?s=cc5ab1310b7f663aad2050da6c4664c9
+        name: Akiyama, Mio
+      role: Main
+      favorites: 13724
+      voice_actors:
+      - person:
+          mal_id: 489
+          url: https://myanimelist.net/people/489/Cristina_Valenzuela
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/55574.jpg?s=f509d42b051ff3da279976e97e9da6d7
+          name: Valenzuela, Cristina
+        language: English
+      - person:
+          mal_id: 7263
+          url: https://myanimelist.net/people/7263/Youko_Hikasa
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/73697.jpg?s=033052cbd090e8e59c470725fe9ad72e
+          name: Hikasa, Youko
+        language: Japanese
+      - person:
+          mal_id: 9872
+          url: https://myanimelist.net/people/9872/Nayéli_Forest
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/38839.jpg?s=8e06e4b8141876a90d1638078b12359c
+          name: Forest, Nayéli
+        language: French
+      - person:
+          mal_id: 14985
+          url: https://myanimelist.net/people/14985/So_Ra_Park
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/15817.jpg?s=261ef1903a7ef7452ef9c3fbecc2b7f3
+          name: Park, So Ra
+        language: Korean
+      - person:
+          mal_id: 20518
+          url: https://myanimelist.net/people/20518/Catherine_Fu
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/63493.jpg?s=6b00bac2bacb655607a7c2509cf7c66a
+          name: Fu, Catherine
+        language: English
+      - person:
+          mal_id: 23657
+          url: https://myanimelist.net/people/23657/Anita_Hopt
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/26435.jpg?s=a969d89e6eff6cd79ab2b5a50c89ec07
+          name: Hopt, Anita
+        language: German
+    - character:
+        mal_id: 19565
+        url: https://myanimelist.net/character/19565/Yui_Hirasawa
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/6/326131.jpg?s=20869a72ce294f22b20a5464f48ae576
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/6/326131.webp?s=20869a72ce294f22b20a5464f48ae576
+            small_image_url: https://cdn.myanimelist.net/images/characters/6/326131t.webp?s=20869a72ce294f22b20a5464f48ae576
+        name: Hirasawa, Yui
+      role: Main
+      favorites: 14574
+      voice_actors:
+      - person:
+          mal_id: 396
+          url: https://myanimelist.net/people/396/Stephanie_Sheh
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/38453.jpg?s=85fe08fa0760e7b36261e18bcfe41aab
+          name: Sheh, Stephanie
+        language: English
+      - person:
+          mal_id: 599
+          url: https://myanimelist.net/people/599/Aki_Toyosaki
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/82665.jpg?s=99afe51dc4545149bd78358ed6d942c7
+          name: Toyosaki, Aki
+        language: Japanese
+      - person:
+          mal_id: 1653
+          url: https://myanimelist.net/people/1653/Julia_Meynen
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/59383.jpg?s=e0552c843f32cc68d7cc988e61f45e1f
+          name: Meynen, Julia
+        language: German
+      - person:
+          mal_id: 8812
+          url: https://myanimelist.net/people/8812/Mi_Sook_Jeong
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/89231.jpg?s=b26d4977500ad4a3bdae042bdcd2ced8
+          name: Jeong, Mi Sook
+        language: Korean
+      - person:
+          mal_id: 20542
+          url: https://myanimelist.net/people/20542/Lily_Truncale
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/22720.jpg?s=130d99ed9ae2402e8d059f2e63e93f91
+          name: Truncale, Lily
+        language: English
+      - person:
+          mal_id: 24241
+          url: https://myanimelist.net/people/24241/Jennifer_Fauveau
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/44905.jpg?s=9951235d6babb6c1c1ac9e6d4998316d
+          name: Fauveau, Jennifer
+        language: French
+      - person:
+          mal_id: 87270
+          url: https://myanimelist.net/people/87270/Angel_Lin
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/86240.jpg?s=046e64e58fb8d4e89c04670a4da2d81d
+          name: Lin, Angel
+        language: Mandarin
+    - character:
+        mal_id: 19568
+        url: https://myanimelist.net/character/19568/Tsumugi_Kotobuki
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/8/51210.jpg?s=3494754e206646aa9a9ad280cdc9ce77
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/8/51210.webp?s=3494754e206646aa9a9ad280cdc9ce77
+            small_image_url: https://cdn.myanimelist.net/images/characters/8/51210t.webp?s=3494754e206646aa9a9ad280cdc9ce77
+        name: Kotobuki, Tsumugi
+      role: Main
+      favorites: 6677
+      voice_actors:
+      - person:
+          mal_id: 6634
+          url: https://myanimelist.net/people/6634/Minako_Kotobuki
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/79688.jpg?s=e438ec02a70693796aad7394b34f05d0
+          name: Kotobuki, Minako
+        language: Japanese
+      - person:
+          mal_id: 9887
+          url: https://myanimelist.net/people/9887/Marie_Diot
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/28495.jpg?s=8775c4a5a0cf21bd6f2206136acbf3a6
+          name: Diot, Marie
+        language: French
+      - person:
+          mal_id: 11370
+          url: https://myanimelist.net/people/11370/Shelby_Lindley
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/13027.jpg?s=d851a0e8e558bd6e8eed20f8c67e6dd3
+          name: Lindley, Shelby
+        language: English
+      - person:
+          mal_id: 14835
+          url: https://myanimelist.net/people/14835/Hyeon_Jin_Lee
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/15407.jpg?s=7e3cf13ee75e0a860d8bd8ffb15db93c
+          name: Lee, Hyeon Jin
+        language: Korean
+      - person:
+          mal_id: 23659
+          url: https://myanimelist.net/people/23659/Marianne_Graffam
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/38239.jpg?s=c381be487a16b9c7181969a32a6993e7
+          name: Graffam, Marianne
+        language: German
+      - person:
+          mal_id: 11091
+          url: https://myanimelist.net/people/11091/Candice_Moore
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/15439.jpg?s=f4e53db88eb5c15e67ba375b833598a7
+          name: Moore, Candice
+        language: English
+    - character:
+        mal_id: 21173
+        url: https://myanimelist.net/character/21173/Azusa_Nakano
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/86736.jpg?s=ecd00a6a480e9a7a988d43f34912a658
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/86736.webp?s=ecd00a6a480e9a7a988d43f34912a658
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/86736t.webp?s=ecd00a6a480e9a7a988d43f34912a658
+        name: Nakano, Azusa
+      role: Main
+      favorites: 7006
+      voice_actors:
+      - person:
+          mal_id: 6996
+          url: https://myanimelist.net/people/6996/Ayana_Taketatsu
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/86545.jpg?s=5d0e0fe12d0ff0bb55338b8924658e87
+          name: Taketatsu, Ayana
+        language: Japanese
+      - person:
+          mal_id: 7302
+          url: https://myanimelist.net/people/7302/Frédérique_Marlot
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/69935.jpg?s=72e6cef5b1e39bb10cc86bb18cb72016
+          name: Marlot, Frédérique
+        language: French
+      - person:
+          mal_id: 12344
+          url: https://myanimelist.net/people/12344/Christine_Marie_Cabanos
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/43360.jpg?s=b6cea10ce37e7e9bd4ee608419628c41
+          name: Cabanos, Christine Marie
+        language: English
+      - person:
+          mal_id: 15593
+          url: https://myanimelist.net/people/15593/Mun_Ja_Choi
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/16929.jpg?s=14f4908f3935b18b8806821fb13eec87
+          name: Choi, Mun Ja
+        language: Korean
+      - person:
+          mal_id: 23661
+          url: https://myanimelist.net/people/23661/Kristina_Tietz
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/26439.jpg?s=7f94d02474a49fd8b60acdb6f83ed544
+          name: Tietz, Kristina
+        language: German
+      - person:
+          mal_id: 11091
+          url: https://myanimelist.net/people/11091/Candice_Moore
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/15439.jpg?s=f4e53db88eb5c15e67ba375b833598a7
+          name: Moore, Candice
+        language: English
+    - character:
+        mal_id: 19567
+        url: https://myanimelist.net/character/19567/Ritsu_Tainaka
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/6/51212.jpg?s=54dac8ce08b197993e8566e1a4eaef4f
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/6/51212.webp?s=54dac8ce08b197993e8566e1a4eaef4f
+            small_image_url: https://cdn.myanimelist.net/images/characters/6/51212t.webp?s=54dac8ce08b197993e8566e1a4eaef4f
+        name: Tainaka, Ritsu
+      role: Main
+      favorites: 5523
+      voice_actors:
+      - person:
+          mal_id: 6560
+          url: https://myanimelist.net/people/6560/Satomi_Satou
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/79882.jpg?s=dc069d6262fbf9e1a6cb9b45389f4af7
+          name: Satou, Satomi
+        language: Japanese
+      - person:
+          mal_id: 7109
+          url: https://myanimelist.net/people/7109/Jennifer_Weiß
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/21889.jpg?s=cda2467d74b5663a3d332f0a57c63b85
+          name: Weiß, Jennifer
+        language: German
+      - person:
+          mal_id: 11369
+          url: https://myanimelist.net/people/11369/Cassandra_Lee_Morris
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/41478.jpg?s=71ac881f0b49121df3f4c438d35a6207
+          name: Morris, Cassandra Lee
+        language: English
+      - person:
+          mal_id: 14865
+          url: https://myanimelist.net/people/14865/Soyeon
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/89249.jpg?s=adc84d7687ff7682a386de72ed518bb4
+          name: Soyeon
+        language: Korean
+      - person:
+          mal_id: 20913
+          url: https://myanimelist.net/people/20913/Muriel_Hofmann
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/23911.jpg?s=7144ac027cb093a64f4a5418655a324c
+          name: Hofmann, Muriel
+        language: English
+      - person:
+          mal_id: 43777
+          url: https://myanimelist.net/people/43777/Caroline_Mozzone
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/67530.jpg?s=cc2a80358849d2e0f556316e0dceb65d
+          name: Mozzone, Caroline
+        language: French
+    - character:
+        mal_id: 67407
+        url: https://myanimelist.net/character/67407/Father_Hirasawa
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/283013.jpg?s=4e0c7d6d0d8e96e89b6920a021d69684
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/283013.webp?s=4e0c7d6d0d8e96e89b6920a021d69684
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/283013t.webp?s=4e0c7d6d0d8e96e89b6920a021d69684
+        name: Hirasawa, Father
+      role: Supporting
+      favorites: 2
+      voice_actors:
+      - person:
+          mal_id: 6908
+          url: https://myanimelist.net/people/6908/Riki_Kitazawa
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/58702.jpg?s=e5d34fd6b21302759b905a0ea7c8a191
+          name: Kitazawa, Riki
+        language: Japanese
+      - person:
+          mal_id: 40193
+          url: https://myanimelist.net/people/40193/Klaus_Lochthove
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/41151.jpg?s=6ad0a3bebb7e6f9bbc2991ed814b4ca7
+          name: Lochthove, Klaus
+        language: German
+      - person:
+          mal_id: 654
+          url: https://myanimelist.net/people/654/Tony_Oliver
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/12598.jpg?s=dbc50cddd41830a214ba17a49c81ef0c
+          name: Oliver, Tony
+        language: English
+      - person:
+          mal_id: 89972
+          url: https://myanimelist.net/people/89972/Danny_Ho
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/86990.jpg?s=fda7d8e40986f0080162db9446de6774
+          name: Ho, Danny
+        language: Mandarin
+    - character:
+        mal_id: 67011
+        url: https://myanimelist.net/character/67011/Mother_Hirasawa
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/283014.jpg?s=0dca820c24d333263115227c934219e1
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/283014.webp?s=0dca820c24d333263115227c934219e1
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/283014t.webp?s=0dca820c24d333263115227c934219e1
+        name: Hirasawa, Mother
+      role: Supporting
+      favorites: 3
+      voice_actors:
+      - person:
+          mal_id: 728
+          url: https://myanimelist.net/people/728/Rio_Natsuki
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/59336.jpg?s=41209862a68157fecc889a0bc8d407d3
+          name: Natsuki, Rio
+        language: Japanese
+      - person:
+          mal_id: 12344
+          url: https://myanimelist.net/people/12344/Christine_Marie_Cabanos
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/43360.jpg?s=b6cea10ce37e7e9bd4ee608419628c41
+          name: Cabanos, Christine Marie
+        language: English
+    - character:
+        mal_id: 19571
+        url: https://myanimelist.net/character/19571/Ui_Hirasawa
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/7/79861.jpg?s=426efbd5b682e736bf47b8db8f8b87ca
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/7/79861.webp?s=426efbd5b682e736bf47b8db8f8b87ca
+            small_image_url: https://cdn.myanimelist.net/images/characters/7/79861t.webp?s=426efbd5b682e736bf47b8db8f8b87ca
+        name: Hirasawa, Ui
+      role: Supporting
+      favorites: 739
+      voice_actors:
+      - person:
+          mal_id: 7254
+          url: https://myanimelist.net/people/7254/Madoka_Yonezawa
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/61809.jpg?s=61ee17c31a960e288c2992aa53618e02
+          name: Yonezawa, Madoka
+        language: Japanese
+      - person:
+          mal_id: 8492
+          url: https://myanimelist.net/people/8492/Xanthe_Huynh
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/53534.jpg?s=5b0fd02bb537d61e25e91b6bdf30428a
+          name: Huynh, Xanthe
+        language: English
+      - person:
+          mal_id: 14837
+          url: https://myanimelist.net/people/14837/Gye_Yun_Lee
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/15409.jpg?s=3403887b4eea9d38cf2a295ad183ecb1
+          name: Lee, Gye Yun
+        language: Korean
+      - person:
+          mal_id: 25817
+          url: https://myanimelist.net/people/25817/Caroline_Combes
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/69933.jpg?s=07dd38375d3fc162ca8bbd3215e8ef8c
+          name: Combes, Caroline
+        language: French
+      - person:
+          mal_id: 44217
+          url: https://myanimelist.net/people/44217/Tabea_Börner
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/47676.jpg?s=7597774727652b47b2c6a71c4191971e
+          name: Börner, Tabea
+        language: German
+      - person:
+          mal_id: 20518
+          url: https://myanimelist.net/people/20518/Catherine_Fu
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/63493.jpg?s=6b00bac2bacb655607a7c2509cf7c66a
+          name: Fu, Catherine
+        language: English
+    - character:
+        mal_id: 133815
+        url: https://myanimelist.net/character/133815/Hitomi_Hoshino
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/291909.jpg?s=68f65a30abc946775266a5b8bb3c23f6
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/291909.webp?s=68f65a30abc946775266a5b8bb3c23f6
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/291909t.webp?s=68f65a30abc946775266a5b8bb3c23f6
+        name: Hoshino, Hitomi
+      role: Supporting
+      favorites: 1
+      voice_actors:
+      - person:
+          mal_id: 11289
+          url: https://myanimelist.net/people/11289/Yui_Shouji
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/18305.jpg?s=b04a1c07e2910682a1e775f9a178a109
+          name: Shouji, Yui
+        language: Japanese
+      - person:
+          mal_id: 10711
+          url: https://myanimelist.net/people/10711/Anja_Rybiczka
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/59385.jpg?s=9dcb1a8b93eb897b16817c98549c1dae
+          name: Rybiczka, Anja
+        language: German
+      - person:
+          mal_id: 21785
+          url: https://myanimelist.net/people/21785/Erika_Harlacher
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/58363.jpg?s=1bbbb9766ecde64a962866986df04a52
+          name: Harlacher, Erika
+        language: English
+    - character:
+        mal_id: 19570
+        url: https://myanimelist.net/character/19570/Nodoka_Manabe
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/80300.jpg?s=46e90eb805380232ef3c7bbd5f003c23
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/80300.webp?s=46e90eb805380232ef3c7bbd5f003c23
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/80300t.webp?s=46e90eb805380232ef3c7bbd5f003c23
+        name: Manabe, Nodoka
+      role: Supporting
+      favorites: 245
+      voice_actors:
+      - person:
+          mal_id: 187
+          url: https://myanimelist.net/people/187/Laura_Bailey
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/68463.jpg?s=24193a467ea9124cf9c107a2eab0b066
+          name: Bailey, Laura
+        language: English
+      - person:
+          mal_id: 5680
+          url: https://myanimelist.net/people/5680/Gwenäelle_Julien
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/59386.jpg?s=1ab4035ba66c5a069ccde1ca01148288
+          name: Julien, Gwenäelle
+        language: French
+      - person:
+          mal_id: 7278
+          url: https://myanimelist.net/people/7278/Chika_Fujitou
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/8016.jpg?s=73438f6fdc00dc3e47a8170c3dcca64e
+          name: Fujitou, Chika
+        language: Japanese
+      - person:
+          mal_id: 15135
+          url: https://myanimelist.net/people/15135/Do_Yeong_Song
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/16033.jpg?s=24a0db6239898cd8e623d1c63dc100b2
+          name: Song, Do Yeong
+        language: Korean
+      - person:
+          mal_id: 20913
+          url: https://myanimelist.net/people/20913/Muriel_Hofmann
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/23911.jpg?s=7144ac027cb093a64f4a5418655a324c
+          name: Hofmann, Muriel
+        language: English
+      - person:
+          mal_id: 23485
+          url: https://myanimelist.net/people/23485/Shalin-Tanita_Rogall
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/26441.jpg?s=3a51c1afbc659077bc8a2f94ce115d33
+          name: Rogall, Shalin-Tanita
+        language: German
+    - character:
+        mal_id: 23344
+        url: https://myanimelist.net/character/23344/Megumi_Sokabe
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/14/89626.jpg?s=10daa0498616da9d898fe4cdc90eff16
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/14/89626.webp?s=10daa0498616da9d898fe4cdc90eff16
+            small_image_url: https://cdn.myanimelist.net/images/characters/14/89626t.webp?s=10daa0498616da9d898fe4cdc90eff16
+        name: Sokabe, Megumi
+      role: Supporting
+      favorites: 3
+      voice_actors:
+      - person:
+          mal_id: 8264
+          url: https://myanimelist.net/people/8264/Asumi_Kodama
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/5470.jpg?s=3719ce00904f690663e98a53912cdb43
+          name: Kodama, Asumi
+        language: Japanese
+      - person:
+          mal_id: 13703
+          url: https://myanimelist.net/people/13703/Bennett_Abara
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/36809.jpg?s=ad3cf052505e0188a4f60a8cef53b54e
+          name: Abara, Bennett
+        language: English
+      - person:
+          mal_id: 44634
+          url: https://myanimelist.net/people/44634/Eva_Thärichen
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/48061.jpg?s=c7024de32849902e67a26ed5d4b08f84
+          name: Thärichen, Eva
+        language: German
+      - person:
+          mal_id: 23451
+          url: https://myanimelist.net/people/23451/Seung-Hui_Yun
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/85825.jpg?s=6ef03f221bbfc94bf24da6924bb1b4a1
+          name: Yun, Seung-Hui
+        language: Korean
+    - character:
+        mal_id: 31526
+        url: https://myanimelist.net/character/31526/Jun_Suzuki
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/3/95854.jpg?s=66ed326fdb1e04acc46879c783200c9d
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/3/95854.webp?s=66ed326fdb1e04acc46879c783200c9d
+            small_image_url: https://cdn.myanimelist.net/images/characters/3/95854t.webp?s=66ed326fdb1e04acc46879c783200c9d
+        name: Suzuki, Jun
+      role: Supporting
+      favorites: 90
+      voice_actors:
+      - person:
+          mal_id: 9557
+          url: https://myanimelist.net/people/9557/Yoriko_Nagata
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/22153.jpg?s=fa48adc355c27f2f949362581a467c7f
+          name: Nagata, Yoriko
+        language: Japanese
+      - person:
+          mal_id: 9886
+          url: https://myanimelist.net/people/9886/Nathalie_Bienaimé
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/72146.jpg?s=2c8a59ee85f7d3372f0a9076e2c8f2b0
+          name: Bienaimé, Nathalie
+        language: French
+      - person:
+          mal_id: 12709
+          url: https://myanimelist.net/people/12709/Michelle_Ann_Dunphy
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/40502.jpg?s=77324fdbc75e8fb0abbec97569b2402d
+          name: Dunphy, Michelle Ann
+        language: English
+      - person:
+          mal_id: 14921
+          url: https://myanimelist.net/people/14921/Seon_Yeong_Park
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/15621.jpg?s=21e657ced3842820cb13f2d711cf949f
+          name: Park, Seon Yeong
+        language: Korean
+      - person:
+          mal_id: 10711
+          url: https://myanimelist.net/people/10711/Anja_Rybiczka
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/2/59385.jpg?s=9dcb1a8b93eb897b16817c98549c1dae
+          name: Rybiczka, Anja
+        language: German
+      - person:
+          mal_id: 87270
+          url: https://myanimelist.net/people/87270/Angel_Lin
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/86240.jpg?s=046e64e58fb8d4e89c04670a4da2d81d
+          name: Lin, Angel
+        language: Mandarin
+    - character:
+        mal_id: 31525
+        url: https://myanimelist.net/character/31525/Satoshi_Tainaka
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/16/83873.jpg?s=a837fcee60d9f42a59077a8e4306f788
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/16/83873.webp?s=a837fcee60d9f42a59077a8e4306f788
+            small_image_url: https://cdn.myanimelist.net/images/characters/16/83873t.webp?s=a837fcee60d9f42a59077a8e4306f788
+        name: Tainaka, Satoshi
+      role: Supporting
+      favorites: 17
+      voice_actors:
+      - person:
+          mal_id: 168
+          url: https://myanimelist.net/people/168/Mika_Itou
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/12238.jpg?s=8d58679d65acca2078e3cefaa67f1414
+          name: Itou, Mika
+        language: Japanese
+      - person:
+          mal_id: 13703
+          url: https://myanimelist.net/people/13703/Bennett_Abara
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/36809.jpg?s=ad3cf052505e0188a4f60a8cef53b54e
+          name: Abara, Bennett
+        language: English
+      - person:
+          mal_id: 14857
+          url: https://myanimelist.net/people/14857/Tae_Yeol_Jeon
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/15449.jpg?s=29d57a11cb8acf0c8d99d41fc96541f9
+          name: Jeon, Tae Yeol
+        language: Korean
+      - person:
+          mal_id: 89972
+          url: https://myanimelist.net/people/89972/Danny_Ho
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/86990.jpg?s=fda7d8e40986f0080162db9446de6774
+          name: Ho, Danny
+        language: Mandarin
+    - character:
+        mal_id: 19569
+        url: https://myanimelist.net/character/19569/Sawako_Yamanaka
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/72659.jpg?s=38e172df21f4688b9f9253cc25538d2a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/72659.webp?s=38e172df21f4688b9f9253cc25538d2a
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/72659t.webp?s=38e172df21f4688b9f9253cc25538d2a
+        name: Yamanaka, Sawako
+      role: Supporting
+      favorites: 462
+      voice_actors:
+      - person:
+          mal_id: 126
+          url: https://myanimelist.net/people/126/Asami_Sanada
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/68873.jpg?s=b0aeae1157fe4ce34b1f79c2e4e8400e
+          name: Sanada, Asami
+        language: Japanese
+      - person:
+          mal_id: 1054
+          url: https://myanimelist.net/people/1054/Karen_Strassman
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/39759.jpg?s=7a95d74abbc0623100ab7a19e16cd8cd
+          name: Strassman, Karen
+        language: English
+      - person:
+          mal_id: 8549
+          url: https://myanimelist.net/people/8549/Antje_von_der_Ahe
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/71078.jpg?s=27e86c35497bbf485e1a077a59e33006
+          name: von der Ahe, Antje
+        language: German
+      - person:
+          mal_id: 14997
+          url: https://myanimelist.net/people/14997/Yeo-jin_Yoon
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/15831.jpg?s=c9f769a6b2d1fecd7030538d489f2172
+          name: Yoon, Yeo-jin
+        language: Korean
+      - person:
+          mal_id: 26505
+          url: https://myanimelist.net/people/26505/Jessie_Lambotte
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/66886.jpg?s=5b7ad361190e3210c7ccf5480ab7a6df
+          name: Lambotte, Jessie
+        language: French
+      - person:
+          mal_id: 11091
+          url: https://myanimelist.net/people/11091/Candice_Moore
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/3/15439.jpg?s=f4e53db88eb5c15e67ba375b833598a7
+          name: Moore, Candice
+        language: English
+      - person:
+          mal_id: 23451
+          url: https://myanimelist.net/people/23451/Seung-Hui_Yun
+          images:
+            jpg:
+              image_url: https://cdn.myanimelist.net/images/voiceactors/1/85825.jpg?s=6ef03f221bbfc94bf24da6924bb1b4a1
+          name: Yun, Seung-Hui
+        language: Korean
+  body_text: null
+  body_b64: null

@@ -1,0 +1,94 @@
+metadata:
+  captured_at: '2026-05-07T11:09:39Z'
+  label: blame
+  backend: mangadex
+  path_slug: manga_feed
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/32fdfe9b-6e11-4a13-9e36-dcd8ea77b4e4/feed?translatedLanguage%5B%5D=en&limit=2&order%5Bchapter%5D=desc
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=60, stale-while-revalidate=15
+    date: Thu, 07 May 2026 11:09:39 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '624'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 73d3e2f7-b89f-42f2-b941-f370bdc49281
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: a13f1f4f-b130-4aa4-8594-a986d8248c40
+      type: chapter
+      attributes:
+        volume: '37'
+        chapter: '325'
+        title: The Date And The Girlfriend (5)
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2025-04-13T01:51:29+00:00'
+        readableAt: '2025-04-13T01:51:29+00:00'
+        createdAt: '2025-04-13T01:51:29+00:00'
+        updatedAt: '2025-04-13T01:52:04+00:00'
+        version: 3
+        pages: 22
+      relationships:
+      - id: 155d7139-8d9a-49eb-bceb-d5e26db08b72
+        type: scanlation_group
+      - id: 32fdfe9b-6e11-4a13-9e36-dcd8ea77b4e4
+        type: manga
+      - id: 9b699d71-882d-4386-aeaa-ddf5523c73b0
+        type: user
+    - id: a9638a38-40bf-4552-9c28-616f0454254a
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '1'
+        title: My "Girlfriend", Chizuru Mizuhara
+        translatedLanguage: en
+        externalUrl: https://kodansha.us/reader/23060
+        isUnavailable: false
+        publishAt: '2023-12-24T19:20:47+00:00'
+        readableAt: '2023-12-24T19:20:47+00:00'
+        createdAt: '2023-12-24T19:20:46+00:00'
+        updatedAt: '2023-12-24T19:20:47+00:00'
+        version: 2
+        pages: 0
+      relationships:
+      - id: 1a650edc-fc18-417d-91d5-6c0df538973d
+        type: scanlation_group
+      - id: 32fdfe9b-6e11-4a13-9e36-dcd8ea77b4e4
+        type: manga
+      - id: e29214b2-9bd4-4e01-9c65-c75b3b0c95ef
+        type: user
+    limit: 2
+    offset: 0
+    total: 2
+  body_text: null
+  body_b64: null

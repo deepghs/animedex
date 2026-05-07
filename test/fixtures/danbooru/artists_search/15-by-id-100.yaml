@@ -1,0 +1,54 @@
+metadata:
+  captured_at: '2026-05-07T11:17:46Z'
+  label: by-id-100
+  backend: danbooru
+  path_slug: artists_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artists/100.json
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    Date: Thu, 07 May 2026 11:17:46 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    Cache-Control: no-cache
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f7fd1f59ef2fc98-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.6726, rails.cpu_time;dur=2.2305, rails.idle_time;dur=0.4422,
+      rails.sql_time;dur=0.5829, rails.view_time;dur=0.7065, rails.allocations;count=1195, request.allocations;count=1665,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.333, request.total_time;dur=3.7752, request.queue_time_0;dur=1.3242,
+      request.queue_time_1;dur=97.0001
+    x-runtime: '0.0037751541137695313'
+    via: <scrubbed-at-capture>
+    strict-transport-security: max-age=31536000; preload
+    Report-To: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    success: false
+    error: ActiveRecord::RecordNotFound
+    message: That record was not found.
+    backtrace:
+    - app/controllers/artists_controller.rb:16:in 'ArtistsController#show'
+    - app/logical/rack_server_timing.rb:19:in 'RackServerTiming#call'
+  body_text: null
+  body_b64: null

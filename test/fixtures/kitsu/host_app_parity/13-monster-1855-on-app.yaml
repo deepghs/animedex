@@ -1,0 +1,189 @@
+metadata:
+  captured_at: '2026-05-07T11:08:39Z'
+  label: monster-1855-on-app
+  backend: kitsu
+  path_slug: host_app_parity
+request:
+  method: GET
+  url: https://kitsu.app/api/edge/anime/1855
+  headers:
+    Accept: application/vnd.api+json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 11:08:39 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"f761ce99910c5b0b549b5d3ed0d9bf5b"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=63072000; includeSubDomains
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 27c80337-fd4b-4f78-bac5-a9f2ff5b2fcf
+    x-runtime: '0.100795'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      id: '1855'
+      type: anime
+      links:
+        self: https://kitsu.app/api/edge/anime/1855
+      attributes:
+        createdAt: '2013-02-20T16:29:25.417Z'
+        updatedAt: '2026-05-07T06:00:30.151Z'
+        slug: cosmo-police-justy
+        synopsis: |-
+          In the future humanity is spread throughout the galaxy. In their efforts to combat criminal espers the Cosmo Police are fortunate to have Justy on their side. However the esper criminals also know this and some of them are making plans for Cosmo Policeman Justy. As their leader says "There's only one way to kill the most powerful esper in the galaxy".
+          (Source: AniDB)
+        description: |-
+          In the future humanity is spread throughout the galaxy. In their efforts to combat criminal espers the Cosmo Police are fortunate to have Justy on their side. However the esper criminals also know this and some of them are making plans for Cosmo Policeman Justy. As their leader says "There's only one way to kill the most powerful esper in the galaxy".
+          (Source: AniDB)
+        coverImageTopOffset: 0
+        titles:
+          en_jp: Cosmo Police Justy
+          ja_jp: COSMO POLICE ジャスティ
+        canonicalTitle: Cosmo Police Justy
+        abbreviatedTitles: []
+        averageRating: '57.89'
+        ratingFrequencies:
+          '2': '8'
+          '3': '0'
+          '4': '12'
+          '5': '0'
+          '6': '13'
+          '7': '1'
+          '8': '29'
+          '9': '0'
+          '10': '47'
+          '11': '1'
+          '12': '31'
+          '13': '0'
+          '14': '30'
+          '15': '0'
+          '16': '12'
+          '17': '0'
+          '18': '1'
+          '19': '0'
+          '20': '4'
+        userCount: 415
+        favoritesCount: 0
+        startDate: '1985-07-20'
+        endDate: '1985-07-20'
+        nextRelease: null
+        popularityRank: 9434
+        ratingRank: 11987
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: OVA
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/1855/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/1855/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/1855/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/1855/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/1855/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: null
+                height: null
+              large:
+                width: null
+                height: null
+              small:
+                width: null
+                height: null
+              medium:
+                width: null
+                height: null
+        coverImage: null
+        episodeCount: 1
+        episodeLength: 44
+        totalLength: 44
+        youtubeVideoId: null
+        showType: OVA
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/genres
+            related: https://kitsu.app/api/edge/anime/1855/genres
+        categories:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/categories
+            related: https://kitsu.app/api/edge/anime/1855/categories
+        castings:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/castings
+            related: https://kitsu.app/api/edge/anime/1855/castings
+        installments:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/installments
+            related: https://kitsu.app/api/edge/anime/1855/installments
+        mappings:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/mappings
+            related: https://kitsu.app/api/edge/anime/1855/mappings
+        reviews:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/reviews
+            related: https://kitsu.app/api/edge/anime/1855/reviews
+        mediaRelationships:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/media-relationships
+            related: https://kitsu.app/api/edge/anime/1855/media-relationships
+        characters:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/characters
+            related: https://kitsu.app/api/edge/anime/1855/characters
+        staff:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/staff
+            related: https://kitsu.app/api/edge/anime/1855/staff
+        productions:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/productions
+            related: https://kitsu.app/api/edge/anime/1855/productions
+        quotes:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/quotes
+            related: https://kitsu.app/api/edge/anime/1855/quotes
+        episodes:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/episodes
+            related: https://kitsu.app/api/edge/anime/1855/episodes
+        streamingLinks:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/streaming-links
+            related: https://kitsu.app/api/edge/anime/1855/streaming-links
+        animeProductions:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/anime-productions
+            related: https://kitsu.app/api/edge/anime/1855/anime-productions
+        animeCharacters:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/anime-characters
+            related: https://kitsu.app/api/edge/anime/1855/anime-characters
+        animeStaff:
+          links:
+            self: https://kitsu.app/api/edge/anime/1855/relationships/anime-staff
+            related: https://kitsu.app/api/edge/anime/1855/anime-staff
+  body_text: null
+  body_b64: null

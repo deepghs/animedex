@@ -1,0 +1,126 @@
+metadata:
+  captured_at: '2026-05-07T11:02:36Z'
+  label: ghibli-rated-pg
+  backend: jikan
+  path_slug: anime_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime?q=Ghibli&rating=pg&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 11:02:36 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+      current_page: 1
+      items:
+        count: 1
+        total: 1
+        per_page: 3
+    data:
+    - mal_id: 2617
+      url: https://myanimelist.net/anime/2617/Ghiblies
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1679/138721.jpg
+          small_image_url: https://myanimelist.net/images/anime/1679/138721t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1679/138721l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1679/138721.webp
+          small_image_url: https://myanimelist.net/images/anime/1679/138721t.webp
+          large_image_url: https://myanimelist.net/images/anime/1679/138721l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Ghiblies
+      - type: Japanese
+        title: ギブリーズ
+      title: Ghiblies
+      title_english: null
+      title_japanese: ギブリーズ
+      title_synonyms: []
+      type: Special
+      source: Original
+      episodes: 2
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2000-04-08T00:00:00+00:00'
+        to: '2002-07-19T00:00:00+00:00'
+        prop:
+          from:
+            day: 8
+            month: 4
+            year: 2000
+          to:
+            day: 19
+            month: 7
+            year: 2002
+        string: Apr 8, 2000 to Jul 19, 2002
+      duration: 18 min per ep
+      rating: PG - Children
+      score: 6.34
+      scored_by: 2904
+      rank: 9070
+      popularity: 7891
+      members: 8141
+      favorites: 8
+      synopsis: Two Ghibli created shorts about the happenings in a fictional animation studio, presumably based to some extent
+        on their own.
+      background: 'The first was aired during a TV special about Ghibli, the second shown in theatres alongside ''The Cat
+        Returns''. Note that the animation studio in these shorts is not spelled ジブリ (hepburn: ''jiburi''), but ギブリ (hepburn:
+        ''giburi''), so pronounced with the hard ''gi'' of ''give'' rather than the ''ji'' of ''jigsaw'' used for Ghibli.
+        (Source: AniDB)'
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers: []
+      licensors: []
+      studios:
+      - mal_id: 21
+        type: anime
+        name: Studio Ghibli
+        url: https://myanimelist.net/anime/producer/21/Studio_Ghibli
+      genres:
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      explicit_genres: []
+      themes: []
+      demographics: []
+  body_text: null
+  body_b64: null
