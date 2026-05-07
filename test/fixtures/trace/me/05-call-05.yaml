@@ -29,20 +29,20 @@ response:
     ratelimit-remaining: '95'
     ratelimit-reset: '50'
     vary: Origin
-    via: 1.1 Caddy
+    via: <scrubbed-at-capture>
     x-ratelimit-limit: '100'
     x-ratelimit-remaining: '95'
     x-ratelimit-reset: '1778152561'
     cf-cache-status: DYNAMIC
-    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Nel: <scrubbed-at-capture>
     Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
     X-Content-Type-Options: nosniff
-    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Nk%2FZR2LlCd73YhfENyGmHCEay7hRx5sT%2BLJppY6pFCRP4JMidf4Cdb0ipI%2FlhtJsjfW7ldhjPWcdzUH2S6lFwxpvHJlb9ZjjtPtAm%2FZQ00PkgPk2CET1VQqw7AgRON8%3D"}]}'
+    Report-To: <scrubbed-at-capture>
     Content-Encoding: gzip
     Server: cloudflare
-    CF-RAY: 9f7fce24bb0917c2-KIX
+    CF-RAY: <scrubbed-at-capture>
   body_json:
-    id: 45.78.62.209
+    id: 203.0.113.42
     priority: 0
     concurrency: 1
     quota: 100

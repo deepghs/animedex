@@ -21,12 +21,11 @@ response:
     Transfer-Encoding: chunked
     Connection: keep-alive
     Server: cloudflare
-    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Nel: <scrubbed-at-capture>
     Cache-Control: no-cache, private
     X-RateLimit-Limit: '30'
     X-RateLimit-Remaining: '24'
-    Set-Cookie: laravel_session=dlkLN7Fg148Jf0v0PZ6yEqKCuylKBFizWgJPq4xv; expires=Thu, 07-May-2026 23:00:12 GMT; Max-Age=43200;
-      path=/; httponly
+    Set-Cookie: <scrubbed-at-capture>
     X-Frame-Options: SAMEORIGIN
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
@@ -35,9 +34,9 @@ response:
     Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
     Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
     cf-cache-status: DYNAMIC
-    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=SzkSXts6DExkV8%2FGqCXUXWWB%2FRl7BXvJRKiv8E0FACDHvYAqfJrvIGc1aZU0t7zwidYDCU4gzBaiuNyfFgbj7mifEpOKwQLVFzS2466n4A5lbsNBMvPcN8vVlNJO7i9Rw6dRdQ%3D%3D"}]}'
+    Report-To: <scrubbed-at-capture>
     Content-Encoding: gzip
-    CF-RAY: 9f7fb83a7c8fd1ca-KIX
+    CF-RAY: <scrubbed-at-capture>
   body_json:
     data:
       Media:

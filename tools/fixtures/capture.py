@@ -44,7 +44,9 @@ for each upstream.
 from __future__ import annotations
 
 import base64
+import ipaddress
 import json
+import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -56,6 +58,121 @@ import yaml
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 FIXTURES_ROOT = PROJECT_ROOT / "test" / "fixtures"
+
+
+# Headers that may carry the captor's identity, network position, or
+# host-side fingerprints. These get a fixed placeholder before the
+# fixture is committed (review M1). Add new entries lowercase here;
+# the matcher is case-insensitive. The list deliberately stays
+# narrow: it matches the "do not commit *to git*" set, not every
+# possible PII vector. Wider stripping happens at runtime in the
+# dispatcher's redact_headers (review M3).
+_HEADERS_TO_SCRUB_AT_CAPTURE = frozenset(
+    {
+        # Identity / network-position headers.
+        "set-cookie",
+        "x-forwarded-for",
+        "x-real-ip",
+        "cf-connecting-ip",
+        "via",
+        # Cloudflare bookkeeping. These carry opaque per-request
+        # tokens which often embed IPs and request fingerprints. They
+        # are noisy in PR diffs and offer nothing the test layer
+        # depends on; scrub wholesale.
+        "content-security-policy-report-only",
+        "report-to",
+        "nel",
+        "cf-ray",
+        "cf-mitigated",
+    }
+)
+_SCRUB_PLACEHOLDER = "<scrubbed-at-capture>"
+
+
+_PLACEHOLDER_IPV4 = "203.0.113.42"  # RFC-5737 TEST-NET-3
+_IPV4_PATTERN = re.compile(r"\b(\d{1,3}(?:\.\d{1,3}){3})\b")
+
+
+def _is_public_ipv4(text: str) -> bool:
+    """Return ``True`` if ``text`` parses as an IPv4 address that is
+    public (i.e. not private, loopback, link-local, or in the RFC-5737
+    documentation ranges).
+
+    :param text: Candidate dotted-quad string.
+    :type text: str
+    :return: Whether the string is a public IPv4.
+    :rtype: bool
+    """
+    try:
+        addr = ipaddress.IPv4Address(text)
+    except (ipaddress.AddressValueError, ValueError):
+        return False
+    if addr.is_private or addr.is_loopback or addr.is_link_local:
+        return False
+    if (
+        addr in ipaddress.IPv4Network("192.0.2.0/24")
+        or addr in ipaddress.IPv4Network("198.51.100.0/24")
+        or addr in ipaddress.IPv4Network("203.0.113.0/24")
+    ):
+        return False
+    return True
+
+
+def replace_public_ips_with_placeholder(text: str, placeholder: str = _PLACEHOLDER_IPV4) -> str:
+    """Replace every public IPv4 address in ``text`` with ``placeholder``.
+
+    Per review M1: hard-coding a list of "known captor IPs" leaks
+    those very IPs into the script that scrubs them. Instead, walk
+    the text generically: anything that looks like a public IPv4 is
+    replaced with the RFC-5737 documentation address. Private,
+    loopback, link-local, and RFC-5737-reserved addresses are left
+    intact - they are documentation/test markers and carry no
+    real-world identity.
+
+    Used both at capture time (response body scan) and by
+    :mod:`tools.fixtures.scrub_existing` (bulk back-fill of older
+    fixtures captured before this scrub landed).
+
+    :param text: Source string.
+    :type text: str
+    :param placeholder: Replacement IP address.
+    :type placeholder: str
+    :return: ``text`` with every public IPv4 replaced.
+    :rtype: str
+    """
+
+    def _sub(match):
+        candidate = match.group(1)
+        return placeholder if _is_public_ipv4(candidate) else candidate
+
+    return _IPV4_PATTERN.sub(_sub, text)
+
+
+def scrub_capture_response_headers(headers: Dict[str, str]) -> Dict[str, str]:
+    """Return a copy of ``headers`` with capture-time-sensitive values
+    replaced by :data:`_SCRUB_PLACEHOLDER`.
+
+    Per review M1: Shikimori's DDoS-Guard ``Set-Cookie: __ddg9_=<ip>``
+    embeds the captor's egress IP in the response; persisting that to
+    git history leaks the contributor's home or CI IP forever. The
+    same risk exists for ``X-Forwarded-For``, ``X-Real-IP``,
+    ``CF-Connecting-IP``, and ``Via`` echoes from intermediate proxies.
+
+    The original ``headers`` dict is not mutated; the call returns a
+    fresh dict.
+
+    :param headers: Response headers as captured.
+    :type headers: dict[str, str]
+    :return: New dict with sensitive values replaced.
+    :rtype: dict[str, str]
+    """
+    out: Dict[str, str] = {}
+    for name, value in headers.items():
+        if name.lower() in _HEADERS_TO_SCRUB_AT_CAPTURE:
+            out[name] = _SCRUB_PLACEHOLDER
+        else:
+            out[name] = value
+    return out
 
 
 # Configure PyYAML so long string scalars are emitted in literal-block
@@ -87,6 +204,28 @@ def slugify(text: str) -> str:
     return "".join(safe).strip("_") or "fixture"
 
 
+def _scrub_public_ips_in_obj(obj: Any) -> Any:
+    """Recursively walk a YAML-shaped value and replace public IPv4
+    addresses inside any string with the documentation placeholder.
+
+    Used by :func:`_classify_body` to scrub body fields at capture
+    time (review M1). Lists and dicts are walked structurally; ints,
+    floats, booleans, and ``None`` pass through unchanged.
+
+    :param obj: Object to walk.
+    :type obj: Any
+    :return: A structurally identical object with strings scrubbed.
+    :rtype: Any
+    """
+    if isinstance(obj, str):
+        return replace_public_ips_with_placeholder(obj)
+    if isinstance(obj, list):
+        return [_scrub_public_ips_in_obj(x) for x in obj]
+    if isinstance(obj, dict):
+        return {k: _scrub_public_ips_in_obj(v) for k, v in obj.items()}
+    return obj
+
+
 def _classify_body(body_bytes: bytes, content_type: str) -> Dict[str, Any]:
     """Decide which of body_json / body_text / body_b64 to populate.
 
@@ -94,6 +233,11 @@ def _classify_body(body_bytes: bytes, content_type: str) -> Dict[str, Any]:
     so PR diffs read like data, not strings. Text-but-not-JSON
     responses become ``body_text`` (preserving newlines via literal
     block scalar). Anything else falls through to ``body_b64``.
+
+    Public IPv4 addresses anywhere in the body get replaced with the
+    RFC-5737 documentation placeholder (review M1) so a captor's IP
+    does not leak through endpoints like Trace.moe ``/me`` or any
+    upstream that echoes the caller's address in the body.
 
     :param body_bytes: Raw response body.
     :type body_bytes: bytes
@@ -114,14 +258,18 @@ def _classify_body(body_bytes: bytes, content_type: str) -> Dict[str, Any]:
         decoded = body_bytes.decode("utf-8")
         try:
             parsed = json.loads(decoded)
-            out["body_json"] = parsed
+            out["body_json"] = _scrub_public_ips_in_obj(parsed)
             return out
         except json.JSONDecodeError:
             pass
         # Plain text (XML for ANN, HTML for some Cloudflare challenges).
-        out["body_text"] = decoded
+        out["body_text"] = replace_public_ips_with_placeholder(decoded)
         return out
     except UnicodeDecodeError:
+        # Binary content - we cannot scrub safely without changing the
+        # bytes shape. Persisting verbatim is acceptable: the inputs
+        # we capture as binary are images, and our binary fixtures
+        # are intentionally tiny (Trace.moe accepts 4-byte sentinels).
         out["body_b64"] = base64.b64encode(body_bytes).decode("ascii")
         return out
 
@@ -138,7 +286,7 @@ def capture(
     json_body: Optional[Any] = None,
     raw_body: Optional[bytes] = None,
     timeout: float = 30.0,
-    pace_seconds: float = 0.0,
+    pace_seconds: float = 1.0,
     overwrite: bool = False,
 ) -> Path:
     """Issue one request, persist the (request, response) pair as YAML.
@@ -173,7 +321,14 @@ def capture(
     :param timeout: Request timeout.
     :type timeout: float
     :param pace_seconds: Sleep before issuing this call (use for
-                          per-backend rate-limit pacing).
+                          per-backend rate-limit pacing). Defaults to
+                          ``1.0`` (review m8): a forgotten pace value
+                          should *not* flood an upstream. Per-backend
+                          scripts should explicitly raise this for
+                          slower upstreams (ANN, MangaDex At-Home);
+                          they may lower it if the upstream is known
+                          to tolerate higher rates and the contributor
+                          confirmed it before merging.
     :type pace_seconds: float
     :param overwrite: When ``False`` (default), an existing fixture
                        with the same path is left alone and the file
@@ -232,7 +387,11 @@ def capture(
         },
         "response": {
             "status": response.status_code,
-            "headers": dict(response.headers),
+            # Scrub at capture time so the YAML committed to git never
+            # carries the captor's IP, session cookies, or proxy
+            # fingerprint. See ``scrub_capture_response_headers`` for
+            # the full rationale (review M1).
+            "headers": scrub_capture_response_headers(dict(response.headers)),
             **body_classification,
         },
     }

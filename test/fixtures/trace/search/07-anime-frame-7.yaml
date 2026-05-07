@@ -30,17 +30,17 @@ response:
     ratelimit-remaining: '78'
     ratelimit-reset: '3'
     vary: Origin, Accept-Encoding
-    via: 1.1 Caddy
+    via: <scrubbed-at-capture>
     x-ratelimit-limit: '100'
     x-ratelimit-remaining: '78'
     x-ratelimit-reset: '1778152561'
     cf-cache-status: DYNAMIC
-    Nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+    Nel: <scrubbed-at-capture>
     Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
     X-Content-Type-Options: nosniff
-    Report-To: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=TN8bNmXxOUdf6L%2BPshmDjksnD1JceaBFuxHWe9TA8J4RPDRpJwviu5O2o%2FdALFyp1adjyw7abcazlYmGaDoLJMZdStNU%2FHv7vgrpXq3yVdK57kH%2FyxikvSnB7STel2o%3D"}]}'
+    Report-To: <scrubbed-at-capture>
     Server: cloudflare
-    CF-RAY: 9f7fcf4c7ca41b19-KIX
+    CF-RAY: <scrubbed-at-capture>
   body_json:
     frameCount: 1678055588
     error: ''
