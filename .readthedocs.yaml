@@ -1,0 +1,29 @@
+# Read the Docs configuration file
+# https://docs.readthedocs.io/en/stable/config-file/v2.html
+
+# Required
+version: 2
+
+# Set the OS, Python version, and other tools the build container needs.
+build:
+  os: ubuntu-24.04
+  tools:
+    python: "3.11"
+
+# Output formats. The HTML build is implied by the `sphinx:` block below.
+formats:
+  - pdf
+
+# Build the Sphinx documentation in docs/source/.
+sphinx:
+  configuration: docs/source/conf.py
+  fail_on_warning: false
+
+# Install the project plus its documentation extras so autodoc can import
+# the package.
+python:
+  install:
+    - requirements: requirements.txt
+    - requirements: requirements-doc.txt
+    - method: pip
+      path: .
