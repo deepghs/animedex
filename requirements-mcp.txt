@@ -1,0 +1,7 @@
+# Optional MCP runtime dependencies.
+#
+# Phase 0 ships only the duck-typed `register_animedex_tools` entry
+# point and the lightweight `@mcp_tool` decorator. The real binding
+# to the upstream Model Context Protocol package lands in Phase 8
+# (per `plans/04 §10`) and will pin the actual server library here.
+mcp>=1.0

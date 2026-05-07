@@ -71,10 +71,40 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.config",
     "animedex.config.meta",
     "animedex.config.buildmeta",
+    "animedex.config.profile",
     "animedex.entry",
     "animedex.entry.cli",
     "animedex.diag",
     "animedex.diag.selftest",
+    "animedex.models",
+    "animedex.models.common",
+    "animedex.models.anime",
+    "animedex.models.manga",
+    "animedex.models.character",
+    "animedex.models.art",
+    "animedex.models.trace",
+    "animedex.models.quote",
+    "animedex.transport",
+    "animedex.transport.useragent",
+    "animedex.transport.ratelimit",
+    "animedex.transport.read_only",
+    "animedex.transport.http",
+    "animedex.cache",
+    "animedex.cache.sqlite",
+    "animedex.auth",
+    "animedex.auth.store",
+    "animedex.auth.inmemory_store",
+    "animedex.auth.keyring_store",
+    "animedex.render",
+    "animedex.render.json_renderer",
+    "animedex.render.tty",
+    "animedex.render.field_projection",
+    "animedex.render.jq_filter",
+    "animedex.policy",
+    "animedex.policy.lint",
+    "animedex.mcp",
+    "animedex.mcp.tool_decorator",
+    "animedex.mcp.register",
 )
 
 
@@ -93,7 +123,7 @@ def _bundle_dir() -> str:
     :return: The PyInstaller temporary extract directory, or ``""``.
     :rtype: str
     """
-    return getattr(sys, "_MEIPASS", "") or ""
+    return getattr(sys, "_MEIPASS", "") or ""  # pragma: no cover - frozen-only branch
 
 
 def _format_environment_lines() -> List[str]:
@@ -135,7 +165,7 @@ def _format_package_lines() -> List[str]:
             import animedex as _pkg
 
             origin = getattr(_pkg, "__file__", "?") or "?"
-        except Exception:
+        except Exception:  # pragma: no cover - defensive; reaching here means animedex itself broke after the import-time `from animedex import ...` succeeded.
             origin = "?"
         return [
             f"  Title:         {__TITLE__}",
@@ -252,7 +282,9 @@ def _check_cli_subcommands() -> List[Tuple[str, bool, str]]:
     # that even if discovery fails we still have those datapoints.
     try:
         commands = sorted(animedex_cli.commands.keys())
-    except Exception:
+    except (
+        Exception
+    ):  # pragma: no cover - defensive; click.Group.commands is a plain dict, sorting its keys never raises in practice.
         results.append(("cli subcommand discovery", False, traceback.format_exc().rstrip()))
         return results
 
@@ -394,7 +426,7 @@ def run_selftest(stream: io.TextIOBase = None) -> int:
         else:
             print(f"  {CHECK_FAIL} animedex selftest detected failures.", file=stream)
             return 1
-    except Exception:
+    except Exception:  # pragma: no cover - runner-level safety net; every checkable path is already wrapped in `_safely`, so reaching this branch means the diagnostic itself is broken.
         # The runner is supposed to be unkillable. If anything escapes
         # the per-check guards above, log it and exit 2 so callers know
         # the report itself is suspect.

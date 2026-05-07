@@ -30,16 +30,22 @@ The naive design adds flags like `--nsfw`, `--allow-pirated-readers`, `--write`,
 
 Every constraint in the codebase belongs in exactly one of these tiers.
 
-### P1 - Protocol contract: hard-coded, non-overridable
+### P1 - Protocol contract
 
-Rules whose violation gets the user punished by a third party.
+Rules whose violation gets the user punished by a third party. Two sub-tiers, distinguished by whether a caller can override the default and inherit the consequences.
 
-- Rate limits at the level the upstream enforces. AniDB will ban the IP for 24 hours if you ignore its "one packet every 4 seconds" cap. That is not a preference, it is a fact about the protocol.
-- Mandatory headers (`User-Agent` for Shikimori / MangaDex / Danbooru; forbidden `Via` for MangaDex).
-- Token storage in the OS keyring. Leaking a token via a dotfile is a security incident, not a UX choice.
-- Read-only constraint on `anime api` (see plan 03): even the escape hatch must not allow `DELETE`/`PATCH`/`POST` mutations against user-account endpoints, because we promise the project is read-only.
+**P1a - hard-coded, non-overridable.** The transport unconditionally applies these. There is no flag, no parameter, no escape hatch:
 
-The user cannot turn these off. They can choose to slow them down further (`--rate slow`), but they cannot bypass them.
+- Rate limits at the level the upstream enforces. AniDB will ban the IP for 24 hours if you ignore its "one packet every 4 seconds" cap. That is not a preference, it is a fact about the protocol. Callers can choose to slow them down further (`--rate slow`), but they cannot bypass them.
+- Forbidden headers (the MangaDex `Via` strip): a header that, when present, fails the request outright. The transport scrubs it from outgoing headers regardless of caller intent.
+- Read-only constraint on `animedex api` (see plan 03): even the escape hatch must not allow `DELETE`/`PATCH`/`POST` mutations against user-account endpoints, because we promise the project is read-only.
+
+**P1b - default-injected, caller-overridable.** The transport ships a contract-satisfying default; the unflagged path is honest and complete. A caller who explicitly supplies an alternative value is exercising informed choice and inherits the upstream's response. We do not silently override caller intent:
+
+- Mandatory headers (`User-Agent` for Shikimori / MangaDex / Danbooru). The default UA is honest, identifies animedex, and includes a contact email; that is what 99% of users want and need. A caller who passes their own `User-Agent` (to identify their own bot, or to test what the upstream does with empty / spoofed values) gets exactly that string on the wire. If Shikimori 403s the result, the caller's choice produced the caller's outcome - same logic as `rating:e` Danbooru queries elsewhere in this document.
+- Token storage. The default lands the credential in the OS keyring; a caller who plugs in a custom `TokenStore` (e.g., for headless CI or a remote vault) replaces the default. The project does not ship a plain-text dotfile fallback, which is the only behaviour the §0 principle truly forbids.
+
+The taxonomy used to lump everything into a single "non-overridable" bucket; it now reflects the implementation honestly. The principle from §0 is the test: when the user makes an explicit choice, animedex respects it; when the user makes no choice, animedex picks the default that satisfies the contract.
 
 ### P2 - Content preference: do not impose a default
 
@@ -153,18 +159,29 @@ We do not trust this convention to enforce itself by virtue. Concrete mechanisms
 - The `anime api` escape hatch carries no extra confirmation. Read-only HTTP methods only, but no content-class gating.
 - Source choice (`--source anilist|jikan|kitsu`) is *not* a safety flag; it is a data-source preference and stays.
 
-## 7. Edge: Things Still Hard-Coded
+## 7. Edge: Hard-Coded vs. Default-Injected
 
-To prevent confusion, here is the explicit list of things that remain hard-coded under this principle. Every one of them is a P1 concern.
+To prevent confusion, here is the explicit list of project-enforced contracts, split into the two sub-tiers from §1 (P1a unconditional, P1b default-overridable).
 
-| Constraint | Why P1 |
+### P1a (unconditional)
+
+| Constraint | Why hard-coded |
 |---|---|
 | AniDB <= 0.5 packet / s rate limit | violation -> 24 h IP ban |
-| MangaDex User-Agent header | violation -> 4xx + risk of ToS escalation |
-| Shikimori User-Agent header | violation -> 403 |
-| MangaDex `Via` header forbidden | violation -> rejected request |
+| All other per-backend rate-limit caps (token-bucket) | violation -> 429 / temporary block |
 | Trace.moe concurrency=1 (free tier) | violation -> 402/429 |
-| Token storage in OS keyring | violation -> credential leak |
-| Read-only HTTP methods on `anime api` | promise of the project |
+| MangaDex `Via` header forbidden | violation -> rejected request; we strip on egress |
+| Read-only HTTP methods on `animedex api` | project promise |
 
-Nothing else.
+These do not have a caller-facing override path. The user can slow rate limits further (`--rate slow`); they cannot speed them up or skip the read-only firewall.
+
+### P1b (default-injected, caller-overridable)
+
+| Constraint | Default behaviour | If caller overrides |
+|---|---|---|
+| MangaDex User-Agent header | project UA injected | user's UA goes on the wire; MangaDex may 4xx |
+| Shikimori User-Agent header | project UA injected | user's UA goes on the wire; Shikimori may 403 |
+| Danbooru User-Agent header | project UA injected (honest, non-browser-pretending) | user's UA goes on the wire; Danbooru may rate-limit harder |
+| Token storage backend | OS keyring | caller-supplied `TokenStore` (in-memory, encrypted file, remote vault, ...) replaces the default; plain-text dotfile fallback is **never** shipped |
+
+The default keeps users safe; the override keeps them sovereign. A caller who passes `headers={"User-Agent": "browser/x"}` through the transport gets exactly that on the wire, with no warning, by design - same logic as a caller who passes `rating:e` to Danbooru. The §0 principle (inform, do not gate) bars us from silently policing caller-supplied headers.

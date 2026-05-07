@@ -16,7 +16,7 @@ This is the top-level rule and overrides every later guideline if they ever conf
 - We do warn. Every command's docstring states the upstream, its rate limit, its content classification (where relevant), and its legal posture (where relevant). Warnings are informational; they never block.
 - Agents read these docstrings; their alignment training does the rest. See `plans/02-design-policy-as-docstring.md`.
 
-The only constraints animedex enforces unilaterally are **technical contracts** - rate limits the upstream actually punishes, mandatory headers, the project-scope read-only HTTP method set. These are physical realities, not value choices, and the user cannot opt out because doing so would simply break the upstream interaction.
+The only constraints animedex enforces **unilaterally and unconditionally** are the rate limits the upstream actually punishes, the project-scope read-only HTTP method set on the `animedex api` passthrough, and the MangaDex `Via`-header strip (a forbidden header, not a missing one). These are physical realities, not value choices, and the user cannot opt out because doing so would simply break the upstream interaction. Other technical contracts - notably the `User-Agent` headers Shikimori, MangaDex, and Danbooru require - are **default-injected** by the transport layer so the unflagged path satisfies them, but a caller who **explicitly** supplies their own value (perhaps to identify their own bot, perhaps to test, perhaps to break themselves on purpose) is exercising informed choice and inherits the upstream's response. The default keeps users safe; the override keeps them sovereign. We do not treat a caller-supplied UA as something to override on their behalf.
 
 Over-protection is itself a bug. When in doubt, choose the option that respects the user's stated intent.
 
@@ -139,12 +139,15 @@ The shape below is mandatory. Skipping any step is how regressions reach `main`.
 2. **Reformat:** run `make format`. This applies `ruff format` then `ruff check --fix`. The diff after this step is what you commit.
 3. **If `make format` changed anything**, the change either touched code style or hid a real diff under cosmetic noise. **Re-run `make test`** in that case, because the reformat may have moved code across lines or changed import order, and we want the test suite to confirm nothing broke.
 4. **Run the regression suite:** `make test`. This is the unit-test suite, which doubles as a regression test. After any code change, run it before claiming the change is finished. A passing suite is the only acceptable evidence that no behaviour was disturbed.
-5. **For changes affecting the CLI entry points or the packaged distribution**, also run `make build && make test_cli`. This builds the PyInstaller binary and exercises it end-to-end via subprocess. Skipping this on a CLI-touching change is how broken installers ship.
-6. **Then commit.** See section 4 for the commit-message style.
+5. **Regenerate API docs:** run `make rst_auto`. The `docs/source/api_doc/` tree is auto-derived from the Python sources by `auto_rst.py`; any change that adds, removes, renames, or reshapes a module, class, or function leaves it stale. Re-running `make rst_auto` re-emits the affected `.rst` files. **Commit the generated diff in the same change as the source edit** so docs and code never drift; reviewers should be able to read either side and trust they match. CI does not yet enforce this, so the discipline lives here. Use `RANGE_DIR=<sub-path>` to scope the regeneration when the change is local.
+6. **For changes affecting the CLI entry points or the packaged distribution**, also run `make build && make test_cli`. This builds the PyInstaller binary and exercises it end-to-end via subprocess. Skipping this on a CLI-touching change is how broken installers ship.
+7. **Then commit.** See section 4 for the commit-message style.
 
 In a busy development session, the formatter step is the one most often skipped. CI enforces `make format-check` (a non-modifying variant), so an unformatted change will fail the build; running `make format` locally is faster than the CI feedback loop. The regression suite is enforced the same way.
 
 The "re-run tests after format" rule is not paranoia. `ruff format` is conservative, but it does collapse multi-line statements, normalise trailing commas, and reorder imports under `--fix`. Any of those can in principle change runtime behaviour (typically when a side-effecting module's import is reordered relative to a sentinel-based late binding). Cheap to re-run, expensive to miss.
+
+The `make rst_auto` rule is a natural follow-on. When a function is added, renamed, or removed, the generated `.rst` for the containing module changes. If the source edit lands without the `.rst` regen, the published docs site (and the inline reST cross-references in other modules) silently drifts. Running it locally and committing the diff in the same change keeps the two halves of the codebase coherent. The cost is small (the generator is fast and only re-emits files whose source mtime changed); the benefit is that anyone reading the published API page sees the current code.
 
 ## 8. Adding a Backend
 
@@ -291,7 +294,7 @@ def function_name(param1: Type1, param2: Type2 = default) -> ReturnType:
 
 ### Backend-command-specific extension
 
-Every CLI subcommand or MCP tool function adds three structural blocks inside its docstring (this is what the lint enforces):
+Every CLI subcommand or MCP tool function adds three structural blocks inside its docstring (this is what the lint enforces). The rule applies uniformly to **every** Click command in the registered tree, including the substrate utilities (`status`, `selftest`) that do not contact a remote backend. For those, name the backend honestly as `animedex (local)` and the rate limit as `not applicable`; the Agent Guidance block still describes when an agent should reach for the command and what to expect from it. The motivation is consistency: agents read the catalogue once at session start (via `animedex --agent-guide` or the MCP tool listing), and a hole in the catalogue would let a substrate command silently disappear from an agent's mental model. Carving an exemption for "non-backend commands" is also a slippery slope toward "this command is too small to document"; we do not take that slope.
 
 ```python
 def search_art(tags: str, limit: int = 20) -> "ArtSearchResult":
