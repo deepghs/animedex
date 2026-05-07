@@ -26,19 +26,19 @@ Example::
 """
 
 #: Title of this project (should be `animedex`).
-__TITLE__: str = 'animedex'
+__TITLE__: str = "animedex"
 
 #: Version of this project.
-__VERSION__: str = '0.0.1'
+__VERSION__: str = "0.0.1"
 
 #: Short description of the project, will be included in ``setup.py``.
 __DESCRIPTION__: str = (
-    'A read-only, multi-source, gh-flavored command-line interface for anime '
-    'and manga metadata, designed for both humans and LLM agents.'
+    "A read-only, multi-source, gh-flavored command-line interface for anime "
+    "and manga metadata, designed for both humans and LLM agents."
 )
 
 #: Author of this project.
-__AUTHOR__: str = 'narugo1992'
+__AUTHOR__: str = "narugo1992"
 
 #: Email of the author.
-__AUTHOR_EMAIL__: str = 'narugo1992@deepghs.org'
+__AUTHOR_EMAIL__: str = "narugo1992@deepghs.org"

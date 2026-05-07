@@ -18,3 +18,9 @@ status\_command
 .. autofunction:: status_command
 
 
+selftest\_command
+-----------------------------------------------------
+
+.. autofunction:: selftest_command
+
+

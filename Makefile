@@ -1,4 +1,4 @@
-.PHONY: help package clean test unittest lint format docs rst_auto
+.PHONY: help package clean test unittest lint format format-check docs rst_auto build test_cli
 
 PYTHON := $(shell which python)
 
@@ -9,6 +9,15 @@ BUILD_DIR    := ${PROJ_DIR}/build
 DIST_DIR     := ${PROJ_DIR}/dist
 TEST_DIR     := ${PROJ_DIR}/test
 SRC_DIR      := ${PROJ_DIR}/animedex
+TOOLS_DIR    := ${PROJ_DIR}/tools
+
+# PyInstaller output. Windows adds the .exe suffix; honour ${IS_WIN} when
+# CI sets it, otherwise infer from the operating system.
+ifeq ($(OS),Windows_NT)
+PYINSTALLER_BIN := ${DIST_DIR}/animedex.exe
+else
+PYINSTALLER_BIN := ${DIST_DIR}/animedex
+endif
 
 RANGE_DIR        ?= .
 RANGE_TEST_DIR   := ${TEST_DIR}/${RANGE_DIR}
@@ -29,26 +38,48 @@ help:
 	@echo "====================="
 	@echo ""
 	@echo "Building and packaging:"
-	@echo "  make package      Build sdist and wheel into dist/"
-	@echo "  make clean        Remove build/, dist/, *.egg-info"
+	@echo "  make package         Build sdist and wheel into dist/"
+	@echo "  make build           Build a standalone PyInstaller binary into dist/"
+	@echo "  make clean           Remove build/, dist/, *.egg-info, .spec, doc build/"
 	@echo ""
 	@echo "Testing:"
-	@echo "  make test         Run pytest unit tests"
-	@echo "                    Options: RANGE_DIR=<sub-path> COV_TYPES='xml term-missing'"
-	@echo "                             MIN_COVERAGE=<percent> WORKERS=<n>"
-	@echo "  make lint         Run flake8"
+	@echo "  make test            Run pytest unit tests (regression suite)"
+	@echo "                       Options: RANGE_DIR=<sub-path> COV_TYPES='xml term-missing'"
+	@echo "                                MIN_COVERAGE=<percent> WORKERS=<n>"
+	@echo "  make test_cli        Run the post-build subprocess smoke-test against dist/animedex"
+	@echo "  make lint            Run flake8"
+	@echo "  make format          Reformat source + tests with ruff (line-length 120)"
+	@echo "  make format-check    Verify formatting without modifying files (CI use)"
 	@echo ""
 	@echo "Documentation:"
-	@echo "  make rst_auto     Regenerate docs/source/api_doc/*.rst from Python sources"
-	@echo "                    Options: RANGE_DIR=<sub-path> to limit the scan"
-	@echo "  make docs         Build the Sphinx HTML site (docs/build/html/)"
+	@echo "  make rst_auto        Regenerate docs/source/api_doc/*.rst from Python sources"
+	@echo "                       Options: RANGE_DIR=<sub-path> to limit the scan"
+	@echo "  make docs            Build the Sphinx HTML site (docs/build/html/)"
 	@echo ""
 
 package:
 	$(PYTHON) -m build --sdist --wheel --outdir ${DIST_DIR}
 
+# Build a single-file standalone binary using PyInstaller.
+# Requires `pip install -r requirements-build.txt` and editable install.
+build:
+	$(PYTHON) -m PyInstaller \
+		--onefile \
+		--name animedex \
+		--noconfirm \
+		--clean \
+		--collect-submodules animedex \
+		animedex_cli.py
+	@echo "Built: ${PYINSTALLER_BIN}"
+
+# Subprocess-based smoke test of the freshly built binary. Imports nothing
+# from the project at runtime; uses tools/test_cli.py as a stdlib-only
+# harness so the same script can run on the build host or in CI.
+test_cli:
+	$(PYTHON) -m tools.test_cli ${PYINSTALLER_BIN}
+
 clean:
-	rm -rf ${DIST_DIR} ${BUILD_DIR} *.egg-info
+	rm -rf ${DIST_DIR} ${BUILD_DIR} *.egg-info animedex.spec
 	$(MAKE) -C "${DOC_DIR}" clean
 
 test: unittest
@@ -64,6 +95,16 @@ unittest:
 
 lint:
 	flake8 ${SRC_DIR} ${TEST_DIR}
+
+# Reformat the tree in place (intended pre-commit hook).
+format:
+	ruff format ${SRC_DIR} ${TEST_DIR}
+	ruff check --fix ${SRC_DIR} ${TEST_DIR}
+
+# Verify formatting without modifying anything; suitable for CI.
+format-check:
+	ruff format --check ${SRC_DIR} ${TEST_DIR}
+	ruff check ${SRC_DIR} ${TEST_DIR}
 
 # Aggregate target: regenerate all RST API docs from the source tree.
 # RANGE_DIR can scope the run.

@@ -10,6 +10,7 @@ animedex
     :maxdepth: 3
 
     config/index
+    diag/index
     entry/index
 
 \_\_all\_\_

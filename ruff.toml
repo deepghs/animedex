@@ -1,0 +1,12 @@
+# Ruff configuration for animedex.
+# https://docs.astral.sh/ruff/settings/
+#
+# Only a single deviation from defaults: a 120-column line length, which
+# matches modern terminal/editor widths and is a deliberate relaxation of
+# Ruff's 88-column default.
+#
+# Everything else (rule selection, format style) is left at the defaults.
+# Tightenings live in dedicated commits with rationale; see AGENTS.md.
+
+line-length = 120
+target-version = "py37"

@@ -36,5 +36,121 @@ jobs:
       - name: Upload built artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts-source-pack
+          name: animedex-source-pack
           path: ./dist/*
+
+  build_cli:
+    name: Build PyInstaller binary (stage 1)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - 'ubuntu-22.04'
+          - 'windows-2022'
+          - 'macos-14'
+        python-version:
+          - '3.11'
+    steps:
+      - name: Resolve OS label
+        id: oslabel
+        shell: bash
+        run: |
+          case "${{ matrix.os }}" in
+            ubuntu*)  echo "name=Linux"   >> "$GITHUB_OUTPUT" ;;
+            windows*) echo "name=Windows" >> "$GITHUB_OUTPUT" ;;
+            macos*)   echo "name=MacOS"   >> "$GITHUB_OUTPUT" ;;
+            *)        echo "name=Unknown" >> "$GITHUB_OUTPUT" ;;
+          esac
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+      - name: Set up python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies (runtime + build + dev install)
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-build.txt
+          pip install -e .
+      - name: Show environment
+        shell: bash
+        run: |
+          python -V
+          pip --version
+      - name: Build the standalone binary
+        shell: bash
+        run: |
+          make build
+          ls -al dist
+      - name: Smoke-test the binary in the build environment
+        shell: bash
+        run: |
+          make test_cli
+      - name: Upload binary artifact for stage 2
+        uses: actions/upload-artifact@v4
+        with:
+          name: animedex-${{ steps.oslabel.outputs.name }}-binary
+          path: dist/animedex*
+          if-no-files-found: error
+
+  smoke_clean:
+    name: Clean-environment smoke test (stage 2; no Python install)
+    needs: [build_cli]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - 'ubuntu-22.04'
+          - 'windows-2022'
+          - 'macos-14'
+    steps:
+      - name: Resolve OS label
+        id: oslabel
+        shell: bash
+        run: |
+          case "${{ matrix.os }}" in
+            ubuntu*)  echo "name=Linux"   >> "$GITHUB_OUTPUT" ;;
+            windows*) echo "name=Windows" >> "$GITHUB_OUTPUT" ;;
+            macos*)   echo "name=MacOS"   >> "$GITHUB_OUTPUT" ;;
+            *)        echo "name=Unknown" >> "$GITHUB_OUTPUT" ;;
+          esac
+      - name: Download stage-1 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: animedex-${{ steps.oslabel.outputs.name }}-binary
+          path: ./bin
+      - name: Inspect downloaded artifact
+        shell: bash
+        run: |
+          ls -la ./bin
+      - name: Locate the binary
+        id: bin
+        shell: bash
+        run: |
+          if [ -f ./bin/animedex.exe ]; then
+            echo "path=./bin/animedex.exe" >> "$GITHUB_OUTPUT"
+          elif [ -f ./bin/animedex ]; then
+            chmod +x ./bin/animedex
+            echo "path=./bin/animedex" >> "$GITHUB_OUTPUT"
+          else
+            echo "[FAIL] Binary not found in ./bin"
+            exit 1
+          fi
+      - name: --version
+        shell: bash
+        run: '${{ steps.bin.outputs.path }} --version'
+      - name: --help
+        shell: bash
+        run: '${{ steps.bin.outputs.path }} --help'
+      - name: status
+        shell: bash
+        run: '${{ steps.bin.outputs.path }} status'
+      - name: selftest
+        shell: bash
+        run: '${{ steps.bin.outputs.path }} selftest'

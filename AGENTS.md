@@ -41,31 +41,55 @@ When editing or generating documentation, write paragraphs as single long lines.
 
 ## 2. Commit Identity Policy
 
-Every commit created for this repository must use the git identity:
+Every contributor configures their own git identity at the **repository level** (never globally on the host) before committing. The identity is whoever is actually doing the work:
 
 ```bash
-git config user.name "narugo1992"
-git config user.email "narugo1992@deepghs.org"
+git config user.name  "<your-github-username>"
+git config user.email "<your-email-of-record>"
 ```
 
-Verify the active identity before creating a commit:
+Verify before each commit:
 
 ```bash
 git config user.name
 git config user.email
 ```
 
-If your local identity differs, override it before committing. Do not create commits under any other name or email. Do **not** modify the global git config to do this; configure the identity at the repository level only.
+There is no project-mandated single identity. The rules are:
+
+- The identity must be set at the local-repo level, not globally. This avoids leaking the identity into unrelated repositories on the same machine.
+- Pick names and emails that resolve to a real GitHub account you control, because the GitHub-CLI rule in section 3 below requires the gh token to belong to the same account.
+- Do not commit under someone else's identity. If you are pairing or pushing on behalf of someone, use git's `Co-Authored-By:` trailer in the commit body, not the author field.
 
 ## 3. GitHub CLI Identity Policy
 
-When using the GitHub CLI for repository operations (issue listing, release creation, repo administration, etc.), use the `narugo1992` account. Do **not** call `gh auth switch` mid-session; instead set the `GH_TOKEN` environment variable explicitly when an isolated identity is required:
+The repository hosts may have multiple GitHub accounts logged in to `gh` simultaneously (`gh auth status` shows them). To keep multi-task environments clean and avoid silently acting under the wrong account, follow these rules.
+
+### 3.1 Always pin the gh user via `GH_TOKEN`
+
+Every `gh` invocation must explicitly bind to the gh user that matches the current repo's git identity:
 
 ```bash
-GH_TOKEN="$(gh auth token --user narugo1992)" gh <command>
+GH_TOKEN="$(gh auth token --user "$(git config user.name)")" gh <subcommand> ...
 ```
 
-Do not commit or otherwise persist the token value.
+The `--user` argument resolves the local git `user.name` to a stored gh token. The pattern is invocation-scoped: the variable lives only for that single command; nothing on the machine is reconfigured. Do not export `GH_TOKEN` for the whole shell.
+
+### 3.2 If no matching gh account exists, do not use gh
+
+If `gh auth token --user "$(git config user.name)"` returns an error (the account is not logged in), **abort the gh operation** and surface the situation to the user. Do not fall back to a different gh account, do not use `gh auth login` non-interactively, and do not edit `git config` to match an unrelated logged-in account.
+
+The intent: a missing gh credential is a real signal that the operator is not authorised for this work. Failing fast is correct.
+
+### 3.3 Never call `gh auth switch`
+
+`gh auth switch` mutates a process-wide global (the active account on the host) that other concurrent shells, agents, scripts, or watchers may be relying on. Using it during a multi-task or agent-driven session is a guaranteed way to corrupt unrelated work.
+
+`gh auth switch` is forbidden in this repository's workflows. Use the `GH_TOKEN` per-invocation pattern in section 3.1 instead. There is no exception.
+
+### 3.4 Do not persist the token
+
+Inline the token only for the single command that needs it. Do not write it to a file, an env file, a CI secret you maintain, or anywhere it can outlive the command. `gh auth token` reads from the user's keyring; that is the only place the value should rest.
 
 ## 4. Commit Message Style
 
@@ -103,9 +127,23 @@ These are project-scope decisions, not value judgements. A user who wants differ
 - Python source targets Python 3.7+.
 - Code comments and docstrings are reST (Sphinx-style). See section 9 for the docstring template, examples, and pitfalls.
 - Keep dependencies minimal; new runtime dependencies require a brief justification in the commit body.
-- Run `make test` before sending a change. If tests are added or updated, run them locally on the version you support.
-- Run `flake8 animedex` for a quick lint pass. CI runs the full matrix.
 - Tests under `test/` mirror the layout of `animedex/` exactly so that `make unittest RANGE_DIR=<sub-path>` covers both source and matching tests in a single invocation. When you add a module under `animedex/<x>/<y>.py`, add the matching test file at `test/<x>/test_<y>.py` and the matching `__init__.py` files.
+- Source line length is **120 columns** (configured in `ruff.toml`). The reformatter is `ruff format`; the linter is `ruff check` plus `flake8` for the historical error subset enforced in CI.
+
+### Required workflow for every code change
+
+The shape below is mandatory. Skipping any step is how regressions reach `main`.
+
+1. **Make the change.**
+2. **Reformat:** run `make format`. This applies `ruff format` then `ruff check --fix`. The diff after this step is what you commit.
+3. **If `make format` changed anything**, the change either touched code style or hid a real diff under cosmetic noise. **Re-run `make test`** in that case, because the reformat may have moved code across lines or changed import order, and we want the test suite to confirm nothing broke.
+4. **Run the regression suite:** `make test`. This is the unit-test suite, which doubles as a regression test. After any code change, run it before claiming the change is finished. A passing suite is the only acceptable evidence that no behaviour was disturbed.
+5. **For changes affecting the CLI entry points or the packaged distribution**, also run `make build && make test_cli`. This builds the PyInstaller binary and exercises it end-to-end via subprocess. Skipping this on a CLI-touching change is how broken installers ship.
+6. **Then commit.** See section 4 for the commit-message style.
+
+In a busy development session, the formatter step is the one most often skipped. CI enforces `make format-check` (a non-modifying variant), so an unformatted change will fail the build; running `make format` locally is faster than the CI feedback loop. The regression suite is enforced the same way.
+
+The "re-run tests after format" rule is not paranoia. `ruff format` is conservative, but it does collapse multi-line statements, normalise trailing commas, and reorder imports under `--fix`. Any of those can in principle change runtime behaviour (typically when a side-effecting module's import is reordered relative to a sentinel-based late binding). Cheap to re-run, expensive to miss.
 
 ## 8. Adding a Backend
 
