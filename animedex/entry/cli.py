@@ -105,7 +105,7 @@ def cli() -> None:
     """The animedex top-level command group."""
 
 
-from animedex.entry.api_cli import api_group as _api_group  # noqa: E402
+from animedex.entry.api import api_group as _api_group  # noqa: E402
 
 cli.add_command(_api_group)
 
