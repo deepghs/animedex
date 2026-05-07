@@ -1,17 +1,10 @@
 # Plan 03 - CLI Architecture: read-only, gh-flavored, multi-source-explicit
 
-> Status: design, frozen.
-> Depends on: plan 01 (sources), plan 02 (policy principle).
-> Drives: plan 04 (roadmap and MVP scope).
+> Status: design, frozen. Depends on: plan 01 (sources), plan 02 (policy principle). Drives: plan 04 (roadmap and MVP scope).
 
 ## 0. Positioning
 
-animedex is a "gh for anime": a single read-only CLI that aggregates
-several public anime metadata services, exposes both high-level
-convenience commands and a raw API passthrough, and tells you at every
-turn which upstream answered a given question. It is built so that a
-human pasting commands and an LLM agent invoking tools can use the same
-surface.
+animedex is a "gh for anime": a single read-only CLI that aggregates several public anime metadata services, exposes both high-level convenience commands and a raw API passthrough, and tells you at every turn which upstream answered a given question. It is built so that a human pasting commands and an LLM agent invoking tools can use the same surface.
 
 ## 1. What we copy from `gh`
 
@@ -30,12 +23,9 @@ surface.
 
 ## 2. What we do NOT copy
 
-- `gh` happily mutates GitHub. animedex never mutates anything. There is
-  no parallel to `gh issue create` or `gh repo delete`.
-- `gh` has implicit current-directory context (current PR). animedex has
-  no equivalent "current anime"; commands are stateless.
-- `gh` shows a single source (GitHub). animedex deals with many, so we
-  surface the source explicitly in every output (see section 5).
+- `gh` happily mutates GitHub. animedex never mutates anything. There is no parallel to `gh issue create` or `gh repo delete`.
+- `gh` has implicit current-directory context (current PR). animedex has no equivalent "current anime"; commands are stateless.
+- `gh` shows a single source (GitHub). animedex deals with many, so we surface the source explicitly in every output (see section 5).
 
 ## 3. Top-Level Layout
 
@@ -64,10 +54,7 @@ surface.
 
 ## 4. Backend Commands
 
-Per-backend command groups. Each group prints the upstream service in its
-help banner and in every default-rendered output. The first column lists
-the command, the second its data source, the third whether anonymous use
-suffices.
+Per-backend command groups. Each group prints the upstream service in its help banner and in every default-rendered output. The first column lists the command, the second its data source, the third whether anonymous use suffices.
 
 ```
 # AniList (graphql.anilist.co) - search backbone
@@ -159,8 +146,7 @@ animedex quote --character <name>                      premium-only at present
 
 ## 5. Source Attribution
 
-Every aggregate or backend command must make its data origin obvious to
-the caller. Two complementary mechanisms:
+Every aggregate or backend command must make its data origin obvious to the caller. Two complementary mechanisms:
 
 ### TTY rendering
 
@@ -204,9 +190,7 @@ Every fact is annotated. There is no anonymous data.
 }
 ```
 
-A `--source-attribution=off` option exists for the rare consumer that
-wants the raw data without the metadata noise. There is no equivalent for
-TTY mode; the human will always see the source column.
+A `--source-attribution=off` option exists for the rare consumer that wants the raw data without the metadata noise. There is no equivalent for TTY mode; the human will always see the source column.
 
 ## 6. Aggregate Commands (cross-source)
 
@@ -223,15 +207,11 @@ animedex schedule [--day]     default AniList airingSchedule
 animedex trace <image|url>    top-level alias of `animedex trace`
 ```
 
-These commands always emit the source-attributed JSON shape from
-section 5. They never hide which upstream answered.
+These commands always emit the source-attributed JSON shape from section 5. They never hide which upstream answered.
 
 ## 7. The `animedex api` Passthrough
 
-A faithful adaptation of `gh api`. The first positional is the backend,
-the second the path or GraphQL document. Authentication, rate limiting,
-caching, and User-Agent injection still apply (those are P1 concerns
-from plan 02). Schema parsing does not.
+A faithful adaptation of `gh api`. The first positional is the backend, the second the path or GraphQL document. Authentication, rate limiting, caching, and User-Agent injection still apply (those are P1 concerns from plan 02). Schema parsing does not.
 
 ```
 animedex api anilist '<graphql-document>' [-f var=value]
@@ -281,11 +261,8 @@ Universal flags:
 
 Two contracts on this command:
 
-1. The output is the upstream's raw JSON, not our annotated shape. No
-   `_source` is added; this is a passthrough.
-2. Read-only mutating methods (`PUT`, `PATCH`, `DELETE`, and writes via
-   `POST` to mutation endpoints) are rejected before the request leaves
-   the host, even if the upstream would accept them.
+1. The output is the upstream's raw JSON, not our annotated shape. No `_source` is added; this is a passthrough.
+2. Read-only mutating methods (`PUT`, `PATCH`, `DELETE`, and writes via `POST` to mutation endpoints) are rejected before the request leaves the host, even if the upstream would accept them.
 
 ## 8. Auth Model
 
@@ -322,8 +299,7 @@ animedex auth logout <backend>
 animedex auth token <backend>            # print token (with confirmation)
 ```
 
-Token storage uses the OS keyring (Secret Service / Keychain / Credential
-Locker). No plain-text dotfile fallback.
+Token storage uses the OS keyring (Secret Service / Keychain / Credential Locker). No plain-text dotfile fallback.
 
 ## 9. Output Modes
 
@@ -353,20 +329,10 @@ animedex trace <img> -w           -> https://trace.moe/?url=<...>
 
 These exist before any backend; they are written once and used by all.
 
-- **HTTP client wrapper**: User-Agent injection, base URL, timeout,
-  redirect policy, gzip handling.
-- **Per-backend rate limiter**: token bucket honouring P1 caps from
-  plan 02. AniDB gets its own scheduler (file-based, persistent across
-  invocations, because rate-limit windows survive process exit).
-- **SQLite cache**: keyed by (backend, request signature). Default TTLs:
-  72 h for metadata, 24 h for lists, 1 h for schedules and trending,
-  30 d for offline dumps. `--no-cache` and `--cache <ttl>` overrides.
+- **HTTP client wrapper**: User-Agent injection, base URL, timeout, redirect policy, gzip handling.
+- **Per-backend rate limiter**: token bucket honouring P1 caps from plan 02. AniDB gets its own scheduler (file-based, persistent across invocations, because rate-limit windows survive process exit).
+- **SQLite cache**: keyed by (backend, request signature). Default TTLs: 72 h for metadata, 24 h for lists, 1 h for schedules and trending, 30 d for offline dumps. `--no-cache` and `--cache <ttl>` overrides.
 - **Token store**: OS keyring frontend; per-backend namespacing.
-- **Source-attributed renderer**: pluggable per output mode; same
-  underlying source-aware data structure feeds TTY, JSON, jq, jinja,
-  and `--web`.
-- **Docstring lint**: enforces the plan-02 docstring contract on every
-  CLI command and MCP tool function.
-- **MCP tool registration**: each CLI command registers with an MCP
-  decorator so the same code drives an MCP server (the Agent Guidance
-  block becomes the tool description).
+- **Source-attributed renderer**: pluggable per output mode; same underlying source-aware data structure feeds TTY, JSON, jq, jinja, and `--web`.
+- **Docstring lint**: enforces the plan-02 docstring contract on every CLI command and MCP tool function.
+- **MCP tool registration**: each CLI command registers with an MCP decorator so the same code drives an MCP server (the Agent Guidance block becomes the tool description).

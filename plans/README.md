@@ -1,13 +1,8 @@
 # animedex Design Plans
 
-This directory holds the staged design documents for **animedex**. The plans are
-ordered: each one builds on the previous, and together they form the
-single source of truth for "why animedex is shaped the way it is".
+This directory holds the staged design documents for **animedex**. The plans are ordered: each one builds on the previous, and together they form the single source of truth for "why animedex is shaped the way it is".
 
-When in doubt about scope, behaviour, or naming, check these files in order.
-Disagreements between code and plan should be resolved by either updating
-the plan first (if the design changed) or fixing the code (if the code
-diverged unintentionally).
+When in doubt about scope, behaviour, or naming, check these files in order. Disagreements between code and plan should be resolved by either updating the plan first (if the design changed) or fixing the code (if the code diverged unintentionally).
 
 ## Index
 
@@ -22,10 +17,6 @@ diverged unintentionally).
 
 If you are **new to the project**, read `01` → `02` → `03` → `04` in order.
 
-If you are **implementing a feature**, the binding documents are `03` (what the
-CLI must look like) and `04` (when each piece is scheduled). `01` and `02` are
-context.
+If you are **implementing a feature**, the binding documents are `03` (what the CLI must look like) and `04` (when each piece is scheduled). `01` and `02` are context.
 
-If you are **adding a backend not in the survey**, write a new plan file
-(`05-...md`, etc.) with the same structure as `01`'s per-entry template,
-then update `03`'s command tree.
+If you are **adding a backend not in the survey**, write a new plan file (`05-...md`, etc.) with the same structure as `01`'s per-entry template, then update `03`'s command tree.

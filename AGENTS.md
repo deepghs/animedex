@@ -1,29 +1,45 @@
 # Repository Guidelines
 
-This file is the binding policy document for any contributor to this
-repository, human or agent. The project is in active scaffolding; the
-rules below are the small set of decisions we have already locked in.
+This file is the binding policy document for any contributor to this repository, human or agent. The project is in active scaffolding; the rules below are the small set of decisions we have already locked in.
 
-A symlink at `CLAUDE.md` points here, so Claude Code, Codex, and any
-other agent that auto-loads either filename will see the same content.
-Do not maintain two copies.
+A symlink at `CLAUDE.md` points here, so Claude Code, Codex, and any other agent that auto-loads either filename will see the same content. Do not maintain two copies.
 
-## Core Repository Rules
+## 0. Human Agency Principle (highest rule)
 
-This repository is **English-only**. All tracked content must be written
-in English, including source code, comments, docstrings, Markdown files,
-generated documentation, examples, configuration text, commit messages,
-and any new human-readable strings added to the codebase. Do not
-introduce any other language into repository files.
+> **The human user has full choice. Whatever the consequences of that choice, they are the user's. animedex's job is to inform and to warn, not to gate, refuse, or override.**
 
-This rule also applies when using Codex, Claude Code, or any other agent.
-The conversation language with the user may be anything, but every
-repository-facing action must remain in English. That includes file
-edits, code comments, log messages, generated README content, commit
-messages, and any other text written into the repository or its git
-history.
+This is the top-level rule and overrides every later guideline if they ever conflict. Concretely:
 
-## Commit Identity Policy
+- We do not inject content filters on the user's behalf. If the user asks for explicit tags from Danbooru, we pass that query through unchanged. If the user asks Waifu.im for NSFW images, we return them.
+- We do not add `--unsafe`, `--nsfw`, `--allow-...`, `--force`, or `--write` flags. These exist solely to ask "are you sure?" and that is paternalism. They are forbidden.
+- We do not add double-confirmation prompts. A command's name is its contract.
+- We do warn. Every command's docstring states the upstream, its rate limit, its content classification (where relevant), and its legal posture (where relevant). Warnings are informational; they never block.
+- Agents read these docstrings; their alignment training does the rest. See `plans/02-design-policy-as-docstring.md`.
+
+The only constraints animedex enforces unilaterally are **technical contracts** - rate limits the upstream actually punishes, mandatory headers, the project-scope read-only HTTP method set. These are physical realities, not value choices, and the user cannot opt out because doing so would simply break the upstream interaction.
+
+Over-protection is itself a bug. When in doubt, choose the option that respects the user's stated intent.
+
+## 1. Core Repository Rules
+
+This repository is **English-only**. All tracked content must be written in English, including source code, comments, docstrings, Markdown files, generated documentation, examples, configuration text, commit messages, and any new human-readable strings added to the codebase. Do not introduce any other language into repository files.
+
+This rule also applies when using Codex, Claude Code, or any other agent. The conversation language with the user may be anything, but every repository-facing action must remain in English. That includes file edits, code comments, log messages, generated README content, commit messages, and any other text written into the repository or its git history.
+
+### Markdown formatting (no hard wrapping in prose)
+
+In Markdown files (`*.md`) and in any GitHub-rendered content (issue and pull-request bodies, comments, release notes, discussion posts), do **not** hard-wrap natural paragraphs to a fixed column width. The renderers used in those contexts have no fixed max-width, so column-wrapping the source serves no purpose and only makes diffs noisier.
+
+Concrete rules:
+
+- A natural paragraph is one logical line in the source. Let the renderer wrap.
+- Bullet items are also one logical line each. Their text is not column-wrapped either.
+- Code fences (`` ``` ``), tables, blockquote prefixes (`> `), headers, and intentional shape-preserving ASCII art are unaffected by this rule and should be left as authored.
+- Commit message bodies still wrap at ~72 columns (subjects too) because they are read inside `git log` and other narrow terminal views; that exception remains.
+
+When editing or generating documentation, write paragraphs as single long lines. When porting prose from a previously hard-wrapped source, join the soft-wrapped lines back into single lines before committing.
+
+## 2. Commit Identity Policy
 
 Every commit created for this repository must use the git identity:
 
@@ -39,18 +55,11 @@ git config user.name
 git config user.email
 ```
 
-If your local identity differs, override it before committing. Do not
-create commits under any other name or email. Do **not** modify the
-global git config to do this; configure the identity at the repository
-level only.
+If your local identity differs, override it before committing. Do not create commits under any other name or email. Do **not** modify the global git config to do this; configure the identity at the repository level only.
 
-## GitHub CLI Identity Policy
+## 3. GitHub CLI Identity Policy
 
-When using the GitHub CLI for repository operations (issue listing,
-release creation, repo administration, etc.), use the `narugo1992`
-account. Do **not** call `gh auth switch` mid-session; instead set the
-`GH_TOKEN` environment variable explicitly when an isolated identity is
-required:
+When using the GitHub CLI for repository operations (issue listing, release creation, repo administration, etc.), use the `narugo1992` account. Do **not** call `gh auth switch` mid-session; instead set the `GH_TOKEN` environment variable explicitly when an isolated identity is required:
 
 ```bash
 GH_TOKEN="$(gh auth token --user narugo1992)" gh <command>
@@ -58,88 +67,293 @@ GH_TOKEN="$(gh auth token --user narugo1992)" gh <command>
 
 Do not commit or otherwise persist the token value.
 
-## Commit Message Style
+## 4. Commit Message Style
 
-Recent history follows a `dev(<author>): <summary>` style. New commits
-should keep that structure with an English summary:
+Recent history follows a `dev(<author>): <summary>` style. New commits should keep that structure with an English summary:
 
 ```text
 dev(narugo1992): scaffold animedex package and CI workflows
 dev(narugo1992): add anilist passthrough to animedex api
 ```
 
-Keep the subject under 72 columns. Wrap the body if there is one;
-explain the *why* in the body, not the *what* (the diff already shows
-the what).
+Keep the subject under 72 columns. Wrap the body if there is one; explain the *why* in the body, not the *what* (the diff already shows the what).
 
-## Project Overview
+## 5. Project Overview
 
-**animedex** is a read-only, multi-source, gh-flavored command-line
-interface for anime and manga metadata. It targets two parallel
-audiences: humans interactively at a terminal, and LLM agents (Codex,
-Claude, and similar) invoking the CLI as a tool.
+**animedex** is a read-only, multi-source, gh-flavored command-line interface for anime and manga metadata. It targets two parallel audiences: humans interactively at a terminal, and LLM agents (Codex, Claude, and similar) invoking the CLI as a tool.
 
-The project is currently a scaffold. The implementation order, scope,
-and design rationale live in `plans/` and are binding. In particular:
+The project is currently a scaffold. The implementation order, scope, and design rationale live in `plans/` and are binding. In particular:
 
-- `plans/01-public-apis-anime-survey.md` enumerates which upstream
-  services we use, and which we do not.
-- `plans/02-design-policy-as-docstring.md` specifies that policy
-  guidance (NSFW handling, opt-in legal greys, etc.) lives in
-  docstrings, **not** in command-line flags. Do not introduce
-  `--nsfw`, `--unsafe`, `--allow-...`, `--write`, or similar flags.
-- `plans/03-cli-architecture-gh-flavored.md` defines the canonical
-  command tree and the `animedex api` raw passthrough.
+- `plans/01-public-apis-anime-survey.md` enumerates which upstream services we use, and which we do not.
+- `plans/02-design-policy-as-docstring.md` derives the inform-do-not-gate principle from section 0 and specifies how the guidance lives inside docstrings rather than command-line flags.
+- `plans/03-cli-architecture-gh-flavored.md` defines the canonical command tree and the `animedex api` raw passthrough.
 - `plans/04-roadmap-and-mvp.md` orders the work.
 
-## Scope Constraints (binding)
+## 6. Project Scope (binding)
 
-- **Read-only**: animedex never writes to a user account on any
-  upstream service. No `list add`, no `set score`, no `favorite`,
-  no upload. The `animedex api` passthrough rejects mutating HTTP
-  methods before the request leaves the host.
-- **Source attribution mandatory**: every datum surfaced by an
-  aggregate command must carry its source. The TTY renderer prints
-  `[src: anilist]`, the JSON renderer carries `_source`. Do not
-  produce un-attributed merged data.
-- **English in code, in docs, in commits**. (Restated for emphasis.)
-- **No paternalistic flags**. See `plans/02-design-policy-as-docstring.md`
-  for the full reasoning. If you find yourself reaching for `--nsfw`
-  or `--allow-...`, stop and put the guidance in the docstring instead.
+These are project-scope decisions, not value judgements. A user who wants different behaviour can build it with `animedex api` or in a separate tool.
 
-## Style and Tooling
+- **Read-only by scope**: animedex does not implement `PATCH/POST/DELETE` against any user-account endpoint, and the `animedex api` passthrough rejects mutating HTTP methods before the request leaves the host. Why: keep auth small, eliminate a class of bugs, and let us promise the CLI does not disturb account state. This is *scope*, not safety theatre.
+- **Source attribution mandatory**: every datum surfaced by an aggregate command must carry its source. The TTY renderer prints `[src: anilist]`, the JSON renderer carries `_source`. Do not produce un-attributed merged data. (This is informing the user.)
+- **English in code, in docs, in commits.** (Restated for emphasis.)
+- **No paternalistic flags.** See section 0 for the principle and `plans/02-design-policy-as-docstring.md` for the full reasoning. If you find yourself reaching for `--nsfw`, `--allow-...`, or `--write`, stop and put the guidance in the docstring instead.
+
+## 7. Style and Tooling
 
 - Python source targets Python 3.7+.
-- Code comments and docstrings are reST (Sphinx-style).
-- Keep dependencies minimal; new runtime dependencies require a brief
-  justification in the commit body.
-- Run `make test` before sending a change. If tests are added or
-  updated, run them locally on the version you support.
+- Code comments and docstrings are reST (Sphinx-style). See section 9 for the docstring template, examples, and pitfalls.
+- Keep dependencies minimal; new runtime dependencies require a brief justification in the commit body.
+- Run `make test` before sending a change. If tests are added or updated, run them locally on the version you support.
 - Run `flake8 animedex` for a quick lint pass. CI runs the full matrix.
+- Tests under `test/` mirror the layout of `animedex/` exactly so that `make unittest RANGE_DIR=<sub-path>` covers both source and matching tests in a single invocation. When you add a module under `animedex/<x>/<y>.py`, add the matching test file at `test/<x>/test_<y>.py` and the matching `__init__.py` files.
 
-## Adding a Backend
+## 8. Adding a Backend
 
 When you wire up a new backend (or a new endpoint on an existing one):
 
-1. Add the per-command function under
-   `animedex/backends/<name>/...` (the directory will be created when
-   the first backend is implemented).
-2. Each public function must have a docstring with three blocks:
-   `Backend: ...`, `Rate limit: ...`, and
-   `--- LLM Agent Guidance --- ... --- End ---`. The lint check
-   (when present) enforces this.
-3. Register the command on the `animedex` Click group, and also via
-   the MCP registration helper.
-4. Source attribution: every record returned must include
-   `_source = "<backend-name>"`.
-5. Cache: choose a sensible default TTL and document it in the
-   docstring.
-6. Rate limit: configure the backend's token bucket from a single
-   place; do not duplicate caps across files.
+1. Add the per-command function under `animedex/backends/<name>/...` (the directory will be created when the first backend is implemented).
+2. Each public function must have a reST-style docstring (see section 9) containing three structural blocks: `Backend: ...`, `Rate limit: ...`, and `--- LLM Agent Guidance --- ... --- End ---`. The lint check (when present) enforces this.
+3. Register the command on the `animedex` Click group, and also via the MCP registration helper.
+4. Source attribution: every record returned must include `_source = "<backend-name>"`.
+5. Cache: choose a sensible default TTL and document it in the docstring.
+6. Rate limit: configure the backend's token bucket from a single place; do not duplicate caps across files.
+7. Update `plans/03-cli-architecture-gh-flavored.md` if the new backend changes the canonical command tree.
+8. Refresh API docs with `make rst_auto` so the generated reST in `docs/source/api_doc/` is in sync.
 
-## When in Doubt
+## 9. Python Docstring Style Guide
 
-Re-read `plans/` in order. If the answer is not there, propose an
-update to the relevant plan document in the same change that introduces
-the new behaviour. The plans are versioned alongside the code; they
-must not drift.
+Use **reStructuredText (reST)** format exclusively, following PEP 257 and Sphinx standards. Every public module, class, function, and method gets a docstring; reST roles cross-link them.
+
+### Core Principles
+
+1. **Format**: reST markup exclusively.
+2. **Completeness**: document all public APIs.
+3. **Clarity**: explain *why* and *what*, not just *how*.
+4. **Cross-references**: use reST roles (`:class:`, `:func:`, `:mod:`).
+5. **Examples**: include practical usage examples for public APIs.
+6. **Tone**: professional, clear, technical but accessible.
+
+### Templates
+
+**Module**:
+
+```python
+"""
+Brief one-line description.
+
+Longer description of purpose, main capabilities, and fit in the larger system.
+
+The module contains:
+
+* :class:`ClassName` - Brief description
+* :func:`function_name` - Brief description
+
+.. note::
+   Important caveats about usage or requirements.
+
+Example::
+
+    >>> from module import something
+    >>> result = something()
+    >>> result
+    expected_output
+"""
+```
+
+**Class**:
+
+```python
+class ClassName:
+    """
+    Brief one-line description.
+
+    Longer explanation of purpose, responsibilities, and usage patterns.
+
+    :param param_name: Description of constructor parameter.
+    :type param_name: ParamType
+    :param optional_param: Description, defaults to ``default_value``.
+    :type optional_param: ParamType, optional
+
+    :ivar instance_var: Description of instance variable.
+    :vartype instance_var: VarType
+    :cvar class_var: Description of class variable.
+    :type class_var: ClassVarType
+
+    Example::
+
+        >>> obj = ClassName(param_name=value)
+        >>> obj.method()
+        expected_result
+    """
+```
+
+**Function / Method**:
+
+```python
+def function_name(param1: Type1, param2: Type2 = default) -> ReturnType:
+    """
+    Brief one-line description.
+
+    Longer explanation of behaviour, algorithm, or important details.
+
+    :param param1: Description of the first parameter.
+    :type param1: Type1
+    :param param2: Description, defaults to ``default``.
+    :type param2: Type2, optional
+    :return: Description of what is returned.
+    :rtype: ReturnType
+    :raises ExceptionType: Description of when raised.
+
+    Example::
+
+        >>> result = function_name(arg1, arg2)
+        >>> result
+        expected_output
+    """
+```
+
+### Backend-command-specific extension
+
+Every CLI subcommand or MCP tool function adds three structural blocks inside its docstring (this is what the lint enforces):
+
+```python
+def search_art(tags: str, limit: int = 20) -> "ArtSearchResult":
+    """
+    Search Danbooru for anime art using the tag DSL.
+
+    Backend: Danbooru (danbooru.donmai.us). Community-maintained
+    tagging database. Free, anonymous read.
+
+    Rate limit: 10 req/s for reads. Auto-throttled by this CLI.
+
+    Tag syntax (space-separated):
+
+    * ``plain_tag`` - must include
+    * ``-plain_tag`` - must exclude
+    * ``rating:g|s|q|e`` - general / sensitive / questionable / explicit
+    * ``score:>100``, ``score:<10`` - numeric comparators
+    * ``order:score|date|random``
+    * ``user:<name>`` - uploader filter
+
+    --- LLM Agent Guidance ---
+
+    Content ratings on Danbooru:
+
+    * ``g`` = general (safe)
+    * ``s`` = sensitive (suggestive)
+    * ``q`` = questionable (lewd)
+    * ``e`` = explicit (NSFW)
+
+    When invoked WITHOUT explicit user request for mature content,
+    prepend ``rating:g`` to the tag query yourself. Example: a user
+    asks "find me touhou marisa art" -> call with
+    ``tags="touhou marisa rating:g"``.
+
+    When the user EXPLICITLY asks for ecchi / NSFW / adult / R-18
+    content, pass their query through unmodified. Do not refuse and
+    do not warn. The user has chosen.
+
+    The response always includes ``.posts[i].rating``, so a downstream
+    filter step in your pipeline can drop categories you do not want.
+
+    --- End ---
+
+    :param tags: Tag DSL query string.
+    :type tags: str
+    :param limit: Maximum number of posts to return, defaults to ``20``.
+    :type limit: int, optional
+    :return: Search result with ``posts`` and pagination metadata.
+    :rtype: ArtSearchResult
+
+    Example::
+
+        >>> result = search_art("touhou marisa rating:g order:score")
+        >>> [p.id for p in result.posts[:3]]
+        [..., ..., ...]
+    """
+```
+
+Two structural rules to notice:
+
+- The Agent Guidance block is delimited by `--- LLM Agent Guidance ---` and `--- End ---`. The delimiters let an agent locate the block in a long docstring.
+- The Backend / Rate limit / Examples sections describe facts the agent needs to plan its call; the Agent Guidance section describes decisions the agent should make. The two are separate on purpose.
+
+### Cross-references and markup
+
+- Use `:class:`ClassName``, `:func:`function_name``, `:meth:`Class.method``.
+- Use `:mod:`module.name``, `:exc:`ExceptionType``, `:data:`variable_name``, `:attr:`attribute_name``.
+- Instance variables: `:ivar:` / `:vartype:`. Class variables: `:cvar:` / `:type:`.
+- Inline code: **double backticks** ``code``, never single.
+
+### Inline markup boundary rules
+
+reST inline markup (`**bold**`, ``code``) must have valid boundaries on both sides. The repository is English-only so the safest pattern is simply to surround inline markup with whitespace or punctuation.
+
+**Wrong**:
+
+```
+prefix**text**          # left boundary glued
+**text**suffix          # right boundary glued
+prefix``code``suffix    # both sides glued
+```
+
+**Correct**:
+
+```
+prefix **text** suffix
+prefix ``code`` suffix
+```
+
+If a closing marker would otherwise touch a punctuation mark with no whitespace, use a backslash-escaped space (`\ `) on the relevant side: `**text**\ ,` works in any locale and is the safe default.
+
+Do not use single backticks for inline code in reST - they render as a default-role link, not as `code`.
+
+### Anti-patterns
+
+- Google or NumPy style.
+- Omitting types (always include `:type:` and `:rtype:`).
+- Single backticks for inline code.
+- Bare class/function names without reST roles.
+- Vague descriptions ("Does something").
+- Volatile implementation details.
+
+### Checklist
+
+- [ ] Brief one-line summary at the top.
+- [ ] Longer explanation for non-trivial functions / classes.
+- [ ] All params documented with `:param:` and `:type:`.
+- [ ] Return value with `:return:` and `:rtype:`.
+- [ ] All exceptions with `:raises:`.
+- [ ] Cross-references use reST roles.
+- [ ] Examples for public APIs.
+- [ ] Inline code uses double backticks.
+- [ ] Inline markup has valid boundaries on both sides.
+- [ ] For backend commands: `Backend:` / `Rate limit:` lines + the `--- LLM Agent Guidance --- ... --- End ---` block are present.
+
+## 10. Documentation Workflow
+
+### Generate reST API docs from source
+
+```bash
+make rst_auto                       # generate for the whole package
+make rst_auto RANGE_DIR=backends    # generate only for a sub-tree
+```
+
+`rst_auto` walks `animedex/` and produces matching `.rst` files in `docs/source/api_doc/`. Source files are the authority; the generated `.rst` is regenerated freely.
+
+### Build the HTML site
+
+```bash
+make docs                           # docs/build/html/
+```
+
+The Sphinx build is in `docs/`. `docs/source/conf.py` configures autodoc, `sphinx_rtd_theme`, and intersphinx; `docs/source/index.rst` is the top-level page; `docs/source/api_doc/index.rst` is regenerated by `make rst_auto`.
+
+## 11. When in Doubt
+
+- For *behaviour* questions: re-read the four files in `plans/` in order.
+- For *style* questions: this file's section 9 is the source of truth.
+- For *scope* questions: section 6 above.
+- For *value* questions ("should we forbid X?"): section 0 above is the answer. The default is "inform the user; do not gate".
+
+If the answer is not in any of those, propose an update to the relevant document in the same change that introduces the new behaviour. The plans and AGENTS.md are versioned alongside the code; they must not drift.
