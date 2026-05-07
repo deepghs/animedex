@@ -624,6 +624,52 @@ class AnilistUser(AnimedexModel):
     source_tag: SourceTag
 
 
+class AnilistNotification(AnimedexModel):
+    """One row from the authenticated ``Page.notifications`` query.
+
+    AniList notifications are a polymorphic union (``AiringNotification``,
+    ``FollowingNotification``, ``ActivityMessageNotification``, etc.).
+    The kind is identified by GraphQL fragment; this model carries the
+    common subset plus a ``kind`` discriminator so consumers can branch.
+    """
+
+    id: int
+    kind: str  # short-hand: "airing" / "following" / "activity-message" / ...
+    type: Optional[str] = None  # AniList's full enum string
+    contexts: List[str] = []
+    context: Optional[str] = None
+    user_name: Optional[str] = None
+    createdAt: Optional[int] = None
+    source_tag: SourceTag
+
+
+class AnilistMarkdown(AnimedexModel):
+    """Result of the authenticated ``Markdown`` query — rendered HTML.
+
+    AniList renders its in-house markdown to HTML server-side. This is
+    the typed wrapper around the ``html`` field.
+    """
+
+    html: str
+    source_tag: SourceTag
+
+
+class AnilistAniChartUser(AnimedexModel):
+    """Authenticated ``AniChartUser`` snapshot.
+
+    AniChart is a sister project of AniList. ``settings`` and
+    ``highlights`` are AniList-encoded JSON strings the user's
+    AniChart profile page reads; we surface them verbatim and let the
+    consumer decode them on demand.
+    """
+
+    user_id: int
+    user_name: str
+    settings: dict = {}
+    highlights: dict = {}
+    source_tag: SourceTag
+
+
 def selftest() -> bool:
     """Smoke-test the AniList rich dataclasses by round-tripping a
     minimally-populated instance of each through pydantic."""
@@ -656,4 +702,9 @@ def selftest() -> bool:
         AnilistExternalLinkSource(id=1, site="x", source_tag=src).model_dump_json()
     )
     AnilistUser.model_validate_json(AnilistUser(id=1, name="x", source_tag=src).model_dump_json())
+    AnilistNotification.model_validate_json(AnilistNotification(id=1, kind="airing", source_tag=src).model_dump_json())
+    AnilistMarkdown.model_validate_json(AnilistMarkdown(html="<p>x</p>", source_tag=src).model_dump_json())
+    AnilistAniChartUser.model_validate_json(
+        AnilistAniChartUser(user_id=1, user_name="x", source_tag=src).model_dump_json()
+    )
     return True

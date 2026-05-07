@@ -89,6 +89,23 @@ _HEADERS_TO_SCRUB_AT_CAPTURE = frozenset(
 _SCRUB_PLACEHOLDER = "<scrubbed-at-capture>"
 
 
+def _redact_request_headers(headers: Dict[str, str]) -> Dict[str, str]:
+    """Return a copy of ``headers`` with credential values redacted.
+
+    Mirrors :func:`animedex.api._envelope.redact_headers` but is
+    duplicated here so the capture tool stays importable without a
+    runtime dependency on the dispatcher package layout.
+
+    Used at fixture-write time so an authenticated capture script
+    that passes ``Authorization: Bearer <token>`` does not leak the
+    token into the YAML committed to git. See review M3 for the
+    runtime equivalent on the dispatcher side.
+    """
+    from animedex.api._envelope import redact_headers as _redact
+
+    return _redact(dict(headers or {}))
+
+
 _PLACEHOLDER_IPV4 = "203.0.113.42"  # RFC-5737 TEST-NET-3
 _IPV4_PATTERN = re.compile(r"\b(\d{1,3}(?:\.\d{1,3}){3})\b")
 
@@ -380,7 +397,14 @@ def capture(
         "request": {
             "method": method.upper(),
             "url": url,
-            "headers": out_headers,
+            # Scrub credential headers (Authorization, Cookie, X-Api-
+            # Key, X-Trace-Key, ...) before persisting. Without this
+            # an authenticated capture script that passes ``Authorization:
+            # Bearer <token>`` through ``headers={}`` would leak the
+            # raw token into git. Mirrors the response-header scrub
+            # added for review M1; see review M3 for the runtime
+            # equivalent in the dispatcher.
+            "headers": _redact_request_headers(out_headers),
             "params": params,
             "json_body": json_body,
             "raw_body_b64": base64.b64encode(raw_body).decode("ascii") if raw_body else None,

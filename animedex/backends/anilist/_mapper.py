@@ -20,16 +20,19 @@ from animedex.backends.anilist.models import (
     AnilistActivity,
     AnilistActivityReply,
     AnilistAiringSchedule,
+    AnilistAniChartUser,
     AnilistAnime,
     AnilistCharacter,
     AnilistExternalLinkSource,
     AnilistFollowEntry,
     AnilistGenreCollection,
+    AnilistMarkdown,
     AnilistMediaListCollection,
     AnilistMediaListEntry,
     AnilistMediaListGroup,
     AnilistMediaTag,
     AnilistMediaTrend,
+    AnilistNotification,
     AnilistRecommendation,
     AnilistReview,
     AnilistSiteStatistics,
@@ -335,6 +338,86 @@ def map_media_list_public(payload: Dict[str, Any], src: SourceTag) -> List[Anili
             )
         )
     return out
+
+
+# ---------- token-required mappers (Phase 8 lands the auth flow; these
+# are wired now so the captured fixtures are usable when token storage
+# arrives) ----------
+
+
+def map_viewer(payload: Dict[str, Any], src: SourceTag) -> AnilistUser:
+    """Map ``data.Viewer`` (authenticated) to :class:`AnilistUser`.
+
+    Same shape as ``data.User`` from the public ``Q_USER_BY_NAME``
+    query, just keyed under ``Viewer``. We delegate to :func:`map_user`
+    after relabelling.
+    """
+    viewer_node = _require(payload.get("data", {}).get("Viewer"), "Viewer")
+    return map_user({"data": {"User": viewer_node}}, src)
+
+
+_NOTIFICATION_KIND_MAP = {
+    "AIRING": "airing",
+    "ACTIVITY_MESSAGE": "activity-message",
+    "ACTIVITY_REPLY": "activity-reply",
+    "ACTIVITY_REPLY_LIKE": "activity-reply-like",
+    "ACTIVITY_LIKE": "activity-like",
+    "ACTIVITY_MENTION": "activity-mention",
+    "ACTIVITY_REPLY_SUBSCRIBED": "activity-reply-subscribed",
+    "FOLLOWING": "following",
+    "RELATED_MEDIA_ADDITION": "related-media-addition",
+    "MEDIA_DATA_CHANGE": "media-data-change",
+    "MEDIA_MERGE": "media-merge",
+    "MEDIA_DELETION": "media-deletion",
+    "THREAD_COMMENT_MENTION": "thread-comment-mention",
+    "THREAD_COMMENT_REPLY": "thread-comment-reply",
+    "THREAD_COMMENT_LIKE": "thread-comment-like",
+    "THREAD_SUBSCRIBED": "thread-subscribed",
+    "THREAD_LIKE": "thread-like",
+}
+
+
+def map_notification(payload: Dict[str, Any], src: SourceTag) -> List[AnilistNotification]:
+    page = payload.get("data", {}).get("Page") or {}
+    rows = page.get("notifications") or []
+    out: List[AnilistNotification] = []
+    for r in rows:
+        type_str = r.get("type") or ""
+        kind = _NOTIFICATION_KIND_MAP.get(type_str, type_str.lower().replace("_", "-") or "unknown")
+        contexts = r.get("contexts") or []
+        if not isinstance(contexts, list):
+            contexts = []
+        user = r.get("user") or {}
+        out.append(
+            AnilistNotification(
+                id=r["id"],
+                kind=kind,
+                type=type_str or None,
+                contexts=contexts,
+                context=r.get("context"),
+                user_name=user.get("name") if isinstance(user, dict) else None,
+                createdAt=r.get("createdAt"),
+                source_tag=src,
+            )
+        )
+    return out
+
+
+def map_markdown(payload: Dict[str, Any], src: SourceTag) -> AnilistMarkdown:
+    node = _require(payload.get("data", {}).get("Markdown"), "Markdown")
+    return AnilistMarkdown(html=node.get("html", ""), source_tag=src)
+
+
+def map_ani_chart_user(payload: Dict[str, Any], src: SourceTag) -> AnilistAniChartUser:
+    node = _require(payload.get("data", {}).get("AniChartUser"), "AniChartUser")
+    user = node.get("user") or {}
+    return AnilistAniChartUser(
+        user_id=user.get("id", 0),
+        user_name=user.get("name", ""),
+        settings=node.get("settings") or {},
+        highlights=node.get("highlights") or {},
+        source_tag=src,
+    )
 
 
 def map_media_list_collection_public(payload: Dict[str, Any], src: SourceTag) -> AnilistMediaListCollection:
