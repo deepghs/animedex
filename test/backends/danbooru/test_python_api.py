@@ -121,6 +121,12 @@ class TestSearch:
         # result for a rare combo.
         assert isinstance(out, list)
 
+    def test_search_null_payload_returns_empty_list(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, "https://danbooru.donmai.us/posts.json", body="null", status=200)
+            out = db_api.search("empty", no_cache=True)
+        assert out == []
+
 
 class TestPost:
     def test_post_returns_typed_resource(self, fake_clock):
@@ -130,6 +136,10 @@ class TestPost:
             out = db_api.post(1, no_cache=True)
         assert isinstance(out, DanbooruPost)
         assert out.id == 1
+
+    def test_post_to_common_uses_default_source_without_source_tag(self):
+        common = DanbooruPost(id=1, file_url="https://example.invalid/image.jpg").to_common()
+        assert common.source.backend == "danbooru"
 
 
 class TestArtist:

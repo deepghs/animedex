@@ -154,6 +154,24 @@ class TestShow:
         assert common.status is None
         assert common.format is None
 
+        edge = MangaDexManga.model_validate(
+            {
+                "id": "edge",
+                "type": "manga",
+                "attributes": {
+                    "title": [],
+                    "description": {"fr": ""},
+                    "status": "mystery",
+                    "publicationDemographic": "shounen",
+                },
+            }
+        )
+        edge_common = edge.to_common()
+        assert edge_common.title == ""
+        assert edge_common.description is None
+        assert edge_common.status == "unknown"
+        assert edge_common.source.backend == "mangadex"
+
 
 class TestSearch:
     def test_search_returns_list_of_manga(self, fake_clock):

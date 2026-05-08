@@ -223,6 +223,6 @@ def selftest() -> bool:
         MangaDexCredentials.from_string("only-three:parts:here")
     except ApiError as exc:
         assert exc.reason == "bad-args"
-    else:
+    else:  # pragma: no cover - defensive
         raise AssertionError("expected ApiError on malformed creds")
     return True
