@@ -1,0 +1,15 @@
+animedex.backends
+========================================================
+
+.. currentmodule:: animedex.backends
+
+.. automodule:: animedex.backends
+
+
+.. toctree::
+    :maxdepth: 3
+
+    anilist/index
+    jikan/index
+    trace/index
+

@@ -6,10 +6,23 @@ animedex.models.common
 .. automodule:: animedex.models.common
 
 
+REASONS
+-----------------------------------------------------
+
+.. autodata:: REASONS
+
+
 AnimedexModel
 -----------------------------------------------------
 
 .. autoclass:: AnimedexModel
+    :members: model_config
+
+
+BackendRichModel
+-----------------------------------------------------
+
+.. autoclass:: BackendRichModel
     :members: model_config
 
 
@@ -18,6 +31,13 @@ SourceTag
 
 .. autoclass:: SourceTag
     :members: backend,fetched_at,cached,rate_limited
+
+
+PartialDate
+-----------------------------------------------------
+
+.. autoclass:: PartialDate
+    :members: year,month,day
 
 
 Pagination
@@ -39,6 +59,12 @@ ApiError
 
 .. autoclass:: ApiError
     :members: __init__,__str__
+
+
+require\_field
+-----------------------------------------------------
+
+.. autofunction:: require_field
 
 
 selftest

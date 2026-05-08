@@ -1,0 +1,195 @@
+metadata:
+  captured_at: '2026-05-07T14:57:53Z'
+  label: media-spirited-away
+  backend: anilist
+  path_slug: phase2_media
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Media(id: $id) {
+          id idMal
+          title { romaji english native }
+          type format status episodes duration
+          season seasonYear
+          startDate { year month day }
+          endDate { year month day }
+          genres tags { name rank }
+          averageScore meanScore popularity favourites trending
+          isAdult countryOfOrigin
+          description(asHtml: false)
+          source
+          coverImage { extraLarge large medium color }
+          bannerImage
+          trailer { id site thumbnail }
+          studios { edges { isMain node { id name isAnimationStudio } } }
+          nextAiringEpisode { airingAt timeUntilAiring episode }
+          externalLinks { id site type url language }
+          streamingEpisodes { title thumbnail url site }
+        }
+      }
+    variables:
+      id: 199
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:57:53 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '28'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Media:
+        id: 199
+        idMal: 199
+        title:
+          romaji: Sen to Chihiro no Kamikakushi
+          english: Spirited Away
+          native: 千と千尋の神隠し
+        type: ANIME
+        format: MOVIE
+        status: FINISHED
+        episodes: 1
+        duration: 125
+        season: SUMMER
+        seasonYear: 2001
+        startDate:
+          year: 2001
+          month: 7
+          day: 20
+        endDate:
+          year: 2001
+          month: 7
+          day: 20
+        genres:
+        - Adventure
+        - Drama
+        - Fantasy
+        - Supernatural
+        tags:
+        - name: Youkai
+          rank: 89
+        - name: Female Protagonist
+          rank: 89
+        - name: Coming of Age
+          rank: 85
+        - name: Curses
+          rank: 80
+        - name: Magic
+          rank: 79
+        - name: Shapeshifting
+          rank: 78
+        - name: Work
+          rank: 78
+        - name: Mythology
+          rank: 77
+        - name: Urban Fantasy
+          rank: 74
+        - name: Isekai
+          rank: 72
+        - name: Gods
+          rank: 66
+        - name: Witch
+          rank: 62
+        - name: Memory Manipulation
+          rank: 59
+        - name: Dragons
+          rank: 58
+        - name: Anthropomorphism
+          rank: 57
+        - name: Travel
+          rank: 55
+        - name: Inn
+          rank: 50
+        - name: Primarily Child Cast
+          rank: 48
+        - name: Trains
+          rank: 47
+        - name: Twins
+          rank: 43
+        averageScore: 86
+        meanScore: 86
+        popularity: 454648
+        favourites: 21885
+        trending: 4
+        isAdult: false
+        countryOfOrigin: JP
+        description: |
+          On the way to their new home, 10-year-old Chihiro Ogino's family stumbles upon a deserted theme park. Intrigued, the family investigates the park, though unbeknownst to them, it is secretly inhabited by spirits who sleep by day and appear at night. When Chihiro's mother and father eat food from a restaurant in the street, angry spirits turn them into pigs. Furthermore, a wide sea has appeared between the spirit world and the human one, trapping Chihiro, the sole human, in a land of spirits. Luckily for her though, a mysterious boy named Haku appears, claiming to know her from the past. Under his instructions, Chihiro secures a job in the bathhouse where Haku works. With only her courage and some new found friends to aid her, Chihiro embarks on a journey to turn her parents back to their original forms and return home.
+        source: ORIGINAL
+        coverImage:
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199-sWefXJvXkDOb.jpg
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199-sWefXJvXkDOb.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx199-sWefXJvXkDOb.jpg
+          color: '#e45d5d'
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/199-Sm2RU5PSqw7T.jpg
+        trailer:
+          id: ByXuk9QqQkk
+          site: youtube
+          thumbnail: https://i.ytimg.com/vi/ByXuk9QqQkk/hqdefault.jpg
+        studios:
+          edges:
+          - isMain: true
+            node:
+              id: 21
+              name: Studio Ghibli
+              isAnimationStudio: true
+          - isMain: false
+            node:
+              id: 101
+              name: Studio Hibari
+              isAnimationStudio: true
+          - isMain: false
+            node:
+              id: 417
+              name: Walt Disney Studios
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 783
+              name: GKIDS
+              isAnimationStudio: false
+        nextAiringEpisode: null
+        externalLinks:
+        - id: 15828
+          site: Netflix
+          type: STREAMING
+          url: https://www.netflix.com/title/60023642
+          language: null
+        - id: 72016
+          site: Max
+          type: STREAMING
+          url: https://www.max.com/movies/3deab668-d0a4-4a8d-9bc8-0952a0ad836e
+          language: null
+        - id: 72017
+          site: Max
+          type: STREAMING
+          url: https://www.max.com/movies/00ad6746-f3f0-4f6b-b8ea-0997f5880aa5
+          language: null
+        streamingEpisodes: []
+  body_text: null
+  body_b64: null

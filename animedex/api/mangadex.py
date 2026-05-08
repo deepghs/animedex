@@ -12,8 +12,8 @@ is ``?limit=N&offset=M`` capped at offset+limit<=10000. Common
 reads: ``/manga?title=...``, ``/manga/{id}``, ``/manga/{id}/feed``,
 ``/at-home/server/{chapter-id}``. Errors land as
 ``{"result":"error","errors":[...]}``.
-Anonymous reads cover everything Phase 1 cares about; OAuth via
-Personal Client unlocks user library and is out of Phase 1 scope.
+Anonymous reads cover everything the substrate API layer cares about; OAuth via
+Personal Client unlocks user library and is out of the substrate API layer scope.
 --- End ---
 """
 
@@ -39,6 +39,7 @@ def call(
     cache=None,
     session=None,
     rate_limit_registry=None,
+    config=None,
 ) -> RawResponse:
     """Issue a MangaDex request and return its envelope."""
     return _dispatch_call(
@@ -56,6 +57,7 @@ def call(
         cache=cache,
         session=session,
         rate_limit_registry=rate_limit_registry,
+        config=config,
     )
 
 

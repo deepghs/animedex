@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-07T15:16:20Z'
+  label: frieren-key-image
+  backend: trace
+  path_slug: search_by_url
+request:
+  method: GET
+  url: https://api.trace.moe/search?anilistInfo&url=https%3A%2F%2Fs4.anilist.co%2Ffile%2Fanilistcdn%2Fmedia%2Fanime%2Fcover%2Fextralarge%2Fbx154587-zVbalZSKBnDz.jpg
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 403
+  headers:
+    Date: Thu, 07 May 2026 15:16:20 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    access-control-allow-credentials: 'true'
+    access-control-allow-headers: Content-Type, x-trace-secret
+    access-control-allow-methods: GET, POST, OPTIONS
+    access-control-allow-origin: '*'
+    alt-svc: h3=":443"; ma=86400
+    etag: W/"7e-STDtj2VIy+rhlgmtABsqlCRFOlc"
+    ratelimit-limit: '100'
+    ratelimit-policy: 100;w=60
+    ratelimit-remaining: '98'
+    ratelimit-reset: '57'
+    vary: Origin
+    via: <scrubbed-at-capture>
+    x-ratelimit-limit: '100'
+    x-ratelimit-remaining: '98'
+    x-ratelimit-reset: '1778167038'
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    X-Content-Type-Options: nosniff
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    error: Failed to fetch image https://s4.anilist.co/file/anilistcdn/media/anime/cover/extralarge/bx154587-zVbalZSKBnDz.jpg
+  body_text: null
+  body_b64: null

@@ -18,6 +18,12 @@ call
 .. autofunction:: call
 
 
+selftest\_backend\_shim
+-----------------------------------------------------
+
+.. autofunction:: selftest_backend_shim
+
+
 selftest
 -----------------------------------------------------
 

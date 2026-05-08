@@ -1,0 +1,93 @@
+metadata:
+  captured_at: '2026-05-07T14:58:30Z'
+  label: character-1
+  backend: anilist
+  path_slug: phase2_character
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Character(id: $id) {
+          id
+          name { full native alternative }
+          image { large medium }
+          description(asHtml: false)
+          gender age dateOfBirth { year month day }
+          bloodType favourites
+          media(perPage: 3) { edges { characterRole node { id title { romaji } } } }
+        }
+      }
+    variables:
+      id: 1
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:30 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '17'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Character:
+        id: 1
+        name:
+          full: Spike Spiegel
+          native: スパイク・スピーゲル
+          alternative:
+          - Spike Spike
+          - Swimming Bird
+        image:
+          large: https://s4.anilist.co/file/anilistcdn/character/large/b1-ChxaldmieFlQ.png
+          medium: https://s4.anilist.co/file/anilistcdn/character/medium/b1-ChxaldmieFlQ.png
+        description: "__Height:__ 185 cm   \n\nSpike Spiegel is a tall and lean 27-year-old bounty hunter born on Mars."
+        gender: Male
+        age: '27'
+        dateOfBirth:
+          year: 2044
+          month: 6
+          day: 26
+        bloodType: null
+        favourites: 14359
+        media:
+          edges:
+          - characterRole: MAIN
+            node:
+              id: 1
+              title:
+                romaji: Cowboy Bebop
+          - characterRole: MAIN
+            node:
+              id: 5
+              title:
+                romaji: 'Cowboy Bebop: Tengoku no Tobira'
+          - characterRole: MAIN
+            node:
+              id: 4037
+              title:
+                romaji: 'Cowboy Bebop: Yoseatsume Blues'
+  body_text: null
+  body_b64: null

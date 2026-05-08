@@ -109,6 +109,98 @@ class TestMergedSources:
         assert decoded["_meta"]["sources_consulted"] == ["anilist", "jikan"]
 
 
+class TestRichModelSourceAttribution:
+    """Reviewer review B1 (PR #6).
+
+    Rich models (``AnilistAnime``, ``JikanAnime``, ``RawTraceHit``)
+    carry the :class:`SourceTag` on a ``source_tag`` field rather than
+    ``source``, because their ``source`` field is taken by the
+    upstream's own value (Jikan's ``source: "Manga"``, AniList's
+    ``source: "MANGA"``). The JSON renderer must still surface them
+    on ``_meta.sources_consulted``; before the B1 fix it only
+    inspected ``payload.get("source")`` and silently emitted an empty
+    list for every Phase-2 rich command.
+    """
+
+    def test_rich_model_with_source_tag_emits_backend_in_meta(self):
+        """A rich-shape model whose only ``SourceTag`` lives on
+        ``source_tag`` must still report its backend in
+        ``_meta.sources_consulted``."""
+        from animedex.backends.jikan.models import JikanAnime
+        from animedex.render.json_renderer import render_json
+
+        rich = JikanAnime.model_validate(
+            {
+                "mal_id": 52991,
+                "title": "Sousou no Frieren",
+                "source_tag": _src("jikan"),
+            }
+        )
+        decoded = json.loads(render_json(rich))
+        assert decoded["_meta"]["sources_consulted"] == ["jikan"], (
+            "Rich model with SourceTag on `source_tag` must report its "
+            "backend on _meta.sources_consulted (AGENTS §6 source "
+            "attribution mandatory)."
+        )
+
+    def test_rich_model_source_tag_does_not_collide_with_upstream_source_string(self):
+        """When the rich model's ``source`` field is a plain upstream
+        string (Jikan's ``source: "Manga"``), the renderer must not
+        treat it as a SourceTag. The actual backend lives on
+        ``source_tag``."""
+        from animedex.backends.jikan.models import JikanAnime
+        from animedex.render.json_renderer import render_json
+
+        rich = JikanAnime.model_validate(
+            {
+                "mal_id": 52991,
+                "title": "Sousou no Frieren",
+                "source": "Manga",  # upstream's own field, NOT a SourceTag
+                "source_tag": _src("jikan"),
+            }
+        )
+        decoded = json.loads(render_json(rich))
+        assert decoded["_meta"]["sources_consulted"] == ["jikan"]
+        # The upstream string survives in its own field.
+        assert decoded["source"] == "Manga"
+
+
+class TestRenderJsonHonorsAliases:
+    """Reviewer review B2 (PR #6).
+
+    The lossless contract (AGENTS §13.6) lists the JSON renderer as
+    one of the four legitimate downstream shapes. Rich models with
+    aliased fields (``RawTraceHit.from_`` aliased to ``from``,
+    ``RawTraceHit.to_`` aliased to ``to``) must round-trip through
+    the renderer with their upstream key names — not the Python
+    field names. Before the B2 fix the renderer called
+    ``model_dump(mode="json")`` without ``by_alias=True``, dumping
+    ``"from_": ...`` instead of ``"from": ...``."""
+
+    def test_aliased_fields_render_with_upstream_names(self):
+        from animedex.backends.trace.models import RawTraceHit
+        from animedex.render.json_renderer import render_json
+
+        hit = RawTraceHit.model_validate(
+            {
+                "anilist": 154587,
+                "similarity": 0.95,
+                "from": 832.7,
+                "at": 836.5,
+                "to": 836.8,
+                "source_tag": _src("trace"),
+            }
+        )
+        decoded = json.loads(render_json(hit))
+        assert "from" in decoded, "expected upstream-aliased 'from' key"
+        assert "to" in decoded, "expected upstream-aliased 'to' key"
+        assert decoded["from"] == 832.7
+        assert decoded["to"] == 836.8
+        # The Python field names ``from_`` / ``to_`` must NOT leak.
+        assert "from_" not in decoded
+        assert "to_" not in decoded
+
+
 class TestSelftest:
     def test_selftest_runs(self):
         from animedex.render import json_renderer

@@ -60,7 +60,8 @@ class TestStaff:
 
         s = Staff(id="anilist:staff:1", name="Keiichirou Saitou", source=_src())
         assert s.name == "Keiichirou Saitou"
-        assert s.primary_role is None
+        assert s.occupations == []
+        assert s.age is None
 
 
 class TestStudio:

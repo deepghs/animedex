@@ -1,0 +1,71 @@
+metadata:
+  captured_at: '2026-05-07T15:13:07Z'
+  label: berserk-2
+  backend: jikan
+  path_slug: manga_statistics
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/manga/2/statistics
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:13:06 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:manga:b1ab5718c50ab9789a6645068db09cc34d20f2f0
+    expires: Fri, 08 May 2026 14:42:15 GMT
+    last-modified: Thu, 07 May 2026 14:42:15 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      reading: 432287
+      completed: 106297
+      on_hold: 66717
+      dropped: 14069
+      plan_to_read: 176917
+      total: 796287
+      scores:
+      - score: 1
+        votes: 3284
+        percentage: 0.8
+      - score: 2
+        votes: 627
+        percentage: 0.2
+      - score: 3
+        votes: 346
+        percentage: 0.1
+      - score: 4
+        votes: 655
+        percentage: 0.2
+      - score: 5
+        votes: 1372
+        percentage: 0.3
+      - score: 6
+        votes: 3352
+        percentage: 0.8
+      - score: 7
+        votes: 10617
+        percentage: 2.7
+      - score: 8
+        votes: 30730
+        percentage: 7.7
+      - score: 9
+        votes: 75834
+        percentage: 19
+      - score: 10
+        votes: 271917
+        percentage: 68.2
+  body_text: null
+  body_b64: null

@@ -1,0 +1,151 @@
+metadata:
+  captured_at: '2026-05-07T14:59:14Z'
+  label: trending-top8
+  backend: anilist
+  path_slug: phase2_trending
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          media(type: ANIME, sort: TRENDING_DESC) {
+            id title { romaji english } status format averageScore popularity trending
+            coverImage { large color }
+          }
+        }
+      }
+    variables:
+      perPage: 8
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:59:14 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '21'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        media:
+        - id: 189046
+          title:
+            romaji: Re:Zero kara Hajimeru Isekai Seikatsu 4th Season
+            english: Re:ZERO -Starting Life in Another World- Season 4
+          status: RELEASING
+          format: TV
+          averageScore: 87
+          popularity: 81506
+          trending: 258
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189046-yaHWtS5FII46.jpg
+            color: '#e49350'
+        - id: 182483
+          title:
+            romaji: Hime Kishi wa Barbaroi no Yome
+            english: The Warrior Princess and the Barbaric King
+          status: RELEASING
+          format: TV
+          averageScore: 67
+          popularity: 29863
+          trending: 184
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182483-La7chs6htDWr.jpg
+            color: '#50bbf1'
+        - id: 180745
+          title:
+            romaji: Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 4th Season 2-nensei-hen Ichi Gakki
+            english: 'Classroom of the Elite 4th Season: Second Year, First Semester'
+          status: RELEASING
+          format: TV
+          averageScore: 79
+          popularity: 75937
+          trending: 177
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180745-OEZaBeEdWozn.png
+            color: '#aec9e4'
+        - id: 147105
+          title:
+            romaji: Tongari Boushi no Atelier
+            english: Witch Hat Atelier
+          status: RELEASING
+          format: ONA
+          averageScore: 86
+          popularity: 125386
+          trending: 170
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx147105-rwOX8qyUy8gV.jpg
+            color: '#0d8693'
+        - id: 21
+          title:
+            romaji: ONE PIECE
+            english: ONE PIECE
+          status: RELEASING
+          format: TV
+          averageScore: 87
+          popularity: 689723
+          trending: 159
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg
+            color: '#e49335'
+        - id: 199588
+          title:
+            romaji: Otaku ni Yasashii Gal wa Inai!?
+            english: Gals Can't Be Kind to Otaku!?
+          status: RELEASING
+          format: TV
+          averageScore: 74
+          popularity: 34171
+          trending: 148
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx199588-M2vtWicvqNbU.jpg
+            color: '#e4c9a1'
+        - id: 194317
+          title:
+            romaji: Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season
+            english: The Beginning After the End Season 2
+          status: RELEASING
+          format: TV
+          averageScore: 55
+          popularity: 29613
+          trending: 102
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx194317-M7t2ymBDHqyW.jpg
+            color: '#e49335'
+        - id: 169580
+          title:
+            romaji: Class de 2-banme ni Kawaii Onnanoko to Tomodachi ni Natta
+            english: I Made Friends with the Second Prettiest Girl in My Class
+          status: RELEASING
+          format: TV
+          averageScore: 77
+          popularity: 42267
+          trending: 96
+          coverImage:
+            large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169580-nXxpmqu6UVux.jpg
+            color: '#f1bb50'
+  body_text: null
+  body_b64: null

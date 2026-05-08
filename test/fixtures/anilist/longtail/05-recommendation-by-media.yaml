@@ -1,0 +1,96 @@
+metadata:
+  captured_at: '2026-05-07T15:10:12Z'
+  label: recommendation-by-media
+  backend: anilist
+  path_slug: phase2_longtail
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Page(page:1,perPage:5){ recommendations(mediaId:154587, sort:RATING_DESC){ id rating media{ id title{romaji}
+      } mediaRecommendation{ id title{romaji} } } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 15:10:12 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '25'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        recommendations:
+        - id: 231598
+          rating: 1116
+          media:
+            id: 154587
+            title:
+              romaji: Sousou no Frieren
+          mediaRecommendation:
+            id: 21827
+            title:
+              romaji: Violet Evergarden
+        - id: 231608
+          rating: 493
+          media:
+            id: 154587
+            title:
+              romaji: Sousou no Frieren
+          mediaRecommendation:
+            id: 112609
+            title:
+              romaji: Majo no Tabitabi
+        - id: 231600
+          rating: 406
+          media:
+            id: 154587
+            title:
+              romaji: Sousou no Frieren
+          mediaRecommendation:
+            id: 114535
+            title:
+              romaji: Fumetsu no Anata e
+        - id: 231594
+          rating: 287
+          media:
+            id: 154587
+            title:
+              romaji: Sousou no Frieren
+          mediaRecommendation:
+            id: 457
+            title:
+              romaji: Mushishi
+        - id: 231606
+          rating: 251
+          media:
+            id: 154587
+            title:
+              romaji: Sousou no Frieren
+          mediaRecommendation:
+            id: 99420
+            title:
+              romaji: Shoujo Shuumatsu Ryokou
+  body_text: null
+  body_b64: null

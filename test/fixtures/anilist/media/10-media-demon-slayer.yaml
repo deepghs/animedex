@@ -1,0 +1,342 @@
+metadata:
+  captured_at: '2026-05-07T14:58:20Z'
+  label: media-demon-slayer
+  backend: anilist
+  path_slug: phase2_media
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Media(id: $id) {
+          id idMal
+          title { romaji english native }
+          type format status episodes duration
+          season seasonYear
+          startDate { year month day }
+          endDate { year month day }
+          genres tags { name rank }
+          averageScore meanScore popularity favourites trending
+          isAdult countryOfOrigin
+          description(asHtml: false)
+          source
+          coverImage { extraLarge large medium color }
+          bannerImage
+          trailer { id site thumbnail }
+          studios { edges { isMain node { id name isAnimationStudio } } }
+          nextAiringEpisode { airingAt timeUntilAiring episode }
+          externalLinks { id site type url language }
+          streamingEpisodes { title thumbnail url site }
+        }
+      }
+    variables:
+      id: 101922
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:20 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '20'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Media:
+        id: 101922
+        idMal: 38000
+        title:
+          romaji: Kimetsu no Yaiba
+          english: 'Demon Slayer: Kimetsu no Yaiba'
+          native: 鬼滅の刃
+        type: ANIME
+        format: TV
+        status: FINISHED
+        episodes: 26
+        duration: 24
+        season: SPRING
+        seasonYear: 2019
+        startDate:
+          year: 2019
+          month: 4
+          day: 6
+        endDate:
+          year: 2019
+          month: 9
+          day: 28
+        genres:
+        - Action
+        - Adventure
+        - Drama
+        - Fantasy
+        - Supernatural
+        tags:
+        - name: Demons
+          rank: 96
+        - name: Shounen
+          rank: 92
+        - name: Swordplay
+          rank: 88
+        - name: Male Protagonist
+          rank: 82
+        - name: Vampire
+          rank: 79
+        - name: Tragedy
+          rank: 78
+        - name: Travel
+          rank: 76
+        - name: Primarily Teen Cast
+          rank: 76
+        - name: Monster Girl
+          rank: 75
+        - name: Revenge
+          rank: 74
+        - name: Orphan
+          rank: 70
+        - name: Gore
+          rank: 67
+        - name: CGI
+          rank: 66
+        - name: Primarily Male Cast
+          rank: 65
+        - name: Mythology
+          rank: 65
+        - name: Rural
+          rank: 60
+        - name: Historical
+          rank: 58
+        - name: Rotoscoping
+          rank: 56
+        - name: Body Horror
+          rank: 54
+        - name: Super Power
+          rank: 54
+        - name: Curses
+          rank: 50
+        - name: Chibi
+          rank: 49
+        - name: Time Skip
+          rank: 41
+        - name: Animals
+          rank: 20
+        - name: Food
+          rank: 10
+        averageScore: 83
+        meanScore: 83
+        popularity: 933621
+        favourites: 56245
+        trending: 16
+        isAdult: false
+        countryOfOrigin: JP
+        description: |-
+          It is the Taisho Period in Japan. Tanjiro, a kindhearted boy who sells charcoal for a living, finds his family slaughtered by a demon. To make matters worse, his younger sister Nezuko, the sole survivor, has been transformed into a demon herself. Though devastated by this grim reality, Tanjiro resolves to become a “demon slayer” so that he can turn his sister back into a human, and kill the demon that massacred his family.<br>
+          <br>
+          (Source: Crunchyroll)
+        source: MANGA
+        coverImage:
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101922-WBsBl0ClmgYL.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx101922-WBsBl0ClmgYL.jpg
+          color: '#f1c9ae'
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/101922-33MtJGsUSxga.jpg
+        trailer:
+          id: 6vMuWuWlW4I
+          site: youtube
+          thumbnail: https://i.ytimg.com/vi/6vMuWuWlW4I/hqdefault.jpg
+        studios:
+          edges:
+          - isMain: true
+            node:
+              id: 43
+              name: ufotable
+              isAnimationStudio: true
+          - isMain: false
+            node:
+              id: 17
+              name: Aniplex
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 6570
+              name: Shueisha
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 493
+              name: Aniplex of America
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 43
+              name: ufotable
+              isAnimationStudio: true
+        nextAiringEpisode: null
+        externalLinks:
+        - id: 5814
+          site: Twitter
+          type: SOCIAL
+          url: https://twitter.com/kimetsu_off
+          language: Japanese
+        - id: 9277
+          site: Crunchyroll
+          type: STREAMING
+          url: https://www.crunchyroll.com/demon-slayer-kimetsu-no-yaiba
+          language: null
+        - id: 9303
+          site: Hulu
+          type: STREAMING
+          url: https://www.hulu.com/demon-slayer-kimetsu-no-yaiba
+          language: null
+        - id: 15243
+          site: Twitter
+          type: SOCIAL
+          url: https://twitter.com/DemonSlayerUSA
+          language: English
+        - id: 21673
+          site: Netflix
+          type: STREAMING
+          url: https://www.netflix.com/title/81091393
+          language: null
+        - id: 28564
+          site: Official Site
+          type: INFO
+          url: https://kimetsu.com/anime/risshihen/
+          language: Japanese
+        - id: 45307
+          site: Twitter
+          type: SOCIAL
+          url: https://twitter.com/kimetsu_fr
+          language: French
+        - id: 108093
+          site: Facebook
+          type: SOCIAL
+          url: https://www.facebook.com/DemonSlayer.anime
+          language: English
+        streamingEpisodes:
+        - title: Episode 1 - Cruelty
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/db617c3bb6a6097394baf707239ff1091554542829_full.jpg
+          url: http://www.crunchyroll.com/watch/G9DUEDM08/cruelty
+          site: Crunchyroll
+        - title: Episode 2 - Trainer Sakonji Urokodaki
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/086240450f344f53dbc50765c0ba80cc1555138178_full.jpg
+          url: http://www.crunchyroll.com/watch/GX9UQKWE0/trainer-sakonji-urokodaki
+          site: Crunchyroll
+        - title: Episode 3 - Sabito and Makomo
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/249734bc86fa3b6c96697b4c0fb623671555745937_full.jpg
+          url: http://www.crunchyroll.com/watch/G4VUQMV58/sabito-and-makomo
+          site: Crunchyroll
+        - title: Episode 4 - Final Selection
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/4558b0fe17cec9f89c4e49142be8841a1556355701_full.jpg
+          url: http://www.crunchyroll.com/watch/GJWU2J0W0/final-selection
+          site: Crunchyroll
+        - title: Episode 5 - My Own Steel
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/ef38749be1f8c847f6cf3c543f731d861556965651_full.jpg
+          url: http://www.crunchyroll.com/watch/GK9U38EVV/my-own-steel
+          site: Crunchyroll
+        - title: Episode 6 - Swordsman Accompanying a Demon
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/130e542a4c0e9b2a641f415b307c061c1557582919_full.jpg
+          url: http://www.crunchyroll.com/watch/G50UZE0KN/swordsman-accompanying-a-demon
+          site: Crunchyroll
+        - title: Episode 7 - Muzan Kibutsuji
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/e37f49ef0692223e459b05861a988bd71558163856_full.jpg
+          url: http://www.crunchyroll.com/watch/G0DUN92GM/muzan-kibutsuji
+          site: Crunchyroll
+        - title: Episode 8 - The Smell of Enchanting Blood
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/fcedf99908b2ac57874878fb01dbeaf31558769599_full.jpg
+          url: http://www.crunchyroll.com/watch/G9DUED0ZK/the-smell-of-enchanting-blood
+          site: Crunchyroll
+        - title: Episode 9 - Temari Demon and Arrow Demon
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/d28b6a5b34e7a0655ecd215c27762ec91559369980_full.jpg
+          url: http://www.crunchyroll.com/watch/GX9UQKE1N/temari-demon-and-arrow-demon
+          site: Crunchyroll
+        - title: Episode 10 - Together Forever
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/64a13c0d70d63e7c138a618ed2312d861559984760_full.jpg
+          url: http://www.crunchyroll.com/watch/G14U4X7QX/together-forever
+          site: Crunchyroll
+        - title: Episode 11 - Tsuzumi Mansion
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/f514e4165a990f016f5459d92c5b0ef81560592929_full.jpg
+          url: http://www.crunchyroll.com/watch/GJWU2JWNX/tsuzumi-mansion
+          site: Crunchyroll
+        - title: Episode 12 - The Boar Bares Its Fangs, Zenitsu Sleeps
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/6070dc5bcb56020bbcb0c1981378ac261561190278_full.jpg
+          url: http://www.crunchyroll.com/watch/GK9U38EV5/the-boar-bares-its-fangs-zenitsu-sleeps
+          site: Crunchyroll
+        - title: Episode 13 - Something More Important Than Life
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/e42ec5184d3d7d13897586c3744098fe1561800656_full.jpg
+          url: http://www.crunchyroll.com/watch/GPWUK09NG/something-more-important-than-life
+          site: Crunchyroll
+        - title: Episode 14 - The House with the Wisteria Family Crest
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/6c70ee54a26bd84c1a1052abba7c819d1562413909_full.jpg
+          url: http://www.crunchyroll.com/watch/G8WUN2J3G/the-house-with-the-wisteria-family-crest
+          site: Crunchyroll
+        - title: Episode 15 - Mount Natagumo
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/6ba9f2d38cdc6ff21e6a586dc36b28a81563019836_full.jpg
+          url: http://www.crunchyroll.com/watch/GZ7UVPGQE/mount-natagumo
+          site: Crunchyroll
+        - title: Episode 16 - Letting Someone Else Go First
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/c15001b5a9ca894ef00d38bfaa1c54a21563622283_full.jpg
+          url: http://www.crunchyroll.com/watch/G50UZE0NN/letting-someone-else-go-first
+          site: Crunchyroll
+        - title: Episode 17 - You Must Master a Single Thing
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/f40566dcc7a6841da2cdc35680dde5021564216522_full.jpg
+          url: http://www.crunchyroll.com/watch/GG1U2DJ52/you-must-master-a-single-thing
+          site: Crunchyroll
+        - title: Episode 18 - A Forged Bond
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/d4902643472940221c95439b1e6724121564822696_full.jpg
+          url: http://www.crunchyroll.com/watch/GEVUZ8730/a-forged-bond
+          site: Crunchyroll
+        - title: Episode 19 - Hinokami
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/d3813c988231fda747d02614e8caa4b61565438538_full.jpg
+          url: http://www.crunchyroll.com/watch/G7PU4W72N/hinokami
+          site: Crunchyroll
+        - title: Episode 20 - Pretend Family
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/7bb29c047f587150e6ef46b7cc24cb141566045641_full.jpg
+          url: http://www.crunchyroll.com/watch/G4VUQM503/pretend-family
+          site: Crunchyroll
+        - title: Episode 21 - Against Corps Rules
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/3dfb5c42ad0601cef2cae9c7294fa0791566633737_full.jpg
+          url: http://www.crunchyroll.com/watch/GJWU2JW7X/against-corps-rules
+          site: Crunchyroll
+        - title: Episode 22 - Master of the Mansion
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/a68639577c99f83aec8a64b72c74860e1567236590_full.jpg
+          url: http://www.crunchyroll.com/watch/GK9U38E25/master-of-the-mansion
+          site: Crunchyroll
+        - title: Episode 23 - Hashira Meeting
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/3e6560351787e6940f7f523c02d937591567839099_full.jpg
+          url: http://www.crunchyroll.com/watch/GVWU0PMXE/hashira-meeting
+          site: Crunchyroll
+        - title: Episode 24 - Rehabilitation Training
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/935b6e5afc1f948277e938756820a8c81568458699_full.jpg
+          url: http://www.crunchyroll.com/watch/GPWUK09JG/rehabilitation-training
+          site: Crunchyroll
+        - title: Episode 25 - Tsuguko, Kanao Tsuyuri
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/dbf9b3cce83780ea5e49fad38f45aedf1569067593_full.jpg
+          url: http://www.crunchyroll.com/watch/G8WUN2JVG/tsuguko-kanao-tsuyuri
+          site: Crunchyroll
+        - title: Episode 26 - New Mission
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/e326d8be303eecf03d3e5812ffcfc7ce1569672152_full.jpg
+          url: http://www.crunchyroll.com/watch/GD9UV2MZM/new-mission
+          site: Crunchyroll
+  body_text: null
+  body_b64: null

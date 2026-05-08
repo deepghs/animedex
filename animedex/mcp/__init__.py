@@ -19,7 +19,7 @@ a real MCP runtime:
   handler)``).
 
 The actual ``animedex mcp serve`` CLI subcommand and the binding to
-the upstream MCP server library land in Phase 8; this scaffold
-exists so backend code in Phases 1-7 can use the decorator and so
-the registry mechanism is testable in isolation.
+the upstream MCP server library land later; this scaffold exists so
+backend code can use the decorator now and so the registry mechanism
+is testable in isolation.
 """

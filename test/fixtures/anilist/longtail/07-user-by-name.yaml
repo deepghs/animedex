@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-07T15:10:20Z'
+  label: user-by-name
+  backend: anilist
+  path_slug: phase2_longtail
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ User(name:"AniList"){ id name about avatar{ large } siteUrl statistics{ anime{ count meanScore } manga{ count
+      meanScore } } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 15:10:20 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '23'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      User:
+        id: 6933956
+        name: AniList
+        about: |-
+          ### Admin Operated | Site News & Updates
+
+          * [Site Rules](https://anilist.co/forum/thread/14)
+          * [Known Issues](https://anilist.co/forum/thread/76237)
+          * [Roadmap & Changelog](https://anilist.co/forum/thread/3878)
+          * [FAQ](https://anilist.co/forum/thread/76239)
+
+          ### AniList Lore Corner
+
+          * Our default user avatar is [Mina](https://anilist.co/character/89926/Mina) from [Terumina](https://anilist.co/manga/87247/Terumina/).
+          * @Removed's avatar is [Tsubasa Hanekawa](https://anilist.co/character/22055/Tsubasa-Hanekawa) from the [Monogatari Series](https://anilist.co/manga/44893/Bakemonogatari/).
+          * @ModChan's avatar is [Komissa-chan](https://anilist.co/character/359600/Komissachan) from [PSYCHO-PASS](https://anilist.co/anime/13601/PSYCHOPASS/).
+        avatar:
+          large: https://s4.anilist.co/file/anilistcdn/user/avatar/large/b6933956-1uVQQVkGj9Ic.png
+        siteUrl: https://anilist.co/user/6933956
+        statistics:
+          anime:
+            count: 0
+            meanScore: 0
+          manga:
+            count: 0
+            meanScore: 0
+  body_text: null
+  body_b64: null

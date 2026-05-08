@@ -1,0 +1,362 @@
+metadata:
+  captured_at: '2026-05-07T15:12:57Z'
+  label: berserk-2
+  backend: jikan
+  path_slug: manga_news
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/manga/2/news?page=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:12:57 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:manga:a2c3d0e109edc925422b1e4ca73464533abbde3d
+    expires: Fri, 08 May 2026 12:46:05 GMT
+    last-modified: Thu, 07 May 2026 12:46:05 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - mal_id: 66547854
+      url: https://myanimelist.net/news/66547854
+      title: Kentarou Miura's Assistants Resume 'Berserk' Serialization, 'Holyland' Creator Kouji Mori to Supervise
+      date: '2022-06-07T00:33:00+00:00'
+      author_username: Vindstot
+      author_url: https://myanimelist.net/profile/Vindstot
+      forum_url: https://myanimelist.net/forum/?topicid=2021160
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1654587114-bf53f8de5beebd981afec1932486e604.jpeg?s=14bd951b901aa46034b344818e7cbd31
+      comments: 69
+      excerpt: The editorial department of Young Animal announced on Tuesday that the late Kentarou Miura's Berserk manga
+        will resume serialization in the 13th issue on June ...
+    - mal_id: 63203251
+      url: https://myanimelist.net/news/63203251
+      title: '''Berserk'' Creator Kentarou Miura Dies at 54'
+      date: '2021-05-19T21:39:00+00:00'
+      author_username: Vindstot
+      author_url: https://myanimelist.net/profile/Vindstot
+      forum_url: https://myanimelist.net/forum/?topicid=1924224
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1621492994-97c345f3d0912b89a1207f235274b1a4.jpeg?s=b42ac2bcc10470f9f29e6d4647f4c4fc
+      comments: 437
+      excerpt: Prolific manga author Kentarou Miura, best known for creating Berserk, died on May 6 at 2:48 p.m. due to an
+        acute aortic dissection. He was 54 years old. "We w...
+    - mal_id: 62171559
+      url: https://myanimelist.net/news/62171559
+      title: North American Anime & Manga Releases for March
+      date: '2021-03-01T18:50:00+00:00'
+      author_username: ImperfectBlue
+      author_url: https://myanimelist.net/profile/ImperfectBlue
+      forum_url: https://myanimelist.net/forum/?topicid=1902047
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1614653396-7a00b4ffc582810d1d397ad1fad351c3.png?s=7020936c11aba46d98b01136bea9c6a7
+      comments: 3
+      excerpt: 'Here are the North American anime & manga releases for March Week 1: March 2 - 8 Anime Releases Amaenaide
+        yo!! (Ah My Buddha!!) Blu-ray Aragne no Mushikago (Arag...'
+    - mal_id: 60161703
+      url: https://myanimelist.net/news/60161703
+      title: North American Anime & Manga Releases for July
+      date: '2020-07-07T15:39:00+00:00'
+      author_username: ImperfectBlue
+      author_url: https://myanimelist.net/profile/ImperfectBlue
+      forum_url: https://myanimelist.net/forum/?topicid=1850747
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1594161493-e76e48dafd1b0f67ece6f1fa065db158.jpeg?s=e24b9ee8cfa8d123bf27fbbd9aef0d27
+      comments: 0
+      excerpt: 'Here are the North American anime & manga releases for July Week 1: July 7 - 13 Anime Releases Cop Craft Complete
+        Collection Blu-ray Dumbbell Nan Kilo Moteru? (H...'
+    - mal_id: 59255151
+      url: https://myanimelist.net/news/59255151
+      title: North American Anime & Manga Releases for March
+      date: '2020-03-02T13:33:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1827523
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1583184670-55ab3932d833b8a5afe77065c6fe401c.jpeg?s=b32e29c5f610adf3d5510e747512a839
+      comments: 4
+      excerpt: 'Here are the North American anime & manga releases for March Week 1: March 3 - 9 Anime Releases Aria The Animation
+        Complete Collection Blu-ray Black Clover Seaso...'
+    - mal_id: 58614811
+      url: https://myanimelist.net/news/58614811
+      title: North American Anime & Manga Releases for November
+      date: '2019-11-04T11:17:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1809588
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1572894978-e527c53e136bbac82968a00799cf4f31.jpeg?s=0bf5651f1286e77056c532ca9979b18d
+      comments: 3
+      excerpt: 'Here are the North American anime & manga releases for November Week 1: November 5 - 11 Anime Releases Dragon
+        Ball Z 30th Anniversary Collector''s Edition Bl...'
+    - mal_id: 58445798
+      url: https://myanimelist.net/news/58445798
+      title: North American Anime & Manga Releases for October
+      date: '2019-09-30T13:23:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1804228
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1569874825-7c1c323174857e84cd2320a871a060de.jpeg?s=636e9b682ec995923c7a4eab1b89b746
+      comments: 0
+      excerpt: 'Here are the North American anime & manga releases for October Week 1: October 1 - 7 Anime Releases Beyblade
+        Burst Complete Collection DVD Beyblade Burst God Com...'
+    - mal_id: 57890337
+      url: https://myanimelist.net/news/57890337
+      title: North American Anime & Manga Releases for July
+      date: '2019-07-01T14:44:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1789812
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1562017369-40a8016bcdd6abc7fa9ce3bb32af6ab1.png?s=fe008b8f0f9c09dcf5bfcde69fedfd71
+      comments: 2
+      excerpt: 'Here are the North American anime & manga releases for July Week 1: July 2 - 8 Anime Releases Basilisk: Kouga
+        Ninpou Chou Complete Collection Blu-ray (Anime Clas...'
+    - mal_id: 57388779
+      url: https://myanimelist.net/news/57388779
+      title: '''Berserk'' Returns from Hiatus'
+      date: '2019-04-13T10:57:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1777198
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1555178072-6d28684b5b136c7cedd941b8dadc2bbc.jpeg?s=395e657f14335c712e088d705d9bf6cb
+      comments: 52
+      excerpt: The eighth 2019 issue of Young Animal announced on Friday that Kentarou Miura's fantasy manga Berserk will
+        resume serialization in the magazine's combined ...
+    - mal_id: 57064903
+      url: https://myanimelist.net/news/57064903
+      title: North American Anime & Manga Releases for March
+      date: '2019-03-04T03:28:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1770021
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1551698777-b015d8cfa285ad9d73ccea71330aab65.png?s=a0601f05a92987fc23d08a1d5a4686d0
+      comments: 3
+      excerpt: 'Here are the North American anime & manga releases for March Week 1: March 5 - 11 Anime Releases Code Geass:
+        Hangyaku no Lelouch Movie Trilogy (incl. I - Koudou,...'
+    - mal_id: 55377145
+      url: https://myanimelist.net/news/55377145
+      title: North American Anime & Manga Releases for July
+      date: '2018-07-03T08:30:00+00:00'
+      author_username: Kineta
+      author_url: https://myanimelist.net/profile/Kineta
+      forum_url: https://myanimelist.net/forum/?topicid=1732247
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1530631249-7dec9ca7a2df2f832ad2ddac31f0c360.jpeg?s=993bf043122833b85cc021380763a70c
+      comments: 0
+      excerpt: 'Here are the North American anime & manga releases for July Week 1: July 3 - July 9 Anime releases Ansatsu
+        Kyoushitsu: 365-nichi no Jikan Blu-ray & DVD Combo...'
+    - mal_id: 53304997
+      url: https://myanimelist.net/news/53304997
+      title: Manga 'Berserk' Resumes Serialization
+      date: '2017-12-08T18:53:00+00:00'
+      author_username: Vindstot
+      author_url: https://myanimelist.net/profile/Vindstot
+      forum_url: https://myanimelist.net/forum/?topicid=1690998
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1512787795-f1674d6456f90126448afb689c3224be.jpeg?s=66f1c0637fa3b5b7e90dc0f40f608738
+      comments: 31
+      excerpt: The 24th issue of this year's Young Animal magazine has announced on Friday that Kentarou Miura's adventure
+        fantasy manga Berserk will resume its serializa...
+    - mal_id: 51372869
+      url: https://myanimelist.net/news/51372869
+      title: North American Anime & Manga Releases for July
+      date: '2017-07-03T11:26:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1633746
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1499106286-37a4ff12c49ae4630f0ff0a72143ddc6.jpeg?s=328c03d6f8b391b0f0176dc06bef5f5f
+      comments: 9
+      excerpt: 'Here are the North American anime & manga releases for July Week 1: July 4 - 10 Anime Releases Bakemono no
+        Ko Blu-ray & DVD Combo Collection''s Edition H...'
+    - mal_id: 48334182
+      url: https://myanimelist.net/news/48334182
+      title: NY Times Manga Best Seller List for Oct 16 - 22
+      date: '2016-10-28T18:15:00+00:00'
+      author_username: Snow
+      author_url: https://myanimelist.net/profile/Snow
+      forum_url: https://myanimelist.net/forum/?topicid=1564760
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1477703676-4d3bae890f57848bb198ae8b083aeb5d.jpeg?s=f1220a6be71b321713e45988733dbf79
+      comments: 19
+      excerpt: Graphic books best seller list (manga, light novel, and OEL) for October 16 - 22 *1. Tokyo Ghoul Vol.9 *2.
+        Tokyo Ghoul Vol.1 *3. One Punch-Man Vol.1 *4. One Punch-Ma...
+    - mal_id: 48145467
+      url: https://myanimelist.net/news/48145467
+      title: NY Times Manga Best Seller List for Oct 2 - 8
+      date: '2016-10-14T10:47:00+00:00'
+      author_username: Snow
+      author_url: https://myanimelist.net/profile/Snow
+      forum_url: https://myanimelist.net/forum/?topicid=1561081
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1476467179-6adfd353e8150f8b067c6a725dc9563d.jpeg?s=fc6495a1124f87c5e47866245080a9e5
+      comments: 13
+      excerpt: Graphic books best seller list (manga, light novel, and OEL) for October 2 - 8 *1. Akatsuki no Yona Vol.2 *2.
+        Shokugeki no Souma Vol.14 *3. Tokyo Ghoul Vol.1 *4. Ans...
+    - mal_id: 48060663
+      url: https://myanimelist.net/news/48060663
+      title: NY Times Manga Best Seller List for Sep 25 - Oct 1
+      date: '2016-10-07T11:55:00+00:00'
+      author_username: Snow
+      author_url: https://myanimelist.net/profile/Snow
+      forum_url: https://myanimelist.net/forum/?topicid=1559345
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1475866485-1404f966af001b966e7d312fe106dd0e.jpeg?s=426d7d8020e419670a3050d565c1d526
+      comments: 13
+      excerpt: Graphic books best seller list (manga, light novel, and OEL) for September 25 - October 1 *1. Fairy Tail Vol.56
+        *2. One Punch-Man Vol.1 *3. Akame ga Kill! Zero Vol.3...
+    - mal_id: 47861342
+      url: https://myanimelist.net/news/47861342
+      title: Manga 'Berserk' Goes on Hiatus
+      date: '2016-09-21T14:40:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1555340
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1474493880-0daebf997d61257939deb4bda9bb0bf7.jpeg?s=2db7ad5bae6032c60b5d5b7f1b762910
+      comments: 48
+      excerpt: Hakusensha's Young Animal magazine is announcing in its 19th issue (pictured), which will go on sale on September
+        23, that Berserk will go on hiatus. It is plan...
+    - mal_id: 47800690
+      url: https://myanimelist.net/news/47800690
+      title: '''Berserk (2016)'' Gets Second Season for Spring 2017'
+      date: '2016-09-17T01:08:00+00:00'
+      author_username: Stark700
+      author_url: https://myanimelist.net/profile/Stark700
+      forum_url: https://myanimelist.net/forum/?topicid=1553927
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1474488689-5098d52e72b0e0e68ff6bec801ac0eff.jpeg?s=97e23e5b95191a061166fe923cc0b222
+      comments: 99
+      excerpt: It was announced after the broadcast of the final episode of Berserk (2016) that the series will be getting
+        a continuation for Spring 2017. Berserk (2016) aired betw...
+    - mal_id: 46404733
+      url: https://myanimelist.net/news/46404733
+      title: '''Berserk'' Manga Resumes Publication Under New Imprint'
+      date: '2016-06-10T00:26:00+00:00'
+      author_username: arsonal
+      author_url: https://myanimelist.net/profile/arsonal
+      forum_url: https://myanimelist.net/forum/?topicid=1520337
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1465543582-e8493dec751e1d0621ddf16321730c2d.jpeg?s=a3f0c5d9f1e263fce9774accfb31020f
+      comments: 26
+      excerpt: Hakusensha's Young Animal magazine has announced that Kentarou Miura's fantasy manga Berserk will resume serialization
+        in the magazine's 13th issue of...
+    - mal_id: 43820039
+      url: https://myanimelist.net/news/43820039
+      title: '''Berserk'' Gets New Anime Project'
+      date: '2015-12-21T06:25:00+00:00'
+      author_username: Stark700
+      author_url: https://myanimelist.net/profile/Stark700
+      forum_url: https://myanimelist.net/forum/?topicid=1463872
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1450707545-35bad5ea5d1a2e88a02db108911ab49f.jpeg?s=d8d6ae223c7342db755795c1395f84ff
+      comments: 256
+      excerpt: It was revealed in the latest January 2016 issue of Young Animal Magazine that Berserk will be getting a new
+        anime adaptation. The new anime project will adapt Kent...
+    - mal_id: 40747338
+      url: https://myanimelist.net/news/40747338
+      title: '''Berserk'' to Resume Serialization'
+      date: '2015-07-08T10:23:00+00:00'
+      author_username: Sakana-san
+      author_url: https://myanimelist.net/profile/Sakana-san
+      forum_url: https://myanimelist.net/forum/?topicid=1403453
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1455181513-fed74b85ea638517a859537e2e36159b.jpeg?s=bb17ac2c0065bb440277de0aed68e774
+      comments: 122
+      excerpt: It will be announced in the 14th issue of Young Animal magazine, released on July 10, that Berserk will resume
+        its serialization after a ten month hiatus. The series...
+    - mal_id: 29220069
+      url: https://myanimelist.net/news/29220069
+      title: '''Berserk'' Manga To Resume This April 11'
+      date: '2014-03-11T08:15:00+00:00'
+      author_username: Dunois
+      author_url: https://myanimelist.net/profile/Dunois
+      forum_url: https://myanimelist.net/forum/?topicid=1105445
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1455351861-7f1d75879f99954f0a22f9e30f84c3f2.jpeg?s=fc6c31b3ef6e15045e937126fbf449af
+      comments: 175
+      excerpt: It will be announced in upcoming sixth issue of the magazine Young Animal that the manga Berserk will resume
+        serialization. The next chapter will be published in the...
+    - mal_id: 26167803
+      url: https://myanimelist.net/news/26167803
+      title: Manga 'Berserk' to Resume After a New Short Manga of Six Chapters
+      date: '2013-11-04T02:03:00+00:00'
+      author_username: symbv
+      author_url: https://myanimelist.net/profile/symbv
+      forum_url: https://myanimelist.net/forum/?topicid=685439
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1455352227-edde58cbd8b9899bc2dafa19f39599fc.jpeg?s=3c7f0e087a39c79a32344b4b2c4bc37f
+      comments: 117
+      excerpt: According to the latest issue of manga magazine Young Animal, Miura Kentarou is going to write a short manga
+        named "Gigantomakhia", which will be serialize...
+    - mal_id: 9613081
+      url: https://myanimelist.net/news/9613081
+      title: Anime Movie of Berserk Announced [Update Jan 6]
+      date: '2010-09-27T15:46:00+00:00'
+      author_username: dtshyk
+      author_url: https://myanimelist.net/profile/dtshyk
+      forum_url: https://myanimelist.net/forum/?topicid=263071
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1455352139-71361c2c41cac24f22d487df549709de.jpeg?s=ad77dc33c4804ea4c47211d9f68ded6c
+      comments: 146
+      excerpt: According to the cover note of the manga volume 35, a new anime project of Berserk was announced to get underway.
+        More information will be given in Young Animal maga...
+    - mal_id: 5914903
+      url: https://myanimelist.net/news/5914903
+      title: Japan's Manga Ranking For Sep 21 - 27
+      date: '2009-09-30T17:00:00+00:00'
+      author_username: dtshyk
+      author_url: https://myanimelist.net/profile/dtshyk
+      forum_url: https://myanimelist.net/forum/?topicid=119888
+      images:
+        jpg:
+          image_url: https://cdn.myanimelist.net/s/common/uploaded_files/1455352064-3c3d6096b66f09e3fe8cefd98200866c.jpeg?s=677ab9fe4837983535b52d3df094ffb0
+      comments: 21
+      excerpt: Here is the weekly manga sales ranking for September 21st - 27th. *1, 183,755 *,183,755 Berserk vol.34 *2,
+        117,158 *,259,956 Soul Eater vol.15 *3, *85,092 *,*85,092 ...
+  body_text: null
+  body_b64: null

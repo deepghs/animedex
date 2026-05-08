@@ -1,0 +1,1915 @@
+metadata:
+  captured_at: '2026-05-07T15:16:09Z'
+  label: popular
+  backend: jikan
+  path_slug: watch_episodes_popular
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/watch/episodes/popular
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:16:08 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:watch:71b66d79faf88eb960e4b540d96ff87c3bb0c359
+    expires: Fri, 08 May 2026 07:56:39 GMT
+    last-modified: Thu, 07 May 2026 07:56:39 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data:
+    - entry:
+        mal_id: 1
+        url: https://myanimelist.net/anime/1/Cowboy_Bebop
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Cowboy Bebop
+      episodes:
+      - mal_id: 26
+        url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/26
+        title: Episode 26
+        premium: false
+      - mal_id: 25
+        url: https://myanimelist.net/anime/1/Cowboy_Bebop/episode/25
+        title: Episode 25
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 20
+        url: https://myanimelist.net/anime/20/Naruto
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1141/142503.jpg
+            small_image_url: https://myanimelist.net/images/anime/1141/142503t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1141/142503l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1141/142503.webp
+            small_image_url: https://myanimelist.net/images/anime/1141/142503t.webp
+            large_image_url: https://myanimelist.net/images/anime/1141/142503l.webp
+        title: Naruto
+      episodes:
+      - mal_id: 220
+        url: https://myanimelist.net/anime/20/Naruto/episode/220
+        title: Episode 220
+        premium: false
+      - mal_id: 219
+        url: https://myanimelist.net/anime/20/Naruto/episode/219
+        title: Episode 219
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 21
+        url: https://myanimelist.net/anime/21/One_Piece
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1244/138851.jpg
+            small_image_url: https://myanimelist.net/images/anime/1244/138851t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1244/138851l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1244/138851.webp
+            small_image_url: https://myanimelist.net/images/anime/1244/138851t.webp
+            large_image_url: https://myanimelist.net/images/anime/1244/138851l.webp
+        title: One Piece
+      episodes:
+      - mal_id: 1123
+        url: https://myanimelist.net/anime/21/One_Piece/episode/1123
+        title: Episode 1123
+        premium: true
+      - mal_id: 1122
+        url: https://myanimelist.net/anime/21/One_Piece/episode/1122
+        title: Episode 1122
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 121
+        url: https://myanimelist.net/anime/121/Fullmetal_Alchemist
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Fullmetal Alchemist
+      episodes:
+      - mal_id: 51
+        url: https://myanimelist.net/anime/121/Fullmetal_Alchemist/episode/51
+        title: Episode 51
+        premium: true
+      - mal_id: 50
+        url: https://myanimelist.net/anime/121/Fullmetal_Alchemist/episode/50
+        title: Episode 50
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 269
+        url: https://myanimelist.net/anime/269/Bleach
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1541/147774.jpg
+            small_image_url: https://myanimelist.net/images/anime/1541/147774t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1541/147774l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1541/147774.webp
+            small_image_url: https://myanimelist.net/images/anime/1541/147774t.webp
+            large_image_url: https://myanimelist.net/images/anime/1541/147774l.webp
+        title: Bleach
+      episodes:
+      - mal_id: 205
+        url: https://myanimelist.net/anime/269/Bleach/episode/205
+        title: Episode 205
+        premium: true
+      - mal_id: 204
+        url: https://myanimelist.net/anime/269/Bleach/episode/204
+        title: Episode 204
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 1535
+        url: https://myanimelist.net/anime/1535/Death_Note
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1079/138100.jpg
+            small_image_url: https://myanimelist.net/images/anime/1079/138100t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1079/138100l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1079/138100.webp
+            small_image_url: https://myanimelist.net/images/anime/1079/138100t.webp
+            large_image_url: https://myanimelist.net/images/anime/1079/138100l.webp
+        title: Death Note
+      episodes:
+      - mal_id: 37
+        url: https://myanimelist.net/anime/1535/Death_Note/episode/37
+        title: Episode 37
+        premium: true
+      - mal_id: 36
+        url: https://myanimelist.net/anime/1535/Death_Note/episode/36
+        title: Episode 36
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 1575
+        url: https://myanimelist.net/anime/1575/Code_Geass__Hangyaku_no_Lelouch
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: 'Code Geass: Hangyaku no Lelouch'
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/1575/Code_Geass__Hangyaku_no_Lelouch/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/1575/Code_Geass__Hangyaku_no_Lelouch/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 1735
+        url: https://myanimelist.net/anime/1735/Naruto__Shippuuden
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1565/111305.jpg
+            small_image_url: https://myanimelist.net/images/anime/1565/111305t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1565/111305l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1565/111305.webp
+            small_image_url: https://myanimelist.net/images/anime/1565/111305t.webp
+            large_image_url: https://myanimelist.net/images/anime/1565/111305l.webp
+        title: 'Naruto: Shippuuden'
+      episodes:
+      - mal_id: 500
+        url: https://myanimelist.net/anime/1735/Naruto__Shippuuden/episode/500
+        title: Episode 500
+        premium: false
+      - mal_id: 499
+        url: https://myanimelist.net/anime/1735/Naruto__Shippuuden/episode/499
+        title: Episode 499
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 2001
+        url: https://myanimelist.net/anime/2001/Tengen_Toppa_Gurren_Lagann
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Tengen Toppa Gurren Lagann
+      episodes:
+      - mal_id: 27
+        url: https://myanimelist.net/anime/2001/Tengen_Toppa_Gurren_Lagann/episode/27
+        title: Episode 27
+        premium: false
+      - mal_id: 26
+        url: https://myanimelist.net/anime/2001/Tengen_Toppa_Gurren_Lagann/episode/26
+        title: Episode 26
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 2904
+        url: https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: 'Code Geass: Hangyaku no Lelouch R2'
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/2904/Code_Geass__Hangyaku_no_Lelouch_R2/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 3588
+        url: https://myanimelist.net/anime/3588/Soul_Eater
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Soul Eater
+      episodes:
+      - mal_id: 51
+        url: https://myanimelist.net/anime/3588/Soul_Eater/episode/51
+        title: Episode 51
+        premium: false
+      - mal_id: 50
+        url: https://myanimelist.net/anime/3588/Soul_Eater/episode/50
+        title: Episode 50
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 4224
+        url: https://myanimelist.net/anime/4224/Toradora
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Toradora!
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/4224/Toradora/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/4224/Toradora/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 5081
+        url: https://myanimelist.net/anime/5081/Bakemonogatari
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Bakemonogatari
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/5081/Bakemonogatari/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/5081/Bakemonogatari/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 5114
+        url: https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: 'Fullmetal Alchemist: Brotherhood'
+      episodes:
+      - mal_id: 64
+        url: https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood/episode/64
+        title: Episode 64
+        premium: false
+      - mal_id: 63
+        url: https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood/episode/63
+        title: Episode 63
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 6547
+        url: https://myanimelist.net/anime/6547/Angel_Beats
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Angel Beats!
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/6547/Angel_Beats/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/6547/Angel_Beats/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 6702
+        url: https://myanimelist.net/anime/6702/Fairy_Tail
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/5/18179.jpg
+            small_image_url: https://myanimelist.net/images/anime/5/18179t.jpg
+            large_image_url: https://myanimelist.net/images/anime/5/18179l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/5/18179.webp
+            small_image_url: https://myanimelist.net/images/anime/5/18179t.webp
+            large_image_url: https://myanimelist.net/images/anime/5/18179l.webp
+        title: Fairy Tail
+      episodes:
+      - mal_id: 175
+        url: https://myanimelist.net/anime/6702/Fairy_Tail/episode/175
+        title: Episode 175
+        premium: false
+      - mal_id: 174
+        url: https://myanimelist.net/anime/6702/Fairy_Tail/episode/174
+        title: Episode 174
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 6746
+        url: https://myanimelist.net/anime/6746/Durarara
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/10/71772.jpg
+            small_image_url: https://myanimelist.net/images/anime/10/71772t.jpg
+            large_image_url: https://myanimelist.net/images/anime/10/71772l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/10/71772.webp
+            small_image_url: https://myanimelist.net/images/anime/10/71772t.webp
+            large_image_url: https://myanimelist.net/images/anime/10/71772l.webp
+        title: Durarara!!
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/6746/Durarara/episode/25
+        title: Episode 25
+        premium: true
+      - mal_id: 24
+        url: https://myanimelist.net/anime/6746/Durarara/episode/24
+        title: Episode 24
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 9253
+        url: https://myanimelist.net/anime/9253/Steins_Gate
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Steins;Gate
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/9253/Steins_Gate/episode/24
+        title: Episode 24
+        premium: false
+      - mal_id: 23
+        url: https://myanimelist.net/anime/9253/Steins_Gate/episode/23
+        title: Episode 23
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 9919
+        url: https://myanimelist.net/anime/9919/Ao_no_Exorcist
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Ao no Exorcist
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/9919/Ao_no_Exorcist/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/9919/Ao_no_Exorcist/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 9989
+        url: https://myanimelist.net/anime/9989/Ano_Hi_Mita_Hana_no_Namae_wo_Bokutachi_wa_Mada_Shiranai
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.
+      episodes:
+      - mal_id: 11
+        url: https://myanimelist.net/anime/9989/Ano_Hi_Mita_Hana_no_Namae_wo_Bokutachi_wa_Mada_Shiranai/episode/11
+        title: Episode 11
+        premium: false
+      - mal_id: 10
+        url: https://myanimelist.net/anime/9989/Ano_Hi_Mita_Hana_no_Namae_wo_Bokutachi_wa_Mada_Shiranai/episode/10
+        title: Episode 10
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 10087
+        url: https://myanimelist.net/anime/10087/Fate_Zero
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Fate/Zero
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/10087/Fate_Zero/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/10087/Fate_Zero/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 10620
+        url: https://myanimelist.net/anime/10620/Mirai_Nikki_TV
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/13/33465.jpg
+            small_image_url: https://myanimelist.net/images/anime/13/33465t.jpg
+            large_image_url: https://myanimelist.net/images/anime/13/33465l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/13/33465.webp
+            small_image_url: https://myanimelist.net/images/anime/13/33465t.webp
+            large_image_url: https://myanimelist.net/images/anime/13/33465l.webp
+        title: Mirai Nikki (TV)
+      episodes:
+      - mal_id: 26
+        url: https://myanimelist.net/anime/10620/Mirai_Nikki_TV/episode/26
+        title: Episode 26
+        premium: true
+      - mal_id: 25
+        url: https://myanimelist.net/anime/10620/Mirai_Nikki_TV/episode/25
+        title: Episode 25
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 11061
+        url: https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Hunter x Hunter (2011)
+      episodes:
+      - mal_id: 148
+        url: https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011/episode/148
+        title: Episode 148
+        premium: true
+      - mal_id: 147
+        url: https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011/episode/147
+        title: Episode 147
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 11111
+        url: https://myanimelist.net/anime/11111/Another
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/4/75509.jpg
+            small_image_url: https://myanimelist.net/images/anime/4/75509t.jpg
+            large_image_url: https://myanimelist.net/images/anime/4/75509l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/4/75509.webp
+            small_image_url: https://myanimelist.net/images/anime/4/75509t.webp
+            large_image_url: https://myanimelist.net/images/anime/4/75509l.webp
+        title: Another
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/11111/Another/episode/12
+        title: Episode 12
+        premium: true
+      - mal_id: 11
+        url: https://myanimelist.net/anime/11111/Another/episode/11
+        title: Episode 11
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 11757
+        url: https://myanimelist.net/anime/11757/Sword_Art_Online
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/11/39717.jpg
+            small_image_url: https://myanimelist.net/images/anime/11/39717t.jpg
+            large_image_url: https://myanimelist.net/images/anime/11/39717l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/11/39717.webp
+            small_image_url: https://myanimelist.net/images/anime/11/39717t.webp
+            large_image_url: https://myanimelist.net/images/anime/11/39717l.webp
+        title: Sword Art Online
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/11757/Sword_Art_Online/episode/25
+        title: Episode 25
+        premium: true
+      - mal_id: 24
+        url: https://myanimelist.net/anime/11757/Sword_Art_Online/episode/24
+        title: Episode 24
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 12189
+        url: https://myanimelist.net/anime/12189/Hyouka
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Hyouka
+      episodes:
+      - mal_id: 22
+        url: https://myanimelist.net/anime/12189/Hyouka/episode/22
+        title: Episode 22
+        premium: false
+      - mal_id: 21
+        url: https://myanimelist.net/anime/12189/Hyouka/episode/21
+        title: Episode 21
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 13601
+        url: https://myanimelist.net/anime/13601/Psycho-Pass
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1314/142015.jpg
+            small_image_url: https://myanimelist.net/images/anime/1314/142015t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1314/142015l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1314/142015.webp
+            small_image_url: https://myanimelist.net/images/anime/1314/142015t.webp
+            large_image_url: https://myanimelist.net/images/anime/1314/142015l.webp
+        title: Psycho-Pass
+      episodes:
+      - mal_id: 22
+        url: https://myanimelist.net/anime/13601/Psycho-Pass/episode/22
+        title: Episode 22
+        premium: false
+      - mal_id: 21
+        url: https://myanimelist.net/anime/13601/Psycho-Pass/episode/21
+        title: Episode 21
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 14719
+        url: https://myanimelist.net/anime/14719/JoJo_no_Kimyou_na_Bouken_TV
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/3/40409.jpg
+            small_image_url: https://myanimelist.net/images/anime/3/40409t.jpg
+            large_image_url: https://myanimelist.net/images/anime/3/40409l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/3/40409.webp
+            small_image_url: https://myanimelist.net/images/anime/3/40409t.webp
+            large_image_url: https://myanimelist.net/images/anime/3/40409l.webp
+        title: JoJo no Kimyou na Bouken (TV)
+      episodes:
+      - mal_id: 26
+        url: https://myanimelist.net/anime/14719/JoJo_no_Kimyou_na_Bouken_TV/episode/26
+        title: Episode 26
+        premium: false
+      - mal_id: 25
+        url: https://myanimelist.net/anime/14719/JoJo_no_Kimyou_na_Bouken_TV/episode/25
+        title: Episode 25
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 14813
+        url: https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Yahari Ore no Seishun Love Comedy wa Machigatteiru.
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru/episode/13
+        title: Episode 13
+        premium: true
+      - mal_id: 12
+        url: https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru/episode/12
+        title: Episode 12
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 15809
+        url: https://myanimelist.net/anime/15809/Hataraku_Maou-sama
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Hataraku Maou-sama!
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/15809/Hataraku_Maou-sama/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/15809/Hataraku_Maou-sama/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 16498
+        url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Shingeki no Kyojin
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/16498/Shingeki_no_Kyojin/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 18679
+        url: https://myanimelist.net/anime/18679/Kill_la_Kill
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Kill la Kill
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/18679/Kill_la_Kill/episode/24
+        title: Episode 24
+        premium: false
+      - mal_id: 23
+        url: https://myanimelist.net/anime/18679/Kill_la_Kill/episode/23
+        title: Episode 23
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 20507
+        url: https://myanimelist.net/anime/20507/Noragami
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Noragami
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/20507/Noragami/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/20507/Noragami/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 20583
+        url: https://myanimelist.net/anime/20583/Haikyuu
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Haikyuu!!
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/20583/Haikyuu/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/20583/Haikyuu/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 21881
+        url: https://myanimelist.net/anime/21881/Sword_Art_Online_II
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1223/121999.jpg
+            small_image_url: https://myanimelist.net/images/anime/1223/121999t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1223/121999l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1223/121999.webp
+            small_image_url: https://myanimelist.net/images/anime/1223/121999t.webp
+            large_image_url: https://myanimelist.net/images/anime/1223/121999l.webp
+        title: Sword Art Online II
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/21881/Sword_Art_Online_II/episode/24
+        title: Episode 24
+        premium: true
+      - mal_id: 23
+        url: https://myanimelist.net/anime/21881/Sword_Art_Online_II/episode/23
+        title: Episode 23
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 22199
+        url: https://myanimelist.net/anime/22199/Akame_ga_Kill
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Akame ga Kill!
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/22199/Akame_ga_Kill/episode/24
+        title: Episode 24
+        premium: false
+      - mal_id: 23
+        url: https://myanimelist.net/anime/22199/Akame_ga_Kill/episode/23
+        title: Episode 23
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 22319
+        url: https://myanimelist.net/anime/22319/Tokyo_Ghoul
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1498/134443.jpg
+            small_image_url: https://myanimelist.net/images/anime/1498/134443t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1498/134443l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1498/134443.webp
+            small_image_url: https://myanimelist.net/images/anime/1498/134443t.webp
+            large_image_url: https://myanimelist.net/images/anime/1498/134443l.webp
+        title: Tokyo Ghoul
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/22319/Tokyo_Ghoul/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/22319/Tokyo_Ghoul/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 22535
+        url: https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/3/73178.jpg
+            small_image_url: https://myanimelist.net/images/anime/3/73178t.jpg
+            large_image_url: https://myanimelist.net/images/anime/3/73178l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/3/73178.webp
+            small_image_url: https://myanimelist.net/images/anime/3/73178t.webp
+            large_image_url: https://myanimelist.net/images/anime/3/73178l.webp
+        title: 'Kiseijuu: Sei no Kakuritsu'
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu/episode/24
+        title: Episode 24
+        premium: false
+      - mal_id: 23
+        url: https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu/episode/23
+        title: Episode 23
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 23273
+        url: https://myanimelist.net/anime/23273/Shigatsu_wa_Kimi_no_Uso
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Shigatsu wa Kimi no Uso
+      episodes:
+      - mal_id: 22
+        url: https://myanimelist.net/anime/23273/Shigatsu_wa_Kimi_no_Uso/episode/22
+        title: Episode 22
+        premium: false
+      - mal_id: 21
+        url: https://myanimelist.net/anime/23273/Shigatsu_wa_Kimi_no_Uso/episode/21
+        title: Episode 21
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 24833
+        url: https://myanimelist.net/anime/24833/Ansatsu_Kyoushitsu
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Ansatsu Kyoushitsu
+      episodes:
+      - mal_id: 22
+        url: https://myanimelist.net/anime/24833/Ansatsu_Kyoushitsu/episode/22
+        title: Episode 22
+        premium: false
+      - mal_id: 21
+        url: https://myanimelist.net/anime/24833/Ansatsu_Kyoushitsu/episode/21
+        title: Episode 21
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 25777
+        url: https://myanimelist.net/anime/25777/Shingeki_no_Kyojin_Season_2
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/4/84177.jpg
+            small_image_url: https://myanimelist.net/images/anime/4/84177t.jpg
+            large_image_url: https://myanimelist.net/images/anime/4/84177l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/4/84177.webp
+            small_image_url: https://myanimelist.net/images/anime/4/84177t.webp
+            large_image_url: https://myanimelist.net/images/anime/4/84177l.webp
+        title: Shingeki no Kyojin Season 2
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/25777/Shingeki_no_Kyojin_Season_2/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/25777/Shingeki_no_Kyojin_Season_2/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 28223
+        url: https://myanimelist.net/anime/28223/Death_Parade
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Death Parade
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/28223/Death_Parade/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/28223/Death_Parade/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 28891
+        url: https://myanimelist.net/anime/28891/Haikyuu_Second_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Haikyuu!! Second Season
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/28891/Haikyuu_Second_Season/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/28891/Haikyuu_Second_Season/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 28999
+        url: https://myanimelist.net/anime/28999/Charlotte
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Charlotte
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/28999/Charlotte/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/28999/Charlotte/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 29803
+        url: https://myanimelist.net/anime/29803/Overlord
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Overlord
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/29803/Overlord/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/29803/Overlord/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 30276
+        url: https://myanimelist.net/anime/30276/One_Punch_Man
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/12/76049.jpg
+            small_image_url: https://myanimelist.net/images/anime/12/76049t.jpg
+            large_image_url: https://myanimelist.net/images/anime/12/76049l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/12/76049.webp
+            small_image_url: https://myanimelist.net/images/anime/12/76049t.webp
+            large_image_url: https://myanimelist.net/images/anime/12/76049l.webp
+        title: One Punch Man
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/30276/One_Punch_Man/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/30276/One_Punch_Man/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 30503
+        url: https://myanimelist.net/anime/30503/Noragami_Aragoto
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Noragami Aragoto
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/30503/Noragami_Aragoto/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/30503/Noragami_Aragoto/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 30654
+        url: https://myanimelist.net/anime/30654/Ansatsu_Kyoushitsu_2nd_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Ansatsu Kyoushitsu 2nd Season
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/30654/Ansatsu_Kyoushitsu_2nd_Season/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/30654/Ansatsu_Kyoushitsu_2nd_Season/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 30831
+        url: https://myanimelist.net/anime/30831/Kono_Subarashii_Sekai_ni_Shukufuku_wo
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Kono Subarashii Sekai ni Shukufuku wo!
+      episodes:
+      - mal_id: 10
+        url: https://myanimelist.net/anime/30831/Kono_Subarashii_Sekai_ni_Shukufuku_wo/episode/10
+        title: Episode 10
+        premium: false
+      - mal_id: 9
+        url: https://myanimelist.net/anime/30831/Kono_Subarashii_Sekai_ni_Shukufuku_wo/episode/9
+        title: Episode 9
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 31043
+        url: https://myanimelist.net/anime/31043/Boku_dake_ga_Inai_Machi
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Boku dake ga Inai Machi
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/31043/Boku_dake_ga_Inai_Machi/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/31043/Boku_dake_ga_Inai_Machi/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 31964
+        url: https://myanimelist.net/anime/31964/Boku_no_Hero_Academia
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/10/78745.jpg
+            small_image_url: https://myanimelist.net/images/anime/10/78745t.jpg
+            large_image_url: https://myanimelist.net/images/anime/10/78745l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/10/78745.webp
+            small_image_url: https://myanimelist.net/images/anime/10/78745t.webp
+            large_image_url: https://myanimelist.net/images/anime/10/78745l.webp
+        title: Boku no Hero Academia
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/31964/Boku_no_Hero_Academia/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/31964/Boku_no_Hero_Academia/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 32182
+        url: https://myanimelist.net/anime/32182/Mob_Psycho_100
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/8/80356.jpg
+            small_image_url: https://myanimelist.net/images/anime/8/80356t.jpg
+            large_image_url: https://myanimelist.net/images/anime/8/80356l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/8/80356.webp
+            small_image_url: https://myanimelist.net/images/anime/8/80356t.webp
+            large_image_url: https://myanimelist.net/images/anime/8/80356l.webp
+        title: Mob Psycho 100
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/32182/Mob_Psycho_100/episode/12
+        title: Episode 12
+        premium: true
+      - mal_id: 11
+        url: https://myanimelist.net/anime/32182/Mob_Psycho_100/episode/11
+        title: Episode 11
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 32281
+        url: https://myanimelist.net/anime/32281/Kimi_no_Na_wa
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Kimi no Na wa.
+      episodes:
+      - mal_id: 1
+        url: https://myanimelist.net/anime/32281/Kimi_no_Na_wa/episode/1
+        title: Episode 1
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 32937
+        url: https://myanimelist.net/anime/32937/Kono_Subarashii_Sekai_ni_Shukufuku_wo_2
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Kono Subarashii Sekai ni Shukufuku wo! 2
+      episodes:
+      - mal_id: 10
+        url: https://myanimelist.net/anime/32937/Kono_Subarashii_Sekai_ni_Shukufuku_wo_2/episode/10
+        title: Episode 10
+        premium: false
+      - mal_id: 9
+        url: https://myanimelist.net/anime/32937/Kono_Subarashii_Sekai_ni_Shukufuku_wo_2/episode/9
+        title: Episode 9
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 33486
+        url: https://myanimelist.net/anime/33486/Boku_no_Hero_Academia_2nd_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/12/85221.jpg
+            small_image_url: https://myanimelist.net/images/anime/12/85221t.jpg
+            large_image_url: https://myanimelist.net/images/anime/12/85221l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/12/85221.webp
+            small_image_url: https://myanimelist.net/images/anime/12/85221t.webp
+            large_image_url: https://myanimelist.net/images/anime/12/85221l.webp
+        title: Boku no Hero Academia 2nd Season
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/33486/Boku_no_Hero_Academia_2nd_Season/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/33486/Boku_no_Hero_Academia_2nd_Season/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 34134
+        url: https://myanimelist.net/anime/34134/One_Punch_Man_2nd_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1247/122044.jpg
+            small_image_url: https://myanimelist.net/images/anime/1247/122044t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1247/122044l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1247/122044.webp
+            small_image_url: https://myanimelist.net/images/anime/1247/122044t.webp
+            large_image_url: https://myanimelist.net/images/anime/1247/122044l.webp
+        title: One Punch Man 2nd Season
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/34134/One_Punch_Man_2nd_Season/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/34134/One_Punch_Man_2nd_Season/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 34572
+        url: https://myanimelist.net/anime/34572/Black_Clover
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/2/88336.jpg
+            small_image_url: https://myanimelist.net/images/anime/2/88336t.jpg
+            large_image_url: https://myanimelist.net/images/anime/2/88336l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/2/88336.webp
+            small_image_url: https://myanimelist.net/images/anime/2/88336t.webp
+            large_image_url: https://myanimelist.net/images/anime/2/88336l.webp
+        title: Black Clover
+      episodes:
+      - mal_id: 170
+        url: https://myanimelist.net/anime/34572/Black_Clover/episode/170
+        title: Episode 170
+        premium: false
+      - mal_id: 169
+        url: https://myanimelist.net/anime/34572/Black_Clover/episode/169
+        title: Episode 169
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 34599
+        url: https://myanimelist.net/anime/34599/Made_in_Abyss
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Made in Abyss
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/34599/Made_in_Abyss/episode/13
+        title: Episode 13
+        premium: true
+      - mal_id: 12
+        url: https://myanimelist.net/anime/34599/Made_in_Abyss/episode/12
+        title: Episode 12
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 35760
+        url: https://myanimelist.net/anime/35760/Shingeki_no_Kyojin_Season_3
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1173/92110.jpg
+            small_image_url: https://myanimelist.net/images/anime/1173/92110t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1173/92110l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1173/92110.webp
+            small_image_url: https://myanimelist.net/images/anime/1173/92110t.webp
+            large_image_url: https://myanimelist.net/images/anime/1173/92110l.webp
+        title: Shingeki no Kyojin Season 3
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/35760/Shingeki_no_Kyojin_Season_3/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/35760/Shingeki_no_Kyojin_Season_3/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 35790
+        url: https://myanimelist.net/anime/35790/Tate_no_Yuusha_no_Nariagari
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1490/101365.jpg
+            small_image_url: https://myanimelist.net/images/anime/1490/101365t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1490/101365l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1490/101365.webp
+            small_image_url: https://myanimelist.net/images/anime/1490/101365t.webp
+            large_image_url: https://myanimelist.net/images/anime/1490/101365l.webp
+        title: Tate no Yuusha no Nariagari
+      episodes:
+      - mal_id: 3
+        url: https://myanimelist.net/anime/35790/Tate_no_Yuusha_no_Nariagari/episode/3
+        title: Episode 3
+        premium: false
+      - mal_id: 2
+        url: https://myanimelist.net/anime/35790/Tate_no_Yuusha_no_Nariagari/episode/2
+        title: Episode 2
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 35849
+        url: https://myanimelist.net/anime/35849/Darling_in_the_FranXX
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1614/90408.jpg
+            small_image_url: https://myanimelist.net/images/anime/1614/90408t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1614/90408l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1614/90408.webp
+            small_image_url: https://myanimelist.net/images/anime/1614/90408t.webp
+            large_image_url: https://myanimelist.net/images/anime/1614/90408l.webp
+        title: Darling in the FranXX
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/35849/Darling_in_the_FranXX/episode/24
+        title: Episode 24
+        premium: true
+      - mal_id: 23
+        url: https://myanimelist.net/anime/35849/Darling_in_the_FranXX/episode/23
+        title: Episode 23
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 36456
+        url: https://myanimelist.net/anime/36456/Boku_no_Hero_Academia_3rd_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1319/92084.jpg
+            small_image_url: https://myanimelist.net/images/anime/1319/92084t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1319/92084l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1319/92084.webp
+            small_image_url: https://myanimelist.net/images/anime/1319/92084t.webp
+            large_image_url: https://myanimelist.net/images/anime/1319/92084l.webp
+        title: Boku no Hero Academia 3rd Season
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/36456/Boku_no_Hero_Academia_3rd_Season/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/36456/Boku_no_Hero_Academia_3rd_Season/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 37430
+        url: https://myanimelist.net/anime/37430/Tensei_shitara_Slime_Datta_Ken
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Tensei shitara Slime Datta Ken
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/37430/Tensei_shitara_Slime_Datta_Ken/episode/24
+        title: Episode 24
+        premium: false
+      - mal_id: 23
+        url: https://myanimelist.net/anime/37430/Tensei_shitara_Slime_Datta_Ken/episode/23
+        title: Episode 23
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 37450
+        url: https://myanimelist.net/anime/37450/Seishun_Buta_Yarou_wa_Bunny_Girl_Senpai_no_Yume_wo_Minai
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1301/93586.jpg
+            small_image_url: https://myanimelist.net/images/anime/1301/93586t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1301/93586l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1301/93586.webp
+            small_image_url: https://myanimelist.net/images/anime/1301/93586t.webp
+            large_image_url: https://myanimelist.net/images/anime/1301/93586l.webp
+        title: Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/37450/Seishun_Buta_Yarou_wa_Bunny_Girl_Senpai_no_Yume_wo_Minai/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/37450/Seishun_Buta_Yarou_wa_Bunny_Girl_Senpai_no_Yume_wo_Minai/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 37510
+        url: https://myanimelist.net/anime/37510/Mob_Psycho_100_II
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1918/96303.jpg
+            small_image_url: https://myanimelist.net/images/anime/1918/96303t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1918/96303l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1918/96303.webp
+            small_image_url: https://myanimelist.net/images/anime/1918/96303t.webp
+            large_image_url: https://myanimelist.net/images/anime/1918/96303l.webp
+        title: Mob Psycho 100 II
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/37510/Mob_Psycho_100_II/episode/13
+        title: Episode 13
+        premium: true
+      - mal_id: 12
+        url: https://myanimelist.net/anime/37510/Mob_Psycho_100_II/episode/12
+        title: Episode 12
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 37521
+        url: https://myanimelist.net/anime/37521/Vinland_Saga
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1500/103005.jpg
+            small_image_url: https://myanimelist.net/images/anime/1500/103005t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1500/103005l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1500/103005.webp
+            small_image_url: https://myanimelist.net/images/anime/1500/103005t.webp
+            large_image_url: https://myanimelist.net/images/anime/1500/103005l.webp
+        title: Vinland Saga
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/37521/Vinland_Saga/episode/24
+        title: Episode 24
+        premium: false
+      - mal_id: 23
+        url: https://myanimelist.net/anime/37521/Vinland_Saga/episode/23
+        title: Episode 23
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 37779
+        url: https://myanimelist.net/anime/37779/Yakusoku_no_Neverland
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1830/118780.jpg
+            small_image_url: https://myanimelist.net/images/anime/1830/118780t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1830/118780l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1830/118780.webp
+            small_image_url: https://myanimelist.net/images/anime/1830/118780t.webp
+            large_image_url: https://myanimelist.net/images/anime/1830/118780l.webp
+        title: Yakusoku no Neverland
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/37779/Yakusoku_no_Neverland/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/37779/Yakusoku_no_Neverland/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 37999
+        url: https://myanimelist.net/anime/37999/Kaguya-sama_wa_Kokurasetai__Tensai-tachi_no_Renai_Zunousen
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1295/106551.jpg
+            small_image_url: https://myanimelist.net/images/anime/1295/106551t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1295/106551l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1295/106551.webp
+            small_image_url: https://myanimelist.net/images/anime/1295/106551t.webp
+            large_image_url: https://myanimelist.net/images/anime/1295/106551l.webp
+        title: 'Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen'
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/37999/Kaguya-sama_wa_Kokurasetai__Tensai-tachi_no_Renai_Zunousen/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/37999/Kaguya-sama_wa_Kokurasetai__Tensai-tachi_no_Renai_Zunousen/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 38000
+        url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1286/99889.jpg
+            small_image_url: https://myanimelist.net/images/anime/1286/99889t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1286/99889l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1286/99889.webp
+            small_image_url: https://myanimelist.net/images/anime/1286/99889t.webp
+            large_image_url: https://myanimelist.net/images/anime/1286/99889l.webp
+        title: Kimetsu no Yaiba
+      episodes:
+      - mal_id: 26
+        url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/26
+        title: Episode 26
+        premium: false
+      - mal_id: 25
+        url: https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba/episode/25
+        title: Episode 25
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 38408
+        url: https://myanimelist.net/anime/38408/Boku_no_Hero_Academia_4th_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: Boku no Hero Academia 4th Season
+      episodes:
+      - mal_id: 25
+        url: https://myanimelist.net/anime/38408/Boku_no_Hero_Academia_4th_Season/episode/25
+        title: Episode 25
+        premium: false
+      - mal_id: 24
+        url: https://myanimelist.net/anime/38408/Boku_no_Hero_Academia_4th_Season/episode/24
+        title: Episode 24
+        premium: false
+      region_locked: true
+    - entry:
+        mal_id: 38524
+        url: https://myanimelist.net/anime/38524/Shingeki_no_Kyojin_Season_3_Part_2
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1517/100633.jpg
+            small_image_url: https://myanimelist.net/images/anime/1517/100633t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1517/100633l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1517/100633.webp
+            small_image_url: https://myanimelist.net/images/anime/1517/100633t.webp
+            large_image_url: https://myanimelist.net/images/anime/1517/100633l.webp
+        title: Shingeki no Kyojin Season 3 Part 2
+      episodes:
+      - mal_id: 10
+        url: https://myanimelist.net/anime/38524/Shingeki_no_Kyojin_Season_3_Part_2/episode/10
+        title: Episode 10
+        premium: false
+      - mal_id: 9
+        url: https://myanimelist.net/anime/38524/Shingeki_no_Kyojin_Season_3_Part_2/episode/9
+        title: Episode 9
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 38671
+        url: https://myanimelist.net/anime/38671/Enen_no_Shouboutai
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1664/103275.jpg
+            small_image_url: https://myanimelist.net/images/anime/1664/103275t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1664/103275l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1664/103275.webp
+            small_image_url: https://myanimelist.net/images/anime/1664/103275t.webp
+            large_image_url: https://myanimelist.net/images/anime/1664/103275l.webp
+        title: Enen no Shouboutai
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/38671/Enen_no_Shouboutai/episode/24
+        title: Episode 24
+        premium: false
+      - mal_id: 23
+        url: https://myanimelist.net/anime/38671/Enen_no_Shouboutai/episode/23
+        title: Episode 23
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 39535
+        url: https://myanimelist.net/anime/39535/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1530/117776.jpg
+            small_image_url: https://myanimelist.net/images/anime/1530/117776t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1530/117776l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1530/117776.webp
+            small_image_url: https://myanimelist.net/images/anime/1530/117776t.webp
+            large_image_url: https://myanimelist.net/images/anime/1530/117776l.webp
+        title: 'Mushoku Tensei: Isekai Ittara Honki Dasu'
+      episodes:
+      - mal_id: 11
+        url: https://myanimelist.net/anime/39535/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu/episode/11
+        title: Episode 11
+        premium: false
+      - mal_id: 10
+        url: https://myanimelist.net/anime/39535/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu/episode/10
+        title: Episode 10
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 40028
+        url: https://myanimelist.net/anime/40028/Shingeki_no_Kyojin__The_Final_Season
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1000/110531.jpg
+            small_image_url: https://myanimelist.net/images/anime/1000/110531t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1000/110531l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1000/110531.webp
+            small_image_url: https://myanimelist.net/images/anime/1000/110531t.webp
+            large_image_url: https://myanimelist.net/images/anime/1000/110531l.webp
+        title: 'Shingeki no Kyojin: The Final Season'
+      episodes:
+      - mal_id: 16
+        url: https://myanimelist.net/anime/40028/Shingeki_no_Kyojin__The_Final_Season/episode/16
+        title: Episode 16
+        premium: false
+      - mal_id: 15
+        url: https://myanimelist.net/anime/40028/Shingeki_no_Kyojin__The_Final_Season/episode/15
+        title: Episode 15
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 40456
+        url: https://myanimelist.net/anime/40456/Kimetsu_no_Yaiba_Movie__Mugen_Ressha-hen
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+          webp:
+            image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            small_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+            large_image_url: https://myanimelist.net/images/icon-banned-youtube-rect.png
+        title: 'Kimetsu no Yaiba Movie: Mugen Ressha-hen'
+      episodes:
+      - mal_id: 1
+        url: https://myanimelist.net/anime/40456/Kimetsu_no_Yaiba_Movie__Mugen_Ressha-hen/episode/1
+        title: Episode 1
+        premium: true
+      region_locked: true
+    - entry:
+        mal_id: 40591
+        url: https://myanimelist.net/anime/40591/Kaguya-sama_wa_Kokurasetai_Tensai-tachi_no_Renai_Zunousen
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1764/106659.jpg
+            small_image_url: https://myanimelist.net/images/anime/1764/106659t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1764/106659l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1764/106659.webp
+            small_image_url: https://myanimelist.net/images/anime/1764/106659t.webp
+            large_image_url: https://myanimelist.net/images/anime/1764/106659l.webp
+        title: Kaguya-sama wa Kokurasetai? Tensai-tachi no Renai Zunousen
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/40591/Kaguya-sama_wa_Kokurasetai_Tensai-tachi_no_Renai_Zunousen/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/40591/Kaguya-sama_wa_Kokurasetai_Tensai-tachi_no_Renai_Zunousen/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 40748
+        url: https://myanimelist.net/anime/40748/Jujutsu_Kaisen
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1171/109222.jpg
+            small_image_url: https://myanimelist.net/images/anime/1171/109222t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1171/109222l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1171/109222.webp
+            small_image_url: https://myanimelist.net/images/anime/1171/109222t.webp
+            large_image_url: https://myanimelist.net/images/anime/1171/109222l.webp
+        title: Jujutsu Kaisen
+      episodes:
+      - mal_id: 24
+        url: https://myanimelist.net/anime/40748/Jujutsu_Kaisen/episode/24
+        title: Episode 24
+        premium: false
+      - mal_id: 23
+        url: https://myanimelist.net/anime/40748/Jujutsu_Kaisen/episode/23
+        title: Episode 23
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 42897
+        url: https://myanimelist.net/anime/42897/Horimiya
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1695/111486.jpg
+            small_image_url: https://myanimelist.net/images/anime/1695/111486t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1695/111486l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1695/111486.webp
+            small_image_url: https://myanimelist.net/images/anime/1695/111486t.webp
+            large_image_url: https://myanimelist.net/images/anime/1695/111486l.webp
+        title: Horimiya
+      episodes:
+      - mal_id: 13
+        url: https://myanimelist.net/anime/42897/Horimiya/episode/13
+        title: Episode 13
+        premium: false
+      - mal_id: 12
+        url: https://myanimelist.net/anime/42897/Horimiya/episode/12
+        title: Episode 12
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 44511
+        url: https://myanimelist.net/anime/44511/Chainsaw_Man
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1806/126216.jpg
+            small_image_url: https://myanimelist.net/images/anime/1806/126216t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1806/126216l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1806/126216.webp
+            small_image_url: https://myanimelist.net/images/anime/1806/126216t.webp
+            large_image_url: https://myanimelist.net/images/anime/1806/126216l.webp
+        title: Chainsaw Man
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/44511/Chainsaw_Man/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/44511/Chainsaw_Man/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 47778
+        url: https://myanimelist.net/anime/47778/Kimetsu_no_Yaiba__Yuukaku-hen
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1908/120036.jpg
+            small_image_url: https://myanimelist.net/images/anime/1908/120036t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1908/120036l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1908/120036.webp
+            small_image_url: https://myanimelist.net/images/anime/1908/120036t.webp
+            large_image_url: https://myanimelist.net/images/anime/1908/120036l.webp
+        title: 'Kimetsu no Yaiba: Yuukaku-hen'
+      episodes:
+      - mal_id: 11
+        url: https://myanimelist.net/anime/47778/Kimetsu_no_Yaiba__Yuukaku-hen/episode/11
+        title: Episode 11
+        premium: true
+      - mal_id: 10
+        url: https://myanimelist.net/anime/47778/Kimetsu_no_Yaiba__Yuukaku-hen/episode/10
+        title: Episode 10
+        premium: true
+      region_locked: false
+    - entry:
+        mal_id: 48583
+        url: https://myanimelist.net/anime/48583/Shingeki_no_Kyojin__The_Final_Season_Part_2
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1948/120625.jpg
+            small_image_url: https://myanimelist.net/images/anime/1948/120625t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1948/120625l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1948/120625.webp
+            small_image_url: https://myanimelist.net/images/anime/1948/120625t.webp
+            large_image_url: https://myanimelist.net/images/anime/1948/120625l.webp
+        title: 'Shingeki no Kyojin: The Final Season Part 2'
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/48583/Shingeki_no_Kyojin__The_Final_Season_Part_2/episode/12
+        title: Episode 12
+        premium: false
+      - mal_id: 11
+        url: https://myanimelist.net/anime/48583/Shingeki_no_Kyojin__The_Final_Season_Part_2/episode/11
+        title: Episode 11
+        premium: false
+      region_locked: false
+    - entry:
+        mal_id: 50265
+        url: https://myanimelist.net/anime/50265/Spy_x_Family
+        images:
+          jpg:
+            image_url: https://myanimelist.net/images/anime/1441/122795.jpg
+            small_image_url: https://myanimelist.net/images/anime/1441/122795t.jpg
+            large_image_url: https://myanimelist.net/images/anime/1441/122795l.jpg
+          webp:
+            image_url: https://myanimelist.net/images/anime/1441/122795.webp
+            small_image_url: https://myanimelist.net/images/anime/1441/122795t.webp
+            large_image_url: https://myanimelist.net/images/anime/1441/122795l.webp
+        title: Spy x Family
+      episodes:
+      - mal_id: 12
+        url: https://myanimelist.net/anime/50265/Spy_x_Family/episode/12
+        title: Episode 12
+        premium: true
+      - mal_id: 11
+        url: https://myanimelist.net/anime/50265/Spy_x_Family/episode/11
+        title: Episode 11
+        premium: true
+      region_locked: false
+  body_text: null
+  body_b64: null

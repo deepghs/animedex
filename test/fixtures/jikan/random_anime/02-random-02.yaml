@@ -1,0 +1,135 @@
+metadata:
+  captured_at: '2026-05-07T15:00:16Z'
+  label: random-02
+  backend: jikan
+  path_slug: random_anime
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/random/anime
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:00:16 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache, no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+    pragma: no-cache
+    expires: Thu, 07 May 2026 15:00:15 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+      mal_id: 3251
+      url: https://myanimelist.net/anime/3251/Hatara_Kids_Mai_Ham_Gumi
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/8/21232.jpg
+          small_image_url: https://myanimelist.net/images/anime/8/21232t.jpg
+          large_image_url: https://myanimelist.net/images/anime/8/21232l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/8/21232.webp
+          small_image_url: https://myanimelist.net/images/anime/8/21232t.webp
+          large_image_url: https://myanimelist.net/images/anime/8/21232l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Hatara Kids Mai Ham Gumi
+      - type: Synonym
+        title: Hatarakids Maiham Gumi
+      - type: Synonym
+        title: Hatara kids My ham Gumi
+      - type: Synonym
+        title: Master Hamsters
+      - type: Japanese
+        title: はたらキッズマイハム組
+      - type: English
+        title: Master Hamsters
+      title: Hatara Kids Mai Ham Gumi
+      title_english: Master Hamsters
+      title_japanese: はたらキッズマイハム組
+      title_synonyms:
+      - Hatarakids Maiham Gumi
+      - Hatara kids My ham Gumi
+      - Master Hamsters
+      type: TV
+      source: Original
+      episodes: 50
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2007-10-07T00:00:00+00:00'
+        to: '2008-10-05T00:00:00+00:00'
+        prop:
+          from:
+            day: 7
+            month: 10
+            year: 2007
+          to:
+            day: 5
+            month: 10
+            year: 2008
+        string: Oct 7, 2007 to Oct 5, 2008
+      duration: 25 min per ep
+      rating: PG - Children
+      score: 6.09
+      scored_by: 147
+      rank: 10492
+      popularity: 16393
+      members: 757
+      favorites: 1
+      synopsis: |-
+        Hatara Kids Maihamu Gumi, literally "Working Kids, My Hamster Team", is a Japanese anime action series for young children about hamsters who hold down jobs from firefighting to cooking.
+
+        (Source: Wikipedia)
+      background: ''
+      season: fall
+      year: 2007
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: Unknown
+      producers:
+      - mal_id: 55
+        type: anime
+        name: TV Asahi
+        url: https://myanimelist.net/anime/producer/55/TV_Asahi
+      licensors: []
+      studios:
+      - mal_id: 18
+        type: anime
+        name: Toei Animation
+        url: https://myanimelist.net/anime/producer/18/Toei_Animation
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 15
+        type: anime
+        name: Kids
+        url: https://myanimelist.net/anime/genre/15/Kids
+  body_text: null
+  body_b64: null

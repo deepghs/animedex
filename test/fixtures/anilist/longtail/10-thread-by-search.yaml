@@ -1,0 +1,119 @@
+metadata:
+  captured_at: '2026-05-07T15:10:32Z'
+  label: thread-by-search
+  backend: anilist
+  path_slug: phase2_longtail
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Page(page:1,perPage:5){ threads(search:"Frieren", sort:CREATED_AT_DESC){ id title body user{ name } } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 15:10:32 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '20'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        threads:
+        - id: 88598
+          title: Sousou no Frieren 3rd Season Announcement
+          body: |-
+            ~~~I honestly did not expect them to drop this right after season 2 ended.
+
+            https://x.com/Anime_Frieren/status/2037536906846883910
+
+            img660(https://i.imgur.com/ZUohoyq.png)
+
+            So far I can't find concrete information about Studio or Staff but MADHOUSE at least reposted the announcement and Evan Call also posted something about having ideas for the golden arc.
+
+            I am praying we get the same team again.~~~
+          user:
+            name: BlessedBaka
+        - id: 88597
+          title: '[Spoilers] Frieren: Beyond Journey’s End Season 2 - Episode 10 Discussion '
+          body: "~~~Hello everbody, welcome to our last Frieren Friday :')\n\nThis episode was a great sendoff. We got some\
+            \ more action, some more cute stuff with everyone and a little bit of Himmel and the others.\n\nThis time even\
+            \ Fern was intrigued. \nimg660(https://i.imgur.com/2Chtp07.jpeg)\n\nAnd one last pouting Fern.\nimg660(https://i.imgur.com/xvMCIgz.jpeg)\n\
+            \nNew generation :)\nimg660(https://i.imgur.com/cRyFUFw.jpeg)\n\nThis will be cinema I just know it.\nimg660(https://i.imgur.com/kp7Nzqm.jpeg)\n\
+            \nI am absolutely happy with how this season went and I want to thank the whole team for making more peak. I never\
+            \ thought we would get a season 2 and it being this good and not just some quickly thrown out cashgrab makes me\
+            \ really happy. \n\nThat's a 10/10 for me.\n\nALSO: SEASON 3 ANNOUNCED!!!!!!!!\n\nYou know the second it drops\
+            \ I will be there. See you in 1 1/2 years :')~~~"
+          user:
+            name: BlessedBaka
+        - id: 88426
+          title: ' [Spoilers] Frieren: Beyond Journey’s End Season 2 - Episode 9 Discussion'
+          body: |-
+            ~~~Welcome to our second last Frieren Friday! Cozy feeling episode today after last weeks action.
+
+            God damn Stark went all out jumping around like a ping pong ball.
+            img660(https://i.imgur.com/Rd4JIPm.jpeg)
+
+            Himmel the hero with some wisdom. Everything Frieren does nowadays she does because of him and the others :)
+            img660(https://i.imgur.com/wcDiX37.jpeg)
+
+            This week just feels like one big tease to manga readers.
+            img660(https://i.imgur.com/2F4kwwv.jpeg)
+
+            So stupid. I love it.
+            img660(https://i.imgur.com/QD4Yqqi.jpeg)
+
+            MORE MORE MORE! I NEED MORE :(((~~~
+          user:
+            name: BlessedBaka
+        - id: 88278
+          title: '[Spoilers] Frieren: Beyond Journey’s End Season 2 - Episode 8 Discussion '
+          body: |-
+            ~~~Happy Frieren Friday everyone! Bit of a nerve wrecking episode today.
+
+            It's absolutely ridiculous how much they showed off with that fight in the beginning! And Ferns fight as well. I still can't believe it.
+            img660(https://i.imgur.com/6EU0q9P.jpeg)
+
+            That whole episode was just peak Frieren and why I loved S1 so much.
+            img660(https://i.imgur.com/j3nQRgS.jpeg)
+
+            Everbody went all out. This episode was insane and definitely one of the best so far. God, Methode is so bad. She is allowed to pet me all day, mainly because I am scared of her now.
+            img660(https://i.imgur.com/hWg0c54.jpeg)
+
+            So satisfying.
+            img660(https://i.imgur.com/Dvc5rrq.jpeg)
+
+            100/10.~~~
+          user:
+            name: BlessedBaka
+        - id: 88121
+          title: '[Spoilers] Frieren: Beyond Journey’s End Season 2 - Episode 7 Discussion '
+          body: "~~~Today was some straight fire. Madhouse I kneel.\n\nSo happy to still have Methode the goat around. \n\
+            img660(https://i.imgur.com/A2UJAhe.jpeg)\n\nShe was so jealous lmao.\nimg660(https://i.imgur.com/FJier9I.jpeg)\n\
+            \nAlways thinking about his wife.\nimg660(https://i.imgur.com/76RQPzJ.jpeg)\n\nHOLY THEY COOKED FOR THIS FIGHT.\n\
+            img660(https://i.imgur.com/UsiRENo.jpeg)\n\nPeak episode... Next week is gotta be really good I imagine.. ~~~"
+          user:
+            name: BlessedBaka
+  body_text: null
+  body_b64: null

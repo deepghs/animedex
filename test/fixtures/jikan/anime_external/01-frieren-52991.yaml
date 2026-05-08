@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-07T15:12:40Z'
+  label: frieren-52991
+  backend: jikan
+  path_slug: anime_external
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime/52991/external
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:12:39 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:anime:f336ada4ef8a6adbf885475d489f75cb3dfc62d8
+    expires: Fri, 08 May 2026 10:10:39 GMT
+    last-modified: Thu, 07 May 2026 10:10:39 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - name: Official Site
+      url: https://frieren-anime.jp/
+    - name: '@Anime_Frieren'
+      url: https://twitter.com/Anime_Frieren
+    - name: AniDB
+      url: https://anidb.net/perl-bin/animedb.pl?show=anime&aid=17617
+    - name: ANN
+      url: https://www.animenewsnetwork.com/encyclopedia/anime.php?id=26334
+    - name: Wikipedia
+      url: https://en.wikipedia.org/wiki/Frieren#Anime
+    - name: Wikipedia
+      url: https://ja.wikipedia.org/wiki/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3
+    - name: Syoboi
+      url: https://cal.syoboi.jp/tid/6776
+  body_text: null
+  body_b64: null

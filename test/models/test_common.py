@@ -119,18 +119,38 @@ class TestApiError:
     def test_carries_backend_and_reason(self):
         from animedex.models.common import ApiError
 
-        err = ApiError("fail", backend="anilist", reason="rate-limited")
+        err = ApiError("fail", backend="anilist", reason="upstream-error")
         assert err.backend == "anilist"
-        assert err.reason == "rate-limited"
+        assert err.reason == "upstream-error"
 
     def test_string_form(self):
         from animedex.models.common import ApiError
 
-        err = ApiError("fail", backend="anilist", reason="rate-limited")
+        err = ApiError("fail", backend="anilist", reason="upstream-error")
         s = str(err)
         assert "anilist" in s
-        assert "rate-limited" in s
+        assert "upstream-error" in s
         assert "fail" in s
+
+    def test_unknown_reason_rejected_at_construction(self):
+        """A typo in ``reason`` should fail loudly at the construction
+        site, not at downstream error-handling time. ``REASONS`` pins
+        the project-wide vocabulary."""
+        from animedex.models.common import REASONS, ApiError
+
+        with pytest.raises(ValueError, match="unknown ApiError reason"):
+            ApiError("fail", backend="anilist", reason="rate-limited")
+        # ``REASONS`` is a frozenset of the actual vocabulary.
+        assert "upstream-error" in REASONS
+        assert "auth-required" in REASONS
+
+    def test_known_reason_accepted(self):
+        """Every value in :data:`REASONS` constructs cleanly."""
+        from animedex.models.common import REASONS, ApiError
+
+        for reason in REASONS:
+            err = ApiError("ok", backend="x", reason=reason)
+            assert err.reason == reason
 
     def test_string_form_without_backend_or_reason(self):
         """The bare-message branch of ``__str__``."""

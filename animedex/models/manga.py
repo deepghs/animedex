@@ -4,7 +4,7 @@ Manga domain models.
 Mirrors the anime side. :class:`Manga` is the cross-source common
 projection (MangaDex provides the lion's share of fields; AniList
 also exposes manga but with thinner coverage). :class:`AtHomeServer`
-is included from day one because the Phase 6 reader path consumes
+is included from day one because the future reader work reader path consumes
 it; defining the shape now keeps the public model surface stable
 through that release.
 """
@@ -99,8 +99,8 @@ class AtHomeServer(AnimedexModel):
     """Result of MangaDex's ``GET /at-home/server/{chapter}`` call.
 
     The base URL is short-lived (~5 min). Per ``plans/03`` we never
-    cache it across chapters; the model carries it so a single Phase
-    6 invocation has a typed object to thread through the page-fetch
+    cache it across chapters; the model carries it so a single
+    invocation has a typed object to thread through the page-fetch
     loop.
 
     :ivar base_url: Per-call base URL for the page bytes endpoint.

@@ -1,0 +1,91 @@
+metadata:
+  captured_at: '2026-05-07T14:58:44Z'
+  label: staff-100186
+  backend: anilist
+  path_slug: phase2_staff
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Staff(id: $id) {
+          id
+          name { full native alternative }
+          image { large medium }
+          description(asHtml: false)
+          primaryOccupations gender age dateOfBirth { year month day }
+          yearsActive homeTown languageV2 favourites
+          staffMedia(perPage: 3) { edges { staffRole node { id title { romaji } } } }
+          characters(perPage: 3) { nodes { id name { full } } }
+        }
+      }
+    variables:
+      id: 100186
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:43 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '13'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Staff:
+        id: 100186
+        name:
+          full: Narumi Takahira
+          native: 成美高平
+          alternative: []
+        image:
+          large: https://s4.anilist.co/file/anilistcdn/staff/large/5186.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/staff/medium/5186.jpg
+        description: null
+        primaryOccupations: []
+        gender: null
+        age: 36
+        dateOfBirth:
+          year: 1989
+          month: 7
+          day: 29
+        yearsActive: []
+        homeTown: null
+        languageV2: Japanese
+        favourites: 4
+        staffMedia:
+          edges: []
+        characters:
+          nodes:
+          - id: 8444
+            name:
+              full: Patricia Thompson
+          - id: 31346
+            name:
+              full: Ariel
+          - id: 76548
+            name:
+              full: Megu
+  body_text: null
+  body_b64: null

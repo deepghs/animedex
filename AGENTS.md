@@ -211,6 +211,76 @@ If a backend has a meaningful online check (e.g. AniList GraphQL liveness, Manga
 
 A pull request that adds a static resource without an accompanying smoke test should not land. Reviewers must check for this explicitly; the lint cannot, because "module gained an asset" is not a syntactic property. If you find yourself shipping resources without smoke coverage, document the reason in the commit body rather than slipping it past review.
 
+## 9bis. Test Discipline (the only legal seam is HTTP)
+
+This rule sits next to selftest because both exist for the same reason: regression coverage that **actually exercises the code path the user runs**. Selftest covers smoke; this rule covers unit tests.
+
+### Rule 9bis.1 - mock at the wire, never above it
+
+Every CLI test, every Python-API test, every mapper test, every renderer test runs the real animedex stack. The only thing the test is allowed to substitute is the **HTTP transport layer** (the per-call request/response). Use the `responses` library (or an equivalent that intercepts at the `requests.adapters.HTTPAdapter` level). Then everything between Click → entry-module wrapper → public Python API (`animedex.backends.<x>.<fn>`) → backend mapper → `_dispatch.call` → URL composer → header injector → cache → rate-limit bucket → firewall → response renderer runs **for real**, against **real fixture data** captured from the upstream.
+
+This rule has teeth. If a test writes `monkeypatch.setattr(animedex.backends.<x>, "<fn>", stub)` it is **forbidden** — it bypasses the entire stack the user will actually run. The same applies to `monkeypatch.setattr(animedex.api.<x>, "call", stub)` (mocks the dispatcher entry, also above the wire) and to any seam that sits inside `animedex/`. Tests that monkey-patch project code instead of HTTP **mask the bugs they exist to catch** - the canonical example being review-found `call() got an unexpected keyword argument 'config'`, which the original Phase-2 CLI tests did not catch precisely because they replaced `backends.jikan.show` with a lambda before the buggy `_fetch → api.jikan.call` wiring ran.
+
+The seam-of-record is HTTP for one reason: HTTP is the **only** layer animedex's tests share with reality. Every byte going out matches what the user's process will send; every byte coming back matches what the upstream's response will be (or what the captured fixture says it would be). Anything above the wire is project code, and project code is the system under test.
+
+The rule applies even when it is annoying:
+* "I can't easily reproduce the upstream response" - capture a fixture (see `tools/fixtures/capture.py` and the per-backend `run_*.py`).
+* "The fixture corpus doesn't have the shape I want" - extend the corpus, then write the test against it.
+* "It's faster to mock the function" - it is also faster to ship a regression. Pay the cost up front.
+
+The narrow legitimate exception: the dispatcher's own unit tests under `test/api/test_dispatch.py` may mock `requests.Session.request` directly (which is HTTP-level monkey-patching, not function-level) for tests that target the dispatcher's internal behaviour (timing, redirect chain, redaction, cache write). These tests still go through the real dispatcher; they just substitute the very layer the dispatcher's job is to wrap.
+
+### Rule 9bis.2 - fixture-driven, not synthesised
+
+Where the test needs a representative upstream response, **load it from `test/fixtures/`**, do not hand-craft a JSON skeleton. Fixtures are real upstream responses (688 of them as of Phase 2), captured at known moments via the project's capture tools. Hand-crafted skeletons drift from the upstream's actual schema (missing fields, wrong nullability, wrong types) and produce tests that pass while the production path crashes.
+
+When a new test needs a shape the corpus doesn't have, capture a new fixture before writing the test. The capture tools take 30 seconds per request and the result becomes shared infrastructure for every future test.
+
+### Rule 9bis.3 - what every CLI / Python-API test must look like
+
+A passing Phase-2-and-beyond test goes through this exact shape:
+
+```python
+import responses, yaml
+from click.testing import CliRunner
+from pathlib import Path
+
+def test_jikan_show_runs(fake_clock):  # fake_clock fixture freezes ratelimit + cache clocks
+    fixture = yaml.safe_load(Path("test/fixtures/jikan/anime_full/01-frieren-52991.yaml").read_text(encoding="utf-8"))
+    with responses.RequestsMock() as rsps:
+        rsps.add(responses.GET, fixture["request"]["url"], json=fixture["response"]["body_json"], status=fixture["response"]["status"])
+        from animedex.entry import animedex_cli
+        result = CliRunner().invoke(animedex_cli, ["jikan", "show", "52991", "--json", "--no-cache"])
+    assert result.exit_code == 0
+    # assertions over the rendered output go here
+```
+
+There is no `monkeypatch.setattr(backends...)`, no `monkeypatch.setattr(api.<x>, "call", ...)`. The fake_clock fixture is the only "infrastructure" mock — it patches the **monotonic clock** so ratelimit doesn't actually sleep — and that is HTTP-adjacent, not above-HTTP.
+
+### Rule 9bis.4 - apply this retroactively
+
+When you touch a test file that violates this rule, rewrite the affected test on the way through. Tests that pass while masking real bugs are worse than no tests at all - they generate false confidence.
+
+### Rule 9bis.5 - the principle of minimal mocking (the one that wins ties)
+
+When in doubt about how much to mock, **mock less**. The legal seams are exactly two:
+
+1. **HTTP transport** (via the ``responses`` library or equivalent ``requests.adapters.HTTPAdapter``-level interception). This is the line between "our code" and "their code".
+2. **OS-level I/O attributes that aren't our code** — the monotonic clock that the rate limiter sleeps against (``animedex.transport.ratelimit._monotonic`` / ``_sleep``), the cache module's ``_utcnow``, and ``sys.stdout.isatty`` when a test needs to exercise the TTY-vs-pipe auto-switch. These are wrappers around OS calls; they are not project logic.
+
+Anything else — a backend Python API function, a mapper, a renderer, a Click wrapper, a dispatcher entry point — is project code, and mocking it disables the system under test. **Do not do it.** A test that mocks ``animedex.backends.jikan.show`` proves nothing about whether ``animedex jikan show`` works on a user's machine, because the function it replaced is exactly the function the user runs.
+
+If the test feels hard to write under this constraint, the constraint is doing its job — the production code is too coupled or the test setup wants a fixture that doesn't exist yet. Solve those, not the constraint.
+
+### Rule 9bis.6 - exercise every output mode
+
+Every CLI command has at least two output paths: ``--json`` (forced JSON) and the default (TTY-vs-pipe auto-switch). Renderer regressions in one path do not surface in the other. **Every CLI command must be exercised in both modes.** Specifically:
+
+* The default-output path needs ``isatty()=True`` to be forced, because ``CliRunner`` substitutes a pipe-shaped stdout and the auto-switch silently routes to JSON.
+* The JSON path passes ``--json`` explicitly.
+
+If your test only asserts ``exit_code == 0`` after passing ``--json``, you have not tested the default rendering path the user sees in their terminal. The canonical example: PR #6 shipped a renderer that crashed with ``AttributeError: 'str' object has no attribute 'backend'`` for every rich-dataclass TTY render, and the entire e2e suite (44 tests) walked past it because every test passed ``--json``. Write the TTY path test alongside the JSON path test — same fixture, different flag.
+
 ## 10. Python Docstring Style Guide
 
 Use **reStructuredText (reST)** format exclusively, following PEP 257 and Sphinx standards. Every public module, class, function, and method gets a docstring; reST roles cross-link them.
@@ -447,6 +517,82 @@ The Sphinx build is in `docs/`. `docs/source/conf.py` configures autodoc, `sphin
 - For *scope* questions: section 6 above.
 - For *value* questions ("should we forbid X?"): section 0 above is the answer. The default is "inform the user; do not gate".
 - For *diagnostic-coverage* questions: section 9 above.
+- For *test-discipline* questions: section 9bis above.
+- For *backend-rich-model* questions: section 13 below.
 - For *Python API* questions: see `plans/05-python-api.md`.
 
 If the answer is not in any of those, propose an update to the relevant document in the same change that introduces the new behaviour. The plans and AGENTS.md are versioned alongside the code; they must not drift.
+
+## 13. Lossless Rich Model Contract (backend dataclasses)
+
+Every backend exposes two parallel data shapes. The user-facing **common** types (`animedex.models.anime.Anime`, `animedex.models.character.Character`, `animedex.models.character.Staff`, `animedex.models.character.Studio`, `animedex.models.trace.TraceHit`, `animedex.models.trace.TraceQuota`) are deliberately a lowest-common-denominator projection across upstreams; they drop backend-specific fields by design. The per-backend **rich** types (`AnilistAnime`, `AnilistCharacter`, `AnilistStaff`, `AnilistStudio`, `JikanAnime`, `JikanCharacter`, `JikanPerson`, `JikanProducer`, `JikanClub`, `JikanUser`, `JikanGenericRow`, `JikanMagazine`, `JikanGenre`, `JikanRelation`, all the nested helper types, plus `RawTraceHit` / `RawTraceQuota`) are the upstream payload as-typed. The contract below pins what they must guarantee.
+
+### 13.1 — rich = lossless, common = lossy
+
+> A rich type, when fed the upstream payload via `model_validate(payload)`, must round-trip via `model_dump(by_alias=True, mode='json')` to produce a key set that is a **superset** of the upstream's. A common type makes no such promise; the projection step is allowed to drop fields, and historically does.
+
+The asymmetry is the whole reason both layers exist. If a power user wants every Jikan field a `/anime/{id}/full` response carried, they reach for `JikanAnime`. If they just want a multi-source-merged "this anime" view, they reach for `Anime`. We refuse to choose for them.
+
+The rule has **no** carve-out. Sensitive upstream values (review M1 originally worried about Trace.moe's `/me` `id` field carrying the caller's egress IP) are not the data model's problem to filter — that violates §0 (a user looking at their own machine's IP is exercising informed choice; we inform, we do not gate). The right place to keep developer IPs out of the repo is the **fixture-capture pipeline**, not the runtime model: ``tools/fixtures/capture.py`` rewrites every public IPv4 in captured payloads to the RFC-5737 documentation placeholder before YAML write. So the rich model surfaces the upstream value verbatim, and the captured fixture committed to git is sanitised. The common projection (`TraceQuota`) deliberately omits `id`, so callers who don't want the value reach for the common shape.
+
+### 13.2 — `BackendRichModel` is the only allowed base
+
+The `animedex.models.common.BackendRichModel` class encodes the contract:
+
+* `extra='allow'` — fields the model didn't declare are kept on the instance and re-emitted on dump (this is what makes "future Jikan adds a field, animedex still round-trips it" work).
+* `populate_by_name=True` — alias-renamed fields (e.g. `from_: float = Field(alias='from')` for the `from`/`to` Python keyword conflict on Trace `/search` hits, or the `JikanAired.from_` field) accept either form on input, and dump back under the alias.
+* `frozen=True` — inherited from `AnimedexModel`. Rich models are immutable.
+* Inheritance from `AnimedexModel` — preserved so every `isinstance(x, AnimedexModel)` check downstream (TTY dispatcher, JSON renderer, CLI's `_to_tty_text`) keeps recognising rich instances. Splitting the two roots was an early bug that made rich models render as raw pydantic `__repr__`. The inheritance is load-bearing.
+
+Every public class declared in `animedex.backends.<name>.models` must be a subclass of `BackendRichModel`. The discipline is enforced by the lossless test suite (`test/backends/test_lossless_round_trip.py::TestBackendRichDiscipline`). No exceptions.
+
+### 13.3 — `to_common()` is the only legal lossy step
+
+The rich → common projection happens via the rich type's `to_common()` method. That method is the single place where field loss is permitted. The renderers (TTY and JSON) are wired to call `to_common()` for any rich instance they see, exactly so the human-friendly output is uniform across backends; the JSON path also includes the rich form when the caller asks for the full backend record. No other layer is allowed to silently drop fields.
+
+If `to_common()` is missing on a rich type, the TTY renderer falls back to a generic source-attributed JSON dump rather than guessing; this keeps the contract honest (no half-projection).
+
+### 13.4 — fixture-driven verification, not synthesised
+
+The lossless test suite parametrises over every fixture in `test/fixtures/<backend>/<endpoint>/*.yaml`, computes the upstream key tree, validates through the rich model, dumps with `by_alias=True`, and asserts the dumped key set is a superset of the upstream's. This is the test that pins the contract; if a future contributor introduces a model that drops fields silently, the new fixture is what catches it. Synthesised payloads do not count — they only catch what the test author already thought to write.
+
+### 13.5 — when adding or expanding a rich type
+
+1. The class inherits from `BackendRichModel`.
+2. Aliases are used for any field whose upstream name is a Python keyword (`from`, `class`, `import`, etc.) or otherwise unrepresentable as an identifier.
+3. There is a fixture under `test/fixtures/<backend>/<endpoint>/` exercising the new type with a real upstream payload.
+4. The lossless test suite picks the fixture up via its parametrise glob; running `make test` confirms the round-trip.
+5. The rich type implements a `to_common()` projection if a common type exists for the same kind of record; otherwise the renderer's fallback path is acceptable.
+6. The `selftest()` for the backend exercises both shapes (rich validate-dump-compare; common projection produces a sane `Anime` / `Character` / etc.).
+
+Skipping any of these steps is how the contract slips. Reviewers are expected to flag missing fixtures or absent `to_common()`.
+
+### 13.6 — when consuming a rich type
+
+A caller who has a rich instance can produce the upstream-faithful payload by calling `obj.model_dump(by_alias=True, mode='json')`. They can produce the project's source-attributed JSON by calling the JSON renderer. They can produce TTY text by calling the TTY renderer. They can produce the common projection by calling `obj.to_common()`. These four shapes cover every legitimate downstream need; new ad-hoc serialisers should not be introduced for the rich layer.
+
+## 14. Source-code naming discipline
+
+The shipped artefact is `animedex/` (the installable package) plus the `animedex` CLI command. Anything a user reads at runtime — `import animedex.foo`, `animedex --help`, `animedex <cmd> --help`, `inspect.getdoc(...)`, the `animedex --agent-guide` extraction, the package on PyPI — is product surface.
+
+Product surface must talk about *what the code does today*, not about *how the project got here* and not about the contributor-side documentation that produced the current shape. Concretely, the following are forbidden inside `animedex/` filenames, identifiers, module paths, docstrings, comments, `help=` strings, agent-guidance blocks, and runtime exception messages:
+
+- **Phase labels.** "Phase 0", "Phase-1", "Phase 2", "phase2", `_phase2_helpers`, `common_phase2_options`, "lands in Phase 8". The user has no concept of project phasing. Describe the actual feature, gate, or limitation directly — "until the OAuth flow lands", "until token storage lands", "high-level CLI factory", "lossless rich model".
+- **References to this document.** Do not write "AGENTS §13", "AGENTS.md §0", "per AGENTS §10", "see the lossless contract in AGENTS", or any other pointer back here. **This applies even when the referenced section is itself a discipline rule.** If a docstring needs to convey a rule, state the rule's technical content in the docstring directly, in the form a downstream reader needs. Pointers create dead links the moment this file is renamed or re-sectioned, and they leak the contributor-process metaphor into the product.
+- **Review references.** "Reviewer review B3", "review M1", "PR #6 carve-out", "the review found …". These belong in commit messages, the PR conversation, or test docstrings — not in the runtime artefact.
+- **Issue / PR / ticket numbers.** "#1", "#5", "Refs #1". OK in commit bodies; not OK in source. (`plans/` files are project-internal docs, not shipped product, so cross-references between plans are fine there.)
+
+This applies to every file under `animedex/`:
+
+- module-level docstrings and identifiers,
+- function and class docstrings,
+- inline comments,
+- `help=` strings on `click.option` / `click.argument`,
+- the agent-guidance blocks injected by the CLI factory,
+- exception messages users may see at runtime.
+
+The same rules apply to files under `tools/`. Files under `test/` may explain in a docstring why a test exists, even when the explanation references a past review; test filenames themselves follow the same naming rules as the package. The tree under `docs/source/api_doc/` is generated from the source and inherits whatever the source says. Files under `plans/` are not part of the product surface and are not constrained by this section.
+
+When in doubt, ask: *"would this make sense to someone who `pip install animedex` and ran `--help`?"* If the answer is "no, they'd see a project-history label they have no context for", rephrase.
+
+The repo-wide grep `grep -rE 'Phase [0-9]|AGENTS[. ]§|Reviewer review' animedex/ tools/` should return zero matches; treat each match as a regression and fix it in the same change.

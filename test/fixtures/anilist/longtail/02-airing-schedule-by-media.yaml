@@ -1,0 +1,81 @@
+metadata:
+  captured_at: '2026-05-07T15:10:01Z'
+  label: airing-schedule-by-media
+  backend: anilist
+  path_slug: phase2_longtail
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ Page(page:1,perPage:5){ airingSchedules(mediaId:21, sort:TIME){ id airingAt episode timeUntilAiring media{ title{romaji}
+      } } } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 15:10:01 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '28'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        airingSchedules:
+        - id: 406458
+          airingAt: 1743854400
+          episode: 1123
+          timeUntilAiring: -34312201
+          media:
+            title:
+              romaji: ONE PIECE
+        - id: 406459
+          airingAt: 1743948960
+          episode: 1124
+          timeUntilAiring: -34217641
+          media:
+            title:
+              romaji: ONE PIECE
+        - id: 406460
+          airingAt: 1744553760
+          episode: 1125
+          timeUntilAiring: -33612841
+          media:
+            title:
+              romaji: ONE PIECE
+        - id: 406461
+          airingAt: 1745158560
+          episode: 1126
+          timeUntilAiring: -33008041
+          media:
+            title:
+              romaji: ONE PIECE
+        - id: 406462
+          airingAt: 1745763360
+          episode: 1127
+          timeUntilAiring: -32403241
+          media:
+            title:
+              romaji: ONE PIECE
+  body_text: null
+  body_b64: null

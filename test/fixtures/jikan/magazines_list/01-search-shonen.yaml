@@ -1,0 +1,53 @@
+metadata:
+  captured_at: '2026-05-07T15:14:21Z'
+  label: search-shonen
+  backend: jikan
+  path_slug: magazines_list
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/magazines?q=Shonen&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:14:20 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 13
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 3
+        total: 37
+        per_page: 3
+    data:
+    - mal_id: 526
+      name: Shonen Shojo Bokeno
+      url: https://myanimelist.net/manga/magazine/526/Shonen_Shojo_Bokeno
+      count: 1
+    - mal_id: 1699
+      name: Shounen Book
+      url: https://myanimelist.net/manga/magazine/1699/Shounen_Book
+      count: 5
+    - mal_id: 1692
+      name: Shounen Hana to Yume
+      url: https://myanimelist.net/manga/magazine/1692/Shounen_Hana_to_Yume
+      count: 4
+  body_text: null
+  body_b64: null

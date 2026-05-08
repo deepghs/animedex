@@ -1,5 +1,5 @@
 """
-Fixture capture tool for the Phase 1 ``animedex api`` test suite.
+Fixture capture tool for the the substrate API layer ``animedex api`` test suite.
 
 Each captured fixture is a single YAML file at
 ``test/fixtures/<backend>/<path-slug>/<NN>-<label>.yaml``. YAML
@@ -62,11 +62,11 @@ FIXTURES_ROOT = PROJECT_ROOT / "test" / "fixtures"
 
 # Headers that may carry the captor's identity, network position, or
 # host-side fingerprints. These get a fixed placeholder before the
-# fixture is committed (review M1). Add new entries lowercase here;
+# fixture is committed (). Add new entries lowercase here;
 # the matcher is case-insensitive. The list deliberately stays
 # narrow: it matches the "do not commit *to git*" set, not every
 # possible PII vector. Wider stripping happens at runtime in the
-# dispatcher's redact_headers (review M3).
+# dispatcher's redact_headers ().
 _HEADERS_TO_SCRUB_AT_CAPTURE = frozenset(
     {
         # Identity / network-position headers.
@@ -87,6 +87,23 @@ _HEADERS_TO_SCRUB_AT_CAPTURE = frozenset(
     }
 )
 _SCRUB_PLACEHOLDER = "<scrubbed-at-capture>"
+
+
+def _redact_request_headers(headers: Dict[str, str]) -> Dict[str, str]:
+    """Return a copy of ``headers`` with credential values redacted.
+
+    Mirrors :func:`animedex.api._envelope.redact_headers` but is
+    duplicated here so the capture tool stays importable without a
+    runtime dependency on the dispatcher package layout.
+
+    Used at fixture-write time so an authenticated capture script
+    that passes ``Authorization: Bearer <token>`` does not leak the
+    token into the YAML committed to git. See for the
+    runtime equivalent on the dispatcher side.
+    """
+    from animedex.api._envelope import redact_headers as _redact
+
+    return _redact(dict(headers or {}))
 
 
 _PLACEHOLDER_IPV4 = "203.0.113.42"  # RFC-5737 TEST-NET-3
@@ -121,7 +138,7 @@ def _is_public_ipv4(text: str) -> bool:
 def replace_public_ips_with_placeholder(text: str, placeholder: str = _PLACEHOLDER_IPV4) -> str:
     """Replace every public IPv4 address in ``text`` with ``placeholder``.
 
-    Per review M1: hard-coding a list of "known captor IPs" leaks
+    Per : hard-coding a list of "known captor IPs" leaks
     those very IPs into the script that scrubs them. Instead, walk
     the text generically: anything that looks like a public IPv4 is
     replaced with the RFC-5737 documentation address. Private,
@@ -152,7 +169,7 @@ def scrub_capture_response_headers(headers: Dict[str, str]) -> Dict[str, str]:
     """Return a copy of ``headers`` with capture-time-sensitive values
     replaced by :data:`_SCRUB_PLACEHOLDER`.
 
-    Per review M1: Shikimori's DDoS-Guard ``Set-Cookie: __ddg9_=<ip>``
+    Per : Shikimori's DDoS-Guard ``Set-Cookie: __ddg9_=<ip>``
     embeds the captor's egress IP in the response; persisting that to
     git history leaks the contributor's home or CI IP forever. The
     same risk exists for ``X-Forwarded-For``, ``X-Real-IP``,
@@ -209,7 +226,7 @@ def _scrub_public_ips_in_obj(obj: Any) -> Any:
     addresses inside any string with the documentation placeholder.
 
     Used by :func:`_classify_body` to scrub body fields at capture
-    time (review M1). Lists and dicts are walked structurally; ints,
+    time (). Lists and dicts are walked structurally; ints,
     floats, booleans, and ``None`` pass through unchanged.
 
     :param obj: Object to walk.
@@ -235,7 +252,7 @@ def _classify_body(body_bytes: bytes, content_type: str) -> Dict[str, Any]:
     block scalar). Anything else falls through to ``body_b64``.
 
     Public IPv4 addresses anywhere in the body get replaced with the
-    RFC-5737 documentation placeholder (review M1) so a captor's IP
+    RFC-5737 documentation placeholder () so a captor's IP
     does not leak through endpoints like Trace.moe ``/me`` or any
     upstream that echoes the caller's address in the body.
 
@@ -322,7 +339,7 @@ def capture(
     :type timeout: float
     :param pace_seconds: Sleep before issuing this call (use for
                           per-backend rate-limit pacing). Defaults to
-                          ``1.0`` (review m8): a forgotten pace value
+                          ``1.0`` (): a forgotten pace value
                           should *not* flood an upstream. Per-backend
                           scripts should explicitly raise this for
                           slower upstreams (ANN, MangaDex At-Home);
@@ -380,7 +397,14 @@ def capture(
         "request": {
             "method": method.upper(),
             "url": url,
-            "headers": out_headers,
+            # Scrub credential headers (Authorization, Cookie, X-Api-
+            # Key, X-Trace-Key, ...) before persisting. Without this
+            # an authenticated capture script that passes ``Authorization:
+            # Bearer <token>`` through ``headers={}`` would leak the
+            # raw token into git. Mirrors the response-header scrub
+            # added for ; see for the runtime
+            # equivalent in the dispatcher.
+            "headers": _redact_request_headers(out_headers),
             "params": params,
             "json_body": json_body,
             "raw_body_b64": base64.b64encode(raw_body).decode("ascii") if raw_body else None,
@@ -390,7 +414,7 @@ def capture(
             # Scrub at capture time so the YAML committed to git never
             # carries the captor's IP, session cookies, or proxy
             # fingerprint. See ``scrub_capture_response_headers`` for
-            # the full rationale (review M1).
+            # the full rationale ().
             "headers": scrub_capture_response_headers(dict(response.headers)),
             **body_classification,
         },

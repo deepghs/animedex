@@ -1,0 +1,152 @@
+metadata:
+  captured_at: '2026-05-07T15:11:25Z'
+  label: external-link-source-collection
+  backend: anilist
+  path_slug: phase2_longtail
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: '{ ExternalLinkSourceCollection(mediaType:ANIME, type:STREAMING){ id site type } }'
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 15:11:25 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '26'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      ExternalLinkSourceCollection:
+      - id: 5
+        site: Crunchyroll
+        type: STREAMING
+      - id: 7
+        site: Hulu
+        type: STREAMING
+      - id: 10
+        site: Netflix
+        type: STREAMING
+      - id: 13
+        site: YouTube
+        type: STREAMING
+      - id: 20
+        site: HIDIVE
+        type: STREAMING
+      - id: 21
+        site: Amazon Prime Video
+        type: STREAMING
+      - id: 22
+        site: Vimeo
+        type: STREAMING
+      - id: 27
+        site: RetroCrush
+        type: STREAMING
+      - id: 28
+        site: Adult Swim
+        type: STREAMING
+      - id: 29
+        site: Japanese Film Archives
+        type: STREAMING
+      - id: 30
+        site: Tubi TV
+        type: STREAMING
+      - id: 31
+        site: Crackle
+        type: STREAMING
+      - id: 32
+        site: AsianCrush
+        type: STREAMING
+      - id: 33
+        site: Midnight Pulp
+        type: STREAMING
+      - id: 45
+        site: Bilibili
+        type: STREAMING
+      - id: 118
+        site: Disney Plus
+        type: STREAMING
+      - id: 119
+        site: Bilibili TV
+        type: STREAMING
+      - id: 121
+        site: Tencent Video
+        type: STREAMING
+      - id: 122
+        site: iQ
+        type: STREAMING
+      - id: 126
+        site: Youku
+        type: STREAMING
+      - id: 131
+        site: WeTV
+        type: STREAMING
+      - id: 180
+        site: Niconico Video
+        type: STREAMING
+      - id: 204
+        site: iQIYI
+        type: STREAMING
+      - id: 210
+        site: Star+
+        type: STREAMING
+      - id: 211
+        site: Max
+        type: STREAMING
+      - id: 214
+        site: Viki
+        type: STREAMING
+      - id: 216
+        site: Cineverse
+        type: STREAMING
+      - id: 218
+        site: Youku TV
+        type: STREAMING
+      - id: 226
+        site: Coolmic
+        type: STREAMING
+      - id: 230
+        site: Criterion Channel
+        type: STREAMING
+      - id: 239
+        site: Hoopla
+        type: STREAMING
+      - id: 245
+        site: Laftel
+        type: STREAMING
+      - id: 249
+        site: OceanVeil
+        type: STREAMING
+      - id: 250
+        site: Apple TV+
+        type: STREAMING
+      - id: 251
+        site: Bandai Channel
+        type: STREAMING
+      - id: 261
+        site: Prime Video
+        type: STREAMING
+  body_text: null
+  body_b64: null

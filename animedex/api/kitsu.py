@@ -43,6 +43,7 @@ def call(
     cache=None,
     session=None,
     rate_limit_registry=None,
+    config=None,
 ) -> RawResponse:
     """Issue a Kitsu request and return its envelope."""
     out_headers = dict(_DEFAULT_HEADERS)
@@ -64,6 +65,7 @@ def call(
         cache=cache,
         session=session,
         rate_limit_registry=rate_limit_registry,
+        config=config,
     )
 
 

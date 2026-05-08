@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-07T15:14:05Z'
+  label: miyazaki-1870
+  backend: jikan
+  path_slug: people_pictures
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/people/1870/pictures
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:14:05 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:people:310a26f94b352e4eebb3c4db8ca4d118422ee093
+    expires: Fri, 08 May 2026 15:14:05 GMT
+    last-modified: Thu, 07 May 2026 15:14:05 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - jpg:
+        image_url: https://myanimelist.net/images/voiceactors/2/38768.jpg
+    - jpg:
+        image_url: https://myanimelist.net/images/voiceactors/2/38769.jpg
+    - jpg:
+        image_url: https://myanimelist.net/images/voiceactors/3/38770.jpg
+    - jpg:
+        image_url: https://myanimelist.net/images/voiceactors/2/38772.jpg
+    - jpg:
+        image_url: https://myanimelist.net/images/voiceactors/1/38773.jpg
+    - jpg:
+        image_url: https://myanimelist.net/images/voiceactors/1/54606.jpg
+    - jpg:
+        image_url: https://myanimelist.net/images/voiceactors/2/63457.jpg
+  body_text: null
+  body_b64: null

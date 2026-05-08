@@ -1,0 +1,37 @@
+metadata:
+  captured_at: '2026-05-07T15:13:18Z'
+  label: berserk-2
+  backend: jikan
+  path_slug: manga_reviews
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/manga/2/reviews?page=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:13:17 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:manga:678d08e4c17f7949b12e49ff30f83b218c9da846
+    expires: Fri, 08 May 2026 14:42:15 GMT
+    last-modified: Thu, 07 May 2026 14:42:15 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 1
+      has_next_page: false
+    data: []
+  body_text: null
+  body_b64: null

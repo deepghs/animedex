@@ -27,11 +27,21 @@ from pydantic import BaseModel, ConfigDict
 
 
 class AnimedexModel(BaseModel):
-    """Project-wide pydantic v2 base.
+    """Project-wide pydantic v2 base for **common projection** types.
 
-    All public dataclasses in :mod:`animedex.models` and all
-    backend-returned records inherit from this class so that the
-    immutability, alias, and extra-field policies are uniform.
+    Common types (e.g. :class:`~animedex.models.anime.Anime`,
+    :class:`~animedex.models.character.Character`,
+    :class:`~animedex.models.character.Staff`,
+    :class:`~animedex.models.character.Studio`) are deliberately the
+    "lowest common denominator" the project surfaces across multiple
+    upstreams. They drop backend-specific fields by design — that is
+    the whole point of a projection. ``extra='ignore'`` enforces this
+    policy: any field a backend gives us that the projection didn't
+    declare is dropped silently.
+
+    Backend-specific **rich** types (``AnilistAnime``, ``JikanAnime``,
+    etc.) are NOT this. See :class:`BackendRichModel` below — they
+    must be lossless.
 
     :ivar model_config: pydantic configuration; do not override per
                          subclass without a documented reason.
@@ -40,6 +50,55 @@ class AnimedexModel(BaseModel):
     model_config = ConfigDict(
         frozen=True,
         extra="ignore",
+        populate_by_name=True,
+    )
+
+
+class BackendRichModel(AnimedexModel):
+    """Project-wide pydantic v2 base for **backend rich** dataclasses.
+
+    Every per-backend rich type — ``AnilistAnime``, ``AnilistCharacter``,
+    ``AnilistStaff``, ``AnilistStudio``, the long-tail Anilist*
+    types, ``JikanAnime``, ``JikanCharacter``, ``JikanPerson``,
+    ``JikanProducer``, ``JikanClub``, ``JikanUser``, ``JikanGenericRow``,
+    ``RawTraceHit``, ``RawTraceQuota``, plus their nested helper types
+    (e.g. ``_AnilistTitle``, ``JikanEntity``, ``JikanAired``) —
+    inherits from this class.
+
+    The contract: a rich model is **information-lossless**. When fed
+    the raw upstream payload via ``model_validate``, it must retain
+    every key the upstream returned, so ``model_dump(by_alias=True,
+    mode='json')`` reconstructs the original payload field-for-field.
+
+    Achieved by:
+
+    * ``extra='allow'`` — fields the model didn't declare are kept on
+      the instance and re-emitted on dump (instead of silently
+      dropped, which is what :class:`AnimedexModel` does for common
+      projections).
+    * ``populate_by_name=True`` — alias-renamed fields (e.g.
+      ``from_: float = Field(alias='from')`` for the Python keyword
+      conflict) accept either form on input.
+
+    The class **inherits from** :class:`AnimedexModel` rather than
+    sitting beside it. Pydantic v2 merges ``model_config`` across
+    inheritance, so the ``extra='allow'`` here overrides the parent's
+    ``extra='ignore'``. The inheritance matters: every ``isinstance(x,
+    AnimedexModel)`` check downstream (the TTY dispatcher in
+    :mod:`animedex.render.tty`, the JSON renderer, the CLI's
+    ``_to_tty_text`` helper) must continue to recognise rich
+    instances. Splitting the two roots was a bug that made rich models
+    fall through to ``str(x)`` and dump pydantic ``__repr__`` instead
+    of human-friendly TTY text.
+
+    Backend-rich → common projection happens via the rich type's
+    ``to_common()`` method. Loss of fields is permitted at and only
+    at that boundary.
+    """
+
+    model_config = ConfigDict(
+        frozen=True,
+        extra="allow",
         populate_by_name=True,
     )
 
@@ -71,6 +130,29 @@ class SourceTag(AnimedexModel):
     fetched_at: datetime
     cached: bool = False
     rate_limited: bool = False
+
+
+class PartialDate(AnimedexModel):
+    """A date where any of year/month/day may be unknown.
+
+    AniList's ``dateOfBirth`` / ``startDate`` / ``endDate`` shapes
+    return ``{ year, month, day }`` with each component independently
+    nullable. A character may have a known birth-month but no day; a
+    series may be year-only when the exact air date isn't recorded.
+    :class:`datetime.date` cannot represent that, so this lighter-
+    weight type stands in.
+
+    :ivar year: Calendar year when known.
+    :vartype year: int or None
+    :ivar month: Calendar month (1-12) when known.
+    :vartype month: int or None
+    :ivar day: Day of month (1-31) when known.
+    :vartype day: int or None
+    """
+
+    year: Optional[int] = None
+    month: Optional[int] = None
+    day: Optional[int] = None
 
 
 class Pagination(AnimedexModel):
@@ -106,6 +188,39 @@ class RateLimit(AnimedexModel):
     reset_at: datetime
 
 
+#: The complete vocabulary of :class:`ApiError` ``reason`` slugs.
+#: Library callers that want to branch on a typed error can match
+#: against this set; new sites that emit :class:`ApiError` should
+#: pick one of these values rather than inventing a new slug, so the
+#: vocabulary stays stable for downstream consumers. ``ApiError``'s
+#: ``__init__`` validates ``reason`` against this set so a typo
+#: surfaces at construction time rather than at error-handling time.
+REASONS = frozenset(
+    {
+        # caller-side
+        "auth-required",
+        "bad-args",
+        # transport / firewall
+        "firewall",
+        "read-only",
+        "unknown-backend",
+        # upstream-side, rough cause known
+        "upstream-error",
+        "upstream-decode",
+        "upstream-shape",
+        "graphql-error",
+        "not-found",
+        # render / shell-out
+        "jq-failed",
+        "jq-missing",
+        "unknown-field",
+        # internal
+        "malformed-guidance",
+        "selftest",
+    }
+)
+
+
 class ApiError(Exception):
     """Typed error raised by the transport, cache, and policy layers.
 
@@ -119,10 +234,14 @@ class ApiError(Exception):
     :param backend: Backend identifier when the failure is
                      backend-specific.
     :type backend: str or None
-    :param reason: Short slug categorising the failure (e.g.
-                    ``"rate-limited"``, ``"read-only"``,
-                    ``"upstream-5xx"``).
+    :param reason: Short slug categorising the failure. Must be one of
+                    the values in :data:`REASONS`. The full vocabulary
+                    is fixed by the project (so library consumers can
+                    branch on a known set); a typo at construction
+                    time raises :class:`ValueError`.
     :type reason: str or None
+    :raises ValueError: When ``reason`` is set but not in
+                         :data:`REASONS`.
     """
 
     def __init__(
@@ -132,6 +251,12 @@ class ApiError(Exception):
         backend: Optional[str] = None,
         reason: Optional[str] = None,
     ) -> None:
+        if reason is not None and reason not in REASONS:
+            raise ValueError(
+                f"unknown ApiError reason: {reason!r}. "
+                f"Add it to animedex.models.common.REASONS or use one "
+                f"of: {sorted(REASONS)!r}"
+            )
         super().__init__(message)
         self.message = message
         self.backend = backend
@@ -146,6 +271,36 @@ class ApiError(Exception):
         if prefix_bits:
             return f"[{' '.join(prefix_bits)}] {self.message}"
         return self.message
+
+
+def require_field(row: dict, key: str, *, backend: str, what: str):
+    """Return ``row[key]`` or raise :class:`ApiError` (``upstream-shape``).
+
+    Used inside mapper code where a particular field is *expected* to
+    be populated on every row (e.g. ``id`` on a search-result row, or
+    ``priority`` on the ``/me`` envelope). A plain ``row[key]`` would
+    crash with :class:`KeyError` and leak the failure point as an
+    internal exception type; this helper converts that to a typed
+    error the dispatcher / CLI / library callers know how to catch.
+    Surfaces upstream schema drift as ``reason='upstream-shape'``
+    rather than as a Python exception class.
+
+    :param row: One dict from an upstream response (a list-row or a
+                 single-entity body).
+    :param key: The required field name on the row.
+    :param backend: Backend identifier — appears on the raised error.
+    :param what: Short label for the row shape (e.g. ``"review"``,
+                  ``"/me"``) — appears in the error message.
+    :raises ApiError: When ``key`` is absent from ``row``.
+                       ``reason='upstream-shape'``.
+    """
+    if key not in row:
+        raise ApiError(
+            f"{backend} {what} row missing required field {key!r}",
+            backend=backend,
+            reason="upstream-shape",
+        )
+    return row[key]
 
 
 def selftest() -> bool:
@@ -165,6 +320,9 @@ def selftest() -> bool:
     now = datetime.now(timezone.utc)
     SourceTag(backend="_selftest", fetched_at=now)
     SourceTag.model_validate({"backend": "_selftest", "fetched_at": now.isoformat()})
+    PartialDate(year=2026, month=5, day=7)
+    PartialDate(year=2026)
+    PartialDate()
     Pagination(page=1, per_page=20, has_next=False)
     RateLimit(reset_at=now)
     err = ApiError("smoke", backend="_selftest", reason="selftest")

@@ -1,0 +1,110 @@
+metadata:
+  captured_at: '2026-05-07T14:58:47Z'
+  label: staff-95269
+  backend: anilist
+  path_slug: phase2_staff
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Staff(id: $id) {
+          id
+          name { full native alternative }
+          image { large medium }
+          description(asHtml: false)
+          primaryOccupations gender age dateOfBirth { year month day }
+          yearsActive homeTown languageV2 favourites
+          staffMedia(perPage: 3) { edges { staffRole node { id title { romaji } } } }
+          characters(perPage: 3) { nodes { id name { full } } }
+        }
+      }
+    variables:
+      id: 95269
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:46 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '12'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Staff:
+        id: 95269
+        name:
+          full: Mary Elizabeth McGlynn
+          native: null
+          alternative:
+          - Melissa Williamson
+        image:
+          large: https://s4.anilist.co/file/anilistcdn/staff/large/n95269-PhQ87wkVzLBb.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/staff/medium/n95269-PhQ87wkVzLBb.jpg
+        description: Mary Elizabeth McGlynn is an American voice actress, ADR director and singer-songwriter best known for
+          her involvement in music production in multiple games from the Silent Hill series, and her extensive English-language
+          dubbing of various anime, animated films and video games.
+        primaryOccupations:
+        - Voice Actor
+        gender: Female
+        age: 59
+        dateOfBirth:
+          year: 1966
+          month: 10
+          day: 16
+        yearsActive: []
+        homeTown: null
+        languageV2: English
+        favourites: 100
+        staffMedia:
+          edges:
+          - staffRole: ADR Director (English)
+            node:
+              id: 1
+              title:
+                romaji: Cowboy Bebop
+          - staffRole: ADR Director (English)
+            node:
+              id: 5
+              title:
+                romaji: 'Cowboy Bebop: Tengoku no Tobira'
+          - staffRole: ADR Director (English)
+            node:
+              id: 20
+              title:
+                romaji: NARUTO
+        characters:
+          nodes:
+          - id: 482
+            name:
+              full: Ayla Veverská Roznovsky
+          - id: 797
+            name:
+              full: Cornelia li Britannia
+          - id: 806
+            name:
+              full: Urd
+  body_text: null
+  body_b64: null

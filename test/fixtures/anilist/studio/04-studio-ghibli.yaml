@@ -1,0 +1,83 @@
+metadata:
+  captured_at: '2026-05-07T14:58:59Z'
+  label: studio-ghibli
+  backend: anilist
+  path_slug: phase2_studio
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Studio(id: $id) {
+          id name isAnimationStudio favourites
+          media(perPage: 5) { edges { isMainStudio node { id title { romaji } } } }
+        }
+      }
+    variables:
+      id: 17
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:59 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '26'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Studio:
+        id: 17
+        name: Aniplex
+        isAnimationStudio: false
+        favourites: 2259
+        media:
+          edges:
+          - isMainStudio: false
+            node:
+              id: 20
+              title:
+                romaji: NARUTO
+          - isMainStudio: false
+            node:
+              id: 28
+              title:
+                romaji: Yakitate!! Japan
+          - isMainStudio: false
+            node:
+              id: 55
+              title:
+                romaji: Arc the Lad
+          - isMainStudio: false
+            node:
+              id: 74
+              title:
+                romaji: Gakuen Alice
+          - isMainStudio: false
+            node:
+              id: 107
+              title:
+                romaji: Ou Dorobou JING
+  body_text: null
+  body_b64: null

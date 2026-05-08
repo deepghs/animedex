@@ -1,0 +1,72 @@
+metadata:
+  captured_at: '2026-05-07T16:47:09Z'
+  label: viewer
+  backend: anilist
+  path_slug: phase2_authenticated_viewer
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Authorization: Bearer eyJ0...yeSY (len=1084)
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query {
+            Viewer {
+              id name about
+              avatar { large medium }
+              siteUrl
+              statistics {
+                anime { count meanScore minutesWatched }
+                manga { count meanScore chaptersRead }
+              }
+            }
+          }
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 16:47:09 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '29'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Viewer:
+        id: 7883112
+        name: narugo1992
+        about: null
+        avatar:
+          large: https://s4.anilist.co/file/anilistcdn/user/avatar/large/default.png
+          medium: https://s4.anilist.co/file/anilistcdn/user/avatar/medium/default.png
+        siteUrl: https://anilist.co/user/7883112
+        statistics:
+          anime:
+            count: 0
+            meanScore: 0
+            minutesWatched: 0
+          manga:
+            count: 0
+            meanScore: 0
+            chaptersRead: 0
+  body_text: null
+  body_b64: null

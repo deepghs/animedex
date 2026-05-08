@@ -92,8 +92,8 @@ class TestRenderTtyFullFields:
             source=SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
         )
         out = render_tty(a)
-        assert "Score: 9.0" in out
-        assert "Streaming: X" in out
+        assert "9.0/10.0" in out
+        assert "Streaming:" in out and "X:" in out
 
 
 class TestRenderTtyNonAnime:
@@ -108,6 +108,52 @@ class TestRenderTtyNonAnime:
         out = render_tty(q)
         assert "Quote" in out
         assert "[src: animechan]" in out
+
+
+class TestRenderTtyFallbackHonorsAliases:
+    """Reviewer review B2 (PR #6).
+
+    The rich-model fallback path in ``render_tty`` (the ``hasattr
+    to_common`` branch's last line) calls ``model_dump_json()``
+    without ``by_alias=True``. So a rich model with aliased fields
+    (e.g. ``RawTraceHit.from_`` aliased to ``from``) used to render
+    ``\"from_\": ...`` instead of ``\"from\": ...``. AGENTS §13.6
+    declares the renderer's output as a legitimate downstream shape;
+    this drift broke the lossless contract.
+
+    A rich model whose ``to_common()`` returns a non-renderable shape
+    falls into the JSON-dump fallback path; we synthesize that case
+    here.
+    """
+
+    def test_fallback_dump_uses_upstream_aliases(self):
+        from animedex.models.common import BackendRichModel, SourceTag
+        from animedex.render.tty import render_tty
+        from pydantic import Field
+
+        # A rich model with aliased fields whose ``to_common()`` returns
+        # something the dispatcher doesn't recognise (so we land in the
+        # JSON-dump fallback).
+        class _RichWithAlias(BackendRichModel):
+            from_: float = Field(alias="from")
+            to_: float = Field(alias="to")
+            source_tag: SourceTag
+
+            def to_common(self):
+                return None
+
+        m = _RichWithAlias.model_validate(
+            {
+                "from": 832.7,
+                "to": 836.8,
+                "source_tag": SourceTag(backend="trace", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+            }
+        )
+        out = render_tty(m)
+        assert '"from"' in out, f"expected upstream alias 'from' in TTY fallback dump, got: {out!r}"
+        assert '"to"' in out
+        assert '"from_"' not in out
+        assert '"to_"' not in out
 
 
 class TestSelftest:

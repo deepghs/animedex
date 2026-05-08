@@ -1,0 +1,936 @@
+metadata:
+  captured_at: '2026-05-07T15:12:54Z'
+  label: berserk-2
+  backend: jikan
+  path_slug: manga_characters
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/manga/2/characters
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:12:54 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:manga:1933e3cf9af562ac7c6bcb540ce9b757b283543e
+    expires: Fri, 08 May 2026 03:44:48 GMT
+    last-modified: Thu, 07 May 2026 03:44:48 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - character:
+        mal_id: 423
+        url: https://myanimelist.net/character/423/Casca
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/14/72697.jpg?s=507f381ee6e54d4bd2c59e6ed3b72c52
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/14/72697.webp?s=507f381ee6e54d4bd2c59e6ed3b72c52
+            small_image_url: https://cdn.myanimelist.net/images/characters/14/72697t.webp?s=507f381ee6e54d4bd2c59e6ed3b72c52
+        name: Casca
+      role: Main
+    - character:
+        mal_id: 7857
+        url: https://myanimelist.net/character/7857/Farnese_de_Vandimion
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/3/150707.jpg?s=f4c441ed0f987e1ac4bd66e2a451db48
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/3/150707.webp?s=f4c441ed0f987e1ac4bd66e2a451db48
+            small_image_url: https://cdn.myanimelist.net/images/characters/3/150707t.webp?s=f4c441ed0f987e1ac4bd66e2a451db48
+        name: de Vandimion, Farnese
+      role: Main
+    - character:
+        mal_id: 424
+        url: https://myanimelist.net/character/424/Griffith
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/326322.jpg?s=cccaa0f72e426492f92db8f04a168a20
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/326322.webp?s=cccaa0f72e426492f92db8f04a168a20
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/326322t.webp?s=cccaa0f72e426492f92db8f04a168a20
+        name: Griffith
+      role: Main
+    - character:
+        mal_id: 422
+        url: https://myanimelist.net/character/422/Guts
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/13/284125.jpg?s=181332f40c6dd9698bae427d2a56bbf7
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/13/284125.webp?s=181332f40c6dd9698bae427d2a56bbf7
+            small_image_url: https://cdn.myanimelist.net/images/characters/13/284125t.webp?s=181332f40c6dd9698bae427d2a56bbf7
+        name: Guts
+      role: Main
+    - character:
+        mal_id: 7859
+        url: https://myanimelist.net/character/7859/Isidro
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/101956.jpg?s=12a149f0da80d6597a0448867d524b3a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/101956.webp?s=12a149f0da80d6597a0448867d524b3a
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/101956t.webp?s=12a149f0da80d6597a0448867d524b3a
+        name: Isidro
+      role: Main
+    - character:
+        mal_id: 5060
+        url: https://myanimelist.net/character/5060/Puck
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/8/101984.jpg?s=de3bc651dc8d49171f0d2f75fca2e7a0
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/8/101984.webp?s=de3bc651dc8d49171f0d2f75fca2e7a0
+            small_image_url: https://cdn.myanimelist.net/images/characters/8/101984t.webp?s=de3bc651dc8d49171f0d2f75fca2e7a0
+        name: Puck
+      role: Main
+    - character:
+        mal_id: 7864
+        url: https://myanimelist.net/character/7864/Schierke
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/12/530028.jpg?s=8fce81cccacba90915b4db31e7abcba6
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/12/530028.webp?s=8fce81cccacba90915b4db31e7abcba6
+            small_image_url: https://cdn.myanimelist.net/images/characters/12/530028t.webp?s=8fce81cccacba90915b4db31e7abcba6
+        name: Schierke
+      role: Main
+    - character:
+        mal_id: 5059
+        url: https://myanimelist.net/character/5059/Serpico
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/150923.jpg?s=3ce8643254e19c029703e2f03724cb91
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/150923.webp?s=3ce8643254e19c029703e2f03724cb91
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/150923t.webp?s=3ce8643254e19c029703e2f03724cb91
+        name: Serpico
+      role: Main
+    - character:
+        mal_id: 143843
+        url: https://myanimelist.net/character/143843/Adolf
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/319066.jpg?s=28ef821b7131ee50be5e96b700f683ed
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/319066.webp?s=28ef821b7131ee50be5e96b700f683ed
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/319066t.webp?s=28ef821b7131ee50be5e96b700f683ed
+        name: Adolf
+      role: Supporting
+    - character:
+        mal_id: 138546
+        url: https://myanimelist.net/character/138546/Adonis
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/300545.jpg?s=817e39b32be427cccf80fedd17fb15f6
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/300545.webp?s=817e39b32be427cccf80fedd17fb15f6
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/300545t.webp?s=817e39b32be427cccf80fedd17fb15f6
+        name: Adonis
+      role: Supporting
+    - character:
+        mal_id: 246982
+        url: https://myanimelist.net/character/246982/Angel_of_Mozgus
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/546157.jpg?s=e0416c924122354d91e5cb951ea240a5
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/546157.webp?s=e0416c924122354d91e5cb951ea240a5
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/546157t.webp?s=e0416c924122354d91e5cb951ea240a5
+        name: Angel of Mozgus
+      role: Supporting
+    - character:
+        mal_id: 7882
+        url: https://myanimelist.net/character/7882/Azan
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/68278.jpg?s=291e96f1d5f8c7baedcd4bd0e1621a84
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/68278.webp?s=291e96f1d5f8c7baedcd4bd0e1621a84
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/68278t.webp?s=291e96f1d5f8c7baedcd4bd0e1621a84
+        name: Azan
+      role: Supporting
+    - character:
+        mal_id: 49343
+        url: https://myanimelist.net/character/49343/Bazuso
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/135205.jpg?s=720076790053a263bfe3d063177bd45d
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/135205.webp?s=720076790053a263bfe3d063177bd45d
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/135205t.webp?s=720076790053a263bfe3d063177bd45d
+        name: Bazuso
+      role: Supporting
+    - character:
+        mal_id: 27213
+        url: https://myanimelist.net/character/27213/Beast_of_Darkness
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/13/68878.jpg?s=840552002f658e4cbbabddbec21b523e
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/13/68878.webp?s=840552002f658e4cbbabddbec21b523e
+            small_image_url: https://cdn.myanimelist.net/images/characters/13/68878t.webp?s=840552002f658e4cbbabddbec21b523e
+        name: Beast of Darkness
+      role: Supporting
+    - character:
+        mal_id: 182541
+        url: https://myanimelist.net/character/182541/Bonebeard
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/7/474302.jpg?s=e69db72dc9d9c50f8716f825a350990d
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/7/474302.webp?s=e69db72dc9d9c50f8716f825a350990d
+            small_image_url: https://cdn.myanimelist.net/images/characters/7/474302t.webp?s=e69db72dc9d9c50f8716f825a350990d
+        name: Bonebeard
+      role: Supporting
+    - character:
+        mal_id: 74513
+        url: https://myanimelist.net/character/74513/Chicchi
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/2/187651.jpg?s=6046b2e761a9ac5370187a7d0e69d611
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/2/187651.webp?s=6046b2e761a9ac5370187a7d0e69d611
+            small_image_url: https://cdn.myanimelist.net/images/characters/2/187651t.webp?s=6046b2e761a9ac5370187a7d0e69d611
+        name: Chicchi
+      role: Supporting
+    - character:
+        mal_id: 57715
+        url: https://myanimelist.net/character/57715/Adon_Coborlwitz
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/156777.jpg?s=411a5ea74822100e27fbe64b0d521cfc
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/156777.webp?s=411a5ea74822100e27fbe64b0d521cfc
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/156777t.webp?s=411a5ea74822100e27fbe64b0d521cfc
+        name: Coborlwitz, Adon
+      role: Supporting
+    - character:
+        mal_id: 143842
+        url: https://myanimelist.net/character/143842/Collette
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/310980.jpg?s=0a9971c3cd7a03c7bbe16615b1633b29
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/310980.webp?s=0a9971c3cd7a03c7bbe16615b1633b29
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/310980t.webp?s=0a9971c3cd7a03c7bbe16615b1633b29
+        name: Collette
+      role: Supporting
+    - character:
+        mal_id: 608
+        url: https://myanimelist.net/character/608/Conrad
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/12/158171.jpg?s=b0da5ca7232be5f9b23d1038a41742dd
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/12/158171.webp?s=b0da5ca7232be5f9b23d1038a41742dd
+            small_image_url: https://cdn.myanimelist.net/images/characters/12/158171t.webp?s=b0da5ca7232be5f9b23d1038a41742dd
+        name: Conrad
+      role: Supporting
+    - character:
+        mal_id: 599
+        url: https://myanimelist.net/character/599/Corkus
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/6/158163.jpg?s=a7b74f7f9b4d08c9906ac65c8cbc056e
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/6/158163.webp?s=a7b74f7f9b4d08c9906ac65c8cbc056e
+            small_image_url: https://cdn.myanimelist.net/images/characters/6/158163t.webp?s=a7b74f7f9b4d08c9906ac65c8cbc056e
+        name: Corkus
+      role: Supporting
+    - character:
+        mal_id: 246984
+        url: https://myanimelist.net/character/246984/Dahl
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/546159.jpg?s=042978232b31a4e602b4c1dfd9c2a09a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/546159.webp?s=042978232b31a4e602b4c1dfd9c2a09a
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/546159t.webp?s=042978232b31a4e602b4c1dfd9c2a09a
+        name: Dahl
+      role: Supporting
+    - character:
+        mal_id: 250397
+        url: https://myanimelist.net/character/250397/Dante
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/552267.jpg?s=5457ee5ee3e28c186e549c8feab6b89f
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/552267.webp?s=5457ee5ee3e28c186e549c8feab6b89f
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/552267t.webp?s=5457ee5ee3e28c186e549c8feab6b89f
+        name: Dante
+      role: Supporting
+    - character:
+        mal_id: 88807
+        url: https://myanimelist.net/character/88807/Dhaiva
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/214953.jpg?s=91ec52c9fd2c019d00f8ba4ae2ea8fd4
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/214953.webp?s=91ec52c9fd2c019d00f8ba4ae2ea8fd4
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/214953t.webp?s=91ec52c9fd2c019d00f8ba4ae2ea8fd4
+        name: Dhaiva
+      role: Supporting
+    - character:
+        mal_id: 137923
+        url: https://myanimelist.net/character/137923/Donovan
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/16/332470.jpg?s=f7d31a3e80736ed9a5caf0bf711e50b9
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/16/332470.webp?s=f7d31a3e80736ed9a5caf0bf711e50b9
+            small_image_url: https://cdn.myanimelist.net/images/characters/16/332470t.webp?s=f7d31a3e80736ed9a5caf0bf711e50b9
+        name: Donovan
+      role: Supporting
+    - character:
+        mal_id: 149776
+        url: https://myanimelist.net/character/149776/Egg_of_the_Perfect_World
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/338438.jpg?s=26a420b40324ab460059dfa813011fbc
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/338438.webp?s=26a420b40324ab460059dfa813011fbc
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/338438t.webp?s=26a420b40324ab460059dfa813011fbc
+        name: Egg of the Perfect World
+      role: Supporting
+    - character:
+        mal_id: 7878
+        url: https://myanimelist.net/character/7878/Emperor_Ganishka
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/215025.jpg?s=c8f17657d016ae872262b4903ab5e1f3
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/215025.webp?s=c8f17657d016ae872262b4903ab5e1f3
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/215025t.webp?s=c8f17657d016ae872262b4903ab5e1f3
+        name: Emperor Ganishka
+      role: Supporting
+    - character:
+        mal_id: 73441
+        url: https://myanimelist.net/character/73441/Erica
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/315605.jpg?s=78f2f158867313effc97cef0ad9e6f7a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/315605.webp?s=78f2f158867313effc97cef0ad9e6f7a
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/315605t.webp?s=78f2f158867313effc97cef0ad9e6f7a
+        name: Erica
+      role: Supporting
+    - character:
+        mal_id: 7866
+        url: https://myanimelist.net/character/7866/Evarella
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/10/73108.jpg?s=31d9cba6b0f4089991ce08ce702e9216
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/10/73108.webp?s=31d9cba6b0f4089991ce08ce702e9216
+            small_image_url: https://cdn.myanimelist.net/images/characters/10/73108t.webp?s=31d9cba6b0f4089991ce08ce702e9216
+        name: Evarella
+      role: Supporting
+    - character:
+        mal_id: 275759
+        url: https://myanimelist.net/character/275759/Female_Apostle
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/16/600498.jpg?s=8d3e0ff958c03e9d505410c207b8c1dd
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/16/600498.webp?s=8d3e0ff958c03e9d505410c207b8c1dd
+            small_image_url: https://cdn.myanimelist.net/images/characters/16/600498t.webp?s=8d3e0ff958c03e9d505410c207b8c1dd
+        name: Female Apostle
+      role: Supporting
+    - character:
+        mal_id: 29388
+        url: https://myanimelist.net/character/29388/Flora
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/76120.jpg?s=2b905beb865c54aa194bddbea06d7e7f
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/76120.webp?s=2b905beb865c54aa194bddbea06d7e7f
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/76120t.webp?s=2b905beb865c54aa194bddbea06d7e7f
+        name: Flora
+      role: Supporting
+    - character:
+        mal_id: 58301
+        url: https://myanimelist.net/character/58301/Foss
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/157295.jpg?s=558b9d07999521b89d772ee7d95e1b8f
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/157295.webp?s=558b9d07999521b89d772ee7d95e1b8f
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/157295t.webp?s=558b9d07999521b89d772ee7d95e1b8f
+        name: Foss
+      role: Supporting
+    - character:
+        mal_id: 602
+        url: https://myanimelist.net/character/602/Gambino
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/3/126231.jpg?s=513684eac5c77908519633e7a9f9913a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/3/126231.webp?s=513684eac5c77908519633e7a9f9913a
+            small_image_url: https://cdn.myanimelist.net/images/characters/3/126231t.webp?s=513684eac5c77908519633e7a9f9913a
+        name: Gambino
+      role: Supporting
+    - character:
+        mal_id: 611
+        url: https://myanimelist.net/character/611/Gaston
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/3/126243.jpg?s=341afacc2394f3af0c138d3bc6097509
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/3/126243.webp?s=341afacc2394f3af0c138d3bc6097509
+            small_image_url: https://cdn.myanimelist.net/images/characters/3/126243t.webp?s=341afacc2394f3af0c138d3bc6097509
+        name: Gaston
+      role: Supporting
+    - character:
+        mal_id: 21706
+        url: https://myanimelist.net/character/21706/General_Boscogne
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/2/158169.jpg?s=532aaf0f04285a9d4828acf393c7ff8b
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/2/158169.webp?s=532aaf0f04285a9d4828acf393c7ff8b
+            small_image_url: https://cdn.myanimelist.net/images/characters/2/158169t.webp?s=532aaf0f04285a9d4828acf393c7ff8b
+        name: General Boscogne
+      role: Supporting
+    - character:
+        mal_id: 6848
+        url: https://myanimelist.net/character/6848/Godo
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/14/214837.jpg?s=6df03e4e0c71161b0c704afe9895c5fa
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/14/214837.webp?s=6df03e4e0c71161b0c704afe9895c5fa
+            small_image_url: https://cdn.myanimelist.net/images/characters/14/214837t.webp?s=6df03e4e0c71161b0c704afe9895c5fa
+        name: Godo
+      role: Supporting
+    - character:
+        mal_id: 7868
+        url: https://myanimelist.net/character/7868/Grunbeld
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/8/144639.jpg?s=3404eca5b853718fb9e46122c12824b8
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/8/144639.webp?s=3404eca5b853718fb9e46122c12824b8
+            small_image_url: https://cdn.myanimelist.net/images/characters/8/144639t.webp?s=3404eca5b853718fb9e46122c12824b8
+        name: Grunbeld
+      role: Supporting
+    - character:
+        mal_id: 144625
+        url: https://myanimelist.net/character/144625/Hanafubuku
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/10/312463.jpg?s=ca786f08b1e3b0e5e79aac8a2a733587
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/10/312463.webp?s=ca786f08b1e3b0e5e79aac8a2a733587
+            small_image_url: https://cdn.myanimelist.net/images/characters/10/312463t.webp?s=ca786f08b1e3b0e5e79aac8a2a733587
+        name: Hanafubuku
+      role: Supporting
+    - character:
+        mal_id: 258439
+        url: https://myanimelist.net/character/258439/Hassan
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/14/567389.jpg?s=9524bd295dee458a8ba87b66a4a755b9
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/14/567389.webp?s=9524bd295dee458a8ba87b66a4a755b9
+            small_image_url: https://cdn.myanimelist.net/images/characters/14/567389t.webp?s=9524bd295dee458a8ba87b66a4a755b9
+        name: Hassan
+      role: Supporting
+    - character:
+        mal_id: 214828
+        url: https://myanimelist.net/character/214828/Hebi_Shuryou
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/15/483116.jpg?s=1f116000d2597090ecfb0b0bfb222112
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/15/483116.webp?s=1f116000d2597090ecfb0b0bfb222112
+            small_image_url: https://cdn.myanimelist.net/images/characters/15/483116t.webp?s=1f116000d2597090ecfb0b0bfb222112
+        name: Hebi Shuryou
+      role: Supporting
+    - character:
+        mal_id: 7871
+        url: https://myanimelist.net/character/7871/Irvine
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/6/153173.jpg?s=f9d94c7b4cb62b40a220a918cf3637dc
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/6/153173.webp?s=f9d94c7b4cb62b40a220a918cf3637dc
+            small_image_url: https://cdn.myanimelist.net/images/characters/6/153173t.webp?s=f9d94c7b4cb62b40a220a918cf3637dc
+        name: Irvine
+      role: Supporting
+    - character:
+        mal_id: 30669
+        url: https://myanimelist.net/character/30669/Isma
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/16/101648.jpg?s=1e9ea53cb46712500c1394fcefb792de
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/16/101648.webp?s=1e9ea53cb46712500c1394fcefb792de
+            small_image_url: https://cdn.myanimelist.net/images/characters/16/101648t.webp?s=1e9ea53cb46712500c1394fcefb792de
+        name: Isma
+      role: Supporting
+    - character:
+        mal_id: 143101
+        url: https://myanimelist.net/character/143101/Jerome
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/338302.jpg?s=3d507b13ae944b288c3faedfc307dfc9
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/338302.webp?s=3d507b13ae944b288c3faedfc307dfc9
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/338302t.webp?s=3d507b13ae944b288c3faedfc307dfc9
+        name: Jerome
+      role: Supporting
+    - character:
+        mal_id: 27057
+        url: https://myanimelist.net/character/27057/Jill
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/68223.jpg?s=825d031fc21a099abaafa21c0acec9fe
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/68223.webp?s=825d031fc21a099abaafa21c0acec9fe
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/68223t.webp?s=825d031fc21a099abaafa21c0acec9fe
+        name: Jill
+      role: Supporting
+    - character:
+        mal_id: 144540
+        url: https://myanimelist.net/character/144540/Joachim
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/333451.jpg?s=27b91c2afba7242ca6407a2cbb2959dc
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/333451.webp?s=27b91c2afba7242ca6407a2cbb2959dc
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/333451t.webp?s=27b91c2afba7242ca6407a2cbb2959dc
+        name: Joachim
+      role: Supporting
+    - character:
+        mal_id: 454
+        url: https://myanimelist.net/character/454/Judeau
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/7/101985.jpg?s=2b1b8b58b74305f349abd0a4343168d1
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/7/101985.webp?s=2b1b8b58b74305f349abd0a4343168d1
+            small_image_url: https://cdn.myanimelist.net/images/characters/7/101985t.webp?s=2b1b8b58b74305f349abd0a4343168d1
+        name: Judeau
+      role: Supporting
+    - character:
+        mal_id: 49607
+        url: https://myanimelist.net/character/49607/Julius
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/13/158167.jpg?s=fce28c360d6573b7d8bf4407b730e6a7
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/13/158167.webp?s=fce28c360d6573b7d8bf4407b730e6a7
+            small_image_url: https://cdn.myanimelist.net/images/characters/13/158167t.webp?s=fce28c360d6573b7d8bf4407b730e6a7
+        name: Julius
+      role: Supporting
+    - character:
+        mal_id: 615
+        url: https://myanimelist.net/character/615/King_of_Midland
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/7/165489.jpg?s=cf48695db596b344ed0a6ef6ae2d3edb
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/7/165489.webp?s=cf48695db596b344ed0a6ef6ae2d3edb
+            small_image_url: https://cdn.myanimelist.net/images/characters/7/165489t.webp?s=cf48695db596b344ed0a6ef6ae2d3edb
+        name: King of Midland
+      role: Supporting
+    - character:
+        mal_id: 7869
+        url: https://myanimelist.net/character/7869/Locus
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/12/68951.jpg?s=39caffded328e7f22bcc91b939c655ad
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/12/68951.webp?s=39caffded328e7f22bcc91b939c655ad
+            small_image_url: https://cdn.myanimelist.net/images/characters/12/68951t.webp?s=39caffded328e7f22bcc91b939c655ad
+        name: Locus
+      role: Supporting
+    - character:
+        mal_id: 21707
+        url: https://myanimelist.net/character/21707/Lord_Gennon
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/126261.jpg?s=56f3bfdfedb08a91000f3afdd7300d37
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/126261.webp?s=56f3bfdfedb08a91000f3afdd7300d37
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/126261t.webp?s=56f3bfdfedb08a91000f3afdd7300d37
+        name: Lord Gennon
+      role: Supporting
+    - character:
+        mal_id: 26394
+        url: https://myanimelist.net/character/26394/Luca
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/150769.jpg?s=9ce1526047a29bdece63c4d11b09bd7d
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/150769.webp?s=9ce1526047a29bdece63c4d11b09bd7d
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/150769t.webp?s=9ce1526047a29bdece63c4d11b09bd7d
+        name: Luca
+      role: Supporting
+    - character:
+        mal_id: 64499
+        url: https://myanimelist.net/character/64499/Martino
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/169767.jpg?s=1e0136c2c5259d6db2323365b445d20a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/169767.webp?s=1e0136c2c5259d6db2323365b445d20a
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/169767t.webp?s=1e0136c2c5259d6db2323365b445d20a
+        name: Martino
+      role: Supporting
+    - character:
+        mal_id: 55193
+        url: https://myanimelist.net/character/55193/Moonlight_Boy
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/12/150997.jpg?s=8537d353300268f8bb5cf296c42c3fa8
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/12/150997.webp?s=8537d353300268f8bb5cf296c42c3fa8
+            small_image_url: https://cdn.myanimelist.net/images/characters/12/150997t.webp?s=8537d353300268f8bb5cf296c42c3fa8
+        name: Moonlight Boy
+      role: Supporting
+    - character:
+        mal_id: 136922
+        url: https://myanimelist.net/character/136922/Morda
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/10/307158.jpg?s=20909bae4af938cd6e6bcd3409ed2e24
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/10/307158.webp?s=20909bae4af938cd6e6bcd3409ed2e24
+            small_image_url: https://cdn.myanimelist.net/images/characters/10/307158t.webp?s=20909bae4af938cd6e6bcd3409ed2e24
+        name: Morda
+      role: Supporting
+    - character:
+        mal_id: 150281
+        url: https://myanimelist.net/character/150281/Morgan
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/8/329149.jpg?s=6548d87b44ffb65ffc8cff6c9036a72c
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/8/329149.webp?s=6548d87b44ffb65ffc8cff6c9036a72c
+            small_image_url: https://cdn.myanimelist.net/images/characters/8/329149t.webp?s=6548d87b44ffb65ffc8cff6c9036a72c
+        name: Morgan
+      role: Supporting
+    - character:
+        mal_id: 32488
+        url: https://myanimelist.net/character/32488/Mozgus
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/16/87108.jpg?s=9f877a7e8998c13490eefe2fc386e26a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/16/87108.webp?s=9f877a7e8998c13490eefe2fc386e26a
+            small_image_url: https://cdn.myanimelist.net/images/characters/16/87108t.webp?s=9f877a7e8998c13490eefe2fc386e26a
+        name: Mozgus
+      role: Supporting
+    - character:
+        mal_id: 55205
+        url: https://myanimelist.net/character/55205/Nina
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/16/150999.jpg?s=5cd25a8479c4593f691058d4ce31ce60
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/16/150999.webp?s=5cd25a8479c4593f691058d4ce31ce60
+            small_image_url: https://cdn.myanimelist.net/images/characters/16/150999t.webp?s=5cd25a8479c4593f691058d4ce31ce60
+        name: Nina
+      role: Supporting
+    - character:
+        mal_id: 600
+        url: https://myanimelist.net/character/600/Zodd_Nosferatu
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/13/530030.jpg?s=41e10a36f94fd766b48f5706bb88f83d
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/13/530030.webp?s=41e10a36f94fd766b48f5706bb88f83d
+            small_image_url: https://cdn.myanimelist.net/images/characters/13/530030t.webp?s=41e10a36f94fd766b48f5706bb88f83d
+        name: Nosferatu, Zodd
+      role: Supporting
+    - character:
+        mal_id: 55333
+        url: https://myanimelist.net/character/55333/Roderick_of_Staufen
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/151999.jpg?s=e97b2a5c3b45769e4cde140c936ab428
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/151999.webp?s=e97b2a5c3b45769e4cde140c936ab428
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/151999t.webp?s=e97b2a5c3b45769e4cde140c936ab428
+        name: of Staufen, Roderick
+      role: Supporting
+    - character:
+        mal_id: 113357
+        url: https://myanimelist.net/character/113357/Owen
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/258875.jpg?s=b3642e92cdcae8345de1b3bb2d5adad6
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/258875.webp?s=b3642e92cdcae8345de1b3bb2d5adad6
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/258875t.webp?s=b3642e92cdcae8345de1b3bb2d5adad6
+        name: Owen
+      role: Supporting
+    - character:
+        mal_id: 597
+        url: https://myanimelist.net/character/597/Pippin
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/68119.jpg?s=87f689fc667d36f5eea9fdde7defbc5b
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/68119.webp?s=87f689fc667d36f5eea9fdde7defbc5b
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/68119t.webp?s=87f689fc667d36f5eea9fdde7defbc5b
+        name: Pippin
+      role: Supporting
+    - character:
+        mal_id: 190398
+        url: https://myanimelist.net/character/190398/Pontiff
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/16/427453.jpg?s=80d14d9556bb0912547a9d0dd7e85c3e
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/16/427453.webp?s=80d14d9556bb0912547a9d0dd7e85c3e
+            small_image_url: https://cdn.myanimelist.net/images/characters/16/427453t.webp?s=80d14d9556bb0912547a9d0dd7e85c3e
+        name: Pontiff
+      role: Supporting
+    - character:
+        mal_id: 58299
+        url: https://myanimelist.net/character/58299/Queen_of_Midland
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/9/157293.jpg?s=9228bc7e0a694fc8abbc31941693bd7c
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/9/157293.webp?s=9228bc7e0a694fc8abbc31941693bd7c
+            small_image_url: https://cdn.myanimelist.net/images/characters/9/157293t.webp?s=9228bc7e0a694fc8abbc31941693bd7c
+        name: Queen of Midland
+      role: Supporting
+    - character:
+        mal_id: 90341
+        url: https://myanimelist.net/character/90341/Raban
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/331579.jpg?s=44acc731fa133c570aae84b363a5a9e7
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/331579.webp?s=44acc731fa133c570aae84b363a5a9e7
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/331579t.webp?s=44acc731fa133c570aae84b363a5a9e7
+        name: Raban
+      role: Supporting
+    - character:
+        mal_id: 7873
+        url: https://myanimelist.net/character/7873/Rakshas
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/2/101986.jpg?s=64601280743aa105e7ea77bcb9eb59f1
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/2/101986.webp?s=64601280743aa105e7ea77bcb9eb59f1
+            small_image_url: https://cdn.myanimelist.net/images/characters/2/101986t.webp?s=64601280743aa105e7ea77bcb9eb59f1
+        name: Rakshas
+      role: Supporting
+    - character:
+        mal_id: 614
+        url: https://myanimelist.net/character/614/Charlotte_Beatrix_Marie_Rhody_Windam
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/153201.jpg?s=b71e867925193c279b99232b8ecaff26
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/153201.webp?s=b71e867925193c279b99232b8ecaff26
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/153201t.webp?s=b71e867925193c279b99232b8ecaff26
+        name: Rhody Windam, Charlotte Beatrix Marie
+      role: Supporting
+    - character:
+        mal_id: 598
+        url: https://myanimelist.net/character/598/Rickert
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/14/214839.jpg?s=11a85f7a6d71a2a71c0860b2d6df605f
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/14/214839.webp?s=11a85f7a6d71a2a71c0860b2d6df605f
+            small_image_url: https://cdn.myanimelist.net/images/characters/14/214839t.webp?s=11a85f7a6d71a2a71c0860b2d6df605f
+        name: Rickert
+      role: Supporting
+    - character:
+        mal_id: 19553
+        url: https://myanimelist.net/character/19553/Rosine
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/12/144657.jpg?s=b295af9e9d223bade53cf56e897aa3e7
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/12/144657.webp?s=b295af9e9d223bade53cf56e897aa3e7
+            small_image_url: https://cdn.myanimelist.net/images/characters/12/144657t.webp?s=b295af9e9d223bade53cf56e897aa3e7
+        name: Rosine
+      role: Supporting
+    - character:
+        mal_id: 88801
+        url: https://myanimelist.net/character/88801/Shisu
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/6/214943.jpg?s=b84a64e124994ca6347f32243aeb2c93
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/6/214943.webp?s=b84a64e124994ca6347f32243aeb2c93
+            small_image_url: https://cdn.myanimelist.net/images/characters/6/214943t.webp?s=b84a64e124994ca6347f32243aeb2c93
+        name: Shisu
+      role: Supporting
+    - character:
+        mal_id: 7879
+        url: https://myanimelist.net/character/7879/Silat
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/7/338301.jpg?s=c3bf7ab0e5d61eba65f37fa930f68b2a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/7/338301.webp?s=c3bf7ab0e5d61eba65f37fa930f68b2a
+            small_image_url: https://cdn.myanimelist.net/images/characters/7/338301t.webp?s=c3bf7ab0e5d61eba65f37fa930f68b2a
+        name: Silat
+      role: Supporting
+    - character:
+        mal_id: 605
+        url: https://myanimelist.net/character/605/Slan
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/16/158175.jpg?s=a1f03a9a060e1913d9b77c055e6fe342
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/16/158175.webp?s=a1f03a9a060e1913d9b77c055e6fe342
+            small_image_url: https://cdn.myanimelist.net/images/characters/16/158175t.webp?s=a1f03a9a060e1913d9b77c055e6fe342
+        name: Slan
+      role: Supporting
+    - character:
+        mal_id: 7874
+        url: https://myanimelist.net/character/7874/Sonia
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/3/153161.jpg?s=fa999c783944f51b74f1cf5173e6be5e
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/3/153161.webp?s=fa999c783944f51b74f1cf5173e6be5e
+            small_image_url: https://cdn.myanimelist.net/images/characters/3/153161t.webp?s=fa999c783944f51b74f1cf5173e6be5e
+        name: Sonia
+      role: Supporting
+    - character:
+        mal_id: 20370
+        url: https://myanimelist.net/character/20370/The_Count
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/214841.jpg?s=4cdb28d0f499b528aedeb975f95a7839
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/214841.webp?s=4cdb28d0f499b528aedeb975f95a7839
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/214841t.webp?s=4cdb28d0f499b528aedeb975f95a7839
+        name: The Count
+      role: Supporting
+    - character:
+        mal_id: 246983
+        url: https://myanimelist.net/character/246983/The_Count_039_s_Wife
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/12/546158.jpg?s=a49cba70b660880b0c338a69155fdf02
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/12/546158.webp?s=a49cba70b660880b0c338a69155fdf02
+            small_image_url: https://cdn.myanimelist.net/images/characters/12/546158t.webp?s=a49cba70b660880b0c338a69155fdf02
+        name: The Count's Wife
+      role: Supporting
+    - character:
+        mal_id: 7881
+        url: https://myanimelist.net/character/7881/The_Skull_Knight
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/8/535379.jpg?s=5e808d3ac8e234c1c780692a2b370cb7
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/8/535379.webp?s=5e808d3ac8e234c1c780692a2b370cb7
+            small_image_url: https://cdn.myanimelist.net/images/characters/8/535379t.webp?s=5e808d3ac8e234c1c780692a2b370cb7
+        name: The Skull Knight
+      role: Supporting
+    - character:
+        mal_id: 142623
+        url: https://myanimelist.net/character/142623/Theresia
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/14/339590.jpg?s=8007053f786e1a10ceee6f9b60a74251
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/14/339590.webp?s=8007053f786e1a10ceee6f9b60a74251
+            small_image_url: https://cdn.myanimelist.net/images/characters/14/339590t.webp?s=8007053f786e1a10ceee6f9b60a74251
+        name: Theresia
+      role: Supporting
+    - character:
+        mal_id: 168240
+        url: https://myanimelist.net/character/168240/Torturer
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/373629.jpg?s=e683a88365731012e7570d225566c58b
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/373629.webp?s=e683a88365731012e7570d225566c58b
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/373629t.webp?s=e683a88365731012e7570d225566c58b
+        name: Torturer
+      role: Supporting
+    - character:
+        mal_id: 607
+        url: https://myanimelist.net/character/607/Ubik
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/11/158173.jpg?s=21b9ab23eeee8799803f7a26b033b218
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/11/158173.webp?s=21b9ab23eeee8799803f7a26b033b218
+            small_image_url: https://cdn.myanimelist.net/images/characters/11/158173t.webp?s=21b9ab23eeee8799803f7a26b033b218
+        name: Ubik
+      role: Supporting
+    - character:
+        mal_id: 20371
+        url: https://myanimelist.net/character/20371/Vargas
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/6/233637.jpg?s=ba20a84562598010b270e72f2a199271
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/6/233637.webp?s=ba20a84562598010b270e72f2a199271
+            small_image_url: https://cdn.myanimelist.net/images/characters/6/233637t.webp?s=ba20a84562598010b270e72f2a199271
+        name: Vargas
+      role: Supporting
+    - character:
+        mal_id: 604
+        url: https://myanimelist.net/character/604/Void
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/2/158161.jpg?s=44f4bc070c2a374bdfebb42da6722d0a
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/2/158161.webp?s=44f4bc070c2a374bdfebb42da6722d0a
+            small_image_url: https://cdn.myanimelist.net/images/characters/2/158161t.webp?s=44f4bc070c2a374bdfebb42da6722d0a
+        name: Void
+      role: Supporting
+    - character:
+        mal_id: 7876
+        url: https://myanimelist.net/character/7876/Mule_Wolflame
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/5/214799.jpg?s=27f44aea81212f04f8336b4b89ccdbbd
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/5/214799.webp?s=27f44aea81212f04f8336b4b89ccdbbd
+            small_image_url: https://cdn.myanimelist.net/images/characters/5/214799t.webp?s=27f44aea81212f04f8336b4b89ccdbbd
+        name: Wolflame, Mule
+      role: Supporting
+    - character:
+        mal_id: 19548
+        url: https://myanimelist.net/character/19548/Wyald
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/4/336682.jpg?s=e01a0686d955371cec9739d052faf6fc
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/4/336682.webp?s=e01a0686d955371cec9739d052faf6fc
+            small_image_url: https://cdn.myanimelist.net/images/characters/4/336682t.webp?s=e01a0686d955371cec9739d052faf6fc
+        name: Wyald
+      role: Supporting
+    - character:
+        mal_id: 246985
+        url: https://myanimelist.net/character/246985/Zondark
+        images:
+          jpg:
+            image_url: https://cdn.myanimelist.net/images/characters/14/546160.jpg?s=f46e31aad9a48913edb8d45a2da17d55
+          webp:
+            image_url: https://cdn.myanimelist.net/images/characters/14/546160.webp?s=f46e31aad9a48913edb8d45a2da17d55
+            small_image_url: https://cdn.myanimelist.net/images/characters/14/546160t.webp?s=f46e31aad9a48913edb8d45a2da17d55
+        name: Zondark
+      role: Supporting
+  body_text: null
+  body_b64: null

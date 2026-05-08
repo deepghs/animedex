@@ -1,0 +1,54 @@
+metadata:
+  captured_at: '2026-05-07T15:14:16Z'
+  label: aniplex-17
+  backend: jikan
+  path_slug: producers_external
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/producers/17/external
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:14:15 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:producers:3a60e15f98b44e367d2242e2312c62803cdebba6
+    expires: Thu, 07 May 2026 16:54:54 GMT
+    last-modified: Wed, 06 May 2026 16:54:54 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    data:
+    - name: aniplex.co.jp
+      url: http://www.aniplex.co.jp/
+    - name: x.com
+      url: https://x.com/aniplex_info
+    - name: aniplex.co.jp
+      url: https://www.aniplex.co.jp/eng/index.html
+    - name: YouTube
+      url: https://www.youtube.com/c/aniplex
+    - name: tiktok.com
+      url: https://www.tiktok.com/@aniplex_official
+    - name: Instagram
+      url: https://www.instagram.com/aniplex_jp/
+    - name: themoviedb.org
+      url: https://www.themoviedb.org/video/channel/UC14QT5j2nQI8lKBCGtrrBQA
+    - name: YouTube
+      url: https://www.youtube.com/c/AniplexUSA
+    - name: cluster.mu
+      url: https://cluster.mu/u/Aniplex
+    - name: online.aniplex.co.jp
+      url: https://online.aniplex.co.jp/
+  body_text: null
+  body_b64: null

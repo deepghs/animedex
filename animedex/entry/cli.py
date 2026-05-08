@@ -57,7 +57,7 @@ def _print_agent_guide(ctx: click.Context, param: click.Option, value: bool) -> 
     :func:`animedex.policy.lint.extract_agent_guidance` block, so an
     LLM agent shelling out without an MCP layer can read the
     catalogue with a single invocation. Exits cleanly when no
-    commands have guidance (e.g. during Phase 0 before any backend
+    commands have guidance (e.g. during the initial scaffolding before any backend
     has shipped).
 
     :param ctx: Click command context for the active invocation.
@@ -106,15 +106,21 @@ def cli() -> None:
 
 
 from animedex.entry.api import api_group as _api_group  # noqa: E402
+from animedex.entry.anilist import anilist_group as _anilist_group  # noqa: E402
+from animedex.entry.jikan import jikan_group as _jikan_group  # noqa: E402
+from animedex.entry.trace import trace_group as _trace_group  # noqa: E402
 
 cli.add_command(_api_group)
+cli.add_command(_anilist_group)
+cli.add_command(_jikan_group)
+cli.add_command(_trace_group)
 
 
 @cli.command(name="status")
 def status_command() -> None:
     """Print a one-shot status banner for the CLI.
 
-    During Phase 0/1 this is a placeholder. Once backends ship it
+    During the early scaffolding this is a placeholder. Once backends ship it
     will report per-backend health, anonymous quota, and auth state
     for AniList, Jikan, Kitsu, MangaDex, Trace.moe, Danbooru,
     Shikimori, ANN, AniDB, Ghibli, NekosBest, Waifu.im, and
@@ -133,7 +139,7 @@ def status_command() -> None:
     --- LLM Agent Guidance ---
     Use this command at session start to confirm the CLI is
     functional and to peek at the environment-derived banner.
-    During Phase 0 it returns a placeholder; once backends ship it
+    During the initial scaffolding it returns a placeholder; once backends ship it
     will list per-backend liveness. Cheap to call; do not rate-limit.
     --- End ---
     """

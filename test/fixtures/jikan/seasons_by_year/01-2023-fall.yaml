@@ -1,0 +1,740 @@
+metadata:
+  captured_at: '2026-05-07T15:15:25Z'
+  label: 2023-fall
+  backend: jikan
+  path_slug: seasons_by_year
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/seasons/2023/fall?limit=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:15:24 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:seasons:40cc426cecfa2fec5986eaceffb158f5050e706d
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 69
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 5
+        total: 345
+        per_page: 5
+    data:
+    - mal_id: 52991
+      url: https://myanimelist.net/anime/52991/Sousou_no_Frieren
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1015/138006.jpg
+          small_image_url: https://myanimelist.net/images/anime/1015/138006t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1015/138006l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1015/138006.webp
+          small_image_url: https://myanimelist.net/images/anime/1015/138006t.webp
+          large_image_url: https://myanimelist.net/images/anime/1015/138006l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/ZEkwCGJ3o7M?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Sousou no Frieren
+      - type: Synonym
+        title: Frieren at the Funeral
+      - type: Synonym
+        title: Frieren The Slayer
+      - type: Japanese
+        title: 葬送のフリーレン
+      - type: English
+        title: 'Frieren: Beyond Journey''s End'
+      title: Sousou no Frieren
+      title_english: 'Frieren: Beyond Journey''s End'
+      title_japanese: 葬送のフリーレン
+      title_synonyms:
+      - Frieren at the Funeral
+      - Frieren The Slayer
+      type: TV
+      source: Manga
+      episodes: 28
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2023-09-29T00:00:00+00:00'
+        to: '2024-03-22T00:00:00+00:00'
+        prop:
+          from:
+            day: 29
+            month: 9
+            year: 2023
+          to:
+            day: 22
+            month: 3
+            year: 2024
+        string: Sep 29, 2023 to Mar 22, 2024
+      duration: 24 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 9.27
+      scored_by: 882662
+      rank: 1
+      popularity: 104
+      members: 1431842
+      favorites: 89236
+      synopsis: |-
+        During their decade-long quest to defeat the Demon King, the members of the hero's party—Himmel himself, the priest Heiter, the dwarf warrior Eisen, and the elven mage Frieren—forge bonds through adventures and battles, creating unforgettable precious memories for most of them.
+
+        However, the time that Frieren spends with her comrades is equivalent to merely a fraction of her life, which has lasted over a thousand years. When the party disbands after their victory, Frieren casually returns to her "usual" routine of collecting spells across the continent. Due to her different sense of time, she seemingly holds no strong feelings toward the experiences she went through.
+
+        As the years pass, Frieren gradually realizes how her days in the hero's party truly impacted her. Witnessing the deaths of two of her former companions, Frieren begins to regret having taken their presence for granted; she vows to better understand humans and create real personal connections. Although the story of that once memorable journey has long ended, a new tale is about to begin.
+
+        [Written by MAL Rewrite]
+      background: Sousou no Frieren was released on Blu-ray and DVD in seven volumes from January 24, 2024, to July 17, 2024.
+        The series aired on Nippon TV's Friday Anime Night block.
+      season: fall
+      year: 2023
+      broadcast:
+        day: Fridays
+        time: '23:00'
+        timezone: Asia/Tokyo
+        string: Fridays at 23:00 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 62
+        type: anime
+        name: Shogakukan-Shueisha Productions
+        url: https://myanimelist.net/anime/producer/62/Shogakukan-Shueisha_Productions
+      - mal_id: 1003
+        type: anime
+        name: Nippon Television Network
+        url: https://myanimelist.net/anime/producer/1003/Nippon_Television_Network
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1430
+        type: anime
+        name: Shogakukan
+        url: https://myanimelist.net/anime/producer/1430/Shogakukan
+      licensors:
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      studios:
+      - mal_id: 11
+        type: anime
+        name: Madhouse
+        url: https://myanimelist.net/anime/producer/11/Madhouse
+      genres:
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 46
+        type: anime
+        name: Award Winning
+        url: https://myanimelist.net/anime/genre/46/Award_Winning
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 54492
+      url: https://myanimelist.net/anime/54492/Kusuriya_no_Hitorigoto
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1708/138033.jpg
+          small_image_url: https://myanimelist.net/images/anime/1708/138033t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1708/138033l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1708/138033.webp
+          small_image_url: https://myanimelist.net/images/anime/1708/138033t.webp
+          large_image_url: https://myanimelist.net/images/anime/1708/138033l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/hkflaNu6yAQ?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Kusuriya no Hitorigoto
+      - type: Synonym
+        title: The Pharmacist's Monologue
+      - type: Synonym
+        title: Drugstore Soliloquy
+      - type: Japanese
+        title: 薬屋のひとりごと
+      - type: English
+        title: The Apothecary Diaries
+      title: Kusuriya no Hitorigoto
+      title_english: The Apothecary Diaries
+      title_japanese: 薬屋のひとりごと
+      title_synonyms:
+      - The Pharmacist's Monologue
+      - Drugstore Soliloquy
+      type: TV
+      source: Light novel
+      episodes: 24
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2023-10-22T00:00:00+00:00'
+        to: '2024-03-24T00:00:00+00:00'
+        prop:
+          from:
+            day: 22
+            month: 10
+            year: 2023
+          to:
+            day: 24
+            month: 3
+            year: 2024
+        string: Oct 22, 2023 to Mar 24, 2024
+      duration: 22 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.85
+      scored_by: 472755
+      rank: 32
+      popularity: 264
+      members: 837213
+      favorites: 28245
+      synopsis: |-
+        Maomao, an apothecary's daughter, has been plucked from her peaceful life and sold to the lowest echelons of the imperial court. Now merely a maid, Maomao settles into her new mundane life and hides her extensive knowledge of medicine in order to avoid any unwanted attention.
+
+        Not long after Maomao's arrival, the emperor's infant children inexplicably begin to experience grave symptoms—almost as if a curse has been cast. The curious Maomao easily solves the mystery and, to remain out of the limelight, attempts to leave an anonymous tip. Unfortunately, the dashing and perceptive eunuch Jinshi sees through it and manages to single her out.
+
+        In recognition of her talent, Maomao is promoted to lady-in-waiting for the emperor's favorite concubine, Gyokuyou. As Maomao continues to remedy the numerous ailments afflicting the imperial court, her pharmaceutical expertise quickly proves indispensable.
+
+        [Written by MAL Rewrite]
+      background: Kusuriya no Hitorigoto was released on Blu-ray in four volumes from January 24, 2024, to July 17, 2024.
+      season: fall
+      year: 2023
+      broadcast:
+        day: Sundays
+        time: 01:05
+        timezone: Asia/Tokyo
+        string: Sundays at 01:05 (JST)
+      producers:
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 58
+        type: anime
+        name: Square Enix
+        url: https://myanimelist.net/anime/producer/58/Square_Enix
+      - mal_id: 1003
+        type: anime
+        name: Nippon Television Network
+        url: https://myanimelist.net/anime/producer/1003/Nippon_Television_Network
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1430
+        type: anime
+        name: Shogakukan
+        url: https://myanimelist.net/anime/producer/1430/Shogakukan
+      - mal_id: 2844
+        type: anime
+        name: Imagica Infos
+        url: https://myanimelist.net/anime/producer/2844/Imagica_Infos
+      licensors:
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      studios:
+      - mal_id: 28
+        type: anime
+        name: OLM
+        url: https://myanimelist.net/anime/producer/28/OLM
+      - mal_id: 2705
+        type: anime
+        name: TOHO animation STUDIO
+        url: https://myanimelist.net/anime/producer/2705/TOHO_animation_STUDIO
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 7
+        type: anime
+        name: Mystery
+        url: https://myanimelist.net/anime/genre/7/Mystery
+      explicit_genres: []
+      themes:
+      - mal_id: 13
+        type: anime
+        name: Historical
+        url: https://myanimelist.net/anime/genre/13/Historical
+      - mal_id: 67
+        type: anime
+        name: Medical
+        url: https://myanimelist.net/anime/genre/67/Medical
+      demographics: []
+    - mal_id: 53887
+      url: https://myanimelist.net/anime/53887/Spy_x_Family_Season_2
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1506/138982.jpg
+          small_image_url: https://myanimelist.net/images/anime/1506/138982t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1506/138982l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1506/138982.webp
+          small_image_url: https://myanimelist.net/images/anime/1506/138982t.webp
+          large_image_url: https://myanimelist.net/images/anime/1506/138982l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/75LyKY6AV4U?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Spy x Family Season 2
+      - type: Japanese
+        title: SPY×FAMILY Season 2
+      title: Spy x Family Season 2
+      title_english: null
+      title_japanese: SPY×FAMILY Season 2
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2023-10-07T00:00:00+00:00'
+        to: '2023-12-23T00:00:00+00:00'
+        prop:
+          from:
+            day: 7
+            month: 10
+            year: 2023
+          to:
+            day: 23
+            month: 12
+            year: 2023
+        string: Oct 7, 2023 to Dec 23, 2023
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.06
+      scored_by: 337193
+      rank: 659
+      popularity: 357
+      members: 679250
+      favorites: 3801
+      synopsis: |-
+        With her ability to read minds, Anya Forger is the only one who knows the true identities of her unconventional family. Her pretend father Loid operates as an elite spy code-named Twilight; her mother Yor kills on demand as the assassin Thorn Princess; and their dog, Bond, possesses the gift of precognition. Although they hide the truth from each other, this pretense of a perfectly ordinary family provides Anya with the genuine love and warmth that she longed for as an orphan.
+
+        Operation Strix—Loid's special mission to avoid potential war by gathering vital information and getting close to the powerful political figure, Donovan Desmond—is only possible if Anya plays her part right. She can either excel academically and become an Imperial Scholar at her prestigious school or make friends with Donovan's son, Damian. Neither is exactly easy, but with her adventurous attitude, Anya throws herself wholeheartedly into her mission as a Forger—all for the sake of international peace.
+
+        [Written by MAL Rewrite]
+      background: Spy x Family Season 2 was released on Blu-ray and DVD in three volumes from December 20, 2023, to April
+        17, 2024.
+      season: fall
+      year: 2023
+      broadcast:
+        day: Saturdays
+        time: '23:00'
+        timezone: Asia/Tokyo
+        string: Saturdays at 23:00 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 62
+        type: anime
+        name: Shogakukan-Shueisha Productions
+        url: https://myanimelist.net/anime/producer/62/Shogakukan-Shueisha_Productions
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      - mal_id: 2512
+        type: anime
+        name: Studio Easter
+        url: https://myanimelist.net/anime/producer/2512/Studio_Easter
+      licensors:
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      studios:
+      - mal_id: 858
+        type: anime
+        name: Wit Studio
+        url: https://myanimelist.net/anime/producer/858/Wit_Studio
+      - mal_id: 1835
+        type: anime
+        name: CloverWorks
+        url: https://myanimelist.net/anime/producer/1835/CloverWorks
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      explicit_genres: []
+      themes:
+      - mal_id: 53
+        type: anime
+        name: Childcare
+        url: https://myanimelist.net/anime/genre/53/Childcare
+      - mal_id: 31
+        type: anime
+        name: Super Power
+        url: https://myanimelist.net/anime/genre/31/Super_Power
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 54595
+      url: https://myanimelist.net/anime/54595/Kage_no_Jitsuryokusha_ni_Naritakute_2nd_Season
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1938/138295.jpg
+          small_image_url: https://myanimelist.net/images/anime/1938/138295t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1938/138295l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1938/138295.webp
+          small_image_url: https://myanimelist.net/images/anime/1938/138295t.webp
+          large_image_url: https://myanimelist.net/images/anime/1938/138295l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/OqzdUcc3k9Y?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Kage no Jitsuryokusha ni Naritakute! 2nd Season
+      - type: Synonym
+        title: Shadow Garden 2nd Season
+      - type: Japanese
+        title: 陰の実力者になりたくて！ 2nd Season
+      - type: English
+        title: The Eminence in Shadow Season 2
+      title: Kage no Jitsuryokusha ni Naritakute! 2nd Season
+      title_english: The Eminence in Shadow Season 2
+      title_japanese: 陰の実力者になりたくて！ 2nd Season
+      title_synonyms:
+      - Shadow Garden 2nd Season
+      type: TV
+      source: Light novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2023-10-04T00:00:00+00:00'
+        to: '2023-12-20T00:00:00+00:00'
+        prop:
+          from:
+            day: 4
+            month: 10
+            year: 2023
+          to:
+            day: 20
+            month: 12
+            year: 2023
+        string: Oct 4, 2023 to Dec 20, 2023
+      duration: 23 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.25
+      scored_by: 299830
+      rank: 379
+      popularity: 472
+      members: 534446
+      favorites: 5244
+      synopsis: |-
+        Enticed by its rumored wealth, Cid Kagenou happily tags along with his sister, Claire, on a trip to the infamous Lawless City. The region is ruled by three monarchs: Yukime, the Spirit Fox; Juggernaut, the Tyrant; and Elisabeth, a dormant progenitor vampire known as the Blood Queen. Hunting Elisabeth down serves as the perfect opportunity for Claire to prove her true mettle. On the other hand, Cid has different objectives—sneaking away from Claire's sight, collecting as much loot as possible, and making Shadow's glorious entrance at the perfect moment.
+
+        As Elisabeth's awakening draws near, her subordinate Crimson enacts a treacherous plot, sending the town into a frenzy. Searching for her now-missing brother, Claire finds an unexpected ally in Mary, a vampire hunter, and the pair hurry to the Crimson Tower—the home of the Blood Queen. Meanwhile, Beta and a small team of Shadow Garden recruits also arrive at the Lawless City. As the key players converge on the Crimson Tower, the stage is set for a grand confrontation under the crimson moon.
+
+        [Written by MAL Rewrite]
+      background: Kage no Jitsuryokusha ni Naritakute! 2nd Season was released on Blu-ray and DVD in three volumes by Kadokawa
+        from January 24, 2024, to March 27, 2024. It adapts content from volumes 3 and 4 of the light novel.
+      season: fall
+      year: 2023
+      broadcast:
+        day: Wednesdays
+        time: '22:30'
+        timezone: Asia/Tokyo
+        string: Wednesdays at 22:30 (JST)
+      producers:
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 306
+        type: anime
+        name: Magic Capsule
+        url: https://myanimelist.net/anime/producer/306/Magic_Capsule
+      - mal_id: 1680
+        type: anime
+        name: BS NTV
+        url: https://myanimelist.net/anime/producer/1680/BS_NTV
+      - mal_id: 1696
+        type: anime
+        name: Kadokawa
+        url: https://myanimelist.net/anime/producer/1696/Kadokawa
+      - mal_id: 1779
+        type: anime
+        name: NewGin
+        url: https://myanimelist.net/anime/producer/1779/NewGin
+      - mal_id: 2435
+        type: anime
+        name: Aiming
+        url: https://myanimelist.net/anime/producer/2435/Aiming
+      licensors:
+      - mal_id: 376
+        type: anime
+        name: Sentai Filmworks
+        url: https://myanimelist.net/anime/producer/376/Sentai_Filmworks
+      studios:
+      - mal_id: 852
+        type: anime
+        name: Nexus
+        url: https://myanimelist.net/anime/producer/852/Nexus
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes:
+      - mal_id: 62
+        type: anime
+        name: Isekai
+        url: https://myanimelist.net/anime/genre/62/Isekai
+      - mal_id: 72
+        type: anime
+        name: Reincarnation
+        url: https://myanimelist.net/anime/genre/72/Reincarnation
+      demographics: []
+    - mal_id: 40357
+      url: https://myanimelist.net/anime/40357/Tate_no_Yuusha_no_Nariagari_Season_3
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1317/139802.jpg
+          small_image_url: https://myanimelist.net/images/anime/1317/139802t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1317/139802l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1317/139802.webp
+          small_image_url: https://myanimelist.net/images/anime/1317/139802t.webp
+          large_image_url: https://myanimelist.net/images/anime/1317/139802l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/VW_LxM4tt-o?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Tate no Yuusha no Nariagari Season 3
+      - type: Synonym
+        title: Tate no Yuusha no Nariagari 3rd Season
+      - type: Synonym
+        title: The Rising of the Shield Hero 3rd Season
+      - type: Japanese
+        title: 盾の勇者の成り上がり Season 3
+      - type: English
+        title: The Rising of the Shield Hero Season 3
+      title: Tate no Yuusha no Nariagari Season 3
+      title_english: The Rising of the Shield Hero Season 3
+      title_japanese: 盾の勇者の成り上がり Season 3
+      title_synonyms:
+      - Tate no Yuusha no Nariagari 3rd Season
+      - The Rising of the Shield Hero 3rd Season
+      type: TV
+      source: Light novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2023-10-06T00:00:00+00:00'
+        to: '2023-12-22T00:00:00+00:00'
+        prop:
+          from:
+            day: 6
+            month: 10
+            year: 2023
+          to:
+            day: 22
+            month: 12
+            year: 2023
+        string: Oct 6, 2023 to Dec 22, 2023
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.08
+      scored_by: 163106
+      rank: 4690
+      popularity: 488
+      members: 522764
+      favorites: 6149
+      synopsis: "Though he has successfully repelled the latest Wave of Catastrophe, Naofumi Iwatani—the Shield Hero—has no\
+        \ time to rest. Naofumi is spurred back into action when Queen Mirelia Q Melromarc tells him that the three other\
+        \ Cardinal Heroes have disappeared without a trace, and she tasks him with finding them. \n\nWith no clues regarding\
+        \ their whereabouts, Naofumi tackles a more pressing issue: the worsening slave trade of demi-humans. Determined to\
+        \ right this injustice, he and his friends find their way to Zeltoble, the country of mercenaries, where the illegal\
+        \ sale of demi-humans has become a lucrative business. To gather money to free the slaves, Naofumi and his comrades\
+        \ disguise themselves and take part in underground coliseum brawls, purposely throwing matches to manipulate the odds\
+        \ and eventually secure an enormous payout. However, with the threat of another Wave of Catastrophe looming on the\
+        \ horizon, the Shield Hero must stick to his mission of finding the missing heroes if he wants to protect those he\
+        \ loves.\n\n[Written by MAL Rewrite]"
+      background: ''
+      season: fall
+      year: 2023
+      broadcast:
+        day: Fridays
+        time: '21:00'
+        timezone: Asia/Tokyo
+        string: Fridays at 21:00 (JST)
+      producers:
+      - mal_id: 61
+        type: anime
+        name: Frontier Works
+        url: https://myanimelist.net/anime/producer/61/Frontier_Works
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 323
+        type: anime
+        name: Nippon Columbia
+        url: https://myanimelist.net/anime/producer/323/Nippon_Columbia
+      - mal_id: 689
+        type: anime
+        name: NTT Docomo
+        url: https://myanimelist.net/anime/producer/689/NTT_Docomo
+      - mal_id: 1255
+        type: anime
+        name: Glovision
+        url: https://myanimelist.net/anime/producer/1255/Glovision
+      - mal_id: 1261
+        type: anime
+        name: Good Smile Company
+        url: https://myanimelist.net/anime/producer/1261/Good_Smile_Company
+      - mal_id: 1345
+        type: anime
+        name: Sammy
+        url: https://myanimelist.net/anime/producer/1345/Sammy
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      - mal_id: 1696
+        type: anime
+        name: Kadokawa
+        url: https://myanimelist.net/anime/producer/1696/Kadokawa
+      licensors: []
+      studios:
+      - mal_id: 290
+        type: anime
+        name: Kinema Citrus
+        url: https://myanimelist.net/anime/producer/290/Kinema_Citrus
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes:
+      - mal_id: 62
+        type: anime
+        name: Isekai
+        url: https://myanimelist.net/anime/genre/62/Isekai
+      demographics: []
+  body_text: null
+  body_b64: null

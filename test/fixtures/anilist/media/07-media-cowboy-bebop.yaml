@@ -1,0 +1,339 @@
+metadata:
+  captured_at: '2026-05-07T14:58:11Z'
+  label: media-cowboy-bebop
+  backend: anilist
+  path_slug: phase2_media
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Media(id: $id) {
+          id idMal
+          title { romaji english native }
+          type format status episodes duration
+          season seasonYear
+          startDate { year month day }
+          endDate { year month day }
+          genres tags { name rank }
+          averageScore meanScore popularity favourites trending
+          isAdult countryOfOrigin
+          description(asHtml: false)
+          source
+          coverImage { extraLarge large medium color }
+          bannerImage
+          trailer { id site thumbnail }
+          studios { edges { isMain node { id name isAnimationStudio } } }
+          nextAiringEpisode { airingAt timeUntilAiring episode }
+          externalLinks { id site type url language }
+          streamingEpisodes { title thumbnail url site }
+        }
+      }
+    variables:
+      id: 1
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:10 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '23'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Media:
+        id: 1
+        idMal: 1
+        title:
+          romaji: Cowboy Bebop
+          english: Cowboy Bebop
+          native: カウボーイビバップ
+        type: ANIME
+        format: TV
+        status: FINISHED
+        episodes: 26
+        duration: 24
+        season: SPRING
+        seasonYear: 1998
+        startDate:
+          year: 1998
+          month: 4
+          day: 3
+        endDate:
+          year: 1999
+          month: 4
+          day: 24
+        genres:
+        - Action
+        - Adventure
+        - Drama
+        - Sci-Fi
+        tags:
+        - name: Space
+          rank: 94
+        - name: Crime
+          rank: 92
+        - name: Episodic
+          rank: 89
+        - name: Ensemble Cast
+          rank: 86
+        - name: Primarily Adult Cast
+          rank: 85
+        - name: Tragedy
+          rank: 83
+        - name: Travel
+          rank: 82
+        - name: Noir
+          rank: 80
+        - name: Philosophy
+          rank: 80
+        - name: Found Family
+          rank: 80
+        - name: Anti-Hero
+          rank: 79
+        - name: Guns
+          rank: 78
+        - name: Cyberpunk
+          rank: 78
+        - name: Male Protagonist
+          rank: 77
+        - name: Female Protagonist
+          rank: 66
+        - name: Martial Arts
+          rank: 66
+        - name: Terrorism
+          rank: 66
+        - name: Heterosexual
+          rank: 65
+        - name: Tomboy
+          rank: 64
+        - name: Cyborg
+          rank: 64
+        - name: Amnesia
+          rank: 62
+        - name: Cowboys
+          rank: 60
+        - name: Gambling
+          rank: 57
+        - name: Yakuza
+          rank: 50
+        - name: Drugs
+          rank: 49
+        - name: Police
+          rank: 48
+        - name: Nudity
+          rank: 45
+        - name: Cult
+          rank: 43
+        - name: Tanned Skin
+          rank: 38
+        - name: Circus
+          rank: 25
+        - name: CGI
+          rank: 20
+        - name: Work
+          rank: 20
+        averageScore: 86
+        meanScore: 86
+        popularity: 441680
+        favourites: 31232
+        trending: 8
+        isAdult: false
+        countryOfOrigin: JP
+        description: |-
+          Enter a world in the distant future, where Bounty Hunters roam the solar system. Spike and Jet, bounty hunting partners, set out on journeys in an ever struggling effort to win bounty rewards to survive.<br><br>
+          While traveling, they meet up with other very interesting people. Could Faye, the beautiful and ridiculously poor gambler, Edward, the computer genius, and Ein, the engineered dog be a good addition to the group?
+        source: ORIGINAL
+        coverImage:
+          extraLarge: https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-GCsPm7waJ4kS.png
+          large: https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1-GCsPm7waJ4kS.png
+          medium: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx1-GCsPm7waJ4kS.png
+          color: '#f16b50'
+        bannerImage: https://s4.anilist.co/file/anilistcdn/media/anime/banner/1-OquNCNB6srGe.jpg
+        trailer:
+          id: OhNwckCLzis
+          site: youtube
+          thumbnail: https://i.ytimg.com/vi/OhNwckCLzis/hqdefault.jpg
+        studios:
+          edges:
+          - isMain: true
+            node:
+              id: 14
+              name: Sunrise
+              isAnimationStudio: true
+          - isMain: false
+            node:
+              id: 23
+              name: Bandai Visual
+              isAnimationStudio: false
+          - isMain: false
+            node:
+              id: 233
+              name: Bandai Entertainment
+              isAnimationStudio: false
+        nextAiringEpisode: null
+        externalLinks:
+        - id: 609
+          site: Hulu
+          type: STREAMING
+          url: http://www.hulu.com/cowboy-bebop
+          language: null
+        - id: 3346
+          site: Crunchyroll
+          type: STREAMING
+          url: http://www.crunchyroll.com/cowboy-bebop
+          language: null
+        - id: 13042
+          site: Amazon Prime Video
+          type: STREAMING
+          url: https://www.amazon.com/gp/video/detail/B00R2KO8ZE/
+          language: null
+        - id: 16098
+          site: Tubi TV
+          type: STREAMING
+          url: https://tubitv.com/series/2052
+          language: null
+        - id: 16099
+          site: Adult Swim
+          type: STREAMING
+          url: https://www.adultswim.com/videos/cowboy-bebop
+          language: null
+        - id: 39888
+          site: Netflix
+          type: STREAMING
+          url: https://www.netflix.com/title/80001305
+          language: null
+        - id: 83633
+          site: Official Site
+          type: INFO
+          url: https://cowboy-bebop.net/
+          language: Japanese
+        streamingEpisodes:
+        - title: Episode 1 - Asteroid Blues
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/e3a45e86c597fe16f02d29efcadedcd81473268732_full.jpg
+          url: http://www.crunchyroll.com/watch/G7PU4VJEJ/asteroid-blues
+          site: Crunchyroll
+        - title: Episode 2 - Stray Dog Strut
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/0eea0ce5c2a92b72fd633e5cbabd17b81473277532_full.jpg
+          url: http://www.crunchyroll.com/watch/GX9UQ7ZXW/stray-dog-strut
+          site: Crunchyroll
+        - title: Episode 3 - Honky Tonk Women
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/f007ab7cb899b5ca83b8e8d07a1067d51473125168_full.jpg
+          url: http://www.crunchyroll.com/watch/G14U4EGNQ/honky-tonk-women
+          site: Crunchyroll
+        - title: Episode 4 - Gateway Shuffle
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/8395f1edb9b86ec69777bdd84a9bf7921473115214_full.jpg
+          url: http://www.crunchyroll.com/watch/GK9U34D13/gateway-shuffle
+          site: Crunchyroll
+        - title: Episode 5 - Ballad of Fallen Angels
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/180d486bb9c563491f417eea1985c1de1473112114_full.jpg
+          url: http://www.crunchyroll.com/watch/GVWU0Z4K1/ballad-of-fallen-angels
+          site: Crunchyroll
+        - title: Episode 6 - Sympathy for the Devil
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/24668be96b09d1356709e04a3daa161f1473114965_full.jpg
+          url: http://www.crunchyroll.com/watch/GPWUK5DP3/sympathy-for-the-devil
+          site: Crunchyroll
+        - title: Episode 7 - Heavy Metal Queen
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/d2d71facab3a707cd6480df47c78c2fe1473112459_full.jpg
+          url: http://www.crunchyroll.com/watch/GZ7UVX1ZP/heavy-metal-queen
+          site: Crunchyroll
+        - title: Episode 8 - Waltz for Venus
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/c82f024aa8e91377f1fd1f31a732ed211473138815_full.jpg
+          url: http://www.crunchyroll.com/watch/GWDU8KQ1W/waltz-for-venus
+          site: Crunchyroll
+        - title: Episode 9 - Jamming with Edward
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/48d53aa4330ef9268c31db12def817ae1473113990_full.jpg
+          url: http://www.crunchyroll.com/watch/G0DUN0J77/jamming-with-edward
+          site: Crunchyroll
+        - title: Episode 10 - Ganymede Elegy
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/0b1fe4247b00a2a96cd724c978f2e9301473126093_full.jpg
+          url: http://www.crunchyroll.com/watch/G9DUEPG85/ganymede-elegy
+          site: Crunchyroll
+        - title: Episode 11 - Toys in the Attic
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/77098545eaa70378a9ef1cdd995015641473117569_full.jpg
+          url: http://www.crunchyroll.com/watch/GJWU2XEV7/toys-in-the-attic
+          site: Crunchyroll
+        - title: Episode 12 - Jupiter Jazz (part 1)
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/cd71c0f3bcf0cb5559d0939e583daf361473118196_full.jpg
+          url: http://www.crunchyroll.com/watch/GK9U34DX3/jupiter-jazz-part-1
+          site: Crunchyroll
+        - title: Episode 13 - Jupiter Jazz (part 2)
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/e289707b5fc232b037a3e7d0e2a7959c1473119423_full.jpg
+          url: http://www.crunchyroll.com/watch/GPWUK5DG3/jupiter-jazz-part-2
+          site: Crunchyroll
+        - title: Episode 14 - Bohemian Rhapsody
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/44580eb7cc5740f63f3170265de80b561473120654_full.jpg
+          url: http://www.crunchyroll.com/watch/GD9UVW8XW/bohemian-rhapsody
+          site: Crunchyroll
+        - title: Episode 15 - My Funny Valentine
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/efb53c03f2ec8c0470275bb3cd32c6aa1473119912_full.jpg
+          url: http://www.crunchyroll.com/watch/GG1U2EZG9/my-funny-valentine
+          site: Crunchyroll
+        - title: Episode 16 - Black Dog Serenade
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/c4138c03816a57f8e28e112875767dff1473121102_full.jpg
+          url: http://www.crunchyroll.com/watch/G9DUEPG35/black-dog-serenade
+          site: Crunchyroll
+        - title: Episode 17 - Mushroom Samba
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/2140460e2f69b8a124f812b31b2f0e991473122552_full.jpg
+          url: http://www.crunchyroll.com/watch/G4VUQX825/mushroom-samba
+          site: Crunchyroll
+        - title: Episode 18 - Speak Like a Child
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/22ab56e337990440b8b3dde252b64b321473122227_full.jpg
+          url: http://www.crunchyroll.com/watch/GN7UD7VVJ/speak-like-a-child
+          site: Crunchyroll
+        - title: Episode 19 - Wild Horses
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/3288ad0b33dcfc5e1af91497d280b4fe1473124229_full.jpg
+          url: http://www.crunchyroll.com/watch/GWDU8KQQ0/wild-horses
+          site: Crunchyroll
+        - title: Episode 20 - Pierrot Le Fou
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/785ef5c25a046832b3513089c6f3d9941473123758_full.jpg
+          url: http://www.crunchyroll.com/watch/G7PU4VJJ5/pierrot-le-fou
+          site: Crunchyroll
+        - title: Episode 21 - Boogie Woogie Feng Shui
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/13dbb524b4b6bbc4cd1d36719d789b2f1473126565_full.jpg
+          url: http://www.crunchyroll.com/watch/G4VUQX88Z/boogie-woogie-feng-shui
+          site: Crunchyroll
+        - title: Episode 22 - Cowboy Funk
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/c71fbb3f7b06b6747208d3d966aaa1b91473125734_full.jpg
+          url: http://www.crunchyroll.com/watch/GN7UD7VVE/cowboy-funk
+          site: Crunchyroll
+        - title: Episode 23 - Brain Scratch
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire3-tmb/0d7ddcae6489ee5aae1c2cccf09f73991473126176_full.jpg
+          url: http://www.crunchyroll.com/watch/GVWU0Z444/brain-scratch
+          site: Crunchyroll
+        - title: Episode 24 - Hard Luck Woman
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire4-tmb/9d2308b354746a3fb84152526b195e1c1473128052_full.jpg
+          url: http://www.crunchyroll.com/watch/G8WUNW0G3/hard-luck-woman
+          site: Crunchyroll
+        - title: Episode 25 - The Real Folk Blues (part 1)
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire2-tmb/7e9bb2a05eb81b701cdf115710d659291473127483_full.jpg
+          url: http://www.crunchyroll.com/watch/GG1U2EZ4P/the-real-folk-blues-part-1
+          site: Crunchyroll
+        - title: Episode 26 - The Real Folk Blues (part 2)
+          thumbnail: https://img1.ak.crunchyroll.com/i/spire1-tmb/191b230426f0b0e6568b4ca6edab47321473136587_full.jpg
+          url: http://www.crunchyroll.com/watch/G9DUEPG5D/the-real-folk-blues-part-2
+          site: Crunchyroll
+  body_text: null
+  body_b64: null

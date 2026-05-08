@@ -1,0 +1,36 @@
+metadata:
+  captured_at: '2026-05-07T15:14:30Z'
+  label: fma
+  backend: jikan
+  path_slug: clubs_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/clubs?q=fma&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 500
+  headers:
+    Server: nginx/1.24.0
+    Date: Thu, 07 May 2026 15:14:29 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+  body_json:
+    status: 500
+    type: Exception
+    message: Unhandled Exception. Please follow report_url to generate an issue on GitHub
+    trace: /var/www/jikan-rest/vendor/typesense/typesense-php/src/ApiCall.php at line 348
+    error: Could not find a field named `name` in the schema for sorting.
+    report_url: https://github.com/jikan-me/jikan-rest/issues/new?template=bug.yml&title=%F0%9F%90%9B+%5BOFFICIAL%5D+Generated+Issue%3A+ObjectNotFound&system_env=Jikan+Parser+Version%2A%2A%3A+%60%60%60v4.0.12%40dcb47237a9407473f484bd28a5e44479cdd916fc%60%60%60%0APHP%3A+%60%60%608.1.29%60%60%60%0AIs+redis+used%3A+%60%60%60Connected%60%60%60&repro_steps=Http+Request%3A+%60GET+%2Fv4%2Fclubs%3Fq%3Dfma%26limit%3D3&expected_behavior=The+API+should+have+returned+a+successful+response+with+data.&current_behavior=The+API+has+returned+an+error%3A+%0A%60%60%60Typesense%5CExceptions%5CObjectNotFound%60%60%60%0AStatus+code%3A+%60%60%600%60%60%60%0AMessage%3A+%60%60%60Could+not+find+a+field+named+%60name%60+in+the+schema+for+sorting.%60%60%60%0ATrace%3A+%60%60%60%2Fvar%2Fwww%2Fjikan-rest%2Fvendor%2Ftypesense%2Ftypesense-php%2Fsrc%2FApiCall.php+on+line+348%60%60%60
+  body_text: null
+  body_b64: null

@@ -38,7 +38,7 @@ def _close_default_cache() -> None:
 
     Registered via :func:`atexit` on first use of
     :func:`_default_cache` so the SQLite connection releases cleanly
-    on interpreter shutdown (review m4). Idempotent: a second call
+    on interpreter shutdown (). Idempotent: a second call
     after teardown is a no-op.
     """
     global _DEFAULT_CACHE
@@ -61,7 +61,7 @@ def _default_cache():
     or that run in unit tests never instantiate it.
 
     The first construction registers :func:`_close_default_cache` as
-    an :func:`atexit` hook (review m4). Without it a long-running
+    an :func:`atexit` hook (). Without it a long-running
     embedding (Jupyter, MCP server, future REPL) would leak the file
     handle.
 
@@ -239,7 +239,7 @@ def api_group() -> None:
       --rate {normal,slow}    voluntary slowdown (slow halves refill)
       -H, --header K:V        add request header (repeatable)
 
-    Per AGENTS.md §0, a caller-supplied `User-Agent` via `--header`
+    Per , a caller-supplied `User-Agent` via `--header`
     overrides the project default verbatim.
 
     \b
@@ -279,7 +279,7 @@ def api_group() -> None:
     headers) - this is the "data + debug" mode.
 
     Caller-supplied User-Agent via --header overrides the project
-    default per AGENTS.md §0.
+    default .
     --- End ---
     """
 

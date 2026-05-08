@@ -1,7 +1,7 @@
 """
 One-shot migrator: convert existing JSON fixtures to YAML in place.
 
-The first batch of Phase 1 fixtures (anilist / jikan / kitsu / mangadex)
+The first batch of the substrate API layer fixtures (anilist / jikan / kitsu / mangadex)
 was captured before the YAML decision; rather than re-hit upstreams
 this script reads each ``.json`` fixture, re-classifies the body
 (parseable JSON -> ``body_json`` native dict; XML/HTML -> ``body_text``;

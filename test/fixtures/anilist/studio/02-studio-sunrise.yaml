@@ -1,0 +1,83 @@
+metadata:
+  captured_at: '2026-05-07T14:58:53Z'
+  label: studio-sunrise
+  backend: anilist
+  path_slug: phase2_studio
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($id: Int) {
+        Studio(id: $id) {
+          id name isAnimationStudio favourites
+          media(perPage: 5) { edges { isMainStudio node { id title { romaji } } } }
+        }
+      }
+    variables:
+      id: 36
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Thu, 07 May 2026 14:58:53 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '28'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Studio:
+        id: 36
+        name: Studio Gallop
+        isAnimationStudio: true
+        favourites: 77
+        media:
+          edges:
+          - isMainStudio: true
+            node:
+              id: 15
+              title:
+                romaji: Eyeshield 21
+          - isMainStudio: true
+            node:
+              id: 45
+              title:
+                romaji: 'Rurouni Kenshin: Meiji Kenkaku Romantan'
+          - isMainStudio: true
+            node:
+              id: 46
+              title:
+                romaji: 'Rurouni Kenshin: Meiji Kenkaku Romantan - Ishinshishi e no Requiem'
+          - isMainStudio: true
+            node:
+              id: 103
+              title:
+                romaji: Akazukin Chacha
+          - isMainStudio: true
+            node:
+              id: 185
+              title:
+                romaji: Initial D
+  body_text: null
+  body_b64: null
