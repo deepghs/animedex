@@ -54,7 +54,11 @@ def _fetch(path: str, *, params: Optional[Dict[str, Any]] = None, config: Option
                        5xx, ``upstream-decode`` if body is non-text.
     """
     raw = _raw_jikan.call(path=path, params=params, config=config, **kw)
-    if raw.firewall_rejected is not None:
+    # Jikan is GET-only by both upstream design and firewall config,
+    # so this branch is defensive — it only fires if the firewall
+    # rules drift to deny GET, which would be a regression caught
+    # elsewhere.
+    if raw.firewall_rejected is not None:  # pragma: no cover
         raise ApiError(
             raw.firewall_rejected.get("message", "request blocked"),
             backend="jikan",

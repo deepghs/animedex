@@ -36,7 +36,12 @@ def _src(envelope) -> SourceTag:
 
 
 def _parse(envelope) -> dict:
-    if envelope.firewall_rejected is not None:
+    # The dispatcher's read-only firewall lets through GET /me and
+    # POST /search (the only two HTTP shapes Trace.moe uses), so this
+    # branch is defensive — it only fires if the firewall rules drift
+    # to deny one of them, which would be a regression caught
+    # elsewhere.
+    if envelope.firewall_rejected is not None:  # pragma: no cover
         raise ApiError(
             envelope.firewall_rejected.get("message", "request blocked"),
             backend="trace",

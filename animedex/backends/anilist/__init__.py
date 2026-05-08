@@ -67,7 +67,11 @@ def _gql(query: str, variables: Optional[Dict[str, Any]] = None, *, config: Opti
                        top-level GraphQL error.
     """
     raw = _raw_anilist.call(query=query, variables=variables, config=config, **kw)
-    if raw.firewall_rejected is not None:
+    # The dispatcher's read-only firewall lets ``POST /`` through for
+    # AniList (its only HTTP shape), so this branch is defensive — it
+    # only ever fires if the firewall rules drift to deny the GraphQL
+    # endpoint, which would be a regression caught elsewhere.
+    if raw.firewall_rejected is not None:  # pragma: no cover
         raise ApiError(
             raw.firewall_rejected.get("message", "request blocked"),
             backend="anilist",
