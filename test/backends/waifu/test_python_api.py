@@ -10,7 +10,7 @@ import responses
 import yaml
 
 from animedex.backends import waifu as waifu_api
-from animedex.backends.waifu.models import WaifuArtist, WaifuImage, WaifuTag
+from animedex.backends.waifu.models import WaifuArtist, WaifuImage, WaifuStats, WaifuTag
 
 
 pytestmark = pytest.mark.unittest
@@ -73,6 +73,15 @@ class TestTags:
         for row in out:
             assert isinstance(row, WaifuTag)
 
+    def test_tags_page_size_threads_parameter(self, fake_clock):
+        fx = _load("tags/01-all.yaml")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, fx)
+            out = waifu_api.tags(page_size=3, no_cache=True)
+            sent = rsps.calls[0].request
+        assert isinstance(out, list)
+        assert "pageSize=3" in sent.url
+
 
 class TestArtists:
     def test_artists_returns_typed_list(self, fake_clock):
@@ -83,6 +92,16 @@ class TestArtists:
         assert isinstance(out, list)
         for row in out:
             assert isinstance(row, WaifuArtist)
+
+    def test_artists_pagination_threads_parameters(self, fake_clock):
+        fx = _load("artists/01-page-1.yaml")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, fx)
+            out = waifu_api.artists(page_number=2, page_size=3, no_cache=True)
+            sent = rsps.calls[0].request
+        assert isinstance(out, list)
+        assert "pageNumber=2" in sent.url
+        assert "pageSize=3" in sent.url
 
 
 class TestImages:
@@ -146,6 +165,66 @@ class TestImages:
         for img in out:
             assert img.isAnimated is True
 
+    def test_images_with_all_optional_filters(self, fake_clock):
+        fx = _load("images/03-included-waifu-page-size-3.yaml")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, fx)
+            out = waifu_api.images(
+                included_tags=["waifu"],
+                excluded_tags=["ero"],
+                is_nsfw=False,
+                is_animated=False,
+                page_number=1,
+                page_size=3,
+                no_cache=True,
+            )
+            sent = rsps.calls[0].request
+        assert isinstance(out, list)
+        assert "included_tags=waifu" in sent.url
+        assert "excluded_tags=ero" in sent.url
+        assert "isNsfw=false" in sent.url
+        assert "isAnimated=false" in sent.url
+        assert "pageNumber=1" in sent.url
+        assert "pageSize=3" in sent.url
+
+
+class TestSingleResources:
+    def test_tag_by_id_returns_typed_resource(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("tags_by_id/01-id-12-waifu.yaml"))
+            row = waifu_api.tag(12, no_cache=True)
+        assert isinstance(row, WaifuTag)
+
+    def test_tag_by_slug_returns_typed_resource(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("tags_by_slug/01-slug-waifu.yaml"))
+            row = waifu_api.tag_by_slug("waifu", no_cache=True)
+        assert isinstance(row, WaifuTag)
+
+    def test_artist_by_id_returns_typed_resource(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("artists_by_id/01-id-80-gongha.yaml"))
+            row = waifu_api.artist(80, no_cache=True)
+        assert isinstance(row, WaifuArtist)
+
+    def test_artist_by_name_returns_typed_resource(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("artists_by_name/01-name-gongha.yaml"))
+            row = waifu_api.artist_by_name("GongHa", no_cache=True)
+        assert isinstance(row, WaifuArtist)
+
+    def test_image_by_id_returns_typed_resource(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("images_by_id/01-id-1914.yaml"))
+            row = waifu_api.image(1914, no_cache=True)
+        assert isinstance(row, WaifuImage)
+
+    def test_stats_public_returns_typed_resource(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("stats_public/01-all.yaml"))
+            row = waifu_api.stats_public(no_cache=True)
+        assert isinstance(row, WaifuStats)
+
 
 # ---------- error paths ----------
 
@@ -179,6 +258,15 @@ class TestErrorPaths:
                 waifu_api.tags(no_cache=True)
         assert ei.value.reason == "upstream-error"
 
+    def test_401_raises_auth_required(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, "https://api.waifu.im/tags", json={"detail": "auth"}, status=401)
+            with pytest.raises(ApiError) as ei:
+                waifu_api.tags(no_cache=True)
+        assert ei.value.reason == "auth-required"
+
     def test_missing_items_raises_upstream_shape(self, fake_clock):
         from animedex.models.common import ApiError
 
@@ -189,6 +277,15 @@ class TestErrorPaths:
                 json={"oops": "no items"},
                 status=200,
             )
+            with pytest.raises(ApiError) as ei:
+                waifu_api.tags(no_cache=True)
+        assert ei.value.reason == "upstream-shape"
+
+    def test_non_list_items_raise_upstream_shape(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, "https://api.waifu.im/tags", json={"items": {"unexpected": "object"}}, status=200)
             with pytest.raises(ApiError) as ei:
                 waifu_api.tags(no_cache=True)
         assert ei.value.reason == "upstream-shape"
@@ -207,6 +304,28 @@ class TestErrorPaths:
             with pytest.raises(ApiError) as ei:
                 waifu_api.tags(no_cache=True)
         assert ei.value.reason == "upstream-decode"
+
+    @pytest.mark.parametrize(
+        "fn,args,path",
+        [
+            (waifu_api.tag, (12,), "/tags/12"),
+            (waifu_api.tag_by_slug, ("waifu",), "/tags/by-slug/waifu"),
+            (waifu_api.artist, (80,), "/artists/80"),
+            (waifu_api.artist_by_name, ("GongHa",), "/artists/by-name/GongHa"),
+            (waifu_api.image, (1914,), "/images/1914"),
+            (waifu_api.stats_public, (), "/stats/public"),
+            (waifu_api.me, (), "/users/me"),
+        ],
+    )
+    def test_singleton_bad_shapes_raise_upstream_shape(self, fn, args, path, fake_clock, monkeypatch):
+        from animedex.models.common import ApiError
+
+        monkeypatch.setenv("ANIMEDEX_WAIFU_TOKEN", "fake-key")
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, f"https://api.waifu.im{path}", json=["unexpected"], status=200)
+            with pytest.raises(ApiError) as ei:
+                fn(*args, no_cache=True)
+        assert ei.value.reason == "upstream-shape"
 
 
 class TestWaifuAuth:
@@ -257,6 +376,26 @@ class TestWaifuAuth:
             waifu_api.me(no_cache=True)
         assert ei.value.reason == "auth-required"
 
+    def test_config_token_store_token_is_used(self, fake_clock, monkeypatch):
+        from animedex.auth.inmemory_store import InMemoryTokenStore
+        from animedex.backends.waifu.models import WaifuUser
+        from animedex.config import Config
+
+        monkeypatch.delenv("ANIMEDEX_WAIFU_TOKEN", raising=False)
+        cfg = Config(token_store=InMemoryTokenStore({"waifu": "stored-key"}))
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("users_me/01-default.yaml"))
+            row = waifu_api.me(config=cfg, no_cache=True)
+            sent = rsps.calls[0].request
+        assert isinstance(row, WaifuUser)
+        assert sent.headers.get("X-Api-Key") == "stored-key"
+
 
 def test_module_selftest_returns_true():
     assert waifu_api.selftest() is True
+
+
+def test_models_selftest_returns_true():
+    from animedex.backends.waifu import models
+
+    assert models.selftest() is True

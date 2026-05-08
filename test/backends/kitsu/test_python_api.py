@@ -19,10 +19,21 @@ import yaml
 from animedex.backends import kitsu as kitsu_api
 from animedex.backends.kitsu.models import (
     KitsuAnime,
+    KitsuAnimeAttributes,
     KitsuCategory,
+    KitsuCharacter,
+    KitsuFranchise,
+    KitsuGenre,
     KitsuManga,
+    KitsuMangaAttributes,
     KitsuMapping,
+    KitsuPerson,
+    KitsuProducer,
+    KitsuRelatedResource,
+    KitsuStreamer,
+    KitsuStreamingLinkAttributes,
     KitsuStreamingLink,
+    KitsuUser,
 )
 
 
@@ -195,6 +206,179 @@ class TestCategories:
             assert isinstance(row, KitsuCategory)
 
 
+_KITSU_ANIME_RELATION_WRAPPERS = [
+    ("anime_characters", "anime_characters/01-frieren.yaml", KitsuRelatedResource),
+    ("anime_staff", "anime_staff/01-frieren.yaml", KitsuRelatedResource),
+    ("anime_episodes", "anime_episodes/01-frieren.yaml", KitsuRelatedResource),
+    ("anime_reviews", "anime_reviews/01-frieren.yaml", KitsuRelatedResource),
+    ("anime_genres", "anime_genres/01-frieren.yaml", KitsuGenre),
+    ("anime_categories", "anime_categories/01-frieren.yaml", KitsuCategory),
+    ("anime_relations", "anime_relations/01-frieren.yaml", KitsuRelatedResource),
+    ("anime_productions", "anime_productions/01-frieren.yaml", KitsuRelatedResource),
+]
+
+_KITSU_MANGA_RELATION_WRAPPERS = [
+    ("manga_characters", "manga_characters/01-berserk.yaml", KitsuRelatedResource),
+    ("manga_staff", "manga_staff/01-berserk.yaml", KitsuRelatedResource),
+    ("manga_chapters", "manga_chapters/01-berserk.yaml", KitsuRelatedResource),
+    ("manga_genres", "manga_genres/01-berserk.yaml", KitsuGenre),
+]
+
+_KITSU_SHOW_WRAPPERS = [
+    ("character", "characters_by_id/01-edward-elric-1.yaml", KitsuCharacter),
+    ("person", "people_by_id/01-miyazaki-1.yaml", KitsuPerson),
+    ("producer", "producers_by_id/01-id-1.yaml", KitsuProducer),
+    ("genre", "genres_by_id/01-id-1.yaml", KitsuGenre),
+    ("category", "categories_by_id/01-id-1.yaml", KitsuCategory),
+    ("franchise", "franchises_by_id/01-id-1.yaml", KitsuFranchise),
+    ("user", "users_by_id/01-id-1.yaml", KitsuUser),
+]
+
+_KITSU_LIST_WRAPPERS = [
+    ("character_search", "characters/01-page1.yaml", KitsuCharacter),
+    ("person_search", "people/01-page1.yaml", KitsuPerson),
+    ("producers", "producers/01-page1.yaml", KitsuProducer),
+    ("genres", "genres/01-page1.yaml", KitsuGenre),
+    ("streamers", "streamers/01-all.yaml", KitsuStreamer),
+    ("franchises", "franchises/01-page1.yaml", KitsuFranchise),
+    ("trending_manga", "trending_manga/01-top10.yaml", KitsuManga),
+]
+
+
+@pytest.mark.parametrize("fn_name,fixture_rel,expected_type", _KITSU_ANIME_RELATION_WRAPPERS)
+def test_anime_relation_wrappers_return_typed_lists(fn_name, fixture_rel, expected_type, fake_clock):
+    with responses.RequestsMock() as rsps:
+        _register(rsps, _load(fixture_rel))
+        rows = getattr(kitsu_api, fn_name)(46474, no_cache=True)
+    assert isinstance(rows, list)
+    for row in rows:
+        assert isinstance(row, expected_type)
+
+
+@pytest.mark.parametrize("fn_name,fixture_rel,expected_type", _KITSU_MANGA_RELATION_WRAPPERS)
+def test_manga_relation_wrappers_return_typed_lists(fn_name, fixture_rel, expected_type, fake_clock):
+    with responses.RequestsMock() as rsps:
+        _register(rsps, _load(fixture_rel))
+        rows = getattr(kitsu_api, fn_name)(1, no_cache=True)
+    assert isinstance(rows, list)
+    for row in rows:
+        assert isinstance(row, expected_type)
+
+
+@pytest.mark.parametrize("fn_name,fixture_rel,expected_type", _KITSU_SHOW_WRAPPERS)
+def test_singleton_wrappers_return_typed_resources(fn_name, fixture_rel, expected_type, fake_clock):
+    fx = _load(fixture_rel)
+    rec_id = int(fx["response"]["body_json"]["data"]["id"])
+    with responses.RequestsMock() as rsps:
+        _register(rsps, fx)
+        row = getattr(kitsu_api, fn_name)(rec_id, no_cache=True)
+    assert isinstance(row, expected_type)
+
+
+@pytest.mark.parametrize("fn_name,fixture_rel,expected_type", _KITSU_LIST_WRAPPERS)
+def test_collection_wrappers_return_typed_lists(fn_name, fixture_rel, expected_type, fake_clock):
+    with responses.RequestsMock() as rsps:
+        _register(rsps, _load(fixture_rel))
+        rows = getattr(kitsu_api, fn_name)(no_cache=True)
+    assert isinstance(rows, list)
+    for row in rows:
+        assert isinstance(row, expected_type)
+
+
+@pytest.mark.parametrize(
+    "fn_name,fixture_rel",
+    [
+        ("person_voices", "people_voices/01-person-1.yaml"),
+        ("person_castings", "people_castings/01-person-1.yaml"),
+    ],
+)
+def test_person_credit_wrappers_return_related_resources(fn_name, fixture_rel, fake_clock):
+    with responses.RequestsMock() as rsps:
+        _register(rsps, _load(fixture_rel))
+        rows = getattr(kitsu_api, fn_name)(1, no_cache=True)
+    assert isinstance(rows, list)
+    for row in rows:
+        assert isinstance(row, KitsuRelatedResource)
+
+
+class TestUsers:
+    def test_user_library_returns_related_resources(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("users_library_entries/01-user-1.yaml"))
+            rows = kitsu_api.user_library(1, no_cache=True)
+        assert isinstance(rows, list)
+        for row in rows:
+            assert isinstance(row, KitsuRelatedResource)
+
+    def test_user_stats_returns_related_resources(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("users_stats/01-user-1.yaml"))
+            rows = kitsu_api.user_stats(1, no_cache=True)
+        assert isinstance(rows, list)
+        for row in rows:
+            assert isinstance(row, KitsuRelatedResource)
+
+
+class TestKitsuBoundaryBranches:
+    def test_listing_none_data_returns_empty_list(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, "https://kitsu.io/api/edge/characters", json={"data": None}, status=200)
+            rows = kitsu_api.character_search(no_cache=True)
+        assert rows == []
+
+    def test_listing_single_data_object_is_wrapped(self, fake_clock):
+        body = {"data": {"id": "1", "type": "characters", "attributes": {"name": "Edward Elric"}}}
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, "https://kitsu.io/api/edge/characters", json=body, status=200)
+            rows = kitsu_api.character_search(no_cache=True)
+        assert len(rows) == 1
+        assert isinstance(rows[0], KitsuCharacter)
+
+    def test_character_search_with_query_threads_filter(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("characters/01-page1.yaml"))
+            rows = kitsu_api.character_search("edward", no_cache=True)
+            sent = rsps.calls[0].request
+        assert isinstance(rows, list)
+        assert "filter%5Bname%5D=edward" in sent.url
+
+    def test_person_search_with_query_threads_filter(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("people/01-page1.yaml"))
+            rows = kitsu_api.person_search("miyazaki", no_cache=True)
+            sent = rsps.calls[0].request
+        assert isinstance(rows, list)
+        assert "filter%5Bname%5D=miyazaki" in sent.url
+
+    def test_model_projection_fallbacks(self):
+        from animedex.models.anime import Anime
+        from animedex.models.manga import Manga
+
+        anime = KitsuAnime(
+            id="x",
+            attributes=KitsuAnimeAttributes(titles={"en_jp": "Fallback"}, startDate=None, status=None),
+        ).to_common()
+        assert isinstance(anime, Anime)
+        assert anime.source.backend == "kitsu"
+        assert anime.season_year is None
+        assert anime.status is None
+
+        manga = KitsuManga(
+            id="m",
+            attributes=KitsuMangaAttributes(titles={"en_jp": "Fallback"}, status=None, mangaType=None),
+        ).to_common()
+        assert isinstance(manga, Manga)
+        assert manga.status is None
+        assert manga.format is None
+
+        unknown = KitsuStreamingLink(id="s", attributes=KitsuStreamingLinkAttributes(url=None)).to_common()
+        assert unknown.provider == "unknown"
+        custom = KitsuStreamingLink(
+            id="s", attributes=KitsuStreamingLinkAttributes(url="https://video.example.invalid/x")
+        ).to_common()
+        assert custom.provider == "video.example.invalid"
+
+
 # ---------- error paths ----------
 
 
@@ -263,3 +447,9 @@ class TestErrorPaths:
 def test_module_selftest_returns_true():
     """The high-level module's offline ``selftest()`` must pass."""
     assert kitsu_api.selftest() is True
+
+
+def test_models_selftest_returns_true():
+    from animedex.backends.kitsu import models
+
+    assert models.selftest() is True
