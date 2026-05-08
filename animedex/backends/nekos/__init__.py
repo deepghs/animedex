@@ -53,7 +53,7 @@ def _fetch(path: str, *, params: Optional[Dict[str, Any]] = None, config: Option
             backend="nekos",
             reason=raw.firewall_rejected.get("reason", "firewall"),
         )
-    if raw.body_text is None:
+    if raw.body_text is None:  # pragma: no cover - nekos.best always returns text JSON
         raise ApiError("nekos.best returned a non-text body", backend="nekos", reason="upstream-decode")
     if raw.status == 404:
         raise ApiError(f"nekos.best 404 on {path}", backend="nekos", reason="not-found")

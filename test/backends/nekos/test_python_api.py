@@ -173,6 +173,24 @@ class TestSearch:
             out = nekos_api.search("Frieren", type=2, amount=3, no_cache=True)
         assert isinstance(out, list)
 
+    def test_search_with_category_filter_threads_param_through(self, fake_clock):
+        """Pinning the ``category=...`` branch in ``search``: the
+        upstream URL must carry the category as a query param. The
+        ``responses`` matcher uses match=urlencoded_params_matcher
+        to fail loudly if the parameter is dropped."""
+        from responses.matchers import query_param_matcher
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://nekos.best/api/v2/search",
+                json={"results": []},
+                status=200,
+                match=[query_param_matcher({"query": "Frieren", "type": "1", "amount": "1", "category": "husbando"})],
+            )
+            out = nekos_api.search("Frieren", category="husbando", no_cache=True)
+        assert isinstance(out, list)
+
 
 # ---------- argument validation ----------
 
@@ -309,6 +327,56 @@ class TestErrorPaths:
             with pytest.raises(ApiError) as ei:
                 nekos_api.search("Frieren", no_cache=True)
         assert ei.value.reason == "upstream-shape"
+
+    def test_categories_full_non_dict_raises_upstream_shape(self, fake_clock):
+        """Mirror of the ``categories`` non-dict branch: when the
+        upstream emits an array where a flat dict-of-categories was
+        expected, surface ``upstream-shape``. Pinned because
+        ``categories_full`` and ``categories`` go through different
+        validation paths and a regression in the typed projection
+        could leave ``categories`` covered while
+        ``categories_full`` silently mis-handles the same input."""
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://nekos.best/api/v2/endpoints",
+                json=["unexpected", "list", "shape"],
+                status=200,
+            )
+            with pytest.raises(ApiError) as ei:
+                nekos_api.categories_full(no_cache=True)
+        assert ei.value.reason == "upstream-shape"
+
+
+class TestModelProjectionFallback:
+    """Direct construction of :class:`NekosImage` (bypassing the
+    high-level fetch helper that always attaches ``source_tag``) is
+    a legitimate caller path — e.g. constructing from a saved JSON
+    payload in a downstream tool. The ``_default_src`` fallback in
+    ``NekosImage.to_common`` exists for that case; pin its behaviour
+    here so the projection still produces a well-formed
+    :class:`~animedex.models.art.ArtPost`."""
+
+    def test_to_common_without_source_tag_uses_fallback_src(self):
+        from animedex.backends.nekos.models import NekosImage
+        from animedex.models.common import SourceTag
+
+        img = NekosImage.model_validate(
+            {
+                "url": "https://nekos.best/api/v2/husbando/1234.png",
+                "anime_name": "Sample",
+            }
+        )
+        assert img.source_tag is None
+        common = img.to_common()
+        # Fallback source must still name the right backend.
+        assert isinstance(common.source, SourceTag)
+        assert common.source.backend == "nekos"
+        assert common.rating == "g"
+        assert common.id == "nekos:1234.png"
+        assert common.tags == ["Sample"]
 
 
 # ---------- selftest ----------
