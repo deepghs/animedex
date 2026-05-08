@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 import pytest
 import responses
@@ -591,6 +592,48 @@ class TestMangaDexCliFromFixtures:
         assert result.exit_code == 0, result.output
         assert "Berserk" in result.output
 
+    @pytest.mark.parametrize(
+        "argv,fixture_rel,query_key,expected",
+        [
+            (
+                ["statistics-manga-batch", "--manga", "801513ba-a712-498c-8f57-cae55b38cc92"],
+                "mangadex/statistics_manga_search/01-berserk-only.yaml",
+                "manga[]",
+                ["801513ba-a712-498c-8f57-cae55b38cc92"],
+            ),
+            (
+                ["statistics-chapter-batch", "--chapter", "01e9f0cb-caea-406d-92bb-0cc67c37481d"],
+                "mangadex/statistics_chapter_search/01-berserk-only.yaml",
+                "chapter[]",
+                ["01e9f0cb-caea-406d-92bb-0cc67c37481d"],
+            ),
+            (
+                [
+                    "statistics-manga-batch",
+                    "--manga",
+                    "801513ba-a712-498c-8f57-cae55b38cc92",
+                    "--manga",
+                    "0d1f5f6b-7e1f-4f0f-a111-000000000000",
+                ],
+                "mangadex/statistics_manga_search/01-berserk-only.yaml",
+                "manga[]",
+                ["801513ba-a712-498c-8f57-cae55b38cc92", "0d1f5f6b-7e1f-4f0f-a111-000000000000"],
+            ),
+        ],
+    )
+    def test_repeatable_batch_options_send_whole_values(
+        self, cli_runner, cli, fake_clock, argv, fixture_rel, query_key, expected
+    ):
+        fixture = _load_fixture(fixture_rel)
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["mangadex", *argv, "--json", "--no-cache"])
+            sent = rsps.calls[0].request
+
+        assert result.exit_code == 0, result.output
+        parsed = parse_qs(urlsplit(sent.url).query)
+        assert parsed[query_key] == expected
+
 
 # ---------- Danbooru ----------
 
@@ -677,6 +720,49 @@ class TestWaifuCliFromFixtures:
         decoded = json.loads(result.output)
         assert decoded
         assert all(v is False for v in decoded)
+
+    @pytest.mark.parametrize(
+        "argv,fixture_rel,expected_included,expected_excluded",
+        [
+            (
+                ["--included-tags", "waifu"],
+                "waifu/images/02-included-waifu.yaml",
+                ["waifu"],
+                None,
+            ),
+            (
+                ["--included-tags", "waifu", "--included-tags", "maid"],
+                "waifu/images/02-included-waifu.yaml",
+                ["waifu", "maid"],
+                None,
+            ),
+            (
+                ["--excluded-tags", "ero"],
+                "waifu/images/06-excluded-ero.yaml",
+                None,
+                ["ero"],
+            ),
+        ],
+    )
+    def test_repeatable_tag_options_send_whole_values(
+        self, cli_runner, cli, fake_clock, argv, fixture_rel, expected_included, expected_excluded
+    ):
+        fixture = _load_fixture(fixture_rel)
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["waifu", "images", *argv, "--json", "--no-cache"])
+            sent = rsps.calls[0].request
+
+        assert result.exit_code == 0, result.output
+        parsed = parse_qs(urlsplit(sent.url).query)
+        if expected_included is None:
+            assert "included_tags" not in parsed
+        else:
+            assert parsed["included_tags"] == expected_included
+        if expected_excluded is None:
+            assert "excluded_tags" not in parsed
+        else:
+            assert parsed["excluded_tags"] == expected_excluded
 
 
 # ---------- viewer / notification / etc. — auth-required stubs ----------

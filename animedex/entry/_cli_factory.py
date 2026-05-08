@@ -289,10 +289,24 @@ def register_subcommand(
             return type(default)
         return str
 
+    def _list_item_type(annotation):
+        """Return the scalar item type for List[T] / Optional[List[T]]."""
+        origin = getattr(annotation, "__origin__", None)
+        args = getattr(annotation, "__args__", ())
+        if origin in (list, List):
+            item = args[0] if args else str
+            return item if item in (int, float, str, bool) else str
+        if origin is not None:
+            type_args = [a for a in args if a is not type(None)]
+            if len(type_args) == 1:
+                return _list_item_type(type_args[0])
+        return None
+
     summary = (help or (fn.__doc__ or fn.__name__).strip().split("\n", 1)[0]).rstrip(".") + "."
     backend = group.name  # group is named "anilist" / "jikan" / "trace"
     fn_module = getattr(fn, "__module__", None)
     fn_qualname = getattr(fn, "__name__", None)
+    list_option_names = set()
 
     def _resolve_fn():
         """Look up ``fn`` from its module at call time so test
@@ -316,6 +330,9 @@ def register_subcommand(
             rate=rate,
             source_attribution=not no_source,
         )
+        for opt_name in list_option_names:
+            value = kwargs.get(opt_name)
+            kwargs[opt_name] = list(value) if value else None
         try:
             result = _resolve_fn()(config=cfg, **kwargs)
         except ApiError as exc:
@@ -363,16 +380,29 @@ def register_subcommand(
         elif isinstance(param.default, bool):
             opt_decs.append(click.option(f"--{pname.replace('_', '-')}", pname, is_flag=True, default=param.default))
         else:
-            click_type = _click_type(annotation, param.default)
-            opt_decs.append(
-                click.option(
-                    f"--{pname.replace('_', '-')}",
-                    pname,
-                    default=param.default,
-                    type=click_type,
-                    show_default=True,
+            list_item_type = _list_item_type(annotation)
+            if list_item_type is not None:
+                list_option_names.add(pname)
+                opt_decs.append(
+                    click.option(
+                        f"--{pname.replace('_', '-')}",
+                        pname,
+                        default=(),
+                        type=list_item_type,
+                        multiple=True,
+                    )
                 )
-            )
+            else:
+                click_type = _click_type(annotation, param.default)
+                opt_decs.append(
+                    click.option(
+                        f"--{pname.replace('_', '-')}",
+                        pname,
+                        default=param.default,
+                        type=click_type,
+                        show_default=True,
+                    )
+                )
 
     # Inner-to-outer: options first (in any order), then arguments in
     # REVERSE so the first source-order argument ends up outermost.
