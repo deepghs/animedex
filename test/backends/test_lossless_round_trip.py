@@ -536,6 +536,69 @@ class TestMangaDexLossless:
             pytest.skip("error / not-found fixture")
         _assert_lossless(MangaDexCover, body["data"], f"MangaDexCover/{path.name}")
 
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "mangadex" / "chapter_search").glob("*.yaml")))
+    def test_mangadex_chapter_search_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexChapter
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(MangaDexChapter, row, f"MangaDexChapter/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "mangadex" / "cover_search").glob("*.yaml")))
+    def test_mangadex_cover_search_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexCover
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(MangaDexCover, row, f"MangaDexCover/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "mangadex" / "manga_random").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_mangadex_manga_random_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexManga
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or not body.get("data"):
+            pytest.skip("empty fixture")
+        d = body["data"] if isinstance(body["data"], dict) else (body["data"][0] if body["data"] else None)
+        if d is None:
+            pytest.skip("no data")
+        _assert_lossless(MangaDexManga, d, f"MangaDexManga/{path.name}")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "mangadex" / "author_by_id").glob("*.yaml"),
+                *(FIXTURES / "mangadex" / "author_search").glob("*.yaml"),
+                *(FIXTURES / "mangadex" / "group_by_id").glob("*.yaml"),
+                *(FIXTURES / "mangadex" / "group_search").glob("*.yaml"),
+                *(FIXTURES / "mangadex" / "manga_recommendation").glob("*.yaml"),
+                *(FIXTURES / "mangadex" / "manga_tag").glob("*.yaml"),
+                *(FIXTURES / "mangadex" / "report_reasons_category").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_mangadex_resource_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexResource
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or not body.get("data"):
+            pytest.skip("empty fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(MangaDexResource, row, f"MangaDexResource/{path.name}[{i}]")
+
 
 # ---------- Danbooru ----------
 

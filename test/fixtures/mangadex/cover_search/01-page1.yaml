@@ -1,0 +1,125 @@
+metadata:
+  captured_at: '2026-05-08T13:01:03Z'
+  label: page1
+  backend: mangadex
+  path_slug: cover_search
+request:
+  method: GET
+  url: https://api.mangadex.org/cover?limit=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Fri, 08 May 2026 13:01:03 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '633'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 5459429e-63f2-4201-bf52-e8bd7186a9a4
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: f73c6872-01ee-4ed5-86d1-3520dc250dc4
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '6'
+        fileName: 55298866-2cb7-49e5-9e2d-6284c5b2c84a.jpg
+        locale: ja
+        createdAt: '2026-05-08T11:58:13+00:00'
+        updatedAt: '2026-05-08T11:58:13+00:00'
+        version: 1
+      relationships:
+      - id: 486d160a-5762-43a8-96cb-5b6eae57ffbd
+        type: manga
+      - id: 132c7600-c1bd-4263-bcaf-c0e0c1a644ab
+        type: user
+    - id: 3ad7f082-9f1d-4d9c-9739-4766d732a21a
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '4'
+        fileName: ce75fd3c-b439-4fe3-ab87-1d7f2b0217cf.jpg
+        locale: ja
+        createdAt: '2026-05-08T11:58:13+00:00'
+        updatedAt: '2026-05-08T11:58:13+00:00'
+        version: 1
+      relationships:
+      - id: 486d160a-5762-43a8-96cb-5b6eae57ffbd
+        type: manga
+      - id: 132c7600-c1bd-4263-bcaf-c0e0c1a644ab
+        type: user
+    - id: 0c8f3827-0a64-4f95-8492-31c62630fa99
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '5'
+        fileName: 79be5f85-a6c5-4263-b64d-6a1e34cb2fd0.jpg
+        locale: ja
+        createdAt: '2026-05-08T11:58:13+00:00'
+        updatedAt: '2026-05-08T11:58:13+00:00'
+        version: 1
+      relationships:
+      - id: 486d160a-5762-43a8-96cb-5b6eae57ffbd
+        type: manga
+      - id: 132c7600-c1bd-4263-bcaf-c0e0c1a644ab
+        type: user
+    - id: 79501527-4ba6-4cc8-a8e8-b9b192c4eb84
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '3'
+        fileName: 2db74e18-076b-4748-b216-b013d52c6dbc.jpg
+        locale: ja
+        createdAt: '2026-05-08T11:58:12+00:00'
+        updatedAt: '2026-05-08T11:58:12+00:00'
+        version: 1
+      relationships:
+      - id: 486d160a-5762-43a8-96cb-5b6eae57ffbd
+        type: manga
+      - id: 132c7600-c1bd-4263-bcaf-c0e0c1a644ab
+        type: user
+    - id: 5057ae8a-a639-459a-bed3-dffd7a34066e
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '1'
+        fileName: 2a5a2ff8-99e3-40e7-b4f1-47434a1754c9.jpg
+        locale: ja
+        createdAt: '2026-05-08T11:45:29+00:00'
+        updatedAt: '2026-05-08T11:45:29+00:00'
+        version: 1
+      relationships:
+      - id: 5351d174-cb9a-4073-8bb4-3094d364933f
+        type: manga
+      - id: f73d34f6-f678-4f8b-9dff-5c759d5fc767
+        type: user
+    limit: 5
+    offset: 0
+    total: 323214
+  body_text: null
+  body_b64: null

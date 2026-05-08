@@ -34,11 +34,15 @@ from animedex.models.manga import Chapter, Manga
 class MangaDexMangaAttributes(BackendRichModel):
     """The ``attributes`` block on a ``/manga/{id}`` resource."""
 
-    title: Optional[Dict[str, Optional[str]]] = None
-    altTitles: Optional[List[Dict[str, Optional[str]]]] = None
-    description: Optional[Dict[str, Optional[str]]] = None
+    # MangaDex usually returns description / title / links as
+    # ``{lang: text}`` maps but occasionally returns an empty list
+    # ``[]`` for description on bare-bones records. ``Any`` keeps the
+    # lossless round-trip valid across both shapes.
+    title: Optional[Any] = None
+    altTitles: Optional[List[Any]] = None
+    description: Optional[Any] = None
     isLocked: Optional[bool] = None
-    links: Optional[Dict[str, Optional[str]]] = None
+    links: Optional[Any] = None
     originalLanguage: Optional[str] = None
     lastVolume: Optional[str] = None
     lastChapter: Optional[str] = None
@@ -180,6 +184,28 @@ class MangaDexCover(BackendRichModel):
     source_tag: Optional[SourceTag] = None
 
 
+class MangaDexResource(BackendRichModel):
+    """Catch-all JSON:API resource for endpoints we wrap but have not
+    typed individually.
+
+    Used for ``/author/{id}`` / ``/group/{id}`` / ``/list/{id}`` /
+    ``/user/{id}`` / ``/manga/tag`` / ``/manga/{id}/recommendation``
+    / ``/statistics/manga/{id}`` / ``/statistics/chapter/{id}`` /
+    ``/statistics/group/{id}`` / ``/report/reasons/{category}`` /
+    ``/manga/{id}/aggregate``.
+    The shape is the same JSON:API resource envelope; ``attributes``
+    is left as a ``dict`` because the typed-attribute story for these
+    endpoints would multiply the model count without much downstream
+    benefit. ``extra='allow'`` round-trips every upstream key.
+    """
+
+    id: Optional[str] = None
+    type: Optional[str] = None
+    attributes: Optional[Dict[str, Any]] = None
+    relationships: Optional[List[Dict[str, Any]]] = None
+    source_tag: Optional[SourceTag] = None
+
+
 # ---------- helpers ----------
 
 
@@ -192,11 +218,15 @@ def _default_src() -> SourceTag:
     return SourceTag(backend="mangadex", fetched_at=datetime.now(timezone.utc))
 
 
-def _pick_localised(d: Optional[Dict[str, Optional[str]]]) -> Optional[str]:
+def _pick_localised(d: Any) -> Optional[str]:
     """Pick the most-readable string from a MangaDex
     language-keyed attribute. Order: ``en``, ``ja-ro``, ``ja``,
-    then any non-empty value."""
-    if not d:
+    then any non-empty value.
+
+    Tolerates non-dict inputs (the upstream occasionally returns an
+    empty list ``[]`` for missing description / links blocks).
+    """
+    if not d or not isinstance(d, dict):
         return None
     for key in ("en", "ja-ro", "ja"):
         v = d.get(key)

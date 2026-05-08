@@ -1,0 +1,75 @@
+metadata:
+  captured_at: '2026-05-08T13:01:08Z'
+  label: first
+  backend: mangadex
+  path_slug: author_by_id
+request:
+  method: GET
+  url: https://api.mangadex.org/author/cc0b9d92-2e66-477c-ad27-ae481fa3dc6f
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Fri, 08 May 2026 12:49:03 GMT
+    content-encoding: gzip
+    x-cache: HIT (fresh)
+    x-cache-age: '725.594'
+    x-cache-hits: '1'
+    x-cache-rid: 8763b816-e7c9-4875-af0a-7a97cd98f2df
+    accept-ranges: bytes
+    content-length: '338'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: f9545163-5b39-4463-83ca-dfb94ef7a19f
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: entity
+    data:
+      id: cc0b9d92-2e66-477c-ad27-ae481fa3dc6f
+      type: author
+      attributes:
+        name: Song Shu 200
+        imageUrl: null
+        biography: {}
+        twitter: null
+        pixiv: null
+        melonBook: null
+        fanBox: null
+        booth: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: null
+        createdAt: '2022-11-10T16:55:56+00:00'
+        updatedAt: '2022-11-10T20:17:57+00:00'
+        version: 2
+      relationships:
+      - id: b8b31598-ca6a-4872-a118-2aa4bb6ccd84
+        type: manga
+  body_text: null
+  body_b64: null

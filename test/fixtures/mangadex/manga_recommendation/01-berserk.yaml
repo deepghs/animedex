@@ -1,0 +1,233 @@
+metadata:
+  captured_at: '2026-05-08T13:00:53Z'
+  label: berserk
+  backend: mangadex
+  path_slug: manga_recommendation
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/801513ba-a712-498c-8f57-cae55b38cc92/recommendation
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=86400, stale-while-revalidate=15
+    date: Fri, 08 May 2026 11:33:34 GMT
+    content-encoding: gzip
+    x-cache: HIT (fresh)
+    x-cache-age: '5238.823'
+    x-cache-hits: '9'
+    x-cache-rid: d356668f-7ee8-4401-be1f-2ecb514592bb
+    accept-ranges: bytes
+    content-length: '1002'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 58e9e01b-55c7-46ef-bfcd-69cb1caa3eda
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_0164b90d-860e-45b0-876c-0ba89bb29200
+      type: manga_recommendation
+      attributes:
+        score: 0.7213532806978192
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 0164b90d-860e-45b0-876c-0ba89bb29200
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_14846783-dc71-4b23-90ae-d442c7f3dcb8
+      type: manga_recommendation
+      attributes:
+        score: 0.6857087957754029
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 14846783-dc71-4b23-90ae-d442c7f3dcb8
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_16dc43f3-d6ba-4154-b445-a9d2e674c0eb
+      type: manga_recommendation
+      attributes:
+        score: 0.6938983075239046
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 16dc43f3-d6ba-4154-b445-a9d2e674c0eb
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_2557db08-1d02-4dfc-83da-4e1a2b62d223
+      type: manga_recommendation
+      attributes:
+        score: 0.730172772950816
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 2557db08-1d02-4dfc-83da-4e1a2b62d223
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_33493b21-3e31-4b5a-9a8b-8abff89f0e73
+      type: manga_recommendation
+      attributes:
+        score: 0.696496395205406
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 33493b21-3e31-4b5a-9a8b-8abff89f0e73
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_36801362-0927-4901-9a91-8a85e73275e4
+      type: manga_recommendation
+      attributes:
+        score: 0.7634481093367159
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 36801362-0927-4901-9a91-8a85e73275e4
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_3bce4841-9f35-4a68-b10a-7403777cf0d9
+      type: manga_recommendation
+      attributes:
+        score: 0.6890024614354815
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 3bce4841-9f35-4a68-b10a-7403777cf0d9
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_4481002b-f65c-426a-8cb4-3a1bba1040c5
+      type: manga_recommendation
+      attributes:
+        score: 0.7215728543745616
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 4481002b-f65c-426a-8cb4-3a1bba1040c5
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_4a5d677d-e3ac-4c23-a6bf-bb92c984fee4
+      type: manga_recommendation
+      attributes:
+        score: 0.6887995058349425
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 4a5d677d-e3ac-4c23-a6bf-bb92c984fee4
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_4c1fce47-9d04-4c0c-a25c-30e068a0f60e
+      type: manga_recommendation
+      attributes:
+        score: 0.7230171776278377
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 4c1fce47-9d04-4c0c-a25c-30e068a0f60e
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_5ad9757a-3d14-4504-a6a7-56db27a38220
+      type: manga_recommendation
+      attributes:
+        score: 0.7039483982759783
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 5ad9757a-3d14-4504-a6a7-56db27a38220
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_7328c8ff-9c64-4b22-b2ca-e092f9b9c62f
+      type: manga_recommendation
+      attributes:
+        score: 0.7277233993601271
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 7328c8ff-9c64-4b22-b2ca-e092f9b9c62f
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_9cf439ab-6122-43cf-8ec2-8b3778577850
+      type: manga_recommendation
+      attributes:
+        score: 0.7410620271525016
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: 9cf439ab-6122-43cf-8ec2-8b3778577850
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_b9959adb-c7bc-4303-84c7-c4b6b2828c46
+      type: manga_recommendation
+      attributes:
+        score: 0.6830239472119696
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: b9959adb-c7bc-4303-84c7-c4b6b2828c46
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_ba322adf-e395-49ab-b8ae-4e5023620d6d
+      type: manga_recommendation
+      attributes:
+        score: 0.7116678608559592
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: ba322adf-e395-49ab-b8ae-4e5023620d6d
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_c7a47226-5e2a-47b8-9b35-728683d70faf
+      type: manga_recommendation
+      attributes:
+        score: 0.7677195143538343
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: c7a47226-5e2a-47b8-9b35-728683d70faf
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_d1e95047-af53-4565-b19d-5c67b0d8841a
+      type: manga_recommendation
+      attributes:
+        score: 0.744342866299617
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: d1e95047-af53-4565-b19d-5c67b0d8841a
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_d7e68212-e21d-400c-85c5-c7b5467e15ac
+      type: manga_recommendation
+      attributes:
+        score: 0.7048638389950377
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: d7e68212-e21d-400c-85c5-c7b5467e15ac
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_e14e3725-e74a-47d5-a57b-38f274af67a8
+      type: manga_recommendation
+      attributes:
+        score: 0.6967219360396602
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: e14e3725-e74a-47d5-a57b-38f274af67a8
+        type: manga
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92_ef1d242f-964f-429e-9ddc-9f0f485f8ab9
+      type: manga_recommendation
+      attributes:
+        score: 0.6830239472119696
+      relationships:
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: ef1d242f-964f-429e-9ddc-9f0f485f8ab9
+        type: manga
+    limit: 50
+    offset: 0
+    total: 20
+  body_text: null
+  body_b64: null

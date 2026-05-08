@@ -23,6 +23,7 @@ from animedex.backends.mangadex.models import (
     MangaDexChapter,
     MangaDexCover,
     MangaDexManga,
+    MangaDexResource,
 )
 from animedex.config import Config
 from animedex.models.common import ApiError, SourceTag
@@ -199,6 +200,233 @@ def cover(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexCover:
     return MangaDexCover.model_validate({**_data(payload), "source_tag": src})
 
 
+# ---------- /manga/<aux> ----------
+
+
+def aggregate(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexResource:
+    """Volume + chapter aggregation tree via ``/manga/{id}/aggregate``.
+
+    Returns the manga's chapters grouped by volume, structured as
+    ``volumes -> chapters -> count``. The shape is upstream-specific
+    (not a JSON:API resource); surfaces as :class:`MangaDexResource`
+    with attributes carrying the aggregation tree.
+    """
+    payload, src = _fetch(f"/manga/{id}/aggregate", config=config, **kw)
+    body = payload if isinstance(payload, dict) else {}
+    body.pop("result", None)  # envelope wrapper, leave the rest
+    return MangaDexResource.model_validate({"id": id, "type": "manga-aggregate", "attributes": body, "source_tag": src})
+
+
+def recommendation(id: str, *, config: Optional[Config] = None, **kw) -> List[MangaDexResource]:
+    """Manga recommendations for one manga via
+    ``/manga/{id}/recommendation``.
+    """
+    payload, src = _fetch(f"/manga/{id}/recommendation", config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def random_manga(*, config: Optional[Config] = None, **kw) -> MangaDexManga:
+    """Random manga via ``/manga/random``."""
+    payload, src = _fetch("/manga/random", config=config, **kw)
+    return MangaDexManga.model_validate({**_data(payload), "source_tag": src})
+
+
+def manga_tag(*, config: Optional[Config] = None, **kw) -> List[MangaDexResource]:
+    """The full tag taxonomy via ``/manga/tag``."""
+    payload, src = _fetch("/manga/tag", config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /chapter, /cover (collection search) ----------
+
+
+def chapter_search(*, limit: int = 10, offset: int = 0, config: Optional[Config] = None, **kw) -> List[MangaDexChapter]:
+    """Search chapters via ``/chapter``."""
+    params: Dict[str, Any] = {"limit": limit, "offset": offset}
+    payload, src = _fetch("/chapter", params=params, config=config, **kw)
+    return [MangaDexChapter.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def cover_search(*, limit: int = 10, offset: int = 0, config: Optional[Config] = None, **kw) -> List[MangaDexCover]:
+    """Search covers via ``/cover``."""
+    params: Dict[str, Any] = {"limit": limit, "offset": offset}
+    payload, src = _fetch("/cover", params=params, config=config, **kw)
+    return [MangaDexCover.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /author ----------
+
+
+def author_search(
+    *, limit: int = 10, offset: int = 0, name: Optional[str] = None, config: Optional[Config] = None, **kw
+) -> List[MangaDexResource]:
+    """Search authors via ``/author``."""
+    params: Dict[str, Any] = {"limit": limit, "offset": offset}
+    if name:
+        params["name"] = name
+    payload, src = _fetch("/author", params=params, config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def author(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexResource:
+    """One author by UUID via ``/author/{id}``."""
+    payload, src = _fetch(f"/author/{id}", config=config, **kw)
+    return MangaDexResource.model_validate({**_data(payload), "source_tag": src})
+
+
+# ---------- /group (scanlation group) ----------
+
+
+def group_search(
+    *, limit: int = 10, offset: int = 0, name: Optional[str] = None, config: Optional[Config] = None, **kw
+) -> List[MangaDexResource]:
+    """Search scanlation groups via ``/group``."""
+    params: Dict[str, Any] = {"limit": limit, "offset": offset}
+    if name:
+        params["name"] = name
+    payload, src = _fetch("/group", params=params, config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def group(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexResource:
+    """One scanlation group by UUID via ``/group/{id}``."""
+    payload, src = _fetch(f"/group/{id}", config=config, **kw)
+    return MangaDexResource.model_validate({**_data(payload), "source_tag": src})
+
+
+# ---------- /list (custom lists) ----------
+
+
+def list_show(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexResource:
+    """One custom list by UUID via ``/list/{id}``.
+
+    Public custom lists are anonymous-readable; private ones return
+    403 / 404 without a token.
+    """
+    payload, src = _fetch(f"/list/{id}", config=config, **kw)
+    return MangaDexResource.model_validate({**_data(payload), "source_tag": src})
+
+
+def list_feed(
+    id: str, *, limit: int = 10, offset: int = 0, config: Optional[Config] = None, **kw
+) -> List[MangaDexChapter]:
+    """Chapter feed for one custom list via ``/list/{id}/feed``."""
+    params: Dict[str, Any] = {"limit": limit, "offset": offset}
+    payload, src = _fetch(f"/list/{id}/feed", params=params, config=config, **kw)
+    return [MangaDexChapter.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /user (public read) ----------
+
+
+def user(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexResource:
+    """One user by UUID via ``/user/{id}`` (public profile)."""
+    payload, src = _fetch(f"/user/{id}", config=config, **kw)
+    return MangaDexResource.model_validate({**_data(payload), "source_tag": src})
+
+
+def user_lists(
+    id: str, *, limit: int = 10, offset: int = 0, config: Optional[Config] = None, **kw
+) -> List[MangaDexResource]:
+    """One user's public custom lists via ``/user/{id}/list``."""
+    params: Dict[str, Any] = {"limit": limit, "offset": offset}
+    payload, src = _fetch(f"/user/{id}/list", params=params, config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /statistics ----------
+
+
+def statistics_manga(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexResource:
+    """Read / follow / rating stats for one manga via
+    ``/statistics/manga/{id}``."""
+    payload, src = _fetch(f"/statistics/manga/{id}", config=config, **kw)
+    body = payload if isinstance(payload, dict) else {}
+    body.pop("result", None)
+    return MangaDexResource.model_validate(
+        {"id": id, "type": "manga-statistics", "attributes": body, "source_tag": src}
+    )
+
+
+def statistics_manga_batch(
+    *, manga: Optional[List[str]] = None, config: Optional[Config] = None, **kw
+) -> MangaDexResource:
+    """Stats for many manga at once via
+    ``/statistics/manga?manga[]=<id>&manga[]=...``."""
+    params: Dict[str, Any] = {}
+    if manga:
+        params["manga[]"] = list(manga)
+    payload, src = _fetch("/statistics/manga", params=params, config=config, **kw)
+    body = payload if isinstance(payload, dict) else {}
+    body.pop("result", None)
+    return MangaDexResource.model_validate(
+        {"id": None, "type": "manga-statistics-batch", "attributes": body, "source_tag": src}
+    )
+
+
+def statistics_chapter(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexResource:
+    """Read stats for one chapter via ``/statistics/chapter/{id}``."""
+    payload, src = _fetch(f"/statistics/chapter/{id}", config=config, **kw)
+    body = payload if isinstance(payload, dict) else {}
+    body.pop("result", None)
+    return MangaDexResource.model_validate(
+        {"id": id, "type": "chapter-statistics", "attributes": body, "source_tag": src}
+    )
+
+
+def statistics_chapter_batch(
+    *, chapter: Optional[List[str]] = None, config: Optional[Config] = None, **kw
+) -> MangaDexResource:
+    """Stats for many chapters at once via
+    ``/statistics/chapter?chapter[]=<id>&chapter[]=...``."""
+    params: Dict[str, Any] = {}
+    if chapter:
+        params["chapter[]"] = list(chapter)
+    payload, src = _fetch("/statistics/chapter", params=params, config=config, **kw)
+    body = payload if isinstance(payload, dict) else {}
+    body.pop("result", None)
+    return MangaDexResource.model_validate(
+        {"id": None, "type": "chapter-statistics-batch", "attributes": body, "source_tag": src}
+    )
+
+
+def statistics_group(id: str, *, config: Optional[Config] = None, **kw) -> MangaDexResource:
+    """Stats for one scanlation group via ``/statistics/group/{id}``."""
+    payload, src = _fetch(f"/statistics/group/{id}", config=config, **kw)
+    body = payload if isinstance(payload, dict) else {}
+    body.pop("result", None)
+    return MangaDexResource.model_validate(
+        {"id": id, "type": "group-statistics", "attributes": body, "source_tag": src}
+    )
+
+
+# ---------- /report ----------
+
+
+def report_reasons(category: str, *, config: Optional[Config] = None, **kw) -> List[MangaDexResource]:
+    """Available report reasons for a category via
+    ``/report/reasons/{category}``.
+
+    Categories: ``manga`` / ``chapter`` / ``scanlation_group`` /
+    ``user`` / ``author``.
+    """
+    payload, src = _fetch(f"/report/reasons/{category}", config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /ping ----------
+
+
+def ping(*, config: Optional[Config] = None, **kw) -> str:
+    """Liveness probe via ``/ping``. Returns the upstream's plain
+    text body (typically ``"pong"``) so callers can confirm the
+    upstream is reachable cheaply."""
+    raw = _raw_mangadex.call(path="/ping", config=config, **kw)
+    if raw.body_text is None:  # pragma: no cover - ping always returns text
+        return ""
+    return raw.body_text.strip()
+
+
 def selftest() -> bool:
     """Smoke-test the public MangaDex Python API (signatures only,
     no network).
@@ -208,7 +436,34 @@ def selftest() -> bool:
     """
     import inspect
 
-    public_callables = [show, search, feed, chapter, cover]
+    public_callables = [
+        show,
+        search,
+        feed,
+        chapter,
+        cover,
+        aggregate,
+        recommendation,
+        random_manga,
+        manga_tag,
+        chapter_search,
+        cover_search,
+        author_search,
+        author,
+        group_search,
+        group,
+        list_show,
+        list_feed,
+        user,
+        user_lists,
+        statistics_manga,
+        statistics_manga_batch,
+        statistics_chapter,
+        statistics_chapter_batch,
+        statistics_group,
+        report_reasons,
+        ping,
+    ]
     for fn in public_callables:
         sig = inspect.signature(fn)
         assert "config" in sig.parameters, f"{fn.__name__} missing config kwarg"

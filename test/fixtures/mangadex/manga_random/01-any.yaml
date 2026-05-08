@@ -1,0 +1,111 @@
+metadata:
+  captured_at: '2026-05-08T13:00:56Z'
+  label: any
+  backend: mangadex
+  path_slug: manga_random
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/random
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Fri, 08 May 2026 13:00:56 GMT
+    x-ratelimit-remaining: '59'
+    x-ratelimit-retry-after: '1778245255'
+    x-ratelimit-limit: '60'
+    x-ratelimit-retry-in: '-1'
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '784'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 3e4c443b-60da-417a-8e80-c7ad99754fdf
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: entity
+    data:
+      id: 937d300d-f303-431f-9448-50d18b61237d
+      type: manga
+      attributes:
+        title:
+          en: 'DEATHSCYTHE: Evil God Hunting'
+        altTitles:
+        - ja-ro: Death Scythe - Akujin Kari
+        - ja: DEATHSCYTHE 悪神狩り
+        - ja-ro: Deathscythe - Akujin Kari
+        - zh: 惡神獵人
+        description: []
+        isLocked: false
+        links:
+          mu: 5epq83v
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: '3'
+        lastChapter: ''
+        publicationDemographic: shounen
+        status: completed
+        year: 2004
+        contentRating: safe
+        tags:
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: []
+            group: genre
+            version: 1
+          relationships: []
+        - id: 39730448-9a5f-48a2-85b0-a70db87b1233
+          type: tag
+          attributes:
+            name:
+              en: Demons
+            description: []
+            group: theme
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2023-10-10T02:57:35+00:00'
+        updatedAt: '2023-10-10T02:57:56+00:00'
+        version: 2
+        availableTranslatedLanguages: []
+        latestUploadedChapter: null
+      relationships:
+      - id: b9ad6491-347a-44b8-b843-26524c0ae2c7
+        type: author
+      - id: b9ad6491-347a-44b8-b843-26524c0ae2c7
+        type: artist
+      - id: 5e6f1a35-b23d-4e63-96b6-ba45c36eaeda
+        type: cover_art
+      - id: 6735a10b-b222-4fc1-9c44-dfea768c9f2e
+        type: manga
+        related: sequel
+      - id: ecf379e6-bc34-42c4-b25d-63698875cdfb
+        type: creator
+  body_text: null
+  body_b64: null
