@@ -211,6 +211,56 @@ If a backend has a meaningful online check (e.g. AniList GraphQL liveness, Manga
 
 A pull request that adds a static resource without an accompanying smoke test should not land. Reviewers must check for this explicitly; the lint cannot, because "module gained an asset" is not a syntactic property. If you find yourself shipping resources without smoke coverage, document the reason in the commit body rather than slipping it past review.
 
+## 9bis. Test Discipline (the only legal seam is HTTP)
+
+This rule sits next to selftest because both exist for the same reason: regression coverage that **actually exercises the code path the user runs**. Selftest covers smoke; this rule covers unit tests.
+
+### Rule 9bis.1 - mock at the wire, never above it
+
+Every CLI test, every Python-API test, every mapper test, every renderer test runs the real animedex stack. The only thing the test is allowed to substitute is the **HTTP transport layer** (the per-call request/response). Use the `responses` library (or an equivalent that intercepts at the `requests.adapters.HTTPAdapter` level). Then everything between Click → entry-module wrapper → public Python API (`animedex.backends.<x>.<fn>`) → backend mapper → `_dispatch.call` → URL composer → header injector → cache → rate-limit bucket → firewall → response renderer runs **for real**, against **real fixture data** captured from the upstream.
+
+This rule has teeth. If a test writes `monkeypatch.setattr(animedex.backends.<x>, "<fn>", stub)` it is **forbidden** — it bypasses the entire stack the user will actually run. The same applies to `monkeypatch.setattr(animedex.api.<x>, "call", stub)` (mocks the dispatcher entry, also above the wire) and to any seam that sits inside `animedex/`. Tests that monkey-patch project code instead of HTTP **mask the bugs they exist to catch** - the canonical example being review-found `call() got an unexpected keyword argument 'config'`, which the original Phase-2 CLI tests did not catch precisely because they replaced `backends.jikan.show` with a lambda before the buggy `_fetch → api.jikan.call` wiring ran.
+
+The seam-of-record is HTTP for one reason: HTTP is the **only** layer animedex's tests share with reality. Every byte going out matches what the user's process will send; every byte coming back matches what the upstream's response will be (or what the captured fixture says it would be). Anything above the wire is project code, and project code is the system under test.
+
+The rule applies even when it is annoying:
+* "I can't easily reproduce the upstream response" - capture a fixture (see `tools/fixtures/capture.py` and the per-backend `run_*.py`).
+* "The fixture corpus doesn't have the shape I want" - extend the corpus, then write the test against it.
+* "It's faster to mock the function" - it is also faster to ship a regression. Pay the cost up front.
+
+The narrow legitimate exception: the dispatcher's own unit tests under `test/api/test_dispatch.py` may mock `requests.Session.request` directly (which is HTTP-level monkey-patching, not function-level) for tests that target the dispatcher's internal behaviour (timing, redirect chain, redaction, cache write). These tests still go through the real dispatcher; they just substitute the very layer the dispatcher's job is to wrap.
+
+### Rule 9bis.2 - fixture-driven, not synthesised
+
+Where the test needs a representative upstream response, **load it from `test/fixtures/`**, do not hand-craft a JSON skeleton. Fixtures are real upstream responses (688 of them as of Phase 2), captured at known moments via the project's capture tools. Hand-crafted skeletons drift from the upstream's actual schema (missing fields, wrong nullability, wrong types) and produce tests that pass while the production path crashes.
+
+When a new test needs a shape the corpus doesn't have, capture a new fixture before writing the test. The capture tools take 30 seconds per request and the result becomes shared infrastructure for every future test.
+
+### Rule 9bis.3 - what every CLI / Python-API test must look like
+
+A passing Phase-2-and-beyond test goes through this exact shape:
+
+```python
+import responses, yaml
+from click.testing import CliRunner
+from pathlib import Path
+
+def test_jikan_show_runs(fake_clock):  # fake_clock fixture freezes ratelimit + cache clocks
+    fixture = yaml.safe_load(Path("test/fixtures/jikan/anime_full/01-frieren-52991.yaml").read_text(encoding="utf-8"))
+    with responses.RequestsMock() as rsps:
+        rsps.add(responses.GET, fixture["request"]["url"], json=fixture["response"]["body_json"], status=fixture["response"]["status"])
+        from animedex.entry import animedex_cli
+        result = CliRunner().invoke(animedex_cli, ["jikan", "show", "52991", "--json", "--no-cache"])
+    assert result.exit_code == 0
+    # assertions over the rendered output go here
+```
+
+There is no `monkeypatch.setattr(backends...)`, no `monkeypatch.setattr(api.<x>, "call", ...)`. The fake_clock fixture is the only "infrastructure" mock — it patches the **monotonic clock** so ratelimit doesn't actually sleep — and that is HTTP-adjacent, not above-HTTP.
+
+### Rule 9bis.4 - apply this retroactively
+
+When you touch a test file that violates this rule, rewrite the affected test on the way through. Tests that pass while masking real bugs are worse than no tests at all - they generate false confidence.
+
 ## 10. Python Docstring Style Guide
 
 Use **reStructuredText (reST)** format exclusively, following PEP 257 and Sphinx standards. Every public module, class, function, and method gets a docstring; reST roles cross-link them.

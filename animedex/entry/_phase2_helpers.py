@@ -185,36 +185,41 @@ def register_subcommand(
     sig = inspect.signature(fn)
     skip = {"config", "no_cache", "cache_ttl", "rate", "session", "cache", "rate_limit_registry"}
 
-    decorators = []
-    for pname, param in sig.parameters.items():
-        if pname in skip:
-            continue
-        if param.kind == inspect.Parameter.VAR_KEYWORD:
-            continue
-        if param.default is inspect.Parameter.empty:
-            decorators.append(click.argument(pname))
-        else:
-            ptype = type(param.default) if param.default is not None else str
-            if ptype is bool:
-                decorators.append(
-                    click.option(f"--{pname.replace('_', '-')}", pname, is_flag=True, default=param.default)
-                )
-            else:
-                py_type = param.annotation if param.annotation is not inspect.Parameter.empty else type(param.default)
-                # narrow to click-supported types
-                if py_type in (int, float, str, bool):
-                    click_type = py_type
-                else:
-                    click_type = str
-                decorators.append(
-                    click.option(
-                        f"--{pname.replace('_', '-')}",
-                        pname,
-                        default=param.default,
-                        type=click_type,
-                        show_default=True,
-                    )
-                )
+    # Resolve forward-reference annotations (the backends use
+    # ``from __future__ import annotations`` so e.g. ``per_page: int``
+    # arrives as the *string* ``'int'`` in inspect.signature). Without
+    # ``get_type_hints`` we'd fall through to ``click_type=str`` for
+    # every typed kwarg, and the int-comparison code paths inside the
+    # mapper would crash with TypeError("'<' not supported between
+    # instances of 'int' and 'str'") at runtime.
+    try:
+        resolved_hints = inspect.get_annotations(fn, eval_str=True)  # py3.10+
+    except (NameError, AttributeError):
+        from typing import get_type_hints as _th
+
+        try:
+            resolved_hints = _th(fn)
+        except Exception:
+            resolved_hints = {}
+
+    def _click_type(annotation, default):
+        """Map a (possibly resolved) annotation + default to a Click
+        scalar type. Falls back to str for unknown types."""
+        # Direct int/float/str/bool
+        if annotation in (int, float, str, bool):
+            return annotation
+        # Optional[X] / Union[X, None]
+        origin = getattr(annotation, "__origin__", None)
+        if origin is not None:
+            type_args = [a for a in getattr(annotation, "__args__", ()) if a is not type(None)]
+            if len(type_args) == 1 and type_args[0] in (int, float, str, bool):
+                return type_args[0]
+        # Fall back to default's runtime type, but only if it is a
+        # primitive scalar. Otherwise plain str so Click can still
+        # accept user input.
+        if default is not None and type(default) in (int, float, str, bool):
+            return type(default)
+        return str
 
     summary = (help or (fn.__doc__ or fn.__name__).strip().split("\n", 1)[0]).rstrip(".") + "."
     backend = group.name  # group is named "anilist" / "jikan" / "trace"
@@ -236,8 +241,6 @@ def register_subcommand(
                 return fn
         return fn
 
-    @group.command(name=name, help=summary)
-    @common_phase2_options
     def _cmd(json_flag, jq_expr, no_cache, cache_ttl, rate, no_source, **kwargs):
         cfg = Config(
             no_cache=no_cache,
@@ -251,19 +254,58 @@ def register_subcommand(
             raise click.ClickException(str(exc))
         emit(result, json_flag=json_flag, jq_expr=jq_expr, no_source=no_source)
 
-    # Inject the policy-compliant docstring AFTER click.command() so
-    # that inspect.getdoc() (which the policy lint uses) sees the
-    # full three-block structure but Click's --help (which stops at
-    # ``\f``) shows only the summary.
-    _cmd.__doc__ = _build_policy_docstring(name, summary, backend)
-    if hasattr(_cmd, "callback") and _cmd.callback is not None:
-        _cmd.callback.__doc__ = _cmd.__doc__
-    if hasattr(_cmd, "help"):
-        _cmd.help = _cmd.__doc__
+    # Apply decorators bottom-up (closest to function = innermost).
+    # Click reads decorators outer-to-inner for positional argument
+    # order, so the LAST decorator applied is the FIRST argument
+    # consumed from argv. Therefore we apply common_phase2_options
+    # first (innermost), then keyword options, then positional
+    # arguments in REVERSE source order (so argument(year) ends up
+    # outermost and gets argv[0]).
+    cmd_fn = common_phase2_options(_cmd)
+    arg_decs = []
+    opt_decs = []
+    for pname, param in sig.parameters.items():
+        if pname in skip:
+            continue
+        if param.kind == inspect.Parameter.VAR_KEYWORD:
+            continue
+        annotation = resolved_hints.get(pname, param.annotation)
+        if param.default is inspect.Parameter.empty:
+            arg_type = _click_type(annotation, None) if annotation is not inspect.Parameter.empty else str
+            arg_decs.append(click.argument(pname, type=arg_type))
+        elif isinstance(param.default, bool):
+            opt_decs.append(click.option(f"--{pname.replace('_', '-')}", pname, is_flag=True, default=param.default))
+        else:
+            click_type = _click_type(annotation, param.default)
+            opt_decs.append(
+                click.option(
+                    f"--{pname.replace('_', '-')}",
+                    pname,
+                    default=param.default,
+                    type=click_type,
+                    show_default=True,
+                )
+            )
 
-    # Apply argument decorators in reverse so the resulting Click
-    # command's positional argument order matches the function's.
-    for dec in reversed(decorators):
-        _cmd = dec(_cmd)
+    # Inner-to-outer: options first (in any order), then arguments in
+    # REVERSE so the first source-order argument ends up outermost.
+    for opt in opt_decs:
+        cmd_fn = opt(cmd_fn)
+    for arg in reversed(arg_decs):
+        cmd_fn = arg(cmd_fn)
 
-    return _cmd
+    # Now register with the group. group.command(name) returns a
+    # decorator that converts the function into a click.Command.
+    cmd = group.command(name=name, help=summary)(cmd_fn)
+
+    # Inject policy-compliant docstring (Backend / Rate limit /
+    # Agent Guidance) so the policy lint stays green. ``\f`` cuts
+    # the policy blocks off Click's --help; ``inspect.getdoc`` (used
+    # by the lint) keeps them.
+    full_doc = _build_policy_docstring(name, summary, backend)
+    cmd.__doc__ = full_doc
+    if cmd.callback is not None:
+        cmd.callback.__doc__ = full_doc
+    cmd.help = full_doc
+
+    return cmd
