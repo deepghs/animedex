@@ -53,25 +53,26 @@ class TestEmit:
         assert "_meta" not in decoded
 
     def test_jq_filter_applied(self, capsys, monkeypatch):
-        # Skip if jq is not on PATH
-        import shutil
-
-        if shutil.which("jq") is None:
-            pytest.skip("jq not installed")
-
+        """``--jq`` runs the rendered JSON through the native wheel.
+        No PATH lookup, no subprocess; the wheel ships with the
+        package."""
         from animedex.entry._cli_factory import emit
 
         emit(self._model(), json_flag=True, jq_expr=".title.romaji", no_source=False)
         out = capsys.readouterr().out.strip()
         assert out == '"Sample"'
 
-    def test_jq_missing_falls_back_with_warning(self, capsys, monkeypatch):
-        from animedex.entry import _cli_factory
+    def test_jq_compile_error_surfaces_as_click_exception(self, capsys, monkeypatch):
+        """A bad expression is surfaced as a clean Click error rather
+        than a leaked ApiError or Python traceback."""
+        import click
 
-        monkeypatch.setattr(_cli_factory, "shutil", type("M", (), {"which": staticmethod(lambda x: None)}))
-        _cli_factory.emit(self._model(), json_flag=True, jq_expr=".x", no_source=False)
-        captured = capsys.readouterr()
-        assert "jq not on PATH" in captured.err
+        from animedex.entry._cli_factory import emit
+
+        with pytest.raises(click.ClickException) as ei:
+            emit(self._model(), json_flag=True, jq_expr="{[malformed", no_source=False)
+        # The message carries the typed prefix from ApiError's __str__.
+        assert "jq" in str(ei.value.message).lower()
 
     def test_list_renders_as_json_array(self, capsys, monkeypatch):
         from animedex.entry._cli_factory import emit

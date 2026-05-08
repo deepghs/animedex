@@ -362,16 +362,11 @@ class TestCliFactory:
         assert opt.type.name in ("text", "string")
 
     def test_jq_error_path(self, cli_runner, cli, fake_clock):
-        """A jq filter with a bad expression errors out via
-        click.ClickException."""
-        import shutil
-
-        if shutil.which("jq") is None:
-            pytest.skip("jq not installed")
-
+        """A jq filter with a syntactically bad expression surfaces
+        as a Click error (exit non-zero, no Python traceback).
+        ``--jq`` runs through the bundled wheel, so this no longer
+        needs to skip on hosts without :program:`jq`."""
         fixture = yaml.safe_load((FIXTURES / "anilist" / "media" / "01-media-frieren.yaml").read_text(encoding="utf-8"))
-        # Register without body-matching (the fixture's captured query
-        # may drift from the live query; we only need the response).
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
             from tools.fixtures.capture import fixture_response_bytes
 
@@ -387,10 +382,11 @@ class TestCliFactory:
                 cli,
                 ["anilist", "show", "154587", "--no-cache", "--jq", "{[malformed"],
             )
-        # ``_apply_jq`` raises click.ClickException → exit non-zero
+        # The native wheel raises ApiError(reason="jq-failed"); _cmd
+        # rewraps as ClickException → exit non-zero.
         assert result.exit_code != 0
-        # The "jq error:" prefix is echoed to stderr by L105
-        assert "jq error" in result.output.lower() or "jq" in (result.stderr or "").lower()
+        assert "Traceback" not in (result.output or "")
+        assert "jq" in (result.output or "").lower()
 
 
 # ---------- render/tty.py edge cases ----------

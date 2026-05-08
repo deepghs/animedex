@@ -87,6 +87,12 @@ HIDDEN_IMPORTS = [
     # path, especially on stripped builds.
     "pydantic_core",
     "pydantic_core._pydantic_core",
+    # The :pypi:`jq` wheel is a Cython binding to libjq; PyInstaller
+    # has no auto-hook for it, so the C extension and its module
+    # init must be listed explicitly. ``animedex.render.jq`` does a
+    # local ``import jq`` only at first call site, which the static
+    # analyser misses.
+    "jq",
 ]
 
 

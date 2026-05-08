@@ -99,7 +99,7 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.render.json_renderer",
     "animedex.render.tty",
     "animedex.render.field_projection",
-    "animedex.render.jq_filter",
+    "animedex.render.jq",
     "animedex.policy",
     "animedex.policy.lint",
     "animedex.mcp",

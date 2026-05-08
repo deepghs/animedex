@@ -307,11 +307,10 @@ class TestAnilistShowDeep:
         assert "_source" not in decoded
 
     def test_frieren_jq_filter(self, cli_runner, cli, fake_clock):
-        import shutil
-
-        if shutil.which("jq") is None:
-            pytest.skip("jq not installed")
-
+        """``--jq`` runs through the bundled wheel — no PATH lookup,
+        no subprocess. The same test used to ``pytest.skip`` when
+        host :program:`jq` wasn't installed; the wheel is now a
+        runtime dep so it always runs."""
         fixture = _load_fixture("anilist/media/01-media-frieren.yaml")
 
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
