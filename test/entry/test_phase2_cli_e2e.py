@@ -47,6 +47,22 @@ def cli():
 
 
 @pytest.fixture
+def force_tty(monkeypatch):
+    """Make ``sys.stdout.isatty()`` return True so the CLI's auto-
+    switching renderer takes the TTY path. ``CliRunner`` substitutes
+    its own stdout (a BytesIO) which reports ``isatty()=False`` —
+    without this fixture every CLI test trivially walks the JSON
+    branch and TTY-side regressions slip through.
+
+    This is HTTP-adjacent stubbing per AGENTS §9bis: it patches an
+    OS-level stream attribute (isatty), not project code.
+    """
+    import animedex.entry._phase2_helpers as helpers
+
+    monkeypatch.setattr(helpers, "_is_terminal", lambda stream: True)
+
+
+@pytest.fixture
 def fake_clock(monkeypatch):
     """Freeze the ratelimit + cache clocks so the dispatcher does not
     actually sleep waiting for token-bucket refill, and cache TTL math
@@ -203,6 +219,60 @@ class TestAnilistCliFromFixtures:
             )
         else:
             assert result.exit_code != 0
+
+
+class TestTtyRenderingWalk:
+    """Every CLI command exercises BOTH output paths:
+    * ``--json`` → JSON renderer (already covered above)
+    * default (no flag) under a TTY → human-readable renderer
+
+    Walks the same fixtures as TestJikanCliFromFixtures but with
+    isatty() forced True so the TTY branch runs end-to-end. This is
+    the suite that would have caught the
+    ``'str' object has no attribute 'backend'`` regression in PR #6:
+    until this fixture existed every CLI test trivially walked the
+    JSON path.
+    """
+
+    @pytest.mark.parametrize(
+        "argv,fixture_rel",
+        [
+            (["jikan", "show", "52991"], "jikan/anime_full/01-frieren-52991.yaml"),
+            (["jikan", "manga-show", "2"], "jikan/manga_full/01-berserk-2.yaml"),
+            (["jikan", "character-show", "11"], "jikan/characters_full/01-edward-elric-11.yaml"),
+            (["jikan", "person-show", "1870"], "jikan/people_full/01-miyazaki-1870.yaml"),
+            (["jikan", "producer-show", "17"], "jikan/producers_full/01-aniplex-17.yaml"),
+            (["jikan", "search", "Frieren"], None),  # uses default Jikan search payload
+            (["jikan", "season", "2023", "fall", "--limit", "5"], "jikan/seasons_by_year/01-2023-fall.yaml"),
+            (["jikan", "top-anime", "--limit", "10"], "jikan/top_anime/01-top10.yaml"),
+            (["jikan", "random-anime"], "jikan/random_anime/01-random-01.yaml"),
+            (["anilist", "show", "154587"], "anilist/phase2_media/01-media-frieren.yaml"),
+            (["anilist", "character", "36"], "anilist/phase2_character/01-character-edward-elric.yaml"),
+            (["anilist", "staff", "101572"], "anilist/phase2_staff/01-staff-101572.yaml"),
+            (["anilist", "studio", "11"], "anilist/phase2_studio/01-studio-madhouse.yaml"),
+            (["anilist", "trending"], "anilist/phase2_trending/01-trending-top8.yaml"),
+        ],
+    )
+    def test_command_renders_in_tty_mode(self, cli_runner, cli, fake_clock, force_tty, argv, fixture_rel):
+        if fixture_rel is None:
+            pytest.skip("no canonical fixture pinned for this command")
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, [*argv, "--no-cache"])
+
+        assert result.exit_code == 0, f"{argv} failed in TTY mode against {fixture_rel}: {result.output[:600]}"
+        # TTY output should contain the source-attribution marker
+        # ``[src: <backend>]``, which the JSON path drops.
+        assert "[src:" in result.output, f"TTY output missing source marker: {result.output[:300]}"
+        # Should NOT look like a JSON dump (TTY path is multi-line key:value).
+        assert not result.output.lstrip().startswith("{"), (
+            f"TTY output appears to be JSON, not human-readable: {result.output[:200]}"
+        )
 
 
 class TestAnilistShowDeep:

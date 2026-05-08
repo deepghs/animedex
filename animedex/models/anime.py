@@ -184,6 +184,12 @@ class Anime(AnimedexModel):
     :ivar age_rating: Free-form rating string (e.g. ``"PG-13"``,
                        ``"TV-MA"``); upstream vocabularies vary.
     :vartype age_rating: str or None
+    :ivar title_synonyms: Alternative-language / fan-translation
+                            titles. Filled from Jikan ``title_synonyms``
+                            (transliterations, English short forms)
+                            and AniList ``synonyms`` (community-
+                            contributed titles).
+    :vartype title_synonyms: list of str
     :ivar popularity: Popularity metric; the meaning is upstream-
                        specific (rank, favourites, member count).
     :vartype popularity: int or None
@@ -227,6 +233,7 @@ class Anime(AnimedexModel):
     country_of_origin: Optional[str] = None
     is_adult: Optional[bool] = None
     age_rating: Optional[str] = None
+    title_synonyms: List[str] = []
     popularity: Optional[int] = None
     favourites: Optional[int] = None
     trending: Optional[int] = None

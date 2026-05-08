@@ -38,6 +38,7 @@ from __future__ import annotations
 _MEDIA_FIELDS = """
 id idMal
 title { romaji english native }
+synonyms
 type format status episodes duration
 season seasonYear
 startDate { year month day }

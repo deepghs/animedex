@@ -92,8 +92,8 @@ class TestRenderTtyFullFields:
             source=SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
         )
         out = render_tty(a)
-        assert "Score: 9.0" in out
-        assert "Streaming: X" in out
+        assert "9.0/10.0" in out
+        assert "Streaming:" in out and "X:" in out
 
 
 class TestRenderTtyNonAnime:

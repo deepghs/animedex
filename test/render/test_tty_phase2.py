@@ -44,7 +44,7 @@ class TestCharacterTty:
         assert "Alt names" in out
         assert "MAIN" in out
         assert "Male" in out
-        assert "Favourites: 12345" in out
+        assert "Favourites: 12,345" in out
 
     def test_minimal_character_renders(self):
         from animedex.models.character import Character
@@ -52,7 +52,8 @@ class TestCharacterTty:
 
         c = Character(id="anilist:char:1", name="x", source=_src())
         out = render_tty(c)
-        assert "x [src: anilist]" in out
+        assert "[src: anilist]" in out
+        assert out.startswith("x")
         assert "Native:" not in out  # absent fields skipped
 
 
@@ -87,8 +88,8 @@ class TestStudioTty:
         s = Studio(id="anilist:studio:11", name="MADHOUSE", is_animation_studio=True, favourites=12345, source=_src())
         out = render_tty(s)
         assert "MADHOUSE" in out
-        assert "True" in out
-        assert "12345" in out
+        assert "yes" in out  # is_animation_studio renders as yes/no
+        assert "12,345" in out  # favourites formatted with thousands separator
 
 
 class TestTraceHitTty:

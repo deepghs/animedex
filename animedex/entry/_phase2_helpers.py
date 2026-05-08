@@ -18,7 +18,7 @@ import click
 from animedex.config import Config
 from animedex.models.common import AnimedexModel, ApiError
 from animedex.render.json_renderer import render_json
-from animedex.render.tty import render_for_stream
+from animedex.render.tty import render_tty
 
 
 # ---------- shared options ----------
@@ -69,11 +69,15 @@ def _to_json_text(model_or_list, *, include_source: bool) -> str:
 
 
 def _to_tty_text(model_or_list) -> str:
-    """Render a model (or list) as TTY text."""
+    """Render a model (or list) as TTY text. Calls
+    :func:`animedex.render.tty.render_tty` directly so the ``emit``
+    caller's ``use_json`` decision is honoured — going through
+    ``render_for_stream`` would re-check isatty(stdout) and bounce
+    list[Anime] into the JSON branch when stdout isn't a real TTY."""
     if isinstance(model_or_list, list):
         return "\n".join(_to_tty_text(item) for item in model_or_list)
     if isinstance(model_or_list, AnimedexModel):
-        return render_for_stream(model_or_list, sys.stdout)
+        return render_tty(model_or_list)
     return str(model_or_list)
 
 
@@ -184,6 +188,11 @@ def register_subcommand(
     """
     sig = inspect.signature(fn)
     skip = {"config", "no_cache", "cache_ttl", "rate", "session", "cache", "rate_limit_registry"}
+    # Conventional optional-positional kwarg names. ``jikan search
+    # Frieren`` must work even though ``jikan.search(q=None)`` is
+    # technically a kwarg with a default. We promote these by name to
+    # positional-optional Click arguments so the CLI feels natural.
+    positional_optional_names = {"q", "query", "search"}
 
     # Resolve forward-reference annotations (the backends use
     # ``from __future__ import annotations`` so e.g. ``per_page: int``
@@ -273,6 +282,12 @@ def register_subcommand(
         if param.default is inspect.Parameter.empty:
             arg_type = _click_type(annotation, None) if annotation is not inspect.Parameter.empty else str
             arg_decs.append(click.argument(pname, type=arg_type))
+        elif pname in positional_optional_names and param.default is None:
+            # Promote q / query / search to positional-optional. Lets
+            # ``jikan search Frieren`` parse Frieren as q while
+            # ``jikan top-anime`` (no positional) still works.
+            arg_type = _click_type(annotation, None)
+            arg_decs.append(click.argument(pname, type=arg_type, required=False))
         elif isinstance(param.default, bool):
             opt_decs.append(click.option(f"--{pname.replace('_', '-')}", pname, is_flag=True, default=param.default))
         else:

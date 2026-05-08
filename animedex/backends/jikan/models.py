@@ -256,6 +256,7 @@ class JikanAnime(AnimedexModel):
             aired_from=self._parse_iso_date(self.aired.from_ if self.aired else None),
             aired_to=self._parse_iso_date(self.aired.to if self.aired else None),
             duration_minutes=self._parse_duration_minutes(self.duration),
+            title_synonyms=list(self.title_synonyms),
             cover_image_url=cover,
             trailer_url=(self.trailer.url if self.trailer else None),
             source_material=(self.source.lower() if self.source else None),

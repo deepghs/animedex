@@ -261,6 +261,26 @@ There is no `monkeypatch.setattr(backends...)`, no `monkeypatch.setattr(api.<x>,
 
 When you touch a test file that violates this rule, rewrite the affected test on the way through. Tests that pass while masking real bugs are worse than no tests at all - they generate false confidence.
 
+### Rule 9bis.5 - the principle of minimal mocking (the one that wins ties)
+
+When in doubt about how much to mock, **mock less**. The legal seams are exactly two:
+
+1. **HTTP transport** (via the ``responses`` library or equivalent ``requests.adapters.HTTPAdapter``-level interception). This is the line between "our code" and "their code".
+2. **OS-level I/O attributes that aren't our code** — the monotonic clock that the rate limiter sleeps against (``animedex.transport.ratelimit._monotonic`` / ``_sleep``), the cache module's ``_utcnow``, and ``sys.stdout.isatty`` when a test needs to exercise the TTY-vs-pipe auto-switch. These are wrappers around OS calls; they are not project logic.
+
+Anything else — a backend Python API function, a mapper, a renderer, a Click wrapper, a dispatcher entry point — is project code, and mocking it disables the system under test. **Do not do it.** A test that mocks ``animedex.backends.jikan.show`` proves nothing about whether ``animedex jikan show`` works on a user's machine, because the function it replaced is exactly the function the user runs.
+
+If the test feels hard to write under this constraint, the constraint is doing its job — the production code is too coupled or the test setup wants a fixture that doesn't exist yet. Solve those, not the constraint.
+
+### Rule 9bis.6 - exercise every output mode
+
+Every CLI command has at least two output paths: ``--json`` (forced JSON) and the default (TTY-vs-pipe auto-switch). Renderer regressions in one path do not surface in the other. **Every CLI command must be exercised in both modes.** Specifically:
+
+* The default-output path needs ``isatty()=True`` to be forced, because ``CliRunner`` substitutes a pipe-shaped stdout and the auto-switch silently routes to JSON.
+* The JSON path passes ``--json`` explicitly.
+
+If your test only asserts ``exit_code == 0`` after passing ``--json``, you have not tested the default rendering path the user sees in their terminal. The canonical example: PR #6 shipped a renderer that crashed with ``AttributeError: 'str' object has no attribute 'backend'`` for every rich-dataclass TTY render, and the entire e2e suite (44 tests) walked past it because every test passed ``--json``. Write the TTY path test alongside the JSON path test — same fixture, different flag.
+
 ## 10. Python Docstring Style Guide
 
 Use **reStructuredText (reST)** format exclusively, following PEP 257 and Sphinx standards. Every public module, class, function, and method gets a docstring; reST roles cross-link them.

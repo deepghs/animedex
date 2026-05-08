@@ -201,6 +201,7 @@ class AnilistAnime(AnimedexModel):
     id: int
     idMal: Optional[int] = None
     title: _AnilistTitle = _AnilistTitle()
+    synonyms: List[str] = []
     type: Optional[str] = None  # ANIME / MANGA
     format: Optional[str] = None
     status: Optional[str] = None
@@ -307,6 +308,7 @@ class AnilistAnime(AnimedexModel):
             source_material=(self.source.lower() if self.source else None),
             country_of_origin=self.countryOfOrigin,
             is_adult=self.isAdult,
+            title_synonyms=list(self.synonyms),
             popularity=self.popularity,
             favourites=self.favourites,
             trending=self.trending,
