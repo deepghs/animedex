@@ -39,4 +39,5 @@ Sleep 400ms
 Enter
 Sleep 2200ms
 
-Sleep 600ms
+# Hold the final frame so a viewer has time to read the last block.
+Sleep 4s

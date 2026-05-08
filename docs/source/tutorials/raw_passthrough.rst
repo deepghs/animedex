@@ -117,5 +117,5 @@ A rejection raises ``ApiError(reason="read-only")`` with a message
 that names the policy — not "405 Method Not Allowed" (the upstream
 would have accepted the request, the project rejected it).
 
-The :doc:`../python_library` page covers the equivalent
+The :doc:`python_library` page covers the equivalent
 ``animedex.api.<backend>.call(...)`` surface in Python.

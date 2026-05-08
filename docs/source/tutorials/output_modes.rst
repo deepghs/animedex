@@ -164,6 +164,6 @@ nekos.best         3 req / sec sustained, 10-token burst (under the 200 / min up
 
 Pass ``--rate slow`` to halve the refill rate for long batch pulls.
 
-The :doc:`../python_library` page exposes the same flags as keyword
+The :doc:`python_library` page exposes the same flags as keyword
 arguments on every public function, plus a ``Config`` entry point for
 project-wide defaults.

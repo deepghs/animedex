@@ -212,6 +212,7 @@ def register_subcommand(
     """Bind a Python API ``fn`` as a Click subcommand on ``group``.
 
     Argument inference:
+
     * Positional parameters with no default → ``click.argument``.
     * Keyword parameters with default → ``click.option``.
     * ``config`` / ``no_cache`` / ``cache_ttl`` / ``rate`` are

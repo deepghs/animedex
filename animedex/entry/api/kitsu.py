@@ -10,11 +10,11 @@ api_kitsu = make_get_only_subcommand(
     backend_module_name="kitsu",
     docstring="""Issue a Kitsu GET request (JSON:API).
 
-    The dispatcher injects `Accept: application/vnd.api+json`
-    automatically. Pagination uses `page[offset]=N&page[limit]=M`;
-    set includes via `?include=streamingLinks,mappings`. Both
-    `kitsu.io/api/edge` and `kitsu.app/api/edge` serve identical
-    data; this command targets `.io` by default.
+    The dispatcher injects ``Accept: application/vnd.api+json``
+    automatically. Pagination uses ``page[offset]=N&page[limit]=M``;
+    set includes via ``?include=streamingLinks,mappings``. Both
+    ``kitsu.io/api/edge`` and ``kitsu.app/api/edge`` serve identical
+    data; this command targets ``.io`` by default.
 
     \b
     Docs:

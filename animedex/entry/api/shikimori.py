@@ -44,10 +44,10 @@ def api_shikimori(
 ):
     """Issue a Shikimori REST or GraphQL request.
 
-    REST default: GET against `/api/...`. GraphQL: pass PATH=
-    `/api/graphql` and `--graphql 'query'`; the wrapper sets
-    method=POST and `Content-Type: application/json`. Both
-    `shikimori.io` (canonical) and `shikimori.one` (fallback) serve
+    REST default: GET against ``/api/...``. GraphQL: pass PATH=
+    ``/api/graphql`` and ``--graphql 'query'``; the wrapper sets
+    method=POST and ``Content-Type: application/json``. Both
+    ``shikimori.io`` (canonical) and ``shikimori.one`` (fallback) serve
     identical data.
 
     \b

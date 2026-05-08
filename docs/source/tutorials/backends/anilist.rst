@@ -88,7 +88,7 @@ Discover them via ``--help``:
 
 Each subcommand returns the AniList GraphQL response wrapped in a
 typed rich dataclass (lossless, dump-back-to-upstream-shape per the
-project's :ref:`AGENTS.md` lossless contract).
+project's lossless rich-model contract).
 
 Auth-required stubs (deferred)
 ------------------------------

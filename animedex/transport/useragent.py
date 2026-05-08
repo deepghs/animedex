@@ -3,11 +3,11 @@ User-Agent string composition for animedex HTTP requests.
 
 The transport injects a minimal project-identifying User-Agent on
 every outgoing request unless the caller passes their own. The
-default form is ``animedex/<version>`` with no contact suffix; this
-was decided in #3's the substrate API layer exploration after live-testing all 8
-backends - every one accepts the bare ``animedex/<version>`` form,
-so the verbose ``animedex/<v> (+<email>)`` shape that earlier code
-shipped was over-engineered.
+default form is ``animedex/<version>`` with no contact suffix:
+live-testing the eight wired backends showed every one accepts the
+bare ``animedex/<version>`` form, so the verbose
+``animedex/<v> (+<email>)`` shape earlier code shipped was
+over-engineered.
 
 Two backends genuinely require *some* non-empty UA at the wire
 (MangaDex returns 400 on empty; Danbooru's Cloudflare front returns
@@ -17,8 +17,9 @@ including empty. Our default satisfies all eight.
 A caller that needs a different UA - identifying their own bot,
 testing what an upstream does with empty/spoofed values, or any
 other reason - can pass ``custom`` to :func:`compose_user_agent`.
-We do not police caller intent; per the Human Agency Principle
-(````) explicit caller choices win over project defaults.
+The project's posture is to surface upstream contracts but never
+override the caller's explicit intent: an empty or hostile UA the
+caller asked for is the caller's problem, not the transport's.
 """
 
 from __future__ import annotations
