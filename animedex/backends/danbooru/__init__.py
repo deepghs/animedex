@@ -16,9 +16,11 @@ behalf.
 
 from __future__ import annotations
 
+import base64 as _base64
 import json as _json
+import os as _os
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from animedex.api import danbooru as _raw_danbooru
 from animedex.backends.danbooru.models import (
@@ -27,8 +29,10 @@ from animedex.backends.danbooru.models import (
     DanbooruIQDBQuery,
     DanbooruPool,
     DanbooruPost,
+    DanbooruProfile,
     DanbooruRecord,
     DanbooruRelatedTag,
+    DanbooruSavedSearch,
     DanbooruTag,
 )
 from animedex.config import Config
@@ -64,6 +68,12 @@ def _fetch(path: str, *, params: Optional[Dict[str, Any]] = None, config: Option
         )
     if raw.body_text is None:  # pragma: no cover - danbooru returns JSON
         raise ApiError("danbooru returned a non-text body", backend="danbooru", reason="upstream-decode")
+    if raw.status == 401 or raw.status == 403:
+        raise ApiError(
+            f"danbooru {raw.status} on {path} (rejected credentials)",
+            backend="danbooru",
+            reason="auth-required",
+        )
     if raw.status == 404:
         raise ApiError(f"danbooru 404 on {path}", backend="danbooru", reason="not-found")
     if raw.status >= 500:
@@ -665,6 +675,113 @@ def metrics(*, limit: int = 20, page: int = 1, config: Optional[Config] = None, 
     return _record_search("metrics", limit=limit, page=page, config=config, **kw)
 
 
+# ---------- authenticated reads ----------
+
+
+def _resolve_basic_auth(creds: Optional[Any] = None, *, config: Optional[Config] = None) -> Tuple[str, str]:
+    """Locate the ``(username, api_key)`` pair Danbooru's HTTP Basic
+    auth scheme expects.
+
+    ``creds`` accepts either a ``(username, api_key)`` tuple or the
+    same colon-separated ``"username:api_key"`` string the env var
+    uses (the CLI threads ``--creds u:k`` through as a string).
+
+    Resolution order: explicit ``creds=`` argument →
+    ``ANIMEDEX_DANBOORU_CREDS`` env var (parsed as
+    ``username:api_key``) → :class:`~animedex.auth.store.TokenStore`
+    entry under ``"danbooru"``.
+
+    :raises ApiError: ``auth-required`` when no credentials resolve.
+    """
+    if creds is not None:
+        if isinstance(creds, str):
+            u, _, k = creds.partition(":")
+            if u and k:
+                return u, k
+            raise ApiError(
+                "danbooru creds= string must be 'username:api_key'",
+                backend="danbooru",
+                reason="bad-args",
+            )
+        if isinstance(creds, tuple) and len(creds) == 2:
+            return str(creds[0]), str(creds[1])
+        raise ApiError(
+            "danbooru creds= must be (username, api_key) tuple or 'username:api_key' string",
+            backend="danbooru",
+            reason="bad-args",
+        )
+    env = _os.environ.get("ANIMEDEX_DANBOORU_CREDS")
+    if env:
+        u, _, k = env.partition(":")
+        if u and k:
+            return u, k
+    if config is not None:
+        stored = config.effective_token_store().get("danbooru")
+        if stored:
+            u, _, k = stored.partition(":")
+            if u and k:
+                return u, k
+    raise ApiError(
+        "danbooru auth required: pass creds=(user, api_key), set "
+        "ANIMEDEX_DANBOORU_CREDS=username:api_key, or store the same "
+        "string under 'danbooru' in the token store",
+        backend="danbooru",
+        reason="auth-required",
+    )
+
+
+def _authed_fetch(
+    path: str,
+    *,
+    params: Optional[Dict[str, Any]] = None,
+    creds: Optional[Tuple[str, str]] = None,
+    config: Optional[Config] = None,
+    **kw,
+):
+    """``_fetch()`` variant that injects HTTP Basic ``username:api_key``."""
+    user, api_key = _resolve_basic_auth(creds, config=config)
+    encoded = _base64.b64encode(f"{user}:{api_key}".encode("utf-8")).decode("ascii")
+    headers = dict(kw.pop("headers", None) or {})
+    headers["Authorization"] = f"Basic {encoded}"
+    return _fetch(path, params=params, config=config, headers=headers, **kw)
+
+
+def profile(*, creds: Optional[Tuple[str, str]] = None, config: Optional[Config] = None, **kw) -> DanbooruProfile:
+    """The authenticated user's own profile via ``/profile.json``.
+
+    Returns the typed :class:`DanbooruProfile`; the upstream payload
+    carries the user's level, upload counters, blacklisted tags, and
+    similar account-scoped state.
+    """
+    payload, src = _authed_fetch("/profile.json", creds=creds, config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "danbooru /profile.json did not return an object",
+            backend="danbooru",
+            reason="upstream-shape",
+        )
+    return DanbooruProfile.model_validate({**payload, "source_tag": src})
+
+
+def saved_searches(
+    *,
+    limit: int = 20,
+    page: int = 1,
+    creds: Optional[Tuple[str, str]] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> List[DanbooruSavedSearch]:
+    """The authenticated user's saved searches via
+    ``/saved_searches.json``.
+
+    Each row carries the saved search's tag query plus an optional
+    label list the user organises bookmarks by.
+    """
+    params = {"limit": limit, "page": page}
+    payload, src = _authed_fetch("/saved_searches.json", params=params, creds=creds, config=config, **kw)
+    return [DanbooruSavedSearch.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
 def selftest() -> bool:
     """Smoke-test the public Danbooru Python API (signatures only,
     no network).
@@ -735,6 +852,8 @@ def selftest() -> bool:
         reactions,
         jobs,
         metrics,
+        profile,
+        saved_searches,
     ]
     for fn in public_callables:
         sig = inspect.signature(fn)

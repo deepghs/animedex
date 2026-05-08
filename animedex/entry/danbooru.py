@@ -174,3 +174,7 @@ register_subcommand(danbooru_group, "recommended-posts", _api.recommended_posts,
 register_subcommand(danbooru_group, "reactions", _api.reactions, help="Reaction-emoji record feed.")
 register_subcommand(danbooru_group, "jobs", _api.jobs, help="Background-job ledger feed.")
 register_subcommand(danbooru_group, "metrics", _api.metrics, help="Operational metric snapshots.")
+
+# ---------- authenticated reads ----------
+register_subcommand(danbooru_group, "profile", _api.profile, help="Authenticated user's own profile (requires creds).")
+register_subcommand(danbooru_group, "saved-searches", _api.saved_searches, help="Authenticated user's saved searches.")

@@ -34,6 +34,20 @@ DanbooruPool
     :members: id,name,description,post_ids,post_count,category,is_active,is_deleted,source_tag
 
 
+DanbooruProfile
+-----------------------------------------------------
+
+.. autoclass:: DanbooruProfile
+    :members: id,name,level,inviter_id,created_at,updated_at,last_logged_in_at,last_forum_read_at,post_upload_count,post_update_count,note_update_count,is_deleted,favorite_tags,blacklisted_tags,comment_threshold,default_image_size,source_tag
+
+
+DanbooruSavedSearch
+-----------------------------------------------------
+
+.. autoclass:: DanbooruSavedSearch
+    :members: id,user_id,query,labels,created_at,updated_at,source_tag
+
+
 DanbooruRecord
 -----------------------------------------------------
 

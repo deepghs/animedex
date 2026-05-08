@@ -34,6 +34,13 @@ WaifuImage
     :members: to_common,id,url,source,isNsfw,isAnimated,width,height,perceptualHash,extension,dominantColor,uploaderId,uploadedAt,byteSize,favorites,likedAt,addedToAlbumAt,reviewStatus,tags,artists,albums,source_tag
 
 
+WaifuUser
+-----------------------------------------------------
+
+.. autoclass:: WaifuUser
+    :members: id,name,discordId,avatarUrl,role,isBlacklisted,blacklistReason,requestCount,apiKeyRequestCount,jwtRequestCount,uploadedAt,source_tag
+
+
 WaifuStats
 -----------------------------------------------------
 

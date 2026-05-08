@@ -19,11 +19,13 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from animedex.api import mangadex as _raw_mangadex
+from animedex.backends.mangadex._auth import MangaDexCredentials, get_bearer_token
 from animedex.backends.mangadex.models import (
     MangaDexChapter,
     MangaDexCover,
     MangaDexManga,
     MangaDexResource,
+    MangaDexUser,
 )
 from animedex.config import Config
 from animedex.models.common import ApiError, SourceTag
@@ -59,6 +61,12 @@ def _fetch(path: str, *, params: Optional[Dict[str, Any]] = None, config: Option
         )
     if raw.body_text is None:  # pragma: no cover - mangadex returns JSON
         raise ApiError("mangadex returned a non-text body", backend="mangadex", reason="upstream-decode")
+    if raw.status == 401 or raw.status == 403:
+        raise ApiError(
+            f"mangadex {raw.status} on {path} (rejected credentials)",
+            backend="mangadex",
+            reason="auth-required",
+        )
     if raw.status == 404:
         raise ApiError(f"mangadex 404 on {path}", backend="mangadex", reason="not-found")
     if raw.status >= 500:
@@ -417,6 +425,253 @@ def report_reasons(category: str, *, config: Optional[Config] = None, **kw) -> L
 # ---------- /ping ----------
 
 
+# ---------- /user (authenticated) ----------
+
+
+def _authed_fetch(
+    path: str,
+    *,
+    params: Optional[Dict[str, Any]] = None,
+    creds: Optional[MangaDexCredentials] = None,
+    config: Optional[Config] = None,
+    **kw,
+):
+    """``_fetch()`` variant that injects a Bearer token resolved
+    via :func:`animedex.backends.mangadex._auth.get_bearer_token`.
+
+    Token resolution order: explicit ``creds=`` argument →
+    ``ANIMEDEX_MANGADEX_CREDS`` env var → ``config``'s token store
+    entry under ``"mangadex"``. The token is cached in process memory
+    (15-minute lifetime per upstream) so a session of authenticated
+    calls does not re-hit the OAuth endpoint per request.
+    """
+    bearer = get_bearer_token(creds, config=config)
+    headers = dict(kw.pop("headers", None) or {})
+    headers["Authorization"] = f"Bearer {bearer}"
+    return _fetch(path, params=params, config=config, headers=headers, **kw)
+
+
+def me(*, creds: Optional[MangaDexCredentials] = None, config: Optional[Config] = None, **kw) -> MangaDexUser:
+    """Authenticated current user via ``/user/me``.
+
+    :return: Typed user resource.
+    :rtype: MangaDexUser
+    """
+    payload, src = _authed_fetch("/user/me", creds=creds, config=config, **kw)
+    return MangaDexUser.model_validate({**_data(payload), "source_tag": src})
+
+
+def my_follows_manga(
+    *,
+    limit: int = 20,
+    offset: int = 0,
+    creds: Optional[MangaDexCredentials] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> List[MangaDexManga]:
+    """Manga the authenticated user is following via
+    ``/user/follows/manga``."""
+    params = {"limit": limit, "offset": offset}
+    payload, src = _authed_fetch("/user/follows/manga", params=params, creds=creds, config=config, **kw)
+    return [MangaDexManga.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def is_following_manga(
+    id: str, *, creds: Optional[MangaDexCredentials] = None, config: Optional[Config] = None, **kw
+) -> bool:
+    """Whether the authenticated user follows manga ``id`` via
+    ``/user/follows/manga/{id}`` (200 → ``True``; 404 → ``False``)."""
+    try:
+        _authed_fetch(f"/user/follows/manga/{id}", creds=creds, config=config, **kw)
+        return True
+    except ApiError as exc:
+        if exc.reason == "not-found":
+            return False
+        raise
+
+
+def my_follows_group(
+    *,
+    limit: int = 20,
+    offset: int = 0,
+    creds: Optional[MangaDexCredentials] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> List[MangaDexResource]:
+    """Scanlation groups the authenticated user is following via
+    ``/user/follows/group``."""
+    params = {"limit": limit, "offset": offset}
+    payload, src = _authed_fetch("/user/follows/group", params=params, creds=creds, config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def is_following_group(
+    id: str, *, creds: Optional[MangaDexCredentials] = None, config: Optional[Config] = None, **kw
+) -> bool:
+    """Whether the authenticated user follows scanlation group
+    ``id`` via ``/user/follows/group/{id}``."""
+    try:
+        _authed_fetch(f"/user/follows/group/{id}", creds=creds, config=config, **kw)
+        return True
+    except ApiError as exc:
+        if exc.reason == "not-found":
+            return False
+        raise
+
+
+def my_follows_user(
+    *,
+    limit: int = 20,
+    offset: int = 0,
+    creds: Optional[MangaDexCredentials] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> List[MangaDexResource]:
+    """Users the authenticated user is following via
+    ``/user/follows/user``."""
+    params = {"limit": limit, "offset": offset}
+    payload, src = _authed_fetch("/user/follows/user", params=params, creds=creds, config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def is_following_user(
+    id: str, *, creds: Optional[MangaDexCredentials] = None, config: Optional[Config] = None, **kw
+) -> bool:
+    """Whether the authenticated user follows user ``id`` via
+    ``/user/follows/user/{id}``."""
+    try:
+        _authed_fetch(f"/user/follows/user/{id}", creds=creds, config=config, **kw)
+        return True
+    except ApiError as exc:
+        if exc.reason == "not-found":
+            return False
+        raise
+
+
+def my_follows_list(
+    *,
+    limit: int = 20,
+    offset: int = 0,
+    creds: Optional[MangaDexCredentials] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> List[MangaDexResource]:
+    """Custom lists the authenticated user is following via
+    ``/user/follows/list``."""
+    params = {"limit": limit, "offset": offset}
+    payload, src = _authed_fetch("/user/follows/list", params=params, creds=creds, config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def my_follows_manga_feed(
+    *,
+    limit: int = 20,
+    offset: int = 0,
+    creds: Optional[MangaDexCredentials] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> List[MangaDexChapter]:
+    """Chapter feed for the manga the authenticated user follows via
+    ``/user/follows/manga/feed``."""
+    params = {"limit": limit, "offset": offset}
+    payload, src = _authed_fetch("/user/follows/manga/feed", params=params, creds=creds, config=config, **kw)
+    return [MangaDexChapter.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def my_lists(
+    *,
+    limit: int = 20,
+    offset: int = 0,
+    creds: Optional[MangaDexCredentials] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> List[MangaDexResource]:
+    """The authenticated user's own custom lists via ``/user/list``."""
+    params = {"limit": limit, "offset": offset}
+    payload, src = _authed_fetch("/user/list", params=params, creds=creds, config=config, **kw)
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def my_history(
+    *, creds: Optional[MangaDexCredentials] = None, config: Optional[Config] = None, **kw
+) -> List[MangaDexResource]:
+    """The authenticated user's reading history via ``/user/history``.
+
+    The upstream returns a list of ``{chapterId, readDate}`` entries
+    wrapped in the standard envelope; the rich shape round-trips them
+    via :class:`MangaDexResource`'s catch-all ``attributes``.
+    """
+    payload, src = _authed_fetch("/user/history", creds=creds, config=config, **kw)
+    rows = payload.get("ratings") or _data(payload) or []
+    if not isinstance(rows, list):
+        rows = [rows]
+    return [MangaDexResource.model_validate({**row, "source_tag": src}) for row in rows if isinstance(row, dict)]
+
+
+def my_manga_status(
+    *,
+    status: Optional[str] = None,
+    creds: Optional[MangaDexCredentials] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> Dict[str, str]:
+    """Reading-status map for every manga the authenticated user has
+    interacted with, via ``/manga/status``.
+
+    The upstream returns ``{result, statuses: {manga-uuid: status}}``;
+    this helper returns the inner ``statuses`` map directly. Pass
+    ``status="reading"`` (or ``"on_hold"`` / ``"plan_to_read"`` /
+    ``"dropped"`` / ``"re_reading"`` / ``"completed"``) to filter.
+
+    :return: Dict mapping manga UUID → reading-status label.
+    :rtype: dict[str, str]
+    """
+    params: Dict[str, Any] = {}
+    if status:
+        params["status"] = status
+    payload, _src_tag = _authed_fetch("/manga/status", params=params or None, creds=creds, config=config, **kw)
+    statuses = payload.get("statuses")
+    if statuses is None:
+        return {}
+    # MangaDex sometimes returns ``statuses: []`` for an empty result
+    # (a JSON-list-as-empty-object idiom from PHP-style serialisers);
+    # normalise that to the dict shape callers expect.
+    if isinstance(statuses, list) and not statuses:
+        return {}
+    if not isinstance(statuses, dict):
+        raise ApiError("mangadex /manga/status returned non-dict statuses", backend="mangadex", reason="upstream-shape")
+    return statuses
+
+
+def my_manga_status_by_id(
+    id: str, *, creds: Optional[MangaDexCredentials] = None, config: Optional[Config] = None, **kw
+) -> Optional[str]:
+    """Reading status for one manga via ``/manga/{id}/status``.
+
+    :return: The status string, or ``None`` when the user has never
+              interacted with this manga.
+    :rtype: str or None
+    """
+    payload, _src_tag = _authed_fetch(f"/manga/{id}/status", creds=creds, config=config, **kw)
+    return payload.get("status")
+
+
+def my_manga_read_markers(
+    id: str, *, creds: Optional[MangaDexCredentials] = None, config: Optional[Config] = None, **kw
+) -> List[str]:
+    """Chapter-IDs the authenticated user has marked read for one
+    manga, via ``/manga/{id}/read``.
+
+    :return: List of chapter UUIDs.
+    :rtype: list[str]
+    """
+    payload, _src_tag = _authed_fetch(f"/manga/{id}/read", creds=creds, config=config, **kw)
+    rows = payload.get("data") or []
+    if not isinstance(rows, list):
+        return []
+    return [str(x) for x in rows]
+
+
 def ping(*, config: Optional[Config] = None, **kw) -> str:
     """Liveness probe via ``/ping``. Returns the upstream's plain
     text body (typically ``"pong"``) so callers can confirm the
@@ -456,6 +711,20 @@ def selftest() -> bool:
         list_feed,
         user,
         user_lists,
+        me,
+        my_follows_manga,
+        is_following_manga,
+        my_follows_group,
+        is_following_group,
+        my_follows_user,
+        is_following_user,
+        my_follows_list,
+        my_follows_manga_feed,
+        my_lists,
+        my_history,
+        my_manga_status,
+        my_manga_status_by_id,
+        my_manga_read_markers,
         statistics_manga,
         statistics_manga_batch,
         statistics_chapter,

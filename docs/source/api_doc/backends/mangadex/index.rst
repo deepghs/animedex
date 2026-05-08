@@ -9,6 +9,7 @@ animedex.backends.mangadex
 .. toctree::
     :maxdepth: 3
 
+    _auth
     models
 
 show
@@ -159,6 +160,90 @@ report\_reasons
 -----------------------------------------------------
 
 .. autofunction:: report_reasons
+
+
+me
+-----------------------------------------------------
+
+.. autofunction:: me
+
+
+my\_follows\_manga
+-----------------------------------------------------
+
+.. autofunction:: my_follows_manga
+
+
+is\_following\_manga
+-----------------------------------------------------
+
+.. autofunction:: is_following_manga
+
+
+my\_follows\_group
+-----------------------------------------------------
+
+.. autofunction:: my_follows_group
+
+
+is\_following\_group
+-----------------------------------------------------
+
+.. autofunction:: is_following_group
+
+
+my\_follows\_user
+-----------------------------------------------------
+
+.. autofunction:: my_follows_user
+
+
+is\_following\_user
+-----------------------------------------------------
+
+.. autofunction:: is_following_user
+
+
+my\_follows\_list
+-----------------------------------------------------
+
+.. autofunction:: my_follows_list
+
+
+my\_follows\_manga\_feed
+-----------------------------------------------------
+
+.. autofunction:: my_follows_manga_feed
+
+
+my\_lists
+-----------------------------------------------------
+
+.. autofunction:: my_lists
+
+
+my\_history
+-----------------------------------------------------
+
+.. autofunction:: my_history
+
+
+my\_manga\_status
+-----------------------------------------------------
+
+.. autofunction:: my_manga_status
+
+
+my\_manga\_status\_by\_id
+-----------------------------------------------------
+
+.. autofunction:: my_manga_status_by_id
+
+
+my\_manga\_read\_markers
+-----------------------------------------------------
+
+.. autofunction:: my_manga_read_markers
 
 
 ping

@@ -146,6 +146,45 @@ class DanbooruPool(BackendRichModel):
     source_tag: Optional[SourceTag] = None
 
 
+class DanbooruProfile(BackendRichModel):
+    """The authenticated user's own profile envelope from
+    ``/profile.json``. Carries account-scoped fields the anonymous
+    ``/users/{id}.json`` view omits (``last_logged_in_at``,
+    ``blacklisted_tags``, ``favorite_tags``, ``comment_threshold``,
+    etc.)."""
+
+    id: int
+    name: Optional[str] = None
+    level: Optional[int] = None
+    inviter_id: Optional[int] = None
+    created_at: Optional[str] = None
+    updated_at: Optional[str] = None
+    last_logged_in_at: Optional[str] = None
+    last_forum_read_at: Optional[str] = None
+    post_upload_count: Optional[int] = None
+    post_update_count: Optional[int] = None
+    note_update_count: Optional[int] = None
+    is_deleted: Optional[bool] = None
+    favorite_tags: Optional[str] = None
+    blacklisted_tags: Optional[str] = None
+    comment_threshold: Optional[int] = None
+    default_image_size: Optional[str] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class DanbooruSavedSearch(BackendRichModel):
+    """One ``/saved_searches.json`` row: a user-saved tag-DSL query
+    plus the labels the user has organised it under."""
+
+    id: int
+    user_id: Optional[int] = None
+    query: Optional[str] = None
+    labels: Optional[List[Any]] = None
+    created_at: Optional[str] = None
+    updated_at: Optional[str] = None
+    source_tag: Optional[SourceTag] = None
+
+
 class DanbooruRecord(BackendRichModel):
     """Catch-all Danbooru record shape used by the long-tail of
     anonymous-readable endpoints (versions / votes / events /

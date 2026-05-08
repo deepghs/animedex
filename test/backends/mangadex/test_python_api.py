@@ -231,6 +231,107 @@ class TestErrorPaths:
         assert ei.value.reason == "upstream-shape"
 
 
+class TestMangaDexAuth:
+    """Authenticated reads on the ``/user/*`` and ``/manga/*/status``
+    surface. Tests stub the OAuth2 password-grant call so they stay
+    offline; the live OAuth flow is exercised by the capture script.
+    """
+
+    @pytest.fixture(autouse=True)
+    def _stub_oauth(self, monkeypatch):
+        """Replace :func:`get_bearer_token` with a static stub so
+        the test does not actually round-trip auth.mangadex.org."""
+        monkeypatch.setattr(
+            "animedex.backends.mangadex.get_bearer_token",
+            lambda creds=None, **kw: "stub-bearer-token",
+        )
+
+    def test_me_returns_typed_user(self, fake_clock):
+        from animedex.backends.mangadex.models import MangaDexUser
+
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("user_me/01-default.yaml"))
+            row = md_api.me(creds="a:b:c:d", no_cache=True)
+        assert isinstance(row, MangaDexUser)
+        assert row.attributes is not None
+        assert row.attributes.username
+
+    def test_authorization_header_is_bearer(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("user_me/01-default.yaml"))
+            md_api.me(creds="a:b:c:d", no_cache=True)
+            sent = rsps.calls[0].request
+        assert sent.headers.get("Authorization") == "Bearer stub-bearer-token"
+
+    def test_my_follows_manga_returns_list(self, fake_clock):
+        from animedex.backends.mangadex.models import MangaDexManga
+
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("user_follows_manga/01-default.yaml"))
+            rows = md_api.my_follows_manga(limit=2, creds="a:b:c:d", no_cache=True)
+        assert isinstance(rows, list)
+        for r in rows:
+            assert isinstance(r, MangaDexManga)
+
+    def test_is_following_manga_404_returns_false(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("user_follows_manga_by_id_not_followed/01-default.yaml"))
+            result = md_api.is_following_manga("801513ba-a712-498c-8f57-cae55b38cc92", creds="a:b:c:d", no_cache=True)
+        assert result is False
+
+    def test_my_manga_status_normalises_empty_list_to_dict(self, fake_clock):
+        # The real upstream returns ``statuses: []`` for an empty
+        # account; the helper must normalise to ``{}``.
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("manga_status/01-default.yaml"))
+            statuses = md_api.my_manga_status(creds="a:b:c:d", no_cache=True)
+        assert statuses == {}
+
+    def test_my_manga_read_markers_returns_list(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("manga_read_markers/01-default.yaml"))
+            chapters = md_api.my_manga_read_markers(
+                "801513ba-a712-498c-8f57-cae55b38cc92", creds="a:b:c:d", no_cache=True
+            )
+        assert isinstance(chapters, list)
+
+
+class TestMangaDexCredentialResolution:
+    """Pure credential-parsing tests (no HTTP)."""
+
+    def test_creds_string_is_parsed(self):
+        from animedex.backends.mangadex._auth import MangaDexCredentials, resolve_credentials
+
+        out = resolve_credentials("a:b:c:d")
+        assert isinstance(out, MangaDexCredentials)
+        assert out.client_id == "a"
+        assert out.password == "d"
+
+    def test_env_var_fallback(self, monkeypatch):
+        from animedex.backends.mangadex._auth import resolve_credentials
+
+        monkeypatch.setenv("ANIMEDEX_MANGADEX_CREDS", "x:y:z:w")
+        out = resolve_credentials()
+        assert out.username == "z"
+
+    def test_no_creds_raises_auth_required(self, monkeypatch):
+        from animedex.backends.mangadex._auth import resolve_credentials
+        from animedex.models.common import ApiError
+
+        monkeypatch.delenv("ANIMEDEX_MANGADEX_CREDS", raising=False)
+        with pytest.raises(ApiError) as ei:
+            resolve_credentials()
+        assert ei.value.reason == "auth-required"
+
+    def test_malformed_creds_string_raises_bad_args(self):
+        from animedex.backends.mangadex._auth import resolve_credentials
+        from animedex.models.common import ApiError
+
+        with pytest.raises(ApiError) as ei:
+            resolve_credentials("only:three:parts")
+        assert ei.value.reason == "bad-args"
+
+
 def test_module_selftest_returns_true():
     """The high-level module's offline ``selftest()`` must pass."""
     assert md_api.selftest() is True

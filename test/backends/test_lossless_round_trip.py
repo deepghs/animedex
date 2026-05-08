@@ -599,6 +599,49 @@ class TestMangaDexLossless:
         for i, row in enumerate(rows):
             _assert_lossless(MangaDexResource, row, f"MangaDexResource/{path.name}[{i}]")
 
+    # ---------- authenticated user / follow / list / history ----------
+    #
+    # The authenticated read surface returns the same JSON:API
+    # ``{result, data: [...] | data: {...}}`` envelope but adds
+    # ``MangaDexUser`` + reuses ``MangaDexResource`` for the long-tail
+    # (lists, follows, history). The lossless test pins the user-shape
+    # specifically and re-runs the catch-all over every other slug.
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "mangadex" / "user_me").glob("*.yaml")))
+    def test_mangadex_user_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexUser
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or not body.get("data"):
+            pytest.skip("empty / error fixture")
+        _assert_lossless(MangaDexUser, body["data"], f"MangaDexUser/{path.name}")
+
+    _MANGADEX_AUTH_RESOURCE_SLUGS = [
+        "user_follows_manga",
+        "user_follows_group",
+        "user_follows_user",
+        "user_follows_list",
+        "user_follows_manga_feed",
+        "user_list",
+    ]
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(p for slug in _MANGADEX_AUTH_RESOURCE_SLUGS for p in (FIXTURES / "mangadex" / slug).glob("*.yaml")),
+        ids=lambda p: f"{p.parent.name}/{p.stem}",
+    )
+    def test_mangadex_auth_resource_list_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexResource
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or not body.get("data"):
+            pytest.skip("empty / error fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
+            _assert_lossless(MangaDexResource, row, f"MangaDexResource/{path.parent.name}/{path.name}[{i}]")
+
 
 # ---------- Danbooru ----------
 
@@ -776,6 +819,27 @@ class TestDanbooruLossless:
         if not body or not isinstance(body, dict):
             pytest.skip("error / non-dict fixture")
         _assert_lossless(DanbooruRelatedTag, body, f"DanbooruRelatedTag/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "profile").glob("*.yaml")))
+    def test_danbooru_profile_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruProfile
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict):
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(DanbooruProfile, body, f"DanbooruProfile/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "saved_searches").glob("*.yaml")))
+    def test_danbooru_saved_search_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruSavedSearch
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            if not isinstance(row, dict):
+                continue
+            _assert_lossless(DanbooruSavedSearch, row, f"DanbooruSavedSearch/{path.name}[{i}]")
 
     @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "iqdb_queries").glob("*.yaml")))
     def test_danbooru_iqdb_query_lossless(self, path):

@@ -215,5 +215,76 @@ class TestErrorPaths:
         assert ei.value.reason == "upstream-decode"
 
 
+class TestDanbooruAuth:
+    """Authenticated reads (``/profile.json`` / ``/saved_searches.json``).
+
+    Verify both the credential-resolution path (env var → string
+    parse → tuple form) and that the wire request actually carries
+    a valid ``Authorization: Basic`` header so a future regression
+    here surfaces in the test suite.
+    """
+
+    def test_profile_returns_typed_record(self, fake_clock, monkeypatch):
+        from animedex.backends.danbooru.models import DanbooruProfile
+
+        monkeypatch.setenv("ANIMEDEX_DANBOORU_CREDS", "deepbooru:fake")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("profile/01-default.yaml"))
+            row = db_api.profile(no_cache=True)
+        assert isinstance(row, DanbooruProfile)
+        assert row.id is not None
+        assert row.name is not None
+
+    def test_profile_explicit_creds_tuple_works(self, fake_clock):
+        from animedex.backends.danbooru.models import DanbooruProfile
+
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("profile/01-default.yaml"))
+            row = db_api.profile(creds=("deepbooru", "fake"), no_cache=True)
+        assert isinstance(row, DanbooruProfile)
+
+    def test_profile_creds_string_parses_to_tuple(self, fake_clock):
+        from animedex.backends.danbooru.models import DanbooruProfile
+
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("profile/01-default.yaml"))
+            row = db_api.profile(creds="deepbooru:fake", no_cache=True)
+        assert isinstance(row, DanbooruProfile)
+
+    def test_no_creds_raises_auth_required(self, fake_clock, monkeypatch):
+        from animedex.models.common import ApiError
+
+        monkeypatch.delenv("ANIMEDEX_DANBOORU_CREDS", raising=False)
+        with pytest.raises(ApiError) as ei:
+            db_api.profile(no_cache=True)
+        assert ei.value.reason == "auth-required"
+
+    def test_authorization_header_is_basic_scheme(self, fake_clock, monkeypatch):
+        """Wire-level: every authenticated call carries
+        ``Authorization: Basic <b64>`` after credential resolution."""
+        import base64
+
+        monkeypatch.setenv("ANIMEDEX_DANBOORU_CREDS", "deepbooru:fake")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("profile/01-default.yaml"))
+            db_api.profile(no_cache=True)
+            sent = rsps.calls[0].request
+        auth = sent.headers.get("Authorization", "")
+        assert auth.startswith("Basic ")
+        decoded = base64.b64decode(auth[len("Basic ") :]).decode("ascii")
+        assert decoded == "deepbooru:fake"
+
+    def test_saved_searches_returns_list(self, fake_clock, monkeypatch):
+        from animedex.backends.danbooru.models import DanbooruSavedSearch
+
+        monkeypatch.setenv("ANIMEDEX_DANBOORU_CREDS", "deepbooru:fake")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("saved_searches/01-default.yaml"))
+            rows = db_api.saved_searches(limit=3, no_cache=True)
+        assert isinstance(rows, list)
+        for r in rows:
+            assert isinstance(r, DanbooruSavedSearch)
+
+
 def test_module_selftest_returns_true():
     assert db_api.selftest() is True

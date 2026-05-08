@@ -85,3 +85,6 @@ register_subcommand(waifu_group, "image", _api.image, help="One image by numeric
 register_subcommand(
     waifu_group, "stats-public", _api.stats_public, help="Catalogue + traffic public statistics envelope."
 )
+
+# ---------- authenticated ----------
+register_subcommand(waifu_group, "me", _api.me, help="Authenticated user (requires X-Api-Key token).")

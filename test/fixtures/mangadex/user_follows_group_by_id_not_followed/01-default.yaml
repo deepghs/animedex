@@ -1,0 +1,45 @@
+metadata:
+  captured_at: '2026-05-08T13:47:00Z'
+  label: default
+  backend: mangadex
+  path_slug: user_follows_group_by_id_not_followed
+request:
+  method: GET
+  url: https://api.mangadex.org/user/follows/group/0a8eb8f6-ed7b-4db6-90f8-fde18e1842e6
+  headers:
+    Authorization: Bearer eyJh...kwmQ (len=1493)
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 404
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Fri, 08 May 2026 13:47:00 GMT
+    content-encoding: gzip
+    x-cache: PASS
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: d6821e1d-ec22-477a-a034-3dfe8428c16f
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ko
+  body_text: null
+  body_b64: null

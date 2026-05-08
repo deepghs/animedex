@@ -184,6 +184,28 @@ class MangaDexCover(BackendRichModel):
     source_tag: Optional[SourceTag] = None
 
 
+class MangaDexUserAttributes(BackendRichModel):
+    """The ``attributes`` block on a ``/user/me`` (or
+    ``/user/{id}``-when-authenticated) resource."""
+
+    username: Optional[str] = None
+    roles: Optional[List[str]] = None
+    avatarFileName: Optional[str] = None
+    bannerFileName: Optional[str] = None
+    version: Optional[int] = None
+
+
+class MangaDexUser(BackendRichModel):
+    """JSON:API user resource from ``/user/me`` and
+    ``/user/{id}``."""
+
+    id: str
+    type: str = "user"
+    attributes: Optional[MangaDexUserAttributes] = None
+    relationships: Optional[List[Dict[str, Any]]] = None
+    source_tag: Optional[SourceTag] = None
+
+
 class MangaDexResource(BackendRichModel):
     """Catch-all JSON:API resource for endpoints we wrap but have not
     typed individually.

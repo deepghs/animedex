@@ -13,11 +13,12 @@ query parameter, not a paternalistic confirmation gate.
 from __future__ import annotations
 
 import json as _json
+import os as _os
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from animedex.api import waifu as _raw_waifu
-from animedex.backends.waifu.models import WaifuArtist, WaifuImage, WaifuStats, WaifuTag
+from animedex.backends.waifu.models import WaifuArtist, WaifuImage, WaifuStats, WaifuTag, WaifuUser
 from animedex.config import Config
 from animedex.models.common import ApiError, SourceTag
 
@@ -51,6 +52,12 @@ def _fetch(path: str, *, params: Optional[Dict[str, Any]] = None, config: Option
         )
     if raw.body_text is None:  # pragma: no cover - waifu returns JSON
         raise ApiError("waifu returned a non-text body", backend="waifu", reason="upstream-decode")
+    if raw.status == 401 or raw.status == 403:
+        raise ApiError(
+            f"waifu {raw.status} on {path} (rejected credentials)",
+            backend="waifu",
+            reason="auth-required",
+        )
     if raw.status == 404:
         raise ApiError(f"waifu 404 on {path}", backend="waifu", reason="not-found")
     if raw.status >= 500:
@@ -298,6 +305,68 @@ def stats_public(*, config: Optional[Config] = None, **kw) -> WaifuStats:
     return WaifuStats.model_validate({**payload, "source_tag": src})
 
 
+# ---------- authenticated reads ----------
+
+
+def _resolve_api_key(token: Optional[str] = None, *, config: Optional[Config] = None) -> str:
+    """Locate the Waifu.im API key.
+
+    Resolution order: explicit ``token=`` → ``ANIMEDEX_WAIFU_TOKEN``
+    env var → :class:`~animedex.auth.store.TokenStore` entry under
+    ``"waifu"``.
+
+    :raises ApiError: ``auth-required`` when no key resolves.
+    """
+    if token:
+        return token
+    env = _os.environ.get("ANIMEDEX_WAIFU_TOKEN")
+    if env:
+        return env
+    if config is not None:
+        stored = config.effective_token_store().get("waifu")
+        if stored:
+            return stored
+    raise ApiError(
+        "waifu auth required: pass token=, set ANIMEDEX_WAIFU_TOKEN, or "
+        "store the API key under 'waifu' in the token store",
+        backend="waifu",
+        reason="auth-required",
+    )
+
+
+def _authed_fetch(
+    path: str,
+    *,
+    params: Optional[Dict[str, Any]] = None,
+    token: Optional[str] = None,
+    config: Optional[Config] = None,
+    **kw,
+):
+    """``_fetch()`` variant that injects ``X-Api-Key`` (Waifu.im's
+    own auth scheme; not Bearer)."""
+    key = _resolve_api_key(token, config=config)
+    headers = dict(kw.pop("headers", None) or {})
+    headers["X-Api-Key"] = key
+    return _fetch(path, params=params, config=config, headers=headers, **kw)
+
+
+def me(*, token: Optional[str] = None, config: Optional[Config] = None, **kw) -> WaifuUser:
+    """Authenticated current user via ``/users/me``.
+
+    :return: Typed user record (id, Discord identity, role,
+              request counters).
+    :rtype: WaifuUser
+    """
+    payload, src = _authed_fetch("/users/me", token=token, config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "waifu /users/me did not return a single object",
+            backend="waifu",
+            reason="upstream-shape",
+        )
+    return WaifuUser.model_validate({**payload, "source_tag": src})
+
+
 def selftest() -> bool:
     """Smoke-test the public Waifu.im Python API (signatures only,
     no network).
@@ -317,6 +386,7 @@ def selftest() -> bool:
         images,
         image,
         stats_public,
+        me,
     ]
     for fn in public_callables:
         sig = inspect.signature(fn)

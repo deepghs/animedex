@@ -48,6 +48,20 @@ MangaDexCover
     :members: id,type,attributes,relationships,source_tag
 
 
+MangaDexUserAttributes
+-----------------------------------------------------
+
+.. autoclass:: MangaDexUserAttributes
+    :members: username,roles,avatarFileName,bannerFileName,version
+
+
+MangaDexUser
+-----------------------------------------------------
+
+.. autoclass:: MangaDexUser
+    :members: id,type,attributes,relationships,source_tag
+
+
 MangaDexResource
 -----------------------------------------------------
 

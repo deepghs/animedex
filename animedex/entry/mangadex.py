@@ -117,3 +117,60 @@ register_subcommand(
 
 # ---------- /ping ----------
 register_subcommand(mangadex_group, "ping", _api.ping, help="Cheap upstream-liveness probe.")
+
+# ---------- /user (authenticated) ----------
+register_subcommand(mangadex_group, "me", _api.me, help="Authenticated user (requires creds).")
+register_subcommand(
+    mangadex_group, "my-follows-manga", _api.my_follows_manga, help="Manga the authenticated user is following."
+)
+register_subcommand(
+    mangadex_group,
+    "is-following-manga",
+    _api.is_following_manga,
+    help="Whether the authenticated user follows manga UUID (true / false).",
+)
+register_subcommand(
+    mangadex_group, "my-follows-group", _api.my_follows_group, help="Scanlation groups the user is following."
+)
+register_subcommand(
+    mangadex_group,
+    "is-following-group",
+    _api.is_following_group,
+    help="Whether the authenticated user follows group UUID.",
+)
+register_subcommand(
+    mangadex_group, "my-follows-user", _api.my_follows_user, help="Users the authenticated user is following."
+)
+register_subcommand(
+    mangadex_group,
+    "is-following-user",
+    _api.is_following_user,
+    help="Whether the authenticated user follows user UUID.",
+)
+register_subcommand(mangadex_group, "my-follows-list", _api.my_follows_list, help="Custom lists the user is following.")
+register_subcommand(
+    mangadex_group,
+    "my-follows-manga-feed",
+    _api.my_follows_manga_feed,
+    help="Chapter feed for the manga the user follows.",
+)
+register_subcommand(mangadex_group, "my-lists", _api.my_lists, help="The user's own custom lists.")
+register_subcommand(mangadex_group, "my-history", _api.my_history, help="The user's reading history.")
+register_subcommand(
+    mangadex_group,
+    "my-manga-status",
+    _api.my_manga_status,
+    help="Reading-status map for every manga the user has interacted with.",
+)
+register_subcommand(
+    mangadex_group,
+    "my-manga-status-by-id",
+    _api.my_manga_status_by_id,
+    help="Reading status for one manga (by UUID).",
+)
+register_subcommand(
+    mangadex_group,
+    "my-manga-read-markers",
+    _api.my_manga_read_markers,
+    help="Chapter UUIDs the user marked as read for one manga.",
+)

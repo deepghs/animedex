@@ -371,6 +371,18 @@ metrics
 .. autofunction:: metrics
 
 
+profile
+-----------------------------------------------------
+
+.. autofunction:: profile
+
+
+saved\_searches
+-----------------------------------------------------
+
+.. autofunction:: saved_searches
+
+
 selftest
 -----------------------------------------------------
 

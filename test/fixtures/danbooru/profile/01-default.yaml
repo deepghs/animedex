@@ -1,0 +1,112 @@
+metadata:
+  captured_at: '2026-05-08T13:47:02Z'
+  label: default
+  backend: danbooru
+  path_slug: profile
+request:
+  method: GET
+  url: https://danbooru.donmai.us/profile.json
+  headers:
+    Authorization: Basic ZGVl...Zw== (len=48)
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:47:02 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"363b483f1ba85787d0f3d56b8f759882"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88e9fcbdd0d3fb-KIX
+    server-timing: sql.queries;count=21, rails.total_time;dur=16.8617, rails.cpu_time;dur=10.1958, rails.idle_time;dur=6.6659,
+      rails.sql_time;dur=7.9566, rails.view_time;dur=9.8373, rails.allocations;count=5528, request.allocations;count=5997,
+      request.gc_time;dur=0.767, request.gc_count;count=0, request.cpu_time;dur=11.0332, request.total_time;dur=17.6993, request.queue_time_0;dur=0.4871,
+      request.queue_time_1;dur=94.0001
+    x-runtime: '0.017699348449707032'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Content-Security-Policy-Report-Only: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 605127
+    created_at: '2019-03-12T05:15:57.659-04:00'
+    name: deepbooru
+    inviter_id: null
+    level: 30
+    post_upload_count: 58
+    post_update_count: 1772
+    note_update_count: 16
+    is_deleted: false
+    updated_at: '2026-05-08T09:47:02.612-04:00'
+    last_logged_in_at: '2026-05-08T09:10:08.572-04:00'
+    last_forum_read_at: '2023-08-31T12:36:14.367-04:00'
+    comment_threshold: -8
+    default_image_size: large
+    favorite_tags: ''
+    blacklisted_tags: |-
+      shexyo
+      motion_interpolation
+      bara
+      my_little_pony
+      limgae
+      the_coffin_of_andy_and_leyley
+      poki_(j0ch3fvj6nd)
+      oroborus
+      henkawa
+    time_zone: Eastern Time (US & Canada)
+    per_page: 100
+    custom_style: ''
+    favorite_count: 0
+    theme: dark
+    level_string: Gold
+    is_banned: false
+    receive_email_notifications: false
+    new_post_navigation_layout: true
+    enable_private_favorites: true
+    show_deleted_children: false
+    disable_categorized_saved_searches: false
+    disable_tagged_filenames: false
+    disable_mobile_gestures: true
+    enable_safe_mode: false
+    enable_desktop_mode: false
+    disable_post_tooltips: false
+    requires_verification: false
+    is_verified: false
+    show_deleted_posts: false
+    statement_timeout: 6000
+    favorite_group_limit: null
+    tag_query_limit: 6
+    max_saved_searches: 1000
+    wiki_page_version_count: 91
+    artist_version_count: 207
+    artist_commentary_version_count: 67
+    pool_version_count: 1
+    forum_post_count: 12
+    comment_count: 2
+    favorite_group_count: 0
+    appeal_count: 3
+    flag_count: 29
+    positive_feedback_count: 0
+    neutral_feedback_count: 0
+    negative_feedback_count: 0
+  body_text: null
+  body_b64: null

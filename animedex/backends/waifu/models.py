@@ -176,6 +176,36 @@ class WaifuImage(BackendRichModel):
         )
 
 
+class WaifuUser(BackendRichModel):
+    """The authenticated user record from ``/users/me``.
+
+    :ivar id: Numeric Waifu.im user id.
+    :vartype id: int
+    :ivar name: Display name (typically the user's Discord username).
+    :vartype name: str or None
+    :ivar discordId: Discord snowflake.
+    :vartype discordId: str or None
+    :ivar avatarUrl: Discord-issued avatar URL.
+    :vartype avatarUrl: str or None
+    :ivar role: Role label (``"User"`` / ``"Moderator"`` /
+                 ``"Administrator"`` etc.).
+    :vartype role: str or None
+    """
+
+    id: int
+    name: Optional[str] = None
+    discordId: Optional[str] = None
+    avatarUrl: Optional[str] = None
+    role: Optional[str] = None
+    isBlacklisted: Optional[bool] = None
+    blacklistReason: Optional[str] = None
+    requestCount: Optional[int] = None
+    apiKeyRequestCount: Optional[int] = None
+    jwtRequestCount: Optional[int] = None
+    uploadedAt: Optional[str] = None
+    source_tag: Optional[SourceTag] = None
+
+
 class WaifuStats(BackendRichModel):
     """Public-statistics envelope from ``/stats/public``: counters
     summarising the upstream's content + traffic.
