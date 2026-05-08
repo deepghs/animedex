@@ -829,6 +829,56 @@ class TestWaifuLossless:
         for i, row in enumerate(body["items"]):
             _assert_lossless(WaifuImage, row, f"WaifuImage/{path.name}[{i}]")
 
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            list((FIXTURES / "waifu" / "tags_by_id").glob("*.yaml"))
+            + list((FIXTURES / "waifu" / "tags_by_slug").glob("*.yaml"))
+        ),
+        ids=lambda p: f"{p.parent.name}/{p.stem}",
+    )
+    def test_waifu_tag_singleton_lossless(self, path):
+        from animedex.backends.waifu.models import WaifuTag
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict) or "id" not in body:
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(WaifuTag, body, f"WaifuTag/{path.parent.name}/{path.name}")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            list((FIXTURES / "waifu" / "artists_by_id").glob("*.yaml"))
+            + list((FIXTURES / "waifu" / "artists_by_name").glob("*.yaml"))
+        ),
+        ids=lambda p: f"{p.parent.name}/{p.stem}",
+    )
+    def test_waifu_artist_singleton_lossless(self, path):
+        from animedex.backends.waifu.models import WaifuArtist
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict) or "id" not in body:
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(WaifuArtist, body, f"WaifuArtist/{path.parent.name}/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "waifu" / "images_by_id").glob("*.yaml")))
+    def test_waifu_image_singleton_lossless(self, path):
+        from animedex.backends.waifu.models import WaifuImage
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict) or "id" not in body:
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(WaifuImage, body, f"WaifuImage/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "waifu" / "stats_public").glob("*.yaml")))
+    def test_waifu_stats_lossless(self, path):
+        from animedex.backends.waifu.models import WaifuStats
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict):
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(WaifuStats, body, f"WaifuStats/{path.name}")
+
 
 # ---------- nekos.best ----------
 

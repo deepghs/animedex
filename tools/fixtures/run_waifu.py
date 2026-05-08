@@ -41,10 +41,24 @@ def main() -> int:
             url=f"{BASE}/tags", pace_seconds=PACE)
     total += 1
 
+    print("-- /tags/{id} + /tags/by-slug/{slug} (2 fixtures)")
+    capture(backend="waifu", path_slug="tags_by_id", label="id-12-waifu", method="GET",
+            url=f"{BASE}/tags/12", pace_seconds=PACE)
+    capture(backend="waifu", path_slug="tags_by_slug", label="slug-waifu", method="GET",
+            url=f"{BASE}/tags/by-slug/waifu", pace_seconds=PACE)
+    total += 2
+
     print("-- /artists (1 fixture)")
     capture(backend="waifu", path_slug="artists", label="page-1", method="GET",
             url=f"{BASE}/artists", pace_seconds=PACE)
     total += 1
+
+    print("-- /artists/{id} + /artists/by-name/{name} (2 fixtures)")
+    capture(backend="waifu", path_slug="artists_by_id", label="id-80-gongha", method="GET",
+            url=f"{BASE}/artists/80", pace_seconds=PACE)
+    capture(backend="waifu", path_slug="artists_by_name", label="name-gongha", method="GET",
+            url=f"{BASE}/artists/by-name/GongHa", pace_seconds=PACE)
+    total += 2
 
     print(f"-- /images ({len(SEARCH_PROBES)} fixtures)")
     for i, (label, params) in enumerate(SEARCH_PROBES, 1):
@@ -53,6 +67,16 @@ def main() -> int:
                 url=url, pace_seconds=PACE)
         total += 1
         print(f"  [{i:02d}/{len(SEARCH_PROBES)}] /images {label}")
+
+    print("-- /images/{id} (1 fixture)")
+    capture(backend="waifu", path_slug="images_by_id", label="id-1914", method="GET",
+            url=f"{BASE}/images/1914", pace_seconds=PACE)
+    total += 1
+
+    print("-- /stats/public (1 fixture)")
+    capture(backend="waifu", path_slug="stats_public", label="all", method="GET",
+            url=f"{BASE}/stats/public", pace_seconds=PACE)
+    total += 1
 
     print(f"Done: {total} fixtures")
     return 0

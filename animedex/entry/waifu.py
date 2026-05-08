@@ -54,9 +54,15 @@ def waifu_group() -> None:
 
 # ---------- /tags ----------
 register_subcommand(waifu_group, "tags", _api.tags, help="List every tag with image counts.")
+register_subcommand(waifu_group, "tag", _api.tag, help="One tag by numeric id.")
+register_subcommand(waifu_group, "tag-by-slug", _api.tag_by_slug, help="One tag by URL-safe slug.")
 
 # ---------- /artists ----------
 register_subcommand(waifu_group, "artists", _api.artists, help="Paginated artist directory.")
+register_subcommand(waifu_group, "artist", _api.artist, help="One artist by numeric id.")
+register_subcommand(
+    waifu_group, "artist-by-name", _api.artist_by_name, help="One artist by display name (case-sensitive)."
+)
 
 # ---------- /images ----------
 register_subcommand(
@@ -72,4 +78,10 @@ register_subcommand(
         "posture is to inform, not to gate. Each row's .isNsfw field lets a downstream "
         "pipeline re-filter."
     ),
+)
+register_subcommand(waifu_group, "image", _api.image, help="One image by numeric id.")
+
+# ---------- /stats ----------
+register_subcommand(
+    waifu_group, "stats-public", _api.stats_public, help="Catalogue + traffic public statistics envelope."
 )

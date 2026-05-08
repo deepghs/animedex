@@ -176,6 +176,28 @@ class WaifuImage(BackendRichModel):
         )
 
 
+class WaifuStats(BackendRichModel):
+    """Public-statistics envelope from ``/stats/public``: counters
+    summarising the upstream's content + traffic.
+
+    :ivar totalRequests: Total request count served by the upstream
+                          (lifetime).
+    :vartype totalRequests: int or None
+    :ivar totalImages: Total image count in the catalogue.
+    :vartype totalImages: int or None
+    :ivar totalTags: Total tag count.
+    :vartype totalTags: int or None
+    :ivar totalArtists: Total artist count.
+    :vartype totalArtists: int or None
+    """
+
+    totalRequests: Optional[int] = None
+    totalImages: Optional[int] = None
+    totalTags: Optional[int] = None
+    totalArtists: Optional[int] = None
+    source_tag: Optional[SourceTag] = None
+
+
 # ---------- helpers ----------
 
 

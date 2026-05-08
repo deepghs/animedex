@@ -277,8 +277,14 @@ SUITES = [
     ("nekos", "baka", _nekos_caller),
     ("nekos", "search", _nekos_caller),
     ("waifu", "tags", _waifu_caller),
+    ("waifu", "tags_by_id", _waifu_caller),
+    ("waifu", "tags_by_slug", _waifu_caller),
     ("waifu", "artists", _waifu_caller),
+    ("waifu", "artists_by_id", _waifu_caller),
+    ("waifu", "artists_by_name", _waifu_caller),
     ("waifu", "images", _waifu_caller),
+    ("waifu", "images_by_id", _waifu_caller),
+    ("waifu", "stats_public", _waifu_caller),
 ]
 
 

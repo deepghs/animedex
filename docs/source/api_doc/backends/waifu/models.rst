@@ -34,6 +34,13 @@ WaifuImage
     :members: to_common,id,url,source,isNsfw,isAnimated,width,height,perceptualHash,extension,dominantColor,uploaderId,uploadedAt,byteSize,favorites,likedAt,addedToAlbumAt,reviewStatus,tags,artists,albums,source_tag
 
 
+WaifuStats
+-----------------------------------------------------
+
+.. autoclass:: WaifuStats
+    :members: totalRequests,totalImages,totalTags,totalArtists,source_tag
+
+
 selftest
 -----------------------------------------------------
 

@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from animedex.api import waifu as _raw_waifu
-from animedex.backends.waifu.models import WaifuArtist, WaifuImage, WaifuTag
+from animedex.backends.waifu.models import WaifuArtist, WaifuImage, WaifuStats, WaifuTag
 from animedex.config import Config
 from animedex.models.common import ApiError, SourceTag
 
@@ -185,6 +185,119 @@ def images(
     return [WaifuImage.model_validate({**row, "source_tag": src}) for row in _items(payload)]
 
 
+def tag(id: int, *, config: Optional[Config] = None, **kw) -> WaifuTag:
+    """Fetch one tag by numeric ID via ``/tags/{id}``.
+
+    :param id: Numeric Waifu.im tag ID.
+    :type id: int
+    :return: Typed tag.
+    :rtype: WaifuTag
+    """
+    payload, src = _fetch(f"/tags/{id}", config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "waifu /tags/{id} did not return a single object",
+            backend="waifu",
+            reason="upstream-shape",
+        )
+    return WaifuTag.model_validate({**payload, "source_tag": src})
+
+
+def tag_by_slug(slug: str, *, config: Optional[Config] = None, **kw) -> WaifuTag:
+    """Fetch one tag by URL-safe slug via ``/tags/by-slug/{slug}``.
+
+    :param slug: Lowercased tag slug (e.g. ``"waifu"``).
+    :type slug: str
+    :return: Typed tag.
+    :rtype: WaifuTag
+    """
+    payload, src = _fetch(f"/tags/by-slug/{slug}", config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "waifu /tags/by-slug/{slug} did not return a single object",
+            backend="waifu",
+            reason="upstream-shape",
+        )
+    return WaifuTag.model_validate({**payload, "source_tag": src})
+
+
+def artist(id: int, *, config: Optional[Config] = None, **kw) -> WaifuArtist:
+    """Fetch one artist by numeric ID via ``/artists/{id}``.
+
+    :param id: Numeric Waifu.im artist ID.
+    :type id: int
+    :return: Typed artist.
+    :rtype: WaifuArtist
+    """
+    payload, src = _fetch(f"/artists/{id}", config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "waifu /artists/{id} did not return a single object",
+            backend="waifu",
+            reason="upstream-shape",
+        )
+    return WaifuArtist.model_validate({**payload, "source_tag": src})
+
+
+def artist_by_name(name: str, *, config: Optional[Config] = None, **kw) -> WaifuArtist:
+    """Fetch one artist by display name via ``/artists/by-name/{name}``.
+
+    The response is the same artist envelope as ``/artists/{id}`` but
+    additionally includes the artist's ``images`` list.
+
+    :param name: Artist display name (case-sensitive).
+    :type name: str
+    :return: Typed artist (with extra ``images`` field via
+              ``extra='allow'``).
+    :rtype: WaifuArtist
+    """
+    payload, src = _fetch(f"/artists/by-name/{name}", config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "waifu /artists/by-name/{name} did not return a single object",
+            backend="waifu",
+            reason="upstream-shape",
+        )
+    return WaifuArtist.model_validate({**payload, "source_tag": src})
+
+
+def image(id: int, *, config: Optional[Config] = None, **kw) -> WaifuImage:
+    """Fetch one image by numeric ID via ``/images/{id}``.
+
+    :param id: Numeric Waifu.im image ID.
+    :type id: int
+    :return: Typed image.
+    :rtype: WaifuImage
+    """
+    payload, src = _fetch(f"/images/{id}", config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "waifu /images/{id} did not return a single object",
+            backend="waifu",
+            reason="upstream-shape",
+        )
+    return WaifuImage.model_validate({**payload, "source_tag": src})
+
+
+def stats_public(*, config: Optional[Config] = None, **kw) -> WaifuStats:
+    """Fetch the public statistics envelope via ``/stats/public``.
+
+    Returns a small object summarising the catalogue size + lifetime
+    request volume; useful as a cheap upstream-liveness probe.
+
+    :return: Typed statistics envelope.
+    :rtype: WaifuStats
+    """
+    payload, src = _fetch("/stats/public", config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "waifu /stats/public did not return a single object",
+            backend="waifu",
+            reason="upstream-shape",
+        )
+    return WaifuStats.model_validate({**payload, "source_tag": src})
+
+
 def selftest() -> bool:
     """Smoke-test the public Waifu.im Python API (signatures only,
     no network).
@@ -194,7 +307,17 @@ def selftest() -> bool:
     """
     import inspect
 
-    public_callables = [tags, artists, images]
+    public_callables = [
+        tags,
+        tag,
+        tag_by_slug,
+        artists,
+        artist,
+        artist_by_name,
+        images,
+        image,
+        stats_public,
+    ]
     for fn in public_callables:
         sig = inspect.signature(fn)
         assert "config" in sig.parameters, f"{fn.__name__} missing config kwarg"
