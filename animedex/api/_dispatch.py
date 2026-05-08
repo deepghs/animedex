@@ -52,6 +52,7 @@ _BASE_URLS = {
     "shikimori": "https://shikimori.io",
     "ann": "https://cdn.animenewsnetwork.com/encyclopedia",
     "nekos": "https://nekos.best/api/v2",
+    "waifu": "https://api.waifu.im",
 }
 
 

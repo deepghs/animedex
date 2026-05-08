@@ -141,6 +141,26 @@ _BACKEND_POLICY = {
         "rate_line": "200 req/min anonymous (visible in x-rate-limit-limit / x-rate-limit-remaining response headers).",
         "guidance": "Read-only image lookup. nekos.best v2 is SFW-only by design, so the rich-model rating projection is always 'g'. The /search endpoint is fuzzy: it ranks all images by similarity to the query and always returns up to amount results — a non-matching query falls through to a near-random selection rather than an empty list, so callers can't use empty-results as a 'no match' signal.",
     },
+    "kitsu": {
+        "backend_line": "Kitsu (kitsu.io/api/edge canonical; kitsu.app/api/edge accepted alias).",
+        "rate_line": "Not formally published; project applies a 10 req/sec sustained ceiling.",
+        "guidance": "Read-only JSON:API. Anime + manga catalogue plus a streaming-link rail and a cross-source mapping table (anilist / mal / anidb / kitsu). The mapping endpoint is the cheapest way to convert an upstream ID to its peers; prefer it over reading the same ID from each upstream in turn.",
+    },
+    "mangadex": {
+        "backend_line": "MangaDex (api.mangadex.org); scanlation aggregator.",
+        "rate_line": "5 req/sec anonymous (transport bucket matches).",
+        "guidance": "Read-only manga / chapter / cover lookup. The catalogue is scanlation-driven, so legal posture varies per series — surface what the upstream returns; do not pre-filter. Page-image fetching is deferred (At-Home reader; lands separately). Multiple translations of the same chapter are normal; filter by --lang at the call site, not at the library level.",
+    },
+    "danbooru": {
+        "backend_line": "Danbooru (danbooru.donmai.us); community tag-driven art catalogue.",
+        "rate_line": "10 req/sec anonymous; Cloudflare-fronted (mandatory User-Agent enforced by the transport default).",
+        "guidance": "Read-only tag-DSL search. Content-rating tags: rating:g (general), rating:s (sensitive), rating:q (questionable), rating:e (explicit). When the user did not explicitly ask for adult / ecchi / NSFW content, prepend rating:g to the tag query yourself so the upstream filter does the work. When the user explicitly asks for ecchi / NSFW / adult / R-18 content, pass their query through unmodified — the project's posture is to inform, not to gate. Each result row carries .rating so a downstream pipeline can re-filter.",
+    },
+    "waifu": {
+        "backend_line": "Waifu.im (api.waifu.im); tagged SFW + NSFW anime art collection.",
+        "rate_line": "Anonymous; not formally published (transport applies a 10 req/sec sustained ceiling).",
+        "guidance": "Read-only image lookup. Upstream defaults images to SFW only when isNsfw is omitted; pass --is-nsfw true for NSFW only. When the user did not explicitly ask for NSFW content, omit --is-nsfw entirely so the upstream's SFW default applies. When the user explicitly requested NSFW or adult material, pass it through unmodified — the project's posture is to inform, not to gate.",
+    },
 }
 
 
