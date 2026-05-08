@@ -6,12 +6,6 @@ animedex.render.jq
 .. automodule:: animedex.render.jq
 
 
-engine\_info
------------------------------------------------------
-
-.. autofunction:: engine_info
-
-
 apply\_jq
 -----------------------------------------------------
 

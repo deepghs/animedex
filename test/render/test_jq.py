@@ -97,15 +97,6 @@ class TestApplyJq:
         assert ei.value.reason == "jq-missing"
 
 
-class TestEngineInfo:
-    def test_engine_label_is_stable(self):
-        from animedex.render.jq import engine_info
-
-        label = engine_info()
-        assert isinstance(label, str)
-        assert "jq" in label.lower()
-
-
 class TestSelftest:
     def test_selftest_runs(self):
         """The wheel is a required runtime dep, so ``selftest()`` must

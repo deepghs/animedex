@@ -193,51 +193,6 @@ class CLIProbe:
         except Exception:
             self.results.append(("animedex selftest", False, traceback.format_exc().rstrip()))
 
-    def check_jq_filter(self) -> None:
-        """Validate the bundled :pypi:`jq` wheel runs end-to-end
-        through the frozen binary.
-
-        Pipes a JSON payload to ``animedex api anilist --jq <expr>``
-        is overkill for a smoke check (it would need network), so
-        we use the local ``status`` subcommand which produces a
-        deterministic output, then re-pipe through ``--jq``. The
-        path to-be-asserted is: bundled wheel imports cleanly, the
-        compiled libjq reads our payload, returns the filtered
-        result. The native engine is reported as
-        ``[OK] animedex.render.jq (smoke)`` by ``selftest``; this
-        probe is the user-facing version of that.
-        """
-        try:
-            # Use a well-known fixture-free path: feed JSON directly
-            # to the jq library through the substrate by leveraging
-            # the ``status`` command, which always emits a small
-            # deterministic JSON payload.
-            #
-            # ``status`` doesn't expose ``--jq`` directly (it isn't
-            # a fixture-driven Phase-2 subcommand), but the bundled
-            # wheel itself can be exercised by importing it through
-            # the dispatcher in ``selftest`` — which we already test
-            # in ``check_selftest``. The dedicated ``--jq`` smoke
-            # therefore just confirms that ``--help`` lists ``--jq``
-            # on a Phase-2 subcommand: the option only exists if the
-            # CLI factory wired the wheel-backed renderer.
-            code, out, err = self._run(["jikan", "show", "--help"])
-            if code != 0:
-                self.results.append(("animedex --jq plumbing", False, _fmt_proc(code, out, err)))
-                return
-            if "--jq" not in out:
-                self.results.append(
-                    (
-                        "animedex --jq plumbing",
-                        False,
-                        f"--jq flag absent from `jikan show --help`:\n{out}",
-                    )
-                )
-                return
-            self.results.append(("animedex --jq plumbing", True, "--jq option present, wheel imports cleanly"))
-        except Exception:
-            self.results.append(("animedex --jq plumbing", False, traceback.format_exc().rstrip()))
-
     def run_all(self) -> int:
         """Execute every probe and print the full report.
 
@@ -256,8 +211,14 @@ class CLIProbe:
             ("version", self.check_version),
             ("help", self.check_help),
             ("status", self.check_status),
+            # ``check_selftest`` covers the bundled jq wheel end-to-end
+            # via ``animedex.render.jq.selftest()``, which calls
+            # ``apply_jq('{"x":42}', '.x')`` through libjq. A separate
+            # ``--jq`` probe would have to either redo that or be
+            # lighter (just check ``--help`` lists ``--jq``) — and the
+            # lighter version doesn't actually verify the wheel
+            # bundled, since the option registration is unconditional.
             ("selftest", self.check_selftest),
-            ("jq plumbing", self.check_jq_filter),
         ]
 
         for label, fn in probes:

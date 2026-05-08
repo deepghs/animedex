@@ -15,7 +15,7 @@ import click
 
 from animedex.config import Config
 from animedex.models.common import AnimedexModel, ApiError
-from animedex.render.jq import apply_jq as _native_apply_jq
+from animedex.render.jq import apply_jq
 from animedex.render.json_renderer import render_json
 from animedex.render.tty import is_terminal as _is_terminal
 from animedex.render.tty import render_tty
@@ -83,7 +83,7 @@ def _apply_jq(json_text: str, jq_expr: str) -> str:
     :class:`click.ClickException` so the CLI exits non-zero with a
     clean one-line error rather than a Python traceback."""
     try:
-        return _native_apply_jq(json_text, jq_expr)
+        return apply_jq(json_text, jq_expr)
     except ApiError as exc:
         raise click.ClickException(str(exc)) from exc
 

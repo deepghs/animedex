@@ -23,17 +23,6 @@ from __future__ import annotations
 from animedex.models.common import ApiError
 
 
-def engine_info() -> str:
-    """Short engine label for diagnostics.
-
-    The :pypi:`jq` wheel does not expose ``__version__`` in its
-    public surface (verified against 1.11.0); we therefore return a
-    stable label that flags the engine without claiming a specific
-    libjq build.
-    """
-    return "native (jq.py wheel)"
-
-
 def apply_jq(payload: str, expression: str) -> str:
     """Filter ``payload`` (JSON text) through ``expression``.
 
@@ -47,9 +36,12 @@ def apply_jq(payload: str, expression: str) -> str:
               shape.
     :rtype: str
     :raises ApiError: ``reason="jq-missing"`` when the wheel is not
-                       importable on this interpreter (exotic
-                       platform / sdist build failure / a deliberate
-                       ``pip uninstall jq``); ``reason="jq-failed"``
+                       importable. With ``jq>=1.11`` listed as a hard
+                       runtime dependency, this is reachable only if
+                       a user has deliberately broken their install
+                       (``pip uninstall jq``) — the typed error gives
+                       them a friendlier message than a raw
+                       :class:`ImportError`. ``reason="jq-failed"``
                        when the expression fails to compile or
                        execute.
     """
