@@ -454,6 +454,44 @@ class TestDanbooruLossless:
         _assert_lossless(DanbooruCount, body, f"DanbooruCount/{path.name}")
 
 
+# ---------- Waifu.im ----------
+
+
+class TestWaifuLossless:
+    """Waifu.im wraps every listing in a paginated envelope; the
+    rich types model the inner ``items`` row shape."""
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "waifu" / "tags").glob("*.yaml")))
+    def test_waifu_tag_lossless(self, path):
+        from animedex.backends.waifu.models import WaifuTag
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("items"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["items"]):
+            _assert_lossless(WaifuTag, row, f"WaifuTag/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "waifu" / "artists").glob("*.yaml")))
+    def test_waifu_artist_lossless(self, path):
+        from animedex.backends.waifu.models import WaifuArtist
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("items"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["items"]):
+            _assert_lossless(WaifuArtist, row, f"WaifuArtist/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "waifu" / "images").glob("*.yaml")))
+    def test_waifu_image_lossless(self, path):
+        from animedex.backends.waifu.models import WaifuImage
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("items"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["items"]):
+            _assert_lossless(WaifuImage, row, f"WaifuImage/{path.name}[{i}]")
+
+
 # ---------- nekos.best ----------
 
 
@@ -554,3 +592,11 @@ class TestBackendRichDiscipline:
         rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
         not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
         assert not not_rich, f"Danbooru classes outside BackendRichModel: {not_rich}"
+
+    def test_waifu_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.waifu import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"Waifu classes outside BackendRichModel: {not_rich}"

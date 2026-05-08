@@ -1,0 +1,72 @@
+metadata:
+  captured_at: '2026-05-08T12:30:24Z'
+  label: default-page1
+  backend: waifu
+  path_slug: images
+request:
+  method: GET
+  url: https://api.waifu.im/images
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:30:24 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    X-Test: api.waifu.im
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, HEAD, PATCH, POST, OPTIONS, DELETE, PUT
+    Access-Control-Allow-Headers: Accept-Version, Authorization, Content-Type
+    Version: v7
+    X-Request-ID: 371bf86e167d0e06d1a743b8180781dd
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    vary: accept-encoding
+    Report-To: <scrubbed-at-capture>
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    items:
+    - id: 6460
+      perceptualHash: ddcbf8e24a60189b
+      extension: .jpeg
+      dominantColor: '#AF9F9F'
+      source: https://reddit.com/pfs8bf/
+      artists: []
+      uploaderId: null
+      uploadedAt: '2021-11-02T11:16:19.048684Z'
+      isNsfw: false
+      isAnimated: false
+      width: 800
+      height: 1131
+      byteSize: 215298
+      url: https://cdn.waifu.im/6460.jpeg
+      tags:
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 5
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    pageNumber: 1
+    totalPages: 1244
+    totalCount: 1244
+    maxPageSize: -1
+    defaultPageSize: 1
+    hasPreviousPage: false
+    hasNextPage: true
+  body_text: null
+  body_b64: null

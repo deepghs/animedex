@@ -637,6 +637,48 @@ class TestDanbooruCliFromFixtures:
         assert all(r == "g" for r in decoded)
 
 
+# ---------- Waifu.im ----------
+
+
+class TestWaifuCliFromFixtures:
+    """JSON-path coverage of every Waifu.im high-level subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("tags", [], "waifu/tags/01-all.yaml"),
+            ("artists", [], "waifu/artists/01-page-1.yaml"),
+            ("images", [], "waifu/images/01-default-page1.yaml"),
+            ("images", ["--included-tags", "waifu"], "waifu/images/02-included-waifu.yaml"),
+            ("images", ["--is-nsfw", "true", "--page-size", "3"], "waifu/images/04-nsfw-true.yaml"),
+            ("images", ["--is-animated", "true", "--page-size", "2"], "waifu/images/05-animated-true.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["waifu", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"waifu {subcommand} failed: {result.output[:600]}"
+
+    def test_default_images_are_sfw(self, cli_runner, cli, fake_clock):
+        """Default ``waifu images`` (no ``--is-nsfw``) returns
+        SFW-only — pin the upstream-default-honouring posture."""
+        fixture = _load_fixture("waifu/images/01-default-page1.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["waifu", "images", "--no-cache", "--jq", "[.[].isNsfw]"])
+        assert result.exit_code == 0, result.output
+        decoded = json.loads(result.output)
+        assert decoded
+        assert all(v is False for v in decoded)
+
+
 # ---------- viewer / notification / etc. — auth-required stubs ----------
 
 
@@ -663,7 +705,7 @@ class TestPhase2SubcommandTree:
     """No HTTP needed; just confirm registration shape."""
 
     def test_top_level_groups_present(self, cli):
-        for group in ("anilist", "danbooru", "jikan", "kitsu", "mangadex", "nekos", "trace"):
+        for group in ("anilist", "danbooru", "jikan", "kitsu", "mangadex", "nekos", "trace", "waifu"):
             assert group in cli.commands
 
     def test_anilist_has_at_least_28_subcommands(self, cli):
@@ -697,6 +739,9 @@ class TestPhase2SubcommandTree:
         assert {"search", "post", "artist", "artist-search", "tag", "pool", "pool-search", "count"} <= set(
             cli.commands["danbooru"].commands.keys()
         )
+
+    def test_waifu_has_full_surface(self, cli):
+        assert {"tags", "artists", "images"} <= set(cli.commands["waifu"].commands.keys())
 
 
 # ---------- --help walk for every Phase-2 subcommand ----------
@@ -741,3 +786,8 @@ class TestEverySubcommandHasHelp:
         for sub in cli.commands["danbooru"].commands:
             r = cli_runner.invoke(cli, ["danbooru", sub, "--help"])
             assert r.exit_code == 0, f"danbooru {sub} --help failed: {r.output[:200]}"
+
+    def test_waifu_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["waifu"].commands:
+            r = cli_runner.invoke(cli, ["waifu", sub, "--help"])
+            assert r.exit_code == 0, f"waifu {sub} --help failed: {r.output[:200]}"

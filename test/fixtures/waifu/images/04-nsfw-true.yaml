@@ -1,0 +1,175 @@
+metadata:
+  captured_at: '2026-05-08T12:30:38Z'
+  label: nsfw-true
+  backend: waifu
+  path_slug: images
+request:
+  method: GET
+  url: https://api.waifu.im/images?isNsfw=true&pageSize=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:30:33 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    X-Test: api.waifu.im
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, HEAD, PATCH, POST, OPTIONS, DELETE, PUT
+    Access-Control-Allow-Headers: Accept-Version, Authorization, Content-Type
+    Version: v7
+    X-Request-ID: 4524d582eed5f7fa42ff52910ebb16ac
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    vary: accept-encoding
+    Report-To: <scrubbed-at-capture>
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    items:
+    - id: 612
+      perceptualHash: a76149d246fc383d
+      extension: .png
+      dominantColor: '#8C5C69'
+      source: https://reddit.com/ekagyi/
+      artists: []
+      uploaderId: null
+      uploadedAt: '2021-11-02T11:16:19.048684Z'
+      isNsfw: true
+      isAnimated: false
+      width: 2156
+      height: 2276
+      byteSize: 2507707
+      url: https://cdn.waifu.im/612.png
+      tags:
+      - id: 2
+        name: Ecchi
+        slug: ecchi
+        description: Slightly explicit sexual content. Show full to partial nudity. Doesn't show any genital.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 3
+        name: Ero
+        slug: ero
+        description: Any kind of erotic content, basically any nsfw image.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 11
+        name: Uniform
+        slug: uniform
+        description: 'Women wearing any kind of uniform, cosplay etc... '
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 7
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    - id: 3864
+      perceptualHash: cf95c1160f4a37a9
+      extension: .jpeg
+      dominantColor: '#D8BFAC'
+      source: https://reddit.com/n8njhm/
+      artists: []
+      uploaderId: null
+      uploadedAt: '2021-11-02T11:16:19.048684Z'
+      isNsfw: true
+      isAnimated: false
+      width: 2480
+      height: 3509
+      byteSize: 319690
+      url: https://cdn.waifu.im/3864.jpeg
+      tags:
+      - id: 2
+        name: Ecchi
+        slug: ecchi
+        description: Slightly explicit sexual content. Show full to partial nudity. Doesn't show any genital.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 3
+        name: Ero
+        slug: ero
+        description: Any kind of erotic content, basically any nsfw image.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 9
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    - id: 1061
+      perceptualHash: bf2ee0f2c0909d4e
+      extension: .jpeg
+      dominantColor: '#F6DFE0'
+      source: https://reddit.com/gqtk4y/
+      artists: []
+      uploaderId: null
+      uploadedAt: '2021-11-02T11:16:19.048684Z'
+      isNsfw: true
+      isAnimated: false
+      width: 950
+      height: 2000
+      byteSize: 121794
+      url: https://cdn.waifu.im/1061.jpeg
+      tags:
+      - id: 2
+        name: Ecchi
+        slug: ecchi
+        description: Slightly explicit sexual content. Show full to partial nudity. Doesn't show any genital.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 3
+        name: Ero
+        slug: ero
+        description: Any kind of erotic content, basically any nsfw image.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 8
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    pageNumber: 1
+    totalPages: 1002
+    totalCount: 3006
+    maxPageSize: -1
+    defaultPageSize: 1
+    hasPreviousPage: false
+    hasNextPage: true
+  body_text: null
+  body_b64: null

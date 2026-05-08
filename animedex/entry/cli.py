@@ -115,6 +115,7 @@ from animedex.entry.kitsu import kitsu_group as _kitsu_group  # noqa: E402
 from animedex.entry.mangadex import mangadex_group as _mangadex_group  # noqa: E402
 from animedex.entry.nekos import nekos_group as _nekos_group  # noqa: E402
 from animedex.entry.trace import trace_group as _trace_group  # noqa: E402
+from animedex.entry.waifu import waifu_group as _waifu_group  # noqa: E402
 
 cli.add_command(_api_group)
 cli.add_command(_anilist_group)
@@ -124,6 +125,7 @@ cli.add_command(_kitsu_group)
 cli.add_command(_mangadex_group)
 cli.add_command(_nekos_group)
 cli.add_command(_trace_group)
+cli.add_command(_waifu_group)
 
 
 @cli.command(name="status")
@@ -154,7 +156,7 @@ def status_command() -> None:
     --- End ---
     """
     click.echo(f"{__TITLE__} v{__VERSION__}")
-    click.echo("Wired groups: anilist, danbooru, jikan, kitsu, mangadex, nekos, trace, api (raw passthrough).")
+    click.echo("Wired groups: anilist, danbooru, jikan, kitsu, mangadex, nekos, trace, waifu, api (raw passthrough).")
     click.echo("Run 'animedex --help' for the full command tree.")
 
 

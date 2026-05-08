@@ -109,6 +109,15 @@ def _ann_caller(fixture):
     return lambda **kw: ann.call(path=path, **kw)
 
 
+def _waifu_caller(fixture):
+    from animedex.api import waifu
+
+    url = fixture["request"]["url"]
+    base = "https://api.waifu.im"
+    path = url[len(base) :] if url.startswith(base) else url
+    return lambda **kw: waifu.call(path=path, **kw)
+
+
 def _nekos_caller(fixture):
     from animedex.api import nekos
 
@@ -165,6 +174,9 @@ SUITES = [
     ("nekos", "waifu", _nekos_caller),
     ("nekos", "baka", _nekos_caller),
     ("nekos", "search", _nekos_caller),
+    ("waifu", "tags", _waifu_caller),
+    ("waifu", "artists", _waifu_caller),
+    ("waifu", "images", _waifu_caller),
 ]
 
 
@@ -244,6 +256,7 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
             "nekos",
             "shikimori",
             "trace",
+            "waifu",
         ):
             monkeypatch.setattr(f"animedex.api.{mod_name}._dispatch_call", _fake_dispatch_call)
         return captured
@@ -300,6 +313,12 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
         from animedex.api import nekos
 
         nekos.call(path="/husbando", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_waifu_threads_timeout_seconds(self, captured):
+        from animedex.api import waifu
+
+        waifu.call(path="/tags", timeout_seconds=5.0)
         assert captured[-1].get("timeout_seconds") == 5.0
 
     def test_default_omits_timeout_seconds_to_use_dispatcher_default(self, captured):
