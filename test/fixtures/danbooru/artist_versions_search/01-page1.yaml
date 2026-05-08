@@ -1,0 +1,84 @@
+metadata:
+  captured_at: '2026-05-08T13:07:15Z'
+  label: page1
+  backend: danbooru
+  path_slug: artist_versions_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artist_versions.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:14 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"187e7fc0e5e7343fead3517d8ba91a90"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88afadab6619d8-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=27.0109, rails.cpu_time;dur=12.5982, rails.idle_time;dur=14.4128,
+      rails.sql_time;dur=13.8658, rails.view_time;dur=18.2225, rails.allocations;count=5827, request.allocations;count=6435,
+      request.gc_time;dur=0.7444, request.gc_count;count=0, request.cpu_time;dur=13.8028, request.total_time;dur=28.257, request.queue_time_0;dur=1.5342,
+      request.queue_time_1;dur=93.0002
+    x-runtime: '0.02825702667236328'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2718243
+    artist_id: 122939
+    name: joker.d.kjo.
+    updater_id: 1354729
+    urls:
+    - https://www.pixiv.net/stacc/he20349084
+    - https://www.pixiv.net/users/4413413
+    - https://www.weibo.com/n/JokerSai何賽
+    - https://www.weibo.com/u/2403765713
+    created_at: '2026-05-08T09:07:07.553-04:00'
+    updated_at: '2026-05-08T09:07:07.553-04:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: false
+    other_names:
+    - joker.
+    - JokerSai何賽
+  - id: 2718242
+    artist_id: 283438
+    name: munemori_(rknd2585)
+    updater_id: 1513576
+    urls:
+    - -https://x.com/i/user/1615720827600928769
+    - -https://x.com/mnmr7890
+    - https://nijie.info/members.php?id=2570471
+    - https://skeb.jp/@mnmr7890
+    - https://www.pixiv.net/stacc/user_rknd2585
+    - https://www.pixiv.net/users/78155413
+    created_at: '2026-05-08T09:06:58.324-04:00'
+    updated_at: '2026-05-08T09:06:58.324-04:00'
+    is_deleted: false
+    group_name: ''
+    is_banned: false
+    other_names:
+    - ムネモリ
+  body_text: null
+  body_b64: null

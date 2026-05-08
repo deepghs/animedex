@@ -1,0 +1,103 @@
+metadata:
+  captured_at: '2026-05-08T13:08:00Z'
+  label: page1
+  backend: danbooru
+  path_slug: media_metadata_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/media_metadata.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:08:00 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"6302ea9c49ed432861e3601c2e486429"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0ce2bc4dfa1-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=4.4504, rails.cpu_time;dur=3.4668, rails.idle_time;dur=0.9836,
+      rails.sql_time;dur=1.169, rails.view_time;dur=2.1311, rails.allocations;count=1635, request.allocations;count=2217,
+      request.gc_time;dur=0.669, request.gc_count;count=0, request.cpu_time;dur=4.4715, request.total_time;dur=5.4553, request.queue_time_0;dur=1.4832,
+      request.queue_time_1;dur=92.9999
+    x-runtime: '0.005455322265625'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 48159054
+    created_at: '2026-05-08T09:07:43.761-04:00'
+    updated_at: '2026-05-08T09:07:43.761-04:00'
+    media_asset_id: 48185102
+    metadata:
+      File:FileType: JPEG
+      File:ImageWidth: 1158
+      File:ImageHeight: 1689
+      JFIF:JFIFVersion: 1.01
+      JFIF:XResolution: 1
+      JFIF:YResolution: 1
+      File:BitsPerSample: 8
+      JFIF:ResolutionUnit: None
+      File:ColorComponents: 3
+      File:EncodingProcess: Baseline DCT, Huffman coding
+      File:YCbCrSubSampling: YCbCr4:4:4 (1 1)
+  - id: 48159053
+    created_at: '2026-05-08T09:07:20.939-04:00'
+    updated_at: '2026-05-08T09:07:20.939-04:00'
+    media_asset_id: 48185101
+    metadata:
+      File:FileType: JPEG
+      File:ImageWidth: 2217
+      File:ImageHeight: 4096
+      JFIF:JFIFVersion: 1.01
+      JFIF:XResolution: 1
+      JFIF:YResolution: 1
+      File:BitsPerSample: 8
+      ICC-header:CMMFlags: Not Embedded, Independent
+      JFIF:ResolutionUnit: None
+      File:ColorComponents: 3
+      File:EncodingProcess: Progressive DCT, Huffman coding
+      ICC-header:ProfileID: 0
+      File:YCbCrSubSampling: YCbCr4:2:0 (2 2)
+      ICC-header:DeviceModel: ''
+      ICC-header:ProfileClass: Display Device Profile
+      ICC-header:ColorSpaceData: 'RGB '
+      ICC-header:ProfileCMMType: ''
+      ICC-header:ProfileCreator: ''
+      ICC-header:ProfileVersion: 4.3.0
+      ICC-header:PrimaryPlatform: Unknown ()
+      ICC-header:ProfileDateTime: 2016:01:01 00:00:00
+      ICC-header:RenderingIntent: Media-Relative Colorimetric
+      ICC-header:DeviceAttributes: Reflective, Glossy, Positive, Color
+      ICC_Profile:MediaWhitePoint: 0.9642 1 0.82491
+      ICC_Profile:RedMatrixColumn: 0.43607 0.22249 0.01392
+      ICC_Profile:BlueMatrixColumn: 0.14307 0.06061 0.7141
+      ICC_Profile:ProfileCopyright: Google Inc. 2016
+      ICC-header:DeviceManufacturer: ''
+      ICC_Profile:GreenMatrixColumn: 0.38515 0.71687 0.09708
+      ICC_Profile:ProfileDescription: sRGB
+      ICC-header:ProfileFileSignature: acsp
+      ICC-header:ProfileConnectionSpace: 'XYZ '
+      ICC-header:ConnectionSpaceIlluminant: 0.9642 1 0.82491
+  body_text: null
+  body_b64: null

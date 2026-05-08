@@ -1,0 +1,237 @@
+metadata:
+  captured_at: '2026-05-08T13:07:28Z'
+  label: page1
+  backend: danbooru
+  path_slug: comments_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/comments.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:28 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"cef30338dc12dc9e4f4039602651fb8e"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0069fc4d3e1-KIX
+    server-timing: sql.queries;count=6, cache.reads;count=2, cache.keys_read;count=115, cache.keys_hit;count=115, cache.total_time;dur=1.0744,
+      rails.total_time;dur=8.3885, rails.cpu_time;dur=6.6825, rails.idle_time;dur=1.706, rails.sql_time;dur=1.5997, rails.view_time;dur=6.8273,
+      rails.allocations;count=6990, request.allocations;count=7464, request.gc_time;dur=0.7945, request.gc_count;count=0,
+      request.cpu_time;dur=7.4092, request.total_time;dur=9.1155, request.queue_time_0;dur=1.0815, request.queue_time_1;dur=91.0001
+    x-runtime: '0.009115524291992187'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 11331214
+    created_at: '2026-05-08T08:57:23.941-04:00'
+    uploader_id: 546373
+    score: 0
+    source: https://bsky.app/profile/did:plc:fjfeoitgpk7xfl43lon2zhak/post/3mkhwwdalu22l
+    md5: c08176453364440b16780259f50f79e7
+    last_comment_bumped_at: '2026-05-08T09:02:54.908-04:00'
+    rating: e
+    image_width: 3490
+    image_height: 3500
+    tag_string: 1boy 1girl absurdres arm_support artist_name barefoot black_unitard blue_eyes blue_hair breasts briar_(league_of_legends)
+      clothed_female_nude_male clothing_cutout commentary commission cum cum_on_body cum_on_breasts cum_on_clothes cum_on_legs
+      cum_on_stomach detached_sleeves dutch_angle english_commentary eyelashes facepaint footjob footjob_with_legwear full_body
+      gradient_hair highres kasparition league_of_legends light_smile long_hair long_pointy_ears looking_at_another looking_down
+      medium_breasts multicolored_hair navel navel_cutout nude out_of_frame penis pink_background pink_hair pink_lips pointy_ears
+      red_sash sash simple_background sitting sleeveless stirrup_legwear toeless_legwear two-footed_footjob uncensored unitard
+      veins veiny_penis
+    fav_count: 0
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: true
+    approver_id: null
+    tag_count_general: 53
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 1954177
+    up_score: 0
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 61
+    updated_at: '2026-05-08T08:57:24.138-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: '2026-05-08T09:02:54.908-04:00'
+    has_active_children: true
+    bit_flags: 0
+    tag_count_meta: 5
+    has_large: true
+    has_visible_children: true
+    media_asset:
+      id: 48185024
+      created_at: '2026-05-08T08:54:39.605-04:00'
+      updated_at: '2026-05-08T08:54:41.236-04:00'
+      md5: c08176453364440b16780259f50f79e7
+      file_ext: jpg
+      file_size: 1954177
+      image_width: 3490
+      image_height: 3500
+      duration: null
+      status: active
+      file_key: FRveTcMp3
+      is_public: true
+      pixel_hash: cb68026ae71e196263e4f793daf51420
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/c0/81/c08176453364440b16780259f50f79e7.jpg
+        width: 179
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/c0/81/c08176453364440b16780259f50f79e7.jpg
+        width: 359
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/c0/81/c08176453364440b16780259f50f79e7.webp
+        width: 718
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/c0/81/sample-c08176453364440b16780259f50f79e7.jpg
+        width: 850
+        height: 852
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/c0/81/c08176453364440b16780259f50f79e7.jpg
+        width: 3490
+        height: 3500
+        file_ext: jpg
+    tag_string_general: 1boy 1girl arm_support artist_name barefoot black_unitard blue_eyes blue_hair breasts clothed_female_nude_male
+      clothing_cutout cum cum_on_body cum_on_breasts cum_on_clothes cum_on_legs cum_on_stomach detached_sleeves dutch_angle
+      eyelashes facepaint footjob footjob_with_legwear full_body gradient_hair light_smile long_hair long_pointy_ears looking_at_another
+      looking_down medium_breasts multicolored_hair navel navel_cutout nude out_of_frame penis pink_background pink_hair pink_lips
+      pointy_ears red_sash sash simple_background sitting sleeveless stirrup_legwear toeless_legwear two-footed_footjob uncensored
+      unitard veins veiny_penis
+    tag_string_character: briar_(league_of_legends)
+    tag_string_copyright: league_of_legends
+    tag_string_artist: kasparition
+    tag_string_meta: absurdres commentary commission english_commentary highres
+    file_url: https://cdn.donmai.us/original/c0/81/c08176453364440b16780259f50f79e7.jpg
+    large_file_url: https://cdn.donmai.us/sample/c0/81/sample-c08176453364440b16780259f50f79e7.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/c0/81/c08176453364440b16780259f50f79e7.jpg
+  - id: 11331231
+    created_at: '2026-05-08T08:59:33.906-04:00'
+    uploader_id: 1330318
+    score: 0
+    source: https://x.com/Doo_so_/status/1949771406759366991
+    md5: b93b06d2adba5369b766d78fdbd43cb4
+    last_comment_bumped_at: '2026-05-08T09:01:31.209-04:00'
+    rating: g
+    image_width: 1700
+    image_height: 851
+    tag_string: 3boys adjusting_eyewear agent_choi black_eyes black_hair black_necktie black_pants black_shirt blue_eyes blue_jacket
+      blue_pupils brown_hair closed_mouth commentary_request cowboy_shot doo_so food fruit glasses grapes grin gwechul hand_on_eyewear
+      hand_on_own_face hand_on_own_shoulder hand_up highres jacket kim_soleum korean_commentary looking_at_viewer male_focus
+      multiple_boys necktie open_mouth pants parted_lips red_pupils ryu_jaekwan scar scar_on_neck serious shirt short_hair
+      simple_background sitting smile solo spiked_hair standing stretching tiger upper_body white_shirt
+    fav_count: 0
+    file_ext: jpg
+    last_noted_at: null
+    parent_id: null
+    has_children: true
+    approver_id: null
+    tag_count_general: 46
+    tag_count_artist: 1
+    tag_count_character: 3
+    tag_count_copyright: 1
+    file_size: 271936
+    up_score: 0
+    down_score: 0
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 54
+    updated_at: '2026-05-08T09:04:37.131-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: '2026-05-08T09:01:31.209-04:00'
+    has_active_children: true
+    bit_flags: 0
+    tag_count_meta: 3
+    has_large: true
+    has_visible_children: true
+    media_asset:
+      id: 48184776
+      created_at: '2026-05-08T08:33:08.491-04:00'
+      updated_at: '2026-05-08T08:33:09.939-04:00'
+      md5: b93b06d2adba5369b766d78fdbd43cb4
+      file_ext: jpg
+      file_size: 271936
+      image_width: 1700
+      image_height: 851
+      duration: null
+      status: active
+      file_key: yXcqiRr9C
+      is_public: true
+      pixel_hash: 89f65da96f21e5157a9eed16a8507e40
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/b9/3b/b93b06d2adba5369b766d78fdbd43cb4.jpg
+        width: 180
+        height: 90
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/b9/3b/b93b06d2adba5369b766d78fdbd43cb4.jpg
+        width: 360
+        height: 180
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/b9/3b/b93b06d2adba5369b766d78fdbd43cb4.webp
+        width: 720
+        height: 360
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/b9/3b/sample-b93b06d2adba5369b766d78fdbd43cb4.jpg
+        width: 850
+        height: 426
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/b9/3b/b93b06d2adba5369b766d78fdbd43cb4.jpg
+        width: 1700
+        height: 851
+        file_ext: jpg
+    tag_string_general: 3boys adjusting_eyewear black_eyes black_hair black_necktie black_pants black_shirt blue_eyes blue_jacket
+      blue_pupils brown_hair closed_mouth cowboy_shot food fruit glasses grapes grin hand_on_eyewear hand_on_own_face hand_on_own_shoulder
+      hand_up jacket looking_at_viewer male_focus multiple_boys necktie open_mouth pants parted_lips red_pupils scar scar_on_neck
+      serious shirt short_hair simple_background sitting smile solo spiked_hair standing stretching tiger upper_body white_shirt
+    tag_string_character: agent_choi kim_soleum ryu_jaekwan
+    tag_string_copyright: gwechul
+    tag_string_artist: doo_so
+    tag_string_meta: commentary_request highres korean_commentary
+    file_url: https://cdn.donmai.us/original/b9/3b/b93b06d2adba5369b766d78fdbd43cb4.jpg
+    large_file_url: https://cdn.donmai.us/sample/b9/3b/sample-b93b06d2adba5369b766d78fdbd43cb4.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/b9/3b/b93b06d2adba5369b766d78fdbd43cb4.jpg
+  body_text: null
+  body_b64: null

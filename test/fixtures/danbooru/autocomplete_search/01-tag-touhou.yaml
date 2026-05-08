@@ -1,0 +1,130 @@
+metadata:
+  captured_at: '2026-05-08T13:08:13Z'
+  label: tag-touhou
+  backend: danbooru
+  path_slug: autocomplete_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/autocomplete.json?search%5Bquery%5D=touhou&search%5Btype%5D=tag_query&limit=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:08:13 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    Cache-Control: max-age=600, public, stale-while-revalidate=86400
+    etag: W/"46eac51dca595e3ff0ad977fc0ede134"
+    x-request-id: 9f88b11ece151a01-KIX
+    server-timing: sql.queries;count=3, rails.total_time;dur=68.7039, rails.cpu_time;dur=23.2849, rails.idle_time;dur=45.419,
+      rails.sql_time;dur=45.7365, rails.view_time;dur=0.5172, rails.allocations;count=16697, request.allocations;count=17145,
+      request.gc_time;dur=12.5703, request.gc_count;count=1, request.cpu_time;dur=24.0664, request.total_time;dur=69.4852,
+      request.queue_time_0;dur=0.561, request.queue_time_1;dur=103.9999
+    x-runtime: '0.06948517608642578'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: MISS
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - type: tag-word
+    label: touhou
+    value: touhou
+    category: 3
+    post_count: 1045081
+    tag:
+      id: 29
+      name: touhou
+      post_count: 1045081
+      category: 3
+      created_at: '2013-02-27T22:33:43.861-05:00'
+      updated_at: '2019-08-27T06:27:39.093-04:00'
+      is_deprecated: false
+      words:
+      - touhou
+  - type: tag-word
+    label: disembodied linked eye
+    value: disembodied_linked_eye
+    category: 0
+    post_count: 45252
+    antecedent: third_eye_(touhou)
+    tag:
+      id: 2604599
+      name: disembodied_linked_eye
+      post_count: 45252
+      category: 0
+      created_at: '2026-04-17T11:56:50.334-04:00'
+      updated_at: '2026-04-17T11:56:50.334-04:00'
+      is_deprecated: false
+      words:
+      - disembodied
+      - linked
+      - eye
+  - type: tag-word
+    label: touhou (pc-98)
+    value: touhou_(pc-98)
+    category: 3
+    post_count: 15947
+    tag:
+      id: 727448
+      name: touhou_(pc-98)
+      post_count: 15947
+      category: 3
+      created_at: '2013-02-28T07:47:04.632-05:00'
+      updated_at: '2019-08-30T19:33:46.374-04:00'
+      is_deprecated: false
+      words:
+      - touhou
+      - pc
+      - '98'
+  - type: tag-word
+    label: cookie (touhou)
+    value: cookie_(touhou)
+    category: 3
+    post_count: 11775
+    tag:
+      id: 1294431
+      name: cookie_(touhou)
+      post_count: 11775
+      category: 3
+      created_at: '2014-10-28T12:23:45.358-04:00'
+      updated_at: '2019-09-01T16:20:32.908-04:00'
+      is_deprecated: false
+      words:
+      - cookie
+      - touhou
+  - type: tag-word
+    label: gap (touhou)
+    value: gap_(touhou)
+    category: 0
+    post_count: 11047
+    tag:
+      id: 1575551
+      name: gap_(touhou)
+      post_count: 11047
+      category: 0
+      created_at: '2020-06-07T17:00:36.109-04:00'
+      updated_at: '2020-06-07T17:00:36.109-04:00'
+      is_deprecated: false
+      words:
+      - gap
+      - touhou
+  body_text: null
+  body_b64: null

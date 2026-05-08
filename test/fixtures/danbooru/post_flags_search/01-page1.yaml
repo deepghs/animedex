@@ -1,0 +1,65 @@
+metadata:
+  captured_at: '2026-05-08T13:07:46Z'
+  label: page1
+  backend: danbooru
+  path_slug: post_flags_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/post_flags.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:46 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"cefceebee4c4c2e1cd9654995a2fe7be"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0744e6c1a15-KIX
+    server-timing: sql.queries;count=3, rails.total_time;dur=4.4422, rails.cpu_time;dur=3.3463, rails.idle_time;dur=1.0959,
+      rails.sql_time;dur=1.2925, rails.view_time;dur=2.6689, rails.allocations;count=1866, request.allocations;count=2393,
+      request.gc_time;dur=0.1263, request.gc_count;count=0, request.cpu_time;dur=4.0792, request.total_time;dur=5.1752, request.queue_time_0;dur=2.111,
+      request.queue_time_1;dur=88.0001
+    x-runtime: '0.0051751785278320315'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - created_at: '2026-05-08T09:00:02.220-04:00'
+    post_id: 10968643
+    reason: Unapproved in three days after returning to moderation queue
+    is_resolved: false
+    updated_at: '2026-05-08T09:00:02.220-04:00'
+    id: 899229
+    status: succeeded
+    category: rejected
+  - created_at: '2026-05-08T09:00:02.053-04:00'
+    post_id: 11308227
+    reason: Unapproved in three days after returning to moderation queue
+    is_resolved: false
+    updated_at: '2026-05-08T09:00:02.053-04:00'
+    id: 899228
+    status: succeeded
+    category: rejected
+  body_text: null
+  body_b64: null

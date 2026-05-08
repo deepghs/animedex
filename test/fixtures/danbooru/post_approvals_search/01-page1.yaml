@@ -1,0 +1,60 @@
+metadata:
+  captured_at: '2026-05-08T13:07:48Z'
+  label: page1
+  backend: danbooru
+  path_slug: post_approvals_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/post_approvals.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:48 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"cc86aa2c32211c5e7eee0565b9c80bc6"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0856d80d3fe-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=1.9831, rails.cpu_time;dur=1.4866, rails.idle_time;dur=0.4964,
+      rails.sql_time;dur=0.5856, rails.view_time;dur=0.7096, rails.allocations;count=1306, request.allocations;count=1829,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.0842, request.total_time;dur=2.5809, request.queue_time_0;dur=1.4367,
+      request.queue_time_1;dur=92.0
+    x-runtime: '0.002580902099609375'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Content-Security-Policy-Report-Only: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 2874822
+    user_id: 1130070
+    post_id: 11331199
+    created_at: '2026-05-08T09:02:45.589-04:00'
+    updated_at: '2026-05-08T09:02:45.589-04:00'
+  - id: 2874821
+    user_id: 1130070
+    post_id: 11331222
+    created_at: '2026-05-08T09:02:37.900-04:00'
+    updated_at: '2026-05-08T09:02:37.900-04:00'
+  body_text: null
+  body_b64: null

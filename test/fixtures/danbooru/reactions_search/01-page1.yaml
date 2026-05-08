@@ -1,0 +1,63 @@
+metadata:
+  captured_at: '2026-05-08T13:08:05Z'
+  label: page1
+  backend: danbooru
+  path_slug: reactions_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/reactions.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:08:05 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"096856a2f9cc7f211c7cb59685e3b6f1"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0ea8944d416-KIX
+    server-timing: sql.queries;count=4, rails.total_time;dur=12.8899, rails.cpu_time;dur=7.3816, rails.idle_time;dur=5.5084,
+      rails.sql_time;dur=4.8052, rails.view_time;dur=6.4713, rails.allocations;count=5252, request.allocations;count=5778,
+      request.gc_time;dur=0.3261, request.gc_count;count=0, request.cpu_time;dur=8.2794, request.total_time;dur=13.7877, request.queue_time_0;dur=1.9312,
+      request.queue_time_1;dur=91.0001
+    x-runtime: '0.013787673950195313'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 82408
+    created_at: '2023-04-03T07:35:18.726-04:00'
+    updated_at: '2023-04-03T07:35:18.726-04:00'
+    creator_id: 1002489
+    reaction_id: 102
+    model_type: Post
+    model_id: 6195010
+  - id: 82407
+    created_at: '2023-04-02T13:10:01.053-04:00'
+    updated_at: '2023-04-02T13:10:01.053-04:00'
+    creator_id: 570331
+    reaction_id: 93
+    model_type: ForumPost
+    model_id: 237416
+  body_text: null
+  body_b64: null

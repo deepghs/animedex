@@ -1,0 +1,65 @@
+metadata:
+  captured_at: '2026-05-08T13:07:16Z'
+  label: page1
+  backend: danbooru
+  path_slug: artist_commentaries_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/artist_commentaries.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:16 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"65997ddd11245c6a7bce165d8d83b3e8"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88afb8d907fca0-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.0885, rails.cpu_time;dur=2.4665, rails.idle_time;dur=0.622,
+      rails.sql_time;dur=0.7758, rails.view_time;dur=1.1493, rails.allocations;count=1535, request.allocations;count=2064,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.3487, request.total_time;dur=3.9711, request.queue_time_0;dur=2.2626,
+      request.queue_time_1;dur=94.0001
+    x-runtime: '0.003971122741699219'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 9168509
+    post_id: 11331266
+    original_title: 緋雪
+    original_description: ''
+    translated_title: ''
+    translated_description: ''
+    created_at: '2026-05-08T09:07:03.996-04:00'
+    updated_at: '2026-05-08T09:07:03.996-04:00'
+  - id: 9168508
+    post_id: 11331265
+    original_title: ''
+    original_description: プレラーティ
+    translated_title: ''
+    translated_description: ''
+    created_at: '2026-05-08T09:06:14.069-04:00'
+    updated_at: '2026-05-08T09:06:14.069-04:00'
+  body_text: null
+  body_b64: null

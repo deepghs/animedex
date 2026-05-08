@@ -1,0 +1,67 @@
+metadata:
+  captured_at: '2026-05-08T13:07:54Z'
+  label: page1
+  backend: danbooru
+  path_slug: mod_actions_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/mod_actions.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:53 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"b62e91257823325ce7d990b14a22ea07"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0a2c9beb649-KIX
+    server-timing: sql.queries;count=3, rails.total_time;dur=12.6861, rails.cpu_time;dur=9.5153, rails.idle_time;dur=3.1708,
+      rails.sql_time;dur=2.6048, rails.view_time;dur=9.0846, rails.allocations;count=5364, request.allocations;count=5955,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=10.3575, request.total_time;dur=13.5282, request.queue_time_0;dur=1.2662,
+      request.queue_time_1;dur=94.0001
+    x-runtime: '0.013528152465820313'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 909243
+    creator_id: 554505
+    description: 'deleted forum #438277'
+    created_at: '2026-05-08T08:47:47.557-04:00'
+    updated_at: '2026-05-08T08:47:47.557-04:00'
+    category: forum_post_delete
+    subject_type: ForumPost
+    subject_id: 438277
+    category_id: 102
+  - id: 909241
+    creator_id: 554505
+    description: 'deleted forum topic #36037 (title: God returned)'
+    created_at: '2026-05-08T08:47:47.533-04:00'
+    updated_at: '2026-05-08T08:47:47.533-04:00'
+    category: forum_topic_delete
+    subject_type: ForumTopic
+    subject_id: 36037
+    category_id: 202
+  body_text: null
+  body_b64: null

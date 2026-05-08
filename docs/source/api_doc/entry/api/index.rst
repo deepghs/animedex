@@ -19,6 +19,7 @@ animedex.entry.api
     nekos
     shikimori
     trace
+    waifu
 
 \_\_all\_\_
 -----------------------------------------------------

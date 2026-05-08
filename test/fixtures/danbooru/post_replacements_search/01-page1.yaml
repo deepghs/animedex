@@ -1,0 +1,88 @@
+metadata:
+  captured_at: '2026-05-08T13:07:42Z'
+  label: page1
+  backend: danbooru
+  path_slug: post_replacements_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/post_replacements.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:42 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"fb3941ff9ab2fe538075a85e9bc47f23"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b060289ed3c5-KIX
+    server-timing: sql.queries;count=3, rails.total_time;dur=10.0388, rails.cpu_time;dur=7.9412, rails.idle_time;dur=2.0976,
+      rails.sql_time;dur=1.6004, rails.view_time;dur=8.3473, rails.allocations;count=8284, request.allocations;count=8810,
+      request.gc_time;dur=0.6853, request.gc_count;count=0, request.cpu_time;dur=8.9502, request.total_time;dur=11.0481, request.queue_time_0;dur=0.8562,
+      request.queue_time_1;dur=92.9999
+    x-runtime: '0.011048072814941407'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Content-Security-Policy-Report-Only: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 75598
+    post_id: 11328787
+    creator_id: 1130070
+    original_url: file://IMG_20200302_062206.jpg
+    replacement_url: https://cdn.donmai.us/original/d7/37/d737395b44f9751341e2aa81831b7df5.jpg
+    created_at: '2026-05-08T07:32:28.580-04:00'
+    updated_at: '2026-05-08T07:32:28.580-04:00'
+    old_file_ext: jpg
+    old_file_size: 102030
+    old_image_width: 1235
+    old_image_height: 1651
+    old_md5: 03b42baa1d1aeb997cc7cc7c21c70adb
+    file_ext: jpg
+    file_size: 142487
+    image_width: 1235
+    image_height: 1651
+    md5: d737395b44f9751341e2aa81831b7df5
+    media_asset_id: 48183838
+    old_media_asset_id: 48179595
+  - id: 75597
+    post_id: 11328971
+    creator_id: 1130070
+    original_url: https://x.com/PGR_GLOBAL/status/2052584283609702584
+    replacement_url: https://www.youtube.com/post/UgkxO5_BBsfi3E1kzW_c6aune5fWL3MtHAzY
+    created_at: '2026-05-08T00:27:46.086-04:00'
+    updated_at: '2026-05-08T00:27:46.086-04:00'
+    old_file_ext: jpg
+    old_file_size: 360765
+    old_image_width: 1920
+    old_image_height: 1080
+    old_md5: a1afb37648ab9faa4578a1b7cb70bb66
+    file_ext: png
+    file_size: 3605557
+    image_width: 1920
+    image_height: 1080
+    md5: b9e7d5bae7e028b217b250ef7399e573
+    media_asset_id: 48179991
+    old_media_asset_id: 48179956
+  body_text: null
+  body_b64: null

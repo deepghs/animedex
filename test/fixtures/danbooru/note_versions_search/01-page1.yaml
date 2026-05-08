@@ -1,0 +1,75 @@
+metadata:
+  captured_at: '2026-05-08T13:07:27Z'
+  label: page1
+  backend: danbooru
+  path_slug: note_versions_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/note_versions.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:27 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"150dc8dbc163dbd63cc6fe648247783b"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88affef9459689-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.6284, rails.cpu_time;dur=2.7341, rails.idle_time;dur=0.8944,
+      rails.sql_time;dur=1.0315, rails.view_time;dur=1.512, rails.allocations;count=1655, request.allocations;count=2223,
+      request.gc_time;dur=0.3515, request.gc_count;count=0, request.cpu_time;dur=4.0156, request.total_time;dur=4.9795, request.queue_time_0;dur=1.035,
+      request.queue_time_1;dur=96.9999
+    x-runtime: '0.0049795455932617185'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 5301450
+    created_at: '2026-05-08T09:07:25.878-04:00'
+    updated_at: '2026-05-08T09:07:25.878-04:00'
+    x: 400
+    y: 955
+    width: 72
+    height: 186
+    body: Love it, really.
+    is_active: true
+    note_id: 4362139
+    post_id: 11330309
+    updater_id: 1415392
+    version: 1
+  - id: 5301449
+    created_at: '2026-05-08T09:06:30.642-04:00'
+    updated_at: '2026-05-08T09:06:30.642-04:00'
+    x: 99
+    y: 967
+    width: 40
+    height: 119
+    body: Was that butterfly, really you?
+    is_active: true
+    note_id: 4362138
+    post_id: 11330309
+    updater_id: 1415392
+    version: 1
+  body_text: null
+  body_b64: null

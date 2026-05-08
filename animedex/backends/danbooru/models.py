@@ -17,7 +17,7 @@ through ``model_dump`` losslessly via ``extra='allow'``.
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import Any, List, Optional
 
 from animedex.models.art import ArtPost
 from animedex.models.common import BackendRichModel, SourceTag
@@ -143,6 +143,46 @@ class DanbooruPool(BackendRichModel):
     category: Optional[str] = None
     is_active: Optional[bool] = None
     is_deleted: Optional[bool] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class DanbooruRecord(BackendRichModel):
+    """Catch-all Danbooru record shape used by the long-tail of
+    anonymous-readable endpoints (versions / votes / events /
+    operational metrics / etc.) where typing every field per
+    endpoint would multiply the model count without much benefit
+    to a downstream caller. ``id`` is the only universal field
+    and is typed as :class:`~typing.Any` because the upstream's
+    primary keys vary by resource family (numeric for the typical
+    rows; UUID string for ``/jobs``, ``/metrics``, and similar
+    operational queues). Everything else round-trips via
+    ``extra='allow'``.
+    """
+
+    id: Optional[Any] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class DanbooruRelatedTag(BackendRichModel):
+    """Response shape for ``/related_tag.json``: a query echo + a
+    ranked list of related tags. The shape is upstream-specific
+    and not a uniform list-of-records."""
+
+    query: Optional[str] = None
+    category: Optional[str] = None
+    related_tags: Optional[List[Any]] = None
+    tag: Optional[Any] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class DanbooruIQDBQuery(BackendRichModel):
+    """Response shape for ``/iqdb_queries.json``: a list of
+    similarity-scored matches against a candidate image URL or
+    upload."""
+
+    post: Optional[Any] = None
+    post_id: Optional[int] = None
+    score: Optional[float] = None
     source_tag: Optional[SourceTag] = None
 
 

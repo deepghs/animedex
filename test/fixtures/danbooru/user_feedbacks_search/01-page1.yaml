@@ -1,0 +1,65 @@
+metadata:
+  captured_at: '2026-05-08T13:07:36Z'
+  label: page1
+  backend: danbooru
+  path_slug: user_feedbacks_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/user_feedbacks.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:35 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"d57511d11aeabd475843e18bd58b06cb"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0321c56b862-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.9579, rails.cpu_time;dur=2.0801, rails.idle_time;dur=0.8778,
+      rails.sql_time;dur=1.0218, rails.view_time;dur=1.3802, rails.allocations;count=1533, request.allocations;count=2053,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.9596, request.total_time;dur=3.8376, request.queue_time_0;dur=1.5182,
+      request.queue_time_1;dur=99.0
+    x-runtime: '0.003837646484375'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - user_id: 1549335
+    creator_id: 554505
+    created_at: '2026-05-08T08:45:22.156-04:00'
+    body: 'Banned forever: Sockpuppet of user #1268653'
+    category: negative
+    id: 39410
+    updated_at: '2026-05-08T08:45:22.156-04:00'
+    is_deleted: false
+  - user_id: 1549266
+    creator_id: 556219
+    created_at: '2026-05-08T05:46:06.785-04:00'
+    body: 'Banned forever: Spam'
+    category: negative
+    id: 39409
+    updated_at: '2026-05-08T05:46:06.785-04:00'
+    is_deleted: false
+  body_text: null
+  body_b64: null

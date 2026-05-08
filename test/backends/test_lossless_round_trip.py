@@ -674,6 +674,123 @@ class TestDanbooruLossless:
             pytest.skip("error fixture")
         _assert_lossless(DanbooruCount, body, f"DanbooruCount/{path.name}")
 
+    # ---------- DanbooruRecord catch-all (paginated long-tail feeds) ----------
+    #
+    # Every long-tail Danbooru endpoint (versions / votes / events / forum /
+    # commentary / moderation / operational) returns the same uniform shape:
+    # a flat ``[{id, ...}, ...]`` (or a single dict for ``/<slug>/{id}.json``).
+    # The ``DanbooruRecord`` model is the catch-all that exists to round-trip
+    # every such payload losslessly without spelling out per-endpoint typed
+    # subclasses (which would multiply the model count without much downstream
+    # benefit; ``extra='allow'`` covers the unmodelled keys).
+
+    _DANBOORU_RECORD_LIST_SLUGS = [
+        "ai_tags_search",
+        "artist_commentaries_search",
+        "artist_commentary_versions_search",
+        "artist_versions_search",
+        "autocomplete_search",
+        "bans_search",
+        "bulk_update_requests_search",
+        "comment_votes_search",
+        "comments_search",
+        "dtext_links_search",
+        "favorite_groups_search",
+        "favorites_search",
+        "forum_post_votes_search",
+        "forum_posts_search",
+        "forum_topic_visits_search",
+        "forum_topics_search",
+        "jobs_search",
+        "media_assets_search",
+        "media_metadata_search",
+        "metrics_search",
+        "mod_actions_search",
+        "note_versions_search",
+        "notes_search",
+        "pool_versions_search",
+        "post_appeals_search",
+        "post_approvals_search",
+        "post_disapprovals_search",
+        "post_events_search",
+        "post_flags_search",
+        "post_replacements_search",
+        "post_versions_search",
+        "post_votes_search",
+        "rate_limits_search",
+        "reactions_search",
+        "recommended_posts_search",
+        "tag_aliases_search",
+        "tag_implications_search",
+        "tag_versions_search",
+        "upload_media_assets_search",
+        "uploads_search",
+        "user_events_search",
+        "user_feedbacks_search",
+        "users_search",
+        "wiki_page_versions_search",
+        "wiki_pages_search",
+    ]
+
+    _DANBOORU_RECORD_BY_ID_SLUGS = [
+        "comments_by_id",
+        "notes_by_id",
+        "users_by_id",
+        "wiki_pages_by_id",
+    ]
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(p for slug in _DANBOORU_RECORD_LIST_SLUGS for p in (FIXTURES / "danbooru" / slug).glob("*.yaml")),
+        ids=lambda p: f"{p.parent.name}/{p.stem}",
+    )
+    def test_danbooru_record_list_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruRecord
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error / non-list fixture")
+        for i, row in enumerate(body):
+            if not isinstance(row, dict):
+                continue
+            _assert_lossless(DanbooruRecord, row, f"DanbooruRecord/{path.parent.name}/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(p for slug in _DANBOORU_RECORD_BY_ID_SLUGS for p in (FIXTURES / "danbooru" / slug).glob("*.yaml")),
+        ids=lambda p: f"{p.parent.name}/{p.stem}",
+    )
+    def test_danbooru_record_by_id_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruRecord
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict):
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(DanbooruRecord, body, f"DanbooruRecord/{path.parent.name}/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "related_tag_search").glob("*.yaml")))
+    def test_danbooru_related_tag_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruRelatedTag
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict):
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(DanbooruRelatedTag, body, f"DanbooruRelatedTag/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "iqdb_queries").glob("*.yaml")))
+    def test_danbooru_iqdb_query_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruIQDBQuery
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body:
+            pytest.skip("empty fixture")
+        if not isinstance(body, list):
+            pytest.skip("error fixture")
+        for i, row in enumerate(body):
+            if not isinstance(row, dict):
+                continue
+            _assert_lossless(DanbooruIQDBQuery, row, f"DanbooruIQDBQuery/{path.name}[{i}]")
+
 
 # ---------- Waifu.im ----------
 

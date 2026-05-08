@@ -1,0 +1,69 @@
+metadata:
+  captured_at: '2026-05-08T13:07:21Z'
+  label: page1
+  backend: danbooru
+  path_slug: tag_versions_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tag_versions.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:21 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"98efc5cd1195428e84e0621c4a8ad381"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88afd9a8effcb5-KIX
+    server-timing: sql.queries;count=4, rails.total_time;dur=16.808, rails.cpu_time;dur=12.2695, rails.idle_time;dur=4.5385,
+      rails.sql_time;dur=3.6381, rails.view_time;dur=8.9519, rails.allocations;count=5970, request.allocations;count=6570,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=13.4191, request.total_time;dur=17.9913, request.queue_time_0;dur=0.8686,
+      request.queue_time_1;dur=92.9999
+    x-runtime: '0.017991302490234375'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 172370
+    created_at: '2026-05-08T07:53:22.390-04:00'
+    updated_at: '2026-05-08T07:53:22.390-04:00'
+    tag_id: 2622591
+    updater_id: 1428520
+    previous_version_id: 172369
+    version: 2
+    name: velvet_biskit
+    category: 4
+    is_deprecated: false
+  - id: 172369
+    created_at: '2026-05-08T07:51:33.416-04:00'
+    updated_at: '2026-05-08T07:51:33.416-04:00'
+    tag_id: 2622591
+    updater_id: null
+    previous_version_id: null
+    version: 1
+    name: velvet_biskit
+    category: 0
+    is_deprecated: false
+  body_text: null
+  body_b64: null
