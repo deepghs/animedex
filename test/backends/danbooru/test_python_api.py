@@ -285,6 +285,34 @@ class TestErrorPaths:
                 db_api.search("touhou", no_cache=True)
         assert ei.value.reason == "auth-required"
 
+    def test_429_raises_rate_limited(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://danbooru.donmai.us/posts.json",
+                json={"success": False, "error": "Rate limit exceeded", "rate_limited": True},
+                status=429,
+            )
+            with pytest.raises(ApiError) as ei:
+                db_api.search("touhou", no_cache=True)
+        assert ei.value.reason == "rate-limited"
+
+    def test_200_error_object_raises_rate_limited(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://danbooru.donmai.us/posts.json",
+                json={"success": False, "error": "Rate limit exceeded", "rate_limited": True},
+                status=200,
+            )
+            with pytest.raises(ApiError) as ei:
+                db_api.search("touhou", no_cache=True)
+        assert ei.value.reason == "rate-limited"
+
     @pytest.mark.parametrize(
         "fn,path,body",
         [

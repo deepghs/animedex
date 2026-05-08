@@ -139,10 +139,11 @@ class TestApiError:
         from animedex.models.common import REASONS, ApiError
 
         with pytest.raises(ValueError, match="unknown ApiError reason"):
-            ApiError("fail", backend="anilist", reason="rate-limited")
+            ApiError("fail", backend="anilist", reason="not-a-real-reason")
         # ``REASONS`` is a frozenset of the actual vocabulary.
         assert "upstream-error" in REASONS
         assert "auth-required" in REASONS
+        assert "rate-limited" in REASONS
 
     def test_known_reason_accepted(self):
         """Every value in :data:`REASONS` constructs cleanly."""

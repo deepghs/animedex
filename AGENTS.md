@@ -39,6 +39,12 @@ Concrete rules:
 
 When editing or generating documentation, write paragraphs as single long lines. When porting prose from a previously hard-wrapped source, join the soft-wrapped lines back into single lines before committing.
 
+### Example and demo correctness
+
+Normal examples must demonstrate successful use. Unless the explicit purpose of an example is to show an error path or failure-mode handling, examples in repository documentation, README content, tutorials, generated docs, PR bodies, issue comments, screenshots, GIFs, videos, and other rendered demo assets must not include error output such as tracebacks, `Error:` lines, HTTP 4xx/5xx failures, validation failures, auth failures, rate-limit failures, or upstream challenge pages.
+
+Before publishing or committing a normal example or demo asset, run or render the exact command sequence shown and inspect the resulting text or frames. If an upstream service is temporarily blocking the local network path, use the documented capture environment (for example, the same proxy/session setup used for fixture capture) or choose a stable command. Do not leave a broken live result in a normal example just because the surrounding feature works.
+
 ## 2. Commit Identity Policy
 
 Every contributor configures their own git identity at the **repository level** (never globally on the host) before committing. The identity is whoever is actually doing the work:

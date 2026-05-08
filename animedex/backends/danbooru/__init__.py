@@ -74,6 +74,8 @@ def _fetch(path: str, *, params: Optional[Dict[str, Any]] = None, config: Option
             backend="danbooru",
             reason="auth-required",
         )
+    if raw.status == 429:
+        raise ApiError(f"danbooru 429 on {path} (rate limited)", backend="danbooru", reason="rate-limited")
     if raw.status == 404:
         raise ApiError(f"danbooru 404 on {path}", backend="danbooru", reason="not-found")
     if raw.status >= 500:
@@ -86,6 +88,10 @@ def _fetch(path: str, *, params: Optional[Dict[str, Any]] = None, config: Option
             backend="danbooru",
             reason="upstream-decode",
         ) from exc
+    if isinstance(payload, dict) and payload.get("success") is False:
+        message = str(payload.get("error") or payload.get("message") or f"danbooru error on {path}")
+        reason = "rate-limited" if payload.get("rate_limited") is True else "upstream-error"
+        raise ApiError(f"danbooru error on {path}: {message}", backend="danbooru", reason=reason)
     return payload, _src(raw)
 
 

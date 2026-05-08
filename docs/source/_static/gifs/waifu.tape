@@ -16,12 +16,12 @@ Set Framerate 24
 Type "animedex waifu tags --jq '.[] | {slug, imageCount}' | head -8"
 Sleep 400ms
 Enter
-Sleep 2000ms
+Sleep 2200ms
 
 Type "animedex waifu images --included-tags waifu --page-size 3 --jq '.[] | {id, isNsfw}'"
 Sleep 400ms
 Enter
-Sleep 1900ms
+Sleep 2000ms
 
 Type "animedex waifu tag-by-slug waifu --jq '.description'"
 Sleep 400ms
