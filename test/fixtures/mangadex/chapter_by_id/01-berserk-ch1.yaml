@@ -1,0 +1,69 @@
+metadata:
+  captured_at: '2026-05-08T12:11:12Z'
+  label: berserk-ch1
+  backend: mangadex
+  path_slug: chapter_by_id
+request:
+  method: GET
+  url: https://api.mangadex.org/chapter/01e9f0cb-caea-406d-92bb-0cc67c37481d
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Fri, 08 May 2026 12:11:11 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 11f18179-644a-4010-8ed2-ffd2bbcf080c
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: entity
+    data:
+      id: 01e9f0cb-caea-406d-92bb-0cc67c37481d
+      type: chapter
+      attributes:
+        volume: '8'
+        chapter: '33'
+        title: One Snowy Night
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2018-02-01T00:59:32+00:00'
+        readableAt: '2018-02-01T00:59:32+00:00'
+        createdAt: '2018-02-01T00:59:32+00:00'
+        updatedAt: '2018-02-01T00:59:32+00:00'
+        version: 1
+        pages: 23
+      relationships:
+      - id: 4b98efe6-e5f2-4077-b9b3-193e3d9c5022
+        type: scanlation_group
+      - id: 801513ba-a712-498c-8f57-cae55b38cc92
+        type: manga
+      - id: b86e992f-c93c-4286-90d0-e1eba31cadf7
+        type: user
+  body_text: null
+  body_b64: null

@@ -140,6 +140,8 @@ SUITES = [
     ("mangadex", "manga_feed", _mangadex_caller),
     ("mangadex", "manga_meta", _mangadex_caller),
     ("mangadex", "at_home_server", _mangadex_caller),
+    ("mangadex", "chapter_by_id", _mangadex_caller),
+    ("mangadex", "cover_by_id", _mangadex_caller),
     ("trace", "me", _trace_caller),
     ("trace", "search", _trace_caller),
     ("danbooru", "posts_search", _danbooru_caller),

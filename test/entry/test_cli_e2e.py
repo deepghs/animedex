@@ -471,7 +471,14 @@ def _register_fixture_path_only(rsps, fixture: dict):
     url_re = re.compile(re.escape(base) + r"(\?.*)?$")
 
     headers = dict(res.get("headers") or {})
-    for h in ("Content-Length", "content-length", "Transfer-Encoding", "transfer-encoding", "Content-Encoding", "content-encoding"):
+    for h in (
+        "Content-Length",
+        "content-length",
+        "Transfer-Encoding",
+        "transfer-encoding",
+        "Content-Encoding",
+        "content-encoding",
+    ):
         headers.pop(h, None)
 
     add_kwargs = {"status": res["status"], "headers": headers}
@@ -530,6 +537,61 @@ class TestKitsuCliFromFixtures:
         assert any("myanimelist" in s for s in decoded)
 
 
+# ---------- MangaDex ----------
+
+
+class TestMangaDexCliFromFixtures:
+    """JSON-path coverage of every MangaDex high-level subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("show", ["801513ba-a712-498c-8f57-cae55b38cc92"], "mangadex/manga_by_id/02-berserk.yaml"),
+            ("search", ["Berserk"], "mangadex/manga_search/01-berserk.yaml"),
+            (
+                "feed",
+                ["801513ba-a712-498c-8f57-cae55b38cc92", "--lang", "en"],
+                "mangadex/manga_feed/02-berserk.yaml",
+            ),
+            ("chapter", ["01e9f0cb-caea-406d-92bb-0cc67c37481d"], "mangadex/chapter_by_id/01-berserk-ch1.yaml"),
+            ("cover", ["f73c6872-01ee-4ed5-86d1-3520dc250dc4"], "mangadex/cover_by_id/01-cover-1.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["mangadex", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"mangadex {subcommand} failed: {result.output[:600]}"
+
+    def test_show_jq_filter_extracts_title(self, cli_runner, cli, fake_clock):
+        """``--jq`` over the rich JSON:API resource. Berserk's
+        upstream title block uses ``ja-ro`` (romanised Japanese)
+        rather than ``en``, so the projection picks any non-null
+        value."""
+        fixture = _load_fixture("mangadex/manga_by_id/02-berserk.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(
+                cli,
+                [
+                    "mangadex",
+                    "show",
+                    "801513ba-a712-498c-8f57-cae55b38cc92",
+                    "--no-cache",
+                    "--jq",
+                    ".attributes.title",
+                ],
+            )
+        assert result.exit_code == 0, result.output
+        assert "Berserk" in result.output
+
+
 # ---------- viewer / notification / etc. — auth-required stubs ----------
 
 
@@ -556,7 +618,7 @@ class TestPhase2SubcommandTree:
     """No HTTP needed; just confirm registration shape."""
 
     def test_top_level_groups_present(self, cli):
-        for group in ("anilist", "jikan", "kitsu", "nekos", "trace"):
+        for group in ("anilist", "jikan", "kitsu", "mangadex", "nekos", "trace"):
             assert group in cli.commands
 
     def test_anilist_has_at_least_28_subcommands(self, cli):
@@ -582,6 +644,9 @@ class TestPhase2SubcommandTree:
             "manga-search",
             "categories",
         } <= set(cli.commands["kitsu"].commands.keys())
+
+    def test_mangadex_has_full_surface(self, cli):
+        assert {"show", "search", "feed", "chapter", "cover"} <= set(cli.commands["mangadex"].commands.keys())
 
 
 # ---------- --help walk for every Phase-2 subcommand ----------
@@ -616,3 +681,8 @@ class TestEverySubcommandHasHelp:
         for sub in cli.commands["kitsu"].commands:
             r = cli_runner.invoke(cli, ["kitsu", sub, "--help"])
             assert r.exit_code == 0, f"kitsu {sub} --help failed: {r.output[:200]}"
+
+    def test_mangadex_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["mangadex"].commands:
+            r = cli_runner.invoke(cli, ["mangadex", sub, "--help"])
+            assert r.exit_code == 0, f"mangadex {sub} --help failed: {r.output[:200]}"

@@ -309,6 +309,76 @@ class TestKitsuLossless:
             _assert_lossless(KitsuCategory, row, f"KitsuCategory/{path.name}[{i}]")
 
 
+# ---------- MangaDex ----------
+
+
+class TestMangaDexLossless:
+    """MangaDex's resource shape is JSON:API-flavoured —
+    ``{id, type, attributes, relationships}``. Listings come in a
+    ``{result, response, data: [...], limit, offset, total}``
+    envelope; the rich types model the inner ``data`` resource.
+
+    Some PR #4 fixtures captured 4xx/5xx from upstream weather
+    (the ``manga_by_id`` slug has a couple of error responses
+    where ``data`` is missing); ``_skip_error_envelopes`` filters
+    those so the lossless walk only audits success payloads.
+    """
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "mangadex" / "manga_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_mangadex_manga_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexManga
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or "data" not in body or body["data"] is None:
+            pytest.skip("error / not-found fixture")
+        _assert_lossless(MangaDexManga, body["data"], f"MangaDexManga/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "mangadex" / "manga_search").glob("*.yaml")))
+    def test_mangadex_manga_search_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexManga
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(MangaDexManga, row, f"MangaDexManga/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "mangadex" / "manga_feed").glob("*.yaml")))
+    def test_mangadex_chapter_feed_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexChapter
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(MangaDexChapter, row, f"MangaDexChapter/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "mangadex" / "chapter_by_id").glob("*.yaml")))
+    def test_mangadex_chapter_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexChapter
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or "data" not in body or body["data"] is None:
+            pytest.skip("error / not-found fixture")
+        _assert_lossless(MangaDexChapter, body["data"], f"MangaDexChapter/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "mangadex" / "cover_by_id").glob("*.yaml")))
+    def test_mangadex_cover_lossless(self, path):
+        from animedex.backends.mangadex.models import MangaDexCover
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or body.get("result") == "error" or "data" not in body or body["data"] is None:
+            pytest.skip("error / not-found fixture")
+        _assert_lossless(MangaDexCover, body["data"], f"MangaDexCover/{path.name}")
+
+
 # ---------- nekos.best ----------
 
 
@@ -393,3 +463,11 @@ class TestBackendRichDiscipline:
         rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
         not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
         assert not not_rich, f"Kitsu classes outside BackendRichModel: {not_rich}"
+
+    def test_mangadex_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.mangadex import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"MangaDex classes outside BackendRichModel: {not_rich}"

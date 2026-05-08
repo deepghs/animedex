@@ -131,6 +131,8 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.backends.jikan.models",
     "animedex.backends.kitsu",
     "animedex.backends.kitsu.models",
+    "animedex.backends.mangadex",
+    "animedex.backends.mangadex.models",
     "animedex.backends.nekos",
     "animedex.backends.nekos.models",
     "animedex.backends.trace",
