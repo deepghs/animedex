@@ -88,11 +88,17 @@ def _apply_jq(json_text: str, jq_expr: str) -> str:
     if shutil.which("jq") is None:
         click.echo("warning: jq not on PATH; printing un-filtered JSON.", err=True)
         return json_text
+    # Force UTF-8 for the subprocess pipes. ``text=True`` alone uses
+    # the platform default encoding (cp1252 on Windows), which blows
+    # up on Japanese / Chinese / Cyrillic characters that appear all
+    # over real upstream payloads. Explicit ``encoding="utf-8"`` is
+    # the only thing that keeps the jq filter Windows-safe.
     proc = subprocess.run(
         ["jq", jq_expr],
         input=json_text,
         capture_output=True,
         text=True,
+        encoding="utf-8",
         check=False,
     )
     if proc.returncode != 0:
