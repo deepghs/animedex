@@ -249,7 +249,9 @@ def register_subcommand(
     # Frieren`` must work even though ``jikan.search(q=None)`` is
     # technically a kwarg with a default. We promote these by name to
     # positional-optional Click arguments so the CLI feels natural.
-    positional_optional_names = {"q", "query", "search"}
+    # ``tags`` and ``name`` cover the Danbooru tag-DSL search and the
+    # artist / pool / tag substring searches.
+    positional_optional_names = {"q", "query", "search", "tags", "name"}
 
     # Resolve forward-reference annotations (the backends use
     # ``from __future__ import annotations`` so e.g. ``per_page: int``

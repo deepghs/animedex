@@ -592,6 +592,51 @@ class TestMangaDexCliFromFixtures:
         assert "Berserk" in result.output
 
 
+# ---------- Danbooru ----------
+
+
+class TestDanbooruCliFromFixtures:
+    """JSON-path coverage of every Danbooru high-level subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("search", ["touhou rating:g order:score"], "danbooru/posts_search/01-touhou-rating-g-order-score.yaml"),
+            ("post", ["1"], "danbooru/posts_by_id/01-post-1.yaml"),
+            ("artist-search", ["ke-ta"], "danbooru/artists_search/02-ke-ta.yaml"),
+            ("tag", ["touhou*"], "danbooru/tags_search/01-touhou-prefix.yaml"),
+            ("pool", ["1"], "danbooru/pools_by_id/01-pool-1.yaml"),
+            ("count", ["touhou rating:g"], "danbooru/counts/01-touhou-rating-g.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["danbooru", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"danbooru {subcommand} failed: {result.output[:600]}"
+
+    def test_search_jq_filter_extracts_ratings(self, cli_runner, cli, fake_clock):
+        """``rating:g`` query → every result row carries
+        ``rating == "g"``. Pin the filter pass-through."""
+        fixture = _load_fixture("danbooru/posts_search/01-touhou-rating-g-order-score.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(
+                cli,
+                ["danbooru", "search", "touhou rating:g order:score", "--no-cache", "--jq", "[.[].rating]"],
+            )
+        assert result.exit_code == 0, result.output
+        decoded = json.loads(result.output)
+        assert decoded
+        assert all(r == "g" for r in decoded)
+
+
 # ---------- viewer / notification / etc. — auth-required stubs ----------
 
 
@@ -618,7 +663,7 @@ class TestPhase2SubcommandTree:
     """No HTTP needed; just confirm registration shape."""
 
     def test_top_level_groups_present(self, cli):
-        for group in ("anilist", "jikan", "kitsu", "mangadex", "nekos", "trace"):
+        for group in ("anilist", "danbooru", "jikan", "kitsu", "mangadex", "nekos", "trace"):
             assert group in cli.commands
 
     def test_anilist_has_at_least_28_subcommands(self, cli):
@@ -647,6 +692,11 @@ class TestPhase2SubcommandTree:
 
     def test_mangadex_has_full_surface(self, cli):
         assert {"show", "search", "feed", "chapter", "cover"} <= set(cli.commands["mangadex"].commands.keys())
+
+    def test_danbooru_has_full_surface(self, cli):
+        assert {"search", "post", "artist", "artist-search", "tag", "pool", "pool-search", "count"} <= set(
+            cli.commands["danbooru"].commands.keys()
+        )
 
 
 # ---------- --help walk for every Phase-2 subcommand ----------
@@ -686,3 +736,8 @@ class TestEverySubcommandHasHelp:
         for sub in cli.commands["mangadex"].commands:
             r = cli_runner.invoke(cli, ["mangadex", sub, "--help"])
             assert r.exit_code == 0, f"mangadex {sub} --help failed: {r.output[:200]}"
+
+    def test_danbooru_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["danbooru"].commands:
+            r = cli_runner.invoke(cli, ["danbooru", sub, "--help"])
+            assert r.exit_code == 0, f"danbooru {sub} --help failed: {r.output[:200]}"

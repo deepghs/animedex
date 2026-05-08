@@ -379,6 +379,81 @@ class TestMangaDexLossless:
         _assert_lossless(MangaDexCover, body["data"], f"MangaDexCover/{path.name}")
 
 
+# ---------- Danbooru ----------
+
+
+class TestDanbooruLossless:
+    """Danbooru's REST surface returns flat JSON objects directly;
+    the rich types map fields one-for-one with extra='allow' so any
+    upstream addition round-trips."""
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "danbooru" / "posts_search").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_danbooru_post_search_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruPost
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body:
+            pytest.skip("empty fixture")
+        if not isinstance(body, list):
+            pytest.skip("error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(DanbooruPost, row, f"DanbooruPost/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "posts_by_id").glob("*.yaml")))
+    def test_danbooru_post_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruPost
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict) or "id" not in body:
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(DanbooruPost, body, f"DanbooruPost/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "artists_search").glob("*.yaml")))
+    def test_danbooru_artist_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruArtist
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(DanbooruArtist, row, f"DanbooruArtist/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "tags_search").glob("*.yaml")))
+    def test_danbooru_tag_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruTag
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(DanbooruTag, row, f"DanbooruTag/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "pools_by_id").glob("*.yaml")))
+    def test_danbooru_pool_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruPool
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict) or "id" not in body:
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(DanbooruPool, body, f"DanbooruPool/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "danbooru" / "counts").glob("*.yaml")))
+    def test_danbooru_count_lossless(self, path):
+        from animedex.backends.danbooru.models import DanbooruCount
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict) or "counts" not in body:
+            pytest.skip("error fixture")
+        _assert_lossless(DanbooruCount, body, f"DanbooruCount/{path.name}")
+
+
 # ---------- nekos.best ----------
 
 
@@ -471,3 +546,11 @@ class TestBackendRichDiscipline:
         rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
         not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
         assert not not_rich, f"MangaDex classes outside BackendRichModel: {not_rich}"
+
+    def test_danbooru_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.danbooru import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"Danbooru classes outside BackendRichModel: {not_rich}"
