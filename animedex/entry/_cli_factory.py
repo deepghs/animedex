@@ -8,8 +8,6 @@ from __future__ import annotations
 
 import inspect
 import json
-import shutil
-import subprocess
 import sys
 from typing import Callable, List, Optional
 
@@ -17,6 +15,7 @@ import click
 
 from animedex.config import Config
 from animedex.models.common import AnimedexModel, ApiError
+from animedex.render.jq import apply_jq
 from animedex.render.json_renderer import render_json
 from animedex.render.tty import is_terminal as _is_terminal
 from animedex.render.tty import render_tty
@@ -29,9 +28,14 @@ def common_options(func: Callable) -> Callable:
     """Decorator: attach ``--json``, ``--jq``, ``--no-cache``,
     ``--cache``, ``--rate``, ``--no-source`` flags to a CLI subcommand.
 
-    ``--jq`` runs the rendered JSON through the system ``jq`` binary;
-    when ``jq`` isn't on PATH the command falls through to printing
-    un-filtered JSON and warns once on stderr.
+    ``--jq`` filters the rendered JSON through the bundled
+    :pypi:`jq` wheel. A syntactically bad expression, runtime error
+    (e.g. ``1/0``, ``error("…")``), or invalid-JSON input surfaces
+    as a typed ``ApiError(reason="jq-failed")``; an uninstalled
+    wheel surfaces as ``reason="jq-missing"``. ``_apply_jq``
+    rewraps either as :class:`click.ClickException` so the CLI
+    exits non-zero with a clean one-line error rather than a
+    Python traceback.
     """
     func = click.option("--no-source", is_flag=True, default=False, help="Drop _source attribution from JSON output.")(
         func
@@ -78,30 +82,15 @@ def _to_tty_text(model_or_list) -> str:
 
 
 def _apply_jq(json_text: str, jq_expr: str) -> str:
-    """Filter ``json_text`` through ``jq <expr>``. Falls back to
-    un-filtered output with a stderr warning when ``jq`` is not on
-    PATH."""
-    if shutil.which("jq") is None:
-        click.echo("warning: jq not on PATH; printing un-filtered JSON.", err=True)
-        return json_text
-    # Force UTF-8 for the subprocess pipes. ``text=True`` alone uses
-    # the platform default encoding (cp1252 on Windows), which blows
-    # up on Japanese / Chinese / Cyrillic characters that appear all
-    # over real upstream payloads. Explicit ``encoding="utf-8"`` is
-    # the only thing that keeps the jq filter Windows-safe.
-    proc = subprocess.run(
-        ["jq", jq_expr],
-        input=json_text,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        check=False,
-    )
-    if proc.returncode != 0:
-        click.echo(f"jq error: {proc.stderr.strip()}", err=True)
-        # Re-raise so the CLI exit code reflects the failure.
-        raise click.ClickException(proc.stderr.strip() or "jq filter failed")
-    return proc.stdout
+    """Filter ``json_text`` through ``jq <expr>`` using the bundled
+    :pypi:`jq` wheel. Typed :class:`ApiError`s from
+    :func:`animedex.render.jq.apply_jq` are surfaced as
+    :class:`click.ClickException` so the CLI exits non-zero with a
+    clean one-line error rather than a Python traceback."""
+    try:
+        return apply_jq(json_text, jq_expr)
+    except ApiError as exc:
+        raise click.ClickException(str(exc)) from exc
 
 
 def emit(

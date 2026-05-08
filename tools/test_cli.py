@@ -211,6 +211,13 @@ class CLIProbe:
             ("version", self.check_version),
             ("help", self.check_help),
             ("status", self.check_status),
+            # ``check_selftest`` covers the bundled jq wheel end-to-end
+            # via ``animedex.render.jq.selftest()``, which calls
+            # ``apply_jq('{"x":42}', '.x')`` through libjq. A separate
+            # ``--jq`` probe would have to either redo that or be
+            # lighter (just check ``--help`` lists ``--jq``) — and the
+            # lighter version doesn't actually verify the wheel
+            # bundled, since the option registration is unconditional.
             ("selftest", self.check_selftest),
         ]
 

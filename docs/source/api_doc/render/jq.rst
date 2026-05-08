@@ -1,9 +1,9 @@
-animedex.render.jq\_filter
+animedex.render.jq
 ========================================================
 
-.. currentmodule:: animedex.render.jq_filter
+.. currentmodule:: animedex.render.jq
 
-.. automodule:: animedex.render.jq_filter
+.. automodule:: animedex.render.jq
 
 
 apply\_jq
