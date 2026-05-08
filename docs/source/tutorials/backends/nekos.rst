@@ -1,28 +1,43 @@
 ``animedex nekos``
 ==================
 
-nekos.best v2 is a curated **SFW** image / GIF API at
-``https://nekos.best/api/v2``. animedex wraps the three JSON-emitting
-endpoints as four high-level commands. The collection is split into
-~60 categories of which roughly half are PNG portraits (``husbando``,
-``neko``, ``waifu``, ``kitsune``, ``kemonomimi``, …) and the rest are
-GIF reactions (``baka``, ``cuddle``, ``hug``, ``kiss``, ``laugh``,
-…).
+nekos.best v2 is a curated **SFW** image / GIF API. animedex wraps
+its three JSON-emitting endpoints as four high-level commands. The
+collection is split into ~60 categories of which roughly half are
+PNG portraits (``husbando``, ``neko``, ``waifu``, ``kitsune``,
+``kemonomimi``, …) and the rest are GIF reactions (``baka``,
+``cuddle``, ``hug``, ``kiss``, ``laugh``, …).
+
+.. image:: /_static/gifs/nekos.gif
+   :alt: animedex nekos demo — categories, image fetch, search, projection
+   :align: center
+
+References
+----------
+
+================================ =====================================
+Site                             https://nekos.best/
+API documentation                https://docs.nekos.best/
+v2 endpoint reference            https://docs.nekos.best/getting-started/api-endpoints.html
+Python module                    :mod:`animedex.backends.nekos`
+Rich models                      :mod:`animedex.backends.nekos.models`
+================================ =====================================
 
 * **Backend**: nekos.best v2.
 * **Rate limit**: 200 req/min anonymous, visible in the
   ``x-rate-limit-limit`` and ``x-rate-limit-remaining`` response
-  headers. animedex's transport applies a 3 req/sec sustained
-  ceiling with a 10-token burst budget to stay comfortably under
-  the cap.
+  headers. The transport applies a 3 req/sec sustained ceiling with
+  a 10-token burst budget to stay comfortably under the cap.
 * **Auth**: never. The collection is fully anonymous.
 * **NSFW**: none. v2 dropped the NSFW tier; every record's
   cross-source projection sets ``rating='g'`` unconditionally.
 
-Discover categories
--------------------
+Discover the catalogue — :func:`~animedex.backends.nekos.categories`
+--------------------------------------------------------------------
 
-``categories`` returns the alphabetised list of category names:
+The alphabetised list of category names. The TTY render is one name
+per line (no ``[src: …]`` marker because the result is a plain
+``list[str]``):
 
 .. code-block:: bash
 
@@ -35,11 +50,13 @@ Discover categories
    # cuddle
    # ...
 
-The TTY output is one name per line (no ``[src: …]`` marker because
-the result is a plain ``list[str]``, not a rich-model row). Use
-``--json`` for a JSON array.
+   animedex nekos categories --json | jq 'length'
+   # 60   (or however many categories nekos.best v2 currently exposes)
 
-``categories-full`` adds the per-category file format metadata:
+Per-category format — :func:`~animedex.backends.nekos.categories_full`
+----------------------------------------------------------------------
+
+Same data, plus the asset format (``"png"`` / ``"gif"``) per category:
 
 .. code-block:: bash
 
@@ -48,32 +65,43 @@ the result is a plain ``list[str]``, not a rich-model row). Use
    #      "format": "png"
    #    }
 
-Random images / GIFs
---------------------
+   # Filter to GIF categories only:
+   animedex nekos categories-full --json \
+     --jq 'with_entries(select(.value.format == "gif")) | keys'
+   # => ["baka", "bite", "blush", "bored", ...]
 
-``image <category> [--amount N]`` returns N random rows from the
-category (``1 <= N <= 20``):
+Fetch random images — :func:`~animedex.backends.nekos.image`
+------------------------------------------------------------
+
+``image <category> [--amount N]`` returns ``N`` random rows from the
+named category (``1 <= N <= 20``):
 
 .. code-block:: bash
 
    animedex nekos image husbando --jq '.[0] | {url, artist: .artist_name, source_url}'
    # => {
    #      "url":        "https://nekos.best/api/v2/husbando/<uuid>.png",
-   #      "artist":     "柊碧月",
-   #      "source_url": "https://www.pixiv.net/en/artworks/91856381"
+   #      "artist":     "<artist name>",
+   #      "source_url": "<gallery URL>"
    #    }
 
-   animedex nekos image neko --amount 3 --jq '.[].url'
+   animedex nekos image neko --amount 3 --jq '[.[].url]'
+   # => [
+   #      "https://nekos.best/api/v2/neko/<uuid>.png",
+   #      "https://nekos.best/api/v2/neko/<uuid>.png",
+   #      "https://nekos.best/api/v2/neko/<uuid>.png"
+   #    ]
 
    # GIF-format category — the asset URL ends in .gif
    animedex nekos image baka --jq '.[0].url'
+   # => "https://nekos.best/api/v2/baka/<uuid>.gif"
 
-Each record carries ``url``, ``dimensions`` (``width`` × ``height``
-in pixels), and best-effort attribution (``anime_name`` /
+Each row carries ``url``, ``dimensions`` (``width`` × ``height`` in
+pixels), and best-effort attribution (``anime_name`` /
 ``artist_name`` / ``artist_href`` / ``source_url``).
 
-Metadata search
----------------
+Metadata search — :func:`~animedex.backends.nekos.search`
+---------------------------------------------------------
 
 ``search <query> [--type 1|2] [--category <name>] [--amount N]``
 matches the query against ``anime_name`` / ``artist_name`` /
@@ -81,7 +109,7 @@ matches the query against ``anime_name`` / ``artist_name`` /
 
 .. code-block:: bash
 
-   animedex nekos search "Frieren" --amount 5 --jq '.[].source_url'
+   animedex nekos search "Frieren" --amount 3 --jq '[.[].source_url]'
 
    # GIF results only (type=2):
    animedex nekos search "Frieren" --type 2 --amount 3 --jq '.[].url'
@@ -95,12 +123,37 @@ when nothing closely matches — so callers cannot rely on an empty
 result list as a "no match" signal. Treat low-similarity results as
 hints, not as positives.
 
+Endpoint summary
+----------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 35 40
+
+   * - Command
+     - Python entry point
+     - Purpose
+   * - ``categories``
+     - :func:`animedex.backends.nekos.categories`
+     - list every category name (alphabetised)
+   * - ``categories-full``
+     - :func:`animedex.backends.nekos.categories_full`
+     - list categories with per-category format metadata
+   * - ``image <category>``
+     - :func:`animedex.backends.nekos.image`
+     - random images / GIFs from one category
+   * - ``search <query>``
+     - :func:`animedex.backends.nekos.search`
+     - fuzzy metadata search across all categories
+
 Cross-source projection
 -----------------------
 
-The rich ``NekosImage`` projects onto the cross-source
-:class:`~animedex.models.art.ArtPost` shape (also used for Danbooru
-and Waifu.im records). The projection is deterministic:
+The rich :class:`~animedex.backends.nekos.models.NekosImage` projects
+onto the cross-source :class:`~animedex.models.art.ArtPost` shape
+(also used for Danbooru and Waifu.im records) via
+:meth:`~animedex.backends.nekos.models.NekosImage.to_common`. The
+projection is deterministic:
 
 * ``rating`` → always ``"g"`` (v2 is SFW-only).
 * ``id`` → ``"nekos:<filename>"`` derived from the asset URL
