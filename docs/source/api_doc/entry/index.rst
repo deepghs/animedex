@@ -13,9 +13,13 @@ animedex.entry
     anilist
     api/index
     cli
+    danbooru
     jikan
+    kitsu
+    mangadex
     nekos
     trace
+    waifu
 
 \_\_all\_\_
 -----------------------------------------------------

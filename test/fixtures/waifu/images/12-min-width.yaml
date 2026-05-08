@@ -1,0 +1,154 @@
+metadata:
+  captured_at: '2026-05-08T14:29:15Z'
+  label: min-width
+  backend: waifu
+  path_slug: images
+request:
+  method: GET
+  url: https://api.waifu.im/images?width=%3E1500&pageSize=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 403
+  headers:
+    Date: Fri, 08 May 2026 14:29:15 GMT
+    Content-Type: text/html
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    cache-control: no-cache
+    X-Test: api.waifu.im
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, HEAD, PATCH, POST, OPTIONS, DELETE, PUT
+    Access-Control-Allow-Headers: Accept-Version, Authorization, Content-Type
+    Version: v7
+    X-Request-ID: d2f9c74614775454bf6aa9bf1b701e6c
+    Report-To: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    vary: accept-encoding
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json: null
+  body_text: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <title>Access Denied</title>\n    <meta charset=\"UTF-8\">\n\
+    \    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"robots\" content=\"noindex,nofollow\"\
+    >\n    <style>\n        /* --- RESET & BASIC SETUP --- */\n        * { box-sizing: border-box; margin: 0; padding: 0;\
+    \ }\n        html { line-height: 1.15; -webkit-text-size-adjust: 100%; }\n        \n        body { \n            display:\
+    \ flex; flex-direction: column; height: 95vh; \n            font-family: system-ui, -apple-system, BlinkMacSystemFont,\
+    \ Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif; \n            transition: background-color 0.3s ease, color 0.3s\
+    \ ease; \n            justify-content: center; align-items: center; overflow: hidden; \n            background-color:\
+    \ #ffffff; color: #313131; \n        }\n\n        /* --- LAYOUT --- */\n        .main-wrapper { \n            align-items:\
+    \ center; display: flex; flex: 1; \n            flex-direction: column; justify-content: center; \n            animation:\
+    \ fadeIn 0.8s ease-out; width: 100%;\n        }\n\n        .main-content { \n            margin: 0 auto; max-width: 60rem;\
+    \ padding: 1.5rem; \n            text-align: center; width: 90%;\n        }\n\n        /* --- TYPOGRAPHY --- */\n    \
+    \    .h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -1px; line-height: 1.2; }\n     \
+    \   .h2 { font-size: 1.25rem; font-weight: 400; margin-bottom: 2rem; opacity: 0.8; line-height: 1.5; }\n        .sub-text\
+    \ { margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.6; }\n\n        /* --- DROPDOWN --- */\n        .custom-select-wrapper\
+    \ { position: fixed; top: 1rem; left: 1rem; z-index: 9999; user-select: none; width: 140px; font-size: 0.9rem; }\n   \
+    \     .custom-select { position: relative; display: flex; flex-direction: column; }\n        .custom-select-trigger {\n\
+    \            position: relative; display: flex; align-items: center; justify-content: space-between;\n            padding:\
+    \ 0.6rem 0.8rem; font-size: 0.85rem; font-weight: 500; cursor: pointer;\n            border-radius: 6px; transition: all\
+    \ 0.2s; background: #ffffff; color: #313131;\n            border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.05);\n\
+    \        }\n        .custom-select-trigger:hover { border-color: #888; }\n        .custom-options {\n            position:\
+    \ absolute; display: block; top: calc(100% + 6px); left: 0; right: 0;\n            transition: all 0.2s ease-in-out; opacity:\
+    \ 0; visibility: hidden; pointer-events: none; z-index: 2;\n            border-radius: 6px; overflow: hidden; transform:\
+    \ translateY(-8px);\n            background: #ffffff; border: 1px solid #ccc; box-shadow: 0 8px 20px rgba(0,0,0,0.1);\n\
+    \        }\n        .custom-select.open .custom-options { opacity: 1; visibility: visible; pointer-events: all; transform:\
+    \ translateY(0); }\n        .custom-option {\n            position: relative; display: block; padding: 0.7rem 0.8rem;\
+    \ font-size: 0.85rem; cursor: pointer;\n            transition: background 0.2s; color: #313131; border-bottom: 1px solid\
+    \ #f0f0f0;\n        }\n        .custom-option:last-child { border-bottom: none; }\n        .custom-option:hover { background-color:\
+    \ #f2f2f2; color: #000; }\n        .custom-option.selected { font-weight: 700; background-color: #e8e8e8; }\n        .arrow-icon\
+    \ { width: 10px; height: 10px; fill: #555; transition: transform 0.3s; }\n        .custom-select.open .arrow-icon { transform:\
+    \ rotate(180deg); }\n\n        /* --- ICONS --- */\n        .dark-mode-toggle { \n            position: fixed; top: 1rem;\
+    \ right: 1rem; cursor: pointer; background: none; border: none; \n            padding: 0.5rem; z-index: 9999; width: 40px;\
+    \ height: 40px; display: flex; align-items: center; justify-content: center;\n        }\n        .main-icon { width: 100px;\
+    \ height: 100px; margin-bottom: 2rem; fill: currentColor; animation: float 6s ease-in-out infinite; }\n\n        @keyframes\
+    \ float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px);\
+    \ } }\n        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0);\
+    \ } }\n\n        /* --- DARK MODE --- */\n        body.dark { background-color: #222222; color: #d9d9d9; }\n        body.dark\
+    \ .custom-select-trigger { background: #2a2a2a; color: #d9d9d9; border-color: #444; box-shadow: none; }\n        body.dark\
+    \ .custom-select-trigger:hover { border-color: #666; }\n        body.dark .custom-options { background: #2a2a2a; border-color:\
+    \ #444; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }\n        body.dark .custom-option { color: #ccc; border-bottom-color:\
+    \ #333; }\n        body.dark .custom-option:hover { background-color: #333; color: #fff; }\n        body.dark .custom-option.selected\
+    \ { background-color: #3a3a3a; color: #fff; }\n        body.dark .arrow-icon { fill: #999; }\n\n        @media (max-width:\
+    \ 720px) { .h1 { font-size: 1.75rem; } .h2 { font-size: 1rem; } .main-icon { width: 80px; height: 80px; } .custom-select-wrapper\
+    \ { width: 130px; } }\n    </style>\n</head>\n<body>\n    <div class=\"custom-select-wrapper\">\n        <div class=\"\
+    custom-select\" id=\"lang-dropdown\">\n            <div class=\"custom-select-trigger\">\n                <span id=\"\
+    current-lang-text\">English</span>\n                <svg class=\"arrow-icon\" viewBox=\"0 0 24 24\"><path d=\"M7.41 8.59L12\
+    \ 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z\"/></svg>\n            </div>\n            <div class=\"custom-options\" id=\"\
+    lang-options-container\"></div>\n        </div>\n    </div>\n    <button class=\"dark-mode-toggle\" aria-label=\"Toggle\
+    \ Dark Mode\"></button>\n\n    <div class=\"main-wrapper\" role=\"main\">\n        <div class=\"main-content\" id=\"main-content-area\"\
+    >\n            <svg class=\"main-icon\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n                <path\
+    \ d=\"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6\
+    \ 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z\"/>\n \
+    \           </svg>\n            <h1 class=\"h1\" id=\"text-title\"></h1>\n            <p class=\"h2\" id=\"text-desc\"\
+    ></p>\n            <p class=\"sub-text\" id=\"text-sub\"></p>\n        </div>\n    </div>\n\n    <script>\n        document.addEventListener('DOMContentLoaded',\
+    \ () => {\n            const PAGE_CONTENT = {\n                translations: {\n                    en: { label: \"English\"\
+    , title: \"Access Denied\", desc: \"You do not have permission to view this page.\", sub: \"This restriction is in place\
+    \ for security reasons.\" },\n                    fr: { label: \"Français\", title: \"Accès Refusé\", desc: \"Vous n'avez\
+    \ pas la permission de voir cette page.\", sub: \"Cette restriction est mise en place pour des raisons de sécurité.\"\
+    \ },\n                    es: { label: \"Español\", title: \"Acceso Denegado\", desc: \"No tiene permiso para ver esta\
+    \ página.\", sub: \"Esta restricción se debe a razones de seguridad.\" },\n                    pt: { label: \"Português\"\
+    , title: \"Acesso Negado\", desc: \"Você não tem permissão para visualizar esta página.\", sub: \"Esta restrição existe\
+    \ por motivos de segurança.\" },\n                    de: { label: \"Deutsch\", title: \"Zugriff verweigert\", desc: \"\
+    Sie haben keine Berechtigung, diese Seite anzuzeigen.\", sub: \"Diese Einschränkung besteht aus Sicherheitsgründen.\"\
+    \ },\n                    ru: { label: \"Русский\", title: \"Доступ запрещен\", desc: \"У вас нет разрешения на просмотр\
+    \ этой страницы.\", sub: \"Это ограничение установлено по соображениям безопасности.\" },\n                    zh: { label:\
+    \ \"中文\", title: \"访问被拒绝\", desc: \"您没有权限查看此页面。\", sub: \"出于安全原因，实施此限制。\" },\n                    ar: { label: \"العربية\"\
+    , title: \"تم رفض الوصول\", desc: \"ليس لديك إذن لعرض هذه الصفحة.\", sub: \"هذا القيد لأسباب أمنية.\" },\n           \
+    \         hi: { label: \"हिन्दी\", title: \"प्रवेश निषेध\", desc: \"आपको इस पृष्ठ को देखने की अनुमति नहीं है।\", sub:\
+    \ \"यह प्रतिबंध सुरक्षा कारणों से लागू है।\" }\n                }\n            };\n\n            /* --- LOGIC (Standardized)\
+    \ --- */\n            const mainContent = document.getElementById('main-content-area');\n            const elTitle = document.getElementById('text-title');\n\
+    \            const elDesc = document.getElementById('text-desc');\n            const elSub = document.getElementById('text-sub');\n\
+    \            const dropdown = document.getElementById('lang-dropdown');\n            const currentLangText = document.getElementById('current-lang-text');\n\
+    \            const optionsContainer = document.getElementById('lang-options-container');\n            const toggleButton\
+    \ = document.querySelector('.custom-select-trigger');\n            const btn = document.querySelector('.dark-mode-toggle');\n\
+    \n            Object.keys(PAGE_CONTENT.translations).forEach(langKey => {\n                const data = PAGE_CONTENT.translations[langKey];\n\
+    \                const optionDiv = document.createElement('div');\n                optionDiv.className = 'custom-option';\n\
+    \                optionDiv.textContent = data.label;\n                optionDiv.setAttribute('data-value', langKey);\n\
+    \                optionDiv.addEventListener('click', function() { setLanguage(langKey); dropdown.classList.remove('open');\
+    \ });\n                optionsContainer.appendChild(optionDiv);\n            });\n\n            function setLanguage(lang)\
+    \ {\n                if (!PAGE_CONTENT.translations[lang]) lang = 'en';\n                const content = PAGE_CONTENT.translations[lang];\n\
+    \                elTitle.textContent = content.title;\n                elDesc.textContent = content.desc;\n          \
+    \      elSub.textContent = content.sub;\n                document.title = content.title;\n                currentLangText.textContent\
+    \ = content.label;\n                if (lang === 'ar') mainContent.style.direction = 'rtl'; else mainContent.style.direction\
+    \ = 'ltr';\n                document.querySelectorAll('.custom-option').forEach(opt => {\n                    opt.classList.remove('selected');\n\
+    \                    if (opt.getAttribute('data-value') === lang) opt.classList.add('selected');\n                });\n\
+    \            }\n\n            const moonSvg = '<svg height=\"22\" width=\"22\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"\
+    0 0 280.036 280.036\"><path style=\"fill:#efc75e\" d=\"M140.018 0c77.331 0 140.014 62.691 140.014 140.014 0 77.331-62.682\
+    \ 140.022-140.014 140.022C62.695 280.036.004 217.345.004 140.014.004 62.691 62.695 0 140.018 0z\"/><path style=\"fill:#c89147\"\
+    \ d=\"M116.303 116.071c-8.208 5.732-18.736 8.068-29.175 5.286-18.744-5.005-29.867-24.205-24.844-42.879 1.076-3.982 2.905-7.526\
+    \ 5.128-10.729-6.537 4.55-11.647 11.201-13.87 19.479-5.023 18.674 6.099 37.874 24.844 42.879 14.754 3.93 29.718-2.187\
+    \ 37.917-14.036zm111.224-11.052c-24.17 0-43.754-19.593-43.754-43.754 0-9.845 3.369-18.832 8.865-26.148-10.641 7.981-17.615\
+    \ 20.582-17.615 34.898 0 24.17 19.584 43.754 43.754 43.754 14.325 0 26.909-6.974 34.89-17.607-7.3 5.488-16.296 8.857-26.14\
+    \ 8.857zM100.455 209.487c-9.328-2.503-14.868-12.094-12.374-21.44l.98-2.59c-4.612 2.083-8.322 6.064-9.731 11.341-2.494\
+    \ 9.346 3.045 18.937 12.374 21.44 8.418 2.258 17.003-2.056 20.451-9.775-3.553 1.61-7.63 2.118-11.7 1.024zm85.234-9.145c-14.01-3.763-22.323-18.149-18.561-32.168.674-2.538\
+    \ 1.803-4.804 3.115-6.931-5.644 3.387-10.037 8.838-11.866 15.682-3.763 14.019 4.559 28.405 18.561 32.168 11.464 3.072\
+    \ 23.094-2.021 29.018-11.63-5.881 3.527-13.109 4.787-20.267 2.879z\"/><path style=\"fill:#d7b354\" d=\"M157.52 262.534c-77.323\
+    \ 0-140.014-62.691-140.014-140.022 0-34.207 12.304-65.518 32.676-89.836C19.528 58.359.004 96.889.004 140.014c0 77.331\
+    \ 62.691 140.022 140.014 140.022 43.124 0 81.645-19.514 107.338-50.169-24.319 20.372-55.62 32.667-89.836 32.667z\"/><path\
+    \ style=\"fill:#dfa14f\" d=\"M262.337 71.958c-10.02-17.957-23.899-33.411-40.481-45.391l-3.08-.315c-24.17 0-43.754 19.593-43.754\
+    \ 43.754 0 24.17 19.584 43.754 43.754 43.754 23.505.01 42.52-18.559 43.561-41.802z\"/><circle style=\"fill:#dfa14f\" cx=\"\
+    183.729\" cy=\"183.724\" r=\"26.261\"/><path style=\"fill:#dfa14f\" d=\"M96.579 62.472c-18.753-5.005-38.014 6.073-43.037\
+    \ 24.756-5.023 18.674 6.099 37.874 24.844 42.879 18.753 4.997 38.022-6.082 43.045-24.756 5.023-18.674-6.108-37.873-24.852-42.879z\"\
+    /><circle style=\"fill:#dfa14f\" cx=\"96.238\" cy=\"201.331\" r=\"17.502\"/></svg>';\n            const sunSvg = '<svg\
+    \ width=\"22\" height=\"22\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\" class=\"iconify iconify--twemoji\"\
+    ><path fill=\"#FFAC33\" d=\"M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4\
+    \ 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414\
+    \ 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828 2.828 0 2.828\
+    \ 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414\
+    \ 1.414zm-21 21s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zM16\
+    \ 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z\"/><circle fill=\"#FFAC33\" cx=\"18\" cy=\"18\" r=\"10\"/></svg>';\n\n    \
+    \        function updateTheme(isDark) {\n                if (isDark) { document.body.classList.add('dark'); btn.innerHTML\
+    \ = sunSvg; } \n                else { document.body.classList.remove('dark'); btn.innerHTML = moonSvg; }\n          \
+    \  }\n            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) updateTheme(true);\
+    \ else updateTheme(false);\n            btn.addEventListener('click', () => { updateTheme(!document.body.classList.contains('dark'));\
+    \ });\n            toggleButton.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('open');\
+    \ });\n            window.addEventListener('click', (e) => { if (!dropdown.contains(e.target)) dropdown.classList.remove('open');\
+    \ });\n            const userLang = navigator.language || navigator.userLanguage; setLanguage(userLang.split('-')[0]);\n\
+    \        });\n    </script>\n</body>\n</html\n"
+  body_b64: null

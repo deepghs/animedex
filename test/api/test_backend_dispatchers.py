@@ -301,6 +301,7 @@ SUITES = [
     ("waifu", "images", _waifu_caller),
     ("waifu", "images_by_id", _waifu_caller),
     ("waifu", "stats_public", _waifu_caller),
+    ("waifu", "users_me", _waifu_caller),
 ]
 
 

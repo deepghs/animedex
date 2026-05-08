@@ -12,6 +12,10 @@ source tapes so future contributors can regenerate them.
 | `quickstart.gif` | `docs/source/quickstart.rst` walkthrough | `quickstart.tape` |
 | `anilist.gif` | `docs/source/tutorials/backends/anilist.rst` header | `anilist.tape` |
 | `jikan.gif` | `docs/source/tutorials/backends/jikan.rst` header | `jikan.tape` |
+| `kitsu.gif` | `docs/source/tutorials/backends/kitsu.rst` header | `kitsu.tape` |
+| `mangadex.gif` | `docs/source/tutorials/backends/mangadex.rst` header | `mangadex.tape` |
+| `danbooru.gif` | `docs/source/tutorials/backends/danbooru.rst` header | `danbooru.tape` |
+| `waifu.gif` | `docs/source/tutorials/backends/waifu.rst` header | `waifu.tape` |
 | `trace.gif` | `docs/source/tutorials/backends/trace.rst` header | `trace.tape` |
 | `nekos.gif` | `docs/source/tutorials/backends/nekos.rst` header | `nekos.tape` |
 
@@ -29,6 +33,10 @@ vhs hero.tape                 # produces hero.gif
 vhs quickstart.tape           # produces quickstart.gif
 vhs anilist.tape              # produces anilist.gif
 vhs jikan.tape                # produces jikan.gif
+vhs kitsu.tape                # produces kitsu.gif
+vhs mangadex.tape             # produces mangadex.gif
+vhs danbooru.tape             # produces danbooru.gif
+vhs waifu.tape                # produces waifu.gif
 vhs trace.tape                # produces trace.gif
 vhs nekos.tape                # produces nekos.gif
 ```

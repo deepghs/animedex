@@ -16,6 +16,10 @@ Per-backend tutorials
 
    backends/anilist
    backends/jikan
+   backends/kitsu
+   backends/mangadex
+   backends/danbooru
+   backends/waifu
    backends/trace
    backends/nekos
 

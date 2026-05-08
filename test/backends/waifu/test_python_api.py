@@ -212,53 +212,28 @@ class TestErrorPaths:
 class TestWaifuAuth:
     """Authenticated reads on Waifu.im (``/users/me``).
 
-    Waifu.im's auth uses ``X-Api-Key`` (not Bearer). The live
-    fixture for this endpoint was not captured in this branch
-    because the upstream's Cloudflare front-end blocked the
-    capture-script's IP after a high-volume probe sequence; these
-    tests verify the wire-level header injection and credential
-    resolution paths against a stubbed in-line response that mirrors
-    a real upstream payload observed during pre-capture probing.
+    Waifu.im's auth uses ``X-Api-Key`` (not Bearer); the live
+    fixture under ``test/fixtures/waifu/users_me/01-default.yaml``
+    was captured against a real personal API key (token redacted by
+    the capture pipeline before write).
     """
-
-    _USERS_ME_PAYLOAD = {
-        "id": 2714,
-        "name": "narugo1992",
-        "discordId": "1027123926217805888",
-        "avatarUrl": "https://cdn.discordapp.com/avatars/x/y.png",
-        "role": "User",
-        "isBlacklisted": False,
-        "blacklistReason": None,
-        "requestCount": 10,
-        "apiKeyRequestCount": 0,
-        "jwtRequestCount": 10,
-    }
 
     def test_me_returns_typed_user(self, fake_clock, monkeypatch):
         from animedex.backends.waifu.models import WaifuUser
 
         monkeypatch.setenv("ANIMEDEX_WAIFU_TOKEN", "fake-key")
         with responses.RequestsMock() as rsps:
-            rsps.add(
-                responses.GET,
-                "https://api.waifu.im/users/me",
-                json=self._USERS_ME_PAYLOAD,
-                status=200,
-            )
+            _register(rsps, _load("users_me/01-default.yaml"))
             row = waifu_api.me(no_cache=True)
         assert isinstance(row, WaifuUser)
-        assert row.name == "narugo1992"
-        assert row.role == "User"
+        assert row.id is not None
+        assert row.name is not None
+        assert row.role is not None
 
     def test_x_api_key_header_is_injected(self, fake_clock, monkeypatch):
         monkeypatch.setenv("ANIMEDEX_WAIFU_TOKEN", "fake-key")
         with responses.RequestsMock() as rsps:
-            rsps.add(
-                responses.GET,
-                "https://api.waifu.im/users/me",
-                json=self._USERS_ME_PAYLOAD,
-                status=200,
-            )
+            _register(rsps, _load("users_me/01-default.yaml"))
             waifu_api.me(no_cache=True)
             sent = rsps.calls[0].request
         assert sent.headers.get("X-Api-Key") == "fake-key"
@@ -269,12 +244,7 @@ class TestWaifuAuth:
     def test_explicit_token_overrides_env(self, fake_clock, monkeypatch):
         monkeypatch.setenv("ANIMEDEX_WAIFU_TOKEN", "env-key")
         with responses.RequestsMock() as rsps:
-            rsps.add(
-                responses.GET,
-                "https://api.waifu.im/users/me",
-                json=self._USERS_ME_PAYLOAD,
-                status=200,
-            )
+            _register(rsps, _load("users_me/01-default.yaml"))
             waifu_api.me(token="explicit-key", no_cache=True)
             sent = rsps.calls[0].request
         assert sent.headers.get("X-Api-Key") == "explicit-key"

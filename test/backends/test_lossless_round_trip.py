@@ -934,6 +934,15 @@ class TestWaifuLossless:
             pytest.skip("error / non-dict fixture")
         _assert_lossless(WaifuImage, body, f"WaifuImage/{path.name}")
 
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "waifu" / "users_me").glob("*.yaml")))
+    def test_waifu_user_lossless(self, path):
+        from animedex.backends.waifu.models import WaifuUser
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict):
+            pytest.skip("error / non-dict fixture")
+        _assert_lossless(WaifuUser, body, f"WaifuUser/{path.name}")
+
     @pytest.mark.parametrize("path", sorted((FIXTURES / "waifu" / "stats_public").glob("*.yaml")))
     def test_waifu_stats_lossless(self, path):
         from animedex.backends.waifu.models import WaifuStats
