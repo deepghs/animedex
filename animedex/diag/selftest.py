@@ -105,7 +105,7 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.mcp",
     "animedex.mcp.tool_decorator",
     "animedex.mcp.register",
-    # Phase 1: animedex api raw passthrough. Each per-backend module
+    # the substrate API layer: animedex api raw passthrough. Each per-backend module
     # ships a selftest() that exercises its read-only firewall path;
     # the dispatcher and envelope have their own end-to-end smokes;
     # the raw renderer's selftest checks the four output modes.
@@ -121,7 +121,7 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.api.shikimori",
     "animedex.api.trace",
     "animedex.render.raw",
-    # Phase 2: backend-specific high-level Python APIs.
+    # the high-level backend layer: backend-specific high-level Python APIs.
     "animedex.backends",
     "animedex.backends.anilist",
     "animedex.backends.anilist.models",

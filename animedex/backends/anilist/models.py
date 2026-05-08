@@ -1,6 +1,6 @@
 """Rich AniList dataclasses (one per Query root we surface).
 
-Phase 2: every anonymous Query root field on AniList's GraphQL schema
+the high-level backend layer: every anonymous Query root field on AniList's GraphQL schema
 gets a typed pydantic dataclass here. Core entities (Media, Character,
 Staff, Studio) carry ``to_common()`` projections onto the cross-source
 types in :mod:`animedex.models`. Long-tail entities (MediaTrend,

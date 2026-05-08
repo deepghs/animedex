@@ -346,7 +346,11 @@ def render_tty(model: AnimedexModel) -> str:
         candidate = getattr(model, "source", None)
         src = candidate if isinstance(candidate, SourceTag) else None
     src_marker = f"[src: {src.backend}]" if src is not None else "[src: ?]"
-    return f"{type(model).__name__} {src_marker}\n{model.model_dump_json()}\n"
+    # ``by_alias=True`` so backend rich models with aliased fields
+    # (e.g. ``RawTraceHit.from_`` aliased to ``from``) preserve the
+    # upstream key names in this fallback path too — matching what
+    # the JSON renderer emits.
+    return f"{type(model).__name__} {src_marker}\n{model.model_dump_json(by_alias=True)}\n"
 
 
 def render_for_stream(model: AnimedexModel, stream: Any) -> str:

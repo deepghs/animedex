@@ -11,7 +11,7 @@ import sys
 import click
 
 from animedex.backends import trace as _api
-from animedex.entry._phase2_helpers import common_phase2_options, emit
+from animedex.entry._cli_factory import common_options, emit
 from animedex.config import Config
 
 
@@ -57,7 +57,7 @@ def trace_group() -> None:
 @click.option("--anilist-info", is_flag=True, default=False, help="Inline AniList title with each hit.")
 @click.option("--cut-borders", is_flag=True, default=False, help="Strip letterboxing before matching.")
 @click.option("--anilist-id", type=int, default=None, help="Restrict matches to a specific AniList show.")
-@common_phase2_options
+@common_options
 def search_cmd(
     image_url,
     input_path,
@@ -113,7 +113,7 @@ def search_cmd(
 
 
 @trace_group.command("quota")
-@common_phase2_options
+@common_options
 def quota_cmd(json_flag, jq_expr, no_cache, cache_ttl, rate, no_source):
     """Show the caller's Trace.moe quota state (free; no quota cost).
 

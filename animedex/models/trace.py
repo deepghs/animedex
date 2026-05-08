@@ -10,7 +10,7 @@ optional preview media URLs.
 :class:`TraceQuota` is the typed shape of ``animedex trace quota``
 (``GET /me``). The upstream returns the caller's IP in the ``id``
 field; the mapper unconditionally drops it before constructing the
-record (review M1 of #4 covered the same vector for fixtures).
+record (of #4 covered the same vector for fixtures).
 """
 
 from __future__ import annotations

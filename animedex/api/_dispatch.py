@@ -40,7 +40,7 @@ from animedex.transport.read_only import enforce_read_only, known_backends
 from animedex.transport.useragent import compose_user_agent
 
 
-# Per-backend canonical base URL. Phase 1 default; per-backend
+# Per-backend canonical base URL. the substrate API layer default; per-backend
 # modules may pass in their own override via the ``base_url`` arg.
 _BASE_URLS = {
     "anilist": "https://graphql.anilist.co",
@@ -94,7 +94,7 @@ def _canonicalise_params(obj: Any) -> Any:
     order but leaves list order alone; this helper sorts list values
     too so the signature is order-invariant.
 
-    Per review m1: applied **only** to ``params`` and **not** to
+    Per : applied **only** to ``params`` and **not** to
     ``json_body``. JSON request bodies often carry ordered semantics
     (paginated cursors, mutation order, ordered relations), and
     treating them as sets would risk cache poisoning - two distinct
@@ -241,7 +241,7 @@ def call(
 
     # 0. Resolve config-supplied defaults. Explicit kwargs win; the
     # config only fills in fields the caller left at the sentinel
-    # (``None``). Per review m3 / plans/05 §4.
+    # (``None``). Per / plans/05 §4.
     if config is not None:
         if user_agent is None:
             user_agent = config.user_agent
@@ -304,7 +304,7 @@ def call(
         if hit is not None:
             payload, hdrs, fetched_at = hit
             # Defence in depth: the cache-write path already redacts
-            # response headers (review M3), but legacy rows written
+            # response headers (), but legacy rows written
             # before that fix landed may still contain raw Set-Cookie
             # / Authorization values. Redact at read time too so an
             # un-redacted row never escapes into a RawResponse.
@@ -397,7 +397,7 @@ def call(
 def selftest_backend_shim(backend: str, call_fn: Any, *, extra_params: tuple = ()) -> bool:
     """Shared offline smoke check for every per-backend shim.
 
-    Per review m5 + AGENTS §9.1: a per-backend ``selftest`` that only
+    Per + : a per-backend ``selftest`` that only
     exercises the firewall rejection path tells us nothing about
     whether the backend's own ``call`` was renamed, removed, or had
     its signature broken. This helper bundles two checks:

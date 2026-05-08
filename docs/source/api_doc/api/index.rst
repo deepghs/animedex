@@ -9,7 +9,16 @@ animedex.api
 .. toctree::
     :maxdepth: 3
 
+    _dispatch
     _envelope
+    anilist
+    ann
+    danbooru
+    jikan
+    kitsu
+    mangadex
+    shikimori
+    trace
 
 \_\_all\_\_
 -----------------------------------------------------

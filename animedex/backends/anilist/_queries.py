@@ -1,6 +1,6 @@
 """Canonical AniList GraphQL templates.
 
-These constants are the queries that ship at runtime. Phase-2
+These constants are the queries that ship at runtime. the high-level backend layer
 fixtures (``test/fixtures/anilist/phase2_*``) were captured against
 these exact strings, so changing one here demands a fixture re-capture
 to keep replay tests honest.

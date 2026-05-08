@@ -33,7 +33,7 @@ def register_animedex_tools(server: Any, *, group: Optional[click.Group] = None)
 
     :param server: A duck-typed object with an ``add_tool(name=...,
                     description=..., handler=...)`` method. The
-                    Phase 8 implementation will pass the real MCP
+                    future authenticated work implementation will pass the real MCP
                     server; tests pass a small fake.
     :type server: Any
     :param group: A Click group to walk. Defaults to
@@ -79,7 +79,7 @@ def selftest() -> bool:
     Builds a synthetic Click group with one well-formed command,
     registers it against a tiny fake server, and asserts the
     metadata round-trips. Stays import-only against the real
-    ``mcp`` package; the actual MCP runtime ships in Phase 8.
+    ``mcp`` package; the actual MCP runtime ships in future authenticated work.
 
     :return: ``True`` on success.
     :rtype: bool

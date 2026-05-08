@@ -1,7 +1,7 @@
 """Capture Jikan ``/anime/{id}/full`` + ``/seasons/now`` + ``/top/anime`` +
-``/random/anime`` + ``/schedules`` fixtures for Phase 2 mappers.
+``/random/anime`` + ``/schedules`` fixtures for the high-level backend layer mappers.
 
-Phase 1 already captured ``/anime/{id}`` (without /full); the
+the substrate API layer already captured ``/anime/{id}`` (without /full); the
 ``/full`` variant exposes the Jikan-specific signals (rank, members,
 broadcast, openings/endings, producers, licensors, demographics) that
 land in :class:`animedex.backends.jikan.models.JikanAnime` per Issue

@@ -8,7 +8,7 @@ some content-rating axis (Danbooru's four-letter ``g/s/q/e`` is the
 most expressive; Waifu.im collapses to a boolean ``is_nsfw``;
 NekosBest is SFW-only).
 
-Per ``plans/02`` and ``AGENTS.md §0`` we **do not** filter results
+Per ``plans/02`` and ```` we **do not** filter results
 by rating; the model simply preserves whichever rating the upstream
 reports so a downstream filter step is possible without a second
 HTTP call.

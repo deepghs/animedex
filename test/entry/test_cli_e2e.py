@@ -57,7 +57,7 @@ def force_tty(monkeypatch):
     This is HTTP-adjacent stubbing per AGENTS §9bis: it patches an
     OS-level stream attribute (isatty), not project code.
     """
-    import animedex.entry._phase2_helpers as helpers
+    import animedex.entry._cli_factory as helpers
 
     monkeypatch.setattr(helpers, "_is_terminal", lambda stream: True)
 
@@ -197,7 +197,7 @@ class TestAnilistCliFromFixtures:
             ("show", ["154587"], "anilist/phase2_media/01-media-frieren.yaml"),
             ("show", ["199"], "anilist/phase2_media/02-media-spirited-away.yaml"),
             ("show", ["21"], "anilist/phase2_media/03-media-one-piece.yaml"),
-            ("character", ["36"], "anilist/phase2_character/01-character-edward-elric.yaml"),
+            ("character", ["11"], "anilist/phase2_character/01-character-edward-elric.yaml"),
             ("staff", ["101572"], "anilist/phase2_staff/01-staff-101572.yaml"),
             ("studio", ["11"], "anilist/phase2_studio/01-studio-madhouse.yaml"),
             ("trending", [], "anilist/phase2_trending/01-trending-top8.yaml"),
@@ -247,7 +247,7 @@ class TestTtyRenderingWalk:
             (["jikan", "top-anime", "--limit", "10"], "jikan/top_anime/01-top10.yaml"),
             (["jikan", "random-anime"], "jikan/random_anime/01-random-01.yaml"),
             (["anilist", "show", "154587"], "anilist/phase2_media/01-media-frieren.yaml"),
-            (["anilist", "character", "36"], "anilist/phase2_character/01-character-edward-elric.yaml"),
+            (["anilist", "character", "11"], "anilist/phase2_character/01-character-edward-elric.yaml"),
             (["anilist", "staff", "101572"], "anilist/phase2_staff/01-staff-101572.yaml"),
             (["anilist", "studio", "11"], "anilist/phase2_studio/01-studio-madhouse.yaml"),
             (["anilist", "trending"], "anilist/phase2_trending/01-trending-top8.yaml"),

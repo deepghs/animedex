@@ -1,11 +1,10 @@
 """Lossless rich Trace.moe dataclasses.
 
-Per AGENTS.md §13 (lossless rich-model contract), the backend layer
-must round-trip the upstream payload field-for-field. The user-facing
-common types in :mod:`animedex.models.trace` rename fields for
-Pythonic ergonomics (``from`` → ``start_at_seconds`` etc.) and so
-they are projections, not the raw shape. These rich classes preserve
-the upstream verbatim:
+The backend layer must round-trip the upstream payload field-for-
+field. The user-facing common types in :mod:`animedex.models.trace`
+rename fields for Pythonic ergonomics (``from`` →
+``start_at_seconds`` etc.) and so they are projections, not the raw
+shape. These rich classes preserve the upstream verbatim:
 
 * :class:`RawTraceHit` — single ``/search`` hit row, lossless.
 * :class:`RawTraceQuota` — ``/me`` body, lossless. The upstream's
@@ -14,7 +13,7 @@ the upstream verbatim:
   hard-coded into a fixture committed to this repo. That guarantee
   lives in the fixture-capture pipeline (``tools/fixtures/capture.py``
   rewrites every public IPv4 in captured payloads to the RFC-5737
-  documentation address per review M1), not in the data model.
+  documentation address), not in the data model.
 
 ``to_common()`` projects to :class:`~animedex.models.trace.TraceHit`
 and :class:`~animedex.models.trace.TraceQuota` respectively. Loss of
@@ -113,16 +112,15 @@ class RawTraceQuota(BackendRichModel):
 
     The upstream's ``id`` field carries the caller's egress IP. We
     surface it on the rich model — it is the caller's own datum, not
-    something to filter on their behalf (AGENTS.md §0). The
-    common-projection :class:`~animedex.models.trace.TraceQuota` does
-    not include ``id``, so anyone who wants the IP reaches for the
-    rich shape; anyone who just wants quota numbers reaches for the
-    common shape.
+    something to filter on their behalf. The common-projection
+    :class:`~animedex.models.trace.TraceQuota` does not include
+    ``id``, so anyone who wants the IP reaches for the rich shape;
+    anyone who just wants quota numbers reaches for the common shape.
 
     The fixture-capture pipeline (``tools/fixtures/capture.py``)
     rewrites public IPv4 addresses in captured payloads to the
-    RFC-5737 documentation address per review M1, so the repo's
-    fixtures never carry a real contributor IP — but a live request
+    RFC-5737 documentation address, so the repo's fixtures never
+    carry a real contributor IP — but a live request
     on a user's own machine returns their actual IP, unmodified.
     """
 

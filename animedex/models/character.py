@@ -2,11 +2,11 @@
 Character / staff / studio domain models.
 
 These records come from AniList's character / staff / studio
-endpoints and surface as their own subcommands in the Phase 2 CLI.
+endpoints and surface as their own subcommands in the the high-level backend layer CLI.
 The trio shares a structural pattern - id, name, source - and adds a
 small number of role-specific optional fields.
 
-Phase 2 expanded each model based on real-data reconnaissance against
+the high-level backend layer expanded each model based on real-data reconnaissance against
 AniList (see issue #5 §2). The added fields (gender / age / dates /
 favourites / native names) are populated by AniList; backends that
 don't expose them leave them ``None``.

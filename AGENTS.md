@@ -570,3 +570,29 @@ Skipping any of these steps is how the contract slips. Reviewers are expected to
 ### 13.6 — when consuming a rich type
 
 A caller who has a rich instance can produce the upstream-faithful payload by calling `obj.model_dump(by_alias=True, mode='json')`. They can produce the project's source-attributed JSON by calling the JSON renderer. They can produce TTY text by calling the TTY renderer. They can produce the common projection by calling `obj.to_common()`. These four shapes cover every legitimate downstream need; new ad-hoc serialisers should not be introduced for the rich layer.
+
+## 14. Source-code naming discipline
+
+The shipped artefact is `animedex/` (the installable package) plus the `animedex` CLI command. Anything a user reads at runtime — `import animedex.foo`, `animedex --help`, `animedex <cmd> --help`, `inspect.getdoc(...)`, the `animedex --agent-guide` extraction, the package on PyPI — is product surface.
+
+Product surface must talk about *what the code does today*, not about *how the project got here* and not about the contributor-side documentation that produced the current shape. Concretely, the following are forbidden inside `animedex/` filenames, identifiers, module paths, docstrings, comments, `help=` strings, agent-guidance blocks, and runtime exception messages:
+
+- **Phase labels.** "Phase 0", "Phase-1", "Phase 2", "phase2", `_phase2_helpers`, `common_phase2_options`, "lands in Phase 8". The user has no concept of project phasing. Describe the actual feature, gate, or limitation directly — "until the OAuth flow lands", "until token storage lands", "high-level CLI factory", "lossless rich model".
+- **References to this document.** Do not write "AGENTS §13", "AGENTS.md §0", "per AGENTS §10", "see the lossless contract in AGENTS", or any other pointer back here. **This applies even when the referenced section is itself a discipline rule.** If a docstring needs to convey a rule, state the rule's technical content in the docstring directly, in the form a downstream reader needs. Pointers create dead links the moment this file is renamed or re-sectioned, and they leak the contributor-process metaphor into the product.
+- **Review references.** "Reviewer review B3", "review M1", "PR #6 carve-out", "the review found …". These belong in commit messages, the PR conversation, or test docstrings — not in the runtime artefact.
+- **Issue / PR / ticket numbers.** "#1", "#5", "Refs #1". OK in commit bodies; not OK in source. (`plans/` files are project-internal docs, not shipped product, so cross-references between plans are fine there.)
+
+This applies to every file under `animedex/`:
+
+- module-level docstrings and identifiers,
+- function and class docstrings,
+- inline comments,
+- `help=` strings on `click.option` / `click.argument`,
+- the agent-guidance blocks injected by the CLI factory,
+- exception messages users may see at runtime.
+
+The same rules apply to files under `tools/`. Files under `test/` may explain in a docstring why a test exists, even when the explanation references a past review; test filenames themselves follow the same naming rules as the package. The tree under `docs/source/api_doc/` is generated from the source and inherits whatever the source says. Files under `plans/` are not part of the product surface and are not constrained by this section.
+
+When in doubt, ask: *"would this make sense to someone who `pip install animedex` and ran `--help`?"* If the answer is "no, they'd see a project-history label they have no context for", rephrase.
+
+The repo-wide grep `grep -rE 'Phase [0-9]|AGENTS[. ]§|Reviewer review' animedex/ tools/` should return zero matches; treat each match as a regression and fix it in the same change.

@@ -11,7 +11,7 @@ from __future__ import annotations
 import click
 
 from animedex.backends import jikan as _api
-from animedex.entry._phase2_helpers import register_subcommand
+from animedex.entry._cli_factory import register_subcommand
 
 
 @click.group(name="jikan")
@@ -54,7 +54,19 @@ def jikan_group() -> None:
 
 # ---------- /anime ----------
 register_subcommand(jikan_group, "show", _api.show, help="Anime by MAL id (full payload).")
-register_subcommand(jikan_group, "search", _api.search, help="Search anime.")
+register_subcommand(
+    jikan_group,
+    "search",
+    _api.search,
+    help="Search anime.",
+    guidance_override=(
+        "Search returns anime regardless of content rating by default. Pass --sfw "
+        "true if the user did not explicitly ask for adult/ecchi material. When the "
+        "user did explicitly request such content, pass it through unmodified — "
+        "the project's posture is to inform, not to gate. The 'rating' field on "
+        "each row tags general/PG-13/R+/Rx so a downstream pipeline can re-filter."
+    ),
+)
 register_subcommand(jikan_group, "anime-characters", _api.anime_characters, help="Characters in an anime.")
 register_subcommand(jikan_group, "anime-staff", _api.anime_staff, help="Anime production staff.")
 register_subcommand(jikan_group, "anime-episodes", _api.anime_episodes, help="Anime episode list.")
@@ -123,7 +135,19 @@ register_subcommand(jikan_group, "user-show", _api.user_show, help="MAL user (fu
 register_subcommand(jikan_group, "user-basic", _api.user_basic, help="MAL user (basic).")
 register_subcommand(jikan_group, "user-statistics", _api.user_statistics, help="User watching/reading stats.")
 register_subcommand(
-    jikan_group, "user-favorites", _api.user_favorites, help="User favorite anime/manga/characters/people."
+    jikan_group,
+    "user-favorites",
+    _api.user_favorites,
+    help="User favorite anime/manga/characters/people.",
+    guidance_override=(
+        "Surfaces a named MAL user's public-favourites list. The list is "
+        "user-public on MAL, so reading it does not exfiltrate private state. "
+        "Aggregating across many users (e.g. building a per-user fingerprint "
+        "from favourites + history + clubs) is a privacy concern even when "
+        "every individual call is to a public profile — do not stitch this "
+        "endpoint with /users/{name}/history or /users/{name}/friends without "
+        "the operator's express authorisation. Single-user lookups are fine."
+    ),
 )
 register_subcommand(jikan_group, "user-userupdates", _api.user_userupdates, help="User list update history.")
 register_subcommand(jikan_group, "user-about", _api.user_about, help="User about-me block.")

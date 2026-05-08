@@ -1,4 +1,4 @@
-"""Capture every remaining read-only endpoint for Phase 2 full coverage.
+"""Capture every remaining read-only endpoint for the high-level backend layer full coverage.
 
 After ``run_anilist_phase2.py`` (core 7 query templates × 27 fixtures)
 and ``run_jikan_phase2.py`` (Jikan core 16 fixtures across full /
@@ -6,7 +6,7 @@ seasons / top / random / schedules), this script captures the **long
 tail**: every other anonymous Query root in AniList + the 70+
 remaining Jikan endpoints + the four trace.moe endpoints.
 
-Each endpoint gets at least 1 fixture (per Phase 2 plan in #5
+Each endpoint gets at least 1 fixture (per the high-level backend layer plan in #5
 follow-up). Higher-traffic endpoints get a few. Captures are paced
 per upstream's rate-limit budget.
 """
@@ -29,7 +29,7 @@ JIKAN_PACE = 1.1  # 60/min cap
 
 
 # ---------- AniList long-tail Query roots ----------
-# (Phase 2 covers Media/Character/Staff/Studio/Page/search/schedule/trending
+# (the high-level backend layer covers Media/Character/Staff/Studio/Page/search/schedule/trending
 # already; this list is the remaining 15 anonymous Query types.)
 
 ANILIST_LONGTAIL: List[Tuple[str, str, dict]] = [

@@ -336,7 +336,7 @@ class RawResponse(AnimedexModel):
 
     @model_validator(mode="after")
     def _check_body_text_matches_bytes(self) -> "RawResponse":
-        """Pin the ``body_text`` / ``body_bytes`` invariant (review m7).
+        """Pin the ``body_text`` / ``body_bytes`` invariant ().
 
         The two fields must agree: either ``body_text`` is the UTF-8
         decode of ``body_bytes``, or ``body_text`` is ``None`` (because

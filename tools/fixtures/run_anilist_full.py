@@ -1,10 +1,10 @@
-"""Capture AniList full-field fixtures for Phase 2 mappers.
+"""Capture AniList full-field fixtures for the high-level backend layer mappers.
 
-Phase 1 fixtures used **simplified** GraphQL queries (selecting 5-10
-fields per Media). Phase 2's mapper layer needs the full surface for
+the substrate API layer fixtures used **simplified** GraphQL queries (selecting 5-10
+fields per Media). the high-level backend layer's mapper layer needs the full surface for
 :class:`~animedex.backends.anilist.models.AnilistAnime` / Character /
 Staff / Studio. This module captures fresh fixtures with the
-canonical Phase-2 queries from
+canonical the high-level backend layer queries from
 :mod:`animedex.backends.anilist._queries`.
 
 Output path slugs:
@@ -151,7 +151,11 @@ MEDIA_CASES = [
 ]
 
 CHARACTER_CASES = [
-    ("character-edward-elric", 36),
+    # Edward Elric is AniList character id 11. The earlier draft of
+    # this list had id=36 under the same label, which is Phyllo —
+    # the mislabel ended up baked into the the high-level backend layer test corpus.
+    ("character-edward-elric", 11),
+    ("character-phyllo", 36),
     ("character-3", 40),
     ("character-1", 1),
     ("character-178", 178),
@@ -173,7 +177,7 @@ STUDIO_CASES = [
 
 
 def main() -> int:
-    print("Capturing AniList Phase-2 fixtures (full-field queries)")
+    print("Capturing AniList the high-level backend layer fixtures (full-field queries)")
     total = (
         len(MEDIA_CASES) + len(CHARACTER_CASES) + len(STAFF_CASES) + len(STUDIO_CASES) + 5
     )

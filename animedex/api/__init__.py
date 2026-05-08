@@ -1,7 +1,7 @@
 """
 ``animedex api`` raw passthrough.
 
-This package wires the eight Phase-1 backends behind a single
+This package wires the eight a future phase backends behind a single
 :func:`call` dispatcher whose return value is the
 :class:`~animedex.api._envelope.RawResponse` envelope. The CLI
 renderers in :mod:`animedex.render.raw` project that envelope into

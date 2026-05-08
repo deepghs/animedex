@@ -8,8 +8,9 @@ parses the body, and returns a typed dataclass from
 
 Token-required Query roots (``Viewer``, ``Notification``,
 ``Markdown``, ``AniChartUser``) are exposed as functions that
-unconditionally raise :class:`ApiError(reason="auth-required")`.
-The corresponding CLI subcommands print a friendly Phase-8 hint.
+unconditionally raise :class:`ApiError(reason="auth-required")`
+until the OAuth flow lands; the corresponding CLI subcommands
+surface that as a clean error.
 """
 
 from __future__ import annotations
@@ -74,7 +75,31 @@ def _gql(query: str, variables: Optional[Dict[str, Any]] = None, *, config: Opti
         )
     if raw.body_text is None:
         raise ApiError("AniList returned a non-text body", backend="anilist", reason="upstream-decode")
-    payload = _json.loads(raw.body_text)
+    # Gate on HTTP status BEFORE parsing the body. AniList is
+    # well-behaved on 200 (a 200 with ``errors[]`` and ``data: null``
+    # is the legitimate GraphQL-error shape), but on 5xx the body may
+    # be a Cloudflare HTML error page or a non-GraphQL JSON like
+    # ``{"error": "internal"}``. Without this gate, HTML would crash
+    # ``_json.loads`` with an uncaught ``JSONDecodeError``; non-
+    # GraphQL JSON would fall into the mapper and surface as a
+    # misleading ``not-found`` ("Media not found" when the server is
+    # actually 5xx-ing).
+    if raw.status >= 500:
+        raise ApiError(
+            f"AniList {raw.status}",
+            backend="anilist",
+            reason="upstream-error",
+        )
+    try:
+        payload = _json.loads(raw.body_text)
+    except ValueError as exc:
+        # 4xx (or anything else) with a non-JSON body: still
+        # preferable to a raw decode error.
+        raise ApiError(
+            f"AniList returned a non-JSON body (status {raw.status})",
+            backend="anilist",
+            reason="upstream-decode",
+        ) from exc
     if "errors" in payload and payload.get("data") is None:
         msg = (payload["errors"][0] or {}).get("message", "GraphQL error")
         raise ApiError(msg, backend="anilist", reason="graphql-error")
@@ -347,43 +372,48 @@ def media_list_collection_public(
     return _mp.map_media_list_collection_public(payload, src)
 
 
-# ---------- token-required (Phase 8 stubs) ----------
+# ---------- token-required stubs ----------
+#
+# These four AniList Query roots require an OAuth token. The token
+# flow has not landed yet; until then each function raises a typed
+# ``ApiError(reason="auth-required")`` so callers can branch on the
+# typed reason rather than parsing a free-text message.
 
 
 def viewer(*, config: Optional[Config] = None, **kw):
     """Current user profile. Requires authentication.
 
-    :raises ApiError: Always; AniList token storage lands in Phase 8.
+    :raises ApiError: Always, until the OAuth flow lands.
     """
     raise ApiError(
-        "Viewer requires authentication; token flow lands in Phase 8.",
+        "Viewer requires authentication; the OAuth flow has not landed yet.",
         backend="anilist",
         reason="auth-required",
     )
 
 
 def notification(*, config: Optional[Config] = None, **kw):
-    """Notifications. Token-required, Phase 8."""
+    """Notifications. Token-required."""
     raise ApiError(
-        "Notification requires authentication; token flow lands in Phase 8.",
+        "Notification requires authentication; the OAuth flow has not landed yet.",
         backend="anilist",
         reason="auth-required",
     )
 
 
 def markdown(text: str, *, config: Optional[Config] = None, **kw):
-    """AniList-markdown to HTML. Token-required, Phase 8."""
+    """AniList-markdown to HTML. Token-required."""
     raise ApiError(
-        "Markdown requires authentication; token flow lands in Phase 8.",
+        "Markdown requires authentication; the OAuth flow has not landed yet.",
         backend="anilist",
         reason="auth-required",
     )
 
 
 def ani_chart_user(*, config: Optional[Config] = None, **kw):
-    """AniChart user state. Token-required, Phase 8."""
+    """AniChart user state. Token-required."""
     raise ApiError(
-        "AniChartUser requires authentication; token flow lands in Phase 8.",
+        "AniChartUser requires authentication; the OAuth flow has not landed yet.",
         backend="anilist",
         reason="auth-required",
     )

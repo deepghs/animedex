@@ -93,7 +93,7 @@ class BackendRichModel(AnimedexModel):
 
     Backend-rich → common projection happens via the rich type's
     ``to_common()`` method. Loss of fields is permitted at and only
-    at that boundary. See AGENTS.md §13 (lossless rich models).
+    at that boundary.
     """
 
     model_config = ConfigDict(

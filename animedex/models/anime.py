@@ -8,7 +8,7 @@ shape AniList, Jikan, Kitsu, and Shikimori backends populate.
 The :class:`Anime` class is intentionally a *common projection*: it
 holds the fields that are reasonably comparable across at least
 three of the upstreams we target. Per ``plans/05-python-api.md`` and
-the design discussion in `#1`'s Phase 0 closeout, each backend will
+the design discussion in `#1`'s the initial scaffolding closeout, each backend will
 ship a *richer* per-backend dataclass under
 ``animedex.backends.<name>.models`` (e.g. ``AnilistAnime``) that
 exposes the long tail of upstream-specific fields, plus a

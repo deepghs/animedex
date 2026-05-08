@@ -47,10 +47,43 @@ from animedex.models.common import ApiError, SourceTag
 
 
 def _require(node: Any, what: str) -> Any:
-    """Raise ``ApiError(reason="not-found")`` when ``node`` is None."""
+    """Raise ``ApiError(reason="not-found")`` when ``node`` is None.
+
+    Used at the *root* of a single-entity query: AniList returns
+    ``data: {Media: null}`` when the id doesn't exist, and we surface
+    that as a typed ``not-found`` so callers can distinguish missing
+    rows from upstream failure modes.
+    """
     if node is None:
         raise ApiError(f"{what} not found", backend="anilist", reason="not-found")
     return node
+
+
+def _field(row: Dict[str, Any], key: str, what: str) -> Any:
+    """Return ``row[key]`` or raise ``ApiError(reason='upstream-shape')``.
+
+    Used inside list-mapper loops where the upstream is *expected* to
+    populate a particular field on every row (typically ``id``). A
+    plain ``row[key]`` would crash with ``KeyError`` and leak the
+    failure point as an internal exception; ``_field`` converts that
+    to a typed error the dispatcher / CLI / library callers know how
+    to catch — surfacing upstream schema drift as ``upstream-shape``
+    rather than as a Python exception type.
+
+    :param row: One row from a GraphQL list response.
+    :param key: The required field name on the row.
+    :param what: Human-readable label for the row (e.g. ``"review"``,
+                 ``"airingSchedule"``) — appears in the error message.
+    :raises ApiError: When ``key`` is absent from ``row``. ``reason``
+                      is ``upstream-shape``.
+    """
+    if key not in row:
+        raise ApiError(
+            f"AniList {what} row missing required field {key!r}",
+            backend="anilist",
+            reason="upstream-shape",
+        )
+    return row[key]
 
 
 def map_media(payload: Dict[str, Any], src: SourceTag) -> AnilistAnime:
@@ -173,9 +206,9 @@ def map_airing_schedule(payload: Dict[str, Any], src: SourceTag) -> List[Anilist
         title = media.get("title") or {}
         out.append(
             AnilistAiringSchedule(
-                id=r["id"],
-                airingAt=r["airingAt"],
-                episode=r["episode"],
+                id=_field(r, "id", "airingSchedule"),
+                airingAt=_field(r, "airingAt", "airingSchedule"),
+                episode=_field(r, "episode", "airingSchedule"),
                 # ``timeUntilAiring`` is absent for already-aired
                 # episodes when the upstream returns a historical
                 # window. Default to 0 rather than crashing — the
@@ -200,7 +233,7 @@ def map_review(payload: Dict[str, Any], src: SourceTag) -> List[AnilistReview]:
     rows = page.get("reviews") or []
     return [
         AnilistReview(
-            id=r["id"],
+            id=_field(r, "id", "review"),
             summary=r.get("summary"),
             score=r.get("score"),
             rating=r.get("rating"),
@@ -222,7 +255,7 @@ def map_recommendation(payload: Dict[str, Any], src: SourceTag) -> List[AnilistR
         rec = r.get("mediaRecommendation") or {}
         out.append(
             AnilistRecommendation(
-                id=r["id"],
+                id=_field(r, "id", "recommendation"),
                 rating=r.get("rating"),
                 media_id=m.get("id"),
                 media_title=(m.get("title") or {}).get("romaji"),
@@ -239,7 +272,7 @@ def map_thread(payload: Dict[str, Any], src: SourceTag) -> List[AnilistThread]:
     rows = page.get("threads") or []
     return [
         AnilistThread(
-            id=r["id"],
+            id=_field(r, "id", "thread"),
             title=r.get("title"),
             body=r.get("body"),
             user_name=(r.get("user") or {}).get("name"),
@@ -257,7 +290,7 @@ def map_thread_comment(payload: Dict[str, Any], src: SourceTag) -> List[AnilistT
     rows = page.get("threadComments") or []
     return [
         AnilistThreadComment(
-            id=r["id"],
+            id=_field(r, "id", "threadComment"),
             comment=r.get("comment"),
             user_name=(r.get("user") or {}).get("name"),
             createdAt=r.get("createdAt"),
@@ -277,7 +310,7 @@ def map_activity(payload: Dict[str, Any], src: SourceTag) -> List[AnilistActivit
         if "text" in r:
             out.append(
                 AnilistActivity(
-                    id=r["id"],
+                    id=_field(r, "id", "activity"),
                     kind="text",
                     text=r.get("text"),
                     user_name=(r.get("user") or {}).get("name"),
@@ -290,7 +323,7 @@ def map_activity(payload: Dict[str, Any], src: SourceTag) -> List[AnilistActivit
             title = (media.get("title") or {}).get("romaji")
             out.append(
                 AnilistActivity(
-                    id=r["id"],
+                    id=_field(r, "id", "activity"),
                     kind="list",
                     status=r.get("status"),
                     user_name=(r.get("user") or {}).get("name"),
@@ -307,7 +340,7 @@ def map_activity_reply(payload: Dict[str, Any], src: SourceTag) -> List[AnilistA
     rows = page.get("activityReplies") or []
     return [
         AnilistActivityReply(
-            id=r["id"],
+            id=_field(r, "id", "activityReply"),
             text=r.get("text"),
             user_name=(r.get("user") or {}).get("name"),
             createdAt=r.get("createdAt"),
@@ -321,7 +354,14 @@ def map_follow(payload: Dict[str, Any], key: str, src: SourceTag) -> List[Anilis
     """Shared between :func:`map_following` / :func:`map_follower`."""
     page = payload.get("data", {}).get("Page") or {}
     rows = page.get(key) or []
-    return [AnilistFollowEntry(id=r["id"], name=r["name"], source_tag=src) for r in rows]
+    return [
+        AnilistFollowEntry(
+            id=_field(r, "id", "followEntry"),
+            name=_field(r, "name", "followEntry"),
+            source_tag=src,
+        )
+        for r in rows
+    ]
 
 
 def map_media_list_public(payload: Dict[str, Any], src: SourceTag) -> List[AnilistMediaListEntry]:
@@ -332,7 +372,7 @@ def map_media_list_public(payload: Dict[str, Any], src: SourceTag) -> List[Anili
         media = r.get("media") or {}
         out.append(
             AnilistMediaListEntry(
-                id=r["id"],
+                id=_field(r, "id", "mediaListEntry"),
                 status=r.get("status"),
                 score=r.get("score"),
                 progress=r.get("progress"),
@@ -344,9 +384,12 @@ def map_media_list_public(payload: Dict[str, Any], src: SourceTag) -> List[Anili
     return out
 
 
-# ---------- token-required mappers (Phase 8 lands the auth flow; these
-# are wired now so the captured fixtures are usable when token storage
-# arrives) ----------
+# ---------- token-required mappers ----------
+#
+# Wired now so the captured authenticated fixtures are usable; the
+# OAuth flow has not landed yet, so the public callables in
+# :mod:`animedex.backends.anilist` raise ``auth-required`` before
+# ever reaching these mappers.
 
 
 def map_viewer(payload: Dict[str, Any], src: SourceTag) -> AnilistUser:
@@ -394,7 +437,7 @@ def map_notification(payload: Dict[str, Any], src: SourceTag) -> List[AnilistNot
         user = r.get("user") or {}
         out.append(
             AnilistNotification(
-                id=r["id"],
+                id=_field(r, "id", "notification"),
                 kind=kind,
                 type=type_str or None,
                 contexts=contexts,

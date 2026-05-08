@@ -1,8 +1,10 @@
 """High-level Trace.moe Python API.
 
 Exposes screenshot search (URL or upload bytes) plus the quota probe.
-The mapper unconditionally drops the upstream's caller-IP echo from
-``/me`` (review M1 vector).
+The common-projection :class:`~animedex.models.trace.TraceQuota`
+returned by :func:`quota` drops the upstream's caller-IP echo (the
+``/me`` ``id`` field) — callers who want it can use the rich
+:class:`~animedex.backends.trace.models.RawTraceQuota` directly.
 """
 
 from __future__ import annotations
@@ -56,7 +58,7 @@ def quota(*, config: Optional[Config] = None, **kw) -> TraceQuota:
     have a place there. A caller who wants the upstream payload as-is
     (including ``id``) can reach for the rich
     :class:`~animedex.backends.trace.models.RawTraceQuota` directly:
-    it round-trips the upstream verbatim per AGENTS §13.
+    it round-trips the upstream verbatim.
     """
     raw = _raw_trace.call(path="/me", config=config, **kw)
     payload = _parse(raw)

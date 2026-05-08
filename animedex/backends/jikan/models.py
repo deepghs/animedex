@@ -2,7 +2,7 @@
 
 Jikan exposes ~91 endpoints. Many share response shapes (every
 ``/anime/{id}/...`` returning a list of records uses the same row
-type). Phase 2 captures distinct shapes once and reuses them across
+type). the high-level backend layer captures distinct shapes once and reuses them across
 endpoints; the mapper layer picks the right shape per call.
 
 The :class:`JikanAnime` ``to_common()`` projects MAL data onto

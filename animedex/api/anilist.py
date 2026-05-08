@@ -17,7 +17,7 @@ document as the body. For per-query variables, also pass a
 calls beyond the budget block until a token is available.
 Anonymous reads cover the public schema (Media, Character, Staff,
 Studio, Page); a token unlocks the viewer's own scopes which are
-out of Phase 1 scope.
+out of the substrate API layer scope.
 --- End ---
 """
 

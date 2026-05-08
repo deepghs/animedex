@@ -1,7 +1,7 @@
-"""Phase-2 CLI helpers: shared option decorators, output rendering,
+"""CLI helpers: shared option decorators, output rendering,
 ``--jq <expr>`` filter, and the ``register_subcommand`` factory used
-to bind a Python API function to a Click subcommand without 100+
-hand-written wrappers.
+to bind a Python API function to a Click subcommand without
+hand-written wrappers per endpoint.
 """
 
 from __future__ import annotations
@@ -18,16 +18,16 @@ import click
 from animedex.config import Config
 from animedex.models.common import AnimedexModel, ApiError
 from animedex.render.json_renderer import render_json
+from animedex.render.tty import is_terminal as _is_terminal
 from animedex.render.tty import render_tty
 
 
 # ---------- shared options ----------
 
 
-def common_phase2_options(func: Callable) -> Callable:
+def common_options(func: Callable) -> Callable:
     """Decorator: attach ``--json``, ``--jq``, ``--no-cache``,
-    ``--cache``, ``--rate``, ``--no-source`` flags to a Phase-2 CLI
-    subcommand.
+    ``--cache``, ``--rate``, ``--no-source`` flags to a CLI subcommand.
 
     ``--jq`` runs the rendered JSON through the system ``jq`` binary;
     when ``jq`` isn't on PATH the command falls through to printing
@@ -49,10 +49,6 @@ def common_phase2_options(func: Callable) -> Callable:
 
 
 # ---------- rendering ----------
-
-
-def _is_terminal(stream) -> bool:
-    return bool(getattr(stream, "isatty", lambda: False)())
 
 
 def _to_json_text(model_or_list, *, include_source: bool) -> str:
@@ -139,7 +135,7 @@ _BACKEND_POLICY = {
     "anilist": {
         "backend_line": "AniList (graphql.anilist.co); GraphQL.",
         "rate_line": "30 req/min anonymous (degraded from baseline 90/min).",
-        "guidance": "Read-only AniList query. Anonymous reads cover the public schema; auth-required endpoints raise auth-required at runtime (Phase 8).",
+        "guidance": "Read-only AniList query. Anonymous reads cover the public schema; auth-required endpoints raise auth-required at runtime until token storage lands.",
     },
     "jikan": {
         "backend_line": "Jikan v4 (api.jikan.moe); REST scraper of MyAnimeList.",
@@ -154,15 +150,43 @@ _BACKEND_POLICY = {
 }
 
 
-def _build_policy_docstring(name: str, summary: str, backend: str) -> str:
+def _build_policy_docstring(
+    name: str,
+    summary: str,
+    backend: str,
+    guidance_override: Optional[str] = None,
+) -> str:
     """Compose a policy-lint-compliant docstring with the three
     structural blocks (Backend / Rate limit / Agent Guidance).
 
     The Click ``\\f`` formfeed cuts the policy blocks off the human
     --help so the output stays readable; ``inspect.getdoc`` (used by
     the policy lint) keeps them.
+
+    :param name: Subcommand name (kept for diagnostic purposes).
+    :type name: str
+    :param summary: One-line human summary of the command.
+    :type summary: str
+    :param backend: Backend group name. Looked up in
+                     :data:`_BACKEND_POLICY` for the Backend /
+                     Rate-limit lines and the default guidance.
+    :type backend: str
+    :param guidance_override: Operation-specific Agent-Guidance text.
+                               When set, replaces the backend-wide
+                               default for this one docstring; the
+                               Backend / Rate-limit lines stay
+                               backend-wide. Use this for operations
+                               where the right behaviour depends on
+                               the call (NSFW filter handling, privacy
+                               carve-outs, etc.) rather than on the
+                               backend.
+    :type guidance_override: str or None
+    :raises KeyError: When ``backend`` is not in :data:`_BACKEND_POLICY`.
+                       Falling back silently would hide typos at the
+                       call site.
     """
-    pol = _BACKEND_POLICY.get(backend, _BACKEND_POLICY["anilist"])
+    pol = _BACKEND_POLICY[backend]
+    guidance = guidance_override if guidance_override is not None else pol["guidance"]
     return (
         f"{summary}\n"
         "\n\f\n"
@@ -171,13 +195,19 @@ def _build_policy_docstring(name: str, summary: str, backend: str) -> str:
         f"Rate limit: {pol['rate_line']}\n"
         "\n"
         "--- LLM Agent Guidance ---\n"
-        f"{pol['guidance']}\n"
+        f"{guidance}\n"
         "--- End ---\n"
     )
 
 
 def register_subcommand(
-    group: click.Group, name: str, fn: Callable, *, help: Optional[str] = None, command_aliases: List[str] = None
+    group: click.Group,
+    name: str,
+    fn: Callable,
+    *,
+    help: Optional[str] = None,
+    command_aliases: List[str] = None,
+    guidance_override: Optional[str] = None,
 ):
     """Bind a Python API ``fn`` as a Click subcommand on ``group``.
 
@@ -185,7 +215,7 @@ def register_subcommand(
     * Positional parameters with no default → ``click.argument``.
     * Keyword parameters with default → ``click.option``.
     * ``config`` / ``no_cache`` / ``cache_ttl`` / ``rate`` are
-      injected via :func:`common_phase2_options` (suppressed from
+      injected via :func:`common_options` (suppressed from
       auto-binding).
 
     The wrapped command builds the ``Config`` from the common flags
@@ -266,17 +296,30 @@ def register_subcommand(
         try:
             result = _resolve_fn()(config=cfg, **kwargs)
         except ApiError as exc:
+            # The typed ``ApiError`` keeps its ``[backend=... reason=...]``
+            # prefix. ``str(exc)`` produces a single-line message that
+            # ``ClickException`` prints to stderr.
             raise click.ClickException(str(exc))
+        except click.ClickException:
+            # Already a Click error (e.g. from inside emit/_apply_jq);
+            # let Click handle it without re-wrapping.
+            raise
+        except Exception as exc:
+            # Anything else — pydantic ValidationError from upstream
+            # schema drift, TypeError from a partial response,
+            # ConnectionError from the wire — surfaces as a clean
+            # one-line Click error rather than a raw Python traceback.
+            raise click.ClickException(f"{type(exc).__name__}: {exc}")
         emit(result, json_flag=json_flag, jq_expr=jq_expr, no_source=no_source)
 
     # Apply decorators bottom-up (closest to function = innermost).
     # Click reads decorators outer-to-inner for positional argument
     # order, so the LAST decorator applied is the FIRST argument
-    # consumed from argv. Therefore we apply common_phase2_options
+    # consumed from argv. Therefore we apply common_options
     # first (innermost), then keyword options, then positional
     # arguments in REVERSE source order (so argument(year) ends up
     # outermost and gets argv[0]).
-    cmd_fn = common_phase2_options(_cmd)
+    cmd_fn = common_options(_cmd)
     arg_decs = []
     opt_decs = []
     for pname, param in sig.parameters.items():
@@ -323,7 +366,7 @@ def register_subcommand(
     # Agent Guidance) so the policy lint stays green. ``\f`` cuts
     # the policy blocks off Click's --help; ``inspect.getdoc`` (used
     # by the lint) keeps them.
-    full_doc = _build_policy_docstring(name, summary, backend)
+    full_doc = _build_policy_docstring(name, summary, backend, guidance_override=guidance_override)
     cmd.__doc__ = full_doc
     if cmd.callback is not None:
         cmd.callback.__doc__ = full_doc

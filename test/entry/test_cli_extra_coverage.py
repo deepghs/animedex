@@ -116,13 +116,13 @@ class TestTraceCliInputModes:
         assert result.exit_code != 0
 
 
-# ---------- entry/_phase2_helpers.py ----------
+# ---------- entry/_cli_factory.py ----------
 
 
 class TestPhase2Helpers:
     def test_is_terminal_no_isatty(self):
         """Stream without isatty() returns False."""
-        from animedex.entry._phase2_helpers import _is_terminal
+        from animedex.entry._cli_factory import _is_terminal
 
         # An object with no isatty attribute at all (the lambda fallback fires).
         class NoIsatty:
@@ -133,7 +133,7 @@ class TestPhase2Helpers:
     def test_to_json_text_plain_dict(self):
         """When the API returns a non-AnimedexModel (plain dict), the
         helper falls back to ``json.dumps``."""
-        from animedex.entry._phase2_helpers import _to_json_text
+        from animedex.entry._cli_factory import _to_json_text
 
         result = _to_json_text({"a": 1, "b": "two"}, include_source=True)
         decoded = json.loads(result)
@@ -141,7 +141,7 @@ class TestPhase2Helpers:
 
     def test_to_tty_text_plain_dict(self):
         """``_to_tty_text`` on a non-AnimedexModel falls back to ``str()``."""
-        from animedex.entry._phase2_helpers import _to_tty_text
+        from animedex.entry._cli_factory import _to_tty_text
 
         assert "1" in _to_tty_text({"a": 1})
 
@@ -151,9 +151,9 @@ class TestPhase2Helpers:
         No backend currently uses this shape; cover the branch with a
         synthetic registration."""
         import click
-        from animedex.entry._phase2_helpers import register_subcommand
+        from animedex.entry._cli_factory import register_subcommand
 
-        @click.group()
+        @click.group(name="anilist")
         def _g():
             pass
 
@@ -171,9 +171,9 @@ class TestPhase2Helpers:
         """``_click_type`` falls back to ``type(default)`` when the
         annotation is missing but the default has a primitive type."""
         import click
-        from animedex.entry._phase2_helpers import register_subcommand
+        from animedex.entry._cli_factory import register_subcommand
 
-        @click.group()
+        @click.group(name="anilist")
         def _g():
             pass
 
@@ -203,11 +203,11 @@ class TestPhase2Helpers:
         through the helper module so :func:`inspect.signature` etc.
         elsewhere stay intact."""
         import click
-        from animedex.entry import _phase2_helpers
+        from animedex.entry import _cli_factory
 
         # _phase2_helpers does ``import inspect``; capture the helper's
         # bound name, then make get_annotations raise only when called.
-        orig = _phase2_helpers.inspect.get_annotations
+        orig = _cli_factory.inspect.get_annotations
 
         def _broken_get_annotations(fn, **kw):
             # Only raise when called with eval_str=True (our caller's
@@ -217,16 +217,16 @@ class TestPhase2Helpers:
                 raise NameError("intentional simulation")
             return orig(fn, **kw)
 
-        monkeypatch.setattr(_phase2_helpers.inspect, "get_annotations", _broken_get_annotations)
+        monkeypatch.setattr(_cli_factory.inspect, "get_annotations", _broken_get_annotations)
 
-        @click.group()
+        @click.group(name="anilist")
         def _g():
             pass
 
         def _stub_unresolvable(*, page: int = 1, **kw):
             return {"page": page}
 
-        _phase2_helpers.register_subcommand(_g, "stub3", _stub_unresolvable)
+        _cli_factory.register_subcommand(_g, "stub3", _stub_unresolvable)
         assert "stub3" in _g.commands
 
     def test_register_subcommand_typing_fallback_also_fails(self, monkeypatch):
@@ -241,7 +241,7 @@ class TestPhase2Helpers:
         import click
         import inspect
         import typing
-        from animedex.entry import _phase2_helpers
+        from animedex.entry import _cli_factory
 
         orig_typing = typing.get_type_hints
 
@@ -254,16 +254,16 @@ class TestPhase2Helpers:
 
         # Patch inspect.get_annotations only when it exists (3.10+).
         if hasattr(inspect, "get_annotations"):
-            orig_inspect = _phase2_helpers.inspect.get_annotations
+            orig_inspect = _cli_factory.inspect.get_annotations
 
             def _bad_inspect(fn, **kw):
                 if kw.get("eval_str") and getattr(fn, "__name__", None) == "_stub_double_fail":
                     raise NameError("simulate")
                 return orig_inspect(fn, **kw)
 
-            monkeypatch.setattr(_phase2_helpers.inspect, "get_annotations", _bad_inspect)
+            monkeypatch.setattr(_cli_factory.inspect, "get_annotations", _bad_inspect)
 
-        @click.group()
+        @click.group(name="anilist")
         def _g():
             pass
 
@@ -271,16 +271,16 @@ class TestPhase2Helpers:
             return {"page": page}
 
         # Should not raise; resolved_hints falls back to {}.
-        _phase2_helpers.register_subcommand(_g, "stub5", _stub_double_fail)
+        _cli_factory.register_subcommand(_g, "stub5", _stub_double_fail)
         assert "stub5" in _g.commands
 
     def test_register_subcommand_no_module_falls_back(self):
         """Cover the ``return fn`` branch in _resolve_fn when
         ``fn_module`` is missing (e.g. lambda or builtin)."""
         import click
-        from animedex.entry import _phase2_helpers
+        from animedex.entry import _cli_factory
 
-        @click.group()
+        @click.group(name="anilist")
         def _g():
             pass
 
@@ -289,7 +289,7 @@ class TestPhase2Helpers:
 
         _stub.__module__ = None  # simulates a function with no module info
 
-        _phase2_helpers.register_subcommand(_g, "stub_nomod", _stub)
+        _cli_factory.register_subcommand(_g, "stub_nomod", _stub)
         runner = CliRunner()
         result = runner.invoke(_g, ["stub_nomod", "--no-cache"])
         assert result.exit_code == 0
@@ -300,9 +300,9 @@ class TestPhase2Helpers:
         be re-imported."""
         import click
         import importlib
-        from animedex.entry import _phase2_helpers
+        from animedex.entry import _cli_factory
 
-        @click.group()
+        @click.group(name="anilist")
         def _g():
             pass
 
@@ -322,7 +322,7 @@ class TestPhase2Helpers:
 
         monkeypatch.setattr(importlib, "import_module", _stub_importer)
 
-        _phase2_helpers.register_subcommand(_g, "stub4", _stub)
+        _cli_factory.register_subcommand(_g, "stub4", _stub)
         # Invoke the command — the late-binding lookup runs at call time.
         runner = CliRunner()
         # We only need the lookup to *fire*, even if the call itself
@@ -332,10 +332,10 @@ class TestPhase2Helpers:
     def test_click_type_str_fallback_for_non_primitive(self):
         """Cover ``_click_type``'s ``return str`` fallback when neither
         the annotation nor the default carries a primitive type."""
-        from animedex.entry._phase2_helpers import register_subcommand
+        from animedex.entry._cli_factory import register_subcommand
         import click
 
-        @click.group()
+        @click.group(name="anilist")
         def _g():
             pass
 

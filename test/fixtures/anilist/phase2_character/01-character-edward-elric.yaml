@@ -1,5 +1,5 @@
 metadata:
-  captured_at: '2026-05-07T14:58:24Z'
+  captured_at: '2026-05-08T05:28:10Z'
   label: character-edward-elric
   backend: anilist
   path_slug: phase2_character
@@ -11,78 +11,100 @@ request:
     User-Agent: animedex/0.0.1
   params: null
   json_body:
-    query: |-
-      query ($id: Int) {
-        Character(id: $id) {
-          id
-          name { full native alternative }
-          image { large medium }
-          description(asHtml: false)
-          gender age dateOfBirth { year month day }
-          bloodType favourites
-          media(perPage: 3) { edges { characterRole node { id title { romaji } } } }
-        }
-      }
+    query: "query ($id: Int) {\n  Character(id: $id) {\n    id\n    name { full native\
+      \ alternative }\n    image { large medium }\n    description(asHtml: false)\n\
+      \    gender age dateOfBirth { year month day }\n    bloodType favourites\n \
+      \   media(perPage: 3) { edges { characterRole node { id title { romaji } } }\
+      \ }\n  }\n}"
     variables:
-      id: 36
+      id: 11
   raw_body_b64: null
 response:
   status: 200
   headers:
-    Date: Thu, 07 May 2026 14:58:24 GMT
+    Date: Fri, 08 May 2026 05:28:10 GMT
     Content-Type: application/json
-    Transfer-Encoding: chunked
-    Connection: keep-alive
     Server: cloudflare
-    Nel: <scrubbed-at-capture>
-    Cache-Control: no-cache, private
-    X-RateLimit-Limit: '30'
-    X-RateLimit-Remaining: '19'
-    Set-Cookie: <scrubbed-at-capture>
-    X-Frame-Options: SAMEORIGIN
-    X-XSS-Protection: 1; mode=block
-    X-Content-Type-Options: nosniff
-    Access-Control-Allow-Origin: '*'
-    Access-Control-Allow-Methods: GET, POST, OPTIONS
-    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
-    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
-    cf-cache-status: DYNAMIC
-    Report-To: <scrubbed-at-capture>
-    Content-Encoding: gzip
-    CF-RAY: <scrubbed-at-capture>
   body_json:
     data:
       Character:
-        id: 36
+        id: 11
         name:
-          full: Phyllo
-          native: フィロ
-          alternative: []
+          full: Edward Elric
+          native: エドワード・エルリック
+          alternative:
+          - Ed
+          - Fullmetal Alchemist
+          - Pipsqueak
+          - Little Red Runt
+          - Shorty
+          - Insect
+          - Hero of the People
         image:
-          large: https://s4.anilist.co/file/anilistcdn/character/large/36.jpg
-          medium: https://s4.anilist.co/file/anilistcdn/character/medium/36.jpg
-        description: ' Class: Harvest Cleric Real Name: Kojirou Nakamura  Phyllo appears as a small Tu Tribe character dressed
-          in a dark gray robe. He has the ability to hover when he moves and wields a gnarled wooden staff when forced into
-          combat. Despite his rather cute appearance he nevertheless has a wise aura about him.  Phyllo has become a sort
-          of landmark in The World R:2. He can almost always be found sitting on the same bridge in the Root Town of Mac Anu.
-          People of all classes, levels, and ideals come to ask him for advice, making him one of the most well known players
-          in the game. His level is quite high, so he is able to wander through the game without having to worry about attacks
-          by PKers.  In the real world Phyllo is a 62 year old man named Kojirou Nakamura. He lives alone with a pet dog and
-          2 cats for companionship.'
+          large: https://s4.anilist.co/file/anilistcdn/character/large/b11-TA5Nuk7EDUZG.jpg
+          medium: https://s4.anilist.co/file/anilistcdn/character/medium/b11-TA5Nuk7EDUZG.jpg
+        description: '__Birthplace:__ Resembool, Amestris
+
+          __Height:__ 1,65m
+
+          __Family:__ [Alphonse Elric](https://anilist.co/character/12/Alphonse-Elric)
+          (brother), [Van Hohenheim](https://anilist.co/character/9792/Van-Hohenheim)
+          (father), [Trisha Elric](https://anilist.co/character/10085/Trisha-Elric)
+          (mother, deceased)
+
+          __Affiliations:__ State Military, [Pinako Rockbell](https://anilist.co/character/65/Pinako-Rockbell),
+          [Izumi Curtis (teacher)](https://anilist.co/character/67/Izumi-Curtis),
+          [Roy Mustang (Commander)](https://anilist.co/character/68/Roy-Mustang)
+
+          __Occupation:__ State Alchemist
+
+
+          Edward "Fullmetal Alchemist" Elric is a young alchemical prodigy. He is
+          the youngest State Alchemist ever to be recognized by the Amestris State
+          Military, having received the title at the age of 12. Ed''s primary motivation
+          throughout the series is to return his younger brother, Alphonse, to his
+          original body, which was lost in a failed human transmutation. Edward, despite
+          his occasional bouts of immaturity, is a selfless boy who gains a reputation
+          as a "hero of the people" throughout his youth. Notably, he doesn''t seem
+          concerned about returning his own arm and leg, instead focusing entirely
+          on Al''s suffering.
+
+
+          Edward is small for his age, standing at only 149 cm (4''11"), however his
+          body is that of an experienced martial artist, with noticeable muscles and
+          a wealth of agility. Although he lacks both his right arm and left leg,
+          Ed''s ability to fight is not impaired, and is in fact improved, as he will
+          often use alchemy to cause his metal arm to partly transform into a blade
+          or shield. His heavy automail limbs are considered by him to be the very
+          best in Amestris. They were made by his childhood friend, Winry Rockbell,
+          and she is constantly working on them. He is able to think quickly, even
+          in desperate situations, though can still be frightened into paralysis.
+          These qualities, combined with his alchemical powers and physical strength,
+          make him a formidable fighter.'
         gender: Male
-        age: '62'
+        age: 15-16 (series), 18 (movie, End of the series)
         dateOfBirth:
-          year: null
+          year: 1899
           month: null
           day: null
         bloodType: null
-        favourites: 8
+        favourites: 19317
         media:
           edges:
           - characterRole: MAIN
             node:
-              id: 873
+              id: 121
               title:
-                romaji: .hack//Roots
+                romaji: Hagane no Renkinjutsushi
+          - characterRole: MAIN
+            node:
+              id: 430
+              title:
+                romaji: 'Hagane no Renkinjutsushi: Shamballa wo Yuku Mono'
+          - characterRole: MAIN
+            node:
+              id: 664
+              title:
+                romaji: 'Hagane no Renkinjutsushi: Reflections'
   body_text: null
   body_b64: null

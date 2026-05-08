@@ -3,11 +3,8 @@
 Each public function in :mod:`animedex.backends.anilist` is bound as
 a Click subcommand via :func:`register_subcommand`. The auto-binder
 infers positional arguments from the Python signature and exposes
-common Phase-2 flags (``--json``, ``--jq``, ``--no-cache``,
-``--cache``, ``--rate``, ``--no-source``) on every subcommand.
-
-The group docstring carries the three structural blocks (Backend,
-Rate limit, Agent Guidance) per AGENTS §8.
+common flags (``--json``, ``--jq``, ``--no-cache``, ``--cache``,
+``--rate``, ``--no-source``) on every subcommand.
 """
 
 from __future__ import annotations
@@ -15,7 +12,7 @@ from __future__ import annotations
 import click
 
 from animedex.backends import anilist as _api
-from animedex.entry._phase2_helpers import register_subcommand
+from animedex.entry._cli_factory import register_subcommand
 
 
 @click.group(name="anilist")
@@ -31,7 +28,7 @@ def anilist_group() -> None:
     Examples:
       animedex anilist show 154587
       animedex anilist search Frieren --per-page 5
-      animedex anilist character 36 --json
+      animedex anilist character 11 --json
       animedex anilist trending --jq '.[].title.romaji'
       animedex anilist user AniList
     \f
@@ -41,8 +38,8 @@ def anilist_group() -> None:
     Rate limit: 30 req/min (anonymous; degraded from baseline 90/min).
 
     --- LLM Agent Guidance ---
-    The 22 Phase-2 subcommands cover every anonymous Query root on
-    the AniList GraphQL schema. Use ``show <id>`` for single Media,
+    The subcommand surface covers every anonymous Query root on the
+    AniList GraphQL schema. Use ``show <id>`` for single Media,
     ``search <q>`` for fuzzy title match, ``schedule <year> <season>``
     for calendar slices, ``trending`` for what's hot. Long-tail
     subcommands (``review``, ``recommendation``, ``thread``,
@@ -51,7 +48,7 @@ def anilist_group() -> None:
 
     Token-required commands (``viewer``, ``notification``,
     ``markdown``, ``ani-chart-user``) are registered but raise
-    auth-required at runtime; OAuth flow lands in Phase 8.
+    auth-required at runtime; the OAuth flow has not landed yet.
     --- End ---
     """
 
@@ -92,7 +89,20 @@ register_subcommand(anilist_group, "activity", _api.activity, help="Recent globa
 register_subcommand(anilist_group, "activity-reply", _api.activity_reply, help="Replies to a public activity item.")
 register_subcommand(anilist_group, "following", _api.following, help="Users a given user follows.")
 register_subcommand(anilist_group, "follower", _api.follower, help="Users following a given user.")
-register_subcommand(anilist_group, "media-list-public", _api.media_list_public, help="Public user's media list rows.")
+register_subcommand(
+    anilist_group,
+    "media-list-public",
+    _api.media_list_public,
+    help="Public user's media list rows.",
+    guidance_override=(
+        "Returns rows from a named AniList user's *public* media list. "
+        "Same privacy considerations as Jikan user-favorites: the list is "
+        "user-public so single-user lookups are fine, but aggregating across "
+        "many users to build per-user fingerprints (favourites x history x "
+        "follows) is a privacy concern that requires express operator "
+        "authorisation."
+    ),
+)
 register_subcommand(
     anilist_group,
     "media-list-collection-public",
@@ -100,10 +110,8 @@ register_subcommand(
     help="Public user's full list grouped by status.",
 )
 
-# ---------- token-required (Phase 8 stubs) ----------
-register_subcommand(anilist_group, "viewer", _api.viewer, help="Current user. Token required (Phase 8).")
-register_subcommand(anilist_group, "notification", _api.notification, help="Notifications. Token required (Phase 8).")
-register_subcommand(anilist_group, "markdown", _api.markdown, help="Markdown render. Token required (Phase 8).")
-register_subcommand(
-    anilist_group, "ani-chart-user", _api.ani_chart_user, help="AniChart user. Token required (Phase 8)."
-)
+# ---------- token-required (raise auth-required until OAuth lands) ----------
+register_subcommand(anilist_group, "viewer", _api.viewer, help="Current user. Token required.")
+register_subcommand(anilist_group, "notification", _api.notification, help="Notifications. Token required.")
+register_subcommand(anilist_group, "markdown", _api.markdown, help="Markdown render. Token required.")
+register_subcommand(anilist_group, "ani-chart-user", _api.ani_chart_user, help="AniChart user. Token required.")

@@ -78,7 +78,7 @@ def api_trace(
     Rate limit: anonymous tier concurrency 1, quota 100/month.
 
     --- LLM Agent Guidance ---
-    Two paths matter for Phase 1: GET /me (free) and
+    Two paths matter for the substrate API layer: GET /me (free) and
     GET /search?url=<encoded> (1 quota each). To search by image
     upload, pass --input path/to/image.jpg with PATH=/search; the
     bytes are sent as the POST body.

@@ -81,7 +81,7 @@ CASES: List[Tuple[str, Callable, tuple, dict, Any]] = [
     # (fixture_rel, fn, args, kwargs, expected_type_or_list)
     ("phase2_media/01-media-frieren.yaml", anilist_api.show, (154587,), {}, AnilistAnime),
     ("phase2_search/01-search-frieren.yaml", anilist_api.search, ("Frieren",), {"per_page": 5}, list),
-    ("phase2_character/01-character-edward-elric.yaml", anilist_api.character, (36,), {}, AnilistCharacter),
+    ("phase2_character/01-character-edward-elric.yaml", anilist_api.character, (11,), {}, AnilistCharacter),
     ("phase2_staff/01-staff-101572.yaml", anilist_api.staff, (101572,), {}, AnilistStaff),
     ("phase2_studio/01-studio-madhouse.yaml", anilist_api.studio, (11,), {}, AnilistStudio),
     ("phase2_trending/01-trending-top8.yaml", anilist_api.trending, (), {"per_page": 8}, list),
@@ -273,13 +273,17 @@ class TestAuthRequiredStubs:
 
 
 class TestErrorPaths:
-    def test_500_with_non_graphql_body_falls_through_to_not_found(self, fake_clock):
-        """``_gql`` doesn't gate on HTTP status (AniList sometimes
-        returns 200 with errors and 5xx with valid bodies). A 500
-        with a non-GraphQL body has no ``data`` key, so the mapper
-        sees ``Media=None`` and raises ``not-found``. This is the
-        current contract; documented here so nobody silently changes
-        it."""
+    def test_500_with_non_graphql_body_raises_upstream_error(self, fake_clock):
+        """Reviewer review B3 (PR #6).
+
+        ``_gql`` must gate on HTTP status. A 5xx response with a
+        non-GraphQL body (Cloudflare HTML error page, maintenance
+        JSON like ``{"error": "internal"}``) used to fall through:
+        the mapper saw ``Media=None`` and raised ``not-found``,
+        misleading the user into thinking the id didn't exist.
+
+        After the fix the wrapper raises ``upstream-error`` reflecting
+        the actual server state."""
         from animedex.models.common import ApiError
 
         with responses.RequestsMock() as rsps:
@@ -291,6 +295,58 @@ class TestErrorPaths:
             )
             with pytest.raises(ApiError) as exc_info:
                 anilist_api.show(154587, no_cache=True)
+        assert exc_info.value.reason == "upstream-error"
+
+    def test_503_with_html_body_raises_upstream_error(self, fake_clock):
+        """503 + non-JSON body (e.g. Cloudflare maintenance HTML).
+        ``_gql`` must still raise ``upstream-error`` rather than
+        propagating a JSON-decode failure or hitting the mapper."""
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.POST,
+                "https://graphql.anilist.co/",
+                body="<html><body>503 maintenance</body></html>",
+                status=503,
+                content_type="text/html",
+            )
+            with pytest.raises(ApiError) as exc_info:
+                anilist_api.show(154587, no_cache=True)
+        assert exc_info.value.reason == "upstream-error"
+
+    def test_4xx_with_non_json_body_raises_upstream_decode(self, fake_clock):
+        """A 4xx response with an HTML / non-JSON body must surface as
+        ``upstream-decode`` rather than crashing inside the JSON
+        decoder."""
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.POST,
+                "https://graphql.anilist.co/",
+                body="<html>403 forbidden</html>",
+                status=403,
+                content_type="text/html",
+            )
+            with pytest.raises(ApiError) as exc_info:
+                anilist_api.show(154587, no_cache=True)
+        assert exc_info.value.reason == "upstream-decode"
+
+    def test_200_with_null_data_still_raises_not_found(self, fake_clock):
+        """The legitimate ``not-found`` path (200 OK + ``Media: null``)
+        must keep working; the new status gate must NOT swallow it."""
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.POST,
+                "https://graphql.anilist.co/",
+                json={"data": {"Media": None}},
+                status=200,
+            )
+            with pytest.raises(ApiError) as exc_info:
+                anilist_api.show(99999999, no_cache=True)
         assert exc_info.value.reason == "not-found"
 
     def test_firewall_branch(self, fake_clock, monkeypatch):
