@@ -181,10 +181,16 @@ def _build_policy_docstring(
                                carve-outs, etc.) rather than on the
                                backend.
     :type guidance_override: str or None
-    :raises KeyError: When ``backend`` is not in :data:`_BACKEND_POLICY`.
-                       Falling back silently would hide typos at the
-                       call site.
+    :raises ApiError: ``reason='unknown-backend'`` when ``backend`` is
+                       not in :data:`_BACKEND_POLICY`. Falling back
+                       silently would hide typos at the call site.
     """
+    if backend not in _BACKEND_POLICY:
+        raise ApiError(
+            f"unknown backend {backend!r}; expected one of {sorted(_BACKEND_POLICY)}",
+            backend=backend,
+            reason="unknown-backend",
+        )
     pol = _BACKEND_POLICY[backend]
     guidance = guidance_override if guidance_override is not None else pol["guidance"]
     return (

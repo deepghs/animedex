@@ -46,6 +46,14 @@ def _src() -> SourceTag:
 
 LIST_MAPPER_CASES: List[Tuple[str, Dict[str, Any]]] = [
     (
+        "map_user",
+        {"data": {"User": {"name": "noidhere"}}},
+    ),
+    (
+        "map_user_list",
+        {"data": {"Page": {"users": [{"name": "noidhere"}]}}},
+    ),
+    (
         "map_airing_schedule",
         {"data": {"Page": {"airingSchedules": [{"airingAt": 0, "episode": 1, "timeUntilAiring": 0}]}}},
     ),

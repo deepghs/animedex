@@ -136,7 +136,11 @@ class JikanAnime(BackendRichModel):
     trailer: Optional[JikanTrailer] = None
     approved: Optional[bool] = None
     titles: List[JikanTitleEntry] = []
-    title: str
+    # ``title`` was historically required, but Jikan's MAL scraper
+    # has been observed to emit null on entries where MAL itself only
+    # populates the typed ``titles[]`` array. Accept null and fall
+    # back through ``titles[]`` in :meth:`to_common`.
+    title: Optional[str] = None
     title_english: Optional[str] = None
     title_japanese: Optional[str] = None
     title_synonyms: List[str] = []
@@ -221,12 +225,35 @@ class JikanAnime(BackendRichModel):
         s_up = s.upper().replace(" ", "_")
         return s_up if s_up in ("TV", "TV_SHORT", "MOVIE", "OVA", "ONA", "SPECIAL", "MUSIC") else None
 
+    def _title_from_titles(self, *type_keys: str) -> Optional[str]:
+        """Walk ``self.titles`` for the first entry whose ``type``
+        matches one of ``type_keys``. Used as a fallback when the
+        legacy flat ``title`` / ``title_english`` / ``title_japanese``
+        fields are null — Jikan's MAL scraper has historically
+        deprecated those when the upstream payload shifts, leaving
+        only the typed ``titles[]`` array. Returning ``None`` means
+        no entry of any of the requested types was found."""
+        for entry in self.titles or []:
+            if entry.type in type_keys and entry.title:
+                return entry.title
+        return None
+
     def to_common(self) -> Anime:
-        title = AnimeTitle(
-            romaji=self.title or self.title_english or self.title_japanese or "",
-            english=self.title_english,
-            native=self.title_japanese,
+        # Prefer the legacy flat field; fall back to the typed
+        # ``titles[]`` array. ``"Default"`` is Jikan's name for the
+        # romaji main title.
+        romaji = (
+            self.title
+            or self.title_english
+            or self.title_japanese
+            or self._title_from_titles("Default")
+            or self._title_from_titles("English")
+            or self._title_from_titles("Japanese")
+            or ""
         )
+        english = self.title_english or self._title_from_titles("English")
+        native = self.title_japanese or self._title_from_titles("Japanese")
+        title = AnimeTitle(romaji=romaji, english=english, native=native)
         score = None
         if self.score is not None:
             score = AnimeRating(score=self.score, scale=10.0, votes=self.scored_by)

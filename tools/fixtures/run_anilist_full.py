@@ -9,13 +9,13 @@ canonical the high-level backend layer queries from
 
 Output path slugs:
 
-* ``test/fixtures/anilist/phase2_media``      — full Media x N
-* ``test/fixtures/anilist/phase2_character``  — full Character x N
-* ``test/fixtures/anilist/phase2_staff``      — full Staff x N
-* ``test/fixtures/anilist/phase2_studio``     — full Studio x N
-* ``test/fixtures/anilist/phase2_search``     — Page-wrapped Media search
-* ``test/fixtures/anilist/phase2_schedule``   — Page-wrapped Media by season
-* ``test/fixtures/anilist/phase2_trending``   — Page-wrapped Media TRENDING_DESC
+* ``test/fixtures/anilist/media``      — full Media x N
+* ``test/fixtures/anilist/character``  — full Character x N
+* ``test/fixtures/anilist/staff``      — full Staff x N
+* ``test/fixtures/anilist/studio``     — full Studio x N
+* ``test/fixtures/anilist/search``     — Page-wrapped Media search
+* ``test/fixtures/anilist/schedule``   — Page-wrapped Media by season
+* ``test/fixtures/anilist/trending``   — Page-wrapped Media TRENDING_DESC
 
 Pacing: 2.5 s between calls (30/min cap = 2.0s minimum, +0.5s buffer).
 """
@@ -188,7 +188,7 @@ def main() -> int:
         i += 1
         path = capture(
             backend="anilist",
-            path_slug="phase2_media",
+            path_slug="media",
             label=label,
             method="POST",
             url=URL,
@@ -202,7 +202,7 @@ def main() -> int:
         i += 1
         path = capture(
             backend="anilist",
-            path_slug="phase2_character",
+            path_slug="character",
             label=label,
             method="POST",
             url=URL,
@@ -216,7 +216,7 @@ def main() -> int:
         i += 1
         path = capture(
             backend="anilist",
-            path_slug="phase2_staff",
+            path_slug="staff",
             label=label,
             method="POST",
             url=URL,
@@ -230,7 +230,7 @@ def main() -> int:
         i += 1
         path = capture(
             backend="anilist",
-            path_slug="phase2_studio",
+            path_slug="studio",
             label=label,
             method="POST",
             url=URL,
@@ -245,7 +245,7 @@ def main() -> int:
         i += 1
         path = capture(
             backend="anilist",
-            path_slug="phase2_search",
+            path_slug="search",
             label=label,
             method="POST",
             url=URL,
@@ -263,7 +263,7 @@ def main() -> int:
         i += 1
         path = capture(
             backend="anilist",
-            path_slug="phase2_schedule",
+            path_slug="schedule",
             label=label,
             method="POST",
             url=URL,
@@ -277,7 +277,7 @@ def main() -> int:
     i += 1
     path = capture(
         backend="anilist",
-        path_slug="phase2_trending",
+        path_slug="trending",
         label="trending-top8",
         method="POST",
         url=URL,

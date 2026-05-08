@@ -43,7 +43,7 @@ from animedex.backends.anilist.models import (
     AnilistUser,
     AnilistUserStatistics,
 )
-from animedex.models.common import ApiError, SourceTag
+from animedex.models.common import ApiError, SourceTag, require_field
 
 
 def _require(node: Any, what: str) -> Any:
@@ -60,30 +60,10 @@ def _require(node: Any, what: str) -> Any:
 
 
 def _field(row: Dict[str, Any], key: str, what: str) -> Any:
-    """Return ``row[key]`` or raise ``ApiError(reason='upstream-shape')``.
-
-    Used inside list-mapper loops where the upstream is *expected* to
-    populate a particular field on every row (typically ``id``). A
-    plain ``row[key]`` would crash with ``KeyError`` and leak the
-    failure point as an internal exception; ``_field`` converts that
-    to a typed error the dispatcher / CLI / library callers know how
-    to catch — surfacing upstream schema drift as ``upstream-shape``
-    rather than as a Python exception type.
-
-    :param row: One row from a GraphQL list response.
-    :param key: The required field name on the row.
-    :param what: Human-readable label for the row (e.g. ``"review"``,
-                 ``"airingSchedule"``) — appears in the error message.
-    :raises ApiError: When ``key`` is absent from ``row``. ``reason``
-                      is ``upstream-shape``.
-    """
-    if key not in row:
-        raise ApiError(
-            f"AniList {what} row missing required field {key!r}",
-            backend="anilist",
-            reason="upstream-shape",
-        )
-    return row[key]
+    """AniList-flavoured wrapper around :func:`require_field` —
+    pre-applies the backend label so list-mapper call sites stay
+    short."""
+    return require_field(row, key, backend="anilist", what=what)
 
 
 def map_media(payload: Dict[str, Any], src: SourceTag) -> AnilistAnime:
@@ -150,8 +130,8 @@ def map_user(payload: Dict[str, Any], src: SourceTag) -> AnilistUser:
             manga_chapters_read=m.get("chaptersRead"),
         )
     return AnilistUser(
-        id=node["id"],
-        name=node["name"],
+        id=_field(node, "id", "User"),
+        name=_field(node, "name", "User"),
         about=node.get("about"),
         avatar_large=avatar_large,
         siteUrl=node.get("siteUrl"),
@@ -169,7 +149,14 @@ def map_user_list(payload: Dict[str, Any], src: SourceTag) -> List[AnilistUser]:
         av = u.get("avatar")
         if isinstance(av, dict):
             avatar_large = av.get("large") or av.get("medium")
-        out.append(AnilistUser(id=u["id"], name=u["name"], avatar_large=avatar_large, source_tag=src))
+        out.append(
+            AnilistUser(
+                id=_field(u, "id", "User"),
+                name=_field(u, "name", "User"),
+                avatar_large=avatar_large,
+                source_tag=src,
+            )
+        )
     return out
 
 

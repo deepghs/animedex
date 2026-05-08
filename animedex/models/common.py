@@ -188,6 +188,39 @@ class RateLimit(AnimedexModel):
     reset_at: datetime
 
 
+#: The complete vocabulary of :class:`ApiError` ``reason`` slugs.
+#: Library callers that want to branch on a typed error can match
+#: against this set; new sites that emit :class:`ApiError` should
+#: pick one of these values rather than inventing a new slug, so the
+#: vocabulary stays stable for downstream consumers. ``ApiError``'s
+#: ``__init__`` validates ``reason`` against this set so a typo
+#: surfaces at construction time rather than at error-handling time.
+REASONS = frozenset(
+    {
+        # caller-side
+        "auth-required",
+        "bad-args",
+        # transport / firewall
+        "firewall",
+        "read-only",
+        "unknown-backend",
+        # upstream-side, rough cause known
+        "upstream-error",
+        "upstream-decode",
+        "upstream-shape",
+        "graphql-error",
+        "not-found",
+        # render / shell-out
+        "jq-failed",
+        "jq-missing",
+        "unknown-field",
+        # internal
+        "malformed-guidance",
+        "selftest",
+    }
+)
+
+
 class ApiError(Exception):
     """Typed error raised by the transport, cache, and policy layers.
 
@@ -201,10 +234,14 @@ class ApiError(Exception):
     :param backend: Backend identifier when the failure is
                      backend-specific.
     :type backend: str or None
-    :param reason: Short slug categorising the failure (e.g.
-                    ``"rate-limited"``, ``"read-only"``,
-                    ``"upstream-5xx"``).
+    :param reason: Short slug categorising the failure. Must be one of
+                    the values in :data:`REASONS`. The full vocabulary
+                    is fixed by the project (so library consumers can
+                    branch on a known set); a typo at construction
+                    time raises :class:`ValueError`.
     :type reason: str or None
+    :raises ValueError: When ``reason`` is set but not in
+                         :data:`REASONS`.
     """
 
     def __init__(
@@ -214,6 +251,12 @@ class ApiError(Exception):
         backend: Optional[str] = None,
         reason: Optional[str] = None,
     ) -> None:
+        if reason is not None and reason not in REASONS:
+            raise ValueError(
+                f"unknown ApiError reason: {reason!r}. "
+                f"Add it to animedex.models.common.REASONS or use one "
+                f"of: {sorted(REASONS)!r}"
+            )
         super().__init__(message)
         self.message = message
         self.backend = backend
@@ -228,6 +271,36 @@ class ApiError(Exception):
         if prefix_bits:
             return f"[{' '.join(prefix_bits)}] {self.message}"
         return self.message
+
+
+def require_field(row: dict, key: str, *, backend: str, what: str):
+    """Return ``row[key]`` or raise :class:`ApiError` (``upstream-shape``).
+
+    Used inside mapper code where a particular field is *expected* to
+    be populated on every row (e.g. ``id`` on a search-result row, or
+    ``priority`` on the ``/me`` envelope). A plain ``row[key]`` would
+    crash with :class:`KeyError` and leak the failure point as an
+    internal exception type; this helper converts that to a typed
+    error the dispatcher / CLI / library callers know how to catch.
+    Surfaces upstream schema drift as ``reason='upstream-shape'``
+    rather than as a Python exception class.
+
+    :param row: One dict from an upstream response (a list-row or a
+                 single-entity body).
+    :param key: The required field name on the row.
+    :param backend: Backend identifier — appears on the raised error.
+    :param what: Short label for the row shape (e.g. ``"review"``,
+                  ``"/me"``) — appears in the error message.
+    :raises ApiError: When ``key`` is absent from ``row``.
+                       ``reason='upstream-shape'``.
+    """
+    if key not in row:
+        raise ApiError(
+            f"{backend} {what} row missing required field {key!r}",
+            backend=backend,
+            reason="upstream-shape",
+        )
+    return row[key]
 
 
 def selftest() -> bool:

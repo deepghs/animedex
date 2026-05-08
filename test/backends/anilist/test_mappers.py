@@ -40,7 +40,7 @@ def _load(path: Path) -> dict:
     return fix["response"]["body_json"]
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "phase2_media").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "media").glob("*.yaml")))
 def test_media_fixture_round_trips(path):
     payload = _load(path)
     rich = mp.map_media(payload, _src())
@@ -52,7 +52,7 @@ def test_media_fixture_round_trips(path):
     assert common.title.romaji  # at least one locale present
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "phase2_character").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "character").glob("*.yaml")))
 def test_character_fixture_round_trips(path):
     payload = _load(path)
     rich = mp.map_character(payload, _src())
@@ -62,7 +62,7 @@ def test_character_fixture_round_trips(path):
     assert common.id.startswith("anilist:char:")
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "phase2_staff").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "staff").glob("*.yaml")))
 def test_staff_fixture_round_trips(path):
     payload = _load(path)
     rich = mp.map_staff(payload, _src())
@@ -72,7 +72,7 @@ def test_staff_fixture_round_trips(path):
     assert common.id.startswith("anilist:staff:")
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "phase2_studio").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "studio").glob("*.yaml")))
 def test_studio_fixture_round_trips(path):
     payload = _load(path)
     rich = mp.map_studio(payload, _src())
@@ -82,7 +82,7 @@ def test_studio_fixture_round_trips(path):
     assert common.id.startswith("anilist:studio:")
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "phase2_search").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "search").glob("*.yaml")))
 def test_search_fixture_round_trips(path):
     payload = _load(path)
     rich_list = mp.map_media_list(payload, _src())
@@ -91,7 +91,7 @@ def test_search_fixture_round_trips(path):
         assert isinstance(r, AnilistAnime)
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "phase2_trending").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "trending").glob("*.yaml")))
 def test_trending_fixture_round_trips(path):
     payload = _load(path)
     rich_list = mp.map_media_list(payload, _src())
@@ -106,7 +106,7 @@ def test_map_media_raises_not_found_when_payload_is_null():
 
 class TestToCommon:
     def test_frieren_projection(self):
-        path = FIXTURES / "phase2_media" / "01-media-frieren.yaml"
+        path = FIXTURES / "media" / "01-media-frieren.yaml"
         if not path.exists():
             pytest.skip("Frieren fixture not present")
         payload = _load(path)
@@ -120,7 +120,7 @@ class TestToCommon:
         assert common.favourites is not None
 
     def test_one_piece_status_airing(self):
-        path = FIXTURES / "phase2_media" / "03-media-one-piece.yaml"
+        path = FIXTURES / "media" / "03-media-one-piece.yaml"
         if not path.exists():
             pytest.skip("One Piece fixture not present")
         payload = _load(path)
@@ -128,7 +128,7 @@ class TestToCommon:
         assert common.status == "airing"
 
     def test_movie_format_projection(self):
-        path = FIXTURES / "phase2_media" / "02-media-spirited-away.yaml"
+        path = FIXTURES / "media" / "02-media-spirited-away.yaml"
         if not path.exists():
             pytest.skip("Spirited Away fixture not present")
         payload = _load(path)

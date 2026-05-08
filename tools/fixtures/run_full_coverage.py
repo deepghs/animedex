@@ -308,10 +308,10 @@ def main() -> int:
         if variables:
             body["variables"] = variables
         # Group by query type for cleaner directories - we'll lump
-        # everything into anilist/phase2_longtail/.
+        # everything into anilist/longtail/.
         capture(
             backend="anilist",
-            path_slug="phase2_longtail",
+            path_slug="longtail",
             label=label,
             method="POST",
             url=ANILIST_URL,

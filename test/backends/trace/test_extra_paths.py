@@ -8,7 +8,6 @@ firewall rejection, decode error, bad-args branches)."""
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from types import SimpleNamespace
 
 import pytest
 import responses
@@ -204,41 +203,26 @@ class TestRawTraceHitToCommonBranches:
 
 
 class TestParseHelpers:
-    """Cover ``_parse`` error branches and ``_coerce_int`` paths."""
+    """Cover ``_parse`` error branches and ``_coerce_int`` paths via
+    HTTP transport only (test discipline §9bis)."""
 
-    def test_firewall_branch(self, monkeypatch):
-        from animedex.api import trace as raw_trace
-
-        def _stub_call(*args, **kwargs):
-            return SimpleNamespace(
-                firewall_rejected={"reason": "read-only", "message": "blocked"},
-                body_text="",
-                cache=SimpleNamespace(hit=False),
-                timing=SimpleNamespace(rate_limit_wait_ms=0),
+    def test_body_text_none(self, fake_clock):
+        """A response body that fails UTF-8 decode produces
+        ``body_text=None`` at the dispatcher; ``_parse`` raises
+        ``upstream-decode``."""
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.trace.moe/me",
+                body=b"\xff\xfe\x00\xc3\x28binary garbage\xff",
+                status=200,
+                content_type="application/octet-stream",
             )
-
-        monkeypatch.setattr(raw_trace, "call", _stub_call)
-        with pytest.raises(ApiError) as exc_info:
-            trace_api.quota(no_cache=True)
-        assert exc_info.value.reason == "read-only"
-
-    def test_body_text_none(self, monkeypatch):
-        from animedex.api import trace as raw_trace
-
-        def _stub_call(*args, **kwargs):
-            return SimpleNamespace(
-                firewall_rejected=None,
-                body_text=None,
-                cache=SimpleNamespace(hit=False),
-                timing=SimpleNamespace(rate_limit_wait_ms=0),
-            )
-
-        monkeypatch.setattr(raw_trace, "call", _stub_call)
-        with pytest.raises(ApiError) as exc_info:
-            trace_api.quota(no_cache=True)
+            with pytest.raises(ApiError) as exc_info:
+                trace_api.quota(no_cache=True)
         assert exc_info.value.reason == "upstream-decode"
 
-    def test_coerce_int_int(self):
+    def test_coerce_int_int(self, fake_clock):
         # The internal _coerce_int handles int + str + raises on others.
         # Reach it via quotaUsed=int directly.
         with responses.RequestsMock() as rsps:
@@ -254,20 +238,33 @@ class TestParseHelpers:
     def test_selftest(self):
         assert trace_api.selftest() is True
 
-    def test_coerce_int_other_raises(self, monkeypatch):
-        """Pass a non-int / non-str ``quotaUsed`` so ``_coerce_int`` hits
-        its raise branch."""
-        from animedex.api import trace as raw_trace
-
-        def _stub_call(*args, **kwargs):
-            return SimpleNamespace(
-                firewall_rejected=None,
-                body_text='{"priority": 0, "concurrency": 1, "quota": 100, "quotaUsed": null}',
-                cache=SimpleNamespace(hit=False),
-                timing=SimpleNamespace(rate_limit_wait_ms=0),
+    def test_quota_missing_priority_raises_upstream_shape(self, fake_clock):
+        """A ``/me`` body missing ``priority`` (or any other required
+        field) must raise ``upstream-shape`` rather than leaking a
+        bare KeyError. Same audit shape as the AniList mappers'
+        ``_field`` guard."""
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.trace.moe/me",
+                json={"concurrency": 1, "quota": 100, "quotaUsed": 0},  # no priority
+                status=200,
             )
+            with pytest.raises(ApiError) as exc_info:
+                trace_api.quota(no_cache=True)
+        assert exc_info.value.reason == "upstream-shape"
+        assert "priority" in exc_info.value.message
 
-        monkeypatch.setattr(raw_trace, "call", _stub_call)
-        with pytest.raises(ApiError) as exc_info:
-            trace_api.quota(no_cache=True)
+    def test_coerce_int_other_raises(self, fake_clock):
+        """A ``null`` ``quotaUsed`` is neither int nor str —
+        ``_coerce_int`` raises ``upstream-shape``."""
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.trace.moe/me",
+                json={"priority": 0, "concurrency": 1, "quota": 100, "quotaUsed": None},
+                status=200,
+            )
+            with pytest.raises(ApiError) as exc_info:
+                trace_api.quota(no_cache=True)
         assert exc_info.value.reason == "upstream-shape"

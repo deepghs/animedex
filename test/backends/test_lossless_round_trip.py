@@ -79,7 +79,7 @@ def _assert_lossless(model_cls, raw: dict, label: str):
 # ---------- AniList core ----------
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "anilist" / "phase2_media").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "anilist" / "media").glob("*.yaml")))
 def test_anilist_anime_lossless(path):
     from animedex.backends.anilist.models import AnilistAnime
 
@@ -89,7 +89,7 @@ def test_anilist_anime_lossless(path):
     _assert_lossless(AnilistAnime, raw, f"AnilistAnime/{path.name}")
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "anilist" / "phase2_character").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "anilist" / "character").glob("*.yaml")))
 def test_anilist_character_lossless(path):
     from animedex.backends.anilist.models import AnilistCharacter
 
@@ -99,7 +99,7 @@ def test_anilist_character_lossless(path):
     _assert_lossless(AnilistCharacter, raw, f"AnilistCharacter/{path.name}")
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "anilist" / "phase2_staff").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "anilist" / "staff").glob("*.yaml")))
 def test_anilist_staff_lossless(path):
     from animedex.backends.anilist.models import AnilistStaff
 
@@ -109,7 +109,7 @@ def test_anilist_staff_lossless(path):
     _assert_lossless(AnilistStaff, raw, f"AnilistStaff/{path.name}")
 
 
-@pytest.mark.parametrize("path", sorted((FIXTURES / "anilist" / "phase2_studio").glob("*.yaml")))
+@pytest.mark.parametrize("path", sorted((FIXTURES / "anilist" / "studio").glob("*.yaml")))
 def test_anilist_studio_lossless(path):
     from animedex.backends.anilist.models import AnilistStudio
 

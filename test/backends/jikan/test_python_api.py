@@ -326,51 +326,23 @@ class TestErrorPaths:
         assert isinstance(result, JikanGenericResponse)
         assert len(result.rows) == 1
 
-    def test_firewall_branch(self, fake_clock, monkeypatch):
-        """Exercise the ``firewall_rejected`` short-circuit in
-        ``_fetch``. The read-only firewall fires on mutating methods,
-        not GET, so we monkey-patch the per-backend ``call`` to return
-        a duck-typed envelope with ``firewall_rejected`` set. AGENTS
-        §9bis.5 allows monkey-patching the dispatcher for tests of the
-        dispatcher's own behaviour; here we're testing ``_fetch``'s
-        branching on the dispatcher's contract."""
-        from animedex.api import jikan as raw_jikan
+    def test_body_text_none_branch(self, fake_clock):
+        """A response body that fails UTF-8 decode produces
+        ``body_text=None`` at the dispatcher; ``_fetch`` raises
+        ``upstream-decode``. (HTTP transport is the only mocked
+        seam, per test discipline §9bis.)"""
         from animedex.models.common import ApiError
-        from types import SimpleNamespace
 
-        def _stub_call(*, path, params=None, config=None, **kw):
-            return SimpleNamespace(
-                firewall_rejected={"reason": "read-only", "message": "blocked"},
-                body_text="",
-                status=0,
-                cache=SimpleNamespace(hit=False),
-                timing=SimpleNamespace(rate_limit_wait_ms=0),
-            )
-
-        monkeypatch.setattr(raw_jikan, "call", _stub_call)
-        with pytest.raises(ApiError) as exc_info:
-            jikan_api.show(52991, no_cache=True)
-        assert exc_info.value.reason == "read-only"
-
-    def test_body_text_none_branch(self, fake_clock, monkeypatch):
-        """``_fetch`` raises ``upstream-decode`` when the dispatcher
-        couldn't decode the body to text."""
-        from animedex.api import jikan as raw_jikan
-        from animedex.models.common import ApiError
-        from types import SimpleNamespace
-
-        def _stub_call(*, path, params=None, config=None, **kw):
-            return SimpleNamespace(
-                firewall_rejected=None,
-                body_text=None,
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.jikan.moe/v4/anime/52991/full",
+                body=b"\xff\xfe\x00\xc3\x28binary garbage\xff",
                 status=200,
-                cache=SimpleNamespace(hit=False),
-                timing=SimpleNamespace(rate_limit_wait_ms=0),
+                content_type="application/octet-stream",
             )
-
-        monkeypatch.setattr(raw_jikan, "call", _stub_call)
-        with pytest.raises(ApiError) as exc_info:
-            jikan_api.show(52991, no_cache=True)
+            with pytest.raises(ApiError) as exc_info:
+                jikan_api.show(52991, no_cache=True)
         assert exc_info.value.reason == "upstream-decode"
 
 
@@ -646,6 +618,76 @@ class TestParseHelpers:
     )
     def test_normalise_format(self, s, expected):
         assert JikanAnime._normalise_format(s) == expected
+
+
+class TestJikanAnimeTitleFallback:
+    """When the legacy flat ``title``/``title_english``/``title_japanese``
+    fields are null, ``to_common`` walks the typed ``titles[]`` array
+    to recover the cross-source title block. The flat fields are what
+    Jikan's MAL scraper has historically deprecated when the upstream
+    payload shifts; without this fallback every common
+    ``Anime.title.romaji`` would silently become an empty string."""
+
+    def _src(self):
+        from animedex.models.common import SourceTag
+
+        return SourceTag(backend="jikan", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc))
+
+    def test_falls_back_to_titles_array_when_flat_fields_null(self):
+        rich = JikanAnime.model_validate(
+            {
+                "mal_id": 1,
+                "title": None,
+                "title_english": None,
+                "title_japanese": None,
+                "titles": [
+                    {"type": "Default", "title": "Sousou no Frieren"},
+                    {"type": "English", "title": "Frieren: Beyond Journey's End"},
+                    {"type": "Japanese", "title": "葬送のフリーレン"},
+                ],
+                "source_tag": self._src(),
+            }
+        )
+        common = rich.to_common()
+        assert common.title.romaji == "Sousou no Frieren"
+        assert common.title.english == "Frieren: Beyond Journey's End"
+        assert common.title.native == "葬送のフリーレン"
+
+    def test_legacy_fields_take_precedence(self):
+        """When the flat field is set, it wins (back-compat)."""
+        rich = JikanAnime.model_validate(
+            {
+                "mal_id": 1,
+                "title": "Legacy Romaji",
+                "title_english": None,
+                "title_japanese": None,
+                "titles": [
+                    {"type": "Default", "title": "Should Not Win"},
+                    {"type": "English", "title": "Array English"},
+                ],
+                "source_tag": self._src(),
+            }
+        )
+        common = rich.to_common()
+        assert common.title.romaji == "Legacy Romaji"
+        # English flat is None, so the array fallback still fills it.
+        assert common.title.english == "Array English"
+
+    def test_empty_titles_array_yields_empty_string(self):
+        """When both legacy fields and array are unhelpful, the
+        common projection's ``romaji`` is the empty string. Existing
+        callers can rely on never seeing ``None``."""
+        rich = JikanAnime.model_validate(
+            {
+                "mal_id": 1,
+                "title": None,
+                "title_english": None,
+                "title_japanese": None,
+                "titles": [],
+                "source_tag": self._src(),
+            }
+        )
+        assert rich.to_common().title.romaji == ""
 
 
 class TestCharacterToCommonBranches:

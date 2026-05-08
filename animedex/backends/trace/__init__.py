@@ -16,8 +16,14 @@ from typing import List, Optional
 from animedex.api import trace as _raw_trace
 from animedex.config import Config
 from animedex.models.anime import AnimeTitle
-from animedex.models.common import ApiError, SourceTag
+from animedex.models.common import ApiError, SourceTag, require_field as _common_require_field
 from animedex.models.trace import TraceHit, TraceQuota
+
+
+def _field(row, key: str, what: str):
+    """Trace-flavoured wrapper around :func:`require_field` —
+    pre-applies the backend label so call sites stay short."""
+    return _common_require_field(row, key, backend="trace", what=what)
 
 
 def _src(envelope) -> SourceTag:
@@ -63,10 +69,10 @@ def quota(*, config: Optional[Config] = None, **kw) -> TraceQuota:
     raw = _raw_trace.call(path="/me", config=config, **kw)
     payload = _parse(raw)
     return TraceQuota(
-        priority=int(payload["priority"]),
-        concurrency=int(payload["concurrency"]),
-        quota=int(payload["quota"]),
-        quota_used=_coerce_int(payload["quotaUsed"]),
+        priority=int(_field(payload, "priority", "/me")),
+        concurrency=int(_field(payload, "concurrency", "/me")),
+        quota=int(_field(payload, "quota", "/me")),
+        quota_used=_coerce_int(_field(payload, "quotaUsed", "/me")),
         source=_src(raw),
     )
 

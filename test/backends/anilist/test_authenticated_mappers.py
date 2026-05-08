@@ -48,7 +48,7 @@ def _load(p: Path) -> dict:
 
 class TestViewer:
     def test_real_viewer_payload_parses(self):
-        path = FIXTURES / "phase2_authenticated_viewer" / "01-viewer.yaml"
+        path = FIXTURES / "authenticated_viewer" / "01-viewer.yaml"
         payload = _load(path)
         result = mp.map_viewer(payload, _src())
         assert isinstance(result, AnilistUser)
@@ -57,7 +57,7 @@ class TestViewer:
         assert result.statistics is not None
 
     def test_authorization_header_was_scrubbed_in_fixture(self):
-        path = FIXTURES / "phase2_authenticated_viewer" / "01-viewer.yaml"
+        path = FIXTURES / "authenticated_viewer" / "01-viewer.yaml"
         fix = yaml.safe_load(path.read_text(encoding="utf-8"))
         auth = fix["request"]["headers"].get("Authorization", "")
         # Fingerprint form: "Bearer eyJ0...XXXX (len=N)"
@@ -69,7 +69,7 @@ class TestViewer:
 
 class TestNotification:
     def test_real_notification_payload_parses(self):
-        path = FIXTURES / "phase2_authenticated_notification" / "01-notification.yaml"
+        path = FIXTURES / "authenticated_notification" / "01-notification.yaml"
         payload = _load(path)
         result = mp.map_notification(payload, _src())
         assert isinstance(result, list)
@@ -112,7 +112,7 @@ class TestNotification:
 
 class TestMarkdown:
     def test_real_markdown_payload_parses(self):
-        path = FIXTURES / "phase2_authenticated_markdown" / "01-markdown-render.yaml"
+        path = FIXTURES / "authenticated_markdown" / "01-markdown-render.yaml"
         payload = _load(path)
         result = mp.map_markdown(payload, _src())
         assert isinstance(result, AnilistMarkdown)
@@ -123,7 +123,7 @@ class TestMarkdown:
 
 class TestAniChartUser:
     def test_real_ani_chart_user_payload_parses(self):
-        path = FIXTURES / "phase2_authenticated_ani_chart_user" / "01-ani-chart-user.yaml"
+        path = FIXTURES / "authenticated_ani_chart_user" / "01-ani-chart-user.yaml"
         payload = _load(path)
         result = mp.map_ani_chart_user(payload, _src())
         assert isinstance(result, AnilistAniChartUser)

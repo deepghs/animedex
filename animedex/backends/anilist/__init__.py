@@ -462,13 +462,19 @@ def selftest() -> bool:
         sig = inspect.signature(fn)
         assert "config" in sig.parameters, f"{fn.__name__} missing config kwarg"
 
-    # Token-required stubs raise auth-required.
+    # Token-required stubs raise auth-required. The ``else`` branch
+    # is a defensive guard: it would only fire if a stub silently
+    # returned instead of raising. The stubs in this module always
+    # raise, so the line is intentionally unreachable in normal
+    # operation — the test for this guard would have to monkey-patch
+    # project code, which is forbidden by the test discipline. We
+    # accept the missed line over the discipline violation.
     for fn in (viewer, notification, ani_chart_user):
         try:
             fn()
         except ApiError as exc:
             assert exc.reason == "auth-required"
-        else:
+        else:  # pragma: no cover
             raise AssertionError(f"{fn.__name__} should have raised auth-required")
     try:
         markdown("hello")

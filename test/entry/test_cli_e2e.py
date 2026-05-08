@@ -194,13 +194,13 @@ class TestAnilistCliFromFixtures:
     @pytest.mark.parametrize(
         "subcommand,positional,fixture_rel",
         [
-            ("show", ["154587"], "anilist/phase2_media/01-media-frieren.yaml"),
-            ("show", ["199"], "anilist/phase2_media/02-media-spirited-away.yaml"),
-            ("show", ["21"], "anilist/phase2_media/03-media-one-piece.yaml"),
-            ("character", ["11"], "anilist/phase2_character/01-character-edward-elric.yaml"),
-            ("staff", ["101572"], "anilist/phase2_staff/01-staff-101572.yaml"),
-            ("studio", ["11"], "anilist/phase2_studio/01-studio-madhouse.yaml"),
-            ("trending", [], "anilist/phase2_trending/01-trending-top8.yaml"),
+            ("show", ["154587"], "anilist/media/01-media-frieren.yaml"),
+            ("show", ["199"], "anilist/media/02-media-spirited-away.yaml"),
+            ("show", ["21"], "anilist/media/03-media-one-piece.yaml"),
+            ("character", ["11"], "anilist/character/01-character-edward-elric.yaml"),
+            ("staff", ["101572"], "anilist/staff/01-staff-101572.yaml"),
+            ("studio", ["11"], "anilist/studio/01-studio-madhouse.yaml"),
+            ("trending", [], "anilist/trending/01-trending-top8.yaml"),
         ],
     )
     def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
@@ -246,11 +246,11 @@ class TestTtyRenderingWalk:
             (["jikan", "season", "2023", "fall", "--limit", "5"], "jikan/seasons_by_year/01-2023-fall.yaml"),
             (["jikan", "top-anime", "--limit", "10"], "jikan/top_anime/01-top10.yaml"),
             (["jikan", "random-anime"], "jikan/random_anime/01-random-01.yaml"),
-            (["anilist", "show", "154587"], "anilist/phase2_media/01-media-frieren.yaml"),
-            (["anilist", "character", "11"], "anilist/phase2_character/01-character-edward-elric.yaml"),
-            (["anilist", "staff", "101572"], "anilist/phase2_staff/01-staff-101572.yaml"),
-            (["anilist", "studio", "11"], "anilist/phase2_studio/01-studio-madhouse.yaml"),
-            (["anilist", "trending"], "anilist/phase2_trending/01-trending-top8.yaml"),
+            (["anilist", "show", "154587"], "anilist/media/01-media-frieren.yaml"),
+            (["anilist", "character", "11"], "anilist/character/01-character-edward-elric.yaml"),
+            (["anilist", "staff", "101572"], "anilist/staff/01-staff-101572.yaml"),
+            (["anilist", "studio", "11"], "anilist/studio/01-studio-madhouse.yaml"),
+            (["anilist", "trending"], "anilist/trending/01-trending-top8.yaml"),
         ],
     )
     def test_command_renders_in_tty_mode(self, cli_runner, cli, fake_clock, force_tty, argv, fixture_rel):
@@ -281,7 +281,7 @@ class TestAnilistShowDeep:
     renderer / config-attribution wiring."""
 
     def test_frieren_output_contains_expected_fields(self, cli_runner, cli, fake_clock):
-        fixture = _load_fixture("anilist/phase2_media/01-media-frieren.yaml")
+        fixture = _load_fixture("anilist/media/01-media-frieren.yaml")
 
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
             _register_fixture(rsps, fixture)
@@ -296,7 +296,7 @@ class TestAnilistShowDeep:
         assert "_meta" in decoded or "_source" in decoded
 
     def test_frieren_with_no_source_strips_attribution(self, cli_runner, cli, fake_clock):
-        fixture = _load_fixture("anilist/phase2_media/01-media-frieren.yaml")
+        fixture = _load_fixture("anilist/media/01-media-frieren.yaml")
 
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
             _register_fixture(rsps, fixture)
@@ -312,7 +312,7 @@ class TestAnilistShowDeep:
         if shutil.which("jq") is None:
             pytest.skip("jq not installed")
 
-        fixture = _load_fixture("anilist/phase2_media/01-media-frieren.yaml")
+        fixture = _load_fixture("anilist/media/01-media-frieren.yaml")
 
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
             _register_fixture(rsps, fixture)

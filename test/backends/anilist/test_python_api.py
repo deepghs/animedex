@@ -79,139 +79,139 @@ def _register(rsps: responses.RequestsMock, fixture: dict) -> None:
 
 CASES: List[Tuple[str, Callable, tuple, dict, Any]] = [
     # (fixture_rel, fn, args, kwargs, expected_type_or_list)
-    ("phase2_media/01-media-frieren.yaml", anilist_api.show, (154587,), {}, AnilistAnime),
-    ("phase2_search/01-search-frieren.yaml", anilist_api.search, ("Frieren",), {"per_page": 5}, list),
-    ("phase2_character/01-character-edward-elric.yaml", anilist_api.character, (11,), {}, AnilistCharacter),
-    ("phase2_staff/01-staff-101572.yaml", anilist_api.staff, (101572,), {}, AnilistStaff),
-    ("phase2_studio/01-studio-madhouse.yaml", anilist_api.studio, (11,), {}, AnilistStudio),
-    ("phase2_trending/01-trending-top8.yaml", anilist_api.trending, (), {"per_page": 8}, list),
-    ("phase2_schedule/01-schedule-2024-spring.yaml", anilist_api.schedule, (2024, "SPRING"), {"per_page": 10}, list),
+    ("media/01-media-frieren.yaml", anilist_api.show, (154587,), {}, AnilistAnime),
+    ("search/01-search-frieren.yaml", anilist_api.search, ("Frieren",), {"per_page": 5}, list),
+    ("character/01-character-edward-elric.yaml", anilist_api.character, (11,), {}, AnilistCharacter),
+    ("staff/01-staff-101572.yaml", anilist_api.staff, (101572,), {}, AnilistStaff),
+    ("studio/01-studio-madhouse.yaml", anilist_api.studio, (11,), {}, AnilistStudio),
+    ("trending/01-trending-top8.yaml", anilist_api.trending, (), {"per_page": 8}, list),
+    ("schedule/01-schedule-2024-spring.yaml", anilist_api.schedule, (2024, "SPRING"), {"per_page": 10}, list),
     # ---------- Long tail (one fixture each) ----------
-    ("phase2_longtail/01-media-trend-frieren.yaml", anilist_api.media_trend, (154587,), {"per_page": 5}, list),
+    ("longtail/01-media-trend-frieren.yaml", anilist_api.media_trend, (154587,), {"per_page": 5}, list),
     (
-        "phase2_longtail/02-airing-schedule-by-media.yaml",
+        "longtail/02-airing-schedule-by-media.yaml",
         anilist_api.airing_schedule,
         (),
         {"media_id": 154587, "per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/03-airing-schedule-not-yet-aired.yaml",
+        "longtail/03-airing-schedule-not-yet-aired.yaml",
         anilist_api.airing_schedule,
         (),
         {"not_yet_aired": True, "per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/04-review-by-media.yaml",
+        "longtail/04-review-by-media.yaml",
         anilist_api.review,
         (),
         {"media_id": 154587, "per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/05-recommendation-by-media.yaml",
+        "longtail/05-recommendation-by-media.yaml",
         anilist_api.recommendation,
         (),
         {"media_id": 154587, "per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/06-media-tag-collection.yaml",
+        "longtail/06-media-tag-collection.yaml",
         anilist_api.media_tag_collection,
         (),
         {},
         list,
     ),
-    ("phase2_longtail/07-user-by-name.yaml", anilist_api.user, ("AniList",), {}, AnilistUser),
-    ("phase2_longtail/08-activity-page.yaml", anilist_api.activity, (), {"per_page": 5}, list),
+    ("longtail/07-user-by-name.yaml", anilist_api.user, ("AniList",), {}, AnilistUser),
+    ("longtail/08-activity-page.yaml", anilist_api.activity, (), {"per_page": 5}, list),
     (
-        "phase2_longtail/09-activity-reply.yaml",
+        "longtail/09-activity-reply.yaml",
         anilist_api.activity_reply,
         (),
         {"activity_id": 123, "per_page": 5},
         list,
     ),
-    ("phase2_longtail/10-thread-by-search.yaml", anilist_api.thread, ("Frieren",), {"per_page": 5}, list),
+    ("longtail/10-thread-by-search.yaml", anilist_api.thread, ("Frieren",), {"per_page": 5}, list),
     (
-        "phase2_longtail/11-thread-comment-by-thread.yaml",
+        "longtail/11-thread-comment-by-thread.yaml",
         anilist_api.thread_comment,
         (),
         {"thread_id": 123, "per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/12-following-by-user.yaml",
+        "longtail/12-following-by-user.yaml",
         anilist_api.following,
         (6933956,),
         {"per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/13-follower-by-user.yaml",
+        "longtail/13-follower-by-user.yaml",
         anilist_api.follower,
         (6933956,),
         {"per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/14-site-statistics.yaml",
+        "longtail/14-site-statistics.yaml",
         anilist_api.site_statistics,
         (),
         {},
         AnilistSiteStatistics,
     ),
     (
-        "phase2_longtail/15-external-link-source-collection.yaml",
+        "longtail/15-external-link-source-collection.yaml",
         anilist_api.external_link_source_collection,
         (),
         {},
         list,
     ),
     (
-        "phase2_longtail/16-media-list-public.yaml",
+        "longtail/16-media-list-public.yaml",
         anilist_api.media_list_public,
         ("AniList",),
         {"type": "ANIME", "per_page": 10},
         list,
     ),
     (
-        "phase2_longtail/17-media-list-collection-public.yaml",
+        "longtail/17-media-list-collection-public.yaml",
         anilist_api.media_list_collection_public,
         ("AniList",),
         {"type": "ANIME"},
         "AnilistMediaListCollection",  # special: not list, not a top-level imported type
     ),
     (
-        "phase2_longtail/18-user-search.yaml",
+        "longtail/18-user-search.yaml",
         anilist_api.user_search,
         ("ani",),
         {"per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/19-genre-collection-singleton.yaml",
+        "longtail/19-genre-collection-singleton.yaml",
         anilist_api.genre_collection,
         (),
         {},
         AnilistGenreCollection,
     ),
     (
-        "phase2_longtail/20-studio-search.yaml",
+        "longtail/20-studio-search.yaml",
         anilist_api.studio_search,
         ("Madhouse",),
         {"per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/21-character-search.yaml",
+        "longtail/21-character-search.yaml",
         anilist_api.character_search,
         ("Naruto",),
         {"per_page": 5},
         list,
     ),
     (
-        "phase2_longtail/22-staff-search.yaml",
+        "longtail/22-staff-search.yaml",
         anilist_api.staff_search,
         ("Yamada",),
         {"per_page": 5},
@@ -349,42 +349,23 @@ class TestErrorPaths:
                 anilist_api.show(99999999, no_cache=True)
         assert exc_info.value.reason == "not-found"
 
-    def test_firewall_branch(self, fake_clock, monkeypatch):
-        """Cover ``_gql``'s ``firewall_rejected`` short-circuit."""
-        from animedex.api import anilist as raw_anilist
+    def test_body_text_none(self, fake_clock):
+        """A response body that fails UTF-8 decode produces
+        ``body_text=None`` at the dispatcher; ``_gql`` raises
+        ``upstream-decode``. (HTTP transport is the only mocked
+        seam, per test discipline §9bis.)"""
         from animedex.models.common import ApiError
-        from types import SimpleNamespace
 
-        def _stub_call(*, query, variables=None, config=None, **kw):
-            return SimpleNamespace(
-                firewall_rejected={"reason": "read-only", "message": "blocked"},
-                body_text="",
-                cache=SimpleNamespace(hit=False),
-                timing=SimpleNamespace(rate_limit_wait_ms=0),
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.POST,
+                "https://graphql.anilist.co/",
+                body=b"\xff\xfe\x00\xc3\x28binary garbage\xff",
+                status=200,
+                content_type="application/octet-stream",
             )
-
-        monkeypatch.setattr(raw_anilist, "call", _stub_call)
-        with pytest.raises(ApiError) as exc_info:
-            anilist_api.show(154587, no_cache=True)
-        assert exc_info.value.reason == "read-only"
-
-    def test_body_text_none(self, fake_clock, monkeypatch):
-        """Cover ``_gql``'s ``upstream-decode`` branch."""
-        from animedex.api import anilist as raw_anilist
-        from animedex.models.common import ApiError
-        from types import SimpleNamespace
-
-        def _stub_call(*, query, variables=None, config=None, **kw):
-            return SimpleNamespace(
-                firewall_rejected=None,
-                body_text=None,
-                cache=SimpleNamespace(hit=False),
-                timing=SimpleNamespace(rate_limit_wait_ms=0),
-            )
-
-        monkeypatch.setattr(raw_anilist, "call", _stub_call)
-        with pytest.raises(ApiError) as exc_info:
-            anilist_api.show(154587, no_cache=True)
+            with pytest.raises(ApiError) as exc_info:
+                anilist_api.show(154587, no_cache=True)
         assert exc_info.value.reason == "upstream-decode"
 
     def test_404_via_null_data(self, fake_clock):
@@ -417,24 +398,13 @@ class TestErrorPaths:
             )
             with pytest.raises(ApiError) as exc_info:
                 anilist_api.show(154587, no_cache=True)
-        assert "Invalid query" in str(exc_info.value) or exc_info.value.reason
+        assert exc_info.value.reason == "graphql-error"
+        assert "Invalid query" in str(exc_info.value)
 
 
 class TestSelftest:
     def test_anilist_selftest(self):
         assert anilist_api.selftest() is True
-
-    def test_selftest_catches_silent_token_stub(self, monkeypatch):
-        """Cover the defensive ``raise AssertionError(...)`` branch:
-        if a token-required stub silently returns instead of raising
-        ``auth-required``, ``selftest()`` must fail loudly."""
-        import animedex.backends.anilist as anilist_mod
-
-        # Replace ``viewer`` with a no-op so the inner ``else`` branch
-        # (function did not raise) fires.
-        monkeypatch.setattr(anilist_mod, "viewer", lambda *a, **kw: None)
-        with pytest.raises(AssertionError):
-            anilist_mod.selftest()
 
 
 # ---------- Bad-args branches ----------
@@ -450,10 +420,10 @@ class TestBadArgs:
 
     def test_schedule_lowercase_season_normalised(self, fake_clock):
         """Lower-case season name is upper-cased and accepted."""
-        path = FIXTURES / "phase2_schedule" / "01-schedule-2024-spring.yaml"
+        path = FIXTURES / "schedule" / "01-schedule-2024-spring.yaml"
         if not path.exists():
             pytest.skip("schedule fixture missing")
-        fixture = _load_fixture("phase2_schedule/01-schedule-2024-spring.yaml")
+        fixture = _load_fixture("schedule/01-schedule-2024-spring.yaml")
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
             _register(rsps, fixture)
             result = anilist_api.schedule(2024, "spring", no_cache=True)

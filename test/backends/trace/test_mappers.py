@@ -10,11 +10,11 @@ The /search mapper coerces the right field set.
 
 from __future__ import annotations
 
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
+import responses
 import yaml
 
 from animedex.backends import trace as trace_api
@@ -31,78 +31,80 @@ def _src() -> SourceTag:
     return SourceTag(backend="trace", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc))
 
 
+@pytest.fixture
+def fake_clock(monkeypatch):
+    """Freeze the dispatcher clock so cache TTL math + ratelimit are
+    deterministic. Only HTTP-adjacent OS-level seams are mocked, per
+    the test discipline."""
+    state = {"rl_now": 0.0, "cache_now": datetime(2026, 5, 7, tzinfo=timezone.utc)}
+    monkeypatch.setattr("animedex.transport.ratelimit._monotonic", lambda: state["rl_now"])
+    monkeypatch.setattr(
+        "animedex.transport.ratelimit._sleep",
+        lambda s: state.update({"rl_now": state["rl_now"] + s}),
+    )
+    monkeypatch.setattr("animedex.cache.sqlite._utcnow", lambda: state["cache_now"])
+    return state
+
+
 class TestQuotaCommonShape:
     """``trace.quota()`` returns the common projection, which has no
     ``id`` field — so the upstream's caller-IP echo never appears on
     the returned object."""
 
-    def test_common_quota_has_no_id_field(self, monkeypatch):
-        # Stub the raw envelope so the mapper sees a /me payload
-        # carrying the captor IP.
-        from animedex.api import trace as raw_trace
-
-        class _FakeEnvelope:
-            firewall_rejected = None
-            body_text = json.dumps(
-                {"id": "203.0.113.42", "priority": 0, "concurrency": 1, "quota": 100, "quotaUsed": "18"}
+    def test_common_quota_has_no_id_field(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.trace.moe/me",
+                json={
+                    "id": "203.0.113.42",
+                    "priority": 0,
+                    "concurrency": 1,
+                    "quota": 100,
+                    "quotaUsed": "18",
+                },
+                status=200,
             )
-
-            class cache:
-                hit = False
-
-            class timing:
-                rate_limit_wait_ms = 0
-
-        monkeypatch.setattr(raw_trace, "call", lambda **kw: _FakeEnvelope())
-
-        result = trace_api.quota()
+            result = trace_api.quota(no_cache=True)
         assert isinstance(result, TraceQuota)
-        # No field on the model carries the IP.
+        # No field on the common projection carries the IP.
         dumped = result.model_dump_json()
         assert "203.0.113.42" not in dumped
         # quotaUsed coerced from string to int.
         assert result.quota_used == 18
 
-    def test_quota_used_string_coerced(self, monkeypatch):
-        from animedex.api import trace as raw_trace
-
-        class _Env:
-            firewall_rejected = None
-            body_text = json.dumps(
-                {"id": "203.0.113.42", "priority": 0, "concurrency": 1, "quota": 100, "quotaUsed": "42"}
+    def test_quota_used_string_coerced(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.trace.moe/me",
+                json={
+                    "id": "203.0.113.42",
+                    "priority": 0,
+                    "concurrency": 1,
+                    "quota": 100,
+                    "quotaUsed": "42",
+                },
+                status=200,
             )
-
-            class cache:
-                hit = False
-
-            class timing:
-                rate_limit_wait_ms = 0
-
-        monkeypatch.setattr(raw_trace, "call", lambda **kw: _Env())
-        assert trace_api.quota().quota_used == 42
+            assert trace_api.quota(no_cache=True).quota_used == 42
 
 
 class TestSearch:
     @pytest.mark.parametrize("path", sorted((FIXTURES / "search").glob("*.yaml")))
-    def test_search_fixture_parses_into_hits(self, path, monkeypatch):
+    def test_search_fixture_parses_into_hits(self, path, fake_clock):
         fix = yaml.safe_load(path.read_text(encoding="utf-8"))
         body = fix["response"].get("body_json")
         if body is None or not body.get("result"):
             pytest.skip("search fixture has no hits")
-        from animedex.api import trace as raw_trace
-
-        class _Env:
-            firewall_rejected = None
-            body_text = json.dumps(body)
-
-            class cache:
-                hit = False
-
-            class timing:
-                rate_limit_wait_ms = 0
-
-        monkeypatch.setattr(raw_trace, "call", lambda **kw: _Env())
-        hits = trace_api.search(image_url="https://example.invalid/x.jpg")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.trace.moe/search",
+                json=body,
+                status=200,
+            )
+            hits = trace_api.search(image_url="https://example.invalid/x.jpg", no_cache=True)
         for h in hits:
             assert isinstance(h, TraceHit)
             assert h.anilist_id > 0

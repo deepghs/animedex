@@ -6,6 +6,12 @@ animedex.models.common
 .. automodule:: animedex.models.common
 
 
+REASONS
+-----------------------------------------------------
+
+.. autodata:: REASONS
+
+
 AnimedexModel
 -----------------------------------------------------
 
@@ -53,6 +59,12 @@ ApiError
 
 .. autoclass:: ApiError
     :members: __init__,__str__
+
+
+require\_field
+-----------------------------------------------------
+
+.. autofunction:: require_field
 
 
 selftest

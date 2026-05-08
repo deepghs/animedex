@@ -1,9 +1,9 @@
 """Canonical AniList GraphQL templates.
 
-These constants are the queries that ship at runtime. the high-level backend layer
-fixtures (``test/fixtures/anilist/phase2_*``) were captured against
-these exact strings, so changing one here demands a fixture re-capture
-to keep replay tests honest.
+These constants are the queries that ship at runtime. The captured
+AniList fixtures used by the test suite were recorded against these
+exact strings, so changing one here demands a fixture re-capture to
+keep replay tests honest.
 
 Each template selects the **full set of fields** the corresponding
 mapper consumes. AniList rate-limits (30/min anonymous) and over-

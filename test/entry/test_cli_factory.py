@@ -277,15 +277,19 @@ class TestPerEndpointGuidance:
 
     def test_unknown_backend_raises_typed_error(self):
         """A typo in the group name shouldn't silently fall back to a
-        random backend's policy."""
+        random backend's policy. Surfaces as a typed ``ApiError`` with
+        the project-wide ``unknown-backend`` reason so library callers
+        can branch on the typed error rather than parsing a message."""
         import click
         import pytest as _pytest
 
         from animedex.entry._cli_factory import register_subcommand
+        from animedex.models.common import ApiError
 
         def fn(*, config=None, **kw):
             return None
 
         grp = click.Group(name="not-a-backend")
-        with _pytest.raises((KeyError, ValueError)):
+        with _pytest.raises(ApiError) as exc_info:
             register_subcommand(grp, "x", fn)
+        assert exc_info.value.reason == "unknown-backend"

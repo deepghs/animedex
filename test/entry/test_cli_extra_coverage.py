@@ -82,27 +82,37 @@ class TestTraceCliInputModes:
             )
         assert result.exit_code == 0, result.output
 
-    def test_search_exception_path(self, cli_runner, cli, fake_clock, monkeypatch):
-        """When the API raises, the CLI rewraps with click.ClickException."""
-        from animedex.backends import trace as trace_api
-        from animedex.models.common import ApiError
-
-        def _stub_search(**kwargs):
-            raise ApiError("simulated", backend="trace", reason="upstream-error")
-
-        monkeypatch.setattr(trace_api, "search", _stub_search)
-        result = cli_runner.invoke(
-            cli,
-            [
-                "trace",
-                "search",
-                "--url",
-                "https://x.invalid/x.jpg",
-                "--json",
-                "--no-cache",
-            ],
-        )
+    def test_search_exception_path(self, cli_runner, cli, fake_clock):
+        """A binary response body fails UTF-8 decode in the
+        dispatcher, surfaces as ``ApiError(reason='upstream-decode')``
+        from ``trace._parse``, and the CLI ``_cmd`` rewraps it as a
+        clean ``ClickException``. Drives the failure end-to-end
+        through the real dispatcher with only HTTP transport mocked."""
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            # ``\xff\xfe...`` is not valid UTF-8 — dispatcher sets
+            # ``body_text=None``, which the trace mapper turns into
+            # ``ApiError(reason='upstream-decode')``.
+            rsps.add(
+                responses.GET,
+                "https://api.trace.moe/search",
+                body=b"\xff\xfe\x00binary garbage\xff",
+                status=200,
+                content_type="application/octet-stream",
+            )
+            result = cli_runner.invoke(
+                cli,
+                [
+                    "trace",
+                    "search",
+                    "--url",
+                    "https://x.invalid/x.jpg",
+                    "--json",
+                    "--no-cache",
+                ],
+            )
         assert result.exit_code != 0
+        assert "Traceback" not in (result.output or "")
+        assert "upstream-decode" in (result.output or "") or "non-text" in (result.output or "")
 
     def test_quota_exception_path(self, cli_runner, cli, fake_clock):
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
@@ -119,7 +129,7 @@ class TestTraceCliInputModes:
 # ---------- entry/_cli_factory.py ----------
 
 
-class TestPhase2Helpers:
+class TestCliFactory:
     def test_is_terminal_no_isatty(self):
         """Stream without isatty() returns False."""
         from animedex.entry._cli_factory import _is_terminal
@@ -205,7 +215,7 @@ class TestPhase2Helpers:
         import click
         from animedex.entry import _cli_factory
 
-        # _phase2_helpers does ``import inspect``; capture the helper's
+        # _cli_factory does ``import inspect``; capture the helper's
         # bound name, then make get_annotations raise only when called.
         orig = _cli_factory.inspect.get_annotations
 
@@ -359,9 +369,7 @@ class TestPhase2Helpers:
         if shutil.which("jq") is None:
             pytest.skip("jq not installed")
 
-        fixture = yaml.safe_load(
-            (FIXTURES / "anilist" / "phase2_media" / "01-media-frieren.yaml").read_text(encoding="utf-8")
-        )
+        fixture = yaml.safe_load((FIXTURES / "anilist" / "media" / "01-media-frieren.yaml").read_text(encoding="utf-8"))
         # Register without body-matching (the fixture's captured query
         # may drift from the live query; we only need the response).
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:

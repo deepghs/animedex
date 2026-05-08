@@ -324,8 +324,11 @@ def render_tty(model: AnimedexModel) -> str:
     # Rich per-backend dataclass (AnilistAnime / AnilistCharacter /
     # AnilistStaff / AnilistStudio / JikanAnime / JikanCharacter /
     # ...) — project to the common type and re-render. The common
-    # types have human-friendly formatters above; the rich types
-    # always carry a ``to_common()`` per ``plans/05 §0.4``.
+    # types have human-friendly formatters above; rich types either
+    # implement ``to_common()`` (which projects onto a common type
+    # and recurses here) or fall through to the JSON-dump fallback
+    # below. ``JikanGenericResponse`` is an example of the latter:
+    # its row shape is too varied for a single TTY formatter.
     if hasattr(model, "to_common"):
         try:
             common = model.to_common()
