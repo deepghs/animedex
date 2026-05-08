@@ -1,0 +1,82 @@
+metadata:
+  captured_at: '2026-05-08T12:53:45Z'
+  label: berserk
+  backend: kitsu
+  path_slug: manga_staff
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/manga/1/staff?page%5Blimit%5D=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:45 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"ac26913f5520e7a248451e9ef6852f5b"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 4bef455a-bea5-4dd4-8333-4a392b7c9a31
+    x-runtime: '0.039858'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '124240'
+      type: mediaStaff
+      links:
+        self: https://kitsu.io/api/edge/media-staff/124240
+      attributes:
+        createdAt: '2018-08-05T03:47:28.727Z'
+        updatedAt: '2018-08-05T03:47:28.727Z'
+        role: Art
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/media-staff/124240/relationships/media
+            related: https://kitsu.io/api/edge/media-staff/124240/media
+        person:
+          links:
+            self: https://kitsu.io/api/edge/media-staff/124240/relationships/person
+            related: https://kitsu.io/api/edge/media-staff/124240/person
+    - id: '124241'
+      type: mediaStaff
+      links:
+        self: https://kitsu.io/api/edge/media-staff/124241
+      attributes:
+        createdAt: '2018-08-05T03:47:28.739Z'
+        updatedAt: '2018-08-05T03:47:28.739Z'
+        role: Story
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/media-staff/124241/relationships/media
+            related: https://kitsu.io/api/edge/media-staff/124241/media
+        person:
+          links:
+            self: https://kitsu.io/api/edge/media-staff/124241/relationships/person
+            related: https://kitsu.io/api/edge/media-staff/124241/person
+    meta:
+      count: 2
+    links:
+      first: https://kitsu.io/api/edge/manga/1/staff?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/manga/1/staff?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

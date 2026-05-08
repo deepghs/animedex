@@ -1,0 +1,149 @@
+metadata:
+  captured_at: '2026-05-08T12:53:18Z'
+  label: page1
+  backend: kitsu
+  path_slug: genres
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/genres?page%5Blimit%5D=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:18 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"aad8708803b5927136c146229e11662e"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 8ffe79f3-4245-4556-baa0-bb42965bc77c
+    x-runtime: '0.040678'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/1
+      attributes:
+        createdAt: '2013-02-20T16:00:15.623Z'
+        updatedAt: '2016-07-17T19:30:56.164Z'
+        name: Action
+        slug: action
+        description: ''
+    - id: '2'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/2
+      attributes:
+        createdAt: '2013-02-20T16:00:15.657Z'
+        updatedAt: '2017-04-22T16:11:16.077Z'
+        name: Adventure
+        slug: adventure
+        description: ''
+    - id: '3'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/3
+      attributes:
+        createdAt: '2013-02-20T16:00:15.671Z'
+        updatedAt: '2013-02-20T16:00:15.671Z'
+        name: Comedy
+        slug: comedy
+        description: null
+    - id: '4'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/4
+      attributes:
+        createdAt: '2013-02-20T16:00:15.686Z'
+        updatedAt: '2016-06-10T11:23:00.431Z'
+        name: Drama
+        slug: drama
+        description: ''
+    - id: '5'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/5
+      attributes:
+        createdAt: '2013-02-20T16:00:15.701Z'
+        updatedAt: '2013-02-20T16:00:15.701Z'
+        name: Sci-Fi
+        slug: sci-fi
+        description: null
+    - id: '6'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/6
+      attributes:
+        createdAt: '2013-02-20T16:00:15.716Z'
+        updatedAt: '2013-02-20T16:00:15.716Z'
+        name: Space
+        slug: space
+        description: null
+    - id: '7'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/7
+      attributes:
+        createdAt: '2013-02-20T16:00:17.012Z'
+        updatedAt: '2013-02-20T16:00:17.012Z'
+        name: Mystery
+        slug: mystery
+        description: null
+    - id: '8'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/8
+      attributes:
+        createdAt: '2013-02-20T16:00:18.761Z'
+        updatedAt: '2013-02-20T16:00:18.761Z'
+        name: Magic
+        slug: magic
+        description: null
+    - id: '9'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/9
+      attributes:
+        createdAt: '2013-02-20T16:00:18.777Z'
+        updatedAt: '2013-02-20T16:00:18.777Z'
+        name: Supernatural
+        slug: supernatural
+        description: null
+    - id: '10'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/10
+      attributes:
+        createdAt: '2013-02-20T16:00:18.880Z'
+        updatedAt: '2013-02-20T16:00:18.880Z'
+        name: Police
+        slug: police
+        description: null
+    meta:
+      count: 62
+    links:
+      first: https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=10
+      last: https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=52
+  body_text: null
+  body_b64: null

@@ -1,0 +1,209 @@
+metadata:
+  captured_at: '2026-05-08T12:53:20Z'
+  label: page1
+  backend: kitsu
+  path_slug: franchises
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:20 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"dd1d0e57e42feaa7e65185598abca9d3"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: a11f5c6c-0f48-4f36-b911-ef703a6610cb
+    x-runtime: '0.048695'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/1
+      attributes:
+        createdAt: '2013-07-07T07:44:54.484Z'
+        updatedAt: '2013-07-07T07:44:54.484Z'
+        titles:
+          en: Darker than Black
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/1/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/1/installments
+    - id: '2'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/2
+      attributes:
+        createdAt: '2013-07-07T18:48:35.028Z'
+        updatedAt: '2013-07-07T18:48:35.028Z'
+        titles:
+          en: Steins;Gate
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/2/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/2/installments
+    - id: '4'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/4
+      attributes:
+        createdAt: '2013-07-28T19:46:41.574Z'
+        updatedAt: '2013-07-28T19:46:41.574Z'
+        titles:
+          en: Monogatari Series
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/4/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/4/installments
+    - id: '5'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/5
+      attributes:
+        createdAt: '2013-07-28T20:00:41.260Z'
+        updatedAt: '2013-07-28T21:04:57.393Z'
+        titles:
+          en: Evangelion
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/5/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/5/installments
+    - id: '6'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/6
+      attributes:
+        createdAt: '2013-07-28T21:09:35.152Z'
+        updatedAt: '2013-07-28T21:31:49.142Z'
+        titles:
+          en: ''
+          en_jp: OreImo
+        canonicalTitle: OreImo
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/6/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/6/installments
+    - id: '7'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/7
+      attributes:
+        createdAt: '2013-07-28T21:12:14.639Z'
+        updatedAt: '2013-07-28T21:12:14.639Z'
+        titles:
+          en: Clannad
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/7/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/7/installments
+    - id: '8'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/8
+      attributes:
+        createdAt: '2013-07-28T21:13:10.842Z'
+        updatedAt: '2013-07-28T21:13:10.842Z'
+        titles:
+          en: Haganai
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/8/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/8/installments
+    - id: '9'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/9
+      attributes:
+        createdAt: '2013-07-28T21:14:07.416Z'
+        updatedAt: '2013-07-28T21:14:07.416Z'
+        titles:
+          en: Amagami
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/9/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/9/installments
+    - id: '10'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/10
+      attributes:
+        createdAt: '2013-07-28T21:15:34.729Z'
+        updatedAt: '2015-03-25T00:14:58.733Z'
+        titles:
+          en: 'Nura: Rise of the Yokai Clan'
+          en_jp: Nurarihyon no Mago
+        canonicalTitle: Nurarihyon no Mago
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/10/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/10/installments
+    - id: '11'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/11
+      attributes:
+        createdAt: '2013-07-28T21:17:29.549Z'
+        updatedAt: '2013-07-28T21:17:29.549Z'
+        titles:
+          en: Fate Series
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/11/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/11/installments
+    meta:
+      count: 1332
+    links:
+      first: https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=10
+      last: https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=1322
+  body_text: null
+  body_b64: null

@@ -21,9 +21,17 @@ from animedex.api import kitsu as _raw_kitsu
 from animedex.backends.kitsu.models import (
     KitsuAnime,
     KitsuCategory,
+    KitsuCharacter,
+    KitsuFranchise,
+    KitsuGenre,
     KitsuManga,
     KitsuMapping,
+    KitsuPerson,
+    KitsuProducer,
+    KitsuRelatedResource,
+    KitsuStreamer,
     KitsuStreamingLink,
+    KitsuUser,
 )
 from animedex.config import Config
 from animedex.models.common import ApiError, SourceTag
@@ -212,6 +220,226 @@ def categories(*, limit: int = 20, config: Optional[Config] = None, **kw) -> Lis
     return [KitsuCategory.model_validate({**row, "source_tag": src}) for row in _list(payload)]
 
 
+# ---------- /anime/{id}/<sub> ----------
+
+
+def anime_characters(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Cast for one anime via ``/anime/{id}/characters``."""
+    payload, src = _fetch(f"/anime/{id}/characters", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def anime_staff(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Production staff for one anime via ``/anime/{id}/staff``."""
+    payload, src = _fetch(f"/anime/{id}/staff", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def anime_episodes(id: int, *, limit: int = 20, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Episode list for one anime via ``/anime/{id}/episodes``."""
+    payload, src = _fetch(f"/anime/{id}/episodes", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def anime_reviews(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """User reviews for one anime via ``/anime/{id}/reviews``."""
+    payload, src = _fetch(f"/anime/{id}/reviews", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def anime_genres(id: int, *, config: Optional[Config] = None, **kw) -> List[KitsuGenre]:
+    """Genres tagged on one anime via ``/anime/{id}/genres``."""
+    payload, src = _fetch(f"/anime/{id}/genres", config=config, **kw)
+    return [KitsuGenre.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def anime_categories(id: int, *, config: Optional[Config] = None, **kw) -> List[KitsuCategory]:
+    """Categories tagged on one anime via ``/anime/{id}/categories``."""
+    payload, src = _fetch(f"/anime/{id}/categories", config=config, **kw)
+    return [KitsuCategory.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def anime_relations(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Sequel / prequel / spin-off relationships via
+    ``/anime/{id}/media-relationships``."""
+    payload, src = _fetch(f"/anime/{id}/media-relationships", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def anime_productions(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Producer / studio / licensor list via
+    ``/anime/{id}/anime-productions``."""
+    payload, src = _fetch(f"/anime/{id}/anime-productions", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /manga/{id}/<sub> ----------
+
+
+def manga_characters(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Cast for one manga via ``/manga/{id}/characters``."""
+    payload, src = _fetch(f"/manga/{id}/characters", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def manga_staff(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Production staff for one manga via ``/manga/{id}/staff``."""
+    payload, src = _fetch(f"/manga/{id}/staff", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def manga_chapters(id: int, *, limit: int = 20, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Chapter list for one manga via ``/manga/{id}/chapters``."""
+    payload, src = _fetch(f"/manga/{id}/chapters", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def manga_genres(id: int, *, config: Optional[Config] = None, **kw) -> List[KitsuGenre]:
+    """Genres tagged on one manga via ``/manga/{id}/genres``."""
+    payload, src = _fetch(f"/manga/{id}/genres", config=config, **kw)
+    return [KitsuGenre.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /characters ----------
+
+
+def character(id: int, *, config: Optional[Config] = None, **kw) -> KitsuCharacter:
+    """One character by Kitsu ID via ``/characters/{id}``."""
+    payload, src = _fetch(f"/characters/{id}", config=config, **kw)
+    return KitsuCharacter.model_validate({**_data(payload), "source_tag": src})
+
+
+def character_search(
+    q: Optional[str] = None, *, limit: int = 10, page: int = 0, config: Optional[Config] = None, **kw
+) -> List[KitsuCharacter]:
+    """Free-text character search via ``/characters?filter[name]=<q>``."""
+    params: Dict[str, Any] = {"page[limit]": limit, "page[offset]": page}
+    if q:
+        params["filter[name]"] = q
+    payload, src = _fetch("/characters", params=params, config=config, **kw)
+    return [KitsuCharacter.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /people ----------
+
+
+def person(id: int, *, config: Optional[Config] = None, **kw) -> KitsuPerson:
+    """One person (VA / staff) by Kitsu ID via ``/people/{id}``."""
+    payload, src = _fetch(f"/people/{id}", config=config, **kw)
+    return KitsuPerson.model_validate({**_data(payload), "source_tag": src})
+
+
+def person_search(
+    q: Optional[str] = None, *, limit: int = 10, page: int = 0, config: Optional[Config] = None, **kw
+) -> List[KitsuPerson]:
+    """Free-text person search via ``/people?filter[name]=<q>``."""
+    params: Dict[str, Any] = {"page[limit]": limit, "page[offset]": page}
+    if q:
+        params["filter[name]"] = q
+    payload, src = _fetch("/people", params=params, config=config, **kw)
+    return [KitsuPerson.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def person_voices(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Voice-acting credits for one person via ``/people/{id}/voices``."""
+    payload, src = _fetch(f"/people/{id}/voices", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def person_castings(id: int, *, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """Production-staff credits for one person via
+    ``/people/{id}/castings``."""
+    payload, src = _fetch(f"/people/{id}/castings", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /producers, /genres, /streamers, /franchises ----------
+
+
+def producer(id: int, *, config: Optional[Config] = None, **kw) -> KitsuProducer:
+    """One producer by Kitsu ID via ``/producers/{id}``."""
+    payload, src = _fetch(f"/producers/{id}", config=config, **kw)
+    return KitsuProducer.model_validate({**_data(payload), "source_tag": src})
+
+
+def producers(*, limit: int = 20, config: Optional[Config] = None, **kw) -> List[KitsuProducer]:
+    """All producers via ``/producers``."""
+    payload, src = _fetch("/producers", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuProducer.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def genre(id: int, *, config: Optional[Config] = None, **kw) -> KitsuGenre:
+    """One genre by Kitsu ID via ``/genres/{id}``."""
+    payload, src = _fetch(f"/genres/{id}", config=config, **kw)
+    return KitsuGenre.model_validate({**_data(payload), "source_tag": src})
+
+
+def genres(*, limit: int = 20, config: Optional[Config] = None, **kw) -> List[KitsuGenre]:
+    """All genres (legacy taxonomy; the richer one is `categories`)."""
+    payload, src = _fetch("/genres", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuGenre.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def category(id: int, *, config: Optional[Config] = None, **kw) -> KitsuCategory:
+    """One category by Kitsu ID via ``/categories/{id}``."""
+    payload, src = _fetch(f"/categories/{id}", config=config, **kw)
+    return KitsuCategory.model_validate({**_data(payload), "source_tag": src})
+
+
+def streamers(*, config: Optional[Config] = None, **kw) -> List[KitsuStreamer]:
+    """All registered streamers via ``/streamers``."""
+    payload, src = _fetch("/streamers", config=config, **kw)
+    return [KitsuStreamer.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def franchise(id: int, *, config: Optional[Config] = None, **kw) -> KitsuFranchise:
+    """One franchise by Kitsu ID via ``/franchises/{id}``."""
+    payload, src = _fetch(f"/franchises/{id}", config=config, **kw)
+    return KitsuFranchise.model_validate({**_data(payload), "source_tag": src})
+
+
+def franchises(*, limit: int = 20, config: Optional[Config] = None, **kw) -> List[KitsuFranchise]:
+    """All franchises via ``/franchises``."""
+    payload, src = _fetch("/franchises", params={"page[limit]": limit}, config=config, **kw)
+    return [KitsuFranchise.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /trending/manga ----------
+
+
+def trending_manga(*, limit: int = 10, config: Optional[Config] = None, **kw) -> List[KitsuManga]:
+    """The ``/trending/manga`` rail."""
+    payload, src = _fetch("/trending/manga", params={"limit": limit}, config=config, **kw)
+    return [KitsuManga.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+# ---------- /users (public read) ----------
+
+
+def user(id: int, *, config: Optional[Config] = None, **kw) -> KitsuUser:
+    """One user's public profile via ``/users/{id}``.
+
+    Public fields only; the upstream silently strips private ones
+    when no auth is presented.
+    """
+    payload, src = _fetch(f"/users/{id}", config=config, **kw)
+    return KitsuUser.model_validate({**_data(payload), "source_tag": src})
+
+
+def user_library(user_id: int, *, limit: int = 20, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """A user's public anime/manga library via
+    ``/library-entries?filter[user_id]=<id>``."""
+    params = {"filter[user_id]": user_id, "page[limit]": limit}
+    payload, src = _fetch("/library-entries", params=params, config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def user_stats(id: int, *, config: Optional[Config] = None, **kw) -> List[KitsuRelatedResource]:
+    """A user's public consumption stats via ``/users/{id}/stats``."""
+    payload, src = _fetch(f"/users/{id}/stats", config=config, **kw)
+    return [KitsuRelatedResource.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
 def selftest() -> bool:
     """Smoke-test the public Kitsu Python API (signatures only, no
     network).
@@ -221,7 +449,46 @@ def selftest() -> bool:
     """
     import inspect
 
-    public_callables = [show, search, streaming, mappings, trending, manga_show, manga_search, categories]
+    public_callables = [
+        show,
+        search,
+        streaming,
+        mappings,
+        trending,
+        manga_show,
+        manga_search,
+        categories,
+        anime_characters,
+        anime_staff,
+        anime_episodes,
+        anime_reviews,
+        anime_genres,
+        anime_categories,
+        anime_relations,
+        anime_productions,
+        manga_characters,
+        manga_staff,
+        manga_chapters,
+        manga_genres,
+        character,
+        character_search,
+        person,
+        person_search,
+        person_voices,
+        person_castings,
+        producer,
+        producers,
+        genre,
+        genres,
+        category,
+        streamers,
+        franchise,
+        franchises,
+        trending_manga,
+        user,
+        user_library,
+        user_stats,
+    ]
     for fn in public_callables:
         sig = inspect.signature(fn)
         assert "config" in sig.parameters, f"{fn.__name__} missing config kwarg"

@@ -259,6 +259,164 @@ class TestKitsuLossless:
         for i, row in enumerate(body["data"]):
             _assert_lossless(KitsuAnime, row, f"KitsuAnime/{path.name}[{i}]")
 
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "kitsu" / "trending_manga").glob("*.yaml")))
+    def test_kitsu_manga_trending_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuManga
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(KitsuManga, row, f"KitsuManga/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "characters").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "characters_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_character_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuCharacter
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty / not-found fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(KitsuCharacter, row, f"KitsuCharacter/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "people").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "people_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_person_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuPerson
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty / not-found fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(KitsuPerson, row, f"KitsuPerson/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "producers").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "producers_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_producer_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuProducer
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty / not-found fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(KitsuProducer, row, f"KitsuProducer/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "genres").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "genres_by_id").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "anime_genres").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "manga_genres").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_genre_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuGenre
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty / not-found fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(KitsuGenre, row, f"KitsuGenre/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "kitsu" / "streamers").glob("*.yaml")))
+    def test_kitsu_streamer_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuStreamer
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(KitsuStreamer, row, f"KitsuStreamer/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "franchises").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "franchises_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_franchise_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuFranchise
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty / not-found fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(KitsuFranchise, row, f"KitsuFranchise/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "kitsu" / "users_by_id").glob("*.yaml")))
+    def test_kitsu_user_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuUser
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty / not-found fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(KitsuUser, row, f"KitsuUser/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "anime_characters").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "anime_staff").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "anime_episodes").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "anime_reviews").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "anime_relations").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "anime_productions").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "manga_characters").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "manga_staff").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "manga_chapters").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "people_voices").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "people_castings").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "users_library_entries").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "users_stats").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_related_resource_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuRelatedResource
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(KitsuRelatedResource, row, f"KitsuRelatedResource/{path.name}[{i}]")
+
     @pytest.mark.parametrize(
         "path",
         sorted(

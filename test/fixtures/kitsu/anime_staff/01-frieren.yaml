@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-08T12:53:33Z'
+  label: frieren
+  backend: kitsu
+  path_slug: anime_staff
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/46474/staff?page%5Blimit%5D=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:33 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"a785639ee34f291fcdd454c3d4eb9303"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: af747f83-21d0-42b8-a520-5967a7aeb568
+    x-runtime: '0.033414'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data: []
+    meta:
+      count: 0
+    links:
+      first: https://kitsu.io/api/edge/anime/46474/staff?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/46474/staff?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

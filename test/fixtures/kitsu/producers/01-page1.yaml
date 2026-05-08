@@ -1,0 +1,229 @@
+metadata:
+  captured_at: '2026-05-08T12:53:17Z'
+  label: page1
+  backend: kitsu
+  path_slug: producers
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/producers?page%5Blimit%5D=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:17 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"26af553e8b2d30e9eee7f43e1c8405af"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 90d0fe21-0513-4b32-a70a-ec9942cd3db7
+    x-runtime: '0.031724'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/1
+      attributes:
+        createdAt: '2013-02-20T16:00:16.004Z'
+        updatedAt: '2013-02-20T16:00:16.004Z'
+        slug: sunrise
+        name: Sunrise
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/1/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/1/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/1/relationships/productions
+            related: https://kitsu.io/api/edge/producers/1/productions
+    - id: '2'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/2
+      attributes:
+        createdAt: '2013-02-20T16:00:16.020Z'
+        updatedAt: '2013-02-20T16:00:16.020Z'
+        slug: bandai-visual
+        name: Bandai Visual
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/2/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/2/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/2/relationships/productions
+            related: https://kitsu.io/api/edge/producers/2/productions
+    - id: '3'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/3
+      attributes:
+        createdAt: '2013-02-20T16:00:16.034Z'
+        updatedAt: '2013-02-20T16:00:16.034Z'
+        slug: bandai-entertainment
+        name: Bandai Entertainment
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/3/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/3/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/3/relationships/productions
+            related: https://kitsu.io/api/edge/producers/3/productions
+    - id: '4'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/4
+      attributes:
+        createdAt: '2013-02-20T16:00:17.054Z'
+        updatedAt: '2015-06-08T02:05:21.484Z'
+        slug: bones
+        name: BONES
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/4/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/4/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/4/relationships/productions
+            related: https://kitsu.io/api/edge/producers/4/productions
+    - id: '5'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/5
+      attributes:
+        createdAt: '2013-02-20T16:00:17.931Z'
+        updatedAt: '2015-05-30T20:23:06.827Z'
+        slug: madhouse
+        name: MADHOUSE
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/5/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/5/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/5/relationships/productions
+            related: https://kitsu.io/api/edge/producers/5/productions
+    - id: '6'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/6
+      attributes:
+        createdAt: '2013-02-20T16:00:17.949Z'
+        updatedAt: '2013-02-20T16:00:17.949Z'
+        slug: geneon-universal-entertainment
+        name: Geneon Universal Entertainment
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/6/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/6/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/6/relationships/productions
+            related: https://kitsu.io/api/edge/producers/6/productions
+    - id: '7'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/7
+      attributes:
+        createdAt: '2013-02-20T16:00:17.964Z'
+        updatedAt: '2017-08-26T04:57:44.086Z'
+        slug: funimation
+        name: Funimation
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/7/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/7/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/7/relationships/productions
+            related: https://kitsu.io/api/edge/producers/7/productions
+    - id: '8'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/8
+      attributes:
+        createdAt: '2013-02-20T16:00:20.025Z'
+        updatedAt: '2013-02-20T16:00:20.025Z'
+        slug: toei-animation
+        name: Toei Animation
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/8/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/8/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/8/relationships/productions
+            related: https://kitsu.io/api/edge/producers/8/productions
+    - id: '9'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/9
+      attributes:
+        createdAt: '2013-02-20T16:00:21.028Z'
+        updatedAt: '2013-02-20T16:00:21.028Z'
+        slug: artland
+        name: Artland
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/9/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/9/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/9/relationships/productions
+            related: https://kitsu.io/api/edge/producers/9/productions
+    - id: '10'
+      type: producers
+      links:
+        self: https://kitsu.io/api/edge/producers/10
+      attributes:
+        createdAt: '2013-02-20T16:00:21.044Z'
+        updatedAt: '2013-02-20T16:00:21.044Z'
+        slug: production-i-g
+        name: Production I.G
+      relationships:
+        animeProductions:
+          links:
+            self: https://kitsu.io/api/edge/producers/10/relationships/anime-productions
+            related: https://kitsu.io/api/edge/producers/10/anime-productions
+        productions:
+          links:
+            self: https://kitsu.io/api/edge/producers/10/relationships/productions
+            related: https://kitsu.io/api/edge/producers/10/productions
+    meta:
+      count: 1963
+    links:
+      first: https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=10
+      last: https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=1953
+  body_text: null
+  body_b64: null

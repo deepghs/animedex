@@ -102,6 +102,82 @@ class KitsuCategoryAttributes(BackendRichModel):
     childCount: Optional[int] = None
 
 
+class KitsuCharacterAttributes(BackendRichModel):
+    """The ``attributes`` block on a ``/characters`` row.
+
+    Note that some upstream fields are deprecated and now carry
+    explanatory strings instead of their original values (e.g.
+    ``malId`` may be a string ``"Moved to mappings relationship."``
+    rather than an int). They surface as ``Any`` so the lossless
+    contract still validates regardless of upstream's chosen
+    deprecation marker.
+    """
+
+    slug: Optional[str] = None
+    name: Optional[str] = None
+    description: Optional[str] = None
+    malId: Optional[Any] = None
+
+
+class KitsuPersonAttributes(BackendRichModel):
+    """The ``attributes`` block on a ``/people`` row.
+
+    See :class:`KitsuCharacterAttributes` for the ``malId``
+    deprecation note.
+    """
+
+    name: Optional[str] = None
+    description: Optional[str] = None
+    malId: Optional[Any] = None
+
+
+class KitsuProducerAttributes(BackendRichModel):
+    """The ``attributes`` block on a ``/producers`` row."""
+
+    slug: Optional[str] = None
+    name: Optional[str] = None
+
+
+class KitsuGenreAttributes(BackendRichModel):
+    """The ``attributes`` block on a ``/genres`` row."""
+
+    name: Optional[str] = None
+    slug: Optional[str] = None
+    description: Optional[str] = None
+
+
+class KitsuStreamerAttributes(BackendRichModel):
+    """The ``attributes`` block on a ``/streamers`` row."""
+
+    siteName: Optional[str] = None
+    logo: Optional[str] = None
+    streamingLinksCount: Optional[int] = None
+
+
+class KitsuFranchiseAttributes(BackendRichModel):
+    """The ``attributes`` block on a ``/franchises`` row."""
+
+    slug: Optional[str] = None
+    titles: Optional[Dict[str, Optional[str]]] = None
+    canonicalTitle: Optional[str] = None
+
+
+class KitsuUserAttributes(BackendRichModel):
+    """The ``attributes`` block on a ``/users`` row (public read)."""
+
+    name: Optional[str] = None
+    pastNames: Optional[List[str]] = None
+    slug: Optional[str] = None
+    about: Optional[str] = None
+    location: Optional[str] = None
+    waifuOrHusbando: Optional[str] = None
+    followersCount: Optional[int] = None
+    followingCount: Optional[int] = None
+    lifeSpentOnAnime: Optional[int] = None
+    birthday: Optional[str] = None
+    gender: Optional[str] = None
+
+
 # ---------- top-level resource shapes ----------
 
 
@@ -260,6 +336,108 @@ class KitsuCategory(BackendRichModel):
     id: str
     type: str = "categories"
     attributes: Optional[KitsuCategoryAttributes] = None
+    relationships: Optional[Dict[str, Any]] = None
+    links: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class KitsuCharacter(BackendRichModel):
+    """JSON:API character resource from ``/characters/{id}`` and
+    ``/characters?filter[name]=...``."""
+
+    id: str
+    type: str = "characters"
+    attributes: Optional[KitsuCharacterAttributes] = None
+    relationships: Optional[Dict[str, Any]] = None
+    links: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class KitsuPerson(BackendRichModel):
+    """JSON:API person resource from ``/people/{id}`` and
+    ``/people?filter[name]=...``."""
+
+    id: str
+    type: str = "people"
+    attributes: Optional[KitsuPersonAttributes] = None
+    relationships: Optional[Dict[str, Any]] = None
+    links: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class KitsuProducer(BackendRichModel):
+    """JSON:API producer resource from ``/producers``."""
+
+    id: str
+    type: str = "producers"
+    attributes: Optional[KitsuProducerAttributes] = None
+    relationships: Optional[Dict[str, Any]] = None
+    links: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class KitsuGenre(BackendRichModel):
+    """JSON:API genre resource from ``/genres``."""
+
+    id: str
+    type: str = "genres"
+    attributes: Optional[KitsuGenreAttributes] = None
+    relationships: Optional[Dict[str, Any]] = None
+    links: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class KitsuStreamer(BackendRichModel):
+    """JSON:API streamer resource from ``/streamers``."""
+
+    id: str
+    type: str = "streamers"
+    attributes: Optional[KitsuStreamerAttributes] = None
+    relationships: Optional[Dict[str, Any]] = None
+    links: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class KitsuFranchise(BackendRichModel):
+    """JSON:API franchise resource from ``/franchises``."""
+
+    id: str
+    type: str = "franchises"
+    attributes: Optional[KitsuFranchiseAttributes] = None
+    relationships: Optional[Dict[str, Any]] = None
+    links: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class KitsuUser(BackendRichModel):
+    """JSON:API user resource from ``/users/{id}`` (public read)."""
+
+    id: str
+    type: str = "users"
+    attributes: Optional[KitsuUserAttributes] = None
+    relationships: Optional[Dict[str, Any]] = None
+    links: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+
+class KitsuRelatedResource(BackendRichModel):
+    """Catch-all JSON:API resource for sub-relationship fetches.
+
+    Used for ``/anime/{id}/characters``, ``/anime/{id}/staff``,
+    ``/anime/{id}/episodes``, ``/anime/{id}/reviews``,
+    ``/anime/{id}/media-relationships``, ``/anime/{id}/anime-productions``,
+    ``/manga/{id}/chapters``, ``/people/{id}/voices``,
+    ``/people/{id}/castings``, ``/library-entries`` (filtered),
+    ``/users/{id}/stats``, etc. The shape is uniform JSON:API
+    (``id`` / ``type`` / ``attributes`` / ``relationships``); the
+    typed-attribute story for these endpoints is extensive enough
+    that we surface ``attributes`` as a dict rather than typing each
+    one. ``extra='allow'`` round-trips every upstream key.
+    """
+
+    id: str
+    type: str
+    attributes: Optional[Dict[str, Any]] = None
     relationships: Optional[Dict[str, Any]] = None
     links: Optional[Dict[str, Any]] = None
     source_tag: Optional[SourceTag] = None

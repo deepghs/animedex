@@ -1,0 +1,53 @@
+metadata:
+  captured_at: '2026-05-08T12:53:28Z'
+  label: id-1
+  backend: kitsu
+  path_slug: genres_by_id
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/genres/1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:27 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"6d7d30e9b18bace65a633a32a7f207a5"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 66878546-63ec-4035-a9fe-1df457840253
+    x-runtime: '0.022681'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      id: '1'
+      type: genres
+      links:
+        self: https://kitsu.io/api/edge/genres/1
+      attributes:
+        createdAt: '2013-02-20T16:00:15.623Z'
+        updatedAt: '2016-07-17T19:30:56.164Z'
+        name: Action
+        slug: action
+        description: ''
+  body_text: null
+  body_b64: null

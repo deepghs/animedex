@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-08T12:53:31Z'
+  label: id-1
+  backend: kitsu
+  path_slug: categories_by_id
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/categories/1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:31 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"721a3f45a0fa5c26b4cc67abb327c395"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: c9f6c06d-2b76-4d1c-a6cb-4c0b81b902f9
+    x-runtime: '0.040973'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      id: '1'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/1
+      attributes:
+        createdAt: '2017-05-31T06:38:28.636Z'
+        updatedAt: '2021-10-02T01:31:01.196Z'
+        title: Middle School
+        description: ''
+        totalMediaCount: 111
+        slug: middle-school
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/1/relationships/parent
+            related: https://kitsu.io/api/edge/categories/1/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/1/relationships/anime
+            related: https://kitsu.io/api/edge/categories/1/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/1/relationships/drama
+            related: https://kitsu.io/api/edge/categories/1/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/1/relationships/manga
+            related: https://kitsu.io/api/edge/categories/1/manga
+  body_text: null
+  body_b64: null

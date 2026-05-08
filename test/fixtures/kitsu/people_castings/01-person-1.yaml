@@ -1,0 +1,169 @@
+metadata:
+  captured_at: '2026-05-08T12:53:50Z'
+  label: person-1
+  backend: kitsu
+  path_slug: people_castings
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/people/1/castings?page%5Blimit%5D=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:50 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"9bce25751f8697b22ea83a42b21405b2"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 87f0c28a-6f91-4780-8951-86a54dfec789
+    x-runtime: '0.057883'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1'
+      type: castings
+      links:
+        self: https://kitsu.io/api/edge/castings/1
+      attributes:
+        createdAt: '2013-02-20T18:49:20.585Z'
+        updatedAt: '2013-02-20T18:49:20.585Z'
+        role: Producer
+        voiceActor: false
+        featured: false
+        language: null
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/castings/1/relationships/media
+            related: https://kitsu.io/api/edge/castings/1/media
+        character:
+          links:
+            self: https://kitsu.io/api/edge/castings/1/relationships/character
+            related: https://kitsu.io/api/edge/castings/1/character
+        person:
+          links:
+            self: https://kitsu.io/api/edge/castings/1/relationships/person
+            related: https://kitsu.io/api/edge/castings/1/person
+    - id: '119'
+      type: castings
+      links:
+        self: https://kitsu.io/api/edge/castings/119
+      attributes:
+        createdAt: '2013-02-20T18:49:21.580Z'
+        updatedAt: '2013-02-20T18:49:21.580Z'
+        role: Producer
+        voiceActor: false
+        featured: false
+        language: null
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/castings/119/relationships/media
+            related: https://kitsu.io/api/edge/castings/119/media
+        character:
+          links:
+            self: https://kitsu.io/api/edge/castings/119/relationships/character
+            related: https://kitsu.io/api/edge/castings/119/character
+        person:
+          links:
+            self: https://kitsu.io/api/edge/castings/119/relationships/person
+            related: https://kitsu.io/api/edge/castings/119/person
+    - id: '6070'
+      type: castings
+      links:
+        self: https://kitsu.io/api/edge/castings/6070
+      attributes:
+        createdAt: '2013-02-20T18:50:07.077Z'
+        updatedAt: '2013-02-20T18:50:07.077Z'
+        role: Assistant Director
+        voiceActor: false
+        featured: false
+        language: null
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/castings/6070/relationships/media
+            related: https://kitsu.io/api/edge/castings/6070/media
+        character:
+          links:
+            self: https://kitsu.io/api/edge/castings/6070/relationships/character
+            related: https://kitsu.io/api/edge/castings/6070/character
+        person:
+          links:
+            self: https://kitsu.io/api/edge/castings/6070/relationships/person
+            related: https://kitsu.io/api/edge/castings/6070/person
+    - id: '6774'
+      type: castings
+      links:
+        self: https://kitsu.io/api/edge/castings/6774
+      attributes:
+        createdAt: '2013-02-20T18:50:12.376Z'
+        updatedAt: '2013-02-20T18:50:12.376Z'
+        role: Producer
+        voiceActor: false
+        featured: false
+        language: null
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/castings/6774/relationships/media
+            related: https://kitsu.io/api/edge/castings/6774/media
+        character:
+          links:
+            self: https://kitsu.io/api/edge/castings/6774/relationships/character
+            related: https://kitsu.io/api/edge/castings/6774/character
+        person:
+          links:
+            self: https://kitsu.io/api/edge/castings/6774/relationships/person
+            related: https://kitsu.io/api/edge/castings/6774/person
+    - id: '7909'
+      type: castings
+      links:
+        self: https://kitsu.io/api/edge/castings/7909
+      attributes:
+        createdAt: '2013-02-20T18:50:20.614Z'
+        updatedAt: '2013-02-20T18:50:20.614Z'
+        role: Producer
+        voiceActor: false
+        featured: false
+        language: null
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/castings/7909/relationships/media
+            related: https://kitsu.io/api/edge/castings/7909/media
+        character:
+          links:
+            self: https://kitsu.io/api/edge/castings/7909/relationships/character
+            related: https://kitsu.io/api/edge/castings/7909/character
+        person:
+          links:
+            self: https://kitsu.io/api/edge/castings/7909/relationships/person
+            related: https://kitsu.io/api/edge/castings/7909/person
+    meta:
+      count: 21
+    links:
+      first: https://kitsu.io/api/edge/people/1/castings?page%5Blimit%5D=5&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/people/1/castings?page%5Blimit%5D=5&page%5Boffset%5D=5
+      last: https://kitsu.io/api/edge/people/1/castings?page%5Blimit%5D=5&page%5Boffset%5D=16
+  body_text: null
+  body_b64: null

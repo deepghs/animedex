@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-08T12:53:24Z'
+  label: miyazaki-1
+  backend: kitsu
+  path_slug: people_by_id
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/people/1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:23 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"8efade747596d83f35a9e7de0cdd004d"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 1fd8d717-4674-410c-927a-f736d3c2157b
+    x-runtime: '0.028824'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      id: '1'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/1
+      attributes:
+        createdAt: '2013-02-20T18:49:20.441Z'
+        updatedAt: '2021-09-16T22:51:01.875Z'
+        name: Masahiko Minami
+        malId: Moved to mappings relationship.
+        description: ' Wikipedia'
+        image:
+          original: https://media.kitsu.app/people/images/1/original.jpg
+          meta:
+            dimensions: {}
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/1/relationships/castings
+            related: https://kitsu.io/api/edge/people/1/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/1/relationships/staff
+            related: https://kitsu.io/api/edge/people/1/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/1/relationships/voices
+            related: https://kitsu.io/api/edge/people/1/voices
+  body_text: null
+  body_b64: null
