@@ -11,5 +11,6 @@ animedex.backends
 
     anilist/index
     jikan/index
+    nekos/index
     trace/index
 

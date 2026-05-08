@@ -215,6 +215,43 @@ class TestTraceLossless:
         )
 
 
+# ---------- nekos.best ----------
+
+
+class TestNekosLossless:
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "nekos" / "husbando").glob("*.yaml"),
+                *(FIXTURES / "nekos" / "neko").glob("*.yaml"),
+                *(FIXTURES / "nekos" / "waifu").glob("*.yaml"),
+                *(FIXTURES / "nekos" / "baka").glob("*.yaml"),
+                *(FIXTURES / "nekos" / "search").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_nekos_image_lossless(self, path):
+        from animedex.backends.nekos.models import NekosImage
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("results"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["results"]):
+            _assert_lossless(NekosImage, row, f"NekosImage/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "nekos" / "endpoints").glob("*.yaml")))
+    def test_nekos_category_format_lossless(self, path):
+        from animedex.backends.nekos.models import NekosCategoryFormat
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"]["body_json"]
+        # /endpoints emits a flat dict-of-categories; each VALUE is the
+        # per-record shape that NekosCategoryFormat models. Walk every
+        # category so a future drift in any single entry surfaces.
+        for cat_name, cat_format in body.items():
+            _assert_lossless(NekosCategoryFormat, cat_format, f"NekosCategoryFormat/{path.name}[{cat_name}]")
+
+
 # ---------- Smoke: every rich class has BackendRichModel discipline ----------
 
 
@@ -246,3 +283,11 @@ class TestBackendRichDiscipline:
         rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
         not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
         assert not not_rich, f"Trace classes outside BackendRichModel: {not_rich}"
+
+    def test_nekos_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.nekos import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"Nekos classes outside BackendRichModel: {not_rich}"

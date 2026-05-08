@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-08T09:08:06Z'
+  label: gif-amount-1
+  backend: nekos
+  path_slug: baka
+request:
+  method: GET
+  url: https://nekos.best/api/v2/baka?amount=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 09:08:06 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    permissions-policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+    referrer-policy: same-origin
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    x-rate-limit-limit: 1m
+    x-rate-limit-remaining: '199'
+    x-rate-limit-reset: '2026-05-08T09:09:00.0000000Z'
+    cf-cache-status: DYNAMIC
+    Content-Security-Policy-Report-Only: <scrubbed-at-capture>
+    Speculation-Rules: '"/cdn-cgi/speculation"'
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    expect-ct: max-age=86400, enforce
+    x-xss-protection: 1; mode=block
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    results:
+    - anime_name: 'Demon Slayer: Kimetsu no Yaiba'
+      url: https://nekos.best/api/v2/baka/7ee213b9-7167-4e54-8cd8-3fb5829b241b.gif
+      dimensions:
+        width: 450
+        height: 259
+  body_text: null
+  body_b64: null

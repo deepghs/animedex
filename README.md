@@ -25,96 +25,112 @@
 [![GitHub pulls](https://img.shields.io/github/issues-pr/deepghs/animedex)](https://github.com/deepghs/animedex/pulls)
 [![Contributors](https://img.shields.io/github/contributors/deepghs/animedex)](https://github.com/deepghs/animedex/graphs/contributors)
 [![GitHub license](https://img.shields.io/github/license/deepghs/animedex)](https://github.com/deepghs/animedex/blob/main/LICENSE)
-[![Status: WIP](https://img.shields.io/badge/status-WIP%20%28scaffold%20only%29-orange.svg)](./plans)
 
 </div>
 
 ---
 
-> A read-only, multi-source, `gh`-flavored command-line interface for anime and manga metadata, designed to be used both by humans and by LLM agents (Codex, Claude, and friends).
+> A read-only, multi-source, [`gh`](https://cli.github.com/)-flavored command-line interface for anime and manga metadata, designed to be used both by humans and by LLM agents (Codex, Claude, and friends).
+
+<div align="center">
+
+![animedex demo](https://raw.githubusercontent.com/deepghs/animedex/main/docs/source/_static/gifs/hero.gif)
+
+</div>
 
 Documentation: <https://animedex.readthedocs.io/en/latest/>
 
-## Status: work in progress
+## Why animedex?
 
-**This repository currently contains only the project scaffolding.** None of the per-backend commands described in the plans are implemented yet. The CLI installs and runs, but every command is a stub.
+There are a dozen public anime APIs. AniList has the cleanest GraphQL surface but degraded rate limits. Jikan scrapes MyAnimeList and is the deepest catalogue. Trace.moe identifies a scene from a screenshot. nekos.best curates SFW art. Each is great at one thing — and each speaks a different protocol, has its own rate limit, and shapes responses differently.
 
-What you can do today:
+`animedex` is one CLI (and one Python library) over all of them, with three guarantees:
+
+- **Source-attributed**: every datum on screen carries `[src: anilist]` / `[src: jikan]` / etc. There is no "merged answer"; you always know who told you what.
+- **Read-only by project scope**: no `add to list`, no `set score`, no upload. Auth is small, account state stays untouched.
+- **Inform, do not gate**: rate limits, content classifications, and legal greys are documented in `--help` and agent-guidance blocks; the CLI does not refuse, second-guess, or impose content filters on the user's behalf.
+
+The CLI is a thin presentation layer over an installable Python package — anything you can run at the prompt is one `from animedex.backends.X import show` away.
+
+## What works today
+
+| Backend | High-level commands | Raw passthrough | Status |
+|---|---|---|---|
+| **AniList** (graphql.anilist.co) | `animedex anilist` — search / show / character / staff / studio / schedule / trending / user / + 20 long-tail endpoints (28 anonymous, plus 4 auth-required stubs) | `animedex api anilist '<graphql-query>'` | live |
+| **Jikan v4** (api.jikan.moe; MyAnimeList view) | `animedex jikan` — 87 anonymous endpoints across anime / manga / character / person / producer / season / top / random / users / clubs / magazines / genres / watch | `animedex api jikan /anime/52991` | live |
+| **Trace.moe** (api.trace.moe) | `animedex trace` — search by image (`--url` or `--input <bytes>`), `quota` | `animedex api trace /me` | live |
+| **nekos.best v2** (nekos.best/api/v2; SFW art / GIF) | `animedex nekos` — `categories`, `categories-full`, `image <category>`, `search` | `animedex api nekos /husbando` | live |
+| Kitsu, MangaDex, Danbooru, Shikimori, ANN | (high-level commands not yet wired) | `animedex api <backend> <path>` | passthrough only |
+| Ghibli, Waifu.im, AnimeChan, MAL v2 | — | — | not yet implemented |
+
+The `animedex api <backend>` passthrough is wired for nine backends — the four high-level ones above plus Kitsu, MangaDex, Danbooru, Shikimori and ANN. Every passthrough call honours the project's read-only firewall (`PUT/PATCH/DELETE` and unwhitelisted `POST` paths are rejected before hitting the wire) and the per-upstream `User-Agent` requirements.
+
+## Try it in 30 seconds
 
 ```bash
 pip install -e .
-animedex --version
-animedex status
+
+# AniList: GraphQL fetch + jq projection on the result
+animedex anilist show 154587 --jq '.title.romaji'
+# => "Sousou no Frieren"
+
+# Jikan: MyAnimeList full record
+animedex jikan show 52991 --jq '.data.title'
+# => "Sousou no Frieren"
+
+# Trace.moe: identify a scene
+animedex trace search --url 'https://i.imgur.com/zLxHIeo.jpg' --anilist-info --jq '.[0].anilist_title.romaji'
+
+# nekos.best: SFW image grab
+animedex nekos image husbando --jq '.[0].url'
 ```
 
-That is the entire functional surface at the moment. The point of this early commit is to lock in:
+Each command auto-switches between TTY (human-readable, source-marked) and JSON (when piped, when `--json` is set, or when `--jq` is set), respects the per-upstream rate limit (visibly: e.g., AniList's degraded 30 req/min, nekos.best's 200 req/min), and caches successful responses in a local SQLite at `~/.cache/animedex/`. Pass `--no-cache` to bypass.
 
-- the project name (`animedex`, available on both PyPI and GitHub);
-- the staged design (see `plans/`);
-- the layered policy model that separates protocol contracts from content preferences (see `plans/02-design-policy-as-docstring.md`);
-- the build, test, and release scaffolding so contributors can wire up one backend at a time without re-litigating infrastructure choices.
+## Documentation
 
-If you found this repository looking for a working anime CLI, come back in a few weeks. If you are here to read or contribute to the design, keep reading.
+The full documentation lives at <https://animedex.readthedocs.io/en/latest/>. Notable pages:
+
+- **Quickstart** — five progressive examples that cover TTY rendering, `--json`, `--jq`, `--no-cache`, and the Python library.
+- **Tutorials** — systematic per-backend deep-dives (anilist / jikan / trace / nekos), the raw passthrough (`animedex api`), output modes, the `Config` Python entry point, and the `--agent-guide` flag for LLM agents.
+- **API reference** — auto-generated from the source docstrings.
 
 ## Human Agency Principle (the top rule)
 
 > **The human user has full choice. Whatever the consequences of that choice, they are the user's. animedex's job is to inform and to warn, not to gate, refuse, or override.**
 
-This rule supersedes every other design guideline in the repository. Concretely it means:
+This rule supersedes every other design guideline. Concretely:
 
-- No content filters are injected on the user's behalf. If you ask Danbooru for explicit tags, you get explicit results. If you ask Waifu.im for NSFW images, you get NSFW images. The CLI does not decide for you.
-- No `--unsafe`, `--nsfw`, `--allow-...`, `--force` flags. Those exist purely to ask "are you sure?" and they are paternalism. We do not ship them.
+- No content filters injected on the user's behalf. If you ask Danbooru for explicit tags, you get explicit results.
+- No `--unsafe`, `--nsfw`, `--allow-...`, `--force` flags. Those exist purely to ask "are you sure?" and that is paternalism.
 - No double-confirmation prompts. If a command name says it does something, running the command does that thing.
-- We do warn, in `--help` text and in docstrings, about every upstream whose data class or legal posture the user might want to be aware of: legal greys (MangaDex scanlations), content classifications (Danbooru `rating:e`), bandwidth costs, rate-limit ceilings. The warning is informational; it never blocks.
+- We do warn — in `--help` text and per-command agent-guidance blocks — about every upstream whose legal posture, content class, or rate ceiling the user might want to be aware of. The warning is informational; it never blocks.
 
-For LLM agents, the same surface comes with explicit usage guidance in each docstring (see [`plans/02-design-policy-as-docstring.md`](./plans/02-design-policy-as-docstring.md)). Agents read docstrings; their alignment training does the rest.
+LLM agents read the same docstrings; their alignment training does the rest.
 
-The only constraints animedex enforces unilaterally are **technical contracts** (rate limits the upstream actually punishes, mandatory headers, read-only HTTP methods). Those are physics, not preferences.
-
-## What animedex aims to be
-
-A single command, modelled on [`gh`](https://cli.github.com/), that:
-
-1. Aggregates the public anime / manga APIs surveyed in [`plans/01-public-apis-anime-survey.md`](./plans/01-public-apis-anime-survey.md).
-2. Is **read-only by project scope**. animedex does not implement `add to list`, `set score`, `favourite`, or upload commands. The read-only choice keeps auth small and lets us promise the CLI does not disturb your existing account state. (See plan 03.)
-3. Names the source of every piece of data it returns. There is no "magic merged answer"; every field carries `[src: anilist]` / `[src: jikan]` / etc. so you always know who told you what.
-4. Treats safety policy as **documentation, not flags**. See [`plans/02-design-policy-as-docstring.md`](./plans/02-design-policy-as-docstring.md).
-5. Provides a `gh api`-style raw passthrough (`animedex api <backend>`) so anything not covered by a high-level command is still one HTTP call away.
-6. Doubles as a **first-class Python library**, not just a CLI. `import animedex` gives you the same source-attributed dataclasses, the same backends, and the same raw passthrough that the command line exposes. The CLI is a thin presentation layer over the library, so anything you can do at the prompt you can do programmatically. See [`plans/05-python-api.md`](./plans/05-python-api.md).
+The only constraints `animedex` enforces unilaterally are **technical contracts**: the rate limits the upstream actually punishes, the mandatory headers (Shikimori / MangaDex / Danbooru `User-Agent`), the read-only HTTP method set on the passthrough. Those are physics, not preferences.
 
 ## Repository map
 
 ```
-animedex/                Source package (currently scaffold only)
-animedex_cli.py          Top-level CLI shim
-test/                    Unit tests (currently smoke tests)
-plans/                   Staged design documents - read these in order
-  README.md              Index and reading order
-  01-public-apis-anime-survey.md
-  02-design-policy-as-docstring.md
-  03-cli-architecture-gh-flavored.md
-  04-roadmap-and-mvp.md
-  05-python-api.md
-docs/                    Sphinx source -> https://animedex.readthedocs.io/en/latest/
-.github/workflows/       CI: test, release, release-test
-AGENTS.md                Repository policy for human + agent contributors
+animedex/                Installable package (the runtime)
+  api/                     Raw passthrough dispatcher + per-backend modules
+  backends/                High-level Python API per backend (anilist, jikan, nekos, trace)
+  cache/                   SQLite TTL cache
+  config/                  Build metadata + Config entry point
+  diag/                    selftest runner + per-module smokes
+  entry/                   Click command tree (anilist, jikan, nekos, trace + api)
+  models/                  Cross-source common types (Anime, Character, ArtPost, ...)
+  policy/                  Docstring lint + agent-guide extractor
+  render/                  TTY / JSON / raw / jq / field-projection renderers
+  transport/               HTTP client + ratelimit + read-only firewall + UA
+test/                    Unit tests + 700+ fixture YAMLs (test/fixtures/)
+plans/                   Staged design documents (binding for contributors)
+docs/                    Sphinx source -> https://animedex.readthedocs.io
+tools/                   Fixture capture, build helpers
+AGENTS.md                Repository policy (English-only, commit identity, naming discipline)
 CLAUDE.md                Symlink to AGENTS.md
-LICENSE                  Apache-2.0
 ```
-
-## How to navigate as a contributor
-
-1. Read [`plans/README.md`](./plans/README.md) and follow its recommended reading order.
-2. Read [`AGENTS.md`](./AGENTS.md). It states the English-only and commit-identity policies that every change must respect.
-3. Pick a phase from [`plans/04-roadmap-and-mvp.md`](./plans/04-roadmap-and-mvp.md). The MVP block (phases 0-2) is the next thing to ship; everything else builds on top.
-
-## How to navigate as an LLM agent
-
-If you are an LLM agent (e.g. Codex or Claude) working in this repo:
-
-- Read `AGENTS.md` first; it is the binding policy for any change you make.
-- Read the five plan documents in order before proposing implementations. The plans tell you not just *what* to build but *why* certain things are out of scope (e.g. writes, NSFW gating flags, content moderation in code rather than docs).
-- When implementing a CLI command, follow the docstring template in `plans/02-design-policy-as-docstring.md` section 3. The lint check enforces it.
 
 ## Install
 
@@ -122,7 +138,13 @@ If you are an LLM agent (e.g. Codex or Claude) working in this repo:
 pip install -e .
 ```
 
-PyPI publication will follow once the project clears the v0.1.0 milestone described in `plans/04-roadmap-and-mvp.md`.
+PyPI publication will follow once the project clears the v0.1.0 milestone (see the [master tracking issue](https://github.com/deepghs/animedex/issues/1) for the full roadmap).
+
+## How to navigate
+
+**As a contributor:** read [`AGENTS.md`](./AGENTS.md) first (it states the binding policies — English-only repository content, commit-identity rules, naming discipline, test discipline, the lossless rich-model contract); then [`plans/README.md`](./plans/README.md) for the design rationale.
+
+**As an LLM agent shelling out:** the per-command Agent Guidance blocks are extracted by `animedex --agent-guide`; that single invocation is enough to populate your tool catalogue. The blocks describe each command's content classification (NSFW posture, age-of-consent considerations), rate ceilings, and the right reflexes when the user has not explicitly asked for mature content. Read [`plans/02-design-policy-as-docstring.md`](./plans/02-design-policy-as-docstring.md) for the full rationale.
 
 ## License
 

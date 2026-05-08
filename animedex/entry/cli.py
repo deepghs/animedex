@@ -1,10 +1,13 @@
 """
 Top-level command-line interface for animedex.
 
-This is a scaffolding stub. None of the per-backend commands (``anilist``,
-``jikan``, ``trace``, etc.) or the ``api`` passthrough group are wired up
-yet. Refer to ``plans/03-cli-architecture-gh-flavored.md`` for the planned
-command tree.
+This module wires the per-backend command groups (``anilist``,
+``jikan``, ``nekos``, ``trace``) and the ``api`` raw-passthrough
+group onto the top-level ``animedex`` Click group, plus the
+substrate utilities ``status`` and ``selftest``. Each per-backend
+group lives in its own ``animedex/entry/<backend>.py`` module so
+contributors can edit one backend's bindings without touching the
+others.
 """
 
 import sys
@@ -56,9 +59,8 @@ def _print_agent_guide(ctx: click.Context, param: click.Option, value: bool) -> 
     Walks the registered command tree and prints every command's
     :func:`animedex.policy.lint.extract_agent_guidance` block, so an
     LLM agent shelling out without an MCP layer can read the
-    catalogue with a single invocation. Exits cleanly when no
-    commands have guidance (e.g. during the initial scaffolding before any backend
-    has shipped).
+    catalogue with a single invocation. Defensive: exits cleanly
+    even if the tree happens to carry no guidance blocks.
 
     :param ctx: Click command context for the active invocation.
     :type ctx: click.Context
@@ -75,7 +77,7 @@ def _print_agent_guide(ctx: click.Context, param: click.Option, value: bool) -> 
 
     blocks = collect_agent_guidance(cli)
     if not blocks:
-        click.echo("No Agent Guidance blocks found (no backends are wired up yet).")
+        click.echo("No Agent Guidance blocks found.")
     else:
         for entry in blocks:
             click.echo(f"=== {entry['command']} ===")
@@ -108,11 +110,13 @@ def cli() -> None:
 from animedex.entry.api import api_group as _api_group  # noqa: E402
 from animedex.entry.anilist import anilist_group as _anilist_group  # noqa: E402
 from animedex.entry.jikan import jikan_group as _jikan_group  # noqa: E402
+from animedex.entry.nekos import nekos_group as _nekos_group  # noqa: E402
 from animedex.entry.trace import trace_group as _trace_group  # noqa: E402
 
 cli.add_command(_api_group)
 cli.add_command(_anilist_group)
 cli.add_command(_jikan_group)
+cli.add_command(_nekos_group)
 cli.add_command(_trace_group)
 
 
@@ -120,11 +124,11 @@ cli.add_command(_trace_group)
 def status_command() -> None:
     """Print a one-shot status banner for the CLI.
 
-    During the early scaffolding this is a placeholder. Once backends ship it
-    will report per-backend health, anonymous quota, and auth state
-    for AniList, Jikan, Kitsu, MangaDex, Trace.moe, Danbooru,
-    Shikimori, ANN, AniDB, Ghibli, NekosBest, Waifu.im, and
-    AnimeChan. Local-only; does not contact any upstream.
+    Reports the version banner and the high-level command groups
+    currently wired into the CLI. Local-only; does not contact any
+    upstream. A future revision will fold in per-backend liveness
+    and quota state — until those land, this command returns a
+    static summary that is cheap and side-effect free.
 
     \b
     Examples:
@@ -139,12 +143,13 @@ def status_command() -> None:
     --- LLM Agent Guidance ---
     Use this command at session start to confirm the CLI is
     functional and to peek at the environment-derived banner.
-    During the initial scaffolding it returns a placeholder; once backends ship it
-    will list per-backend liveness. Cheap to call; do not rate-limit.
+    Cheap to call (no network, no I/O beyond stdout); do not
+    rate-limit.
     --- End ---
     """
-    click.echo(f"{__TITLE__} v{__VERSION__} - work in progress.")
-    click.echo("No backends are wired up yet. See plans/ in the repository.")
+    click.echo(f"{__TITLE__} v{__VERSION__}")
+    click.echo("Wired groups: anilist, jikan, nekos, trace, api (raw passthrough).")
+    click.echo("Run 'animedex --help' for the full command tree.")
 
 
 @cli.command(name="selftest")

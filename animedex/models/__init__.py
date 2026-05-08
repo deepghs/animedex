@@ -12,8 +12,7 @@ captures the fields that at least three of the upstreams we target
 populate (or that are uniquely valuable from one source, like
 :class:`~animedex.models.anime.AnimeStreamingLink` from Kitsu).
 
-Per the design discussion in `#1`'s the initial scaffolding closeout, each backend
-will additionally ship a richer per-backend dataclass under
+Each backend additionally ships a richer per-backend dataclass under
 ``animedex.backends.<name>.models`` (e.g. ``AnilistAnime``) that
 exposes the long tail of upstream-specific fields, plus a
 ``to_common()`` mapping into the projection types here. Single-

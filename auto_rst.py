@@ -452,8 +452,18 @@ def convert_code_to_rst(code_file: str, rst_file: str, lib_dir: str = '.'):
         if module_name.split('.')[-1] == '__init__':
             module_name = '.'.join(module_name.split('.')[:-1])
 
-        print(f'{rst_to_text(module_name)}', file=f)
-        print(f'========================================================', file=f)
+        # The root package's auto-generated index doubles as the
+        # docs site's "API Reference" landing — give it a friendlier
+        # title than the bare module name. Sub-packages keep their
+        # dotted-path titles so deep links remain self-describing.
+        is_root_index = (
+            os.path.basename(code_file) == '__init__.py' and '.' not in module_name
+        )
+        title = 'API Reference' if is_root_index else rst_to_text(module_name)
+        underline = '=' * max(len(title), 56)
+
+        print(f'{title}', file=f)
+        print(f'{underline}', file=f)
         print(f'', file=f)
 
         print(f'.. currentmodule:: {module_name}', file=f)

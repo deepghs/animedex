@@ -109,6 +109,15 @@ def _ann_caller(fixture):
     return lambda **kw: ann.call(path=path, **kw)
 
 
+def _nekos_caller(fixture):
+    from animedex.api import nekos
+
+    url = fixture["request"]["url"]
+    base = "https://nekos.best/api/v2"
+    path = url[len(base) :] if url.startswith(base) else url
+    return lambda **kw: nekos.call(path=path, **kw)
+
+
 # (backend, path_slug, caller_factory)
 SUITES = [
     ("anilist", "graphql", _anilist_caller),
@@ -144,6 +153,12 @@ SUITES = [
     ("ann", "by_id", _ann_caller),
     ("ann", "substring_search", _ann_caller),
     ("ann", "reports", _ann_caller),
+    ("nekos", "endpoints", _nekos_caller),
+    ("nekos", "husbando", _nekos_caller),
+    ("nekos", "neko", _nekos_caller),
+    ("nekos", "waifu", _nekos_caller),
+    ("nekos", "baka", _nekos_caller),
+    ("nekos", "search", _nekos_caller),
 ]
 
 
@@ -213,7 +228,17 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
             return _Stub()
 
         # Patch every per-backend module's bound ``_dispatch_call``.
-        for mod_name in ("anilist", "ann", "danbooru", "jikan", "kitsu", "mangadex", "shikimori", "trace"):
+        for mod_name in (
+            "anilist",
+            "ann",
+            "danbooru",
+            "jikan",
+            "kitsu",
+            "mangadex",
+            "nekos",
+            "shikimori",
+            "trace",
+        ):
             monkeypatch.setattr(f"animedex.api.{mod_name}._dispatch_call", _fake_dispatch_call)
         return captured
 
@@ -263,6 +288,12 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
         from animedex.api import ann
 
         ann.call(path="/api.xml?id=1", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_nekos_threads_timeout_seconds(self, captured):
+        from animedex.api import nekos
+
+        nekos.call(path="/husbando", timeout_seconds=5.0)
         assert captured[-1].get("timeout_seconds") == 5.0
 
     def test_default_omits_timeout_seconds_to_use_dispatcher_default(self, captured):

@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-08T09:08:04Z'
+  label: image-amount-1
+  backend: nekos
+  path_slug: waifu
+request:
+  method: GET
+  url: https://nekos.best/api/v2/waifu?amount=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 09:08:04 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    permissions-policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+    referrer-policy: same-origin
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    x-rate-limit-limit: 1m
+    x-rate-limit-remaining: '199'
+    x-rate-limit-reset: '2026-05-08T09:09:00.0000000Z'
+    cf-cache-status: DYNAMIC
+    x-xss-protection: 1; mode=block
+    Speculation-Rules: '"/cdn-cgi/speculation"'
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    expect-ct: max-age=86400, enforce
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    results:
+    - artist_name: non_non427
+      artist_href: https://twitter.com/non_non427
+      source_url: https://twitter.com/non_non427/status/1867842300849926203
+      url: https://nekos.best/api/v2/waifu/31331b52-296a-4f40-a1c2-88eadfbd0914.png
+      dimensions:
+        width: 1094
+        height: 1825
+  body_text: null
+  body_b64: null

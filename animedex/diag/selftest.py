@@ -118,6 +118,7 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.api.jikan",
     "animedex.api.kitsu",
     "animedex.api.mangadex",
+    "animedex.api.nekos",
     "animedex.api.shikimori",
     "animedex.api.trace",
     "animedex.render.raw",
@@ -127,6 +128,8 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.backends.anilist.models",
     "animedex.backends.jikan",
     "animedex.backends.jikan.models",
+    "animedex.backends.nekos",
+    "animedex.backends.nekos.models",
     "animedex.backends.trace",
     "animedex.backends.trace.models",
 )

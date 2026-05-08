@@ -23,12 +23,11 @@ api_ann = make_get_only_subcommand(
 
     \b
     Common paths:
-      /api.xml?anime=4                    fetch by id
-      /api.xml?anime=~Frieren              substring search by title
-      /api.xml?anime=4&anime=30            multi-id batch fetch
-      /reports.xml?id=155&type=anime&nlist=10
-                                           recently-modified report
-      /nodelay.api.xml?anime=4             5/5sec variant; 503 on overshoot
+      /api.xml?anime=4                                fetch by id
+      /api.xml?anime=~Frieren                         substring search by title
+      /api.xml?anime=4&anime=30                       multi-id batch fetch
+      /reports.xml?id=155&type=anime&nlist=10         recently-modified report
+      /nodelay.api.xml?anime=4                        5/5sec variant; 503 on overshoot
 
     \b
     Examples:

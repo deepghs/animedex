@@ -17,6 +17,7 @@ animedex.api
     jikan
     kitsu
     mangadex
+    nekos
     shikimori
     trace
 

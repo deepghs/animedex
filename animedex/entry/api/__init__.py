@@ -213,10 +213,10 @@ def _resolve_cache(no_cache: bool):
 
 @click.group(name="api")
 def api_group() -> None:
-    """Raw HTTP / GraphQL passthrough to one of the 8 upstream backends.
+    """Raw HTTP / GraphQL passthrough to one of the 9 upstream backends.
 
     Each subcommand wraps one backend's raw API surface. The
-    dispatcher injects the project `User-Agent`, runs the read-only
+    dispatcher injects the project ``User-Agent``, runs the read-only
     firewall, applies a per-backend rate-limit token bucket, and
     consults the local SQLite cache before issuing the request.
 
@@ -225,10 +225,9 @@ def api_group() -> None:
       (default)         response body only (gh-api equivalent)
       -i, --include     status line + response headers + body
       -I, --head        status line + response headers (no body)
-      --debug           full RawResponse envelope as indented JSON;
-                        includes the request snapshot (credentials
-                        fingerprint-redacted), redirect chain, per-
-                        call timing breakdown, and cache provenance
+      --debug           full RawResponse envelope as indented JSON
+                        (request snapshot, redirect chain, timing,
+                        cache provenance; credentials redacted)
 
     \b
     Other behaviour:
@@ -239,8 +238,8 @@ def api_group() -> None:
       --rate {normal,slow}    voluntary slowdown (slow halves refill)
       -H, --header K:V        add request header (repeatable)
 
-    Per , a caller-supplied `User-Agent` via `--header`
-    overrides the project default verbatim.
+    A caller-supplied ``User-Agent`` via ``--header`` overrides the
+    project default verbatim.
 
     \b
     Examples:
@@ -260,9 +259,10 @@ def api_group() -> None:
       danbooru   https://danbooru.donmai.us/wiki_pages/help:api
       shikimori  https://shikimori.io/api/doc
       ann        https://www.animenewsnetwork.com/encyclopedia/api.php
+      nekos      https://docs.nekos.best/
     \f
 
-    Backend: animedex (local; routes to one of 8 upstream backends).
+    Backend: animedex (local; routes to one of 9 upstream backends).
 
     Rate limit: not applicable at this level (each backend's bucket
     applies inside the call).
@@ -279,7 +279,7 @@ def api_group() -> None:
     headers) - this is the "data + debug" mode.
 
     Caller-supplied User-Agent via --header overrides the project
-    default .
+    default verbatim.
     --- End ---
     """
 
@@ -293,6 +293,7 @@ from animedex.entry.api import danbooru  # noqa: E402, F401
 from animedex.entry.api import jikan  # noqa: E402, F401
 from animedex.entry.api import kitsu  # noqa: E402, F401
 from animedex.entry.api import mangadex  # noqa: E402, F401
+from animedex.entry.api import nekos  # noqa: E402, F401
 from animedex.entry.api import shikimori  # noqa: E402, F401
 from animedex.entry.api import trace  # noqa: E402, F401
 

@@ -1,4 +1,4 @@
-animedex
+API Reference
 ========================================================
 
 .. currentmodule:: animedex
@@ -9,7 +9,9 @@ animedex
 .. toctree::
     :maxdepth: 3
 
+    api/index
     auth/index
+    backends/index
     cache/index
     config/index
     diag/index

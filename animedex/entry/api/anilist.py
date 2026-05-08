@@ -54,8 +54,7 @@ def api_anilist(
     Examples:
       animedex api anilist '{ Media(id:154587){ title{romaji english} } }'
       animedex api anilist '{ Page(perPage:5){ media(search:"Frieren"){ id title{romaji} } } }'
-      animedex api anilist 'query($s:String){ Page(perPage:2){ media(search:$s){ id }}}' \\
-          --variables '{"s":"Naruto"}'
+      animedex api anilist 'query($s:String){ Page(perPage:2){ media(search:$s){ id }}}' --variables '{"s":"Naruto"}'
       animedex api anilist '{ Media(id:154587){ id } }' --debug | jq '.timing,.cache'
     \f
 

@@ -1,89 +1,148 @@
 Quickstart
 ==========
 
-.. warning::
-   This page is a forward-looking sketch. The CLI is in scaffolding
-   state: most of the commands shown below are not yet wired up. They
-   represent the final intended interaction model.
+Five progressive examples that take you from "I just installed
+animedex" to "I have automation that uses it as a Python library."
+Each example is runnable as-is; each shows the actual output you
+should see.
 
-The intended interaction model
-------------------------------
+.. image:: _static/gifs/quickstart.gif
+   :alt: animedex quickstart walkthrough — help, anilist show, nekos image
+   :align: center
 
-animedex is structured like ``gh``: each upstream service is its own
-command group, plus a small set of cross-source aggregate commands
-and a raw passthrough.
-
-.. code-block:: bash
-
-   # search anime via AniList GraphQL
-   animedex anilist search "Frieren"
-
-   # fetch the anime entry from MyAnimeList via Jikan
-   animedex jikan show 52991
-
-   # legal streaming-link aggregation via Kitsu
-   animedex kitsu streaming 47390
-
-   # screenshot reverse search via trace.moe
-   animedex trace screenshot.jpg
-
-   # tag-DSL search on Danbooru (the user is in charge of the query)
-   animedex danbooru search "touhou marisa rating:g order:score"
-
-Aggregate commands (cross-source, source-attributed)
-----------------------------------------------------
+Install
+-------
 
 .. code-block:: bash
 
-   animedex search "Frieren"
-   animedex show "Frieren"
-   animedex crossref anilist:154587
-   animedex season 2026 spring
-   animedex schedule --day mon
+   pip install -e .
+   animedex --version
 
-The ``gh api``-style raw passthrough
-------------------------------------
+The version banner prints two lines: the package title plus version,
+then a build-info summary (commit short hash + ``built …`` timestamp
+for a frozen binary, or the literal sentinel ``build info not
+generated`` for a fresh checkout).
 
-When a high-level command does not cover what you need, fall back to:
+Step 1 — A first lookup
+-----------------------
 
-.. code-block:: bash
-
-   animedex api anilist 'query { Media(id: 154587) { title { romaji } } }'
-   animedex api jikan /anime/52991
-   animedex api mangadex '/manga/{id}/feed?translatedLanguage[]=en' --paginate
-   animedex api danbooru '/posts.json?tags=touhou+rating:g+order:score'
-
-The passthrough still applies authentication, rate limiting, and
-caching; it does not parse or filter the response. Mutating HTTP
-methods are rejected by the project-scope read-only constraint.
-
-Output formats
---------------
+Pull AniList's record for *Sousou no Frieren* (AniList ID ``154587``).
+The default output mode is human-readable when stdout is a terminal,
+and JSON when piped:
 
 .. code-block:: bash
 
-   animedex anilist show 154587                   # human-friendly TTY render
-   animedex anilist show 154587 | jq .             # piped: full JSON
-   animedex anilist show 154587 --json title,score # JSON, only selected fields
+   animedex anilist show 154587
+
+You should see a multi-line block beginning with the romaji title, the
+season year, and the score, each line carrying ``[src: anilist]``. The
+``[src: …]`` marker is the project's promise that nothing on screen is
+"merged from somewhere we won't tell you about" — every datum names
+its origin.
+
+Step 2 — Project a single field with ``--jq``
+---------------------------------------------
+
+When you only want one field, the bundled jq wheel filters the JSON
+output. ``--jq`` forces JSON mode and applies the expression:
+
+.. code-block:: bash
+
    animedex anilist show 154587 --jq '.title.romaji'
-   animedex anilist show 154587 --web              # open the AniList page
+   # => "Sousou no Frieren"
 
-Python library use
-------------------
+   animedex anilist show 154587 --jq '{romaji: .title.romaji, year: .seasonYear, score: .averageScore}'
+   # => {
+   #      "romaji": "Sousou no Frieren",
+   #      "year":   2023,
+   #      "score":  90
+   #    }
 
-The same surface is reachable from Python:
+The wheel ships with the package — no host ``jq`` binary required, no
+PATH lookup, no platform drift. A bad expression surfaces as a clean
+``ApiError`` with a typed reason, not a Python traceback.
+
+Step 3 — Cross the same anime against Jikan
+-------------------------------------------
+
+The same show has a different MyAnimeList ID (``52991``). Fetching it
+via Jikan gives you the deeper catalogue (broadcast schedule,
+streaming links, theme songs):
+
+.. code-block:: bash
+
+   animedex jikan show 52991 --jq '.data.title'
+   # => "Sousou no Frieren"
+
+   animedex jikan show 52991 --jq '.data | {title, score, status, broadcast}'
+
+You now have two **independent** sources for the same show, each
+source-attributed. There is no merging step that picks one and hides
+the other; if AniList's score and Jikan's score disagree, both are
+visible. The :doc:`tutorials/output_modes` page covers the JSON
+projection rules in detail.
+
+Step 4 — Discover the SFW art collection
+----------------------------------------
+
+nekos.best v2 is a curated SFW image / GIF API. Start with the
+category list, then pull a few images:
+
+.. code-block:: bash
+
+   animedex nekos categories | head
+   # baka
+   # bite
+   # blush
+   # bored
+   # cry
+   # cuddle
+   # ...
+
+   animedex nekos image husbando --jq '.[0].url'
+   # => "https://nekos.best/api/v2/husbando/<uuid>.png"
+
+   animedex nekos search "Frieren" --amount 5 --jq '.[].source_url'
+
+Caveat: ``nekos search`` is fuzzy. The upstream always returns up to
+``amount`` results, falling through to a near-random ranking when
+nothing closely matches — so callers cannot rely on an empty result
+list as a "no match" signal.
+
+Step 5 — Use animedex as a Python library
+-----------------------------------------
+
+The CLI is a thin presentation layer over an installable package.
+Anything you can do at the prompt is one ``from animedex.backends.X
+import …`` away:
 
 .. code-block:: python
 
-   from animedex.backends import anilist, jikan
-   from animedex import search
+   from animedex.backends import anilist, jikan, nekos
 
    a = anilist.show(154587)
-   m = jikan.show(int(a.ids["mal"]))
-   results = search("Frieren")
-   for r in results:
-       print(r.title.romaji, r.source.backend)
+   # Rich models preserve upstream field names verbatim per the
+   # lossless contract — AniList GraphQL fields stay camelCase.
+   print(a.title.romaji, a.seasonYear, a.averageScore, a.source_tag.backend)
+   # Sousou no Frieren 2023 90 anilist
 
-   # raw passthrough, programmatic equivalent of ``animedex api ...``
-   from animedex.api import call
-   data = call("anilist", "query { Media(id: 154587) { title { romaji } } }")
+   m = jikan.show(52991)
+   print(m.title, m.score, m.source_tag.backend)
+   # Sousou no Frieren 9.31 jikan
+
+   for img in nekos.image("husbando", amount=3):
+       print(img.url, img.artist_name, img.source_tag.backend)
+
+Each function accepts an optional ``config: Config`` keyword and
+forwards transport-level keyword arguments (``no_cache``, ``rate``,
+``timeout_seconds``, …) — see :doc:`tutorials/python_library` for
+the complete contract.
+
+Where to go next
+----------------
+
+* :doc:`tutorials/index` — systematic tutorials per backend, per
+  output mode, the raw passthrough, the Python library, and the
+  ``--agent-guide`` flag.
+* :doc:`api_doc/index` — auto-generated reference for every public
+  module, class, and function.

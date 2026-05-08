@@ -204,7 +204,7 @@ def default_registry() -> RateLimitRegistry:
     r.register("shikimori", capacity=5, refill_per_second=5.0)
     r.register("ann", capacity=5, refill_per_second=1.0)
     r.register("trace", capacity=1, refill_per_second=0.5)
-    r.register("nekos", capacity=10, refill_per_second=10.0)
+    r.register("nekos", capacity=10, refill_per_second=3.0)
     r.register("waifu", capacity=10, refill_per_second=10.0)
     r.register("animechan", capacity=5, refill_per_second=0.0014)
     return r
