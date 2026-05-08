@@ -227,8 +227,17 @@ def _sanitise_click_docstring(app, what, name, obj, options, lines):
             # recognises the literal-block intro.
             lines.insert(j, "")
             j += 1
-            # Indent the next non-blank run by 4 spaces.
-            while j < len(lines) and lines[j].strip():
+            # Indent the next non-blank run by 4 spaces. Stop at the
+            # next `\\b` line too — back-to-back `\\b` blocks (no
+            # blank between them) should each be processed as their
+            # own literal block by the outer pass, not be folded into
+            # the first one (which would emit a literal backspace
+            # character inside the rendered code block).
+            while (
+                j < len(lines)
+                and lines[j].strip()
+                and _CLICK_BACKSPACE not in lines[j]
+            ):
                 lines[j] = "    " + lines[j]
                 j += 1
             # Insert a blank line before `::` to terminate any

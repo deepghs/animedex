@@ -262,7 +262,7 @@ def api_group() -> None:
       nekos      https://docs.nekos.best/
     \f
 
-    Backend: animedex (local; routes to one of 8 upstream backends).
+    Backend: animedex (local; routes to one of 9 upstream backends).
 
     Rate limit: not applicable at this level (each backend's bucket
     applies inside the call).

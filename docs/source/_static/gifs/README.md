@@ -10,6 +10,10 @@ source tapes so future contributors can regenerate them.
 |---|---|---|
 | `hero.gif` | top of `README.md`; first thing a visitor sees | `hero.tape` |
 | `quickstart.gif` | `docs/source/quickstart.rst` walkthrough | `quickstart.tape` |
+| `anilist.gif` | `docs/source/tutorials/backends/anilist.rst` header | `anilist.tape` |
+| `jikan.gif` | `docs/source/tutorials/backends/jikan.rst` header | `jikan.tape` |
+| `trace.gif` | `docs/source/tutorials/backends/trace.rst` header | `trace.tape` |
+| `nekos.gif` | `docs/source/tutorials/backends/nekos.rst` header | `nekos.tape` |
 
 ## Regenerating
 
@@ -23,6 +27,10 @@ which animedex                # confirm it resolves to the dev install
 cd docs/source/_static/gifs
 vhs hero.tape                 # produces hero.gif
 vhs quickstart.tape           # produces quickstart.gif
+vhs anilist.tape              # produces anilist.gif
+vhs jikan.tape                # produces jikan.gif
+vhs trace.tape                # produces trace.gif
+vhs nekos.tape                # produces nekos.gif
 ```
 
 vhs is available as a single-file binary at

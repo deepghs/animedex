@@ -63,7 +63,7 @@ The CLI is a thin presentation layer over an installable Python package — anyt
 | Kitsu, MangaDex, Danbooru, Shikimori, ANN | (high-level commands not yet wired) | `animedex api <backend> <path>` | passthrough only |
 | Ghibli, Waifu.im, AnimeChan, MAL v2 | — | — | not yet implemented |
 
-The four `animedex api <backend>` shapes for the eight wired backends honour the project's read-only firewall (`PUT/PATCH/DELETE` and unwhitelisted `POST` paths are rejected before hitting the wire) and the per-upstream `User-Agent` requirements.
+The `animedex api <backend>` passthrough is wired for nine backends — the four high-level ones above plus Kitsu, MangaDex, Danbooru, Shikimori and ANN. Every passthrough call honours the project's read-only firewall (`PUT/PATCH/DELETE` and unwhitelisted `POST` paths are rejected before hitting the wire) and the per-upstream `User-Agent` requirements.
 
 ## Try it in 30 seconds
 
@@ -79,7 +79,7 @@ animedex jikan show 52991 --jq '.data.title'
 # => "Sousou no Frieren"
 
 # Trace.moe: identify a scene
-animedex trace --url 'https://i.imgur.com/zLxHIeo.jpg' --anilist-info --jq '.[0].anilist.title.romaji'
+animedex trace search --url 'https://i.imgur.com/zLxHIeo.jpg' --anilist-info --jq '.[0].anilist_title.romaji'
 
 # nekos.best: SFW image grab
 animedex nekos image husbando --jq '.[0].url'
@@ -138,7 +138,7 @@ CLAUDE.md                Symlink to AGENTS.md
 pip install -e .
 ```
 
-PyPI publication will follow once the project clears the v0.1.0 milestone (see [issue #1](https://github.com/deepghs/animedex/issues/1) for the master plan).
+PyPI publication will follow once the project clears the v0.1.0 milestone (see the [master tracking issue](https://github.com/deepghs/animedex/issues/1) for the full roadmap).
 
 ## How to navigate
 

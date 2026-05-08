@@ -28,9 +28,10 @@ Basic usage
 
    from animedex.backends import anilist, jikan, nekos, trace
 
-   # AniList
+   # AniList — rich models preserve upstream GraphQL field names
+   # verbatim (lossless contract), so attribute access is camelCase.
    media = anilist.show(154587)
-   print(media.title.romaji, media.season_year, media.average_score)
+   print(media.title.romaji, media.seasonYear, media.averageScore)
    # Sousou no Frieren 2023 90
 
    # Jikan
@@ -42,11 +43,13 @@ Basic usage
    for img in nekos.image("husbando", amount=3):
        print(img.url, img.artist_name)
 
-   # Trace.moe (image-bytes input)
+   # Trace.moe — search() takes raw_bytes (or image_url); returns
+   # a list of common-shape TraceHit (flat fields, not the nested
+   # rich shape).
    with open("scene.jpg", "rb") as fh:
-       hits = trace.search(image_bytes=fh.read(), anilist_info=True)
+       hits = trace.search(raw_bytes=fh.read(), anilist_info=True)
    for hit in hits:
-       print(hit.episode, hit.from_, hit.anilist.id)
+       print(hit.episode, hit.start_at_seconds, hit.anilist_id)
 
 Every public function accepts:
 

@@ -47,9 +47,10 @@ def nekos_group() -> None:
     Read-only image / GIF lookup. nekos.best v2 is SFW-only by
     design, so the rich-model rating projection is always 'g'. Use
     ``categories`` first to discover the valid category set; the
-    server returns 404 on unknown categories. ``search`` is best-
-    effort metadata matching across artist / source / anime_name —
-    empty result lists are normal when nothing matches the query.
+    server returns 404 on unknown categories. ``search`` is fuzzy:
+    it always returns up to ``amount`` results, falling through to a
+    near-random ranking when nothing closely matches — callers
+    cannot rely on an empty-results signal.
     --- End ---
     """
 

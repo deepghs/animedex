@@ -17,7 +17,7 @@ Sleep 400ms
 Enter
 Sleep 2000ms
 
-Type "animedex trace search --url 'https://i.imgur.com/zLxHIeo.jpg' --anilist-info --jq '.[0] | {anime: .anilist.title.romaji, episode, similarity}'"
+Type "animedex trace search --url 'https://i.imgur.com/zLxHIeo.jpg' --anilist-info --jq '.[0] | {anime: .anilist_title.romaji, episode, similarity}'"
 Sleep 500ms
 Enter
 Sleep 3000ms

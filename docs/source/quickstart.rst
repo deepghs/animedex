@@ -121,7 +121,9 @@ import …`` away:
    from animedex.backends import anilist, jikan, nekos
 
    a = anilist.show(154587)
-   print(a.title.romaji, a.season_year, a.average_score, a.source.backend)
+   # Rich models preserve upstream field names verbatim per the
+   # lossless contract — AniList GraphQL fields stay camelCase.
+   print(a.title.romaji, a.seasonYear, a.averageScore, a.source_tag.backend)
    # Sousou no Frieren 2023 90 anilist
 
    m = jikan.show(52991)

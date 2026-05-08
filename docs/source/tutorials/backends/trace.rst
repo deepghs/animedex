@@ -38,7 +38,7 @@ Two input shapes:
 .. code-block:: bash
 
    animedex trace search --url 'https://i.imgur.com/zLxHIeo.jpg' --anilist-info \
-     --jq '.[0] | {anime: .anilist.title.romaji, episode, time: .from}'
+     --jq '.[0] | {anime: .anilist_title.romaji, episode, time: .start_at_seconds}'
    # => {
    #      "anime":   "Moonlight Mile",
    #      "episode": 4,
@@ -51,7 +51,7 @@ stdin):
 .. code-block:: bash
 
    animedex trace search --input ./screenshot.jpg --anilist-info \
-     --jq '.[0].anilist.title'
+     --jq '.[0].anilist_title.romaji'
 
    cat screenshot.jpg | animedex trace search --input - --anilist-info
 
@@ -62,26 +62,41 @@ extra round-trip.
 The result is a list of hits sorted by similarity (highest first).
 Each hit carries:
 
+The high-level CLI emits the **common-shape**
+:class:`~animedex.models.trace.TraceHit` (flat fields, easier to
+diff across backends). The rich nested
+:class:`~animedex.backends.trace.models.RawTraceHit` is available
+to Python callers via :mod:`animedex.api.trace` for upstream-faithful
+key names (``from`` / ``to`` / ``video`` / ``image`` / nested
+``anilist``).
+
 .. list-table::
    :header-rows: 1
-   :widths: 25 75
+   :widths: 30 70
 
-   * - Field
+   * - Field (common shape)
      - Meaning
-   * - ``anilist``
-     - Numeric AniList ID; with ``--anilist-info`` becomes a full
-       :class:`~animedex.models.anime.AnimeTitle`-shaped object.
-   * - ``filename``
-     - Source filename hint (uploader-supplied, often shortened).
+   * - ``anilist_id``
+     - Numeric AniList ID for the matched Media.
+   * - ``anilist_title``
+     - With ``--anilist-info``: full
+       :class:`~animedex.models.anime.AnimeTitle` (``romaji`` /
+       ``english`` / ``native``); ``null`` otherwise.
    * - ``episode``
      - Episode number (integer; 0 for movies / OVAs).
-   * - ``from`` / ``to``
+   * - ``start_at_seconds`` / ``end_at_seconds``
      - Match window in seconds within the episode.
+   * - ``frame_at_seconds``
+     - Frame inside the window the upstream considers most diagnostic.
+   * - ``episode_filename``
+     - Source filename hint (uploader-supplied, often shortened).
+   * - ``episode_duration_seconds``
+     - Full episode runtime in seconds.
    * - ``similarity``
      - Match confidence, ``0..1``. ``>= 0.85`` is a strong match.
-   * - ``video``
+   * - ``preview_video_url``
      - Preview MP4 URL (5-second clip around the match).
-   * - ``image``
+   * - ``preview_image_url``
      - Preview thumbnail URL.
 
 Quota check — :func:`~animedex.backends.trace.quota`
