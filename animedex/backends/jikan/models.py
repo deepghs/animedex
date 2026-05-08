@@ -17,26 +17,28 @@ import re
 from datetime import date, datetime
 from typing import List, Optional
 
+from pydantic import Field
+
 from animedex.models.anime import Anime, AnimeRating, AnimeStreamingLink, AnimeTitle
 from animedex.models.character import Character
-from animedex.models.common import AnimedexModel, SourceTag
+from animedex.models.common import BackendRichModel, SourceTag
 
 
 # ---------- shared mini-types ----------
 
 
-class JikanImageJpg(AnimedexModel):
+class JikanImageJpg(BackendRichModel):
     image_url: Optional[str] = None
     small_image_url: Optional[str] = None
     large_image_url: Optional[str] = None
 
 
-class JikanImages(AnimedexModel):
+class JikanImages(BackendRichModel):
     jpg: Optional[JikanImageJpg] = None
     webp: Optional[JikanImageJpg] = None
 
 
-class JikanTrailerImages(AnimedexModel):
+class JikanTrailerImages(BackendRichModel):
     image_url: Optional[str] = None
     small_image_url: Optional[str] = None
     medium_image_url: Optional[str] = None
@@ -44,48 +46,54 @@ class JikanTrailerImages(AnimedexModel):
     maximum_image_url: Optional[str] = None
 
 
-class JikanTrailer(AnimedexModel):
+class JikanTrailer(BackendRichModel):
     youtube_id: Optional[str] = None
     url: Optional[str] = None
     embed_url: Optional[str] = None
     images: Optional[JikanTrailerImages] = None
 
 
-class JikanTitleEntry(AnimedexModel):
+class JikanTitleEntry(BackendRichModel):
     type: str
     title: str
 
 
-class JikanAiredProp(AnimedexModel):
+class JikanAiredProp(BackendRichModel):
     day: Optional[int] = None
     month: Optional[int] = None
     year: Optional[int] = None
 
 
-class JikanAiredFromTo(AnimedexModel):
-    from_: Optional[JikanAiredProp] = None
+class JikanAiredFromTo(BackendRichModel):
+    """``aired.prop`` / ``published.prop`` sub-block.
+
+    ``from`` is a Python keyword, so it's stored as ``from_`` with
+    ``alias="from"``. ``populate_by_name=True`` (inherited from
+    :class:`BackendRichModel`) lets pydantic accept either name on
+    input; ``model_dump(by_alias=True)`` re-emits ``from``.
+    """
+
+    from_: Optional[JikanAiredProp] = Field(default=None, alias="from")
     to: Optional[JikanAiredProp] = None
 
-    model_config = {"populate_by_name": True, "extra": "ignore", "frozen": True}
 
+class JikanAired(BackendRichModel):
+    """``aired`` / ``published`` block on Jikan anime / manga."""
 
-class JikanAired(AnimedexModel):
-    from_: Optional[str] = None  # ISO-8601
+    from_: Optional[str] = Field(default=None, alias="from")  # ISO-8601
     to: Optional[str] = None
     prop: Optional[JikanAiredFromTo] = None
     string: Optional[str] = None
 
-    model_config = {"populate_by_name": True, "extra": "ignore", "frozen": True}
 
-
-class JikanBroadcast(AnimedexModel):
+class JikanBroadcast(BackendRichModel):
     day: Optional[str] = None
     time: Optional[str] = None
     timezone: Optional[str] = None
     string: Optional[str] = None
 
 
-class JikanEntity(AnimedexModel):
+class JikanEntity(BackendRichModel):
     """Generic ``{ mal_id, type, name, url }`` entity reference used
     across Jikan responses (producers, licensors, studios, genres,
     themes, etc.).
@@ -101,17 +109,17 @@ class JikanEntity(AnimedexModel):
     url: Optional[str] = None
 
 
-class JikanThemes(AnimedexModel):
+class JikanThemes(BackendRichModel):
     openings: List[str] = []
     endings: List[str] = []
 
 
-class JikanExternal(AnimedexModel):
+class JikanExternal(BackendRichModel):
     name: str
     url: Optional[str] = None
 
 
-class JikanRelation(AnimedexModel):
+class JikanRelation(BackendRichModel):
     relation: str
     entry: List[JikanEntity] = []
 
@@ -119,7 +127,7 @@ class JikanRelation(AnimedexModel):
 # ---------- /anime/{id}[/full] ----------
 
 
-class JikanAnime(AnimedexModel):
+class JikanAnime(BackendRichModel):
     """Full Jikan ``/anime/{id}/full`` response payload (rich)."""
 
     mal_id: int
@@ -271,7 +279,7 @@ class JikanAnime(AnimedexModel):
 # ---------- /manga/{id}[/full] ----------
 
 
-class JikanManga(AnimedexModel):
+class JikanManga(BackendRichModel):
     """``/manga/{id}/full`` response. Same shape as JikanAnime minus
     a few anime-specific fields plus chapter/volume counts."""
 
@@ -312,22 +320,22 @@ class JikanManga(AnimedexModel):
 # ---------- characters / people ----------
 
 
-class JikanCharacterAnimeRole(AnimedexModel):
+class JikanCharacterAnimeRole(BackendRichModel):
     role: Optional[str] = None
     anime: Optional[JikanEntity] = None
 
 
-class JikanCharacterMangaRole(AnimedexModel):
+class JikanCharacterMangaRole(BackendRichModel):
     role: Optional[str] = None
     manga: Optional[JikanEntity] = None
 
 
-class JikanCharacterVoiceActor(AnimedexModel):
+class JikanCharacterVoiceActor(BackendRichModel):
     language: Optional[str] = None
     person: Optional[JikanEntity] = None
 
 
-class JikanCharacter(AnimedexModel):
+class JikanCharacter(BackendRichModel):
     """``/characters/{id}/full`` and ``/characters/{id}``."""
 
     mal_id: int
@@ -364,7 +372,7 @@ class JikanCharacter(AnimedexModel):
         )
 
 
-class JikanPerson(AnimedexModel):
+class JikanPerson(BackendRichModel):
     """``/people/{id}/full`` and ``/people/{id}``."""
 
     mal_id: int
@@ -384,7 +392,7 @@ class JikanPerson(AnimedexModel):
 # ---------- producers, magazines, genres, clubs ----------
 
 
-class JikanProducer(AnimedexModel):
+class JikanProducer(BackendRichModel):
     mal_id: int
     url: Optional[str] = None
     titles: List[JikanTitleEntry] = []
@@ -397,7 +405,7 @@ class JikanProducer(AnimedexModel):
     source_tag: SourceTag
 
 
-class JikanMagazine(AnimedexModel):
+class JikanMagazine(BackendRichModel):
     mal_id: int
     name: str
     url: Optional[str] = None
@@ -405,7 +413,7 @@ class JikanMagazine(AnimedexModel):
     source_tag: SourceTag
 
 
-class JikanGenre(AnimedexModel):
+class JikanGenre(BackendRichModel):
     mal_id: int
     name: str
     url: Optional[str] = None
@@ -413,7 +421,7 @@ class JikanGenre(AnimedexModel):
     source_tag: SourceTag
 
 
-class JikanClub(AnimedexModel):
+class JikanClub(BackendRichModel):
     mal_id: int
     name: str
     url: Optional[str] = None
@@ -428,7 +436,7 @@ class JikanClub(AnimedexModel):
 # ---------- users ----------
 
 
-class JikanUser(AnimedexModel):
+class JikanUser(BackendRichModel):
     mal_id: Optional[int] = None
     username: str
     url: Optional[str] = None
@@ -445,7 +453,7 @@ class JikanUser(AnimedexModel):
 # ---------- generic envelopes for long-tail endpoints ----------
 
 
-class JikanGenericRow(AnimedexModel):
+class JikanGenericRow(BackendRichModel):
     """Pydantic-loose row used by long-tail endpoints (news, forum,
     pictures, statistics, moreinfo, recommendations, userupdates,
     reviews, relations, themes, external, streaming, episodes,
@@ -456,7 +464,7 @@ class JikanGenericRow(AnimedexModel):
     model_config = {"populate_by_name": True, "extra": "allow", "frozen": True}
 
 
-class JikanGenericResponse(AnimedexModel):
+class JikanGenericResponse(BackendRichModel):
     """Wrapper for any Jikan endpoint whose payload is too large /
     unstable to map field-by-field. Carries the parsed ``data`` array
     as a list of permissive rows + the source tag.

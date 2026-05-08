@@ -150,6 +150,30 @@ map\_media\_list\_public
 .. autofunction:: map_media_list_public
 
 
+map\_viewer
+-----------------------------------------------------
+
+.. autofunction:: map_viewer
+
+
+map\_notification
+-----------------------------------------------------
+
+.. autofunction:: map_notification
+
+
+map\_markdown
+-----------------------------------------------------
+
+.. autofunction:: map_markdown
+
+
+map\_ani\_chart\_user
+-----------------------------------------------------
+
+.. autofunction:: map_ani_chart_user
+
+
 map\_media\_list\_collection\_public
 -----------------------------------------------------
 

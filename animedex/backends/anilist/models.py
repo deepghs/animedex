@@ -28,13 +28,13 @@ from animedex.models.anime import (
     NextAiringEpisode,
 )
 from animedex.models.character import Character, Staff, Studio
-from animedex.models.common import AnimedexModel, PartialDate, SourceTag
+from animedex.models.common import BackendRichModel, PartialDate, SourceTag
 
 
 # ---------- helper structs ----------
 
 
-class _AnilistTitle(AnimedexModel):
+class _AnilistTitle(BackendRichModel):
     """AniList ``title`` block as returned by GraphQL.
 
     AniList allows any of the three locales to be ``null``; the
@@ -47,7 +47,7 @@ class _AnilistTitle(AnimedexModel):
     native: Optional[str] = None
 
 
-class _AnilistName(AnimedexModel):
+class _AnilistName(BackendRichModel):
     """AniList ``name`` block (Character / Staff)."""
 
     full: Optional[str] = None
@@ -55,14 +55,14 @@ class _AnilistName(AnimedexModel):
     alternative: List[str] = []
 
 
-class _AnilistImage(AnimedexModel):
+class _AnilistImage(BackendRichModel):
     """AniList ``image`` block (Character / Staff)."""
 
     large: Optional[str] = None
     medium: Optional[str] = None
 
 
-class _AnilistCoverImage(AnimedexModel):
+class _AnilistCoverImage(BackendRichModel):
     """AniList ``coverImage`` block (Media)."""
 
     extraLarge: Optional[str] = None
@@ -71,7 +71,7 @@ class _AnilistCoverImage(AnimedexModel):
     color: Optional[str] = None
 
 
-class _AnilistFuzzyDate(AnimedexModel):
+class _AnilistFuzzyDate(BackendRichModel):
     """AniList ``FuzzyDate`` block; matches :class:`PartialDate`."""
 
     year: Optional[int] = None
@@ -94,7 +94,7 @@ class _AnilistFuzzyDate(AnimedexModel):
         return date(self.year, self.month or 1, self.day or 1)
 
 
-class _AnilistTrailer(AnimedexModel):
+class _AnilistTrailer(BackendRichModel):
     """AniList ``trailer`` block."""
 
     id: Optional[str] = None
@@ -112,14 +112,14 @@ class _AnilistTrailer(AnimedexModel):
         return None
 
 
-class _AnilistTag(AnimedexModel):
+class _AnilistTag(BackendRichModel):
     """AniList ``tag`` block (with rank)."""
 
     name: str
     rank: Optional[int] = None
 
 
-class _AnilistStudioNode(AnimedexModel):
+class _AnilistStudioNode(BackendRichModel):
     """Inner studio node from ``Media.studios.edges[].node``."""
 
     id: Optional[int] = None
@@ -127,20 +127,20 @@ class _AnilistStudioNode(AnimedexModel):
     isAnimationStudio: Optional[bool] = None
 
 
-class _AnilistStudioEdge(AnimedexModel):
+class _AnilistStudioEdge(BackendRichModel):
     """Edge wrapper around a studio node, carrying ``isMain``."""
 
     isMain: Optional[bool] = None
     node: _AnilistStudioNode
 
 
-class _AnilistStudioConnection(AnimedexModel):
+class _AnilistStudioConnection(BackendRichModel):
     """``Media.studios`` connection."""
 
     edges: List[_AnilistStudioEdge] = []
 
 
-class _AnilistNextAiringEpisode(AnimedexModel):
+class _AnilistNextAiringEpisode(BackendRichModel):
     """``Media.nextAiringEpisode`` block."""
 
     airingAt: int  # epoch seconds
@@ -155,7 +155,7 @@ class _AnilistNextAiringEpisode(AnimedexModel):
         )
 
 
-class _AnilistExternalLink(AnimedexModel):
+class _AnilistExternalLink(BackendRichModel):
     """``Media.externalLinks[]`` entry."""
 
     id: Optional[int] = None
@@ -165,7 +165,7 @@ class _AnilistExternalLink(AnimedexModel):
     language: Optional[str] = None
 
 
-class _AnilistStreamingEpisode(AnimedexModel):
+class _AnilistStreamingEpisode(BackendRichModel):
     """``Media.streamingEpisodes[]`` entry."""
 
     title: Optional[str] = None
@@ -174,7 +174,7 @@ class _AnilistStreamingEpisode(AnimedexModel):
     site: Optional[str] = None
 
 
-class _AnilistMediaCharacterEdge(AnimedexModel):
+class _AnilistMediaCharacterEdge(BackendRichModel):
     """``Character.media.edges[]`` entry — what role this character
     plays in which media."""
 
@@ -182,14 +182,14 @@ class _AnilistMediaCharacterEdge(AnimedexModel):
     node: Optional[dict] = None  # leave as raw dict; the role string is what matters
 
 
-class _AnilistMediaCharacterConnection(AnimedexModel):
+class _AnilistMediaCharacterConnection(BackendRichModel):
     edges: List[_AnilistMediaCharacterEdge] = []
 
 
 # ---------- core entity dataclasses ----------
 
 
-class AnilistAnime(AnimedexModel):
+class AnilistAnime(BackendRichModel):
     """Full AniList Media (anime / manga) record.
 
     Field-for-field projection of the
@@ -318,7 +318,7 @@ class AnilistAnime(AnimedexModel):
         )
 
 
-class AnilistCharacter(AnimedexModel):
+class AnilistCharacter(BackendRichModel):
     """Full AniList Character record."""
 
     id: int
@@ -360,7 +360,7 @@ class AnilistCharacter(AnimedexModel):
         )
 
 
-class AnilistStaff(AnimedexModel):
+class AnilistStaff(BackendRichModel):
     """Full AniList Staff record."""
 
     id: int
@@ -396,7 +396,7 @@ class AnilistStaff(AnimedexModel):
         )
 
 
-class AnilistStudio(AnimedexModel):
+class AnilistStudio(BackendRichModel):
     """Full AniList Studio record."""
 
     id: int
@@ -418,7 +418,7 @@ class AnilistStudio(AnimedexModel):
 # ---------- long-tail entity dataclasses ----------
 
 
-class AnilistMediaTrend(AnimedexModel):
+class AnilistMediaTrend(BackendRichModel):
     """One row from :data:`Q_MEDIA_TREND` — daily trending stats."""
 
     mediaId: Optional[int] = None
@@ -431,7 +431,7 @@ class AnilistMediaTrend(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistAiringSchedule(AnimedexModel):
+class AnilistAiringSchedule(BackendRichModel):
     """One row from :data:`Q_AIRING_SCHEDULE`."""
 
     id: int
@@ -443,7 +443,7 @@ class AnilistAiringSchedule(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistReview(AnimedexModel):
+class AnilistReview(BackendRichModel):
     """One row from :data:`Q_REVIEW`."""
 
     id: int
@@ -456,7 +456,7 @@ class AnilistReview(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistRecommendation(AnimedexModel):
+class AnilistRecommendation(BackendRichModel):
     """One row from :data:`Q_RECOMMENDATION`."""
 
     id: int
@@ -468,7 +468,7 @@ class AnilistRecommendation(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistThread(AnimedexModel):
+class AnilistThread(BackendRichModel):
     """One row from :data:`Q_THREAD`."""
 
     id: int
@@ -481,7 +481,7 @@ class AnilistThread(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistThreadComment(AnimedexModel):
+class AnilistThreadComment(BackendRichModel):
     """One row from :data:`Q_THREAD_COMMENT`."""
 
     id: int
@@ -491,7 +491,7 @@ class AnilistThreadComment(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistActivity(AnimedexModel):
+class AnilistActivity(BackendRichModel):
     """One row from :data:`Q_ACTIVITY` (TextActivity / ListActivity)."""
 
     id: int
@@ -504,7 +504,7 @@ class AnilistActivity(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistActivityReply(AnimedexModel):
+class AnilistActivityReply(BackendRichModel):
     """One row from :data:`Q_ACTIVITY_REPLY`."""
 
     id: int
@@ -514,7 +514,7 @@ class AnilistActivityReply(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistFollowEntry(AnimedexModel):
+class AnilistFollowEntry(BackendRichModel):
     """One follower / following entry."""
 
     id: int
@@ -522,7 +522,7 @@ class AnilistFollowEntry(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistMediaListEntry(AnimedexModel):
+class AnilistMediaListEntry(BackendRichModel):
     """One row from :data:`Q_MEDIA_LIST_PUBLIC`."""
 
     id: int
@@ -534,7 +534,7 @@ class AnilistMediaListEntry(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistMediaListGroup(AnimedexModel):
+class AnilistMediaListGroup(BackendRichModel):
     """One named list (e.g. ``Watching``) inside a collection."""
 
     name: str
@@ -542,7 +542,7 @@ class AnilistMediaListGroup(AnimedexModel):
     entry_count: int
 
 
-class AnilistMediaListCollection(AnimedexModel):
+class AnilistMediaListCollection(BackendRichModel):
     """One ``MediaListCollection`` block."""
 
     user_id: Optional[int] = None
@@ -551,14 +551,14 @@ class AnilistMediaListCollection(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistGenreCollection(AnimedexModel):
+class AnilistGenreCollection(BackendRichModel):
     """``GenreCollection`` singleton."""
 
     genres: List[str] = []
     source_tag: SourceTag
 
 
-class AnilistMediaTag(AnimedexModel):
+class AnilistMediaTag(BackendRichModel):
     """One row from :data:`Q_MEDIA_TAG_COLLECTION`."""
 
     id: int
@@ -571,7 +571,7 @@ class AnilistMediaTag(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistSiteStatBucket(AnimedexModel):
+class AnilistSiteStatBucket(BackendRichModel):
     """One ``date / count / change`` triple from SiteStatistics."""
 
     date: int
@@ -579,7 +579,7 @@ class AnilistSiteStatBucket(AnimedexModel):
     change: int
 
 
-class AnilistSiteStatistics(AnimedexModel):
+class AnilistSiteStatistics(BackendRichModel):
     """``SiteStatistics`` snapshot."""
 
     users: List[AnilistSiteStatBucket] = []
@@ -591,7 +591,7 @@ class AnilistSiteStatistics(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistExternalLinkSource(AnimedexModel):
+class AnilistExternalLinkSource(BackendRichModel):
     """One entry from
     :data:`Q_EXTERNAL_LINK_SOURCE_COLLECTION`."""
 
@@ -603,7 +603,7 @@ class AnilistExternalLinkSource(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistUserStatistics(AnimedexModel):
+class AnilistUserStatistics(BackendRichModel):
     """User profile statistics block."""
 
     anime_count: Optional[int] = None
@@ -614,7 +614,7 @@ class AnilistUserStatistics(AnimedexModel):
     manga_chapters_read: Optional[int] = None
 
 
-class AnilistUser(AnimedexModel):
+class AnilistUser(BackendRichModel):
     """``User`` record."""
 
     id: int
@@ -626,7 +626,7 @@ class AnilistUser(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistNotification(AnimedexModel):
+class AnilistNotification(BackendRichModel):
     """One row from the authenticated ``Page.notifications`` query.
 
     AniList notifications are a polymorphic union (``AiringNotification``,
@@ -645,7 +645,7 @@ class AnilistNotification(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistMarkdown(AnimedexModel):
+class AnilistMarkdown(BackendRichModel):
     """Result of the authenticated ``Markdown`` query — rendered HTML.
 
     AniList renders its in-house markdown to HTML server-side. This is
@@ -656,7 +656,7 @@ class AnilistMarkdown(AnimedexModel):
     source_tag: SourceTag
 
 
-class AnilistAniChartUser(AnimedexModel):
+class AnilistAniChartUser(BackendRichModel):
     """Authenticated ``AniChartUser`` snapshot.
 
     AniChart is a sister project of AniList. ``settings`` and

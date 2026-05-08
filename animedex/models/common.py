@@ -27,11 +27,21 @@ from pydantic import BaseModel, ConfigDict
 
 
 class AnimedexModel(BaseModel):
-    """Project-wide pydantic v2 base.
+    """Project-wide pydantic v2 base for **common projection** types.
 
-    All public dataclasses in :mod:`animedex.models` and all
-    backend-returned records inherit from this class so that the
-    immutability, alias, and extra-field policies are uniform.
+    Common types (e.g. :class:`~animedex.models.anime.Anime`,
+    :class:`~animedex.models.character.Character`,
+    :class:`~animedex.models.character.Staff`,
+    :class:`~animedex.models.character.Studio`) are deliberately the
+    "lowest common denominator" the project surfaces across multiple
+    upstreams. They drop backend-specific fields by design — that is
+    the whole point of a projection. ``extra='ignore'`` enforces this
+    policy: any field a backend gives us that the projection didn't
+    declare is dropped silently.
+
+    Backend-specific **rich** types (``AnilistAnime``, ``JikanAnime``,
+    etc.) are NOT this. See :class:`BackendRichModel` below — they
+    must be lossless.
 
     :ivar model_config: pydantic configuration; do not override per
                          subclass without a documented reason.
@@ -40,6 +50,55 @@ class AnimedexModel(BaseModel):
     model_config = ConfigDict(
         frozen=True,
         extra="ignore",
+        populate_by_name=True,
+    )
+
+
+class BackendRichModel(AnimedexModel):
+    """Project-wide pydantic v2 base for **backend rich** dataclasses.
+
+    Every per-backend rich type — ``AnilistAnime``, ``AnilistCharacter``,
+    ``AnilistStaff``, ``AnilistStudio``, the long-tail Anilist*
+    types, ``JikanAnime``, ``JikanCharacter``, ``JikanPerson``,
+    ``JikanProducer``, ``JikanClub``, ``JikanUser``, ``JikanGenericRow``,
+    ``RawTraceHit``, ``RawTraceQuota``, plus their nested helper types
+    (e.g. ``_AnilistTitle``, ``JikanEntity``, ``JikanAired``) —
+    inherits from this class.
+
+    The contract: a rich model is **information-lossless**. When fed
+    the raw upstream payload via ``model_validate``, it must retain
+    every key the upstream returned, so ``model_dump(by_alias=True,
+    mode='json')`` reconstructs the original payload field-for-field.
+
+    Achieved by:
+
+    * ``extra='allow'`` — fields the model didn't declare are kept on
+      the instance and re-emitted on dump (instead of silently
+      dropped, which is what :class:`AnimedexModel` does for common
+      projections).
+    * ``populate_by_name=True`` — alias-renamed fields (e.g.
+      ``from_: float = Field(alias='from')`` for the Python keyword
+      conflict) accept either form on input.
+
+    The class **inherits from** :class:`AnimedexModel` rather than
+    sitting beside it. Pydantic v2 merges ``model_config`` across
+    inheritance, so the ``extra='allow'`` here overrides the parent's
+    ``extra='ignore'``. The inheritance matters: every ``isinstance(x,
+    AnimedexModel)`` check downstream (the TTY dispatcher in
+    :mod:`animedex.render.tty`, the JSON renderer, the CLI's
+    ``_to_tty_text`` helper) must continue to recognise rich
+    instances. Splitting the two roots was a bug that made rich models
+    fall through to ``str(x)`` and dump pydantic ``__repr__`` instead
+    of human-friendly TTY text.
+
+    Backend-rich → common projection happens via the rich type's
+    ``to_common()`` method. Loss of fields is permitted at and only
+    at that boundary. See AGENTS.md §13 (lossless rich models).
+    """
+
+    model_config = ConfigDict(
+        frozen=True,
+        extra="allow",
         populate_by_name=True,
     )
 

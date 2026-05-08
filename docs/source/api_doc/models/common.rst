@@ -13,6 +13,13 @@ AnimedexModel
     :members: model_config
 
 
+BackendRichModel
+-----------------------------------------------------
+
+.. autoclass:: BackendRichModel
+    :members: model_config
+
+
 SourceTag
 -----------------------------------------------------
 

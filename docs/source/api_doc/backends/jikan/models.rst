@@ -52,14 +52,14 @@ JikanAiredFromTo
 -----------------------------------------------------
 
 .. autoclass:: JikanAiredFromTo
-    :members: from_,to,model_config
+    :members: from_,to
 
 
 JikanAired
 -----------------------------------------------------
 
 .. autoclass:: JikanAired
-    :members: from_,to,prop,string,model_config
+    :members: from_,to,prop,string
 
 
 JikanBroadcast

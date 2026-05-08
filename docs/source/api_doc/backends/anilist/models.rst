@@ -10,7 +10,7 @@ AnilistAnime
 -----------------------------------------------------
 
 .. autoclass:: AnilistAnime
-    :members: to_common,id,idMal,title,type,format,status,episodes,duration,season,seasonYear,startDate,endDate,genres,tags,averageScore,meanScore,popularity,favourites,trending,isAdult,countryOfOrigin,description,source,coverImage,bannerImage,trailer,studios,nextAiringEpisode,externalLinks,streamingEpisodes,source_tag
+    :members: to_common,id,idMal,title,synonyms,type,format,status,episodes,duration,season,seasonYear,startDate,endDate,genres,tags,averageScore,meanScore,popularity,favourites,trending,isAdult,countryOfOrigin,description,source,coverImage,bannerImage,trailer,studios,nextAiringEpisode,externalLinks,streamingEpisodes,source_tag
 
 
 AnilistCharacter
@@ -165,6 +165,27 @@ AnilistUser
 
 .. autoclass:: AnilistUser
     :members: id,name,about,avatar_large,siteUrl,statistics,source_tag
+
+
+AnilistNotification
+-----------------------------------------------------
+
+.. autoclass:: AnilistNotification
+    :members: id,kind,type,contexts,context,user_name,createdAt,source_tag
+
+
+AnilistMarkdown
+-----------------------------------------------------
+
+.. autoclass:: AnilistMarkdown
+    :members: html,source_tag
+
+
+AnilistAniChartUser
+-----------------------------------------------------
+
+.. autoclass:: AnilistAniChartUser
+    :members: user_id,user_name,settings,highlights,source_tag
 
 
 selftest

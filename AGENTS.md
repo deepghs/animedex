@@ -517,6 +517,56 @@ The Sphinx build is in `docs/`. `docs/source/conf.py` configures autodoc, `sphin
 - For *scope* questions: section 6 above.
 - For *value* questions ("should we forbid X?"): section 0 above is the answer. The default is "inform the user; do not gate".
 - For *diagnostic-coverage* questions: section 9 above.
+- For *test-discipline* questions: section 9bis above.
+- For *backend-rich-model* questions: section 13 below.
 - For *Python API* questions: see `plans/05-python-api.md`.
 
 If the answer is not in any of those, propose an update to the relevant document in the same change that introduces the new behaviour. The plans and AGENTS.md are versioned alongside the code; they must not drift.
+
+## 13. Lossless Rich Model Contract (backend dataclasses)
+
+Every backend exposes two parallel data shapes. The user-facing **common** types (`animedex.models.anime.Anime`, `animedex.models.character.Character`, `animedex.models.character.Staff`, `animedex.models.character.Studio`, `animedex.models.trace.TraceHit`, `animedex.models.trace.TraceQuota`) are deliberately a lowest-common-denominator projection across upstreams; they drop backend-specific fields by design. The per-backend **rich** types (`AnilistAnime`, `AnilistCharacter`, `AnilistStaff`, `AnilistStudio`, `JikanAnime`, `JikanCharacter`, `JikanPerson`, `JikanProducer`, `JikanClub`, `JikanUser`, `JikanGenericRow`, `JikanMagazine`, `JikanGenre`, `JikanRelation`, all the nested helper types, plus `RawTraceHit` / `RawTraceQuota`) are the upstream payload as-typed. The contract below pins what they must guarantee.
+
+### 13.1 — rich = lossless, common = lossy
+
+> A rich type, when fed the upstream payload via `model_validate(payload)`, must round-trip via `model_dump(by_alias=True, mode='json')` to produce a key set that is a **superset** of the upstream's. A common type makes no such promise; the projection step is allowed to drop fields, and historically does.
+
+The asymmetry is the whole reason both layers exist. If a power user wants every Jikan field a `/anime/{id}/full` response carried, they reach for `JikanAnime`. If they just want a multi-source-merged "this anime" view, they reach for `Anime`. We refuse to choose for them.
+
+The rule has one explicit, well-documented carve-out: `RawTraceQuota` deliberately drops the upstream `id` field, which is the caller's egress IP. Persisting that field would re-leak a value review M1 worked to suppress. The drop happens in a `model_validator(mode='before')`; it is tested in both directions (the dropped field never appears in `model_dump`, every other field still does).
+
+### 13.2 — `BackendRichModel` is the only allowed base
+
+The `animedex.models.common.BackendRichModel` class encodes the contract:
+
+* `extra='allow'` — fields the model didn't declare are kept on the instance and re-emitted on dump (this is what makes "future Jikan adds a field, animedex still round-trips it" work).
+* `populate_by_name=True` — alias-renamed fields (e.g. `from_: float = Field(alias='from')` for the `from`/`to` Python keyword conflict on Trace `/search` hits, or the `JikanAired.from_` field) accept either form on input, and dump back under the alias.
+* `frozen=True` — inherited from `AnimedexModel`. Rich models are immutable.
+* Inheritance from `AnimedexModel` — preserved so every `isinstance(x, AnimedexModel)` check downstream (TTY dispatcher, JSON renderer, CLI's `_to_tty_text`) keeps recognising rich instances. Splitting the two roots was an early bug that made rich models render as raw pydantic `__repr__`. The inheritance is load-bearing.
+
+Every public class declared in `animedex.backends.<name>.models` must be a subclass of `BackendRichModel`. The discipline is enforced by the lossless test suite (`test/backends/test_lossless_round_trip.py::TestBackendRichDiscipline`). No exceptions.
+
+### 13.3 — `to_common()` is the only legal lossy step
+
+The rich → common projection happens via the rich type's `to_common()` method. That method is the single place where field loss is permitted. The renderers (TTY and JSON) are wired to call `to_common()` for any rich instance they see, exactly so the human-friendly output is uniform across backends; the JSON path also includes the rich form when the caller asks for the full backend record. No other layer is allowed to silently drop fields.
+
+If `to_common()` is missing on a rich type, the TTY renderer falls back to a generic source-attributed JSON dump rather than guessing; this keeps the contract honest (no half-projection).
+
+### 13.4 — fixture-driven verification, not synthesised
+
+The lossless test suite parametrises over every fixture in `test/fixtures/<backend>/<endpoint>/*.yaml`, computes the upstream key tree, validates through the rich model, dumps with `by_alias=True`, and asserts the dumped key set is a superset of the upstream's. This is the test that pins the contract; if a future contributor introduces a model that drops fields silently, the new fixture is what catches it. Synthesised payloads do not count — they only catch what the test author already thought to write.
+
+### 13.5 — when adding or expanding a rich type
+
+1. The class inherits from `BackendRichModel`.
+2. Aliases are used for any field whose upstream name is a Python keyword (`from`, `class`, `import`, etc.) or otherwise unrepresentable as an identifier.
+3. There is a fixture under `test/fixtures/<backend>/<endpoint>/` exercising the new type with a real upstream payload.
+4. The lossless test suite picks the fixture up via its parametrise glob; running `make test` confirms the round-trip.
+5. The rich type implements a `to_common()` projection if a common type exists for the same kind of record; otherwise the renderer's fallback path is acceptable.
+6. The `selftest()` for the backend exercises both shapes (rich validate-dump-compare; common projection produces a sane `Anime` / `Character` / etc.).
+
+Skipping any of these steps is how the contract slips. Reviewers are expected to flag missing fixtures or absent `to_common()`.
+
+### 13.6 — when consuming a rich type
+
+A caller who has a rich instance can produce the upstream-faithful payload by calling `obj.model_dump(by_alias=True, mode='json')`. They can produce the project's source-attributed JSON by calling the JSON renderer. They can produce TTY text by calling the TTY renderer. They can produce the common projection by calling `obj.to_common()`. These four shapes cover every legitimate downstream need; new ad-hoc serialisers should not be introduced for the rich layer.
