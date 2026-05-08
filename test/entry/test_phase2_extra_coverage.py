@@ -186,6 +186,12 @@ class TestPhase2Helpers:
         opt = next(p for p in cmd.params if p.name == "count")
         assert opt.type.name == "integer"
 
+    @pytest.mark.skipif(
+        not hasattr(__import__("inspect"), "get_annotations"),
+        reason="inspect.get_annotations is Python 3.10+; on 3.9 the helper "
+        "naturally takes the typing.get_type_hints fallback path on every "
+        "call, so this synthetic test is moot.",
+    )
     def test_register_subcommand_unresolvable_annotation(self, monkeypatch):
         """Cover the ``except (NameError, AttributeError)`` fallback in
         register_subcommand. Force ``inspect.get_annotations`` (called
@@ -225,27 +231,37 @@ class TestPhase2Helpers:
 
     def test_register_subcommand_typing_fallback_also_fails(self, monkeypatch):
         """Cover the inner ``except Exception: resolved_hints = {}``
-        path: both ``inspect.get_annotations(eval_str=True)`` and
-        ``typing.get_type_hints`` fail."""
+        path: both the primary annotation source and
+        ``typing.get_type_hints`` fail.
+
+        On Python 3.10+ the primary source is ``inspect.get_annotations``;
+        on 3.9 it's ``typing.get_type_hints`` directly (no inspect path
+        because that attribute doesn't exist there). Patching both gets
+        us into the inner-except branch on either platform."""
         import click
+        import inspect
         import typing
         from animedex.entry import _phase2_helpers
 
-        orig_inspect = _phase2_helpers.inspect.get_annotations
         orig_typing = typing.get_type_hints
-
-        def _bad_inspect(fn, **kw):
-            if kw.get("eval_str") and getattr(fn, "__name__", None) == "_stub_double_fail":
-                raise NameError("simulate")
-            return orig_inspect(fn, **kw)
 
         def _bad_typing(fn, *a, **k):
             if getattr(fn, "__name__", None) == "_stub_double_fail":
                 raise RuntimeError("simulated typing failure")
             return orig_typing(fn, *a, **k)
 
-        monkeypatch.setattr(_phase2_helpers.inspect, "get_annotations", _bad_inspect)
         monkeypatch.setattr(typing, "get_type_hints", _bad_typing)
+
+        # Patch inspect.get_annotations only when it exists (3.10+).
+        if hasattr(inspect, "get_annotations"):
+            orig_inspect = _phase2_helpers.inspect.get_annotations
+
+            def _bad_inspect(fn, **kw):
+                if kw.get("eval_str") and getattr(fn, "__name__", None) == "_stub_double_fail":
+                    raise NameError("simulate")
+                return orig_inspect(fn, **kw)
+
+            monkeypatch.setattr(_phase2_helpers.inspect, "get_annotations", _bad_inspect)
 
         @click.group()
         def _g():
