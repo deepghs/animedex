@@ -643,8 +643,10 @@ Sessionx.vim
 # Temporary
 .netrwhist
 *~
-# Auto-generated tag files
-tags
+# Auto-generated tag files (ctags / etags). Anchor to repo root so a
+# nested directory literally named "tags" (e.g. fixtures/waifu/tags/)
+# is not silently swept up.
+/tags
 # Persistent undo
 [._]*.un~
 
