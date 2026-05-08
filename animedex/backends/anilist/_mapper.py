@@ -176,7 +176,11 @@ def map_airing_schedule(payload: Dict[str, Any], src: SourceTag) -> List[Anilist
                 id=r["id"],
                 airingAt=r["airingAt"],
                 episode=r["episode"],
-                timeUntilAiring=r["timeUntilAiring"],
+                # ``timeUntilAiring`` is absent for already-aired
+                # episodes when the upstream returns a historical
+                # window. Default to 0 rather than crashing — the
+                # field is informational, not load-bearing.
+                timeUntilAiring=r.get("timeUntilAiring", 0),
                 media_id=media.get("id"),
                 media_title_romaji=title.get("romaji") or title.get("english"),
                 source_tag=src,
