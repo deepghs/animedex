@@ -1,0 +1,1735 @@
+metadata:
+  captured_at: '2026-05-08T12:01:05Z'
+  label: top10
+  backend: kitsu
+  path_slug: trending_anime
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/trending/anime
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:01:05 GMT
+    Content-Type: application/vnd.api+json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"b55acf2736d2b420c1dc6818f3a9a67b"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 3d68f194-0233-4a5d-8a88-b7ffaeceb3ac
+    x-runtime: '0.266603'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '12'
+      type: anime
+      links:
+        self: /anime/12
+      attributes:
+        createdAt: '2013-02-20T16:00:25.722Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: one-piece
+        synopsis: |-
+          Gol D. Roger was known as the "Pirate King," the strongest and most infamous being to have sailed the Grand Line. The capture and death of Roger by the World Government brought a change throughout the world. His last words before his death revealed the existence of the greatest treasure in the world, One Piece. It was this revelation that brought about the Grand Age of Pirates, men who dreamed of finding One Piece—which promises an unlimited amount of riches and fame—and quite possibly the pinnacle of glory and the title of the Pirate King.
+          Enter Monkey D. Luffy, a 17-year-old boy who defies your standard definition of a pirate. Rather than the popular persona of a wicked, hardened, toothless pirate ransacking villages for fun, Luffy’s reason for being a pirate is one of pure wonder: the thought of an exciting adventure that leads him to intriguing people and ultimately, the promised treasure. Following in the footsteps of his childhood hero, Luffy and his crew travel across the Grand Line, experiencing crazy adventures, unveiling dark mysteries and battling strong enemies, all in order to reach the most coveted of all fortunes—One Piece.
+          [Written by MAL Rewrite]
+        description: |-
+          Gol D. Roger was known as the "Pirate King," the strongest and most infamous being to have sailed the Grand Line. The capture and death of Roger by the World Government brought a change throughout the world. His last words before his death revealed the existence of the greatest treasure in the world, One Piece. It was this revelation that brought about the Grand Age of Pirates, men who dreamed of finding One Piece—which promises an unlimited amount of riches and fame—and quite possibly the pinnacle of glory and the title of the Pirate King.
+          Enter Monkey D. Luffy, a 17-year-old boy who defies your standard definition of a pirate. Rather than the popular persona of a wicked, hardened, toothless pirate ransacking villages for fun, Luffy’s reason for being a pirate is one of pure wonder: the thought of an exciting adventure that leads him to intriguing people and ultimately, the promised treasure. Following in the footsteps of his childhood hero, Luffy and his crew travel across the Grand Line, experiencing crazy adventures, unveiling dark mysteries and battling strong enemies, all in order to reach the most coveted of all fortunes—One Piece.
+          [Written by MAL Rewrite]
+        coverImageTopOffset: 50
+        titles:
+          en: One Piece
+          en_jp: One Piece
+          ja_jp: ONE PIECE
+        canonicalTitle: One Piece
+        abbreviatedTitles:
+        - ワンピース
+        averageRating: '83.98'
+        ratingFrequencies:
+          '2': '7990'
+          '3': '173'
+          '4': '599'
+          '5': '111'
+          '6': '533'
+          '7': '119'
+          '8': '9754'
+          '9': '154'
+          '10': '1649'
+          '11': '247'
+          '12': '2832'
+          '13': '325'
+          '14': '22936'
+          '15': '694'
+          '16': '7963'
+          '17': '1234'
+          '18': '8832'
+          '19': '1232'
+          '20': '98625'
+        userCount: 321956
+        favoritesCount: 10686
+        startDate: '1999-10-20'
+        endDate: null
+        nextRelease: '2026-05-10T09:30:00.000+09:00'
+        popularityRank: 14
+        ratingRank: 54
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/12/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/12/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/12/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/12/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/12/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/12/cover_image/tiny-cd1b0729d5c15400bfa2441ea3751e86.jpeg
+          large: https://media.kitsu.app/anime/12/cover_image/large-3e72f400a87b5241780c5082f0582611.jpeg
+          small: https://media.kitsu.app/anime/12/cover_image/small-8d0cbc39cac65d5d7c4db5f5b3742ae7.jpeg
+          original: https://media.kitsu.app/anime/12/cover_image/21ecb556255bd46b95aea4779d19789f.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: null
+        episodeLength: 24
+        totalLength: 33288
+        youtubeVideoId: CmTeYj2FmRc
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/12/relationships/genres
+            related: /anime/12/genres
+        categories:
+          links:
+            self: /anime/12/relationships/categories
+            related: /anime/12/categories
+        castings:
+          links:
+            self: /anime/12/relationships/castings
+            related: /anime/12/castings
+        installments:
+          links:
+            self: /anime/12/relationships/installments
+            related: /anime/12/installments
+        mappings:
+          links:
+            self: /anime/12/relationships/mappings
+            related: /anime/12/mappings
+        reviews:
+          links:
+            self: /anime/12/relationships/reviews
+            related: /anime/12/reviews
+        mediaRelationships:
+          links:
+            self: /anime/12/relationships/media-relationships
+            related: /anime/12/media-relationships
+        characters:
+          links:
+            self: /anime/12/relationships/characters
+            related: /anime/12/characters
+        staff:
+          links:
+            self: /anime/12/relationships/staff
+            related: /anime/12/staff
+        productions:
+          links:
+            self: /anime/12/relationships/productions
+            related: /anime/12/productions
+        quotes:
+          links:
+            self: /anime/12/relationships/quotes
+            related: /anime/12/quotes
+        episodes:
+          links:
+            self: /anime/12/relationships/episodes
+            related: /anime/12/episodes
+        streamingLinks:
+          links:
+            self: /anime/12/relationships/streaming-links
+            related: /anime/12/streaming-links
+        animeProductions:
+          links:
+            self: /anime/12/relationships/anime-productions
+            related: /anime/12/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/12/relationships/anime-characters
+            related: /anime/12/anime-characters
+        animeStaff:
+          links:
+            self: /anime/12/relationships/anime-staff
+            related: /anime/12/anime-staff
+    - id: '7442'
+      type: anime
+      links:
+        self: /anime/7442
+      attributes:
+        createdAt: '2013-02-20T17:55:59.054Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: attack-on-titan
+        synopsis: |-
+          Centuries ago, mankind was slaughtered to near extinction by monstrous humanoid creatures called titans, forcing humans to hide in fear behind enormous concentric walls. What makes these giants truly terrifying is that their taste for human flesh is not born out of hunger but what appears to be out of pleasure. To ensure their survival, the remnants of humanity began living within defensive barriers, resulting in one hundred years without a single titan encounter. However, that fragile calm is soon shattered when a colossal titan manages to breach the supposedly impregnable outer wall, reigniting the fight for survival against the man-eating abominations.
+
+          After witnessing a horrific personal loss at the hands of the invading creatures, Eren Yeager dedicates his life to their eradication by enlisting into the Survey Corps, an elite military unit that combats the merciless humanoids outside the protection of the walls. Based on Hajime Isayama's award-winning manga, Shingeki no Kyojin follows Eren, along with his adopted sister Mikasa Ackerman and his childhood friend Armin Arlert, as they join the brutal war against the titans and race to discover a way of defeating them before the last walls are breached.
+
+          (Source: MAL Rewrite)
+        description: |-
+          Centuries ago, mankind was slaughtered to near extinction by monstrous humanoid creatures called titans, forcing humans to hide in fear behind enormous concentric walls. What makes these giants truly terrifying is that their taste for human flesh is not born out of hunger but what appears to be out of pleasure. To ensure their survival, the remnants of humanity began living within defensive barriers, resulting in one hundred years without a single titan encounter. However, that fragile calm is soon shattered when a colossal titan manages to breach the supposedly impregnable outer wall, reigniting the fight for survival against the man-eating abominations.
+
+          After witnessing a horrific personal loss at the hands of the invading creatures, Eren Yeager dedicates his life to their eradication by enlisting into the Survey Corps, an elite military unit that combats the merciless humanoids outside the protection of the walls. Based on Hajime Isayama's award-winning manga, Shingeki no Kyojin follows Eren, along with his adopted sister Mikasa Ackerman and his childhood friend Armin Arlert, as they join the brutal war against the titans and race to discover a way of defeating them before the last walls are breached.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 263
+        titles:
+          en: Attack on Titan
+          en_jp: Shingeki no Kyojin
+          en_us: Attack on Titan
+          ja_jp: 進撃の巨人
+        canonicalTitle: Attack on Titan
+        abbreviatedTitles:
+        - AoT
+        averageRating: '84.5'
+        ratingFrequencies:
+          '2': '12398'
+          '3': '276'
+          '4': '1106'
+          '5': '213'
+          '6': '1083'
+          '7': '216'
+          '8': '21121'
+          '9': '346'
+          '10': '3572'
+          '11': '602'
+          '12': '7077'
+          '13': '908'
+          '14': '73303'
+          '15': '2255'
+          '16': '27594'
+          '17': '4114'
+          '18': '28561'
+          '19': '2847'
+          '20': '225830'
+        userCount: 606351
+        favoritesCount: 9570
+        startDate: '2013-04-07'
+        endDate: '2013-09-29'
+        nextRelease: null
+        popularityRank: 1
+        ratingRank: 45
+        ageRating: R
+        ageRatingGuide: Violence, Profanity
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/7442/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/7442/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/7442/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/7442/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/7442/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/7442/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/7442/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/7442/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/7442/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 25
+        episodeLength: 24
+        totalLength: 600
+        youtubeVideoId: LHtdKWJdif4
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/7442/relationships/genres
+            related: /anime/7442/genres
+        categories:
+          links:
+            self: /anime/7442/relationships/categories
+            related: /anime/7442/categories
+        castings:
+          links:
+            self: /anime/7442/relationships/castings
+            related: /anime/7442/castings
+        installments:
+          links:
+            self: /anime/7442/relationships/installments
+            related: /anime/7442/installments
+        mappings:
+          links:
+            self: /anime/7442/relationships/mappings
+            related: /anime/7442/mappings
+        reviews:
+          links:
+            self: /anime/7442/relationships/reviews
+            related: /anime/7442/reviews
+        mediaRelationships:
+          links:
+            self: /anime/7442/relationships/media-relationships
+            related: /anime/7442/media-relationships
+        characters:
+          links:
+            self: /anime/7442/relationships/characters
+            related: /anime/7442/characters
+        staff:
+          links:
+            self: /anime/7442/relationships/staff
+            related: /anime/7442/staff
+        productions:
+          links:
+            self: /anime/7442/relationships/productions
+            related: /anime/7442/productions
+        quotes:
+          links:
+            self: /anime/7442/relationships/quotes
+            related: /anime/7442/quotes
+        episodes:
+          links:
+            self: /anime/7442/relationships/episodes
+            related: /anime/7442/episodes
+        streamingLinks:
+          links:
+            self: /anime/7442/relationships/streaming-links
+            related: /anime/7442/streaming-links
+        animeProductions:
+          links:
+            self: /anime/7442/relationships/anime-productions
+            related: /anime/7442/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/7442/relationships/anime-characters
+            related: /anime/7442/anime-characters
+        animeStaff:
+          links:
+            self: /anime/7442/relationships/anime-staff
+            related: /anime/7442/anime-staff
+    - id: '11469'
+      type: anime
+      links:
+        self: /anime/11469
+      attributes:
+        createdAt: '2015-10-27T22:39:09.949Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: boku-no-hero-academia
+        synopsis: |-
+          What would the world be like if 80 percent of the population manifested extraordinary superpowers called “Quirks” at age four? Heroes and villains would be battling it out everywhere! Becoming a hero would mean learning to use your power, but where would you go to study? U.A. High's Hero Program of course! But what would you do if you were one of the 20 percent who were born Quirkless?
+
+          Middle school student Izuku Midoriya wants to be a hero more than anything, but he hasn't got an ounce of power in him. With no chance of ever getting into the prestigious U.A. High School for budding heroes, his life is looking more and more like a dead end. Then an encounter with All Might, the greatest hero of them all gives him a chance to change his destiny…
+
+          (Source: Viz Media)
+        description: |-
+          What would the world be like if 80 percent of the population manifested extraordinary superpowers called “Quirks” at age four? Heroes and villains would be battling it out everywhere! Becoming a hero would mean learning to use your power, but where would you go to study? U.A. High's Hero Program of course! But what would you do if you were one of the 20 percent who were born Quirkless?
+
+          Middle school student Izuku Midoriya wants to be a hero more than anything, but he hasn't got an ounce of power in him. With no chance of ever getting into the prestigious U.A. High School for budding heroes, his life is looking more and more like a dead end. Then an encounter with All Might, the greatest hero of them all gives him a chance to change his destiny…
+
+          (Source: Viz Media)
+        coverImageTopOffset: 200
+        titles:
+          en: My Hero Academia
+          en_jp: Boku no Hero Academia
+          en_us: My Hero Academia
+          ja_jp: 僕のヒーローアカデミア
+        canonicalTitle: Boku no Hero Academia
+        abbreviatedTitles: []
+        averageRating: '83.23'
+        ratingFrequencies:
+          '2': '12920'
+          '3': '325'
+          '4': '863'
+          '5': '218'
+          '6': '1085'
+          '7': '247'
+          '8': '22120'
+          '9': '379'
+          '10': '3427'
+          '11': '704'
+          '12': '6201'
+          '13': '1196'
+          '14': '75989'
+          '15': '2856'
+          '16': '25044'
+          '17': '4065'
+          '18': '18771'
+          '19': '2020'
+          '20': '202319'
+        userCount: 561235
+        favoritesCount: 5702
+        startDate: '2016-04-03'
+        endDate: '2016-06-26'
+        nextRelease: null
+        popularityRank: 2
+        ratingRank: 91
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/11469/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/11469/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/11469/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/11469/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/11469/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/11469/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/11469/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/11469/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/11469/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 13
+        episodeLength: 23
+        totalLength: 312
+        youtubeVideoId: D5fYOnwYkj4
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/11469/relationships/genres
+            related: /anime/11469/genres
+        categories:
+          links:
+            self: /anime/11469/relationships/categories
+            related: /anime/11469/categories
+        castings:
+          links:
+            self: /anime/11469/relationships/castings
+            related: /anime/11469/castings
+        installments:
+          links:
+            self: /anime/11469/relationships/installments
+            related: /anime/11469/installments
+        mappings:
+          links:
+            self: /anime/11469/relationships/mappings
+            related: /anime/11469/mappings
+        reviews:
+          links:
+            self: /anime/11469/relationships/reviews
+            related: /anime/11469/reviews
+        mediaRelationships:
+          links:
+            self: /anime/11469/relationships/media-relationships
+            related: /anime/11469/media-relationships
+        characters:
+          links:
+            self: /anime/11469/relationships/characters
+            related: /anime/11469/characters
+        staff:
+          links:
+            self: /anime/11469/relationships/staff
+            related: /anime/11469/staff
+        productions:
+          links:
+            self: /anime/11469/relationships/productions
+            related: /anime/11469/productions
+        quotes:
+          links:
+            self: /anime/11469/relationships/quotes
+            related: /anime/11469/quotes
+        episodes:
+          links:
+            self: /anime/11469/relationships/episodes
+            related: /anime/11469/episodes
+        streamingLinks:
+          links:
+            self: /anime/11469/relationships/streaming-links
+            related: /anime/11469/streaming-links
+        animeProductions:
+          links:
+            self: /anime/11469/relationships/anime-productions
+            related: /anime/11469/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/11469/relationships/anime-characters
+            related: /anime/11469/anime-characters
+        animeStaff:
+          links:
+            self: /anime/11469/relationships/anime-staff
+            related: /anime/11469/anime-staff
+    - id: '12268'
+      type: anime
+      links:
+        self: /anime/12268
+      attributes:
+        createdAt: '2016-06-26T19:09:26.437Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: boku-no-hero-academia-2nd-season
+        synopsis: |-
+          Taking off right after the last episode of the first season. The school is temporarily closed due to security. When U.A. restarts, it is announced that the highly anticipated School Sports Festival will soon be taking place. All classes: Hero, Support, General and Business will be participating. Tournaments all around will decide who is the top Hero in training.
+
+          (Source: Anime News Network)
+        description: |-
+          Taking off right after the last episode of the first season. The school is temporarily closed due to security. When U.A. restarts, it is announced that the highly anticipated School Sports Festival will soon be taking place. All classes: Hero, Support, General and Business will be participating. Tournaments all around will decide who is the top Hero in training.
+
+          (Source: Anime News Network)
+        coverImageTopOffset: 200
+        titles:
+          en: My Hero Academia Season 2
+          en_jp: Boku no Hero Academia 2
+          ja_jp: 僕のヒーローアカデミア２
+        canonicalTitle: Boku no Hero Academia 2
+        abbreviatedTitles: []
+        averageRating: '83.35'
+        ratingFrequencies:
+          '2': '13515'
+          '3': '312'
+          '4': '805'
+          '5': '229'
+          '6': '1137'
+          '7': '282'
+          '8': '22731'
+          '9': '390'
+          '10': '2815'
+          '11': '656'
+          '12': '4695'
+          '13': '1039'
+          '14': '70176'
+          '15': '2720'
+          '16': '22323'
+          '17': '4308'
+          '18': '19345'
+          '19': '2190'
+          '20': '200184'
+        userCount: 545762
+        favoritesCount: 2237
+        startDate: '2017-04-01'
+        endDate: '2017-09-30'
+        nextRelease: null
+        popularityRank: 3
+        ratingRank: 80
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/12268/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/12268/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/12268/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/12268/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/12268/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/12268/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/12268/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/12268/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/12268/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 25
+        episodeLength: 24
+        totalLength: 600
+        youtubeVideoId: 9ZIgCYSn3e8
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/12268/relationships/genres
+            related: /anime/12268/genres
+        categories:
+          links:
+            self: /anime/12268/relationships/categories
+            related: /anime/12268/categories
+        castings:
+          links:
+            self: /anime/12268/relationships/castings
+            related: /anime/12268/castings
+        installments:
+          links:
+            self: /anime/12268/relationships/installments
+            related: /anime/12268/installments
+        mappings:
+          links:
+            self: /anime/12268/relationships/mappings
+            related: /anime/12268/mappings
+        reviews:
+          links:
+            self: /anime/12268/relationships/reviews
+            related: /anime/12268/reviews
+        mediaRelationships:
+          links:
+            self: /anime/12268/relationships/media-relationships
+            related: /anime/12268/media-relationships
+        characters:
+          links:
+            self: /anime/12268/relationships/characters
+            related: /anime/12268/characters
+        staff:
+          links:
+            self: /anime/12268/relationships/staff
+            related: /anime/12268/staff
+        productions:
+          links:
+            self: /anime/12268/relationships/productions
+            related: /anime/12268/productions
+        quotes:
+          links:
+            self: /anime/12268/relationships/quotes
+            related: /anime/12268/quotes
+        episodes:
+          links:
+            self: /anime/12268/relationships/episodes
+            related: /anime/12268/episodes
+        streamingLinks:
+          links:
+            self: /anime/12268/relationships/streaming-links
+            related: /anime/12268/streaming-links
+        animeProductions:
+          links:
+            self: /anime/12268/relationships/anime-productions
+            related: /anime/12268/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/12268/relationships/anime-characters
+            related: /anime/12268/anime-characters
+        animeStaff:
+          links:
+            self: /anime/12268/relationships/anime-staff
+            related: /anime/12268/anime-staff
+    - id: '13881'
+      type: anime
+      links:
+        self: /anime/13881
+      attributes:
+        createdAt: '2017-09-29T18:20:02.301Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: boku-no-hero-academia-3rd-season
+        synopsis: |-
+          Summer is here, and the heroes of Class 1-A and 1-B are in for the toughest training camp of their lives! A group of seasoned pros pushes everyone's Quirks to new heights as the students face one overwhelming challenge after another. Braving the elements in this secret location becomes the least of their worries when routine training turns into a critical struggle for survival.
+
+          (Source: Crunchyroll)
+        description: |-
+          Summer is here, and the heroes of Class 1-A and 1-B are in for the toughest training camp of their lives! A group of seasoned pros pushes everyone's Quirks to new heights as the students face one overwhelming challenge after another. Braving the elements in this secret location becomes the least of their worries when routine training turns into a critical struggle for survival.
+
+          (Source: Crunchyroll)
+        coverImageTopOffset: 0
+        titles:
+          en: My Hero Academia Season 3
+          en_jp: Boku no Hero Academia 3
+          ja_jp: 僕のヒーローアカデミア３
+        canonicalTitle: Boku no Hero Academia 3
+        abbreviatedTitles: []
+        averageRating: '83.61'
+        ratingFrequencies:
+          '2': '12655'
+          '3': '316'
+          '4': '786'
+          '5': '204'
+          '6': '878'
+          '7': '238'
+          '8': '19241'
+          '9': '321'
+          '10': '2621'
+          '11': '660'
+          '12': '4272'
+          '13': '1003'
+          '14': '61957'
+          '15': '2389'
+          '16': '17496'
+          '17': '3748'
+          '18': '14364'
+          '19': '2040'
+          '20': '184328'
+        userCount: 505068
+        favoritesCount: 2519
+        startDate: '2018-04-07'
+        endDate: '2018-09-29'
+        nextRelease: null
+        popularityRank: 5
+        ratingRank: 68
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/13881/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/13881/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/13881/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/13881/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/13881/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/13881/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/13881/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/13881/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/13881/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 25
+        episodeLength: 24
+        totalLength: 600
+        youtubeVideoId: JezE6iZUWxo
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/13881/relationships/genres
+            related: /anime/13881/genres
+        categories:
+          links:
+            self: /anime/13881/relationships/categories
+            related: /anime/13881/categories
+        castings:
+          links:
+            self: /anime/13881/relationships/castings
+            related: /anime/13881/castings
+        installments:
+          links:
+            self: /anime/13881/relationships/installments
+            related: /anime/13881/installments
+        mappings:
+          links:
+            self: /anime/13881/relationships/mappings
+            related: /anime/13881/mappings
+        reviews:
+          links:
+            self: /anime/13881/relationships/reviews
+            related: /anime/13881/reviews
+        mediaRelationships:
+          links:
+            self: /anime/13881/relationships/media-relationships
+            related: /anime/13881/media-relationships
+        characters:
+          links:
+            self: /anime/13881/relationships/characters
+            related: /anime/13881/characters
+        staff:
+          links:
+            self: /anime/13881/relationships/staff
+            related: /anime/13881/staff
+        productions:
+          links:
+            self: /anime/13881/relationships/productions
+            related: /anime/13881/productions
+        quotes:
+          links:
+            self: /anime/13881/relationships/quotes
+            related: /anime/13881/quotes
+        episodes:
+          links:
+            self: /anime/13881/relationships/episodes
+            related: /anime/13881/episodes
+        streamingLinks:
+          links:
+            self: /anime/13881/relationships/streaming-links
+            related: /anime/13881/streaming-links
+        animeProductions:
+          links:
+            self: /anime/13881/relationships/anime-productions
+            related: /anime/13881/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/13881/relationships/anime-characters
+            related: /anime/13881/anime-characters
+        animeStaff:
+          links:
+            self: /anime/13881/relationships/anime-staff
+            related: /anime/13881/anime-staff
+    - id: '10740'
+      type: anime
+      links:
+        self: /anime/10740
+      attributes:
+        createdAt: '2015-03-07T16:34:36.575Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: one-punch-man
+        synopsis: |-
+          The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the process. Now, Saitama is incredibly powerful, so much so that no enemy is able to defeat him in battle. In fact, all it takes to defeat evildoers with just one punch has led to an unexpected problem—he is no longer able to enjoy the thrill of battling and has become quite bored.
+
+          This all changes with the arrival of Genos, a 19-year-old cyborg, who wishes to be Saitama's disciple after seeing what he is capable of. Genos proposes that the two join the Hero Association in order to become certified heroes that will be recognized for their positive contributions to society, and Saitama, shocked that no one knows who he is, quickly agrees. And thus begins the story of One Punch Man, an action-comedy that follows an eccentric individual who longs to fight strong enemies that can hopefully give him the excitement he once felt and just maybe, he'll become popular in the process.
+
+          (Source: MAL Rewrite)
+        description: |-
+          The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the process. Now, Saitama is incredibly powerful, so much so that no enemy is able to defeat him in battle. In fact, all it takes to defeat evildoers with just one punch has led to an unexpected problem—he is no longer able to enjoy the thrill of battling and has become quite bored.
+
+          This all changes with the arrival of Genos, a 19-year-old cyborg, who wishes to be Saitama's disciple after seeing what he is capable of. Genos proposes that the two join the Hero Association in order to become certified heroes that will be recognized for their positive contributions to society, and Saitama, shocked that no one knows who he is, quickly agrees. And thus begins the story of One Punch Man, an action-comedy that follows an eccentric individual who longs to fight strong enemies that can hopefully give him the excitement he once felt and just maybe, he'll become popular in the process.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 350
+        titles:
+          en_jp: One Punch Man
+          en_us: One Punch Man
+          ja_jp: ワンパンマン
+        canonicalTitle: One Punch Man
+        abbreviatedTitles:
+        - One Punch-Man
+        - OPM
+        - One-Punch Man
+        averageRating: '83.48'
+        ratingFrequencies:
+          '2': '14086'
+          '3': '336'
+          '4': '1040'
+          '5': '190'
+          '6': '833'
+          '7': '241'
+          '8': '21350'
+          '9': '316'
+          '10': '2768'
+          '11': '567'
+          '12': '4927'
+          '13': '849'
+          '14': '65050'
+          '15': '2221'
+          '16': '24676'
+          '17': '4143'
+          '18': '25518'
+          '19': '2458'
+          '20': '194901'
+        userCount: 528920
+        favoritesCount: 4289
+        startDate: '2015-10-05'
+        endDate: '2015-12-21'
+        nextRelease: null
+        popularityRank: 4
+        ratingRank: 76
+        ageRating: R
+        ageRatingGuide: Violence, Profanity
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/10740/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/10740/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/10740/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/10740/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/10740/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/10740/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/10740/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/10740/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/10740/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 12
+        episodeLength: 24
+        totalLength: 288
+        youtubeVideoId: tMblzsXwAKo
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/10740/relationships/genres
+            related: /anime/10740/genres
+        categories:
+          links:
+            self: /anime/10740/relationships/categories
+            related: /anime/10740/categories
+        castings:
+          links:
+            self: /anime/10740/relationships/castings
+            related: /anime/10740/castings
+        installments:
+          links:
+            self: /anime/10740/relationships/installments
+            related: /anime/10740/installments
+        mappings:
+          links:
+            self: /anime/10740/relationships/mappings
+            related: /anime/10740/mappings
+        reviews:
+          links:
+            self: /anime/10740/relationships/reviews
+            related: /anime/10740/reviews
+        mediaRelationships:
+          links:
+            self: /anime/10740/relationships/media-relationships
+            related: /anime/10740/media-relationships
+        characters:
+          links:
+            self: /anime/10740/relationships/characters
+            related: /anime/10740/characters
+        staff:
+          links:
+            self: /anime/10740/relationships/staff
+            related: /anime/10740/staff
+        productions:
+          links:
+            self: /anime/10740/relationships/productions
+            related: /anime/10740/productions
+        quotes:
+          links:
+            self: /anime/10740/relationships/quotes
+            related: /anime/10740/quotes
+        episodes:
+          links:
+            self: /anime/10740/relationships/episodes
+            related: /anime/10740/episodes
+        streamingLinks:
+          links:
+            self: /anime/10740/relationships/streaming-links
+            related: /anime/10740/streaming-links
+        animeProductions:
+          links:
+            self: /anime/10740/relationships/anime-productions
+            related: /anime/10740/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/10740/relationships/anime-characters
+            related: /anime/10740/anime-characters
+        animeStaff:
+          links:
+            self: /anime/10740/relationships/anime-staff
+            related: /anime/10740/anime-staff
+    - id: '1376'
+      type: anime
+      links:
+        self: /anime/1376
+      attributes:
+        createdAt: '2013-02-20T16:22:02.337Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: death-note
+        synopsis: |-
+          A shinigami, as a god of death, can kill any person—provided they see their victim's face and write their victim's name in a notebook called a Death Note. One day, Ryuk, bored by the shinigami lifestyle and interested in seeing how a human would use a Death Note, drops one into the human realm.
+
+          High school student and prodigy Light Yagami stumbles upon the Death Note and—since he deplores the state of the world—tests the deadly notebook by writing a criminal's name in it. When the criminal dies immediately following his experiment with the Death Note, Light is greatly surprised and quickly recognizes how devastating the power that has fallen into his hands could be.
+
+          With this divine capability, Light decides to extinguish all criminals in order to build a new world where crime does not exist and people worship him as a god. Police, however, quickly discover that a serial killer is targeting criminals and, consequently, try to apprehend the culprit. To do this, the Japanese investigators count on the assistance of the best detective in the world: a young and eccentric man known only by the name of L.
+
+          (Source: MAL Rewrite)
+        description: |-
+          A shinigami, as a god of death, can kill any person—provided they see their victim's face and write their victim's name in a notebook called a Death Note. One day, Ryuk, bored by the shinigami lifestyle and interested in seeing how a human would use a Death Note, drops one into the human realm.
+
+          High school student and prodigy Light Yagami stumbles upon the Death Note and—since he deplores the state of the world—tests the deadly notebook by writing a criminal's name in it. When the criminal dies immediately following his experiment with the Death Note, Light is greatly surprised and quickly recognizes how devastating the power that has fallen into his hands could be.
+
+          With this divine capability, Light decides to extinguish all criminals in order to build a new world where crime does not exist and people worship him as a god. Police, however, quickly discover that a serial killer is targeting criminals and, consequently, try to apprehend the culprit. To do this, the Japanese investigators count on the assistance of the best detective in the world: a young and eccentric man known only by the name of L.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 53
+        titles:
+          en: Death Note
+          en_jp: Death Note
+          en_us: Death Note
+          ja_jp: デスノート
+        canonicalTitle: Death Note
+        abbreviatedTitles:
+        - DN
+        averageRating: '83.13'
+        ratingFrequencies:
+          '2': '11197'
+          '3': '238'
+          '4': '907'
+          '5': '203'
+          '6': '882'
+          '7': '178'
+          '8': '20620'
+          '9': '289'
+          '10': '2848'
+          '11': '553'
+          '12': '6441'
+          '13': '805'
+          '14': '57200'
+          '15': '1946'
+          '16': '25046'
+          '17': '3561'
+          '18': '28388'
+          '19': '2996'
+          '20': '165695'
+        userCount: 490575
+        favoritesCount: 7205
+        startDate: '2006-10-04'
+        endDate: '2007-06-27'
+        nextRelease: null
+        popularityRank: 6
+        ratingRank: 96
+        ageRating: R
+        ageRatingGuide: Violence, Profanity
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/1376/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/1376/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/1376/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/1376/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/1376/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/1376/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/1376/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/1376/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/1376/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 37
+        episodeLength: 23
+        totalLength: 851
+        youtubeVideoId: NlJZ-YgAt-c
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/1376/relationships/genres
+            related: /anime/1376/genres
+        categories:
+          links:
+            self: /anime/1376/relationships/categories
+            related: /anime/1376/categories
+        castings:
+          links:
+            self: /anime/1376/relationships/castings
+            related: /anime/1376/castings
+        installments:
+          links:
+            self: /anime/1376/relationships/installments
+            related: /anime/1376/installments
+        mappings:
+          links:
+            self: /anime/1376/relationships/mappings
+            related: /anime/1376/mappings
+        reviews:
+          links:
+            self: /anime/1376/relationships/reviews
+            related: /anime/1376/reviews
+        mediaRelationships:
+          links:
+            self: /anime/1376/relationships/media-relationships
+            related: /anime/1376/media-relationships
+        characters:
+          links:
+            self: /anime/1376/relationships/characters
+            related: /anime/1376/characters
+        staff:
+          links:
+            self: /anime/1376/relationships/staff
+            related: /anime/1376/staff
+        productions:
+          links:
+            self: /anime/1376/relationships/productions
+            related: /anime/1376/productions
+        quotes:
+          links:
+            self: /anime/1376/relationships/quotes
+            related: /anime/1376/quotes
+        episodes:
+          links:
+            self: /anime/1376/relationships/episodes
+            related: /anime/1376/episodes
+        streamingLinks:
+          links:
+            self: /anime/1376/relationships/streaming-links
+            related: /anime/1376/streaming-links
+        animeProductions:
+          links:
+            self: /anime/1376/relationships/anime-productions
+            related: /anime/1376/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/1376/relationships/anime-characters
+            related: /anime/1376/anime-characters
+        animeStaff:
+          links:
+            self: /anime/1376/relationships/anime-staff
+            related: /anime/1376/anime-staff
+    - id: '48363'
+      type: anime
+      links:
+        self: /anime/48363
+      attributes:
+        createdAt: '2023-12-28T21:24:33.741Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: Jujutsu-Kaisen-3
+        synopsis: |-
+          The third season of Jujutsu Kaisen.
+
+          After the Shibuya Incident, a deadly jujutsu battle known as the Culling Game, orchestrated by Noritoshi Kamo, erupts across ten colonies in Japan.
+
+          Haunted by guilt over the mass killings in Shibuya and wary of Sukuna’s interest in Fushiguro, Itadori chooses not to return to Jujutsu High. Instead, he teams up with Choso to exorcise the countless cursed spirits unleashed by Noritoshi Kamo. Amid this chaos, the Jujutsu Headquarters revokes Yuji Itadori’s suspended death sentence and appoints special-grade sorcerer Yuta Okkotsu as his executioner.
+
+          Newly awakened modern sorcerers and resurrected ancient ones, now fighting as players in the Culling Game, collide with conflicting motives, driving the world once more toward an age ruled by jujutsu.
+
+          (Source: TOHO Animation)
+        description: |-
+          The third season of Jujutsu Kaisen.
+
+          After the Shibuya Incident, a deadly jujutsu battle known as the Culling Game, orchestrated by Noritoshi Kamo, erupts across ten colonies in Japan.
+
+          Haunted by guilt over the mass killings in Shibuya and wary of Sukuna’s interest in Fushiguro, Itadori chooses not to return to Jujutsu High. Instead, he teams up with Choso to exorcise the countless cursed spirits unleashed by Noritoshi Kamo. Amid this chaos, the Jujutsu Headquarters revokes Yuji Itadori’s suspended death sentence and appoints special-grade sorcerer Yuta Okkotsu as his executioner.
+
+          Newly awakened modern sorcerers and resurrected ancient ones, now fighting as players in the Culling Game, collide with conflicting motives, driving the world once more toward an age ruled by jujutsu.
+
+          (Source: TOHO Animation)
+        coverImageTopOffset: 0
+        titles:
+          en: 'Jujutsu Kaisen Season 3: The Culling Game Part 1'
+          en_jp: 'Jujutsu Kaisen: Shimetsu Kaiyū Zenpen'
+          ja_jp: '呪術廻戦 第3期: 死滅回游 前編'
+        canonicalTitle: 'Jujutsu Kaisen: Shimetsu Kaiyū Zenpen'
+        abbreviatedTitles:
+        - JJK3
+        - Jujutsu Kaisen Season 3
+        - Jujutsu Kaisen 3rd Season
+        - 'Jujutsu Kaisen: The Culling Game Part 1'
+        averageRating: '86.08'
+        ratingFrequencies:
+          '2': '15'
+          '3': '0'
+          '4': '0'
+          '5': '3'
+          '6': '2'
+          '7': '3'
+          '8': '18'
+          '9': '1'
+          '10': '11'
+          '11': '8'
+          '12': '23'
+          '13': '7'
+          '14': '179'
+          '15': '37'
+          '16': '191'
+          '17': '92'
+          '18': '213'
+          '19': '69'
+          '20': '567'
+        userCount: 5459
+        favoritesCount: 52
+        startDate: '2026-01-08'
+        endDate: '2026-03-26'
+        nextRelease: null
+        popularityRank: 2601
+        ratingRank: 22
+        ageRating: R
+        ageRatingGuide: 17+ (violence & profanity)
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/48363/poster_image/tiny-685f82381507bd2656e015fd681b9da6.jpeg
+          large: https://media.kitsu.app/anime/48363/poster_image/large-9aa3932da532e5fced3be37a5b9d81d2.jpeg
+          small: https://media.kitsu.app/anime/48363/poster_image/small-a3eb8e4077349a9158c45dbfa5d7c170.jpeg
+          medium: https://media.kitsu.app/anime/48363/poster_image/medium-3a5b89a567ed3d4be0cc71fe94e029c7.jpeg
+          original: https://media.kitsu.app/anime/48363/poster_image/f83bd46a458cf46b966355dd63f3f6bc.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/48363/cover_image/tiny-7affcf95fe51ec91aad94d7e8a1636a9.jpeg
+          large: https://media.kitsu.app/anime/48363/cover_image/large-c0584de9e1fee910a40402702e48313d.jpeg
+          small: https://media.kitsu.app/anime/48363/cover_image/small-a0d817e4c2c28d8a05ca291aef515443.jpeg
+          original: https://media.kitsu.app/anime/48363/cover_image/8698500ebb25794e97e7602eb4876ce5.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 12
+        episodeLength: 24
+        totalLength: -24
+        youtubeVideoId: ruX3rIj3--w
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/48363/relationships/genres
+            related: /anime/48363/genres
+        categories:
+          links:
+            self: /anime/48363/relationships/categories
+            related: /anime/48363/categories
+        castings:
+          links:
+            self: /anime/48363/relationships/castings
+            related: /anime/48363/castings
+        installments:
+          links:
+            self: /anime/48363/relationships/installments
+            related: /anime/48363/installments
+        mappings:
+          links:
+            self: /anime/48363/relationships/mappings
+            related: /anime/48363/mappings
+        reviews:
+          links:
+            self: /anime/48363/relationships/reviews
+            related: /anime/48363/reviews
+        mediaRelationships:
+          links:
+            self: /anime/48363/relationships/media-relationships
+            related: /anime/48363/media-relationships
+        characters:
+          links:
+            self: /anime/48363/relationships/characters
+            related: /anime/48363/characters
+        staff:
+          links:
+            self: /anime/48363/relationships/staff
+            related: /anime/48363/staff
+        productions:
+          links:
+            self: /anime/48363/relationships/productions
+            related: /anime/48363/productions
+        quotes:
+          links:
+            self: /anime/48363/relationships/quotes
+            related: /anime/48363/quotes
+        episodes:
+          links:
+            self: /anime/48363/relationships/episodes
+            related: /anime/48363/episodes
+        streamingLinks:
+          links:
+            self: /anime/48363/relationships/streaming-links
+            related: /anime/48363/streaming-links
+        animeProductions:
+          links:
+            self: /anime/48363/relationships/anime-productions
+            related: /anime/48363/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/48363/relationships/anime-characters
+            related: /anime/48363/anime-characters
+        animeStaff:
+          links:
+            self: /anime/48363/relationships/anime-staff
+            related: /anime/48363/anime-staff
+    - id: '6448'
+      type: anime
+      links:
+        self: /anime/6448
+      attributes:
+        createdAt: '2013-02-20T17:39:58.670Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: hunter-x-hunter-2011
+        synopsis: |-
+          Hunter x Hunter is set in a world where Hunters exist to perform all manner of dangerous tasks like capturing criminals and bravely searching for lost treasures in uncharted territories. Twelve-year-old Gon Freecss is determined to become the best Hunter possible in hopes of finding his father, who was a Hunter himself and had long ago abandoned his young son. However, Gon soon realizes the path to achieving his goals is far more challenging than he could have ever imagined.
+
+          Along the way to becoming an official Hunter, Gon befriends the lively doctor-in-training Leorio, vengeful Kurapika, and rebellious ex-assassin Killua. To attain their own goals and desires, together the four of them take the Hunter Exam, notorious for its low success rate and high probability of death. Throughout their journey, Gon and his friends embark on an adventure that puts them through many hardships and struggles. They will meet a plethora of monsters, creatures, and characters—all while learning what being a Hunter truly means.
+
+          (Source: MAL Rewrite)
+        description: |-
+          Hunter x Hunter is set in a world where Hunters exist to perform all manner of dangerous tasks like capturing criminals and bravely searching for lost treasures in uncharted territories. Twelve-year-old Gon Freecss is determined to become the best Hunter possible in hopes of finding his father, who was a Hunter himself and had long ago abandoned his young son. However, Gon soon realizes the path to achieving his goals is far more challenging than he could have ever imagined.
+
+          Along the way to becoming an official Hunter, Gon befriends the lively doctor-in-training Leorio, vengeful Kurapika, and rebellious ex-assassin Killua. To attain their own goals and desires, together the four of them take the Hunter Exam, notorious for its low success rate and high probability of death. Throughout their journey, Gon and his friends embark on an adventure that puts them through many hardships and struggles. They will meet a plethora of monsters, creatures, and characters—all while learning what being a Hunter truly means.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 130
+        titles:
+          en: Hunter x Hunter (2011)
+          en_jp: Hunter x Hunter (2011)
+          en_us: Hunter x Hunter
+          ja_jp: HUNTER×HUNTER ハンターハンター
+        canonicalTitle: Hunter x Hunter (2011)
+        abbreviatedTitles:
+        - HUNTER×HUNTER ハンターハンター
+        - HxH (2011)
+        - Hantā Hantā (2011)
+        averageRating: '84.17'
+        ratingFrequencies:
+          '2': '10701'
+          '3': '276'
+          '4': '937'
+          '5': '171'
+          '6': '579'
+          '7': '182'
+          '8': '16288'
+          '9': '239'
+          '10': '1492'
+          '11': '390'
+          '12': '3111'
+          '13': '450'
+          '14': '34668'
+          '15': '1041'
+          '16': '11633'
+          '17': '2344'
+          '18': '17678'
+          '19': '2655'
+          '20': '143272'
+        userCount: 404734
+        favoritesCount: 7856
+        startDate: '2011-10-02'
+        endDate: '2014-09-24'
+        nextRelease: null
+        popularityRank: 9
+        ratingRank: 48
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: TV
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/6448/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/6448/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/6448/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/6448/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/6448/original.png
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 155
+              large:
+                width: 550
+                height: 776
+              small:
+                width: 284
+                height: 400
+              medium:
+                width: 390
+                height: 551
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/6448/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/6448/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/6448/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/6448/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 148
+        episodeLength: 23
+        totalLength: 3549
+        youtubeVideoId: fda6QzBA2mI
+        showType: TV
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/6448/relationships/genres
+            related: /anime/6448/genres
+        categories:
+          links:
+            self: /anime/6448/relationships/categories
+            related: /anime/6448/categories
+        castings:
+          links:
+            self: /anime/6448/relationships/castings
+            related: /anime/6448/castings
+        installments:
+          links:
+            self: /anime/6448/relationships/installments
+            related: /anime/6448/installments
+        mappings:
+          links:
+            self: /anime/6448/relationships/mappings
+            related: /anime/6448/mappings
+        reviews:
+          links:
+            self: /anime/6448/relationships/reviews
+            related: /anime/6448/reviews
+        mediaRelationships:
+          links:
+            self: /anime/6448/relationships/media-relationships
+            related: /anime/6448/media-relationships
+        characters:
+          links:
+            self: /anime/6448/relationships/characters
+            related: /anime/6448/characters
+        staff:
+          links:
+            self: /anime/6448/relationships/staff
+            related: /anime/6448/staff
+        productions:
+          links:
+            self: /anime/6448/relationships/productions
+            related: /anime/6448/productions
+        quotes:
+          links:
+            self: /anime/6448/relationships/quotes
+            related: /anime/6448/quotes
+        episodes:
+          links:
+            self: /anime/6448/relationships/episodes
+            related: /anime/6448/episodes
+        streamingLinks:
+          links:
+            self: /anime/6448/relationships/streaming-links
+            related: /anime/6448/streaming-links
+        animeProductions:
+          links:
+            self: /anime/6448/relationships/anime-productions
+            related: /anime/6448/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/6448/relationships/anime-characters
+            related: /anime/6448/anime-characters
+        animeStaff:
+          links:
+            self: /anime/6448/relationships/anime-staff
+            related: /anime/6448/anime-staff
+    - id: '11614'
+      type: anime
+      links:
+        self: /anime/11614
+      attributes:
+        createdAt: '2015-12-10T23:03:02.734Z'
+        updatedAt: '2026-05-08T12:00:09.556Z'
+        slug: kimi-no-na-wa
+        synopsis: |-
+          From director Makoto Shinkai, the innovative mind behind Voices of a Distant Star and 5 Centimeters Per Second, comes a beautiful masterpiece about time, the thread of fate, and the hearts of two young souls.
+
+          The day the stars fell, two lives changed forever. High schoolers Mitsuha and Taki are complete strangers living separate lives. But one night, they suddenly switch places. Mitsuha wakes up in Taki’s body, and he in hers. This bizarre occurrence continues to happen randomly, and the two must adjust their lives around each other. Yet, somehow, it works. They build a connection and communicate by leaving notes, messages, and more importantly, an imprint.
+
+          When a dazzling comet lights up the night’s sky, it dawns on them. They want something more from this connection—a chance to meet, an opportunity to truly know each other. Tugging at the string of fate, they try to find a way to each other. But distance isn’t the only thing keeping them apart. Is their bond strong enough to face the cruel irony of time? Or is their meeting nothing more than a wish upon the stars?
+
+          (Source: FUNimation Films)
+        description: |-
+          From director Makoto Shinkai, the innovative mind behind Voices of a Distant Star and 5 Centimeters Per Second, comes a beautiful masterpiece about time, the thread of fate, and the hearts of two young souls.
+
+          The day the stars fell, two lives changed forever. High schoolers Mitsuha and Taki are complete strangers living separate lives. But one night, they suddenly switch places. Mitsuha wakes up in Taki’s body, and he in hers. This bizarre occurrence continues to happen randomly, and the two must adjust their lives around each other. Yet, somehow, it works. They build a connection and communicate by leaving notes, messages, and more importantly, an imprint.
+
+          When a dazzling comet lights up the night’s sky, it dawns on them. They want something more from this connection—a chance to meet, an opportunity to truly know each other. Tugging at the string of fate, they try to find a way to each other. But distance isn’t the only thing keeping them apart. Is their bond strong enough to face the cruel irony of time? Or is their meeting nothing more than a wish upon the stars?
+
+          (Source: FUNimation Films)
+        coverImageTopOffset: 275
+        titles:
+          en: Your Name.
+          en_jp: Kimi no Na wa.
+          en_us: Your Name.
+          ja_jp: 君の名は。
+        canonicalTitle: Kimi no Na wa.
+        abbreviatedTitles: []
+        averageRating: '83.32'
+        ratingFrequencies:
+          '2': '11616'
+          '3': '309'
+          '4': '777'
+          '5': '204'
+          '6': '751'
+          '7': '200'
+          '8': '17796'
+          '9': '292'
+          '10': '2051'
+          '11': '487'
+          '12': '3132'
+          '13': '652'
+          '14': '43036'
+          '15': '1382'
+          '16': '12985'
+          '17': '2727'
+          '18': '18503'
+          '19': '2680'
+          '20': '146694'
+        userCount: 416268
+        favoritesCount: 4180
+        startDate: '2016-08-26'
+        endDate: '2016-08-26'
+        nextRelease: null
+        popularityRank: 8
+        ratingRank: 85
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: movie
+        status: finished
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/anime/poster_images/11614/tiny.jpg
+          large: https://media.kitsu.app/anime/poster_images/11614/large.jpg
+          small: https://media.kitsu.app/anime/poster_images/11614/small.jpg
+          medium: https://media.kitsu.app/anime/poster_images/11614/medium.jpg
+          original: https://media.kitsu.app/anime/poster_images/11614/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/anime/cover_images/11614/tiny.jpg
+          large: https://media.kitsu.app/anime/cover_images/11614/large.jpg
+          small: https://media.kitsu.app/anime/cover_images/11614/small.jpg
+          original: https://media.kitsu.app/anime/cover_images/11614/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        episodeCount: 1
+        episodeLength: 106
+        totalLength: 106
+        youtubeVideoId: 3KR8_igDs1Y
+        showType: movie
+        nsfw: false
+      relationships:
+        genres:
+          links:
+            self: /anime/11614/relationships/genres
+            related: /anime/11614/genres
+        categories:
+          links:
+            self: /anime/11614/relationships/categories
+            related: /anime/11614/categories
+        castings:
+          links:
+            self: /anime/11614/relationships/castings
+            related: /anime/11614/castings
+        installments:
+          links:
+            self: /anime/11614/relationships/installments
+            related: /anime/11614/installments
+        mappings:
+          links:
+            self: /anime/11614/relationships/mappings
+            related: /anime/11614/mappings
+        reviews:
+          links:
+            self: /anime/11614/relationships/reviews
+            related: /anime/11614/reviews
+        mediaRelationships:
+          links:
+            self: /anime/11614/relationships/media-relationships
+            related: /anime/11614/media-relationships
+        characters:
+          links:
+            self: /anime/11614/relationships/characters
+            related: /anime/11614/characters
+        staff:
+          links:
+            self: /anime/11614/relationships/staff
+            related: /anime/11614/staff
+        productions:
+          links:
+            self: /anime/11614/relationships/productions
+            related: /anime/11614/productions
+        quotes:
+          links:
+            self: /anime/11614/relationships/quotes
+            related: /anime/11614/quotes
+        episodes:
+          links:
+            self: /anime/11614/relationships/episodes
+            related: /anime/11614/episodes
+        streamingLinks:
+          links:
+            self: /anime/11614/relationships/streaming-links
+            related: /anime/11614/streaming-links
+        animeProductions:
+          links:
+            self: /anime/11614/relationships/anime-productions
+            related: /anime/11614/anime-productions
+        animeCharacters:
+          links:
+            self: /anime/11614/relationships/anime-characters
+            related: /anime/11614/anime-characters
+        animeStaff:
+          links:
+            self: /anime/11614/relationships/anime-staff
+            related: /anime/11614/anime-staff
+  body_text: null
+  body_b64: null

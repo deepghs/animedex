@@ -215,6 +215,100 @@ class TestTraceLossless:
         )
 
 
+# ---------- Kitsu ----------
+
+
+class TestKitsuLossless:
+    """Kitsu's JSON:API resource shape is ``{id, type, attributes,
+    relationships, links}``. The rich types model the ``attributes``
+    block as a typed sub-class with ``extra='allow'`` so any field
+    upstream adds round-trips through ``model_dump`` even if not
+    declared."""
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "anime_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_anime_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuAnime
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or "data" not in body or body["data"] is None:
+            pytest.skip("empty / not-found fixture")
+        _assert_lossless(KitsuAnime, body["data"], f"KitsuAnime/{path.name}")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "anime_search").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "trending_anime").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_anime_listing_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuAnime
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(KitsuAnime, row, f"KitsuAnime/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "kitsu" / "manga_by_id").glob("*.yaml"),
+                *(FIXTURES / "kitsu" / "manga_search").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_kitsu_manga_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuManga
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or "data" not in body or body["data"] is None:
+            pytest.skip("empty / not-found fixture")
+        rows = body["data"] if isinstance(body["data"], list) else [body["data"]]
+        for i, row in enumerate(rows):
+            _assert_lossless(KitsuManga, row, f"KitsuManga/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "kitsu" / "anime_mappings").glob("*.yaml")))
+    def test_kitsu_mapping_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuMapping
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(KitsuMapping, row, f"KitsuMapping/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "kitsu" / "anime_streaming_links").glob("*.yaml")))
+    def test_kitsu_streaming_link_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuStreamingLink
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(KitsuStreamingLink, row, f"KitsuStreamingLink/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "kitsu" / "categories").glob("*.yaml")))
+    def test_kitsu_category_lossless(self, path):
+        from animedex.backends.kitsu.models import KitsuCategory
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not body.get("data"):
+            pytest.skip("empty fixture")
+        for i, row in enumerate(body["data"]):
+            _assert_lossless(KitsuCategory, row, f"KitsuCategory/{path.name}[{i}]")
+
+
 # ---------- nekos.best ----------
 
 
@@ -291,3 +385,11 @@ class TestBackendRichDiscipline:
         rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
         not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
         assert not not_rich, f"Nekos classes outside BackendRichModel: {not_rich}"
+
+    def test_kitsu_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.kitsu import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"Kitsu classes outside BackendRichModel: {not_rich}"
