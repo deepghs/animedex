@@ -325,7 +325,7 @@ class TestAnilistShowDeep:
 
 
 class TestTraceCliFromFixtures:
-    def test_quota_drops_caller_ip(self, cli_runner, cli, fake_clock):
+    def test_quota_common_shape_has_no_ip(self, cli_runner, cli, fake_clock):
         # We have a Trace /me fixture from Phase 1 + Phase 2 — pick one.
         candidates = list((FIXTURES / "trace" / "me").glob("*.yaml"))
         if not candidates:
@@ -338,8 +338,13 @@ class TestTraceCliFromFixtures:
 
         assert result.exit_code == 0, result.output
         decoded = json.loads(result.output)
-        # The captor IP should never reach the rendered output even
-        # if the fixture's body_json carries it (the mapper drops it).
+        # ``trace quota`` renders the common projection ``TraceQuota``,
+        # which has no ``id`` field by design (the cross-source common
+        # shape doesn't model upstream IP echoes). So the placeholder
+        # IP from the fixture must not appear in the rendered output —
+        # not because we filter it, but because the projection didn't
+        # claim it. The lossless rich shape is available directly via
+        # ``RawTraceQuota`` for a caller who wants it (AGENTS §13).
         assert "203.0.113.42" not in result.output  # placeholder
         # quota_used is coerced from string to int (Trace's quirk)
         assert isinstance(decoded["quota_used"], int)

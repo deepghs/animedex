@@ -189,22 +189,30 @@ class TestTraceLossless:
             _assert_lossless(RawTraceHit, row, f"RawTraceHit/{path.name}[{i}]")
 
     @pytest.mark.parametrize("path", sorted((FIXTURES / "trace" / "me").glob("*.yaml")))
-    def test_trace_quota_lossless_minus_id(self, path):
+    def test_trace_quota_lossless(self, path):
         from animedex.backends.trace.models import RawTraceQuota
 
         body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
         if not body:
             pytest.skip("empty fixture")
-        # ``id`` (caller IP) is deliberately dropped.
-        upstream = _key_tree(body) - {"id"}
-        obj = RawTraceQuota.model_validate({**body, "source_tag": _src()})
-        dumped = obj.model_dump(mode="json", by_alias=True, exclude={"source_tag"})
-        after = _key_tree(dumped)
-        # ``id`` must NOT survive
-        assert "id" not in after, "RawTraceQuota leaked the caller IP back through dump"
-        # everything else must be preserved
-        lost = upstream - after
-        assert not lost, f"RawTraceQuota dropped non-id keys: {sorted(lost)}"
+        # The rich shape is fully lossless, ``id`` included. The
+        # upstream's ``id`` is the caller's egress IP — surfacing it on
+        # the rich model is correct (it's the caller's own datum, not
+        # something to filter on their behalf, AGENTS §0). The
+        # fixture-capture pipeline rewrites public IPv4 addresses to
+        # the RFC-5737 documentation address, so the repo's fixtures
+        # never carry a real contributor IP. The common projection
+        # :class:`TraceQuota` does not include ``id``, so callers who
+        # don't want the IP reach for it.
+        _assert_lossless(RawTraceQuota, body, f"RawTraceQuota/{path.name}")
+        # The common projection deliberately does NOT have an ``id``
+        # field — pin that here so the asymmetry is enforced.
+        from animedex.models.trace import TraceQuota
+
+        assert "id" not in TraceQuota.model_fields, (
+            "TraceQuota.id appeared on the common projection — the rich shape carries the IP, "
+            "the common shape does not. See AGENTS §13."
+        )
 
 
 # ---------- Smoke: every rich class has BackendRichModel discipline ----------

@@ -24,7 +24,7 @@ RawTraceQuota
 -----------------------------------------------------
 
 .. autoclass:: RawTraceQuota
-    :members: to_common,priority,concurrency,quota,quotaUsed,source_tag
+    :members: to_common,id,priority,concurrency,quota,quotaUsed,source_tag
 
 
 selftest

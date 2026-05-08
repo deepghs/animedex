@@ -1,7 +1,11 @@
 """Trace.moe Python API tests.
 
-The /me mapper drops the upstream's caller-IP echo (privacy);
-/search mapper coerces the right field set.
+``trace.quota()`` returns the common projection :class:`TraceQuota`,
+which has no ``id`` field — so the caller's egress IP that the
+upstream echoes back never reaches the common shape. (A power user
+who actually wants ``id`` reaches for the rich
+:class:`RawTraceQuota` directly; that is lossless per AGENTS §13.)
+The /search mapper coerces the right field set.
 """
 
 from __future__ import annotations
@@ -27,10 +31,12 @@ def _src() -> SourceTag:
     return SourceTag(backend="trace", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc))
 
 
-class TestQuotaPrivacy:
-    """The mapper must not surface the upstream's `id` field (caller IP)."""
+class TestQuotaCommonShape:
+    """``trace.quota()`` returns the common projection, which has no
+    ``id`` field — so the upstream's caller-IP echo never appears on
+    the returned object."""
 
-    def test_quota_drops_caller_ip(self, monkeypatch):
+    def test_common_quota_has_no_id_field(self, monkeypatch):
         # Stub the raw envelope so the mapper sees a /me payload
         # carrying the captor IP.
         from animedex.api import trace as raw_trace

@@ -6,6 +6,11 @@ animedex.backends.trace
 .. automodule:: animedex.backends.trace
 
 
+.. toctree::
+    :maxdepth: 3
+
+    models
+
 quota
 -----------------------------------------------------
 

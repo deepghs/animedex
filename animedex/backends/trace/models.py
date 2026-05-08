@@ -8,8 +8,13 @@ they are projections, not the raw shape. These rich classes preserve
 the upstream verbatim:
 
 * :class:`RawTraceHit` — single ``/search`` hit row, lossless.
-* :class:`RawTraceQuota` — ``/me`` body, with the caller-IP ``id``
-  field DROPPED (privacy carve-out per review M1).
+* :class:`RawTraceQuota` — ``/me`` body, lossless. The upstream's
+  ``id`` field carries the caller's egress IP; surfacing it to the
+  caller is fine (it's the caller's own datum), but it must never be
+  hard-coded into a fixture committed to this repo. That guarantee
+  lives in the fixture-capture pipeline (``tools/fixtures/capture.py``
+  rewrites every public IPv4 in captured payloads to the RFC-5737
+  documentation address per review M1), not in the data model.
 
 ``to_common()`` projects to :class:`~animedex.models.trace.TraceHit`
 and :class:`~animedex.models.trace.TraceQuota` respectively. Loss of
@@ -104,24 +109,29 @@ class RawTraceHit(BackendRichModel):
 
 
 class RawTraceQuota(BackendRichModel):
-    """``/me`` body, lossless except that the upstream's ``id`` field
-    is **deliberately dropped** — that field carries the caller's
-    egress IP and persisting it would re-leak the value review M1
-    worked to suppress. The drop is documented here and tested.
+    """``/me`` body, lossless to the upstream shape.
+
+    The upstream's ``id`` field carries the caller's egress IP. We
+    surface it on the rich model — it is the caller's own datum, not
+    something to filter on their behalf (AGENTS.md §0). The
+    common-projection :class:`~animedex.models.trace.TraceQuota` does
+    not include ``id``, so anyone who wants the IP reaches for the
+    rich shape; anyone who just wants quota numbers reaches for the
+    common shape.
+
+    The fixture-capture pipeline (``tools/fixtures/capture.py``)
+    rewrites public IPv4 addresses in captured payloads to the
+    RFC-5737 documentation address per review M1, so the repo's
+    fixtures never carry a real contributor IP — but a live request
+    on a user's own machine returns their actual IP, unmodified.
     """
 
+    id: Optional[str] = None
     priority: int
     concurrency: int
     quota: int
     quotaUsed: Union[int, str]
     source_tag: SourceTag
-
-    @model_validator(mode="before")
-    @classmethod
-    def _drop_caller_ip(cls, data):
-        if isinstance(data, dict) and "id" in data:
-            data = {k: v for k, v in data.items() if k != "id"}
-        return data
 
     def to_common(self) -> TraceQuota:
         used = int(self.quotaUsed) if isinstance(self.quotaUsed, str) else self.quotaUsed
@@ -159,10 +169,14 @@ def selftest() -> bool:
     common = hit.to_common()
     assert common.anilist_id == 154587
 
-    # Round-trip a /me payload; ``id`` must be dropped.
+    # Round-trip a /me payload; ``id`` is preserved on the rich shape
+    # (caller's own datum) and stays off the common projection.
     quota = RawTraceQuota.model_validate(
         {"id": "203.0.113.42", "priority": 0, "concurrency": 1, "quota": 100, "quotaUsed": "18", "source_tag": src}
     )
-    assert "id" not in quota.model_dump(mode="json")
-    assert quota.to_common().quota_used == 18
+    assert quota.id == "203.0.113.42"
+    assert "id" in quota.model_dump(by_alias=True, mode="json", exclude={"source_tag"})
+    common = quota.to_common()
+    assert common.quota_used == 18
+    assert "id" not in TraceQuota.model_fields
     return True

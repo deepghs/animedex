@@ -50,8 +50,13 @@ def _coerce_int(v) -> int:
 def quota(*, config: Optional[Config] = None, **kw) -> TraceQuota:
     """Fetch ``/me``: caller's quota state.
 
-    The upstream's ``id`` field (the caller IP) is unconditionally
-    dropped — it never lands in the returned object or the cache row.
+    Returns the cross-source projection :class:`TraceQuota`, which
+    omits the upstream's ``id`` field by design — the common shape is
+    the lowest-common-denominator across backends and IP echoes don't
+    have a place there. A caller who wants the upstream payload as-is
+    (including ``id``) can reach for the rich
+    :class:`~animedex.backends.trace.models.RawTraceQuota` directly:
+    it round-trips the upstream verbatim per AGENTS §13.
     """
     raw = _raw_trace.call(path="/me", config=config, **kw)
     payload = _parse(raw)

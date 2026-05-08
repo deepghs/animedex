@@ -533,7 +533,7 @@ Every backend exposes two parallel data shapes. The user-facing **common** types
 
 The asymmetry is the whole reason both layers exist. If a power user wants every Jikan field a `/anime/{id}/full` response carried, they reach for `JikanAnime`. If they just want a multi-source-merged "this anime" view, they reach for `Anime`. We refuse to choose for them.
 
-The rule has one explicit, well-documented carve-out: `RawTraceQuota` deliberately drops the upstream `id` field, which is the caller's egress IP. Persisting that field would re-leak a value review M1 worked to suppress. The drop happens in a `model_validator(mode='before')`; it is tested in both directions (the dropped field never appears in `model_dump`, every other field still does).
+The rule has **no** carve-out. Sensitive upstream values (review M1 originally worried about Trace.moe's `/me` `id` field carrying the caller's egress IP) are not the data model's problem to filter — that violates §0 (a user looking at their own machine's IP is exercising informed choice; we inform, we do not gate). The right place to keep developer IPs out of the repo is the **fixture-capture pipeline**, not the runtime model: ``tools/fixtures/capture.py`` rewrites every public IPv4 in captured payloads to the RFC-5737 documentation placeholder before YAML write. So the rich model surfaces the upstream value verbatim, and the captured fixture committed to git is sanitised. The common projection (`TraceQuota`) deliberately omits `id`, so callers who don't want the value reach for the common shape.
 
 ### 13.2 — `BackendRichModel` is the only allowed base
 
