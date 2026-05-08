@@ -1,0 +1,31 @@
+Tutorials
+=========
+
+Systematic tutorials for every wired feature. Each page is
+self-contained: a complete runnable example, the expected output,
+the gotchas, and the cross-source caveats.
+
+If you have not yet, read the :doc:`../quickstart` first — it covers
+the five most common end-to-end paths in roughly five minutes.
+
+Per-backend tutorials
+---------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   backends/anilist
+   backends/jikan
+   backends/trace
+   backends/nekos
+
+Cross-cutting tutorials
+-----------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   raw_passthrough
+   output_modes
+   python_library
+   agent_guide

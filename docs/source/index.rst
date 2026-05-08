@@ -5,49 +5,72 @@ animedex
    :alt: Apache-2.0 license
    :target: https://github.com/deepghs/animedex/blob/main/LICENSE
 
-.. image:: https://img.shields.io/badge/status-WIP-orange.svg
-   :alt: Work in progress
-
 A read-only, multi-source, ``gh``-flavored command-line interface for
 anime and manga metadata. ``animedex`` is also a first-class Python
 library: ``import animedex`` exposes the same backends, the same
 source-attributed dataclasses, and the same raw-passthrough API that
 the ``animedex`` console script uses.
 
-.. note::
-   The project is currently a scaffold: the per-backend commands and
-   the high-level Python API are still being implemented. The bits that
-   are wired up today are the version banner, the ``selftest``
-   diagnostic, and the documentation build itself.
+.. image:: _static/gifs/hero.gif
+   :alt: animedex hero demo — querying AniList, Jikan and nekos.best in turn
+   :align: center
 
-What animedex aims to be
-------------------------
+The CLI is a thin presentation layer over the package: every command in
+the GIF above also has a one-line Python equivalent, and every JSON
+response carries ``_source`` annotations so a downstream automation
+layer always knows which upstream produced which field.
 
-A single command modelled on `gh <https://cli.github.com/>`_, plus a
-matching Python package, that:
+Why animedex?
+-------------
 
-* Aggregates the public anime and manga APIs surveyed by the project.
-* Is **read-only by project scope**. animedex does not implement
-  ``add to list`` / ``set score`` / ``favourite`` / upload commands.
-  The read-only choice keeps auth small and lets us promise that the
-  CLI does not disturb your existing account state.
-* Names the source of every datum it returns. Every field carries
-  ``[src: anilist]`` / ``[src: jikan]`` / ``[src: kitsu]`` / etc., so
-  there is never a "magic merged answer" - you always know which
-  upstream supplied which fact.
-* Provides a ``gh api``-style raw passthrough (``animedex api
-  <backend>``) for endpoints not covered by a high-level command.
-* Doubles as an importable Python library with the same surface, so
-  downstream automation can call into it without spawning subprocesses.
+There are a dozen public anime APIs. AniList has the cleanest GraphQL
+surface but degraded rate limits. Jikan scrapes MyAnimeList and is the
+deepest catalogue. Trace.moe identifies a scene from a screenshot.
+nekos.best curates SFW art. Each is great at one thing — and each
+speaks a different protocol, has its own rate limit, and shapes
+responses differently.
 
-Contents
---------
+``animedex`` is one CLI (and one Python library) over all of them, with
+three guarantees:
+
+* **Source-attributed** — every datum on screen carries
+  ``[src: anilist]`` / ``[src: jikan]`` / etc. No "merged answer";
+  callers always know who told them what.
+* **Read-only by project scope** — no ``add to list``, no
+  ``set score``, no upload. Auth stays small; account state stays
+  untouched.
+* **Inform, do not gate** — rate limits, content classifications, and
+  legal greys live in ``--help`` text and per-command Agent Guidance
+  blocks. The CLI does not refuse, second-guess, or impose content
+  filters on the user's behalf.
+
+What works today
+----------------
+
+Four backends are wired up at the high-level command surface, with
+eight at the raw-passthrough surface. The full list, command shapes
+and rate-ceiling notes live in :doc:`tutorials/index`.
+
+* ``animedex anilist ...`` — 28 anonymous endpoints + 4 auth-required
+  stubs (until token storage lands).
+* ``animedex jikan ...`` — 87 anonymous endpoints across the entire
+  Jikan v4 surface.
+* ``animedex trace ...`` — search by image, quota check.
+* ``animedex nekos ...`` — categories, per-category random images
+  / GIFs, fuzzy metadata search.
+* ``animedex api <backend> <path>`` — raw passthrough for AniList,
+  Jikan, Kitsu, MangaDex, Trace.moe, Danbooru, Shikimori, ANN, and
+  nekos.best.
+
+Documentation contents
+----------------------
 
 .. toctree::
    :maxdepth: 2
 
    installation
    quickstart
+   tutorials/index
    api_doc/index
 
 Project repository
