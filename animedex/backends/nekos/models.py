@@ -36,16 +36,32 @@ from animedex.models.art import ArtPost
 from animedex.models.common import BackendRichModel, SourceTag
 
 
+class NekosImageDimensions(BackendRichModel):
+    """``dimensions`` sub-block on a :class:`NekosImage` record.
+
+    :ivar width: Image width in pixels.
+    :vartype width: int or None
+    :ivar height: Image height in pixels.
+    :vartype height: int or None
+    """
+
+    width: Optional[int] = None
+    height: Optional[int] = None
+
+
 class NekosImage(BackendRichModel):
     """A single image / GIF record from nekos.best v2.
 
-    Every record exposes ``url``; the rest of the fields are
-    best-effort attribution. ``anime_name`` and ``artist_name`` are
-    the typical attribution columns; ``source_url`` points at the
-    artist's gallery or the anime's page when available.
+    Every record exposes ``url`` and ``dimensions``; the rest of the
+    fields are best-effort attribution. ``anime_name`` is set on
+    anime-derived assets; ``artist_name`` / ``artist_href`` /
+    ``source_url`` are set on fan-art assets where the upstream
+    knows the provenance.
 
     :ivar url: Direct asset URL.
     :vartype url: str
+    :ivar dimensions: ``{width, height}`` in pixels.
+    :vartype dimensions: NekosImageDimensions or None
     :ivar anime_name: Show name when the asset is anime-derived.
     :vartype anime_name: str or None
     :ivar artist_name: Artist attribution when the asset is fan art.
@@ -61,6 +77,7 @@ class NekosImage(BackendRichModel):
     """
 
     url: str
+    dimensions: Optional[NekosImageDimensions] = None
     anime_name: Optional[str] = None
     artist_name: Optional[str] = None
     artist_href: Optional[str] = None
@@ -84,6 +101,8 @@ class NekosImage(BackendRichModel):
         tags: List[str] = []
         if self.anime_name:
             tags.append(self.anime_name)
+        width = self.dimensions.width if self.dimensions else None
+        height = self.dimensions.height if self.dimensions else None
         return ArtPost(
             id=f"nekos:{filename}",
             url=self.url,
@@ -91,6 +110,8 @@ class NekosImage(BackendRichModel):
             tags=tags,
             artist=self.artist_name,
             source_url=self.source_url,
+            width=width,
+            height=height,
             source=self.source_tag or _default_src(),
         )
 

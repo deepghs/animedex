@@ -1,0 +1,62 @@
+metadata:
+  captured_at: '2026-05-08T09:08:02Z'
+  label: image-amount-3
+  backend: nekos
+  path_slug: husbando
+request:
+  method: GET
+  url: https://nekos.best/api/v2/husbando?amount=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 09:08:02 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    permissions-policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+    referrer-policy: same-origin
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    x-rate-limit-limit: 1m
+    x-rate-limit-remaining: '198'
+    x-rate-limit-reset: '2026-05-08T09:09:00.0000000Z'
+    cf-cache-status: DYNAMIC
+    x-xss-protection: 1; mode=block
+    Speculation-Rules: '"/cdn-cgi/speculation"'
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    expect-ct: max-age=86400, enforce
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    results:
+    - artist_name: azな
+      artist_href: https://www.pixiv.net/en/users/8399356
+      source_url: https://www.pixiv.net/en/artworks/93751064
+      url: https://nekos.best/api/v2/husbando/99edbfd9-e9b1-454a-9c90-293dab346468.png
+      dimensions:
+        width: 1157
+        height: 1682
+    - artist_name: kio
+      artist_href: https://twitter.com/winkio_
+      source_url: https://twitter.com/winkio_/status/1527759854974259201
+      url: https://nekos.best/api/v2/husbando/1a2484fd-f6ad-40ed-b9c5-842456a992f7.png
+      dimensions:
+        width: 1567
+        height: 2386
+    - artist_name: ogawa_32
+      artist_href: https://twitter.com/ogawa_32
+      source_url: https://twitter.com/ogawa_32/status/1367041728658608130
+      url: https://nekos.best/api/v2/husbando/7ef54d53-8044-40c5-b1b4-14af5fcc841d.png
+      dimensions:
+        width: 1864
+        height: 2398
+  body_text: null
+  body_b64: null

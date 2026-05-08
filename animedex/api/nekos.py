@@ -9,8 +9,10 @@ and ``dimensions`` (``width`` / ``height``).
 
 Backend: nekos.best v2 (nekos.best/api/v2).
 
-Rate limit: anonymous; no formal cap is published. The transport
-applies a conservative ~10 req/sec soft ceiling.
+Rate limit: 200 req/min anonymous. The cap is visible in the
+``x-rate-limit-limit`` (``"1m"`` window) and ``x-rate-limit-remaining``
+response headers; the transport applies a 3 req/sec sustained
+ceiling with a 10-token burst budget to stay under it.
 
 --- LLM Agent Guidance ---
 GET-only path. Common endpoints: ``/endpoints`` (lists all categories

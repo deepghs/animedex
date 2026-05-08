@@ -1,0 +1,76 @@
+metadata:
+  captured_at: '2026-05-08T09:08:07Z'
+  label: frieren-image
+  backend: nekos
+  path_slug: search
+request:
+  method: GET
+  url: https://nekos.best/api/v2/search?query=Frieren&type=1&amount=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 09:08:07 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    permissions-policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+    referrer-policy: same-origin
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    x-rate-limit-limit: 1m
+    x-rate-limit-remaining: '199'
+    x-rate-limit-reset: '2026-05-08T09:09:00.0000000Z'
+    cf-cache-status: DYNAMIC
+    x-xss-protection: 1; mode=block
+    Speculation-Rules: '"/cdn-cgi/speculation"'
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    expect-ct: max-age=86400, enforce
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    results:
+    - artist_name: divergenceok
+      artist_href: https://twitter.com/divergenceok
+      source_url: https://twitter.com/divergenceok/status/1402568905688686592
+      url: https://nekos.best/api/v2/neko/bd8be7f5-72ab-42c2-80da-d389b11359c5.png
+      dimensions:
+        width: 1417
+        height: 2000
+    - artist_name: ririse
+      artist_href: https://www.pixiv.net/en/users
+      source_url: https://www.pixiv.net/en/artworks/111643121
+      url: https://nekos.best/api/v2/neko/6feea75e-f5af-4f0b-bebd-deb6a39870b8.png
+      dimensions:
+        width: 1895
+        height: 2582
+    - artist_name: roshidere
+      artist_href: https://twitter.com/roshidere
+      source_url: https://twitter.com/roshidere/status/1490637525459025920
+      url: https://nekos.best/api/v2/waifu/f669798a-0ed3-4214-a42b-3f108a60c718.png
+      dimensions:
+        width: 2009
+        height: 2808
+    - artist_name: feiren
+      artist_href: https://www.pixiv.net/en/users/463209
+      source_url: https://www.pixiv.net/en/artworks/46057027
+      url: https://nekos.best/api/v2/kitsune/be4699bf-4618-4c25-9360-446e07c07e9e.png
+      dimensions:
+        width: 777
+        height: 1087
+    - artist_name: roshidere
+      artist_href: https://twitter.com/roshidere
+      source_url: https://twitter.com/roshidere/status/1519255036370456577
+      url: https://nekos.best/api/v2/waifu/a4880b99-dd7f-4955-96ce-5c875dd7b270.png
+      dimensions:
+        width: 2861
+        height: 4096
+  body_text: null
+  body_b64: null

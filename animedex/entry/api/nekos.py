@@ -39,8 +39,9 @@ api_nekos = make_get_only_subcommand(
 
     Backend: nekos.best v2 (nekos.best/api/v2).
 
-    Rate limit: anonymous; no formal cap published (treat ~10 req/sec
-    as a soft ceiling).
+    Rate limit: 200 req/min anonymous (visible in
+    ``x-rate-limit-limit`` and ``x-rate-limit-remaining`` response
+    headers).
 
     --- LLM Agent Guidance ---
     PATH is the URL path under /api/v2. Common reads:

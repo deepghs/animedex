@@ -191,8 +191,10 @@ def search(
 
     Calls ``GET /search?query=<query>&type=<type>&amount=<amount>``
     (plus optional ``&category=<name>``). The upstream matches
-    ``query`` against ``anime_name`` / ``artist_name`` / ``source_url``;
-    the result list may legitimately be empty when nothing matches.
+    ``query`` against ``anime_name`` / ``artist_name`` / ``source_url``
+    fuzzily and always returns up to ``amount`` results — a query
+    that nothing closely matches falls through to a near-random
+    ranking rather than an empty list.
 
     :param query: Search phrase.
     :type query: str
@@ -202,10 +204,11 @@ def search(
     :param category: Restrict the search to one category.
     :type category: str or None
     :param amount: Maximum number of results, ``1..20``. Defaults to
-                    ``1``. nekos.best may return fewer than this when
-                    the corpus has insufficient matches.
+                    ``1``. The upstream returns exactly ``amount``
+                    results in practice — there is no empty-result
+                    signal for non-matching queries.
     :type amount: int
-    :return: List of matching images (possibly empty).
+    :return: List of matching images.
     :rtype: list[NekosImage]
     :raises ApiError: ``bad-args`` for ``amount`` or ``type`` out of
                        range, ``upstream-shape`` for malformed

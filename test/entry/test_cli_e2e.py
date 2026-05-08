@@ -251,6 +251,9 @@ class TestTtyRenderingWalk:
             (["anilist", "staff", "101572"], "anilist/staff/01-staff-101572.yaml"),
             (["anilist", "studio", "11"], "anilist/studio/01-studio-madhouse.yaml"),
             (["anilist", "trending"], "anilist/trending/01-trending-top8.yaml"),
+            (["nekos", "image", "husbando"], "nekos/husbando/01-image-amount-1.yaml"),
+            (["nekos", "image", "neko"], "nekos/neko/01-image-amount-1.yaml"),
+            (["nekos", "search", "Frieren", "--amount", "5"], "nekos/search/01-frieren-image.yaml"),
         ],
     )
     def test_command_renders_in_tty_mode(self, cli_runner, cli, fake_clock, force_tty, argv, fixture_rel):
@@ -370,6 +373,78 @@ class TestTraceCliFromFixtures:
             assert "TypeError" not in result.output
 
 
+# ---------- nekos.best ----------
+
+
+class TestNekosCliFromFixtures:
+    """JSON-path coverage of every nekos subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("categories", [], "nekos/endpoints/01-all-categories.yaml"),
+            ("categories-full", [], "nekos/endpoints/01-all-categories.yaml"),
+            ("image", ["husbando"], "nekos/husbando/01-image-amount-1.yaml"),
+            ("image", ["husbando", "--amount", "3"], "nekos/husbando/02-image-amount-3.yaml"),
+            ("image", ["neko"], "nekos/neko/01-image-amount-1.yaml"),
+            ("image", ["waifu"], "nekos/waifu/01-image-amount-1.yaml"),
+            ("image", ["baka"], "nekos/baka/01-gif-amount-1.yaml"),
+            ("search", ["Frieren", "--amount", "5"], "nekos/search/01-frieren-image.yaml"),
+            ("search", ["Frieren", "--type", "2", "--amount", "3"], "nekos/search/02-frieren-gif.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, ["nekos", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"nekos {subcommand} {positional} failed: {result.output[:600]}"
+
+    def test_image_jq_filter_extracts_url(self, cli_runner, cli, fake_clock):
+        """``--jq '.[0].url'`` reaches into the rendered list and extracts
+        the asset URL — pins the multi-result rendering shape."""
+        fixture = _load_fixture("nekos/husbando/01-image-amount-1.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, ["nekos", "image", "husbando", "--no-cache", "--jq", ".[0].url"])
+        assert result.exit_code == 0, result.output
+        assert result.output.strip().startswith('"https://nekos.best/api/v2/husbando/')
+
+    def test_categories_lists_at_least_ten_categories_in_json(self, cli_runner, cli, fake_clock):
+        fixture = _load_fixture("nekos/endpoints/01-all-categories.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, ["nekos", "categories", "--json", "--no-cache"])
+        assert result.exit_code == 0, result.output
+        decoded = json.loads(result.output)
+        assert isinstance(decoded, list)
+        assert len(decoded) >= 10
+        # Sorted (the public Python API returns alphabetised names).
+        assert decoded == sorted(decoded)
+
+    def test_categories_tty_output_is_one_name_per_line(self, cli_runner, cli, fake_clock, force_tty):
+        """``nekos categories`` returns ``list[str]``; the TTY renderer
+        falls through to one-string-per-line. No ``[src:]`` marker
+        applies because there is no rich-model row to attribute. Pin
+        this shape so a future renderer change doesn't silently
+        promote it to JSON-of-strings on the TTY path."""
+        fixture = _load_fixture("nekos/endpoints/01-all-categories.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, ["nekos", "categories", "--no-cache"])
+        assert result.exit_code == 0, result.output
+        lines = [ln for ln in result.output.split("\n") if ln.strip()]
+        assert "husbando" in lines
+        assert lines == sorted(lines)
+        # Should not look like JSON.
+        assert not result.output.lstrip().startswith("[")
+
+
 # ---------- viewer / notification / etc. — auth-required stubs ----------
 
 
@@ -396,7 +471,7 @@ class TestPhase2SubcommandTree:
     """No HTTP needed; just confirm registration shape."""
 
     def test_top_level_groups_present(self, cli):
-        for group in ("anilist", "jikan", "trace"):
+        for group in ("anilist", "jikan", "nekos", "trace"):
             assert group in cli.commands
 
     def test_anilist_has_at_least_28_subcommands(self, cli):
@@ -407,6 +482,9 @@ class TestPhase2SubcommandTree:
 
     def test_trace_has_search_and_quota(self, cli):
         assert {"search", "quota"} <= set(cli.commands["trace"].commands.keys())
+
+    def test_nekos_has_categories_image_search(self, cli):
+        assert {"categories", "categories-full", "image", "search"} <= set(cli.commands["nekos"].commands.keys())
 
 
 # ---------- --help walk for every Phase-2 subcommand ----------
@@ -431,3 +509,8 @@ class TestEverySubcommandHasHelp:
         for sub in cli.commands["trace"].commands:
             r = cli_runner.invoke(cli, ["trace", sub, "--help"])
             assert r.exit_code == 0, f"trace {sub} --help failed: {r.output[:200]}"
+
+    def test_nekos_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["nekos"].commands:
+            r = cli_runner.invoke(cli, ["nekos", sub, "--help"])
+            assert r.exit_code == 0, f"nekos {sub} --help failed: {r.output[:200]}"

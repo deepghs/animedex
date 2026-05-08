@@ -138,8 +138,8 @@ _BACKEND_POLICY = {
     },
     "nekos": {
         "backend_line": "nekos.best v2 (nekos.best/api/v2); SFW anime image / GIF collection.",
-        "rate_line": "Anonymous; no formal cap published (treat ~10 req/sec as a soft ceiling).",
-        "guidance": "Read-only image lookup. nekos.best v2 is SFW-only by design, so the rich-model rating projection is always 'g'. The /search endpoint is best-effort metadata search across artist_name / source_url; empty result lists are normal when nothing matches.",
+        "rate_line": "200 req/min anonymous (visible in x-rate-limit-limit / x-rate-limit-remaining response headers).",
+        "guidance": "Read-only image lookup. nekos.best v2 is SFW-only by design, so the rich-model rating projection is always 'g'. The /search endpoint is fuzzy: it ranks all images by similarity to the query and always returns up to amount results — a non-matching query falls through to a near-random selection rather than an empty list, so callers can't use empty-results as a 'no match' signal.",
     },
 }
 

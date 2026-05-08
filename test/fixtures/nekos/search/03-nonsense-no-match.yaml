@@ -1,0 +1,76 @@
+metadata:
+  captured_at: '2026-05-08T09:08:10Z'
+  label: nonsense-no-match
+  backend: nekos
+  path_slug: search
+request:
+  method: GET
+  url: https://nekos.best/api/v2/search?query=zzzzzzzzzzzzzzz-no-such-anime&type=1&amount=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 09:08:10 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    permissions-policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+    referrer-policy: same-origin
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    x-rate-limit-limit: 1m
+    x-rate-limit-remaining: '197'
+    x-rate-limit-reset: '2026-05-08T09:09:00.0000000Z'
+    cf-cache-status: DYNAMIC
+    x-xss-protection: 1; mode=block
+    Speculation-Rules: '"/cdn-cgi/speculation"'
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    expect-ct: max-age=86400, enforce
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    results:
+    - artist_name: h
+      artist_href: https://twitter.com/eeeelog
+      source_url: https://twitter.com/eeeelog/status/1663101476506578946
+      url: https://nekos.best/api/v2/neko/1b0de689-9060-4400-86dc-73200105a6ca.png
+      dimensions:
+        width: 1247
+        height: 1692
+    - artist_name: O cha
+      artist_href: https://www.pixiv.net/en/users/30886283
+      source_url: https://www.pixiv.net/en/artworks/91786830
+      url: https://nekos.best/api/v2/neko/fad2db86-e22e-4151-bd4f-2323d3999e87.png
+      dimensions:
+        width: 2480
+        height: 3508
+    - artist_name: Kimae
+      artist_href: https://www.pixiv.net/en/users/14327995
+      source_url: https://www.pixiv.net/en/artworks/91987007
+      url: https://nekos.best/api/v2/neko/79353e02-7b78-4188-8e44-96bfa58c023b.png
+      dimensions:
+        width: 1366
+        height: 2048
+    - artist_name: Duchi
+      artist_href: https://twitter.com/Duchi0356
+      source_url: https://twitter.com/Duchi0356/status/1825005444265623928
+      url: https://nekos.best/api/v2/neko/a7d0fd2e-7d1a-484d-bb3f-328c690cd8ae.png
+      dimensions:
+        width: 2480
+        height: 3508
+    - artist_name: chabi
+      artist_href: https://twitter.com/chabi0091
+      source_url: https://twitter.com/chabi0091/status/1768887126094164208
+      url: https://nekos.best/api/v2/neko/c59cd711-87c2-4fa2-b3d6-971bcd624c4d.png
+      dimensions:
+        width: 1445
+        height: 2048
+  body_text: null
+  body_b64: null

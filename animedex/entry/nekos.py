@@ -39,8 +39,9 @@ def nekos_group() -> None:
 
     Backend: nekos.best v2 (nekos.best/api/v2).
 
-    Rate limit: anonymous; no formal cap published (treat ~10 req/sec
-    as a soft ceiling).
+    Rate limit: 200 req/min anonymous (visible in the
+    ``x-rate-limit-limit`` and ``x-rate-limit-remaining`` response
+    headers).
 
     --- LLM Agent Guidance ---
     Read-only image / GIF lookup. nekos.best v2 is SFW-only by
@@ -84,8 +85,10 @@ register_subcommand(
     help="Metadata search across all categories (image or GIF).",
     guidance_override=(
         "Searches anime_name / artist_name / source_url for the query phrase. "
-        "type=1 for images (default), type=2 for GIFs. Empty result lists are "
-        "normal when nothing matches. nekos.best v2 has no NSFW tier, so the "
-        "result rating is always 'g' — agents do not need to add a content filter."
+        "type=1 for images (default), type=2 for GIFs. The upstream is fuzzy: "
+        "it always returns up to 'amount' results, falling through to a near-"
+        "random ranking when nothing closely matches — callers cannot rely on an "
+        "empty-results signal. nekos.best v2 has no NSFW tier, so result rating "
+        "is always 'g' and agents do not need to add a content filter."
     ),
 )

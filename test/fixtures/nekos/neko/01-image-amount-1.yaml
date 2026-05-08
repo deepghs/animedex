@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-08T09:08:03Z'
+  label: image-amount-1
+  backend: nekos
+  path_slug: neko
+request:
+  method: GET
+  url: https://nekos.best/api/v2/neko?amount=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 09:08:03 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    permissions-policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+    referrer-policy: same-origin
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    x-rate-limit-limit: 1m
+    x-rate-limit-remaining: '199'
+    x-rate-limit-reset: '2026-05-08T09:09:00.0000000Z'
+    cf-cache-status: DYNAMIC
+    x-xss-protection: 1; mode=block
+    Speculation-Rules: '"/cdn-cgi/speculation"'
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    expect-ct: max-age=86400, enforce
+    Content-Encoding: gzip
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    results:
+    - artist_name: maru B
+      artist_href: https://www.pixiv.net/en/users/29131327
+      source_url: https://www.pixiv.net/en/artworks/109362315
+      url: https://nekos.best/api/v2/neko/32b729e1-340e-442b-ae8f-a863dbcf4e15.png
+      dimensions:
+        width: 760
+        height: 1200
+  body_text: null
+  body_b64: null
