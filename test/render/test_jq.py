@@ -77,6 +77,30 @@ class TestApplyJq:
         assert ei.value.reason == "jq-failed"
         assert "runtime" in ei.value.message.lower()
 
+    def test_invalid_json_input_raises_typed_error(self):
+        """``input_text`` over a non-JSON payload raises libjq
+        ``ValueError`` — caught and surfaced as typed ``jq-failed``,
+        not a leaked exception type. Matches the docstring's
+        ``:raises:`` clause for the input-side failure mode."""
+        from animedex.models.common import ApiError
+        from animedex.render.jq import apply_jq
+
+        with pytest.raises(ApiError) as ei:
+            apply_jq("not json at all", ".x")
+        assert ei.value.reason == "jq-failed"
+
+    def test_empty_result_yields_empty_string(self):
+        """``.[] | select(false)`` matches nothing — libjq returns
+        the empty string (no trailing newline), matching host
+        :program:`jq`'s exit-on-empty behaviour. Pin so a future
+        libjq behaviour change can't silently regress callers'
+        pipelines (``read``-loops over ``--jq`` output break if the
+        \"no match\" wire form ever changes from ``''`` to ``'\\n'``
+        or ``'null\\n'``)."""
+        from animedex.render.jq import apply_jq
+
+        assert apply_jq("[1, 2]", ".[] | select(false)") == ""
+
     def test_missing_wheel_raises_typed_error(self, monkeypatch):
         """When ``import jq`` raises :class:`ImportError` (exotic
         platform, sdist build failure, ``pip uninstall jq``), the

@@ -28,9 +28,14 @@ def common_options(func: Callable) -> Callable:
     """Decorator: attach ``--json``, ``--jq``, ``--no-cache``,
     ``--cache``, ``--rate``, ``--no-source`` flags to a CLI subcommand.
 
-    ``--jq`` runs the rendered JSON through the system ``jq`` binary;
-    when ``jq`` isn't on PATH the command falls through to printing
-    un-filtered JSON and warns once on stderr.
+    ``--jq`` filters the rendered JSON through the bundled
+    :pypi:`jq` wheel. A syntactically bad expression, runtime error
+    (e.g. ``1/0``, ``error("…")``), or invalid-JSON input surfaces
+    as a typed ``ApiError(reason="jq-failed")``; an uninstalled
+    wheel surfaces as ``reason="jq-missing"``. ``_apply_jq``
+    rewraps either as :class:`click.ClickException` so the CLI
+    exits non-zero with a clean one-line error rather than a
+    Python traceback.
     """
     func = click.option("--no-source", is_flag=True, default=False, help="Drop _source attribution from JSON output.")(
         func

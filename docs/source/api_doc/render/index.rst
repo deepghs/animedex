@@ -10,7 +10,8 @@ animedex.render
     :maxdepth: 3
 
     field_projection
-    jq_filter
+    jq
     json_renderer
+    raw
     tty
 

@@ -43,7 +43,9 @@ def apply_jq(payload: str, expression: str) -> str:
                        them a friendlier message than a raw
                        :class:`ImportError`. ``reason="jq-failed"``
                        when the expression fails to compile or
-                       execute.
+                       execute, or when ``payload`` is not valid JSON
+                       (libjq raises ``ValueError`` from
+                       ``input_text`` in that case too).
     """
     try:
         import jq as _jq  # type: ignore[import-untyped]
