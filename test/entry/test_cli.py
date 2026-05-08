@@ -34,7 +34,10 @@ class TestCli:
         runner = CliRunner()
         result = runner.invoke(animedex_cli, ["status"])
         assert result.exit_code == 0
-        assert "work in progress" in result.output.lower()
+        # Status reports the wired groups; assert the version banner
+        # plus at least one known group name appears.
+        assert "animedex" in result.output.lower()
+        assert "anilist" in result.output.lower()
 
     def test_selftest_subcommand_exits_zero(self):
         # The selftest command exits via sys.exit; CliRunner records

@@ -51,6 +51,7 @@ _BASE_URLS = {
     "danbooru": "https://danbooru.donmai.us",
     "shikimori": "https://shikimori.io",
     "ann": "https://cdn.animenewsnetwork.com/encyclopedia",
+    "nekos": "https://nekos.best/api/v2",
 }
 
 

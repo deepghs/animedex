@@ -81,6 +81,10 @@ _RULES: Dict[str, Dict[str, Callable[[str], bool]]] = {
         "GET": _allow,
         "POST": _path_equals("/search"),
     },
+    "nekos": {
+        "GET": _allow,
+        "POST": _deny,
+    },
 }
 
 

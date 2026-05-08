@@ -136,6 +136,11 @@ _BACKEND_POLICY = {
         "rate_line": "Anonymous concurrency 1, quota 100/month.",
         "guidance": "Identify anime scenes from screenshots; --anilist-info inlines AnimeTitle so callers can chain into anilist commands without an extra round-trip.",
     },
+    "nekos": {
+        "backend_line": "nekos.best v2 (nekos.best/api/v2); SFW anime image / GIF collection.",
+        "rate_line": "Anonymous; no formal cap published (treat ~10 req/sec as a soft ceiling).",
+        "guidance": "Read-only image lookup. nekos.best v2 is SFW-only by design, so the rich-model rating projection is always 'g'. The /search endpoint is best-effort metadata search across artist_name / source_url; empty result lists are normal when nothing matches.",
+    },
 }
 
 
