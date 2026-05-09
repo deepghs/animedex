@@ -41,6 +41,10 @@ def _path_equals(target: str) -> Callable[[str], bool]:
     return matcher
 
 
+def _allowed_methods_for_path(rules: Dict[str, Callable[[str], bool]], path: str) -> tuple:
+    return tuple(method for method, matcher in sorted(rules.items()) if matcher(path))
+
+
 # Per-backend `(method, path) -> allowed?` matrix.
 #
 # `GET` is universally allowed. The mapping below covers `POST` and
@@ -137,8 +141,11 @@ def enforce_read_only(backend: str, method: str, path: str) -> None:
         )
     matcher = rules.get(method.upper())
     if matcher is None or not matcher(path):
+        method_up = method.upper()
+        allowed = ", ".join(_allowed_methods_for_path(rules, path)) or "none"
         raise ApiError(
-            f"read-only contract: {method} {path!r} is not a permitted read on {backend}",
+            f"{method_up} rejected by animedex's read-only policy for {backend}: "
+            f"{method_up} {path} is not a permitted read; allowed read methods for this path are {allowed}",
             backend=backend,
             reason="read-only",
         )

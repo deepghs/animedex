@@ -29,6 +29,13 @@ animedex.entry.api
 .. autodata:: __all__
 
 
+ApiFieldOption
+-----------------------------------------------------
+
+.. autoclass:: ApiFieldOption
+    :members: __init__,add_to_parser,handle_parse_result,type_cast_value
+
+
 api\_group
 -----------------------------------------------------
 

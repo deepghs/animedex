@@ -5,10 +5,14 @@ from __future__ import annotations
 import click
 
 from animedex.entry.api import (
+    _call_or_paginate,
     _common_output_options,
     _common_request_options,
     _emit,
+    _merge_json_objects,
+    _merge_path_and_fields,
     _output_mode_from_flags,
+    _parse_api_fields,
     _parse_extra_headers,
     _resolve_cache,
     api_group,
@@ -17,7 +21,6 @@ from animedex.entry.api import (
 
 @api_group.command("shikimori")
 @click.argument("path", required=True)
-@click.option("--method", "-X", default="GET", help="HTTP method (GET or POST).")
 @click.option(
     "--graphql",
     "graphql_query",
@@ -30,8 +33,12 @@ from animedex.entry.api import (
 def api_shikimori(
     ctx,
     path,
-    method,
     graphql_query,
+    method,
+    api_fields,
+    paginate,
+    max_pages,
+    max_items,
     extra_headers,
     rate,
     cache_ttl,
@@ -97,11 +104,29 @@ def api_shikimori(
     from animedex.api import shikimori as shikimori_mod
 
     mode = _output_mode_from_flags(include_flag, head_flag, debug_flag)
+    fields = _parse_api_fields(api_fields)
     json_body = {"query": graphql_query} if graphql_query is not None else None
+    if json_body is not None:
+        variables = fields or None
+        if variables is not None:
+            json_body["variables"] = variables
+    elif method.upper() == "POST":
+        json_body = _merge_json_objects(None, fields, left_name="JSON body", right_name="-f/-F") if fields else None
     method_up = "POST" if json_body is not None else method.upper()
-    env = shikimori_mod.call(
-        path=path,
+    if json_body is not None:
+        out_path = path
+        params = None
+    else:
+        out_path, params = _merge_path_and_fields(path, fields)
+    env = _call_or_paginate(
+        shikimori_mod,
+        backend="shikimori",
+        paginate=paginate,
+        max_pages=max_pages,
+        max_items=max_items,
+        path=out_path,
         method=method_up,
+        params=params,
         json_body=json_body,
         headers=_parse_extra_headers(extra_headers),
         cache=_resolve_cache(no_cache),

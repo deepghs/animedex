@@ -27,6 +27,8 @@ from __future__ import annotations
 import click
 
 from animedex.api._envelope import RawResponse
+from animedex.api._params import split_path_query
+from animedex.models.common import ApiError
 from animedex.render.raw import render_body, render_debug, render_head, render_include
 
 
@@ -166,7 +168,40 @@ def _common_output_options(func):
 
 
 def _common_request_options(func):
-    """Decorator factory: add ``--header / -H``, ``--rate``, ``--cache``, ``--no-cache``."""
+    """Decorator factory: add universal raw request options."""
+    func = click.option(
+        "--max-items",
+        type=int,
+        default=None,
+        help="With --paginate, stop after at most N accumulated items.",
+    )(func)
+    func = click.option(
+        "--max-pages",
+        type=int,
+        default=10,
+        show_default=True,
+        help="With --paginate, stop after at most N pages.",
+    )(func)
+    func = click.option("--paginate", is_flag=True, default=False, help="Auto-paginate supported GET endpoints.")(func)
+    func = click.option(
+        "--raw-field",
+        "-F",
+        "api_fields",
+        multiple=True,
+        expose_kind="raw",
+        cls=ApiFieldOption,
+        help="Add a string field (repeatable): K=V.",
+    )(func)
+    func = click.option(
+        "--field",
+        "-f",
+        "api_fields",
+        multiple=True,
+        expose_kind="typed",
+        cls=ApiFieldOption,
+        help="Add a typed field (repeatable): K=V.",
+    )(func)
+    func = click.option("--method", "-X", default="GET", help="HTTP method for raw REST calls.")(func)
     func = click.option("--no-cache", is_flag=True, default=False, help="Skip cache lookup and write.")(func)
     func = click.option("--cache", "cache_ttl", type=int, default=None, help="Override cache TTL in seconds.")(func)
     func = click.option(
@@ -181,6 +216,78 @@ def _common_request_options(func):
     return func
 
 
+class ApiFieldOption(click.Option):
+    """Click option that preserves mixed ``-f`` / ``-F`` order.
+
+    Click normally collects values per option declaration, which loses
+    order when two flags write to the same parameter. The raw
+    passthrough needs gh-style last-write-wins across both flags, so
+    each parsed value carries its kind before landing in ``api_fields``.
+    """
+
+    def __init__(self, *args, expose_kind: str, **kwargs):
+        self.expose_kind = expose_kind
+        super().__init__(*args, **kwargs)
+
+    def add_to_parser(self, parser, ctx) -> None:
+        def _wrap(opts, explicit_value, state):
+            value = explicit_value
+            if value is None:
+                option = parser._long_opt.get(opts[0]) or parser._short_opt.get(opts[0])
+                value = parser._get_value_from_state(opts[0], option, state)
+            state.opts.setdefault(self.name, []).append((self.expose_kind, value))
+            state.order.append(self)
+
+        for opt in self.opts:
+            norm = click.parser._normalize_opt(opt, ctx)
+            option = _ApiFieldParserOption(obj=self, opts=[norm], process_value=_wrap)
+            if norm.startswith("--"):
+                parser._long_opt[norm] = option
+            else:
+                parser._short_opt[norm] = option
+            parser._opt_prefixes.update(_option_prefixes(norm))
+
+    def handle_parse_result(self, ctx, opts, args):
+        if self.expose_kind != "typed" and self.name in ctx.params:
+            return None, args
+        value, args = super().handle_parse_result(ctx, opts, args)
+        if self.expose_kind == "typed" and self.name in ctx.params:
+            ctx.params[self.name] = value
+        return value, args
+
+    def type_cast_value(self, ctx, value):
+        if value is None:
+            return ()
+        return tuple(value)
+
+
+class _ApiFieldParserOption:
+    def __init__(self, *, obj, opts, process_value):
+        self.obj = obj
+        self.opts = opts
+        self.dest = obj.name
+        self.action = "append"
+        self.nargs = 1
+        self.const = None
+        self.takes_value = True
+        self._short_opts = [opt for opt in opts if opt.startswith("-") and not opt.startswith("--")]
+        self._long_opts = [opt for opt in opts if opt.startswith("--")]
+        self.prefixes = _option_prefixes(opts[0])
+        self._process_value = process_value
+
+    def process(self, value, state):
+        self._process_value(self.opts, value, state)
+
+
+def _option_prefixes(opt: str) -> set:
+    """Return option prefixes for Click's parser bookkeeping."""
+    if opt.startswith("--"):
+        return {"--"}
+    if opt.startswith("-"):
+        return {"-"}
+    return set()
+
+
 def _parse_extra_headers(extra_headers):
     """Turn ``("Name: Value", ...)`` into a dict; raise on malformed."""
     out = {}
@@ -190,6 +297,85 @@ def _parse_extra_headers(extra_headers):
         name, value = h.split(":", 1)
         out[name.strip()] = value.strip()
     return out
+
+
+def _coerce_field_value(value: str):
+    """Coerce one ``-f`` value using gh-compatible raw API rules."""
+    try:
+        return int(value)
+    except ValueError:
+        pass
+    try:
+        return float(value)
+    except ValueError:
+        pass
+    if value == "true":
+        return True
+    if value == "false":
+        return False
+    return value
+
+
+def _parse_api_fields(api_fields):
+    """Parse mixed ``-f`` and ``-F`` values into a last-write mapping."""
+    out = {}
+    for kind, item in api_fields or []:
+        if "=" not in item:
+            raise click.UsageError(f"--field/--raw-field must be K=V, got {item!r}")
+        key, value = item.split("=", 1)
+        if not key:
+            raise click.UsageError("--field/--raw-field key must not be empty")
+        out[key] = value if kind == "raw" else _coerce_field_value(value)
+    return out
+
+
+def _merge_path_and_fields(path: str, fields: dict):
+    """Merge ``-f``/``-F`` values over query parameters in ``path``."""
+    if not fields:
+        return path, None
+    return split_path_query(path, fields)
+
+
+def _merge_json_objects(left, right, *, left_name: str, right_name: str):
+    """Merge two optional JSON objects for CLI request-body assembly."""
+    if left is None:
+        base = {}
+    elif isinstance(left, dict):
+        base = dict(left)
+    else:
+        raise click.UsageError(f"{left_name} must decode to a JSON object")
+    if right is None:
+        return base
+    if not isinstance(right, dict):
+        raise click.UsageError(f"{right_name} must decode to a JSON object")
+    base.update(right)
+    return base
+
+
+def _call_or_paginate(
+    backend_module,
+    *,
+    backend: str,
+    paginate: bool,
+    max_pages: int,
+    max_items: int | None,
+    **kwargs,
+):
+    """Call one raw request or the central pagination helper."""
+    if not paginate:
+        return backend_module.call(**kwargs)
+    paginated_kwargs = {k: v for k, v in kwargs.items() if k not in ("json_body", "raw_body")}
+    try:
+        from animedex.api._paginate import call_paginated
+
+        return call_paginated(
+            backend=backend,
+            max_pages=max_pages,
+            max_items=max_items,
+            **paginated_kwargs,
+        )
+    except ApiError as exc:
+        raise click.ClickException(str(exc)) from exc
 
 
 def _emit(ctx: click.Context, envelope: RawResponse, mode: str, full_body: bool) -> None:
@@ -231,6 +417,12 @@ def api_group() -> None:
 
     \b
     Other behaviour:
+      -X, --method METHOD     set the HTTP method on raw requests
+      -f, --field K=V        add a typed field (repeatable)
+      -F, --raw-field K=V    add a string field (repeatable)
+      --paginate             auto-paginate supported GET endpoints
+      --max-pages N          page ceiling for --paginate (default 10)
+      --max-items N          item ceiling for --paginate
       --no-follow             disable 3xx auto-following
       --debug-full-body       opt out of the 64 KiB body cap in --debug
       --no-cache              skip cache lookup and write
@@ -247,6 +439,8 @@ def api_group() -> None:
       animedex api anilist '{ Media(id:154587){ title{romaji} } }'
       animedex api kitsu '/anime?filter[text]=Frieren&page[limit]=2' -i
       animedex api shikimori /api/graphql --graphql '{ animes(ids:"52991"){ id name }}'
+      animedex api jikan /anime --paginate --field q=Naruto --field limit=2 --max-pages 3
+      animedex api jikan /anime/52991 --method DELETE
       animedex api jikan /anime/52991 --debug | jq '{cache, timing}'
 
     \b

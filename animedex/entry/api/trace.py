@@ -11,7 +11,9 @@ from animedex.entry.api import (
     _common_output_options,
     _common_request_options,
     _emit,
+    _merge_path_and_fields,
     _output_mode_from_flags,
+    _parse_api_fields,
     _parse_extra_headers,
     _resolve_cache,
     api_group,
@@ -34,6 +36,11 @@ def api_trace(
     ctx,
     path,
     input_path,
+    method,
+    api_fields,
+    paginate,
+    max_pages,
+    max_items,
     extra_headers,
     rate,
     cache_ttl,
@@ -87,19 +94,23 @@ def api_trace(
     from animedex.api import trace as trace_mod
 
     raw_body: Optional[bytes] = None
-    method = "GET"
+    method_up = method.upper()
     if input_path:
         if input_path == "-":
             raw_body = sys.stdin.buffer.read()
         else:
             with open(input_path, "rb") as fh:
                 raw_body = fh.read()
-        method = "POST"
+        method_up = "POST"
+    if paginate:
+        raise click.UsageError("--paginate is not supported for Trace.moe")
 
     mode = _output_mode_from_flags(include_flag, head_flag, debug_flag)
+    out_path, params = _merge_path_and_fields(path, _parse_api_fields(api_fields))
     env = trace_mod.call(
-        path=path,
-        method=method,
+        path=out_path,
+        method=method_up,
+        params=params,
         raw_body=raw_body,
         headers=_parse_extra_headers(extra_headers),
         cache=_resolve_cache(no_cache),

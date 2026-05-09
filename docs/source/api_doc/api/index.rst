@@ -11,6 +11,8 @@ animedex.api
 
     _dispatch
     _envelope
+    _paginate
+    _params
     anilist
     ann
     danbooru
@@ -28,4 +30,3 @@ animedex.api
 -----------------------------------------------------
 
 .. autodata:: __all__
-

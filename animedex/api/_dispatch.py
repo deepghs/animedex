@@ -439,6 +439,7 @@ def selftest_backend_shim(backend: str, call_fn: Any, *, extra_params: tuple = (
         "no_cache",
         "cache_ttl",
         "rate",
+        "method",
         "timeout_seconds",
         "user_agent",
         "cache",

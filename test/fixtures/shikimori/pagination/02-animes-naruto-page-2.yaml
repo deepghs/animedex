@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-09T08:05:47Z'
+  label: animes-naruto-page-2
+  backend: shikimori
+  path_slug: pagination
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Naruto&page=2&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Sat, 09 May 2026 08:05:46 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"20371a258d41958cf1fb4940bd3fcc4a"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 9e47fab3-1dac-499c-9eca-1d5313795c85
+    X-Runtime: '0.034393'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 2248
+    name: 'Naruto: Dai Katsugeki!! Yuki Hime Ninpouchou Dattebayo! - Konoha no Sato no Dai Undoukai'
+    russian: 'Наруто: Спортивный фестиваль Конохи'
+    image:
+      original: /system/animes/original/2248.jpg?1711965702
+      preview: /system/animes/preview/2248.jpg?1711965702
+      x96: /system/animes/x96/2248.jpg?1711965702
+      x48: /system/animes/x48/2248.jpg?1711965702
+    url: /animes/z2248-naruto-dai-katsugeki-yuki-hime-ninpouchou-dattebayo-konoha-no-sato-no-dai-undoukai
+    kind: special
+    score: '6.86'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2004-08-21'
+    released_on: null
+  - id: 2472
+    name: 'Naruto: Shippuuden Movie 1'
+    russian: 'Наруто: Ураганные хроники 1 — Адепты Тёмного царства'
+    image:
+      original: /system/animes/original/2472.jpg?1711965640
+      preview: /system/animes/preview/2472.jpg?1711965640
+      x96: /system/animes/x96/2472.jpg?1711965640
+      x48: /system/animes/x48/2472.jpg?1711965640
+    url: /animes/z2472-naruto-shippuuden-movie-1
+    kind: movie
+    score: '7.3'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2007-08-04'
+    released_on: null
+  body_text: null
+  body_b64: null

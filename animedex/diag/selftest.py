@@ -113,6 +113,8 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.api",
     "animedex.api._envelope",
     "animedex.api._dispatch",
+    "animedex.api._paginate",
+    "animedex.api._params",
     "animedex.api.anilist",
     "animedex.api.ann",
     "animedex.api.danbooru",

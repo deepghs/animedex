@@ -1,0 +1,270 @@
+metadata:
+  captured_at: '2026-05-09T08:05:33Z'
+  label: manga-berserk-offset-4
+  backend: mangadex
+  path_slug: pagination
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Berserk&limit=2&offset=4&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Sat, 09 May 2026 08:05:33 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 65b99e30-4bd0-4f41-b4af-4112b56d79f4
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: e939aa14-37e7-4fd1-9923-ddad014c5c1e
+      type: manga
+      attributes:
+        title:
+          en: Kentaro Miura Memorial Manga
+        altTitles:
+        - en: Berserk Memorial
+        - en: M.K.
+        - ja-ro: Mori-chan Ken-chan
+        - ja: モリちゃんケンちゃん
+        - es-la: Mensajes a Miura Kentarou
+        description:
+          en: |-
+            Memorial for Kentaro Miura from the final chapter of 'Berserk'.
+
+            Will continue to chapter 1 whenever Mori-san will get to publishing it.
+        isLocked: false
+        links:
+          al: '192971'
+          ap: kentaro-miura-memorial-manga
+          kt: '72049'
+          mu: tg05lrb
+          mal: '147941'
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: seinen
+        status: completed
+        year: 2021
+        contentRating: safe
+        tags:
+        - id: 0234a31e-a729-4e28-9d6a-3f87c4966b9e
+          type: tag
+          attributes:
+            name:
+              en: Oneshot
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: f8f62932-27da-4fe4-8ee1-6779a8c5edba
+          type: tag
+          attributes:
+            name:
+              en: Tragedy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2021-12-04T08:59:28+00:00'
+        updatedAt: '2025-11-15T20:52:40+00:00'
+        version: 23
+        availableTranslatedLanguages:
+        - es-la
+        - en
+        - vi
+        - pt-br
+        latestUploadedChapter: 9e8a55f2-a51a-4c39-9870-2df6d3148d49
+      relationships:
+      - id: e4dc18d8-1b8d-48e6-9b70-0f93a5af35ca
+        type: author
+      - id: e4dc18d8-1b8d-48e6-9b70-0f93a5af35ca
+        type: artist
+      - id: 10b925b5-481b-4102-83d3-5cb006d538dd
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '1'
+          fileName: 7617fc38-72b8-419d-b979-97e5aa926ffe.jpg
+          locale: ja
+          createdAt: '2021-12-04T08:59:31+00:00'
+          updatedAt: '2021-12-04T08:59:31+00:00'
+          version: 1
+      - id: 2a97c6e6-f276-4c48-877f-a51bce99a69c
+        type: creator
+    - id: 06d22615-4713-43dd-985d-377301758d69
+      type: manga
+      attributes:
+        title:
+          en: Peerless Battle Spirit
+        altTitles:
+        - en: Berserk Peerless Battle Spirit
+        - en: Berserk Sovereign of Battle
+        - zh: 绝世战魂
+        - zh-ro: Jueshi Zhan Hun
+        description:
+          en: "In the Canglan Continent, there existed a rule: only those who managed to awaken a Martial Spirit were able\
+            \ to pursue the path of cultivation, and a Martial Spirit's rank was determined when it was awakened. Born in\
+            \ Linshui City, Qin Nan was a peerless genius who possessed great talents and was highly anticipated to become\
+            \ a great cultivator in the future. However, things changed when he ended up awakening the lowest-grade Martial\
+            \ Spirit, resulting in him being considered trash.  \n  \nFortunately, when Qin Nan was struck by a ray of lightning\
+            \ at a young age, he coincidentally obtained the atavistic Divine Battle Spirit, which was capable of ranking\
+            \ up, breaking the ultimate rule of the Canglan Continent. Little did he know that his Martial Spirit possessed\
+            \ a great secret, which would continue to be unveiled as he learns more about the story of the Divine Battle Spirit.\
+            \  \n  \nWhat is the secret behind the Divine Battle Spirit? What is the curse of the Canglan Continent? Who exactly\
+            \ is the Divine God of Battle?  \n  \nJoin Qin Nan and his companions along their journey, battling against various\
+            \ opponents, outsmarting their enemies, and seeking the answers to unveil mysteries!  \n  \n“Master, please bring\
+            \ me along on your journey battling against the Nine Heavens, will you?”  \n  \n*From gravitytales.com"
+        isLocked: false
+        links:
+          al: '111408'
+          kt: '54865'
+          mu: 66sgiqx
+          raw: https://ac.qq.com/Comic/comicInfo/id/643504
+        officialLinks: null
+        originalLanguage: zh
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: null
+        status: ongoing
+        year: null
+        contentRating: safe
+        tags:
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 3e2b8dae-350e-4ab8-a8ce-016e844b9f0d
+          type: tag
+          attributes:
+            name:
+              en: Long Strip
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 799c202e-7daa-44eb-9cf7-8a3c0441531e
+          type: tag
+          attributes:
+            name:
+              en: Martial Arts
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: acc803a4-c95a-4c22-86fc-eb6b582d82a2
+          type: tag
+          attributes:
+            name:
+              en: Wuxia
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdc58593-87dd-415e-bbc0-2ec27bf404cc
+          type: tag
+          attributes:
+            name:
+              en: Fantasy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: e197df38-d0e7-43b5-9b09-2842d0c326dd
+          type: tag
+          attributes:
+            name:
+              en: Web Comic
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: f5ba408b-0e7a-484d-8d49-4e9125ac96de
+          type: tag
+          attributes:
+            name:
+              en: Full Color
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2020-05-12T19:25:53+00:00'
+        updatedAt: '2025-11-15T21:14:08+00:00'
+        version: 5
+        availableTranslatedLanguages:
+        - en
+        - id
+        - es-la
+        - pt-br
+        - pl
+        - fr
+        - it
+        latestUploadedChapter: 960c3501-feeb-4976-923f-173b79d7a92f
+      relationships:
+      - id: f1b8b99d-d1f8-4afc-9cd0-570d934d2ecc
+        type: author
+      - id: f914b4d3-a1d8-4a6a-95b5-faa9798f4577
+        type: artist
+      - id: aeb87136-fb29-4f7a-b30b-669f04c07a59
+        type: cover_art
+        attributes:
+          description: ''
+          volume: null
+          fileName: a98a1a7b-9459-4057-8931-30083605c2a8.jpg
+          locale: zh
+          createdAt: '2021-05-24T17:55:43+00:00'
+          updatedAt: '2021-05-24T17:55:43+00:00'
+          version: 1
+      - id: ea70bf95-d899-49e1-abc3-0d6e205bc334
+        type: manga
+        related: alternate_story
+    limit: 2
+    offset: 4
+    total: 20
+  body_text: null
+  body_b64: null

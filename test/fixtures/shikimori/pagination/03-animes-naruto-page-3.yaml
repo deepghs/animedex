@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-09T08:05:48Z'
+  label: animes-naruto-page-3
+  backend: shikimori
+  path_slug: pagination
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Naruto&page=3&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Sat, 09 May 2026 08:05:48 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"a22fc8c64db145692c693da7db817f86"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: d9984ef7-d600-4bac-b65f-c162a85b77d6
+    X-Runtime: '0.036867'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 8246
+    name: 'Naruto: Shippuuden Movie 4 - The Lost Tower'
+    russian: 'Наруто: Ураганные хроники 4 — Затерянная башня'
+    image:
+      original: /system/animes/original/8246.jpg?1711965632
+      preview: /system/animes/preview/8246.jpg?1711965632
+      x96: /system/animes/x96/8246.jpg?1711965632
+      x48: /system/animes/x48/8246.jpg?1711965632
+    url: /animes/z8246-naruto-shippuuden-movie-4-the-lost-tower
+    kind: movie
+    score: '7.42'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2010-07-31'
+    released_on: null
+  - id: 4437
+    name: 'Naruto: Shippuuden Movie 2 - Kizuna'
+    russian: 'Наруто: Ураганные хроники 2 — Связи'
+    image:
+      original: /system/animes/original/4437.jpg?1711965655
+      preview: /system/animes/preview/4437.jpg?1711965655
+      x96: /system/animes/x96/4437.jpg?1711965655
+      x48: /system/animes/x48/4437.jpg?1711965655
+    url: /animes/z4437-naruto-shippuuden-movie-2-kizuna
+    kind: movie
+    score: '7.28'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2008-08-02'
+    released_on: null
+  body_text: null
+  body_b64: null

@@ -86,6 +86,29 @@ class TestRenderBody:
         out = render_body(envelope)
         assert out == '{"data":{"Media":{"id":154587}}}'
 
+    def test_firewall_body_returns_actionable_message(self):
+        from animedex.api._envelope import (
+            RawCacheInfo,
+            RawRequest,
+            RawResponse,
+            RawTiming,
+        )
+        from animedex.render.raw import render_body
+
+        env = RawResponse(
+            backend="jikan",
+            request=RawRequest(method="DELETE", url="https://x.invalid/anime", headers={}),
+            status=0,
+            response_headers={},
+            body_bytes=b"",
+            body_text="",
+            timing=RawTiming(total_ms=0.1, rate_limit_wait_ms=0, request_ms=0),
+            cache=RawCacheInfo(hit=False),
+            firewall_rejected={"reason": "read-only", "message": "DELETE rejected by animedex's read-only policy"},
+        )
+
+        assert render_body(env) == "DELETE rejected by animedex's read-only policy"
+
     def test_falls_back_to_bytes_repr_when_not_decodable(self):
         from animedex.api._envelope import (
             RawCacheInfo,

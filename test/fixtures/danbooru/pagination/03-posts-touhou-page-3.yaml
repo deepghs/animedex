@@ -1,0 +1,230 @@
+metadata:
+  captured_at: '2026-05-09T08:05:44Z'
+  label: posts-touhou-page-3
+  backend: danbooru
+  path_slug: pagination
+request:
+  method: GET
+  url: https://danbooru.donmai.us/posts.json?tags=touhou+rating:g+order:score&limit=2&page=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Sat, 09 May 2026 08:05:44 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"85e9dfe68588c1c5ea09311e5fe039d3"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f8f3359a8479647-KIX
+    server-timing: sql.queries;count=5, cache.reads;count=4, cache.keys_read;count=113, cache.keys_hit;count=113, cache.total_time;dur=2.1774,
+      rails.total_time;dur=2063.9946, rails.cpu_time;dur=10.4527, rails.idle_time;dur=2053.5418, rails.sql_time;dur=2053.1796,
+      rails.view_time;dur=6.1843, rails.allocations;count=250995, request.allocations;count=251529, request.gc_time;dur=19.5976,
+      request.gc_count;count=0, request.cpu_time;dur=11.6759, request.total_time;dur=2065.2183, request.queue_time_0;dur=0.2987,
+      request.queue_time_1;dur=-137.0001
+    x-runtime: '2.0652182922363282'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 5967308
+    created_at: '2023-01-09T07:09:27.082-05:00'
+    uploader_id: 483749
+    score: 317
+    source: https://i.pximg.net/img-original/img/2023/01/09/21/08/35/104385177_p0.png
+    md5: 3bcf180c33e4b56db9e4c9f95bee667b
+    last_comment_bumped_at: null
+    rating: g
+    image_width: 1593
+    image_height: 2251
+    tag_string: 1girl alcohol apron black_pantyhose blue_dress blue_eyes blush bow braid breasts buttons collared_shirt commentary
+      couch cup dress drinking_glass drunk eyelashes fingernails frilled_dress frills green_bow hair_bow highres holding holding_cup
+      izayoi_sakuya kanpa_(campagne_9) lamp looking_at_viewer maid maid_apron maid_headdress medium_breasts medium_hair missing_headwear
+      on_couch open_mouth pantyhose photo_(object) pillow red_wine shirt short_dress short_sleeves sitting smile solo touhou
+      twin_braids waist_apron white_apron white_hair white_shirt wine wine_glass
+    fav_count: 287
+    file_ext: png
+    last_noted_at: null
+    parent_id: null
+    has_children: false
+    approver_id: null
+    tag_count_general: 52
+    tag_count_artist: 1
+    tag_count_character: 1
+    tag_count_copyright: 1
+    file_size: 5941088
+    up_score: 318
+    down_score: -1
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 57
+    updated_at: '2026-02-19T14:23:32.344-05:00'
+    is_banned: false
+    pixiv_id: 104385177
+    last_commented_at: null
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 2
+    has_large: true
+    has_visible_children: false
+    media_asset:
+      id: 7371506
+      created_at: '2023-01-09T07:09:17.079-05:00'
+      updated_at: '2023-03-04T09:13:50.879-05:00'
+      md5: 3bcf180c33e4b56db9e4c9f95bee667b
+      file_ext: png
+      file_size: 5941088
+      image_width: 1593
+      image_height: 2251
+      duration: null
+      status: active
+      file_key: V8bcOPkLq
+      is_public: true
+      pixel_hash: 3408d676761abb4ff1c37066ea405e08
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/3b/cf/3bcf180c33e4b56db9e4c9f95bee667b.jpg
+        width: 127
+        height: 180
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/3b/cf/3bcf180c33e4b56db9e4c9f95bee667b.jpg
+        width: 255
+        height: 360
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/3b/cf/3bcf180c33e4b56db9e4c9f95bee667b.webp
+        width: 510
+        height: 720
+        file_ext: webp
+      - type: sample
+        url: https://cdn.donmai.us/sample/3b/cf/sample-3bcf180c33e4b56db9e4c9f95bee667b.jpg
+        width: 850
+        height: 1201
+        file_ext: jpg
+      - type: original
+        url: https://cdn.donmai.us/original/3b/cf/3bcf180c33e4b56db9e4c9f95bee667b.png
+        width: 1593
+        height: 2251
+        file_ext: png
+    tag_string_general: 1girl alcohol apron black_pantyhose blue_dress blue_eyes blush bow braid breasts buttons collared_shirt
+      couch cup dress drinking_glass drunk eyelashes fingernails frilled_dress frills green_bow hair_bow holding holding_cup
+      lamp looking_at_viewer maid maid_apron maid_headdress medium_breasts medium_hair missing_headwear on_couch open_mouth
+      pantyhose photo_(object) pillow red_wine shirt short_dress short_sleeves sitting smile solo twin_braids waist_apron
+      white_apron white_hair white_shirt wine wine_glass
+    tag_string_character: izayoi_sakuya
+    tag_string_copyright: touhou
+    tag_string_artist: kanpa_(campagne_9)
+    tag_string_meta: commentary highres
+    file_url: https://cdn.donmai.us/original/3b/cf/3bcf180c33e4b56db9e4c9f95bee667b.png
+    large_file_url: https://cdn.donmai.us/sample/3b/cf/sample-3bcf180c33e4b56db9e4c9f95bee667b.jpg
+    preview_file_url: https://cdn.donmai.us/180x180/3b/cf/3bcf180c33e4b56db9e4c9f95bee667b.jpg
+  - id: 5408356
+    created_at: '2022-06-05T11:16:45.338-04:00'
+    uploader_id: 30072
+    score: 311
+    source: https://twitter.com/is8811/status/1533463687264374784
+    md5: e9c91de276baec60be4048e681fbcec3
+    last_comment_bumped_at: '2022-06-05T13:10:13.783-04:00'
+    rating: g
+    image_width: 880
+    image_height: 720
+    tag_string: 3girls animated black_shirt blue_bow blue_eyes blue_hair blue_sky bow cape character_doll choujuu_gigaku closed_mouth
+      cloud commentary_request crossed_arms day doll female_pov fins hair_bow head_fins holding holding_unworn_clothes imaizumi_kagerou
+      indoors isu_(is88) kasodani_kyouko looking_at_mirror miniskirt mirror multiple_girls pixel_art pov red_cape red_eyes
+      red_hair red_skirt reflection resized sekibanki sekibanki_day shirt short_hair skirt sky smile standing sun thighs touhou
+      undressing upscaled video wakasagihime
+    fav_count: 280
+    file_ext: mp4
+    last_noted_at: null
+    parent_id: 5654236
+    has_children: false
+    approver_id: null
+    tag_count_general: 43
+    tag_count_artist: 1
+    tag_count_character: 4
+    tag_count_copyright: 1
+    file_size: 643715
+    up_score: 312
+    down_score: -1
+    is_pending: false
+    is_flagged: false
+    is_deleted: false
+    tag_count: 54
+    updated_at: '2025-06-04T07:47:11.418-04:00'
+    is_banned: false
+    pixiv_id: null
+    last_commented_at: '2022-06-05T13:10:13.783-04:00'
+    has_active_children: false
+    bit_flags: 0
+    tag_count_meta: 5
+    has_large: false
+    has_visible_children: false
+    media_asset:
+      id: 6069036
+      created_at: '2022-06-05T11:15:19.633-04:00'
+      updated_at: '2023-03-27T00:50:51.206-04:00'
+      md5: e9c91de276baec60be4048e681fbcec3
+      file_ext: mp4
+      file_size: 643715
+      image_width: 880
+      image_height: 720
+      duration: 17.95
+      status: active
+      file_key: poVZcEh2z
+      is_public: true
+      pixel_hash: e9c91de276baec60be4048e681fbcec3
+      variants:
+      - type: 180x180
+        url: https://cdn.donmai.us/180x180/e9/c9/e9c91de276baec60be4048e681fbcec3.jpg
+        width: 180
+        height: 147
+        file_ext: jpg
+      - type: 360x360
+        url: https://cdn.donmai.us/360x360/e9/c9/e9c91de276baec60be4048e681fbcec3.jpg
+        width: 360
+        height: 295
+        file_ext: jpg
+      - type: 720x720
+        url: https://cdn.donmai.us/720x720/e9/c9/e9c91de276baec60be4048e681fbcec3.webp
+        width: 720
+        height: 589
+        file_ext: webp
+      - type: original
+        url: https://cdn.donmai.us/original/e9/c9/e9c91de276baec60be4048e681fbcec3.mp4
+        width: 880
+        height: 720
+        file_ext: mp4
+    tag_string_general: 3girls black_shirt blue_bow blue_eyes blue_hair blue_sky bow cape character_doll choujuu_gigaku closed_mouth
+      cloud crossed_arms day doll female_pov fins hair_bow head_fins holding holding_unworn_clothes indoors looking_at_mirror
+      miniskirt mirror multiple_girls pixel_art pov red_cape red_eyes red_hair red_skirt reflection sekibanki_day shirt short_hair
+      skirt sky smile standing sun thighs undressing
+    tag_string_character: imaizumi_kagerou kasodani_kyouko sekibanki wakasagihime
+    tag_string_copyright: touhou
+    tag_string_artist: isu_(is88)
+    tag_string_meta: animated commentary_request resized upscaled video
+    file_url: https://cdn.donmai.us/original/e9/c9/e9c91de276baec60be4048e681fbcec3.mp4
+    large_file_url: https://cdn.donmai.us/original/e9/c9/e9c91de276baec60be4048e681fbcec3.mp4
+    preview_file_url: https://cdn.donmai.us/180x180/e9/c9/e9c91de276baec60be4048e681fbcec3.jpg
+  body_text: null
+  body_b64: null

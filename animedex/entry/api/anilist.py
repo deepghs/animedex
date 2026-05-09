@@ -3,12 +3,15 @@
 from __future__ import annotations
 
 import click
+from click.core import ParameterSource
 
 from animedex.entry.api import (
     _common_output_options,
     _common_request_options,
     _emit,
+    _merge_json_objects,
     _output_mode_from_flags,
+    _parse_api_fields,
     _parse_extra_headers,
     _resolve_cache,
     api_group,
@@ -25,6 +28,11 @@ def api_anilist(
     ctx,
     query,
     variables_json,
+    method,
+    api_fields,
+    paginate,
+    max_pages,
+    max_items,
     extra_headers,
     rate,
     cache_ttl,
@@ -79,9 +87,21 @@ def api_anilist(
             variables = _json.loads(variables_json)
         except _json.JSONDecodeError as exc:
             raise click.UsageError(f"--variables is not valid JSON: {exc}")
+    variables = _merge_json_objects(
+        variables, _parse_api_fields(api_fields), left_name="--variables", right_name="-f/-F"
+    )
+    if not variables:
+        variables = None
+    if paginate:
+        raise click.UsageError("--paginate is not supported for AniList GraphQL")
 
+    method_source = ctx.get_parameter_source("method")
+    method_up = method.upper()
+    if method_up == "GET" and method_source is not ParameterSource.COMMANDLINE:
+        method_up = "POST"
     env = anilist.call(
         query=query,
+        method=method_up,
         variables=variables,
         headers=_parse_extra_headers(extra_headers),
         cache=_resolve_cache(no_cache),

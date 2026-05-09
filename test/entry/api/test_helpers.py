@@ -168,6 +168,34 @@ class TestParseExtraHeaders:
             _parse_extra_headers(("no-colon-here",))
 
 
+class TestParseApiFields:
+    def test_typed_values_and_raw_strings(self):
+        from animedex.entry.api import _parse_api_fields
+
+        assert _parse_api_fields(
+            (
+                ("typed", "count=10"),
+                ("typed", "score=9.5"),
+                ("typed", "published=true"),
+                ("raw", "tag=true"),
+            )
+        ) == {"count": 10, "score": 9.5, "published": True, "tag": "true"}
+
+    def test_last_write_wins_across_kinds(self):
+        from animedex.entry.api import _parse_api_fields
+
+        assert _parse_api_fields((("typed", "count=1"), ("raw", "count=10"))) == {"count": "10"}
+        assert _parse_api_fields((("raw", "count=1"), ("typed", "count=10"))) == {"count": 10}
+
+    def test_malformed_field_raises(self):
+        import click
+
+        from animedex.entry.api import _parse_api_fields
+
+        with pytest.raises(click.UsageError, match="must be K=V"):
+            _parse_api_fields((("typed", "broken"),))
+
+
 class TestEmit:
     def test_echoes_rendered_output_and_exits_with_status_class_code(self):
         import click

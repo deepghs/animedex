@@ -1,0 +1,295 @@
+metadata:
+  captured_at: '2026-05-09T08:05:23Z'
+  label: anime-naruto-page-1
+  backend: jikan
+  path_slug: pagination
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime?q=Naruto&page=1&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Sat, 09 May 2026 08:05:23 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 15
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 2
+        total: 30
+        per_page: 2
+    data:
+    - mal_id: 20
+      url: https://myanimelist.net/anime/20/Naruto
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1141/142503.jpg
+          small_image_url: https://myanimelist.net/images/anime/1141/142503t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1141/142503l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1141/142503.webp
+          small_image_url: https://myanimelist.net/images/anime/1141/142503t.webp
+          large_image_url: https://myanimelist.net/images/anime/1141/142503l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Naruto
+      - type: Synonym
+        title: NARUTO
+      - type: Japanese
+        title: ナルト
+      - type: English
+        title: Naruto
+      title: Naruto
+      title_english: Naruto
+      title_japanese: ナルト
+      title_synonyms:
+      - NARUTO
+      type: TV
+      source: Manga
+      episodes: 220
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2002-10-03T00:00:00+00:00'
+        to: '2007-02-08T00:00:00+00:00'
+        prop:
+          from:
+            day: 3
+            month: 10
+            year: 2002
+          to:
+            day: 8
+            month: 2
+            year: 2007
+        string: Oct 3, 2002 to Feb 8, 2007
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.02
+      scored_by: 2141464
+      rank: 726
+      popularity: 9
+      members: 3115716
+      favorites: 86462
+      synopsis: |-
+        Twelve years ago, a colossal demon fox terrorized the world. During the monster's attack on the Hidden Leaf Village, the Hokage—the village's leader and most powerful ninja—sacrifices himself to seal the beast inside a newborn, relieving civilization from destruction while dooming the baby to a lonely life.
+
+        Now, after years of being shunned and bullied, Naruto Uzumaki pesters the village with elaborate pranks and vandalism. Despite these antics, he works hard to achieve his dream: to become the Hokage and earn the acknowledgement of those who have mistreated him for his entire life. Naruto joins Team 7, a ninja squad made up of two of his peers—prodigy Sasuke Uchiha and clever Sakura Haruno.
+
+        Under the aloof Kakashi Hatake's leadership, Team 7 takes on a series of difficult missions, forcing its members to grow in strength and comradery despite their many differences. Naruto strives to stand out in his rivalry with Sasuke and earn the romantic affection of Sakura. But as the trio brush against danger and death, their tragic pasts threaten to tear them apart.
+
+        [Written by MAL Rewrite]
+      background: Naruto received numerous awards during its airing, including the Best Full-Length Animation Program Award
+        in the third UStv Awards and the 38th Best Animated Show in IGN's Top 100 Animated Series. The anime was released
+        on DVD in 16 volumes by VIZ Media from July 4, 2006, to September 22, 2009. The company rereleased it in eight volumes
+        from October 6, 2009, to December 14, 2010. VIZ Media also made available a Blu-ray version in eight volumes from
+        November 3, 2020, to October 18, 2022. The series adapts the first 27 volumes of the original manga.
+      season: fall
+      year: 2002
+      broadcast:
+        day: Thursdays
+        time: '19:30'
+        timezone: Asia/Tokyo
+        string: Thursdays at 19:30 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      licensors:
+      - mal_id: 119
+        type: anime
+        name: VIZ Media
+        url: https://myanimelist.net/anime/producer/119/VIZ_Media
+      studios:
+      - mal_id: 1
+        type: anime
+        name: Studio Pierrot
+        url: https://myanimelist.net/anime/producer/1/Studio_Pierrot
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes:
+      - mal_id: 17
+        type: anime
+        name: Martial Arts
+        url: https://myanimelist.net/anime/genre/17/Martial_Arts
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 16870
+      url: https://myanimelist.net/anime/16870/The_Last__Naruto_the_Movie
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1491/134498.jpg
+          small_image_url: https://myanimelist.net/images/anime/1491/134498t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1491/134498l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1491/134498.webp
+          small_image_url: https://myanimelist.net/images/anime/1491/134498t.webp
+          large_image_url: https://myanimelist.net/images/anime/1491/134498l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/tA3yE4_t6SY?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'The Last: Naruto the Movie'
+      - type: Synonym
+        title: 'Naruto Movie 10: Naruto the Movie: The Last,Naruto: Shippuuden Movie 7 - The Last'
+      - type: Japanese
+        title: THE LAST NARUTO THE MOVIE
+      - type: English
+        title: 'Naruto Shippuden the Movie 7: The Last'
+      - type: German
+        title: 'Naruto Film 7: The Last'
+      - type: Spanish
+        title: 'Naruto Película 7: The Last'
+      - type: French
+        title: 'Naruto Film 7: The Last'
+      title: 'The Last: Naruto the Movie'
+      title_english: 'Naruto Shippuden the Movie 7: The Last'
+      title_japanese: THE LAST NARUTO THE MOVIE
+      title_synonyms:
+      - 'Naruto Movie 10: Naruto the Movie: The Last,Naruto: Shippuuden Movie 7 - The Last'
+      type: Movie
+      source: Manga
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2014-12-06T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 6
+            month: 12
+            year: 2014
+          to:
+            day: null
+            month: null
+            year: null
+        string: Dec 6, 2014
+      duration: 1 hr 52 min
+      rating: PG-13 - Teens 13 or older
+      score: 7.8
+      scored_by: 442322
+      rank: 1192
+      popularity: 366
+      members: 669292
+      favorites: 2342
+      synopsis: |-
+        Two years have passed since the end of the Fourth Great Ninja War. Konohagakure has remained in a state of peace and harmony—until Sixth Hokage Kakashi Hatake notices the moon is dangerously approaching the Earth, posing the threat of planetary ruin.
+
+        Amidst the grave ordeal, Konoha is invaded by a new evil, Toneri Oosutuski, who suddenly abducts Hinata Hyuuga's little sister Hanabi. Kakashi dispatches a skilled ninja team comprised of Naruto Uzumaki, Sakura Haruno, Shikamaru Nara, Sai, and Hinata in an effort to rescue Hanabi from the diabolical clutches of Toneri. However, during their mission, the team faces several obstacles that challenge them, foiling their efforts.
+
+        With her abduction, the relationships the team share with one another are tested, and with the world reaching the brink of destruction, they must race against time to ensure the safety of their planet. Meanwhile, as the battle ensues, Naruto is driven to fight for something greater than he has ever imagined—love.
+
+        [Written by MAL Rewrite]
+      background: 'The events in the film The Last: Naruto the Movie take place chronologically between chapters 699 and 700
+        of the original manga. It is the tenth animated film in the Naruto series and was made to commemorate the manga''s
+        15th anniversary.'
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      licensors:
+      - mal_id: 119
+        type: anime
+        name: VIZ Media
+        url: https://myanimelist.net/anime/producer/119/VIZ_Media
+      studios:
+      - mal_id: 1
+        type: anime
+        name: Studio Pierrot
+        url: https://myanimelist.net/anime/producer/1/Studio_Pierrot
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 22
+        type: anime
+        name: Romance
+        url: https://myanimelist.net/anime/genre/22/Romance
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+  body_text: null
+  body_b64: null

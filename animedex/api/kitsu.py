@@ -31,6 +31,7 @@ _DEFAULT_HEADERS = {"Accept": "application/vnd.api+json"}
 def call(
     path: str,
     *,
+    method: str = "GET",
     headers: Optional[Dict[str, str]] = None,
     params: Optional[dict] = None,
     no_cache: bool = False,
@@ -52,7 +53,7 @@ def call(
     return _dispatch_call(
         backend="kitsu",
         path=path,
-        method="GET",
+        method=method,
         headers=out_headers,
         params=params,
         no_cache=no_cache,
@@ -73,4 +74,4 @@ def selftest() -> bool:
     """Smoke-test the Kitsu passthrough (firewall + signature)."""
     from animedex.api._dispatch import selftest_backend_shim
 
-    return selftest_backend_shim("kitsu", call, extra_params=("path", "base_url"))
+    return selftest_backend_shim("kitsu", call, extra_params=("path", "method", "base_url"))

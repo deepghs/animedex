@@ -37,6 +37,8 @@ def render_body(envelope: RawResponse) -> str:
     :return: Body text (or base64-encoded bytes when not decodable).
     :rtype: str
     """
+    if envelope.firewall_rejected is not None:
+        return envelope.firewall_rejected.get("message", "")
     if envelope.body_text is not None:
         return envelope.body_text
     return base64.b64encode(envelope.body_bytes).decode("ascii")

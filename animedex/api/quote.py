@@ -34,6 +34,7 @@ from animedex.api._envelope import RawResponse
 def call(
     path: str,
     *,
+    method: str = "GET",
     headers: Optional[Dict[str, str]] = None,
     params: Optional[dict] = None,
     no_cache: bool = False,
@@ -65,7 +66,7 @@ def call(
     return _dispatch_call(
         backend="quote",
         path=path,
-        method="GET",
+        method=method,
         headers=headers,
         params=params,
         no_cache=no_cache,

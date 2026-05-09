@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-09T08:05:45Z'
+  label: animes-naruto-page-1
+  backend: shikimori
+  path_slug: pagination
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Naruto&page=1&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Sat, 09 May 2026 08:05:45 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"c6125792ebce22c4044d3389c8ab4726"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 44cf04b0-a45b-40c2-a777-03bf9d7f0b5b
+    X-Runtime: '0.043136'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 20
+    name: Naruto
+    russian: Наруто
+    image:
+      original: /system/animes/original/20.jpg?1711965679
+      preview: /system/animes/preview/20.jpg?1711965679
+      x96: /system/animes/x96/20.jpg?1711965679
+      x48: /system/animes/x48/20.jpg?1711965679
+    url: /animes/z20-naruto
+    kind: tv
+    score: '8.02'
+    status: released
+    episodes: 220
+    episodes_aired: 0
+    aired_on: '2002-10-03'
+    released_on: '2007-02-08'
+  - id: 16870
+    name: 'The Last: Naruto the Movie'
+    russian: 'Наруто: Последний фильм'
+    image:
+      original: /system/animes/original/16870.jpg?1711977323
+      preview: /system/animes/preview/16870.jpg?1711977323
+      x96: /system/animes/x96/16870.jpg?1711977323
+      x48: /system/animes/x48/16870.jpg?1711977323
+    url: /animes/z16870-the-last-naruto-the-movie
+    kind: movie
+    score: '7.8'
+    status: released
+    episodes: 1
+    episodes_aired: 0
+    aired_on: '2014-12-06'
+    released_on: null
+  body_text: null
+  body_b64: null

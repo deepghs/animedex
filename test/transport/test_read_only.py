@@ -97,6 +97,16 @@ class TestErrorMessageNamesPolicy:
         with pytest.raises(ApiError) as ei:
             enforce_read_only("anilist", "DELETE", "/")
         assert "read-only" in str(ei.value).lower()
+        assert "DELETE /" in str(ei.value)
+        assert "allowed read methods for this path are GET, POST" in str(ei.value)
+
+    def test_message_lists_only_methods_allowed_for_path(self):
+        from animedex.models.common import ApiError
+        from animedex.transport.read_only import enforce_read_only
+
+        with pytest.raises(ApiError) as ei:
+            enforce_read_only("jikan", "DELETE", "/anime")
+        assert "allowed read methods for this path are GET" in str(ei.value)
 
 
 class TestSelftest:

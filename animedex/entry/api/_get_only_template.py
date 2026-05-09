@@ -14,10 +14,13 @@ from __future__ import annotations
 import click
 
 from animedex.entry.api import (
+    _call_or_paginate,
     _common_output_options,
     _common_request_options,
     _emit,
+    _merge_path_and_fields,
     _output_mode_from_flags,
+    _parse_api_fields,
     _parse_extra_headers,
     _resolve_cache,
     api_group,
@@ -45,6 +48,11 @@ def make_get_only_subcommand(*, name: str, backend_module_name: str, docstring: 
     def _cmd(
         ctx,
         path,
+        method,
+        api_fields,
+        paginate,
+        max_pages,
+        max_items,
         extra_headers,
         rate,
         cache_ttl,
@@ -59,8 +67,16 @@ def make_get_only_subcommand(*, name: str, backend_module_name: str, docstring: 
 
         backend_module = import_module(f"animedex.api.{backend_module_name}")
         mode = _output_mode_from_flags(include_flag, head_flag, debug_flag)
-        env = backend_module.call(
-            path=path,
+        out_path, params = _merge_path_and_fields(path, _parse_api_fields(api_fields))
+        env = _call_or_paginate(
+            backend_module,
+            backend=name,
+            paginate=paginate,
+            max_pages=max_pages,
+            max_items=max_items,
+            path=out_path,
+            method=method.upper(),
+            params=params,
             headers=_parse_extra_headers(extra_headers),
             cache=_resolve_cache(no_cache),
             no_cache=no_cache,
