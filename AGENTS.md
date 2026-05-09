@@ -602,3 +602,95 @@ The same rules apply to files under `tools/`. Files under `test/` may explain in
 When in doubt, ask: *"would this make sense to someone who `pip install animedex` and ran `--help`?"* If the answer is "no, they'd see a project-history label they have no context for", rephrase.
 
 The repo-wide grep `grep -rE 'Phase [0-9]|AGENTS[. ]§|Reviewer review' animedex/ tools/` should return zero matches; treat each match as a regression and fix it in the same change.
+
+## 15. Standard PR Workflow (binding for human and agent contributors)
+
+This section is the binding workflow for every code-bearing PR — whether the author is a human, Claude, Codex, or any other agent. It distils the patterns that the merged PRs in this repository (substrate, raw passthrough, MVP commands, the jq wheel swap, the front-face overhaul, the mid-tier backends, and the auth-hardening follow-up) actually used. Sections 0–14 above describe binding *outcomes*; this section describes the binding *process* that produces them.
+
+### 15.1 PR slicing
+
+A single PR has a single, narrow theme. Concretely:
+
+- A backend-landing PR lands one to four backends of comparable shape, plus the tests, fixtures, generated docs, tutorial pages, and demo assets that ship with them. It does **not** also restructure substrate.
+- A substrate-touching PR lands one well-bounded substrate change (a new transport feature, a new universal flag, a new render mode) plus its unit tests. It does **not** also land a new backend.
+- A hygiene PR lands documentation, AGENTS.md edits, CI configuration, or workflow scaffolding. It does **not** carry runtime behaviour change.
+- A release PR lands version-bump, changelog, and tag. Nothing else.
+
+The reason for the discipline: a PR that mixes a new backend with a substrate refactor is one where the reviewer cannot tell whether a regression came from the new feature or the old code's reshape. Past evidence: the largest mixed PR in this repository was 51,350 lines and surfaced one §14 violation plus four defensive findings on a tiny 200-line OAuth helper that would have been easy to spot in a 1k-line PR. Slice harder.
+
+When the natural unit of work is too large for one PR, the rule is: split by *backend boundary* (one PR per backend) before splitting by *implementation layer* (one PR for models, one for entry, one for tests). Backend-boundary splits keep each PR end-to-end runnable; layer splits leave half-wired code on `main` that cannot be exercised.
+
+### 15.2 What a backend-landing PR must contain
+
+Every PR that adds a new backend must ship the entire vertical slice. Missing pieces are a review-blocking regression, not a follow-up. The required elements are:
+
+- **High-level Python API** at `animedex/backends/<x>/__init__.py` plus the rich model module at `animedex/backends/<x>/models.py`. Every public class inherits from `animedex.models.common.BackendRichModel`; every endpoint helper attaches `_source` via `model_validate({**payload, "source_tag": <backend>})`.
+- **Lossless rich model contract honoured** — see section 13. Every rich type round-trips upstream payloads via `model_dump(by_alias=True, mode='json')` to a key-set superset; aliases are present for Python keywords like `from`, `class`, `import`; `to_common()` exists where a common-model projection makes sense (`Anime` / `Character` / `Staff` / `Studio` / `ArtPost` / etc.). The lossless test suite `test/backends/test_lossless_round_trip.py` parametrises over fixtures automatically and will fail if these shape rules slip. The rule is "no upstream-visible field disappears on the rich-layer round-trip"; treat it as load-bearing, not aspirational.
+- **Read-only API surface coverage** — every anonymous read endpoint the upstream documents must be exposed as a high-level helper and a CLI command, not a representative subset. Where the upstream offers an authenticated read tier (no mutation), it is also exposed, gated on credential resolution. Mutating endpoints (`POST` / `PATCH` / `DELETE` outside of GraphQL or known read-with-body paths) are excluded by section 6 and the read-only firewall in `transport/read_only.py`. The wider the coverage, the better Codex / Claude can compose calls; partial surfaces force agents to fall back to the raw passthrough and lose typed-result benefits. Treat "I shipped only what looked useful" as a smell.
+- **CLI entry module** at `animedex/entry/<x>.py` that defines the Click group, registers each command via `register_subcommand(...)`, and adds an entry to `_BACKEND_POLICY` in `animedex/entry/_cli_factory.py` carrying `backend_line`, `rate_line`, and `guidance` strings. The group docstring follows the `\f` cutoff convention from section 7 step 6 (human help above the formfeed; policy block below).
+- **Diagnostic registration** — every new module under the backend (the package `__init__.py`, the `models.py`, any helper like `_auth.py`) appears in `_SELFTEST_TARGETS` in `animedex/diag/selftest.py`, with a `selftest()` callable that exercises every bundled asset, schema, or non-trivial computed constant per section 9.
+- **Read-only firewall row** in `animedex/transport/read_only.py` if the backend is a new entry, with the per-method allow / deny rules spelled out (anonymous-read backends typically `GET` allow / `POST` deny; GraphQL backends or specific read-with-body endpoints carve out the narrow allow).
+- **Rate-limit bucket** configured in `animedex/transport/ratelimit.py` from a single source of truth, with the cap chosen to match what the upstream actually punishes; the cap is documented in the backend docstring's `Rate limit:` line.
+- **Fixture corpus** — every endpoint exercised by the test suite has at least one captured fixture under `test/fixtures/<backend>/<endpoint>/<NN>-<label>.yaml`, captured via `tools/fixtures/run_<backend>.py` against the real upstream. Synthesised hand-crafted JSON is not acceptable (section 9bis.2). The capture script lives in `tools/fixtures/` and is committed as part of the PR.
+- **Tests** that obey section 9bis: HTTP is the only legal mock seam; `responses.RequestsMock` (or equivalent `requests.adapters.HTTPAdapter`-level interception) is the only acceptable mocking technique; tests load real captured fixtures from `test/fixtures/`; every CLI command is exercised through both `--json` and the default TTY path with `isatty()=True` forced (section 9bis.6); above-the-wire `monkeypatch.setattr(animedex.backends.<x>, ...)` is forbidden.
+- **Generated API docs** refreshed via `make rst_auto` and committed in the same PR (section 7 step 5). The diff under `docs/source/api_doc/<backend>/` must reflect the new modules.
+- **Tutorial / demo asset** under `docs/source/tutorials/<backend>.rst` and a hero GIF or screenshot if the PR adds user-visible CLI surface. Past PRs have used `vhs` / `ttyd` / Playwright via the `terminal-capture-workflow` skill; the convention is one hero asset per backend referenced from the tutorial. README's per-backend feature matrix gains a row.
+
+### 15.3 What a substrate-touching PR must contain
+
+Substrate PRs follow the same discipline as backend PRs, scaled down. Required elements:
+
+- **One well-bounded substrate change** — a single new universal flag (e.g. `--paginate`), or a single new transport feature (e.g. a long-window rate-limit bucket), or a single new render mode. If the change naturally splits, split it.
+- **Abstraction confirmation up front** — for any non-trivial substrate change (new dispatcher seam, new transport contract, new cache schema), the PR author opens a draft on the issue or the PR with a one-paragraph abstraction proposal *before* writing implementation code. The reviewer responds with go / change. This avoids writing a thousand lines of implementation in the wrong shape.
+- **Unit tests at the substrate seam** — tests exercise the new substrate behaviour via the same legal seams as backend tests (HTTP via `responses`, OS-level attributes via `monkeypatch`). Substrate tests do not require fixture corpus expansion *unless* the substrate change interacts with backend behaviour (e.g. `--paginate` requires multi-page fixture coverage on the affected backends).
+- **Backend ripple identified and fixed in the same PR** — if the substrate change requires every backend to thread a new parameter, the PR threads it. Half-wired substrate PRs leave `main` in a broken state.
+- **Generated API docs** refreshed when the substrate change touches public Python API.
+
+### 15.4 PR pre-flight checklist (before commit, before push)
+
+This is the literal command sequence every PR author runs before declaring the PR ready. It is a strict superset of section 7's "required workflow for every code change". Run it; do not improvise.
+
+1. `make format` — formats and auto-fixes; must pass cleanly.
+2. `make test` — full unit suite green. If `make format` modified any file, re-run `make test` per section 7 step 3.
+3. `make rst_auto` — regenerate API docs; commit the diff in the same PR.
+4. For Click command additions / changes: `animedex <group> --help` and `animedex <group> <command> --help` for every modified command, and visual inspection of the rendered help text per section 7 step 6. Bullet lists must use `\b`, policy blocks must sit below `\f`, no reST role markers in human help.
+5. For any change to `animedex/entry/`, `setup.py`, `requirements.txt`, or PyInstaller `*.spec`: `make build && make test_cli` — frozen-binary smoke must pass.
+6. `python -m animedex.policy.lint animedex/` — docstring lint green.
+7. `grep -rE 'Phase [0-9]|AGENTS[. ]§|Reviewer review' animedex/ tools/` — must return zero matches (section 14).
+8. Verify git identity at the repo level (`git config user.name` / `git config user.email`), per section 2.
+9. Commit with the `dev(<author>): <summary>` style from section 4.
+
+If any step fails, fix the underlying cause; do not skip with `--no-verify`.
+
+### 15.5 Working from a tracking issue (Codex / Claude / human)
+
+Most code-bearing PRs in this repository will reference a tracking issue with a numbered checklist. The convention:
+
+- Open the PR with `Refs #<issue>` in the commit body or PR description so the issue's checklist auto-links to the PR.
+- If the issue marks a step "confirm abstraction before implementing", post the abstraction proposal as an issue comment and wait for sign-off before writing implementation code. The cost of the round-trip is small; the cost of redoing 1k lines of misshapen substrate is large.
+- Self-check the issue's verification checklist before requesting review. Reflect the result in the PR body — for each checklist item, mark done / partial / deferred with a one-line reason. A PR that claims green without showing the checklist is harder to review.
+- If the issue mentions external API documentation links, the author reads them as the authoritative reference for endpoint shapes; the issue's own description is a hint, not a contract. Upstream APIs drift. Capture fresh fixtures rather than hand-extending an old fixture corpus.
+- The issue's "minimum scope" lists the endpoints / commands / flags that must land. The author is **encouraged** to exceed it — surface every read-only endpoint the upstream documents that fits the existing pattern, not only the ones named in the issue. Section 15.2's "Read-only API surface coverage" bullet is the bar; the issue is a floor.
+- Document the fixture-capture environment in the PR body: capture date in UTC, whether a proxy or alternate egress was used, and any upstream-specific notes (rate-limit pacing, auth used). This makes future re-capture cheap.
+
+### 15.6 Review etiquette
+
+The reviewer's job is to verify the PR meets the binding outcomes in sections 0–14 and the binding process in section 15.1–15.5. The conventions:
+
+- Blocking findings are inline comments anchored to a specific line, not body-only narrative. The body summarises; the inline comments are where the author finds the actual problem.
+- Each blocking finding cites the section it violates ("§14 forbids backrefs to AGENTS.md") and quotes enough of the rule that the author does not have to look it up.
+- Non-blocking suggestions go in the same review under a clearly labelled "non-blocking" header.
+- Affirmation is welcome ("§6 read-only firewall row added correctly") but not required; silence on a check is implicit acknowledgement that it passed.
+- For PRs the reviewer authored themselves, GitHub blocks `REQUEST_CHANGES` on a self-PR; use `event=COMMENT` and carry the change-request framing in the body. Same for `APPROVE` on a self-PR — `event=COMMENT` with explicit "approving in spirit" wording is the convention.
+- When the author submits fixes, the reviewer verifies that **each finding has a corresponding regression test**. A fix without a test does not close the loop; the bug it addressed will return.
+- Identity discipline: every `gh` invocation uses the `GH_TOKEN="$(gh auth token --user "$(git config user.name)")"` pinning pattern from section 3.1. Never `gh auth switch`.
+
+### 15.7 Issues as task contracts
+
+Tracking issues describe what to build at a level a downstream agent (Codex / Claude) can act on without re-deriving design choices. Concretely:
+
+- The issue lists the specific endpoints / commands / flags to land at minimum, the upstream API documentation links, the fixture-capture entry point (e.g. `tools/fixtures/run_<x>.py`), the verification checklist, and any abstraction questions that must be resolved before implementing.
+- The issue distinguishes "must" from "encouraged exploration" — an issue that locks scope to exactly N items prevents the agent from finding the (N+1)th endpoint that obviously belongs. The default phrasing is "at minimum: …; encouraged: explore the upstream's documented surface for additional anonymous read endpoints that fit the pattern and add them with the same discipline".
+- The issue restates the load-bearing rules (lossless rich model from section 13, read-only coverage from section 6, fixture-driven testing from section 9bis); agents reading a single issue should not have to reload AGENTS.md to understand the contract.
+- Cross-issue dependencies are stated explicitly. Issues that *can* run in parallel say so; issues that *must* run after another say so.
+- Labels are advisory and not load-bearing. Use them when they help filtering; don't bikeshed on taxonomy.
