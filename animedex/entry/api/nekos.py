@@ -8,7 +8,7 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_nekos = make_get_only_subcommand(
     name="nekos",
     backend_module_name="nekos",
-    docstring="""Issue a nekos.best v2 GET request (anonymous, SFW image / GIF API).
+    docstring="""Issue a nekos.best v2 raw request (anonymous, SFW image / GIF API).
 
     PATH is the URL path under `/api/v2`. The collection is read-only
     JSON; every category is SFW, so consumers do not have to re-filter

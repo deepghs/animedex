@@ -103,7 +103,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the AniList passthrough (firewall + signature)."""
+    """Smoke-test the AniList passthrough."""
     from animedex.api._dispatch import selftest_backend_shim
 
     return selftest_backend_shim("anilist", call, extra_params=("query", "method", "variables"))

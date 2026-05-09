@@ -111,7 +111,7 @@ def _render_output(envelope: RawResponse, mode: str, full_body: bool) -> str:
 def _exit_code_for(envelope: RawResponse) -> int:
     """Map an envelope to a CLI exit code.
 
-    * ``firewall_rejected`` -> 2
+    * ``firewall_rejected`` -> 2 (legacy envelope state)
     * 2xx -> 0
     * 3xx (only with ``--no-follow``) -> 3
     * 4xx -> 4
@@ -200,7 +200,9 @@ def _common_request_options(func):
         help="Add a typed field (repeatable): K=V.",
     )(func)
     func = click.option("--method", "-X", default="GET", help="HTTP method for raw REST calls.")(func)
-    func = click.option("--no-cache", is_flag=True, default=False, help="Skip cache lookup and write.")(func)
+    func = click.option(
+        "--no-cache", is_flag=True, default=False, help="Skip cache lookup and write for cache-eligible requests."
+    )(func)
     func = click.option("--cache", "cache_ttl", type=int, default=None, help="Override cache TTL in seconds.")(func)
     func = click.option(
         "--rate",
@@ -413,9 +415,9 @@ def api_group() -> None:
     """Raw HTTP / GraphQL passthrough to one of the 12 upstream backends.
 
     Each subcommand wraps one backend's raw API surface. The
-    dispatcher injects the project ``User-Agent``, runs the read-only
-    firewall, applies a per-backend rate-limit token bucket, and
-    consults the local SQLite cache before issuing the request.
+    dispatcher injects the project ``User-Agent``, applies a
+    per-backend rate-limit token bucket, and consults the local
+    SQLite cache before issuing the request.
 
     \b
     Output modes (mutually exclusive):
@@ -436,7 +438,7 @@ def api_group() -> None:
       --max-items N          item ceiling for --paginate
       --no-follow             disable 3xx auto-following
       --debug-full-body       opt out of the 64 KiB body cap in --debug
-      --no-cache              skip cache lookup and write
+      --no-cache              skip cache lookup/write for eligible requests
       --cache TTL_SECONDS     override default cache TTL
       --rate {normal,slow}    voluntary slowdown (slow halves refill)
       -H, --header K:V        add request header (repeatable)
@@ -479,8 +481,9 @@ def api_group() -> None:
     The api group is the project's escape hatch for endpoints not
     covered by the higher-level commands. Each subcommand wraps one
     backend's raw HTTP/GraphQL surface; the dispatcher injects the
-    project User-Agent, runs the read-only firewall, applies rate
-    limiting, and consults the local cache. The output flags
+    project User-Agent, applies rate limiting, and consults the local
+    cache. Method/path choices are forwarded verbatim; the caller owns
+    the upstream result. The output flags
     (-i / -I / --debug) are shared and mutually exclusive. Use
     --debug when you need to inspect the full envelope (redirect
     chain, timing, cache provenance, fingerprint-redacted request

@@ -4,7 +4,7 @@ HTTP transport layer for animedex backends.
 This package owns every wire-level concern that backend modules must
 honour but should never have to reimplement: the User-Agent string
 (:mod:`animedex.transport.useragent`), per-backend rate limiting
-(:mod:`animedex.transport.ratelimit`), the read-only firewall
+(:mod:`animedex.transport.ratelimit`), the advisory method classifier
 (:mod:`animedex.transport.read_only`), and the
 :class:`~animedex.transport.http.HttpClient` wrapper that composes
 them on top of :class:`requests.Session`.

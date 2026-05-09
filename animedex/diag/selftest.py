@@ -107,9 +107,9 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.mcp.tool_decorator",
     "animedex.mcp.register",
     # the substrate API layer: animedex api raw passthrough. Each per-backend module
-    # ships a selftest() that exercises its read-only firewall path;
-    # the dispatcher and envelope have their own end-to-end smokes;
-    # the raw renderer's selftest checks the four output modes.
+    # ships a selftest() that checks its signature; the dispatcher and
+    # envelope have their own end-to-end smokes; the raw renderer's
+    # selftest checks the four output modes.
     "animedex.api",
     "animedex.api._envelope",
     "animedex.api._dispatch",

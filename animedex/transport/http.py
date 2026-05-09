@@ -2,9 +2,8 @@
 HTTP client wrapper used by every animedex backend.
 
 The :class:`HttpClient` composes :mod:`animedex.transport.useragent`,
-:mod:`animedex.transport.ratelimit`, and
-:mod:`animedex.transport.read_only` on top of a single
-``requests.Session``. Responsibilities:
+:mod:`animedex.transport.ratelimit`, and a single ``requests.Session``.
+Responsibilities:
 
 * Inject the project User-Agent on every request unless the caller
   passes an explicit override.
@@ -12,7 +11,6 @@ The :class:`HttpClient` composes :mod:`animedex.transport.useragent`,
   it for *every* backend to make the contract uniform and so a
   misconfigured shared proxy cannot accidentally trip the constraint).
 * Consult the per-backend rate-limit bucket before issuing the call.
-* Run the read-only firewall before the request leaves the host.
 
 Backends should not subclass this class; they should compose it. The
 goal is one HTTP call site per backend so retry, timeout, redirect
@@ -26,16 +24,14 @@ from typing import Any, Optional
 import requests
 
 from animedex.transport.ratelimit import RateLimitRegistry, default_registry
-from animedex.transport.read_only import enforce_read_only
 from animedex.transport.useragent import compose_user_agent
 
 
 class HttpClient:
-    """A read-only HTTP client bound to a single backend.
+    """An HTTP client bound to a single backend.
 
     :param backend: Backend identifier (e.g. ``"anilist"``); used to
-                     pick the rate-limit bucket and the read-only
-                     ruleset.
+                     pick the rate-limit bucket.
     :type backend: str
     :param base_url: Base URL prefix joined with the request path.
     :type base_url: str
@@ -97,7 +93,7 @@ class HttpClient:
         return headers
 
     def request(self, method: str, path: str, **kwargs: Any) -> requests.Response:
-        """Issue an HTTP request through the read-only stack.
+        """Issue an HTTP request through the shared transport stack.
 
         :param method: HTTP method (case-insensitive on input;
                         upper-cased internally).
@@ -111,16 +107,10 @@ class HttpClient:
                         defaulted to :attr:`timeout_seconds`.
         :return: The response object.
         :rtype: requests.Response
-        :raises ApiError: When the read-only firewall rejects the
-                           request, or when the rate-limit bucket
-                           rejects the backend identifier.
+        :raises KeyError: When the rate-limit bucket rejects the
+                          backend identifier.
         """
         method_up = method.upper()
-        # The firewall expects the *path* relative to the backend
-        # (e.g. AniList's GraphQL is rooted at "/"); pass `path` as
-        # given so absolute URLs are not allowed to mask intent.
-        firewall_path = path if path.startswith("/") else "/" + path
-        enforce_read_only(self.backend, method_up, firewall_path)
         self.rate_limit_registry.get(self.backend).acquire()
 
         prepared_kwargs = dict(kwargs)
@@ -136,8 +126,8 @@ class HttpClient:
     def post(self, path: str, **kwargs: Any) -> requests.Response:
         """Issue a ``POST`` request. Convenience over :meth:`request`.
 
-        Subject to the per-backend ``POST`` rules in
-        :mod:`animedex.transport.read_only`.
+        Method and path are passed through verbatim; callers own the
+        upstream result.
         """
         return self.request("POST", path, **kwargs)
 
@@ -145,23 +135,13 @@ class HttpClient:
 def selftest() -> bool:
     """Smoke-test :class:`HttpClient` without touching the network.
 
-    Verifies the constructor wires UA / firewall / rate limiter
-    correctly, and that the firewall rejects a clear mutation before
-    the request would have been issued. Avoids any real socket
-    activity.
+    Verifies the constructor wires UA and the rate limiter without
+    touching the network.
 
     :return: ``True`` on success.
     :rtype: bool
     """
-    from animedex.models.common import ApiError
-
     client = HttpClient(backend="anilist", base_url="https://upstream.invalid")
     assert "animedex/" in client.user_agent
-
-    try:
-        client.request("DELETE", "/x")
-    except ApiError as exc:
-        assert exc.reason == "read-only"
-    else:  # pragma: no cover - defensive selftest assertion
-        raise AssertionError("DELETE should have been rejected by the firewall")
+    assert client._join("/x") == "https://upstream.invalid/x"
     return True

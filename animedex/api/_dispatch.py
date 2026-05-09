@@ -1,13 +1,13 @@
 """
 Universal ``animedex api`` dispatcher.
 
-:func:`call` is the single entry point: it composes the URL, runs the
-read-only firewall, waits on the per-backend rate-limit bucket, looks
-up the local SQLite cache, issues the HTTP request when needed, and
-assembles a :class:`~animedex.api._envelope.RawResponse` envelope
-containing everything a CLI render mode needs (body, status, response
-headers, redirect chain, request snapshot with credentials redacted,
-timing breakdown, cache provenance).
+:func:`call` is the single entry point: it composes the URL, waits on
+the per-backend rate-limit bucket, looks up the local SQLite cache,
+issues the HTTP request when needed, and assembles a
+:class:`~animedex.api._envelope.RawResponse` envelope containing
+everything a CLI render mode needs (body, status, response headers,
+redirect chain, request snapshot with credentials redacted, timing
+breakdown, cache provenance).
 
 Per-backend modules under ``animedex/api/<backend>.py`` are thin
 shims that pre-fill the ``backend`` argument; this module owns the
@@ -34,9 +34,8 @@ from animedex.api._envelope import (
     redact_headers,
 )
 from animedex.cache.sqlite import SqliteCache, default_ttl_seconds
-from animedex.models.common import ApiError
 from animedex.transport.ratelimit import RateLimitRegistry, default_registry
-from animedex.transport.read_only import enforce_read_only, known_backends
+from animedex.transport.read_only import classify_read_only
 from animedex.transport.useragent import compose_user_agent
 
 
@@ -85,6 +84,16 @@ def _join(base_url: str, path: str) -> str:
     if not path.startswith("/"):
         path = "/" + path
     return base_url.rstrip("/") + path
+
+
+def _classification_path(path: str) -> str:
+    from urllib.parse import urlsplit
+
+    split = urlsplit(path)
+    out = split.path or "/"
+    if not out.startswith("/"):
+        out = "/" + out
+    return out
 
 
 def _canonicalise_params(obj: Any) -> Any:
@@ -191,7 +200,7 @@ def call(
     """Issue one request and return its complete envelope.
 
     :param backend: Backend identifier (e.g. ``"anilist"``); determines
-                     base URL, rate-limit bucket, and read-only ruleset.
+                     base URL and rate-limit bucket.
     :type backend: str
     :param path: URL path (relative to base) or absolute URL.
     :type path: str
@@ -278,8 +287,9 @@ def call(
         body_preview=_make_body_preview(json_body, raw_body),
     )
 
-    # 2. Read-only firewall - reject before going further.
-    if backend not in known_backends():
+    # 2. Known backend validation. Method/path choices are passed
+    # through verbatim; callers own the upstream result.
+    if backend not in _BASE_URLS:
         return _firewall_envelope(
             backend=backend,
             request_snapshot=request_snapshot,
@@ -288,21 +298,13 @@ def call(
             t_start=t_start,
         )
 
-    firewall_path = path if path.startswith("/") else "/" + path
-    try:
-        enforce_read_only(backend, method_up, firewall_path)
-    except ApiError as exc:
-        return _firewall_envelope(
-            backend=backend,
-            request_snapshot=request_snapshot,
-            reason=exc.reason or "read-only",
-            message=str(exc.message),
-            t_start=t_start,
-        )
-
-    # 3. Cache lookup.
+    # 3. Cache lookup. Raw passthrough methods are forwarded
+    # verbatim, so cache only requests the advisory classifier knows
+    # are reads. A mutating-looking request must reach the upstream
+    # every time instead of being replayed from a local row.
     sig = _signature(method_up, full_url, params, json_body, raw_body)
-    cache_lookup_skipped = no_cache or cache is None
+    cache_allowed = classify_read_only(backend, method_up, _classification_path(path)) is True
+    cache_lookup_skipped = no_cache or cache is None or not cache_allowed
     if not cache_lookup_skipped:
         hit = cache.get_with_meta(backend, sig)
         if hit is not None:
@@ -401,21 +403,15 @@ def call(
 def selftest_backend_shim(backend: str, call_fn: Any, *, extra_params: tuple = ()) -> bool:
     """Shared offline smoke check for every per-backend shim.
 
-    Per + : a per-backend ``selftest`` that only
-    exercises the firewall rejection path tells us nothing about
-    whether the backend's own ``call`` was renamed, removed, or had
-    its signature broken. This helper bundles two checks:
+    Per-backend ``selftest`` functions should prove that the backend's
+    own ``call`` was not renamed, removed, or narrowed. This helper
+    checks that ``call_fn`` is callable, targets a registered raw
+    backend, has a Pythonic keyword surface, and exposes the
+    cross-cutting kwargs every shim must thread (``no_cache``,
+    ``cache_ttl``, ``rate``, ``timeout_seconds``, ``user_agent``,
+    ``cache``). A rename that drops one of these is a regression.
 
-    * **Firewall path** - a ``DELETE`` to the backend is rejected by
-      :func:`enforce_read_only` before leaving the host. Confirms the
-      read-only contract still wires up.
-    * **Signature shape** - ``call_fn`` is callable, has a Pythonic
-      keyword surface, and exposes the cross-cutting kwargs every
-      shim must thread (``no_cache``, ``cache_ttl``, ``rate``,
-      ``timeout_seconds``, ``user_agent``, ``cache``). A rename
-      that drops one of these is a regression.
-
-    :param backend: Backend identifier passed to the firewall check.
+    :param backend: Backend identifier.
     :type backend: str
     :param call_fn: The shim's public ``call`` function.
     :type call_fn: Callable
@@ -431,8 +427,7 @@ def selftest_backend_shim(backend: str, call_fn: Any, *, extra_params: tuple = (
     """
     import inspect
 
-    raw = call(backend=backend, path="/_animedex_selftest", method="DELETE", cache=None)
-    assert raw.firewall_rejected is not None, f"{backend} firewall did not reject DELETE"
+    resolve_base_url(backend)
 
     sig = inspect.signature(call_fn)
     expected = {
@@ -526,12 +521,11 @@ def selftest() -> bool:
     :rtype: bool
     """
     # Import-only validation: the dispatcher's wiring is exercised
-    # by unit tests; the selftest just confirms the symbols load and
-    # the firewall path works without touching the network.
+    # by unit tests; the selftest just confirms the symbols load
+    # without touching the network.
     from animedex.api._envelope import RawResponse as _RR
 
     assert resolve_base_url("anilist") == "https://graphql.anilist.co"
-    raw = call(backend="anilist", path="/", method="DELETE", cache=None)
-    assert isinstance(raw, _RR)
-    assert raw.firewall_rejected is not None
+    assert _signature("DELETE", "https://graphql.anilist.co/", None, None, None)
+    assert _RR.__name__ == "RawResponse"
     return True

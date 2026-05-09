@@ -27,7 +27,7 @@ def _make_envelope(status: int, *, firewall: bool = False):
         body_text="",
         timing=RawTiming(total_ms=0.0, rate_limit_wait_ms=0.0, request_ms=0.0),
         cache=RawCacheInfo(hit=False),
-        firewall_rejected=({"reason": "read-only", "message": "x"} if firewall else None),
+        firewall_rejected=({"reason": "unknown-backend", "message": "x"} if firewall else None),
     )
 
 
@@ -125,11 +125,11 @@ class TestExitCodeFor:
 
         assert _exit_code_for(_make_envelope(status)) == expected
 
-    def test_firewall_overrides_status(self):
+    def test_local_rejection_overrides_status(self):
         from animedex.entry.api import _exit_code_for
 
-        # Firewall-rejected envelope has status=0, but the exit code
-        # comes from the firewall flag, not the status class.
+        # Locally rejected envelopes have status=0, but the exit code
+        # comes from the rejection flag, not the status class.
         assert _exit_code_for(_make_envelope(0, firewall=True)) == 2
 
 
@@ -387,7 +387,7 @@ class TestEmit:
         result = CliRunner().invoke(cmd, [])
         assert result.exit_code == 4
 
-    def test_firewall_envelope_exits_2(self):
+    def test_local_rejection_envelope_exits_2(self):
         import click
         from click.testing import CliRunner
 

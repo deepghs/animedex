@@ -1,8 +1,8 @@
 """
 ``animedex api nekos`` raw passthrough.
 
-nekos.best v2 is a free, anonymous, GET-only JSON API serving a curated
-SFW collection of anime imagery and GIFs. Each record carries
+nekos.best v2 is a free, anonymous JSON API serving a curated SFW
+collection of anime imagery and GIFs. Each record carries
 ``url`` (the asset), plus best-effort attribution
 (``anime_name`` / ``artist_name`` / ``artist_href`` / ``source_url``)
 and ``dimensions`` (``width`` / ``height``).
@@ -15,14 +15,15 @@ response headers; the transport applies a 3 req/sec sustained
 ceiling with a 10-token burst budget to stay under it.
 
 --- LLM Agent Guidance ---
-GET-only path. Common endpoints: ``/endpoints`` (lists all categories
-and their per-category file format); ``/<category>?amount=N``
-(retrieves ``N`` random images / GIFs from that category, ``1 <= N <=
-20``); ``/search?query=...&type=1|2&category=<name>&amount=N``
-(metadata search across artist / source / anime fields, ``type=1``
-for images and ``type=2`` for GIFs). All v2 categories are SFW; the
-high-level rich-model projection sets ``rating='g'`` unconditionally.
-A 404 on ``/<category>`` means the category name is unknown — call
+Common read paths: ``/endpoints`` (lists all categories and their
+per-category file format); ``/<category>?amount=N`` (retrieves ``N``
+random images / GIFs from that category, ``1 <= N <= 20``);
+``/search?query=...&type=1|2&category=<name>&amount=N`` (metadata
+search across artist / source / anime fields, ``type=1`` for images
+and ``type=2`` for GIFs). The raw ``method`` argument is forwarded
+verbatim. All v2 categories are SFW; the high-level rich-model
+projection sets ``rating='g'`` unconditionally. A 404 on
+``/<category>`` means the category name is unknown — call
 ``/endpoints`` to discover the valid set.
 --- End ---
 """
@@ -91,7 +92,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the nekos.best passthrough (firewall + signature).
+    """Smoke-test the nekos.best passthrough.
 
     :return: ``True`` on success; raises on contract drift.
     :rtype: bool

@@ -1,24 +1,24 @@
 Raw passthrough — ``animedex api``
 ==================================
 
-When a high-level command does not cover what you need, the ``animedex api <backend> <path>`` subcommand sends a raw request to the upstream and returns the response **unparsed**. It is the project's escape hatch, modelled on ``gh api``, and it still honours the project's transport contract: rate limiting, the read-only firewall, the per-backend ``User-Agent`` injection, and the local SQLite cache all apply, even on the passthrough path.
+When a high-level command does not cover what you need, the ``animedex api <backend> <path>`` subcommand sends a raw request to the upstream and returns the response **unparsed**. It is the project's escape hatch, modelled on ``gh api``, and it still honours the project's physical transport contracts: rate limiting, the per-backend ``User-Agent`` injection, the MangaDex ``Via``-header strip, cache eligibility for known reads, and debug redaction all apply, even on the passthrough path. Method and path choices are forwarded verbatim; the caller owns the upstream result.
 
 Twelve backends have raw-passthrough subcommands:
 
 * ``animedex api anilist '<graphql-query>'`` — POST to AniList.
-* ``animedex api jikan <path>`` — GET against Jikan v4.
-* ``animedex api kitsu <path>`` — GET against Kitsu.
-* ``animedex api mangadex <path>`` — GET against MangaDex.
-* ``animedex api trace <path>`` — GET (or POST /search) against
+* ``animedex api jikan <path>`` — defaults to GET against Jikan v4.
+* ``animedex api kitsu <path>`` — defaults to GET against Kitsu.
+* ``animedex api mangadex <path>`` — defaults to GET against MangaDex.
+* ``animedex api trace <path>`` — defaults to GET (or POST /search) against
   Trace.moe.
-* ``animedex api danbooru <path>`` — GET against Danbooru.
-* ``animedex api shikimori <path>`` — GET (REST) or POST /api/graphql.
-* ``animedex api ann <path>`` — GET against Anime News Network's
+* ``animedex api danbooru <path>`` — defaults to GET against Danbooru.
+* ``animedex api shikimori <path>`` — defaults to GET (REST) or POST /api/graphql.
+* ``animedex api ann <path>`` — defaults to GET against Anime News Network's
   encyclopedia XML.
-* ``animedex api nekos <path>`` — GET against nekos.best v2.
-* ``animedex api waifu <path>`` — GET against Waifu.im.
-* ``animedex api ghibli <path>`` — GET against the live Studio Ghibli API.
-* ``animedex api quote <path>`` — GET against AnimeChan.
+* ``animedex api nekos <path>`` — defaults to GET against nekos.best v2.
+* ``animedex api waifu <path>`` — defaults to GET against Waifu.im.
+* ``animedex api ghibli <path>`` — defaults to GET against the live Studio Ghibli API.
+* ``animedex api quote <path>`` — defaults to GET against AnimeChan.
 
 Output modes (mutually exclusive)
 ---------------------------------
@@ -62,7 +62,7 @@ Examples
 Method Selection
 ----------------
 
-``--method`` / ``-X`` sets the HTTP method sent through the raw dispatcher. ``GET`` is the default for REST backends. AniList still defaults to ``POST`` because GraphQL reads use ``POST /``. Shikimori GraphQL uses ``POST /api/graphql`` when ``--graphql`` is present, and Trace.moe uses ``POST /search`` when ``--input`` is present.
+``--method`` / ``-X`` sets the HTTP method sent through the raw dispatcher. ``GET`` is the default for REST backends. AniList still defaults to ``POST`` because GraphQL reads use ``POST /``. Shikimori GraphQL defaults to ``POST /api/graphql`` when ``--graphql`` is present and no explicit method was supplied. Trace.moe defaults to ``POST /search`` when ``--input`` is present and no explicit method was supplied.
 
 .. code-block:: bash
 
@@ -70,14 +70,14 @@ Method Selection
    # => {"data":{"mal_id":52991,...}}
 
    animedex api jikan /anime -X DELETE
-   # => DELETE rejected by animedex's read-only policy for jikan: DELETE /anime is not a permitted read; allowed read methods for this path are GET
+   # sends DELETE /anime to Jikan; the upstream response is returned unparsed
 
-Mutating methods are rejected before the request leaves the host. Allowed read-only ``POST`` routes remain explicit: AniList ``/``, Shikimori ``/api/graphql``, and Trace.moe ``/search``.
+The raw passthrough does not reject mutating-looking methods on the user's behalf. Use them only when you intentionally want the upstream to receive that method; upstream authentication, authorization, and error behaviour are returned as-is.
 
 Fields
 ------
 
-``--field`` / ``-f`` and ``--raw-field`` / ``-F`` add gh-style fields to a raw request. REST ``GET`` calls receive them as query parameters, GraphQL calls receive them as variables, and allowed JSON ``POST`` calls receive them in the JSON body. Repeated keys use last-write-wins semantics across both flags.
+``--field`` / ``-f`` and ``--raw-field`` / ``-F`` add gh-style fields to a raw request. REST ``GET`` calls receive them as query parameters, GraphQL calls receive them as variables, and JSON ``POST`` calls receive them in the JSON body when the wrapper is assembling one. Repeated keys use last-write-wins semantics across both flags.
 
 ``-f`` coerces values in this order: integer, float, literal ``true`` / ``false``, then string. ``-F`` always keeps strings.
 
@@ -124,7 +124,7 @@ For variables, use ``--variables '<json>'``.
 Common flags
 ------------
 
-* ``--method / -X METHOD`` — choose the HTTP method for the raw request. The read-only firewall still decides whether that method/path pair is allowed.
+* ``--method / -X METHOD`` — choose the HTTP method for the raw request. The method is forwarded verbatim.
 * ``--field / -f K=V`` — add a typed field. REST ``GET`` sends it as a query parameter; GraphQL sends it as a variable.
 * ``--raw-field / -F K=V`` — add a string-only field. Use this when the upstream distinguishes ``"10"`` from ``10``.
 * ``--paginate`` — auto-paginate supported ``GET`` endpoints; use ``--max-pages`` and ``--max-items`` to bound the loop.
@@ -136,37 +136,15 @@ Common flags
   the rate-limit refill rate so the backend's bucket burns through
   more slowly during long batch pulls.
 * ``--cache <ttl-seconds>`` — override the per-backend default TTL.
-* ``--no-cache`` — skip cache lookup AND skip cache write for this
-  call.
+* ``--no-cache`` — skip cache lookup AND skip cache write for cache-eligible requests.
 * ``--no-follow`` — do not auto-follow 3xx redirects.
 * ``--debug-full-body`` — with ``--debug``, do not truncate the body
   at 64 KiB.
 
-Read-only firewall
-------------------
+Method responsibility
+---------------------
 
-The dispatcher rejects requests that would mutate upstream state
-**before** they leave the host. The rules are per-backend and
-explicit:
-
-================ ==================================================
-AniList          ``GET`` allowed; ``POST /`` allowed (GraphQL).
-Jikan            ``GET`` only.
-Kitsu            ``GET`` only.
-MangaDex         ``GET`` only.
-Danbooru         ``GET`` only.
-Shikimori        ``GET`` only; ``POST /api/graphql`` allowed.
-ANN              ``GET`` only.
-Trace.moe        ``GET`` allowed; ``POST /search`` allowed.
-nekos.best       ``GET`` only.
-Waifu.im         ``GET`` only.
-Studio Ghibli    ``GET`` only.
-AnimeChan        ``GET`` only.
-================ ==================================================
-
-A rejection raises ``ApiError(reason="read-only")`` with a message
-that names the policy — not "405 Method Not Allowed" (the upstream
-would have accepted the request, the project rejected it).
+The raw dispatcher does not maintain a method firewall. It still applies transport realities that make requests function at all: upstream rate limits, default ``User-Agent`` injection unless the caller overrides it, credential redaction in debug envelopes, cache eligibility for known reads, and the MangaDex ``Via`` strip. It does not block ``POST``, ``PUT``, ``PATCH``, or ``DELETE`` based on project policy.
 
 The :doc:`python_library` page covers the equivalent
 ``animedex.api.<backend>.call(...)`` surface in Python.

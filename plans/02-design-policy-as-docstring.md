@@ -38,7 +38,6 @@ Rules whose violation gets the user punished by a third party. Two sub-tiers, di
 
 - Rate limits at the level the upstream enforces. AniDB will ban the IP for 24 hours if you ignore its "one packet every 4 seconds" cap. That is not a preference, it is a fact about the protocol. Callers can choose to slow them down further (`--rate slow`), but they cannot bypass them.
 - Forbidden headers (the MangaDex `Via` strip): a header that, when present, fails the request outright. The transport scrubs it from outgoing headers regardless of caller intent.
-- Read-only constraint on `animedex api` (see plan 03): even the escape hatch must not allow `DELETE`/`PATCH`/`POST` mutations against user-account endpoints, because we promise the project is read-only.
 
 **P1b - default-injected, caller-overridable.** The transport ships a contract-satisfying default; the unflagged path is honest and complete. A caller who explicitly supplies an alternative value is exercising informed choice and inherits the upstream's response. We do not silently override caller intent:
 
@@ -156,7 +155,7 @@ We do not trust this convention to enforce itself by virtue. Concrete mechanisms
 ## 6. Decisions This Forces in Plan 03
 
 - No `--nsfw`, no `--unsafe`, no `--explicit`, no `--allow-...`, no `--write` (we do not write at all), no `--force`.
-- The `anime api` escape hatch carries no extra confirmation. Read-only HTTP methods only, but no content-class gating.
+- The `animedex api` escape hatch carries no extra confirmation. Method/path choices are forwarded verbatim; no content-class gating and no method firewall.
 - Source choice (`--source anilist|jikan|kitsu`) is *not* a safety flag; it is a data-source preference and stays.
 
 ## 7. Edge: Hard-Coded vs. Default-Injected
@@ -171,9 +170,7 @@ To prevent confusion, here is the explicit list of project-enforced contracts, s
 | All other per-backend rate-limit caps (token-bucket) | violation -> 429 / temporary block |
 | Trace.moe concurrency=1 (free tier) | violation -> 402/429 |
 | MangaDex `Via` header forbidden | violation -> rejected request; we strip on egress |
-| Read-only HTTP methods on `animedex api` | project promise |
-
-These do not have a caller-facing override path. The user can slow rate limits further (`--rate slow`); they cannot speed them up or skip the read-only firewall.
+These do not have a caller-facing override path. The user can slow rate limits further (`--rate slow`); they cannot speed them up or send MangaDex's forbidden `Via` header through animedex.
 
 ### P1b (default-injected, caller-overridable)
 

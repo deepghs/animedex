@@ -2,9 +2,9 @@
 Tests for :mod:`animedex.api._dispatch`.
 
 Covers the full envelope assembly: pre-call URL/header composition,
-firewall rejection, rate-limit timing capture, cache lookup + write,
-HTTP execution including the redirect chain, body decoding, and
-final RawResponse construction.
+rate-limit timing capture, cache lookup + write, HTTP execution
+including the redirect chain, body decoding, and final RawResponse
+construction.
 """
 
 from __future__ import annotations
@@ -116,19 +116,23 @@ class TestSimpleCall:
         assert "BadResponseException" in raw.body_text
 
 
-class TestFirewallRejection:
-    def test_delete_rejected_before_request(self, fake_clock, cache):
+class TestMethodPassThrough:
+    @responses.activate
+    def test_delete_is_sent_to_upstream(self, fake_clock, cache):
         from animedex.api._dispatch import call
+
+        responses.add(responses.DELETE, "https://graphql.anilist.co/", body="", status=204)
 
         raw = call(backend="anilist", path="/", method="DELETE", cache=cache)
 
-        assert raw.firewall_rejected is not None
-        assert raw.firewall_rejected["reason"] == "read-only"
-        assert raw.status == 0
+        assert raw.firewall_rejected is None
+        assert raw.status == 204
         assert raw.body_bytes == b""
-        # The request the user attempted is still recorded.
         assert raw.request.method == "DELETE"
+        assert responses.calls[0].request.method == "DELETE"
 
+
+class TestLocalRejection:
     def test_unknown_backend_rejected(self, fake_clock, cache):
         from animedex.api._dispatch import call
 
@@ -233,6 +237,23 @@ class TestCacheBehavior:
         assert second.cache.hit is False
         # Different bodies prove both went out.
         assert "alt" in second.body_text
+
+    @responses.activate
+    def test_mutating_looking_methods_bypass_cache(self, fake_clock, cache):
+        from animedex.api._dispatch import call
+
+        responses.add(responses.DELETE, "https://graphql.anilist.co/", json={"n": 1}, status=200)
+        responses.add(responses.DELETE, "https://graphql.anilist.co/", json={"n": 2}, status=200)
+
+        first = call(backend="anilist", path="/", method="DELETE", cache=cache)
+        second = call(backend="anilist", path="/", method="DELETE", cache=cache)
+
+        assert first.cache.hit is False
+        assert second.cache.hit is False
+        assert first.cache.key is None
+        assert second.cache.key is None
+        assert len(responses.calls) == 2
+        assert '"n": 2' in second.body_text
 
 
 class TestRequestSnapshotRedaction:

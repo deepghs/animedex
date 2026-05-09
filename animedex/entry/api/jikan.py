@@ -8,7 +8,7 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_jikan = make_get_only_subcommand(
     name="jikan",
     backend_module_name="jikan",
-    docstring="""Issue a Jikan v4 GET request (anonymous MAL view).
+    docstring="""Issue a Jikan v4 raw request (anonymous MAL view).
 
     PATH is the URL path under `/v4`. Pagination is `?page=N&limit=M`;
     the response carries a `pagination` envelope. A 404 means the

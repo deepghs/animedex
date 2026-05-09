@@ -70,7 +70,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the ANN passthrough (firewall + signature)."""
+    """Smoke-test the ANN passthrough."""
     from animedex.api._dispatch import selftest_backend_shim
 
     return selftest_backend_shim("ann", call, extra_params=("path",))

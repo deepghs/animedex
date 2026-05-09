@@ -8,7 +8,7 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_kitsu = make_get_only_subcommand(
     name="kitsu",
     backend_module_name="kitsu",
-    docstring="""Issue a Kitsu GET request (JSON:API).
+    docstring="""Issue a Kitsu raw request (JSON:API).
 
     The dispatcher injects ``Accept: application/vnd.api+json``
     automatically. Pagination uses ``page[offset]=N&page[limit]=M``;

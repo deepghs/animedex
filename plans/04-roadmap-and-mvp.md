@@ -90,7 +90,7 @@ animedex api ann <path>               # XML auto-convert
 
 Universal flags from plan 03 section 7 are wired in here.
 
-Read-only enforcement: a small middleware rejects PUT/PATCH/DELETE and known-mutation POST paths before the request leaves the host. The rejection is informative (it names the policy, not "Method Not Allowed").
+Raw method handling: `--method/-X` is forwarded verbatim. The dispatcher still applies physical transport constraints such as rate limits, default header injection, the MangaDex `Via` strip, cache eligibility, and credential redaction, but it does not block methods on the user's behalf.
 
 ## 4. Phase 2 - High-level Commands for the MVP backends (2-3 days)
 

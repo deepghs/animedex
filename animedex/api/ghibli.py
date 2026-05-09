@@ -1,11 +1,11 @@
 """
 ``animedex api ghibli`` raw passthrough.
 
-The live Studio Ghibli API is a free, anonymous, GET-only JSON API
-covering films, people, locations, species, and vehicles from Studio
-Ghibli productions. The high-level :mod:`animedex.backends.ghibli`
-module reads a bundled snapshot instead; this raw passthrough exists
-for callers who explicitly want the current live upstream.
+The live Studio Ghibli API is a free, anonymous JSON API covering
+films, people, locations, species, and vehicles from Studio Ghibli
+productions. The high-level :mod:`animedex.backends.ghibli` module
+reads a bundled snapshot instead; this raw passthrough exists for
+callers who explicitly want the current live upstream.
 
 Backend: Studio Ghibli API (ghibliapi.vercel.app).
 
@@ -13,12 +13,13 @@ Rate limit: not formally published; the transport applies a
 conservative 1 req/sec sustained ceiling with a 5-token burst budget.
 
 --- LLM Agent Guidance ---
-GET-only path. Common endpoints: ``/films``, ``/people``,
-``/locations``, ``/species``, and ``/vehicles``; append ``/<id>`` for
-single-record reads. Prefer the high-level ``animedex ghibli``
-commands when the bundled snapshot is sufficient: those commands are
-offline, deterministic, and do not consume upstream capacity. Use
-this raw passthrough when the user explicitly asks for live data.
+Common read paths: ``/films``, ``/people``, ``/locations``,
+``/species``, and ``/vehicles``; append ``/<id>`` for single-record
+reads. The raw ``method`` argument is forwarded verbatim. Prefer the
+high-level ``animedex ghibli`` commands when the bundled snapshot is
+sufficient: those commands are offline, deterministic, and do not
+consume upstream capacity. Use this raw passthrough when the user
+explicitly asks for live data.
 --- End ---
 """
 
@@ -85,8 +86,7 @@ def call(
 def selftest() -> bool:
     """Smoke-test the Studio Ghibli API passthrough.
 
-    Exercises the shared shim checks: firewall rejection happens
-    before the wire, and the public ``call`` signature retains the
+    Exercises the shared shim checks: the public ``call`` signature retains the
     cross-cutting transport kwargs.
 
     :return: ``True`` on success; raises on contract drift.

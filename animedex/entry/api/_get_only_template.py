@@ -1,5 +1,5 @@
 """
-Template for GET-only backend subcommands.
+Template for simple raw path backend subcommands.
 
 Used by jikan / kitsu / mangadex / danbooru / ann to share the
 identical body. Each backend's own ``.py`` file imports
@@ -28,7 +28,7 @@ from animedex.entry.api import (
 
 
 def make_get_only_subcommand(*, name: str, backend_module_name: str, docstring: str):
-    """Register a GET-only ``api <name>`` subcommand on the api group.
+    """Register a simple raw-path ``api <name>`` subcommand on the api group.
 
     Each backend gets its own click.Command with its own docstring;
     the docstring carries the ``Backend:`` / ``Rate limit:`` /

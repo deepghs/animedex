@@ -3,10 +3,9 @@ Tests for :mod:`animedex.transport.http`.
 
 The :class:`~animedex.transport.http.HttpClient` is the surface every
 backend reaches HTTP through. It composes the User-Agent injector,
-the rate limiter, and the read-only firewall on top of a
-``requests.Session``. The tests pin: UA injection, read-only
-enforcement before a request goes out, rate-limiter consultation,
-and the ``Via`` header strip required by MangaDex's contract
+the rate limiter, and a ``requests.Session``. The tests pin: UA
+injection, method forwarding, rate-limiter consultation, and the
+``Via`` header strip required by MangaDex's contract
 (``plans/02 §7``).
 """
 
@@ -86,15 +85,18 @@ class TestHttpClientGet:
         assert "Via" not in responses.calls[0].request.headers
 
 
-class TestHttpClientReadOnlyFirewall:
-    def test_put_rejected_before_request(self, fake_clock):
-        from animedex.models.common import ApiError
+class TestHttpClientMethodForwarding:
+    @responses.activate
+    def test_put_forwarded_to_request(self, fake_clock):
         from animedex.transport.http import HttpClient
 
+        responses.add(responses.PUT, "https://upstream.invalid/x", json={"ok": True}, status=200)
+
         client = HttpClient(backend="anilist", base_url="https://upstream.invalid")
-        with pytest.raises(ApiError) as ei:
-            client.request("PUT", "/x")
-        assert ei.value.reason == "read-only"
+        response = client.request("PUT", "/x")
+
+        assert response.json() == {"ok": True}
+        assert responses.calls[0].request.method == "PUT"
 
     def test_post_to_anilist_root_allowed(self, fake_clock):
         from animedex.transport.http import HttpClient

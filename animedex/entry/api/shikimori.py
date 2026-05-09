@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import click
+from click.core import ParameterSource
 
 from animedex.entry.api import (
     _call_or_paginate,
@@ -25,7 +26,7 @@ from animedex.entry.api import (
     "--graphql",
     "graphql_query",
     default=None,
-    help="GraphQL query string; sent as JSON body to /api/graphql.",
+    help="GraphQL query string; sent as JSON body and defaults method to POST when -X is omitted.",
 )
 @_common_request_options
 @_common_output_options
@@ -52,10 +53,10 @@ def api_shikimori(
     """Issue a Shikimori REST or GraphQL request.
 
     REST default: GET against ``/api/...``. GraphQL: pass PATH=
-    ``/api/graphql`` and ``--graphql 'query'``; the wrapper sets
-    method=POST and ``Content-Type: application/json``. Both
-    ``shikimori.io`` (canonical) and ``shikimori.one`` (fallback) serve
-    identical data.
+    ``/api/graphql`` and ``--graphql 'query'``; the wrapper sends a
+    JSON body and defaults method to POST only when ``-X/--method`` is
+    omitted. Both ``shikimori.io`` (canonical) and ``shikimori.one``
+    (fallback) serve identical data.
 
     \b
     Docs:
@@ -96,8 +97,9 @@ def api_shikimori(
     /api/ranobe/{id}, /api/clubs/{id}, /api/publishers, or
     /api/people/{id}. Prefer the high-level shikimori commands for
     lifted REST surfaces. For GraphQL, pass PATH=/api/graphql and
-    --graphql '{ animes(...){ id } }'; the wrapper sets method=POST
-    and Content-Type: application/json. Both shikimori.io and
+    --graphql '{ animes(...){ id } }'; the wrapper sends a JSON body,
+    sets Content-Type: application/json, and defaults to POST only
+    when the caller did not pass -X/--method. Both shikimori.io and
     shikimori.one serve identical data; .io is canonical.
     --- End ---
     """
@@ -110,9 +112,12 @@ def api_shikimori(
         variables = fields or None
         if variables is not None:
             json_body["variables"] = variables
-    elif method.upper() == "POST":
+    method_source = ctx.get_parameter_source("method")
+    method_up = method.upper()
+    if method_up == "GET" and json_body is not None and method_source is not ParameterSource.COMMANDLINE:
+        method_up = "POST"
+    elif method_up == "POST":
         json_body = _merge_json_objects(None, fields, left_name="JSON body", right_name="-f/-F") if fields else None
-    method_up = "POST" if json_body is not None else method.upper()
     if json_body is not None:
         out_path = path
         params = None
