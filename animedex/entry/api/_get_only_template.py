@@ -74,6 +74,7 @@ def make_get_only_subcommand(*, name: str, backend_module_name: str, docstring: 
             paginate=paginate,
             max_pages=max_pages,
             max_items=max_items,
+            method_explicit=True,
             path=out_path,
             method=method.upper(),
             params=params,

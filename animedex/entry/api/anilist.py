@@ -6,6 +6,7 @@ import click
 from click.core import ParameterSource
 
 from animedex.entry.api import (
+    _call_or_paginate,
     _common_output_options,
     _common_request_options,
     _emit,
@@ -96,7 +97,13 @@ def api_anilist(
     method_up = method.upper()
     if method_up == "GET" and method_source is not ParameterSource.COMMANDLINE:
         method_up = "POST"
-    env = anilist.call(
+    env = _call_or_paginate(
+        anilist,
+        backend="anilist",
+        paginate=paginate,
+        max_pages=max_pages,
+        max_items=max_items,
+        method_explicit=method_source is ParameterSource.COMMANDLINE,
         query=query,
         method=method_up,
         variables=variables,

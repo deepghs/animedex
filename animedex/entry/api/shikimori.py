@@ -129,6 +129,7 @@ def api_shikimori(
         paginate=paginate,
         max_pages=max_pages,
         max_items=max_items,
+        method_explicit=method_source is ParameterSource.COMMANDLINE,
         path=out_path,
         method=method_up,
         params=params,

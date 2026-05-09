@@ -153,6 +153,10 @@ def test_paginate_does_not_block_anilist_passthrough(cli):
 
     assert result.exit_code == 0, result.output
     assert method == "POST"
+    assert (
+        "--paginate ignored: backend 'anilist' has no pagination strategy; sending a single forwarded request."
+        in result.stderr
+    )
 
 
 def test_paginate_does_not_block_trace_passthrough(cli):
@@ -163,6 +167,10 @@ def test_paginate_does_not_block_trace_passthrough(cli):
 
     assert result.exit_code == 0, result.output
     assert method == "GET"
+    assert (
+        "--paginate ignored: backend 'trace' has no pagination strategy; sending a single forwarded request."
+        in result.stderr
+    )
 
 
 def test_paginate_does_not_block_explicit_non_get_method(cli):
@@ -174,3 +182,4 @@ def test_paginate_does_not_block_explicit_non_get_method(cli):
     assert result.exit_code == 0, result.output
     assert method == "POST"
     assert "saw-post" in result.output
+    assert "--paginate ignored: explicit -X POST; sending a single forwarded request." in result.stderr

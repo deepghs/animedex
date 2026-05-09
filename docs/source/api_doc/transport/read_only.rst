@@ -18,12 +18,6 @@ classify\_read\_only
 .. autofunction:: classify_read_only
 
 
-enforce\_read\_only
------------------------------------------------------
-
-.. autofunction:: enforce_read_only
-
-
 selftest
 -----------------------------------------------------
 

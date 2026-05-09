@@ -276,7 +276,8 @@ class RawResponse(AnimedexModel):
     :ivar cache: Cache provenance.
     :vartype cache: RawCacheInfo
     :ivar firewall_rejected: ``{"reason": "...", "message": "..."}``
-                               for legacy local-rejection envelopes;
+                               for local pre-request rejection metadata,
+                               currently unknown-backend envelopes;
                                ``None`` otherwise.
     :vartype firewall_rejected: dict[str, str] or None
     """

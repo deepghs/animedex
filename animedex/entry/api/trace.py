@@ -9,6 +9,7 @@ import click
 from click.core import ParameterSource
 
 from animedex.entry.api import (
+    _call_or_paginate,
     _common_output_options,
     _common_request_options,
     _emit,
@@ -109,7 +110,13 @@ def api_trace(
             method_up = "POST"
     mode = _output_mode_from_flags(include_flag, head_flag, debug_flag)
     out_path, params = _merge_path_and_fields(path, _parse_api_fields(api_fields))
-    env = trace_mod.call(
+    env = _call_or_paginate(
+        trace_mod,
+        backend="trace",
+        paginate=paginate,
+        max_pages=max_pages,
+        max_items=max_items,
+        method_explicit=method_source is ParameterSource.COMMANDLINE,
         path=out_path,
         method=method_up,
         params=params,

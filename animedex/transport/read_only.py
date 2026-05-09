@@ -113,27 +113,6 @@ def classify_read_only(backend: str, method: str, path: str) -> Optional[bool]:
     return bool(matcher(path)) if matcher is not None else False
 
 
-def enforce_read_only(backend: str, method: str, path: str) -> None:
-    """Deprecated non-blocking compatibility shim.
-
-    Older callers used this function as an enforcing firewall. Raw API
-    transport now follows the human-agency rule and forwards the
-    caller's method/path choice, so this function intentionally returns
-    normally for every input.
-
-    :param backend: Backend identifier.
-    :type backend: str
-    :param method: HTTP method.
-    :type method: str
-    :param path: Request path.
-    :type path: str
-    :return: ``None``.
-    :rtype: None
-    """
-    classify_read_only(backend, method, path)
-    return None
-
-
 def selftest() -> bool:
     """Smoke-test the advisory classifier.
 
@@ -146,5 +125,4 @@ def selftest() -> bool:
     assert classify_read_only("anilist", "POST", "/") is True
     assert classify_read_only("jikan", "DELETE", "/anime") is False
     assert classify_read_only("not-a-backend", "GET", "/") is None
-    enforce_read_only("jikan", "DELETE", "/anime")
     return True

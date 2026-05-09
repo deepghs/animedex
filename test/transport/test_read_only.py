@@ -32,12 +32,6 @@ class TestClassifyReadOnly:
 
         assert classify_read_only("not-a-backend", "GET", "/") is None
 
-    @pytest.mark.parametrize("method", ["POST", "PUT", "PATCH", "DELETE"])
-    def test_enforce_read_only_is_non_blocking_compatibility_shim(self, method):
-        from animedex.transport.read_only import enforce_read_only
-
-        assert enforce_read_only("jikan", method, "/anime") is None
-
 
 class TestKnownBackends:
     def test_known_backends_contains_raw_api_backends(self):

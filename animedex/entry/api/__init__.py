@@ -372,18 +372,25 @@ def _call_or_paginate(
     paginate: bool,
     max_pages: int,
     max_items,
+    method_explicit: bool = True,
     **kwargs,
 ):
     """Call one raw request or the central pagination helper."""
     if not paginate:
         return backend_module.call(**kwargs)
-    if kwargs.get("method", "GET").upper() != "GET":
-        return backend_module.call(**kwargs)
+    method = kwargs.get("method", "GET").upper()
     from animedex.api._paginate import get_strategy
 
     try:
         get_strategy(backend)
     except ApiError:
+        if method != "GET" and method_explicit:
+            _warn_paginate_ignored_non_get(method, explicit=True)
+            return backend_module.call(**kwargs)
+        _warn_paginate_ignored_no_strategy(backend)
+        return backend_module.call(**kwargs)
+    if method != "GET":
+        _warn_paginate_ignored_non_get(method, explicit=method_explicit)
         return backend_module.call(**kwargs)
 
     paginated_kwargs = {k: v for k, v in kwargs.items() if k not in ("json_body", "raw_body")}
@@ -398,6 +405,20 @@ def _call_or_paginate(
         )
     except ApiError as exc:
         raise click.ClickException(str(exc)) from exc
+
+
+def _warn_paginate_ignored_non_get(method: str, *, explicit: bool) -> None:
+    """Warn that ``--paginate`` cannot apply to a non-GET request."""
+    reason = f"explicit -X {method}" if explicit else f"non-GET {method}"
+    click.echo(f"--paginate ignored: {reason}; sending a single forwarded request.", err=True)
+
+
+def _warn_paginate_ignored_no_strategy(backend: str) -> None:
+    """Warn that ``--paginate`` has no backend strategy to run."""
+    click.echo(
+        f"--paginate ignored: backend {backend!r} has no pagination strategy; sending a single forwarded request.",
+        err=True,
+    )
 
 
 def _emit(ctx: click.Context, envelope: RawResponse, mode: str, full_body: bool) -> None:

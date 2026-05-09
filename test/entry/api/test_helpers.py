@@ -355,7 +355,7 @@ class TestCallOrPaginate:
             path="/anime",
         ) == {"kwargs": {"path": "/anime"}}
 
-    def test_unsupported_paginate_backend_falls_back_to_raw_call(self):
+    def test_unsupported_paginate_backend_falls_back_to_raw_call(self, capsys):
         from animedex.entry.api import _call_or_paginate
 
         class Backend:
@@ -372,6 +372,49 @@ class TestCallOrPaginate:
             path="/",
             method="GET",
         ) == {"kwargs": {"path": "/", "method": "GET"}}
+        assert (
+            "--paginate ignored: backend 'anilist' has no pagination strategy; sending a single forwarded request."
+            in capsys.readouterr().err
+        )
+
+    def test_unsupported_paginate_backend_with_explicit_non_get_falls_back_to_raw_call(self, capsys):
+        from animedex.entry.api import _call_or_paginate
+
+        class Backend:
+            @staticmethod
+            def call(**kwargs):
+                return {"kwargs": kwargs}
+
+        assert _call_or_paginate(
+            Backend,
+            backend="anilist",
+            paginate=True,
+            max_pages=10,
+            max_items=None,
+            method_explicit=True,
+            path="/",
+            method="POST",
+        ) == {"kwargs": {"path": "/", "method": "POST"}}
+        assert "--paginate ignored: explicit -X POST; sending a single forwarded request." in capsys.readouterr().err
+
+    def test_non_get_paginate_falls_back_to_raw_call(self, capsys):
+        from animedex.entry.api import _call_or_paginate
+
+        class Backend:
+            @staticmethod
+            def call(**kwargs):
+                return {"kwargs": kwargs}
+
+        assert _call_or_paginate(
+            Backend,
+            backend="jikan",
+            paginate=True,
+            max_pages=10,
+            max_items=None,
+            path="/anime",
+            method="POST",
+        ) == {"kwargs": {"path": "/anime", "method": "POST"}}
+        assert "--paginate ignored: explicit -X POST; sending a single forwarded request." in capsys.readouterr().err
 
     def test_paginate_api_error_becomes_click_exception(self):
         import click
