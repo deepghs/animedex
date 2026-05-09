@@ -1,0 +1,71 @@
+metadata:
+  captured_at: '2026-05-08T13:07:33Z'
+  label: page1
+  backend: danbooru
+  path_slug: users_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/users.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:33 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"c62b3506e2c34f7bee70c3e841d7db66"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b023ae68d3d2-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.3398, rails.cpu_time;dur=2.6207, rails.idle_time;dur=0.7191,
+      rails.sql_time;dur=0.8948, rails.view_time;dur=1.3831, rails.allocations;count=1684, request.allocations;count=2156,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.4413, request.total_time;dur=4.1602, request.queue_time_0;dur=1.7948,
+      request.queue_time_1;dur=-499.0001
+    x-runtime: '0.004160202026367187'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 1549350
+    created_at: '2026-05-08T09:07:30.713-04:00'
+    name: hiver0921
+    inviter_id: null
+    level: 20
+    post_upload_count: 0
+    post_update_count: 0
+    note_update_count: 0
+    is_deleted: false
+    level_string: Member
+    is_banned: false
+  - id: 1549349
+    created_at: '2026-05-08T09:06:34.752-04:00'
+    name: starrk94
+    inviter_id: null
+    level: 20
+    post_upload_count: 0
+    post_update_count: 0
+    note_update_count: 0
+    is_deleted: false
+    level_string: Member
+    is_banned: false
+  body_text: null
+  body_b64: null

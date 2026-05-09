@@ -1,0 +1,69 @@
+metadata:
+  captured_at: '2026-05-08T12:53:44Z'
+  label: berserk
+  backend: kitsu
+  path_slug: manga_characters
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/manga/1/characters?page%5Blimit%5D=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:44 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"5817163e8f30d2dec9298b376b62bfd1"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 91d69569-d316-42db-9449-451725b61b96
+    x-runtime: '0.041971'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '125079'
+      type: mediaCharacters
+      links:
+        self: https://kitsu.io/api/edge/media-characters/125079
+      attributes:
+        createdAt: '2018-08-02T21:56:05.148Z'
+        updatedAt: '2018-08-02T21:56:05.148Z'
+        role: main
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/media-characters/125079/relationships/media
+            related: https://kitsu.io/api/edge/media-characters/125079/media
+        character:
+          links:
+            self: https://kitsu.io/api/edge/media-characters/125079/relationships/character
+            related: https://kitsu.io/api/edge/media-characters/125079/character
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/media-characters/125079/relationships/voices
+            related: https://kitsu.io/api/edge/media-characters/125079/voices
+    meta:
+      count: 1
+    links:
+      first: https://kitsu.io/api/edge/manga/1/characters?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/manga/1/characters?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

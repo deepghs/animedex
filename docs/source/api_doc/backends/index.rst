@@ -10,7 +10,11 @@ animedex.backends
     :maxdepth: 3
 
     anilist/index
+    danbooru/index
     jikan/index
+    kitsu/index
+    mangadex/index
     nekos/index
     trace/index
+    waifu/index
 

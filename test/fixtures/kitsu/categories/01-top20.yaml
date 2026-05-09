@@ -1,0 +1,672 @@
+metadata:
+  captured_at: '2026-05-08T12:01:10Z'
+  label: top20
+  backend: kitsu
+  path_slug: categories
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/categories?page%5Blimit%5D=20
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:01:09 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"5a7c200e685aa9af980bb663ff4c9551"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 1e08324a-e452-4262-8496-859afa2ab643
+    x-runtime: '0.074071'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/1
+      attributes:
+        createdAt: '2017-05-31T06:38:28.636Z'
+        updatedAt: '2021-10-02T01:31:01.196Z'
+        title: Middle School
+        description: ''
+        totalMediaCount: 111
+        slug: middle-school
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/1/relationships/parent
+            related: https://kitsu.io/api/edge/categories/1/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/1/relationships/anime
+            related: https://kitsu.io/api/edge/categories/1/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/1/relationships/drama
+            related: https://kitsu.io/api/edge/categories/1/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/1/relationships/manga
+            related: https://kitsu.io/api/edge/categories/1/manga
+    - id: '2'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/2
+      attributes:
+        createdAt: '2017-05-31T06:38:28.722Z'
+        updatedAt: '2021-10-02T01:31:01.621Z'
+        title: Cycling
+        description: ''
+        totalMediaCount: 19
+        slug: cycling
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/2/relationships/parent
+            related: https://kitsu.io/api/edge/categories/2/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/2/relationships/anime
+            related: https://kitsu.io/api/edge/categories/2/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/2/relationships/drama
+            related: https://kitsu.io/api/edge/categories/2/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/2/relationships/manga
+            related: https://kitsu.io/api/edge/categories/2/manga
+    - id: '3'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/3
+      attributes:
+        createdAt: '2017-05-31T06:38:28.745Z'
+        updatedAt: '2021-10-02T01:31:01.213Z'
+        title: Elementary School
+        description: The term elementary school is used in some countries for schools where children from the age of about
+          five receive primary education.
+        totalMediaCount: 91
+        slug: elementary-school
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/3/relationships/parent
+            related: https://kitsu.io/api/edge/categories/3/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/3/relationships/anime
+            related: https://kitsu.io/api/edge/categories/3/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/3/relationships/drama
+            related: https://kitsu.io/api/edge/categories/3/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/3/relationships/manga
+            related: https://kitsu.io/api/edge/categories/3/manga
+    - id: '4'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/4
+      attributes:
+        createdAt: '2017-05-31T06:38:28.770Z'
+        updatedAt: '2021-10-02T01:30:58.992Z'
+        title: Mermaid
+        description: A creature that is half-human (usually the upper body) and half-fish (usually the lower body). A male
+          mermaid is called merman (but they can appear under many different names).
+        totalMediaCount: 54
+        slug: mermaid
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/4/relationships/parent
+            related: https://kitsu.io/api/edge/categories/4/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/4/relationships/anime
+            related: https://kitsu.io/api/edge/categories/4/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/4/relationships/drama
+            related: https://kitsu.io/api/edge/categories/4/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/4/relationships/manga
+            related: https://kitsu.io/api/edge/categories/4/manga
+    - id: '5'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/5
+      attributes:
+        createdAt: '2017-05-31T06:38:28.792Z'
+        updatedAt: '2021-10-02T01:30:58.806Z'
+        title: Android
+        description: An android is a robot or synthetic organism designed to look and act like a human.
+        totalMediaCount: 235
+        slug: android
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/5/relationships/parent
+            related: https://kitsu.io/api/edge/categories/5/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/5/relationships/anime
+            related: https://kitsu.io/api/edge/categories/5/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/5/relationships/drama
+            related: https://kitsu.io/api/edge/categories/5/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/5/relationships/manga
+            related: https://kitsu.io/api/edge/categories/5/manga
+    - id: '6'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/6
+      attributes:
+        createdAt: '2017-05-31T06:38:29.320Z'
+        updatedAt: '2021-10-02T01:31:01.231Z'
+        title: All Girls School
+        description: This school is only for female students. There may be a few male teachers though.
+        totalMediaCount: 147
+        slug: all-girls-school
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/6/relationships/parent
+            related: https://kitsu.io/api/edge/categories/6/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/6/relationships/anime
+            related: https://kitsu.io/api/edge/categories/6/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/6/relationships/drama
+            related: https://kitsu.io/api/edge/categories/6/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/6/relationships/manga
+            related: https://kitsu.io/api/edge/categories/6/manga
+    - id: '7'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/7
+      attributes:
+        createdAt: '2017-05-31T06:38:30.558Z'
+        updatedAt: '2021-10-02T01:30:58.336Z'
+        title: Vampire
+        description: |-
+          A vampire is a mythological or folkloric nocturnal undead. Vampires use long fangs to penetrate the necks of people, usually young females, to drink their blood, both as a form of nourishment and to turn the targets into slaves.
+
+          In the classic vampire stories, they are thought to have no reflection in mirrors, are able to shapeshift into bats (sometimes also wolves or some form of fog), have unlimited lifespan and superhuman strength, reflexes and senses, and may only be killed by silver bullets, silver blades, a stake through the heart, fire, or exposure to sunlight; on the other hand, they cannot tolerate garlic, holy water, or Christian crosses (sometimes expanded to religious symbols in general).
+
+          In modern anime, these limitations are usually dropped, and they become far more powerful and fearsome opponents than usual. A human bitten, or sometimes even scratched, by a vampire typically becomes a slave, eventually dying as if poisoned, and becoming a vampire, ghoul, zombie, or other form of undead after death, often staying under the command of the vampire who originally bit them.
+        totalMediaCount: 773
+        slug: vampire
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/7/relationships/parent
+            related: https://kitsu.io/api/edge/categories/7/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/7/relationships/anime
+            related: https://kitsu.io/api/edge/categories/7/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/7/relationships/drama
+            related: https://kitsu.io/api/edge/categories/7/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/7/relationships/manga
+            related: https://kitsu.io/api/edge/categories/7/manga
+    - id: '8'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/8
+      attributes:
+        createdAt: '2017-05-31T06:38:30.856Z'
+        updatedAt: '2021-10-02T01:31:01.661Z'
+        title: Wrestling
+        description: Wrestling is a fight between two people without weapons, in which each person tries to beat their opponent.
+          Wrestlers use clinching, holding, locking, and leverage. It resembles ritual fighting as it avoids things that will
+          likely lead to serious injury. It is similar to military hand-to-hand combat or self-defence systems.
+        totalMediaCount: 35
+        slug: wrestling
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/8/relationships/parent
+            related: https://kitsu.io/api/edge/categories/8/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/8/relationships/anime
+            related: https://kitsu.io/api/edge/categories/8/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/8/relationships/drama
+            related: https://kitsu.io/api/edge/categories/8/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/8/relationships/manga
+            related: https://kitsu.io/api/edge/categories/8/manga
+    - id: '9'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/9
+      attributes:
+        createdAt: '2017-05-31T06:38:30.881Z'
+        updatedAt: '2021-10-02T01:30:58.528Z'
+        title: Samurai
+        description: ''
+        totalMediaCount: 497
+        slug: samurai
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/9/relationships/parent
+            related: https://kitsu.io/api/edge/categories/9/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/9/relationships/anime
+            related: https://kitsu.io/api/edge/categories/9/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/9/relationships/drama
+            related: https://kitsu.io/api/edge/categories/9/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/9/relationships/manga
+            related: https://kitsu.io/api/edge/categories/9/manga
+    - id: '10'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/10
+      attributes:
+        createdAt: '2017-05-31T06:38:31.311Z'
+        updatedAt: '2021-10-02T01:30:59.009Z'
+        title: Elf
+        description: |-
+          The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology, in which, elves are described as divine, or near-divine, race of humanoids (Vættir), likened to the Æsir. In common description they are described as sage and immortal beings occupying the threshold between humans and the gods. In some cases humans that were beloved by the gods became elves within their lives. Ancient Elves are delineated into a pair of similar but distinct races; Light Elves (Ljósálfar) and Dark Elves (Svartálfar), each originating from separate homes within the nine worlds of Yggdrasil. Within the Poetic Edda the differences are commonly ascribed as:
+
+          "There is one place there that is called the Elf Home (Álfheimr which is the elven city). People live there that are named the light elves (Ljósálfar). But the dark elves (Dökkálfar) live below in earth, in caves and the dark forest and they are unlike them in appearance - and more unlike them in reality. The Light Elves are brighter than the sun in appearance, but the Dark Elves are blacker than pitch." (Snorri, Gylfaginning 17, Prose Edda)
+        totalMediaCount: 353
+        slug: elf
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/10/relationships/parent
+            related: https://kitsu.io/api/edge/categories/10/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/10/relationships/anime
+            related: https://kitsu.io/api/edge/categories/10/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/10/relationships/drama
+            related: https://kitsu.io/api/edge/categories/10/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/10/relationships/manga
+            related: https://kitsu.io/api/edge/categories/10/manga
+    - id: '11'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/11
+      attributes:
+        createdAt: '2017-05-31T06:38:32.006Z'
+        updatedAt: '2021-10-02T01:31:01.380Z'
+        title: Pirate
+        description: Those who take to the high seas (or space) to rob ships or search for treasure.
+        totalMediaCount: 104
+        slug: pirate
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/11/relationships/parent
+            related: https://kitsu.io/api/edge/categories/11/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/11/relationships/anime
+            related: https://kitsu.io/api/edge/categories/11/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/11/relationships/drama
+            related: https://kitsu.io/api/edge/categories/11/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/11/relationships/manga
+            related: https://kitsu.io/api/edge/categories/11/manga
+    - id: '12'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/12
+      attributes:
+        createdAt: '2017-05-31T06:38:32.258Z'
+        updatedAt: '2021-10-02T01:30:59.665Z'
+        title: Bishounen
+        description: Young man whose beauty (and sexual appeal) transcends the boundary of gender or sexual orientation.
+        totalMediaCount: 164
+        slug: bishounen
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/12/relationships/parent
+            related: https://kitsu.io/api/edge/categories/12/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/12/relationships/anime
+            related: https://kitsu.io/api/edge/categories/12/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/12/relationships/drama
+            related: https://kitsu.io/api/edge/categories/12/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/12/relationships/manga
+            related: https://kitsu.io/api/edge/categories/12/manga
+    - id: '13'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/13
+      attributes:
+        createdAt: '2017-05-31T06:38:32.282Z'
+        updatedAt: '2021-10-02T01:30:59.678Z'
+        title: Tentacle
+        description: 'A tentacle or bothrium (plural: bothria) is one of usually two or more elongated flexible organs present
+          in animals, especially invertebrates. Usually, Tentacles are used for feeding, feeling and grasping.'
+        totalMediaCount: 176
+        slug: tentacle
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/13/relationships/parent
+            related: https://kitsu.io/api/edge/categories/13/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/13/relationships/anime
+            related: https://kitsu.io/api/edge/categories/13/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/13/relationships/drama
+            related: https://kitsu.io/api/edge/categories/13/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/13/relationships/manga
+            related: https://kitsu.io/api/edge/categories/13/manga
+    - id: '15'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/15
+      attributes:
+        createdAt: '2017-05-31T06:38:32.894Z'
+        updatedAt: '2021-10-02T01:31:01.699Z'
+        title: Boxing
+        description: ''
+        totalMediaCount: 49
+        slug: boxing
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/15/relationships/parent
+            related: https://kitsu.io/api/edge/categories/15/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/15/relationships/anime
+            related: https://kitsu.io/api/edge/categories/15/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/15/relationships/drama
+            related: https://kitsu.io/api/edge/categories/15/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/15/relationships/manga
+            related: https://kitsu.io/api/edge/categories/15/manga
+    - id: '16'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/16
+      attributes:
+        createdAt: '2017-05-31T06:38:33.246Z'
+        updatedAt: '2021-10-02T01:31:02.048Z'
+        title: Musical Band
+        description: A musical ensemble also known as a music(al) group or music(al) band is a group of people who perform
+          instrumental or vocal music, typically known by a distinct name.
+        totalMediaCount: 118
+        slug: musical-band
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/16/relationships/parent
+            related: https://kitsu.io/api/edge/categories/16/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/16/relationships/anime
+            related: https://kitsu.io/api/edge/categories/16/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/16/relationships/drama
+            related: https://kitsu.io/api/edge/categories/16/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/16/relationships/manga
+            related: https://kitsu.io/api/edge/categories/16/manga
+    - id: '18'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/18
+      attributes:
+        createdAt: '2017-05-31T06:38:34.267Z'
+        updatedAt: '2021-10-02T01:31:01.054Z'
+        title: Cooking
+        description: Cooking, baking or otherwise producing food.
+        totalMediaCount: 418
+        slug: cooking
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/18/relationships/parent
+            related: https://kitsu.io/api/edge/categories/18/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/18/relationships/anime
+            related: https://kitsu.io/api/edge/categories/18/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/18/relationships/drama
+            related: https://kitsu.io/api/edge/categories/18/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/18/relationships/manga
+            related: https://kitsu.io/api/edge/categories/18/manga
+    - id: '19'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/19
+      attributes:
+        createdAt: '2017-05-31T06:38:34.295Z'
+        updatedAt: '2021-10-02T01:31:02.249Z'
+        title: Air Force
+        description: |-
+          An air force, also known in some countries as an air army or air corps, is in the broadest sense, the national military organization that primarily conducts aerial warfare. More specifically, it is the branch of a nation's armed services that is responsible for aerial warfare as distinct from an army, navy or other branch. Typically, air forces are responsible for gaining control of the air, carrying out strategic-bombing missions and providing support to surface forces.
+
+          The term "air force" may also refer to a tactical air force or numbered air force, which is an operational formation within a national air force. Air forces typically consist of a combination of fighters, bombers, helicopters, transport planes and other aircraft.
+        totalMediaCount: 49
+        slug: air-force
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/19/relationships/parent
+            related: https://kitsu.io/api/edge/categories/19/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/19/relationships/anime
+            related: https://kitsu.io/api/edge/categories/19/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/19/relationships/drama
+            related: https://kitsu.io/api/edge/categories/19/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/19/relationships/manga
+            related: https://kitsu.io/api/edge/categories/19/manga
+    - id: '21'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/21
+      attributes:
+        createdAt: '2017-05-31T06:38:34.881Z'
+        updatedAt: '2021-10-02T01:31:01.397Z'
+        title: Bounty Hunter
+        description: Involve hunting down criminals (or other wanted individuals) for money or fame.
+        totalMediaCount: 39
+        slug: bounty-hunter
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/21/relationships/parent
+            related: https://kitsu.io/api/edge/categories/21/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/21/relationships/anime
+            related: https://kitsu.io/api/edge/categories/21/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/21/relationships/drama
+            related: https://kitsu.io/api/edge/categories/21/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/21/relationships/manga
+            related: https://kitsu.io/api/edge/categories/21/manga
+    - id: '22'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/22
+      attributes:
+        createdAt: '2017-05-31T06:38:34.917Z'
+        updatedAt: '2021-10-02T01:31:01.253Z'
+        title: High School
+        description: A secondary school that usually contains grades 10 through 12 in Japan, or 9 through 12 in America.
+        totalMediaCount: 1038
+        slug: high-school
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/22/relationships/parent
+            related: https://kitsu.io/api/edge/categories/22/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/22/relationships/anime
+            related: https://kitsu.io/api/edge/categories/22/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/22/relationships/drama
+            related: https://kitsu.io/api/edge/categories/22/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/22/relationships/manga
+            related: https://kitsu.io/api/edge/categories/22/manga
+    - id: '23'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/23
+      attributes:
+        createdAt: '2017-05-31T06:38:34.970Z'
+        updatedAt: '2021-10-02T01:31:01.281Z'
+        title: Delinquent
+        description: |-
+          Delinquents - Every school has them, but not all anime with school setting make delinquents a central topic. There are several versions of these delinquents, though some are grounded on a misunderstanding:
+
+          * The student with a really bad image and attitude, based on his real criminal actions outside of the school and is even feared by teachers.
+          * The primitive "class bully" that pushes around ("clobbers") his classmates for no apparent reason, possibly extorting lunch money.
+          * The student with an sinister complexion or "evil eye", but is actually a "good" student (unfoundedly feared character).
+          * The rebellious student, who does not care for studying, but is otherwise docile. Called a "delinquent" as a joke.
+        totalMediaCount: 288
+        slug: delinquent
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/23/relationships/parent
+            related: https://kitsu.io/api/edge/categories/23/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/23/relationships/anime
+            related: https://kitsu.io/api/edge/categories/23/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/23/relationships/drama
+            related: https://kitsu.io/api/edge/categories/23/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/23/relationships/manga
+            related: https://kitsu.io/api/edge/categories/23/manga
+    meta:
+      count: 218
+    links:
+      first: https://kitsu.io/api/edge/categories?page%5Blimit%5D=20&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/categories?page%5Blimit%5D=20&page%5Boffset%5D=20
+      last: https://kitsu.io/api/edge/categories?page%5Blimit%5D=20&page%5Boffset%5D=198
+  body_text: null
+  body_b64: null

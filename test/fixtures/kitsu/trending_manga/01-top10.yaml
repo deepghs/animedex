@@ -1,0 +1,1555 @@
+metadata:
+  captured_at: '2026-05-08T12:53:55Z'
+  label: top10
+  backend: kitsu
+  path_slug: trending_manga
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/trending/manga
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:55 GMT
+    Content-Type: application/vnd.api+json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"b4d4546769e56904f216c06bf38895d5"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 6359fb12-fc87-420d-9a8d-2dcc2d856814
+    x-runtime: '0.153889'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '55900'
+      type: manga
+      links:
+        self: /manga/55900
+      attributes:
+        createdAt: '2020-02-07T12:37:50.073Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: mo-huang-da-guanjia
+        synopsis: |-
+          As the Demon King, Yifan Zhuo uses his knowledge and power, collected over millennia, to defeat all foes, until the day he is betrayed. With his last breath, the demon king manages to reincarnate... but into the body of a puny young servant! To Yifan's dismay, the servant has a spirit bond with his mistress, Lady Luo. Yifan, now known as Fan, finds himself inexplicably drawn to Lady Luo and links his fate to her family. With Lady Luo at his side, will he regain his place as the Demon King?
+
+          (Source: Tapas)
+        description: |-
+          As the Demon King, Yifan Zhuo uses his knowledge and power, collected over millennia, to defeat all foes, until the day he is betrayed. With his last breath, the demon king manages to reincarnate... but into the body of a puny young servant! To Yifan's dismay, the servant has a spirit bond with his mistress, Lady Luo. Yifan, now known as Fan, finds himself inexplicably drawn to Lady Luo and links his fate to her family. With Lady Luo at his side, will he regain his place as the Demon King?
+
+          (Source: Tapas)
+        coverImageTopOffset: 0
+        titles:
+          en: The Devil Butler
+          en_cn: Mo Huang Da Guanjia
+          zh_cn: 魔皇大管家
+        canonicalTitle: Mo Huang Da Guanjia
+        abbreviatedTitles:
+        - Demon Magic Emperor
+        - Demonic Emperor
+        - Housekeeper Is the Magic Emperor
+        - Magic Emperor
+        - Mo Huang Da Guan Jia
+        - The Servant Is the Demon King?!
+        - The Steward Demonic Emperor
+        - امپراطور جادو
+        - 마황의 귀환
+        - Devil's Butler
+        averageRating: '81.43'
+        ratingFrequencies:
+          '2': '54'
+          '4': '3'
+          '5': '3'
+          '6': '5'
+          '7': '1'
+          '8': '30'
+          '9': '2'
+          '10': '19'
+          '11': '6'
+          '12': '21'
+          '13': '9'
+          '14': '153'
+          '15': '39'
+          '16': '126'
+          '17': '74'
+          '18': '118'
+          '19': '51'
+          '20': '417'
+        userCount: 3946
+        favoritesCount: 51
+        startDate: '2019-04-05'
+        endDate: null
+        nextRelease: null
+        popularityRank: 428
+        ratingRank: 605
+        ageRating: PG
+        ageRatingGuide: null
+        subtype: manhua
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/poster_images/55900/tiny.jpg
+          large: https://media.kitsu.app/manga/poster_images/55900/large.jpg
+          small: https://media.kitsu.app/manga/poster_images/55900/small.jpg
+          medium: https://media.kitsu.app/manga/poster_images/55900/medium.jpg
+          original: https://media.kitsu.app/manga/poster_images/55900/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/manga/55900/cover_image/tiny-b88e81f6b11e2699c3f3d3486b8898b1.jpeg
+          large: https://media.kitsu.app/manga/55900/cover_image/large-1ac85471368a5e59bfd5458d1a14d6d2.jpeg
+          small: https://media.kitsu.app/manga/55900/cover_image/small-8883ffaabc53eeda1162ac9b0802f8e8.jpeg
+          original: https://media.kitsu.app/manga/55900/cover_image/5983badb8343755e5c9c6be9e225045b.png
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        chapterCount: null
+        volumeCount: null
+        serialization: null
+        mangaType: manhua
+      relationships:
+        genres:
+          links:
+            self: /manga/55900/relationships/genres
+            related: /manga/55900/genres
+        categories:
+          links:
+            self: /manga/55900/relationships/categories
+            related: /manga/55900/categories
+        castings:
+          links:
+            self: /manga/55900/relationships/castings
+            related: /manga/55900/castings
+        installments:
+          links:
+            self: /manga/55900/relationships/installments
+            related: /manga/55900/installments
+        mappings:
+          links:
+            self: /manga/55900/relationships/mappings
+            related: /manga/55900/mappings
+        reviews:
+          links:
+            self: /manga/55900/relationships/reviews
+            related: /manga/55900/reviews
+        mediaRelationships:
+          links:
+            self: /manga/55900/relationships/media-relationships
+            related: /manga/55900/media-relationships
+        characters:
+          links:
+            self: /manga/55900/relationships/characters
+            related: /manga/55900/characters
+        staff:
+          links:
+            self: /manga/55900/relationships/staff
+            related: /manga/55900/staff
+        productions:
+          links:
+            self: /manga/55900/relationships/productions
+            related: /manga/55900/productions
+        quotes:
+          links:
+            self: /manga/55900/relationships/quotes
+            related: /manga/55900/quotes
+        chapters:
+          links:
+            self: /manga/55900/relationships/chapters
+            related: /manga/55900/chapters
+        mangaCharacters:
+          links:
+            self: /manga/55900/relationships/manga-characters
+            related: /manga/55900/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/55900/relationships/manga-staff
+            related: /manga/55900/manga-staff
+    - id: '38'
+      type: manga
+      links:
+        self: /manga/38
+      attributes:
+        createdAt: '2013-12-18T13:48:27.926Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: one-piece
+        synopsis: |-
+          Gol D. Roger was known as the Pirate King, the strongest and most infamous being to have sailed the Grand Line. The capture and death of Roger by the World Government brought a change throughout the world. His last words before his death revealed the location of the greatest treasure in the world, One Piece. It was this revelation that brought about the Grand Age of Pirates, men who dreamed of finding One Piece (which promises an unlimited amount of riches and fame), and quite possibly the most coveted of titles for the person who found it, the title of the Pirate King.
+
+          Enter Monkey D. Luffy, a 17-year-old boy that defies your standard definition of a pirate. Rather than the popular persona of a wicked, hardened, toothless pirate who ransacks villages for fun, Luffy’s reason for being a pirate is one of pure wonder; the thought of an exciting adventure and meeting new and intriguing people, along with finding One Piece, are his reasons of becoming a pirate. Following in the footsteps of his childhood hero, Luffy and his crew travel across the Grand Line, experiencing crazy adventures, unveiling dark mysteries and battling strong enemies, all in order to reach One Piece.
+
+          (Source: MAL Rewrite)
+        description: |-
+          Gol D. Roger was known as the Pirate King, the strongest and most infamous being to have sailed the Grand Line. The capture and death of Roger by the World Government brought a change throughout the world. His last words before his death revealed the location of the greatest treasure in the world, One Piece. It was this revelation that brought about the Grand Age of Pirates, men who dreamed of finding One Piece (which promises an unlimited amount of riches and fame), and quite possibly the most coveted of titles for the person who found it, the title of the Pirate King.
+
+          Enter Monkey D. Luffy, a 17-year-old boy that defies your standard definition of a pirate. Rather than the popular persona of a wicked, hardened, toothless pirate who ransacks villages for fun, Luffy’s reason for being a pirate is one of pure wonder; the thought of an exciting adventure and meeting new and intriguing people, along with finding One Piece, are his reasons of becoming a pirate. Following in the footsteps of his childhood hero, Luffy and his crew travel across the Grand Line, experiencing crazy adventures, unveiling dark mysteries and battling strong enemies, all in order to reach One Piece.
+
+          (Source: MAL Rewrite)
+        coverImageTopOffset: 50
+        titles:
+          en: One Piece
+          en_jp: One Piece
+          en_us: One Piece
+          ja_jp: ONE PIECE
+        canonicalTitle: One Piece
+        abbreviatedTitles:
+        - Budak Getah
+        - Đảo Hải Tặc
+        - Большой куш
+        - Ван Пис
+        - Уан Пийс
+        - Эйтиро Ода
+        - Վան Փիս
+        - וואן פיס
+        - قطعة واحدة
+        - وان پیس
+        - ون بيس
+        - وەن پیس
+        - वान पिस
+        - वान् पीस
+        - ওয়ান পিস
+        - ஒன் பீஸ்
+        - วันพีซ
+        - ဝမ်းပိစ်
+        - ዋንፒስ
+        - ワンピース
+        - 海盗路飞
+        - 海賊王
+        - 海贼王
+        - 航海王
+        - 원피스
+        averageRating: '85.06'
+        ratingFrequencies:
+          '2': '5469'
+          '3': '105'
+          '4': '294'
+          '5': '50'
+          '6': '266'
+          '7': '61'
+          '8': '5130'
+          '9': '96'
+          '10': '530'
+          '11': '128'
+          '12': '776'
+          '13': '166'
+          '14': '11665'
+          '15': '265'
+          '16': '2569'
+          '17': '562'
+          '18': '3733'
+          '19': '804'
+          '20': '62146'
+        userCount: 162217
+        favoritesCount: 3754
+        startDate: '1997-07-22'
+        endDate: null
+        nextRelease: null
+        popularityRank: 3
+        ratingRank: 3
+        ageRating: G
+        ageRatingGuide: null
+        subtype: manga
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/38/poster_image/tiny-9212308f74228cddfeffb43e8b27b7f8.jpeg
+          large: https://media.kitsu.app/manga/38/poster_image/large-676b91b69b775c6c240c41dbf8106d03.jpeg
+          small: https://media.kitsu.app/manga/38/poster_image/small-856c6f25c6a57d4f1d4570bb578af520.jpeg
+          medium: https://media.kitsu.app/manga/38/poster_image/medium-101738b3660e107cc751f00d46126f0b.jpeg
+          original: https://media.kitsu.app/manga/38/poster_image/85c98b3ebfea8a1cfe8c8f837b6b5fc8.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/manga/38/cover_image/tiny-551b3a10a77d7462184ec88c870e909a.jpeg
+          large: https://media.kitsu.app/manga/38/cover_image/large-bd52b8f2fb81d3cf99b4fbe4c072d2b1.jpeg
+          small: https://media.kitsu.app/manga/38/cover_image/small-e0bb784a3578bfd6bcdde1ccc83529b1.jpeg
+          original: https://media.kitsu.app/manga/38/cover_image/020c994fbf81443b79723d8fca369df0.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        chapterCount: null
+        volumeCount: null
+        serialization: Shounen Jump (Weekly)
+        mangaType: manga
+      relationships:
+        genres:
+          links:
+            self: /manga/38/relationships/genres
+            related: /manga/38/genres
+        categories:
+          links:
+            self: /manga/38/relationships/categories
+            related: /manga/38/categories
+        castings:
+          links:
+            self: /manga/38/relationships/castings
+            related: /manga/38/castings
+        installments:
+          links:
+            self: /manga/38/relationships/installments
+            related: /manga/38/installments
+        mappings:
+          links:
+            self: /manga/38/relationships/mappings
+            related: /manga/38/mappings
+        reviews:
+          links:
+            self: /manga/38/relationships/reviews
+            related: /manga/38/reviews
+        mediaRelationships:
+          links:
+            self: /manga/38/relationships/media-relationships
+            related: /manga/38/media-relationships
+        characters:
+          links:
+            self: /manga/38/relationships/characters
+            related: /manga/38/characters
+        staff:
+          links:
+            self: /manga/38/relationships/staff
+            related: /manga/38/staff
+        productions:
+          links:
+            self: /manga/38/relationships/productions
+            related: /manga/38/productions
+        quotes:
+          links:
+            self: /manga/38/relationships/quotes
+            related: /manga/38/quotes
+        chapters:
+          links:
+            self: /manga/38/relationships/chapters
+            related: /manga/38/chapters
+        mangaCharacters:
+          links:
+            self: /manga/38/relationships/manga-characters
+            related: /manga/38/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/38/relationships/manga-staff
+            related: /manga/38/manga-staff
+    - id: '57618'
+      type: manga
+      links:
+        self: /manga/57618
+      attributes:
+        createdAt: '2020-10-09T17:16:17.653Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: nano-mashin
+        synopsis: |-
+          After being held in disdain and having his life put in danger, an orphan from the Demonic Cult, Cheon Yeo-Woon, has an unexpected visit from his descendant from the future who inserts a nano machine into Cheon Yeo-Woon's body, which drastically changes Cheon Yeo-Woon's life after its activation. The story of Cheon Yeo-Woon's journey of bypassing the Demonic Cult and rising to become the best martial artist has just begun.
+
+          (Source: MU)
+        description: |-
+          After being held in disdain and having his life put in danger, an orphan from the Demonic Cult, Cheon Yeo-Woon, has an unexpected visit from his descendant from the future who inserts a nano machine into Cheon Yeo-Woon's body, which drastically changes Cheon Yeo-Woon's life after its activation. The story of Cheon Yeo-Woon's journey of bypassing the Demonic Cult and rising to become the best martial artist has just begun.
+
+          (Source: MU)
+        coverImageTopOffset: 0
+        titles:
+          en: Nano Machine
+          en_kr: Nano Mashin
+          ko_kr: 나노마신
+        canonicalTitle: Nano Mashin
+        abbreviatedTitles:
+        - Nanomasin
+        - 喇勞 魔神
+        - 奈米魔神
+        - Nano
+        averageRating: '81.79'
+        ratingFrequencies:
+          '2': '79'
+          '3': '0'
+          '4': '2'
+          '5': '1'
+          '6': '2'
+          '7': '4'
+          '8': '52'
+          '9': '2'
+          '10': '17'
+          '11': '8'
+          '12': '39'
+          '13': '14'
+          '14': '188'
+          '15': '49'
+          '16': '209'
+          '17': '116'
+          '18': '234'
+          '19': '76'
+          '20': '565'
+        userCount: 5423
+        favoritesCount: 72
+        startDate: '2020-06-10'
+        endDate: null
+        nextRelease: null
+        popularityRank: 290
+        ratingRank: 515
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: manhwa
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/poster_images/57618/tiny.jpg
+          large: https://media.kitsu.app/manga/poster_images/57618/large.jpg
+          small: https://media.kitsu.app/manga/poster_images/57618/small.jpg
+          medium: https://media.kitsu.app/manga/poster_images/57618/medium.jpg
+          original: https://media.kitsu.app/manga/poster_images/57618/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        chapterCount: null
+        volumeCount: null
+        serialization: Naver Webtoon
+        mangaType: manhwa
+      relationships:
+        genres:
+          links:
+            self: /manga/57618/relationships/genres
+            related: /manga/57618/genres
+        categories:
+          links:
+            self: /manga/57618/relationships/categories
+            related: /manga/57618/categories
+        castings:
+          links:
+            self: /manga/57618/relationships/castings
+            related: /manga/57618/castings
+        installments:
+          links:
+            self: /manga/57618/relationships/installments
+            related: /manga/57618/installments
+        mappings:
+          links:
+            self: /manga/57618/relationships/mappings
+            related: /manga/57618/mappings
+        reviews:
+          links:
+            self: /manga/57618/relationships/reviews
+            related: /manga/57618/reviews
+        mediaRelationships:
+          links:
+            self: /manga/57618/relationships/media-relationships
+            related: /manga/57618/media-relationships
+        characters:
+          links:
+            self: /manga/57618/relationships/characters
+            related: /manga/57618/characters
+        staff:
+          links:
+            self: /manga/57618/relationships/staff
+            related: /manga/57618/staff
+        productions:
+          links:
+            self: /manga/57618/relationships/productions
+            related: /manga/57618/productions
+        quotes:
+          links:
+            self: /manga/57618/relationships/quotes
+            related: /manga/57618/quotes
+        chapters:
+          links:
+            self: /manga/57618/relationships/chapters
+            related: /manga/57618/chapters
+        mangaCharacters:
+          links:
+            self: /manga/57618/relationships/manga-characters
+            related: /manga/57618/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/57618/relationships/manga-staff
+            related: /manga/57618/manga-staff
+    - id: '40987'
+      type: manga
+      links:
+        self: /manga/40987
+      attributes:
+        createdAt: '2018-06-06T16:05:29.358Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: martial-peak
+        synopsis: 'The journey to the martial peak is a lonely, solitary and long one.In the face of adversity,you must survive
+          and remain unyielding.Only then can you break through and and continue on your journey to become the strongest.
+          Sky Tower tests its disciples in the harshest ways to prepare them for this journey.One day the lowly sweeper Yang
+          Kai managed to obtain a black book, setting him on the road to the peak of the martials world.(Source: MU)'
+        description: 'The journey to the martial peak is a lonely, solitary and long one.In the face of adversity,you must
+          survive and remain unyielding.Only then can you break through and and continue on your journey to become the strongest.
+          Sky Tower tests its disciples in the harshest ways to prepare them for this journey.One day the lowly sweeper Yang
+          Kai managed to obtain a black book, setting him on the road to the peak of the martials world.(Source: MU)'
+        coverImageTopOffset: 0
+        titles:
+          en_us: Martial Peak
+          zh_cn: 武炼巅峰
+        canonicalTitle: Martial Peak
+        abbreviatedTitles:
+        - "MP\r\n"
+        - "Wu Lian Dian Feng \r\n"
+        - "Wǔ Liàn Diān Fēng\r\n"
+        - "Wǔ Liàn Diānfēng\r\n"
+        - "Вершина боевых искусств\r\n"
+        - Пик боевых искусств
+        averageRating: '78.0'
+        ratingFrequencies:
+          '2': '26'
+          '3': '1'
+          '4': '9'
+          '5': '2'
+          '6': '10'
+          '7': '6'
+          '8': '35'
+          '9': '5'
+          '10': '33'
+          '11': '15'
+          '12': '40'
+          '13': '27'
+          '14': '168'
+          '15': '48'
+          '16': '88'
+          '17': '58'
+          '18': '89'
+          '19': '39'
+          '20': '281'
+        userCount: 3683
+        favoritesCount: 103
+        startDate: '2017-06-01'
+        endDate: null
+        nextRelease: null
+        popularityRank: 462
+        ratingRank: 1750
+        ageRating: G
+        ageRatingGuide: null
+        subtype: manhua
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/poster_images/40987/tiny.jpg
+          large: https://media.kitsu.app/manga/poster_images/40987/large.jpg
+          small: https://media.kitsu.app/manga/poster_images/40987/small.jpg
+          medium: https://media.kitsu.app/manga/poster_images/40987/medium.jpg
+          original: https://media.kitsu.app/manga/poster_images/40987/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage:
+          tiny: https://media.kitsu.app/manga/cover_images/40987/tiny.jpg
+          large: https://media.kitsu.app/manga/cover_images/40987/large.jpg
+          small: https://media.kitsu.app/manga/cover_images/40987/small.jpg
+          original: https://media.kitsu.app/manga/cover_images/40987/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 840
+                height: 200
+              large:
+                width: 3360
+                height: 800
+              small:
+                width: 1680
+                height: 400
+        chapterCount: null
+        volumeCount: null
+        serialization: null
+        mangaType: manhua
+      relationships:
+        genres:
+          links:
+            self: /manga/40987/relationships/genres
+            related: /manga/40987/genres
+        categories:
+          links:
+            self: /manga/40987/relationships/categories
+            related: /manga/40987/categories
+        castings:
+          links:
+            self: /manga/40987/relationships/castings
+            related: /manga/40987/castings
+        installments:
+          links:
+            self: /manga/40987/relationships/installments
+            related: /manga/40987/installments
+        mappings:
+          links:
+            self: /manga/40987/relationships/mappings
+            related: /manga/40987/mappings
+        reviews:
+          links:
+            self: /manga/40987/relationships/reviews
+            related: /manga/40987/reviews
+        mediaRelationships:
+          links:
+            self: /manga/40987/relationships/media-relationships
+            related: /manga/40987/media-relationships
+        characters:
+          links:
+            self: /manga/40987/relationships/characters
+            related: /manga/40987/characters
+        staff:
+          links:
+            self: /manga/40987/relationships/staff
+            related: /manga/40987/staff
+        productions:
+          links:
+            self: /manga/40987/relationships/productions
+            related: /manga/40987/productions
+        quotes:
+          links:
+            self: /manga/40987/relationships/quotes
+            related: /manga/40987/quotes
+        chapters:
+          links:
+            self: /manga/40987/relationships/chapters
+            related: /manga/40987/chapters
+        mangaCharacters:
+          links:
+            self: /manga/40987/relationships/manga-characters
+            related: /manga/40987/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/40987/relationships/manga-staff
+            related: /manga/40987/manga-staff
+    - id: '65728'
+      type: manga
+      links:
+        self: /manga/65728
+      attributes:
+        createdAt: '2023-01-03T15:28:02.369Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: pick-me-up
+        synopsis: |-
+          The mobile gacha game ‘Pick Me Up!’ is known for being brutally difficult, and no one has been able to clear a dungeon. Loki, the fifth among all the world’s masters, loses consciousness while trying to clear the dungeon.
+
+          Upon waking up, Loki finds himself turned into a 1-star level 1 hero, ‘Islat Han’. In order to return to Earth, he must lead novice masters and heroes and break through the 100th floor of the dungeon!
+
+          This is the story of master Loki who is forced to carry everyone to victory and cannot afford a single defeat.
+        description: |-
+          The mobile gacha game ‘Pick Me Up!’ is known for being brutally difficult, and no one has been able to clear a dungeon. Loki, the fifth among all the world’s masters, loses consciousness while trying to clear the dungeon.
+
+          Upon waking up, Loki finds himself turned into a 1-star level 1 hero, ‘Islat Han’. In order to return to Earth, he must lead novice masters and heroes and break through the 100th floor of the dungeon!
+
+          This is the story of master Loki who is forced to carry everyone to victory and cannot afford a single defeat.
+        coverImageTopOffset: 0
+        titles:
+          en_kr: Pick Me Up!
+          ko_kr: 픽 미 업!
+        canonicalTitle: Pick Me Up!
+        abbreviatedTitles:
+        - Pick Me Up, Infinite Gacha
+        averageRating: '83.02'
+        ratingFrequencies:
+          '2': '30'
+          '4': '0'
+          '5': '0'
+          '6': '4'
+          '8': '7'
+          '9': '1'
+          '10': '10'
+          '11': '1'
+          '12': '24'
+          '13': '5'
+          '14': '74'
+          '15': '18'
+          '16': '102'
+          '17': '51'
+          '18': '125'
+          '19': '31'
+          '20': '252'
+        userCount: 3330
+        favoritesCount: 34
+        startDate: '2022-12-28'
+        endDate: null
+        nextRelease: null
+        popularityRank: 519
+        ratingRank: 77
+        ageRating: null
+        ageRatingGuide: null
+        subtype: manhwa
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/65728/poster_image/tiny-b864b2aabf2ac872d82ca68497337d5f.jpeg
+          large: https://media.kitsu.app/manga/65728/poster_image/large-c5f9b3bd3f82fb8df55b68843bfa2464.jpeg
+          small: https://media.kitsu.app/manga/65728/poster_image/small-ad7a31ee9bfd0403bd8bf435010c3b72.jpeg
+          medium: https://media.kitsu.app/manga/65728/poster_image/medium-b8dfb173414e0193198c169d0531a9b4.jpeg
+          original: https://media.kitsu.app/manga/65728/poster_image/5fd64285da875749fc91eb8ae9153d05.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        chapterCount: null
+        volumeCount: null
+        serialization: null
+        mangaType: manhwa
+      relationships:
+        genres:
+          links:
+            self: /manga/65728/relationships/genres
+            related: /manga/65728/genres
+        categories:
+          links:
+            self: /manga/65728/relationships/categories
+            related: /manga/65728/categories
+        castings:
+          links:
+            self: /manga/65728/relationships/castings
+            related: /manga/65728/castings
+        installments:
+          links:
+            self: /manga/65728/relationships/installments
+            related: /manga/65728/installments
+        mappings:
+          links:
+            self: /manga/65728/relationships/mappings
+            related: /manga/65728/mappings
+        reviews:
+          links:
+            self: /manga/65728/relationships/reviews
+            related: /manga/65728/reviews
+        mediaRelationships:
+          links:
+            self: /manga/65728/relationships/media-relationships
+            related: /manga/65728/media-relationships
+        characters:
+          links:
+            self: /manga/65728/relationships/characters
+            related: /manga/65728/characters
+        staff:
+          links:
+            self: /manga/65728/relationships/staff
+            related: /manga/65728/staff
+        productions:
+          links:
+            self: /manga/65728/relationships/productions
+            related: /manga/65728/productions
+        quotes:
+          links:
+            self: /manga/65728/relationships/quotes
+            related: /manga/65728/quotes
+        chapters:
+          links:
+            self: /manga/65728/relationships/chapters
+            related: /manga/65728/chapters
+        mangaCharacters:
+          links:
+            self: /manga/65728/relationships/manga-characters
+            related: /manga/65728/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/65728/relationships/manga-staff
+            related: /manga/65728/manga-staff
+    - id: '69516'
+      type: manga
+      links:
+        self: /manga/69516
+      attributes:
+        createdAt: '2023-09-24T02:00:28.128Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: star-embracing-swordmaster
+        synopsis: Vlad was a vagrant child of the slums who always admired knights. After an incident where he was struck
+          by black lightning, he began hearing a voice. A knight of blue moonlight appeared one day, and Vlad’s back-alley
+          life was turned upside down… Even an obscure star that does not shine in the highest peaks of the night sky is still
+          a star if it wishes to shine.
+        description: Vlad was a vagrant child of the slums who always admired knights. After an incident where he was struck
+          by black lightning, he began hearing a voice. A knight of blue moonlight appeared one day, and Vlad’s back-alley
+          life was turned upside down… Even an obscure star that does not shine in the highest peaks of the night sky is still
+          a star if it wishes to shine.
+        coverImageTopOffset: 0
+        titles:
+          en_kr: Star-Embracing Swordmaster
+          ko_kr: 별을 품은 소드마스터
+        canonicalTitle: Star-Embracing Swordmaster
+        abbreviatedTitles:
+        - Star-Fostered Swordmaster
+        - The Stellar Swordmaster
+        - Byeoreul Pumeun Swordmaster
+        averageRating: '79.53'
+        ratingFrequencies:
+          '2': '27'
+          '3': '0'
+          '4': '0'
+          '6': '2'
+          '8': '2'
+          '10': '0'
+          '11': '3'
+          '12': '7'
+          '13': '3'
+          '14': '40'
+          '15': '14'
+          '16': '57'
+          '17': '26'
+          '18': '46'
+          '19': '15'
+          '20': '99'
+        userCount: 1812
+        favoritesCount: 15
+        startDate: '2023-09-20'
+        endDate: null
+        nextRelease: null
+        popularityRank: 1064
+        ratingRank: 1114
+        ageRating: null
+        ageRatingGuide: null
+        subtype: manhwa
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/69516/poster_image/tiny-2e64056e4926c06807767661a6997276.jpeg
+          large: https://media.kitsu.app/manga/69516/poster_image/large-aad39241dd00e02a4646f7e548056b40.jpeg
+          small: https://media.kitsu.app/manga/69516/poster_image/small-27719f58b323335675387cda4ef13f1f.jpeg
+          medium: https://media.kitsu.app/manga/69516/poster_image/medium-6cc5120fb120e9054a378139f1932a4c.jpeg
+          original: https://media.kitsu.app/manga/69516/poster_image/b9b4fccb43c63e010629f656068eb7fa.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        chapterCount: null
+        volumeCount: null
+        serialization: Naver Webtoon
+        mangaType: manhwa
+      relationships:
+        genres:
+          links:
+            self: /manga/69516/relationships/genres
+            related: /manga/69516/genres
+        categories:
+          links:
+            self: /manga/69516/relationships/categories
+            related: /manga/69516/categories
+        castings:
+          links:
+            self: /manga/69516/relationships/castings
+            related: /manga/69516/castings
+        installments:
+          links:
+            self: /manga/69516/relationships/installments
+            related: /manga/69516/installments
+        mappings:
+          links:
+            self: /manga/69516/relationships/mappings
+            related: /manga/69516/mappings
+        reviews:
+          links:
+            self: /manga/69516/relationships/reviews
+            related: /manga/69516/reviews
+        mediaRelationships:
+          links:
+            self: /manga/69516/relationships/media-relationships
+            related: /manga/69516/media-relationships
+        characters:
+          links:
+            self: /manga/69516/relationships/characters
+            related: /manga/69516/characters
+        staff:
+          links:
+            self: /manga/69516/relationships/staff
+            related: /manga/69516/staff
+        productions:
+          links:
+            self: /manga/69516/relationships/productions
+            related: /manga/69516/productions
+        quotes:
+          links:
+            self: /manga/69516/relationships/quotes
+            related: /manga/69516/quotes
+        chapters:
+          links:
+            self: /manga/69516/relationships/chapters
+            related: /manga/69516/chapters
+        mangaCharacters:
+          links:
+            self: /manga/69516/relationships/manga-characters
+            related: /manga/69516/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/69516/relationships/manga-staff
+            related: /manga/69516/manga-staff
+    - id: '59455'
+      type: manga
+      links:
+        self: /manga/59455
+      attributes:
+        createdAt: '2021-05-15T09:02:39.357Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: hwasangwihwan
+        synopsis: |-
+          Chung Myung, The 13th Disciple of the Great Flowery Mountain Sect, One of the 3 Great Swordsmen, the Plum Blossom Sword Saint, defeated Chun Ma, who has brought destruction and disarray onto the world.
+
+          After the battle, he breathes his last breath on top of the headquarter mountain of the Devil’s Worship Sect. But he is reborn after 100 years in the body of a child.
+
+          What? The Flowery Mountain Sect has fallen? What kind of nonsense is that!?
+
+          (Source: MU)
+        description: |-
+          Chung Myung, The 13th Disciple of the Great Flowery Mountain Sect, One of the 3 Great Swordsmen, the Plum Blossom Sword Saint, defeated Chun Ma, who has brought destruction and disarray onto the world.
+
+          After the battle, he breathes his last breath on top of the headquarter mountain of the Devil’s Worship Sect. But he is reborn after 100 years in the body of a child.
+
+          What? The Flowery Mountain Sect has fallen? What kind of nonsense is that!?
+
+          (Source: MU)
+        coverImageTopOffset: 0
+        titles:
+          en: Return of the Blossoming Blade
+          en_kr: Hwasangwihwan
+          ko_kr: 화산귀환
+          zh_cn: 華山転生
+        canonicalTitle: Hwasangwihwan
+        abbreviatedTitles:
+        - Return of the Flowery Mountain Sect
+        - Return of the Mount Hua Sect
+        - Return of the Huashan Sect
+        - Volcanic Return
+        averageRating: '81.88'
+        ratingFrequencies:
+          '2': '67'
+          '4': '2'
+          '5': '1'
+          '6': '3'
+          '7': '1'
+          '8': '36'
+          '9': '2'
+          '10': '16'
+          '11': '3'
+          '12': '31'
+          '13': '7'
+          '14': '132'
+          '15': '29'
+          '16': '131'
+          '17': '60'
+          '18': '183'
+          '19': '66'
+          '20': '444'
+        userCount: 4177
+        favoritesCount: 46
+        startDate: '2021-03-23'
+        endDate: null
+        nextRelease: null
+        popularityRank: 386
+        ratingRank: 489
+        ageRating: PG
+        ageRatingGuide: Teens 13 or older
+        subtype: manhwa
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/poster_images/59455/tiny.jpg
+          large: https://media.kitsu.app/manga/poster_images/59455/large.jpg
+          small: https://media.kitsu.app/manga/poster_images/59455/small.jpg
+          medium: https://media.kitsu.app/manga/poster_images/59455/medium.jpg
+          original: https://media.kitsu.app/manga/poster_images/59455/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        chapterCount: null
+        volumeCount: null
+        serialization: Naver Webtoon
+        mangaType: manhwa
+      relationships:
+        genres:
+          links:
+            self: /manga/59455/relationships/genres
+            related: /manga/59455/genres
+        categories:
+          links:
+            self: /manga/59455/relationships/categories
+            related: /manga/59455/categories
+        castings:
+          links:
+            self: /manga/59455/relationships/castings
+            related: /manga/59455/castings
+        installments:
+          links:
+            self: /manga/59455/relationships/installments
+            related: /manga/59455/installments
+        mappings:
+          links:
+            self: /manga/59455/relationships/mappings
+            related: /manga/59455/mappings
+        reviews:
+          links:
+            self: /manga/59455/relationships/reviews
+            related: /manga/59455/reviews
+        mediaRelationships:
+          links:
+            self: /manga/59455/relationships/media-relationships
+            related: /manga/59455/media-relationships
+        characters:
+          links:
+            self: /manga/59455/relationships/characters
+            related: /manga/59455/characters
+        staff:
+          links:
+            self: /manga/59455/relationships/staff
+            related: /manga/59455/staff
+        productions:
+          links:
+            self: /manga/59455/relationships/productions
+            related: /manga/59455/productions
+        quotes:
+          links:
+            self: /manga/59455/relationships/quotes
+            related: /manga/59455/quotes
+        chapters:
+          links:
+            self: /manga/59455/relationships/chapters
+            related: /manga/59455/chapters
+        mangaCharacters:
+          links:
+            self: /manga/59455/relationships/manga-characters
+            related: /manga/59455/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/59455/relationships/manga-staff
+            related: /manga/59455/manga-staff
+    - id: '65717'
+      type: manga
+      links:
+        self: /manga/65717
+      attributes:
+        createdAt: '2023-01-02T15:15:55.824Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: muhanui-mabeopsa
+        synopsis: A human’s dream of infinity is like a supernova explosion that spreads at the speed of light! This is the
+          story of child named Shirone who was abandoned in a stable, wrapped in swaddling clothes. While growing up, he showed
+          unbridled interest in everything related to books and strove to learn even on his own. Although Shirone was the
+          foster son of a hunter, one of the lowest-class people, he was a genius in everything! One day, as a reward for
+          mastering a legendary skill to knock down trees with a couple swings of an axe, his foster father takes him along
+          on his trip to the city. And in that city, Shirone chances upon magic!
+        description: A human’s dream of infinity is like a supernova explosion that spreads at the speed of light! This is
+          the story of child named Shirone who was abandoned in a stable, wrapped in swaddling clothes. While growing up,
+          he showed unbridled interest in everything related to books and strove to learn even on his own. Although Shirone
+          was the foster son of a hunter, one of the lowest-class people, he was a genius in everything! One day, as a reward
+          for mastering a legendary skill to knock down trees with a couple swings of an axe, his foster father takes him
+          along on his trip to the city. And in that city, Shirone chances upon magic!
+        coverImageTopOffset: 0
+        titles:
+          en: The infinite Mage
+          en_kr: Muhanui Mabeopsa
+          ko_kr: 무한의 마법사
+        canonicalTitle: Muhanui Mabeopsa
+        abbreviatedTitles:
+        - Infinite Mage
+        - Infinite Wizard
+        averageRating: '77.58'
+        ratingFrequencies:
+          '2': '39'
+          '4': '1'
+          '6': '10'
+          '7': '2'
+          '8': '16'
+          '9': '0'
+          '10': '10'
+          '11': '4'
+          '12': '23'
+          '13': '11'
+          '14': '130'
+          '15': '37'
+          '16': '109'
+          '17': '44'
+          '18': '91'
+          '19': '15'
+          '20': '171'
+        userCount: 3257
+        favoritesCount: 19
+        startDate: '2022-12-30'
+        endDate: null
+        nextRelease: null
+        popularityRank: 537
+        ratingRank: 1964
+        ageRating: null
+        ageRatingGuide: null
+        subtype: manhwa
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/65717/poster_image/tiny-030ff1719be3c7dfcda91cd33e7d3bde.jpeg
+          large: https://media.kitsu.app/manga/65717/poster_image/large-7dc868259b85ba659cc264e0af4c5400.jpeg
+          small: https://media.kitsu.app/manga/65717/poster_image/small-15350b1866cfa83216b4f4a14005cbfe.jpeg
+          medium: https://media.kitsu.app/manga/65717/poster_image/medium-013d4bbebc3b9c9ea6ce8cf7669ffbc1.jpeg
+          original: https://media.kitsu.app/manga/65717/poster_image/0160849b1d6592e1af3b716c5ff81944.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        chapterCount: null
+        volumeCount: null
+        serialization: Kakao
+        mangaType: manhwa
+      relationships:
+        genres:
+          links:
+            self: /manga/65717/relationships/genres
+            related: /manga/65717/genres
+        categories:
+          links:
+            self: /manga/65717/relationships/categories
+            related: /manga/65717/categories
+        castings:
+          links:
+            self: /manga/65717/relationships/castings
+            related: /manga/65717/castings
+        installments:
+          links:
+            self: /manga/65717/relationships/installments
+            related: /manga/65717/installments
+        mappings:
+          links:
+            self: /manga/65717/relationships/mappings
+            related: /manga/65717/mappings
+        reviews:
+          links:
+            self: /manga/65717/relationships/reviews
+            related: /manga/65717/reviews
+        mediaRelationships:
+          links:
+            self: /manga/65717/relationships/media-relationships
+            related: /manga/65717/media-relationships
+        characters:
+          links:
+            self: /manga/65717/relationships/characters
+            related: /manga/65717/characters
+        staff:
+          links:
+            self: /manga/65717/relationships/staff
+            related: /manga/65717/staff
+        productions:
+          links:
+            self: /manga/65717/relationships/productions
+            related: /manga/65717/productions
+        quotes:
+          links:
+            self: /manga/65717/relationships/quotes
+            related: /manga/65717/quotes
+        chapters:
+          links:
+            self: /manga/65717/relationships/chapters
+            related: /manga/65717/chapters
+        mangaCharacters:
+          links:
+            self: /manga/65717/relationships/manga-characters
+            related: /manga/65717/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/65717/relationships/manga-staff
+            related: /manga/65717/manga-staff
+    - id: '71747'
+      type: manga
+      links:
+        self: /manga/71747
+      attributes:
+        createdAt: '2024-05-18T20:09:36.888Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: eternally-regressing-knight
+        synopsis: |-
+          "You're a genius." Those words he heard as a child were poison.
+          Encrid dreamed of becoming a knight, but he soon realized it was futile.
+          "You want to live by the sword with that level of skill?" Some laughed at him.
+          "Just give up." Some advised him against it.
+          Despite that, his dream remained steadfast. He slept less, ran more, and trained harder.
+          One day, he died, having been stabbed in the neck. Encrid opened his eyes again to "today's" morning.
+        description: |-
+          "You're a genius." Those words he heard as a child were poison.
+          Encrid dreamed of becoming a knight, but he soon realized it was futile.
+          "You want to live by the sword with that level of skill?" Some laughed at him.
+          "Just give up." Some advised him against it.
+          Despite that, his dream remained steadfast. He slept less, ran more, and trained harder.
+          One day, he died, having been stabbed in the neck. Encrid opened his eyes again to "today's" morning.
+        coverImageTopOffset: 0
+        titles:
+          en_kr: Eternally Regressing Knight
+          ko_kr: 오늘만 사는 기사
+        canonicalTitle: Eternally Regressing Knight
+        abbreviatedTitles:
+        - The Knight Only Lives Today
+        averageRating: '83.25'
+        ratingFrequencies:
+          '2': '16'
+          '3': '0'
+          '4': '1'
+          '8': '5'
+          '9': '0'
+          '10': '2'
+          '11': '1'
+          '12': '6'
+          '13': '1'
+          '14': '29'
+          '15': '8'
+          '16': '54'
+          '17': '26'
+          '18': '56'
+          '19': '21'
+          '20': '124'
+        userCount: 1664
+        favoritesCount: 17
+        startDate: '2024-01-01'
+        endDate: null
+        nextRelease: null
+        popularityRank: 1181
+        ratingRank: 60
+        ageRating: null
+        ageRatingGuide: null
+        subtype: manhwa
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/71747/poster_image/tiny-484924165170df2e5ccf4fe048065045.jpeg
+          large: https://media.kitsu.app/manga/71747/poster_image/large-70d2dfee53b4bba3ac9104e6cf107010.jpeg
+          small: https://media.kitsu.app/manga/71747/poster_image/small-2628a8927d2316ad356f8d5e97ab2f74.jpeg
+          medium: https://media.kitsu.app/manga/71747/poster_image/medium-dc459029b8765fe543f3c64ff0ba60cf.jpeg
+          original: https://media.kitsu.app/manga/71747/poster_image/27564aa44aef7cd91943cbd0833ce072.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        chapterCount: null
+        volumeCount: null
+        serialization: null
+        mangaType: manhwa
+      relationships:
+        genres:
+          links:
+            self: /manga/71747/relationships/genres
+            related: /manga/71747/genres
+        categories:
+          links:
+            self: /manga/71747/relationships/categories
+            related: /manga/71747/categories
+        castings:
+          links:
+            self: /manga/71747/relationships/castings
+            related: /manga/71747/castings
+        installments:
+          links:
+            self: /manga/71747/relationships/installments
+            related: /manga/71747/installments
+        mappings:
+          links:
+            self: /manga/71747/relationships/mappings
+            related: /manga/71747/mappings
+        reviews:
+          links:
+            self: /manga/71747/relationships/reviews
+            related: /manga/71747/reviews
+        mediaRelationships:
+          links:
+            self: /manga/71747/relationships/media-relationships
+            related: /manga/71747/media-relationships
+        characters:
+          links:
+            self: /manga/71747/relationships/characters
+            related: /manga/71747/characters
+        staff:
+          links:
+            self: /manga/71747/relationships/staff
+            related: /manga/71747/staff
+        productions:
+          links:
+            self: /manga/71747/relationships/productions
+            related: /manga/71747/productions
+        quotes:
+          links:
+            self: /manga/71747/relationships/quotes
+            related: /manga/71747/quotes
+        chapters:
+          links:
+            self: /manga/71747/relationships/chapters
+            related: /manga/71747/chapters
+        mangaCharacters:
+          links:
+            self: /manga/71747/relationships/manga-characters
+            related: /manga/71747/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/71747/relationships/manga-staff
+            related: /manga/71747/manga-staff
+    - id: '66874'
+      type: manga
+      links:
+        self: /manga/66874
+      attributes:
+        createdAt: '2023-04-24T14:43:51.327Z'
+        updatedAt: '2026-05-08T12:00:24.873Z'
+        slug: cheolhyeolgeomga-sanyanggaeui-hoegwi
+        synopsis: |-
+          The hunting hound of the Baskerville Clan, 'Bichir van Baskerville' followed the path of assassination and espionage he was set on to get his clan the title of greatest. The reward for his loyalty to his clan, however, was a false accusation of treachery, followed by the cold blade of the guillotine.
+
+          "Never again will I live the life of a dog that's killed after the rabbit hunt is over."
+
+          But when met with death, an unexpected opportunity had come for him. Bichir's eyes glowed while he sharpened his fangs in the dark.
+
+          "Wait for me, Hugo. This time, it will be you I tear apart with these jaws."
+
+          And so, the bloody revenge of the hound commences!
+
+          (Source: KakaoPage, translated)
+        description: |-
+          The hunting hound of the Baskerville Clan, 'Bichir van Baskerville' followed the path of assassination and espionage he was set on to get his clan the title of greatest. The reward for his loyalty to his clan, however, was a false accusation of treachery, followed by the cold blade of the guillotine.
+
+          "Never again will I live the life of a dog that's killed after the rabbit hunt is over."
+
+          But when met with death, an unexpected opportunity had come for him. Bichir's eyes glowed while he sharpened his fangs in the dark.
+
+          "Wait for me, Hugo. This time, it will be you I tear apart with these jaws."
+
+          And so, the bloody revenge of the hound commences!
+
+          (Source: KakaoPage, translated)
+        coverImageTopOffset: 0
+        titles:
+          en: Revenge of the Baskerville Bloodhound
+          en_kr: Cheolhyeolgeomga Sanyanggaeui Hoegwi
+          ko_kr: 철혈검가 사냥개의 회귀
+        canonicalTitle: Cheolhyeolgeomga Sanyanggaeui Hoegwi
+        abbreviatedTitles:
+        - Revenge of the Iron-Blooded Sword Hound
+        - Revenge of the Sword Clan's Hound
+        - The Return of the Iron-Blood Sword Hound
+        averageRating: '79.22'
+        ratingFrequencies:
+          '2': '43'
+          '3': '1'
+          '4': '3'
+          '5': '1'
+          '6': '2'
+          '7': '1'
+          '8': '11'
+          '9': '4'
+          '10': '9'
+          '11': '2'
+          '12': '21'
+          '13': '10'
+          '14': '87'
+          '15': '30'
+          '16': '110'
+          '17': '52'
+          '18': '107'
+          '19': '24'
+          '20': '191'
+        userCount: 3131
+        favoritesCount: 22
+        startDate: '2023-04-14'
+        endDate: null
+        nextRelease: null
+        popularityRank: 555
+        ratingRank: 1217
+        ageRating: PG
+        ageRatingGuide: 13 teens or odler
+        subtype: manhwa
+        status: current
+        tba: null
+        posterImage:
+          tiny: https://media.kitsu.app/manga/66874/poster_image/tiny-0e63fa4e8239c370eda3049b10118f85.jpeg
+          large: https://media.kitsu.app/manga/66874/poster_image/large-1dd785701763b0d955170aa591b37d79.jpeg
+          small: https://media.kitsu.app/manga/66874/poster_image/small-84e3206aae9ac78f878aff262b647c84.jpeg
+          medium: https://media.kitsu.app/manga/66874/poster_image/medium-90ce85c43e900cbe1f489e348e73a27c.jpeg
+          original: https://media.kitsu.app/manga/66874/poster_image/d3352486f95106f93ef1c83b4e7b09a7.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 110
+                height: 156
+              large:
+                width: 550
+                height: 780
+              small:
+                width: 284
+                height: 402
+              medium:
+                width: 390
+                height: 554
+        coverImage: null
+        chapterCount: null
+        volumeCount: null
+        serialization: Kakao Webtoon
+        mangaType: manhwa
+      relationships:
+        genres:
+          links:
+            self: /manga/66874/relationships/genres
+            related: /manga/66874/genres
+        categories:
+          links:
+            self: /manga/66874/relationships/categories
+            related: /manga/66874/categories
+        castings:
+          links:
+            self: /manga/66874/relationships/castings
+            related: /manga/66874/castings
+        installments:
+          links:
+            self: /manga/66874/relationships/installments
+            related: /manga/66874/installments
+        mappings:
+          links:
+            self: /manga/66874/relationships/mappings
+            related: /manga/66874/mappings
+        reviews:
+          links:
+            self: /manga/66874/relationships/reviews
+            related: /manga/66874/reviews
+        mediaRelationships:
+          links:
+            self: /manga/66874/relationships/media-relationships
+            related: /manga/66874/media-relationships
+        characters:
+          links:
+            self: /manga/66874/relationships/characters
+            related: /manga/66874/characters
+        staff:
+          links:
+            self: /manga/66874/relationships/staff
+            related: /manga/66874/staff
+        productions:
+          links:
+            self: /manga/66874/relationships/productions
+            related: /manga/66874/productions
+        quotes:
+          links:
+            self: /manga/66874/relationships/quotes
+            related: /manga/66874/quotes
+        chapters:
+          links:
+            self: /manga/66874/relationships/chapters
+            related: /manga/66874/chapters
+        mangaCharacters:
+          links:
+            self: /manga/66874/relationships/manga-characters
+            related: /manga/66874/manga-characters
+        mangaStaff:
+          links:
+            self: /manga/66874/relationships/manga-staff
+            related: /manga/66874/manga-staff
+  body_text: null
+  body_b64: null

@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-08T13:07:30Z'
+  label: page1
+  backend: danbooru
+  path_slug: forum_topics_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/forum_topics.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:30 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"84de5ce182ad30d39cc6276da8bf4c8b"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b014a880832e-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.6401, rails.cpu_time;dur=2.8377, rails.idle_time;dur=0.8024,
+      rails.sql_time;dur=0.9529, rails.view_time;dur=1.3869, rails.allocations;count=1714, request.allocations;count=2261,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=3.8597, request.total_time;dur=4.6623, request.queue_time_0;dur=0.8123,
+      request.queue_time_1;dur=102.9999
+    x-runtime: '0.004662307739257812'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 36038
+    creator_id: 957301
+    updater_id: 957301
+    title: Hyphenate *_colored into *-colored
+    response_count: 1
+    is_sticky: false
+    is_locked: false
+    created_at: '2026-05-08T08:59:09.602-04:00'
+    updated_at: '2026-05-08T09:01:31.845-04:00'
+    is_deleted: false
+    category_id: 1
+    min_level: None
+  - id: 36037
+    creator_id: 1549335
+    updater_id: 554505
+    title: God returned
+    response_count: 1
+    is_sticky: false
+    is_locked: false
+    created_at: '2026-05-08T08:45:18.778-04:00'
+    updated_at: '2026-05-08T08:47:47.555-04:00'
+    is_deleted: true
+    category_id: 0
+    min_level: None
+  body_text: null
+  body_b64: null

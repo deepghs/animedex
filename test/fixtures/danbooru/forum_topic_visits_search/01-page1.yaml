@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-08T13:08:09Z'
+  label: page1
+  backend: danbooru
+  path_slug: forum_topic_visits_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/forum_topic_visits.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:08:09 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: '2'
+    Connection: keep-alive
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b104dbea968b-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.9285, rails.cpu_time;dur=2.8757, rails.idle_time;dur=1.0528,
+      rails.sql_time;dur=0.7825, rails.view_time;dur=0.7996, rails.allocations;count=1802, request.allocations;count=2409,
+      request.gc_time;dur=0.3197, request.gc_count;count=0, request.cpu_time;dur=3.6667, request.total_time;dur=4.7204, request.queue_time_0;dur=1.1384,
+      request.queue_time_1;dur=-749.0001
+    x-runtime: '0.00472039794921875'
+    via: <scrubbed-at-capture>
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json: []
+  body_text: null
+  body_b64: null

@@ -1,0 +1,71 @@
+metadata:
+  captured_at: '2026-05-08T13:07:20Z'
+  label: page1
+  backend: danbooru
+  path_slug: tag_implications_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/tag_implications.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:20 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"25590ca82f7f62593b60994e6c276890"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88afd31e358316-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.8249, rails.cpu_time;dur=2.0912, rails.idle_time;dur=0.7337,
+      rails.sql_time;dur=0.8875, rails.view_time;dur=1.1322, rails.allocations;count=1692, request.allocations;count=2245,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.7687, request.total_time;dur=3.5681, request.queue_time_0;dur=1.0154,
+      request.queue_time_1;dur=96.9999
+    x-runtime: '0.003568122863769531'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 222725
+    reason: ''
+    creator_id: 52664
+    antecedent_name: condom_wrapper_in_clothes
+    consequent_name: condom_wrapper
+    status: active
+    forum_topic_id: 35963
+    created_at: '2026-05-08T00:31:34.803-04:00'
+    updated_at: '2026-05-08T00:31:34.803-04:00'
+    approver_id: 52664
+    forum_post_id: null
+  - id: 222723
+    reason: ''
+    creator_id: 502584
+    antecedent_name: void_shiki_(swimsuit_mooncancer)
+    consequent_name: void_shiki
+    status: active
+    forum_topic_id: null
+    created_at: '2026-05-08T00:16:11.003-04:00'
+    updated_at: '2026-05-08T00:16:11.003-04:00'
+    approver_id: 502584
+    forum_post_id: null
+  body_text: null
+  body_b64: null

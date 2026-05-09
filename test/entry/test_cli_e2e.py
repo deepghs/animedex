@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 import pytest
 import responses
@@ -254,6 +255,8 @@ class TestTtyRenderingWalk:
             (["nekos", "image", "husbando"], "nekos/husbando/01-image-amount-1.yaml"),
             (["nekos", "image", "neko"], "nekos/neko/01-image-amount-1.yaml"),
             (["nekos", "search", "Frieren", "--amount", "5"], "nekos/search/01-frieren-image.yaml"),
+            (["kitsu", "show", "46474"], "kitsu/anime_by_id/01-frieren-46474.yaml"),
+            (["kitsu", "trending", "--limit", "10"], "kitsu/trending_anime/01-top10.yaml"),
         ],
     )
     def test_command_renders_in_tty_mode(self, cli_runner, cli, fake_clock, force_tty, argv, fixture_rel):
@@ -445,6 +448,323 @@ class TestNekosCliFromFixtures:
         assert not result.output.lstrip().startswith("[")
 
 
+# ---------- Kitsu ----------
+
+
+def _register_fixture_path_only(rsps, fixture: dict):
+    """Path-only fixture registration used by Kitsu tests: the
+    fixture URL's path determines the mock route, and any query
+    string the CLI sends through is accepted regardless of whether
+    it exactly matches the captured one. Necessary because Kitsu
+    fixtures were captured with ad-hoc page[limit] values that don't
+    match the high-level Python API's defaults; the test cares about
+    the response shape, not the query echo.
+    """
+    import re
+    from urllib.parse import urlsplit
+
+    req = fixture["request"]
+    res = fixture["response"]
+    method = req["method"].upper()
+
+    parsed = urlsplit(req["url"])
+    base = f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
+    url_re = re.compile(re.escape(base) + r"(\?.*)?$")
+
+    headers = dict(res.get("headers") or {})
+    for h in (
+        "Content-Length",
+        "content-length",
+        "Transfer-Encoding",
+        "transfer-encoding",
+        "Content-Encoding",
+        "content-encoding",
+    ):
+        headers.pop(h, None)
+
+    add_kwargs = {"status": res["status"], "headers": headers}
+    body_json = res.get("body_json")
+    body_text = res.get("body_text")
+    if body_json is not None:
+        add_kwargs["json"] = body_json
+    elif body_text is not None:
+        add_kwargs["body"] = body_text
+
+    rsps.add(responses.Response(method=method, url=url_re, **add_kwargs))
+
+
+class TestKitsuCliFromFixtures:
+    """JSON-path coverage of every Kitsu high-level subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("show", ["46474"], "kitsu/anime_by_id/01-frieren-46474.yaml"),
+            ("search", ["Frieren"], "kitsu/anime_search/01-frieren.yaml"),
+            ("streaming", ["46474"], "kitsu/anime_streaming_links/01-frieren-46474.yaml"),
+            ("mappings", ["46474"], "kitsu/anime_mappings/01-frieren-46474.yaml"),
+            ("trending", ["--limit", "10"], "kitsu/trending_anime/01-top10.yaml"),
+            ("manga-show", ["1"], "kitsu/manga_by_id/01-berserk-1.yaml"),
+            ("manga-search", ["Berserk"], "kitsu/manga_search/01-berserk.yaml"),
+            ("categories", ["--limit", "20"], "kitsu/categories/01-top20.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["kitsu", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"kitsu {subcommand} {positional} failed: {result.output[:600]}"
+
+    def test_mappings_jq_filter_extracts_external_ids(self, cli_runner, cli, fake_clock):
+        """``--jq`` over the mappings list pins the JSON:API resource
+        shape (id / type / attributes nesting) for downstream callers."""
+        fixture = _load_fixture("kitsu/anime_mappings/01-frieren-46474.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(
+                cli,
+                ["kitsu", "mappings", "46474", "--no-cache", "--jq", "[.[].attributes.externalSite]"],
+            )
+        assert result.exit_code == 0, result.output
+        decoded = json.loads(result.output)
+        # Frieren's mappings always include at least anilist + mal.
+        assert any("anilist" in s for s in decoded)
+        assert any("myanimelist" in s for s in decoded)
+
+
+# ---------- MangaDex ----------
+
+
+class TestMangaDexCliFromFixtures:
+    """JSON-path coverage of every MangaDex high-level subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("show", ["801513ba-a712-498c-8f57-cae55b38cc92"], "mangadex/manga_by_id/02-berserk.yaml"),
+            ("search", ["Berserk"], "mangadex/manga_search/01-berserk.yaml"),
+            (
+                "feed",
+                ["801513ba-a712-498c-8f57-cae55b38cc92", "--lang", "en"],
+                "mangadex/manga_feed/02-berserk.yaml",
+            ),
+            ("chapter", ["01e9f0cb-caea-406d-92bb-0cc67c37481d"], "mangadex/chapter_by_id/01-berserk-ch1.yaml"),
+            ("cover", ["f73c6872-01ee-4ed5-86d1-3520dc250dc4"], "mangadex/cover_by_id/01-cover-1.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["mangadex", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"mangadex {subcommand} failed: {result.output[:600]}"
+
+    def test_show_jq_filter_extracts_title(self, cli_runner, cli, fake_clock):
+        """``--jq`` over the rich JSON:API resource. Berserk's
+        upstream title block uses ``ja-ro`` (romanised Japanese)
+        rather than ``en``, so the projection picks any non-null
+        value."""
+        fixture = _load_fixture("mangadex/manga_by_id/02-berserk.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(
+                cli,
+                [
+                    "mangadex",
+                    "show",
+                    "801513ba-a712-498c-8f57-cae55b38cc92",
+                    "--no-cache",
+                    "--jq",
+                    ".attributes.title",
+                ],
+            )
+        assert result.exit_code == 0, result.output
+        assert "Berserk" in result.output
+
+    @pytest.mark.parametrize(
+        "argv,fixture_rel,query_key,expected",
+        [
+            (
+                ["statistics-manga-batch", "--manga", "801513ba-a712-498c-8f57-cae55b38cc92"],
+                "mangadex/statistics_manga_search/01-berserk-only.yaml",
+                "manga[]",
+                ["801513ba-a712-498c-8f57-cae55b38cc92"],
+            ),
+            (
+                ["statistics-chapter-batch", "--chapter", "01e9f0cb-caea-406d-92bb-0cc67c37481d"],
+                "mangadex/statistics_chapter_search/01-berserk-only.yaml",
+                "chapter[]",
+                ["01e9f0cb-caea-406d-92bb-0cc67c37481d"],
+            ),
+            (
+                [
+                    "statistics-manga-batch",
+                    "--manga",
+                    "801513ba-a712-498c-8f57-cae55b38cc92",
+                    "--manga",
+                    "0d1f5f6b-7e1f-4f0f-a111-000000000000",
+                ],
+                "mangadex/statistics_manga_search/01-berserk-only.yaml",
+                "manga[]",
+                ["801513ba-a712-498c-8f57-cae55b38cc92", "0d1f5f6b-7e1f-4f0f-a111-000000000000"],
+            ),
+        ],
+    )
+    def test_repeatable_batch_options_send_whole_values(
+        self, cli_runner, cli, fake_clock, argv, fixture_rel, query_key, expected
+    ):
+        fixture = _load_fixture(fixture_rel)
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["mangadex", *argv, "--json", "--no-cache"])
+            sent = rsps.calls[0].request
+
+        assert result.exit_code == 0, result.output
+        parsed = parse_qs(urlsplit(sent.url).query)
+        assert parsed[query_key] == expected
+
+
+# ---------- Danbooru ----------
+
+
+class TestDanbooruCliFromFixtures:
+    """JSON-path coverage of every Danbooru high-level subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("search", ["touhou rating:g order:score"], "danbooru/posts_search/01-touhou-rating-g-order-score.yaml"),
+            ("post", ["1"], "danbooru/posts_by_id/01-post-1.yaml"),
+            ("artist-search", ["ke-ta"], "danbooru/artists_search/02-ke-ta.yaml"),
+            ("tag", ["touhou*"], "danbooru/tags_search/01-touhou-prefix.yaml"),
+            ("pool", ["1"], "danbooru/pools_by_id/01-pool-1.yaml"),
+            ("count", ["touhou rating:g"], "danbooru/counts/01-touhou-rating-g.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["danbooru", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"danbooru {subcommand} failed: {result.output[:600]}"
+
+    def test_search_jq_filter_extracts_ratings(self, cli_runner, cli, fake_clock):
+        """``rating:g`` query → every result row carries
+        ``rating == "g"``. Pin the filter pass-through."""
+        fixture = _load_fixture("danbooru/posts_search/01-touhou-rating-g-order-score.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(
+                cli,
+                ["danbooru", "search", "touhou rating:g order:score", "--no-cache", "--jq", "[.[].rating]"],
+            )
+        assert result.exit_code == 0, result.output
+        decoded = json.loads(result.output)
+        assert decoded
+        assert all(r == "g" for r in decoded)
+
+
+# ---------- Waifu.im ----------
+
+
+class TestWaifuCliFromFixtures:
+    """JSON-path coverage of every Waifu.im high-level subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("tags", [], "waifu/tags/01-all.yaml"),
+            ("artists", [], "waifu/artists/01-page-1.yaml"),
+            ("images", [], "waifu/images/01-default-page1.yaml"),
+            ("images", ["--included-tags", "waifu"], "waifu/images/02-included-waifu.yaml"),
+            ("images", ["--is-nsfw", "true", "--page-size", "3"], "waifu/images/04-nsfw-true.yaml"),
+            ("images", ["--is-animated", "true", "--page-size", "2"], "waifu/images/05-animated-true.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        path = FIXTURES / fixture_rel
+        if not path.exists():
+            pytest.skip(f"fixture missing: {fixture_rel}")
+        fixture = _load_fixture(fixture_rel)
+
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["waifu", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"waifu {subcommand} failed: {result.output[:600]}"
+
+    def test_default_images_are_sfw(self, cli_runner, cli, fake_clock):
+        """Default ``waifu images`` (no ``--is-nsfw``) returns
+        SFW-only — pin the upstream-default-honouring posture."""
+        fixture = _load_fixture("waifu/images/01-default-page1.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["waifu", "images", "--no-cache", "--jq", "[.[].isNsfw]"])
+        assert result.exit_code == 0, result.output
+        decoded = json.loads(result.output)
+        assert decoded
+        assert all(v is False for v in decoded)
+
+    @pytest.mark.parametrize(
+        "argv,fixture_rel,expected_included,expected_excluded",
+        [
+            (
+                ["--included-tags", "waifu"],
+                "waifu/images/02-included-waifu.yaml",
+                ["waifu"],
+                None,
+            ),
+            (
+                ["--included-tags", "waifu", "--included-tags", "maid"],
+                "waifu/images/02-included-waifu.yaml",
+                ["waifu", "maid"],
+                None,
+            ),
+            (
+                ["--excluded-tags", "ero"],
+                "waifu/images/06-excluded-ero.yaml",
+                None,
+                ["ero"],
+            ),
+        ],
+    )
+    def test_repeatable_tag_options_send_whole_values(
+        self, cli_runner, cli, fake_clock, argv, fixture_rel, expected_included, expected_excluded
+    ):
+        fixture = _load_fixture(fixture_rel)
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["waifu", "images", *argv, "--json", "--no-cache"])
+            sent = rsps.calls[0].request
+
+        assert result.exit_code == 0, result.output
+        parsed = parse_qs(urlsplit(sent.url).query)
+        if expected_included is None:
+            assert "included_tags" not in parsed
+        else:
+            assert parsed["included_tags"] == expected_included
+        if expected_excluded is None:
+            assert "excluded_tags" not in parsed
+        else:
+            assert parsed["excluded_tags"] == expected_excluded
+
+
 # ---------- viewer / notification / etc. — auth-required stubs ----------
 
 
@@ -471,7 +791,7 @@ class TestPhase2SubcommandTree:
     """No HTTP needed; just confirm registration shape."""
 
     def test_top_level_groups_present(self, cli):
-        for group in ("anilist", "jikan", "nekos", "trace"):
+        for group in ("anilist", "danbooru", "jikan", "kitsu", "mangadex", "nekos", "trace", "waifu"):
             assert group in cli.commands
 
     def test_anilist_has_at_least_28_subcommands(self, cli):
@@ -485,6 +805,29 @@ class TestPhase2SubcommandTree:
 
     def test_nekos_has_categories_image_search(self, cli):
         assert {"categories", "categories-full", "image", "search"} <= set(cli.commands["nekos"].commands.keys())
+
+    def test_kitsu_has_full_surface(self, cli):
+        assert {
+            "show",
+            "search",
+            "streaming",
+            "mappings",
+            "trending",
+            "manga-show",
+            "manga-search",
+            "categories",
+        } <= set(cli.commands["kitsu"].commands.keys())
+
+    def test_mangadex_has_full_surface(self, cli):
+        assert {"show", "search", "feed", "chapter", "cover"} <= set(cli.commands["mangadex"].commands.keys())
+
+    def test_danbooru_has_full_surface(self, cli):
+        assert {"search", "post", "artist", "artist-search", "tag", "pool", "pool-search", "count"} <= set(
+            cli.commands["danbooru"].commands.keys()
+        )
+
+    def test_waifu_has_full_surface(self, cli):
+        assert {"tags", "artists", "images"} <= set(cli.commands["waifu"].commands.keys())
 
 
 # ---------- --help walk for every Phase-2 subcommand ----------
@@ -514,3 +857,23 @@ class TestEverySubcommandHasHelp:
         for sub in cli.commands["nekos"].commands:
             r = cli_runner.invoke(cli, ["nekos", sub, "--help"])
             assert r.exit_code == 0, f"nekos {sub} --help failed: {r.output[:200]}"
+
+    def test_kitsu_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["kitsu"].commands:
+            r = cli_runner.invoke(cli, ["kitsu", sub, "--help"])
+            assert r.exit_code == 0, f"kitsu {sub} --help failed: {r.output[:200]}"
+
+    def test_mangadex_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["mangadex"].commands:
+            r = cli_runner.invoke(cli, ["mangadex", sub, "--help"])
+            assert r.exit_code == 0, f"mangadex {sub} --help failed: {r.output[:200]}"
+
+    def test_danbooru_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["danbooru"].commands:
+            r = cli_runner.invoke(cli, ["danbooru", sub, "--help"])
+            assert r.exit_code == 0, f"danbooru {sub} --help failed: {r.output[:200]}"
+
+    def test_waifu_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["waifu"].commands:
+            r = cli_runner.invoke(cli, ["waifu", sub, "--help"])
+            assert r.exit_code == 0, f"waifu {sub} --help failed: {r.output[:200]}"

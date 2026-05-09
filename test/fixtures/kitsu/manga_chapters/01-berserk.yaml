@@ -1,0 +1,154 @@
+metadata:
+  captured_at: '2026-05-08T12:53:46Z'
+  label: berserk
+  backend: kitsu
+  path_slug: manga_chapters
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/manga/1/chapters?page%5Blimit%5D=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:46 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"86e6a841ea220ad56b92d67c8a754b86"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: b0321b91-c87b-498a-8a3f-dc2283866f90
+    x-runtime: '0.044834'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1601'
+      type: chapters
+      links:
+        self: https://kitsu.io/api/edge/chapters/1601
+      attributes:
+        createdAt: '2017-07-17T01:33:22.367Z'
+        updatedAt: '2018-11-28T23:13:26.149Z'
+        synopsis: ''
+        description: ''
+        titles: {}
+        canonicalTitle: null
+        volumeNumber: 1
+        number: 1
+        published: null
+        length: null
+        thumbnail: null
+      relationships:
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/chapters/1601/relationships/manga
+            related: https://kitsu.io/api/edge/chapters/1601/manga
+    - id: '1602'
+      type: chapters
+      links:
+        self: https://kitsu.io/api/edge/chapters/1602
+      attributes:
+        createdAt: '2017-07-17T01:33:22.384Z'
+        updatedAt: '2018-11-28T23:13:26.149Z'
+        synopsis: ''
+        description: ''
+        titles: {}
+        canonicalTitle: null
+        volumeNumber: 1
+        number: 2
+        published: null
+        length: null
+        thumbnail: null
+      relationships:
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/chapters/1602/relationships/manga
+            related: https://kitsu.io/api/edge/chapters/1602/manga
+    - id: '1603'
+      type: chapters
+      links:
+        self: https://kitsu.io/api/edge/chapters/1603
+      attributes:
+        createdAt: '2017-07-17T01:33:22.390Z'
+        updatedAt: '2018-11-28T23:13:26.149Z'
+        synopsis: ''
+        description: ''
+        titles: {}
+        canonicalTitle: null
+        volumeNumber: 1
+        number: 3
+        published: null
+        length: null
+        thumbnail: null
+      relationships:
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/chapters/1603/relationships/manga
+            related: https://kitsu.io/api/edge/chapters/1603/manga
+    - id: '1604'
+      type: chapters
+      links:
+        self: https://kitsu.io/api/edge/chapters/1604
+      attributes:
+        createdAt: '2017-07-17T01:33:22.396Z'
+        updatedAt: '2018-11-28T23:13:26.149Z'
+        synopsis: ''
+        description: ''
+        titles: {}
+        canonicalTitle: null
+        volumeNumber: 1
+        number: 4
+        published: null
+        length: null
+        thumbnail: null
+      relationships:
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/chapters/1604/relationships/manga
+            related: https://kitsu.io/api/edge/chapters/1604/manga
+    - id: '1605'
+      type: chapters
+      links:
+        self: https://kitsu.io/api/edge/chapters/1605
+      attributes:
+        createdAt: '2017-07-17T01:33:22.409Z'
+        updatedAt: '2018-11-28T23:13:26.149Z'
+        synopsis: ''
+        description: ''
+        titles: {}
+        canonicalTitle: null
+        volumeNumber: 1
+        number: 5
+        published: null
+        length: null
+        thumbnail: null
+      relationships:
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/chapters/1605/relationships/manga
+            related: https://kitsu.io/api/edge/chapters/1605/manga
+    meta:
+      count: 22
+    links:
+      first: https://kitsu.io/api/edge/manga/1/chapters?page%5Blimit%5D=5&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/manga/1/chapters?page%5Blimit%5D=5&page%5Boffset%5D=5
+      last: https://kitsu.io/api/edge/manga/1/chapters?page%5Blimit%5D=5&page%5Boffset%5D=17
+  body_text: null
+  body_b64: null

@@ -1,0 +1,73 @@
+metadata:
+  captured_at: '2026-05-08T13:07:22Z'
+  label: page1
+  backend: danbooru
+  path_slug: wiki_pages_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/wiki_pages.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:22 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"c16739503d032690fc604e19bbd03c25"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88afdfe866fc9f-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.505, rails.cpu_time;dur=1.7901, rails.idle_time;dur=0.7149,
+      rails.sql_time;dur=0.8328, rails.view_time;dur=1.0092, rails.allocations;count=1514, request.allocations;count=2042,
+      request.gc_time;dur=0.0461, request.gc_count;count=0, request.cpu_time;dur=2.3748, request.total_time;dur=3.0898, request.queue_time_0;dur=1.3607,
+      request.queue_time_1;dur=92.0
+    x-runtime: '0.0030897903442382814'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 287151
+    created_at: '2026-05-08T06:02:26.838-04:00'
+    updated_at: '2026-05-08T09:03:32.632-04:00'
+    title: stay_solid_no_fold_(project_sekai)
+    body: "The 204th event of [[Project Sekai]]. The focus of this event is [[Vivid Bad Squad (project sekai)|]].\r\n\r\n\
+      h4. Featured Characters \r\n\r\nh5. 4 Stars \r\n\r\n* !post #11331100: [[Azusawa Kohane]] \r\n* !post #11331250: [[Shinonome\
+      \ Akito]] \r\n* [[Aoyagi Touya]] \r\n\r\nh5. Event Shop\r\n\r\n* [[Shiraishi An]] \r\n* !post #11331213: [[Vivid Bad\
+      \ Squad Kaito]] \r\n\r\nh4. See Also \r\n\r\n* [[List of Project Sekai Costumes and Events]]"
+    is_locked: false
+    other_names: []
+    is_deleted: false
+  - id: 279698
+    created_at: '2026-03-16T21:31:21.948-04:00'
+    updated_at: '2026-05-08T08:56:55.431-04:00'
+    title: lee_jaheon
+    body: "Section Chief [[Lee_Jaheon]], also known as Lizard and Chief Lizard by his team members, is the team leader of\
+      \ D Squad within Daydream Inc. and an affiliate of the Space Shopping Mall.\r\n\r\nHe has [[white hair]] and [[red eyes]].\r\
+      \nHe has a white lizard plushie on his desk.\r\n\r\nh4. Appearance\r\n\r\n* !asset #46746765\r\n\r\nh4. External links\r\
+      \n\r\n* \"Ghost Story Gotta Work wiki\":https://ghost-story-gotta-work.fandom.com/wiki/Lee_Jaheon"
+    is_locked: false
+    other_names:
+    - 李慈宪
+    - 이자헌
+    is_deleted: false
+  body_text: null
+  body_b64: null

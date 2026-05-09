@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-08T13:07:39Z'
+  label: page1
+  backend: danbooru
+  path_slug: uploads_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/uploads.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:39 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: '2'
+    Connection: keep-alive
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b04b18f6d3e6-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=2.74, rails.cpu_time;dur=1.9327, rails.idle_time;dur=0.8074,
+      rails.sql_time;dur=0.9279, rails.view_time;dur=0.9456, rails.allocations;count=1374, request.allocations;count=1847,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=2.566, request.total_time;dur=3.3736, request.queue_time_0;dur=1.4892,
+      request.queue_time_1;dur=92.0
+    x-runtime: '0.0033736114501953123'
+    via: <scrubbed-at-capture>
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json: []
+  body_text: null
+  body_b64: null

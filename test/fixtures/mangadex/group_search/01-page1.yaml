@@ -1,0 +1,178 @@
+metadata:
+  captured_at: '2026-05-08T13:01:10Z'
+  label: page1
+  backend: mangadex
+  path_slug: group_search
+request:
+  method: GET
+  url: https://api.mangadex.org/group?limit=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Fri, 08 May 2026 13:01:10 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '981'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 7ff9aaba-1f54-4c29-9676-d896c889a332
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 6f066753-22c8-4e55-83fa-72fd39819dfd
+      type: scanlation_group
+      attributes:
+        name: Kasansa
+        altNames: []
+        locked: false
+        website: https://instagram.com/inkasuke1?igshid=MTNiYzNiMzkwZA==
+        ircServer: null
+        ircChannel: null
+        discord: null
+        contactEmail: null
+        description: 'Selamat datang bro saya suka TL komik / manga kalau lagi ada waktu senggang '
+        twitter: null
+        mangaUpdates: null
+        focusedLanguages: []
+        official: false
+        verified: false
+        inactive: false
+        publishDelay: null
+        exLicensed: false
+        createdAt: '2023-11-23T23:01:33+00:00'
+        updatedAt: '2023-11-30T21:15:24+00:00'
+        version: 2
+      relationships:
+      - id: 7a6363b4-00af-453f-a203-98ece4df54a4
+        type: leader
+      - id: 7a6363b4-00af-453f-a203-98ece4df54a4
+        type: member
+    - id: 6f07005e-b477-41f7-811b-d65d645c9bff
+      type: scanlation_group
+      attributes:
+        name: ryowalker
+        altNames: []
+        locked: false
+        website: null
+        ircServer: null
+        ircChannel: null
+        discord: null
+        contactEmail: null
+        description: 'A Tales of Sunshine | #أترجم لأاسعد ثلّة من العالم'
+        twitter: https://twitter.com/re7_walker
+        mangaUpdates: null
+        focusedLanguages: []
+        official: false
+        verified: false
+        inactive: false
+        publishDelay: null
+        exLicensed: false
+        createdAt: '2023-11-02T23:45:42+00:00'
+        updatedAt: '2023-11-02T23:45:42+00:00'
+        version: 1
+      relationships: []
+    - id: 6f07b7db-2dd2-4f61-b830-2243dff3cafc
+      type: scanlation_group
+      attributes:
+        name: SanSara
+        altNames: []
+        locked: false
+        website: https://vk.com/san0_0sara
+        ircServer: null
+        ircChannel: null
+        discord: null
+        contactEmail: null
+        description: null
+        twitter: null
+        mangaUpdates: null
+        focusedLanguages: []
+        official: false
+        verified: false
+        inactive: false
+        publishDelay: null
+        exLicensed: false
+        createdAt: '2022-01-31T19:55:14+00:00'
+        updatedAt: '2022-03-13T16:29:41+00:00'
+        version: 2
+      relationships:
+      - id: d682260b-4ee3-4631-9f2a-ac0f03e54b18
+        type: leader
+      - id: d682260b-4ee3-4631-9f2a-ac0f03e54b18
+        type: member
+    - id: 6f0bfb33-9679-4a40-8d22-aa1959caef23
+      type: scanlation_group
+      attributes:
+        name: Area 52
+        altNames: []
+        locked: false
+        website: null
+        ircServer: null
+        ircChannel: null
+        discord: null
+        contactEmail: null
+        description: ''
+        twitter: null
+        mangaUpdates: null
+        focusedLanguages: []
+        official: false
+        verified: false
+        inactive: false
+        publishDelay: null
+        exLicensed: false
+        createdAt: '2025-03-20T22:11:21+00:00'
+        updatedAt: '2025-03-20T22:11:21+00:00'
+        version: 1
+      relationships: []
+    - id: 6f0d4b44-bc7a-4bad-83e7-806e8d0f267e
+      type: scanlation_group
+      attributes:
+        name: Eutopia
+        altNames: []
+        locked: false
+        website: null
+        ircServer: null
+        ircChannel: null
+        discord: null
+        contactEmail: null
+        description: Represents Eutopia on e-hentai/exhentai.
+        twitter: null
+        mangaUpdates: null
+        focusedLanguages: []
+        official: false
+        verified: false
+        inactive: false
+        publishDelay: null
+        exLicensed: false
+        createdAt: '2024-04-08T14:33:54+00:00'
+        updatedAt: '2024-04-08T14:33:54+00:00'
+        version: 1
+      relationships: []
+    limit: 5
+    offset: 0
+    total: 47250
+  body_text: null
+  body_b64: null

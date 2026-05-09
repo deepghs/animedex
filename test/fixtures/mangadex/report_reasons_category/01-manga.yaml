@@ -1,0 +1,113 @@
+metadata:
+  captured_at: '2026-05-08T13:01:27Z'
+  label: manga
+  backend: mangadex
+  path_slug: report_reasons_category
+request:
+  method: GET
+  url: https://api.mangadex.org/report/reasons/manga
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=86400, stale-while-revalidate=15
+    date: Fri, 08 May 2026 13:01:27 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 84605c5e-6075-41c1-98ef-5a60c715ed1c
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 1a0b6e60-cacd-453f-ba16-b0aafee3ddad
+      type: report_reason
+      attributes:
+        reason:
+          en: Incorrect or missing volume numbers
+        detailsRequired: true
+        category: manga
+        version: 1
+      relationships: []
+    - id: 8a44e534-d2b1-11eb-a84d-0242ac110002
+      type: report_reason
+      attributes:
+        reason:
+          en: Troll entry
+        detailsRequired: false
+        category: manga
+        version: 1
+      relationships: []
+    - id: 8a44e584-d2b1-11eb-a84d-0242ac110002
+      type: report_reason
+      attributes:
+        reason:
+          en: Duplicate entry
+        detailsRequired: true
+        category: manga
+        version: 1
+      relationships: []
+    - id: 8a44e5ca-d2b1-11eb-a84d-0242ac110002
+      type: report_reason
+      attributes:
+        reason:
+          en: Information to correct
+        detailsRequired: true
+        category: manga
+        version: 1
+      relationships: []
+    - id: 8a44e624-d2b1-11eb-a84d-0242ac110002
+      type: report_reason
+      attributes:
+        reason:
+          en: Other
+        detailsRequired: true
+        category: manga
+        version: 1
+      relationships: []
+    - id: 97d0a78d-1d08-4a30-b382-3de2effe43c3
+      type: report_reason
+      attributes:
+        reason:
+          en: Missing cover art
+        detailsRequired: true
+        category: manga
+        version: 1
+      relationships: []
+    - id: fc472c20-fe84-4bc4-92d9-6660133c2412
+      type: report_reason
+      attributes:
+        reason:
+          en: Vandalism
+        detailsRequired: true
+        category: manga
+        version: 1
+      relationships: []
+    limit: 7
+    offset: 0
+    total: 7
+  body_text: null
+  body_b64: null

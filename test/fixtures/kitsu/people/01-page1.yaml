@@ -1,0 +1,412 @@
+metadata:
+  captured_at: '2026-05-08T12:53:14Z'
+  label: page1
+  backend: kitsu
+  path_slug: people
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/people?page%5Blimit%5D=10
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:14 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"2a06648880b2a1a600dfd368fb790792"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 63fae17c-b641-4df1-a05a-45a4be3ba6c5
+    x-runtime: '0.046705'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/1
+      attributes:
+        createdAt: '2013-02-20T18:49:20.441Z'
+        updatedAt: '2021-09-16T22:51:01.875Z'
+        name: Masahiko Minami
+        malId: Moved to mappings relationship.
+        description: ' Wikipedia'
+        image:
+          original: https://media.kitsu.app/people/images/1/original.jpg
+          meta:
+            dimensions: {}
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/1/relationships/castings
+            related: https://kitsu.io/api/edge/people/1/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/1/relationships/staff
+            related: https://kitsu.io/api/edge/people/1/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/1/relationships/voices
+            related: https://kitsu.io/api/edge/people/1/voices
+    - id: '2'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/2
+      attributes:
+        createdAt: '2013-02-20T18:49:20.614Z'
+        updatedAt: '2021-09-25T07:35:21.130Z'
+        name: Shinichiro Watanabe
+        malId: Moved to mappings relationship.
+        description: "  Shinichirō Watanabe is a Japanese anime filmmaker, screenwriter, and producer. He is known for directing\
+          \ the popular anime series Cowboy Bebop and Samurai Champloo. \n \nWatanabe is noted for blending together multiple\
+          \ genres in his anime. For example, in Cowboy Bebop, classic cowboy western mixes with 1940s/1950s New York City\
+          \ film noir, Jazz music and Hong Kong action movies, all while being set in space. In his later work, Samurai Champloo,\
+          \ Watanabe mixes the cultures of Okinawa, hip-hop, modern-day Japan, and samurai.  "
+        image:
+          tiny: https://media.kitsu.app/person/2/image/tiny-4ee1326e784c69183f2419c19d9a3a6d.jpeg
+          large: https://media.kitsu.app/person/2/image/large-0dc537c4e5b8d61cd60b73fc60f5bea7.jpeg
+          small: https://media.kitsu.app/person/2/image/small-a173ba0f478bd5f547b89928f28047e3.jpeg
+          medium: https://media.kitsu.app/person/2/image/medium-c6a15817099ed49f633ac35c84a0d9ed.jpeg
+          original: https://media.kitsu.app/people/images/2/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 100
+                height: 120
+              large:
+                width: 500
+                height: 600
+              small:
+                width: 200
+                height: 240
+              medium:
+                width: 300
+                height: 360
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/2/relationships/castings
+            related: https://kitsu.io/api/edge/people/2/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/2/relationships/staff
+            related: https://kitsu.io/api/edge/people/2/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/2/relationships/voices
+            related: https://kitsu.io/api/edge/people/2/voices
+    - id: '3'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/3
+      attributes:
+        createdAt: '2013-02-20T18:49:20.621Z'
+        updatedAt: '2020-08-04T20:00:07.229Z'
+        name: Katsuyoshi Kobayashi
+        malId: Moved to mappings relationship.
+        description: ''
+        image: null
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/3/relationships/castings
+            related: https://kitsu.io/api/edge/people/3/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/3/relationships/staff
+            related: https://kitsu.io/api/edge/people/3/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/3/relationships/voices
+            related: https://kitsu.io/api/edge/people/3/voices
+    - id: '4'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/4
+      attributes:
+        createdAt: '2013-02-20T18:49:20.628Z'
+        updatedAt: '2020-08-04T20:00:07.247Z'
+        name: Yamaguchi Ryota
+        malId: Moved to mappings relationship.
+        description: ''
+        image: null
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/4/relationships/castings
+            related: https://kitsu.io/api/edge/people/4/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/4/relationships/staff
+            related: https://kitsu.io/api/edge/people/4/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/4/relationships/voices
+            related: https://kitsu.io/api/edge/people/4/voices
+    - id: '5'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/5
+      attributes:
+        createdAt: '2013-02-20T18:49:20.634Z'
+        updatedAt: '2021-09-25T07:35:24.038Z'
+        name: Sadayuki Murai
+        malId: Moved to mappings relationship.
+        description: '  Birth place: Nara Prefecture, Japan  '
+        image:
+          tiny: https://media.kitsu.app/person/5/image/tiny-3049ed65788514753a3b193d5701aa0b.jpeg
+          large: https://media.kitsu.app/person/5/image/large-075c021118bbc2d391a76ba741d89053.jpeg
+          small: https://media.kitsu.app/person/5/image/small-b01054cc795f7d291f38bb0065626ba6.jpeg
+          medium: https://media.kitsu.app/person/5/image/medium-877c3b10b7c43be567c82d28a4b0a4b9.jpeg
+          original: https://media.kitsu.app/people/images/5/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 100
+                height: 120
+              large:
+                width: 500
+                height: 600
+              small:
+                width: 200
+                height: 240
+              medium:
+                width: 300
+                height: 360
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/5/relationships/castings
+            related: https://kitsu.io/api/edge/people/5/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/5/relationships/staff
+            related: https://kitsu.io/api/edge/people/5/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/5/relationships/voices
+            related: https://kitsu.io/api/edge/people/5/voices
+    - id: '6'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/6
+      attributes:
+        createdAt: '2013-02-20T18:49:20.642Z'
+        updatedAt: '2021-09-25T07:35:26.273Z'
+        name: Dai Sato
+        malId: Moved to mappings relationship.
+        description: ''
+        image:
+          tiny: https://media.kitsu.app/person/6/image/tiny-1eb523990241b1fec471a9e5f285a675.jpeg
+          large: https://media.kitsu.app/person/6/image/large-c9b8642cc4b2a002b9b4bc45f956b2a8.jpeg
+          small: https://media.kitsu.app/person/6/image/small-b45942ebb4110864e5565ad744c6a93b.jpeg
+          medium: https://media.kitsu.app/person/6/image/medium-ce9eb1ec4ba3fb025bec369e63abd265.jpeg
+          original: https://media.kitsu.app/people/images/6/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 100
+                height: 120
+              large:
+                width: 500
+                height: 600
+              small:
+                width: 200
+                height: 240
+              medium:
+                width: 300
+                height: 360
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/6/relationships/castings
+            related: https://kitsu.io/api/edge/people/6/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/6/relationships/staff
+            related: https://kitsu.io/api/edge/people/6/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/6/relationships/voices
+            related: https://kitsu.io/api/edge/people/6/voices
+    - id: '7'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/7
+      attributes:
+        createdAt: '2013-02-20T18:49:20.650Z'
+        updatedAt: '2021-09-25T07:35:28.347Z'
+        name: Keiko Nobumoto
+        malId: Moved to mappings relationship.
+        description: ''
+        image:
+          tiny: https://media.kitsu.app/person/7/image/tiny-b26669fa7ea2f08bc93124da8bc3ec0e.jpeg
+          large: https://media.kitsu.app/person/7/image/large-2cbbdc7c180eb3433489ba63afb7e58e.jpeg
+          small: https://media.kitsu.app/person/7/image/small-558fed19af8a64e2fec1f121a3499f2f.jpeg
+          medium: https://media.kitsu.app/person/7/image/medium-3bcdde9824e44c0c4608de84f9baf21e.jpeg
+          original: https://media.kitsu.app/people/images/7/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 100
+                height: 120
+              large:
+                width: 500
+                height: 600
+              small:
+                width: 200
+                height: 240
+              medium:
+                width: 300
+                height: 360
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/7/relationships/castings
+            related: https://kitsu.io/api/edge/people/7/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/7/relationships/staff
+            related: https://kitsu.io/api/edge/people/7/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/7/relationships/voices
+            related: https://kitsu.io/api/edge/people/7/voices
+    - id: '8'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/8
+      attributes:
+        createdAt: '2013-02-20T18:49:20.656Z'
+        updatedAt: '2021-09-25T07:35:30.550Z'
+        name: Michiko Yokote
+        malId: Moved to mappings relationship.
+        description: ''
+        image:
+          tiny: https://media.kitsu.app/person/8/image/tiny-abe3318bc6a532e47ae30d5eb47d2174.jpeg
+          large: https://media.kitsu.app/person/8/image/large-f07e5fafd6b21f700aa4be2fde55586a.jpeg
+          small: https://media.kitsu.app/person/8/image/small-c6f2d25b3008acdedeacc9a9237290e2.jpeg
+          medium: https://media.kitsu.app/person/8/image/medium-b268ae9e6dac094f3bd8214a8287dc74.jpeg
+          original: https://media.kitsu.app/people/images/8/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 100
+                height: 120
+              large:
+                width: 500
+                height: 600
+              small:
+                width: 200
+                height: 240
+              medium:
+                width: 300
+                height: 360
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/8/relationships/castings
+            related: https://kitsu.io/api/edge/people/8/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/8/relationships/staff
+            related: https://kitsu.io/api/edge/people/8/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/8/relationships/voices
+            related: https://kitsu.io/api/edge/people/8/voices
+    - id: '9'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/9
+      attributes:
+        createdAt: '2013-02-20T18:49:20.662Z'
+        updatedAt: '2020-08-04T20:00:07.480Z'
+        name: Toshiyuki Tsuru
+        malId: Moved to mappings relationship.
+        description: <p><div class="people-informantion-more js-people-informantion-more">Tsuru sometimes works under the
+          pen name Yasuaki Kurotsu (黒津安明). The kanji that make up this pen name is a mix of the characters for Akira Kurosawa
+          and Yasujirō Ozu.</div></p>
+        image: null
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/9/relationships/castings
+            related: https://kitsu.io/api/edge/people/9/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/9/relationships/staff
+            related: https://kitsu.io/api/edge/people/9/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/9/relationships/voices
+            related: https://kitsu.io/api/edge/people/9/voices
+    - id: '10'
+      type: people
+      links:
+        self: https://kitsu.io/api/edge/people/10
+      attributes:
+        createdAt: '2013-02-20T18:49:20.672Z'
+        updatedAt: '2021-09-25T07:35:32.482Z'
+        name: Umanosuke Iida
+        malId: Moved to mappings relationship.
+        description: "  Birth name: Tsutomu (つとむ) Iida (飯田) \n \nDate of death: 11-26-2010  "
+        image:
+          tiny: https://media.kitsu.app/person/10/image/tiny-48c47ee1e48f09f81ef8b02f09aacd1a.jpeg
+          large: https://media.kitsu.app/person/10/image/large-99422347e1de70cb788ca980be044248.jpeg
+          small: https://media.kitsu.app/person/10/image/small-5e07c6f116915c61a55702c829e51ee1.jpeg
+          medium: https://media.kitsu.app/person/10/image/medium-702725adcae14309bcadb5f1362dace9.jpeg
+          original: https://media.kitsu.app/people/images/10/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 100
+                height: 120
+              large:
+                width: 500
+                height: 600
+              small:
+                width: 200
+                height: 240
+              medium:
+                width: 300
+                height: 360
+      relationships:
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/people/10/relationships/castings
+            related: https://kitsu.io/api/edge/people/10/castings
+        staff:
+          links:
+            self: https://kitsu.io/api/edge/people/10/relationships/staff
+            related: https://kitsu.io/api/edge/people/10/staff
+        voices:
+          links:
+            self: https://kitsu.io/api/edge/people/10/relationships/voices
+            related: https://kitsu.io/api/edge/people/10/voices
+    meta:
+      count: 35338
+    links:
+      first: https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=10
+      last: https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=35328
+  body_text: null
+  body_b64: null

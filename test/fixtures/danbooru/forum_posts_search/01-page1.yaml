@@ -1,0 +1,67 @@
+metadata:
+  captured_at: '2026-05-08T13:07:32Z'
+  label: page1
+  backend: danbooru
+  path_slug: forum_posts_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/forum_posts.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:32 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"8b346c8bd16f1a517950e442ccb61f75"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b01cfdd996c1-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.979, rails.cpu_time;dur=2.7997, rails.idle_time;dur=1.1792,
+      rails.sql_time;dur=1.3482, rails.view_time;dur=1.5287, rails.allocations;count=1625, request.allocations;count=2152,
+      request.gc_time;dur=0.2931, request.gc_count;count=0, request.cpu_time;dur=3.7955, request.total_time;dur=4.9747, request.queue_time_0;dur=1.5752,
+      request.queue_time_1;dur=96.0
+    x-runtime: '0.004974700927734375'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 438278
+    created_at: '2026-05-08T08:59:09.620-04:00'
+    updated_at: '2026-05-08T09:01:31.848-04:00'
+    creator_id: 957301
+    body: "[bur:59076]\r\n\r\nFor standardization purpose. I observed most tags based on phrasal compound adjectives like\
+      \ [[AI-generated]], [[one-eyed]], {{two-tone_*}} etc. use the before-the-noun format."
+    updater_id: 957301
+    is_deleted: false
+    topic_id: 36038
+  - id: 438276
+    created_at: '2026-05-08T08:19:48.507-04:00'
+    updated_at: '2026-05-08T08:19:48.507-04:00'
+    creator_id: 480841
+    body: "[bur:59075]\r\n\r\nAs the occidental name uses Rooster instead the Japanese word, I see that it should alias to\
+      \ the copyright tag."
+    updater_id: 480841
+    is_deleted: false
+    topic_id: 36036
+  body_text: null
+  body_b64: null

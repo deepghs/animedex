@@ -1,0 +1,95 @@
+metadata:
+  captured_at: '2026-05-08T13:08:06Z'
+  label: page1
+  backend: danbooru
+  path_slug: jobs_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/jobs.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:08:06 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"e7948b644dc5561b91c361e35764677f"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0f3685e965f-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=388.3512, rails.cpu_time;dur=7.5972, rails.idle_time;dur=380.754,
+      rails.sql_time;dur=380.6922, rails.view_time;dur=385.4718, rails.allocations;count=8545, request.allocations;count=9074,
+      request.gc_time;dur=0.1917, request.gc_count;count=0, request.cpu_time;dur=8.4187, request.total_time;dur=389.1728,
+      request.queue_time_0;dur=1.8978, request.queue_time_1;dur=93.9999
+    x-runtime: '0.3891728210449219'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 7a74d5e3-d4e1-4c70-a1e6-8169116b7384
+    queue_name: default
+    priority: -20
+    scheduled_at: '2026-05-08T09:08:06.318-04:00'
+    performed_at: '2026-05-08T09:08:06.344-04:00'
+    finished_at: null
+    error: null
+    created_at: '2026-05-08T09:08:06.318-04:00'
+    updated_at: '2026-05-08T09:08:06.346-04:00'
+    active_job_id: 7a74d5e3-d4e1-4c70-a1e6-8169116b7384
+    concurrency_key: null
+    cron_key: null
+    cron_at: null
+    batch_id: null
+    batch_callback_id: null
+    executions_count: 1
+    job_class: ProcessUploadJob
+    error_event: null
+    labels: null
+    locked_by_id: a373f1cb-6e37-4bb5-8a24-2c5a734c50f3
+    locked_at: '2026-05-08T09:08:06.344-04:00'
+    runtime_latency: 0.448018533
+    queue_latency: 0.025601
+  - id: 97e034e4-863b-4f24-8bfd-cd89c8de8de4
+    queue_name: default
+    priority: 0
+    scheduled_at: '2026-05-08T09:08:03.140-04:00'
+    performed_at: '2026-05-08T09:08:03.170-04:00'
+    finished_at: '2026-05-08T09:08:04.087-04:00'
+    error: null
+    created_at: '2026-05-08T09:08:03.140-04:00'
+    updated_at: '2026-05-08T09:08:04.089-04:00'
+    active_job_id: 97e034e4-863b-4f24-8bfd-cd89c8de8de4
+    concurrency_key: null
+    cron_key: null
+    cron_at: null
+    batch_id: null
+    batch_callback_id: null
+    executions_count: 1
+    job_class: IqdbAddPostJob
+    error_event: null
+    labels: null
+    locked_by_id: null
+    locked_at: null
+    runtime_latency: 0.917489
+    queue_latency: 0.029514
+  body_text: null
+  body_b64: null

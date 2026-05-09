@@ -1,0 +1,60 @@
+metadata:
+  captured_at: '2026-05-08T13:46:35Z'
+  label: default
+  backend: mangadex
+  path_slug: user_me
+request:
+  method: GET
+  url: https://api.mangadex.org/user/me
+  headers:
+    Authorization: Bearer eyJh...kwmQ (len=1493)
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Fri, 08 May 2026 13:46:35 GMT
+    content-encoding: gzip
+    x-cache: PASS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 2223533a-f21d-415e-850e-40f34782a93b
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: entity
+    data:
+      id: e6d38157-54da-4ab2-867d-92e886c75fe9
+      type: user
+      attributes:
+        username: narugo1992
+        roles:
+        - ROLE_USER
+        avatarFileName: null
+        bannerFileName: null
+        version: 3
+      relationships:
+      - id: e6d38157-54da-4ab2-867d-92e886c75fe9
+        type: user_profile
+  body_text: null
+  body_b64: null

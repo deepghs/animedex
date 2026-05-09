@@ -141,6 +141,26 @@ _BACKEND_POLICY = {
         "rate_line": "200 req/min anonymous (visible in x-rate-limit-limit / x-rate-limit-remaining response headers).",
         "guidance": "Read-only image lookup. nekos.best v2 is SFW-only by design, so the rich-model rating projection is always 'g'. The /search endpoint is fuzzy: it ranks all images by similarity to the query and always returns up to amount results — a non-matching query falls through to a near-random selection rather than an empty list, so callers can't use empty-results as a 'no match' signal.",
     },
+    "kitsu": {
+        "backend_line": "Kitsu (kitsu.io/api/edge canonical; kitsu.app/api/edge accepted alias).",
+        "rate_line": "Not formally published; project applies a 10 req/sec sustained ceiling.",
+        "guidance": "Read-only JSON:API. Anime + manga catalogue plus a streaming-link rail and a cross-source mapping table (anilist / mal / anidb / kitsu). The mapping endpoint is the cheapest way to convert an upstream ID to its peers; prefer it over reading the same ID from each upstream in turn.",
+    },
+    "mangadex": {
+        "backend_line": "MangaDex (api.mangadex.org); scanlation aggregator.",
+        "rate_line": "5 req/sec anonymous (transport bucket matches).",
+        "guidance": "Read-only manga / chapter / cover lookup. The catalogue is scanlation-driven, so legal posture varies per series — surface what the upstream returns; do not pre-filter. Page-image fetching is deferred (At-Home reader; lands separately). Multiple translations of the same chapter are normal; filter by --lang at the call site, not at the library level.",
+    },
+    "danbooru": {
+        "backend_line": "Danbooru (danbooru.donmai.us); community tag-driven art catalogue.",
+        "rate_line": "10 req/sec anonymous; Cloudflare-fronted (mandatory User-Agent enforced by the transport default).",
+        "guidance": "Read-only tag-DSL search. Content-rating tags: rating:g (general), rating:s (sensitive), rating:q (questionable), rating:e (explicit). When the user did not explicitly ask for adult / ecchi / NSFW content, prepend rating:g to the tag query yourself so the upstream filter does the work. When the user explicitly asks for ecchi / NSFW / adult / R-18 content, pass their query through unmodified — the project's posture is to inform, not to gate. Each result row carries .rating so a downstream pipeline can re-filter.",
+    },
+    "waifu": {
+        "backend_line": "Waifu.im (api.waifu.im); tagged SFW + NSFW anime art collection.",
+        "rate_line": "Anonymous; not formally published (transport applies a 10 req/sec sustained ceiling).",
+        "guidance": "Read-only image lookup. Upstream defaults images to SFW only when isNsfw is omitted; pass --is-nsfw true for NSFW only. When the user did not explicitly ask for NSFW content, omit --is-nsfw entirely so the upstream's SFW default applies. When the user explicitly requested NSFW or adult material, pass it through unmodified — the project's posture is to inform, not to gate.",
+    },
 }
 
 
@@ -229,7 +249,9 @@ def register_subcommand(
     # Frieren`` must work even though ``jikan.search(q=None)`` is
     # technically a kwarg with a default. We promote these by name to
     # positional-optional Click arguments so the CLI feels natural.
-    positional_optional_names = {"q", "query", "search"}
+    # ``tags`` and ``name`` cover the Danbooru tag-DSL search and the
+    # artist / pool / tag substring searches.
+    positional_optional_names = {"q", "query", "search", "tags", "name"}
 
     # Resolve forward-reference annotations (the backends use
     # ``from __future__ import annotations`` so e.g. ``per_page: int``
@@ -267,10 +289,24 @@ def register_subcommand(
             return type(default)
         return str
 
+    def _list_item_type(annotation):
+        """Return the scalar item type for List[T] / Optional[List[T]]."""
+        origin = getattr(annotation, "__origin__", None)
+        args = getattr(annotation, "__args__", ())
+        if origin is list:
+            item = args[0] if args else str
+            return item if item in (int, float, str, bool) else str
+        if origin is not None:
+            type_args = [a for a in args if a is not type(None)]
+            if len(type_args) == 1:
+                return _list_item_type(type_args[0])
+        return None
+
     summary = (help or (fn.__doc__ or fn.__name__).strip().split("\n", 1)[0]).rstrip(".") + "."
     backend = group.name  # group is named "anilist" / "jikan" / "trace"
     fn_module = getattr(fn, "__module__", None)
     fn_qualname = getattr(fn, "__name__", None)
+    list_option_names = set()
 
     def _resolve_fn():
         """Look up ``fn`` from its module at call time so test
@@ -294,6 +330,9 @@ def register_subcommand(
             rate=rate,
             source_attribution=not no_source,
         )
+        for opt_name in list_option_names:
+            value = kwargs.get(opt_name)
+            kwargs[opt_name] = list(value) if value else None
         try:
             result = _resolve_fn()(config=cfg, **kwargs)
         except ApiError as exc:
@@ -341,16 +380,29 @@ def register_subcommand(
         elif isinstance(param.default, bool):
             opt_decs.append(click.option(f"--{pname.replace('_', '-')}", pname, is_flag=True, default=param.default))
         else:
-            click_type = _click_type(annotation, param.default)
-            opt_decs.append(
-                click.option(
-                    f"--{pname.replace('_', '-')}",
-                    pname,
-                    default=param.default,
-                    type=click_type,
-                    show_default=True,
+            list_item_type = _list_item_type(annotation)
+            if list_item_type is not None:
+                list_option_names.add(pname)
+                opt_decs.append(
+                    click.option(
+                        f"--{pname.replace('_', '-')}",
+                        pname,
+                        default=(),
+                        type=list_item_type,
+                        multiple=True,
+                    )
                 )
-            )
+            else:
+                click_type = _click_type(annotation, param.default)
+                opt_decs.append(
+                    click.option(
+                        f"--{pname.replace('_', '-')}",
+                        pname,
+                        default=param.default,
+                        type=click_type,
+                        show_default=True,
+                    )
+                )
 
     # Inner-to-outer: options first (in any order), then arguments in
     # REVERSE so the first source-order argument ends up outermost.

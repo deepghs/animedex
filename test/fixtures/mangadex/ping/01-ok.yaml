@@ -1,0 +1,36 @@
+metadata:
+  captured_at: '2026-05-08T13:00:47Z'
+  label: ok
+  backend: mangadex
+  path_slug: ping
+request:
+  method: GET
+  url: https://api.mangadex.org/ping
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-length: '4'
+    content-type: text/plain
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 63e3811e-d687-4aac-9599-7e4ef353c537
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+    connection: close
+  body_json: null
+  body_text: pong
+  body_b64: null

@@ -1,0 +1,336 @@
+metadata:
+  captured_at: '2026-05-08T12:53:52Z'
+  label: user-1
+  backend: kitsu
+  path_slug: users_library_entries
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/library-entries?filter%5Buser_id%5D=1&page%5Blimit%5D=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:52 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"ac10ec1410e5e80c2764cd85f8708a34"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 0d87c696-2696-44db-ad6e-9c89fe4f190c
+    x-runtime: '0.033004'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '18344699'
+      type: libraryEntries
+      links:
+        self: https://kitsu.io/api/edge/library-entries/18344699
+      attributes:
+        createdAt: '2017-09-15T16:07:56.861Z'
+        updatedAt: '2017-09-15T16:07:56.861Z'
+        status: completed
+        progress: 37
+        volumesOwned: 0
+        reconsuming: false
+        reconsumeCount: 0
+        notes: null
+        private: false
+        reactionSkipped: unskipped
+        progressedAt: '2017-09-15T16:07:56.861Z'
+        startedAt: '2017-09-15T16:07:56.861Z'
+        finishedAt: '2017-09-15T16:07:56.861Z'
+        rating: '0.0'
+        ratingTwenty: null
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/user
+            related: https://kitsu.io/api/edge/library-entries/18344699/user
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/anime
+            related: https://kitsu.io/api/edge/library-entries/18344699/anime
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/manga
+            related: https://kitsu.io/api/edge/library-entries/18344699/manga
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/drama
+            related: https://kitsu.io/api/edge/library-entries/18344699/drama
+        review:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/review
+            related: https://kitsu.io/api/edge/library-entries/18344699/review
+        mediaReaction:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/media-reaction
+            related: https://kitsu.io/api/edge/library-entries/18344699/media-reaction
+        media:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/media
+            related: https://kitsu.io/api/edge/library-entries/18344699/media
+        unit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/unit
+            related: https://kitsu.io/api/edge/library-entries/18344699/unit
+        nextUnit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344699/relationships/next-unit
+            related: https://kitsu.io/api/edge/library-entries/18344699/next-unit
+    - id: '18344700'
+      type: libraryEntries
+      links:
+        self: https://kitsu.io/api/edge/library-entries/18344700
+      attributes:
+        createdAt: '2017-09-15T16:08:17.543Z'
+        updatedAt: '2017-09-15T16:08:17.543Z'
+        status: completed
+        progress: 64
+        volumesOwned: 0
+        reconsuming: false
+        reconsumeCount: 0
+        notes: null
+        private: false
+        reactionSkipped: unskipped
+        progressedAt: '2017-09-15T16:08:17.542Z'
+        startedAt: '2017-09-15T16:08:17.542Z'
+        finishedAt: '2017-09-15T16:08:17.542Z'
+        rating: '0.0'
+        ratingTwenty: null
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/user
+            related: https://kitsu.io/api/edge/library-entries/18344700/user
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/anime
+            related: https://kitsu.io/api/edge/library-entries/18344700/anime
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/manga
+            related: https://kitsu.io/api/edge/library-entries/18344700/manga
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/drama
+            related: https://kitsu.io/api/edge/library-entries/18344700/drama
+        review:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/review
+            related: https://kitsu.io/api/edge/library-entries/18344700/review
+        mediaReaction:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/media-reaction
+            related: https://kitsu.io/api/edge/library-entries/18344700/media-reaction
+        media:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/media
+            related: https://kitsu.io/api/edge/library-entries/18344700/media
+        unit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/unit
+            related: https://kitsu.io/api/edge/library-entries/18344700/unit
+        nextUnit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344700/relationships/next-unit
+            related: https://kitsu.io/api/edge/library-entries/18344700/next-unit
+    - id: '18344701'
+      type: libraryEntries
+      links:
+        self: https://kitsu.io/api/edge/library-entries/18344701
+      attributes:
+        createdAt: '2017-09-15T16:08:23.078Z'
+        updatedAt: '2017-09-15T16:08:23.078Z'
+        status: completed
+        progress: 24
+        volumesOwned: 0
+        reconsuming: false
+        reconsumeCount: 0
+        notes: null
+        private: false
+        reactionSkipped: unskipped
+        progressedAt: '2017-09-15T16:08:23.078Z'
+        startedAt: '2017-09-15T16:08:23.078Z'
+        finishedAt: '2017-09-15T16:08:23.078Z'
+        rating: '0.0'
+        ratingTwenty: null
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/user
+            related: https://kitsu.io/api/edge/library-entries/18344701/user
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/anime
+            related: https://kitsu.io/api/edge/library-entries/18344701/anime
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/manga
+            related: https://kitsu.io/api/edge/library-entries/18344701/manga
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/drama
+            related: https://kitsu.io/api/edge/library-entries/18344701/drama
+        review:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/review
+            related: https://kitsu.io/api/edge/library-entries/18344701/review
+        mediaReaction:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/media-reaction
+            related: https://kitsu.io/api/edge/library-entries/18344701/media-reaction
+        media:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/media
+            related: https://kitsu.io/api/edge/library-entries/18344701/media
+        unit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/unit
+            related: https://kitsu.io/api/edge/library-entries/18344701/unit
+        nextUnit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344701/relationships/next-unit
+            related: https://kitsu.io/api/edge/library-entries/18344701/next-unit
+    - id: '18344702'
+      type: libraryEntries
+      links:
+        self: https://kitsu.io/api/edge/library-entries/18344702
+      attributes:
+        createdAt: '2017-09-15T16:08:30.079Z'
+        updatedAt: '2017-09-15T16:08:30.079Z'
+        status: completed
+        progress: 1
+        volumesOwned: 0
+        reconsuming: false
+        reconsumeCount: 0
+        notes: null
+        private: false
+        reactionSkipped: unskipped
+        progressedAt: '2017-09-15T16:08:30.079Z'
+        startedAt: '2017-09-15T16:08:30.079Z'
+        finishedAt: '2017-09-15T16:08:30.079Z'
+        rating: '0.0'
+        ratingTwenty: null
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/user
+            related: https://kitsu.io/api/edge/library-entries/18344702/user
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/anime
+            related: https://kitsu.io/api/edge/library-entries/18344702/anime
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/manga
+            related: https://kitsu.io/api/edge/library-entries/18344702/manga
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/drama
+            related: https://kitsu.io/api/edge/library-entries/18344702/drama
+        review:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/review
+            related: https://kitsu.io/api/edge/library-entries/18344702/review
+        mediaReaction:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/media-reaction
+            related: https://kitsu.io/api/edge/library-entries/18344702/media-reaction
+        media:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/media
+            related: https://kitsu.io/api/edge/library-entries/18344702/media
+        unit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/unit
+            related: https://kitsu.io/api/edge/library-entries/18344702/unit
+        nextUnit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344702/relationships/next-unit
+            related: https://kitsu.io/api/edge/library-entries/18344702/next-unit
+    - id: '18344703'
+      type: libraryEntries
+      links:
+        self: https://kitsu.io/api/edge/library-entries/18344703
+      attributes:
+        createdAt: '2017-09-15T16:08:33.188Z'
+        updatedAt: '2017-09-15T16:08:33.188Z'
+        status: completed
+        progress: 0
+        volumesOwned: 0
+        reconsuming: false
+        reconsumeCount: 0
+        notes: null
+        private: false
+        reactionSkipped: unskipped
+        progressedAt: '2017-09-15T16:08:33.188Z'
+        startedAt: '2017-09-15T16:08:33.188Z'
+        finishedAt: '2017-09-15T16:08:33.188Z'
+        rating: '0.0'
+        ratingTwenty: null
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/user
+            related: https://kitsu.io/api/edge/library-entries/18344703/user
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/anime
+            related: https://kitsu.io/api/edge/library-entries/18344703/anime
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/manga
+            related: https://kitsu.io/api/edge/library-entries/18344703/manga
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/drama
+            related: https://kitsu.io/api/edge/library-entries/18344703/drama
+        review:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/review
+            related: https://kitsu.io/api/edge/library-entries/18344703/review
+        mediaReaction:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/media-reaction
+            related: https://kitsu.io/api/edge/library-entries/18344703/media-reaction
+        media:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/media
+            related: https://kitsu.io/api/edge/library-entries/18344703/media
+        unit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/unit
+            related: https://kitsu.io/api/edge/library-entries/18344703/unit
+        nextUnit:
+          links:
+            self: https://kitsu.io/api/edge/library-entries/18344703/relationships/next-unit
+            related: https://kitsu.io/api/edge/library-entries/18344703/next-unit
+    meta:
+      statusCounts:
+        completed: 35
+      count: 35
+    links:
+      first: https://kitsu.io/api/edge/library-entries?filter%5Buser_id%5D=1&page%5Blimit%5D=5&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/library-entries?filter%5Buser_id%5D=1&page%5Blimit%5D=5&page%5Boffset%5D=5
+      last: https://kitsu.io/api/edge/library-entries?filter%5Buser_id%5D=1&page%5Blimit%5D=5&page%5Boffset%5D=30
+  body_text: null
+  body_b64: null

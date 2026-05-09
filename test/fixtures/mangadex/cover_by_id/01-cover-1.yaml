@@ -1,0 +1,62 @@
+metadata:
+  captured_at: '2026-05-08T12:11:16Z'
+  label: cover-1
+  backend: mangadex
+  path_slug: cover_by_id
+request:
+  method: GET
+  url: https://api.mangadex.org/cover/f73c6872-01ee-4ed5-86d1-3520dc250dc4
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Fri, 08 May 2026 12:11:15 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 70e55c71-ebd0-4a83-983f-d172c9c0156b
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: entity
+    data:
+      id: f73c6872-01ee-4ed5-86d1-3520dc250dc4
+      type: cover_art
+      attributes:
+        description: ''
+        volume: '6'
+        fileName: 55298866-2cb7-49e5-9e2d-6284c5b2c84a.jpg
+        locale: ja
+        createdAt: '2026-05-08T11:58:13+00:00'
+        updatedAt: '2026-05-08T11:58:13+00:00'
+        version: 1
+      relationships:
+      - id: 486d160a-5762-43a8-96cb-5b6eae57ffbd
+        type: manga
+      - id: 132c7600-c1bd-4263-bcaf-c0e0c1a644ab
+        type: user
+  body_text: null
+  body_b64: null

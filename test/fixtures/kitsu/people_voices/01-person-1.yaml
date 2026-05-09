@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-08T12:53:49Z'
+  label: person-1
+  backend: kitsu
+  path_slug: people_voices
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/people/1/voices?page%5Blimit%5D=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:49 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"942248ce05c8d1ef81c6e89a9af53e6f"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: fc1bf211-ef35-4919-8485-f8a831150621
+    x-runtime: '0.036039'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data: []
+    meta:
+      count: 0
+    links:
+      first: https://kitsu.io/api/edge/people/1/voices?page%5Blimit%5D=5&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/people/1/voices?page%5Blimit%5D=5&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

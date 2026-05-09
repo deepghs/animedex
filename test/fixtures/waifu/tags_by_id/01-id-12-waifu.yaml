@@ -1,0 +1,44 @@
+metadata:
+  captured_at: '2026-05-08T13:20:27Z'
+  label: id-12-waifu
+  backend: waifu
+  path_slug: tags_by_id
+request:
+  method: GET
+  url: https://api.waifu.im/tags/12
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:20:26 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    X-Test: api.waifu.im
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, HEAD, PATCH, POST, OPTIONS, DELETE, PUT
+    Access-Control-Allow-Headers: Accept-Version, Authorization, Content-Type
+    Version: v7
+    X-Request-ID: e41bd487832bedf37305a12d61076584
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    vary: accept-encoding
+    Report-To: <scrubbed-at-capture>
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    id: 12
+    name: Waifu
+    slug: waifu
+    description: A female anime/manga character.
+    reviewStatus: Accepted
+    creatorId: null
+    imageCount: 0
+  body_text: null
+  body_b64: null

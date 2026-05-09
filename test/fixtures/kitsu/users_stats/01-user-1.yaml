@@ -1,0 +1,204 @@
+metadata:
+  captured_at: '2026-05-08T12:53:53Z'
+  label: user-1
+  backend: kitsu
+  path_slug: users_stats
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/users/1/stats
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:53 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"7989ba32a5c0c36a50c8b9d4c577488c"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: b7ee5687-f3ae-4125-b13d-e25a57bca63c
+    x-runtime: '0.042435'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1142688'
+      type: stats
+      links:
+        self: https://kitsu.io/api/edge/stats/1142688
+      attributes:
+        createdAt: '2017-09-15T16:07:57.052Z'
+        updatedAt: '2018-12-26T02:11:42.513Z'
+        kind: anime-category-breakdown
+        statsData:
+          total: 35
+          categories:
+            Vampire: 4
+            Super Power: 7
+            Action: 18
+            Angst: 8
+            Science Fiction: 13
+            Fantasy: 17
+            Adventure: 17
+            Horror: 1
+            Thriller: 4
+            Comedy: 13
+            Ecchi: 1
+            Anthropomorphism: 1
+            Romance: 6
+            Harem: 2
+            Drama: 12
+            Detective: 3
+            Psychological: 5
+            Supernatural: 2
+            Mystery: 10
+            Anime Influenced: 4
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/stats/1142688/relationships/user
+            related: https://kitsu.io/api/edge/stats/1142688/user
+    - id: '1142690'
+      type: stats
+      links:
+        self: https://kitsu.io/api/edge/stats/1142690
+      attributes:
+        createdAt: '2017-09-15T16:07:57.157Z'
+        updatedAt: '2017-09-15T16:15:59.048Z'
+        kind: anime-favorite-year
+        statsData:
+          total: 34
+          all_years:
+            '1984': 1
+            '1986': 1
+            '1988': 1
+            '1997': 2
+            '1998': 1
+            '2001': 1
+            '2003': 1
+            '2005': 2
+            '2006': 6
+            '2007': 2
+            '2008': 1
+            '2009': 3
+            '2010': 1
+            '2011': 1
+            '2012': 2
+            '2013': 1
+            '2014': 4
+            '2015': 1
+            '2017': 2
+          total_media: 34
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/stats/1142690/relationships/user
+            related: https://kitsu.io/api/edge/stats/1142690/user
+    - id: '1142691'
+      type: stats
+      links:
+        self: https://kitsu.io/api/edge/stats/1142691
+      attributes:
+        createdAt: '2017-09-15T16:07:57.228Z'
+        updatedAt: '2018-01-28T08:15:56.099Z'
+        kind: anime-activity-history
+        statsData:
+          days:
+            '2017-09-15':
+              time: 0
+              units: 528
+          last: '2017-09-15'
+          first: '2017-09-15'
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/stats/1142691/relationships/user
+            related: https://kitsu.io/api/edge/stats/1142691/user
+    - id: '2183554'
+      type: stats
+      links:
+        self: https://kitsu.io/api/edge/stats/2183554
+      attributes:
+        createdAt: '2018-12-13T01:31:47.429Z'
+        updatedAt: '2021-03-25T05:20:38.548Z'
+        kind: anime-amount-consumed
+        statsData:
+          time: 762600
+          media: 35
+          units: 528
+          completed: 35
+          percentiles:
+            media: 0.65
+            units: 0.6
+            time: 0.61
+          averageDiffs:
+            media: -0.5872226434834651
+            units: -0.5503759961661576
+            time: -0.5004722041935321
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/stats/2183554/relationships/user
+            related: https://kitsu.io/api/edge/stats/2183554/user
+    - id: '2183556'
+      type: stats
+      links:
+        self: https://kitsu.io/api/edge/stats/2183556
+      attributes:
+        createdAt: '2018-12-13T01:31:47.613Z'
+        updatedAt: '2018-12-20T20:26:54.714Z'
+        kind: manga-amount-consumed
+        statsData:
+          time: 0
+          media: 0
+          units: 0
+          completed: 0
+          percentiles:
+            media: 0.0
+            units: 0.0
+          averageDiffs: {}
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/stats/2183556/relationships/user
+            related: https://kitsu.io/api/edge/stats/2183556/user
+    - id: '2183559'
+      type: stats
+      links:
+        self: https://kitsu.io/api/edge/stats/2183559
+      attributes:
+        createdAt: '2018-12-13T01:31:47.697Z'
+        updatedAt: '2018-12-25T04:28:29.291Z'
+        kind: manga-category-breakdown
+        statsData:
+          total: 0
+          categories: {}
+      relationships:
+        user:
+          links:
+            self: https://kitsu.io/api/edge/stats/2183559/relationships/user
+            related: https://kitsu.io/api/edge/stats/2183559/user
+    meta:
+      count: 6
+    links:
+      first: https://kitsu.io/api/edge/users/1/stats?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/users/1/stats?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

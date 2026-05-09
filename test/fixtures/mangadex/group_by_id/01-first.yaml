@@ -1,0 +1,78 @@
+metadata:
+  captured_at: '2026-05-08T13:01:12Z'
+  label: first
+  backend: mangadex
+  path_slug: group_by_id
+request:
+  method: GET
+  url: https://api.mangadex.org/group/6f066753-22c8-4e55-83fa-72fd39819dfd
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Fri, 08 May 2026 12:49:06 GMT
+    content-encoding: gzip
+    x-cache: HIT (fresh)
+    x-cache-age: '726.504'
+    x-cache-hits: '1'
+    x-cache-rid: f69a42f0-3940-46a5-b049-94462e07e5e0
+    accept-ranges: bytes
+    content-length: '496'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: a2c1498d-e727-4373-8cf9-25cc0f4733db
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: entity
+    data:
+      id: 6f066753-22c8-4e55-83fa-72fd39819dfd
+      type: scanlation_group
+      attributes:
+        name: Kasansa
+        altNames: []
+        locked: false
+        website: https://instagram.com/inkasuke1?igshid=MTNiYzNiMzkwZA==
+        ircServer: null
+        ircChannel: null
+        discord: null
+        contactEmail: null
+        description: 'Selamat datang bro saya suka TL komik / manga kalau lagi ada waktu senggang '
+        twitter: null
+        mangaUpdates: null
+        focusedLanguages: []
+        official: false
+        verified: false
+        inactive: false
+        publishDelay: null
+        exLicensed: false
+        createdAt: '2023-11-23T23:01:33+00:00'
+        updatedAt: '2023-11-30T21:15:24+00:00'
+        version: 2
+      relationships:
+      - id: 7a6363b4-00af-453f-a203-98ece4df54a4
+        type: leader
+      - id: 7a6363b4-00af-453f-a203-98ece4df54a4
+        type: member
+  body_text: null
+  body_b64: null

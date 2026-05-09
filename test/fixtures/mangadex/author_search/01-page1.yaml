@@ -1,0 +1,220 @@
+metadata:
+  captured_at: '2026-05-08T13:01:06Z'
+  label: page1
+  backend: mangadex
+  path_slug: author_search
+request:
+  method: GET
+  url: https://api.mangadex.org/author?limit=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Fri, 08 May 2026 13:01:05 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: e5fbd28f-8791-4d21-b8fc-3479442b5400
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: cc0b9d92-2e66-477c-ad27-ae481fa3dc6f
+      type: author
+      attributes:
+        name: Song Shu 200
+        imageUrl: null
+        biography: {}
+        twitter: null
+        pixiv: null
+        melonBook: null
+        fanBox: null
+        booth: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: null
+        createdAt: '2022-11-10T16:55:56+00:00'
+        updatedAt: '2022-11-10T20:17:57+00:00'
+        version: 2
+      relationships:
+      - id: b8b31598-ca6a-4872-a118-2aa4bb6ccd84
+        type: manga
+    - id: 3000f7a0-53ec-4f0c-9c0a-419528d5a8c2
+      type: author
+      attributes:
+        name: Reiha
+        imageUrl: null
+        biography: {}
+        twitter: null
+        pixiv: null
+        melonBook: null
+        fanBox: null
+        booth: null
+        namicomi: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: null
+        createdAt: '2022-05-24T14:03:08+00:00'
+        updatedAt: '2022-05-24T14:03:08+00:00'
+        version: 1
+      relationships:
+      - id: 8c54d09b-e24d-4679-98e0-44786e8e172e
+        type: manga
+      - id: b34f7fc6-fd17-4b2e-bb59-66f3b5932e0a
+        type: manga
+    - id: 3001cd3d-125f-4c40-9b1d-90f8a4af757a
+      type: author
+      attributes:
+        name: Kazahana Chiruwo
+        imageUrl: null
+        biography: {}
+        twitter: null
+        pixiv: null
+        melonBook: null
+        fanBox: null
+        booth: null
+        namicomi: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: null
+        createdAt: '2021-04-19T21:59:45+00:00'
+        updatedAt: '2021-04-19T21:59:45+00:00'
+        version: 1
+      relationships:
+      - id: f064aa80-b99e-46b6-b3d5-b876dced62a4
+        type: manga
+      - id: 95408710-94b9-456a-b902-cf0dd03c31b1
+        type: manga
+      - id: 8ec9d595-f128-4eff-a467-b532012df171
+        type: manga
+      - id: f968b757-d616-4a76-85f7-d03822f1773a
+        type: manga
+      - id: b81714ad-c2af-41d7-b658-8f27f1ad070c
+        type: manga
+      - id: 7fd29292-cbcc-442e-ab91-49106e240069
+        type: manga
+      - id: c81ee107-c944-4920-bd6d-a1ec4e7d103f
+        type: manga
+      - id: a53e69fc-ddb5-4817-9909-043d644c7ba7
+        type: manga
+      - id: ced1cfc2-7668-417d-be44-18a0a6902b2d
+        type: manga
+      - id: bb4bf3e3-6aca-4636-bf05-a5091f00d252
+        type: manga
+    - id: 300220df-d675-4ed0-99b8-23a0eda50abc
+      type: author
+      attributes:
+        name: Kamaboko RED
+        imageUrl: null
+        biography:
+          en: |-
+            **Alt names**:
+            かまぼこRED
+        twitter: https://twitter.com/_kamaboko_
+        pixiv: https://www.pixiv.net/users/19303
+        melonBook: null
+        fanBox: null
+        booth: null
+        namicomi: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: null
+        createdAt: '2021-04-19T21:59:45+00:00'
+        updatedAt: '2023-04-12T03:47:10+00:00'
+        version: 3
+      relationships:
+      - id: 2c32b2c9-2036-420a-a778-a6b09dedfcfa
+        type: manga
+      - id: 5790713d-b306-4173-bc68-0dba6420fc55
+        type: manga
+      - id: a7e02b38-37b0-4c93-a8b5-4068e332d8af
+        type: manga
+      - id: 7fc7e83c-a86a-4130-a80b-0c75a147290a
+        type: manga
+      - id: ba3ddde9-9ae4-4da0-9a46-eafca495b86d
+        type: manga
+      - id: 751fb01e-3391-4d9f-9067-7894035b5bf6
+        type: manga
+      - id: 027df837-7a15-4893-9dc3-e2ae11b94717
+        type: manga
+      - id: 5b6d9b9b-d34f-419e-bc02-24a22f9e5ea4
+        type: manga
+      - id: 13492ed2-6342-4ace-9ec8-6a678f4e9a81
+        type: manga
+      - id: ec466b5e-78a1-4a8a-ba7c-7a34c3c4fe53
+        type: manga
+    - id: 30027871-7fd1-45f0-a661-ef965f9ee89b
+      type: author
+      attributes:
+        name: Kanou Miki
+        imageUrl: null
+        biography: {}
+        twitter: null
+        pixiv: null
+        melonBook: null
+        fanBox: null
+        booth: null
+        namicomi: null
+        nicoVideo: null
+        skeb: null
+        fantia: null
+        tumblr: null
+        youtube: null
+        weibo: null
+        naver: null
+        website: null
+        createdAt: '2021-04-19T21:59:45+00:00'
+        updatedAt: '2021-04-19T21:59:45+00:00'
+        version: 1
+      relationships:
+      - id: 8d589c54-8a0f-49fe-bae8-57cbdb2090ec
+        type: manga
+    limit: 5
+    offset: 0
+    total: 72283
+  body_text: null
+  body_b64: null

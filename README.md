@@ -58,12 +58,16 @@ The CLI is a thin presentation layer over an installable Python package — anyt
 |---|---|---|---|
 | **AniList** (graphql.anilist.co) | `animedex anilist` — search / show / character / staff / studio / schedule / trending / user / + 20 long-tail endpoints (28 anonymous, plus 4 auth-required stubs) | `animedex api anilist '<graphql-query>'` | live |
 | **Jikan v4** (api.jikan.moe; MyAnimeList view) | `animedex jikan` — 87 anonymous endpoints across anime / manga / character / person / producer / season / top / random / users / clubs / magazines / genres / watch | `animedex api jikan /anime/52991` | live |
+| **Kitsu** (kitsu.io/api/edge; JSON:API library aggregator) | `animedex kitsu` — 38 anonymous endpoints across anime / manga / characters / people / producers / mappings / streaming / categories / users | `animedex api kitsu /anime/7442` | live |
+| **MangaDex** (api.mangadex.org; scanlation aggregator) | `animedex mangadex` — 26 anonymous endpoints (search / show / feed / chapter / cover / aggregate / statistics / authors / groups / lists) plus 13 authenticated reads (`me` / `my-follows-*` / `my-history` / `my-manga-status` / `my-manga-read-markers`) | `animedex api mangadex /manga/...` | live |
+| **Danbooru** (danbooru.donmai.us; tag-DSL art catalogue) | `animedex danbooru` — 57 anonymous endpoints (search / post / artist / tag / pool / count / autocomplete / iqdb-query / wiki / forum / commentary / votes / versions / moderation / operational) plus 2 authenticated reads (`profile` / `saved-searches`) | `animedex api danbooru /posts.json` | live |
+| **Waifu.im** (api.waifu.im; SFW + NSFW art) | `animedex waifu` — 9 anonymous endpoints (`tags` / `images` / `artists` / per-id + per-slug lookups / `stats-public`) plus 1 authenticated read (`me`) | `animedex api waifu /images?...` | live |
 | **Trace.moe** (api.trace.moe) | `animedex trace` — search by image (`--url` or `--input <bytes>`), `quota` | `animedex api trace /me` | live |
 | **nekos.best v2** (nekos.best/api/v2; SFW art / GIF) | `animedex nekos` — `categories`, `categories-full`, `image <category>`, `search` | `animedex api nekos /husbando` | live |
-| Kitsu, MangaDex, Danbooru, Shikimori, ANN | (high-level commands not yet wired) | `animedex api <backend> <path>` | passthrough only |
-| Ghibli, Waifu.im, AnimeChan, MAL v2 | — | — | not yet implemented |
+| Shikimori, ANN | (high-level commands not yet wired) | `animedex api <backend> <path>` | passthrough only |
+| Ghibli, AnimeChan, MAL v2 | — | — | not yet implemented |
 
-The `animedex api <backend>` passthrough is wired for nine backends — the four high-level ones above plus Kitsu, MangaDex, Danbooru, Shikimori and ANN. Every passthrough call honours the project's read-only firewall (`PUT/PATCH/DELETE` and unwhitelisted `POST` paths are rejected before hitting the wire) and the per-upstream `User-Agent` requirements.
+The `animedex api <backend>` passthrough is wired for ten backends — the eight high-level ones above plus Shikimori and ANN. Every passthrough call honours the project's read-only firewall (`PUT/PATCH/DELETE` and unwhitelisted `POST` paths are rejected before hitting the wire) and the per-upstream `User-Agent` requirements.
 
 ## Try it in 30 seconds
 
@@ -92,7 +96,7 @@ Each command auto-switches between TTY (human-readable, source-marked) and JSON 
 The full documentation lives at <https://animedex.readthedocs.io/en/latest/>. Notable pages:
 
 - **Quickstart** — five progressive examples that cover TTY rendering, `--json`, `--jq`, `--no-cache`, and the Python library.
-- **Tutorials** — systematic per-backend deep-dives (anilist / jikan / trace / nekos), the raw passthrough (`animedex api`), output modes, the `Config` Python entry point, and the `--agent-guide` flag for LLM agents.
+- **Tutorials** — systematic per-backend deep-dives (anilist / jikan / kitsu / mangadex / danbooru / waifu / trace / nekos), the raw passthrough (`animedex api`), output modes, the `Config` Python entry point, and the `--agent-guide` flag for LLM agents.
 - **API reference** — auto-generated from the source docstrings.
 
 ## Human Agency Principle (the top rule)

@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-08T13:01:24Z'
+  label: first
+  backend: mangadex
+  path_slug: statistics_group
+request:
+  method: GET
+  url: https://api.mangadex.org/statistics/group/6f066753-22c8-4e55-83fa-72fd39819dfd
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=600, stale-while-revalidate=15
+    date: Fri, 08 May 2026 13:01:24 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '99'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 2e36d522-cd0e-47c2-8959-40d511ce30ec
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    statistics:
+      6f066753-22c8-4e55-83fa-72fd39819dfd:
+        comments: null
+  body_text: null
+  body_b64: null

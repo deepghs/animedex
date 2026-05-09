@@ -1,0 +1,281 @@
+metadata:
+  captured_at: '2026-05-08T12:53:39Z'
+  label: frieren
+  backend: kitsu
+  path_slug: anime_categories
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/46474/categories
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:39 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"0f6d4ef1ed17990c1f8812571be51340"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: ccf3016d-fe8c-4217-9f42-9357d39e37b3
+    x-runtime: '0.045317'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '10'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/10
+      attributes:
+        createdAt: '2017-05-31T06:38:31.311Z'
+        updatedAt: '2021-10-02T01:30:59.009Z'
+        title: Elf
+        description: |-
+          The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology, in which, elves are described as divine, or near-divine, race of humanoids (Vættir), likened to the Æsir. In common description they are described as sage and immortal beings occupying the threshold between humans and the gods. In some cases humans that were beloved by the gods became elves within their lives. Ancient Elves are delineated into a pair of similar but distinct races; Light Elves (Ljósálfar) and Dark Elves (Svartálfar), each originating from separate homes within the nine worlds of Yggdrasil. Within the Poetic Edda the differences are commonly ascribed as:
+
+          "There is one place there that is called the Elf Home (Álfheimr which is the elven city). People live there that are named the light elves (Ljósálfar). But the dark elves (Dökkálfar) live below in earth, in caves and the dark forest and they are unlike them in appearance - and more unlike them in reality. The Light Elves are brighter than the sun in appearance, but the Dark Elves are blacker than pitch." (Snorri, Gylfaginning 17, Prose Edda)
+        totalMediaCount: 353
+        slug: elf
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/10/relationships/parent
+            related: https://kitsu.io/api/edge/categories/10/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/10/relationships/anime
+            related: https://kitsu.io/api/edge/categories/10/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/10/relationships/drama
+            related: https://kitsu.io/api/edge/categories/10/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/10/relationships/manga
+            related: https://kitsu.io/api/edge/categories/10/manga
+    - id: '25'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/25
+      attributes:
+        createdAt: '2017-05-31T06:38:36.191Z'
+        updatedAt: '2021-10-02T01:30:59.023Z'
+        title: Magic
+        description: Magic is the art of purportedly manipulating aspects of reality either by supernatural means or through
+          knowledge of unknown occult laws.
+        totalMediaCount: 4055
+        slug: magic
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/25/relationships/parent
+            related: https://kitsu.io/api/edge/categories/25/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/25/relationships/anime
+            related: https://kitsu.io/api/edge/categories/25/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/25/relationships/drama
+            related: https://kitsu.io/api/edge/categories/25/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/25/relationships/manga
+            related: https://kitsu.io/api/edge/categories/25/manga
+    - id: '156'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/156
+      attributes:
+        createdAt: '2017-05-31T06:39:22.629Z'
+        updatedAt: '2021-10-02T01:30:58.996Z'
+        title: Fantasy
+        description: |-
+          Fantasy is a genre of fiction that uses magic and other supernatural phenomena as a primary element of plot, theme, or setting. Many works within the genre take place in fictional worlds where magic is common. Fantasy is generally distinguished from science fiction and horror by the expectation that it steers clear of (pseudo-)scientific and macabre themes, respectively, though there is a great deal of overlap between the three (which are subgenres of speculative fiction).
+
+          In popular culture, the genre of fantasy is dominated by its medievalist form, especially since the worldwide success of The Lord of the Rings books by J. R. R. Tolkien. In its broadest sense however, fantasy comprises works by many writers, artists, filmmakers, and musicians, from ancient myths and legends to many recent works embraced by a wide audience today.
+
+          Fantasy is a vibrant area of academic study in a number of disciplines (English, cultural studies, comparative literature, history, medieval studies). Work in this area ranges widely, from the structuralist theory of Tzvetan Todorov, which emphasizes the fantastic as a liminal space, to work on the connections (political, historical, literary) between medievalism and popular culture
+
+          Source: Wiki
+        totalMediaCount: 26105
+        slug: fantasy
+        nsfw: false
+        childCount: 10
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/156/relationships/parent
+            related: https://kitsu.io/api/edge/categories/156/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/156/relationships/anime
+            related: https://kitsu.io/api/edge/categories/156/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/156/relationships/drama
+            related: https://kitsu.io/api/edge/categories/156/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/156/relationships/manga
+            related: https://kitsu.io/api/edge/categories/156/manga
+    - id: '157'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/157
+      attributes:
+        createdAt: '2017-05-31T06:39:23.663Z'
+        updatedAt: '2021-10-02T01:30:59.126Z'
+        title: Adventure
+        description: Adventures are exciting stories, with new experiences or exotic locales. Adventures are designed to provide
+          an action-filled, energetic experience for the viewer. Rather than the predominant emphasis on violence and fighting
+          that is found in pure action anime, however, the viewer of adventures can live vicariously through the travels,
+          conquests, explorations, creation of empires, struggles and situations that confront the main characters, actual
+          historical figures or protagonists. Under the category of adventures, we can include traditional swashbucklers,
+          serialized films, and historical spectacles, searches or expeditions for lost continents, "jungle" and "desert"
+          epics, treasure hunts and quests, disaster films, and heroic journeys or searches for the unknown. Adventure films
+          are often, but not always, set in an historical period, and may include adapted stories of historical or literary
+          adventure heroes, kings, battles, rebellion, or piracy.
+        totalMediaCount: 10744
+        slug: adventure
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/157/relationships/parent
+            related: https://kitsu.io/api/edge/categories/157/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/157/relationships/anime
+            related: https://kitsu.io/api/edge/categories/157/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/157/relationships/drama
+            related: https://kitsu.io/api/edge/categories/157/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/157/relationships/manga
+            related: https://kitsu.io/api/edge/categories/157/manga
+    - id: '169'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/169
+      attributes:
+        createdAt: '2017-05-31T06:39:25.594Z'
+        updatedAt: '2021-10-02T01:31:01.137Z'
+        title: Slice of Life
+        description: The antics of the protagonists do not take place in some exotic setting or time, but in everyday life.
+          When not "at the job" this means getting up in the morning, making meals, house cleaning, going shopping or out
+          to eat, visiting the bath house or spa, leisure activities in the spare time, etc. The time "on the job" for students
+          is School Life, for others working in their profession. Daily Life is basically a synonym for everything normal,
+          repetitive, and trivial happening to your average person.
+        totalMediaCount: 10645
+        slug: slice-of-life
+        nsfw: false
+        childCount: 1
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/169/relationships/parent
+            related: https://kitsu.io/api/edge/categories/169/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/169/relationships/anime
+            related: https://kitsu.io/api/edge/categories/169/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/169/relationships/drama
+            related: https://kitsu.io/api/edge/categories/169/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/169/relationships/manga
+            related: https://kitsu.io/api/edge/categories/169/manga
+    - id: '184'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/184
+      attributes:
+        createdAt: '2017-05-31T06:39:28.357Z'
+        updatedAt: '2021-10-02T01:30:59.565Z'
+        title: Drama
+        description: Drama is a form of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone.
+        totalMediaCount: 17743
+        slug: drama
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/184/relationships/parent
+            related: https://kitsu.io/api/edge/categories/184/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/184/relationships/anime
+            related: https://kitsu.io/api/edge/categories/184/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/184/relationships/drama
+            related: https://kitsu.io/api/edge/categories/184/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/184/relationships/manga
+            related: https://kitsu.io/api/edge/categories/184/manga
+    - id: '243'
+      type: categories
+      links:
+        self: https://kitsu.io/api/edge/categories/243
+      attributes:
+        createdAt: '2018-05-16T02:02:14.800Z'
+        updatedAt: '2021-10-02T01:31:02.373Z'
+        title: Shounen
+        description: Media targeting boys roughly 8-18
+        totalMediaCount: 3580
+        slug: shounen
+        nsfw: false
+        childCount: 0
+      relationships:
+        parent:
+          links:
+            self: https://kitsu.io/api/edge/categories/243/relationships/parent
+            related: https://kitsu.io/api/edge/categories/243/parent
+        anime:
+          links:
+            self: https://kitsu.io/api/edge/categories/243/relationships/anime
+            related: https://kitsu.io/api/edge/categories/243/anime
+        drama:
+          links:
+            self: https://kitsu.io/api/edge/categories/243/relationships/drama
+            related: https://kitsu.io/api/edge/categories/243/drama
+        manga:
+          links:
+            self: https://kitsu.io/api/edge/categories/243/relationships/manga
+            related: https://kitsu.io/api/edge/categories/243/manga
+    meta:
+      count: 7
+    links:
+      first: https://kitsu.io/api/edge/anime/46474/categories?page%5Blimit%5D=10&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/46474/categories?page%5Blimit%5D=10&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

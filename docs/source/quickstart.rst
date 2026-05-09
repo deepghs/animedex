@@ -118,7 +118,7 @@ import …`` away:
 
 .. code-block:: python
 
-   from animedex.backends import anilist, jikan, nekos
+   from animedex.backends import anilist, jikan, kitsu, mangadex, danbooru, waifu, nekos
 
    a = anilist.show(154587)
    # Rich models preserve upstream field names verbatim per the
@@ -129,6 +129,21 @@ import …`` away:
    m = jikan.show(52991)
    print(m.title, m.score, m.source_tag.backend)
    # Sousou no Frieren 9.31 jikan
+
+   k = kitsu.show(7442)
+   print(k.attributes.canonicalTitle, k.attributes.status)
+   # Attack on Titan finished
+
+   md = mangadex.show("801513ba-a712-498c-8f57-cae55b38cc92")
+   print(md.attributes.title.get("en"), md.attributes.status)
+   # Berserk ongoing
+
+   posts = danbooru.search("touhou marisa rating:g order:score", limit=3)
+   for p in posts:
+       print(p.id, p.rating, p.file_url)
+
+   for img in waifu.images(included_tags=["waifu"], page_size=3):
+       print(img.id, img.url, img.isNsfw)
 
    for img in nekos.image("husbando", amount=3):
        print(img.url, img.artist_name, img.source_tag.backend)

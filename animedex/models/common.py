@@ -205,6 +205,7 @@ REASONS = frozenset(
         "read-only",
         "unknown-backend",
         # upstream-side, rough cause known
+        "rate-limited",
         "upstream-error",
         "upstream-decode",
         "upstream-shape",

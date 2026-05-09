@@ -1,0 +1,55 @@
+metadata:
+  captured_at: '2026-05-08T13:01:17Z'
+  label: berserk-only
+  backend: mangadex
+  path_slug: statistics_manga_search
+request:
+  method: GET
+  url: https://api.mangadex.org/statistics/manga?manga[]=801513ba-a712-498c-8f57-cae55b38cc92
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=600, stale-while-revalidate=15
+    date: Fri, 08 May 2026 13:01:17 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '187'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: eb754549-37bf-41d3-ba35-d351ff7ba63e
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    statistics:
+      801513ba-a712-498c-8f57-cae55b38cc92:
+        comments:
+          threadId: 5373
+          repliesCount: 488
+        follows: 204038
+        rating:
+          average: 9.6863
+          bayesian: 9.680130422635926
+        unavailableChaptersCount: 0
+  body_text: null
+  body_b64: null

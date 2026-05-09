@@ -1,0 +1,47 @@
+metadata:
+  captured_at: '2026-05-08T13:46:54Z'
+  label: default
+  backend: mangadex
+  path_slug: manga_status_by_id
+request:
+  method: GET
+  url: https://api.mangadex.org/manga/801513ba-a712-498c-8f57-cae55b38cc92/status
+  headers:
+    Authorization: Bearer eyJh...kwmQ (len=1493)
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: no-cache, private
+    date: Fri, 08 May 2026 13:46:54 GMT
+    content-encoding: gzip
+    x-cache: PASS
+    accept-ranges: bytes
+    content-length: '49'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 5b9b09a9-f56b-4c5d-9108-a30f2d2f436c
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    status: null
+  body_text: null
+  body_b64: null

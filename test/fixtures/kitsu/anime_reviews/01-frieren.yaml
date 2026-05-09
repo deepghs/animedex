@@ -1,0 +1,48 @@
+metadata:
+  captured_at: '2026-05-08T12:53:36Z'
+  label: frieren
+  backend: kitsu
+  path_slug: anime_reviews
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/46474/reviews?page%5Blimit%5D=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:36 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"7a6ebe209edfc0180858cc7b3c990dc4"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 667f3ee0-afce-4dea-9279-3fa74512a4d3
+    x-runtime: '0.052266'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data: []
+    meta:
+      count: 0
+    links:
+      first: https://kitsu.io/api/edge/anime/46474/reviews?page%5Blimit%5D=5&page%5Boffset%5D=0
+      last: https://kitsu.io/api/edge/anime/46474/reviews?page%5Blimit%5D=5&page%5Boffset%5D=0
+  body_text: null
+  body_b64: null

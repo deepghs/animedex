@@ -1,0 +1,99 @@
+metadata:
+  captured_at: '2026-05-08T12:30:42Z'
+  label: animated-true
+  backend: waifu
+  path_slug: images
+request:
+  method: GET
+  url: https://api.waifu.im/images?isAnimated=true&pageSize=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:30:42 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    X-Test: api.waifu.im
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, HEAD, PATCH, POST, OPTIONS, DELETE, PUT
+    Access-Control-Allow-Headers: Accept-Version, Authorization, Content-Type
+    Version: v7
+    X-Request-ID: dc13c7f1cb061407001609051a62176c
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    vary: accept-encoding
+    Report-To: <scrubbed-at-capture>
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    items:
+    - id: 1521
+      perceptualHash: f291ad6290477765
+      extension: .gif
+      dominantColor: '#B4ADAE'
+      source: https://reddit.com/ii5ry4/
+      artists: []
+      uploaderId: null
+      uploadedAt: '2021-11-02T11:16:19.048684Z'
+      isNsfw: false
+      isAnimated: true
+      width: 800
+      height: 1054
+      byteSize: 50278178
+      url: https://cdn.waifu.im/1521.gif
+      tags:
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 5
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    - id: 6488
+      perceptualHash: ad9af225891b36d2
+      extension: .gif
+      dominantColor: '#B2ADA9'
+      source: null
+      artists: []
+      uploaderId: null
+      uploadedAt: '2021-11-02T11:16:19.048684Z'
+      isNsfw: false
+      isAnimated: true
+      width: 600
+      height: 332
+      byteSize: 1734874
+      url: https://cdn.waifu.im/6488.gif
+      tags:
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 6
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    pageNumber: 1
+    totalPages: 3
+    totalCount: 5
+    maxPageSize: -1
+    defaultPageSize: 1
+    hasPreviousPage: false
+    hasNextPage: true
+  body_text: null
+  body_b64: null

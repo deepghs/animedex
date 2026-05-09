@@ -1,0 +1,172 @@
+metadata:
+  captured_at: '2026-05-08T12:30:31Z'
+  label: included-waifu-page-size-3
+  backend: waifu
+  path_slug: images
+request:
+  method: GET
+  url: https://api.waifu.im/images?included_tags=waifu&pageSize=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:30:31 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    X-Test: api.waifu.im
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, HEAD, PATCH, POST, OPTIONS, DELETE, PUT
+    Access-Control-Allow-Headers: Accept-Version, Authorization, Content-Type
+    Version: v7
+    X-Request-ID: 27ff55fd15eb47bb3bb63257afd1d76f
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    vary: accept-encoding
+    Report-To: <scrubbed-at-capture>
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    items:
+    - id: 7256
+      perceptualHash: eb32d0d0a4af91ce
+      extension: .jpg
+      dominantColor: '#9F7D82'
+      source: https://www.pixiv.net/en/artworks/94524387
+      artists: []
+      uploaderId: null
+      uploadedAt: '2021-12-03T10:32:17.937655Z'
+      isNsfw: false
+      isAnimated: false
+      width: 1000
+      height: 1511
+      byteSize: 1258201
+      url: https://cdn.waifu.im/7256.jpg
+      tags:
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 2
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    - id: 7810
+      perceptualHash: caaab6a5894d3e98
+      extension: .jpg
+      dominantColor: '#90868A'
+      source: https://www.pixiv.net/en/artworks/90118979
+      artists:
+      - id: 900
+        name: イルレ
+        patreon: null
+        pixiv: https://www.pixiv.net/users/1911006
+        twitter: https://twitter.com/mingou91
+        deviantArt: null
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      uploaderId: null
+      uploadedAt: '2022-09-05T23:17:35.726606Z'
+      isNsfw: false
+      isAnimated: false
+      width: 1106
+      height: 1754
+      byteSize: 726640
+      url: https://cdn.waifu.im/7810.jpg
+      tags:
+      - id: 11
+        name: Uniform
+        slug: uniform
+        description: 'Women wearing any kind of uniform, cosplay etc... '
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 2
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    - id: 7803
+      perceptualHash: ff34b262818b8dc9
+      extension: .jpg
+      dominantColor: '#B09EB8'
+      source: https://www.pixiv.net/en/artworks/99872746
+      artists:
+      - id: 207
+        name: yulha
+        patreon: null
+        pixiv: https://www.pixiv.net/users/40337923
+        twitter: https://twitter.com/yulha___
+        deviantArt: null
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      uploaderId: null
+      uploadedAt: '2022-08-30T20:51:39.885999Z'
+      isNsfw: false
+      isAnimated: false
+      width: 3000
+      height: 5825
+      byteSize: 6391100
+      url: https://cdn.waifu.im/7803.jpg
+      tags:
+      - id: 7
+        name: Oppai
+        slug: oppai
+        description: Large-breasted women
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 15
+        name: Raiden Shogun
+        slug: raiden-shogun
+        description: Genshin Impact's Raiden Shogun is a fierce lady in the Genshin ranks.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 18
+        name: Genshin Impact
+        slug: genshin-impact
+        description: Genshin impact characters
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 4
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    pageNumber: 1
+    totalPages: 415
+    totalCount: 1244
+    maxPageSize: -1
+    defaultPageSize: 1
+    hasPreviousPage: false
+    hasNextPage: true
+  body_text: null
+  body_b64: null

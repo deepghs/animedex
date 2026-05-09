@@ -1,0 +1,127 @@
+metadata:
+  captured_at: '2026-05-08T13:07:59Z'
+  label: page1
+  backend: danbooru
+  path_slug: media_assets_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/media_assets.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:59 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"f954b9f15bede9b3e8085ca97a51c223"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b0c4fe609aae-KIX
+    server-timing: sql.queries;count=4, rails.total_time;dur=4.9591, rails.cpu_time;dur=3.8386, rails.idle_time;dur=1.1204,
+      rails.sql_time;dur=1.433, rails.view_time;dur=3.0008, rails.allocations;count=2573, request.allocations;count=3104,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=4.7729, request.total_time;dur=5.8936, request.queue_time_0;dur=2.3901,
+      request.queue_time_1;dur=96.0
+    x-runtime: '0.005893630981445313'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 48185102
+    created_at: '2026-05-08T09:07:43.592-04:00'
+    updated_at: '2026-05-08T09:07:45.461-04:00'
+    md5: 295d5f5e133350347ae8c887aabada44
+    file_ext: jpg
+    file_size: 1626849
+    image_width: 1158
+    image_height: 1689
+    duration: null
+    status: active
+    file_key: QptzJHhYT
+    is_public: true
+    pixel_hash: 5e8971f7c70437ad3ca5415a9b8ada1a
+    variants:
+    - type: 180x180
+      url: https://cdn.donmai.us/180x180/29/5d/295d5f5e133350347ae8c887aabada44.jpg
+      width: 123
+      height: 180
+      file_ext: jpg
+    - type: 360x360
+      url: https://cdn.donmai.us/360x360/29/5d/295d5f5e133350347ae8c887aabada44.jpg
+      width: 247
+      height: 360
+      file_ext: jpg
+    - type: 720x720
+      url: https://cdn.donmai.us/720x720/29/5d/295d5f5e133350347ae8c887aabada44.webp
+      width: 494
+      height: 720
+      file_ext: webp
+    - type: sample
+      url: https://cdn.donmai.us/sample/29/5d/sample-295d5f5e133350347ae8c887aabada44.jpg
+      width: 850
+      height: 1240
+      file_ext: jpg
+    - type: original
+      url: https://cdn.donmai.us/original/29/5d/295d5f5e133350347ae8c887aabada44.jpg
+      width: 1158
+      height: 1689
+      file_ext: jpg
+  - id: 48185101
+    created_at: '2026-05-08T09:07:20.793-04:00'
+    updated_at: '2026-05-08T09:07:22.333-04:00'
+    md5: a962fddf854312101289b05fb641f5f9
+    file_ext: jpg
+    file_size: 522148
+    image_width: 2217
+    image_height: 4096
+    duration: null
+    status: active
+    file_key: 6ocU8rhaN
+    is_public: true
+    pixel_hash: 9ef37914b374090b82f8d4fcf57b06fd
+    variants:
+    - type: 180x180
+      url: https://cdn.donmai.us/180x180/a9/62/a962fddf854312101289b05fb641f5f9.jpg
+      width: 97
+      height: 180
+      file_ext: jpg
+    - type: 360x360
+      url: https://cdn.donmai.us/360x360/a9/62/a962fddf854312101289b05fb641f5f9.jpg
+      width: 195
+      height: 360
+      file_ext: jpg
+    - type: 720x720
+      url: https://cdn.donmai.us/720x720/a9/62/a962fddf854312101289b05fb641f5f9.webp
+      width: 390
+      height: 720
+      file_ext: webp
+    - type: sample
+      url: https://cdn.donmai.us/sample/a9/62/sample-a962fddf854312101289b05fb641f5f9.jpg
+      width: 850
+      height: 1570
+      file_ext: jpg
+    - type: original
+      url: https://cdn.donmai.us/original/a9/62/a962fddf854312101289b05fb641f5f9.jpg
+      width: 2217
+      height: 4096
+      file_ext: jpg
+  body_text: null
+  body_b64: null

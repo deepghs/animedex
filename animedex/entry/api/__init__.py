@@ -213,7 +213,7 @@ def _resolve_cache(no_cache: bool):
 
 @click.group(name="api")
 def api_group() -> None:
-    """Raw HTTP / GraphQL passthrough to one of the 9 upstream backends.
+    """Raw HTTP / GraphQL passthrough to one of the 10 upstream backends.
 
     Each subcommand wraps one backend's raw API surface. The
     dispatcher injects the project ``User-Agent``, runs the read-only
@@ -260,9 +260,10 @@ def api_group() -> None:
       shikimori  https://shikimori.io/api/doc
       ann        https://www.animenewsnetwork.com/encyclopedia/api.php
       nekos      https://docs.nekos.best/
+      waifu      https://docs.waifu.im/
     \f
 
-    Backend: animedex (local; routes to one of 9 upstream backends).
+    Backend: animedex (local; routes to one of 10 upstream backends).
 
     Rate limit: not applicable at this level (each backend's bucket
     applies inside the call).
@@ -296,6 +297,7 @@ from animedex.entry.api import mangadex  # noqa: E402, F401
 from animedex.entry.api import nekos  # noqa: E402, F401
 from animedex.entry.api import shikimori  # noqa: E402, F401
 from animedex.entry.api import trace  # noqa: E402, F401
+from animedex.entry.api import waifu  # noqa: E402, F401
 
 
 __all__ = ["api_group"]

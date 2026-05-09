@@ -1,0 +1,61 @@
+metadata:
+  captured_at: '2026-05-08T13:08:11Z'
+  label: page1
+  backend: danbooru
+  path_slug: forum_post_votes_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/forum_post_votes.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:08:10 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"b54d09bc94de8c0dc31962316f06d8e5"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b10e0c46cffb-KIX
+    server-timing: sql.queries;count=2, rails.total_time;dur=3.5717, rails.cpu_time;dur=2.7805, rails.idle_time;dur=0.7913,
+      rails.sql_time;dur=0.7271, rails.view_time;dur=0.9289, rails.allocations;count=2032, request.allocations;count=2636,
+      request.gc_time;dur=0.3909, request.gc_count;count=0, request.cpu_time;dur=3.4763, request.total_time;dur=4.2676, request.queue_time_0;dur=1.0955,
+      request.queue_time_1;dur=94.0001
+    x-runtime: '0.004267562866210937'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 169297
+    forum_post_id: 438278
+    creator_id: 454670
+    score: 1
+    created_at: '2026-05-08T09:03:58.453-04:00'
+    updated_at: '2026-05-08T09:03:58.453-04:00'
+  - id: 169296
+    forum_post_id: 438248
+    creator_id: 779867
+    score: -1
+    created_at: '2026-05-08T08:57:18.854-04:00'
+    updated_at: '2026-05-08T08:57:18.854-04:00'
+  body_text: null
+  body_b64: null

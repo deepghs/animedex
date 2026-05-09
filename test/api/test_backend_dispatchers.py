@@ -109,6 +109,15 @@ def _ann_caller(fixture):
     return lambda **kw: ann.call(path=path, **kw)
 
 
+def _waifu_caller(fixture):
+    from animedex.api import waifu
+
+    url = fixture["request"]["url"]
+    base = "https://api.waifu.im"
+    path = url[len(base) :] if url.startswith(base) else url
+    return lambda **kw: waifu.call(path=path, **kw)
+
+
 def _nekos_caller(fixture):
     from animedex.api import nekos
 
@@ -131,11 +140,78 @@ SUITES = [
     ("kitsu", "anime_streaming_links", _kitsu_caller),
     ("kitsu", "anime_mappings", _kitsu_caller),
     ("kitsu", "host_app_parity", _kitsu_caller),
+    ("kitsu", "trending_anime", _kitsu_caller),
+    ("kitsu", "trending_manga", _kitsu_caller),
+    ("kitsu", "categories", _kitsu_caller),
+    ("kitsu", "categories_by_id", _kitsu_caller),
+    ("kitsu", "manga_by_id", _kitsu_caller),
+    ("kitsu", "manga_search", _kitsu_caller),
+    ("kitsu", "characters", _kitsu_caller),
+    ("kitsu", "characters_by_id", _kitsu_caller),
+    ("kitsu", "people", _kitsu_caller),
+    ("kitsu", "people_by_id", _kitsu_caller),
+    ("kitsu", "people_voices", _kitsu_caller),
+    ("kitsu", "people_castings", _kitsu_caller),
+    ("kitsu", "producers", _kitsu_caller),
+    ("kitsu", "producers_by_id", _kitsu_caller),
+    ("kitsu", "genres", _kitsu_caller),
+    ("kitsu", "genres_by_id", _kitsu_caller),
+    ("kitsu", "streamers", _kitsu_caller),
+    ("kitsu", "franchises", _kitsu_caller),
+    ("kitsu", "franchises_by_id", _kitsu_caller),
+    ("kitsu", "anime_characters", _kitsu_caller),
+    ("kitsu", "anime_staff", _kitsu_caller),
+    ("kitsu", "anime_episodes", _kitsu_caller),
+    ("kitsu", "anime_reviews", _kitsu_caller),
+    ("kitsu", "anime_genres", _kitsu_caller),
+    ("kitsu", "anime_categories", _kitsu_caller),
+    ("kitsu", "anime_relations", _kitsu_caller),
+    ("kitsu", "anime_productions", _kitsu_caller),
+    ("kitsu", "manga_characters", _kitsu_caller),
+    ("kitsu", "manga_staff", _kitsu_caller),
+    ("kitsu", "manga_chapters", _kitsu_caller),
+    ("kitsu", "manga_genres", _kitsu_caller),
+    ("kitsu", "users_by_id", _kitsu_caller),
+    ("kitsu", "users_library_entries", _kitsu_caller),
+    ("kitsu", "users_stats", _kitsu_caller),
     ("mangadex", "manga_search", _mangadex_caller),
     ("mangadex", "manga_by_id", _mangadex_caller),
     ("mangadex", "manga_feed", _mangadex_caller),
     ("mangadex", "manga_meta", _mangadex_caller),
     ("mangadex", "at_home_server", _mangadex_caller),
+    ("mangadex", "chapter_by_id", _mangadex_caller),
+    ("mangadex", "cover_by_id", _mangadex_caller),
+    ("mangadex", "ping", _mangadex_caller),
+    ("mangadex", "manga_aggregate", _mangadex_caller),
+    ("mangadex", "manga_recommendation", _mangadex_caller),
+    ("mangadex", "manga_random", _mangadex_caller),
+    ("mangadex", "manga_tag", _mangadex_caller),
+    ("mangadex", "chapter_search", _mangadex_caller),
+    ("mangadex", "cover_search", _mangadex_caller),
+    ("mangadex", "author_search", _mangadex_caller),
+    ("mangadex", "author_by_id", _mangadex_caller),
+    ("mangadex", "group_search", _mangadex_caller),
+    ("mangadex", "group_by_id", _mangadex_caller),
+    ("mangadex", "statistics_manga_single", _mangadex_caller),
+    ("mangadex", "statistics_manga_search", _mangadex_caller),
+    ("mangadex", "statistics_chapter_single", _mangadex_caller),
+    ("mangadex", "statistics_chapter_search", _mangadex_caller),
+    ("mangadex", "statistics_group", _mangadex_caller),
+    ("mangadex", "report_reasons_category", _mangadex_caller),
+    # Authenticated read surface (Bearer; tokens redacted in fixtures)
+    ("mangadex", "user_me", _mangadex_caller),
+    ("mangadex", "user_follows_manga", _mangadex_caller),
+    ("mangadex", "user_follows_manga_by_id_not_followed", _mangadex_caller),
+    ("mangadex", "user_follows_group", _mangadex_caller),
+    ("mangadex", "user_follows_group_by_id_not_followed", _mangadex_caller),
+    ("mangadex", "user_follows_user", _mangadex_caller),
+    ("mangadex", "user_follows_list", _mangadex_caller),
+    ("mangadex", "user_follows_manga_feed", _mangadex_caller),
+    ("mangadex", "user_list", _mangadex_caller),
+    ("mangadex", "user_history", _mangadex_caller),
+    ("mangadex", "manga_status", _mangadex_caller),
+    ("mangadex", "manga_status_by_id", _mangadex_caller),
+    ("mangadex", "manga_read_markers", _mangadex_caller),
     ("trace", "me", _trace_caller),
     ("trace", "search", _trace_caller),
     ("danbooru", "posts_search", _danbooru_caller),
@@ -144,6 +220,63 @@ SUITES = [
     ("danbooru", "artists_search", _danbooru_caller),
     ("danbooru", "counts", _danbooru_caller),
     ("danbooru", "pools_by_id", _danbooru_caller),
+    # Long-tail anonymous-readable feeds (versions / votes / events /
+    # commentary / wiki / forum / moderation / operational). All share
+    # the same JSON list-of-records shape and replay through the same
+    # caller; the catch-all DanbooruRecord rich type round-trips them.
+    ("danbooru", "ai_tags_search", _danbooru_caller),
+    ("danbooru", "artist_commentaries_search", _danbooru_caller),
+    ("danbooru", "artist_commentary_versions_search", _danbooru_caller),
+    ("danbooru", "artist_versions_search", _danbooru_caller),
+    ("danbooru", "autocomplete_search", _danbooru_caller),
+    ("danbooru", "bans_search", _danbooru_caller),
+    ("danbooru", "bulk_update_requests_search", _danbooru_caller),
+    ("danbooru", "comment_votes_search", _danbooru_caller),
+    ("danbooru", "comments_by_id", _danbooru_caller),
+    ("danbooru", "comments_search", _danbooru_caller),
+    ("danbooru", "dtext_links_search", _danbooru_caller),
+    ("danbooru", "favorite_groups_search", _danbooru_caller),
+    ("danbooru", "favorites_search", _danbooru_caller),
+    ("danbooru", "forum_post_votes_search", _danbooru_caller),
+    ("danbooru", "forum_posts_search", _danbooru_caller),
+    ("danbooru", "forum_topic_visits_search", _danbooru_caller),
+    ("danbooru", "forum_topics_search", _danbooru_caller),
+    ("danbooru", "iqdb_queries", _danbooru_caller),
+    ("danbooru", "jobs_search", _danbooru_caller),
+    ("danbooru", "media_assets_search", _danbooru_caller),
+    ("danbooru", "media_metadata_search", _danbooru_caller),
+    ("danbooru", "metrics_search", _danbooru_caller),
+    ("danbooru", "mod_actions_search", _danbooru_caller),
+    ("danbooru", "note_versions_search", _danbooru_caller),
+    ("danbooru", "notes_by_id", _danbooru_caller),
+    ("danbooru", "notes_search", _danbooru_caller),
+    ("danbooru", "pool_versions_search", _danbooru_caller),
+    ("danbooru", "post_appeals_search", _danbooru_caller),
+    ("danbooru", "post_approvals_search", _danbooru_caller),
+    ("danbooru", "post_disapprovals_search", _danbooru_caller),
+    ("danbooru", "post_events_search", _danbooru_caller),
+    ("danbooru", "post_flags_search", _danbooru_caller),
+    ("danbooru", "post_replacements_search", _danbooru_caller),
+    ("danbooru", "post_versions_search", _danbooru_caller),
+    ("danbooru", "post_votes_search", _danbooru_caller),
+    ("danbooru", "rate_limits_search", _danbooru_caller),
+    ("danbooru", "reactions_search", _danbooru_caller),
+    ("danbooru", "recommended_posts_search", _danbooru_caller),
+    ("danbooru", "related_tag_search", _danbooru_caller),
+    ("danbooru", "tag_aliases_search", _danbooru_caller),
+    ("danbooru", "tag_implications_search", _danbooru_caller),
+    ("danbooru", "tag_versions_search", _danbooru_caller),
+    ("danbooru", "upload_media_assets_search", _danbooru_caller),
+    ("danbooru", "uploads_search", _danbooru_caller),
+    ("danbooru", "user_events_search", _danbooru_caller),
+    ("danbooru", "user_feedbacks_search", _danbooru_caller),
+    ("danbooru", "users_by_id", _danbooru_caller),
+    ("danbooru", "users_search", _danbooru_caller),
+    ("danbooru", "wiki_page_versions_search", _danbooru_caller),
+    ("danbooru", "wiki_pages_by_id", _danbooru_caller),
+    ("danbooru", "wiki_pages_search", _danbooru_caller),
+    ("danbooru", "profile", _danbooru_caller),
+    ("danbooru", "saved_searches", _danbooru_caller),
     ("shikimori", "animes_by_id", _shikimori_caller),
     ("shikimori", "animes_search", _shikimori_caller),
     ("shikimori", "calendar", _shikimori_caller),
@@ -159,6 +292,16 @@ SUITES = [
     ("nekos", "waifu", _nekos_caller),
     ("nekos", "baka", _nekos_caller),
     ("nekos", "search", _nekos_caller),
+    ("waifu", "tags", _waifu_caller),
+    ("waifu", "tags_by_id", _waifu_caller),
+    ("waifu", "tags_by_slug", _waifu_caller),
+    ("waifu", "artists", _waifu_caller),
+    ("waifu", "artists_by_id", _waifu_caller),
+    ("waifu", "artists_by_name", _waifu_caller),
+    ("waifu", "images", _waifu_caller),
+    ("waifu", "images_by_id", _waifu_caller),
+    ("waifu", "stats_public", _waifu_caller),
+    ("waifu", "users_me", _waifu_caller),
 ]
 
 
@@ -238,6 +381,7 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
             "nekos",
             "shikimori",
             "trace",
+            "waifu",
         ):
             monkeypatch.setattr(f"animedex.api.{mod_name}._dispatch_call", _fake_dispatch_call)
         return captured
@@ -294,6 +438,12 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
         from animedex.api import nekos
 
         nekos.call(path="/husbando", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_waifu_threads_timeout_seconds(self, captured):
+        from animedex.api import waifu
+
+        waifu.call(path="/tags", timeout_seconds=5.0)
         assert captured[-1].get("timeout_seconds") == 5.0
 
     def test_default_omits_timeout_seconds_to_use_dispatcher_default(self, captured):

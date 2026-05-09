@@ -1,0 +1,229 @@
+metadata:
+  captured_at: '2026-05-08T12:53:19Z'
+  label: all
+  backend: kitsu
+  path_slug: streamers
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/streamers
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:19 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"ea30c0cccab2c1704c4523425906dcac"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 91624fc6-4bff-4b9a-84f2-bd034241e54d
+    x-runtime: '0.029732'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '1'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/1
+      attributes:
+        createdAt: null
+        updatedAt: null
+        siteName: Hulu
+        streamingLinksCount: 760
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/1/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/1/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/1/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/1/videos
+    - id: '2'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/2
+      attributes:
+        createdAt: null
+        updatedAt: null
+        siteName: Funimation
+        streamingLinksCount: 319
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/2/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/2/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/2/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/2/videos
+    - id: '3'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/3
+      attributes:
+        createdAt: null
+        updatedAt: null
+        siteName: Crunchyroll
+        streamingLinksCount: 742
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/3/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/3/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/3/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/3/videos
+    - id: '4'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/4
+      attributes:
+        createdAt: null
+        updatedAt: '2020-04-03T17:42:39.412Z'
+        siteName: CONtv
+        streamingLinksCount: 57
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/4/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/4/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/4/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/4/videos
+    - id: '6'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/6
+      attributes:
+        createdAt: null
+        updatedAt: null
+        siteName: Netflix
+        streamingLinksCount: 66
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/6/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/6/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/6/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/6/videos
+    - id: '7'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/7
+      attributes:
+        createdAt: '2018-01-31T06:49:25.536Z'
+        updatedAt: '2018-01-31T06:49:25.536Z'
+        siteName: HIDIVE
+        streamingLinksCount: 0
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/7/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/7/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/7/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/7/videos
+    - id: '8'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/8
+      attributes:
+        createdAt: '2018-01-31T07:01:01.878Z'
+        updatedAt: '2018-01-31T07:01:01.878Z'
+        siteName: TubiTV
+        streamingLinksCount: 0
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/8/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/8/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/8/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/8/videos
+    - id: '9'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/9
+      attributes:
+        createdAt: '2018-01-31T07:12:11.124Z'
+        updatedAt: '2018-01-31T07:12:11.124Z'
+        siteName: Amazon
+        streamingLinksCount: 0
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/9/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/9/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/9/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/9/videos
+    - id: '10'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/10
+      attributes:
+        createdAt: '2018-04-10T21:34:01.968Z'
+        updatedAt: '2018-04-10T21:34:01.968Z'
+        siteName: YouTube
+        streamingLinksCount: 0
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/10/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/10/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/10/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/10/videos
+    - id: '11'
+      type: streamers
+      links:
+        self: https://kitsu.io/api/edge/streamers/11
+      attributes:
+        createdAt: '2020-04-03T17:50:02.540Z'
+        updatedAt: '2020-04-03T17:51:02.339Z'
+        siteName: AnimeLab
+        streamingLinksCount: 0
+      relationships:
+        streamingLinks:
+          links:
+            self: https://kitsu.io/api/edge/streamers/11/relationships/streaming-links
+            related: https://kitsu.io/api/edge/streamers/11/streaming-links
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/streamers/11/relationships/videos
+            related: https://kitsu.io/api/edge/streamers/11/videos
+    meta:
+      count: 11
+    links:
+      first: https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=10
+      last: https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=1
+  body_text: null
+  body_b64: null

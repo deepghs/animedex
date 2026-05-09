@@ -1,0 +1,68 @@
+metadata:
+  captured_at: '2026-05-08T13:47:04Z'
+  label: default
+  backend: danbooru
+  path_slug: saved_searches
+request:
+  method: GET
+  url: https://danbooru.donmai.us/saved_searches.json?limit=3
+  headers:
+    Authorization: Basic ZGVl...Zw== (len=48)
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:47:04 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"e9cc6a87178e32bb88dc849bafe19b3e"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88ea094e79fcb3-KIX
+    server-timing: sql.queries;count=5, rails.total_time;dur=7.9243, rails.cpu_time;dur=6.2153, rails.idle_time;dur=1.709,
+      rails.sql_time;dur=2.1005, rails.view_time;dur=1.6891, rails.allocations;count=3302, request.allocations;count=3845,
+      request.gc_time;dur=0.0, request.gc_count;count=0, request.cpu_time;dur=7.4215, request.total_time;dur=9.1303, request.queue_time_0;dur=0.747,
+      request.queue_time_1;dur=95.0
+    x-runtime: '0.009130287170410156'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 593202
+    user_id: 605127
+    query: duke_(inu_daimyou)
+    created_at: '2019-12-27T15:47:31.029-05:00'
+    updated_at: '2021-09-18T05:12:17.441-04:00'
+    labels: []
+  - id: 560647
+    user_id: 605127
+    query: space_cat_(meme)
+    created_at: '2019-10-08T17:22:48.928-04:00'
+    updated_at: '2019-10-08T17:22:48.928-04:00'
+    labels: []
+  - id: 558640
+    user_id: 605127
+    query: pool:5924
+    created_at: '2019-10-03T16:42:22.730-04:00'
+    updated_at: '2019-10-03T16:42:22.730-04:00'
+    labels: []
+  body_text: null
+  body_b64: null

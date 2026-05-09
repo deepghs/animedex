@@ -1,0 +1,160 @@
+metadata:
+  captured_at: '2026-05-08T13:01:00Z'
+  label: page1
+  backend: mangadex
+  path_slug: chapter_search
+request:
+  method: GET
+  url: https://api.mangadex.org/chapter?limit=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Fri, 08 May 2026 13:01:00 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    content-length: '641'
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: 53fd9adb-8143-4a07-a9ff-aec2b9a7e36e
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 0aaf8b27-0013-4ae0-8935-91a089466874
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '1'
+        title: ''
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2018-01-15T16:38:24+00:00'
+        readableAt: '2018-01-15T16:38:24+00:00'
+        createdAt: '2018-01-15T16:38:24+00:00'
+        updatedAt: '2024-12-30T13:12:39+00:00'
+        version: 3
+        pages: 15
+      relationships:
+      - id: caf0d1da-a790-49d0-833c-ce74d651c8a1
+        type: scanlation_group
+      - id: 127820bd-8fc5-47b8-8782-e680317bf41d
+        type: manga
+      - id: 16cf9cc6-78a4-4037-abdc-abf9145d74c8
+        type: user
+    - id: bbf176a0-ea53-4b8b-8e23-8aa192e838d5
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '2'
+        title: ''
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2018-01-15T16:38:57+00:00'
+        readableAt: '2018-01-15T16:38:57+00:00'
+        createdAt: '2018-01-15T16:38:57+00:00'
+        updatedAt: '2018-01-15T16:38:57+00:00'
+        version: 1
+        pages: 14
+      relationships:
+      - id: caf0d1da-a790-49d0-833c-ce74d651c8a1
+        type: scanlation_group
+      - id: 127820bd-8fc5-47b8-8782-e680317bf41d
+        type: manga
+      - id: 16cf9cc6-78a4-4037-abdc-abf9145d74c8
+        type: user
+    - id: aff0e720-88f2-45c5-8d9e-817f84d4c306
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '3'
+        title: ''
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2018-01-15T16:39:53+00:00'
+        readableAt: '2018-01-15T16:39:53+00:00'
+        createdAt: '2018-01-15T16:39:53+00:00'
+        updatedAt: '2018-01-15T16:39:53+00:00'
+        version: 1
+        pages: 12
+      relationships:
+      - id: caf0d1da-a790-49d0-833c-ce74d651c8a1
+        type: scanlation_group
+      - id: 127820bd-8fc5-47b8-8782-e680317bf41d
+        type: manga
+      - id: 16cf9cc6-78a4-4037-abdc-abf9145d74c8
+        type: user
+    - id: dfc5a5cc-8b36-4f0c-a272-ae69802c91f8
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '4'
+        title: ''
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2018-01-15T16:41:00+00:00'
+        readableAt: '2018-01-15T16:41:00+00:00'
+        createdAt: '2018-01-15T16:41:00+00:00'
+        updatedAt: '2018-01-15T16:41:00+00:00'
+        version: 1
+        pages: 14
+      relationships:
+      - id: caf0d1da-a790-49d0-833c-ce74d651c8a1
+        type: scanlation_group
+      - id: 127820bd-8fc5-47b8-8782-e680317bf41d
+        type: manga
+      - id: 16cf9cc6-78a4-4037-abdc-abf9145d74c8
+        type: user
+    - id: 7c03d00c-55f5-4370-bb00-8bc3dafee36c
+      type: chapter
+      attributes:
+        volume: '1'
+        chapter: '9'
+        title: ''
+        translatedLanguage: en
+        externalUrl: null
+        isUnavailable: false
+        publishAt: '2018-01-15T16:46:56+00:00'
+        readableAt: '2018-01-15T16:46:56+00:00'
+        createdAt: '2018-01-15T16:46:56+00:00'
+        updatedAt: '2018-01-15T16:46:56+00:00'
+        version: 1
+        pages: 14
+      relationships:
+      - id: caf0d1da-a790-49d0-833c-ce74d651c8a1
+        type: scanlation_group
+      - id: 127820bd-8fc5-47b8-8782-e680317bf41d
+        type: manga
+      - id: 16cf9cc6-78a4-4037-abdc-abf9145d74c8
+        type: user
+    limit: 5
+    offset: 0
+    total: 1905346
+  body_text: null
+  body_b64: null

@@ -1,0 +1,88 @@
+metadata:
+  captured_at: '2026-05-08T12:30:28Z'
+  label: included-waifu
+  backend: waifu
+  path_slug: images
+request:
+  method: GET
+  url: https://api.waifu.im/images?included_tags=waifu
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:30:27 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    X-Test: api.waifu.im
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, HEAD, PATCH, POST, OPTIONS, DELETE, PUT
+    Access-Control-Allow-Headers: Accept-Version, Authorization, Content-Type
+    Version: v7
+    X-Request-ID: ab46e773b20f214911ca444df1ddc33f
+    Content-Encoding: gzip
+    cf-cache-status: DYNAMIC
+    vary: accept-encoding
+    Report-To: <scrubbed-at-capture>
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+    items:
+    - id: 7865
+      perceptualHash: a113eff89c1c71c1
+      extension: .jpg
+      dominantColor: '#B5A7A4'
+      source: https://twitter.com/lillly____/status/1566382858855276544
+      artists:
+      - id: 16
+        name: Lillly / RAUM/2월 일페 양일
+        patreon: null
+        pixiv: null
+        twitter: https://twitter.com/lillly____
+        deviantArt: null
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      uploaderId: null
+      uploadedAt: '2022-09-25T00:58:57.064001Z'
+      isNsfw: false
+      isAnimated: false
+      width: 2568
+      height: 4096
+      byteSize: 1062960
+      url: https://cdn.waifu.im/7865.jpg
+      tags:
+      - id: 7
+        name: Oppai
+        slug: oppai
+        description: Large-breasted women
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      - id: 12
+        name: Waifu
+        slug: waifu
+        description: A female anime/manga character.
+        reviewStatus: Accepted
+        creatorId: null
+        imageCount: 0
+      reviewStatus: Accepted
+      favorites: 8
+      likedAt: null
+      addedToAlbumAt: null
+      albums: []
+    pageNumber: 1
+    totalPages: 1244
+    totalCount: 1244
+    maxPageSize: -1
+    defaultPageSize: 1
+    hasPreviousPage: false
+    hasNextPage: true
+  body_text: null
+  body_b64: null

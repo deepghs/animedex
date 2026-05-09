@@ -85,6 +85,10 @@ _RULES: Dict[str, Dict[str, Callable[[str], bool]]] = {
         "GET": _allow,
         "POST": _deny,
     },
+    "waifu": {
+        "GET": _allow,
+        "POST": _deny,
+    },
 }
 
 

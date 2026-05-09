@@ -1,0 +1,59 @@
+metadata:
+  captured_at: '2026-05-08T12:53:26Z'
+  label: id-1
+  backend: kitsu
+  path_slug: franchises_by_id
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/franchises/1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:26 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"c316630729ffe7ebe242164d04d4481e"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 720e927b-e9f0-4e5d-9441-a5e2aae6d425
+    x-runtime: '0.045591'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      id: '1'
+      type: franchises
+      links:
+        self: https://kitsu.io/api/edge/franchises/1
+      attributes:
+        createdAt: '2013-07-07T07:44:54.484Z'
+        updatedAt: '2013-07-07T07:44:54.484Z'
+        titles:
+          en: Darker than Black
+          en_jp: ''
+        canonicalTitle: ''
+      relationships:
+        installments:
+          links:
+            self: https://kitsu.io/api/edge/franchises/1/relationships/installments
+            related: https://kitsu.io/api/edge/franchises/1/installments
+  body_text: null
+  body_b64: null

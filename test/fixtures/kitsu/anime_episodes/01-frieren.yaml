@@ -1,0 +1,309 @@
+metadata:
+  captured_at: '2026-05-08T12:53:34Z'
+  label: frieren
+  backend: kitsu
+  path_slug: anime_episodes
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/anime/46474/episodes?page%5Blimit%5D=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 12:53:34 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"7cf016fcf42b1c70033e8e9909f82dfd"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 69b6804a-2076-41ee-af04-7b69f9bf1387
+    x-runtime: '0.034883'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '353471'
+      type: episodes
+      links:
+        self: https://kitsu.io/api/edge/episodes/353471
+      attributes:
+        createdAt: '2023-07-04T16:43:05.275Z'
+        updatedAt: '2023-11-06T21:27:46.527Z'
+        synopsis: |-
+          The world celebrates the Demon King's defeat at the hands of the Hero and his companions. Now that their great adventure is over, what will Frieren the mage do next?
+
+          (Source: Crunchyroll)
+        description: |-
+          The world celebrates the Demon King's defeat at the hands of the Hero and his companions. Now that their great adventure is over, what will Frieren the mage do next?
+
+          (Source: Crunchyroll)
+        titles:
+          en: The Journey's End
+        canonicalTitle: The Journey's End
+        seasonNumber: 1
+        number: 1
+        relativeNumber: null
+        airdate: '2023-09-29'
+        length: 24
+        thumbnail:
+          tiny: https://media.kitsu.app/episode/353471/thumbnail/tiny-661ff904b766d4cbfb75db1ed5158c11.jpeg
+          large: https://media.kitsu.app/episode/353471/thumbnail/large-ef2d37ac96cd1b8d0dfa48f10d728195.jpeg
+          small: https://media.kitsu.app/episode/353471/thumbnail/small-33119add0dbfeafe7d5cd0e7ec2b7a8b.jpeg
+          medium: https://media.kitsu.app/episode/353471/thumbnail/medium-4218a1887e2d33e701be955a9d0315bc.jpeg
+          original: https://media.kitsu.app/episode/353471/thumbnail/586ff8f159af3cefedfe7c48d454c982.png
+          meta:
+            dimensions:
+              tiny:
+                width: 160
+                height: 90
+              large:
+                width: 960
+                height: 540
+              small:
+                width: 320
+                height: 180
+              medium:
+                width: 640
+                height: 360
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/episodes/353471/relationships/media
+            related: https://kitsu.io/api/edge/episodes/353471/media
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/episodes/353471/relationships/videos
+            related: https://kitsu.io/api/edge/episodes/353471/videos
+    - id: '353472'
+      type: episodes
+      links:
+        self: https://kitsu.io/api/edge/episodes/353472
+      attributes:
+        createdAt: '2023-07-04T16:43:05.499Z'
+        updatedAt: '2023-11-06T21:44:39.608Z'
+        synopsis: |-
+          Frieren instructs Fern in the use of magic while deciphering a grimoire for Heiter.
+
+          (Source: Crunchyroll)
+        description: |-
+          Frieren instructs Fern in the use of magic while deciphering a grimoire for Heiter.
+
+          (Source: Crunchyroll)
+        titles:
+          en: It Didn't Have to Be Magic...
+        canonicalTitle: It Didn't Have to Be Magic...
+        seasonNumber: 1
+        number: 2
+        relativeNumber: null
+        airdate: '2023-09-29'
+        length: 24
+        thumbnail:
+          tiny: https://media.kitsu.app/episode/353472/thumbnail/tiny-d4451a010437c95d5f12c50d068dee37.jpeg
+          large: https://media.kitsu.app/episode/353472/thumbnail/large-9c4f034ac02b7402f5c795ecdbf00079.jpeg
+          small: https://media.kitsu.app/episode/353472/thumbnail/small-264953e4807f08e0d68179742733f56c.jpeg
+          medium: https://media.kitsu.app/episode/353472/thumbnail/medium-d49e6c7021cda491175b27f1f20bf186.jpeg
+          original: https://media.kitsu.app/episode/353472/thumbnail/4ea4ed39d5342b4f32e1c6b7f4a7183f.png
+          meta:
+            dimensions:
+              tiny:
+                width: 160
+                height: 90
+              large:
+                width: 960
+                height: 540
+              small:
+                width: 320
+                height: 180
+              medium:
+                width: 640
+                height: 360
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/episodes/353472/relationships/media
+            related: https://kitsu.io/api/edge/episodes/353472/media
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/episodes/353472/relationships/videos
+            related: https://kitsu.io/api/edge/episodes/353472/videos
+    - id: '356650'
+      type: episodes
+      links:
+        self: https://kitsu.io/api/edge/episodes/356650
+      attributes:
+        createdAt: '2023-09-17T02:15:47.221Z'
+        updatedAt: '2023-11-06T21:58:52.081Z'
+        synopsis: |-
+          While retracing the path she took on her adventure with her former traveling companions, Frieren confronts an old enemy.
+
+          (Source: Crunchyroll)
+        description: |-
+          While retracing the path she took on her adventure with her former traveling companions, Frieren confronts an old enemy.
+
+          (Source: Crunchyroll)
+        titles:
+          en: Killing Magic
+        canonicalTitle: Killing Magic
+        seasonNumber: 1
+        number: 3
+        relativeNumber: null
+        airdate: '2023-09-29'
+        length: 24
+        thumbnail:
+          tiny: https://media.kitsu.app/episode/356650/thumbnail/tiny-7be4a61ec2e2709242a9c683d8c4c735.jpeg
+          large: https://media.kitsu.app/episode/356650/thumbnail/large-fbdc94515d62a8633b67b4628bc809dd.jpeg
+          small: https://media.kitsu.app/episode/356650/thumbnail/small-04a946fa13305d744e2cb23b656c47a5.jpeg
+          medium: https://media.kitsu.app/episode/356650/thumbnail/medium-c4346a2783f355394e5ab9e62e93121a.jpeg
+          original: https://media.kitsu.app/episode/356650/thumbnail/4747c5c35cf4f7c6ce781937beffbb14.png
+          meta:
+            dimensions:
+              tiny:
+                width: 160
+                height: 90
+              large:
+                width: 960
+                height: 540
+              small:
+                width: 320
+                height: 180
+              medium:
+                width: 640
+                height: 360
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/episodes/356650/relationships/media
+            related: https://kitsu.io/api/edge/episodes/356650/media
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/episodes/356650/relationships/videos
+            related: https://kitsu.io/api/edge/episodes/356650/videos
+    - id: '356901'
+      type: episodes
+      links:
+        self: https://kitsu.io/api/edge/episodes/356901
+      attributes:
+        createdAt: '2023-09-20T12:58:43.028Z'
+        updatedAt: '2023-11-06T21:59:52.093Z'
+        synopsis: |-
+          Frieren and Fern pay a visit to Eisen, who requests their help in finding the notes of Flamme the Legendary Mage.
+
+          (Source: Crunchyroll)
+        description: |-
+          Frieren and Fern pay a visit to Eisen, who requests their help in finding the notes of Flamme the Legendary Mage.
+
+          (Source: Crunchyroll)
+        titles:
+          en: The Land Where Souls Rest
+        canonicalTitle: The Land Where Souls Rest
+        seasonNumber: 1
+        number: 4
+        relativeNumber: null
+        airdate: '2023-09-29'
+        length: 24
+        thumbnail:
+          tiny: https://media.kitsu.app/episode/356901/thumbnail/tiny-8437f6f04d7122ed0142c8b68de688d7.jpeg
+          large: https://media.kitsu.app/episode/356901/thumbnail/large-77438340d578786739ccc3537344c29f.jpeg
+          small: https://media.kitsu.app/episode/356901/thumbnail/small-409ac4a7b0ac273ce20c68517eb5507a.jpeg
+          medium: https://media.kitsu.app/episode/356901/thumbnail/medium-33c5b1ef93201cd13607db49593388dc.jpeg
+          original: https://media.kitsu.app/episode/356901/thumbnail/316546a9cde01b95320e8182c4446667.png
+          meta:
+            dimensions:
+              tiny:
+                width: 160
+                height: 90
+              large:
+                width: 960
+                height: 540
+              small:
+                width: 320
+                height: 180
+              medium:
+                width: 640
+                height: 360
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/episodes/356901/relationships/media
+            related: https://kitsu.io/api/edge/episodes/356901/media
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/episodes/356901/relationships/videos
+            related: https://kitsu.io/api/edge/episodes/356901/videos
+    - id: '356902'
+      type: episodes
+      links:
+        self: https://kitsu.io/api/edge/episodes/356902
+      attributes:
+        createdAt: '2023-09-20T12:58:43.045Z'
+        updatedAt: '2023-11-06T22:00:42.034Z'
+        synopsis: |-
+          Frieren and Fern investigate ghost sightings at a village where people have started going missing.
+
+          (Source: Crunchyroll)
+        description: |-
+          Frieren and Fern investigate ghost sightings at a village where people have started going missing.
+
+          (Source: Crunchyroll)
+        titles:
+          en: Phantoms of the Dead
+        canonicalTitle: Phantoms of the Dead
+        seasonNumber: 1
+        number: 5
+        relativeNumber: null
+        airdate: '2023-10-06'
+        length: 24
+        thumbnail:
+          tiny: https://media.kitsu.app/episode/356902/thumbnail/tiny-ffa0d11d53159b82da9c1749c86d3e37.jpeg
+          large: https://media.kitsu.app/episode/356902/thumbnail/large-84810169e8dc8f9348727c81b04fd839.jpeg
+          small: https://media.kitsu.app/episode/356902/thumbnail/small-d4c2eeda73c202d3c2ce540c496e8ed2.jpeg
+          medium: https://media.kitsu.app/episode/356902/thumbnail/medium-b4a3e42751c8e3e1818a8792feb88b0b.jpeg
+          original: https://media.kitsu.app/episode/356902/thumbnail/6c3fec0bf76e67911a32b80a222db9bd.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 160
+                height: 90
+              large:
+                width: 960
+                height: 540
+              small:
+                width: 320
+                height: 180
+              medium:
+                width: 640
+                height: 360
+      relationships:
+        media:
+          links:
+            self: https://kitsu.io/api/edge/episodes/356902/relationships/media
+            related: https://kitsu.io/api/edge/episodes/356902/media
+        videos:
+          links:
+            self: https://kitsu.io/api/edge/episodes/356902/relationships/videos
+            related: https://kitsu.io/api/edge/episodes/356902/videos
+    meta:
+      count: 28
+    links:
+      first: https://kitsu.io/api/edge/anime/46474/episodes?page%5Blimit%5D=5&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/anime/46474/episodes?page%5Blimit%5D=5&page%5Boffset%5D=5
+      last: https://kitsu.io/api/edge/anime/46474/episodes?page%5Blimit%5D=5&page%5Boffset%5D=23
+  body_text: null
+  body_b64: null

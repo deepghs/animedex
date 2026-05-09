@@ -1,0 +1,63 @@
+metadata:
+  captured_at: '2026-05-08T13:07:47Z'
+  label: page1
+  backend: danbooru
+  path_slug: post_votes_search
+request:
+  method: GET
+  url: https://danbooru.donmai.us/post_votes.json?limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Fri, 08 May 2026 13:07:47 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    vary: Accept-Encoding
+    x-frame-options: SAMEORIGIN
+    x-xss-protection: '0'
+    x-content-type-options: nosniff
+    x-permitted-cross-domain-policies: none
+    referrer-policy: strict-origin-when-cross-origin
+    access-control-allow-origin: '*'
+    x-git-hash: a1ade225b228171432794e34f8b69cf770a75f9a
+    etag: W/"6c9bcfb71dc42c9aa0afab4504beac4e"
+    Cache-Control: max-age=0, private, must-revalidate
+    Set-Cookie: <scrubbed-at-capture>
+    x-request-id: 9f88b07e79e41a14-KIX
+    server-timing: sql.queries;count=4, rails.total_time;dur=21.2493, rails.cpu_time;dur=3.4518, rails.idle_time;dur=17.7975,
+      rails.sql_time;dur=18.0288, rails.view_time;dur=19.1118, rails.allocations;count=1995, request.allocations;count=2519,
+      request.gc_time;dur=0.165, request.gc_count;count=0, request.cpu_time;dur=4.1171, request.total_time;dur=21.9147, request.queue_time_0;dur=1.843,
+      request.queue_time_1;dur=88.0001
+    x-runtime: '0.0219146728515625'
+    via: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    strict-transport-security: max-age=31536000; preload
+    cf-cache-status: DYNAMIC
+    Nel: <scrubbed-at-capture>
+    Report-To: <scrubbed-at-capture>
+    Server: cloudflare
+    CF-RAY: <scrubbed-at-capture>
+    alt-svc: h3=":443"; ma=86400
+  body_json:
+  - id: 331539269
+    post_id: 11262111
+    user_id: 482870
+    created_at: '2026-05-08T09:07:46.381-04:00'
+    updated_at: '2026-05-08T09:07:46.381-04:00'
+    score: 1
+    is_deleted: false
+  - id: 331539268
+    post_id: 11295272
+    user_id: 1486772
+    created_at: '2026-05-08T09:07:46.189-04:00'
+    updated_at: '2026-05-08T09:07:46.189-04:00'
+    score: 1
+    is_deleted: false
+  body_text: null
+  body_b64: null
