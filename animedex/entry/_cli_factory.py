@@ -163,7 +163,7 @@ _BACKEND_POLICY = {
     },
     "ghibli": {
         "backend_line": "Studio Ghibli API snapshot bundled with animedex (live source: ghibliapi.vercel.app).",
-        "rate_line": "Not applicable for high-level commands; all reads are served from the bundled offline snapshot.",
+        "rate_line": "Not applicable for high-level commands; the raw animedex api ghibli passthrough applies a conservative 5 req/s ceiling because the upstream does not publish a formal rate limit.",
         "guidance": "Offline, deterministic metadata lookup for Studio Ghibli films, people, locations, species, and vehicles. Use this high-level group by default because it does not touch the network. Use animedex api ghibli only when the user explicitly asks for live upstream data.",
     },
     "quote": {

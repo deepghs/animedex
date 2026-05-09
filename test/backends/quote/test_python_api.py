@@ -261,3 +261,4 @@ class TestModelEdges:
 class TestSelftest:
     def test_selftest_runs(self):
         assert quote_api.selftest() is True
+        assert quote_api._DEFAULT_CACHE is None

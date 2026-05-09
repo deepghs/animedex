@@ -188,7 +188,11 @@ def _validate_page(page: int) -> None:
 
 
 def selftest() -> bool:
-    """Smoke-test the public AnimeChan Python API (signatures only).
+    """Smoke-test the public AnimeChan Python API.
+
+    Checks public callable signatures and exercises the default SQLite
+    cache path so platform-specific cache directory resolution and
+    schema creation are covered by the offline smoke test.
 
     :return: ``True`` on success.
     :rtype: bool
@@ -199,5 +203,8 @@ def selftest() -> bool:
     for fn in public_callables:
         sig = inspect.signature(fn)
         assert "config" in sig.parameters, f"{fn.__name__} missing config kwarg"
-    assert callable(_default_cache)
+    try:
+        assert _default_cache() is not None
+    finally:
+        _close_default_cache()
     return True
