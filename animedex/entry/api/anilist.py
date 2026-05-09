@@ -92,9 +92,6 @@ def api_anilist(
     )
     if not variables:
         variables = None
-    if paginate:
-        raise click.UsageError("--paginate is not supported for AniList GraphQL")
-
     method_source = ctx.get_parameter_source("method")
     method_up = method.upper()
     if method_up == "GET" and method_source is not ParameterSource.COMMANDLINE:

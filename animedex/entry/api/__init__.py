@@ -377,6 +377,15 @@ def _call_or_paginate(
     """Call one raw request or the central pagination helper."""
     if not paginate:
         return backend_module.call(**kwargs)
+    if kwargs.get("method", "GET").upper() != "GET":
+        return backend_module.call(**kwargs)
+    from animedex.api._paginate import get_strategy
+
+    try:
+        get_strategy(backend)
+    except ApiError:
+        return backend_module.call(**kwargs)
+
     paginated_kwargs = {k: v for k, v in kwargs.items() if k not in ("json_body", "raw_body")}
     try:
         from animedex.api._paginate import call_paginated
@@ -482,8 +491,9 @@ def api_group() -> None:
     covered by the higher-level commands. Each subcommand wraps one
     backend's raw HTTP/GraphQL surface; the dispatcher injects the
     project User-Agent, applies rate limiting, and consults the local
-    cache. Method/path choices are forwarded verbatim; the caller owns
-    the upstream result. The output flags
+    cache. Method/path choices are forwarded verbatim; unsupported
+    --paginate combinations fall back to a single raw request rather
+    than blocking the call. The caller owns the upstream result. The output flags
     (-i / -I / --debug) are shared and mutually exclusive. Use
     --debug when you need to inspect the full envelope (redirect
     chain, timing, cache provenance, fingerprint-redacted request

@@ -107,9 +107,6 @@ def api_trace(
                 raw_body = fh.read()
         if method_up == "GET" and method_source is not ParameterSource.COMMANDLINE:
             method_up = "POST"
-    if paginate:
-        raise click.UsageError("--paginate is not supported for Trace.moe")
-
     mode = _output_mode_from_flags(include_flag, head_flag, debug_flag)
     out_path, params = _merge_path_and_fields(path, _parse_api_fields(api_fields))
     env = trace_mod.call(

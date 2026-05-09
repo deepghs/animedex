@@ -127,17 +127,6 @@ class TestApiAnilist:
         assert captured[0]["no_cache"] is True
         assert captured[0]["cache"] is None
 
-    def test_paginate_is_rejected_before_call(self, cli_runner, cli, monkeypatch):
-        from animedex.api import anilist as anilist_mod
-
-        captured: list = []
-        monkeypatch.setattr(anilist_mod, "call", _captured_call(captured))
-
-        result = cli_runner.invoke(cli, ["api", "anilist", "{ x }", "--paginate"])
-        assert result.exit_code != 0
-        assert "--paginate is not supported" in result.output
-        assert captured == []
-
 
 class TestApiTrace:
     def test_get_path(self, cli_runner, cli, monkeypatch):
@@ -208,17 +197,6 @@ class TestApiTrace:
         assert result.exit_code == 0, result.output
         assert captured[0]["method"] == "POST"
         assert captured[0]["raw_body"] == b"\xff\xd8\xff\xe0"
-
-    def test_paginate_is_rejected_before_call(self, cli_runner, cli, monkeypatch):
-        from animedex.api import trace as trace_mod
-
-        captured: list = []
-        monkeypatch.setattr(trace_mod, "call", _captured_call(captured))
-
-        result = cli_runner.invoke(cli, ["api", "trace", "/me", "--paginate"])
-        assert result.exit_code != 0
-        assert "--paginate is not supported" in result.output
-        assert captured == []
 
 
 class TestApiShikimori:

@@ -355,19 +355,42 @@ class TestCallOrPaginate:
             path="/anime",
         ) == {"kwargs": {"path": "/anime"}}
 
+    def test_unsupported_paginate_backend_falls_back_to_raw_call(self):
+        from animedex.entry.api import _call_or_paginate
+
+        class Backend:
+            @staticmethod
+            def call(**kwargs):
+                return {"kwargs": kwargs}
+
+        assert _call_or_paginate(
+            Backend,
+            backend="anilist",
+            paginate=True,
+            max_pages=10,
+            max_items=None,
+            path="/",
+            method="GET",
+        ) == {"kwargs": {"path": "/", "method": "GET"}}
+
     def test_paginate_api_error_becomes_click_exception(self):
         import click
 
         from animedex.entry.api import _call_or_paginate
 
-        with pytest.raises(click.ClickException, match="does not support raw --paginate"):
+        class Backend:
+            @staticmethod
+            def call(**kwargs):
+                return {"kwargs": kwargs}
+
+        with pytest.raises(click.ClickException, match="--max-pages must be >= 1"):
             _call_or_paginate(
-                object(),
-                backend="anilist",
+                Backend,
+                backend="jikan",
                 paginate=True,
-                max_pages=10,
+                max_pages=0,
                 max_items=None,
-                path="/",
+                path="/anime",
                 method="GET",
             )
 

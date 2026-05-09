@@ -143,3 +143,34 @@ def test_shikimori_graphql_respects_explicit_method(cli):
     assert result.exit_code == 0, result.output
     assert method == "DELETE"
     assert "saw-delete" in result.output
+
+
+def test_paginate_does_not_block_anilist_passthrough(cli):
+    with responses.RequestsMock() as rsps:
+        rsps.add(responses.POST, "https://graphql.anilist.co/", json={"data": {"ok": True}}, status=200)
+        result = CliRunner().invoke(cli, ["api", "anilist", "{ Viewer { id } }", "--paginate", "--no-cache"])
+        method = rsps.calls[0].request.method
+
+    assert result.exit_code == 0, result.output
+    assert method == "POST"
+
+
+def test_paginate_does_not_block_trace_passthrough(cli):
+    with responses.RequestsMock() as rsps:
+        rsps.add(responses.GET, "https://api.trace.moe/me", json={"quota": 100}, status=200)
+        result = CliRunner().invoke(cli, ["api", "trace", "/me", "--paginate", "--no-cache"])
+        method = rsps.calls[0].request.method
+
+    assert result.exit_code == 0, result.output
+    assert method == "GET"
+
+
+def test_paginate_does_not_block_explicit_non_get_method(cli):
+    with responses.RequestsMock() as rsps:
+        rsps.add(responses.POST, "https://api.jikan.moe/v4/anime", json={"upstream": "saw-post"}, status=200)
+        result = CliRunner().invoke(cli, ["api", "jikan", "/anime", "--paginate", "-X", "POST", "--no-cache"])
+        method = rsps.calls[0].request.method
+
+    assert result.exit_code == 0, result.output
+    assert method == "POST"
+    assert "saw-post" in result.output
