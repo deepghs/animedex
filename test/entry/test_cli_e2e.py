@@ -243,7 +243,7 @@ class TestTtyRenderingWalk:
             (["jikan", "character-show", "11"], "jikan/characters_full/01-edward-elric-11.yaml"),
             (["jikan", "person-show", "1870"], "jikan/people_full/01-miyazaki-1870.yaml"),
             (["jikan", "producer-show", "17"], "jikan/producers_full/01-aniplex-17.yaml"),
-            (["jikan", "search", "Frieren"], None),  # uses default Jikan search payload
+            (["jikan", "recommendations-anime"], "jikan/recommendations_anime/01-list.yaml"),
             (["jikan", "season", "2023", "fall", "--limit", "5"], "jikan/seasons_by_year/01-2023-fall.yaml"),
             (["jikan", "top-anime", "--limit", "10"], "jikan/top_anime/01-top10.yaml"),
             (["jikan", "random-anime"], "jikan/random_anime/01-random-01.yaml"),
@@ -252,29 +252,39 @@ class TestTtyRenderingWalk:
             (["anilist", "staff", "101572"], "anilist/staff/01-staff-101572.yaml"),
             (["anilist", "studio", "11"], "anilist/studio/01-studio-madhouse.yaml"),
             (["anilist", "trending"], "anilist/trending/01-trending-top8.yaml"),
+            (["ghibli", "films"], None),
+            (["ghibli", "people", "Haku"], None),
             (["nekos", "image", "husbando"], "nekos/husbando/01-image-amount-1.yaml"),
             (["nekos", "image", "neko"], "nekos/neko/01-image-amount-1.yaml"),
             (["nekos", "search", "Frieren", "--amount", "5"], "nekos/search/01-frieren-image.yaml"),
+            (["quote", "random"], "quote/random/01-random.yaml"),
+            (["quote", "quotes-by-character", "Saitama"], "quote/quotes_by_character/01-saitama-page-1.yaml"),
             (["kitsu", "show", "46474"], "kitsu/anime_by_id/01-frieren-46474.yaml"),
             (["kitsu", "trending", "--limit", "10"], "kitsu/trending_anime/01-top10.yaml"),
         ],
     )
     def test_command_renders_in_tty_mode(self, cli_runner, cli, fake_clock, force_tty, argv, fixture_rel):
         if fixture_rel is None:
-            pytest.skip("no canonical fixture pinned for this command")
-        path = FIXTURES / fixture_rel
-        if not path.exists():
-            pytest.skip(f"fixture missing: {fixture_rel}")
-        fixture = _load_fixture(fixture_rel)
-
-        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
-            _register_fixture(rsps, fixture)
             result = cli_runner.invoke(cli, [*argv, "--no-cache"])
+        else:
+            path = FIXTURES / fixture_rel
+            if not path.exists():
+                pytest.skip(f"fixture missing: {fixture_rel}")
+            fixture = _load_fixture(fixture_rel)
+
+            with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+                _register_fixture(rsps, fixture)
+                result = cli_runner.invoke(cli, [*argv, "--no-cache"])
 
         assert result.exit_code == 0, f"{argv} failed in TTY mode against {fixture_rel}: {result.output[:600]}"
         # TTY output should contain the source-attribution marker
         # ``[src: <backend>]``, which the JSON path drops.
-        assert "[src:" in result.output, f"TTY output missing source marker: {result.output[:300]}"
+        if argv[0] == "ghibli":
+            assert "[src: ghibli]" in result.output, f"TTY output missing Ghibli source marker: {result.output[:300]}"
+        elif argv[0] == "quote":
+            assert "[src: quote]" in result.output, f"TTY output missing Quote source marker: {result.output[:300]}"
+        else:
+            assert "[src:" in result.output, f"TTY output missing source marker: {result.output[:300]}"
         # Should NOT look like a JSON dump (TTY path is multi-line key:value).
         assert not result.output.lstrip().startswith("{"), (
             f"TTY output appears to be JSON, not human-readable: {result.output[:200]}"
@@ -446,6 +456,70 @@ class TestNekosCliFromFixtures:
         assert lines == sorted(lines)
         # Should not look like JSON.
         assert not result.output.lstrip().startswith("[")
+
+
+# ---------- Studio Ghibli ----------
+
+
+class TestGhibliCliOffline:
+    """JSON-path coverage of every offline Ghibli subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional",
+        [
+            ("films", []),
+            ("film", ["2baf70d1-42bb-4437-b551-e5fed5a87abe"]),
+            ("people", ["Haku"]),
+            ("person", ["267649ac-fb1b-11eb-9a03-0242ac130003"]),
+            ("locations", []),
+            ("location", ["11014596-71b0-4b3e-b8c0-1c4b15f28b9a"]),
+            ("vehicles", []),
+            ("vehicle", ["4e09b023-f650-4747-9ab9-eacf14540cfb"]),
+            ("species", []),
+            ("species-by-id", ["af3910a6-429f-4c74-9ad5-dfe1c4aa04f2"]),
+        ],
+    )
+    def test_subcommand_runs_offline(self, cli_runner, cli, fake_clock, subcommand, positional):
+        result = cli_runner.invoke(cli, ["ghibli", subcommand, *positional, "--json", "--no-cache"])
+        assert result.exit_code == 0, f"ghibli {subcommand} failed: {result.output[:600]}"
+
+    def test_films_jq_filter_extracts_titles(self, cli_runner, cli, fake_clock):
+        result = cli_runner.invoke(cli, ["ghibli", "films", "--no-cache", "--jq", "[.[].title] | .[0]"])
+        assert result.exit_code == 0, result.output
+        assert "Castle in the Sky" in result.output
+
+
+# ---------- AnimeChan ----------
+
+
+class TestQuoteCliFromFixtures:
+    """JSON-path coverage of every AnimeChan high-level subcommand."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("random", [], "quote/random/01-random.yaml"),
+            ("random-by-anime", ["Naruto"], "quote/random_by_anime/01-naruto.yaml"),
+            ("random-by-character", ["Saitama"], "quote/random_by_character/01-saitama.yaml"),
+            ("quotes-by-anime", ["Naruto"], "quote/quotes_by_anime/01-naruto-page-1.yaml"),
+            ("quotes-by-character", ["Saitama"], "quote/quotes_by_character/01-saitama-page-1.yaml"),
+            ("anime", ["188"], "quote/anime/01-one-punch-man-188.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        fixture = _load_fixture(fixture_rel)
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, ["quote", subcommand, *positional, "--json", "--no-cache"])
+        assert result.exit_code == 0, f"quote {subcommand} failed: {result.output[:600]}"
+
+    def test_random_jq_filter_extracts_content(self, cli_runner, cli, fake_clock):
+        fixture = _load_fixture("quote/random/01-random.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, ["quote", "random", "--no-cache", "--jq", ".content"])
+        assert result.exit_code == 0, result.output
+        assert result.output.strip().startswith('"')
 
 
 # ---------- Kitsu ----------
@@ -791,7 +865,18 @@ class TestPhase2SubcommandTree:
     """No HTTP needed; just confirm registration shape."""
 
     def test_top_level_groups_present(self, cli):
-        for group in ("anilist", "danbooru", "jikan", "kitsu", "mangadex", "nekos", "trace", "waifu"):
+        for group in (
+            "anilist",
+            "danbooru",
+            "ghibli",
+            "jikan",
+            "kitsu",
+            "mangadex",
+            "nekos",
+            "quote",
+            "trace",
+            "waifu",
+        ):
             assert group in cli.commands
 
     def test_anilist_has_at_least_28_subcommands(self, cli):
@@ -828,6 +913,21 @@ class TestPhase2SubcommandTree:
 
     def test_waifu_has_full_surface(self, cli):
         assert {"tags", "artists", "images"} <= set(cli.commands["waifu"].commands.keys())
+
+    def test_ghibli_has_full_surface(self, cli):
+        assert {"films", "film", "people", "person", "locations", "location", "vehicles", "vehicle", "species"} <= set(
+            cli.commands["ghibli"].commands.keys()
+        )
+
+    def test_quote_has_full_surface(self, cli):
+        assert {
+            "random",
+            "random-by-anime",
+            "random-by-character",
+            "quotes-by-anime",
+            "quotes-by-character",
+            "anime",
+        } <= set(cli.commands["quote"].commands.keys())
 
 
 # ---------- --help walk for every Phase-2 subcommand ----------
@@ -877,3 +977,13 @@ class TestEverySubcommandHasHelp:
         for sub in cli.commands["waifu"].commands:
             r = cli_runner.invoke(cli, ["waifu", sub, "--help"])
             assert r.exit_code == 0, f"waifu {sub} --help failed: {r.output[:200]}"
+
+    def test_ghibli_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["ghibli"].commands:
+            r = cli_runner.invoke(cli, ["ghibli", sub, "--help"])
+            assert r.exit_code == 0, f"ghibli {sub} --help failed: {r.output[:200]}"
+
+    def test_quote_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["quote"].commands:
+            r = cli_runner.invoke(cli, ["quote", sub, "--help"])
+            assert r.exit_code == 0, f"quote {sub} --help failed: {r.output[:200]}"

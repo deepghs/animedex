@@ -93,6 +93,6 @@ class TestDefaultCacheLifecycle:
         inside the tmp_path."""
         import animedex.cache.sqlite as cache_mod
 
-        # The conftest patched default_cache_path to return tmp_path /
-        # "isolated-cache.sqlite". Verify.
-        assert cache_mod.default_cache_path() == tmp_path / "isolated-cache.sqlite"
+        # The conftest patches the platform cache-dir resolver so all
+        # singleton caches land under tmp_path.
+        assert cache_mod.default_cache_path() == tmp_path / "cache.sqlite"

@@ -1,0 +1,30 @@
+metadata:
+  captured_at: '2026-05-09T00:00:00Z'
+  label: random
+  backend: quote
+  path_slug: random
+request:
+  method: GET
+  url: https://api.animechan.io/v1/quotes/random
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json; charset=utf-8
+  body_json:
+    status: success
+    data:
+      content: Become strong not just for your own sake, but for your friends.
+      anime:
+        id: 222
+        name: Bleach
+        altName: Bleach
+      character:
+        id: 779
+        name: Kurosaki Ichigo
+  body_text: null
+  body_b64: null

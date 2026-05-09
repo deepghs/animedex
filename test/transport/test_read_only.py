@@ -20,7 +20,7 @@ class TestRejectMutatingMethod:
     @pytest.mark.parametrize("method", ["PUT", "PATCH", "DELETE"])
     @pytest.mark.parametrize(
         "backend",
-        ["anilist", "jikan", "kitsu", "mangadex", "danbooru", "shikimori", "ann", "trace"],
+        ["anilist", "jikan", "kitsu", "mangadex", "danbooru", "shikimori", "ann", "trace", "ghibli", "quote"],
     )
     def test_universally_rejected(self, backend, method):
         from animedex.models.common import ApiError
@@ -44,7 +44,9 @@ class TestPostPolicyPerBackend:
         with pytest.raises(ApiError):
             enforce_read_only("anilist", "POST", "/some/other/path")
 
-    @pytest.mark.parametrize("backend", ["jikan", "kitsu", "danbooru", "shikimori", "ann", "mangadex"])
+    @pytest.mark.parametrize(
+        "backend", ["jikan", "kitsu", "danbooru", "shikimori", "ann", "mangadex", "ghibli", "quote"]
+    )
     def test_post_rejected_for_pure_rest_backends(self, backend):
         from animedex.models.common import ApiError
         from animedex.transport.read_only import enforce_read_only
@@ -68,7 +70,7 @@ class TestPostPolicyPerBackend:
 class TestGetAlwaysAllowed:
     @pytest.mark.parametrize(
         "backend",
-        ["anilist", "jikan", "kitsu", "mangadex", "danbooru", "shikimori", "ann", "trace"],
+        ["anilist", "jikan", "kitsu", "mangadex", "danbooru", "shikimori", "ann", "trace", "ghibli", "quote"],
     )
     def test_get_allowed(self, backend):
         from animedex.transport.read_only import enforce_read_only

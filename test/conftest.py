@@ -27,15 +27,17 @@ def _isolate_default_cache(tmp_path, monkeypatch):
     and the safety bound prevents a forgotten ``--no-cache`` flag in
     a new test from polluting the contributor's home directory.
 
-    Resets the ``_DEFAULT_CACHE`` module-global to ``None`` and
-    monkeypatches the platform-default path so that any first-use
+    Resets cache-owning module globals to ``None`` and monkeypatches
+    the platform-default directory resolver so that any first-use
     construction lands inside ``tmp_path``.
     """
     import animedex.cache.sqlite as _cache_mod
+    import animedex.backends.quote as _quote_api
     import animedex.entry.api as _entry_api
 
+    monkeypatch.setattr(_quote_api, "_DEFAULT_CACHE", None)
     monkeypatch.setattr(_entry_api, "_DEFAULT_CACHE", None)
-    monkeypatch.setattr(_cache_mod, "default_cache_path", lambda: tmp_path / "isolated-cache.sqlite")
+    monkeypatch.setattr(_cache_mod, "_user_cache_dir", lambda: str(tmp_path))
     yield
 
 

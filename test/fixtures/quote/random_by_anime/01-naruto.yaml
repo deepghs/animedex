@@ -1,0 +1,30 @@
+metadata:
+  captured_at: '2026-05-09T00:00:00Z'
+  label: naruto
+  backend: quote
+  path_slug: random_by_anime
+request:
+  method: GET
+  url: https://api.animechan.io/v1/quotes/random?anime=Naruto
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json; charset=utf-8
+  body_json:
+    status: success
+    data:
+      content: I believe you have the potential to bloom into something even more beautiful than the cosmos.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto (2023)
+      character:
+        id: 2484
+        name: Ino Yamanaka
+  body_text: null
+  body_b64: null

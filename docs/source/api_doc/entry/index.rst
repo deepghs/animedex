@@ -14,10 +14,12 @@ animedex.entry
     api/index
     cli
     danbooru
+    ghibli
     jikan
     kitsu
     mangadex
     nekos
+    quote
     trace
     waifu
 
@@ -25,5 +27,4 @@ animedex.entry
 -----------------------------------------------------
 
 .. autodata:: __all__
-
 

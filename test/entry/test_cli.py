@@ -38,6 +38,8 @@ class TestCli:
         # plus at least one known group name appears.
         assert "animedex" in result.output.lower()
         assert "anilist" in result.output.lower()
+        assert "ghibli" in result.output.lower()
+        assert "quote" in result.output.lower()
 
     def test_selftest_subcommand_exits_zero(self):
         # The selftest command exits via sys.exit; CliRunner records
