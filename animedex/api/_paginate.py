@@ -326,7 +326,9 @@ def call_paginated(
 
         page_result = strategy.decode(_decode_json_page(env), request)
         remaining = None if max_items is None else max_items - len(items)
-        if remaining is not None and remaining <= 0:
+        if (
+            remaining is not None and remaining <= 0
+        ):  # pragma: no cover - guarded by max_items validation and prior break
             termination_reason = "max-items"
             break
         page_items = page_result.items if remaining is None else page_result.items[:remaining]
@@ -367,7 +369,7 @@ def call_paginated(
     }
     body_bytes = json.dumps(body, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
 
-    if first_request is None:
+    if first_request is None:  # pragma: no cover - max_pages validation guarantees at least one request attempt
         first_request = RawRequest(method=method_up, url="", headers={})
     cache_hit = bool(page_meta) and all(page["cache_hit"] for page in page_meta)
     return RawResponse(

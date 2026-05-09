@@ -195,6 +195,150 @@ class TestParseApiFields:
         with pytest.raises(click.UsageError, match="must be K=V"):
             _parse_api_fields((("typed", "broken"),))
 
+    def test_empty_key_raises(self):
+        import click
+
+        from animedex.entry.api import _parse_api_fields
+
+        with pytest.raises(click.UsageError, match="key must not be empty"):
+            _parse_api_fields((("typed", "=broken"),))
+
+
+class TestApiFieldParserHelpers:
+    def test_normalize_option_without_context_normalizer(self):
+        from animedex.entry.api import _normalize_option
+
+        assert _normalize_option("--raw-field", object()) == "--raw-field"
+
+    def test_normalize_option_with_context_normalizer(self):
+        from animedex.entry.api import _normalize_option
+
+        class Ctx:
+            token_normalize_func = staticmethod(str.upper)
+
+        assert _normalize_option("--raw-field", Ctx()) == "--RAW-FIELD"
+        assert _normalize_option("-f", Ctx()) == "-F"
+
+    @pytest.mark.parametrize(
+        "option,expected",
+        [
+            ("--raw-field", {"--"}),
+            ("-f", {"-"}),
+            ("field", set()),
+        ],
+    )
+    def test_option_prefixes(self, option, expected):
+        from animedex.entry.api import _option_prefixes
+
+        assert _option_prefixes(option) == expected
+
+    def test_parser_option_process_calls_wrapped_callback(self):
+        from animedex.entry.api import _ApiFieldParserOption
+
+        sentinel = object()
+        captured = []
+        option = _ApiFieldParserOption(
+            obj=type("Obj", (), {"name": "api_fields"})(),
+            opts=["-f"],
+            process_value=lambda opts, value, state: captured.append((opts, value, state)),
+        )
+        option.process("x=1", state=sentinel)
+        assert captured == [(["-f"], "x=1", sentinel)]
+
+    def test_api_field_option_type_cast_none(self):
+        from animedex.entry.api import ApiFieldOption
+
+        option = ApiFieldOption(("--field",), expose_kind="typed")
+        assert option.type_cast_value(None, None) == ()
+
+
+class TestMergePathAndFields:
+    def test_no_fields_returns_original_path_and_no_params(self):
+        from animedex.entry.api import _merge_path_and_fields
+
+        assert _merge_path_and_fields("/anime?q=Naruto", {}) == ("/anime?q=Naruto", None)
+
+    def test_fields_merge_over_path_query(self):
+        from animedex.entry.api import _merge_path_and_fields
+
+        path, params = _merge_path_and_fields("/anime?q=Frieren&limit=1", {"q": "Naruto"})
+        assert path == "/anime"
+        assert params == {"q": "Naruto", "limit": "1"}
+
+
+class TestMergeJsonObjects:
+    def test_left_none_and_right_none_returns_empty_dict(self):
+        from animedex.entry.api import _merge_json_objects
+
+        assert _merge_json_objects(None, None, left_name="left", right_name="right") == {}
+
+    def test_left_dict_and_right_none_returns_copy(self):
+        from animedex.entry.api import _merge_json_objects
+
+        left = {"a": 1}
+        out = _merge_json_objects(left, None, left_name="left", right_name="right")
+        assert out == {"a": 1}
+        assert out is not left
+
+    def test_right_overrides_left(self):
+        from animedex.entry.api import _merge_json_objects
+
+        assert _merge_json_objects({"a": 1}, {"a": 2, "b": 3}, left_name="left", right_name="right") == {
+            "a": 2,
+            "b": 3,
+        }
+
+    def test_non_object_left_raises(self):
+        import click
+
+        from animedex.entry.api import _merge_json_objects
+
+        with pytest.raises(click.UsageError, match="left must decode"):
+            _merge_json_objects([], {}, left_name="left", right_name="right")
+
+    def test_non_object_right_raises(self):
+        import click
+
+        from animedex.entry.api import _merge_json_objects
+
+        with pytest.raises(click.UsageError, match="right must decode"):
+            _merge_json_objects({}, [], left_name="left", right_name="right")
+
+
+class TestCallOrPaginate:
+    def test_plain_call_delegates_to_backend_module(self):
+        from animedex.entry.api import _call_or_paginate
+
+        class Backend:
+            @staticmethod
+            def call(**kwargs):
+                return {"kwargs": kwargs}
+
+        assert _call_or_paginate(
+            Backend,
+            backend="jikan",
+            paginate=False,
+            max_pages=10,
+            max_items=None,
+            path="/anime",
+        ) == {"kwargs": {"path": "/anime"}}
+
+    def test_paginate_api_error_becomes_click_exception(self):
+        import click
+
+        from animedex.entry.api import _call_or_paginate
+
+        with pytest.raises(click.ClickException, match="does not support raw --paginate"):
+            _call_or_paginate(
+                object(),
+                backend="anilist",
+                paginate=True,
+                max_pages=10,
+                max_items=None,
+                path="/",
+                method="GET",
+            )
+
 
 class TestEmit:
     def test_echoes_rendered_output_and_exits_with_status_class_code(self):
