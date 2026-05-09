@@ -38,6 +38,15 @@ def test_split_path_query_preserves_repeated_values_and_fragments():
     assert params == {"tag": ["a", "b"], "page": 2}
 
 
+def test_split_path_query_normalises_query_only_path():
+    from animedex.api._params import split_path_query
+
+    path, params = split_path_query("?q=Frieren")
+
+    assert path == "/"
+    assert params == {"q": "Frieren"}
+
+
 def test_first_int_uses_last_list_value_and_falls_back():
     from animedex.api._params import first_int
 

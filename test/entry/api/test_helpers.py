@@ -177,9 +177,11 @@ class TestParseApiFields:
                 ("typed", "count=10"),
                 ("typed", "score=9.5"),
                 ("typed", "published=true"),
+                ("typed", "airing=false"),
+                ("typed", "title=Frieren"),
                 ("raw", "tag=true"),
             )
-        ) == {"count": 10, "score": 9.5, "published": True, "tag": "true"}
+        ) == {"count": 10, "score": 9.5, "published": True, "airing": False, "title": "Frieren", "tag": "true"}
 
     def test_last_write_wins_across_kinds(self):
         from animedex.entry.api import _parse_api_fields
@@ -244,6 +246,36 @@ class TestApiFieldParserHelpers:
         )
         option.process("x=1", state=sentinel)
         assert captured == [(["-f"], "x=1", sentinel)]
+
+    def test_api_field_option_fetches_value_from_state_when_click_omits_it(self):
+        from animedex.entry.api import ApiFieldOption
+
+        class Parser:
+            def __init__(self):
+                self._long_opt = {}
+                self._short_opt = {}
+                self._opt_prefixes = set()
+
+            def _get_value_from_state(self, opt, parser_option, state):
+                assert opt == "--field"
+                assert parser_option is self._long_opt["--field"]
+                assert state is sentinel
+                return "limit=2"
+
+        class State:
+            def __init__(self):
+                self.opts = {}
+                self.order = []
+
+        sentinel = State()
+        parser = Parser()
+        option = ApiFieldOption(("--field",), expose_kind="typed")
+
+        option.add_to_parser(parser, object())
+        parser._long_opt["--field"].process(None, sentinel)
+
+        assert sentinel.opts == {option.name: [("typed", "limit=2")]}
+        assert sentinel.order == [option]
 
     def test_api_field_option_type_cast_none(self):
         from animedex.entry.api import ApiFieldOption
