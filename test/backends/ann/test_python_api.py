@@ -51,6 +51,14 @@ def _register(rsps: responses.RequestsMock, fixture: dict) -> None:
     )
 
 
+def _register_path(rsps: responses.RequestsMock, path: str, *, status: int = 200, body="") -> None:
+    """Register a synthetic ANN response by endpoint path."""
+    import re
+
+    url_re = re.compile(r"https://cdn\.animenewsnetwork\.com/encyclopedia/" + re.escape(path) + r"(\?.*)?$")
+    rsps.add(responses.Response(method="GET", url=url_re, status=status, body=body))
+
+
 _STRIP_HEADERS = {"content-encoding", "content-length", "transfer-encoding"}
 
 
@@ -119,6 +127,31 @@ class TestReports:
         assert out.source_tag is not None
         assert out.source_tag.backend == "ann"
 
+    def test_reports_threads_optional_filters(self, fake_clock):
+        cases = [
+            ("reports/05-anime-skip-5.yaml", {"id": 155, "type": "anime", "nlist": 5, "nskip": 5}),
+            ("reports/08-anime-search-frieren.yaml", {"id": 155, "type": "anime", "nlist": 5, "search": "Frieren"}),
+            ("reports/12-anime-by-name-prefix.yaml", {"id": 155, "type": "anime", "nlist": 5, "name": "A"}),
+            ("reports/14-anime-licensed-true.yaml", {"id": 155, "type": "anime", "nlist": 5, "licensed": "true"}),
+        ]
+
+        for rel, kwargs in cases:
+            with responses.RequestsMock() as rsps:
+                _register(rsps, _load(rel))
+                out = ann_api.reports(**kwargs, no_cache=True)
+
+            assert isinstance(out, AnnReport)
+            assert out.attrs["listed"]
+            assert out.args["type"] == "anime"
+
+    def test_reports_allows_omitting_type_filter(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "reports.xml", body='<report listed="0"><args><id>155</id></args></report>')
+            out = ann_api.reports(id=155, type=None, nlist=1, no_cache=True)
+
+        assert isinstance(out, AnnReport)
+        assert out.args == {"id": "155"}
+
 
 class TestErrorPaths:
     def test_reports_html_error_raises_not_found(self, fake_clock):
@@ -131,3 +164,45 @@ class TestErrorPaths:
                 ann_api.reports(id=99999999, type="anime", nlist=2, no_cache=True)
 
         assert ei.value.reason == "not-found"
+
+    def test_show_non_text_body_raises_decode_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "api.xml", body=b"\xff")
+            with pytest.raises(ApiError) as ei:
+                ann_api.show(1, no_cache=True)
+
+        assert ei.value.backend == "ann"
+        assert ei.value.reason == "upstream-decode"
+
+    def test_show_malformed_xml_keeps_backend_on_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "api.xml", body="<ann>")
+            with pytest.raises(ApiError) as ei:
+                ann_api.show(1, no_cache=True)
+
+        assert ei.value.backend == "ann"
+        assert ei.value.reason == "upstream-decode"
+
+    def test_show_5xx_raises_upstream_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "api.xml", status=503, body="<html>unavailable</html>")
+            with pytest.raises(ApiError) as ei:
+                ann_api.show(1, no_cache=True)
+
+        assert ei.value.reason == "upstream-error"
+
+    def test_reports_wrong_xml_root_raises_shape_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "reports.xml", body="<ann />")
+            with pytest.raises(ApiError) as ei:
+                ann_api.reports(id=155, type="anime", nlist=1, no_cache=True)
+
+        assert ei.value.reason == "upstream-shape"

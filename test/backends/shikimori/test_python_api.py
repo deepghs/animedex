@@ -64,6 +64,29 @@ def _register(rsps: responses.RequestsMock, fixture: dict) -> None:
     rsps.add(responses.Response(method=req["method"].upper(), url=url_re, **kwargs))
 
 
+def _register_path(
+    rsps: responses.RequestsMock,
+    path: str,
+    *,
+    status: int = 200,
+    body="[]",
+    content_type: str = "application/json",
+) -> None:
+    """Register a synthetic Shikimori response by endpoint path."""
+    import re
+
+    url_re = re.compile(r"https://shikimori\.io" + re.escape(path) + r"(\?.*)?$")
+    rsps.add(
+        responses.Response(
+            method="GET",
+            url=url_re,
+            status=status,
+            body=body,
+            headers={"Content-Type": content_type},
+        )
+    )
+
+
 _STRIP_HEADERS = {"content-encoding", "content-length", "transfer-encoding"}
 
 
@@ -114,6 +137,15 @@ class TestCalendar:
         assert len(out) >= 1
         assert isinstance(out[0], ShikimoriCalendarEntry)
         assert out[0].anime is not None
+
+    def test_calendar_default_call_accepts_array_payload(self, fake_clock):
+        fx = _load("calendar/16-default.yaml")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, fx)
+            out = shiki_api.calendar(no_cache=True)
+
+        assert len(out) >= 1
+        assert isinstance(out[0], ShikimoriCalendarEntry)
 
 
 class TestMedia:
@@ -182,3 +214,72 @@ class TestLongTail:
         assert isinstance(studios[0], ShikimoriStudio)
         assert len(genres) >= 1
         assert isinstance(genres[0], ShikimoriResource)
+
+
+class TestErrorPaths:
+    def test_429_raises_rate_limited(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "/api/animes/52991", status=429, body='{"message":"rate limited"}')
+            with pytest.raises(ApiError) as ei:
+                shiki_api.show(52991, no_cache=True)
+
+        assert ei.value.backend == "shikimori"
+        assert ei.value.reason == "rate-limited"
+
+    def test_5xx_raises_upstream_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "/api/animes/52991", status=503, body='{"message":"unavailable"}')
+            with pytest.raises(ApiError) as ei:
+                shiki_api.show(52991, no_cache=True)
+
+        assert ei.value.reason == "upstream-error"
+
+    def test_non_text_body_raises_decode_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "/api/animes/52991", body=b"\xff", content_type="application/octet-stream")
+            with pytest.raises(ApiError) as ei:
+                shiki_api.show(52991, no_cache=True)
+
+        assert ei.value.reason == "upstream-decode"
+
+    def test_non_json_body_raises_decode_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "/api/animes/52991", body="<html />", content_type="text/html")
+            with pytest.raises(ApiError) as ei:
+                shiki_api.show(52991, no_cache=True)
+
+        assert ei.value.reason == "upstream-decode"
+
+    def test_show_array_payload_raises_shape_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "/api/animes/52991", body="[]")
+            with pytest.raises(ApiError) as ei:
+                shiki_api.show(52991, no_cache=True)
+
+        assert ei.value.reason == "upstream-shape"
+
+    def test_null_list_payload_normalises_to_empty_list(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "/api/animes", body="null")
+            out = shiki_api.search("empty", no_cache=True)
+
+        assert out == []
+
+    def test_object_list_payload_normalises_to_one_row(self, fake_clock):
+        body = '{"id":52991,"name":"Sousou no Frieren"}'
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, "/api/animes/52991/similar", body=body)
+            out = shiki_api.similar(52991, no_cache=True)
+
+        assert len(out) == 1
+        assert isinstance(out[0], ShikimoriAnime)
