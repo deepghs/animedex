@@ -15,8 +15,10 @@ import responses
 import yaml
 
 from animedex.backends import quote as quote_api
+from animedex.backends.quote import models as quote_models
 from animedex.backends.quote.models import AnimeChanAnime, AnimeChanQuote
 from animedex.config import Config
+from animedex.models.common import ApiError
 
 
 pytestmark = pytest.mark.unittest
@@ -122,25 +124,25 @@ class TestQuoteApi:
         assert first.source_tag.cached is False
         assert second.source_tag.cached is True
 
+    def test_close_default_cache_resets_singleton(self, fake_clock):
+        cache = quote_api._default_cache()
+        assert quote_api._DEFAULT_CACHE is cache
+        quote_api._close_default_cache()
+        assert quote_api._DEFAULT_CACHE is None
+
 
 class TestValidation:
     def test_empty_filter_raises_bad_args(self, fake_clock):
-        from animedex.models.common import ApiError
-
         with pytest.raises(ApiError) as ei:
             quote_api.random_by_anime("", no_cache=True)
         assert ei.value.reason == "bad-args"
 
     def test_page_zero_raises_bad_args(self, fake_clock):
-        from animedex.models.common import ApiError
-
         with pytest.raises(ApiError) as ei:
             quote_api.quotes_by_anime("Naruto", page=0, no_cache=True)
         assert ei.value.reason == "bad-args"
 
     def test_429_raises_rate_limited(self, fake_clock):
-        from animedex.models.common import ApiError
-
         with responses.RequestsMock() as rsps:
             rsps.add(
                 responses.GET,
@@ -151,6 +153,109 @@ class TestValidation:
             with pytest.raises(ApiError) as ei:
                 quote_api.random(no_cache=True)
         assert ei.value.reason == "rate-limited"
+
+    @pytest.mark.parametrize(
+        ("status", "body", "reason"),
+        [
+            (404, {"message": "missing"}, "not-found"),
+            (500, {"message": "server failed"}, "upstream-error"),
+            (400, {"message": "bad input"}, "upstream-error"),
+        ],
+    )
+    def test_http_errors_raise_api_error(self, fake_clock, status, body, reason):
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, "https://api.animechan.io/v1/quotes/random", json=body, status=status)
+            with pytest.raises(ApiError) as ei:
+                quote_api.random(no_cache=True)
+        assert ei.value.reason == reason
+
+    def test_non_json_body_raises_decode_error(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, "https://api.animechan.io/v1/quotes/random", body="not-json", status=200)
+            with pytest.raises(ApiError) as ei:
+                quote_api.random(no_cache=True)
+        assert ei.value.reason == "upstream-decode"
+
+    def test_non_object_payload_raises_shape_error(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.GET, "https://api.animechan.io/v1/quotes/random", json=[], status=200)
+            with pytest.raises(ApiError) as ei:
+                quote_api.random(no_cache=True)
+        assert ei.value.reason == "upstream-shape"
+
+    def test_unsuccessful_envelope_raises_upstream_error(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.animechan.io/v1/quotes/random",
+                json={"status": "error", "message": "temporary failure"},
+                status=200,
+            )
+            with pytest.raises(ApiError) as ei:
+                quote_api.random(no_cache=True)
+        assert ei.value.reason == "upstream-error"
+
+    def test_single_quote_shape_error(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.animechan.io/v1/quotes/random",
+                json={"status": "success", "data": []},
+                status=200,
+            )
+            with pytest.raises(ApiError) as ei:
+                quote_api.random(no_cache=True)
+        assert ei.value.reason == "upstream-shape"
+
+    def test_quote_list_shape_error(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.animechan.io/v1/quotes",
+                match=[responses.matchers.query_param_matcher({"anime": "Naruto", "page": "1"})],
+                json={"status": "success", "data": {}},
+                status=200,
+            )
+            with pytest.raises(ApiError) as ei:
+                quote_api.quotes_by_anime("Naruto", page=1, no_cache=True)
+        assert ei.value.reason == "upstream-shape"
+
+    def test_quote_row_shape_error(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.animechan.io/v1/quotes",
+                match=[responses.matchers.query_param_matcher({"anime": "Naruto", "page": "1"})],
+                json={"status": "success", "data": ["not-an-object"]},
+                status=200,
+            )
+            with pytest.raises(ApiError) as ei:
+                quote_api.quotes_by_anime("Naruto", page=1, no_cache=True)
+        assert ei.value.reason == "upstream-shape"
+
+    def test_anime_shape_error(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.animechan.io/v1/anime/188",
+                json={"status": "success", "data": []},
+                status=200,
+            )
+            with pytest.raises(ApiError) as ei:
+                quote_api.anime("188", no_cache=True)
+        assert ei.value.reason == "upstream-shape"
+
+
+class TestModelEdges:
+    def test_quote_to_common_without_nested_models_uses_default_source(self):
+        common = AnimeChanQuote(content="Sample").to_common()
+        assert common.text == "Sample"
+        assert common.anime is None
+        assert common.character is None
+        assert common.source.backend == "quote"
+
+    def test_model_selftest_runs(self):
+        assert quote_models.selftest() is True
 
 
 class TestSelftest:
