@@ -153,7 +153,6 @@ caller). Examples:
   expected.
 * ``upstream-shape`` — JSON parsed but the expected key was missing.
 * ``graphql-error`` — AniList's body had a non-empty ``errors`` list.
-* ``read-only`` — the local firewall rejected a mutating method.
 * ``unknown-backend`` — typo in the backend identifier.
 * ``auth-required`` — endpoint needs a token; raised by the four
   AniList stubs until token storage lands.

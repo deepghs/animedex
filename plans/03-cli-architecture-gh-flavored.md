@@ -248,8 +248,7 @@ Universal flags:
 ```
 --paginate         auto-paginate (Jikan, MangaDex, Danbooru)
 --jq <expr>        jq post-filter
---method/-X        HTTP method override (GET / POST allowed; mutating
-                    methods rejected to honour the read-only promise)
+--method/-X        HTTP method override; forwarded verbatim
 --header/-H K:V    add header
 --field/-f K=V     form/url-encoded field
 --raw-field/-F K=V no type coercion
@@ -262,7 +261,7 @@ Universal flags:
 Two contracts on this command:
 
 1. The output is the upstream's raw JSON, not our annotated shape. No `_source` is added; this is a passthrough.
-2. Read-only mutating methods (`PUT`, `PATCH`, `DELETE`, and writes via `POST` to mutation endpoints) are rejected before the request leaves the host, even if the upstream would accept them.
+2. Method/path choices are forwarded verbatim. The raw passthrough is an escape hatch; callers own the upstream response.
 
 ## 8. Auth Model
 

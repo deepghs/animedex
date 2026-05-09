@@ -13,9 +13,11 @@ positional tags include, ``-tag`` excludes, ``rating:g|s|q|e``
 selects content class, ``score:>N`` / ``score:<N`` filter by
 score, ``order:score|date|random`` sets order. Pagination uses
 ``?page=N&limit=M`` with cursor variants ``?page=b<id>`` (before)
-and ``?page=a<id>`` (after). Common reads: ``/posts.json?tags=...``,
-``/posts/{id}.json``, ``/tags.json?search[name_matches]=touhou*``,
-``/counts/posts.json?tags=...``.
+and ``?page=a<id>`` (after). Common read paths:
+``/posts.json?tags=...``, ``/posts/{id}.json``,
+``/tags.json?search[name_matches]=touhou*``,
+``/counts/posts.json?tags=...``. The raw ``method`` argument is
+forwarded verbatim.
 --- End ---
 """
 
@@ -30,6 +32,7 @@ from animedex.api._envelope import RawResponse
 def call(
     path: str,
     *,
+    method: str = "GET",
     headers: Optional[Dict[str, str]] = None,
     params: Optional[dict] = None,
     no_cache: bool = False,
@@ -47,7 +50,7 @@ def call(
     return _dispatch_call(
         backend="danbooru",
         path=path,
-        method="GET",
+        method=method,
         headers=headers,
         params=params,
         no_cache=no_cache,
@@ -64,7 +67,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the Danbooru passthrough (firewall + signature)."""
+    """Smoke-test the Danbooru passthrough."""
     from animedex.api._dispatch import selftest_backend_shim
 
     return selftest_backend_shim("danbooru", call, extra_params=("path",))

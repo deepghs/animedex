@@ -14,8 +14,7 @@ Two paths:
 * ``GET /search?url=<encoded>&anilistInfo`` searches for a
   screenshot anime match. Each call consumes one from the monthly
   quota.
-* ``POST /search`` with raw image bytes is also supported and is
-  the only POST allowed by the read-only firewall on this backend.
+* ``POST /search`` with raw image bytes is also supported.
 
 Errors: HTTP 402 (quota exhausted), 429 (concurrency exceeded),
 503 (backend overload), 403 (target image fetch failed).
@@ -73,7 +72,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the Trace.moe passthrough (firewall + signature)."""
+    """Smoke-test the Trace.moe passthrough signature."""
     from animedex.api._dispatch import selftest_backend_shim
 
     return selftest_backend_shim("trace", call, extra_params=("path", "method", "raw_body"))

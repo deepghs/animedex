@@ -248,7 +248,7 @@ class TestRawResponse:
         assert r.redirects == []
         assert r.firewall_rejected is None
 
-    def test_firewall_rejected(self):
+    def test_local_rejected(self):
         from animedex.api._envelope import (
             RawCacheInfo,
             RawRequest,
@@ -265,9 +265,9 @@ class TestRawResponse:
             body_text="",
             timing=RawTiming(total_ms=0.1, rate_limit_wait_ms=0, request_ms=0),
             cache=RawCacheInfo(hit=False),
-            firewall_rejected={"reason": "read-only", "message": "DELETE not permitted"},
+            firewall_rejected={"reason": "unknown-backend", "message": "unknown backend"},
         )
-        assert r.firewall_rejected["reason"] == "read-only"
+        assert r.firewall_rejected["reason"] == "unknown-backend"
 
     def test_round_trip_json(self):
         from animedex.api._envelope import (

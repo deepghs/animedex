@@ -150,6 +150,7 @@ SUITES = [
     ("anilist", "graphql", _anilist_caller),
     ("jikan", "anime_by_id", _jikan_caller),
     ("jikan", "anime_search", _jikan_caller),
+    ("jikan", "pagination", _jikan_caller),
     ("jikan", "seasons", _jikan_caller),
     ("jikan", "anime_characters", _jikan_caller),
     ("jikan", "anime_episodes", _jikan_caller),
@@ -193,6 +194,7 @@ SUITES = [
     ("kitsu", "users_library_entries", _kitsu_caller),
     ("kitsu", "users_stats", _kitsu_caller),
     ("mangadex", "manga_search", _mangadex_caller),
+    ("mangadex", "pagination", _mangadex_caller),
     ("mangadex", "manga_by_id", _mangadex_caller),
     ("mangadex", "manga_feed", _mangadex_caller),
     ("mangadex", "manga_meta", _mangadex_caller),
@@ -233,6 +235,7 @@ SUITES = [
     ("trace", "me", _trace_caller),
     ("trace", "search", _trace_caller),
     ("danbooru", "posts_search", _danbooru_caller),
+    ("danbooru", "pagination", _danbooru_caller),
     ("danbooru", "posts_by_id", _danbooru_caller),
     ("danbooru", "tags_search", _danbooru_caller),
     ("danbooru", "artists_search", _danbooru_caller),
@@ -297,6 +300,7 @@ SUITES = [
     ("danbooru", "saved_searches", _danbooru_caller),
     ("shikimori", "animes_by_id", _shikimori_caller),
     ("shikimori", "animes_search", _shikimori_caller),
+    ("shikimori", "pagination", _shikimori_caller),
     ("shikimori", "calendar", _shikimori_caller),
     ("shikimori", "screenshots", _shikimori_caller),
     ("shikimori", "videos", _shikimori_caller),
@@ -515,11 +519,7 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
 
 
 class TestSelftestBackendShimHelper:
-    """Per review m5 + AGENTS §9.1: each per-backend selftest must
-    catch a rename / signature breakage of the module's public ``call``.
-    Driven by the shared :func:`animedex.api._dispatch.selftest_backend_shim`
-    helper.
-    """
+    """Each per-backend selftest must catch public ``call`` signature breaks."""
 
     def test_helper_passes_when_call_signature_is_intact(self):
         from animedex.api._dispatch import selftest_backend_shim

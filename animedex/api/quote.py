@@ -1,11 +1,10 @@
 """
 ``animedex api quote`` raw passthrough.
 
-AnimeChan is a free, anonymous, GET-only quote API. The free tier
-serves random quotes and paginated quote lists filtered by anime or
-character name. Every successful response is a JSON envelope with a
-``status`` string and a ``data`` field containing either one quote or
-an array of quotes.
+AnimeChan is a free, anonymous quote API. The free tier serves random
+quotes and paginated quote lists filtered by anime or character name.
+Every successful response is a JSON envelope with a ``status`` string
+and a ``data`` field containing either one quote or an array of quotes.
 
 Backend: AnimeChan (api.animechan.io/v1).
 
@@ -14,12 +13,13 @@ limits, but this backend only configures the anonymous free-tier
 bucket.
 
 --- LLM Agent Guidance ---
-GET-only path. Common endpoints: ``/quotes/random``,
+Common read paths: ``/quotes/random``,
 ``/quotes/random?anime=<title>``, ``/quotes/random?character=<name>``,
 ``/quotes?anime=<title>&page=N``, and
-``/quotes?character=<name>&page=N``. The free tier is very tight
-(5 req/hour), so prefer cached high-level calls and avoid exploratory
-live probing unless the user needs fresh quotes.
+``/quotes?character=<name>&page=N``. The raw ``method`` argument is
+forwarded verbatim. The free tier is very tight (5 req/hour), so
+prefer cached high-level calls and avoid exploratory live probing
+unless the user needs fresh quotes.
 --- End ---
 """
 
@@ -34,6 +34,7 @@ from animedex.api._envelope import RawResponse
 def call(
     path: str,
     *,
+    method: str = "GET",
     headers: Optional[Dict[str, str]] = None,
     params: Optional[dict] = None,
     no_cache: bool = False,
@@ -65,7 +66,7 @@ def call(
     return _dispatch_call(
         backend="quote",
         path=path,
-        method="GET",
+        method=method,
         headers=headers,
         params=params,
         no_cache=no_cache,
@@ -84,8 +85,7 @@ def call(
 def selftest() -> bool:
     """Smoke-test the AnimeChan passthrough.
 
-    Exercises the shared shim checks: firewall rejection happens
-    before the wire, and the public ``call`` signature retains the
+    Exercises the shared shim checks: the public ``call`` signature retains the
     cross-cutting transport kwargs.
 
     :return: ``True`` on success; raises on contract drift.

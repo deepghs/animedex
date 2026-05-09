@@ -74,7 +74,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the Shikimori passthrough (firewall + signature)."""
+    """Smoke-test the Shikimori passthrough."""
     from animedex.api._dispatch import selftest_backend_shim
 
     return selftest_backend_shim("shikimori", call, extra_params=("path", "method", "json_body", "base_url"))

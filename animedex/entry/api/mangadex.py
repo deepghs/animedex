@@ -8,7 +8,7 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_mangadex = make_get_only_subcommand(
     name="mangadex",
     backend_module_name="mangadex",
-    docstring="""Issue a MangaDex GET request.
+    docstring="""Issue a MangaDex raw request.
 
     UA is mandatory at the wire (empty UA returns HTTP 400); the
     dispatcher injects `animedex/<version>` automatically. Pagination

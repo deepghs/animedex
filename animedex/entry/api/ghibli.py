@@ -8,7 +8,7 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_ghibli = make_get_only_subcommand(
     name="ghibli",
     backend_module_name="ghibli",
-    docstring="""Issue a live Studio Ghibli API GET request.
+    docstring="""Issue a live Studio Ghibli API raw request.
 
     PATH is the URL path under `https://ghibliapi.vercel.app`. The
     high-level `animedex ghibli` commands use a bundled offline

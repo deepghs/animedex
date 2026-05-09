@@ -12,10 +12,10 @@ known\_backends
 .. autofunction:: known_backends
 
 
-enforce\_read\_only
+classify\_read\_only
 -----------------------------------------------------
 
-.. autofunction:: enforce_read_only
+.. autofunction:: classify_read_only
 
 
 selftest

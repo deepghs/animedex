@@ -152,7 +152,7 @@ These are non-negotiable across humans and agents alike.
 
 These are scope and technical-contract decisions, not value judgements about how a user should behave. A user who wants any of the following can build it on top of `animedex api` or in a separate tool; this project simply does not ship them.
 
-- **Writes**. animedex is read-only. We do not implement `PATCH/POST/DELETE` against any user-account endpoint, and the `animedex api` passthrough rejects mutating HTTP methods. Why: it keeps the auth surface small, eliminates a whole class of bugs, and lets us promise that the CLI cannot disturb the user's existing account state. See plan 03.
+- **Writes**. animedex's high-level surface is read-oriented. We do not implement high-level `PATCH/POST/DELETE` helpers against user-account endpoints. The raw `animedex api` passthrough remains the escape hatch: it forwards method/path choices verbatim and returns the upstream result. See plan 03.
 - **Hot-linking the MangaDex public CDN**. The MangaDex ToS requires the At-Home flow (`GET /at-home/server/{id}` followed by `<base>/data/<hash>/<file>`); going around it has produced IP rate limits and is a technical contract, not a preference.
 - **Reviving a dead upstream**. AniAPI's domain has been re-pointed away from the project and its repository is archived; we do not attempt to scrape, mirror, or otherwise reconstruct the service. When and if a maintained successor appears, this decision can be revisited.
 

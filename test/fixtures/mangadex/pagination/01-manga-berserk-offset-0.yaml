@@ -1,0 +1,494 @@
+metadata:
+  captured_at: '2026-05-09T08:05:30Z'
+  label: manga-berserk-offset-0
+  backend: mangadex
+  path_slug: pagination
+request:
+  method: GET
+  url: https://api.mangadex.org/manga?title=Berserk&limit=2&offset=0&includes%5B%5D=cover_art
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json
+    cache-control: max-age=15, public, s-maxage=2592000, stale-while-revalidate=15
+    date: Sat, 09 May 2026 08:05:30 GMT
+    content-encoding: gzip
+    x-cache: MISS
+    accept-ranges: bytes
+    transfer-encoding: chunked
+    access-control-allow-credentials: 'true'
+    access-control-expose-headers: '*'
+    vary: Origin
+    md-edge-crs: Tk9ORQ
+    server: MangaDex
+    via: <scrubbed-at-capture>
+    x-request-id: acfe79dd-389e-4ae7-8461-758332078a74
+    permissions-policy: fullscreen=(self)
+    referrer-policy: strict-origin
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+    x-frame-options: DENY
+    cross-origin-embedder-policy: unsafe-none
+    cross-origin-opener-policy: same-origin-allow-popups
+    cross-origin-resource-policy: cross-origin
+    strict-transport-security: max-age=63072000; includeSubDomains; preload
+    alt-svc: h3=":443"; ma=86400
+    md-progressive-rollout-bucket: '3104436490'
+  body_json:
+    result: ok
+    response: collection
+    data:
+    - id: 801513ba-a712-498c-8f57-cae55b38cc92
+      type: manga
+      attributes:
+        title:
+          ja-ro: Berserk
+        altTitles:
+        - ja: ベルセルク
+        - ko: 베르세르크
+        - zh: 烙印勇士
+        - zh-hk: 劍風傳奇
+        - ar: برسرك
+        - ar: بيرسيرك
+        - be: Бярсерк
+        - de: Berserk
+        - he: ברזרק
+        - ne: बर्सर्क
+        - fa: برزرک
+        - ru: Берсерк
+        - th: เบอร์เซิร์ก
+        - th: เทพมรณะ
+        - uk: Берсерк
+        - bg: Берсерк
+        - bn: রণোন্মত্ত
+        - en: Berserk
+        description:
+          en: |-
+            Guts, known as the Black Swordsman, seeks sanctuary from the demonic forces attracted to him and his woman because of a demonic mark on their necks, and also vengeance against the man who branded him as an unholy sacrifice. Aided only by his titanic strength gained from a harsh childhood lived with mercenaries, a gigantic sword, and an iron prosthetic left hand, Guts must struggle against his bleak destiny, all the while fighting with a rage that might strip him of his humanity.
+            ___
+            Won the 6th Osamu Tezuka Cultural Prize Excellence Award in 2002.
+
+            Note: Following Miura Kenta's death in 2021, the series has been taken over by Kouji Mori, who supervises the series with art done by Studio Gaga.
+          es: Guts, conocido como el Espadachín Negro, busca refugio de las fuerzas demoníacas que se sienten atraídas por
+            él y su mujer debido a una marca demoníaca en el cuello, además de vengarse del hombre que lo marcó como un sacrificio
+            impío. Únicamente con la ayuda de su fuerza titánica, adquirida tras una dura infancia vivida con mercenarios,
+            una espada gigantesca y una prótesis de hierro en la mano izquierda, Guts deberá luchar contra su sombrío destino,
+            al tiempo que combate con una rabia que podría despojarle de su humanidad.
+          ja: 巨大な剣を背負い、鉄の義手をつけた剣士・ガッツ。彼の行くところ、血の雨が降り、死体の山が築かれる…！
+          ru: Гатс – Черный Мечник, за которым охотятся демоны. Мечник стремится найти все убежища демонов и отомстить человеку,
+            сделавшего их него «жертвенную овечку». Черный Мечник противостоит жестокой судьбе благодаря непоколебимой воле,
+            невероятной силе, и, конечно же, меча. Постоянные сражения со злом приближает Гатса к параллельному миру тьмы,
+            лишая его человечности. Берсерк – сложная, но сильная история о сражениях и злой судьбе.
+          th: |-
+            เบอร์เซิร์ก เป็นชื่อมังงะ แนวดาร์ค แฟนตาซี ของญี่ปุ่น วาดโดยเคนทาโร่ มิอุระ มีการดำเนินเรื่องเกิดขึ้นในยุคกลางของยุโรป โดยได้รับอิทธิพลมาจากโลกแห่งจินตนิมิตด้านมืด มีตัวละครเอกของเรื่องคือ กัทส์ ทหารรับจ้างผู้โดดเดี่ยวและ กริฟฟิท หัวหน้าของกลุ่มทหารรับจ้างที่รวมตัวกันภายใต้ชื่อ กองพันเหยี่ยว
+
+            ----
+             [Shopee (ไทย)](https://shopee.co.th/berserk%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%8B%E0%B8%B4%E0%B8%A3%E0%B9%8C%E0%B8%81-%E0%B8%9A%E0%B8%B4%E0%B9%8A%E0%B8%81%E0%B8%9A%E0%B8%B8%E0%B8%84-%E0%B9%81%E0%B8%A2%E0%B8%81%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%A1-1-20-%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87-i.63434898.1855330863)
+          tr: "Kara Kılıç Ustası olarak anılan Guts, vücutlarındaki şeytani damga yüzünden onlara musallat olan şeytani güçlerden,\
+            \ kadınını ve kendisini korumanın bir yolunu aramaktadır. Aynı zamanda onu damgalayan ve bir kurban konumuna düşüren\
+            \ adamdan intikam almaya çalışmaktadır. Paralı askerlerle geçirdiği zorlu çocukluk yıllarının getirdiği tecrübeler\
+            \ sayesinde elde ettiği büyük gücü, devasa bir kılıç ve protez bir kol ile destekleyen Guts, karamsar kaderiyle\
+            \ mücadele etmek zorundadır. Tüm bunları yaparken, insani benliğini kaybetmesine neden olabilecek öfkeyle başa\
+            \ çıkmalıdır. \n\nTheWildDeer'dan Dorylaion tarafından biraz yorum katılarak sitedeki ingilizce açıklamadan çevrilmiştir."
+          uk: 'Його ім''я Ґатс, Чорний Мечник. Він могутній воїн, про якого говорять лишень пошепки. У нього є велетенський
+            меч , рука зі заліза й шрами від незліченних боїв і тортур. А ще його плоть позначена Тавром — нечестивим символом,
+            який притягує сили пітьми й робить Ґатса їхньою жертвою. Але Ґатс не прийме таку долю спокійно: він порубає на
+            фарш війська проклятих, як і будь-кого, кому стане дурості стати на його шляху! Ґатс іде в товаристві ельфа Пака
+            (більше докучайла, ніж товариша) темним і закривавленим шляхом, який приведе лише до загибелі... Чи помсти.'
+          es-la: Guts, conocido como el Espadachín Negro, busca refugio de las fuerzas demoníacas que se sienten atraídas
+            por él y su mujer debido a una marca demoníaca en el cuello, además de vengarse del hombre que lo marcó como un
+            sacrificio impío. Únicamente con la ayuda de su fuerza titánica, adquirida tras una dura infancia vivida con mercenarios,
+            una espada gigantesca y una prótesis de hierro en la mano izquierda, Guts deberá luchar contra su sombrío destino,
+            al tiempo que combate con una rabia que podría despojarle de su humanidad.
+          pt-br: Guts, conhecido como o Espadachim Negro, busca refúgio das forças demoníacas atraídas por ele e sua mulher
+            por causa de uma marca demoníaca em seus pescoços, e também vingança contra o homem que o marcou como um sacrifício
+            profano.  Ajudado apenas por sua força titânica adquirida de uma infância dura vivida com mercenários, uma espada
+            gigantesca e uma mão esquerda protética de ferro, Guts deve lutar contra seu destino sombrio, enquanto luta com
+            uma raiva que pode despojá-lo de sua humanidade.
+        isLocked: false
+        links:
+          al: '30002'
+          ap: berserk
+          bw: series/16664/list
+          kt: '8'
+          mu: njeqwry
+          amz: https://www.amazon.co.jp/-/en/dp/B074C597F1
+          cdj: https://www.cdjapan.co.jp/product/NEOBK-3115032
+          ebj: https://ebookjapan.yahoo.co.jp/books/127562/
+          mal: '2'
+          raw: https://younganimal.com/series/f68f676b354d4/
+          engtl: https://www.darkhorsedirect.com/products/berserk-multi-volume-books
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: seinen
+        status: ongoing
+        year: 1989
+        contentRating: erotica
+        tags:
+        - id: 0a39b5a1-b235-4886-a747-1d05d216532d
+          type: tag
+          attributes:
+            name:
+              en: Award Winning
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        - id: 36fd93ea-e8b8-445e-b836-358f02b3d33d
+          type: tag
+          attributes:
+            name:
+              en: Monsters
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 39730448-9a5f-48a2-85b0-a70db87b1233
+          type: tag
+          attributes:
+            name:
+              en: Demons
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: 3b60b75c-a2d7-4860-ab56-05f391bb889c
+          type: tag
+          attributes:
+            name:
+              en: Psychological
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 97893a4c-12af-4dac-b6be-0dffb353568e
+          type: tag
+          attributes:
+            name:
+              en: Sexual Violence
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: ac72833b-c4e9-4878-b9db-6c8a4a99444a
+          type: tag
+          attributes:
+            name:
+              en: Military
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: b1e97889-25b4-4258-b28b-cd7f4d28ea9b
+          type: tag
+          attributes:
+            name:
+              en: Philosophical
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: b29d6a3d-1569-4e7a-8caf-7557bc92cd5d
+          type: tag
+          attributes:
+            name:
+              en: Gore
+            description: {}
+            group: content
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdad7e68-1419-41dd-bdce-27753074a640
+          type: tag
+          attributes:
+            name:
+              en: Horror
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdc58593-87dd-415e-bbc0-2ec27bf404cc
+          type: tag
+          attributes:
+            name:
+              en: Fantasy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2018-01-30T13:50:05+00:00'
+        updatedAt: '2026-02-26T16:36:44+00:00'
+        version: 119
+        availableTranslatedLanguages:
+        - fr
+        - pt-br
+        - es-la
+        - es
+        - ar
+        - en
+        - uk
+        - id
+        - ru
+        - tr
+        - zh-hk
+        - it
+        - ro
+        - hu
+        - pl
+        - fa
+        - zh
+        - bg
+        - el
+        latestUploadedChapter: d291d403-b6d4-406f-af76-77179aab13e7
+      relationships:
+      - id: 5863578d-4e4f-4b57-b64d-1dd45a893cb0
+        type: author
+      - id: e4dc18d8-1b8d-48e6-9b70-0f93a5af35ca
+        type: author
+      - id: 5863578d-4e4f-4b57-b64d-1dd45a893cb0
+        type: artist
+      - id: 8d88f37d-bd1e-4974-a309-7dfce13f9c56
+        type: artist
+      - id: bab715d9-1b6a-4f50-8fea-ac5628ebfd8e
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '43'
+          fileName: 81e1c82d-6672-400c-8c58-4ff9bfb89031.jpg
+          locale: ja
+          createdAt: '2025-08-22T11:23:23+00:00'
+          updatedAt: '2025-08-22T11:23:23+00:00'
+          version: 1
+      - id: 4a5d677d-e3ac-4c23-a6bf-bb92c984fee4
+        type: manga
+        related: preserialization
+      - id: 5a143603-d575-4062-9528-12c2ddb83af3
+        type: manga
+        related: side_story
+      - id: 77994aef-fe9a-418b-97a8-12b306a8dbdc
+        type: manga
+        related: doujinshi
+      - id: d9e2f26e-c762-41a6-bb71-b6ae18cadde2
+        type: manga
+        related: colored
+      - id: fab932f0-385e-46c2-b67a-f7e68ad85208
+        type: manga
+        related: doujinshi
+    - id: 30196491-8fc2-4961-8886-a58f898b1b3e
+      type: manga
+      attributes:
+        title:
+          ja-ro: Boushoku no Berserk ~Ore dake Level to Iu Gainen wo Toppa suru~
+        altTitles:
+        - ja: 暴食のベルセルク～俺だけレベルという概念を突破する～ THE COMIC
+        - ja-ro: Boushoku no Berserk ~Ore dake Level to Iu Gainen o Toppa suru~
+        - en: 'Berserk of Gluttony: The One that Exceeds the Concept of Levels'
+        - ko: 폭식의 베르세르크 ~나만 레벨이라는 개념을 돌파한다~
+        - zh: 狂怒的暴食 ～只有我突破了等级这概念～
+        - zh-hk: 狂怒的暴食 ～僅自己突破了等級這概念～
+        - fr: 'Berserk de la Gourmandise : Celui qui surpasse le concept même de niveaux'
+        - pl: Berserk obżarstwa
+        - ru: Ненасытный Берсерк
+        - vi: Bạo Thực Cuồng Nhân
+        description:
+          en: In this world, there are two types of people. Those Who have powerful "skills", and those who don't. People
+            born with powerful skills, exterminate monsters to level up and become successful, while people without them,
+            become failures, who are treated harshly by society. Follow the story of Fate, a guy who works as a gatekeeper,
+            and whose only skill is gluttony, a skill that only makes him hungry.
+          fr: "Dans ce monde, il y a deux types de personnes. Ceux qui ont un ou plusieurs \"talents\", et ceux qui n'en possèdent\
+            \ pas. Les personnes nées avec de puissant talents, exterminent les monstres pour monter en niveaux et devenir\
+            \ puissants, alors que ceux qui n'en possèdent pas deviennent des échecs et sont traités durement par la société.\
+            \ Nous suivons l'histoire de Fate, un homme travaillant comme garde aux portes de la ville et dont son seul talents\
+            \ est la gourmandise, un talent qui ne fait que lui donner faim.  \n\n\n---"
+          ja: |-
+            暴食《スキル》が真の姿を見せたとき、少年の運命が動き始める――
+
+            スキルの優劣が絶対の世界で《暴食》という腹が減るだけのスキルを持って生まれた少年フェイト。無能と蔑まれ、危険で薄給な城の門番で日銭を稼ぐ最底辺の生活を強いられていたある日、城に侵入した賊を仕留めたことで《暴食》の真の能力、「殺した相手のスキル、能力を奪い取る」力が発動する――
+          ro: "În lumea asta sunt două tipuri de oameni: cei care posedă “puteri” incredibile și cei care nu.  \nCei care\
+            \ au fost născuți cu asemenea “puteri” extermină monștrii, evoluează și devin oameni de success, în timp ce ceilalți\
+            \ devin eșecuri, și sunt tratați diferit de societate.  \nCitește povestea lui Fate, un tip ce lucrează ca și\
+            \ gardian, a cărui putere este lăcomia, o putere care îl face să fie mereu înfometat.   \n  \n\n\n---\n\n**Links:**\
+            \  \n- [Author's Twitter](https://twitter.com/isshiki_ichika)  \n- [Original Web Novel](https://ncode.syosetu.com/n6887dt/)\
+            \ (Raw)  \n- Original Comic on **[** [Comic Ride](http://comicride.jp/gluttony/) **|** [NicoNico](http://seiga.nicovideo.jp/comic/31663)\
+            \ **]** (Raw)"
+          ru: "В этом мире есть два типа людей. Те, у кого есть сильные «навыки», и те, кто их не имеет. Люди, рожденные с\
+            \ мощными навыками, уничтожают монстров, чтобы стать успешными, в то время как люди без них становятся неудачниками,\
+            \ к которым жестоко относится общество. В нашей истории, парень, который работает в качестве привратника, и чье\
+            \ единственное умение — обжорство, умение, которое только делает его голодным.   \n  \n\n\n---"
+          vi: 'Fate, một người lính gác cổng thành, sống một cuộc sống với vô vàn rắc rối. Cơn đói khát luôn cào xé Fate ngay
+            từ lúc anh mới lọt lòng bởi《Bạo Thực》- một quyền năng được Chúa ban tặng. Nhìn qua nó đúng là một kỹ năng vô dụng,
+            chỉ khiến cho người sở hữu đói đến phát điên, nhưng như tảng băng trôi, năng lực ấy còn có khả năng tiềm ẩn chưa
+            một ai thấy được. Một ngày nọ, sau khi hạ gục một tên trộm cả gan đột nhập vào lâu đài, Fate đã khai phá được
+            sức mạnh thật sự của《Bạo Thực》. Một kỹ năng nuốt chửng toàn bộ linh hồn những đối tượng bị Fate đánh bại, hấp
+            thụ toàn bộ sức mạnh của chúng. Lần đầu tiên trong đời, Fate thỏa mãn được cơn đói khát của mình. Dần dần, một
+            người vốn bị đối xử như đống rác rưởi, bị xã hội ruồng bỏ; bắt đầu vực dậy và ngẩng cao đầu. Phá vỡ khái niệm
+            “level” - thứ đang chi phối cả thế giới này, anh gieo rắc nỗi sợ với sức mạnh huỷ diệt của mình, cùng với danh
+            xưng đầy tự hào: Bạo Thực Cuồng Nhân…'
+          pt-br: Neste mundo, existem dois tipos de pessoas. Aqueles que têm poderosas “habilidades” e aqueles que não. As
+            pessoas nascidas com habilidades poderosas exterminam monstros para subirem de nível e se tornarem bem-sucedidas,
+            enquanto as pessoas sem eles, tornam-se fracassos, que são tratados com dureza pela sociedade. Fate é um cara
+            que trabalha como um porteiro, e cuja única habilidade é a gula, uma habilidade que o faz comer almas.
+        isLocked: false
+        links:
+          al: '101625'
+          ap: berserk-of-gluttony
+          bl: '553482'
+          bw: series/175790
+          kt: '40812'
+          mu: y10mhma
+          nu: berserk-of-gluttony
+          amz: https://www.amazon.co.jp/dp/B07PGBXYQZ
+          ebj: https://ebookjapan.yahoo.co.jp/books/436470/
+          mal: '113958'
+          raw: https://comicride.jp/gluttony
+          engtl: https://sevenseasentertainment.com/series/berserk-of-gluttony-manga
+        officialLinks: null
+        originalLanguage: ja
+        lastVolume: ''
+        lastChapter: ''
+        publicationDemographic: seinen
+        status: ongoing
+        year: 2018
+        contentRating: safe
+        tags:
+        - id: 391b0423-d847-456f-aff0-8b0cfc03066b
+          type: tag
+          attributes:
+            name:
+              en: Action
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 423e2eae-a7a2-4a8b-ac03-a8351462d71d
+          type: tag
+          attributes:
+            name:
+              en: Romance
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: 87cc87cd-a395-47af-b27a-93258283bbc6
+          type: tag
+          attributes:
+            name:
+              en: Adventure
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: aafb99c1-7f60-43fa-b75f-fc9502ce29c7
+          type: tag
+          attributes:
+            name:
+              en: Harem
+            description: {}
+            group: theme
+            version: 1
+          relationships: []
+        - id: b9af3a63-f058-46de-a9a0-e0c13906197a
+          type: tag
+          attributes:
+            name:
+              en: Drama
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: cdc58593-87dd-415e-bbc0-2ec27bf404cc
+          type: tag
+          attributes:
+            name:
+              en: Fantasy
+            description: {}
+            group: genre
+            version: 1
+          relationships: []
+        - id: f4122d1c-3b44-44d0-9936-ff7502c39ad3
+          type: tag
+          attributes:
+            name:
+              en: Adaptation
+            description: {}
+            group: format
+            version: 1
+          relationships: []
+        state: published
+        chapterNumbersResetOnNewVolume: false
+        createdAt: '2019-03-26T07:49:40+00:00'
+        updatedAt: '2026-04-28T15:15:48+00:00'
+        version: 53
+        availableTranslatedLanguages:
+        - ru
+        - pl
+        - vi
+        - es-la
+        - hu
+        - fr
+        - pt-br
+        - en
+        - it
+        - de
+        - ar
+        - bg
+        - ro
+        latestUploadedChapter: 91a9e4ae-9f1f-4b37-b7d5-f83cd868a00c
+      relationships:
+      - id: 6e5e2e5e-a19c-4eaf-8f2b-de2593a2a060
+        type: author
+      - id: 6c744f72-ec67-455b-bdaa-93ef20adf2ae
+        type: artist
+      - id: ae0865e8-6e55-4e09-b406-b8f0c33601a6
+        type: cover_art
+        attributes:
+          description: ''
+          volume: '15'
+          fileName: 1790f17f-9184-4a48-8928-c45de48b778e.jpg
+          locale: ja
+          createdAt: '2026-04-24T23:32:44+00:00'
+          updatedAt: '2026-04-24T23:32:44+00:00'
+          version: 1
+      - id: f4e9f182-8345-449b-98b3-54ba4f29493d
+        type: manga
+        related: alternate_version
+    limit: 2
+    offset: 0
+    total: 20
+  body_text: null
+  body_b64: null

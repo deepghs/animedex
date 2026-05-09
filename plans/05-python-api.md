@@ -113,11 +113,11 @@ chap = mangadex.feed("manga-id", lang="en", order="chapter:asc")
 img  = danbooru.search("touhou marisa rating:g order:score", limit=20)
 ```
 
-Backends never *mutate* the user's account state - the read-only constraint from plan 03 is enforced at the library level, not just the CLI. There are no `add_to_list` or `set_score` functions in any backend module.
+High-level backend modules do not ship account-mutation helpers. There are no `add_to_list` or `set_score` functions in any backend module; callers who intentionally need an upstream operation outside the high-level read surface use the raw passthrough and own the upstream result.
 
 ### 2.3 `animedex.api.call(backend, path_or_query, ...)` (raw passthrough)
 
-The Python equivalent of `animedex api <backend> ...`. Returns the upstream's raw JSON, with rate limiting, caching, and User-Agent injection applied; bypasses the schema-shaped result dataclasses. Read-only HTTP methods only (mutating methods are rejected before the request leaves the host).
+The Python equivalent of `animedex api <backend> ...`. Returns the upstream's raw JSON, with rate limiting, caching, User-Agent injection, and MangaDex `Via` stripping applied; bypasses the schema-shaped result dataclasses. Method/path choices are forwarded verbatim, and callers own the upstream response.
 
 ```python
 from animedex.api import call

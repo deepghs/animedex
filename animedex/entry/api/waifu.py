@@ -8,7 +8,7 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_waifu = make_get_only_subcommand(
     name="waifu",
     backend_module_name="waifu",
-    docstring="""Issue a Waifu.im GET request (anonymous; SFW + NSFW image API).
+    docstring="""Issue a Waifu.im raw request (anonymous; SFW + NSFW image API).
 
     PATH is the URL path on ``api.waifu.im``. The upstream's
     ``/images`` endpoint defaults to SFW only when ``isNsfw`` is

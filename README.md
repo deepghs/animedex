@@ -69,7 +69,7 @@ The CLI is a thin presentation layer over an installable Python package — anyt
 | **ANN Encyclopedia** (cdn.animenewsnetwork.com; XML) | `animedex ann` — show / search / reports with typed XML warning handling | `animedex api ann <path>` | live |
 | MAL v2 | — | — | not yet implemented |
 
-The `animedex api <backend>` passthrough is wired for twelve backends. Every passthrough call honours the project's read-only firewall (`PUT/PATCH/DELETE` and unwhitelisted `POST` paths are rejected before hitting the wire) and the per-upstream `User-Agent` requirements.
+The `animedex api <backend>` passthrough is wired for twelve backends. Every passthrough call honours the project's physical transport contracts: rate limits, default `User-Agent` injection, the MangaDex `Via`-header strip, cache eligibility for known reads, and debug redaction. Method/path choices are forwarded verbatim; the caller owns the upstream result.
 
 ## Try it in 30 seconds
 
@@ -120,7 +120,7 @@ This rule supersedes every other design guideline. Concretely:
 
 LLM agents read the same docstrings; their alignment training does the rest.
 
-The only constraints `animedex` enforces unilaterally are **technical contracts**: the rate limits the upstream actually punishes, the mandatory headers (Shikimori / MangaDex / Danbooru `User-Agent`), the read-only HTTP method set on the passthrough. Those are physics, not preferences.
+The only constraints `animedex` enforces unilaterally are **technical contracts**: the rate limits the upstream actually punishes, the default headers needed for normal operation, and MangaDex's forbidden `Via` header. Those are physics, not preferences.
 
 ## Repository map
 
@@ -135,7 +135,7 @@ animedex/                Installable package (the runtime)
   models/                  Cross-source common types (Anime, Character, ArtPost, ...)
   policy/                  Docstring lint + agent-guide extractor
   render/                  TTY / JSON / raw / jq / field-projection renderers
-  transport/               HTTP client + ratelimit + read-only firewall + UA
+  transport/               HTTP client + ratelimit + advisory method classifier + UA
 test/                    Unit tests + 700+ fixture YAMLs (test/fixtures/)
 plans/                   Staged design documents (binding for contributors)
 docs/                    Sphinx source -> https://animedex.readthedocs.io

@@ -86,6 +86,29 @@ class TestRenderBody:
         out = render_body(envelope)
         assert out == '{"data":{"Media":{"id":154587}}}'
 
+    def test_local_rejection_body_returns_actionable_message(self):
+        from animedex.api._envelope import (
+            RawCacheInfo,
+            RawRequest,
+            RawResponse,
+            RawTiming,
+        )
+        from animedex.render.raw import render_body
+
+        env = RawResponse(
+            backend="jikan",
+            request=RawRequest(method="DELETE", url="https://x.invalid/anime", headers={}),
+            status=0,
+            response_headers={},
+            body_bytes=b"",
+            body_text="",
+            timing=RawTiming(total_ms=0.1, rate_limit_wait_ms=0, request_ms=0),
+            cache=RawCacheInfo(hit=False),
+            firewall_rejected={"reason": "unknown-backend", "message": "unknown backend: 'missing'"},
+        )
+
+        assert render_body(env) == "unknown backend: 'missing'"
+
     def test_falls_back_to_bytes_repr_when_not_decodable(self):
         from animedex.api._envelope import (
             RawCacheInfo,
@@ -274,12 +297,12 @@ class TestRenderDebug:
             body_text="",
             timing=RawTiming(total_ms=0.5, rate_limit_wait_ms=0, request_ms=0),
             cache=RawCacheInfo(hit=False),
-            firewall_rejected={"reason": "read-only", "message": "DELETE / not permitted on anilist"},
+            firewall_rejected={"reason": "unknown-backend", "message": "unknown backend"},
         )
 
         out = render_debug(env)
         decoded = json.loads(out)
-        assert decoded["firewall_rejected"]["reason"] == "read-only"
+        assert decoded["firewall_rejected"]["reason"] == "unknown-backend"
         assert decoded["status"] == 0
 
 

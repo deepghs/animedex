@@ -5,9 +5,8 @@ The :class:`RawResponse` envelope carries everything a caller needs
 to debug an HTTP exchange: the request that was actually sent (with
 credentials fingerprint-redacted), the redirect chain, the final
 response (status + headers + body bytes + decoded text), per-call
-timing, cache provenance, and a firewall-rejection record when the
-read-only middleware (:mod:`animedex.transport.read_only`) blocked
-the request before it left the host.
+timing, cache provenance, and a legacy local-rejection record for
+requests that never left the host.
 
 Credential redaction follows the convention from #3 §5.0: keep the
 first 4 + last 4 characters + length, redact the middle. The token
@@ -251,19 +250,18 @@ class RawResponse(AnimedexModel):
     :ivar backend: Backend identifier (e.g. ``"anilist"``).
     :vartype backend: str
     :ivar request: Snapshot of the request that was issued (or would
-                    have been, on a firewall reject).
+                    have been, on a local reject).
     :vartype request: RawRequest
     :ivar redirects: Ordered list of 3xx hops; empty when the
                       response was direct.
     :vartype redirects: list[RawRedirectHop]
-    :ivar status: Final HTTP status code; ``0`` indicates the
-                   firewall rejected the request before it left the
-                   host.
+    :ivar status: Final HTTP status code; ``0`` indicates a local
+                   rejection before the request left the host.
     :vartype status: int
     :ivar response_headers: Response headers from the final hop;
-                             empty on firewall reject.
+                             empty on local reject.
     :vartype response_headers: dict[str, str]
-    :ivar body_bytes: Raw response body bytes; empty on firewall
+    :ivar body_bytes: Raw response body bytes; empty on local
                        reject. ``--debug`` mode emits this base64-
                        encoded.
     :vartype body_bytes: bytes
@@ -278,8 +276,9 @@ class RawResponse(AnimedexModel):
     :ivar cache: Cache provenance.
     :vartype cache: RawCacheInfo
     :ivar firewall_rejected: ``{"reason": "...", "message": "..."}``
-                               when the read-only firewall blocked the
-                               request; ``None`` otherwise.
+                               for local pre-request rejection metadata,
+                               currently unknown-backend envelopes;
+                               ``None`` otherwise.
     :vartype firewall_rejected: dict[str, str] or None
     """
 

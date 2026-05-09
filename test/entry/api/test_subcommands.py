@@ -155,6 +155,20 @@ class TestApiTrace:
         assert captured[0]["method"] == "POST"
         assert captured[0]["raw_body"] == b"\xff\xd8\xff\xe0"
 
+    def test_input_file_respects_explicit_method(self, cli_runner, cli, monkeypatch, tmp_path):
+        from animedex.api import trace as trace_mod
+
+        captured: list = []
+        monkeypatch.setattr(trace_mod, "call", _captured_call(captured))
+
+        img = tmp_path / "shot.jpg"
+        img.write_bytes(b"\xff\xd8\xff\xe0")
+
+        result = cli_runner.invoke(cli, ["api", "trace", "/search", "--input", str(img), "-X", "PUT"])
+        assert result.exit_code == 0, result.output
+        assert captured[0]["method"] == "PUT"
+        assert captured[0]["raw_body"] == b"\xff\xd8\xff\xe0"
+
     def test_input_dash_reads_stdin(self, cli_runner, cli, monkeypatch):
         """``--input -`` reads the request body from stdin (binary).
 
@@ -208,6 +222,20 @@ class TestApiShikimori:
         assert captured[0]["method"] == "POST"
         assert captured[0]["json_body"] == {"query": '{ animes(ids:"1"){ id } }'}
 
+    def test_graphql_query_respects_explicit_method(self, cli_runner, cli, monkeypatch):
+        from animedex.api import shikimori as shikimori_mod
+
+        captured: list = []
+        monkeypatch.setattr(shikimori_mod, "call", _captured_call(captured))
+
+        result = cli_runner.invoke(
+            cli,
+            ["api", "shikimori", "/api/graphql", "--graphql", '{ animes(ids:"1"){ id } }', "-X", "DELETE"],
+        )
+        assert result.exit_code == 0, result.output
+        assert captured[0]["method"] == "DELETE"
+        assert captured[0]["json_body"] == {"query": '{ animes(ids:"1"){ id } }'}
+
     def test_explicit_post_method_passed_through(self, cli_runner, cli, monkeypatch):
         from animedex.api import shikimori as shikimori_mod
 
@@ -217,9 +245,22 @@ class TestApiShikimori:
         cli_runner.invoke(cli, ["api", "shikimori", "/api/x", "-X", "POST"])
         assert captured[0]["method"] == "POST"
 
+    def test_graphql_fields_merge_into_variables(self, cli_runner, cli, monkeypatch):
+        from animedex.api import shikimori as shikimori_mod
+
+        captured: list = []
+        monkeypatch.setattr(shikimori_mod, "call", _captured_call(captured))
+
+        result = cli_runner.invoke(
+            cli,
+            ["api", "shikimori", "/api/graphql", "--graphql", "{ animes { id } }", "-f", "limit=2"],
+        )
+        assert result.exit_code == 0, result.output
+        assert captured[0]["json_body"] == {"query": "{ animes { id } }", "variables": {"limit": 2}}
+
 
 class TestGetOnlySubcommands:
-    """The four GET-only backends share the same template body
+    """The simple raw path backends share the same template body
     (``_get_only_template.make_get_only_subcommand``). Exercising one
     backend covers the template; the others are covered indirectly.
     Keep two so a regression in either side is visible."""

@@ -32,6 +32,7 @@ from animedex.api._envelope import RawResponse
 def call(
     query: str,
     *,
+    method: str = "POST",
     variables: Optional[Dict[str, Any]] = None,
     headers: Optional[Dict[str, str]] = None,
     no_cache: bool = False,
@@ -49,6 +50,8 @@ def call(
 
     :param query: GraphQL document.
     :type query: str
+    :param method: HTTP method; ``POST`` is the normal GraphQL read path.
+    :type method: str
     :param variables: GraphQL variables, optional.
     :type variables: dict or None
     :param headers: Caller-supplied headers (override defaults).
@@ -83,7 +86,7 @@ def call(
     return _dispatch_call(
         backend="anilist",
         path="/",
-        method="POST",
+        method=method,
         json_body=body,
         headers=out_headers,
         no_cache=no_cache,
@@ -100,7 +103,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the AniList passthrough (firewall + signature)."""
+    """Smoke-test the AniList passthrough."""
     from animedex.api._dispatch import selftest_backend_shim
 
-    return selftest_backend_shim("anilist", call, extra_params=("query", "variables"))
+    return selftest_backend_shim("anilist", call, extra_params=("query", "method", "variables"))

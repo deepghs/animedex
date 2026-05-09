@@ -8,7 +8,7 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_quote = make_get_only_subcommand(
     name="quote",
     backend_module_name="quote",
-    docstring="""Issue an AnimeChan GET request (anonymous quote API).
+    docstring="""Issue an AnimeChan raw request (anonymous quote API).
 
     PATH is the URL path under `https://api.animechan.io/v1`.
 

@@ -6,12 +6,16 @@ import sys
 from typing import Optional
 
 import click
+from click.core import ParameterSource
 
 from animedex.entry.api import (
+    _call_or_paginate,
     _common_output_options,
     _common_request_options,
     _emit,
+    _merge_path_and_fields,
     _output_mode_from_flags,
+    _parse_api_fields,
     _parse_extra_headers,
     _resolve_cache,
     api_group,
@@ -25,7 +29,7 @@ from animedex.entry.api import (
     "input_path",
     type=click.Path(exists=True, dir_okay=False, allow_dash=True),
     default=None,
-    help="Read POST body bytes from a file (or '-' for stdin).",
+    help="Read request body bytes from a file (or '-' for stdin); defaults method to POST when -X is omitted.",
 )
 @_common_request_options
 @_common_output_options
@@ -34,6 +38,11 @@ def api_trace(
     ctx,
     path,
     input_path,
+    method,
+    api_fields,
+    paginate,
+    max_pages,
+    max_items,
     extra_headers,
     rate,
     cache_ttl,
@@ -50,7 +59,8 @@ def api_trace(
     `GET /me` reports the current quota state and is free; every
     `/search` call consumes one from the monthly budget. To search
     by image upload pass `--input <file>` (or `-` for stdin) with
-    PATH=`/search`; the bytes are sent as the POST body.
+    PATH=`/search`; the bytes are sent as the request body, defaulting
+    the method to POST only when `-X/--method` is omitted.
 
     \b
     Docs:
@@ -63,7 +73,7 @@ def api_trace(
       /me                                    quota state (free)
       /search?url=<encoded-image-url>        search by URL
       /search?anilistInfo&url=<encoded>      search + AniList metadata
-      /search                                POST upload (use --input)
+      /search                                upload body (use --input)
 
     \b
     Examples:
@@ -81,25 +91,35 @@ def api_trace(
     Two paths matter for the substrate API layer: GET /me (free) and
     GET /search?url=<encoded> (1 quota each). To search by image
     upload, pass --input path/to/image.jpg with PATH=/search; the
-    bytes are sent as the POST body.
+    bytes are sent as the request body. The wrapper defaults to POST
+    only when the caller did not pass -X/--method.
     --- End ---
     """
     from animedex.api import trace as trace_mod
 
     raw_body: Optional[bytes] = None
-    method = "GET"
+    method_source = ctx.get_parameter_source("method")
+    method_up = method.upper()
     if input_path:
         if input_path == "-":
             raw_body = sys.stdin.buffer.read()
         else:
             with open(input_path, "rb") as fh:
                 raw_body = fh.read()
-        method = "POST"
-
+        if method_up == "GET" and method_source is not ParameterSource.COMMANDLINE:
+            method_up = "POST"
     mode = _output_mode_from_flags(include_flag, head_flag, debug_flag)
-    env = trace_mod.call(
-        path=path,
-        method=method,
+    out_path, params = _merge_path_and_fields(path, _parse_api_fields(api_fields))
+    env = _call_or_paginate(
+        trace_mod,
+        backend="trace",
+        paginate=paginate,
+        max_pages=max_pages,
+        max_items=max_items,
+        method_explicit=method_source is ParameterSource.COMMANDLINE,
+        path=out_path,
+        method=method_up,
+        params=params,
         raw_body=raw_body,
         headers=_parse_extra_headers(extra_headers),
         cache=_resolve_cache(no_cache),

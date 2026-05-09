@@ -10,7 +10,7 @@ When in doubt about scope, behaviour, or naming, check these files in order. Dis
 |---|------|-------|
 | 01 | [`01-public-apis-anime-survey.md`](./01-public-apis-anime-survey.md) | Survey of every entry under the Anime section of `public-apis/public-apis`. Per-site capabilities, rate limits, schema discoverability, LLM-agent friendliness, effort estimates. Identifies dead, redundant, and load-bearing sources. |
 | 02 | [`02-design-policy-as-docstring.md`](./02-design-policy-as-docstring.md) | The "policy lives in docstrings, not in code gates" principle. Defines the P1 / P2 / P3 layering (protocol contract, content preference, policy text) and how that drives a flag-light, agent-friendly surface. |
-| 03 | [`03-cli-architecture-gh-flavored.md`](./03-cli-architecture-gh-flavored.md) | The final command tree: read-only, multi-source-explicit, gh-flavored. Includes the `anime api` raw passthrough escape hatch, source attribution rules, and the auth model. |
+| 03 | [`03-cli-architecture-gh-flavored.md`](./03-cli-architecture-gh-flavored.md) | The final command tree: read-only, multi-source-explicit, gh-flavored. Includes the `animedex api` raw passthrough escape hatch, source attribution rules, and the auth model. |
 | 04 | [`04-roadmap-and-mvp.md`](./04-roadmap-and-mvp.md) | Phased work plan. MVP scope (5 days), full v1 scope (~3 weeks), AniDB UDP as a separate heavy track. |
 | 05 | [`05-python-api.md`](./05-python-api.md) | The library is a first-class Python API as well as a CLI. Documents the module layout that mirrors the CLI tree, source-attributed dataclasses, the `Config` object, sync-first stance with a future `animedex.aio` namespace, semver guarantees, and the rule that the CLI is a thin presentation layer over the library. |
 

@@ -1,15 +1,14 @@
 """
 ``animedex api waifu`` raw passthrough.
 
-Waifu.im is a free, anonymous, GET-only JSON API serving a curated
-collection of anime artwork tagged across SFW and NSFW. Every image
-record carries an ``isNsfw`` boolean; the listing endpoint
-(``/images``) defaults to SFW only and accepts an ``isNsfw`` query
-parameter (``true`` / ``false``) to flip the filter, or omits the
-parameter to honour the default. animedex's high-level layer
-exposes this as the transparent ``--is-nsfw`` flag — the project's
-posture is to surface upstream contracts, not to add a paternalistic
-confirmation gate.
+Waifu.im is a free, anonymous JSON API serving a curated collection of
+anime artwork tagged across SFW and NSFW. Every image record carries
+an ``isNsfw`` boolean; the listing endpoint (``/images``) defaults to
+SFW only and accepts an ``isNsfw`` query parameter (``true`` /
+``false``) to flip the filter, or omits the parameter to honour the
+default. animedex's high-level layer exposes this as the transparent
+``--is-nsfw`` flag — the project's posture is to surface upstream
+contracts, not to add a paternalistic confirmation gate.
 
 Backend: Waifu.im (api.waifu.im).
 
@@ -18,17 +17,17 @@ applies a conservative 10 req/sec sustained ceiling with a 10-token
 burst budget.
 
 --- LLM Agent Guidance ---
-GET-only path. Common endpoints: ``/tags`` (lists every tag with
-description and current image count), ``/images`` (paginated image
-listing with optional ``included_tags``, ``excluded_tags``,
-``isNsfw``, ``isAnimated``, ``orderBy`` filters), and ``/artists``
-(paginated artist directory). The ``isNsfw`` query parameter
-defaults to ``false`` (SFW only) when omitted; pass ``true`` for
-NSFW only. When the user did not explicitly ask for NSFW content,
-omit the parameter entirely so the upstream's SFW default applies.
-When the user explicitly requested NSFW or adult material, pass it
-through unmodified — the project's posture is to inform, not to
-gate.
+Common read paths: ``/tags`` (lists every tag with description and
+current image count), ``/images`` (paginated image listing with
+optional ``included_tags``, ``excluded_tags``, ``isNsfw``,
+``isAnimated``, ``orderBy`` filters), and ``/artists`` (paginated
+artist directory). The raw ``method`` argument is forwarded verbatim.
+The ``isNsfw`` query parameter defaults to ``false`` (SFW only) when
+omitted; pass ``true`` for NSFW only. When the user did not explicitly
+ask for NSFW content, omit the parameter entirely so the upstream's
+SFW default applies. When the user explicitly requested NSFW or adult
+material, pass it through unmodified — the project's posture is to
+inform, not to gate.
 --- End ---
 """
 
@@ -43,6 +42,7 @@ from animedex.api._envelope import RawResponse
 def call(
     path: str,
     *,
+    method: str = "GET",
     headers: Optional[Dict[str, str]] = None,
     params: Optional[dict] = None,
     no_cache: bool = False,
@@ -78,7 +78,7 @@ def call(
     return _dispatch_call(
         backend="waifu",
         path=path,
-        method="GET",
+        method=method,
         headers=headers,
         params=params,
         no_cache=no_cache,
@@ -95,7 +95,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the Waifu.im passthrough (firewall + signature).
+    """Smoke-test the Waifu.im passthrough.
 
     :return: ``True`` on success; raises on contract drift.
     :rtype: bool

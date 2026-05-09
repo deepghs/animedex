@@ -9,11 +9,13 @@ Rate limit: ~5 req/sec global per IP; 40/min on /at-home/server/{id}.
 UA mandatory at the wire (returns HTTP 400 on empty UA). The
 transport injects ``animedex/<version>`` automatically. Pagination
 is ``?limit=N&offset=M`` capped at offset+limit<=10000. Common
-reads: ``/manga?title=...``, ``/manga/{id}``, ``/manga/{id}/feed``,
-``/at-home/server/{chapter-id}``. Errors land as
+read paths: ``/manga?title=...``, ``/manga/{id}``,
+``/manga/{id}/feed``, ``/at-home/server/{chapter-id}``. The raw
+``method`` argument is forwarded verbatim. Errors land as
 ``{"result":"error","errors":[...]}``.
-Anonymous reads cover everything the substrate API layer cares about; OAuth via
-Personal Client unlocks user library and is out of the substrate API layer scope.
+Anonymous reads cover everything the substrate API layer cares about;
+OAuth via Personal Client unlocks user library and is out of the
+substrate API layer scope.
 --- End ---
 """
 
@@ -28,6 +30,7 @@ from animedex.api._envelope import RawResponse
 def call(
     path: str,
     *,
+    method: str = "GET",
     headers: Optional[Dict[str, str]] = None,
     params: Optional[dict] = None,
     no_cache: bool = False,
@@ -45,7 +48,7 @@ def call(
     return _dispatch_call(
         backend="mangadex",
         path=path,
-        method="GET",
+        method=method,
         headers=headers,
         params=params,
         no_cache=no_cache,
@@ -62,7 +65,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the MangaDex passthrough (firewall + signature)."""
+    """Smoke-test the MangaDex passthrough."""
     from animedex.api._dispatch import selftest_backend_shim
 
     return selftest_backend_shim("mangadex", call, extra_params=("path",))

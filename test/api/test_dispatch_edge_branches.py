@@ -5,7 +5,7 @@
 These cover code paths the broader test suite doesn't reach: body-
 preview truncation, the request-header ``Via`` strip per AGENTS §0,
 caller-supplied UTF-8-decoded body, anilist + kitsu header merging,
-and the firewall-rejected status-line render path.
+and the local-rejection status-line render path.
 """
 
 from __future__ import annotations
@@ -240,11 +240,11 @@ class TestKitsuHeaderMerge:
         assert raw.request.headers.get("X-Trace") == "yes"
 
 
-class TestFirewallStatusLineRender:
-    """``render.raw._format_status_line`` has a firewall-rejected
+class TestLocalRejectionStatusLineRender:
+    """``render.raw._format_status_line`` has a local-rejection
     branch that the regular envelope tests don't trigger directly."""
 
-    def test_firewall_rejected_status_line_is_formatted(self):
+    def test_local_rejected_status_line_is_formatted(self):
         from animedex.api._envelope import (
             RawCacheInfo,
             RawRequest,
@@ -262,16 +262,16 @@ class TestFirewallStatusLineRender:
             body_text="",
             timing=RawTiming(total_ms=0.1, rate_limit_wait_ms=0.0, request_ms=0.0),
             cache=RawCacheInfo(hit=False),
-            firewall_rejected={"reason": "read-only", "message": "DELETE blocked"},
+            firewall_rejected={"reason": "unknown-backend", "message": "unknown backend"},
         )
 
         out = render_include(env)
         first = out.split("\n", 1)[0]
         assert "firewall-rejected" in first
-        assert "read-only" in first
+        assert "unknown-backend" in first
 
-    def test_firewall_rejected_without_reason_uses_default(self):
-        """When the firewall dict omits ``reason``, the renderer
+    def test_local_rejected_without_reason_uses_default(self):
+        """When the rejection dict omits ``reason``, the renderer
         falls back to the literal ``rejected`` string."""
         from animedex.api._envelope import (
             RawCacheInfo,

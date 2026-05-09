@@ -7,13 +7,13 @@ Rate limit: not formally published; self-imposed 10/sec polite cap.
 
 --- LLM Agent Guidance ---
 JSON:API. Inject ``Accept: application/vnd.api+json`` automatically.
-Pagination uses ``page[offset]=N&page[limit]=M``. Common reads:
+Pagination uses ``page[offset]=N&page[limit]=M``. Common read paths:
 ``/anime?filter[text]=Frieren&page[limit]=5&include=streamingLinks``,
 ``/anime/{id}``, ``/anime/{id}/streaming-links``,
-``/anime/{id}/mappings`` (cross-source IDs).
-Both kitsu.io and kitsu.app serve identical data; the canonical
-default is .io. Anonymous reads cover the surface; a token unlocks
-user library / private data.
+``/anime/{id}/mappings`` (cross-source IDs). The raw ``method``
+argument is forwarded verbatim. Both kitsu.io and kitsu.app serve
+identical data; the canonical default is .io. Anonymous reads cover
+the surface; a token unlocks user library / private data.
 --- End ---
 """
 
@@ -31,6 +31,7 @@ _DEFAULT_HEADERS = {"Accept": "application/vnd.api+json"}
 def call(
     path: str,
     *,
+    method: str = "GET",
     headers: Optional[Dict[str, str]] = None,
     params: Optional[dict] = None,
     no_cache: bool = False,
@@ -52,7 +53,7 @@ def call(
     return _dispatch_call(
         backend="kitsu",
         path=path,
-        method="GET",
+        method=method,
         headers=out_headers,
         params=params,
         no_cache=no_cache,
@@ -70,7 +71,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the Kitsu passthrough (firewall + signature)."""
+    """Smoke-test the Kitsu passthrough."""
     from animedex.api._dispatch import selftest_backend_shim
 
-    return selftest_backend_shim("kitsu", call, extra_params=("path", "base_url"))
+    return selftest_backend_shim("kitsu", call, extra_params=("path", "method", "base_url"))

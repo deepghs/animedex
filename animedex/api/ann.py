@@ -35,6 +35,7 @@ from animedex.api._envelope import RawResponse
 def call(
     path: str,
     *,
+    method: str = "GET",
     headers: Optional[Dict[str, str]] = None,
     params: Optional[dict] = None,
     no_cache: bool = False,
@@ -52,7 +53,7 @@ def call(
     return _dispatch_call(
         backend="ann",
         path=path,
-        method="GET",
+        method=method,
         headers=headers,
         params=params,
         no_cache=no_cache,
@@ -69,7 +70,7 @@ def call(
 
 
 def selftest() -> bool:
-    """Smoke-test the ANN passthrough (firewall + signature)."""
+    """Smoke-test the ANN passthrough."""
     from animedex.api._dispatch import selftest_backend_shim
 
     return selftest_backend_shim("ann", call, extra_params=("path",))

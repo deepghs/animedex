@@ -1,29 +1,16 @@
 """
-Read-only firewall for the ``animedex api`` passthrough layer.
+Advisory method classification for raw API calls.
 
-The CLI promises read-only behaviour against every supported
-upstream (``plans/03 §7``). Naive method-level filtering does not
-work because two of our backends use ``POST`` for legitimate reads:
-
-* AniList GraphQL: every read goes ``POST /``.
-* Trace.moe: image search is ``POST /search`` with the image bytes
-  as the body.
-
-This module owns the per-backend rules that decide which combinations
-of ``(method, path)`` are reads, and rejects everything else with a
-typed :class:`~animedex.models.common.ApiError` whose ``reason`` is
-``"read-only"`` so callers do not have to grep error strings.
-
-The rules are deliberately enumerated per backend, not derived from
-heuristics, so a future backend addition is a code change reviewers
-can trace.
+The raw ``animedex api`` passthrough does not block HTTP methods on
+the user's behalf. This module keeps a small, non-enforcing classifier
+for documentation, diagnostics, and callers that want to label a
+request before sending it. A result of ``False`` is information only;
+the transport layer still forwards the user's chosen method and path.
 """
 
 from __future__ import annotations
 
-from typing import Callable, Dict
-
-from animedex.models.common import ApiError
+from typing import Callable, Dict, Optional
 
 
 def _allow(_path: str) -> bool:
@@ -41,12 +28,7 @@ def _path_equals(target: str) -> Callable[[str], bool]:
     return matcher
 
 
-# Per-backend `(method, path) -> allowed?` matrix.
-#
-# `GET` is universally allowed. The mapping below covers `POST` and
-# every mutating method the read-only firewall must reason about.
-# Methods not listed for a backend are rejected.
-_RULES: Dict[str, Dict[str, Callable[[str], bool]]] = {
+_ADVISORY_RULES: Dict[str, Dict[str, Callable[[str], bool]]] = {
     "anilist": {
         "GET": _allow,
         "POST": _path_equals("/"),
@@ -69,8 +51,6 @@ _RULES: Dict[str, Dict[str, Callable[[str], bool]]] = {
     },
     "shikimori": {
         "GET": _allow,
-        # Shikimori exposes both REST (GET only) and GraphQL on
-        # ``POST /api/graphql``; whitelist that one path.
         "POST": _path_equals("/api/graphql"),
     },
     "ann": {
@@ -101,71 +81,48 @@ _RULES: Dict[str, Dict[str, Callable[[str], bool]]] = {
 
 
 def known_backends() -> tuple:
-    """Return the tuple of backends the firewall reasons about.
+    """Return the tuple of backends known to the advisory classifier.
 
     :return: Ordered tuple of backend identifiers.
     :rtype: tuple
     """
-    return tuple(_RULES.keys())
+    return tuple(_ADVISORY_RULES.keys())
 
 
-def enforce_read_only(backend: str, method: str, path: str) -> None:
-    """Reject the request when it violates the read-only contract.
+def classify_read_only(backend: str, method: str, path: str) -> Optional[bool]:
+    """Classify whether a method/path pair is known to be read-only.
 
-    The function returns silently when the request is a permitted
-    read; otherwise it raises :class:`ApiError` with ``reason`` set
-    to ``"read-only"`` for known-mutation rejections, or
-    ``"unknown-backend"`` for typos in the backend identifier.
+    ``True`` means the pair is a known read, ``False`` means the pair
+    is not known to be read-only, and ``None`` means the backend is not
+    in the advisory registry. The classifier never raises and never
+    blocks transport.
 
     :param backend: Backend identifier (e.g. ``"anilist"``).
     :type backend: str
-    :param method: HTTP method, upper-cased
-                    (e.g. ``"GET"``, ``"POST"``).
+    :param method: HTTP method.
     :type method: str
-    :param path: Request path. For GraphQL backends it is the path
-                  on which the GraphQL document is posted (typically
-                  ``"/"``).
+    :param path: Request path.
     :type path: str
-    :raises ApiError: When the request is not a permitted read.
+    :return: Advisory classification.
+    :rtype: bool or None
     """
-    rules = _RULES.get(backend)
+    rules = _ADVISORY_RULES.get(backend)
     if rules is None:
-        raise ApiError(
-            f"unknown backend: {backend!r}",
-            backend=backend,
-            reason="unknown-backend",
-        )
+        return None
     matcher = rules.get(method.upper())
-    if matcher is None or not matcher(path):
-        raise ApiError(
-            f"read-only contract: {method} {path!r} is not a permitted read on {backend}",
-            backend=backend,
-            reason="read-only",
-        )
+    return bool(matcher(path)) if matcher is not None else False
 
 
 def selftest() -> bool:
-    """Smoke-test the firewall against representative inputs.
+    """Smoke-test the advisory classifier.
 
-    Exercises one positive and one negative case per known backend
-    so a future rule regression surfaces in the diagnostic before
-    any backend issues a real request.
+    Confirms representative read and non-read classifications without
+    asserting that any request would be blocked.
 
     :return: ``True`` on success.
     :rtype: bool
     """
-    enforce_read_only("anilist", "GET", "/")
-    enforce_read_only("anilist", "POST", "/")
-    enforce_read_only("trace", "POST", "/search")
-    enforce_read_only("ghibli", "GET", "/films")
-    enforce_read_only("quote", "GET", "/quotes/random")
-    for backend in known_backends():
-        enforce_read_only(backend, "GET", "/anything")
-    for method in ("PUT", "PATCH", "DELETE"):
-        try:
-            enforce_read_only("anilist", method, "/")
-        except ApiError as exc:
-            assert exc.reason == "read-only"
-        else:  # pragma: no cover - defensive selftest assertion
-            raise AssertionError(f"{method} should have been rejected")
+    assert classify_read_only("anilist", "POST", "/") is True
+    assert classify_read_only("jikan", "DELETE", "/anime") is False
+    assert classify_read_only("not-a-backend", "GET", "/") is None
     return True

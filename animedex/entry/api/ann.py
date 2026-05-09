@@ -8,7 +8,7 @@ from animedex.entry.api._get_only_template import make_get_only_subcommand
 api_ann = make_get_only_subcommand(
     name="ann",
     backend_module_name="ann",
-    docstring="""Issue an ANN Encyclopedia GET request (XML).
+    docstring="""Issue an ANN Encyclopedia raw request (XML).
 
     ANN's id space is independent of MAL/AniList. The `?title=` param
     is *id aliasing*, not name search; for fuzzy title search use

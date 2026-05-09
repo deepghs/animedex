@@ -1,0 +1,310 @@
+metadata:
+  captured_at: '2026-05-09T08:05:28Z'
+  label: anime-naruto-page-3
+  backend: jikan
+  path_slug: pagination
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/anime?q=Naruto&page=3&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Sat, 09 May 2026 08:05:28 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 15
+      has_next_page: true
+      current_page: 3
+      items:
+        count: 2
+        total: 30
+        per_page: 2
+    data:
+    - mal_id: 442
+      url: https://myanimelist.net/anime/442/Naruto_Movie_1__Dai_Katsugeki_Yuki_Hime_Ninpouchou_Dattebayo
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1231/134484.jpg
+          small_image_url: https://myanimelist.net/images/anime/1231/134484t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1231/134484l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1231/134484.webp
+          small_image_url: https://myanimelist.net/images/anime/1231/134484t.webp
+          large_image_url: https://myanimelist.net/images/anime/1231/134484l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Naruto Movie 1: Dai Katsugeki!! Yuki Hime Ninpouchou Dattebayo!'
+      - type: Synonym
+        title: 'Naruto: Daikatsugeki! Yukihime Ninpocho Dattebayo!'
+      - type: Synonym
+        title: 'Naruto: It''s the Snow Princess'' Ninja Art Book!'
+      - type: Japanese
+        title: 劇場版　NARUTO　大活劇！雪姫忍法帖だってばよ!!
+      - type: English
+        title: 'Naruto the Movie 1: Ninja Clash in the Land of Snow'
+      - type: German
+        title: 'Naruto Der Film: Geheimmission im Land des Ewigen Schnees'
+      - type: French
+        title: 'Naruto Le Film: Naruto et la Princesse des Neiges'
+      title: 'Naruto Movie 1: Dai Katsugeki!! Yuki Hime Ninpouchou Dattebayo!'
+      title_english: 'Naruto the Movie 1: Ninja Clash in the Land of Snow'
+      title_japanese: 劇場版　NARUTO　大活劇！雪姫忍法帖だってばよ!!
+      title_synonyms:
+      - 'Naruto: Daikatsugeki! Yukihime Ninpocho Dattebayo!'
+      - 'Naruto: It''s the Snow Princess'' Ninja Art Book!'
+      type: Movie
+      source: Manga
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2004-08-21T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 21
+            month: 8
+            year: 2004
+          to:
+            day: null
+            month: null
+            year: null
+        string: Aug 21, 2004
+      duration: 1 hr 22 min
+      rating: PG-13 - Teens 13 or older
+      score: 7.13
+      scored_by: 194124
+      rank: 4403
+      popularity: 881
+      members: 320359
+      favorites: 333
+      synopsis: "Naruto Uzumaki and his squadmates, Sasuke Uchiha and Sakura Haruno, are sent on a mission to escort a movie\
+        \ crew on its way to film in the Land of Snow. They soon find out that they are accompanying a famous actress, Yukie\
+        \ Fujikaze, who persistently refuses to travel there, making the trip far more difficult than originally intended.\
+        \ After a surprising encounter with ninjas from the Land of Snow, Naruto discovers that there is more to Yukie than\
+        \ meets the eye.\n \nDai Katsugeki!! Yuki Hime Ninpouchou Dattebayo! follows the group as they attempt to overcome\
+        \ the obstacles in the Land of Snow and unveil Yukie's true purpose there as well.\n\n[Written by MAL Rewrite]"
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 230
+        type: anime
+        name: Bandai
+        url: https://myanimelist.net/anime/producer/230/Bandai
+      - mal_id: 717
+        type: anime
+        name: TV Tokyo Music
+        url: https://myanimelist.net/anime/producer/717/TV_Tokyo_Music
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      licensors:
+      - mal_id: 119
+        type: anime
+        name: VIZ Media
+        url: https://myanimelist.net/anime/producer/119/VIZ_Media
+      studios:
+      - mal_id: 1
+        type: anime
+        name: Studio Pierrot
+        url: https://myanimelist.net/anime/producer/1/Studio_Pierrot
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 2472
+      url: https://myanimelist.net/anime/2472/Naruto__Shippuuden_Movie_1
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1703/134493.jpg
+          small_image_url: https://myanimelist.net/images/anime/1703/134493t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1703/134493l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1703/134493.webp
+          small_image_url: https://myanimelist.net/images/anime/1703/134493t.webp
+          large_image_url: https://myanimelist.net/images/anime/1703/134493l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Naruto: Shippuuden Movie 1'
+      - type: Synonym
+        title: Naruto Shippuden Movie
+      - type: Synonym
+        title: Naruto Movie 4
+      - type: Synonym
+        title: Gekijouban Naruto Shippuuden
+      - type: Japanese
+        title: 劇場版NARUTO -ナルト- 疾風伝
+      - type: English
+        title: Naruto Shippuden the Movie 1
+      - type: German
+        title: 'Naruto Shippuden: Der Film'
+      - type: Spanish
+        title: 'Naruto Shippuden: La Película'
+      - type: French
+        title: 'Naruto Shippuden Le Film: Un Funeste Présage'
+      title: 'Naruto: Shippuuden Movie 1'
+      title_english: Naruto Shippuden the Movie 1
+      title_japanese: 劇場版NARUTO -ナルト- 疾風伝
+      title_synonyms:
+      - Naruto Shippuden Movie
+      - Naruto Movie 4
+      - Gekijouban Naruto Shippuuden
+      type: Movie
+      source: Manga
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2007-08-04T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 4
+            month: 8
+            year: 2007
+          to:
+            day: null
+            month: null
+            year: null
+        string: Aug 4, 2007
+      duration: 1 hr 34 min
+      rating: PG-13 - Teens 13 or older
+      score: 7.3
+      scored_by: 183653
+      rank: 3288
+      popularity: 886
+      members: 319097
+      favorites: 330
+      synopsis: |-
+        A group of ninja is planning to revive a powerful demon, and once its spirit is reunited with its body, the world will be destroyed. The only way to prevent this from happening is for Shion, a shrine maiden, to seal it away for good.
+
+        Naruto Uzumaki is tasked to guard her, but one thing stops Shion from accepting his help: she also has the ability to predict death—and she has foreseen his demise approaching soon. In order to escape his fate, Naruto must stay away from Shion; however, undeterred, he chooses to challenge the prophecy in order to protect Shion and the world.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 230
+        type: anime
+        name: Bandai
+        url: https://myanimelist.net/anime/producer/230/Bandai
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      licensors:
+      - mal_id: 119
+        type: anime
+        name: VIZ Media
+        url: https://myanimelist.net/anime/producer/119/VIZ_Media
+      studios:
+      - mal_id: 1
+        type: anime
+        name: Studio Pierrot
+        url: https://myanimelist.net/anime/producer/1/Studio_Pierrot
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+  body_text: null
+  body_b64: null

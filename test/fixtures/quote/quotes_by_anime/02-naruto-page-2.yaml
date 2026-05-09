@@ -1,0 +1,87 @@
+metadata:
+  captured_at: '2026-05-09T08:06:35Z'
+  label: naruto-page-2
+  backend: quote
+  path_slug: quotes_by_anime
+request:
+  method: GET
+  url: https://api.animechan.io/v1/quotes?anime=Naruto&page=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0 (Ubuntu)
+    Date: Sat, 09 May 2026 08:06:35 GMT
+    Content-Type: application/json; charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Content-Security-Policy: 'default-src ''self'';base-uri ''self'';font-src ''self'' https: data:;form-action ''self'';frame-ancestors
+      ''self'';img-src ''self'' data:;object-src ''none'';script-src ''self'';script-src-attr ''none'';style-src ''self''
+      https: ''unsafe-inline'';upgrade-insecure-requests'
+    Cross-Origin-Opener-Policy: same-origin
+    Cross-Origin-Resource-Policy: same-origin
+    Origin-Agent-Cluster: ?1
+    Referrer-Policy: no-referrer
+    Strict-Transport-Security: max-age=15552000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-DNS-Prefetch-Control: 'off'
+    X-Download-Options: noopen
+    X-Frame-Options: SAMEORIGIN
+    X-Permitted-Cross-Domain-Policies: none
+    X-XSS-Protection: '0'
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Credentials: 'true'
+    ETag: W/"49f-jt8PemXWTuioWuLFAOaU7DErd0w"
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+  body_json:
+    status: success
+    data:
+    - content: Just because someone is important to you, it doesn't necessarily mean that, that person is good. Even if you
+        knew that person was evil... People cannot win against their loneliness.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 920
+        name: Gaara
+    - content: We have walked through the darkness of this world, that’s why we are able to see even a sliver of light.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 920
+        name: Gaara
+    - content: Even the most ignorant, innocent child will eventually grow up as they learn what true pain is. It affects
+        what they say, what they think… and they become real people.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 316
+        name: Pain
+    - content: Fear. That is what we live with. And we live it everyday. Only in death are we free of it.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 1215
+        name: Neji Hyuuga
+    - content: If you don't share someone's pain. You can never understand them.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 1296
+        name: Nagato
+  body_text: null
+  body_b64: null
