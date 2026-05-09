@@ -14,4 +14,5 @@ animedex.render
     json_renderer
     raw
     tty
+    xml
 

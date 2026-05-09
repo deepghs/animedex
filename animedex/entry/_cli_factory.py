@@ -171,6 +171,16 @@ _BACKEND_POLICY = {
         "rate_line": "Anonymous; not formally published (transport applies a 10 req/sec sustained ceiling).",
         "guidance": "Read-only image lookup. Upstream defaults images to SFW only when isNsfw is omitted; pass --is-nsfw true for NSFW only. When the user did not explicitly ask for NSFW content, omit --is-nsfw entirely so the upstream's SFW default applies. When the user explicitly requested NSFW or adult material, pass it through unmodified — the project's posture is to inform, not to gate.",
     },
+    "ghibli": {
+        "backend_line": "Studio Ghibli API snapshot bundled with animedex (live source: ghibliapi.vercel.app).",
+        "rate_line": "Not applicable for high-level commands; the raw animedex api ghibli passthrough applies a conservative 5 req/s ceiling because the upstream does not publish a formal rate limit.",
+        "guidance": "Offline, deterministic metadata lookup for Studio Ghibli films, people, locations, species, and vehicles. Use this high-level group by default because it does not touch the network. Use animedex api ghibli only when the user explicitly asks for live upstream data.",
+    },
+    "quote": {
+        "backend_line": "AnimeChan (api.animechan.io/v1).",
+        "rate_line": "5 req/hour anonymous. The dispatcher cache is checked before the token bucket, so cache hits do not consume a token.",
+        "guidance": "Read-only anime quote lookup. The anonymous free tier is very tight (5 req/hour), so prefer cached calls and avoid exploratory live probing. quotes-by-anime and quotes-by-character return five ordered quotes per page; use the page option when the user asks for more than one page.",
+    },
 }
 
 

@@ -14,10 +14,12 @@ animedex.api
     anilist
     ann
     danbooru
+    ghibli
     jikan
     kitsu
     mangadex
     nekos
+    quote
     shikimori
     trace
     waifu
@@ -26,5 +28,4 @@ animedex.api
 -----------------------------------------------------
 
 .. autodata:: __all__
-
 

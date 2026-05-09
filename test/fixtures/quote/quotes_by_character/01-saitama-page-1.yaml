@@ -1,0 +1,65 @@
+metadata:
+  captured_at: '2026-05-09T00:00:00Z'
+  label: saitama-page-1
+  backend: quote
+  path_slug: quotes_by_character
+request:
+  method: GET
+  url: https://api.animechan.io/v1/quotes?character=Saitama&page=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json; charset=utf-8
+  body_json:
+    status: success
+    data:
+    - content: Prophecies don't ever come true.
+      anime:
+        id: 188
+        name: One Punch Man
+        altName: One Punch Man
+      character:
+        id: 213
+        name: Saitama
+    - content: Heroes and the police don't do their jobs because someone says "please". Right?
+      anime:
+        id: 188
+        name: One Punch Man
+        altName: One Punch Man
+      character:
+        id: 213
+        name: Saitama
+    - content: If you really want to be strong... Stop caring about what your surrounding thinks of you!
+      anime:
+        id: 188
+        name: One Punch Man
+        altName: One Punch Man
+      character:
+        id: 213
+        name: Saitama
+    - content: In exchange for gaining strength, have I lost something more important as a human being? Emotions used to swirl
+        within me when I fought. Fear, impatience, anger... But now... Day after day, after one punch I go home unharmed and
+        wash my gloves.
+      anime:
+        id: 188
+        name: One Punch Man
+        altName: One Punch Man
+      character:
+        id: 213
+        name: Saitama
+    - content: Is that really... the limit to your power? Do you honestly think that you won't get any stronger for the rest
+        of your life? Instead of sitting around frustrated, it's better to keep on moving forward.
+      anime:
+        id: 188
+        name: One Punch Man
+        altName: One Punch Man
+      character:
+        id: 213
+        name: Saitama
+  body_text: null
+  body_b64: null

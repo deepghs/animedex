@@ -21,9 +21,13 @@ Per-backend tutorials
    backends/mangadex
    backends/danbooru
    backends/waifu
+   backends/ghibli
+   backends/quote
    backends/trace
    backends/nekos
    backends/shikimori
+   ghibli
+   quote
 
 Cross-cutting tutorials
 -----------------------

@@ -1,0 +1,69 @@
+metadata:
+  captured_at: '2026-05-09T00:00:00Z'
+  label: naruto-page-1
+  backend: quote
+  path_slug: quotes_by_anime
+request:
+  method: GET
+  url: https://api.animechan.io/v1/quotes?anime=Naruto&page=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json; charset=utf-8
+  body_json:
+    status: success
+    data:
+    - content: Because of the existence of love - sacrifice is born. As well as hate. Then one comprehends... one knows PAIN.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 316
+        name: Pain
+    - content: "Physical wounds will definitely bleed and may look painful \nbut over time they heal by themselves and if\
+        \ you apply medicine, \nthey will heal faster. What's troublesome are wounds of the heart. Nothing is harder to heal.\
+        \ They're a bit different from physical injuries. You can't apply medicine for one thing and sometimes, they never\
+        \ heal. There's only one cure for a wound of the heart. \nIt's a bit bothersome and you can only receive it from someone\
+        \ else. What is it? Love."
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 418
+        name: Yashamaru
+    - content: The many lives lost during long years of conflict... because of those selfless sacrifices, we are able to bathe
+        in peace and prosperity now. To ingrain this history within the new generation will be a vital cog in helping to maintain
+        the peace.
+      anime:
+        id: 341
+        name: 'Boruto: Naruto Next Generations'
+        altName: 'Boruto: Naruto Next Generations'
+      character:
+        id: 450
+        name: Naruto Uzumaki
+    - content: Trying to improve by learning from others that is what calls friendship.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 532
+        name: Shino Aburame
+    - content: When captured birds grow wiser, they try to open the cage with their beaks. They don't give up, because they
+        want to fly again.
+      anime:
+        id: 266
+        name: Naruto
+        altName: Naruto
+      character:
+        id: 773
+        name: Genma Shiranui
+  body_text: null
+  body_b64: null

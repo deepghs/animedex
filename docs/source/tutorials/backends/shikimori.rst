@@ -58,8 +58,8 @@ Calendar — :func:`~animedex.backends.shikimori.calendar`
 
    animedex shikimori calendar --limit 3 --jq '.[0:3] | map({episode: .next_episode, title: .anime.name})'
 
-Media rails — :func:`~animedex.backends.shikimori.screenshots` and :func:`~animedex.backends.shikimori.videos`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Media rails
+~~~~~~~~~~~
 
 .. code-block:: bash
 

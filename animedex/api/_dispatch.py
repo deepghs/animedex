@@ -53,6 +53,8 @@ _BASE_URLS = {
     "ann": "https://cdn.animenewsnetwork.com/encyclopedia",
     "nekos": "https://nekos.best/api/v2",
     "waifu": "https://api.waifu.im",
+    "ghibli": "https://ghibliapi.vercel.app",
+    "quote": "https://api.animechan.io/v1",
 }
 
 

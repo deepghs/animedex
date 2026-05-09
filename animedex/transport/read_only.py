@@ -89,6 +89,14 @@ _RULES: Dict[str, Dict[str, Callable[[str], bool]]] = {
         "GET": _allow,
         "POST": _deny,
     },
+    "ghibli": {
+        "GET": _allow,
+        "POST": _deny,
+    },
+    "quote": {
+        "GET": _allow,
+        "POST": _deny,
+    },
 }
 
 
@@ -149,6 +157,8 @@ def selftest() -> bool:
     enforce_read_only("anilist", "GET", "/")
     enforce_read_only("anilist", "POST", "/")
     enforce_read_only("trace", "POST", "/search")
+    enforce_read_only("ghibli", "GET", "/films")
+    enforce_read_only("quote", "GET", "/quotes/random")
     for backend in known_backends():
         enforce_read_only(backend, "GET", "/anything")
     for method in ("PUT", "PATCH", "DELETE"):

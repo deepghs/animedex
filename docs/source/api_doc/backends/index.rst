@@ -12,11 +12,12 @@ animedex.backends
     anilist/index
     ann/index
     danbooru/index
+    ghibli/index
     jikan/index
     kitsu/index
     mangadex/index
     nekos/index
+    quote/index
     shikimori/index
     trace/index
     waifu/index
-

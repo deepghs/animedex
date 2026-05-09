@@ -14,6 +14,7 @@ API Reference
     backends/index
     cache/index
     config/index
+    data/index
     diag/index
     entry/index
     mcp/index
@@ -26,5 +27,4 @@ API Reference
 -----------------------------------------------------
 
 .. autodata:: __all__
-
 
