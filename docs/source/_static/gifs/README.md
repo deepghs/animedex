@@ -16,6 +16,8 @@ source tapes so future contributors can regenerate them.
 | `mangadex.gif` | `docs/source/tutorials/backends/mangadex.rst` header | `mangadex.tape` |
 | `danbooru.gif` | `docs/source/tutorials/backends/danbooru.rst` header | `danbooru.tape` |
 | `waifu.gif` | `docs/source/tutorials/backends/waifu.rst` header | `waifu.tape` |
+| `ghibli.gif` | `docs/source/tutorials/backends/ghibli.rst` header | `ghibli.tape` |
+| `quote.gif` | `docs/source/tutorials/backends/quote.rst` header | `quote.tape` |
 | `trace.gif` | `docs/source/tutorials/backends/trace.rst` header | `trace.tape` |
 | `nekos.gif` | `docs/source/tutorials/backends/nekos.rst` header | `nekos.tape` |
 
@@ -37,18 +39,15 @@ vhs kitsu.tape                # produces kitsu.gif
 vhs mangadex.tape             # produces mangadex.gif
 vhs danbooru.tape             # produces danbooru.gif
 vhs waifu.tape                # produces waifu.gif
+vhs ghibli.tape               # produces ghibli.gif
+vhs quote.tape                # produces quote.gif
 vhs trace.tape                # produces trace.gif
 vhs nekos.tape                # produces nekos.gif
 ```
 
 vhs is available as a single-file binary at
 [github.com/charmbracelet/vhs/releases](https://github.com/charmbracelet/vhs/releases).
-The render is local and offline-after-install — no network calls happen
-inside vhs itself, but the recorded commands DO call out to the real
-upstream backends (so they need network at record time). Each fresh
-render captures whatever the upstream returned that moment; small drift
-(a different random nekos image, a different anilist score) is expected
-and does not invalidate the GIF.
+The render is local and offline-after-install — no network calls happen inside vhs itself. Most tapes intentionally run live `animedex` commands, so they need network at record time and may show small upstream drift such as a different random image or score. `ghibli.tape` is fully offline, and `quote.tape` prewarms a temporary local cache from committed fixtures before the visible commands run so it does not consume AnimeChan's anonymous hourly quota.
 
 ## Why commit both .tape and .gif?
 

@@ -206,7 +206,8 @@ def default_registry() -> RateLimitRegistry:
     r.register("trace", capacity=1, refill_per_second=0.5)
     r.register("nekos", capacity=10, refill_per_second=3.0)
     r.register("waifu", capacity=10, refill_per_second=10.0)
-    r.register("animechan", capacity=5, refill_per_second=0.0014)
+    r.register("ghibli", capacity=5, refill_per_second=1.0)
+    r.register("quote", capacity=5, refill_per_second=5.0 / 3600.0)
     return r
 
 
@@ -227,6 +228,19 @@ def selftest() -> bool:
     assert b.try_acquire() is False
 
     r = default_registry()
-    for name in ["anilist", "jikan", "kitsu", "mangadex", "danbooru", "shikimori", "ann", "trace"]:
+    for name in [
+        "anilist",
+        "jikan",
+        "kitsu",
+        "mangadex",
+        "danbooru",
+        "shikimori",
+        "ann",
+        "trace",
+        "nekos",
+        "waifu",
+        "ghibli",
+        "quote",
+    ]:
         assert r.get(name).capacity > 0
     return True

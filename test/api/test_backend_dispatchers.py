@@ -127,6 +127,24 @@ def _nekos_caller(fixture):
     return lambda **kw: nekos.call(path=path, **kw)
 
 
+def _ghibli_caller(fixture):
+    from animedex.api import ghibli
+
+    url = fixture["request"]["url"]
+    base = "https://ghibliapi.vercel.app"
+    path = url[len(base) :] if url.startswith(base) else url
+    return lambda **kw: ghibli.call(path=path, **kw)
+
+
+def _quote_caller(fixture):
+    from animedex.api import quote
+
+    url = fixture["request"]["url"]
+    base = "https://api.animechan.io/v1"
+    path = url[len(base) :] if url.startswith(base) else url
+    return lambda **kw: quote.call(path=path, **kw)
+
+
 # (backend, path_slug, caller_factory)
 SUITES = [
     ("anilist", "graphql", _anilist_caller),
@@ -302,6 +320,22 @@ SUITES = [
     ("waifu", "images_by_id", _waifu_caller),
     ("waifu", "stats_public", _waifu_caller),
     ("waifu", "users_me", _waifu_caller),
+    ("ghibli", "films", _ghibli_caller),
+    ("ghibli", "films_by_id", _ghibli_caller),
+    ("ghibli", "people", _ghibli_caller),
+    ("ghibli", "people_by_id", _ghibli_caller),
+    ("ghibli", "locations", _ghibli_caller),
+    ("ghibli", "locations_by_id", _ghibli_caller),
+    ("ghibli", "species", _ghibli_caller),
+    ("ghibli", "species_by_id", _ghibli_caller),
+    ("ghibli", "vehicles", _ghibli_caller),
+    ("ghibli", "vehicles_by_id", _ghibli_caller),
+    ("quote", "random", _quote_caller),
+    ("quote", "random_by_anime", _quote_caller),
+    ("quote", "random_by_character", _quote_caller),
+    ("quote", "quotes_by_anime", _quote_caller),
+    ("quote", "quotes_by_character", _quote_caller),
+    ("quote", "anime", _quote_caller),
 ]
 
 
@@ -375,10 +409,12 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
             "anilist",
             "ann",
             "danbooru",
+            "ghibli",
             "jikan",
             "kitsu",
             "mangadex",
             "nekos",
+            "quote",
             "shikimori",
             "trace",
             "waifu",
@@ -444,6 +480,18 @@ class TestPerBackendShimAcceptsTimeoutSeconds:
         from animedex.api import waifu
 
         waifu.call(path="/tags", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_ghibli_threads_timeout_seconds(self, captured):
+        from animedex.api import ghibli
+
+        ghibli.call(path="/films", timeout_seconds=5.0)
+        assert captured[-1].get("timeout_seconds") == 5.0
+
+    def test_quote_threads_timeout_seconds(self, captured):
+        from animedex.api import quote
+
+        quote.call(path="/quotes/random", timeout_seconds=5.0)
         assert captured[-1].get("timeout_seconds") == 5.0
 
     def test_default_omits_timeout_seconds_to_use_dispatcher_default(self, captured):

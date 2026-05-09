@@ -130,8 +130,28 @@ class TestRegistry:
         from animedex.transport.ratelimit import default_registry
 
         r = default_registry()
-        for name in ["anilist", "jikan", "kitsu", "mangadex", "danbooru", "shikimori", "ann", "trace"]:
+        for name in [
+            "anilist",
+            "jikan",
+            "kitsu",
+            "mangadex",
+            "danbooru",
+            "shikimori",
+            "ann",
+            "trace",
+            "nekos",
+            "waifu",
+            "ghibli",
+            "quote",
+        ]:
             assert r.get(name) is not None
+
+    def test_quote_bucket_matches_free_hour_window(self):
+        from animedex.transport.ratelimit import default_registry
+
+        bucket = default_registry().get("quote")
+        assert bucket.capacity == 5
+        assert bucket.refill_per_second == pytest.approx(5.0 / 3600.0)
 
 
 class TestSelftest:

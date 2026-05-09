@@ -213,7 +213,7 @@ def _resolve_cache(no_cache: bool):
 
 @click.group(name="api")
 def api_group() -> None:
-    """Raw HTTP / GraphQL passthrough to one of the 10 upstream backends.
+    """Raw HTTP / GraphQL passthrough to one of the 12 upstream backends.
 
     Each subcommand wraps one backend's raw API surface. The
     dispatcher injects the project ``User-Agent``, runs the read-only
@@ -259,11 +259,13 @@ def api_group() -> None:
       danbooru   https://danbooru.donmai.us/wiki_pages/help:api
       shikimori  https://shikimori.io/api/doc
       ann        https://www.animenewsnetwork.com/encyclopedia/api.php
+      ghibli     https://ghibliapi.vercel.app/
       nekos      https://docs.nekos.best/
+      quote      https://animechan.io/docs
       waifu      https://docs.waifu.im/
     \f
 
-    Backend: animedex (local; routes to one of 10 upstream backends).
+    Backend: animedex (local; routes to one of 12 upstream backends).
 
     Rate limit: not applicable at this level (each backend's bucket
     applies inside the call).
@@ -291,10 +293,12 @@ def api_group() -> None:
 from animedex.entry.api import anilist  # noqa: E402, F401
 from animedex.entry.api import ann  # noqa: E402, F401
 from animedex.entry.api import danbooru  # noqa: E402, F401
+from animedex.entry.api import ghibli  # noqa: E402, F401
 from animedex.entry.api import jikan  # noqa: E402, F401
 from animedex.entry.api import kitsu  # noqa: E402, F401
 from animedex.entry.api import mangadex  # noqa: E402, F401
 from animedex.entry.api import nekos  # noqa: E402, F401
+from animedex.entry.api import quote  # noqa: E402, F401
 from animedex.entry.api import shikimori  # noqa: E402, F401
 from animedex.entry.api import trace  # noqa: E402, F401
 from animedex.entry.api import waifu  # noqa: E402, F401

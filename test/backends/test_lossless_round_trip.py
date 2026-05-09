@@ -990,6 +990,128 @@ class TestNekosLossless:
             _assert_lossless(NekosCategoryFormat, cat_format, f"NekosCategoryFormat/{path.name}[{cat_name}]")
 
 
+# ---------- Studio Ghibli ----------
+
+
+class TestGhibliLossless:
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "ghibli" / "films").glob("*.yaml"),
+                *(FIXTURES / "ghibli" / "films_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_ghibli_film_lossless(self, path):
+        from animedex.backends.ghibli.models import GhibliFilm
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        rows = body if isinstance(body, list) else [body]
+        for i, row in enumerate(rows):
+            _assert_lossless(GhibliFilm, row, f"GhibliFilm/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "ghibli" / "people").glob("*.yaml"),
+                *(FIXTURES / "ghibli" / "people_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_ghibli_person_lossless(self, path):
+        from animedex.backends.ghibli.models import GhibliPerson
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        rows = body if isinstance(body, list) else [body]
+        for i, row in enumerate(rows):
+            _assert_lossless(GhibliPerson, row, f"GhibliPerson/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "ghibli" / "locations").glob("*.yaml"),
+                *(FIXTURES / "ghibli" / "locations_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_ghibli_location_lossless(self, path):
+        from animedex.backends.ghibli.models import GhibliLocation
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        rows = body if isinstance(body, list) else [body]
+        for i, row in enumerate(rows):
+            _assert_lossless(GhibliLocation, row, f"GhibliLocation/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "ghibli" / "vehicles").glob("*.yaml"),
+                *(FIXTURES / "ghibli" / "vehicles_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_ghibli_vehicle_lossless(self, path):
+        from animedex.backends.ghibli.models import GhibliVehicle
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        rows = body if isinstance(body, list) else [body]
+        for i, row in enumerate(rows):
+            _assert_lossless(GhibliVehicle, row, f"GhibliVehicle/{path.name}[{i}]")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "ghibli" / "species").glob("*.yaml"),
+                *(FIXTURES / "ghibli" / "species_by_id").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_ghibli_species_lossless(self, path):
+        from animedex.backends.ghibli.models import GhibliSpecies
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        rows = body if isinstance(body, list) else [body]
+        for i, row in enumerate(rows):
+            _assert_lossless(GhibliSpecies, row, f"GhibliSpecies/{path.name}[{i}]")
+
+
+# ---------- AnimeChan ----------
+
+
+class TestQuoteLossless:
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "quote" / "random").glob("*.yaml"),
+                *(FIXTURES / "quote" / "random_by_anime").glob("*.yaml"),
+                *(FIXTURES / "quote" / "random_by_character").glob("*.yaml"),
+                *(FIXTURES / "quote" / "quotes_by_anime").glob("*.yaml"),
+                *(FIXTURES / "quote" / "quotes_by_character").glob("*.yaml"),
+            ]
+        ),
+    )
+    def test_quote_envelope_lossless(self, path):
+        from animedex.backends.quote.models import AnimeChanEnvelope
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        _assert_lossless(AnimeChanEnvelope, body, f"AnimeChanEnvelope/{path.parent.name}/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "quote" / "anime").glob("*.yaml")))
+    def test_quote_anime_lossless(self, path):
+        from animedex.backends.quote.models import AnimeChanAnime
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body.get("data"), dict):
+            pytest.skip("empty fixture")
+        _assert_lossless(AnimeChanAnime, body["data"], f"AnimeChanAnime/{path.name}")
+
+
 # ---------- Smoke: every rich class has BackendRichModel discipline ----------
 
 
@@ -1061,3 +1183,19 @@ class TestBackendRichDiscipline:
         rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
         not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
         assert not not_rich, f"Waifu classes outside BackendRichModel: {not_rich}"
+
+    def test_ghibli_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.ghibli import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"Ghibli classes outside BackendRichModel: {not_rich}"
+
+    def test_quote_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.quote import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"Quote classes outside BackendRichModel: {not_rich}"

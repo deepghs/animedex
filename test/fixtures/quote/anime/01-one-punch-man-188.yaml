@@ -1,0 +1,37 @@
+metadata:
+  captured_at: '2026-05-09T00:00:00Z'
+  label: one-punch-man-188
+  backend: quote
+  path_slug: anime
+request:
+  method: GET
+  url: https://api.animechan.io/v1/anime/188
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    content-type: application/json; charset=utf-8
+  body_json:
+    status: success
+    data:
+      id: 188
+      name: One Punch Man
+      altName: One Punch Man
+      episodeCount: 12
+      summary: 'The seemingly unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood
+        dream, Saitama relentlessly trained for three years, losing all of his hair in the process. Now, Saitama is so powerful,
+        he can defeat any enemy with just one punch. However, having no one capable of matching his strength has led Saitama
+        to an unexpected problem—he is no longer able to enjoy the thrill of battling and has become quite bored.
+
+
+        One day, Saitama catches the attention of 19-year-old cyborg Genos, who witnesses his power and wishes to become Saitama''s
+        disciple. Genos proposes that the two join the Hero Association in order to become certified heroes that will be recognized
+        for their positive contributions to society. Saitama, who is shocked that no one knows who he is, quickly agrees.
+        Meeting new allies and taking on new foes, Saitama embarks on a new journey as a member of the Hero Association to
+        experience the excitement of battle he once felt.'
+  body_text: null
+  body_b64: null

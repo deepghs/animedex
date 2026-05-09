@@ -109,6 +109,10 @@ def collect_datas() -> list:
     """
     datas = []
     try:
+        project_root = Path(__file__).resolve().parents[1]
+        if str(project_root) not in sys.path:
+            sys.path.insert(0, str(project_root))
+
         from tools.resources import get_resource_files
 
         for src_file, dst_dir in get_resource_files():
