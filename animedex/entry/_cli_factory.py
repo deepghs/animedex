@@ -147,9 +147,9 @@ _BACKEND_POLICY = {
         "guidance": "Read-only image lookup. nekos.best v2 is SFW-only by design, so the rich-model rating projection is always 'g'. The /search endpoint is fuzzy: it ranks all images by similarity to the query and always returns up to amount results — a non-matching query falls through to a near-random selection rather than an empty list, so callers can't use empty-results as a 'no match' signal.",
     },
     "shikimori": {
-        "backend_line": "Shikimori (shikimori.io; shikimori.one accepted alias); REST and GraphQL anime catalogue.",
+        "backend_line": "Shikimori (shikimori.io; shikimori.one accepted alias); REST and GraphQL catalogue.",
         "rate_line": "5 RPS / 90 RPM.",
-        "guidance": "Read-only Shikimori wrapper over the anonymous REST catalogue. The transport injects the project User-Agent by default; caller-supplied values still win. Prefer high-level commands for anime, calendar, screenshots, videos, roles, relations, links, topics, studios, and genres; use animedex api shikimori for GraphQL and endpoints not yet lifted.",
+        "guidance": "Read-only Shikimori wrapper over the anonymous REST catalogue. The transport injects the project User-Agent by default; caller-supplied values still win. Prefer high-level commands for anime, manga, ranobe, clubs, publishers, top-level people, calendar, screenshots, videos, roles, relations, links, topics, studios, and genres; use animedex api shikimori for GraphQL.",
     },
     "kitsu": {
         "backend_line": "Kitsu (kitsu.io/api/edge canonical; kitsu.app/api/edge accepted alias).",

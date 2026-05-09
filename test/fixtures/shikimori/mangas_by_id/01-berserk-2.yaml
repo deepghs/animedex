@@ -1,0 +1,171 @@
+metadata:
+  captured_at: '2026-05-09T06:03:24Z'
+  label: berserk-2
+  backend: shikimori
+  path_slug: mangas_by_id
+request:
+  method: GET
+  url: https://shikimori.io/api/mangas/2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Sat, 09 May 2026 06:03:24 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"2710461929c5715ddfdcac2f26011b5d"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: e16c6098-c3cb-4c5b-ba7a-77772bb037b9
+    X-Runtime: '0.008000'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    id: 2
+    name: Berserk
+    russian: Берсерк
+    image:
+      original: /system/mangas/original/2.jpg?1712722988
+      preview: /system/mangas/preview/2.jpg?1712722988
+      x96: /system/mangas/x96/2.jpg?1712722988
+      x48: /system/mangas/x48/2.jpg?1712722988
+    url: /mangas/2-berserk
+    kind: manga
+    score: '9.46'
+    status: ongoing
+    volumes: 0
+    chapters: 0
+    aired_on: '1989-08-25'
+    released_on: null
+    english:
+    - Berserk
+    japanese:
+    - ベルセルク
+    synonyms:
+    - 'Берсерк: Прототип'
+    - 'Berserk: The Prototype'
+    - 'Berserk: Prototype'
+    - Kenpuu Denki Berserk
+    - Beruseruku
+    license_name_ru: Берсерк
+    description: |-
+      Наёмник Гатс, по прозвищу Чёрный Мечник, странствует по магическому королевству Мидланд, вооружившись двухметровым мечом «Убийцей Драконов» и уничтожая на своём пути полчища демонов, охотящихся на него. Не жалея ни себя, ни тех, кто попадается ему под руку, он неустанно движется вперёд, ведомый только безудержной жаждой мести. Но откуда она берёт своё начало? Какое тяжкое бремя несёт на своих плечах Гатс? И есть ли шанс на простое светлое будущее у того, кто воочию повидал сам ад?..
+
+      «Берсерк» — это тёмная и печальная сага о неистовых жестоких сражениях, недостижимых мечтах, дружбе и предательстве, а также печальной судьбе одного человека.
+    description_html: <div class="b-text_with_paragraphs">Наёмник <a href="https://shikimori.io/characters/422-guts" title="Guts"
+      class="bubbled b-link" data-tooltip_url="https://shikimori.io/characters/422-guts/tooltip" data-attrs="{&quot;id&quot;:422,&quot;type&quot;:&quot;character&quot;,&quot;name&quot;:&quot;Guts&quot;,&quot;russian&quot;:&quot;Гатс&quot;}">Гатс</a>,
+      по прозвищу Чёрный Мечник, странствует по магическому королевству Мидланд, вооружившись двухметровым мечом «Убийцей
+      Драконов» и уничтожая на своём пути полчища демонов, охотящихся на него. Не жалея ни себя, ни тех, кто попадается ему
+      под руку, он неустанно движется вперёд, ведомый только безудержной жаждой мести. Но откуда она берёт своё начало? Какое
+      тяжкое бремя несёт на своих плечах <a href="https://shikimori.io/characters/422-guts" title="Guts" class="bubbled b-link"
+      data-tooltip_url="https://shikimori.io/characters/422-guts/tooltip" data-attrs="{&quot;id&quot;:422,&quot;type&quot;:&quot;character&quot;,&quot;name&quot;:&quot;Guts&quot;,&quot;russian&quot;:&quot;Гатс&quot;}">Гатс</a>?
+      И есть ли шанс на простое светлое будущее у того, кто воочию повидал сам ад?..<br class="br"><br class="br">«Берсерк»
+      — это тёмная и печальная сага о неистовых жестоких сражениях, недостижимых мечтах, дружбе и предательстве, а также печальной
+      судьбе одного человека.</div>
+    description_source: null
+    franchise: berserk
+    favoured: false
+    anons: false
+    ongoing: true
+    thread_id: 10932
+    topic_id: 10932
+    myanimelist_id: 2
+    rates_scores_stats:
+    - name: 10
+      value: 13422
+    - name: 9
+      value: 3496
+    - name: 8
+      value: 1642
+    - name: 7
+      value: 633
+    - name: 6
+      value: 189
+    - name: 5
+      value: 85
+    - name: 4
+      value: 52
+    - name: 3
+      value: 26
+    - name: 2
+      value: 31
+    - name: 1
+      value: 66
+    rates_statuses_stats:
+    - name: Запланировано
+      value: 15442
+    - name: Прочитано
+      value: 14365
+    - name: Читаю
+      value: 20859
+    - name: Брошено
+      value: 1345
+    - name: Отложено
+      value: 2825
+    licensors:
+    - XL Media
+    genres:
+    - id: 56
+      name: Action
+      russian: Экшен
+      kind: genre
+      entry_type: Manga
+    - id: 68
+      name: Adventure
+      russian: Приключения
+      kind: genre
+      entry_type: Manga
+    - id: 50
+      name: Drama
+      russian: Драма
+      kind: genre
+      entry_type: Manga
+    - id: 57
+      name: Fantasy
+      russian: Фэнтези
+      kind: genre
+      entry_type: Manga
+    - id: 80
+      name: Horror
+      russian: Ужасы
+      kind: genre
+      entry_type: Manga
+    - id: 48
+      name: Supernatural
+      russian: Сверхъестественное
+      kind: genre
+      entry_type: Manga
+    - id: 70
+      name: Military
+      russian: Военное
+      kind: genre
+      entry_type: Manga
+    - id: 67
+      name: Psychological
+      russian: Психологическое
+      kind: genre
+      entry_type: Manga
+    - id: 52
+      name: Seinen
+      russian: Сэйнэн
+      kind: genre
+      entry_type: Manga
+    publishers:
+    - id: 2
+      name: Young Animal
+    user_rate: null
+  body_text: null
+  body_b64: null

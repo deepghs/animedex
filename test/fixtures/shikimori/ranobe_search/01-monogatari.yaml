@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-09T06:03:26Z'
+  label: monogatari
+  backend: shikimori
+  path_slug: ranobe_search
+request:
+  method: GET
+  url: https://shikimori.io/api/ranobe?search=Monogatari&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Sat, 09 May 2026 06:03:25 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"9203716ce25f32e65cb9001e843fa723"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 2a140638-d2a0-4e75-b8a6-57de324b93bf
+    X-Runtime: '0.007708'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 23751
+    name: 'Monogatari Series: Second Season'
+    russian: 'Цикл историй: Второй сезон'
+    image:
+      original: /system/mangas/original/23751.jpg?1708797429
+      preview: /system/mangas/preview/23751.jpg?1708797429
+      x96: /system/mangas/x96/23751.jpg?1708797429
+      x48: /system/mangas/x48/23751.jpg?1708797429
+    url: /mangas/z23751-monogatari-series-second-season
+    kind: light_novel
+    score: '8.93'
+    status: released
+    volumes: 6
+    chapters: 199
+    aired_on: '2010-10-27'
+    released_on: '2011-12-20'
+  - id: 14893
+    name: 'Monogatari Series: First Season'
+    russian: 'Цикл историй: Первый сезон'
+    image:
+      original: /system/mangas/original/14893.jpg?1708797445
+      preview: /system/mangas/preview/14893.jpg?1708797445
+      x96: /system/mangas/x96/14893.jpg?1708797445
+      x48: /system/mangas/x48/14893.jpg?1708797445
+    url: /mangas/z14893-monogatari-series-first-season
+    kind: light_novel
+    score: '8.91'
+    status: released
+    volumes: 6
+    chapters: 107
+    aired_on: '2006-11-01'
+    released_on: '2010-07-28'
+  body_text: null
+  body_b64: null

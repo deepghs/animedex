@@ -137,6 +137,26 @@ def main() -> int:
         total += 1
         print(f"  [{i:02d}/{len(long_tail_cases)}] {slug}/{label}")
 
+    print("-- manga, ranobe, clubs, publishers, and top-level people")
+    entity_cases = [
+        ("mangas_search", "berserk", "/api/mangas?search=Berserk&limit=2"),
+        ("mangas_by_id", "berserk-2", "/api/mangas/2"),
+        ("ranobe_search", "monogatari", "/api/ranobe?search=Monogatari&limit=2"),
+        ("ranobe_by_id", "monogatari-second-season-23751", "/api/ranobe/23751"),
+        ("clubs_search", "anime", "/api/clubs?search=anime&limit=3"),
+        ("clubs_by_id", "site-development-1", "/api/clubs/1"),
+        ("publishers", "all", "/api/publishers"),
+        ("people_search", "hayao-miyazaki", "/api/people/search?search=Hayao%20Miyazaki"),
+        ("people_by_id", "hayao-miyazaki-1870", "/api/people/1870"),
+    ]
+    for i, (slug, label, path) in enumerate(entity_cases, 1):
+        capture(backend="shikimori", path_slug=slug,
+                label=label, method="GET",
+                url=f"{BASE}{path}",
+                pace_seconds=PACE)
+        total += 1
+        print(f"  [{i:02d}/{len(entity_cases)}] {slug}/{label}")
+
     print("-- graphql (16)")
     graphql_cases = [
         ("animes-frieren", '{ animes(ids:"52991"){ id name score status episodes }}'),

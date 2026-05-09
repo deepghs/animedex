@@ -104,6 +104,39 @@ class TestCommonProjection:
         assert common_studio.is_animation_studio is True
         assert common_studio.source.backend == "shikimori"
 
+    def test_person_projection_uses_job_title_when_roles_are_empty(self):
+        from animedex.backends.shikimori.models import ShikimoriPerson
+
+        person = ShikimoriPerson(
+            id=1870,
+            name="Hayao Miyazaki",
+            job_title="Director",
+            birth_on={"year": 1941, "month": 1, "day": 5},
+            source_tag=_src(),
+        )
+
+        common = person.to_common()
+
+        assert common.occupations == ["Director"]
+        assert common.date_of_birth is not None
+        assert common.date_of_birth.year == 1941
+        assert common.description == "Director"
+
+    def test_manga_projection_maps_status_and_format_edges(self):
+        from animedex.backends.shikimori.models import ShikimoriManga
+
+        paused = ShikimoriManga(id=1, name="Paused", status="paused", kind="manhwa").to_common()
+        stopped = ShikimoriManga(id=2, name="Stopped", status="discontinued", kind="manhua").to_common()
+        mystery = ShikimoriManga(id=3, name="Mystery", status="mystery", kind=None).to_common()
+        plain = ShikimoriManga(id=4, name="Plain", status=None, kind=None).to_common()
+
+        assert paused.status == "hiatus"
+        assert paused.format == "MANHWA"
+        assert stopped.status == "cancelled"
+        assert stopped.format == "MANHUA"
+        assert mystery.status == "unknown"
+        assert plain.format is None
+
     def test_calendar_to_common_adds_next_airing_when_complete(self):
         from animedex.backends.shikimori.models import ShikimoriAnime, ShikimoriCalendarEntry
 

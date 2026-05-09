@@ -34,9 +34,10 @@ def shikimori_group() -> None:
     --- LLM Agent Guidance ---
     Read-only Shikimori catalogue wrapper. The project transport
     injects a default User-Agent, while explicit caller overrides win.
-    High-level commands cover the anonymous anime REST surface; use
-    ``animedex api shikimori /api/graphql --graphql ...`` for GraphQL
-    queries and any read endpoint not lifted here.
+    High-level commands cover the anonymous REST entity surfaces for
+    anime, manga, ranobe, clubs, publishers, people, taxonomies, and
+    anime rails; use ``animedex api shikimori /api/graphql --graphql
+    ...`` for GraphQL queries.
     --- End ---
     """
 
@@ -44,6 +45,15 @@ def shikimori_group() -> None:
 register_subcommand(shikimori_group, "calendar", _api.calendar, help="Upcoming and currently-airing schedule.")
 register_subcommand(shikimori_group, "search", _api.search, help="Search Shikimori anime by title.")
 register_subcommand(shikimori_group, "show", _api.show, help="Anime by Shikimori numeric id.")
+register_subcommand(shikimori_group, "manga-search", _api.manga_search, help="Search Shikimori manga by title.")
+register_subcommand(shikimori_group, "manga-show", _api.manga_show, help="Manga by Shikimori numeric id.")
+register_subcommand(shikimori_group, "ranobe-search", _api.ranobe_search, help="Search Shikimori ranobe by title.")
+register_subcommand(shikimori_group, "ranobe-show", _api.ranobe_show, help="Ranobe by Shikimori numeric id.")
+register_subcommand(shikimori_group, "club-search", _api.club_search, help="Search Shikimori clubs.")
+register_subcommand(shikimori_group, "club-show", _api.club_show, help="Club by Shikimori numeric id.")
+register_subcommand(shikimori_group, "publishers", _api.publishers, help="Manga publisher taxonomy.")
+register_subcommand(shikimori_group, "people-search", _api.people_search, help="Search top-level Shikimori people.")
+register_subcommand(shikimori_group, "person", _api.person, help="Top-level person by Shikimori numeric id.")
 register_subcommand(shikimori_group, "screenshots", _api.screenshots, help="Screenshot list for one anime.")
 register_subcommand(shikimori_group, "videos", _api.videos, help="Promo and episode-preview videos for one anime.")
 register_subcommand(shikimori_group, "roles", _api.roles, help="Raw character/person role rows for one anime.")

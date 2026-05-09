@@ -1,10 +1,10 @@
 ``animedex shikimori``
 ======================
 
-Shikimori is a Russian-language anime catalogue with MAL-flavoured IDs, REST resources, and a GraphQL surface. animedex wraps the anonymous anime REST endpoints as high-level commands and leaves GraphQL available through ``animedex api shikimori``.
+Shikimori is a Russian-language catalogue with MAL-flavoured IDs, REST resources, and a GraphQL surface. animedex wraps the anonymous REST entity surfaces for anime, manga, ranobe, clubs, publishers, top-level people, taxonomies, and anime rails as high-level commands, while GraphQL remains available through ``animedex api shikimori``.
 
 .. image:: /_static/gifs/shikimori.gif
-   :alt: animedex shikimori demo — show, search, calendar, screenshots, videos
+   :alt: animedex shikimori demo - anime, manga, ranobe, clubs, publishers, and people
    :align: center
 
 References
@@ -31,11 +31,10 @@ Anime by Shikimori ID — :func:`~animedex.backends.shikimori.show`
 
 .. code-block:: bash
 
-   animedex shikimori show 52991 --jq '{id, name, russian, status, episodes}'
+   animedex shikimori show 52991 --jq '{id, name, status, episodes}'
    # => {
    #      "id": 52991,
    #      "name": "Sousou no Frieren",
-   #      "russian": "Провожающая в последний путь Фрирен",
    #      "status": "released",
    #      "episodes": 28
    #    }
@@ -45,11 +44,92 @@ Search by title — :func:`~animedex.backends.shikimori.search`
 
 .. code-block:: bash
 
-   animedex shikimori search Frieren --limit 2 --jq '[.[].name]'
+   animedex shikimori search Frieren --limit 2 --jq '[.[0].name]'
    # => [
-   #      "Sousou no Frieren",
-   #      "Sousou no Frieren: ●● no Mahou"
+   #      "Sousou no Frieren"
    #    ]
+
+Manga search and detail
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Python entry points: :func:`~animedex.backends.shikimori.manga_search`, :func:`~animedex.backends.shikimori.manga_show`.
+
+.. code-block:: bash
+
+   animedex shikimori manga-search Berserk --limit 2 --jq '[.[0] | {id, name, kind, status}]'
+   # => [
+   #      {
+   #        "id": 2,
+   #        "name": "Berserk",
+   #        "kind": "manga",
+   #        "status": "ongoing"
+   #      }
+   #    ]
+
+   animedex shikimori manga-show 2 --jq '{id, name, kind, status, myanimelist_id}'
+   # => {
+   #      "id": 2,
+   #      "name": "Berserk",
+   #      "kind": "manga",
+   #      "status": "ongoing",
+   #      "myanimelist_id": 2
+   #    }
+
+Ranobe
+~~~~~~
+
+Python entry points: :func:`~animedex.backends.shikimori.ranobe_search`, :func:`~animedex.backends.shikimori.ranobe_show`.
+
+.. code-block:: bash
+
+   animedex shikimori ranobe-search Monogatari --limit 2 --jq '[.[0] | {id, name, kind}]'
+   # => [
+   #      {
+   #        "id": 23751,
+   #        "name": "Monogatari Series: Second Season",
+   #        "kind": "light_novel"
+   #      }
+   #    ]
+
+   animedex shikimori ranobe-show 23751 --jq '{id, name, kind, volumes, chapters}'
+   # => {
+   #      "id": 23751,
+   #      "name": "Monogatari Series: Second Season",
+   #      "kind": "light_novel",
+   #      "volumes": 6,
+   #      "chapters": 199
+   #    }
+
+Clubs, publishers, and people
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Python entry points: :func:`~animedex.backends.shikimori.club_search`, :func:`~animedex.backends.shikimori.publishers`, :func:`~animedex.backends.shikimori.person`.
+
+.. code-block:: bash
+
+   animedex shikimori club-search anime --limit 3 --jq '[.[0] | {id, name, join_policy}]'
+   # => [
+   #      {
+   #        "id": 746,
+   #        "name": "Anime Glitch",
+   #        "join_policy": "free"
+   #      }
+   #    ]
+
+   animedex shikimori publishers --jq '[.[0] | {id, name}]'
+   # => [
+   #      {
+   #        "id": 1510,
+   #        "name": "Web Action"
+   #      }
+   #    ]
+
+   animedex shikimori person 1870 --jq '{id, name, website}'
+   # => {
+   #      "id": 1870,
+   #      "name": "Hayao Miyazaki",
+   #      "website": "http://www.ghibli.jp/"
+   #    }
 
 Calendar — :func:`~animedex.backends.shikimori.calendar`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,6 +155,15 @@ Command                          Python entry point                             
 ``calendar``                     :func:`animedex.backends.shikimori.calendar`                                  ``list[ShikimoriCalendarEntry]``
 ``search <q>``                   :func:`animedex.backends.shikimori.search`                                    ``list[ShikimoriAnime]``
 ``show <anime_id>``              :func:`animedex.backends.shikimori.show`                                      :class:`~animedex.backends.shikimori.models.ShikimoriAnime`
+``manga-search <q>``             :func:`animedex.backends.shikimori.manga_search`                              ``list[ShikimoriManga]``
+``manga-show <manga_id>``        :func:`animedex.backends.shikimori.manga_show`                                :class:`~animedex.backends.shikimori.models.ShikimoriManga`
+``ranobe-search <q>``            :func:`animedex.backends.shikimori.ranobe_search`                             ``list[ShikimoriManga]``
+``ranobe-show <ranobe_id>``      :func:`animedex.backends.shikimori.ranobe_show`                               :class:`~animedex.backends.shikimori.models.ShikimoriManga`
+``club-search <q>``              :func:`animedex.backends.shikimori.club_search`                               ``list[ShikimoriClub]``
+``club-show <club_id>``          :func:`animedex.backends.shikimori.club_show`                                 :class:`~animedex.backends.shikimori.models.ShikimoriClub`
+``publishers``                   :func:`animedex.backends.shikimori.publishers`                                ``list[ShikimoriPublisher]``
+``people-search <q>``            :func:`animedex.backends.shikimori.people_search`                             ``list[ShikimoriPerson]``
+``person <person_id>``           :func:`animedex.backends.shikimori.person`                                    :class:`~animedex.backends.shikimori.models.ShikimoriPerson`
 ``screenshots <anime_id>``       :func:`animedex.backends.shikimori.screenshots`                               ``list[ShikimoriScreenshot]``
 ``videos <anime_id>``            :func:`animedex.backends.shikimori.videos`                                    ``list[ShikimoriVideo]``
 ``roles <anime_id>``             :func:`animedex.backends.shikimori.roles`                                     ``list[ShikimoriResource]``

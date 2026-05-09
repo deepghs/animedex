@@ -6,11 +6,12 @@ Backend: Shikimori (shikimori.io; shikimori.one accepted fallback).
 Rate limit: 5 RPS / 90 RPM.
 
 --- LLM Agent Guidance ---
-Both REST (``/api/animes/{id}``, ``/api/calendar``,
-``/api/animes?search=...``, ``/api/animes/{id}/screenshots``,
-``/api/animes/{id}/videos``) and GraphQL (``POST /api/graphql``)
-are exposed. Prefer GraphQL when possible per upstream advice.
-Rate limit applies to all forms.
+Both REST (``/api/animes/{id}``, ``/api/mangas/{id}``,
+``/api/ranobe/{id}``, ``/api/clubs/{id}``, ``/api/publishers``,
+``/api/people/{id}``, ``/api/calendar``) and GraphQL
+(``POST /api/graphql``) are exposed. Prefer the high-level commands
+for lifted REST entity surfaces and use this raw passthrough for
+GraphQL or one-off documented reads. Rate limit applies to all forms.
 
 Although the docs threaten an IP ban for missing UA, the upstream
 returns data even with empty UA today; the project ships

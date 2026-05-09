@@ -58,16 +58,24 @@ def api_shikimori(
 
     \b
     Common REST paths:
-      /api/animes/{id}                      fetch one
-      /api/animes?search=Frieren&limit=2    search
+      /api/animes/{id}                       fetch one anime
+      /api/animes?search=Frieren&limit=2     search anime
+      /api/mangas/{id}                       fetch one manga
+      /api/mangas?search=Berserk&limit=2     search manga
+      /api/ranobe/{id}                       fetch one ranobe
+      /api/clubs/{id}                        fetch one club
+      /api/publishers                        publisher taxonomy
+      /api/people/{id}                       fetch one top-level person
       /api/calendar                          airing calendar
-      /api/animes/{id}/screenshots          screenshot list
-      /api/animes/{id}/videos               PV/OP/ED list
+      /api/animes/{id}/screenshots           screenshot list
+      /api/animes/{id}/videos                PV/OP/ED list
 
     \b
     Examples:
       animedex api shikimori /api/animes/52991
       animedex api shikimori '/api/animes?search=Frieren&limit=2' -i
+      animedex api shikimori '/api/mangas?search=Berserk&limit=2'
+      animedex api shikimori /api/people/1870
       animedex api shikimori /api/calendar
       animedex api shikimori /api/graphql --graphql '{ animes(ids:"52991"){ id name score } }'
     \f
@@ -77,11 +85,13 @@ def api_shikimori(
     Rate limit: 5 RPS / 90 RPM.
 
     --- LLM Agent Guidance ---
-    For REST, leave PATH as e.g. /api/animes/{id}. For GraphQL, pass
-    PATH=/api/graphql and --graphql '{ animes(...){ id } }'; the
-    wrapper sets method=POST and Content-Type: application/json.
-    Both shikimori.io and shikimori.one serve identical data; .io
-    is canonical.
+    For REST, leave PATH as e.g. /api/animes/{id}, /api/mangas/{id},
+    /api/ranobe/{id}, /api/clubs/{id}, /api/publishers, or
+    /api/people/{id}. Prefer the high-level shikimori commands for
+    lifted REST surfaces. For GraphQL, pass PATH=/api/graphql and
+    --graphql '{ animes(...){ id } }'; the wrapper sets method=POST
+    and Content-Type: application/json. Both shikimori.io and
+    shikimori.one serve identical data; .io is canonical.
     --- End ---
     """
     from animedex.api import shikimori as shikimori_mod

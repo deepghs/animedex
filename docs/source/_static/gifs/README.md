@@ -51,7 +51,7 @@ vhs shikimori.tape            # produces shikimori.gif
 
 vhs is available as a single-file binary at
 [github.com/charmbracelet/vhs/releases](https://github.com/charmbracelet/vhs/releases).
-The render is local and offline-after-install — no network calls happen inside vhs itself. Most tapes intentionally run live `animedex` commands, so they need network at record time and may show small upstream drift such as a different random image or score. `ghibli.tape` is fully offline, and `quote.tape` prewarms a temporary local cache from committed fixtures before the visible commands run so it does not consume AnimeChan's anonymous hourly quota.
+The render is local and offline-after-install — no network calls happen inside vhs itself. Most tapes intentionally run live `animedex` commands, so they need network at record time and may show small upstream drift such as a different random image or score. `ghibli.tape` is fully offline, and `quote.tape` / `shikimori.tape` prewarm a temporary local cache from committed fixtures before the visible commands run so the demos stay stable under tight upstream limits.
 
 ## Why commit both .tape and .gif?
 

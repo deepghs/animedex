@@ -7,7 +7,8 @@ from typing import Any, Dict, List, Optional
 
 from animedex.models.anime import Anime, AnimeRating, AnimeTitle, NextAiringEpisode
 from animedex.models.character import Character, Staff, Studio
-from animedex.models.common import BackendRichModel, SourceTag
+from animedex.models.common import BackendRichModel, PartialDate, SourceTag
+from animedex.models.manga import Manga
 
 
 class ShikimoriImage(BackendRichModel):
@@ -50,6 +51,14 @@ class ShikimoriStudio(BackendRichModel):
             is_animation_studio=self.real,
             source=self.source_tag or _default_src(),
         )
+
+
+class ShikimoriPublisher(BackendRichModel):
+    """Publisher row from ``/api/publishers``."""
+
+    id: int
+    name: Optional[str] = None
+    source_tag: Optional[SourceTag] = None
 
 
 class ShikimoriVideo(BackendRichModel):
@@ -95,24 +104,164 @@ class ShikimoriCharacter(BackendRichModel):
 
 
 class ShikimoriPerson(BackendRichModel):
-    """Person reference from anime roles."""
+    """Person reference or top-level person record."""
 
     id: int
     name: Optional[str] = None
     russian: Optional[str] = None
     image: Optional[ShikimoriImage] = None
     url: Optional[str] = None
+    japanese: Optional[str] = None
+    job_title: Optional[str] = None
+    birth_on: Optional[Dict[str, Any]] = None
+    deceased_on: Optional[Dict[str, Any]] = None
+    website: Optional[str] = None
+    groupped_roles: List[List[Any]] = []
+    roles: List[Dict[str, Any]] = []
+    works: List[Dict[str, Any]] = []
+    topic_id: Optional[int] = None
+    person_favoured: Optional[bool] = None
+    producer: Optional[bool] = None
+    producer_favoured: Optional[bool] = None
+    mangaka: Optional[bool] = None
+    mangaka_favoured: Optional[bool] = None
+    seyu: Optional[bool] = None
+    seyu_favoured: Optional[bool] = None
+    updated_at: Optional[str] = None
+    thread_id: Optional[int] = None
+    birthday: Optional[Dict[str, Any]] = None
     source_tag: Optional[SourceTag] = None
 
     def to_common(self) -> Staff:
         """Project this person onto the common staff shape."""
+        occupations = []
+        for row in self.groupped_roles:
+            if row and isinstance(row[0], str):
+                occupations.append(row[0])
+        if not occupations and self.job_title:
+            occupations.append(self.job_title)
         return Staff(
             id=f"shikimori:person:{self.id}",
             name=self.name or self.russian or "",
-            name_native=self.russian,
+            name_native=self.japanese or self.russian,
+            occupations=occupations,
+            date_of_birth=_partial_date(self.birth_on),
             image_url=_absolute_url(self.image.original if self.image else None),
+            description=self.job_title,
             source=self.source_tag or _default_src(),
         )
+
+
+class ShikimoriManga(BackendRichModel):
+    """Manga or ranobe record from ``/api/mangas`` and ``/api/ranobe``."""
+
+    id: int
+    name: Optional[str] = None
+    russian: Optional[str] = None
+    image: Optional[ShikimoriImage] = None
+    url: Optional[str] = None
+    kind: Optional[str] = None
+    score: Optional[str] = None
+    status: Optional[str] = None
+    volumes: Optional[int] = None
+    chapters: Optional[int] = None
+    aired_on: Optional[str] = None
+    released_on: Optional[str] = None
+    english: List[Optional[str]] = []
+    japanese: List[Optional[str]] = []
+    synonyms: List[str] = []
+    license_name_ru: Optional[str] = None
+    description: Optional[str] = None
+    description_html: Optional[str] = None
+    description_source: Optional[str] = None
+    franchise: Optional[str] = None
+    favoured: Optional[bool] = None
+    anons: Optional[bool] = None
+    ongoing: Optional[bool] = None
+    thread_id: Optional[int] = None
+    topic_id: Optional[int] = None
+    myanimelist_id: Optional[int] = None
+    rates_scores_stats: List[Dict[str, Any]] = []
+    rates_statuses_stats: List[Dict[str, Any]] = []
+    licensors: List[str] = []
+    genres: List[ShikimoriEntity] = []
+    publishers: List[ShikimoriPublisher] = []
+    user_rate: Optional[Dict[str, Any]] = None
+    source_tag: Optional[SourceTag] = None
+
+    def to_common(self) -> Manga:
+        """Project this Shikimori manga or ranobe onto the common manga shape."""
+        title = self.name or _first_string(self.english) or self.russian or ""
+        return Manga(
+            id=f"shikimori:manga:{self.id}",
+            title=title,
+            cover_url=_absolute_url(self.image.original if self.image else None),
+            chapters=[],
+            languages=[],
+            description=self.description,
+            status=_normalise_manga_status(self.status),
+            format=_normalise_manga_format(self.kind),
+            genres=[genre.name for genre in self.genres if genre.name],
+            tags=[publisher.name for publisher in self.publishers if publisher.name],
+            ids={"shikimori": str(self.id), **({"mal": str(self.myanimelist_id)} if self.myanimelist_id else {})},
+            source=self.source_tag or _default_src(),
+        )
+
+
+class ShikimoriClubLogo(BackendRichModel):
+    """Logo URL block used by Shikimori clubs."""
+
+    original: Optional[str] = None
+    main: Optional[str] = None
+    x96: Optional[str] = None
+    x73: Optional[str] = None
+    x48: Optional[str] = None
+
+
+class ShikimoriUserImage(BackendRichModel):
+    """User avatar URL block used by club member rows."""
+
+    x160: Optional[str] = None
+    x148: Optional[str] = None
+    x80: Optional[str] = None
+    x64: Optional[str] = None
+    x48: Optional[str] = None
+    x32: Optional[str] = None
+    x16: Optional[str] = None
+
+
+class ShikimoriUser(BackendRichModel):
+    """Small public user row nested inside club responses."""
+
+    id: int
+    nickname: Optional[str] = None
+    avatar: Optional[str] = None
+    image: Optional[ShikimoriUserImage] = None
+    last_online_at: Optional[str] = None
+    url: Optional[str] = None
+
+
+class ShikimoriClub(BackendRichModel):
+    """Club record from ``/api/clubs`` and ``/api/clubs/{id}``."""
+
+    id: int
+    name: Optional[str] = None
+    logo: Optional[ShikimoriClubLogo] = None
+    is_censored: Optional[bool] = None
+    join_policy: Optional[str] = None
+    comment_policy: Optional[str] = None
+    description: Optional[str] = None
+    description_html: Optional[str] = None
+    mangas: List[ShikimoriEntity] = []
+    characters: List[ShikimoriCharacter] = []
+    thread_id: Optional[int] = None
+    topic_id: Optional[int] = None
+    user_role: Optional[str] = None
+    style_id: Optional[int] = None
+    members: List[ShikimoriUser] = []
+    animes: List[ShikimoriAnime] = []
+    images: List[Dict[str, Any]] = []
+    source_tag: Optional[SourceTag] = None
 
 
 class ShikimoriRole(BackendRichModel):
@@ -310,6 +459,12 @@ def _parse_datetime(value: Optional[str]):
         return None
 
 
+def _partial_date(value: Optional[Dict[str, Any]]) -> Optional[PartialDate]:
+    if not value:
+        return None
+    return PartialDate(year=value.get("year"), month=value.get("month"), day=value.get("day"))
+
+
 def _normalise_status(value: Optional[str]) -> Optional[str]:
     if value == "ongoing":
         return "airing"
@@ -340,6 +495,35 @@ def _normalise_format(value: Optional[str]) -> Optional[str]:
     return mapping.get(value)
 
 
+def _normalise_manga_status(value: Optional[str]) -> Optional[str]:
+    if value == "ongoing":
+        return "ongoing"
+    if value == "released":
+        return "completed"
+    if value == "paused":
+        return "hiatus"
+    if value == "discontinued":
+        return "cancelled"
+    if not value:
+        return None
+    return "unknown"
+
+
+def _normalise_manga_format(value: Optional[str]) -> Optional[str]:
+    if not value:
+        return None
+    mapping = {
+        "manga": "MANGA",
+        "manhwa": "MANHWA",
+        "manhua": "MANHUA",
+        "one_shot": "ONE_SHOT",
+        "doujin": "DOUJINSHI",
+        "light_novel": "NOVEL",
+        "novel": "NOVEL",
+    }
+    return mapping.get(value)
+
+
 def selftest() -> bool:
     """Smoke-test the Shikimori rich models."""
     from datetime import datetime, timezone
@@ -359,4 +543,8 @@ def selftest() -> bool:
     assert common.id == "shikimori:52991"
     assert common.status == "finished"
     assert common.source.backend == "shikimori"
+    manga = ShikimoriManga(id=2, name="Berserk", kind="manga", status="ongoing", source_tag=src)
+    assert manga.to_common().format == "MANGA"
+    person = ShikimoriPerson(id=1870, name="Hayao Miyazaki", birth_on={"year": 1941, "month": 1, "day": 5})
+    assert person.to_common().date_of_birth.year == 1941
     return True

@@ -1,7 +1,7 @@
-# vhs tape — animedex shikimori backend tour (~20 s)
+# vhs tape - animedex shikimori backend tour (~24 s)
 #
-# Four Shikimori demos covering: anime show, title search, calendar,
-# and media rails.
+# Uses a pre-warmed local cache during rendering so the demo is stable
+# and does not depend on live Shikimori rate-limit state.
 
 Output shikimori.gif
 
@@ -12,22 +12,33 @@ Set Height 520
 Set Padding 14
 Set Framerate 24
 
+Hide
+Type "export XDG_CACHE_HOME=$(mktemp -d) && python ../../../../tools/fixtures/prewarm_shikimori_cache.py && clear"
+Enter
+Sleep 1s
+Show
+
 Type "animedex shikimori show 52991 --jq '{id, name, status, episodes}'"
 Sleep 400ms
 Enter
 Sleep 1900ms
 
-Type "animedex shikimori search Frieren --limit 2 --jq '[.[].name]'"
+Type "animedex shikimori manga-show 2 --jq '{id, name, kind, status}'"
 Sleep 400ms
 Enter
 Sleep 1900ms
 
-Type "animedex shikimori calendar --limit 3 --jq '.[0:3] | map({episode: .next_episode, title: .anime.name})'"
+Type "animedex shikimori ranobe-show 23751 --jq '{id, name, kind, volumes, chapters}'"
 Sleep 400ms
 Enter
 Sleep 2200ms
 
-Type "animedex shikimori videos 52991 --jq '[.[0:3][] | {name, kind, url}]'"
+Type "animedex shikimori publishers --jq '[.[0] | {id, name}]'"
+Sleep 400ms
+Enter
+Sleep 1900ms
+
+Type "animedex shikimori person 1870 --jq '{id, name, website}'"
 Sleep 400ms
 Enter
 Sleep 2400ms

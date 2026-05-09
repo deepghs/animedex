@@ -65,7 +65,7 @@ The CLI is a thin presentation layer over an installable Python package — anyt
 | **Trace.moe** (api.trace.moe) | `animedex trace` — search by image (`--url` or `--input <bytes>`), `quota` | `animedex api trace /me` | live |
 | **Studio Ghibli API** (ghibliapi.vercel.app; bundled snapshot) | `animedex ghibli` — offline films / people / locations / species / vehicles with local filters | `animedex api ghibli /films` | offline high-level; live passthrough |
 | **AnimeChan** (api.animechan.io/v1; quotes) | `animedex quote` — random quote / filtered random / paginated quote lists / anime info, cached by default for the 5 req/hour free tier | `animedex api quote /quotes/random` | live |
-| **Shikimori** (shikimori.io; REST + GraphQL catalogue) | `animedex shikimori` — calendar / search / show / screenshots / videos / characters / staff / similar / related / external-links / topics / studios / genres | `animedex api shikimori <path>` | live |
+| **Shikimori** (shikimori.io; REST + GraphQL catalogue) | `animedex shikimori` — anime / manga / ranobe / clubs / publishers / top-level people / calendar / screenshots / videos / characters / staff / similar / related / external-links / topics / studios / genres | `animedex api shikimori <path>` | live |
 | **ANN Encyclopedia** (cdn.animenewsnetwork.com; XML) | `animedex ann` — show / search / reports with typed XML warning handling | `animedex api ann <path>` | live |
 | MAL v2 | — | — | not yet implemented |
 

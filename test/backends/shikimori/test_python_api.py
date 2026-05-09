@@ -14,7 +14,10 @@ from animedex.backends.shikimori.models import (
     ShikimoriAnime,
     ShikimoriCalendarEntry,
     ShikimoriCharacter,
+    ShikimoriClub,
+    ShikimoriManga,
     ShikimoriPerson,
+    ShikimoriPublisher,
     ShikimoriResource,
     ShikimoriScreenshot,
     ShikimoriStudio,
@@ -125,6 +128,88 @@ class TestAnime:
                 shiki_api.show(99999999, no_cache=True)
 
         assert ei.value.reason == "not-found"
+
+    def test_high_level_default_cache_serves_repeat_call(self, fake_clock):
+        fx = _load("animes_by_id/01-frieren-52991.yaml")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, fx)
+            first = shiki_api.show(52991)
+            second = shiki_api.show(52991)
+
+        assert first.source_tag is not None
+        assert first.source_tag.cached is False
+        assert second.source_tag is not None
+        assert second.source_tag.cached is True
+
+    def test_close_default_cache_resets_singleton(self, fake_clock):
+        cache = shiki_api._default_cache()
+
+        assert cache is shiki_api._default_cache()
+        shiki_api._close_default_cache()
+        assert shiki_api._DEFAULT_CACHE is None
+
+    def test_config_threads_transport_defaults(self, fake_clock):
+        from animedex.config import Config
+
+        fx = _load("animes_by_id/01-frieren-52991.yaml")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, fx)
+            out = shiki_api.show(52991, config=Config(no_cache=True, cache_ttl_seconds=30, rate="slow"))
+
+        assert isinstance(out, ShikimoriAnime)
+        assert out.source_tag is not None
+        assert out.source_tag.cached is False
+
+
+class TestMangaRanobePeople:
+    def test_manga_search_and_show_return_typed_rows(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("mangas_search/01-berserk.yaml"))
+            _register(rsps, _load("mangas_by_id/01-berserk-2.yaml"))
+            search = shiki_api.manga_search("Berserk", limit=2, no_cache=True)
+            show = shiki_api.manga_show(2, no_cache=True)
+
+        assert len(search) >= 1
+        assert isinstance(search[0], ShikimoriManga)
+        assert isinstance(show, ShikimoriManga)
+        common = show.to_common()
+        assert common.id == "shikimori:manga:2"
+        assert common.format == "MANGA"
+
+    def test_ranobe_search_and_show_return_typed_rows(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("ranobe_search/01-monogatari.yaml"))
+            _register(rsps, _load("ranobe_by_id/01-monogatari-second-season-23751.yaml"))
+            search = shiki_api.ranobe_search("Monogatari", limit=2, no_cache=True)
+            show = shiki_api.ranobe_show(23751, no_cache=True)
+
+        assert len(search) >= 1
+        assert isinstance(search[0], ShikimoriManga)
+        assert isinstance(show, ShikimoriManga)
+        assert show.to_common().format == "NOVEL"
+
+    def test_clubs_publishers_and_people_return_typed_rows(self, fake_clock):
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("clubs_search/01-anime.yaml"))
+            _register(rsps, _load("clubs_by_id/01-site-development-1.yaml"))
+            _register(rsps, _load("publishers/01-all.yaml"))
+            _register(rsps, _load("people_search/01-hayao-miyazaki.yaml"))
+            _register(rsps, _load("people_by_id/01-hayao-miyazaki-1870.yaml"))
+            clubs = shiki_api.club_search("anime", limit=3, no_cache=True)
+            club = shiki_api.club_show(1, no_cache=True)
+            publishers = shiki_api.publishers(no_cache=True)
+            people = shiki_api.people_search("Hayao Miyazaki", no_cache=True)
+            person = shiki_api.person(1870, no_cache=True)
+
+        assert len(clubs) >= 1
+        assert isinstance(clubs[0], ShikimoriClub)
+        assert isinstance(club, ShikimoriClub)
+        assert len(publishers) >= 1
+        assert isinstance(publishers[0], ShikimoriPublisher)
+        assert len(people) >= 1
+        assert isinstance(people[0], ShikimoriPerson)
+        assert isinstance(person, ShikimoriPerson)
+        assert person.to_common().id == "shikimori:person:1870"
 
 
 class TestCalendar:
@@ -266,6 +351,26 @@ class TestErrorPaths:
             with pytest.raises(ApiError) as ei:
                 shiki_api.show(52991, no_cache=True)
 
+        assert ei.value.reason == "upstream-shape"
+
+    @pytest.mark.parametrize(
+        "fn,path,arg",
+        [
+            (shiki_api.manga_show, "/api/mangas/2", 2),
+            (shiki_api.ranobe_show, "/api/ranobe/23751", 23751),
+            (shiki_api.club_show, "/api/clubs/1", 1),
+            (shiki_api.person, "/api/people/1870", 1870),
+        ],
+    )
+    def test_new_entity_show_array_payload_raises_shape_error(self, fake_clock, fn, path, arg):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register_path(rsps, path, body="[]")
+            with pytest.raises(ApiError) as ei:
+                fn(arg, no_cache=True)
+
+        assert ei.value.backend == "shikimori"
         assert ei.value.reason == "upstream-shape"
 
     def test_null_list_payload_normalises_to_empty_list(self, fake_clock):

@@ -27,6 +27,13 @@ ShikimoriStudio
     :members: to_common,id,name,filtered_name,real,image,source_tag
 
 
+ShikimoriPublisher
+-----------------------------------------------------
+
+.. autoclass:: ShikimoriPublisher
+    :members: id,name,source_tag
+
+
 ShikimoriVideo
 -----------------------------------------------------
 
@@ -52,7 +59,42 @@ ShikimoriPerson
 -----------------------------------------------------
 
 .. autoclass:: ShikimoriPerson
-    :members: to_common,id,name,russian,image,url,source_tag
+    :members: to_common,id,name,russian,image,url,japanese,job_title,birth_on,deceased_on,website,groupped_roles,roles,works,topic_id,person_favoured,producer,producer_favoured,mangaka,mangaka_favoured,seyu,seyu_favoured,updated_at,thread_id,birthday,source_tag
+
+
+ShikimoriManga
+-----------------------------------------------------
+
+.. autoclass:: ShikimoriManga
+    :members: to_common,id,name,russian,image,url,kind,score,status,volumes,chapters,aired_on,released_on,english,japanese,synonyms,license_name_ru,description,description_html,description_source,franchise,favoured,anons,ongoing,thread_id,topic_id,myanimelist_id,rates_scores_stats,rates_statuses_stats,licensors,genres,publishers,user_rate,source_tag
+
+
+ShikimoriClubLogo
+-----------------------------------------------------
+
+.. autoclass:: ShikimoriClubLogo
+    :members: original,main,x96,x73,x48
+
+
+ShikimoriUserImage
+-----------------------------------------------------
+
+.. autoclass:: ShikimoriUserImage
+    :members: x160,x148,x80,x64,x48,x32,x16
+
+
+ShikimoriUser
+-----------------------------------------------------
+
+.. autoclass:: ShikimoriUser
+    :members: id,nickname,avatar,image,last_online_at,url
+
+
+ShikimoriClub
+-----------------------------------------------------
+
+.. autoclass:: ShikimoriClub
+    :members: id,name,logo,is_censored,join_policy,comment_policy,description,description_html,mangas,characters,thread_id,topic_id,user_role,style_id,members,animes,images,source_tag
 
 
 ShikimoriRole
