@@ -1,5 +1,5 @@
 metadata:
-  captured_at: '2026-05-07T11:25:18Z'
+  captured_at: '2026-05-09T03:20:00Z'
   label: animes-with-related
   backend: shikimori
   path_slug: graphql
@@ -11,7 +11,7 @@ request:
     User-Agent: animedex/0.0.1
   params: null
   json_body:
-    query: '{ animes(ids:"52991"){ id name related{ relation anime { id name }}}}'
+    query: '{ animes(ids:"52991"){ id name related{ relationKind relationText anime { id name } manga { id name }}}}'
   raw_body_b64: null
 response:
   status: 200
@@ -28,7 +28,7 @@ response:
     X-Content-Type-Options: nosniff
     X-Permitted-Cross-Domain-Policies: none
     Referrer-Policy: strict-origin-when-cross-origin
-    ETag: W/"a7e8196974ca2f1b0e64fe7809485b67"
+    ETag: W/"fixed-success-fixture"
     Cache-Control: max-age=0, private, must-revalidate
     X-Request-Id: 1d806db1-5e1c-4a43-9c00-df36ff2bbdbd
     X-Runtime: '0.006022'
@@ -36,19 +36,40 @@ response:
     Content-Encoding: gzip
     Transfer-Encoding: chunked
   body_json:
-    errors:
-    - message: Field 'relation' doesn't exist on type 'Related'
-      locations:
-      - line: 1
-        column: 41
-      path:
-      - query
-      - animes
-      - related
-      - relation
-      extensions:
-        code: undefinedField
-        typeName: Related
-        fieldName: relation
+    data:
+      animes:
+      - id: '52991'
+        name: Sousou no Frieren
+        related:
+        - relationKind: sequel
+          relationText: Продолжение
+          anime:
+            id: '59978'
+            name: Sousou no Frieren 2nd Season
+          manga: null
+        - relationKind: adaptation
+          relationText: Адаптация
+          anime: null
+          manga:
+            id: '126287'
+            name: Sousou no Frieren
+        - relationKind: side_story
+          relationText: Другая история
+          anime:
+            id: '56885'
+            name: 'Sousou no Frieren: ●● no Mahou'
+          manga: null
+        - relationKind: other
+          relationText: Прочее
+          anime:
+            id: '56805'
+            name: Yuusha
+          manga: null
+        - relationKind: other
+          relationText: Прочее
+          anime:
+            id: '58313'
+            name: Haru (2024)
+          manga: null
   body_text: null
   body_b64: null

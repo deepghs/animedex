@@ -131,6 +131,11 @@ _BACKEND_POLICY = {
         "rate_line": "60 req/min, 3 req/sec.",
         "guidance": "Read-only Jikan endpoint; fully anonymous. Long-tail sub-endpoints return JikanGenericResponse — use --jq to filter structurally.",
     },
+    "ann": {
+        "backend_line": "ANN Encyclopedia (cdn.animenewsnetwork.com); XML encyclopedia.",
+        "rate_line": "1 req/sec on api.xml; 5 reqs/5sec on nodelay.api.xml.",
+        "guidance": "Read-only ANN encyclopedia XML wrapper. Use show for ANN numeric ids, search for title substring lookup, and reports for curated encyclopedia lists. A 200 response with <warning> is an empty-result warning carried on the rich model, not an ApiError.",
+    },
     "trace": {
         "backend_line": "Trace.moe (api.trace.moe).",
         "rate_line": "Anonymous concurrency 1, quota 100/month.",
@@ -140,6 +145,11 @@ _BACKEND_POLICY = {
         "backend_line": "nekos.best v2 (nekos.best/api/v2); SFW anime image / GIF collection.",
         "rate_line": "200 req/min anonymous (visible in x-rate-limit-limit / x-rate-limit-remaining response headers).",
         "guidance": "Read-only image lookup. nekos.best v2 is SFW-only by design, so the rich-model rating projection is always 'g'. The /search endpoint is fuzzy: it ranks all images by similarity to the query and always returns up to amount results — a non-matching query falls through to a near-random selection rather than an empty list, so callers can't use empty-results as a 'no match' signal.",
+    },
+    "shikimori": {
+        "backend_line": "Shikimori (shikimori.io; shikimori.one accepted alias); REST and GraphQL catalogue.",
+        "rate_line": "5 RPS / 90 RPM.",
+        "guidance": "Read-only Shikimori wrapper over the anonymous REST catalogue. The transport injects the project User-Agent by default; caller-supplied values still win. Prefer high-level commands for anime, manga, ranobe, clubs, publishers, top-level people, calendar, screenshots, videos, roles, relations, links, topics, studios, and genres; use animedex api shikimori for GraphQL.",
     },
     "kitsu": {
         "backend_line": "Kitsu (kitsu.io/api/edge canonical; kitsu.app/api/edge accepted alias).",

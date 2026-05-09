@@ -1,0 +1,82 @@
+metadata:
+  captured_at: '2026-05-09T06:03:29Z'
+  label: anime
+  backend: shikimori
+  path_slug: clubs_search
+request:
+  method: GET
+  url: https://shikimori.io/api/clubs?search=anime&limit=3
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Sat, 09 May 2026 06:03:28 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"4cadd4c9a1f98853ba814b846f6b5772"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 0b11ca58-e8fa-41b5-8e15-83593cd8ec94
+    X-Runtime: '0.040039'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 746
+    name: Anime Glitch
+    logo:
+      original: /system/clubs/original/746.gif?1478947376
+      main: /system/clubs/main/746.gif?1478947376
+      x96: /system/clubs/x96/746.gif?1478947376
+      x73: /system/clubs/x73/746.gif?1478947376
+      x48: /system/clubs/x48/746.gif?1478947376
+    is_censored: false
+    join_policy: free
+    comment_policy: members
+  - id: 337
+    name: 'Anime TV '
+    logo:
+      original: /assets/globals/missing_original_original.png
+      main: /assets/globals/missing_main_main.png
+      x96: /assets/globals/missing_x96_x96.png
+      x73: /assets/globals/missing_x73_x73.png
+      x48: /assets/globals/missing_x48_x48.png
+    is_censored: false
+    join_policy: owner_invite
+    comment_policy: free
+  - id: 727
+    name: anime movies
+    logo:
+      original: /system/clubs/original/727.jpg?1474130764
+      main: /system/clubs/main/727.jpg?1474130764
+      x96: /system/clubs/x96/727.jpg?1474130764
+      x73: /system/clubs/x73/727.jpg?1474130764
+      x48: /system/clubs/x48/727.jpg?1474130764
+    is_censored: false
+    join_policy: free
+    comment_policy: members
+  - id: 365
+    name: Anime TяН*о*
+    logo:
+      original: /system/clubs/original/365.jpeg?1481944343
+      main: /system/clubs/main/365.jpeg?1481944343
+      x96: /system/clubs/x96/365.jpeg?1481944343
+      x73: /system/clubs/x73/365.jpeg?1481944343
+      x48: /system/clubs/x48/365.jpeg?1481944343
+    is_censored: false
+    join_policy: free
+    comment_policy: free
+  body_text: null
+  body_b64: null

@@ -1,0 +1,1802 @@
+metadata:
+  captured_at: '2026-05-09T06:03:36Z'
+  label: hayao-miyazaki-1870
+  backend: shikimori
+  path_slug: people_by_id
+request:
+  method: GET
+  url: https://shikimori.io/api/people/1870
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Sat, 09 May 2026 06:03:36 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"80d0859613bd2cbb9871611293e04570"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 1f5208e5-2bec-4c5b-ae49-c31cc1fe831d
+    X-Runtime: '0.115293'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+    id: 1870
+    name: Hayao Miyazaki
+    russian: Хаяо Миядзаки
+    image:
+      original: /system/people/original/1870.jpg?1712004020
+      preview: /system/people/preview/1870.jpg?1712004020
+      x96: /system/people/x96/1870.jpg?1712004020
+      x48: /system/people/x48/1870.jpg?1712004020
+    url: /people/1870-hayao-miyazaki
+    japanese: 宮崎 駿
+    job_title: Режиссёр аниме
+    birth_on:
+      day: 5
+      year: 1941
+      month: 1
+    deceased_on: {}
+    website: http://www.ghibli.jp/
+    groupped_roles:
+    - - Сценарий
+      - 39
+    - - Режиссёр
+      - 32
+    - - Ключевая анимация
+      - 24
+    - - Раскадровка
+      - 16
+    - - Сюжет и иллюстрации
+      - 12
+    - - Автор оригинала
+      - 8
+    - - Планирование
+      - 7
+    - - Дизайн персонажей
+      - 5
+    - - Исполнительн. продюсер
+      - 5
+    - - Вёрстка
+      - 4
+    - - Режиссёр эпизодов
+      - 4
+    - - Автор
+      - 3
+    - - Настройка
+      - 3
+    - - Оригинал. дизайн персонажей
+      - 3
+    - - Промежуточ. анимация
+      - 3
+    - - Лирика гл. муз. темы
+      - 2
+    - - Продюсер
+      - 2
+    - - Рисовка
+      - 2
+    - - Сэйю
+      - 2
+    - - Дизайн макетов
+      - 1
+    - - Монтаж
+      - 1
+    - - Режиссёр анимации
+      - 1
+    roles:
+    - characters:
+      - id: 269
+        name: Totoro
+        russian: Тоторо
+        image:
+          original: /system/characters/original/269.jpg?1712015478
+          preview: /system/characters/preview/269.jpg?1712015478
+          x96: /system/characters/x96/269.jpg?1712015478
+          x48: /system/characters/x48/269.jpg?1712015478
+        url: /characters/269-totoro
+      - id: 110037
+        name: Grandmother Nekobasu
+        russian: Бабушка Котобусёнка
+        image:
+          original: /system/characters/original/110037.jpg?1712048503
+          preview: /system/characters/preview/110037.jpg?1712048503
+          x96: /system/characters/x96/110037.jpg?1712048503
+          x48: /system/characters/x48/110037.jpg?1712048503
+        url: /characters/110037-grandmother-nekobasu
+      animes:
+      - id: 523
+        name: Tonari no Totoro
+        russian: Мой сосед Тоторо
+        image:
+          original: /system/animes/original/523.jpg?1711978124
+          preview: /system/animes/preview/523.jpg?1711978124
+          x96: /system/animes/x96/523.jpg?1711978124
+          x48: /system/animes/x48/523.jpg?1711978124
+        url: /animes/z523-tonari-no-totoro
+        kind: movie
+        score: '8.25'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1988-04-16'
+        released_on: null
+      - id: 2488
+        name: Mei to Koneko Bus
+        russian: Мэй и Котобусёнок
+        image:
+          original: /system/animes/original/2488.jpg?1711963258
+          preview: /system/animes/preview/2488.jpg?1711963258
+          x96: /system/animes/x96/2488.jpg?1711963258
+          x48: /system/animes/x48/2488.jpg?1711963258
+        url: /animes/2488-mei-to-koneko-bus
+        kind: special
+        score: '7.32'
+        status: released
+        episodes: 1
+        episodes_aired: 1
+        aired_on: '2002-10-01'
+        released_on: null
+    works:
+    - anime: null
+      manga:
+        id: 651
+        name: Kaze no Tani no Nausicaa
+        russian: Навсикая из Долины ветров
+        image:
+          original: /system/mangas/original/651.jpg?1708781344
+          preview: /system/mangas/preview/651.jpg?1708781344
+          x96: /system/mangas/x96/651.jpg?1708781344
+          x48: /system/mangas/x48/651.jpg?1708781344
+        url: /mangas/651-kaze-no-tani-no-nausicaa
+        kind: manga
+        score: '8.82'
+        status: released
+        volumes: 7
+        chapters: 59
+        aired_on: '1982-10-09'
+        released_on: '1994-02-10'
+      role: Сюжет и иллюстрации
+    - anime:
+        id: 199
+        name: Sen to Chihiro no Kamikakushi
+        russian: Унесённые призраками
+        image:
+          original: /system/animes/original/199.jpg?1711972539
+          preview: /system/animes/preview/199.jpg?1711972539
+          x96: /system/animes/x96/199.jpg?1711972539
+          x48: /system/animes/x48/199.jpg?1711972539
+        url: /animes/z199-sen-to-chihiro-no-kamikakushi
+        kind: movie
+        score: '8.77'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2001-07-20'
+        released_on: null
+      manga: null
+      role: Автор оригинала
+    - anime:
+        id: 164
+        name: Mononoke Hime
+        russian: Принцесса Мононоке
+        image:
+          original: /system/animes/original/164.jpg?1711964491
+          preview: /system/animes/preview/164.jpg?1711964491
+          x96: /system/animes/x96/164.jpg?1711964491
+          x48: /system/animes/x48/164.jpg?1711964491
+        url: /animes/164-mononoke-hime
+        kind: movie
+        score: '8.67'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1997-07-12'
+        released_on: null
+      manga: null
+      role: Автор
+    - anime:
+        id: 431
+        name: Howl no Ugoku Shiro
+        russian: Ходячий замок
+        image:
+          original: /system/animes/original/431.jpg?1711954232
+          preview: /system/animes/preview/431.jpg?1711954232
+          x96: /system/animes/x96/431.jpg?1711954232
+          x48: /system/animes/x48/431.jpg?1711954232
+        url: /animes/431-howl-no-ugoku-shiro
+        kind: movie
+        score: '8.67'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2004-11-20'
+        released_on: null
+      manga: null
+      role: Исполнительн. продюсер
+    - anime:
+        id: 572
+        name: Kaze no Tani no Nausicaa
+        russian: Навсикая из Долины ветров
+        image:
+          original: /system/animes/original/572.jpg?1711957866
+          preview: /system/animes/preview/572.jpg?1711957866
+          x96: /system/animes/x96/572.jpg?1711957866
+          x48: /system/animes/x48/572.jpg?1711957866
+        url: /animes/572-kaze-no-tani-no-nausicaa
+        kind: movie
+        score: '8.36'
+        status: released
+        episodes: 1
+        episodes_aired: 1
+        aired_on: '1984-03-11'
+        released_on: null
+      manga: null
+      role: Автор оригинала
+    - anime:
+        id: 513
+        name: Tenkuu no Shiro Laputa
+        russian: Небесный замок Лапута
+        image:
+          original: /system/animes/original/513.jpg?1711976985
+          preview: /system/animes/preview/513.jpg?1711976985
+          x96: /system/animes/x96/513.jpg?1711976985
+          x48: /system/animes/x48/513.jpg?1711976985
+        url: /animes/513-tenkuu-no-shiro-laputa
+        kind: movie
+        score: '8.26'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1986-08-02'
+        released_on: null
+      manga: null
+      role: Дизайн персонажей
+    - anime:
+        id: 523
+        name: Tonari no Totoro
+        russian: Мой сосед Тоторо
+        image:
+          original: /system/animes/original/523.jpg?1711978124
+          preview: /system/animes/preview/523.jpg?1711978124
+          x96: /system/animes/x96/523.jpg?1711978124
+          x48: /system/animes/x48/523.jpg?1711978124
+        url: /animes/z523-tonari-no-totoro
+        kind: movie
+        score: '8.25'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1988-04-16'
+        released_on: null
+      manga: null
+      role: Автор оригинала
+    - anime:
+        id: 512
+        name: Majo no Takkyuubin
+        russian: Ведьмина служба доставки
+        image:
+          original: /system/animes/original/512.jpg?1711962494
+          preview: /system/animes/preview/512.jpg?1711962494
+          x96: /system/animes/x96/512.jpg?1711962494
+          x48: /system/animes/x48/512.jpg?1711962494
+        url: /animes/512-majo-no-takkyuubin
+        kind: movie
+        score: '8.24'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1989-07-29'
+        released_on: null
+      manga: null
+      role: Продюсер
+    - anime:
+        id: 585
+        name: Mimi wo Sumaseba
+        russian: Шёпот сердца
+        image:
+          original: /system/animes/original/585.jpg?1711963867
+          preview: /system/animes/preview/585.jpg?1711963867
+          x96: /system/animes/x96/585.jpg?1711963867
+          x48: /system/animes/x48/585.jpg?1711963867
+        url: /animes/585-mimi-wo-sumaseba
+        kind: movie
+        score: '8.23'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1995-07-15'
+        released_on: null
+      manga: null
+      role: Автор
+    - anime:
+        id: 1430
+        name: 'Lupin III: Cagliostro no Shiro'
+        russian: 'Люпен III: Замок Калиостро'
+        image:
+          original: /system/animes/original/1430.jpg?1711961746
+          preview: /system/animes/preview/1430.jpg?1711961746
+          x96: /system/animes/x96/1430.jpg?1711961746
+          x48: /system/animes/x48/1430.jpg?1711961746
+        url: /animes/1430-lupin-iii-cagliostro-no-shiro
+        kind: movie
+        score: '8.15'
+        status: released
+        episodes: 1
+        episodes_aired: 1
+        aired_on: '1979-12-15'
+        released_on: null
+      manga: null
+      role: Дизайн персонажей
+    - anime:
+        id: 16662
+        name: Kaze Tachinu
+        russian: Ветер крепчает
+        image:
+          original: /system/animes/original/16662.jpg?1711957874
+          preview: /system/animes/preview/16662.jpg?1711957874
+          x96: /system/animes/x96/16662.jpg?1711957874
+          x48: /system/animes/x48/16662.jpg?1711957874
+        url: /animes/16662-kaze-tachinu
+        kind: movie
+        score: '8.14'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2013-07-20'
+        released_on: null
+      manga: null
+      role: Автор оригинала
+    - anime:
+        id: 302
+        name: Mirai Shounen Conan
+        russian: Конан — мальчик из будущего
+        image:
+          original: /system/animes/original/302.jpg?1711964065
+          preview: /system/animes/preview/302.jpg?1711964065
+          x96: /system/animes/x96/302.jpg?1711964065
+          x48: /system/animes/x48/302.jpg?1711964065
+        url: /animes/302-mirai-shounen-conan
+        kind: tv
+        score: '8.11'
+        status: released
+        episodes: 26
+        episodes_aired: 0
+        aired_on: '1978-04-04'
+        released_on: '1978-10-31'
+      manga: null
+      role: Дизайн макетов
+    - anime:
+        id: 416
+        name: Kurenai no Buta
+        russian: Порко Россо
+        image:
+          original: /system/animes/original/416.jpg?1711960206
+          preview: /system/animes/preview/416.jpg?1711960206
+          x96: /system/animes/x96/416.jpg?1711960206
+          x48: /system/animes/x48/416.jpg?1711960206
+        url: /animes/z416-kurenai-no-buta
+        kind: movie
+        score: '7.97'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1992-07-18'
+        released_on: null
+      manga: null
+      role: Автор оригинала
+    - anime:
+        id: 2890
+        name: Gake no Ue no Ponyo
+        russian: Рыбка Поньо на утёсе
+        image:
+          original: /system/animes/original/2890.jpg?1711950084
+          preview: /system/animes/preview/2890.jpg?1711950084
+          x96: /system/animes/x96/2890.jpg?1711950084
+          x48: /system/animes/x48/2890.jpg?1711950084
+        url: /animes/2890-gake-no-ue-no-ponyo
+        kind: movie
+        score: '7.97'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2008-07-19'
+        released_on: null
+      manga: null
+      role: Исполнительн. продюсер
+    - anime:
+        id: 283
+        name: Akage no Anne
+        russian: Энн из Зелёных Крыш
+        image:
+          original: /system/animes/original/283.jpg?1711939797
+          preview: /system/animes/preview/283.jpg?1711939797
+          x96: /system/animes/x96/283.jpg?1711939797
+          x48: /system/animes/x48/283.jpg?1711939797
+        url: /animes/283-akage-no-anne
+        kind: tv
+        score: '7.9'
+        status: released
+        episodes: 50
+        episodes_aired: 0
+        aired_on: '1979-01-07'
+        released_on: '1979-12-30'
+      manga: null
+      role: Вёрстка
+    - anime:
+        id: 7711
+        name: Karigurashi no Arrietty
+        russian: Ариэтти из страны лилипутов
+        image:
+          original: /system/animes/original/7711.jpg?1711957756
+          preview: /system/animes/preview/7711.jpg?1711957756
+          x96: /system/animes/x96/7711.jpg?1711957756
+          x48: /system/animes/x48/7711.jpg?1711957756
+        url: /animes/7711-karigurashi-no-arrietty
+        kind: movie
+        score: '7.9'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2010-07-17'
+        released_on: null
+      manga: null
+      role: Планирование
+    - anime:
+        id: 1425
+        name: 'Lupin III: Part II'
+        russian: 'Люпен III: Часть II'
+        image:
+          original: /system/animes/original/1425.jpg?1711961742
+          preview: /system/animes/preview/1425.jpg?1711961742
+          x96: /system/animes/x96/1425.jpg?1711961742
+          x48: /system/animes/x48/1425.jpg?1711961742
+        url: /animes/1425-lupin-iii-part-ii
+        kind: tv
+        score: '7.81'
+        status: released
+        episodes: 155
+        episodes_aired: 0
+        aired_on: '1977-10-03'
+        released_on: '1980-10-06'
+      manga: null
+      role: Раскадровка
+    - anime:
+        id: 10029
+        name: Coquelicot-zaka kara
+        russian: Со склонов Кокурико
+        image:
+          original: /system/animes/original/10029.jpg?1711946705
+          preview: /system/animes/preview/10029.jpg?1711946705
+          x96: /system/animes/x96/10029.jpg?1711946705
+          x48: /system/animes/x48/10029.jpg?1711946705
+        url: /animes/10029-coquelicot-zaka-kara
+        kind: movie
+        score: '7.78'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2011-07-16'
+        released_on: null
+      manga: null
+      role: Планирование
+    - anime:
+        id: 597
+        name: Neko no Ongaeshi
+        russian: Возвращение кота
+        image:
+          original: /system/animes/original/597.jpg?1711965933
+          preview: /system/animes/preview/597.jpg?1711965933
+          x96: /system/animes/x96/597.jpg?1711965933
+          x48: /system/animes/x48/597.jpg?1711965933
+        url: /animes/597-neko-no-ongaeshi
+        kind: movie
+        score: '7.72'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2002-07-20'
+        released_on: null
+      manga: null
+      role: Исполнительн. продюсер
+    - anime: null
+      manga:
+        id: 3274
+        name: Shuna no Tabi
+        russian: Путешествие Сюны
+        image:
+          original: /system/mangas/original/3274.jpg?1708882255
+          preview: /system/mangas/preview/3274.jpg?1708882255
+          x96: /system/mangas/x96/3274.jpg?1708882255
+          x48: /system/mangas/x48/3274.jpg?1708882255
+        url: /mangas/3274-shuna-no-tabi
+        kind: manga
+        score: '7.69'
+        status: released
+        volumes: 1
+        chapters: 6
+        aired_on: '1983-06-01'
+        released_on: null
+      role: Сюжет и иллюстрации
+    - anime:
+        id: 1412
+        name: Lupin III
+        russian: Люпен III
+        image:
+          original: /system/animes/original/1412.jpg?1711961701
+          preview: /system/animes/preview/1412.jpg?1711961701
+          x96: /system/animes/x96/1412.jpg?1711961701
+          x48: /system/animes/x48/1412.jpg?1711961701
+        url: /animes/1412-lupin-iii
+        kind: tv
+        score: '7.63'
+        status: released
+        episodes: 23
+        episodes_aired: 0
+        aired_on: '1971-10-24'
+        released_on: '1972-03-26'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 36699
+        name: Kimitachi wa Dou Ikiru ka
+        russian: Как поживаете?
+        image:
+          original: /system/animes/original/36699.jpg?1708747442
+          preview: /system/animes/preview/36699.jpg?1708747442
+          x96: /system/animes/x96/36699.jpg?1708747442
+          x48: /system/animes/x48/36699.jpg?1708747442
+        url: /animes/36699-kimitachi-wa-dou-ikiru-ka
+        kind: movie
+        score: '7.61'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2023-07-14'
+        released_on: null
+      manga: null
+      role: Автор оригинала
+    - anime: null
+      manga:
+        id: 76407
+        name: Tenkuu no Shiro Laputa
+        russian: Небесный замок Лапута
+        image:
+          original: /system/mangas/original/76407.jpg?1708888963
+          preview: /system/mangas/preview/76407.jpg?1708888963
+          x96: /system/mangas/x96/76407.jpg?1708888963
+          x48: /system/mangas/x48/76407.jpg?1708888963
+        url: /mangas/76407-tenkuu-no-shiro-laputa
+        kind: light_novel
+        score: '7.53'
+        status: released
+        volumes: 2
+        chapters: 0
+        aired_on: '1985-05-31'
+        released_on: '1986-07-31'
+      role: Рисовка
+    - anime:
+        id: 1663
+        name: Haha wo Tazunete Sanzenri
+        russian: 3000 миль в поисках матери
+        image:
+          original: /system/animes/original/1663.jpg?1711952245
+          preview: /system/animes/preview/1663.jpg?1711952245
+          x96: /system/animes/x96/1663.jpg?1711952245
+          x48: /system/animes/x48/1663.jpg?1711952245
+        url: /animes/1663-haha-wo-tazunete-sanzenri
+        kind: tv
+        score: '7.52'
+        status: released
+        episodes: 52
+        episodes_aired: 0
+        aired_on: '1976-01-04'
+        released_on: '1976-12-26'
+      manga: null
+      role: Вёрстка
+    - anime:
+        id: 1047
+        name: On Your Mark
+        russian: На старт!
+        image:
+          original: /system/animes/original/1047.jpg?1711967428
+          preview: /system/animes/preview/1047.jpg?1711967428
+          x96: /system/animes/x96/1047.jpg?1711967428
+          x48: /system/animes/x48/1047.jpg?1711967428
+        url: /animes/1047-on-your-mark
+        kind: music
+        score: '7.49'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1995-06-29'
+        released_on: null
+      manga: null
+      role: Режиссёр
+    - anime:
+        id: 2553
+        name: Flanders no Inu
+        russian: Фландрийский пёс
+        image:
+          original: /system/animes/original/2553.jpg?1711949499
+          preview: /system/animes/preview/2553.jpg?1711949499
+          x96: /system/animes/x96/2553.jpg?1711949499
+          x48: /system/animes/x48/2553.jpg?1711949499
+        url: /animes/2553-flanders-no-inu
+        kind: tv
+        score: '7.48'
+        status: released
+        episodes: 52
+        episodes_aired: 0
+        aired_on: '1975-01-05'
+        released_on: '1975-12-28'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 1029
+        name: Omoide Poroporo
+        russian: Ещё вчера
+        image:
+          original: /system/animes/original/1029.jpg?1701802866
+          preview: /system/animes/preview/1029.jpg?1701802866
+          x96: /system/animes/x96/1029.jpg?1701802866
+          x48: /system/animes/x48/1029.jpg?1701802866
+        url: /animes/1029-omoide-poroporo
+        kind: movie
+        score: '7.45'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1991-07-20'
+        released_on: null
+      manga: null
+      role: Исполнительн. продюсер
+    - anime:
+        id: 2225
+        name: Alps no Shoujo Heidi
+        russian: Хайди — девочка Альп
+        image:
+          original: /system/animes/original/2225.jpg?1712343651
+          preview: /system/animes/preview/2225.jpg?1712343651
+          x96: /system/animes/x96/2225.jpg?1712343651
+          x48: /system/animes/x48/2225.jpg?1712343651
+        url: /animes/2225-alps-no-shoujo-heidi
+        kind: tv
+        score: '7.44'
+        status: released
+        episodes: 52
+        episodes_aired: 0
+        aired_on: '1974-01-06'
+        released_on: '1974-12-29'
+      manga: null
+      role: Вёрстка
+    - anime:
+        id: 1972
+        name: Meitantei Holmes
+        russian: Великий детектив Холмс
+        image:
+          original: /system/animes/original/1972.jpg?1711963432
+          preview: /system/animes/preview/1972.jpg?1711963432
+          x96: /system/animes/x96/1972.jpg?1711963432
+          x48: /system/animes/x48/1972.jpg?1711963432
+        url: /animes/1972-meitantei-holmes
+        kind: tv
+        score: '7.41'
+        status: released
+        episodes: 26
+        episodes_aired: 0
+        aired_on: '1984-11-06'
+        released_on: '1985-05-21'
+      manga: null
+      role: Раскадровка
+    - anime:
+        id: 2488
+        name: Mei to Koneko Bus
+        russian: Мэй и Котобусёнок
+        image:
+          original: /system/animes/original/2488.jpg?1711963258
+          preview: /system/animes/preview/2488.jpg?1711963258
+          x96: /system/animes/x96/2488.jpg?1711963258
+          x48: /system/animes/x48/2488.jpg?1711963258
+        url: /animes/2488-mei-to-koneko-bus
+        kind: special
+        score: '7.32'
+        status: released
+        episodes: 1
+        episodes_aired: 1
+        aired_on: '2002-10-01'
+        released_on: null
+      manga: null
+      role: Автор
+    - anime:
+        id: 28149
+        name: Nihon Animator Mihonichi
+        russian: Японская выставка анимации
+        image:
+          original: /system/animes/original/28149.jpg?1711966161
+          preview: /system/animes/preview/28149.jpg?1711966161
+          x96: /system/animes/x96/28149.jpg?1711966161
+          x48: /system/animes/x48/28149.jpg?1711966161
+        url: /animes/28149-nihon-animator-mihonichi
+        kind: ona
+        score: '7.31'
+        status: released
+        episodes: 35
+        episodes_aired: 0
+        aired_on: '2014-11-07'
+        released_on: '2015-10-09'
+      manga: null
+      role: Оригинал. дизайн персонажей
+    - anime:
+        id: 1030
+        name: Heisei Tanuki Gassen Ponpoko
+        russian: Война тануки в периоды Хэйсэй и Помпоко
+        image:
+          original: /system/animes/original/1030.jpg?1711953181
+          preview: /system/animes/preview/1030.jpg?1711953181
+          x96: /system/animes/x96/1030.jpg?1711953181
+          x48: /system/animes/x48/1030.jpg?1711953181
+        url: /animes/1030-heisei-tanuki-gassen-ponpoko
+        kind: movie
+        score: '7.3'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1994-06-13'
+        released_on: null
+      manga: null
+      role: Исполнительн. продюсер
+    - anime: null
+      manga:
+        id: 46318
+        name: 'Kaze Tachinu: Miyazaki Hayao no Mousou Comeback'
+        russian: Ветер крепчает
+        image:
+          original: /system/mangas/original/46318.jpg?1708781358
+          preview: /system/mangas/preview/46318.jpg?1708781358
+          x96: /system/mangas/x96/46318.jpg?1708781358
+          x48: /system/mangas/x48/46318.jpg?1708781358
+        url: /mangas/46318-kaze-tachinu-miyazaki-hayao-no-mousou-comeback
+        kind: manga
+        score: '7.19'
+        status: released
+        volumes: 1
+        chapters: 9
+        aired_on: '2009-02-25'
+        released_on: '2009-11-25'
+      role: Сюжет и иллюстрации
+    - anime:
+        id: 8234
+        name: Muumin
+        russian: Муми-тролль
+        image:
+          original: /system/animes/original/8234.jpg?1711965189
+          preview: /system/animes/preview/8234.jpg?1711965189
+          x96: /system/animes/x96/8234.jpg?1711965189
+          x48: /system/animes/x48/8234.jpg?1711965189
+        url: /animes/8234-muumin
+        kind: tv
+        score: '7.17'
+        status: released
+        episodes: 65
+        episodes_aired: 0
+        aired_on: '1969-10-05'
+        released_on: '1970-12-27'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 2452
+        name: Space Adventure Cobra
+        russian: Космические приключения Кобры
+        image:
+          original: /system/animes/original/2452.jpg?1711975504
+          preview: /system/animes/preview/2452.jpg?1711975504
+          x96: /system/animes/x96/2452.jpg?1711975504
+          x48: /system/animes/x48/2452.jpg?1711975504
+        url: /animes/z2452-space-adventure-cobra
+        kind: movie
+        score: '7.13'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1982-07-03'
+        released_on: null
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 9916
+        name: Samurai Giants
+        russian: Самураи-гиганты
+        image:
+          original: /system/animes/original/9916.jpg?1711971786
+          preview: /system/animes/preview/9916.jpg?1711971786
+          x96: /system/animes/x96/9916.jpg?1711971786
+          x48: /system/animes/x48/9916.jpg?1711971786
+        url: /animes/9916-samurai-giants
+        kind: tv
+        score: '7.08'
+        status: released
+        episodes: 46
+        episodes_aired: 0
+        aired_on: '1973-10-07'
+        released_on: '1974-09-15'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 4208
+        name: Tetsujin 28-gou (1980)
+        russian: Новый Железный человек №28
+        image:
+          original: /system/animes/original/4208.jpg?1711977118
+          preview: /system/animes/preview/4208.jpg?1711977118
+          x96: /system/animes/x96/4208.jpg?1711977118
+          x48: /system/animes/x48/4208.jpg?1711977118
+        url: /animes/4208-tetsujin-28-gou-1980
+        kind: tv
+        score: '7.05'
+        status: released
+        episodes: 51
+        episodes_aired: 0
+        aired_on: '1980-10-03'
+        released_on: '1981-09-25'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 6463
+        name: Hoshi wo Katta Hi
+        russian: День, когда я купил звезду
+        image:
+          original: /system/animes/original/6463.jpg?1711954132
+          preview: /system/animes/preview/6463.jpg?1711954132
+          x96: /system/animes/x96/6463.jpg?1711954132
+          x48: /system/animes/x48/6463.jpg?1711954132
+        url: /animes/6463-hoshi-wo-katta-hi
+        kind: movie
+        score: '7.03'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2006-01-03'
+        released_on: null
+      manga: null
+      role: Режиссёр
+    - anime:
+        id: 2279
+        name: Nagagutsu wo Haita Neko
+        russian: Кот в сапогах
+        image:
+          original: /system/animes/original/2279.jpg?1711965335
+          preview: /system/animes/preview/2279.jpg?1711965335
+          x96: /system/animes/x96/2279.jpg?1711965335
+          x48: /system/animes/x48/2279.jpg?1711965335
+        url: /animes/2279-nagagutsu-wo-haita-neko
+        kind: movie
+        score: '7.02'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1969-03-18'
+        released_on: null
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 2576
+        name: Araiguma Rascal
+        russian: Енот по имени Раскал
+        image:
+          original: /system/animes/original/2576.jpg?1711941984
+          preview: /system/animes/preview/2576.jpg?1711941984
+          x96: /system/animes/x96/2576.jpg?1711941984
+          x48: /system/animes/x48/2576.jpg?1711941984
+        url: /animes/2576-araiguma-rascal
+        kind: tv
+        score: '6.99'
+        status: released
+        episodes: 52
+        episodes_aired: 0
+        aired_on: '1977-01-02'
+        released_on: '1977-12-25'
+      manga: null
+      role: Ключевая анимация
+    - anime: null
+      manga:
+        id: 14741
+        name: 'Doromamire no Tora: Miyazaki Hayao Mousou Note'
+        russian: 'Отто Кариус: Тигры в грязи'
+        image:
+          original: /system/mangas/original/14741.jpg?1712732994
+          preview: /system/mangas/preview/14741.jpg?1712732994
+          x96: /system/mangas/x96/14741.jpg?1712732994
+          x48: /system/mangas/x48/14741.jpg?1712732994
+        url: /mangas/14741-doromamire-no-tora-miyazaki-hayao-mousou-note
+        kind: manga
+        score: '6.91'
+        status: released
+        volumes: 1
+        chapters: 6
+        aired_on: '1998-10-25'
+        released_on: '1999-03-25'
+      role: Сюжет и иллюстрации
+    - anime:
+        id: 4597
+        name: Kouya no Shounen Isamu
+        russian: Исаму — мальчик из пустыни
+        image:
+          original: /system/animes/original/4597.jpg?1711959891
+          preview: /system/animes/preview/4597.jpg?1711959891
+          x96: /system/animes/x96/4597.jpg?1711959891
+          x48: /system/animes/x48/4597.jpg?1711959891
+        url: /animes/4597-kouya-no-shounen-isamu
+        kind: tv
+        score: '6.9'
+        status: released
+        episodes: 52
+        episodes_aired: 0
+        aired_on: '1973-04-04'
+        released_on: '1974-03-27'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 9798
+        name: Pandane to Tamago-hime
+        russian: Мистер Тесто и Принцесса Яйцо
+        image:
+          original: /system/animes/original/9798.jpg?1711968347
+          preview: /system/animes/preview/9798.jpg?1711968347
+          x96: /system/animes/x96/9798.jpg?1711968347
+          x48: /system/animes/x48/9798.jpg?1711968347
+        url: /animes/9798-pandane-to-tamago-hime
+        kind: movie
+        score: '6.89'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2010-11-20'
+        released_on: null
+      manga: null
+      role: Раскадровка
+    - anime:
+        id: 3356
+        name: Mahoutsukai Sally
+        russian: Ведьма Салли
+        image:
+          original: /system/animes/original/3356.jpg?1711962401
+          preview: /system/animes/preview/3356.jpg?1711962401
+          x96: /system/animes/x96/3356.jpg?1711962401
+          x48: /system/animes/x48/3356.jpg?1711962401
+        url: /animes/3356-mahoutsukai-sally
+        kind: tv
+        score: '6.88'
+        status: released
+        episodes: 109
+        episodes_aired: 0
+        aired_on: '1966-12-05'
+        released_on: '1968-12-30'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 17521
+        name: Ookami Shounen Ken
+        russian: Кэн — мальчик-волк
+        image:
+          original: /system/animes/original/17521.jpg?1711967720
+          preview: /system/animes/preview/17521.jpg?1711967720
+          x96: /system/animes/x96/17521.jpg?1711967720
+          x48: /system/animes/x48/17521.jpg?1711967720
+        url: /animes/17521-ookami-shounen-ken
+        kind: tv
+        score: '6.82'
+        status: released
+        episodes: 86
+        episodes_aired: 0
+        aired_on: '1963-11-25'
+        released_on: '1965-08-16'
+      manga: null
+      role: Промежуточ. анимация
+    - anime:
+        id: 3285
+        name: Himitsu no Akko-chan
+        russian: Секрет маленькой Акко
+        image:
+          original: /system/animes/original/3285.jpg?1711953735
+          preview: /system/animes/preview/3285.jpg?1711953735
+          x96: /system/animes/x96/3285.jpg?1711953735
+          x48: /system/animes/x48/3285.jpg?1711953735
+        url: /animes/3285-himitsu-no-akko-chan
+        kind: tv
+        score: '6.81'
+        status: released
+        episodes: 94
+        episodes_aired: 0
+        aired_on: '1969-01-06'
+        released_on: '1970-10-26'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 2614
+        name: 'Mirai Shounen Conan: Kyodaiki Gigant no Fukkatsu'
+        russian: Конан — мальчик из будущего. Фильм 2
+        image:
+          original: /system/animes/original/2614.jpg?1711964071
+          preview: /system/animes/preview/2614.jpg?1711964071
+          x96: /system/animes/x96/2614.jpg?1711964071
+          x48: /system/animes/x48/2614.jpg?1711964071
+        url: /animes/2614-mirai-shounen-conan-kyodaiki-gigant-no-fukkatsu
+        kind: movie
+        score: '6.81'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1984-03-11'
+        released_on: null
+      manga: null
+      role: Дизайн персонажей
+    - anime:
+        id: 32133
+        name: Kemushi no Boro
+        russian: Гусеница Боро
+        image:
+          original: /system/animes/original/32133.jpg?1711958045
+          preview: /system/animes/preview/32133.jpg?1711958045
+          x96: /system/animes/x96/32133.jpg?1711958045
+          x48: /system/animes/x48/32133.jpg?1711958045
+        url: /animes/32133-kemushi-no-boro
+        kind: movie
+        score: '6.77'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2018-03-21'
+        released_on: null
+      manga: null
+      role: Автор оригинала
+    - anime:
+        id: 6311
+        name: Sarutobi Ecchan
+        russian: Малышка Эцуко Сарутоби
+        image:
+          original: /system/animes/original/6311.jpg?1711972032
+          preview: /system/animes/preview/6311.jpg?1711972032
+          x96: /system/animes/x96/6311.jpg?1711972032
+          x48: /system/animes/x48/6311.jpg?1711972032
+        url: /animes/6311-sarutobi-ecchan
+        kind: tv
+        score: '6.74'
+        status: released
+        episodes: 26
+        episodes_aired: 0
+        aired_on: '1971-10-04'
+        released_on: '1972-03-27'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 2611
+        name: Panda Kopanda
+        russian: Панда большая и маленькая
+        image:
+          original: /system/animes/original/2611.jpg?1711968348
+          preview: /system/animes/preview/2611.jpg?1711968348
+          x96: /system/animes/x96/2611.jpg?1711968348
+          x48: /system/animes/x48/2611.jpg?1711968348
+        url: /animes/2611-panda-kopanda
+        kind: movie
+        score: '6.73'
+        status: released
+        episodes: 2
+        episodes_aired: 0
+        aired_on: '1972-12-17'
+        released_on: '1973-03-17'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 13307
+        name: Shounen Ninja Kaze no Fujimaru
+        russian: Мальчик-ниндзя Фудзимару
+        image:
+          original: /system/animes/original/13307.jpg?1711973996
+          preview: /system/animes/preview/13307.jpg?1711973996
+          x96: /system/animes/x96/13307.jpg?1711973996
+          x48: /system/animes/x48/13307.jpg?1711973996
+        url: /animes/13307-shounen-ninja-kaze-no-fujimaru
+        kind: tv
+        score: '6.72'
+        status: released
+        episodes: 65
+        episodes_aired: 0
+        aired_on: '1964-06-07'
+        released_on: '1965-08-31'
+      manga: null
+      role: Ключевая анимация
+    - anime: null
+      manga:
+        id: 24979
+        name: Hikoutei Jidai
+        russian: Век свиньи в небе
+        image:
+          original: /system/mangas/original/24979.jpg?1712747106
+          preview: /system/mangas/preview/24979.jpg?1712747106
+          x96: /system/mangas/x96/24979.jpg?1712747106
+          x48: /system/mangas/x48/24979.jpg?1712747106
+        url: /mangas/24979-hikoutei-jidai
+        kind: manga
+        score: '6.72'
+        status: released
+        volumes: 1
+        chapters: 3
+        aired_on: '1989-03-01'
+        released_on: '1989-05-01'
+      role: Сюжет и иллюстрации
+    - anime:
+        id: 3570
+        name: Yadosagashi
+        russian: В поисках дома
+        image:
+          original: /system/animes/original/3570.jpg?1711982081
+          preview: /system/animes/preview/3570.jpg?1711982081
+          x96: /system/animes/x96/3570.jpg?1711982081
+          x48: /system/animes/x48/3570.jpg?1711982081
+        url: /animes/3570-yadosagashi
+        kind: special
+        score: '6.69'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2006-01-03'
+        released_on: null
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 11275
+        name: Akadou Suzunosuke
+        russian: Красногрудый Судзуносукэ
+        image:
+          original: /system/animes/original/11275.jpg?1711939173
+          preview: /system/animes/preview/11275.jpg?1711939173
+          x96: /system/animes/x96/11275.jpg?1711939173
+          x48: /system/animes/x48/11275.jpg?1711939173
+        url: /animes/11275-akadou-suzunosuke
+        kind: tv
+        score: '6.68'
+        status: released
+        episodes: 52
+        episodes_aired: 0
+        aired_on: '1972-04-05'
+        released_on: '1973-03-28'
+      manga: null
+      role: Раскадровка
+    - anime:
+        id: 8632
+        name: Chuuzumou
+        russian: Мышиное сумо
+        image:
+          original: /system/animes/original/8632.jpg?1711946417
+          preview: /system/animes/preview/8632.jpg?1711946417
+          x96: /system/animes/x96/8632.jpg?1711946417
+          x48: /system/animes/x48/8632.jpg?1711946417
+        url: /animes/8632-chuuzumou
+        kind: movie
+        score: '6.6'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2010-01-03'
+        released_on: null
+      manga: null
+      role: Планирование
+    - anime:
+        id: 15347
+        name: 'Meitantei Holmes: Aoi Ruby no Maki / Kaitei no Zaihou no Maki'
+        russian: 'Детектив Холмс: Дело о Голубом Рубине/Дело о сокровищах со дна моря'
+        image:
+          original: /system/animes/original/15347.jpg?1711963416
+          preview: /system/animes/preview/15347.jpg?1711963416
+          x96: /system/animes/x96/15347.jpg?1711963416
+          x48: /system/animes/x48/15347.jpg?1711963416
+        url: /animes/15347-meitantei-holmes-aoi-ruby-no-maki-kaitei-no-zaihou-no-maki
+        kind: movie
+        score: '6.59'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1984-03-11'
+        released_on: null
+      manga: null
+      role: Режиссёр
+    - anime: null
+      manga:
+        id: 24978
+        name: Imouto e
+        russian: Моя сестра
+        image:
+          original: /system/mangas/original/24978.jpg?1708771058
+          preview: /system/mangas/preview/24978.jpg?1708771058
+          x96: /system/mangas/x96/24978.jpg?1708771058
+          x48: /system/mangas/x48/24978.jpg?1708771058
+        url: /mangas/24978-imouto-e
+        kind: one_shot
+        score: '6.58'
+        status: released
+        volumes: 0
+        chapters: 1
+        aired_on: '1982-01-01'
+        released_on: null
+      role: Сюжет и иллюстрации
+    - anime:
+        id: 20441
+        name: 'Meitantei Holmes: Mrs. Hudson Hitojichi Jiken no Maki / Dover Kaikyou no Daikuuchuusen no Maki'
+        russian: 'Великий детектив Холмс: Дело о заложнице миссис Хадсон/Дело о воздушной битве над Дуврским проливом'
+        image:
+          original: /system/animes/original/20441.jpg?1711963400
+          preview: /system/animes/preview/20441.jpg?1711963400
+          x96: /system/animes/x96/20441.jpg?1711963400
+          x48: /system/animes/x48/20441.jpg?1711963400
+        url: /animes/20441-meitantei-holmes-mrs-hudson-hitojichi-jiken-no-maki-dover-kaikyou-no-daikuuchuusen-no-maki
+        kind: movie
+        score: '6.57'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1986-08-02'
+        released_on: null
+      manga: null
+      role: Режиссёр
+    - anime:
+        id: 6975
+        name: Koro no Dai Sanpo
+        russian: Большое путешествие Коро
+        image:
+          original: /system/animes/original/6975.jpg?1711959637
+          preview: /system/animes/preview/6975.jpg?1711959637
+          x96: /system/animes/x96/6975.jpg?1711959637
+          x48: /system/animes/x48/6975.jpg?1711959637
+        url: /animes/6975-koro-no-dai-sanpo
+        kind: special
+        score: '6.57'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2001-10-01'
+        released_on: null
+      manga: null
+      role: Режиссёр
+    - anime:
+        id: 4306
+        name: Mizugumo Monmon
+        russian: Водяной паук Мон-мон
+        image:
+          original: /system/animes/original/4306.jpg?1711964239
+          preview: /system/animes/preview/4306.jpg?1711964239
+          x96: /system/animes/x96/4306.jpg?1711964239
+          x48: /system/animes/x48/4306.jpg?1711964239
+        url: /animes/4306-mizugumo-monmon
+        kind: movie
+        score: '6.56'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2006-01-03'
+        released_on: null
+      manga: null
+      role: Режиссёр
+    - anime:
+        id: 2811
+        name: Soratobu Yuureisen
+        russian: Летающий корабль-призрак
+        image:
+          original: /system/animes/original/2811.jpg?1711974749
+          preview: /system/animes/preview/2811.jpg?1711974749
+          x96: /system/animes/x96/2811.jpg?1711974749
+          x48: /system/animes/x48/2811.jpg?1711974749
+        url: /animes/2811-soratobu-yuureisen
+        kind: movie
+        score: '6.55'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1969-07-20'
+        released_on: null
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 1044
+        name: 'Taiyou no Ouji: Horus no Daibouken'
+        russian: 'Принц Солнца: Большое приключение Холса'
+        image:
+          original: /system/animes/original/1044.jpg?1711976469
+          preview: /system/animes/preview/1044.jpg?1711976469
+          x96: /system/animes/x96/1044.jpg?1711976469
+          x48: /system/animes/x48/1044.jpg?1711976469
+        url: /animes/1044-taiyou-no-ouji-horus-no-daibouken
+        kind: movie
+        score: '6.53'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1968-07-21'
+        released_on: null
+      manga: null
+      role: Ключевая анимация
+    - anime: null
+      manga:
+        id: 12595
+        name: Hansu no Kikan
+        russian: Возвращение Ганса
+        image:
+          original: /system/mangas/original/12595.jpg?1712744034
+          preview: /system/mangas/preview/12595.jpg?1712744034
+          x96: /system/mangas/x96/12595.jpg?1712744034
+          x48: /system/mangas/x48/12595.jpg?1712744034
+        url: /mangas/12595-hansu-no-kikan
+        kind: manga
+        score: '6.48'
+        status: released
+        volumes: 1
+        chapters: 3
+        aired_on: '1994-03-01'
+        released_on: '1994-09-01'
+      role: Сюжет и иллюстрации
+    - anime:
+        id: 3842
+        name: Doubutsu Takarajima
+        russian: Звериный остров сокровищ
+        image:
+          original: /system/animes/original/3842.jpg?1711948141
+          preview: /system/animes/preview/3842.jpg?1711948141
+          x96: /system/animes/x96/3842.jpg?1711948141
+          x48: /system/animes/x48/3842.jpg?1711948141
+        url: /animes/3842-doubutsu-takarajima
+        kind: movie
+        score: '6.46'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1971-03-20'
+        released_on: null
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 11561
+        name: Sougen no Ko Tenguri
+        russian: Степной мальчишка Тенгри
+        image:
+          original: /system/animes/original/11561.jpg?1711974871
+          preview: /system/animes/preview/11561.jpg?1711974871
+          x96: /system/animes/x96/11561.jpg?1711974871
+          x48: /system/animes/x48/11561.jpg?1711974871
+        url: /animes/11561-sougen-no-ko-tenguri
+        kind: movie
+        score: '6.3'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1977-01-01'
+        released_on: null
+      manga: null
+      role: Вёрстка
+    - anime:
+        id: 2895
+        name: Kujiratori
+        russian: Охота на кита
+        image:
+          original: /system/animes/original/2895.jpg?1711960121
+          preview: /system/animes/preview/2895.jpg?1711960121
+          x96: /system/animes/x96/2895.jpg?1711960121
+          x48: /system/animes/x48/2895.jpg?1711960121
+        url: /animes/2895-kujiratori
+        kind: movie
+        score: '6.29'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2001-10-01'
+        released_on: null
+      manga: null
+      role: Раскадровка
+    - anime: null
+      manga:
+        id: 18293
+        name: Sabaku no Tami
+        russian: Народ пустыни
+        image:
+          original: /system/mangas/original/18293.jpg?1708873198
+          preview: /system/mangas/preview/18293.jpg?1708873198
+          x96: /system/mangas/x96/18293.jpg?1708873198
+          x48: /system/mangas/x48/18293.jpg?1708873198
+        url: /mangas/18293-sabaku-no-tami
+        kind: manga
+        score: '6.27'
+        status: released
+        volumes: 1
+        chapters: 26
+        aired_on: '1969-09-01'
+        released_on: '1970-03-01'
+      role: Сюжет и иллюстрации
+    - anime:
+        id: 12267
+        name: Takara-sagashi
+        russian: Охота за сокровищами
+        image:
+          original: /system/animes/original/12267.jpg?1711976445
+          preview: /system/animes/preview/12267.jpg?1711976445
+          x96: /system/animes/x96/12267.jpg?1711976445
+          x48: /system/animes/x48/12267.jpg?1711976445
+        url: /animes/12267-takara-sagashi
+        kind: movie
+        score: '6.26'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2011-06-04'
+        released_on: null
+      manga: null
+      role: Планирование
+    - anime:
+        id: 10889
+        name: Jungle Kurobee
+        russian: Куробэ из джунглей
+        image:
+          original: /system/animes/original/10889.jpg?1711956578
+          preview: /system/animes/preview/10889.jpg?1711956578
+          x96: /system/animes/x96/10889.jpg?1711956578
+          x48: /system/animes/x48/10889.jpg?1711956578
+        url: /animes/10889-jungle-kurobee
+        kind: tv
+        score: '6.17'
+        status: released
+        episodes: 31
+        episodes_aired: 0
+        aired_on: '1973-03-02'
+        released_on: '1973-09-28'
+      manga: null
+      role: Оригинал. дизайн персонажей
+    - anime:
+        id: 19401
+        name: Kuusou no Soratobu Kikai-tachi
+        russian: Вымышленные летающие машины
+        image:
+          original: /system/animes/original/19401.jpg?1711960310
+          preview: /system/animes/preview/19401.jpg?1711960310
+          x96: /system/animes/x96/19401.jpg?1711960310
+          x48: /system/animes/x48/19401.jpg?1711960310
+        url: /animes/19401-kuusou-no-soratobu-kikai-tachi
+        kind: movie
+        score: '6.14'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2002-01-01'
+        released_on: null
+      manga: null
+      role: Автор оригинала
+    - anime:
+        id: 9228
+        name: Wanwan Chuushingura
+        russian: Верные слуги-псы
+        image:
+          original: /system/animes/original/9228.jpg?1711980086
+          preview: /system/animes/preview/9228.jpg?1711980086
+          x96: /system/animes/x96/9228.jpg?1711980086
+          x48: /system/animes/x48/9228.jpg?1711980086
+        url: /animes/9228-wanwan-chuushingura
+        kind: movie
+        score: '6.08'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1963-12-21'
+        released_on: null
+      manga: null
+      role: Промежуточ. анимация
+    - anime:
+        id: 9438
+        name: Rainbow Sentai Robin
+        russian: Радужный эскадрон Робина
+        image:
+          original: /system/animes/original/9438.jpg?1711969915
+          preview: /system/animes/preview/9438.jpg?1711969915
+          x96: /system/animes/x96/9438.jpg?1711969915
+          x48: /system/animes/x48/9438.jpg?1711969915
+        url: /animes/9438-rainbow-sentai-robin
+        kind: tv
+        score: '6.06'
+        status: released
+        episodes: 48
+        episodes_aired: 0
+        aired_on: '1966-04-23'
+        released_on: '1967-03-24'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 2833
+        name: Gulliver no Uchuu Ryokou
+        russian: Космические путешествия Гулливера
+        image:
+          original: /system/animes/original/2833.jpg?1711951950
+          preview: /system/animes/preview/2833.jpg?1711951950
+          x96: /system/animes/x96/2833.jpg?1711951950
+          x48: /system/animes/x48/2833.jpg?1711951950
+        url: /animes/2833-gulliver-no-uchuu-ryokou
+        kind: movie
+        score: '6.04'
+        status: released
+        episodes: 1
+        episodes_aired: 1
+        aired_on: '1965-03-20'
+        released_on: null
+      manga: null
+      role: Промежуточ. анимация
+    - anime:
+        id: 19681
+        name: Hustle Punch
+        russian: Суетливый Панч
+        image:
+          original: /system/animes/original/19681.jpg?1711954551
+          preview: /system/animes/preview/19681.jpg?1711954551
+          x96: /system/animes/x96/19681.jpg?1711954551
+          x48: /system/animes/x48/19681.jpg?1711954551
+        url: /animes/19681-hustle-punch
+        kind: tv
+        score: '5.92'
+        status: released
+        episodes: 26
+        episodes_aired: 0
+        aired_on: '1965-11-01'
+        released_on: '1966-04-25'
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 2616
+        name: Sora Iro no Tane
+        russian: Семечко небесного цвета
+        image:
+          original: /system/animes/original/2616.jpg?1711974652
+          preview: /system/animes/preview/2616.jpg?1711974652
+          x96: /system/animes/x96/2616.jpg?1711974652
+          x48: /system/animes/x48/2616.jpg?1711974652
+        url: /animes/2616-sora-iro-no-tane
+        kind: cm
+        score: '5.81'
+        status: released
+        episodes: 3
+        episodes_aired: 0
+        aired_on: '1992-12-23'
+        released_on: null
+      manga: null
+      role: Раскадровка
+    - anime:
+        id: 24975
+        name: Ghibli ga Ippai Special Short Short
+        russian: Короткометражные фильмы студии «Гибли»
+        image:
+          original: /system/animes/original/24975.jpg?1711950939
+          preview: /system/animes/preview/24975.jpg?1711950939
+          x96: /system/animes/x96/24975.jpg?1711950939
+          x48: /system/animes/x48/24975.jpg?1711950939
+        url: /animes/24975-ghibli-ga-ippai-special-short-short
+        kind: special
+        score: '5.69'
+        status: released
+        episodes: 10
+        episodes_aired: 10
+        aired_on: '2005-11-16'
+        released_on: null
+      manga: null
+      role: Режиссёр
+    - anime:
+        id: 3843
+        name: Ali Baba to 40-hiki no Touzoku
+        russian: Али-Баба и сорок разбойников
+        image:
+          original: /system/animes/original/3843.jpg?1711939687
+          preview: /system/animes/preview/3843.jpg?1711939687
+          x96: /system/animes/x96/3843.jpg?1711939687
+          x48: /system/animes/x48/3843.jpg?1711939687
+        url: /animes/3843-ali-baba-to-40-hiki-no-touzoku
+        kind: movie
+        score: '5.69'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1971-07-18'
+        released_on: null
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 15021
+        name: Yuki no Taiyou Pilot
+        russian: Солнце Юки
+        image:
+          original: /system/animes/original/15021.jpg?1711983130
+          preview: /system/animes/preview/15021.jpg?1711983130
+          x96: /system/animes/x96/15021.jpg?1711983130
+          x48: /system/animes/x48/15021.jpg?1711983130
+        url: /animes/15021-yuki-no-taiyou-pilot
+        kind: special
+        score: '5.47'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1972-01-01'
+        released_on: null
+      manga: null
+      role: Режиссёр
+    - anime:
+        id: 42143
+        name: Aya to Majo
+        russian: Ая и ведьма
+        image:
+          original: /system/animes/original/42143.jpg?1711942902
+          preview: /system/animes/preview/42143.jpg?1711942902
+          x96: /system/animes/x96/42143.jpg?1711942902
+          x48: /system/animes/x48/42143.jpg?1711942902
+        url: /animes/42143-aya-to-majo
+        kind: tv_special
+        score: '5.39'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2020-12-30'
+        released_on: null
+      manga: null
+      role: Планирование
+    - anime:
+        id: 2897
+        name: Nandarou
+        russian: Что это?
+        image:
+          original: /system/animes/original/2897.jpg?1711965515
+          preview: /system/animes/preview/2897.jpg?1711965515
+          x96: /system/animes/x96/2897.jpg?1711965515
+          x48: /system/animes/x48/2897.jpg?1711965515
+        url: /animes/2897-nandarou
+        kind: cm
+        score: '5.16'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '1992-11-01'
+        released_on: null
+      manga: null
+      role: Ключевая анимация
+    - anime:
+        id: 25291
+        name: Yomiuri Shimbun
+        russian: Ёмиури-симбун
+        image:
+          original: /system/animes/original/25291.jpg?1711982630
+          preview: /system/animes/preview/25291.jpg?1711982630
+          x96: /system/animes/x96/25291.jpg?1711982630
+          x48: /system/animes/x48/25291.jpg?1711982630
+        url: /animes/25291-yomiuri-shimbun
+        kind: cm
+        score: '4.62'
+        status: released
+        episodes: 1
+        episodes_aired: 0
+        aired_on: '2009-08-01'
+        released_on: null
+      manga: null
+      role: Планирование
+    - anime: null
+      manga:
+        id: 24980
+        name: Chuunen wa Kouya wo Mezasu zo
+        russian: Мужчина средних лет бежит в сторону пустоши
+        image:
+          original: /system/mangas/original/24980.jpg?1712728197
+          preview: /system/mangas/preview/24980.jpg?1712728197
+          x96: /system/mangas/x96/24980.jpg?1712728197
+          x48: /system/mangas/x48/24980.jpg?1712728197
+        url: /mangas/24980-chuunen-wa-kouya-wo-mezasu-zo
+        kind: one_shot
+        score: '0.0'
+        status: released
+        volumes: 0
+        chapters: 1
+        aired_on: '1993-01-01'
+        released_on: null
+      role: Сюжет и иллюстрации
+    - anime: null
+      manga:
+        id: 13971
+        name: Dobutsu Takarajima
+        russian: Звериный остров сокровищ
+        image:
+          original: /system/mangas/original/13971.jpg?1712732445
+          preview: /system/mangas/preview/13971.jpg?1712732445
+          x96: /system/mangas/x96/13971.jpg?1712732445
+          x48: /system/mangas/x48/13971.jpg?1712732445
+        url: /mangas/13971-dobutsu-takarajima
+        kind: manga
+        score: '0.0'
+        status: released
+        volumes: 0
+        chapters: 13
+        aired_on: '1971-01-01'
+        released_on: '1971-03-01'
+      role: Рисовка
+    - anime: null
+      manga:
+        id: 24977
+        name: Kuuchuu de Oshokuji
+        russian: Еда в полёте
+        image:
+          original: /system/mangas/original/24977.jpg?1708788696
+          preview: /system/mangas/preview/24977.jpg?1708788696
+          x96: /system/mangas/x96/24977.jpg?1708788696
+          x48: /system/mangas/x48/24977.jpg?1708788696
+        url: /mangas/24977-kuuchuu-de-oshokuji
+        kind: manga
+        score: '0.0'
+        status: released
+        volumes: 0
+        chapters: 1
+        aired_on: '1994-06-01'
+        released_on: null
+      role: Сюжет и иллюстрации
+    - anime: null
+      manga:
+        id: 71215
+        name: Nagagutsu wo Haita Neko
+        russian: Кот в сапогах
+        image:
+          original: /system/mangas/original/71215.jpg?1708799605
+          preview: /system/mangas/preview/71215.jpg?1708799605
+          x96: /system/mangas/x96/71215.jpg?1708799605
+          x48: /system/mangas/x48/71215.jpg?1708799605
+        url: /mangas/71215-nagagutsu-wo-haita-neko
+        kind: manga
+        score: '0.0'
+        status: released
+        volumes: 1
+        chapters: 12
+        aired_on: '1969-01-01'
+        released_on: '1969-03-01'
+      role: Сюжет и иллюстрации
+    - anime: null
+      manga:
+        id: 71163
+        name: 'Westall Gensou: Tynemouth e no Tabi'
+        russian: Путешествие в Тайнмут
+        image:
+          original: /system/mangas/original/71163.jpg?1708927662
+          preview: /system/mangas/preview/71163.jpg?1708927662
+          x96: /system/mangas/x96/71163.jpg?1708927662
+          x48: /system/mangas/x48/71163.jpg?1708927662
+        url: /mangas/71163-westall-gensou-tynemouth-e-no-tabi
+        kind: one_shot
+        score: '0.0'
+        status: released
+        volumes: 0
+        chapters: 1
+        aired_on: '2006-01-01'
+        released_on: null
+      role: Сюжет и иллюстрации
+    topic_id: 135164
+    person_favoured: false
+    producer: true
+    producer_favoured: false
+    mangaka: true
+    mangaka_favoured: false
+    seyu: true
+    seyu_favoured: false
+    updated_at: '2026-04-29T00:14:02.863+03:00'
+    thread_id: 135164
+    birthday:
+      day: 5
+      year: 1941
+      month: 1
+  body_text: null
+  body_b64: null

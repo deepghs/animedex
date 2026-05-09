@@ -467,6 +467,220 @@ class TestKitsuLossless:
             _assert_lossless(KitsuCategory, row, f"KitsuCategory/{path.name}[{i}]")
 
 
+# ---------- Shikimori ----------
+
+
+class TestShikimoriLossless:
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "shikimori" / "animes_by_id").glob("*.yaml"),
+                *(FIXTURES / "shikimori" / "animes_search").glob("*.yaml"),
+            ]
+        ),
+        ids=lambda p: f"{p.parent.name}/{p.stem}",
+    )
+    def test_shikimori_anime_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriAnime
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body:
+            pytest.skip("empty fixture")
+        if isinstance(body, dict) and "id" not in body:
+            pytest.skip("error / non-anime fixture")
+        rows = body if isinstance(body, list) else [body]
+        for i, row in enumerate(rows):
+            if not isinstance(row, dict) or "id" not in row:
+                continue
+            _assert_lossless(ShikimoriAnime, row, f"ShikimoriAnime/{path.parent.name}/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "calendar").glob("*.yaml")))
+    def test_shikimori_calendar_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriCalendarEntry
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriCalendarEntry, row, f"ShikimoriCalendarEntry/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "screenshots").glob("*.yaml")))
+    def test_shikimori_screenshot_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriScreenshot
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriScreenshot, row, f"ShikimoriScreenshot/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "videos").glob("*.yaml")))
+    def test_shikimori_video_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriVideo
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriVideo, row, f"ShikimoriVideo/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "roles").glob("*.yaml")))
+    def test_shikimori_role_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriRole
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriRole, row, f"ShikimoriRole/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "similar").glob("*.yaml")))
+    def test_shikimori_similar_anime_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriAnime
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriAnime, row, f"ShikimoriAnime/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "topics").glob("*.yaml")))
+    def test_shikimori_topic_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriTopic
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriTopic, row, f"ShikimoriTopic/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "studios").glob("*.yaml")))
+    def test_shikimori_studio_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriStudio
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriStudio, row, f"ShikimoriStudio/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "mangas_search").glob("*.yaml")))
+    def test_shikimori_manga_search_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriManga
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriManga, row, f"ShikimoriManga/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "mangas_by_id").glob("*.yaml")))
+    def test_shikimori_manga_show_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriManga
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict):
+            pytest.skip("empty / error fixture")
+        _assert_lossless(ShikimoriManga, body, f"ShikimoriManga/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "clubs_search").glob("*.yaml")))
+    def test_shikimori_club_search_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriClub
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriClub, row, f"ShikimoriClub/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "clubs_by_id").glob("*.yaml")))
+    def test_shikimori_club_show_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriClub
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict):
+            pytest.skip("empty / error fixture")
+        _assert_lossless(ShikimoriClub, body, f"ShikimoriClub/{path.name}")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "publishers").glob("*.yaml")))
+    def test_shikimori_publisher_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriPublisher
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriPublisher, row, f"ShikimoriPublisher/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "people_search").glob("*.yaml")))
+    def test_shikimori_people_search_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriPerson
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriPerson, row, f"ShikimoriPerson/{path.name}[{i}]")
+
+    @pytest.mark.parametrize("path", sorted((FIXTURES / "shikimori" / "people_by_id").glob("*.yaml")))
+    def test_shikimori_person_show_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriPerson
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, dict):
+            pytest.skip("empty / error fixture")
+        _assert_lossless(ShikimoriPerson, body, f"ShikimoriPerson/{path.name}")
+
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "shikimori" / "related").glob("*.yaml"),
+                *(FIXTURES / "shikimori" / "external_links").glob("*.yaml"),
+                *(FIXTURES / "shikimori" / "genres").glob("*.yaml"),
+            ]
+        ),
+        ids=lambda p: f"{p.parent.name}/{p.stem}",
+    )
+    def test_shikimori_resource_lossless(self, path):
+        from animedex.backends.shikimori.models import ShikimoriResource
+
+        body = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_json")
+        if not body or not isinstance(body, list):
+            pytest.skip("empty / error fixture")
+        for i, row in enumerate(body):
+            _assert_lossless(ShikimoriResource, row, f"ShikimoriResource/{path.parent.name}/{path.name}[{i}]")
+
+
+# ---------- ANN ----------
+
+
+class TestAnnLossless:
+    @pytest.mark.parametrize(
+        "path",
+        sorted(
+            [
+                *(FIXTURES / "ann" / "by_id").glob("*.yaml"),
+                *(FIXTURES / "ann" / "substring_search").glob("*.yaml"),
+                *(FIXTURES / "ann" / "reports").glob("*.yaml"),
+            ]
+        ),
+        ids=lambda p: f"{p.parent.name}/{p.stem}",
+    )
+    def test_ann_xml_adapter_node_lossless(self, path):
+        from animedex.backends.ann.models import AnnXmlNode
+        from animedex.render.xml import xml_text_to_dict
+
+        body_text = yaml.safe_load(path.read_text(encoding="utf-8"))["response"].get("body_text")
+        if not body_text:
+            pytest.skip("non-XML / empty fixture")
+        if path.stem.startswith("16-invalid-"):
+            pytest.skip("explicit error fixture")
+        adapted = xml_text_to_dict(body_text)
+        _assert_lossless(AnnXmlNode, adapted, f"AnnXmlNode/{path.parent.name}/{path.name}")
+
+
 # ---------- MangaDex ----------
 
 
@@ -1184,6 +1398,14 @@ class TestBackendRichDiscipline:
         not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
         assert not not_rich, f"Waifu classes outside BackendRichModel: {not_rich}"
 
+    def test_ann_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.ann import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"ANN classes outside BackendRichModel: {not_rich}"
+
     def test_ghibli_module_uses_backend_rich_base(self):
         from animedex.models.common import BackendRichModel
         from animedex.backends.ghibli import models as m
@@ -1199,3 +1421,11 @@ class TestBackendRichDiscipline:
         rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
         not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
         assert not not_rich, f"Quote classes outside BackendRichModel: {not_rich}"
+
+    def test_shikimori_module_uses_backend_rich_base(self):
+        from animedex.models.common import BackendRichModel
+        from animedex.backends.shikimori import models as m
+
+        rich_classes = [c for c in vars(m).values() if isinstance(c, type) and c.__module__ == m.__name__]
+        not_rich = [c.__name__ for c in rich_classes if not issubclass(c, BackendRichModel)]
+        assert not not_rich, f"Shikimori classes outside BackendRichModel: {not_rich}"

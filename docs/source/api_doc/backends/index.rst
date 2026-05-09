@@ -10,6 +10,7 @@ animedex.backends
     :maxdepth: 3
 
     anilist/index
+    ann/index
     danbooru/index
     ghibli/index
     jikan/index
@@ -17,5 +18,6 @@ animedex.backends
     mangadex/index
     nekos/index
     quote/index
+    shikimori/index
     trace/index
     waifu/index

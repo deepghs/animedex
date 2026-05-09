@@ -33,9 +33,11 @@ def _isolate_default_cache(tmp_path, monkeypatch):
     """
     import animedex.cache.sqlite as _cache_mod
     import animedex.backends.quote as _quote_api
+    import animedex.backends.shikimori as _shikimori_api
     import animedex.entry.api as _entry_api
 
     monkeypatch.setattr(_quote_api, "_DEFAULT_CACHE", None)
+    monkeypatch.setattr(_shikimori_api, "_DEFAULT_CACHE", None)
     monkeypatch.setattr(_entry_api, "_DEFAULT_CACHE", None)
     monkeypatch.setattr(_cache_mod, "_user_cache_dir", lambda: str(tmp_path))
     yield

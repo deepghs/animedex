@@ -63,13 +63,13 @@ The CLI is a thin presentation layer over an installable Python package — anyt
 | **Danbooru** (danbooru.donmai.us; tag-DSL art catalogue) | `animedex danbooru` — 57 anonymous endpoints (search / post / artist / tag / pool / count / autocomplete / iqdb-query / wiki / forum / commentary / votes / versions / moderation / operational) plus 2 authenticated reads (`profile` / `saved-searches`) | `animedex api danbooru /posts.json` | live |
 | **Waifu.im** (api.waifu.im; SFW + NSFW art) | `animedex waifu` — 9 anonymous endpoints (`tags` / `images` / `artists` / per-id + per-slug lookups / `stats-public`) plus 1 authenticated read (`me`) | `animedex api waifu /images?...` | live |
 | **Trace.moe** (api.trace.moe) | `animedex trace` — search by image (`--url` or `--input <bytes>`), `quota` | `animedex api trace /me` | live |
-| **nekos.best v2** (nekos.best/api/v2; SFW art / GIF) | `animedex nekos` — `categories`, `categories-full`, `image <category>`, `search` | `animedex api nekos /husbando` | live |
 | **Studio Ghibli API** (ghibliapi.vercel.app; bundled snapshot) | `animedex ghibli` — offline films / people / locations / species / vehicles with local filters | `animedex api ghibli /films` | offline high-level; live passthrough |
 | **AnimeChan** (api.animechan.io/v1; quotes) | `animedex quote` — random quote / filtered random / paginated quote lists / anime info, cached by default for the 5 req/hour free tier | `animedex api quote /quotes/random` | live |
-| Shikimori, ANN | (high-level commands not yet wired) | `animedex api <backend> <path>` | passthrough only |
+| **Shikimori** (shikimori.io; REST + GraphQL catalogue) | `animedex shikimori` — anime / manga / ranobe / clubs / publishers / top-level people / calendar / screenshots / videos / characters / staff / similar / related / external-links / topics / studios / genres | `animedex api shikimori <path>` | live |
+| **ANN Encyclopedia** (cdn.animenewsnetwork.com; XML) | `animedex ann` — show / search / reports with typed XML warning handling | `animedex api ann <path>` | live |
 | MAL v2 | — | — | not yet implemented |
 
-The `animedex api <backend>` passthrough is wired for twelve backends — the ten high-level ones above plus Shikimori and ANN. Every passthrough call honours the project's read-only firewall (`PUT/PATCH/DELETE` and unwhitelisted `POST` paths are rejected before hitting the wire) and the per-upstream `User-Agent` requirements.
+The `animedex api <backend>` passthrough is wired for twelve backends. Every passthrough call honours the project's read-only firewall (`PUT/PATCH/DELETE` and unwhitelisted `POST` paths are rejected before hitting the wire) and the per-upstream `User-Agent` requirements.
 
 ## Try it in 30 seconds
 
@@ -104,7 +104,7 @@ Each command auto-switches between TTY (human-readable, source-marked) and JSON 
 The full documentation lives at <https://animedex.readthedocs.io/en/latest/>. Notable pages:
 
 - **Quickstart** — five progressive examples that cover TTY rendering, `--json`, `--jq`, `--no-cache`, and the Python library.
-- **Tutorials** — systematic per-backend deep-dives (anilist / jikan / kitsu / mangadex / danbooru / waifu / ghibli / quote / trace / nekos), the raw passthrough (`animedex api`), output modes, the `Config` Python entry point, and the `--agent-guide` flag for LLM agents.
+- **Tutorials** — systematic per-backend deep-dives (anilist / ann / jikan / kitsu / mangadex / danbooru / waifu / ghibli / quote / trace / nekos / shikimori), the raw passthrough (`animedex api`), output modes, the `Config` Python entry point, and the `--agent-guide` flag for LLM agents.
 - **API reference** — auto-generated from the source docstrings.
 
 ## Human Agency Principle (the top rule)
@@ -127,11 +127,11 @@ The only constraints `animedex` enforces unilaterally are **technical contracts*
 ```
 animedex/                Installable package (the runtime)
   api/                     Raw passthrough dispatcher + per-backend modules
-  backends/                High-level Python API per backend (anilist, jikan, ghibli, quote, nekos, trace)
+  backends/                High-level Python API per backend (anilist, ann, ghibli, quote, shikimori, ...)
   cache/                   SQLite TTL cache
   config/                  Build metadata + Config entry point
   diag/                    selftest runner + per-module smokes
-  entry/                   Click command tree (anilist, jikan, nekos, trace + api)
+  entry/                   Click command tree (anilist, ann, ghibli, quote, shikimori, trace + api)
   models/                  Cross-source common types (Anime, Character, ArtPost, ...)
   policy/                  Docstring lint + agent-guide extractor
   render/                  TTY / JSON / raw / jq / field-projection renderers

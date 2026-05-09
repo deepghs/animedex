@@ -11,6 +11,7 @@ animedex.entry
 
     _cli_factory
     anilist
+    ann
     api/index
     cli
     danbooru
@@ -20,6 +21,7 @@ animedex.entry
     mangadex
     nekos
     quote
+    shikimori
     trace
     waifu
 
@@ -27,4 +29,3 @@ animedex.entry
 -----------------------------------------------------
 
 .. autodata:: __all__
-
