@@ -1,13 +1,12 @@
 """
 Top-level command-line interface for animedex.
 
-This module wires the per-backend command groups (``anilist``,
-``jikan``, ``nekos``, ``trace``) and the ``api`` raw-passthrough
-group onto the top-level ``animedex`` Click group, plus the
-substrate utilities ``status`` and ``selftest``. Each per-backend
-group lives in its own ``animedex/entry/<backend>.py`` module so
-contributors can edit one backend's bindings without touching the
-others.
+This module wires the per-backend command groups and the ``api``
+raw-passthrough group onto the top-level ``animedex`` Click group,
+plus the substrate utilities ``status`` and ``selftest``. Each
+per-backend group lives in its own ``animedex/entry/<backend>.py``
+module so contributors can edit one backend's bindings without
+touching the others.
 """
 
 import sys
@@ -109,21 +108,25 @@ def cli() -> None:
 
 from animedex.entry.api import api_group as _api_group  # noqa: E402
 from animedex.entry.anilist import anilist_group as _anilist_group  # noqa: E402
+from animedex.entry.ann import ann_group as _ann_group  # noqa: E402
 from animedex.entry.danbooru import danbooru_group as _danbooru_group  # noqa: E402
 from animedex.entry.jikan import jikan_group as _jikan_group  # noqa: E402
 from animedex.entry.kitsu import kitsu_group as _kitsu_group  # noqa: E402
 from animedex.entry.mangadex import mangadex_group as _mangadex_group  # noqa: E402
 from animedex.entry.nekos import nekos_group as _nekos_group  # noqa: E402
+from animedex.entry.shikimori import shikimori_group as _shikimori_group  # noqa: E402
 from animedex.entry.trace import trace_group as _trace_group  # noqa: E402
 from animedex.entry.waifu import waifu_group as _waifu_group  # noqa: E402
 
 cli.add_command(_api_group)
 cli.add_command(_anilist_group)
+cli.add_command(_ann_group)
 cli.add_command(_danbooru_group)
 cli.add_command(_jikan_group)
 cli.add_command(_kitsu_group)
 cli.add_command(_mangadex_group)
 cli.add_command(_nekos_group)
+cli.add_command(_shikimori_group)
 cli.add_command(_trace_group)
 cli.add_command(_waifu_group)
 
@@ -156,7 +159,9 @@ def status_command() -> None:
     --- End ---
     """
     click.echo(f"{__TITLE__} v{__VERSION__}")
-    click.echo("Wired groups: anilist, danbooru, jikan, kitsu, mangadex, nekos, trace, waifu, api (raw passthrough).")
+    click.echo(
+        "Wired groups: anilist, ann, danbooru, jikan, kitsu, mangadex, nekos, shikimori, trace, waifu, api (raw passthrough)."
+    )
     click.echo("Run 'animedex --help' for the full command tree.")
 
 

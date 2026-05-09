@@ -15,6 +15,7 @@ Per-backend tutorials
    :maxdepth: 1
 
    backends/anilist
+   backends/ann
    backends/jikan
    backends/kitsu
    backends/mangadex
@@ -22,6 +23,7 @@ Per-backend tutorials
    backends/waifu
    backends/trace
    backends/nekos
+   backends/shikimori
 
 Cross-cutting tutorials
 -----------------------

@@ -1,0 +1,1 @@
+.. include:: backends/shikimori.rst

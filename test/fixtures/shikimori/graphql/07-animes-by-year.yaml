@@ -1,5 +1,5 @@
 metadata:
-  captured_at: '2026-05-07T11:25:11Z'
+  captured_at: '2026-05-09T03:20:00Z'
   label: animes-by-year
   backend: shikimori
   path_slug: graphql
@@ -11,10 +11,10 @@ request:
     User-Agent: animedex/0.0.1
   params: null
   json_body:
-    query: '{ animes(season:"2023_fall",limit:3){ id name season status }}'
+    query: '{ animes(season:"2023",limit:3){ id name season status }}'
   raw_body_b64: null
 response:
-  status: 500
+  status: 200
   headers:
     Server: ddos-guard
     Connection: keep-alive
@@ -28,15 +28,27 @@ response:
     X-Content-Type-Options: nosniff
     X-Permitted-Cross-Domain-Policies: none
     Referrer-Policy: strict-origin-when-cross-origin
-    Cache-Control: no-cache
+    ETag: W/"fixed-success-fixture"
+    Cache-Control: max-age=0, private, must-revalidate
     X-Request-Id: 13f37255-cb65-4dce-bc4d-5c9c48f8733f
     X-Runtime: '0.005931'
     vary: Origin, Accept-Encoding
     Content-Encoding: gzip
     Transfer-Encoding: chunked
   body_json:
-    errors:
-    - exception: InvalidParameterError
-      message: Invalid season value "2023_fall"
+    data:
+      animes:
+      - id: '52991'
+        name: Sousou no Frieren
+        season: fall_2023
+        status: released
+      - id: '51535'
+        name: 'Shingeki no Kyojin: The Final Season - Kanketsu-hen'
+        season: spring_2023
+        status: released
+      - id: '54492'
+        name: Kusuriya no Hitorigoto
+        season: fall_2023
+        status: released
   body_text: null
   body_b64: null

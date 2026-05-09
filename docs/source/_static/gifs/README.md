@@ -11,6 +11,7 @@ source tapes so future contributors can regenerate them.
 | `hero.gif` | top of `README.md`; first thing a visitor sees | `hero.tape` |
 | `quickstart.gif` | `docs/source/quickstart.rst` walkthrough | `quickstart.tape` |
 | `anilist.gif` | `docs/source/tutorials/backends/anilist.rst` header | `anilist.tape` |
+| `ann.gif` | `docs/source/tutorials/backends/ann.rst` header | `ann.tape` |
 | `jikan.gif` | `docs/source/tutorials/backends/jikan.rst` header | `jikan.tape` |
 | `kitsu.gif` | `docs/source/tutorials/backends/kitsu.rst` header | `kitsu.tape` |
 | `mangadex.gif` | `docs/source/tutorials/backends/mangadex.rst` header | `mangadex.tape` |
@@ -18,6 +19,7 @@ source tapes so future contributors can regenerate them.
 | `waifu.gif` | `docs/source/tutorials/backends/waifu.rst` header | `waifu.tape` |
 | `trace.gif` | `docs/source/tutorials/backends/trace.rst` header | `trace.tape` |
 | `nekos.gif` | `docs/source/tutorials/backends/nekos.rst` header | `nekos.tape` |
+| `shikimori.gif` | `docs/source/tutorials/backends/shikimori.rst` header | `shikimori.tape` |
 
 ## Regenerating
 
@@ -32,6 +34,7 @@ cd docs/source/_static/gifs
 vhs hero.tape                 # produces hero.gif
 vhs quickstart.tape           # produces quickstart.gif
 vhs anilist.tape              # produces anilist.gif
+vhs ann.tape                  # produces ann.gif
 vhs jikan.tape                # produces jikan.gif
 vhs kitsu.tape                # produces kitsu.gif
 vhs mangadex.tape             # produces mangadex.gif
@@ -39,6 +42,7 @@ vhs danbooru.tape             # produces danbooru.gif
 vhs waifu.tape                # produces waifu.gif
 vhs trace.tape                # produces trace.gif
 vhs nekos.tape                # produces nekos.gif
+vhs shikimori.tape            # produces shikimori.gif
 ```
 
 vhs is available as a single-file binary at

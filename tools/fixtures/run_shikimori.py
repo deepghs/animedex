@@ -119,6 +119,24 @@ def main() -> int:
         total += 1
         print(f"  [{i:02d}/16] {label}")
 
+    print("-- lifted long-tail REST endpoints")
+    long_tail_cases = [
+        ("roles", "frieren-52991", "/api/animes/52991/roles"),
+        ("similar", "frieren-52991", "/api/animes/52991/similar"),
+        ("related", "frieren-52991", "/api/animes/52991/related"),
+        ("external_links", "frieren-52991", "/api/animes/52991/external_links"),
+        ("topics", "frieren-52991", "/api/animes/52991/topics?limit=3"),
+        ("studios", "all", "/api/studios"),
+        ("genres", "all", "/api/genres"),
+    ]
+    for i, (slug, label, path) in enumerate(long_tail_cases, 1):
+        capture(backend="shikimori", path_slug=slug,
+                label=label, method="GET",
+                url=f"{BASE}{path}",
+                pace_seconds=PACE)
+        total += 1
+        print(f"  [{i:02d}/{len(long_tail_cases)}] {slug}/{label}")
+
     print("-- graphql (16)")
     graphql_cases = [
         ("animes-frieren", '{ animes(ids:"52991"){ id name score status episodes }}'),
@@ -127,12 +145,12 @@ def main() -> int:
         ("animes-multi", '{ animes(ids:"1,20,30"){ id name }}'),
         ("animes-search", '{ animes(search:"Frieren",limit:3){ id name }}'),
         ("animes-by-genre", '{ animes(genre:"Comedy",limit:3){ id name }}'),
-        ("animes-by-year", '{ animes(season:"2023_fall",limit:3){ id name season status }}'),
+        ("animes-by-year", '{ animes(season:"2023",limit:3){ id name season status }}'),
         ("animes-list-tv", '{ animes(kind:"tv",limit:3){ id name kind }}'),
         ("animes-list-movie", '{ animes(kind:"movie",limit:3){ id name kind }}'),
         ("animes-by-status-released", '{ animes(status:"released",limit:3){ id name status }}'),
         ("animes-by-status-ongoing", '{ animes(status:"ongoing",limit:3){ id name status }}'),
-        ("animes-with-related", '{ animes(ids:"52991"){ id name related{ relation anime { id name }}}}'),
+        ("animes-with-related", '{ animes(ids:"52991"){ id name related{ relationKind relationText anime { id name } manga { id name }}}}'),
         ("animes-with-genres-field", '{ animes(ids:"52991"){ id name genres { id name kind }}}'),
         ("animes-with-studios", '{ animes(ids:"52991"){ id name studios { id name }}}'),
         ("schema-introspection", '{ __schema { queryType { name } } }'),

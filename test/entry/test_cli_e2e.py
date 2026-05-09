@@ -257,6 +257,10 @@ class TestTtyRenderingWalk:
             (["nekos", "search", "Frieren", "--amount", "5"], "nekos/search/01-frieren-image.yaml"),
             (["kitsu", "show", "46474"], "kitsu/anime_by_id/01-frieren-46474.yaml"),
             (["kitsu", "trending", "--limit", "10"], "kitsu/trending_anime/01-top10.yaml"),
+            (["shikimori", "show", "52991"], "shikimori/animes_by_id/01-frieren-52991.yaml"),
+            (["shikimori", "search", "Frieren", "--limit", "2"], "shikimori/animes_search/01-frieren.yaml"),
+            (["ann", "show", "38838"], "ann/by_id/14-id-38838-frieren.yaml"),
+            (["ann", "search", "Frieren"], "ann/substring_search/01-frieren.yaml"),
         ],
     )
     def test_command_renders_in_tty_mode(self, cli_runner, cli, fake_clock, force_tty, argv, fixture_rel):
@@ -538,6 +542,92 @@ class TestKitsuCliFromFixtures:
         assert any("myanimelist" in s for s in decoded)
 
 
+# ---------- Shikimori ----------
+
+
+class TestShikimoriCliFromFixtures:
+    """JSON-path coverage for the high-level Shikimori commands."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("show", ["52991"], "shikimori/animes_by_id/01-frieren-52991.yaml"),
+            ("search", ["Frieren", "--limit", "2"], "shikimori/animes_search/01-frieren.yaml"),
+            ("calendar", ["--limit", "1"], "shikimori/calendar/01-limit-1.yaml"),
+            ("screenshots", ["52991"], "shikimori/screenshots/01-frieren-52991.yaml"),
+            ("videos", ["52991"], "shikimori/videos/01-frieren-52991.yaml"),
+            ("roles", ["52991"], "shikimori/roles/01-frieren-52991.yaml"),
+            ("characters", ["52991"], "shikimori/roles/01-frieren-52991.yaml"),
+            ("staff", ["52991"], "shikimori/roles/01-frieren-52991.yaml"),
+            ("similar", ["52991"], "shikimori/similar/01-frieren-52991.yaml"),
+            ("related", ["52991"], "shikimori/related/01-frieren-52991.yaml"),
+            ("external-links", ["52991"], "shikimori/external_links/01-frieren-52991.yaml"),
+            ("topics", ["52991", "--limit", "3"], "shikimori/topics/01-frieren-52991.yaml"),
+            ("studios", [], "shikimori/studios/01-all.yaml"),
+            ("genres", [], "shikimori/genres/01-all.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        fixture = _load_fixture(fixture_rel)
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(cli, ["shikimori", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"shikimori {subcommand} failed: {result.output[:600]}"
+
+    def test_search_jq_filter_extracts_names(self, cli_runner, cli, fake_clock):
+        fixture = _load_fixture("shikimori/animes_search/01-frieren.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture_path_only(rsps, fixture)
+            result = cli_runner.invoke(
+                cli,
+                ["shikimori", "search", "Frieren", "--limit", "2", "--no-cache", "--jq", "[.[].name]"],
+            )
+
+        assert result.exit_code == 0, result.output
+        decoded = json.loads(result.output)
+        assert "Sousou no Frieren" in decoded
+
+
+# ---------- ANN ----------
+
+
+class TestAnnCliFromFixtures:
+    """JSON-path coverage for the high-level ANN commands."""
+
+    @pytest.mark.parametrize(
+        "subcommand,positional,fixture_rel",
+        [
+            ("show", ["38838"], "ann/by_id/14-id-38838-frieren.yaml"),
+            ("search", ["Frieren"], "ann/substring_search/01-frieren.yaml"),
+            (
+                "reports",
+                ["--id", "155", "--type", "anime", "--nlist", "2"],
+                "ann/reports/01-anime-recently-modified-2.yaml",
+            ),
+            ("show", ["99999999"], "ann/by_id/15-id-99999999-missing.yaml"),
+        ],
+    )
+    def test_subcommand_runs_against_fixture(self, cli_runner, cli, fake_clock, subcommand, positional, fixture_rel):
+        fixture = _load_fixture(fixture_rel)
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, ["ann", subcommand, *positional, "--json", "--no-cache"])
+
+        assert result.exit_code == 0, f"ann {subcommand} failed: {result.output[:600]}"
+
+    def test_warning_200_is_rendered_not_error(self, cli_runner, cli, fake_clock):
+        fixture = _load_fixture("ann/by_id/15-id-99999999-missing.yaml")
+        with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+            _register_fixture(rsps, fixture)
+            result = cli_runner.invoke(cli, ["ann", "show", "99999999", "--json", "--no-cache"])
+
+        assert result.exit_code == 0, result.output
+        decoded = json.loads(result.output)
+        assert decoded["warnings"] == ["no result for anime=99999999"]
+        assert decoded["anime"] == []
+
+
 # ---------- MangaDex ----------
 
 
@@ -791,7 +881,18 @@ class TestPhase2SubcommandTree:
     """No HTTP needed; just confirm registration shape."""
 
     def test_top_level_groups_present(self, cli):
-        for group in ("anilist", "danbooru", "jikan", "kitsu", "mangadex", "nekos", "trace", "waifu"):
+        for group in (
+            "anilist",
+            "ann",
+            "danbooru",
+            "jikan",
+            "kitsu",
+            "mangadex",
+            "nekos",
+            "shikimori",
+            "trace",
+            "waifu",
+        ):
             assert group in cli.commands
 
     def test_anilist_has_at_least_28_subcommands(self, cli):
@@ -828,6 +929,26 @@ class TestPhase2SubcommandTree:
 
     def test_waifu_has_full_surface(self, cli):
         assert {"tags", "artists", "images"} <= set(cli.commands["waifu"].commands.keys())
+
+    def test_shikimori_has_full_surface(self, cli):
+        assert {
+            "calendar",
+            "search",
+            "show",
+            "screenshots",
+            "videos",
+            "characters",
+            "staff",
+            "similar",
+            "related",
+            "external-links",
+            "topics",
+            "studios",
+            "genres",
+        } <= set(cli.commands["shikimori"].commands.keys())
+
+    def test_ann_has_full_surface(self, cli):
+        assert {"show", "search", "reports"} <= set(cli.commands["ann"].commands.keys())
 
 
 # ---------- --help walk for every Phase-2 subcommand ----------
@@ -877,3 +998,13 @@ class TestEverySubcommandHasHelp:
         for sub in cli.commands["waifu"].commands:
             r = cli_runner.invoke(cli, ["waifu", sub, "--help"])
             assert r.exit_code == 0, f"waifu {sub} --help failed: {r.output[:200]}"
+
+    def test_shikimori_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["shikimori"].commands:
+            r = cli_runner.invoke(cli, ["shikimori", sub, "--help"])
+            assert r.exit_code == 0, f"shikimori {sub} --help failed: {r.output[:200]}"
+
+    def test_ann_help_walk(self, cli_runner, cli):
+        for sub in cli.commands["ann"].commands:
+            r = cli_runner.invoke(cli, ["ann", sub, "--help"])
+            assert r.exit_code == 0, f"ann {sub} --help failed: {r.output[:200]}"
