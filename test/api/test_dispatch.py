@@ -99,6 +99,23 @@ class TestSimpleCall:
         assert raw.request.headers["User-Agent"] == "animedex/0.0.1"
 
     @responses.activate
+    def test_relative_path_without_leading_slash_is_classified(self, fake_clock, cache):
+        from animedex.api._dispatch import call
+
+        responses.add(
+            responses.GET,
+            "https://api.jikan.moe/v4/anime/52991",
+            json={"data": {"mal_id": 52991, "title": "Frieren"}},
+            status=200,
+        )
+
+        raw = call(backend="jikan", path="anime/52991", cache=cache)
+
+        assert raw.status == 200
+        assert raw.request.url == "https://api.jikan.moe/v4/anime/52991"
+        assert raw.cache.key is not None
+
+    @responses.activate
     def test_404_response_passes_through(self, fake_clock, cache):
         from animedex.api._dispatch import call
 
