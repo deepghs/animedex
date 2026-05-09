@@ -24,6 +24,7 @@ limit bucket.
 from __future__ import annotations
 
 import os
+import re
 import time
 from dataclasses import dataclass
 from typing import Dict, Optional
@@ -32,6 +33,7 @@ import requests
 
 from animedex.config import Config
 from animedex.models.common import ApiError
+from animedex.transport.useragent import compose_user_agent
 
 
 _TOKEN_URL = "https://auth.mangadex.org/realms/mangadex/protocol/openid-connect/token"
@@ -60,6 +62,13 @@ class MangaDexCredentials:
     username: str
     password: str
 
+    def __repr__(self) -> str:
+        """Return a representation that does not leak secrets."""
+        return (
+            f"MangaDexCredentials(client_id={self.client_id!r}, "
+            f"client_secret=***, username={self.username!r}, password=***)"
+        )
+
     @classmethod
     def from_string(cls, raw: str) -> "MangaDexCredentials":
         """Parse the colon-separated quad
@@ -86,6 +95,33 @@ class MangaDexCredentials:
 class _CachedToken:
     access_token: str
     expires_at: float  # epoch seconds
+
+
+def _auth_session() -> requests.Session:
+    """Build the direct-auth session with project transport headers.
+
+    The OAuth token endpoint intentionally avoids the main dispatcher
+    so it does not consume the api-host rate-limit bucket, but it still
+    honours the repository-wide wire contracts for User-Agent and Via.
+
+    :return: Session prepared for Keycloak token requests.
+    :rtype: requests.Session
+    """
+    session = requests.Session()
+    session.headers.update({"User-Agent": compose_user_agent(None)})
+    session.headers.pop("Via", None)
+    return session
+
+
+def _redact_auth_error_body(body: str) -> str:
+    """Mask credential-like fields in a Keycloak error snippet.
+
+    :param body: Response text snippet.
+    :type body: str
+    :return: Redacted text safe for an :class:`ApiError` message.
+    :rtype: str
+    """
+    return re.sub(r"(?i)(password|client_secret)=([^&\s]+)", r"\1=***", body)
 
 
 def resolve_credentials(
@@ -172,7 +208,7 @@ def get_bearer_token(
         return cached.access_token
 
     try:
-        r = requests.post(
+        r = _auth_session().post(
             _TOKEN_URL,
             data={
                 "grant_type": "password",
@@ -187,8 +223,9 @@ def get_bearer_token(
         raise ApiError(f"mangadex auth network error: {exc}", backend="mangadex", reason="upstream-error") from exc
 
     if r.status_code != 200:
+        error_body = _redact_auth_error_body(r.text[:200])
         raise ApiError(
-            f"mangadex auth returned {r.status_code}: {r.text[:200]}",
+            f"mangadex auth returned {r.status_code}: {error_body}",
             backend="mangadex",
             reason="auth-required" if r.status_code in (400, 401) else "upstream-error",
         )
@@ -199,9 +236,11 @@ def get_bearer_token(
         raise ApiError(f"mangadex auth returned non-JSON: {exc}", backend="mangadex", reason="upstream-decode") from exc
 
     token = body.get("access_token")
-    expires_in = body.get("expires_in") or 0
     if not token:
         raise ApiError("mangadex auth response missing access_token", backend="mangadex", reason="upstream-shape")
+    expires_in = body.get("expires_in")
+    if expires_in is None:
+        raise ApiError("mangadex auth response missing expires_in", backend="mangadex", reason="upstream-shape")
     _TOKEN_CACHE[resolved.client_id] = _CachedToken(access_token=token, expires_at=now + float(expires_in))
     return token
 

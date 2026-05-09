@@ -293,7 +293,7 @@ def register_subcommand(
         """Return the scalar item type for List[T] / Optional[List[T]]."""
         origin = getattr(annotation, "__origin__", None)
         args = getattr(annotation, "__args__", ())
-        if origin in (list, List):
+        if origin is list:
             item = args[0] if args else str
             return item if item in (int, float, str, bool) else str
         if origin is not None:

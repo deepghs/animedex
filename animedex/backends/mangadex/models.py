@@ -5,12 +5,13 @@ is wrapped as ``{id, type, attributes, relationships}`` and listings
 come back as
 ``{result, response, data: [...], limit, offset, total}``.
 
-Per the project's lossless rich-model contract (§13), every class
-below inherits from :class:`BackendRichModel` (``extra='allow'``,
-``populate_by_name=True``, ``frozen=True``). The ``attributes``
+Every class below inherits from :class:`BackendRichModel` so
+MangaDex payloads round-trip losslessly: declared fields are typed,
+undeclared upstream fields are kept on the instance via
+``extra='allow'``, aliases are accepted via ``populate_by_name=True``,
+and the same data is re-emitted by ``model_dump``. The ``attributes``
 sub-classes only spell out the fields the high-level API touches;
-upstream may add more, and they round-trip through ``model_dump``
-via ``extra='allow'``.
+upstream may add more without breaking callers.
 
 The :meth:`MangaDexManga.to_common` and
 :meth:`MangaDexChapter.to_common` projections map onto

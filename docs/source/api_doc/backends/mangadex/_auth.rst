@@ -10,7 +10,7 @@ MangaDexCredentials
 -----------------------------------------------------
 
 .. autoclass:: MangaDexCredentials
-    :members: from_string,client_id,client_secret,username,password
+    :members: __repr__,from_string,client_id,client_secret,username,password
 
 
 resolve\_credentials

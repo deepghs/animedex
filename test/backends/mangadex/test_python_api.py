@@ -773,6 +773,17 @@ class TestMangaDexCredentialResolution:
         creds = MangaDexCredentials("a", "b", "c", "d")
         assert resolve_credentials(creds) is creds
 
+    def test_credentials_repr_masks_secrets(self):
+        from animedex.backends.mangadex._auth import MangaDexCredentials
+
+        text = repr(MangaDexCredentials("client-id", "secret-value", "username", "password-value"))
+        assert "client-id" in text
+        assert "username" in text
+        assert "secret-value" not in text
+        assert "password-value" not in text
+        assert "client_secret=***" in text
+        assert "password=***" in text
+
     def test_invalid_creds_object_raises_bad_args(self):
         from animedex.backends.mangadex._auth import resolve_credentials
         from animedex.models.common import ApiError
@@ -793,6 +804,19 @@ class TestMangaDexCredentialResolution:
             assert len([c for c in rsps.calls if "auth.mangadex.org" in c.request.url]) == 1
         assert first == "cached-token"
         assert second == "cached-token"
+
+    def test_get_bearer_token_uses_project_transport_headers(self):
+        from animedex.backends.mangadex import _auth
+        from animedex.backends.mangadex._auth import get_bearer_token
+        from animedex.transport.useragent import default_user_agent
+
+        _auth._TOKEN_CACHE.pop("headers-client", None)
+        with responses.RequestsMock() as rsps:
+            _register_oauth_token(rsps, token="headers-token", client_id="headers-client")
+            assert get_bearer_token("headers-client:b:c:d") == "headers-token"
+            sent = rsps.calls[0].request
+        assert sent.headers.get("User-Agent") == default_user_agent()
+        assert "Via" not in sent.headers
 
     def test_get_bearer_token_force_refresh_ignores_cache(self):
         from animedex.backends.mangadex import _auth
@@ -824,6 +848,24 @@ class TestMangaDexCredentialResolution:
                 get_bearer_token(f"status-{status}:b:c:d")
         assert ei.value.reason == reason
 
+    def test_get_bearer_token_status_error_redacts_credentials(self):
+        from animedex.backends.mangadex import _auth
+        from animedex.backends.mangadex._auth import get_bearer_token
+        from animedex.models.common import ApiError
+
+        _auth._TOKEN_CACHE.pop("redact-client", None)
+        body = "invalid password=super-secret&client_secret=client-secret username=user"
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.POST, _TOKEN_URL, body=body, status=400)
+            with pytest.raises(ApiError) as ei:
+                get_bearer_token("redact-client:client-secret:user:super-secret")
+        text = str(ei.value)
+        assert "super-secret" not in text
+        assert "client-secret" not in text
+        assert "password=***" in text
+        assert "client_secret=***" in text
+        assert ei.value.reason == "auth-required"
+
     def test_get_bearer_token_rejects_non_json_response(self):
         from animedex.backends.mangadex import _auth
         from animedex.backends.mangadex._auth import get_bearer_token
@@ -846,6 +888,18 @@ class TestMangaDexCredentialResolution:
             rsps.add(responses.POST, _TOKEN_URL, json={"expires_in": 900}, status=200)
             with pytest.raises(ApiError) as ei:
                 get_bearer_token("missing-token-client:b:c:d")
+        assert ei.value.reason == "upstream-shape"
+
+    def test_get_bearer_token_rejects_missing_expires_in(self):
+        from animedex.backends.mangadex import _auth
+        from animedex.backends.mangadex._auth import get_bearer_token
+        from animedex.models.common import ApiError
+
+        _auth._TOKEN_CACHE.pop("missing-expiry-client", None)
+        with responses.RequestsMock() as rsps:
+            rsps.add(responses.POST, _TOKEN_URL, json={"access_token": "token-without-expiry"}, status=200)
+            with pytest.raises(ApiError) as ei:
+                get_bearer_token("missing-expiry-client:b:c:d")
         assert ei.value.reason == "upstream-shape"
 
     def test_get_bearer_token_network_error(self):
