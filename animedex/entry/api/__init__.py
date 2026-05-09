@@ -22,8 +22,6 @@ Shared utilities used by every subcommand:
   decorator factories.
 """
 
-from __future__ import annotations
-
 import click
 
 from animedex.api._envelope import RawResponse
@@ -239,7 +237,7 @@ class ApiFieldOption(click.Option):
             state.order.append(self)
 
         for opt in self.opts:
-            norm = click.parser._normalize_opt(opt, ctx)
+            norm = _normalize_option(opt, ctx)
             option = _ApiFieldParserOption(obj=self, opts=[norm], process_value=_wrap)
             if norm.startswith("--"):
                 parser._long_opt[norm] = option
@@ -277,6 +275,19 @@ class _ApiFieldParserOption:
 
     def process(self, value, state):
         self._process_value(self.opts, value, state)
+
+
+def _normalize_option(opt, ctx):
+    """Apply Click's token normalizer to an option string."""
+    token_normalize_func = getattr(ctx, "token_normalize_func", None)
+    if token_normalize_func is None:
+        return opt
+    prefix = ""
+    rest = opt
+    while rest.startswith("-"):
+        prefix += "-"
+        rest = rest[1:]
+    return f"{prefix}{token_normalize_func(rest)}"
 
 
 def _option_prefixes(opt: str) -> set:
@@ -358,7 +369,7 @@ def _call_or_paginate(
     backend: str,
     paginate: bool,
     max_pages: int,
-    max_items: int | None,
+    max_items,
     **kwargs,
 ):
     """Call one raw request or the central pagination helper."""
