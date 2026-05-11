@@ -10,14 +10,14 @@ AggregateSourceStatus
 -----------------------------------------------------
 
 .. autoclass:: AggregateSourceStatus
-    :members: status,items,reason,message,http_status,duration_ms
+    :members: ok,backend,status,items,reason,message,http_status,duration_ms
 
 
 AggregateResult
 -----------------------------------------------------
 
 .. autoclass:: AggregateResult
-    :members: failed_sources,ok_sources,all_failed,items,sources
+    :members: failed_sources,succeeded_count,all_failed,items,sources
 
 
 selftest

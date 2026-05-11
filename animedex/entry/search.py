@@ -12,7 +12,7 @@ from animedex.models.common import ApiError
 
 
 def _emit_failure_lines(result: AggregateResult) -> None:
-    for name, status in result.failed_sources().items():
+    for name, status in result.failed_sources.items():
         reason = status.reason or "failed"
         message = status.message or reason
         click.echo(f"source {name!r} failed: {message}; continuing with other sources", err=True)

@@ -163,7 +163,7 @@ class TestAggregateResultTty:
                     }
                 ).model_copy(update={"_source": "jikan", "_prefix_id": "mal:52991"})
             ],
-            sources={"jikan": AggregateSourceStatus(status="ok", items=1)},
+            sources={"jikan": AggregateSourceStatus(backend="jikan", status="ok", items=1)},
         )
         out = render_tty(result)
 

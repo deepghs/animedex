@@ -15,13 +15,15 @@ class TestAggregateResult:
         result = AggregateResult(
             items=[{"id": 1, "_source": "anilist"}],
             sources={
-                "anilist": AggregateSourceStatus(status="ok", items=1),
-                "jikan": AggregateSourceStatus(status="failed", reason="upstream-error", message="jikan 503"),
+                "anilist": AggregateSourceStatus(backend="anilist", status="ok", items=1),
+                "jikan": AggregateSourceStatus(
+                    backend="jikan", status="failed", reason="upstream-error", message="jikan 503"
+                ),
             },
         )
 
-        assert set(result.ok_sources()) == {"anilist"}
-        assert set(result.failed_sources()) == {"jikan"}
+        assert result.succeeded_count == 1
+        assert set(result.failed_sources) == {"jikan"}
         assert result.all_failed is False
 
     def test_all_failed(self):
@@ -29,7 +31,7 @@ class TestAggregateResult:
 
         result = AggregateResult(
             items=[],
-            sources={"anilist": AggregateSourceStatus(status="failed", reason="upstream-error")},
+            sources={"anilist": AggregateSourceStatus(backend="anilist", status="failed", reason="upstream-error")},
         )
 
         assert result.all_failed is True

@@ -299,8 +299,8 @@ def _format_trace_quota_tty(q: TraceQuota) -> str:
 def _format_aggregate_result_tty(result: AggregateResult) -> str:
     out = io.StringIO()
     print("Aggregate results", file=out)
-    if result.failed_sources():
-        failed = ", ".join(sorted(result.failed_sources()))
+    if result.failed_sources:
+        failed = ", ".join(sorted(result.failed_sources))
         print(f"  Failed sources: {failed}", file=out)
     for item in result.items:
         if hasattr(item, "to_common"):

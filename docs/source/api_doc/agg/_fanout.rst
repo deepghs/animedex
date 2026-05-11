@@ -6,22 +6,17 @@ animedex.agg.\_fanout
 .. automodule:: animedex.agg._fanout
 
 
-SourceCallable
+FanoutSource
 -----------------------------------------------------
 
-.. autodata:: SourceCallable
+.. autoclass:: FanoutSource
+    :members: name,call
 
 
-fanout
+run\_fanout
 -----------------------------------------------------
 
-.. autofunction:: fanout
-
-
-select\_sources
------------------------------------------------------
-
-.. autofunction:: select_sources
+.. autofunction:: run_fanout
 
 
 selftest

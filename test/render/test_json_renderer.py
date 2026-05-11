@@ -117,8 +117,8 @@ class TestAggregateResultSources:
         result = AggregateResult(
             items=[{"id": 1, "_source": "jikan", "_prefix_id": "mal:1"}],
             sources={
-                "anilist": AggregateSourceStatus(status="failed", reason="upstream-error"),
-                "jikan": AggregateSourceStatus(status="ok", items=1),
+                "anilist": AggregateSourceStatus(backend="anilist", status="failed", reason="upstream-error"),
+                "jikan": AggregateSourceStatus(backend="jikan", status="ok", items=1),
             },
         )
         decoded = json.loads(render_json(result, include_source=True))

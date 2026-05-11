@@ -2,14 +2,39 @@
 
 from __future__ import annotations
 
-from typing import Optional
+from typing import Iterable, List, Optional
 
-from animedex.agg._fanout import fanout, select_sources
+from animedex.agg._fanout import FanoutSource, run_fanout
 from animedex.agg._prefix_id import prefix_for_backend
 from animedex.agg._type_routes import call_search_route, search_routes_for, validate_entity_type
 from animedex.config import Config
 from animedex.models.aggregate import AggregateResult
 from animedex.models.common import AnimedexModel, ApiError
+
+
+def _select_sources(available: Iterable[str], requested: Optional[str]) -> List[str]:
+    """Resolve a comma-separated source allowlist for entity search.
+
+    :param available: Allowed source names.
+    :type available: iterable[str]
+    :param requested: Comma-separated source list or ``None``.
+    :type requested: str or None
+    :return: Selected sources in available-source order.
+    :rtype: list[str]
+    :raises ApiError: When an unknown source is requested.
+    """
+    available_list = list(available)
+    if requested is None or not requested.strip():
+        return available_list
+    wanted = [part.strip() for part in requested.split(",") if part.strip()]
+    unknown = [name for name in wanted if name not in available_list]
+    if unknown:
+        raise ApiError(
+            f"unknown source(s): {', '.join(unknown)}; supported sources: {', '.join(available_list)}",
+            backend="aggregate",
+            reason="bad-args",
+        )
+    return [name for name in available_list if name in wanted]
 
 
 def _native_id(row, backend: str):
@@ -66,7 +91,7 @@ def search(
     if limit < 1:
         raise ApiError("limit must be >= 1", backend="aggregate", reason="bad-args")
     routes = search_routes_for(entity_type)
-    selected = set(select_sources((route.backend for route in routes), source))
+    selected = set(_select_sources((route.backend for route in routes), source))
     selected_routes = [route for route in routes if route.backend in selected]
 
     def _make(route):
@@ -74,7 +99,7 @@ def search(
             _annotate_row(row, route.backend) for row in call_search_route(route, q, limit, config=config, **kw)
         ]
 
-    return fanout({route.backend: _make(route) for route in selected_routes})
+    return run_fanout([FanoutSource(route.backend, _make(route)) for route in selected_routes])
 
 
 def selftest() -> bool:

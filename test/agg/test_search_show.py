@@ -56,6 +56,19 @@ def _register_fixture_path_only(rsps: responses.RequestsMock, fixture: dict) -> 
 
 
 class TestAggregateSearch:
+    def test_native_id_falls_back_to_plain_id_for_unknown_backend(self):
+        from animedex.agg.search import _native_id
+
+        assert _native_id({"id": "mystery-1"}, "unknown") == "mystery-1"
+
+    def test_annotates_plain_dict_rows_without_known_prefix(self):
+        from animedex.agg.search import _annotate_row
+
+        row = _annotate_row({"id": "local-1", "title": "Local"}, "local")
+
+        assert row == {"id": "local-1", "title": "Local", "_source": "local"}
+        assert "_prefix_id" not in row
+
     def test_annotates_real_rich_rows_with_source_and_prefix_id(self, fake_clock):
         from animedex.agg.search import search
 

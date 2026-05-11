@@ -5,10 +5,11 @@ It owns prefix-encoded entity references, type-to-backend routing,
 and generic fan-out handling for partial source failures.
 """
 
+from animedex.agg._fanout import FanoutSource, run_fanout
 from animedex.agg.search import search
 from animedex.agg.show import show
 
-__all__ = ["search", "show"]
+__all__ = ["FanoutSource", "run_fanout", "search", "show"]
 
 
 def selftest() -> bool:
@@ -17,6 +18,7 @@ def selftest() -> bool:
     :return: ``True`` on success.
     :rtype: bool
     """
+    assert callable(run_fanout)
     assert callable(search)
     assert callable(show)
     return True

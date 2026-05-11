@@ -47,3 +47,17 @@ class TestTypeRoutes:
 
         assert route.function_name == "show"
         assert route.id_arg == "id"
+
+    def test_filter_rows_keeps_rows_when_query_is_empty(self):
+        from animedex.agg._type_routes import _filter_rows
+
+        rows = [{"title": "A"}, {"title": "B"}]
+
+        assert _filter_rows(rows, "") is rows
+
+    def test_filter_rows_matches_nested_list_values(self):
+        from animedex.agg._type_routes import _filter_rows
+
+        rows = [{"title": "No match", "aliases": ["Sousou no Frieren"]}, {"title": "Other", "aliases": []}]
+
+        assert _filter_rows(rows, "frieren") == [rows[0]]
