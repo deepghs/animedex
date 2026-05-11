@@ -14,7 +14,8 @@ from __future__ import annotations
 import io
 from typing import Any, Optional
 
-from animedex.models.anime import Anime
+from animedex.models.anime import AiringScheduleRow, Anime
+from animedex.models.aggregate import AggregateResult
 from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import AnimedexModel
 from animedex.models.trace import TraceHit, TraceQuota
@@ -295,6 +296,24 @@ def _format_trace_quota_tty(q: TraceQuota) -> str:
     return out.getvalue()
 
 
+def _format_airing_schedule_tty(row: AiringScheduleRow) -> str:
+    src = f"[src: {row.source.backend}]"
+    out = io.StringIO()
+    print(f"{row.title}  {src}", file=out)
+    if row.airing_at is not None:
+        print(f"  Airing:   {row.airing_at.isoformat()}", file=out)
+    detail = []
+    if row.weekday:
+        detail.append(row.weekday)
+    if row.local_time:
+        detail.append(row.local_time)
+    if detail:
+        print(f"  Schedule: {'  ·  '.join(detail)}", file=out)
+    if row.episode is not None:
+        print(f"  Episode:  {row.episode}", file=out)
+    return out.getvalue()
+
+
 def render_tty(model: AnimedexModel) -> str:
     """Render a model into the human-friendly TTY form.
 
@@ -309,6 +328,12 @@ def render_tty(model: AnimedexModel) -> str:
     :return: The TTY-friendly string.
     :rtype: str
     """
+    if isinstance(model, AggregateResult):
+        if not model.items:
+            return ""
+        return "\n\n".join(render_tty(item) if isinstance(item, AnimedexModel) else str(item) for item in model.items)
+    if isinstance(model, AiringScheduleRow):
+        return _format_airing_schedule_tty(model)
     if isinstance(model, Anime):
         return _format_anime_tty(model)
     if isinstance(model, Character):
@@ -334,7 +359,7 @@ def render_tty(model: AnimedexModel) -> str:
             common = model.to_common()
         except Exception:
             common = None
-        if isinstance(common, (Anime, Character, Staff, Studio)):
+        if isinstance(common, (Anime, AiringScheduleRow, Character, Staff, Studio)):
             return render_tty(common)
     # Generic fallback: dump JSON with whichever SourceTag we can find.
     # Rich dataclasses store the SourceTag on ``source_tag`` because

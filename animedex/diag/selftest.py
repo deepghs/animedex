@@ -73,10 +73,12 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.config.buildmeta",
     "animedex.config.profile",
     "animedex.entry",
+    "animedex.entry.aggregate",
     "animedex.entry.cli",
     "animedex.diag",
     "animedex.diag.selftest",
     "animedex.models",
+    "animedex.models.aggregate",
     "animedex.models.common",
     "animedex.models.anime",
     "animedex.models.manga",
@@ -106,6 +108,9 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.mcp",
     "animedex.mcp.tool_decorator",
     "animedex.mcp.register",
+    "animedex.agg",
+    "animedex.agg._fanout",
+    "animedex.agg.calendar",
     # the substrate API layer: animedex api raw passthrough. Each per-backend module
     # ships a selftest() that checks its signature; the dispatcher and
     # envelope have their own end-to-end smokes; the raw renderer's

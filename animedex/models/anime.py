@@ -114,6 +114,32 @@ class NextAiringEpisode(AnimedexModel):
     episode: int
 
 
+class AiringScheduleRow(AnimedexModel):
+    """Common projection for a single airing schedule row.
+
+    :ivar title: Display title of the airing series.
+    :vartype title: str
+    :ivar airing_at: Exact UTC airing instant when available.
+    :vartype airing_at: datetime.datetime or None
+    :ivar episode: Episode number when reported.
+    :vartype episode: int or None
+    :ivar weekday: Lowercase weekday name when the upstream only
+                   reports a weekly schedule.
+    :vartype weekday: str or None
+    :ivar local_time: Local clock time string from the upstream.
+    :vartype local_time: str or None
+    :ivar source: Provenance tag.
+    :vartype source: SourceTag
+    """
+
+    title: str
+    airing_at: Optional[datetime] = None
+    episode: Optional[int] = None
+    weekday: Optional[str] = None
+    local_time: Optional[str] = None
+    source: SourceTag
+
+
 class Anime(AnimedexModel):
     """An anime record as returned by any single backend.
 
@@ -290,4 +316,14 @@ def selftest() -> bool:
         source=src,
     )
     Anime.model_validate_json(a.model_dump_json())
+    AiringScheduleRow.model_validate_json(
+        AiringScheduleRow(
+            title="x",
+            airing_at=datetime.now(timezone.utc),
+            episode=1,
+            weekday="monday",
+            local_time="01:00",
+            source=src,
+        ).model_dump_json()
+    )
     return True

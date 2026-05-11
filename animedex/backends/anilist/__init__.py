@@ -84,6 +84,12 @@ def _gql(query: str, variables: Optional[Dict[str, Any]] = None, *, config: Opti
     # GraphQL JSON would fall into the mapper and surface as a
     # misleading ``not-found`` ("Media not found" when the server is
     # actually 5xx-ing).
+    if raw.status == 429:
+        raise ApiError(
+            "AniList 429",
+            backend="anilist",
+            reason="rate-limited",
+        )
     if raw.status >= 500:
         raise ApiError(
             f"AniList {raw.status}",
@@ -266,6 +272,8 @@ def airing_schedule(
     *,
     media_id: Optional[int] = None,
     not_yet_aired: Optional[bool] = None,
+    airing_at_greater: Optional[int] = None,
+    airing_at_lesser: Optional[int] = None,
     per_page: int = 10,
     config: Optional[Config] = None,
     **kw,
@@ -273,7 +281,13 @@ def airing_schedule(
     """Upcoming-episode schedule, optionally filtered."""
     payload, src = _gql(
         _q.Q_AIRING_SCHEDULE,
-        {"mediaId": media_id, "notYetAired": not_yet_aired, "perPage": min(per_page, 50)},
+        {
+            "mediaId": media_id,
+            "notYetAired": not_yet_aired,
+            "airingAtGreater": airing_at_greater,
+            "airingAtLesser": airing_at_lesser,
+            "perPage": min(per_page, 50),
+        },
         config=config,
         **kw,
     )

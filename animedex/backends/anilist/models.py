@@ -21,6 +21,7 @@ from datetime import date, datetime, timezone
 from typing import List, Optional
 
 from animedex.models.anime import (
+    AiringScheduleRow,
     Anime,
     AnimeRating,
     AnimeStreamingLink,
@@ -441,6 +442,15 @@ class AnilistAiringSchedule(BackendRichModel):
     media_id: Optional[int] = None
     media_title_romaji: Optional[str] = None
     source_tag: SourceTag
+
+    def to_common(self) -> AiringScheduleRow:
+        """Project onto the common airing schedule row."""
+        return AiringScheduleRow(
+            title=self.media_title_romaji or f"AniList media {self.media_id or self.id}",
+            airing_at=datetime.fromtimestamp(self.airingAt, tz=timezone.utc),
+            episode=self.episode,
+            source=self.source_tag,
+        )
 
 
 class AnilistReview(BackendRichModel):

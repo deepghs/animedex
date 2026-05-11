@@ -107,6 +107,8 @@ def cli() -> None:
 
 
 from animedex.entry.api import api_group as _api_group  # noqa: E402
+from animedex.entry.aggregate import schedule_command as _schedule_command  # noqa: E402
+from animedex.entry.aggregate import season_command as _season_command  # noqa: E402
 from animedex.entry.anilist import anilist_group as _anilist_group  # noqa: E402
 from animedex.entry.ann import ann_group as _ann_group  # noqa: E402
 from animedex.entry.danbooru import danbooru_group as _danbooru_group  # noqa: E402
@@ -133,6 +135,8 @@ cli.add_command(_quote_group)
 cli.add_command(_shikimori_group)
 cli.add_command(_trace_group)
 cli.add_command(_waifu_group)
+cli.add_command(_season_command)
+cli.add_command(_schedule_command)
 
 
 @cli.command(name="status")
@@ -164,7 +168,7 @@ def status_command() -> None:
     """
     click.echo(f"{__TITLE__} v{__VERSION__}")
     click.echo(
-        "Wired groups: anilist, ann, danbooru, ghibli, jikan, kitsu, mangadex, nekos, quote, shikimori, trace, waifu, api (raw passthrough)."
+        "Wired groups: season, schedule, anilist, ann, danbooru, ghibli, jikan, kitsu, mangadex, nekos, quote, shikimori, trace, waifu, api (raw passthrough)."
     )
     click.echo("Run 'animedex --help' for the full command tree.")
 

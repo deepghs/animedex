@@ -252,10 +252,16 @@ query ($mediaType: ExternalLinkMediaType, $type: ExternalLinkType) {
 
 
 Q_AIRING_SCHEDULE = """
-query ($mediaId: Int, $notYetAired: Boolean, $perPage: Int) {
+query ($mediaId: Int, $notYetAired: Boolean, $airingAtGreater: Int, $airingAtLesser: Int, $perPage: Int) {
   Page(page: 1, perPage: $perPage) {
     pageInfo { total hasNextPage }
-    airingSchedules(mediaId: $mediaId, notYetAired: $notYetAired, sort: TIME) {
+    airingSchedules(
+      mediaId: $mediaId,
+      notYetAired: $notYetAired,
+      airingAt_greater: $airingAtGreater,
+      airingAt_lesser: $airingAtLesser,
+      sort: TIME
+    ) {
       id airingAt episode timeUntilAiring
       media { id title { romaji english } }
     }

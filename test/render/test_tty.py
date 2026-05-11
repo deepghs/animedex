@@ -96,6 +96,23 @@ class TestRenderTtyFullFields:
         assert "Streaming:" in out and "X:" in out
 
 
+class TestRenderAiringScheduleRow:
+    def test_renders_schedule_row(self):
+        from animedex.models.anime import AiringScheduleRow
+        from animedex.render.tty import render_tty
+
+        row = AiringScheduleRow(
+            title="Shin Nippon History",
+            weekday="monday",
+            local_time="01:00",
+            source=SourceTag(backend="jikan", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+        )
+        out = render_tty(row)
+        assert "Shin Nippon History" in out
+        assert "[src: jikan]" in out
+        assert "Schedule: monday" in out
+
+
 class TestRenderTtyNonAnime:
     def test_falls_back_with_source_marker(self):
         from animedex.models.quote import Quote
