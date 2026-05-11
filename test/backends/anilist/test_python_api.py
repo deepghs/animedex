@@ -19,6 +19,7 @@ import yaml
 
 from animedex.backends import anilist as anilist_api
 from animedex.backends.anilist.models import (
+    AnilistAiringSchedule,
     AnilistAnime,
     AnilistCharacter,
     AnilistGenreCollection,
@@ -27,6 +28,7 @@ from animedex.backends.anilist.models import (
     AnilistStudio,
     AnilistUser,
 )
+from animedex.models.common import SourceTag
 
 
 pytestmark = pytest.mark.unittest
@@ -243,6 +245,25 @@ def test_anilist_api_round_trip(fixture_rel, fn, args, kwargs, expected, fake_cl
         assert type(result).__name__ == expected
     else:
         assert isinstance(result, expected)
+
+
+class TestAiringScheduleProjection:
+    def test_to_common_projects_to_airing_schedule_row(self):
+        row = AnilistAiringSchedule(
+            id=1,
+            airingAt=1778457600,
+            episode=3,
+            timeUntilAiring=0,
+            media_id=154587,
+            media_title_romaji="Sousou no Frieren",
+            source_tag=SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+        )
+
+        common = row.to_common()
+
+        assert common.title == "Sousou no Frieren"
+        assert common.episode == 3
+        assert common.source.backend == "anilist"
 
 
 # ---------- Auth-required stubs ----------

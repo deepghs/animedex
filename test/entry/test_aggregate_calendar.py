@@ -65,7 +65,19 @@ def _stdout(result) -> str:
 
 
 def _stderr(result) -> str:
-    return result.stderr if hasattr(result, "stderr") else result.output
+    try:
+        stderr = result.stderr
+    except (AttributeError, ValueError):
+        return result.output
+    return stderr or result.output
+
+
+def _json_payload(result) -> dict:
+    """Parse the JSON envelope even when older Click mixes stderr into output."""
+    for line in reversed(_stdout(result).splitlines()):
+        if line.startswith("{"):
+            return json.loads(line)
+    raise AssertionError(f"no JSON object found in output: {_stdout(result)!r}")
 
 
 def _register(rsps, *fixtures):
@@ -145,7 +157,7 @@ def test_season_json_aggregates_two_sources(runner, cli, fake_clock):
         result = runner.invoke(cli, ["season", "2024", "spring", "--limit", "3", "--json", "--no-cache"])
 
     assert result.exit_code == 0, result.output
-    payload = json.loads(_stdout(result))
+    payload = _json_payload(result)
     assert set(payload["sources"]) == {"anilist", "jikan"}
     assert payload["sources"]["anilist"]["status"] == "ok"
     assert payload["sources"]["jikan"]["items"] == 3
@@ -161,7 +173,7 @@ def test_season_source_allowlist_only_calls_jikan(runner, cli, fake_clock):
         )
 
     assert result.exit_code == 0, result.output
-    payload = json.loads(_stdout(result))
+    payload = _json_payload(result)
     assert set(payload["sources"]) == {"jikan"}
     assert payload["sources"]["jikan"]["items"] == 3
 
@@ -175,7 +187,7 @@ def test_schedule_json_aggregates_and_projects_rows(runner, cli, fake_clock, mon
         result = runner.invoke(cli, ["schedule", "--day", "monday", "--limit", "5", "--json", "--no-cache"])
 
     assert result.exit_code == 0, result.output
-    payload = json.loads(_stdout(result))
+    payload = _json_payload(result)
     assert set(payload["sources"]) == {"anilist", "jikan"}
     assert payload["sources"]["anilist"]["items"] == 5
     assert payload["sources"]["jikan"]["items"] == 5
@@ -211,7 +223,7 @@ def test_partial_failure_returns_success_with_stderr(runner, cli, fake_clock):
         result = runner.invoke(cli, ["season", "2024", "spring", "--limit", "3", "--json", "--no-cache"])
 
     assert result.exit_code == 0, result.output
-    payload = json.loads(_stdout(result))
+    payload = _json_payload(result)
     assert payload["sources"]["anilist"]["status"] == "failed"
     assert payload["sources"]["anilist"]["reason"] == "rate-limited"
     assert payload["sources"]["jikan"]["status"] == "ok"
@@ -236,7 +248,7 @@ def test_total_failure_exits_nonzero_with_empty_envelope(runner, cli, fake_clock
         result = runner.invoke(cli, ["season", "2024", "spring", "--limit", "3", "--json", "--no-cache"])
 
     assert result.exit_code == 1
-    payload = json.loads(_stdout(result))
+    payload = _json_payload(result)
     assert payload["items"] == []
     assert payload["sources"]["anilist"]["status"] == "failed"
     assert payload["sources"]["jikan"]["status"] == "failed"
@@ -258,3 +270,53 @@ def test_top_level_help_lists_aggregate_commands_without_policy_blocks(runner, c
     assert "List airing schedule rows across AniList and Jikan." in result.output
     assert "Examples:" in result.output
     assert "LLM Agent Guidance" not in result.output
+
+
+def test_invalid_aggregate_options_surface_click_errors(runner, cli):
+    result = runner.invoke(cli, ["season", "2024", "spring", "--source", "all,jikan"])
+    assert result.exit_code != 0
+    assert "--source all cannot be combined" in result.output
+
+    result = runner.invoke(cli, ["schedule", "--day", "noday"])
+    assert result.exit_code != 0
+    assert "Invalid value for '--day'" in result.output
+
+    result = runner.invoke(cli, ["season", "2024", "spring", "--limit", "0"])
+    assert result.exit_code != 0
+    assert "--limit must be >= 1" in result.output
+
+
+def test_jq_errors_are_wrapped(runner, cli, fake_clock):
+    with responses.RequestsMock(assert_all_requests_are_fired=True) as rsps:
+        _register(rsps, _jikan_season())
+        result = runner.invoke(
+            cli,
+            [
+                "season",
+                "2024",
+                "spring",
+                "--source",
+                "jikan",
+                "--limit",
+                "3",
+                "--json",
+                "--no-cache",
+                "--jq",
+                "{[broken",
+            ],
+        )
+
+    assert result.exit_code != 0
+    assert "jq" in result.output.lower()
+
+
+def test_schedule_bad_args_surface_click_error(runner, cli):
+    result = runner.invoke(cli, ["schedule", "--limit", "0"])
+    assert result.exit_code != 0
+    assert "--limit must be >= 1" in result.output
+
+
+def test_entry_selftest_runs():
+    import animedex.entry.aggregate as aggregate_entry
+
+    assert aggregate_entry.selftest() is True

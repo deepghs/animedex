@@ -112,6 +112,34 @@ class TestRenderAiringScheduleRow:
         assert "[src: jikan]" in out
         assert "Schedule: monday" in out
 
+    def test_renders_airing_instant_and_episode(self):
+        from animedex.models.anime import AiringScheduleRow
+        from animedex.render.tty import render_tty
+
+        row = AiringScheduleRow(
+            title="Exact Airing",
+            airing_at=datetime(2026, 5, 11, 1, tzinfo=timezone.utc),
+            episode=3,
+            source=SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+        )
+        out = render_tty(row)
+        assert "Airing:" in out
+        assert "Episode:  3" in out
+
+
+class TestRenderAggregateResult:
+    def test_empty_aggregate_renders_empty_string(self):
+        from animedex.models.aggregate import AggregateResult
+        from animedex.render.tty import render_tty
+
+        assert render_tty(AggregateResult()) == ""
+
+    def test_aggregate_renders_plain_non_model_items(self):
+        from animedex.models.aggregate import AggregateResult
+        from animedex.render.tty import render_tty
+
+        assert render_tty(AggregateResult(items=["plain"])) == "plain"
+
 
 class TestRenderTtyNonAnime:
     def test_falls_back_with_source_marker(self):
