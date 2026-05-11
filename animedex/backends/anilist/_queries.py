@@ -171,7 +171,8 @@ query ($year: Int, $season: MediaSeason, $perPage: Int) {
   Page(page: 1, perPage: $perPage) {
     pageInfo { total }
     media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
-      id title { romaji english } status format episodes season seasonYear
+      id idMal title { romaji english native } synonyms status format episodes season seasonYear
+      startDate { year month day } endDate { year month day }
       averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
     }
   }

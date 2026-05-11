@@ -1,0 +1,659 @@
+metadata:
+  captured_at: '2026-05-11T11:33:27Z'
+  label: 2016-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2016
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:27 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '26'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 21459
+          idMal: 31964
+          title:
+            romaji: Boku no Hero Academia
+            english: My Hero Academia
+            native: 僕のヒーローアカデミア
+          synonyms:
+          - BNHA
+          - MHA
+          - 나의 히어로 아카데미아 1기
+          - 나히아 1기
+          - אקדמיית הגיבורים שלי
+          - 我的英雄学院
+          - มายฮีโร่ อคาเดเมีย
+          - أكاديميتي للأبطال
+          - Η Δική Μου Ακαδημία Ηρώων
+          - Akademia bohaterów
+          - Моя геройская академия
+          - Hősakadémia
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 3
+          endDate:
+            year: 2016
+            month: 6
+            day: 26
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 21355
+          idMal: 31240
+          title:
+            romaji: Re:Zero kara Hajimeru Isekai Seikatsu
+            english: Re:ZERO -Starting Life in Another World-
+            native: Re:ゼロから始める異世界生活
+          synonyms:
+          - 'Re: Life in a different world from zero'
+          - ReZero
+          - Re Zero
+          - Re：从零开始的异世界生活
+          - Re:Zero รีเซทชีวิต ฝ่าวิกฤตต่างโลก
+          - Re:Zero — жизнь с нуля в другом мире
+          - Re:Zero Empezar de cero en un mundo diferente
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 4
+          endDate:
+            year: 2016
+            month: 9
+            day: 19
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 21311
+          idMal: 31478
+          title:
+            romaji: Bungou Stray Dogs
+            english: Bungo Stray Dogs
+            native: 文豪ストレイドッグス
+          synonyms:
+          - כלבי ספרות נודדים
+          - Văn hào lưu lạc
+          - คณะประพันธกรจรจัด
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 7
+          endDate:
+            year: 2016
+            month: 6
+            day: 23
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 21450
+          idMal: 31933
+          title:
+            romaji: 'JoJo no Kimyou na Bouken: Diamond wa Kudakenai'
+            english: 'JoJo''s Bizarre Adventure: Diamond is Unbreakable'
+            native: ジョジョの奇妙な冒険 ダイヤモンドは砕けない
+          synonyms:
+          - 'JoJo no Kimyou na Bouken Part 4: Diamond wa Kudakenai'
+          - 'JoJo''s Bizarre Adventure Part 4: Diamond is Unbreakable'
+          - 'مغامرات جوجو العجيبة: الألماس غير قابل للكسر'
+          - 'Le bizzarre avventure di JoJo: Diamond is Unbreakable'
+          - 'Невероятные приключения ДжоДжо: Diamond is Unbreakable'
+          status: FINISHED
+          format: TV
+          episodes: 39
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 2
+          endDate:
+            year: 2016
+            month: 12
+            day: 24
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 21421
+          idMal: 31798
+          title:
+            romaji: Kiznaiver
+            english: Kiznaiver
+            native: キズナイーバー
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 9
+          endDate:
+            year: 2016
+            month: 6
+            day: 25
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 21196
+          idMal: 28623
+          title:
+            romaji: Koutetsujou no Kabaneri
+            english: Kabaneri of the Iron Fortress
+            native: 甲鉄城のカバネリ
+          synonyms:
+          - Kabaneri de la Fortaleza de Hierro
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 8
+          endDate:
+            year: 2016
+            month: 7
+            day: 1
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 21595
+          idMal: 32542
+          title:
+            romaji: Sakamoto desu ga?
+            english: Haven't You Heard? I'm Sakamoto
+            native: 坂本ですが?
+          synonyms:
+          - Sakamoto, pour vous servir !
+          - เทพศาสตร์ซากาโมโต้
+          - Gak Pernah Dengar Nama Aku Sakamoto?
+          - Soy Sakamoto, ¿por?
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 8
+          endDate:
+            year: 2016
+            month: 7
+            day: 1
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21290
+          idMal: 31404
+          title:
+            romaji: Netoge no Yome wa Onnanoko ja Nai to Omotta?
+            english: And you thought there is never a girl online?
+            native: ネトゲの嫁は女の子じゃないと思った?
+          synonyms:
+          - ถามหน่อยครับ คิดว่าเจ้าสาวผมในเกมออนไลน์เป็นผู้หญิงจริงหรือเปล่า?
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 7
+          endDate:
+            year: 2016
+            month: 6
+            day: 23
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 21574
+          idMal: 32380
+          title:
+            romaji: 'Kono Subarashii Sekai ni Shukufuku wo!: Kono Subarashii Choker ni Shukufuku wo!'
+            english: 'KONOSUBA -God''s blessing on this wonderful world!: God''s Blessings On This Wonderful Choker!'
+            native: この素晴らしい世界に祝福を！ この素晴らしいチョーカーに祝福を!
+          synonyms:
+          - 'Konosuba - As Bençãos de Deus Neste Mundo Maravilhoso: As Bençãos de Deus Nesta Maravilhosa Gargantilha!'
+          - 'Konosuba ¡Bendito sea este mundo maravilloso!: ¡Bendita sea esta gargantilla maravillosa!'
+          - Konosuba OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 6
+            day: 24
+          endDate:
+            year: 2016
+            month: 6
+            day: 24
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 21495
+          idMal: 32093
+          title:
+            romaji: Tanaka-kun wa Itsumo Kedaruge
+            english: Tanaka-kun is Always Listless
+            native: 田中くんはいつもけだるげ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 9
+          endDate:
+            year: 2016
+            month: 6
+            day: 25
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 21499
+          idMal: 32105
+          title:
+            romaji: Sousei no Onmyouji
+            english: Twin Star Exorcists
+            native: 双星の陰陽師
+          synonyms:
+          - ทวิดารา มหาองเมียวจิ
+          status: FINISHED
+          format: TV
+          episodes: 50
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 6
+          endDate:
+            year: 2017
+            month: 3
+            day: 29
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 21394
+          idMal: 31741
+          title:
+            romaji: 'Magi: Sinbad no Bouken'
+            english: 'Magi: Adventure of Sinbad'
+            native: マギ シンドバッドの冒険
+          synonyms:
+          - 'מאגי: הרפתקאותיו של סינבד'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 16
+          endDate:
+            year: 2016
+            month: 7
+            day: 2
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 21390
+          idMal: 31737
+          title:
+            romaji: Gakusen Toshi Asterisk 2
+            english: The Asterisk War 2
+            native: 学戦都市アスタリスク 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 2
+          endDate:
+            year: 2016
+            month: 6
+            day: 18
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 21362
+          idMal: 31338
+          title:
+            romaji: Hundred
+            english: Hundred
+            native: ハンドレッド
+          synonyms:
+          - ฮันเดรด
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 5
+          endDate:
+            year: 2016
+            month: 6
+            day: 21
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 21284
+          idMal: 31376
+          title:
+            romaji: Flying Witch
+            english: Flying Witch
+            native: ふらいんぐうぃっち
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 10
+          endDate:
+            year: 2016
+            month: 6
+            day: 26
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 21296
+          idMal: 31245
+          title:
+            romaji: 'Zutto Mae kara Suki deshita.: Kokuhaku Jikkou Iinkai'
+            english: I've Always Liked You
+            native: ずっと前から好きでした。～告白実行委員会～
+          synonyms:
+          - 'Kokuhaku Jikkou Iinkai: Renai Series'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 23
+          endDate:
+            year: 2016
+            month: 4
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 21445
+          idMal: 31904
+          title:
+            romaji: Big Order
+            english: Big Order
+            native: ビッグオーダー
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 16
+          endDate:
+            year: 2016
+            month: 6
+            day: 18
+          averageScore: 48
+          nextAiringEpisode: null
+        - id: 21637
+          idMal: 32681
+          title:
+            romaji: Uchuu Patrol Luluco
+            english: Space Patrol Luluco
+            native: 宇宙パトロールルル子
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 13
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 1
+          endDate:
+            year: 2016
+            month: 6
+            day: 24
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21567
+          idMal: 32438
+          title:
+            romaji: Mayoiga
+            english: The Lost Village
+            native: 迷家-マヨイガ-
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 1
+          endDate:
+            year: 2016
+            month: 6
+            day: 17
+          averageScore: 50
+          nextAiringEpisode: null
+        - id: 21291
+          idMal: 31405
+          title:
+            romaji: Joker Game
+            english: Joker Game
+            native: ジョーカー・ゲーム
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 5
+          endDate:
+            year: 2016
+            month: 6
+            day: 21
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 21360
+          idMal: 31630
+          title:
+            romaji: 'Gyakuten Saiban: Sono "Shinjitsu", Igi Ari!'
+            english: Ace Attorney
+            native: 逆転裁判 その『真実』、異議あり！
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 2
+          endDate:
+            year: 2016
+            month: 9
+            day: 24
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 21586
+          idMal: 31378
+          title:
+            romaji: 'Owari no Seraph: Kyuuketsuki Shahal'
+            english: 'Seraph of the End: Kyuuketsuki Shahal'
+            native: 終わりのセラフ 吸血鬼シャハル
+          synonyms:
+          - 'Owari no Seraph: Jump Festa 2015 Special'
+          - 'Owari no Seraph: Vampire Shahar'
+          - Owari no Seraph OVA
+          - 終わりのセラフ ジャンプフェスタ2015
+          - เทวทูตแห่งโลกมืด OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 5
+            day: 2
+          endDate:
+            year: 2016
+            month: 5
+            day: 2
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 21691
+          idMal: 31327
+          title:
+            romaji: Shokugeki no Souma OVA
+            english: Food Wars! Shokugeki no Soma OVA
+            native: 食戟のソーマ OVA
+          synonyms:
+          - 'Food Wars! Shokugeki no Soma: Takumi''s Downtown Competition'
+          - 'Food Wars! Shokugeki no Soma: Erina''s Summer Vacation'
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 5
+            day: 2
+          endDate:
+            year: 2016
+            month: 7
+            day: 4
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 21516
+          idMal: 32245
+          title:
+            romaji: Kuromukuro
+            english: Kuromukuro
+            native: クロムクロ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 7
+          endDate:
+            year: 2016
+            month: 9
+            day: 29
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 21316
+          idMal: 31500
+          title:
+            romaji: High School Fleet
+            english: High School Fleet
+            native: ハイスクール・フリート
+          synonyms:
+          - Haifuri
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 4
+            day: 10
+          endDate:
+            year: 2016
+            month: 6
+            day: 26
+          averageScore: 70
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

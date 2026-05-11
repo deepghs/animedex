@@ -1,0 +1,643 @@
+metadata:
+  captured_at: '2026-05-11T11:33:02Z'
+  label: 2014-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2014
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:02 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '13'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 20447
+          idMal: 20507
+          title:
+            romaji: Noragami
+            english: Noragami
+            native: ノラガミ
+          synonyms:
+          - Stray God
+          - 野良神
+          - โนรางามิ เทวดาขาจร ภาค 1
+          - Бездомный бог
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 5
+          endDate:
+            year: 2014
+            month: 3
+            day: 23
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 18897
+          idMal: 18897
+          title:
+            romaji: Nisekoi
+            english: Nisekoi
+            native: ニセコイ
+          synonyms:
+          - 'Nisekoi: False Love'
+          - ' รักลวงป่วนใจ'
+          status: FINISHED
+          format: TV
+          episodes: 20
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 11
+          endDate:
+            year: 2014
+            month: 5
+            day: 24
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 18671
+          idMal: 18671
+          title:
+            romaji: Chuunibyou demo Koi ga Shitai! Ren
+            english: Love, Chunibyo & Other Delusions - Heart Throb -
+            native: 中二病でも恋がしたい！戀
+          synonyms:
+          - Chuunibyou demo Koi ga Shitai! 2
+          - ' Miłość, gimbaza i kosmiczna faza: Porywy serca'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 9
+          endDate:
+            year: 2014
+            month: 3
+            day: 27
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20483
+          idMal: 20541
+          title:
+            romaji: Mikakunin de Shinkoukei
+            english: Engaged to the Unidentified
+            native: 未確認で進行形
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 9
+          endDate:
+            year: 2014
+            month: 3
+            day: 27
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20057
+          idMal: 20057
+          title:
+            romaji: Space☆Dandy
+            english: Space Dandy
+            native: スペース☆ダンディ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 5
+          endDate:
+            year: 2014
+            month: 3
+            day: 27
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 20031
+          idMal: 20031
+          title:
+            romaji: D-Frag!
+            english: null
+            native: ディーふらぐ!
+          synonyms:
+          - D Frag
+          - D-Fragments!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 7
+          endDate:
+            year: 2014
+            month: 3
+            day: 25
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20503
+          idMal: 21085
+          title:
+            romaji: Witch Craft Works
+            english: Witch Craft Works
+            native: ウィッチクラフトワークス
+          synonyms:
+          - Witchcraft Works
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 5
+          endDate:
+            year: 2014
+            month: 3
+            day: 23
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20494
+          idMal: 20767
+          title:
+            romaji: Noragami OVA
+            english: Noragami OVA
+            native: ノラガミ OAD
+          synonyms:
+          - ノラガミ OVA
+          - Noragami OAD
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 2
+            day: 17
+          endDate:
+            year: 2014
+            month: 7
+            day: 17
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 20047
+          idMal: 20047
+          title:
+            romaji: Sakura Trick
+            english: Sakura Trick
+            native: 桜Trick
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 10
+          endDate:
+            year: 2014
+            month: 3
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 20521
+          idMal: 20689
+          title:
+            romaji: Hamatora THE ANIMATION
+            english: Hamatora
+            native: ハマトラ THE ANIMATION
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 8
+          endDate:
+            year: 2014
+            month: 3
+            day: 26
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 18139
+          idMal: 18139
+          title:
+            romaji: Tonari no Seki-kun
+            english: 'Tonari no Seki-kun: The Master of Killing Time'
+            native: となりの関くん
+          synonyms:
+          - My Neighbor Seki
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 21
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 6
+          endDate:
+            year: 2014
+            month: 5
+            day: 26
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20448
+          idMal: 20847
+          title:
+            romaji: Seitokai Yakuindomo＊
+            english: Seitokai Yakuindomo Season 2
+            native: 生徒会役員共＊
+          synonyms:
+          - 'Seitokai Yakuindomo Season 2 '
+          - Seitokai 2
+          - Seitokai Yakuindomo*
+          - SYD*
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 4
+          endDate:
+            year: 2014
+            month: 3
+            day: 30
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 19769
+          idMal: 19769
+          title:
+            romaji: Mahou Sensou
+            english: Magical Warfare
+            native: 魔法戦争
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 10
+          endDate:
+            year: 2014
+            month: 3
+            day: 28
+          averageScore: 54
+          nextAiringEpisode: null
+        - id: 18095
+          idMal: 18095
+          title:
+            romaji: Nourin
+            english: No-Rin
+            native: のうりん
+          synonyms:
+          - ไอดอลสาวชาวไร่
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 11
+          endDate:
+            year: 2014
+            month: 3
+            day: 29
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 19315
+          idMal: 19315
+          title:
+            romaji: Pupa
+            english: null
+            native: ピューパ
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 10
+          endDate:
+            year: 2014
+            month: 3
+            day: 28
+          averageScore: 27
+          nextAiringEpisode: null
+        - id: 17777
+          idMal: 17777
+          title:
+            romaji: Saikin, Imouto no Yousu ga Chotto Okashiinda ga.
+            english: Recently, My Sister Is Unusual
+            native: 最近、妹のようすがちょっとおかしいんだが。
+          synonyms:
+          - imocho
+          - imocyo
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 4
+          endDate:
+            year: 2014
+            month: 3
+            day: 23
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 20488
+          idMal: 20457
+          title:
+            romaji: Inari, Konkon, Koi Iroha.
+            english: Inari Kon Kon
+            native: いなり、こんこん、恋いろは。
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 16
+          endDate:
+            year: 2014
+            month: 3
+            day: 20
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 20496
+          idMal: 20973
+          title:
+            romaji: 'Sekai Seifuku: Bouryaku no Zvezda'
+            english: World Conquest Zvezda Plot
+            native: 世界征服～謀略のズヴィズダー～
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 12
+          endDate:
+            year: 2014
+            month: 3
+            day: 29
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 20526
+          idMal: 21329
+          title:
+            romaji: 'Mushishi: Hihamukage'
+            english: MUSHI-SHI OVA
+            native: 蟲師 特別篇「日蝕む翳」
+          synonyms:
+          - 'Mushi-shi Tokubetsu-hen: Hihamu Kage'
+          - 'MUSHI-SHI: The Shadow that Devours the Sun'
+          - 'MUSHI-SHI: L''ombre qui dévore le soleil'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 4
+          endDate:
+            year: 2014
+            month: 1
+            day: 4
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 15565
+          idMal: 15565
+          title:
+            romaji: Maken-Ki! Tsuu
+            english: Maken-Ki! Battling Venus 2
+            native: マケン姫っ！通
+          synonyms:
+          - Maken-Ki! Dai 2-ki
+          - Maken-Ki! 2
+          - Maken-Ki! Second Season
+          - Maken-Ki! 2nd Season
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 16
+          endDate:
+            year: 2014
+            month: 3
+            day: 20
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 19363
+          idMal: 19363
+          title:
+            romaji: Gin no Saji 2
+            english: Silver Spoon Season 2
+            native: 銀の匙 2
+          synonyms:
+          - Ginsaji 2
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 10
+          endDate:
+            year: 2014
+            month: 3
+            day: 27
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 20431
+          idMal: 20431
+          title:
+            romaji: Hoozuki no Reitetsu
+            english: Hozuki's Coolheadedness
+            native: 鬼灯の冷徹
+          synonyms:
+          - Hozuki no Reitetsu
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 10
+          endDate:
+            year: 2014
+            month: 4
+            day: 4
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20473
+          idMal: 20931
+          title:
+            romaji: Onee-chan ga Kita
+            english: Onee-chan ga Kita
+            native: お姉ちゃんが来た
+          synonyms:
+          - My Big Sister Arrived
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 1
+            day: 9
+          endDate:
+            year: 2014
+            month: 3
+            day: 27
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 20582
+          idMal: 21797
+          title:
+            romaji: Chuunibyou demo Koi ga Shitai! Ren Lite
+            english: Love, Chunibyo & Other Delusions - Heart Throb - Lite
+            native: 中二病でも恋がしたい！戀 Lite
+          synonyms: []
+          status: FINISHED
+          format: ONA
+          episodes: 6
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2013
+            month: 12
+            day: 25
+          endDate:
+            year: 2014
+            month: 3
+            day: 16
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 20831
+          idMal: 22839
+          title:
+            romaji: Cross Road
+            english: null
+            native: クロスロード
+          synonyms:
+          - Crossroad
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: WINTER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 2
+            day: 25
+          endDate:
+            year: 2014
+            month: 2
+            day: 25
+          averageScore: 69
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

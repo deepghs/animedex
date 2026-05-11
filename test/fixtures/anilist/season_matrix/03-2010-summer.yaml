@@ -1,0 +1,689 @@
+metadata:
+  captured_at: '2026-05-11T11:32:25Z'
+  label: 2010-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2010
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:24 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '27'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 8074
+          idMal: 8074
+          title:
+            romaji: 'Gakuen Mokushiroku: HIGHSCHOOL OF THE DEAD'
+            english: High School of the Dead
+            native: 学園黙示録HIGHSCHOOL OF THE DEAD
+          synonyms:
+          - HOTD
+          - HSOTD
+          - 'High School of the Dead: Apocalipsis en el Instituto'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 5
+          endDate:
+            year: 2010
+            month: 9
+            day: 20
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 7724
+          idMal: 7724
+          title:
+            romaji: Shiki
+            english: Shiki
+            native: 屍鬼
+          synonyms:
+          - Corpse Demon
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 9
+          endDate:
+            year: 2010
+            month: 12
+            day: 31
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 8675
+          idMal: 8675
+          title:
+            romaji: Seitokai Yakuindomo
+            english: Seitokai Yakuindomo
+            native: 生徒会役員共
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 4
+          endDate:
+            year: 2010
+            month: 9
+            day: 26
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 7711
+          idMal: 7711
+          title:
+            romaji: Karigurashi no Arrietty
+            english: The Secret World of Arrietty
+            native: 借りぐらしのアリエッティ
+          synonyms:
+          - Karigurashi no Arrietti
+          - The Borrower Arrietty
+          - 'Arrietty: Le Petit Monde des Chapardeurs'
+          - Arrietty y el Mundo de los Diminutos
+          - O Mundo dos Pequeninos
+          - Arrietty
+          - Tajemniczy świat Arrietty
+          - العالم السري لآريتي
+          - Arrietty - Die wundersame Welt der Borger
+          - Arriettas hemmelige verden
+          - Arrietty - Il mondo segreto sotto il pavimento
+          - Lånaren Arrietty
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 17
+          endDate:
+            year: 2010
+            month: 7
+            day: 17
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 6707
+          idMal: 6707
+          title:
+            romaji: Kuroshitsuji II
+            english: Black Butler II
+            native: 黒執事II
+          synonyms:
+          - Kuroshitsuji 2
+          - Black Butler 2
+          - คนลึกไขปริศนาลับ ภาค 2
+          - คนลึกไขปริศนาลับ II
+          - Hắc quản gia 2
+          - 黑执事 第2季
+          - 黑執事 第2季
+          - Hắc Quản Gia – Phần 2
+          - 흑집사 2기
+          - Diácono Negro temporada 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 2
+          endDate:
+            year: 2010
+            month: 9
+            day: 17
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 8676
+          idMal: 8676
+          title:
+            romaji: Amagami SS
+            english: Amagami SS
+            native: アマガミSS
+          synonyms:
+          - 圣诞之吻SS
+          - 아마가미 SS
+          - Амагами СС
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 2
+          endDate:
+            year: 2010
+            month: 12
+            day: 24
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 4901
+          idMal: 4901
+          title:
+            romaji: 'BLACK LAGOON: Roberta''s Blood Trail'
+            english: 'Black Lagoon: Roberta''s Blood Trail'
+            native: BLACK LAGOON Roberta's Blood Trail
+          synonyms:
+          - Black Lagoon 3
+          status: FINISHED
+          format: OVA
+          episodes: 5
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 6
+            day: 27
+          endDate:
+            year: 2011
+            month: 6
+            day: 22
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 8086
+          idMal: 8086
+          title:
+            romaji: Densetsu no Yuusha no Densetsu
+            english: The Legend of the Legendary Heroes
+            native: 伝説の勇者の伝説
+          synonyms:
+          - DenYuDen
+          - DenYuuDen
+          - Densetsu no Yusha no Densetsu
+          - LOLH
+          - 传说的勇者的传说
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 2
+          endDate:
+            year: 2010
+            month: 12
+            day: 17
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 8142
+          idMal: 8142
+          title:
+            romaji: Colorful
+            english: Colorful ~ The Motion Picture
+            native: カラフル
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 8
+            day: 21
+          endDate:
+            year: 2010
+            month: 8
+            day: 21
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 8246
+          idMal: 8246
+          title:
+            romaji: 'NARUTO: Shippuuden - The Lost Tower'
+            english: 'Naruto Shippuden the Movie: The Lost Tower'
+            native: 劇場版 NARUTO -ナルト- 疾風伝 ザ・ロストタワー
+          synonyms:
+          - Naruto Movie 7
+          - 'Gekijouban Naruto Shippuuden: The Lost Tower'
+          - 'Naruto Shippūden la película: La torre perdida'
+          - 'Naruto Shippuden Movie 04: La torre perduta'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 31
+          endDate:
+            year: 2010
+            month: 7
+            day: 31
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 7769
+          idMal: 7769
+          title:
+            romaji: Ookami-san to Shichinin no Nakama-tachi
+            english: Okami-san and Her Seven Companions
+            native: オオカミさんと七人の仲間たち
+          synonyms:
+          - Ookami-san to Shichinin no Nakamatachi
+          - Okamisan and Seven Companions
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 1
+          endDate:
+            year: 2010
+            month: 9
+            day: 16
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 7592
+          idMal: 7592
+          title:
+            romaji: Nurarihyon no Mago
+            english: 'Nura: Rise of the Yokai Clan'
+            native: ぬらりひょんの孫
+          synonyms:
+          - The Grandson of Nurarihyon
+          - Grandchild of Nurarihyon
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 6
+          endDate:
+            year: 2010
+            month: 12
+            day: 21
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 5277
+          idMal: 5277
+          title:
+            romaji: 'Sekirei: Pure Engagement'
+            english: null
+            native: セキレイ～Pure Engagement～
+          synonyms:
+          - Sekirei 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 6
+            day: 13
+          endDate:
+            year: 2010
+            month: 9
+            day: 26
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 6166
+          idMal: 6166
+          title:
+            romaji: Asobi ni Iku yo!
+            english: Cat Planet Cuties
+            native: あそびにいくヨ!
+          synonyms:
+          - Asobi ni Ikuyo!
+          - Let's Go Play!
+          - 'Asobi ni Ikuyo: Bombshells from the Sky'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 11
+          endDate:
+            year: 2010
+            month: 9
+            day: 26
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 8408
+          idMal: 8408
+          title:
+            romaji: Durarara!! Specials
+            english: null
+            native: デュラララ!!
+          synonyms:
+          - Durarara!! Episode 12.5
+          - Durarara!! Episode 25
+          - Dhurarara!!
+          - Dyurarara!!
+          status: FINISHED
+          format: SPECIAL
+          episodes: 2
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 8
+            day: 25
+          endDate:
+            year: 2011
+            month: 2
+            day: 23
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 7059
+          idMal: 7059
+          title:
+            romaji: Black★Rock Shooter (OVA)
+            english: null
+            native: ブラック★ロックシューター (OVA)
+          synonyms:
+          - BRS OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 24
+          endDate:
+            year: 2010
+            month: 7
+            day: 24
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 7627
+          idMal: 7627
+          title:
+            romaji: Mitsudomoe
+            english: null
+            native: みつどもえ
+          synonyms:
+          - Three Way Struggle
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 3
+          endDate:
+            year: 2010
+            month: 9
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 7695
+          idMal: 7695
+          title:
+            romaji: 'Pocket Monsters Diamond & Pearl: Genei no Hasha Zoroark'
+            english: 'Pokémon: Zoroark—Master of Illusions'
+            native: ポケットモンスター ダイヤモンド&パール 幻影の覇者 ゾロアーク
+          synonyms:
+          - 'Gekijouban Pocket Monsters Diamond and Pearl: Phantom Ruler Zoroark'
+          - Pokemon Movie 13
+          - 'Pokémon: Zoroark, Illusjonens mester'
+          - 'Pokémon: Zoroark, el maestro de ilusiones'
+          - 'Pokémon: Zoroark – Illuusioiden mestari'
+          - 'Pokémon: Zoroark, mistrz iluzji'
+          - 'Pokémon 13: Zoroark - Meester der Illusie'
+          - 'Pokémon Zororark: illusionernas mästare'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 10
+          endDate:
+            year: 2010
+            month: 7
+            day: 10
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 10298
+          idMal: 10298
+          title:
+            romaji: 'Kaichou wa Maid-sama!: Goshujin-sama to Asonjao♥'
+            english: Maid-Sama! LaLa Special
+            native: 会長はメイド様! ご主人様と遊んじゃお♥
+          synonyms:
+          - Kaichou wa Maid-sama LaLa Special
+          - Kaicho wa Maidsama LaLa Special
+          - Kaichou wa Meido Sama LaLa Special
+          - Class President is a Maid! LaLa Special
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 24
+          endDate:
+            year: 2010
+            month: 7
+            day: 24
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 6974
+          idMal: 6974
+          title:
+            romaji: Seikimatsu Occult Gakuin
+            english: Occult Academy
+            native: 世紀末オカルト学院
+          synonyms:
+          - Zaidanhoujin Occult Designer Gakuin
+          - Seikimatsu Occult Academy
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 6
+          endDate:
+            year: 2010
+            month: 9
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 6381
+          idMal: 6381
+          title:
+            romaji: Strike Witches 2
+            english: Strike Witches 2
+            native: ストライクウィッチーズ 2
+          synonyms:
+          - 强袭魔女2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 8
+          endDate:
+            year: 2010
+            month: 9
+            day: 23
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 8577
+          idMal: 8577
+          title:
+            romaji: 'Aki-Sora: Yume no Naka'
+            english: Aki Sora
+            native: あきそら～夢の中～
+          synonyms:
+          - 'Akisora: Yume no Naka'
+          - 'Aki-Sora: In a Dream'
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 30
+          endDate:
+            year: 2010
+            month: 11
+            day: 17
+          averageScore: 54
+          nextAiringEpisode: null
+        - id: 8768
+          idMal: 8768
+          title:
+            romaji: Hiyokoi
+            english: null
+            native: ひよ恋
+          synonyms: []
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 30
+          endDate:
+            year: 2010
+            month: 7
+            day: 30
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 10659
+          idMal: 10659
+          title:
+            romaji: 'NARUTO: Soyokazeden - Naruto to Mashin to Mitsu no Onegai Dattebayo!!'
+            english: null
+            native: 劇場版 NARUTO -ナルト- そよかぜ伝 ナルトと魔神と3つのお願いだってばよ!!
+          synonyms:
+          - 'Gekijouban Naruto Soyokazeden: Naruto to Mashin to Mitsu no Onegai Dattebayo!!'
+          - 'Naruto: Gentle Breeze Chronicles the Film: Naruto'
+          - the Genie
+          - and the Three Wishes Dattebayo!!
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 31
+          endDate:
+            year: 2010
+            month: 7
+            day: 31
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 9063
+          idMal: 9063
+          title:
+            romaji: 'Toaru Kagaku no Railgun: Entenka no Satsuei Model mo Raku ja Arimasen wa ne.'
+            english: null
+            native: とある科学の超電磁砲 炎天下の撮影モデルも楽じゃありませんわね.
+          synonyms:
+          - Toaru Beach no Tokuten Eizo
+          - Toaru Kagaku no Railgun Episode 13
+          - A Certain Scientific Railgun Episode 13
+          - 'A Certain Scientific Railgun: Being a Photo Shoot Model Under the Blazing Sun Isn''t Easy, Is It?'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 7
+            day: 24
+          endDate:
+            year: 2010
+            month: 7
+            day: 24
+          averageScore: 64
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,656 @@
+metadata:
+  captured_at: '2026-05-11T11:33:25Z'
+  label: 2016-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2016
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:24 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '27'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 21234
+          idMal: 31043
+          title:
+            romaji: Boku dake ga Inai Machi
+            english: ERASED
+            native: 僕だけがいない街
+          synonyms:
+          - Bokumachi
+          - Desaparecido
+          - Miasto beze mnie
+          - รีไววัล ย้อนอดีตไขปริศนา
+          - ย้อนอดีตไขปริศนา
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 8
+          endDate:
+            year: 2016
+            month: 3
+            day: 25
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 21202
+          idMal: 30831
+          title:
+            romaji: Kono Subarashii Sekai ni Shukufuku wo!
+            english: KONOSUBA -God's blessing on this wonderful world!
+            native: この素晴らしい世界に祝福を！
+          synonyms:
+          - Konosuba
+          - Kono Subarashii Sekai ni Syukufuku wo!
+          - Konosuba - As Bençãos de Deus Neste Mundo Maravilhoso
+          - 为美好的世界献上祝福！
+          - ขอให้โชคดีมีชัยในโลกแฟนตาซี!
+          - 'Konosuba : Sois béni monde merveilleux !'
+          - Да благословят боги сей расчудесный мир!
+          - 'Konosuba: Un mundo maravilloso!'
+          - ' Konosuba: ¡Bendito sea este maravilloso mundo!'
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 14
+          endDate:
+            year: 2016
+            month: 3
+            day: 17
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 21170
+          idMal: 30654
+          title:
+            romaji: Ansatsu Kyoushitsu 2nd Season
+            english: Assassination Classroom Second Season
+            native: 暗殺教室 第２期
+          synonyms:
+          - فصل الاغتيال 2
+          - Klasa skrytobójców 2
+          - Assassination Classroom Season 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 8
+          endDate:
+            year: 2016
+            month: 7
+            day: 1
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 21428
+          idMal: 31859
+          title:
+            romaji: Hai to Gensou no Grimgar
+            english: Grimgar of Fantasy and Ash
+            native: 灰と幻想のグリムガル
+          synonyms:
+          - Grimgar
+          - '  Ashes and Illusions'
+          - ขี้เถ้าในกริมการ์แดนมายา
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 11
+          endDate:
+            year: 2016
+            month: 3
+            day: 28
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 9260
+          idMal: 9260
+          title:
+            romaji: 'Kizumonogatari I: Tekketsu-hen'
+            english: 'Kizumonogatari Part 1: Tekketsu'
+            native: 傷物語〈Ⅰ鉄血篇〉
+          synonyms:
+          - 'Wound Tale 1: Iron Blood'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 8
+          endDate:
+            year: 2016
+            month: 1
+            day: 8
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 21306
+          idMal: 31442
+          title:
+            romaji: Musaigen no Phantom World
+            english: Myriad Colors Phantom World
+            native: 無彩限のファントム・ワールド
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 7
+          endDate:
+            year: 2016
+            month: 3
+            day: 31
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 21364
+          idMal: 31637
+          title:
+            romaji: 'GATE: Jieitai Kanochi nite, Kaku Tatakaeri Part 2'
+            english: Gate 2
+            native: GATE 自衛隊 彼の地にて、斯く戦えり 第2クール
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 9
+          endDate:
+            year: 2016
+            month: 3
+            day: 26
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21341
+          idMal: 31580
+          title:
+            romaji: Ajin
+            english: 'AJIN: Demi-Human'
+            native: 亜人
+          synonyms:
+          - 'AJIN: Semihumano'
+          - อาจิน สายพันธุ์อมนุษย์
+          - 'أجين: أنصاف البشر'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 16
+          endDate:
+            year: 2016
+            month: 4
+            day: 9
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 21365
+          idMal: 31636
+          title:
+            romaji: Dagashi Kashi
+            english: null
+            native: だがしかし
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 8
+          endDate:
+            year: 2016
+            month: 4
+            day: 1
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 21188
+          idMal: 30749
+          title:
+            romaji: Saijaku Muhai no Bahamut
+            english: Undefeated Bahamut Chronicle
+            native: 最弱無敗の神装機竜《バハムート》
+          synonyms:
+          - บาฮามุท มังกรเหล็กไร้พ่าย
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 11
+          endDate:
+            year: 2016
+            month: 3
+            day: 28
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 21258
+          idMal: 31173
+          title:
+            romaji: Akagami no Shirayuki-hime 2nd Season
+            english: Snow White with the Red Hair Season 2
+            native: 赤髪の白雪姫 2ndシーズン
+          synonyms:
+          - สโนว์ไวท์ผมแดง ภาค 2
+          - Die rothaarige Schneeprinzessin 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 12
+          endDate:
+            year: 2016
+            month: 3
+            day: 29
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 21520
+          idMal: 32268
+          title:
+            romaji: Koyomimonogatari
+            english: Koyomimonogatari
+            native: 暦物語
+          synonyms:
+          - Calendar Tale
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 9
+          endDate:
+            year: 2016
+            month: 3
+            day: 27
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 21096
+          idMal: 30346
+          title:
+            romaji: Doukyuusei
+            english: Doukyuusei -Classmates-
+            native: 同級生
+          synonyms:
+          - Classmates
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 2
+            day: 20
+          endDate:
+            year: 2016
+            month: 2
+            day: 20
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 20972
+          idMal: 28735
+          title:
+            romaji: Shouwa Genroku Rakugo Shinjuu
+            english: Showa Genroku Rakugo Shinju
+            native: 昭和元禄落語心中
+          synonyms:
+          - 'Descending Stories: Showa Genroku Rakugo Shinju'
+          - Le Rakugo ou la vie
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 9
+          endDate:
+            year: 2016
+            month: 4
+            day: 2
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 20880
+          idMal: 27833
+          title:
+            romaji: Durarara!!x2 Ketsu
+            english: Durarara!! X2 The Third Arc
+            native: デュラララ!!×２ 結
+          synonyms:
+          - DRRR!! 2 Ketsu
+          - דורארארה!!2x סיום
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 9
+          endDate:
+            year: 2016
+            month: 3
+            day: 26
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 21416
+          idMal: 31772
+          title:
+            romaji: One Punch Man OVA
+            english: One-Punch Man OVA
+            native: ワンパンマン OVA
+          synonyms: []
+          status: FINISHED
+          format: OVA
+          episodes: 6
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2015
+            month: 12
+            day: 24
+          endDate:
+            year: 2016
+            month: 5
+            day: 27
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21256
+          idMal: 31163
+          title:
+            romaji: Dimension W
+            english: Dimension W
+            native: ディメンション ダブリュー
+          synonyms:
+          - มิติปริศนา
+          - Измерение W
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 10
+          endDate:
+            year: 2016
+            month: 3
+            day: 27
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 21339
+          idMal: 31553
+          title:
+            romaji: 'Charlotte: Tsuyoimono-tachi'
+            english: 'Charlotte: Strong People'
+            native: Charlotte 強い者たち
+          synonyms:
+          - Charlotte(シャーロット)TV未放送エピソード特別篇
+          - Charlotte TV mi Housou Episode Tokubetsu-hen
+          - Charlotte Special
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 3
+            day: 30
+          endDate:
+            year: 2016
+            month: 3
+            day: 30
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21292
+          idMal: 31414
+          title:
+            romaji: Nijiiro Days
+            english: Rainbow Days
+            native: 虹色デイズ
+          synonyms:
+          - Niji-iro Days
+          - Beztroskie dni
+          - รักสุดใจคนวัยซ่า
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 24
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 10
+          endDate:
+            year: 2016
+            month: 6
+            day: 26
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 21472
+          idMal: 32013
+          title:
+            romaji: Oshiete! Galko-chan
+            english: Please tell me! Galko-chan
+            native: おしえて！ ギャル子ちゃん
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 8
+          endDate:
+            year: 2016
+            month: 3
+            day: 25
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 21565
+          idMal: 32485
+          title:
+            romaji: 'Prison School: Mad Wax'
+            english: null
+            native: 監獄学園[プリズンスクール] マッドワックス
+          synonyms:
+          - 'Kangoku Gakuen: Mad Wax'
+          - Kangoku Gakuen OVA
+          - Prison School OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 3
+            day: 4
+          endDate:
+            year: 2016
+            month: 3
+            day: 4
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 21330
+          idMal: 31559
+          title:
+            romaji: 'Prince of Stride: Alternative'
+            english: 'Prince of Stride: Alternative'
+            native: プリンス・オブ・ストライド オルタナティブ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 5
+          endDate:
+            year: 2016
+            month: 3
+            day: 22
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 21577
+          idMal: 32491
+          title:
+            romaji: 'Kanojo to Kanojo no Neko: Everything Flows'
+            english: She and Her Cat -Everything Flows-
+            native: 彼女と彼女の猫 -Everything Flows-
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 4
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 3
+            day: 4
+          endDate:
+            year: 2016
+            month: 3
+            day: 25
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 21380
+          idMal: 31710
+          title:
+            romaji: Divine Gate
+            english: Divine Gate
+            native: ディバインゲート
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 8
+          endDate:
+            year: 2016
+            month: 3
+            day: 25
+          averageScore: 50
+          nextAiringEpisode: null
+        - id: 21319
+          idMal: 28391
+          title:
+            romaji: Ao no Kanata no Four Rhythm
+            english: 'AOKANA: Four Rhythm Across the Blue'
+            native: 蒼の彼方のフォーリズム
+          synonyms:
+          - AoKana
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 1
+            day: 12
+          endDate:
+            year: 2016
+            month: 3
+            day: 29
+          averageScore: 63
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

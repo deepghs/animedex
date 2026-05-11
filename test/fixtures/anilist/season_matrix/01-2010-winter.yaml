@@ -1,0 +1,658 @@
+metadata:
+  captured_at: '2026-05-11T11:32:19Z'
+  label: 2010-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2010
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:19 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '29'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 6746
+          idMal: 6746
+          title:
+            romaji: Durarara!!
+            english: Durarara!!
+            native: デュラララ!!
+          synonyms:
+          - DRRR!!
+          - דורארארה!!
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 8
+          endDate:
+            year: 2010
+            month: 6
+            day: 25
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 7311
+          idMal: 7311
+          title:
+            romaji: Suzumiya Haruhi no Shoushitsu
+            english: The Disappearance of Haruhi Suzumiya
+            native: 涼宮ハルヒの消失
+          synonyms:
+          - 스즈미야 하루히의 소실
+          - La Disparition de Haruhi Suzumiya
+          - La Scomparsa di Haruhi Suzumiya
+          - 'Исчезновение Харухи Судзумии '
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 2
+            day: 6
+          endDate:
+            year: 2010
+            month: 2
+            day: 6
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 6594
+          idMal: 6594
+          title:
+            romaji: Katanagatari
+            english: Katanagatari
+            native: 刀語
+          synonyms:
+          - Sword Story
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 26
+          endDate:
+            year: 2010
+            month: 12
+            day: 11
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 6347
+          idMal: 6347
+          title:
+            romaji: Baka to Test to Shoukanjuu
+            english: Baka and Test - Summon the Beasts
+            native: バカとテストと召喚獣
+          synonyms:
+          - The Idiot
+          - the Tests
+          - and the Summoned Creatures
+          - Baka to Test to Shokanju
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 7
+          endDate:
+            year: 2010
+            month: 4
+            day: 1
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 6500
+          idMal: 6500
+          title:
+            romaji: Seikon no Qwaser
+            english: The Qwaser of Stigmata
+            native: 聖痕のクェイサー
+          synonyms:
+          - Seikon no Quasar
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 10
+          endDate:
+            year: 2010
+            month: 6
+            day: 20
+          averageScore: 55
+          nextAiringEpisode: null
+        - id: 6922
+          idMal: 6922
+          title:
+            romaji: 'Fate/stay night Movie: UNLIMITED BLADE WORKS'
+            english: 'Fate/stay night: Unlimited Blade Works (Movie)'
+            native: 劇場版 Fate/stay night UNLIMITED BLADE WORKS
+          synonyms:
+          - 'Gekijouban Fate/Stay Night: Unlimited Blade Works'
+          - Fate/stay night UBW
+          - 'Судaьба/Ночь схватки: Бесконечный мир клинков'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 23
+          endDate:
+            year: 2010
+            month: 1
+            day: 23
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 6862
+          idMal: 6862
+          title:
+            romaji: 'K-ON!: Live House!'
+            english: 'K-ON!: Live House!'
+            native: けいおん!「ライブハウス！」
+          synonyms:
+          - K-On! OVA
+          - Keion OVA
+          - K-On! Episode 14
+          - Keion OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 19
+          endDate:
+            year: 2010
+            month: 1
+            day: 19
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 6802
+          idMal: 6802
+          title:
+            romaji: So Ra No Wo To
+            english: Sound of the Sky
+            native: ソ・ラ・ノ・ヲ・ト
+          synonyms:
+          - Sora no Oto
+          - Soranowoto
+          - Sora no Woto
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 5
+          endDate:
+            year: 2010
+            month: 3
+            day: 23
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 7148
+          idMal: 7148
+          title:
+            romaji: Ladies versus Butlers!
+            english: Ladies Versus Butlers
+            native: れでぃ×ばと!
+          synonyms:
+          - Ladies vs. Butlers!
+          - Redei x Bato
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 5
+          endDate:
+            year: 2010
+            month: 3
+            day: 23
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 7338
+          idMal: 7338
+          title:
+            romaji: 'DARKER THAN BLACK: Kuro no Keiyakusha - Gaiden'
+            english: 'Darker than Black: Origins'
+            native: DARKER THAN BLACK -黒の契約者- 外伝
+          synonyms:
+          - 'Darker than BLACK: Origin'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 4
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 27
+          endDate:
+            year: 2010
+            month: 7
+            day: 21
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 6324
+          idMal: 6324
+          title:
+            romaji: Omamori Himari
+            english: Omamori Himari
+            native: おまもりひまり
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 7
+          endDate:
+            year: 2010
+            month: 3
+            day: 25
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 6747
+          idMal: 6747
+          title:
+            romaji: Dance in the Vampire Bund
+            english: Dance in the Vampire Bund
+            native: ダンスインザヴァンパイアバンド
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 7
+          endDate:
+            year: 2010
+            month: 4
+            day: 1
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 6336
+          idMal: 6336
+          title:
+            romaji: Kidou Senshi Gundam UC
+            english: Mobile Suit Gundam UC
+            native: 機動戦士ガンダムUC
+          synonyms:
+          - Kidou Senshi Gundam Unicorn
+          - Mobile Suit Gundam Unicorn
+          status: FINISHED
+          format: OVA
+          episodes: 7
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 2
+            day: 20
+          endDate:
+            year: 2014
+            month: 5
+            day: 17
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 6574
+          idMal: 6574
+          title:
+            romaji: Hanamaru Youchien
+            english: Hanamaru Kindergarten
+            native: はなまる幼稚園
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 10
+          endDate:
+            year: 2010
+            month: 3
+            day: 28
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 5690
+          idMal: 5690
+          title:
+            romaji: Nodame Cantabile Finale
+            english: null
+            native: のだめカンタービレ フィナーレ
+          synonyms:
+          - Nodame Cantabile Third Season
+          - Nodame Cantabile Season 3
+          - 'Nodame Cantabile: Finale'
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 15
+          endDate:
+            year: 2010
+            month: 3
+            day: 26
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 6951
+          idMal: 6951
+          title:
+            romaji: 'Yu☆Gi☆Oh!: Chou Yuugou! Toki wo Koeta Kizuna'
+            english: 'Yu-Gi-Oh! 3D: Bonds Beyond Time'
+            native: 劇場版 遊☆戯☆王 ～超融合! 時空を越えた絆～
+          synonyms:
+          - Yugioh
+          - 'Yu-Gi-Oh! The Movie: Ultra Fusion! Bonds Over Time and Space'
+          - Yu-Gi-Oh! 10th Anniversary Special
+          - 10th Anniversary Gekijouban
+          - 'Yu-Gi-Oh!: Vínculos Além do Tempo'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 23
+          endDate:
+            year: 2010
+            month: 1
+            day: 23
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 8023
+          idMal: 8023
+          title:
+            romaji: 'Toaru Kagaku no Railgun: Motto Marutto Railgun'
+            english: null
+            native: とある科学の超電磁砲 もっとまるっと超電磁砲
+          synonyms:
+          - Toaru Kagaku no Railgun MMR
+          - A Certain Scientific Railgun Specials
+          status: FINISHED
+          format: SPECIAL
+          episodes: 2
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 29
+          endDate:
+            year: 2010
+            month: 5
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 7645
+          idMal: 7645
+          title:
+            romaji: Heartcatch Precure!
+            english: Heartcatch Precure!
+            native: ハートキャッチプリキュア!
+          synonyms:
+          - Heartcatch Pretty Cure!
+          status: FINISHED
+          format: TV
+          episodes: 49
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 2
+            day: 7
+          endDate:
+            year: 2011
+            month: 1
+            day: 30
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 7079
+          idMal: 7079
+          title:
+            romaji: Ookami Kakushi
+            english: Okamikakushi ~ Masque of the Wolf
+            native: おおかみかくし
+          synonyms:
+          - Ookamikakushi
+          - Wolfed Away
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 8
+          endDate:
+            year: 2010
+            month: 3
+            day: 26
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 6645
+          idMal: 6645
+          title:
+            romaji: Chuu Bra!!
+            english: 'Chu-Bra!: Panty Appreciation Society'
+            native: ちゅーぶら!!
+          synonyms:
+          - Chu-Bra!!
+          - Chubra!!
+          - Chuubra!!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 4
+          endDate:
+            year: 2010
+            month: 3
+            day: 22
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 7062
+          idMal: 7062
+          title:
+            romaji: Hidamari Sketch x ☆☆☆
+            english: Hidamari Sketch x Hoshimittsu
+            native: ひだまりスケッチ x ☆☆☆
+          synonyms:
+          - Hidamari Sketch S3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 8
+          endDate:
+            year: 2010
+            month: 3
+            day: 26
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 4985
+          idMal: 4985
+          title:
+            romaji: 'Mahou Shoujo Lyrical Nanoha: The MOVIE 1st'
+            english: 'Magical Girl Lyrical Nanoha: The Movie 1st'
+            native: 魔法少女リリカルなのは The MOVIE 1st
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 1
+            day: 23
+          endDate:
+            year: 2010
+            month: 1
+            day: 23
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 8115
+          idMal: 8115
+          title:
+            romaji: Uchuu Show e Youkoso
+            english: Welcome to THE SPACE SHOW
+            native: 宇宙ショーへようこそ
+          synonyms:
+          - Uchu Show e Youkoso
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 2
+            day: 18
+          endDate:
+            year: 2010
+            month: 2
+            day: 18
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 9213
+          idMal: 9213
+          title:
+            romaji: Kowarekake no Orgel
+            english: null
+            native: こわれかけのオルゴール
+          synonyms:
+          - Kowarekake no Orgol
+          - Half-Broken Music Box
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2009
+            month: 12
+            day: 31
+          endDate:
+            year: 2009
+            month: 12
+            day: 31
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 7762
+          idMal: 7762
+          title:
+            romaji: Yondemasu yo, Azazel-san.
+            english: null
+            native: よんでますよ、アザゼルさん。
+          synonyms: []
+          status: FINISHED
+          format: OVA
+          episodes: 4
+          season: WINTER
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 2
+            day: 23
+          endDate:
+            year: 2014
+            month: 6
+            day: 23
+          averageScore: 73
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

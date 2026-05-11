@@ -118,11 +118,13 @@ def season_command(
     anonymous, Jikan 60 req/min and 3 req/sec.
 
     --- LLM Agent Guidance ---
-    Use this command for a multi-source seasonal anime list. It does
-    not deduplicate across sources; duplicate titles are expected and
-    source attribution is the contract. Partial backend failure keeps
-    successful rows on stdout, writes one stderr line per failed
-    source, and exits non-zero only when every selected source failed.
+    Use this command for a multi-source seasonal anime list. The
+    aggregate path merges likely identical AniList and Jikan records
+    using shared ids plus title and broadcast metadata; single-source
+    records remain visible with their source attribution. Partial
+    backend failure keeps successful rows on stdout, writes one
+    stderr line per failed source, and exits non-zero only when every
+    selected source failed.
     --- End ---
     """
     cfg = _config(no_cache, cache_ttl, rate, no_source)
@@ -155,13 +157,21 @@ def season_command(
 )
 @click.option("--source", default="all", show_default=True, help="Comma-separated allowlist: all, anilist, jikan.")
 @click.option("--limit", default=25, type=int, show_default=True, help="Per-source row limit.")
+@click.option(
+    "--timezone",
+    "timezone_name",
+    default="local",
+    show_default=True,
+    help="Display/query timezone: local, UTC, IANA name, or offset like +08:00.",
+)
 @_common_options
 @click.pass_context
-def schedule_command(ctx, day, source, limit, json_flag, jq_expr, no_cache, cache_ttl, rate, no_source):
+def schedule_command(ctx, day, source, limit, timezone_name, json_flag, jq_expr, no_cache, cache_ttl, rate, no_source):
     """List airing schedule rows across AniList and Jikan.
 
-    ``--day all`` covers the local seven-day window starting today.
-    Weekday names resolve to the next local occurrence of that day.
+    ``--day all`` covers the selected timezone's seven-day window
+    starting today. Weekday names resolve to the next occurrence of
+    that day in the selected timezone.
 
     \b
     Docs:
@@ -171,7 +181,7 @@ def schedule_command(ctx, day, source, limit, json_flag, jq_expr, no_cache, cach
     \b
     Examples:
       animedex schedule
-      animedex schedule --day monday --source jikan
+      animedex schedule --day monday --timezone Asia/Tokyo --source jikan
       animedex schedule --day today --jq '.items[:3]'
     \f
 
@@ -182,10 +192,11 @@ def schedule_command(ctx, day, source, limit, json_flag, jq_expr, no_cache, cach
 
     --- LLM Agent Guidance ---
     Use this command for currently airing schedule rows. The JSON path
-    preserves the aggregate envelope; the TTY path renders successful
-    rows compactly. Empty days are successful results with ``items:
-    []`` when the selected sources answered. Partial failure reports
-    failed sources on stderr and exits non-zero only when all selected
+    preserves the structured aggregate envelope; the TTY path groups
+    successful rows into a calendar-style view using the selected
+    timezone. Empty days are successful results with ``items: []``
+    when the selected sources answered. Partial failure reports failed
+    sources on stderr and exits non-zero only when all selected
     sources failed.
     --- End ---
     """
@@ -195,6 +206,7 @@ def schedule_command(ctx, day, source, limit, json_flag, jq_expr, no_cache, cach
             day=day,
             source=source,
             limit=limit,
+            timezone_name=timezone_name,
             config=cfg,
             no_cache=no_cache,
             cache_ttl=cache_ttl,

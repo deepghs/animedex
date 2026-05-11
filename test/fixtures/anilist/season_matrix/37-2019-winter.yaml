@@ -1,0 +1,669 @@
+metadata:
+  captured_at: '2026-05-11T11:34:01Z'
+  label: 2019-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2019
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:01 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '15'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 101759
+          idMal: 37779
+          title:
+            romaji: Yakusoku no Neverland
+            english: The Promised Neverland
+            native: 約束のネバーランド
+          synonyms:
+          - YakuNeba
+          - TPN
+          - نيفرلاند الموعودة
+          - 约定的梦幻岛
+          - พันธสัญญาเนเวอร์แลนด์
+          - 約定的夢幻島
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 10
+          endDate:
+            year: 2019
+            month: 3
+            day: 29
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 101921
+          idMal: 37999
+          title:
+            romaji: 'Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen'
+            english: 'Kaguya-sama: Love is War'
+            native: かぐや様は告らせたい～天才たちの恋愛頭脳戦～
+          synonyms:
+          - 'Kaguya Wants to be Confessed To: The Geniuses'' War of Love and Brains'
+          - קאגויה סאמה
+          - 辉夜大小姐想让我告白～天才们的恋爱头脑战～
+          - 辉夜姬想让人告白
+          - 辉夜姬想让人告白～天才们的恋爱头脑战～
+          - 辉告
+          - 'Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen'
+          - 'Kaguya-sama : L''Amour est une guerre'
+          - สารภาพรักกับคุณคางุยะซะดีๆ ~สงครามประสาทความรักของเหล่าอัจฉริยะ~
+          - 'Госпожа Кагуя: В любви как на войне'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 12
+          endDate:
+            year: 2019
+            month: 3
+            day: 30
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 99263
+          idMal: 35790
+          title:
+            romaji: Tate no Yuusha no Nariagari
+            english: The Rising of the Shield Hero
+            native: 盾の勇者の成り上がり
+          synonyms:
+          - 盾之勇者成名录
+          - ผู้กล้าโล่ผงาด
+          - Восхождение героя щита
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 9
+          endDate:
+            year: 2019
+            month: 6
+            day: 26
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 101338
+          idMal: 37510
+          title:
+            romaji: Mob Psycho 100 II
+            english: Mob Psycho 100 II
+            native: モブサイコ100 II
+          synonyms:
+          - Mob Psycho Hyaku
+          - ม็อบไซโค 100 คนพลังจิต ภาค 2
+          - Моб Психо 100 II
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 7
+          endDate:
+            year: 2019
+            month: 4
+            day: 1
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 101347
+          idMal: 37520
+          title:
+            romaji: Dororo
+            english: Dororo
+            native: どろろ
+          synonyms:
+          - Дороро
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 7
+          endDate:
+            year: 2019
+            month: 6
+            day: 24
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 103572
+          idMal: 38101
+          title:
+            romaji: Go-toubun no Hanayome
+            english: The Quintessential Quintuplets
+            native: 五等分の花嫁
+          synonyms:
+          - 5-toubun no Hanayome
+          - The Five Wedded Brides
+          - เจ้าสาวผมเป็นแฝดห้า
+          - 五等分的新娘
+          - Eşsiz Beşizler
+          - Sposób na pięcioraczki
+          - Пять невест
+          - Квинтэссенция пяти близнецов
+          - Las Quintillizas
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 11
+          endDate:
+            year: 2019
+            month: 3
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 100876
+          idMal: 37086
+          title:
+            romaji: Kakegurui ××
+            english: Kakegurui xx
+            native: 賭ケグルイ××
+          synonyms:
+          - Kakegurui - Compulsive Gambler 2
+          - โคตรเซียนโรงเรียนพนัน  ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 9
+          endDate:
+            year: 2019
+            month: 3
+            day: 27
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 103139
+          idMal: 37982
+          title:
+            romaji: Domestic na Kanojo
+            english: Domestic Girlfriend
+            native: ドメスティックな彼女
+          synonyms:
+          - DomeKano
+          - บทเรียนรักเส้นทางหัวใจ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 12
+          endDate:
+            year: 2019
+            month: 3
+            day: 30
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 21718
+          idMal: 33049
+          title:
+            romaji: Fate/stay night [Heaven's Feel] II. lost butterfly
+            english: Fate/stay night [Heaven's Feel] II. lost butterfly
+            native: Fate/stay night[Heaven's Feel] ⅠⅠ.lost butterfly
+          synonyms:
+          - Fate/HF II
+          - 'Судьба/Ночь схватки: Прикосновение небес 2'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 12
+          endDate:
+            year: 2019
+            month: 1
+            day: 12
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 100722
+          idMal: 36633
+          title:
+            romaji: Date A Live III
+            english: Date A Live III
+            native: デート・ア・ライブⅢ
+          synonyms:
+          - Date a Live 3rd Season
+          - Date a Live 3
+          - DAL 3
+          - พิชิตรัก พิทักษ์โลก ภาค 3
+          - Рандеву с Жизнью 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 11
+          endDate:
+            year: 2019
+            month: 3
+            day: 29
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 97880
+          idMal: 34437
+          title:
+            romaji: 'Code Geass: Fukkatsu no Lelouch'
+            english: 'Code Geass: Lelouch of the Re;surrection'
+            native: コードギアス 復活のルルーシュ
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 2
+            day: 9
+          endDate:
+            year: 2019
+            month: 2
+            day: 9
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 100878
+          idMal: 37055
+          title:
+            romaji: Youjo Senki Movie
+            english: Saga of Tanya the Evil - the Movie -
+            native: 劇場版 幼女戦記
+          synonyms:
+          - Колдунья в погонах. Фильм
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 2
+            day: 8
+          endDate:
+            year: 2019
+            month: 2
+            day: 8
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 100815
+          idMal: 36999
+          title:
+            romaji: Zoku Owarimonogatari
+            english: Zoku Owarimonogatari
+            native: 続・終物語
+          synonyms:
+          - Continued End Tale
+          status: FINISHED
+          format: OVA
+          episodes: 6
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 2
+            day: 27
+          endDate:
+            year: 2019
+            month: 3
+            day: 27
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 101283
+          idMal: 37451
+          title:
+            romaji: Boogiepop wa Warawanai
+            english: Boogiepop and Others
+            native: ブギーポップは笑わない
+          synonyms:
+          - Boogiepop wa Warawanai (2019)
+          status: FINISHED
+          format: TV
+          episodes: 18
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 4
+          endDate:
+            year: 2019
+            month: 3
+            day: 29
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 101166
+          idMal: 37348
+          title:
+            romaji: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka: Orion no Ya'
+            english: 'Is It Wrong to Try to Pick Up Girls in a Dungeon?: Arrow of the Orion'
+            native: ダンジョンに出会いを求めるのは間違っているだろうか ─ オリオンの矢 ─
+          synonyms:
+          - 'DanMachi: Arrow of the Orion'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 2
+            day: 15
+          endDate:
+            year: 2019
+            month: 2
+            day: 15
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 102680
+          idMal: 37993
+          title:
+            romaji: Watashi ni Tenshi ga Maiorita!
+            english: 'WATATEN!: an Angel Flew Down to Me'
+            native: 私に天使が舞い降りた！
+          synonyms:
+          - Wataten
+          - An Angel Swooped Down on Me!
+          - นางฟ้าตัวน้อยได้ลงมาโปรดฉันค่ะ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 8
+          endDate:
+            year: 2019
+            month: 3
+            day: 26
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 103874
+          idMal: 38145
+          title:
+            romaji: Doukyonin wa Hiza, Tokidoki, Atama no Ue.
+            english: My Roommate is a Cat
+            native: 同居人はひざ、時々、頭のうえ。
+          synonyms:
+          - Hizaue
+          - นายท่านอยู่บนตักหรือบางทีอยู่บนหัวเรา
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 9
+          endDate:
+            year: 2019
+            month: 3
+            day: 27
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 102882
+          idMal: 37956
+          title:
+            romaji: '3D Kanojo: Real Girl 2'
+            english: Real Girl 2
+            native: 3D彼女 リアルガール 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 9
+          endDate:
+            year: 2019
+            month: 3
+            day: 27
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 101344
+          idMal: 37515
+          title:
+            romaji: 'Made in Abyss: Hourou Suru Tasogare'
+            english: 'Made in Abyss: Wandering Twilight'
+            native: メイドインアビス 放浪する黄昏
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 18
+          endDate:
+            year: 2019
+            month: 1
+            day: 18
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 105893
+          idMal: 38699
+          title:
+            romaji: 'Boku no Hero Academia THE MOVIE: Futari no Hero Specials'
+            english: 'My Hero Academia the Movie: Two Heroes Specials'
+            native: 僕のヒーローアカデミア THE MOVIE 〜2人の英雄〜 特典
+          synonyms:
+          - 'All Might: Rising The Animation'
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 2
+            day: 13
+          endDate:
+            year: 2019
+            month: 2
+            day: 13
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 101343
+          idMal: 37514
+          title:
+            romaji: 'Made in Abyss: Tabidachi no Yoake'
+            english: 'Made in Abyss: Journey''s Dawn'
+            native: メイドインアビス 旅立ちの夜明け
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 4
+          endDate:
+            year: 2019
+            month: 1
+            day: 4
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 101773
+          idMal: 37920
+          title:
+            romaji: Ueno-san wa Bukiyou
+            english: How clumsy you are, Miss Ueno.
+            native: 上野さんは不器用
+          synonyms:
+          - '笨拙之极的上野 '
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 7
+          endDate:
+            year: 2019
+            month: 3
+            day: 25
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 21322
+          idMal: 31537
+          title:
+            romaji: Manaria Friends
+            english: Mysteria Friends
+            native: マナリアフレンズ
+          synonyms:
+          - 'Shingeki no Bahamut: Manaria Friends'
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 10
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 21
+          endDate:
+            year: 2019
+            month: 3
+            day: 25
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 104174
+          idMal: 37492
+          title:
+            romaji: 'Steins;Gate 0: Kesshou Takei no Valentine - Bittersweet Day'
+            english: 'Steins;Gate 0: Valentine''s of Crystal Polymorphism -Bittersweet Intermedio-'
+            native: シュタインズ・ゲート ゼロ 結晶多形のバレンタイン
+          synonyms:
+          - Steins;Gate 0 Special
+          - 'San Valentín de polimorfismo de cristal: Intermedio agridulce'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2018
+            month: 12
+            day: 21
+          endDate:
+            year: 2018
+            month: 12
+            day: 21
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 100523
+          idMal: 36792
+          title:
+            romaji: Eromanga Sensei OVA
+            english: null
+            native: エロマンガ先生 OVA
+          synonyms:
+          - Ero Manga Sensei
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: WINTER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 1
+            day: 16
+          endDate:
+            year: 2019
+            month: 1
+            day: 16
+          averageScore: 66
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

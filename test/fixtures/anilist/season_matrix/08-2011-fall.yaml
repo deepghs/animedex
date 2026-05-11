@@ -1,0 +1,668 @@
+metadata:
+  captured_at: '2026-05-11T11:32:38Z'
+  label: 2011-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2011
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:37 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '22'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 11061
+          idMal: 11061
+          title:
+            romaji: HUNTER×HUNTER (2011)
+            english: Hunter x Hunter (2011)
+            native: HUNTER×HUNTER (2011)
+          synonyms:
+          - ハンター×ハンター
+          - HxH
+          - 全职猎人
+          - האנטר האנטר
+          - ฮันเตอร์ x ฮันเตอร์
+          - 'القناص '
+          - Мисливець X Мисливець
+          status: FINISHED
+          format: TV
+          episodes: 148
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 2
+          endDate:
+            year: 2014
+            month: 9
+            day: 24
+          averageScore: 89
+          nextAiringEpisode: null
+        - id: 10620
+          idMal: 10620
+          title:
+            romaji: Mirai Nikki
+            english: The Future Diary
+            native: 未来日記
+          synonyms:
+          - 未来日记
+          - יומן העתיד
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 9
+          endDate:
+            year: 2012
+            month: 4
+            day: 15
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 10087
+          idMal: 10087
+          title:
+            romaji: Fate/Zero
+            english: Fate/Zero
+            native: Fate/Zero
+          synonyms:
+          - フェイト/ゼロ
+          - F/Z
+          - القدر/زيرو
+          - פייט/זירו
+          - Судьба/Начало
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 2
+          endDate:
+            year: 2011
+            month: 12
+            day: 25
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 10793
+          idMal: 10793
+          title:
+            romaji: Guilty Crown
+            english: Guilty Crown
+            native: ギルティクラウン
+          synonyms:
+          - المُلك المُدان
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 14
+          endDate:
+            year: 2012
+            month: 3
+            day: 23
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 10719
+          idMal: 10719
+          title:
+            romaji: Boku wa Tomodachi ga Sukunai
+            english: Haganai
+            native: 僕は友達が少ない
+          synonyms:
+          - I Don't Have Many Friends
+          - Boku ha Tomodachi ga Sukunai
+          - 我的朋友很少
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 7
+          endDate:
+            year: 2011
+            month: 12
+            day: 23
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 10800
+          idMal: 10800
+          title:
+            romaji: Chihayafuru
+            english: Chihayafuru
+            native: ちはやふる
+          synonyms:
+          - Chihayafull
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 5
+          endDate:
+            year: 2012
+            month: 3
+            day: 28
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 9617
+          idMal: 9617
+          title:
+            romaji: K-ON! Movie
+            english: 'K-ON!: The Movie'
+            native: 映画けいおん！
+          synonyms:
+          - Eiga K-On!
+          - Keion Movie
+          - K on Movie
+          - Film K-On!
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 12
+            day: 3
+          endDate:
+            year: 2011
+            month: 12
+            day: 3
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 10396
+          idMal: 10396
+          title:
+            romaji: Ben-To
+            english: Ben-To
+            native: ベン・トー
+          synonyms:
+          - Bento
+          - Ben-Tou
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 9
+          endDate:
+            year: 2011
+            month: 12
+            day: 25
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 9936
+          idMal: 9936
+          title:
+            romaji: Maken-Ki!
+            english: Maken-Ki! Battling Venus
+            native: マケン姫っ！
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 5
+          endDate:
+            year: 2011
+            month: 12
+            day: 21
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 10030
+          idMal: 10030
+          title:
+            romaji: Bakuman. 2
+            english: null
+            native: バクマン。2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 1
+          endDate:
+            year: 2012
+            month: 3
+            day: 24
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 10213
+          idMal: 10213
+          title:
+            romaji: Maji de Watashi ni Koi Shinasai!
+            english: 'Majikoi: Oh! Samurai Girls'
+            native: 真剣で私に恋しなさい！
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 2
+          endDate:
+            year: 2011
+            month: 12
+            day: 18
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 10588
+          idMal: 10588
+          title:
+            romaji: Persona 4 the Animation
+            english: Persona 4 the Animation
+            native: ペルソナ4アニメーション
+          synonyms:
+          - P4A
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 7
+          endDate:
+            year: 2012
+            month: 3
+            day: 30
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 10521
+          idMal: 10521
+          title:
+            romaji: WORKING'!!
+            english: Wagnaria!!2
+            native: WORKING'!!
+          synonyms:
+          - ワーキング’!!
+          - Working!! 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 1
+          endDate:
+            year: 2011
+            month: 12
+            day: 24
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 6773
+          idMal: 6773
+          title:
+            romaji: Shakugan no Shana III (Final)
+            english: 'Shakugan no Shana: Season III'
+            native: 灼眼のシャナIII (Final)
+          synonyms:
+          - Shakugan no Shana Third
+          - Shakugan no Shana 3
+          - Shakugan no Shana Final
+          - 'ชานะ นักรบเนตรอัคคี ภาคที่ 3 '
+          - Hoả nhãn của Shana 3
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 8
+          endDate:
+            year: 2012
+            month: 3
+            day: 24
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 10456
+          idMal: 10456
+          title:
+            romaji: Kyoukaisenjou no Horizon
+            english: Horizon in the Middle of Nowhere
+            native: 境界線上のホライゾン
+          synonyms:
+          - Horizon on the Middle of Nowhere
+          - Kyoukai Senjou no Horizon
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 2
+          endDate:
+            year: 2011
+            month: 12
+            day: 25
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 10460
+          idMal: 10460
+          title:
+            romaji: Kimi to Boku.
+            english: You and Me.
+            native: 君と僕。
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 4
+          endDate:
+            year: 2011
+            month: 12
+            day: 27
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 10578
+          idMal: 10578
+          title:
+            romaji: C³
+            english: C3
+            native: シーキューブ
+          synonyms:
+          - C Cube
+          - C^3
+          - C³ - CubexCursedxCurious
+          - C3 Anime
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 1
+          endDate:
+            year: 2011
+            month: 12
+            day: 17
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 12565
+          idMal: 12565
+          title:
+            romaji: Fate/Prototype
+            english: null
+            native: Fate/Prototype
+          synonyms:
+          - フェイト/プロトタイプ
+          - Судьба/Прототип
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 12
+            day: 31
+          endDate:
+            year: 2011
+            month: 12
+            day: 31
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 10798
+          idMal: 10798
+          title:
+            romaji: UN-GO
+            english: UN-GO
+            native: UN-GO アン ゴ
+          synonyms:
+          - Un Go
+          - Ungo
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 14
+          endDate:
+            year: 2011
+            month: 12
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 12231
+          idMal: 12231
+          title:
+            romaji: 'Dragon Ball: Episode of Bardock'
+            english: 'Dragon Ball: Episode of Bardock'
+            native: ドラゴンボール エピソード オブ バーダック
+          synonyms:
+          - 'Драконий жемчуг: Эпизод Бардока'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 12
+            day: 17
+          endDate:
+            year: 2011
+            month: 12
+            day: 17
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 10397
+          idMal: 10397
+          title:
+            romaji: 'Mashiroiro Symphony: The color of lovers'
+            english: Mashiroiro Symphony
+            native: ましろ色シンフォニー -The color of lovers-
+          synonyms:
+          - 'Mashiroiro Symphony: Love Is Pure White'
+          - Mashiro-iro Symphony
+          - Pure White Symphony
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 5
+          endDate:
+            year: 2011
+            month: 12
+            day: 21
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 10897
+          idMal: 10897
+          title:
+            romaji: 'Boku wa Tomodachi ga Sukunai Episode 0: Yaminabe wa Bishoujo ga Zannen na Nioi'
+            english: 'Haganai: Episode 0'
+            native: 僕は友達が少ない 第0語 闇鍋は美少女が残念な臭い(;´∀`)
+          synonyms:
+          - Boku wa Tomodachi ga Sukunai OVA
+          - Haganai OVA
+          - I Don't Have Many Friends OVA
+          - Boku ha Tomodachi ga Sukunai OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 9
+            day: 22
+          endDate:
+            year: 2011
+            month: 9
+            day: 22
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 11266
+          idMal: 11266
+          title:
+            romaji: 'Ao no Exorcist: Kuro no Iede'
+            english: 'Blue Exorcist: Runaway Kuro'
+            native: 青の祓魔師 クロの家出
+          synonyms:
+          - Ao no Exorcist Special
+          - 'Ao no Futsumashi: Kuro no Iede'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 26
+          endDate:
+            year: 2011
+            month: 10
+            day: 26
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 10418
+          idMal: 10418
+          title:
+            romaji: 'Deadman Wonderland: Akai Knife Tsukai'
+            english: 'Deadman Wonderland: The Red Knife Wielder'
+            native: デッドマン・ワンダーランド 赤いナイフ使い
+          synonyms:
+          - Deadman Wonderland OAD
+          - Deadman Wonderland OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 10
+            day: 8
+          endDate:
+            year: 2011
+            month: 10
+            day: 8
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 10378
+          idMal: 10378
+          title:
+            romaji: Shinryaku!? Ika Musume
+            english: Squid Girl 2
+            native: 侵略!?イカ娘
+          synonyms:
+          - The Invader Comes From the Bottom of the Sea!
+          - Shinryaku! Ika Musume 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 9
+            day: 27
+          endDate:
+            year: 2011
+            month: 12
+            day: 25
+          averageScore: 73
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

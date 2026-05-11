@@ -1,0 +1,689 @@
+metadata:
+  captured_at: '2026-05-11T11:35:04Z'
+  label: 2024-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2024
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:35:04 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '14'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 162804
+          idMal: 54744
+          title:
+            romaji: Tokidoki Bosotto Russiago de Dereru Tonari no Alya-san
+            english: Alya Sometimes Hides Her Feelings in Russian
+            native: 時々ボソッとロシア語でデレる隣のアーリャさん
+          synonyms:
+          - Roshidere
+          - ロシデレ
+          - 'คุณอาเรียโต๊ะข้างๆพูดรัสเซียหวานใส่ซะหัวใจจะวาย '
+          - Иногда Аля внезапно кокетничает по-русски
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 3
+          endDate:
+            year: 2024
+            month: 9
+            day: 18
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 166531
+          idMal: 55791
+          title:
+            romaji: '[Oshi no Ko] 2nd Season'
+            english: Oshi no Ko Season 2
+            native: 【推しの子】第2期
+          synonyms:
+          - 我推的孩子
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 3
+          endDate:
+            year: 2024
+            month: 10
+            day: 6
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 174576
+          idMal: 58059
+          title:
+            romaji: Tsue to Tsurugi no Wistoria
+            english: 'Wistoria: Wand and Sword'
+            native: 杖と剣のウィストリア
+          synonyms:
+          - 杖與劍的魔劍譚
+          - ตำนานดาบและคทาแห่งวิสตอเรีย
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 7
+          endDate:
+            year: 2024
+            month: 9
+            day: 29
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 171457
+          idMal: 57524
+          title:
+            romaji: Make Heroine ga Oosugiru!
+            english: 'Makeine: Too Many Losing Heroines!'
+            native: 負けヒロインが多すぎる！
+          synonyms:
+          - Toooooo Many Losing Heroines
+          - マケイン
+          - รักครั้งนี้มีคนนกเยอะไปมั้ย!
+          - Makeine
+          - 敗北女角太多了！
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 14
+          endDate:
+            year: 2024
+            month: 9
+            day: 29
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 153406
+          idMal: 52635
+          title:
+            romaji: 'Kami no Tou: Tower of God 2nd Season'
+            english: Tower of God Season 2
+            native: 神之塔 -Tower of God- 第2期
+          synonyms:
+          - タワーオブ・ゴッド 2
+          - Sinui Tap 2
+          - TOG 2
+          - 신의 탑 2
+          - 'Tower of God Season 2: Return of the Prince'
+          - 神之塔 -Tower of God- 王子の帰還
+          - 'Kami no Tou: Tower of God - Ouji no Kikan'
+          - 神之塔 -Tower of God- 工房戦
+          - 'Kami no Tou: Tower of God - Koubou-sen'
+          - 'Tower of God Season 2: Workshop Battle'
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 7
+          endDate:
+            year: 2024
+            month: 12
+            day: 29
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 175977
+          idMal: 58426
+          title:
+            romaji: Shikanoko Nokonoko Koshitantan
+            english: My Deer Friend Nokotan
+            native: しかのこのこのここしたんたん
+          synonyms:
+          - Minha Amiga Nokotan é um Cervo
+          - Mi Amiga Nokotan es un Ciervo
+          - 鹿乃子乃子虎视眈眈
+          - Nokotan in Cerva di Amici
+          - Моя подруга-олениха Нокотан
+          - Shikanoko i dziwne zdarzenia w klubie jelenia
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 3
+          endDate:
+            year: 2024
+            month: 9
+            day: 18
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 152137
+          idMal: 52367
+          title:
+            romaji: Isekai Shikkaku
+            english: No Longer Allowed in Another World
+            native: 異世界失格
+          synonyms:
+          - No Longer Human…In Another World
+          - Disqualified from Another World
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 9
+          endDate:
+            year: 2024
+            month: 9
+            day: 24
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 173694
+          idMal: 57892
+          title:
+            romaji: Hazure Waku no [Joutai Ijou Skill] de Saikyou ni Natta Ore ga Subete wo Juurin Suru made
+            english: 'Failure Frame: I Became the Strongest and Annihilated Everything with Low-Level Spells'
+            native: ハズレ枠の【状態異常スキル】で最強になった俺がすべてを蹂躙するまで
+          synonyms:
+          - Hazurewaku
+          - Dengan Bingkai Status Sampah "Skill Abnormal" Aku Menjadi Terkuat dan Akan Menghabisi Semuanya
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 5
+          endDate:
+            year: 2024
+            month: 9
+            day: 27
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 163623
+          idMal: 54968
+          title:
+            romaji: Giji Harem
+            english: Pseudo Harem
+            native: 疑似ハーレム
+          synonyms:
+          - ฮาเร็มนี้มีแต่เธอ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 5
+          endDate:
+            year: 2024
+            month: 9
+            day: 20
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 162896
+          idMal: 54724
+          title:
+            romaji: Nige Jouzu no Wakagimi
+            english: The Elusive Samurai
+            native: 逃げ上手の若君
+          synonyms:
+          - Nigewaka
+          - นายน้อยจอมโกยก้าวสู่เส้นทางแห่งวีรบุรุษ
+          - Héroe fugitivo
+          - Беглый самурай
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 6
+          endDate:
+            year: 2024
+            month: 9
+            day: 28
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 170695
+          idMal: 57058
+          title:
+            romaji: 'Ore wa Subete wo [Parry] Suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai'
+            english: I Parry Everything
+            native: 俺は全てを【パリイ】する ～逆勘違いの世界最強は冒険者になりたい～
+          synonyms:
+          - 'I Parry Everything: What Do You Mean I''m the Strongest? I''m Not Even an Adventurer Yet!'
+          - I Parry Everything to Become the Greatest Adventure!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 5
+          endDate:
+            year: 2024
+            month: 9
+            day: 20
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 152681
+          idMal: 52481
+          title:
+            romaji: Gimai Seikatsu
+            english: Days with My Stepsister
+            native: 義妹生活
+          synonyms:
+          - แง้มหัวใจยัยน้องสาวจำเป็น
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 4
+          endDate:
+            year: 2024
+            month: 9
+            day: 19
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 163292
+          idMal: 54913
+          title:
+            romaji: Shinmai Ossan Bouken-sha, Saikyou Party ni Shinu Hodo Kitaerarete Muteki ni Naru.
+            english: The Ossan Newbie Adventurer, Trained to Death by the Most Powerful Party, Became Invincible
+            native: 新米オッサン冒険者、最強パーティに死ぬほど鍛えられて無敵になる。
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 2
+          endDate:
+            year: 2024
+            month: 9
+            day: 24
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 133845
+          idMal: 48896
+          title:
+            romaji: 'Overlord: Sei Oukoku-hen'
+            english: 'OVERLORD: The Sacred Kingdom'
+            native: オーバーロード 聖王国編
+          synonyms:
+          - Overlord Movie 3
+          - 'Overlord: Holy Kingdom Arc'
+          - โอเวอร์ลอร์ด บทนครศักดิ์สิทธิ์
+          - 'Overlord: The Paladin of the Sacred Kingdom Arc'
+          - 'Overlord: O Reino Sagrado'
+          - 'Overlord: El Reino Sagrado'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 9
+            day: 20
+          endDate:
+            year: 2024
+            month: 9
+            day: 20
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 166710
+          idMal: 55848
+          title:
+            romaji: Isekai Suicide Squad
+            english: Suicide Squad ISEKAI
+            native: 異世界スーサイド・スクワッド
+          synonyms:
+          - 'Legion samobójców: Isekai'
+          - 異世界自殺突擊隊
+          - " Esquadrão Suicida: Isekai\t"
+          - 'Az Öngyilkos osztag: Iszekai'
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 6
+            day: 27
+          endDate:
+            year: 2024
+            month: 8
+            day: 15
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 158559
+          idMal: 53802
+          title:
+            romaji: 2.5 Jigen no Ririsa
+            english: 2.5 Dimensional Seduction
+            native: 2.5次元の誘惑
+          synonyms:
+          - 2.5 Jigen no Yuuwaku
+          - 2.5 มิติ ริริสะ
+          - Ririsa of 2.5 Dimension
+          - にごリリ
+          - Nigoriri
+          - Ririsa, uma Garota em 2.5D
+          - Ririsa, una chica en 2.5D
+          - 2.5 Seducción Dimensional
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 5
+          endDate:
+            year: 2024
+            month: 12
+            day: 13
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 173295
+          idMal: 57810
+          title:
+            romaji: Shoushimin Series
+            english: 'SHOSHIMIN: How to Become Ordinary'
+            native: 小市民シリーズ
+          synonyms:
+          - 小市民系列
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 7
+          endDate:
+            year: 2024
+            month: 9
+            day: 15
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 139095
+          idMal: 49785
+          title:
+            romaji: 'FAIRY TAIL: 100 YEARS QUEST'
+            english: FAIRY TAIL 100 YEARS QUEST
+            native: FAIRY TAIL 100 YEARS QUEST
+          synonyms:
+          - フェアリーテイル
+          - FAIRY TAIL 100年クエスト
+          - 'FAIRY TAIL: 100-nen Quest'
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 7
+          endDate:
+            year: 2025
+            month: 1
+            day: 5
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 167419
+          idMal: 56062
+          title:
+            romaji: Naze Boku no Sekai wo Daremo Oboeteinai no ka?
+            english: Why Does Nobody Remember Me in This World?
+            native: なぜ僕の世界を誰も覚えていないのか？
+          synonyms:
+          - Why nobody remembers my world?
+          - Nazeboku
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 13
+          endDate:
+            year: 2024
+            month: 9
+            day: 28
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 173584
+          idMal: 57876
+          title:
+            romaji: Maou Gun Saikyou no Majutsushi wa Ningen datta
+            english: The Strongest Magician in the Demon Lord's Army was a Human
+            native: 魔王軍最強の魔術師は人間だった
+          synonyms:
+          - Maou-gun Saikyou no Majutsushi wa Ningen datta
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 6
+            day: 26
+          endDate:
+            year: 2024
+            month: 9
+            day: 11
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 168872
+          idMal: 56538
+          title:
+            romaji: Kimi ni Todoke 3RD SEASON
+            english: 'Kimi ni Todoke: From Me to You Season 3'
+            native: 君に届け 3RD SEASON
+          synonyms:
+          - ฝากใจไปถึงเธอ ซีซั่น 3
+          status: FINISHED
+          format: ONA
+          episodes: 5
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 8
+            day: 1
+          endDate:
+            year: 2024
+            month: 8
+            day: 1
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 139825
+          idMal: 49981
+          title:
+            romaji: Kimi to Boku no Saigo no Senjou, Arui wa Sekai ga Hajimaru Seisen Season II
+            english: Our Last Crusade or the Rise of a New World Season 2
+            native: キミと僕の最後の戦場、あるいは世界が始まる聖戦 Season II
+          synonyms:
+          - Kimisen 2
+          - キミ戦 2
+          - Kimi to Boku no Saigo no Senjo, Aruiwa Sekai ga Hajimaru Seisen
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 10
+          endDate:
+            year: 2025
+            month: 6
+            day: 26
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 168013
+          idMal: 56196
+          title:
+            romaji: 'Boku no Hero Academia THE MOVIE: YOU''RE NEXT'
+            english: 'My Hero Academia: You’re Next'
+            native: '僕のヒーローアカデミア THE MOVIE: ユア ネクスト'
+          synonyms:
+          - My Hero Academia the Movie 4
+          - 'My Hero Academia: Agora é a Sua Vez'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 8
+            day: 2
+          endDate:
+            year: 2024
+            month: 8
+            day: 2
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 173533
+          idMal: 57864
+          title:
+            romaji: 'Monogatari Series: Off & Monster Season'
+            english: 'MONOGATARI Series: OFF & MONSTER Season'
+            native: 〈物語〉シリーズ オフ&モンスターシーズン
+          synonyms:
+          - Orokamonogatari
+          - Nademonogatari
+          - Wazamonogatari
+          - Shinobumonogatari
+          status: FINISHED
+          format: ONA
+          episodes: 14
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 6
+          endDate:
+            year: 2024
+            month: 10
+            day: 19
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 170938
+          idMal: 57217
+          title:
+            romaji: Katsute Mahou Shoujo to Aku wa Tekitai Shite Ita.
+            english: The Magical Girl and the Evil Lieutenant Used to Be Archenemies
+            native: かつて魔法少女と悪は敵対していた。
+          synonyms:
+          - MahoAku
+          - まほあく
+          - Волшебница и злой офицер
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 7
+            day: 9
+          endDate:
+            year: 2024
+            month: 9
+            day: 24
+          averageScore: 74
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

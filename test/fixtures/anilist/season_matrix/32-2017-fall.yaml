@@ -1,0 +1,676 @@
+metadata:
+  captured_at: '2026-05-11T11:33:44Z'
+  label: 2017-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2017
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:43 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '20'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 97940
+          idMal: 34572
+          title:
+            romaji: Black Clover
+            english: Black Clover
+            native: ブラッククローバー
+          synonyms:
+          - תלתן שחור
+          - แบล็กโคลเวอร์
+          - Чёрный клевер
+          status: FINISHED
+          format: TV
+          episodes: 170
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 3
+          endDate:
+            year: 2021
+            month: 3
+            day: 30
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 98436
+          idMal: 35062
+          title:
+            romaji: Mahoutsukai no Yome
+            english: The Ancient Magus' Bride
+            native: 魔法使いの嫁
+          synonyms:
+          - Mahou Tsukai no Yome
+          - Mahoyome
+          - Невеста чародея
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 8
+          endDate:
+            year: 2018
+            month: 3
+            day: 25
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 99255
+          idMal: 35788
+          title:
+            romaji: 'Shokugeki no Souma: San no Sara'
+            english: Food Wars! The Third Plate
+            native: 食戟のソーマ 餐ノ皿
+          synonyms:
+          - 食戟之灵 餐之皿
+          - ยอดนักปรุงโซมะ ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 4
+          endDate:
+            year: 2017
+            month: 12
+            day: 20
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 97994
+          idMal: 34618
+          title:
+            romaji: Blend S
+            english: BLEND-S
+            native: ブレンド・S
+          synonyms:
+          - 調教咖啡廳
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 8
+          endDate:
+            year: 2017
+            month: 12
+            day: 24
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 97922
+          idMal: 34542
+          title:
+            romaji: Inuyashiki
+            english: INUYASHIKI LAST HERO
+            native: いぬやしき
+          synonyms:
+          - اینو یاشیکی
+          - อินุยาชิกิ
+          - 犬屋敷
+          - 犬舍
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 13
+          endDate:
+            year: 2017
+            month: 12
+            day: 22
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 98707
+          idMal: 35557
+          title:
+            romaji: Houseki no Kuni
+            english: Land of the Lustrous
+            native: 宝石の国
+          synonyms:
+          - L'Ère des Cristaux
+          - Das Land der Juwelen
+          - Страна самоцветов
+          - Vương Quốc Bảo Thạch
+          - ดินแดนอัญมณี
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 7
+          endDate:
+            year: 2017
+            month: 12
+            day: 23
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 20791
+          idMal: 25537
+          title:
+            romaji: Fate/stay night [Heaven's Feel] I. presage flower
+            english: Fate/stay night [Heaven's Feel] I. presage flower
+            native: Fate/stay night[Heaven's Feel] Ⅰ.presage flower
+          synonyms:
+          - Fate/HF
+          - 'Судьба/Ночь схватки: Прикосновение небес'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 14
+          endDate:
+            year: 2017
+            month: 10
+            day: 14
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 99726
+          idMal: 36038
+          title:
+            romaji: Net-juu no Susume
+            english: Recovery of an MMO Junkie
+            native: ネト充のススメ
+          synonyms:
+          - Neto-juu no Susume
+          - Netojuu no Susume
+          - Recommendation of the Wonderful Virtual Life
+          - Recommendation of The Internet Enhancement
+          - Netoju
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 6
+          endDate:
+            year: 2017
+            month: 12
+            day: 8
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 99420
+          idMal: 35838
+          title:
+            romaji: Shoujo Shuumatsu Ryokou
+            english: Girls' Last Tour
+            native: 少女終末旅行
+          synonyms:
+          - '少女终末旅行 '
+          - GLT
+          - Wisata Gadis di Akhir Hayat
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 6
+          endDate:
+            year: 2017
+            month: 12
+            day: 22
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 98478
+          idMal: 35180
+          title:
+            romaji: 3-gatsu no Lion 2nd Season
+            english: March comes in like a lion Season 2
+            native: ３月のライオン 第2シリーズ
+          synonyms:
+          - Sangatsu no Lion 2
+          - מרץ מגיע כאריה 2
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 14
+          endDate:
+            year: 2018
+            month: 3
+            day: 31
+          averageScore: 89
+          nextAiringEpisode: null
+        - id: 97886
+          idMal: 34451
+          title:
+            romaji: Kekkai Sensen & BEYOND
+            english: Blood Blockade Battlefront & Beyond
+            native: 血界戦線 & BEYOND
+          synonyms:
+          - Bloodline Battlefront & Beyond
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 8
+          endDate:
+            year: 2017
+            month: 12
+            day: 24
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 98596
+          idMal: 35413
+          title:
+            romaji: Imouto sae Ireba Ii.
+            english: A Sister's All You Need.
+            native: 妹さえいればいい。
+          synonyms:
+          - Imoto sae Ireba Ii.
+          - A Sister's All You Need
+          - It'd be Good if Only Little Sister Was Here
+          - Imosae
+          - Imoutosae
+          - Imotosae
+          - 如果有妹妹就好了。
+          - คงจะดี ถ้ามีน้องสาวสักคน
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 8
+          endDate:
+            year: 2017
+            month: 12
+            day: 24
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 99634
+          idMal: 36106
+          title:
+            romaji: 'Shingeki no Kyojin: LOST GIRLS'
+            english: 'Attack on Titan: Lost Girls'
+            native: 進撃の巨人 LOST GIRLS
+          synonyms:
+          - 'Episode 16.5A: Wall Sina. Goodbye'
+          - 'Episode 16.5B: Wall Sina. Goodbye'
+          - SnK
+          - AoT
+          - ผ่าพิภพไททัน OAD
+          - ผ่าพิภพไททัน ภาค OAD Lost Girls
+          - 'Атака титанов: Потерянные девушки'
+          status: FINISHED
+          format: OVA
+          episodes: 3
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 12
+            day: 8
+          endDate:
+            year: 2018
+            month: 8
+            day: 9
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 98820
+          idMal: 35639
+          title:
+            romaji: Just Because!
+            english: Just Because!
+            native: Just Because!
+          synonyms:
+          - ジャストビコーズ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 5
+          endDate:
+            year: 2017
+            month: 12
+            day: 28
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 98443
+          idMal: 35076
+          title:
+            romaji: Juuni Taisen
+            english: JUNI TAISEN：ZODIAC WAR
+            native: 十二大戦
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 3
+          endDate:
+            year: 2017
+            month: 12
+            day: 19
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 98951
+          idMal: 35712
+          title:
+            romaji: Boku no Kanojo ga Majime Sugiru Shoujo Bitch na Ken
+            english: My Girlfriend is Shobitch
+            native: 僕の彼女がマジメ過ぎる処女ビッチな件
+          synonyms:
+          - My Girlfriend Is a Virgin Who Takes Being Slutty Too Seriously
+          - My girlfriend is faithful virgin bitch
+          - This girlfriend is too much to handle!
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 12
+          endDate:
+            year: 2017
+            month: 12
+            day: 14
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 98449
+          idMal: 34712
+          title:
+            romaji: Kujira no Kora wa Sajou ni Utau
+            english: Children of the Whales
+            native: クジラの子らは砂上に歌う
+          synonyms:
+          - KujiSuna
+          - Die Walkinder
+          - Hijos de las Ballenas
+          - أبناء الحيتان
+          - ลำนำของเหล่าลูกปลาวาฬ
+          - Kujira no Kora - Filhos das Baleias
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 8
+          endDate:
+            year: 2017
+            month: 12
+            day: 24
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 98572
+          idMal: 35376
+          title:
+            romaji: Himouto! Umaru-chan R
+            english: Himouto! Umaru-chan R
+            native: 干物妹! うまるちゃん R
+          synonyms:
+          - Himouto! Umaru-chan Season 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 9
+          endDate:
+            year: 2017
+            month: 12
+            day: 25
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 98977
+          idMal: 36220
+          title:
+            romaji: Itsudatte Bokura no Koi wa 10 cm Datta.
+            english: Our love has always been 10 centimeters apart.
+            native: いつだって僕らの恋は10センチだった。
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 6
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 11
+            day: 25
+          endDate:
+            year: 2017
+            month: 12
+            day: 30
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 99698
+          idMal: 36027
+          title:
+            romaji: Ousama Game The Animation
+            english: King's Game
+            native: 王様ゲーム The Animation
+          synonyms:
+          - 国王游戏
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 5
+          endDate:
+            year: 2017
+            month: 12
+            day: 21
+          averageScore: 46
+          nextAiringEpisode: null
+        - id: 98657
+          idMal: 35484
+          title:
+            romaji: Osake wa Fuufu ni Natte kara
+            english: Love is Like a Cocktail
+            native: お酒は夫婦になってから
+          synonyms:
+          - Osake wa Fuufu ni Nattekara
+          - Alcohol is for married couples
+          - Osakefufu
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 13
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 4
+          endDate:
+            year: 2017
+            month: 12
+            day: 27
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 21855
+          idMal: 33478
+          title:
+            romaji: 'UQ Holder!: Mahou Sensei Negima! 2'
+            english: UQ Holder!
+            native: UQ Holder! ～魔法先生ネギま!2～
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 3
+          endDate:
+            year: 2017
+            month: 12
+            day: 19
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 98448
+          idMal: 35079
+          title:
+            romaji: Kino no Tabi -the Beautiful World- the Animated Series
+            english: Kino's Journey -the Beautiful World- the Animated Series
+            native: キノの旅 -the Beautiful World- the Animated Series
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 6
+          endDate:
+            year: 2017
+            month: 12
+            day: 22
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 99714
+          idMal: 35843
+          title:
+            romaji: 'Gintama.: Porori-hen'
+            english: 'Gintama.: Slip Arc'
+            native: 銀魂. ポロリ編
+          synonyms:
+          - Gintama. (2017)
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 2
+          endDate:
+            year: 2017
+            month: 12
+            day: 25
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 98506
+          idMal: 35241
+          title:
+            romaji: Konohana Kitan
+            english: KONOHANA KITAN
+            native: このはな綺譚
+          synonyms:
+          - 此花绮谭
+          - 此花亭奇谭
+          - fox spirit tales
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 10
+            day: 4
+          endDate:
+            year: 2017
+            month: 12
+            day: 20
+          averageScore: 72
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

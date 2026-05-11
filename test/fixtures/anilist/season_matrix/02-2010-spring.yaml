@@ -1,0 +1,666 @@
+metadata:
+  captured_at: '2026-05-11T11:32:22Z'
+  label: 2010-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2010
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:22 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '28'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 6547
+          idMal: 6547
+          title:
+            romaji: Angel Beats!
+            english: Angel Beats!
+            native: Angel Beats!
+          synonyms:
+          - エンジェルビーツ
+          - פעימות מלאך
+          - الملاك الوحش
+          - Ангельские ритмы
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 3
+          endDate:
+            year: 2010
+            month: 6
+            day: 26
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 7054
+          idMal: 7054
+          title:
+            romaji: Kaichou wa Maid-sama!
+            english: Maid-Sama!
+            native: 会長はメイド様!
+          synonyms:
+          - Kaicho wa Maidsama
+          - Kaichou wa Meido Sama
+          - Class President is a Maid!
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 2
+          endDate:
+            year: 2010
+            month: 9
+            day: 24
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 7791
+          idMal: 7791
+          title:
+            romaji: K-ON!!
+            english: K-ON! Season 2
+            native: けいおん!!
+          synonyms:
+          - Keion 2
+          - K-On!! 2nd Season
+          - K on 2
+          - 케이온!!
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 7
+          endDate:
+            year: 2010
+            month: 9
+            day: 29
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 7785
+          idMal: 7785
+          title:
+            romaji: Yojouhan Shinwa Taikei
+            english: The Tatami Galaxy
+            native: 四畳半神話大系
+          synonyms:
+          - Yojo-Han Shinwa Taikei
+          - Yojou-Han Shinwa Taikei
+          - Yojohan Shinwa Taikei
+          - 四叠半神话大系
+          - 4½ Tatami Mythological Chronicles
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 23
+          endDate:
+            year: 2010
+            month: 7
+            day: 2
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 7593
+          idMal: 7593
+          title:
+            romaji: kiss×sis (TV)
+            english: null
+            native: kiss×sis (TV)
+          synonyms:
+          - キスシス
+          - kiss x sis
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 5
+          endDate:
+            year: 2010
+            month: 6
+            day: 21
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 7088
+          idMal: 7088
+          title:
+            romaji: Ichiban Ushiro no Daimaou
+            english: Demon King Daimao
+            native: いちばんうしろの大魔王
+          synonyms:
+          - Ichiban Ushiro no Dai Mao
+          - Rei Demônio Daimao
+          - El Gran Rey Demonio
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 3
+          endDate:
+            year: 2010
+            month: 6
+            day: 19
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 6956
+          idMal: 6956
+          title:
+            romaji: WORKING!!
+            english: Wagnaria!!
+            native: WORKING!!
+          synonyms:
+          - ワーキング!!
+          - 워킹!!
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 4
+          endDate:
+            year: 2010
+            month: 6
+            day: 27
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 6114
+          idMal: 6114
+          title:
+            romaji: 'RAINBOW: Nisha Rokubou no Shichinin'
+            english: Rainbow
+            native: RAINBOW -二舎六房の七人-
+          synonyms:
+          - 'Rainbow: The Seven From Compound Two, Cell Six'
+          - Rainbow, os sete do bloco 2, cela 6
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 2
+          endDate:
+            year: 2010
+            month: 9
+            day: 29
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 7647
+          idMal: 7647
+          title:
+            romaji: Arakawa Under the Bridge
+            english: Arakawa Under the Bridge
+            native: 荒川アンダー ザ ブリッジ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 5
+          endDate:
+            year: 2010
+            month: 6
+            day: 28
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 7817
+          idMal: 7817
+          title:
+            romaji: B Gata H Kei
+            english: 'Yamada''s First Time: B Gata H Kei'
+            native: B型H系
+          synonyms:
+          - Yamada ma première fois
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 2
+          endDate:
+            year: 2010
+            month: 6
+            day: 18
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 7472
+          idMal: 7472
+          title:
+            romaji: 'Gintama: Shinyaku Benizakura-hen'
+            english: Gintama - The Movie
+            native: 銀魂 新訳紅桜篇
+          synonyms:
+          - 'Gintama: Benizakura Arc - A New Retelling'
+          - 'Gintama Movie: Crimson Sakura Chapter New Edition'
+          - 'Gintama: Shin-yaku Benizakura-hen'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 24
+          endDate:
+            year: 2010
+            month: 4
+            day: 24
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 4106
+          idMal: 4106
+          title:
+            romaji: 'TRIGUN: Badlands Rumble'
+            english: 'Trigun: Badlands Rumble'
+            native: TRIGUN Badlands Rumble
+          synonyms:
+          - 劇場版トライガン
+          - Trigun Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 2
+          endDate:
+            year: 2010
+            month: 4
+            day: 2
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 7465
+          idMal: 7465
+          title:
+            romaji: Eve no Jikan Movie
+            english: 'Time of Eve: The Movie'
+            native: イヴの時間 劇場版
+          synonyms:
+          - Eve no Jikan - Are you enjoying the time of EVE ? Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 3
+            day: 6
+          endDate:
+            year: 2010
+            month: 3
+            day: 6
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 6637
+          idMal: 6637
+          title:
+            romaji: 'Higashi no Eden Movie II: Paradise Lost'
+            english: 'Eden of the East the Movie II: Paradise Lost'
+            native: 東のエデン 劇場版II Paradise Lost
+          synonyms:
+          - 'Higashi no Eden: Gekijouban II Paradise Lost'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 3
+            day: 13
+          endDate:
+            year: 2010
+            month: 3
+            day: 13
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 7590
+          idMal: 7590
+          title:
+            romaji: Mayoi Neko Overrun!
+            english: null
+            native: 迷い猫オーバーラン!
+          synonyms:
+          - Stray Cats Overrun!
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 6
+          endDate:
+            year: 2010
+            month: 6
+            day: 29
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 7588
+          idMal: 7588
+          title:
+            romaji: Saraiya Goyou
+            english: House of Five Leaves
+            native: さらい屋 五葉
+          synonyms:
+          - Sarai-ya Goyou
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 16
+          endDate:
+            year: 2010
+            month: 7
+            day: 2
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 6895
+          idMal: 6895
+          title:
+            romaji: Hakuouki
+            english: Hakuoki ~Demon of the Fleeting Blossom~
+            native: 薄桜鬼
+          synonyms:
+          - Hakuoki
+          - Hakuouki Shinsengumi Kitan
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 4
+          endDate:
+            year: 2010
+            month: 6
+            day: 20
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 8410
+          idMal: 8410
+          title:
+            romaji: 'Metal Fight Beyblade: Baku'
+            english: 'Beyblade: Metal Masters'
+            native: メタルファイト ベイブレード～爆～
+          synonyms:
+          - 'Metal Fight Beyblade: Explosion'
+          - Metal Fight Beyblade 2
+          - 'Beyblade: Metal Fusion 2'
+          status: FINISHED
+          format: TV
+          episodes: 51
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 4
+          endDate:
+            year: 2011
+            month: 3
+            day: 27
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 8740
+          idMal: 8740
+          title:
+            romaji: 'ONE PIECE FILM: STRONG WORLD - EPISODE:0'
+            english: null
+            native: ONE PIECE FILM STRONG WORLD EPISODE:0
+          synonyms: []
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 16
+          endDate:
+            year: 2010
+            month: 4
+            day: 16
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 8479
+          idMal: 8479
+          title:
+            romaji: Hetalia World Series
+            english: Hetalia World Series
+            native: ヘタリア Ｗorld Ｓeries
+          synonyms: []
+          status: FINISHED
+          format: ONA
+          episodes: 48
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 3
+            day: 26
+          endDate:
+            year: 2011
+            month: 3
+            day: 11
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 8310
+          idMal: 8310
+          title:
+            romaji: Magic Kaito
+            english: null
+            native: まじっく快斗
+          synonyms:
+          - Kaito Kid
+          - Majikku Kaito
+          - Kaitou Kid
+          - Magic Kaitou
+          status: FINISHED
+          format: SPECIAL
+          episodes: 12
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 17
+          endDate:
+            year: 2012
+            month: 12
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 6772
+          idMal: 6772
+          title:
+            romaji: 'Break Blade 1: Kakusei no Toki'
+            english: Broken Blade
+            native: ブレイク ブレイド 覚醒ノ刻
+          synonyms:
+          - Breaker Blade
+          - 'Break Blade 1: The Time of Awakening'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 5
+            day: 29
+          endDate:
+            year: 2010
+            month: 5
+            day: 29
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 7058
+          idMal: 7058
+          title:
+            romaji: Uragiri wa Boku no Namae wo Shitteiru
+            english: The Betrayal Knows My Name
+            native: 裏切りは僕の名前を知っている
+          synonyms:
+          - Uraboku
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 12
+          endDate:
+            year: 2010
+            month: 9
+            day: 20
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 6408
+          idMal: 6408
+          title:
+            romaji: Bungaku Shoujo
+            english: null
+            native: 文学少女
+          synonyms:
+          - Book Girl
+          - Literature Girl
+          - 'Book Girl: La chica de los libros'
+          - Book Girl, La Chica que Devoraba Libros
+          - Bungaku Shoujo - O Filme
+          - 'Garota dos Livros: O Filme'
+          - Буквоежка
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 5
+            day: 1
+          endDate:
+            year: 2010
+            month: 5
+            day: 1
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 7661
+          idMal: 7661
+          title:
+            romaji: GIANT KILLING
+            english: Giant Killing
+            native: GIANT KILLING
+          synonyms:
+          - ジャイアントキリング
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 4
+            day: 4
+          endDate:
+            year: 2010
+            month: 9
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

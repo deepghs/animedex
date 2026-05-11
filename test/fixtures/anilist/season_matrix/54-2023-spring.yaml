@@ -1,0 +1,729 @@
+metadata:
+  captured_at: '2026-05-11T11:34:46Z'
+  label: 2023-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2023
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:46 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '19'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 145139
+          idMal: 51019
+          title:
+            romaji: 'Kimetsu no Yaiba: Katanakaji no Sato-hen'
+            english: 'Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc'
+            native: 鬼滅の刃 刀鍛冶の里編
+          synonyms:
+          - KnY 3
+          - ดาบพิฆาตอสูร ภาค 3 บทหมู่บ้านช่างตีดาบ
+          - 'Demon Slayer: Kimetsu no Yaiba - Le village des forgerons'
+          - 'Истребитель демонов: Kimetsu no Yaiba. Деревня кузнецов'
+          - 'Miecz zabójcy demonów – Kimetsu no Yaiba: Wioska płatnerzy'
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 9
+          endDate:
+            year: 2023
+            month: 6
+            day: 18
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 128893
+          idMal: 46569
+          title:
+            romaji: Jigokuraku
+            english: Hell’s Paradise
+            native: 地獄楽
+          synonyms:
+          - 'Hell’s Paradise: Jigokuraku'
+          - สุขาวดีอเวจี
+          - Адский рай
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 1
+          endDate:
+            year: 2023
+            month: 7
+            day: 1
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 150672
+          idMal: 52034
+          title:
+            romaji: '[Oshi no Ko]'
+            english: Oshi No Ko
+            native: 【推しの子】
+          synonyms:
+          - Favorite Girl
+          - My Idol's Child
+          - '[Mein*Star]'
+          - เกิดใหม่เป็นลูกโอชิ
+          - Anak Idola
+          - 【OSHI NO KO】
+          - 【推しの子】Mother and Children
+          - '[Oshi no Ko] Mother and Children'
+          - 我推的孩子
+          - 【최애의 아이】
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 12
+          endDate:
+            year: 2023
+            month: 6
+            day: 28
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 151801
+          idMal: 52211
+          title:
+            romaji: MASHLE
+            english: 'MASHLE: MAGIC AND MUSCLES'
+            native: マッシュル-MASHLE-
+          synonyms:
+          - MASHLE ศึกโลกเวทมนตร์คนพลังกล้าม
+          - 'MASHLE: MAGIA E MÚSCULOS'
+          - 'MASHLE: Магия и мускулы'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 8
+          endDate:
+            year: 2023
+            month: 6
+            day: 30
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 155783
+          idMal: 53393
+          title:
+            romaji: Tengoku Daimakyou
+            english: Tengoku Daimakyo
+            native: 天国大魔境
+          synonyms:
+          - Heavenly Delusion
+          - 'Tengoku-Daimakyo: Ilusão Celestial'
+          - ถ้ำปีศาจแดนสวรรค์
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 1
+          endDate:
+            year: 2023
+            month: 6
+            day: 24
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 131518
+          idMal: 48549
+          title:
+            romaji: 'Dr. STONE: NEW WORLD'
+            english: Dr. STONE New World
+            native: Dr.STONE NEW WORLD
+          synonyms:
+          - 石纪元第三季
+          - Dr.STONE Season 3
+          - DR.STONE ภาค 3
+          - Dr.STONE 第3期
+          - Dr. STONE 新石紀（第三季）
+          - 'Доктор Стоун: Новый Свет'
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 6
+          endDate:
+            year: 2023
+            month: 6
+            day: 15
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 154965
+          idMal: 53126
+          title:
+            romaji: Yamada-kun to Lv999 no Koi wo Suru
+            english: My Love Story with Yamada-kun at Lv999
+            native: 山田くんとLv999の恋をする
+          synonyms:
+          - Loving Yamada at LV999!
+          - My Lv999 Love for Yamada-kun
+          - Minha História de Amor com Yamada-kun Nível 999
+          - 'รักสุดฟินเลเวล 999 กับยามาดะคุง '
+          - 和山田进行LV.999的恋爱
+          - Моя любовь к Ямаде 999 уровня
+          - Mon histoire d'amour avec Yamada à Lv999
+          - 和山田談場 Lv999 的戀愛
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 2
+          endDate:
+            year: 2023
+            month: 6
+            day: 25
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 153152
+          idMal: 52578
+          title:
+            romaji: Boku no Kokoro no Yabai Yatsu
+            english: The Dangers in My Heart
+            native: 僕の心のヤバイやつ
+          synonyms:
+          - BokuYaba
+          - เธอผู้อันตรายต่อใจผม
+          - 내 마음의 위험한 녀석
+          - 我內心的糟糕念頭
+          - 僕ヤバ
+          - Peligros en mi corazón
+          - Czarne chmury w moim sercu
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 2
+          endDate:
+            year: 2023
+            month: 6
+            day: 18
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 151384
+          idMal: 52198
+          title:
+            romaji: 'Kaguya-sama wa Kokurasetai: First Kiss wa Owaranai'
+            english: 'Kaguya-sama: Love is War -The First Kiss That Never Ends-'
+            native: かぐや様は告らせたい -ファーストキッスは終わらない-
+          synonyms:
+          - 'Kaguya-sama: Love is War Movie'
+          - 'Kaguya-sama: Cuộc chiến tỏ tình - Nụ hôn đầu không hồi kết'
+          - 'Госпожа Кагуя: в любви как на войне. Бесконечный первый поцелуй'
+          status: FINISHED
+          format: TV
+          episodes: 4
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 1
+          endDate:
+            year: 2023
+            month: 4
+            day: 3
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 153845
+          idMal: 52830
+          title:
+            romaji: 'Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta'
+            english: I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too
+            native: 異世界でチート能力を手にした俺は、現実世界をも無双する ～レベルアップは人生を変えた～
+          synonyms:
+          - I Got a Cheat Ability in a Different World, and Became Extraordinary Even in the Real World
+          - Isekai de Cheat Nouryoku Ote ni Shita Ore wa, Genjitsu Sekai o mo Musou Suru
+          - 'สกิลโกงไร้เทียมทาน สร้างตำนานในสองโลก: ชีวิตพลิกผันด้วยการอัปเลเวล'
+          - Ganhei um Poder Apelão em Outro Mundo e Agora Sou Imbatível no Mundo Real
+          - Iseleve
+          - 在异世界获得超强能力的我，在现实世界照样无敌～等级提升改变人生命运
+          - いせれべ
+          - Skill Nge-Cheat yang Kudapat di Dunia Lain Juga Membuatku Tanpa Tanding di Dunia Asal
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 4
+          endDate:
+            year: 2023
+            month: 6
+            day: 29
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 141911
+          idMal: 50416
+          title:
+            romaji: Skip to Loafer
+            english: Skip and Loafer
+            native: スキップとローファー
+          synonyms:
+          - จังหวะวัยรุ่น ว้าวุ่นหัวใจ
+          - В лоферах вприпрыжку
+          - 躍動青春
+          - スキロー
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 4
+          endDate:
+            year: 2023
+            month: 6
+            day: 20
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 150075
+          idMal: 51958
+          title:
+            romaji: Kono Subarashii Sekai ni Bakuen wo!
+            english: KONOSUBA -An Explosion on This Wonderful World!
+            native: この素晴らしい世界に爆焔を！
+          synonyms:
+          - ขอให้ระเบิดตูมตามในโลกแฟนตาซี!
+          - 為美好的世界獻上爆焰！
+          - Да благословит взрыв сей расчудесный мир!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 6
+          endDate:
+            year: 2023
+            month: 6
+            day: 22
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 143653
+          idMal: 50796
+          title:
+            romaji: Kimi wa Houkago Insomnia
+            english: Insomniacs After School
+            native: 君は放課後インソムニア
+          synonyms:
+          - Insomniaques
+          - ถ้านอนไม่หลับไปนับดาวกันไหม
+          - 放学后失眠的你
+          - Bezsenność po szkole
+          - Insomnia Sepulang Sekolah
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 11
+          endDate:
+            year: 2023
+            month: 7
+            day: 4
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 131680
+          idMal: 48585
+          title:
+            romaji: 'Black Clover: Mahou Tei no Ken'
+            english: 'Black Clover: Sword of the Wizard King'
+            native: ブラッククローバー 魔法帝の剣
+          synonyms:
+          - Black Clover Movie
+          - 'Чорна конюшина: Меч короля магів'
+          - 'Black Clover: A Espada do Rei Mago'
+          - 'Black Clover: La espada del rey mago'
+          - 'Черный клевер: Меч короля магов'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 6
+            day: 16
+          endDate:
+            year: 2023
+            month: 6
+            day: 16
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 157198
+          idMal: 53613
+          title:
+            romaji: Dead Mount Death Play
+            english: Dead Mount Death Play
+            native: デッドマウント・デスプレイ
+          synonyms:
+          - 屍體如山的死亡遊戲
+          - DMDP
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 11
+          endDate:
+            year: 2023
+            month: 6
+            day: 27
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 141208
+          idMal: 50307
+          title:
+            romaji: Tonikaku Kawaii Season 2
+            english: 'TONIKAWA: Over The Moon For You Season 2'
+            native: トニカクカワイイ（シーズン2）
+          synonyms:
+          - Fly Me to the Moon 2
+          - Tonikaku Cawaii 2
+          - Generally Cute 2
+          - 总之就是非常可爱２
+          - จะยังไงภรรยาของผมก็น่ารัก ภาค 2
+          - 'Красавица: Унеси меня на Луну 2'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 8
+          endDate:
+            year: 2023
+            month: 6
+            day: 24
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 148048
+          idMal: 51693
+          title:
+            romaji: Kaminaki Sekai no Kamisama Katsudou
+            english: 'KamiKatsu: Working for God in a Godless World'
+            native: 神無き世界のカミサマ活動
+          synonyms:
+          - What God Does in a World Without Gods
+          - 'KamiKatsu: Atividades Divinas em um Mundo sem Deuses '
+          - 'Kamisama : Opération Divine'
+          - KamiKatsu
+          - 'KamiKatsu: Meine Arbeit als Missionar in einer gottlosen Welt'
+          - โลกนี้ โลกหน้า ข้าก็เป็นพระเจ้า
+          - 'KamiKatsu: Как быть богу в мире без богов?'
+          - 無神世界的神明活動
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 6
+          endDate:
+            year: 2023
+            month: 7
+            day: 6
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 154967
+          idMal: 53129
+          title:
+            romaji: Seishun Buta Yarou wa Odekake Sister no Yume wo Minai
+            english: Rascal Does Not Dream of a Sister Venturing Out
+            native: 青春ブタ野郎はおでかけシスターの夢を見ない
+          synonyms:
+          - Ao Buta
+          - 青ブタ
+          - เรื่องฝันปั่นป่วยของผมกับน้องสาวออกนอกบ้าน
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 6
+            day: 23
+          endDate:
+            year: 2023
+            month: 6
+            day: 23
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 153332
+          idMal: 52608
+          title:
+            romaji: 'Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito'
+            english: 'The Aristocrat’s Otherworldly Adventure: Serving Gods Who Go Too Far'
+            native: 転生貴族の異世界冒険録 〜自重を知らない神々の使徒〜
+          synonyms:
+          - Chronicles of an Aristocrat Reborn in Another World
+          - 'เกิดใหม่เป็นขุนนางไปผจญภัยในต่างโลก: อัครทูตจอมซุ่มซ่ามของทวยเทพ'
+          - Crônicas de um Aristocrata em Outro Mundo
+          - Noble New World Adventures
+          - Die Parallelwelt-Chroniken des Aristokraten
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 2
+          endDate:
+            year: 2023
+            month: 6
+            day: 18
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 151847
+          idMal: 52308
+          title:
+            romaji: Kanojo ga Koushaku-tei ni Itta Riyuu
+            english: Why Raeliana Ended Up at the Duke’s Mansion
+            native: 彼女が公爵邸に行った理由
+          synonyms:
+          - 그녀가 공작저로 가야 했던 사정
+          - Geunyeoga Gongjagjeolo Gaya Haessdeon Sajeong
+          - พระเอกของฉันเป็นท่านดยุค
+          - Como Raeliana Foi Parar na Mansão do Duque
+          - Comment Raeliana a survécu au manoir Wynknight
+          - The Reason Why Raeliana Ended up at the Duke's Mansion
+          - 'Raeliana: Warum sie die Verlobte des Dukes wurde'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 10
+          endDate:
+            year: 2023
+            month: 6
+            day: 26
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 148098
+          idMal: 51705
+          title:
+            romaji: Otonari ni Ginga
+            english: A Galaxy Next Door
+            native: おとなりに銀河
+          synonyms:
+          - Uma Vizinha de Outro Mundo
+          - 鄰人似銀河
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 9
+          endDate:
+            year: 2023
+            month: 6
+            day: 25
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 140754
+          idMal: 50220
+          title:
+            romaji: Isekai Shoukan wa Nidome desu
+            english: Summoned to Another World for a Second Time
+            native: 異世界召喚は二度目です
+          synonyms:
+          - Summoned to Another World... Again?!
+          - Invocado Para Outro Mundo... De Novo?!
+          - Je me fais isekai pour la deuxième fois... Ça commence à faire beaucoup.
+          - IseNido
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 9
+          endDate:
+            year: 2023
+            month: 6
+            day: 25
+          averageScore: 55
+          nextAiringEpisode: null
+        - id: 154364
+          idMal: 52955
+          title:
+            romaji: Mahoutsukai no Yome SEASON 2
+            english: The Ancient Magus' Bride Season 2
+            native: 魔法使いの嫁 SEASON2
+          synonyms:
+          - Mahoyome 2
+          - เจ้าสาวผมแดงกับจอมเวทอสูร ภาค 2
+          - Невеста чародея 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 6
+          endDate:
+            year: 2023
+            month: 6
+            day: 22
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 147571
+          idMal: 51632
+          title:
+            romaji: Isekai wa Smartphone to Tomo ni. 2
+            english: In Another World With My Smartphone 2
+            native: 異世界はスマートフォンとともに。2
+          synonyms:
+          - Isesuma 2
+          - 帶著智慧型手機闖蕩異世界。2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 3
+          endDate:
+            year: 2023
+            month: 6
+            day: 19
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 148109
+          idMal: 51706
+          title:
+            romaji: Yuusha ga Shinda!
+            english: The Legendary Hero is Dead!
+            native: 勇者が死んだ！
+          synonyms:
+          - 勇者死了！
+          - เมื่อผู้กล้าลาโลกแล้ว!
+          - Герой мёртв!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 4
+            day: 7
+          endDate:
+            year: 2023
+            month: 6
+            day: 23
+          averageScore: 63
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

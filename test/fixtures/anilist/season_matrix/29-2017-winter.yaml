@@ -1,0 +1,659 @@
+metadata:
+  captured_at: '2026-05-11T11:33:36Z'
+  label: 2017-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2017
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:35 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '23'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 21699
+          idMal: 32937
+          title:
+            romaji: Kono Subarashii Sekai ni Shukufuku wo! 2
+            english: KONOSUBA -God's blessing on this wonderful world! 2
+            native: この素晴らしい世界に祝福を！2
+          synonyms:
+          - Konosuba 2
+          - Konosuba! - As Bençãos de Deus Neste Mundo Maravilhoso 2!
+          - 为美好的世界献上祝福！2
+          - 为美好的世界献上祝福第二季
+          - ขอให้โชคดีมีชัยในโลกแฟนตาซี! ภาค 2
+          - 'Konosuba : Une explosion dans ce monde merveilleux !'
+          - Да благословят боги сей расчудесный мир! 2
+          - Konosuba! Un mundo maravilloso 2
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 12
+          endDate:
+            year: 2017
+            month: 3
+            day: 16
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 21776
+          idMal: 33206
+          title:
+            romaji: Kobayashi-san Chi no Maidragon
+            english: Miss Kobayashi's Dragon Maid
+            native: 小林さんちのメイドラゴン
+          synonyms:
+          - Kobayashi-san Chi no Maid Dragon
+          - 小林家的龙女仆
+          - น้องเมดมังกรของคุณโคบายาชิ
+          - Дракониха-горничная госпожи Кобаяси
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 12
+          endDate:
+            year: 2017
+            month: 4
+            day: 6
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 21613
+          idMal: 32615
+          title:
+            romaji: Youjo Senki
+            english: Saga of Tanya the Evil
+            native: 幼女戦記
+          synonyms:
+          - 幼女战记
+          - Колдунья в погонах
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 6
+          endDate:
+            year: 2017
+            month: 3
+            day: 31
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 21857
+          idMal: 33487
+          title:
+            romaji: Masamune-kun no Revenge
+            english: Masamune-kun's Revenge
+            native: 政宗くんのリベンジ
+          synonyms:
+          - การแก้แค้นของมาซามุเนะคุง
+          - Месть Масамунэ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 5
+          endDate:
+            year: 2017
+            month: 3
+            day: 23
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 21403
+          idMal: 31765
+          title:
+            romaji: 'Sword Art Online: Ordinal Scale'
+            english: 'Sword Art Online the Movie: Ordinal Scale'
+            native: ソードアート・オンライン -オーディナル・スケール-
+          synonyms:
+          - SAO THE MOVIE
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 2
+            day: 18
+          endDate:
+            year: 2017
+            month: 2
+            day: 18
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 21701
+          idMal: 32949
+          title:
+            romaji: Kuzu no Honkai
+            english: Scum's Wish
+            native: クズの本懐
+          synonyms:
+          - Desejos Proibidos
+          - El deseo de la escoria
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 13
+          endDate:
+            year: 2017
+            month: 3
+            day: 31
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 21861
+          idMal: 33506
+          title:
+            romaji: 'Ao no Exorcist: Kyoto Fujouou-hen'
+            english: 'Blue Exorcist: Kyoto Saga'
+            native: 青の祓魔師 京都不浄王篇
+          synonyms:
+          - 'Blue Exorcist: Kyoto Impure King Arc'
+          - Blue Exorcist Season 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 7
+          endDate:
+            year: 2017
+            month: 3
+            day: 25
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 21858
+          idMal: 33489
+          title:
+            romaji: Little Witch Academia (TV)
+            english: Little Witch Academia (TV)
+            native: リトルウィッチアカデミア (TV)
+          synonyms:
+          - LWA (TV)
+          - 小魔女学园
+          - Det lille hekseakademiet
+          - האקדמיה למכשפות קטנות
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 9
+          endDate:
+            year: 2017
+            month: 6
+            day: 26
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 21400
+          idMal: 31758
+          title:
+            romaji: 'Kizumonogatari III: Reiketsu-hen'
+            english: 'Kizumonogatari Part 3: Reiketsu'
+            native: 傷物語〈Ⅲ冷血篇〉
+          synonyms:
+          - 'Wound Tale 3: Cold Blood'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 6
+          endDate:
+            year: 2017
+            month: 1
+            day: 6
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 21878
+          idMal: 33731
+          title:
+            romaji: Gabriel Dropout
+            english: Gabriel DropOut
+            native: ガヴリールドロップアウト
+          synonyms:
+          - GabDro
+          - 珈百璃的堕落
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 9
+          endDate:
+            year: 2017
+            month: 3
+            day: 27
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 97592
+          idMal: 33988
+          title:
+            romaji: Demi-chan wa Kataritai
+            english: Interviews with Monster Girls
+            native: 亜人ちゃんは語りたい
+          synonyms:
+          - Entrevistas con chicas monstruo
+          - Interviews mit Monster-Mädchen
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 8
+          endDate:
+            year: 2017
+            month: 3
+            day: 26
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 97889
+          idMal: 34096
+          title:
+            romaji: Gintama.
+            english: Gintama Season 4
+            native: 銀魂。
+          synonyms:
+          - Gintama. (2017)
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 9
+          endDate:
+            year: 2017
+            month: 3
+            day: 27
+          averageScore: 88
+          nextAiringEpisode: null
+        - id: 21887
+          idMal: 33743
+          title:
+            romaji: Fuuka
+            english: Fuuka
+            native: 風夏
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 6
+          endDate:
+            year: 2017
+            month: 3
+            day: 24
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 97730
+          idMal: 33836
+          title:
+            romaji: Seiren
+            english: Seiren
+            native: セイレン
+          synonyms:
+          - Divina Juventud
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 6
+          endDate:
+            year: 2017
+            month: 3
+            day: 24
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 21733
+          idMal: 33095
+          title:
+            romaji: 'Shouwa Genroku Rakugo Shinjuu: Sukeroku Futatabi-hen'
+            english: 'Descending Stories: Showa Genroku Rakugo Shinju'
+            native: 昭和元禄落語心中～助六再び篇～
+          synonyms:
+          - Le Rakugo ou la vie 2
+          - Shouwa Genroku Rakugo Shinjuu 2nd Season
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 7
+          endDate:
+            year: 2017
+            month: 3
+            day: 25
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 21823
+          idMal: 33337
+          title:
+            romaji: 'ACCA: 13-ku Kansatsu-ka'
+            english: 'ACCA: 13-Territory Inspection Dept.'
+            native: ACCA 13区監察課
+          synonyms:
+          - 'ACCA: Jusan-ku Kansatsu-ka'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 10
+          endDate:
+            year: 2017
+            month: 3
+            day: 28
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21425
+          idMal: 31812
+          title:
+            romaji: 'Kuroshitsuji: Book of the Atlantic'
+            english: 'Black Butler: Book of the Atlantic'
+            native: 黒執事 Book of the Atlantic
+          synonyms:
+          - Kuroshitsuji
+          - Black Butler
+          - Book of Atlantic
+          - 'คนลึกไขปริศนาลับ: Book of the Atlantic'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 21
+          endDate:
+            year: 2017
+            month: 1
+            day: 21
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 21874
+          idMal: 33581
+          title:
+            romaji: Trinity Seven Movie - Yuukyuu Toshokan to Renkinjutsu Shoujo
+            english: 'Trinity Seven: Eternal Library & Alchemic Girl'
+            native: 劇場版 トリニティセブン -悠久図書館と錬金術少女-
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 2
+            day: 25
+          endDate:
+            year: 2017
+            month: 2
+            day: 25
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 97857
+          idMal: 34392
+          title:
+            romaji: One Room
+            english: OneRoom
+            native: One Room
+          synonyms:
+          - ワンルーム
+          - В одной комнате
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 11
+          endDate:
+            year: 2017
+            month: 3
+            day: 29
+          averageScore: 52
+          nextAiringEpisode: null
+        - id: 87435
+          idMal: 33573
+          title:
+            romaji: BanG Dream!
+            english: BanG Dream!
+            native: BanG Dream!（バンドリ！）
+          synonyms:
+          - Bandori
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 21
+          endDate:
+            year: 2017
+            month: 4
+            day: 22
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 21696
+          idMal: 32924
+          title:
+            romaji: Urara Meirochou
+            english: Urara Meirocho
+            native: うらら迷路帖
+          synonyms:
+          - Adivina como puedas
+          - 우라라 미로첩
+          - uramei
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 6
+          endDate:
+            year: 2017
+            month: 3
+            day: 24
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 97645
+          idMal: 34086
+          title:
+            romaji: Tales of Zestiria the Cross 2
+            english: Tales of Zestiria the X Season 2
+            native: テイルズ オブ ゼスティリア ザ クロス 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 8
+          endDate:
+            year: 2017
+            month: 4
+            day: 29
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 97636
+          idMal: 34051
+          title:
+            romaji: 'Akiba''s Trip: The Animation'
+            english: Akiba's Trip the Animation
+            native: Akiba's Trip -The Animation-
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 4
+          endDate:
+            year: 2017
+            month: 3
+            day: 29
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 97875
+          idMal: 34414
+          title:
+            romaji: Nanbaka 2
+            english: NANBAKA - Part Two
+            native: ナンバカ 2
+          synonyms:
+          - Nambaka 2
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 4
+          endDate:
+            year: 2017
+            month: 3
+            day: 22
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 98153
+          idMal: 34152
+          title:
+            romaji: Super Danganronpa 2.5 Komaeda Nagito to Sekai no Hakaimono
+            english: null
+            native: スーパーダンガンロンパ2.5 狛枝凪斗と世界の破壊者
+          synonyms:
+          - 'Super Danganronpa 2.5: Nagito Komaeda and the Destroyer of the World'
+          - 'Super Danganronpa 2.5: Nagito Komaeda and the World Destroyer'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 1
+            day: 12
+          endDate:
+            year: 2017
+            month: 1
+            day: 12
+          averageScore: 69
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

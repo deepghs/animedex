@@ -12,14 +12,19 @@ piped output remains parseable.
 from __future__ import annotations
 
 import io
+import re
+from datetime import date, datetime, time, timedelta, timezone
 from typing import Any, Optional
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from animedex.models.anime import AiringScheduleRow, Anime
-from animedex.models.aggregate import AggregateResult
+from animedex.models.aggregate import AggregateResult, MergedAnime, ScheduleCalendarResult
 from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import AnimedexModel
 from animedex.models.trace import TraceHit, TraceQuota
 from animedex.render.json_renderer import render_json
+
+_OFFSET_RE = re.compile(r"^([+-])(\d{2}):?(\d{2})$")
 
 
 def is_terminal(stream: Any) -> bool:
@@ -314,6 +319,104 @@ def _format_airing_schedule_tty(row: AiringScheduleRow) -> str:
     return out.getvalue()
 
 
+def _tzinfo_from_label(label: str):
+    if label == "UTC":
+        return timezone.utc
+    match = _OFFSET_RE.match(label)
+    if match is not None:
+        sign, hours_text, minutes_text = match.groups()
+        delta = timedelta(hours=int(hours_text), minutes=int(minutes_text))
+        if sign == "-":
+            delta = -delta
+        return timezone(delta, name=f"{sign}{int(hours_text):02d}:{int(minutes_text):02d}")
+    try:
+        return ZoneInfo(label)
+    except (ZoneInfoNotFoundError, ValueError):
+        return None
+
+
+def _schedule_datetime(row: AiringScheduleRow, *, window_start: date, timezone_label: str) -> Optional[datetime]:
+    target_tz = _tzinfo_from_label(timezone_label)
+    if row.airing_at is not None:
+        return row.airing_at.astimezone(target_tz) if target_tz is not None else row.airing_at
+    if row.weekday in ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday") and row.local_time:
+        try:
+            hour, minute = [int(part) for part in row.local_time.split(":", 1)]
+        except ValueError:
+            return None
+        weekdays = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+        delta = (weekdays.index(row.weekday) - window_start.weekday()) % 7
+        tz = target_tz
+        return datetime.combine(window_start + timedelta(days=delta), time(hour, minute), tzinfo=tz)
+    return None
+
+
+def _format_schedule_calendar_tty(result: ScheduleCalendarResult) -> str:
+    out = io.StringIO()
+    print(f"Schedule ({result.timezone})", file=out)
+    print(f"Window: {result.window_start.isoformat()} to {result.window_end.isoformat()} (exclusive)", file=out)
+    if not result.items:
+        return out.getvalue()
+
+    groups = {}
+    floating = []
+    for item in result.items:
+        row = item if isinstance(item, AiringScheduleRow) else None
+        if row is None and hasattr(item, "to_common"):
+            try:
+                common = item.to_common()
+            except Exception:
+                common = None
+            row = common if isinstance(common, AiringScheduleRow) else None
+        if row is None:
+            floating.append(item)
+            continue
+        when = _schedule_datetime(row, window_start=result.window_start, timezone_label=result.timezone)
+        key = when.date() if when is not None else None
+        groups.setdefault(key, []).append((when, row))
+
+    for day in sorted(groups, key=lambda value: value or date.max):
+        label = day.strftime("%A, %Y-%m-%d") if day is not None else "Unscheduled"
+        print("", file=out)
+        print(label, file=out)
+        for when, row in sorted(groups[day], key=lambda pair: ((pair[0] or datetime.max).time(), pair[1].title)):
+            clock = when.strftime("%H:%M") if when is not None else (row.local_time or "--:--")
+            bits = [f"  {clock}", row.title]
+            if row.episode is not None:
+                bits.append(f"ep {row.episode}")
+            bits.append(f"[src: {row.source.backend}]")
+            print("  ".join(bits), file=out)
+
+    for item in floating:
+        print("", file=out)
+        print(render_tty(item) if isinstance(item, AnimedexModel) else str(item), file=out)
+    return out.getvalue()
+
+
+def _format_merged_anime_tty(item: MergedAnime) -> str:
+    source_names = "+".join(source.backend for source in item.sources) or "?"
+    out = io.StringIO()
+    print(f"{item.title.romaji}  [src: {source_names}]", file=out)
+    if item.title.english and item.title.english != item.title.romaji:
+        print(f"  English: {item.title.english}", file=out)
+    if item.ids:
+        print(f"  IDs:     {' | '.join(f'{key}:{value}' for key, value in sorted(item.ids.items()))}", file=out)
+    for backend, anime in item.records.items():
+        bits = []
+        if anime.score is not None:
+            bits.append(f"score {anime.score.score}/{anime.score.scale}")
+        if anime.format:
+            bits.append(anime.format)
+        if anime.episodes is not None:
+            bits.append(f"{anime.episodes} ep")
+        if anime.status:
+            bits.append(anime.status)
+        detail = "  ·  ".join(bits) if bits else anime.id
+        title = anime.title.romaji
+        print(f"  {backend}: {title}  ({detail})", file=out)
+    return out.getvalue()
+
+
 def render_tty(model: AnimedexModel) -> str:
     """Render a model into the human-friendly TTY form.
 
@@ -328,10 +431,14 @@ def render_tty(model: AnimedexModel) -> str:
     :return: The TTY-friendly string.
     :rtype: str
     """
+    if isinstance(model, ScheduleCalendarResult):
+        return _format_schedule_calendar_tty(model)
     if isinstance(model, AggregateResult):
         if not model.items:
             return ""
         return "\n\n".join(render_tty(item) if isinstance(item, AnimedexModel) else str(item) for item in model.items)
+    if isinstance(model, MergedAnime):
+        return _format_merged_anime_tty(model)
     if isinstance(model, AiringScheduleRow):
         return _format_airing_schedule_tty(model)
     if isinstance(model, Anime):

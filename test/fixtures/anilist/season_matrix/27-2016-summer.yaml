@@ -1,0 +1,666 @@
+metadata:
+  captured_at: '2026-05-11T11:33:31Z'
+  label: 2016-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2016
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:30 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '25'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 21519
+          idMal: 32281
+          title:
+            romaji: Kimi no Na wa.
+            english: Your Name.
+            native: 君の名は。
+          synonyms:
+          - 'Your Name. - Gestern, heute und für immer '
+          - 'Mi a Neved? '
+          - 你的名字。
+          - 너의 이름은.
+          - Tu nombre
+          - Твоё имя
+          - หลับตาฝันถึงชื่อเธอ
+          - Il tuo nome
+          - השם שלך.
+          - Twoje imię
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 8
+            day: 26
+          endDate:
+            year: 2016
+            month: 8
+            day: 26
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 20954
+          idMal: 28851
+          title:
+            romaji: Koe no Katachi
+            english: A Silent Voice
+            native: 聲の形
+          synonyms:
+          - The Shape of Voice
+          - A Voz do Silêncio
+          - A Forma da Voz
+          - La Forma della Voce
+          - צורתו של קול
+          - 声之形
+          - الحزن الصامت
+          - Una voz silenciosa
+          - La Forme de la voix
+          - Форма голоса
+          - Форма голосу
+          - Tylus balsas
+          - Balss forma
+          - Дауыс пішіні
+          - Sakit səs
+          - รักไร้เสียง
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 9
+            day: 17
+          endDate:
+            year: 2016
+            month: 9
+            day: 17
+          averageScore: 88
+          nextAiringEpisode: null
+        - id: 21507
+          idMal: 32182
+          title:
+            romaji: Mob Psycho 100
+            english: Mob Psycho 100
+            native: モブサイコ100
+          synonyms:
+          - מוב פסיכו 100
+          - ม็อบไซโค 100 คนพลังจิต
+          - Моб Психо 100
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 12
+          endDate:
+            year: 2016
+            month: 9
+            day: 27
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 21804
+          idMal: 33255
+          title:
+            romaji: Saiki Kusuo no Ψ-nan
+            english: The Disastrous Life of Saiki K.
+            native: 斉木楠雄のΨ難
+          synonyms:
+          - חייו הרי-האסון של סאיקי ק
+          - Η Καταστροφική Ζωή του Σάικι Κ
+          - Ох уж этот экстрасенс Сайки Кусуо!
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 120
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 4
+          endDate:
+            year: 2016
+            month: 12
+            day: 26
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 21518
+          idMal: 32282
+          title:
+            romaji: 'Shokugeki no Souma: Ni no Sara'
+            english: Food Wars! The Second Plate
+            native: 食戟のソーマ 弍ノ皿
+          synonyms:
+          - 食戟之灵 贰之皿
+          - ยอดนักปรุงโซมะ ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 2
+          endDate:
+            year: 2016
+            month: 9
+            day: 24
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 21049
+          idMal: 30015
+          title:
+            romaji: ReLIFE
+            english: ReLIFE
+            native: ReLIFE
+          synonyms:
+          - リライフ
+          - Повторная жизнь
+          status: FINISHED
+          format: ONA
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 6
+            day: 24
+          endDate:
+            year: 2016
+            month: 6
+            day: 24
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 21647
+          idMal: 32729
+          title:
+            romaji: orange
+            english: Orange
+            native: orange
+          synonyms:
+          - オレンジ
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 4
+          endDate:
+            year: 2016
+            month: 9
+            day: 26
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21711
+          idMal: 32998
+          title:
+            romaji: 91Days
+            english: 91 Days
+            native: 91Days
+          synonyms:
+          - 91デイズ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 9
+          endDate:
+            year: 2016
+            month: 10
+            day: 1
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 21385
+          idMal: 31722
+          title:
+            romaji: 'Nanatsu no Taizai: Seisen no Shirushi'
+            english: 'The Seven Deadly Sins: Signs of A Holy War'
+            native: 七つの大罪 聖戦の予兆
+          synonyms:
+          - 'The Seven Deadly Sins: Signs of Holy War'
+          - The Seven Deadly Sins - Anzeichen eines Heiligen Kriegs
+          - ศึกตำนาน 7 อัศวิน ภาค สัญญาณสงครามศักดิ์สิทธิ์
+          - 'The Seven Deadly Sins: Ślady Świętej Wojny'
+          - 'Семь смертных грехов: Знамение священной войны'
+          status: FINISHED
+          format: TV
+          episodes: 4
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 8
+            day: 28
+          endDate:
+            year: 2016
+            month: 9
+            day: 18
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 21399
+          idMal: 31757
+          title:
+            romaji: 'Kizumonogatari II: Nekketsu-hen'
+            english: 'Kizumonogatari Part 2: Nekketsu'
+            native: 傷物語〈Ⅱ熱血篇〉
+          synonyms:
+          - 'Wound Tale 2: Hot Blood'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 8
+            day: 19
+          endDate:
+            year: 2016
+            month: 8
+            day: 19
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 21455
+          idMal: 31953
+          title:
+            romaji: NEW GAME!
+            english: NEW GAME!
+            native: NEW GAME!
+          synonyms:
+          - Новая игра!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 4
+          endDate:
+            year: 2016
+            month: 9
+            day: 19
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 21509
+          idMal: 32189
+          title:
+            romaji: 'Danganronpa 3: The End of Kibougamine Gakuen - Mirai-hen'
+            english: 'Danganronpa 3: The End of Hope’s Peak High School - Future Arc'
+            native: ダンガンロンパ３ –The End of 希望ヶ峰学園– 未来編
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 11
+          endDate:
+            year: 2016
+            month: 9
+            day: 26
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 21825
+          idMal: 33028
+          title:
+            romaji: 'Danganronpa 3: The End of Kibougamine Gakuen - Zetsubou-hen'
+            english: 'Danganronpa 3: The End of Hope’s Peak High School - Despair Arc'
+            native: ダンガンロンパ3 -The End of 希望ヶ峰学園-　絶望編
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 14
+          endDate:
+            year: 2016
+            month: 9
+            day: 22
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 21659
+          idMal: 32828
+          title:
+            romaji: Amaama to Inazuma
+            english: Sweetness & Lightning
+            native: 甘々と稲妻
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 5
+          endDate:
+            year: 2016
+            month: 9
+            day: 20
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 21457
+          idMal: 31952
+          title:
+            romaji: Kono Bijutsu-bu ni wa Mondai ga Aru!
+            english: This Art Club Has a Problem!
+            native: この美術部には問題がある!
+          synonyms:
+          - Konobi
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 8
+          endDate:
+            year: 2016
+            month: 9
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 21626
+          idMal: 32648
+          title:
+            romaji: Handa-kun
+            english: Handa-kun
+            native: はんだくん
+          synonyms:
+          - ฮันดะคุง
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 8
+          endDate:
+            year: 2016
+            month: 9
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 21410
+          idMal: 31764
+          title:
+            romaji: 'Nejimaki Seirei Senki: Tenkyou no Alderamin'
+            english: Alderamin on the Sky
+            native: ねじ巻き精霊戦記 天鏡のアルデラミン
+          synonyms:
+          - สงครามภูติล้างบัลลังก์ อัลเดรามินแห่งฟากฟ้า
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 9
+          endDate:
+            year: 2016
+            month: 10
+            day: 1
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21560
+          idMal: 32379
+          title:
+            romaji: Berserk
+            english: Berserk (2016)
+            native: ベルセルク
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 1
+          endDate:
+            year: 2016
+            month: 9
+            day: 16
+          averageScore: 55
+          nextAiringEpisode: null
+        - id: 21221
+          idMal: 30911
+          title:
+            romaji: Tales of Zestiria the Cross
+            english: Tales of Zestiria the X
+            native: テイルズ オブ ゼスティリア ザ クロス
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 3
+          endDate:
+            year: 2016
+            month: 9
+            day: 25
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 21688
+          idMal: 32902
+          title:
+            romaji: 'Mahoutsukai no Yome: Hoshi Matsu Hito'
+            english: 'The Ancient Magus'' Bride: Those Awaiting a Star'
+            native: 魔法使いの嫁 星待つひと
+          synonyms:
+          - 'Mahou Tsukai no Yome: Hoshi Matsu Hito'
+          - The Ancient Magus Bride
+          - The Ancient Magus' Bride
+          status: FINISHED
+          format: OVA
+          episodes: 3
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 8
+            day: 13
+          endDate:
+            year: 2017
+            month: 9
+            day: 9
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 21378
+          idMal: 31845
+          title:
+            romaji: Masou Gakuen HxH
+            english: Hybrid x Heart Magias Academy Ataraxia
+            native: 魔装学園H×H
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 6
+          endDate:
+            year: 2016
+            month: 9
+            day: 21
+          averageScore: 56
+          nextAiringEpisode: null
+        - id: 21269
+          idMal: 31229
+          title:
+            romaji: SERVAMP
+            english: SERVAMP
+            native: SERVAMP
+          synonyms:
+          - サーヴァンプ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 5
+          endDate:
+            year: 2016
+            month: 9
+            day: 20
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 21031
+          idMal: 29758
+          title:
+            romaji: Taboo Tattoo
+            english: null
+            native: タブー・タトゥー
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 5
+          endDate:
+            year: 2016
+            month: 9
+            day: 20
+          averageScore: 53
+          nextAiringEpisode: null
+        - id: 21584
+          idMal: 32526
+          title:
+            romaji: Love Live! Sunshine!!
+            english: Love Live! Sunshine!!
+            native: ラブライブ！サンシャイン!!
+          synonyms:
+          - Love Live! School Idol Project Sunshine!!
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 2
+          endDate:
+            year: 2016
+            month: 9
+            day: 24
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 21335
+          idMal: 31490
+          title:
+            romaji: 'ONE PIECE FILM: GOLD'
+            english: 'One Piece Film: Gold'
+            native: ONE PIECE FILM GOLD
+          synonyms:
+          - One Piece Film 13
+          - 航海王之黄金城
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 7
+            day: 23
+          endDate:
+            year: 2016
+            month: 7
+            day: 23
+          averageScore: 77
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

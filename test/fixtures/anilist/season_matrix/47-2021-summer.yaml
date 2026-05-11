@@ -1,0 +1,695 @@
+metadata:
+  captured_at: '2026-05-11T11:34:28Z'
+  label: 2021-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2021
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:27 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '26'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 116742
+          idMal: 41487
+          title:
+            romaji: Tensei Shitara Slime Datta Ken 2nd Season Part 2
+            english: That Time I Got Reincarnated as a Slime Season 2 Part 2
+            native: 転生したらスライムだった件 第2期 第2クール
+          synonyms:
+          - Tensura 2
+          - 关于我转生变成史莱姆这档事第二季（下半）
+          - เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว ภาค 2 พาร์ท 2
+          - Moi, quand je me réincarne en Slime Saison 2 Partie 2
+          - О моём перерождении в слизь 2
+          - 転スラ 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 6
+          endDate:
+            year: 2021
+            month: 9
+            day: 21
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 131646
+          idMal: 48580
+          title:
+            romaji: Vanitas no Carte
+            english: The Case Study of Vanitas
+            native: ヴァニタスの手記
+          synonyms:
+          - Vanitas no Karte
+          - Les Mémoires de Vanitas
+          - 瓦尼塔斯的手记
+          - บันทึกแวมไพร์วานิทัส
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 3
+          endDate:
+            year: 2021
+            month: 9
+            day: 18
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 107717
+          idMal: 39247
+          title:
+            romaji: Kobayashi-san Chi no Maidragon S
+            english: Miss Kobayashi's Dragon Maid S
+            native: 小林さんちのメイドラゴンＳ
+          synonyms:
+          - 小林家的龙女仆 S
+          - 小林家的龍女僕S
+          - น้องเมดมังกรของคุณโคบายาชิ ภาค 2
+          - ' Kobayashi-san Chi no Maid Dragon 2nd Season'
+          - Дракониха-горничная госпожи Кобаяси S
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 8
+          endDate:
+            year: 2021
+            month: 9
+            day: 23
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 125206
+          idMal: 43523
+          title:
+            romaji: Tsuki ga Michibiku Isekai Douchuu
+            english: TSUKIMICHI -Moonlit Fantasy-
+            native: 月が導く異世界道中
+          synonyms:
+          - Moon-led Journey Across Another World
+          - จันทรานำพาสู่ต่างโลก
+          - 月光下的异世界之旅
+          - Благословлённое лунным светом приключение в другом мире
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 7
+          endDate:
+            year: 2021
+            month: 9
+            day: 22
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 126546
+          idMal: 44203
+          title:
+            romaji: Seirei Gensouki
+            english: 'Seirei Gensouki: Spirit Chronicles'
+            native: 精霊幻想記
+          synonyms:
+          - 精灵幻想记
+          - ตำนานวิญญาณแฟนซี
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 6
+          endDate:
+            year: 2021
+            month: 9
+            day: 21
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 117612
+          idMal: 41710
+          title:
+            romaji: Genjitsu Shugi Yuusha no Oukoku Saikenki
+            english: How a Realist Hero Rebuilt the Kingdom
+            native: 現実主義勇者の王国再建記
+          synonyms:
+          - Genjitsushugisha no Oukokukaizouki
+          - A Realist's Kingdom Reform Chronicles
+          - Genkoku
+          - ยุทธศาสตร์กู้ชาติของราชามือใหม่
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 4
+          endDate:
+            year: 2021
+            month: 9
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 132126
+          idMal: 48849
+          title:
+            romaji: Sonny Boy
+            english: Sonny Boy
+            native: Sonny Boy
+          synonyms:
+          - サニーボーイ
+          - ซันนีบอย
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 16
+          endDate:
+            year: 2021
+            month: 10
+            day: 1
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 126192
+          idMal: 43969
+          title:
+            romaji: Kanojo mo Kanojo
+            english: Girlfriend, Girlfriend
+            native: カノジョも彼女
+          synonyms:
+          - KanoKano
+          - She is also my Girlfriend
+          - 'จะคนไหนก็แฟนสาว '
+          - Мои девушки
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 3
+          endDate:
+            year: 2021
+            month: 9
+            day: 18
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 128712
+          idMal: 46471
+          title:
+            romaji: Tantei wa mou, Shindeiru.
+            english: The Detective Is Already Dead
+            native: 探偵はもう、死んでいる。
+          synonyms:
+          - La detective esta muerta.
+          - Tanmoshi
+          - 侦探已经，死了
+          - 侦探已死
+          - นักสืบตายแล้ว
+          - Детектив уже мёртв
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 4
+          endDate:
+            year: 2021
+            month: 9
+            day: 19
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 114065
+          idMal: 40904
+          title:
+            romaji: Bokutachi no Remake
+            english: Remake Our Life!
+            native: ぼくたちのリメイク
+          synonyms:
+          - Bokurema
+          - 我们的重制人生
+          - ย้อนเวลา รีเมคชีวิต
+          - Ремейк нашей жизни!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 3
+          endDate:
+            year: 2021
+            month: 9
+            day: 25
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 126659
+          idMal: 44200
+          title:
+            romaji: 'Boku no Hero Academia THE MOVIE: World Heroes'' Mission'
+            english: 'My Hero Academia: World Heroes'' Mission'
+            native: 僕のヒーローアカデミア THE MOVIE ワールド ヒーローズ ミッション
+          synonyms:
+          - My Hero Academia the Movie 3
+          - 'My Hero Academia: Misión Mundial de Héroes'
+          - 'My Hero Academia: Missão Mundial de Heróis'
+          - 'มาย ฮีโร่ อาคาเดเมีย : รวมพลฮีโร่กู้วิกฤตโลก'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 8
+            day: 6
+          endDate:
+            year: 2021
+            month: 8
+            day: 6
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 107625
+          idMal: 39175
+          title:
+            romaji: Cider no You ni Kotoba ga Wakiagaru
+            english: Words Bubble Up Like Soda Pop
+            native: サイダーのように言葉が湧き上がる
+          synonyms:
+          - Palavras que Borbulham como Refrigerante
+          - Palabras que burbujean como un refresco
+          - מילים מתפצפצות כמו גזוז
+          - Nos mots comme des bulles
+          - ถ้อยคำเอ่อล้นด้วยหัวใจรัก
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 22
+          endDate:
+            year: 2021
+            month: 7
+            day: 22
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 112802
+          idMal: 40620
+          title:
+            romaji: Uramichi Oniisan
+            english: Life Lessons with Uramichi Oniisan
+            native: うらみちお兄さん
+          synonyms:
+          - อูรามิจิ โอนีซัง
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 6
+          endDate:
+            year: 2021
+            month: 9
+            day: 28
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 132456
+          idMal: 48753
+          title:
+            romaji: Jahy-sama wa Kujikenai!
+            english: The Great Jahy Will Not Be Defeated!
+            native: ジャヒー様はくじけない！
+          synonyms:
+          - ท่านปีศาจจาฮี ชีวิตนี้ไม่มีถอย!
+          - Niepokonana Jahy
+          status: FINISHED
+          format: TV
+          episodes: 20
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 8
+            day: 1
+          endDate:
+            year: 2021
+            month: 12
+            day: 19
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 129277
+          idMal: 47257
+          title:
+            romaji: Shinigami Bocchan to Kuro Maid
+            english: The Duke of Death and His Maid
+            native: 死神坊ちゃんと黒メイド
+          synonyms:
+          - คุณชายวิปริตกับเมดสาวรอบจัด
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 4
+          endDate:
+            year: 2021
+            month: 9
+            day: 19
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 120209
+          idMal: 42282
+          title:
+            romaji: Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta… X
+            english: 'My Next Life as a Villainess: All Routes Lead to Doom! X'
+            native: 乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…Ｘ
+          synonyms:
+          - Hamefura 2
+          - Hamehura 2
+          - เกิดใหม่เป็นนางร้ายจะเลือกทางไหนก็หายนะ X
+          - เกิดใหม่เป็นนางร้ายจะเลือกทางไหนก็หายนะ ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 3
+          endDate:
+            year: 2021
+            month: 9
+            day: 18
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 120608
+          idMal: 42340
+          title:
+            romaji: Meikyuu Black Company
+            english: The Dungeon of Black Company
+            native: 迷宮ブラックカンパニー
+          synonyms:
+          - เมคีว แบล็กคอมพานี
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 9
+          endDate:
+            year: 2021
+            month: 9
+            day: 24
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 126047
+          idMal: 43814
+          title:
+            romaji: Deatte 5-byou de Battle
+            english: Battle Game in 5 Seconds
+            native: 出会って5秒でバトル
+          synonyms:
+          - Battle in 5 seconds after meeting.
+          - ศึกเดือด 5 วิ พลิกชะตา
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 13
+          endDate:
+            year: 2021
+            month: 9
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 122052
+          idMal: 42544
+          title:
+            romaji: Kaizoku Oujo
+            english: 'Fena: Pirate Princess'
+            native: 海賊王女
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 8
+            day: 15
+          endDate:
+            year: 2021
+            month: 10
+            day: 24
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 127271
+          idMal: 44807
+          title:
+            romaji: Ryuu to Sobakasu no Hime
+            english: BELLE
+            native: 竜とそばかすの姫
+          synonyms:
+          - The Dragon and Freckled Princess
+          - BELLE เจ้าหญิงแห่งเสียงเพลง
+          - Красавица и дракон
+          - 'Μπελ: Ο Δράκος και Η Πριγκίπισσα'
+          - 龙与雀斑公主
+          - Дракон та веснянкувата принцеса
+          - 'Belle: The Dragon and the Freckled Princess'
+          - Skaistule un briesmonis
+          - Сұлу қыз бен айдаһар
+          - Gözəl və əjdaha
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 16
+          endDate:
+            year: 2021
+            month: 7
+            day: 16
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 117989
+          idMal: 41812
+          title:
+            romaji: Megami-ryou no Ryoubo-kun.
+            english: Mother of the Goddess’ Dormitory
+            native: 女神寮の寮母くん。
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 14
+          endDate:
+            year: 2021
+            month: 9
+            day: 15
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 128545
+          idMal: 46093
+          title:
+            romaji: Shiroi Suna no Aquatope
+            english: The aquatope on white sand
+            native: 白い砂のアクアトープ
+          synonyms:
+          - Aquatope of White Sand
+          - The two girls met in the ruins of damaged dream
+          - อควาโทปแห่งทรายขาว
+          - Aquatope di Atas Pasir Putih
+          - Акватоп на белом песке
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 9
+          endDate:
+            year: 2021
+            month: 12
+            day: 17
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 127371
+          idMal: 44931
+          title:
+            romaji: 'Tonikaku Kawaii: SNS'
+            english: 'TONIKAWA: Over The Moon For You ~SNS~'
+            native: トニカクカワイイ ～SNS～
+          synonyms:
+          - Tonikaku Kawaii OVA
+          - TONIKAWA OVA
+          - Tonikaku Kawaii Episode 13
+          - 'Красавица: Унеси меня на Луну. Социальная сеть'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 8
+            day: 18
+          endDate:
+            year: 2021
+            month: 8
+            day: 18
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 122434
+          idMal: 42625
+          title:
+            romaji: Heion Sedai no Idaten-tachi
+            english: The Idaten Deities Know Only Peace
+            native: 平穏世代の韋駄天達
+          synonyms:
+          - Idaten Deities in the Peaceful Generation
+          - อิดะเท็น เทพต่อสู้กู้ยุคสันติ
+          - Боги-стражники не ведали войны
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 23
+          endDate:
+            year: 2021
+            month: 9
+            day: 28
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 122441
+          idMal: 42627
+          title:
+            romaji: Peach Boy Riverside
+            english: Peach Boy Riverside
+            native: ピーチボーイリバーサイド
+          synonyms:
+          - พีชบอยริเวอร์ไซด์
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 7
+            day: 1
+          endDate:
+            year: 2021
+            month: 9
+            day: 16
+          averageScore: 60
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

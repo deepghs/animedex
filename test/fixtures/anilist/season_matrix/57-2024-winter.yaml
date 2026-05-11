@@ -1,0 +1,727 @@
+metadata:
+  captured_at: '2026-05-11T11:34:57Z'
+  label: 2024-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2024
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:57 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '16'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 151807
+          idMal: 52299
+          title:
+            romaji: Ore dake Level Up na Ken
+            english: Solo Leveling
+            native: 俺だけレベルアップな件
+          synonyms:
+          - 나 혼자만 레벨업
+          - Na Honjaman Level Up
+          - 'Solo Leveling: Поднятие уровня в одиночку'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 7
+          endDate:
+            year: 2024
+            month: 3
+            day: 31
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 153518
+          idMal: 52701
+          title:
+            romaji: Dungeon Meshi
+            english: Delicious in Dungeon
+            native: ダンジョン飯
+          synonyms:
+          - Dungeon Food
+          - Dungeon Meal
+          - Tragones y Mazmorras
+          - Gloutons et Dragons
+          - Подземелье вкусностей
+          - 던전밥
+          - สูตรลับตำรับดันเจียน
+          - Mỹ vị hầm ngục
+          - Підземелля смакоти
+          - 迷宫饭
+          - מבוכים ומטעמים
+          - Dunmeshi
+          - Labužníci v kobce
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 4
+          endDate:
+            year: 2024
+            month: 6
+            day: 13
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 146066
+          idMal: 51180
+          title:
+            romaji: Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 3rd Season
+            english: Classroom of the Elite Season 3
+            native: ようこそ実力至上主義の教室へ 3rd Season
+          synonyms:
+          - You-Zitsu 3
+          - Youjitsu 3
+          - ขอต้อนรับสู่ห้องเรียนนิยม (เฉพาะ) ยอดคน ภาค 3
+          - Classroom of the Elite III
+          - 欢迎来到实力至上主义的教室 第三季
+          - Добро пожаловать в класс для особо одарённых 3
+          - فصل النخبة الموسم الثالث
+          - 歡迎來到實力至上主義的教室 第三季
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 3
+          endDate:
+            year: 2024
+            month: 3
+            day: 27
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 166610
+          idMal: 55813
+          title:
+            romaji: 'MASHLE: Kami Shinkakusha Kouho Senbatsu Shiken-hen'
+            english: 'MASHLE: MAGIC AND MUSCLES Season 2'
+            native: マッシュル-MASHLE- 神覚者候補選抜試験編
+          synonyms:
+          - マッシュル-MASHLE- 第2期
+          - MASHLE 2nd Season
+          - 'MASHLE: MAGIC AND MUSCLES - The Divine Visionary Candidate Exam Arc'
+          - 肌肉魔法使-MASHLE- 神覺者候補選拔試驗篇
+          - 'MASHLE: Магия и мускулы. Экзамен на звание Вестника Бога'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 6
+          endDate:
+            year: 2024
+            month: 3
+            day: 30
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 166794
+          idMal: 55866
+          title:
+            romaji: Yubisaki to Renren
+            english: A Sign of Affection
+            native: ゆびさきと恋々
+          synonyms:
+          - Ein Zeichen der Zuneigung
+          - 손끝과 연연
+          - Signos de Afecto
+          - Кохання на кінчиках пальців
+          - Znaki naszych uczuć
+          - Cinta dan Isyarat
+          - Любовь с кончиков пальцев
+          - Жест беззаветной любви
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 6
+          endDate:
+            year: 2024
+            month: 3
+            day: 23
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 137908
+          idMal: 49613
+          title:
+            romaji: Chiyu Mahou no Machigatta Tsukaikata
+            english: The Wrong Way to Use Healing Magic
+            native: 治癒魔法の間違った使い方
+          synonyms:
+          - Penggunaan Sihir Penyembuh yang Keliru
+          - เวทรักษาที่ไหนเขาใช้กันแบบนี้
+          - Cách dùng sai của ma thuật chữa trị
+          - Как (не) стоит использовать магию исцеления
+          - الطريقة الخاطئة لاستخدام سحر الشفاء
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 6
+          endDate:
+            year: 2024
+            month: 3
+            day: 30
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 139518
+          idMal: 49889
+          title:
+            romaji: Tsuki ga Michibiku Isekai Douchuu 2nd Season
+            english: TSUKIMICHI -Moonlit Fantasy- Season 2
+            native: 月が導く異世界道中 第二幕
+          synonyms:
+          - จันทรานำพาสู่ต่างโลก ภาค 2
+          - 月光下的異世界之旅 第二季
+          - Благословлённое лунным светом приключение в другом мире 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 8
+          endDate:
+            year: 2024
+            month: 6
+            day: 24
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 141821
+          idMal: 50392
+          title:
+            romaji: Mato Seihei no Slave
+            english: Chained Soldier
+            native: 魔都精兵のスレイブ
+          synonyms:
+          - Slave of the Magic Capital's Elite Troops
+          - Demon Slave
+          - Slave of the Hell Soldiers
+          - ทาสสุดแกร่งแห่งหน่วยป้องกันอสูร
+          - Mabotai
+          - 'Demon Slave: The Chained Soldier'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 4
+          endDate:
+            year: 2024
+            month: 3
+            day: 21
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 166216
+          idMal: 55690
+          title:
+            romaji: Boku no Kokoro no Yabai Yatsu 2nd Season
+            english: The Dangers in My Heart Season 2
+            native: 僕の心のヤバイやつ 第2期
+          synonyms:
+          - BokuYaba 2
+          - 僕ヤバ 2
+          - เธอผู้อันตรายต่อใจผม ภาคที่ 2
+          - Czarne chmury w moim sercu. Sezon 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 7
+          endDate:
+            year: 2024
+            month: 3
+            day: 31
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 153658
+          idMal: 52742
+          title:
+            romaji: 'Haikyuu!!: Gomi Suteba no Kessen'
+            english: HAIKYU!! The Dumpster Battle
+            native: ハイキュー!! ゴミ捨て場の決戦
+          synonyms:
+          - 'ハイキュー!! FINAL '
+          - Haikyuu!! FINAL
+          - Haikyuu!! Battle at the Garbage Dump
+          - 'Haikyu!! Movie: Decisive Battle at the Garbage Dump'
+          - HAIKYU!! La Batalla del Basurero
+          - HAIKYU!! La Guerre des Poubelles
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 2
+            day: 16
+          endDate:
+            year: 2024
+            month: 2
+            day: 16
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 168374
+          idMal: 56352
+          title:
+            romaji: Loop 7-kaime no Akuyaku Reijou wa, Moto Tekikoku de Jiyuu Kimama na Hanayome Seikatsu wo Mankitsu Suru
+            english: '7th Time Loop: The Villainess Enjoys a Carefree Life Married to Her Worst Enemy!'
+            native: ループ7回目の悪役令嬢は、元敵国で自由気ままな花嫁生活を満喫する
+          synonyms:
+          - ชีวิตลูปที่ 7 ของนางร้าย ขอเป็นเจ้าสาวนอนกลิ้งสบายในแดนอดีตศัตรู
+          - Седьмая беззаботная жизнь злодейки в браке со злейшим врагом
+          - LoopNana
+          - ルプなな
+          - 輪迴七次的惡役千金，在前敵國享受隨心所欲的新婚生活
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 7
+          endDate:
+            year: 2024
+            month: 3
+            day: 24
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 155963
+          idMal: 53421
+          title:
+            romaji: Dosanko Gal wa Namara Menkoi
+            english: Hokkaido Gals Are Super Adorable!
+            native: 道産子ギャルはなまらめんこい
+          synonyms:
+          - Dosanko Gyaru Is Mega Cute
+          - Dosanko Gyaru wa Namaramenkoi
+          - สาวแกลเมืองเหนือน่าฮักขนาด
+          - Dosakoi
+          - どさこい
+          - Девчонки с Хоккайдо просто чума!
+          - غارو هوكّاديو ظريفات جدّاً
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 9
+          endDate:
+            year: 2024
+            month: 3
+            day: 26
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 147642
+          idMal: 51648
+          title:
+            romaji: Nozomanu Fushi no Boukensha
+            english: The Unwanted Undead Adventurer
+            native: 望まぬ不死の冒険者
+          synonyms:
+          - เส้นทางพลิกผันชองราชันอมตะ
+          - TUUA
+          - Petualang Mayat Hidup yang Tidak Diinginkan
+          - Нежеланно бессмертный авантюрист
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 5
+          endDate:
+            year: 2024
+            month: 3
+            day: 22
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 151639
+          idMal: 56285
+          title:
+            romaji: Ninja Kamui
+            english: Ninja Kamui
+            native: Ninja Kamui
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 2
+            day: 11
+          endDate:
+            year: 2024
+            month: 5
+            day: 5
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 162780
+          idMal: 54722
+          title:
+            romaji: Mahou Shoujo ni Akogarete
+            english: Gushing Over Magical Girls
+            native: 魔法少女にあこがれて
+          synonyms:
+          - I Admire Magical Girls, and...
+          - Mahoako
+          - Looking up to Magical Girls
+          - 夢想成為魔法少女
+          - Fascinada por Garotas Mágicas
+          - Me encantan las Magical Girls
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 3
+          endDate:
+            year: 2024
+            month: 3
+            day: 27
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 163076
+          idMal: 54837
+          title:
+            romaji: 'Akuyaku Reijou Level 99: Watashi wa Ura Boss desu ga Maou de wa Arimasen'
+            english: 'Villainess Level 99: I May Be the Hidden Boss but I''m Not the Demon Lord'
+            native: 悪役令嬢レベル99 ～私は裏ボスですが魔王ではありません～
+          synonyms:
+          - ชีวิตไม่ง่ายของนางร้าย LV99
+          - Light Magic and the Hero
+          - 'Злодейка 99 уровня: Да, я скрытый босс, но не повелительница демонов'
+          - Akuyaku LV99
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 9
+          endDate:
+            year: 2024
+            month: 3
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 158028
+          idMal: 53730
+          title:
+            romaji: Sokushi Cheat ga Saikyou Sugite, Isekai no Yatsura ga Marude Aite ni Naranai n desu ga.
+            english: My Instant Death Ability is Overpowered
+            native: 即死チートが最強すぎて、異世界のやつらがまるで相手にならないんですが。
+          synonyms:
+          - Sokushicheat
+          - My Instant Death Ability Is So Overpowered, No One in This Other World Stands a Chance Against Me!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 5
+          endDate:
+            year: 2024
+            month: 3
+            day: 22
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 153818
+          idMal: 52816
+          title:
+            romaji: Majo to Yajuu
+            english: The Witch and the Beast
+            native: 魔女と野獣
+          synonyms:
+          - Ведьма и зверь
+          - Відьма та чудовисько
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 12
+          endDate:
+            year: 2024
+            month: 4
+            day: 5
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 158931
+          idMal: 53889
+          title:
+            romaji: 'Ao no Exorcist: Shimane Illuminati-hen'
+            english: Blue Exorcist -Shimane Illuminati Saga-
+            native: 青の祓魔師 島根啓明結社篇
+          synonyms:
+          - Ao no Futsumashi
+          - 'Синий экзорцист 3: Иллюминаты Симанэ'
+          - Blue Exorcist Season 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 7
+          endDate:
+            year: 2024
+            month: 3
+            day: 24
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 156131
+          idMal: 53488
+          title:
+            romaji: Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node, Henkyou de Slow Life suru Koto ni shimashita
+              2nd
+            english: Banished from the Hero’s Party, I Decided to Live a Quiet Life in the Countryside Season 2
+            native: 真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました 2nd
+          synonyms:
+          - Banished from the brave man's group, I decided to lead a slow life in the back country. 2nd
+          - I Was Kicked out of the Hero’s Party Because I Wasn’t a True Companion so I Decided to Have a Slow Life at the
+            Frontier Season 2
+          - ผมโดนกลุ่มผู้กล้าขับไส เลยต้องไปสโลว์ไลฟ์ที่ชายแดน ภาค 2
+          - Изгнанный из отряда героя, я решил поселиться в глубинке 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 7
+          endDate:
+            year: 2024
+            month: 3
+            day: 24
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 164244
+          idMal: 55129
+          title:
+            romaji: Oroka na Tenshi wa Akuma to Odoru
+            english: The Foolish Angel Dances with the Devil
+            native: 愚かな天使は悪魔と踊る
+          synonyms:
+          - Stupid angel dances with the devil
+          - Die mit dem Teufel tanzt
+          - 愚蠢天使與惡魔共舞
+          - Глупый ангел пляшет с демоном
+          - 'かな天 '
+          - KanaTen
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 9
+          endDate:
+            year: 2024
+            month: 3
+            day: 26
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 143866
+          idMal: 50803
+          title:
+            romaji: Jaku-Chara Tomozaki-kun 2nd STAGE
+            english: Bottom-Tier Character Tomozaki 2nd Stage
+            native: 弱キャラ友崎くん 2nd STAGE
+          synonyms:
+          - Bottom-Tier Character Tomozaki Season 2
+          - Jaku-Chara Tomozaki-kun 2nd Season
+          - 弱キャラ友崎くん２
+          - Низкоуровневый Томодзаки 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 3
+          endDate:
+            year: 2024
+            month: 3
+            day: 27
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 160389
+          idMal: 54265
+          title:
+            romaji: Kekkon Yubiwa Monogatari
+            english: Tales of Wedding Rings
+            native: 結婚指輪物語
+          synonyms:
+          - ตำนานผู้กล้าแห่งแหวน
+          - 婚戒物語
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 6
+          endDate:
+            year: 2024
+            month: 3
+            day: 23
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 156891
+          idMal: 53590
+          title:
+            romaji: Saijaku Tamer wa Gomi Hiroi no Tabi wo Hajimemashita.
+            english: The Weakest Tamer Began a Journey to Pick Up Trash
+            native: 最弱テイマーはゴミ拾いの旅を始めました。
+          synonyms:
+          - การผจญภัยของเทมเมอร์มือใหม่กับสไลม์สุดด๋อย
+          - 最弱魔物使開始了撿垃圾之旅。
+          - Слабейшая укротительница отправляется в путешествие по сбору мусора
+          - Kẻ Thuần Hóa Yếu Nhất Bắt Đầu Hành Trình Nhặt Rác
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 12
+          endDate:
+            year: 2024
+            month: 3
+            day: 29
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 161476
+          idMal: 54449
+          title:
+            romaji: Ishura
+            english: ISHURA
+            native: 異修羅
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 1
+            day: 3
+          endDate:
+            year: 2024
+            month: 3
+            day: 20
+          averageScore: 65
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

@@ -45,7 +45,7 @@ from animedex.models.anime import (
     AnimeStreamingLink,
     AnimeTitle,
 )
-from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
+from animedex.models.aggregate import AggregateResult, AggregateSourceStatus, MergedAnime, ScheduleCalendarResult
 from animedex.models.art import ArtPost, ArtRating
 from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import (
@@ -86,9 +86,11 @@ __all__ = [
     "Manga",
     "MangaFormat",
     "MangaStatus",
+    "MergedAnime",
     "Pagination",
     "Quote",
     "RateLimit",
+    "ScheduleCalendarResult",
     "SourceTag",
     "Staff",
     "Studio",
