@@ -29,6 +29,8 @@ class TestCalendarHelpers:
 
         with pytest.raises(ApiError, match="unknown season"):
             calendar._normalise_season("monsoon")
+        with pytest.raises(ApiError, match="unknown day"):
+            calendar._normalise_day("noday")
         with pytest.raises(ApiError, match="unknown source"):
             calendar._select_sources("anilist,unknown")
 

@@ -270,6 +270,20 @@ class TestErrorPaths:
                 jikan_api.show(999999999, no_cache=True)
         assert exc_info.value.reason == "not-found"
 
+    def test_429_raises_rate_limited(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            rsps.add(
+                responses.GET,
+                "https://api.jikan.moe/v4/anime/52991/full",
+                json={"status": 429, "type": "RateLimitException", "message": "Too many requests"},
+                status=429,
+            )
+            with pytest.raises(ApiError) as exc_info:
+                jikan_api.show(52991, no_cache=True)
+        assert exc_info.value.reason == "rate-limited"
+
     def test_5xx_raises_upstream_error(self, fake_clock):
         from animedex.models.common import ApiError
 

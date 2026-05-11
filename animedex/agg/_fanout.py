@@ -57,10 +57,7 @@ def _http_status_from_message(message: str) -> Optional[int]:
     match = _HTTP_STATUS_RE.search(message)
     if match is None:
         return None
-    try:
-        return int(match.group(1))
-    except ValueError:
-        return None
+    return int(match.group(1))
 
 
 def _status_from_exception(name: str, exc: BaseException, duration_ms: float) -> AggregateSourceStatus:
