@@ -1,9 +1,9 @@
-# vhs tape - animedex aggregate search/show tour (~18 s)
+# vhs tape - animedex search/show aggregate tour (~18 s)
 #
 # Uses a pre-warmed local cache during rendering so the demo is stable
 # and does not depend on live upstream rate-limit state.
 
-Output aggregate.gif
+Output search_show.gif
 
 Set Theme "Dracula"
 Set FontSize 13

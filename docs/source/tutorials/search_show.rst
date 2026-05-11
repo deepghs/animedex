@@ -3,7 +3,7 @@
 
 The top-level aggregate commands are the normal entry point when the user has not chosen a backend yet. ``animedex search`` fans out to every catalogue that supports the requested entity type, while ``animedex show`` routes one ``prefix:id`` reference back to the owning backend.
 
-.. image:: /_static/gifs/aggregate.gif
+.. image:: /_static/gifs/search_show.gif
    :alt: animedex aggregate demo - multi-source search and prefix-id show
    :align: center
 
