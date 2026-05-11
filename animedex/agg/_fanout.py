@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Any, Callable, Dict, Iterable, List, Tuple
+from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple
 
 from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
 from animedex.models.common import ApiError
@@ -13,7 +13,7 @@ from animedex.models.common import ApiError
 SourceCallable = Callable[[], List[Any]]
 
 
-def _http_status_from_message(message: str) -> int | None:
+def _http_status_from_message(message: str) -> Optional[int]:
     """Best-effort status extraction from backend ``ApiError`` text."""
     for token in message.replace("(", " ").replace(")", " ").split():
         if token.isdigit() and len(token) == 3:
@@ -92,7 +92,7 @@ def _run_one(name: str, fn: SourceCallable) -> Tuple[str, List[Any], AggregateSo
     )
 
 
-def select_sources(available: Iterable[str], requested: str | None) -> List[str]:
+def select_sources(available: Iterable[str], requested: Optional[str]) -> List[str]:
     """Resolve a comma-separated source allowlist.
 
     :param available: Allowed source names.
