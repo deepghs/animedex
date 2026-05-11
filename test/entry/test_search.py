@@ -20,8 +20,12 @@ _STRIP_HEADERS = {"content-encoding", "content-length", "transfer-encoding"}
 
 @pytest.fixture
 def cli_runner():
+    import inspect
+
     from click.testing import CliRunner
 
+    if "mix_stderr" in inspect.signature(CliRunner).parameters:
+        return CliRunner(mix_stderr=False)
     return CliRunner()
 
 
@@ -80,6 +84,14 @@ def _register_fixture_path_only(rsps: responses.RequestsMock, fixture: dict) -> 
 def _register_many(rsps: responses.RequestsMock, fixture_rels: list[str]) -> None:
     for rel in fixture_rels:
         _register_fixture_path_only(rsps, _load_fixture(rel))
+
+
+def _combined_output(result) -> str:
+    try:
+        stderr = result.stderr
+    except ValueError:
+        stderr = ""
+    return result.output + stderr
 
 
 ANIME_SEARCH_FIXTURES = [
@@ -211,11 +223,12 @@ class TestSearchCli:
         result = cli_runner.invoke(cli, ["search", "badtype", "x", "--json", "--no-cache"])
 
         assert result.exit_code != 0
-        assert "unknown type" in result.output
-        assert "supported types" in result.output
+        output = _combined_output(result)
+        assert "unknown type" in output
+        assert "supported types" in output
 
     def test_missing_type_uses_click_argument_error(self, cli_runner, cli):
         result = cli_runner.invoke(cli, ["search"])
 
         assert result.exit_code != 0
-        assert "Missing argument 'TYPE'" in result.output
+        assert "Missing argument 'TYPE'" in _combined_output(result)

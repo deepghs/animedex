@@ -20,8 +20,12 @@ _STRIP_HEADERS = {"content-encoding", "content-length", "transfer-encoding"}
 
 @pytest.fixture
 def cli_runner():
+    import inspect
+
     from click.testing import CliRunner
 
+    if "mix_stderr" in inspect.signature(CliRunner).parameters:
+        return CliRunner(mix_stderr=False)
     return CliRunner()
 
 
@@ -75,6 +79,14 @@ def _register_fixture_path_only(rsps: responses.RequestsMock, fixture: dict) -> 
 
         kwargs["body"] = base64.b64decode(resp["body_b64"])
     rsps.add(responses.Response(method=req["method"].upper(), url=url_re, **kwargs))
+
+
+def _combined_output(result) -> str:
+    try:
+        stderr = result.stderr
+    except ValueError:
+        stderr = ""
+    return result.output + stderr
 
 
 class TestShowCli:
@@ -135,7 +147,7 @@ class TestShowCli:
 
         assert len(rsps.calls) == 0
         assert result.exit_code != 0
-        assert expected in result.output
+        assert expected in _combined_output(result)
 
     def test_upstream_error_propagates_cleanly(self, cli_runner, cli, fake_clock):
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
