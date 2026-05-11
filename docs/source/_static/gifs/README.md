@@ -22,6 +22,7 @@ source tapes so future contributors can regenerate them.
 | `trace.gif` | `docs/source/tutorials/backends/trace.rst` header | `trace.tape` |
 | `nekos.gif` | `docs/source/tutorials/backends/nekos.rst` header | `nekos.tape` |
 | `shikimori.gif` | `docs/source/tutorials/backends/shikimori.rst` header | `shikimori.tape` |
+| `aggregate.gif` | `docs/source/tutorials/aggregate.rst` header | `aggregate.tape` |
 
 ## Regenerating
 
@@ -47,11 +48,12 @@ vhs quote.tape                # produces quote.gif
 vhs trace.tape                # produces trace.gif
 vhs nekos.tape                # produces nekos.gif
 vhs shikimori.tape            # produces shikimori.gif
+vhs aggregate.tape            # produces aggregate.gif
 ```
 
 vhs is available as a single-file binary at
 [github.com/charmbracelet/vhs/releases](https://github.com/charmbracelet/vhs/releases).
-The render is local and offline-after-install — no network calls happen inside vhs itself. Most tapes intentionally run live `animedex` commands, so they need network at record time and may show small upstream drift such as a different random image or score. `ghibli.tape` is fully offline, and `quote.tape` / `shikimori.tape` prewarm a temporary local cache from committed fixtures before the visible commands run so the demos stay stable under tight upstream limits.
+The render is local and offline-after-install — no network calls happen inside vhs itself. Most tapes intentionally run live `animedex` commands, so they need network at record time and may show small upstream drift such as a different random image or score. `ghibli.tape` is fully offline, and `quote.tape` / `shikimori.tape` / `aggregate.tape` prewarm a temporary local cache from committed fixtures before the visible commands run so the demos stay stable under tight upstream limits.
 
 ## Why commit both .tape and .gif?
 

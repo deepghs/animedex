@@ -45,6 +45,11 @@ def render_json(model: AnimedexModel, *, include_source: bool = True) -> str:
     payload = model.model_dump(mode="json", by_alias=True)
     if include_source:
         sources = []
+        aggregate_sources = payload.get("sources")
+        if isinstance(aggregate_sources, dict):
+            for name, status in aggregate_sources.items():
+                if not isinstance(status, dict) or status.get("status") == "ok":
+                    sources.append(name)
         # Single-source records keep the source on either ``.source``
         # (common projection types like :class:`Anime`,
         # :class:`Character`) or ``.source_tag`` (backend-rich types

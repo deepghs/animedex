@@ -1,0 +1,75 @@
+metadata:
+  captured_at: '2026-05-11T08:09:41Z'
+  label: miyazaki-limit2
+  backend: jikan
+  path_slug: people_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/people?q=Miyazaki&limit=2&page=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Mon, 11 May 2026 08:09:41 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: HIT
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 32
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 2
+        total: 64
+        per_page: 2
+    data:
+    - mal_id: 92944
+      url: https://myanimelist.net/people/92944/Erika_Miyazaki
+      website_url: null
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/voiceactors/1/88722.jpg
+      name: Erika Miyazaki
+      given_name: 恵里花
+      family_name: 宮崎
+      alternate_names: []
+      birthday: null
+      favorites: 1
+      about: |-
+        Birthplace: Chiba Prefecture
+        Hobby: Cleaning, aerobic exercise, reading manga
+        Special Skills:  good at shopping
+
+        She is a voice actress affiliated with M&amp;I.
+
+        Twitter: @_miyazaki_erika
+        Profile: Mand-i
+    - mal_id: 92149
+      url: https://myanimelist.net/people/92149/Maho_Miyazaki
+      website_url: null
+      images:
+        jpg:
+          image_url: https://myanimelist.net/img/sp/icon/apple-touch-icon-256.png
+      name: Maho Miyazaki
+      given_name: 真帆
+      family_name: 宮崎
+      alternate_names: []
+      birthday: null
+      favorites: 0
+      about: null
+  body_text: null
+  body_b64: null

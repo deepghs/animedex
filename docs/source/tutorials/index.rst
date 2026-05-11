@@ -35,6 +35,7 @@ Cross-cutting tutorials
 .. toctree::
    :maxdepth: 1
 
+   aggregate
    raw_passthrough
    output_modes
    python_library

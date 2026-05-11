@@ -68,10 +68,10 @@ query ($id: Int) {{
 
 
 Q_MEDIA_SEARCH = """
-query ($q: String, $page: Int, $perPage: Int) {
+query ($q: String, $page: Int, $perPage: Int, $type: MediaType) {
   Page(page: $page, perPage: $perPage) {
     pageInfo { total currentPage hasNextPage perPage }
-    media(search: $q, type: ANIME, sort: SEARCH_MATCH) {
+    media(search: $q, type: $type, sort: SEARCH_MATCH) {
       id idMal
       title { romaji english native }
       type format status episodes

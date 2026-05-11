@@ -1,0 +1,45 @@
+metadata:
+  captured_at: '2026-05-11T08:09:45Z'
+  label: miyazaki-limit2
+  backend: kitsu
+  path_slug: people
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/people?filter[name]=Miyazaki&page[limit]=2&page[offset]=0
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 400
+  headers:
+    Date: Mon, 11 May 2026 08:09:45 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: no-cache
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: 81d2bee3-87cc-4675-b2d0-2ee11a4c7059
+    x-runtime: '0.011774'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    errors:
+    - title: Filter not allowed
+      detail: name is not allowed.
+      code: '102'
+      status: '400'
+  body_text: null
+  body_b64: null

@@ -109,6 +109,24 @@ class TestMergedSources:
         assert decoded["_meta"]["sources_consulted"] == ["anilist", "jikan"]
 
 
+class TestAggregateResultSources:
+    def test_aggregate_sources_map_reports_ok_sources_only(self):
+        from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
+        from animedex.render.json_renderer import render_json
+
+        result = AggregateResult(
+            items=[{"id": 1, "_source": "jikan", "_prefix_id": "mal:1"}],
+            sources={
+                "anilist": AggregateSourceStatus(status="failed", reason="upstream-error"),
+                "jikan": AggregateSourceStatus(status="ok", items=1),
+            },
+        )
+        decoded = json.loads(render_json(result, include_source=True))
+
+        assert decoded["_meta"]["sources_consulted"] == ["jikan"]
+        assert decoded["sources"]["anilist"]["status"] == "failed"
+
+
 class TestRichModelSourceAttribution:
     """Reviewer review B1 (PR #6).
 

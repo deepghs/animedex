@@ -26,6 +26,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional
 
 from animedex.models.anime import Anime, AnimeRating, AnimeStreamingLink, AnimeTitle
+from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import BackendRichModel, SourceTag
 from animedex.models.manga import Manga
 
@@ -352,6 +353,21 @@ class KitsuCharacter(BackendRichModel):
     links: Optional[Dict[str, Any]] = None
     source_tag: Optional[SourceTag] = None
 
+    def to_common(self) -> Character:
+        """Project this resource onto the cross-source character shape."""
+        attrs = self.attributes or KitsuCharacterAttributes()
+        names = attrs.names or {}
+        image_url = (attrs.image or {}).get("original") if isinstance(attrs.image, dict) else None
+        return Character(
+            id=f"kitsu:char:{self.id}",
+            name=attrs.name or attrs.canonicalName or names.get("en") or names.get("en_jp") or "",
+            name_native=names.get("ja_jp"),
+            name_alternatives=list(attrs.otherNames or []),
+            image_url=image_url,
+            description=attrs.description,
+            source=self.source_tag or _default_src(),
+        )
+
 
 class KitsuPerson(BackendRichModel):
     """JSON:API person resource from ``/people/{id}`` and
@@ -364,6 +380,16 @@ class KitsuPerson(BackendRichModel):
     links: Optional[Dict[str, Any]] = None
     source_tag: Optional[SourceTag] = None
 
+    def to_common(self) -> Staff:
+        """Project this resource onto the cross-source staff shape."""
+        attrs = self.attributes or KitsuPersonAttributes()
+        return Staff(
+            id=f"kitsu:person:{self.id}",
+            name=attrs.name or "",
+            description=attrs.description,
+            source=self.source_tag or _default_src(),
+        )
+
 
 class KitsuProducer(BackendRichModel):
     """JSON:API producer resource from ``/producers``."""
@@ -374,6 +400,15 @@ class KitsuProducer(BackendRichModel):
     relationships: Optional[Dict[str, Any]] = None
     links: Optional[Dict[str, Any]] = None
     source_tag: Optional[SourceTag] = None
+
+    def to_common(self) -> Studio:
+        """Project this resource onto the cross-source studio shape."""
+        attrs = self.attributes or KitsuProducerAttributes()
+        return Studio(
+            id=f"kitsu:producer:{self.id}",
+            name=attrs.name or attrs.slug or "",
+            source=self.source_tag or _default_src(),
+        )
 
 
 class KitsuGenre(BackendRichModel):

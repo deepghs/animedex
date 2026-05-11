@@ -65,10 +65,28 @@ club\_show
 .. autofunction:: club_show
 
 
+character\_search
+-----------------------------------------------------
+
+.. autofunction:: character_search
+
+
+character
+-----------------------------------------------------
+
+.. autofunction:: character
+
+
 publishers
 -----------------------------------------------------
 
 .. autofunction:: publishers
+
+
+publisher
+-----------------------------------------------------
+
+.. autofunction:: publisher
 
 
 people\_search
@@ -141,6 +159,12 @@ studios
 -----------------------------------------------------
 
 .. autofunction:: studios
+
+
+studio
+-----------------------------------------------------
+
+.. autofunction:: studio
 
 
 genres

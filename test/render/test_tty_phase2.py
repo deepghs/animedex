@@ -143,3 +143,31 @@ class TestTraceQuotaTty:
         assert "[src: trace]" in out
         assert "100" in out
         assert "18" in out
+
+
+class TestAggregateResultTty:
+    def test_renders_compact_rows_with_prefix_and_source(self):
+        from animedex.backends.jikan.models import JikanAnime
+        from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
+        from animedex.render.tty import render_tty
+
+        result = AggregateResult(
+            items=[
+                JikanAnime.model_validate(
+                    {
+                        "mal_id": 52991,
+                        "title": "Sousou no Frieren",
+                        "score": 9.27,
+                        "status": "released",
+                        "source_tag": _src(backend="jikan"),
+                    }
+                ).model_copy(update={"_source": "jikan", "_prefix_id": "mal:52991"})
+            ],
+            sources={"jikan": AggregateSourceStatus(status="ok", items=1)},
+        )
+        out = render_tty(result)
+
+        assert "Aggregate results" in out
+        assert "[src: jikan]" in out
+        assert "mal:52991" in out
+        assert "Score:" in out

@@ -43,6 +43,7 @@ from animedex.models.anime import (
     AnimeStreamingLink,
     AnimeTitle,
 )
+from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
 from animedex.models.art import ArtPost, ArtRating
 from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import (
@@ -64,6 +65,8 @@ from animedex.models.trace import TraceHit
 
 __all__ = [
     "AnimedexModel",
+    "AggregateResult",
+    "AggregateSourceStatus",
     "Anime",
     "AnimeFormat",
     "AnimeRating",

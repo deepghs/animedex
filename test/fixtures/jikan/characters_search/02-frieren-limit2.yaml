@@ -1,0 +1,81 @@
+metadata:
+  captured_at: '2026-05-11T08:09:40Z'
+  label: frieren-limit2
+  backend: jikan
+  path_slug: characters_search
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/characters?q=Frieren&limit=2&page=1
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Mon, 11 May 2026 08:09:39 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: must-revalidate, private
+    pragma: no-cache
+    expires: '-1'
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: HIT
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 8
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 2
+        total: 15
+        per_page: 2
+    data:
+    - mal_id: 184947
+      url: https://myanimelist.net/character/184947/Frieren
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/characters/7/525105.jpg
+        webp:
+          image_url: https://myanimelist.net/images/characters/7/525105.webp
+          small_image_url: https://myanimelist.net/images/characters/7/525105t.webp
+      name: Frieren
+      name_kanji: フリーレン
+      nicknames:
+      - Frieren the Slayer
+      favorites: 31697
+      about: |-
+        Frieren was a mage in Hero Himmel's party. They travelled along with Priest Heiter and Warrior Eisen in a ten-year journey to defeat the Demon King. She was the last member to be recruited to the party and, despite Heiter's initial impression of her mana being average, Himmel had a hunch she was the most powerful mage he had ever met.
+
+        Being an elf that has lived for over a thousand years, Frieren has a hard time forming meaningful relationships with humans because of the difference in their lifespans and how they perceive the passage of time. This generally manifests itself as laziness, since missing an important event is of no importance as she will have plenty of opportunities to relive it in the future, or as a nearly sociopathic inability to comprehend human's feelings. For instance, she tends to not notice how her lack of impatience or cold statements can affect humans around her. Her party members have also frequently stated that they can't comprehend her feelings or read what goes on in her head.
+
+        Despite being an extremely powerful mage, Frieren has the habit of collecting rare and daily usage centered magic, like magic that can polish a bronze statue or make flowers bloom. She always asks for a grimoire as a reward even if she already knows its contents or when it comes to The Great Mage Flamme's lost grimoires knows they are fakes.
+
+        After the deaths of Hero Himmel and Priest Heiter, Frieren decided she wants to learn more about humans. She is currently traveling with Fern her pupil who was a war refugee left in her care by Priest Heiter in a quest to Ende, the place where souls reside in the northernmost tip of the continent and where the Demon King's Castle was built to try and speak to Himmel's soul. In her new journey, Frieren visits many places her old party travelled through in the past and relives memories, slowly understanding more about their meaning and her feelings.
+
+        Ironically, Fern is generally the one to take care of Frieren in daily activities despite being far younger.
+
+
+        (Source: Frieren: Beyond Journey's End Wiki)
+    - mal_id: 239233
+      url: https://myanimelist.net/character/239233/Reid_Frieden
+      images:
+        jpg:
+          image_url: https://myanimelist.net/img/sp/icon/apple-touch-icon-256.png
+        webp:
+          image_url: https://myanimelist.net/img/sp/icon/apple-touch-icon-256.png
+          small_image_url: https://myanimelist.net/img/sp/icon/apple-touch-icon-256.png
+      name: Reid Frieden
+      name_kanji: null
+      nicknames:
+      - Hero
+      favorites: 0
+      about: null
+  body_text: null
+  body_b64: null

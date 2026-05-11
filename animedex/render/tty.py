@@ -15,6 +15,7 @@ import io
 from typing import Any, Optional
 
 from animedex.models.anime import Anime
+from animedex.models.aggregate import AggregateResult
 from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import AnimedexModel
 from animedex.models.trace import TraceHit, TraceQuota
@@ -295,6 +296,64 @@ def _format_trace_quota_tty(q: TraceQuota) -> str:
     return out.getvalue()
 
 
+def _format_aggregate_result_tty(result: AggregateResult) -> str:
+    out = io.StringIO()
+    print("Aggregate results", file=out)
+    if result.failed_sources():
+        failed = ", ".join(sorted(result.failed_sources()))
+        print(f"  Failed sources: {failed}", file=out)
+    for item in result.items:
+        if hasattr(item, "to_common"):
+            try:
+                common = item.to_common()
+            except Exception:
+                common = None
+        else:
+            common = None
+        source = None
+        prefix_id = None
+        dict_label = None
+        if isinstance(item, dict):
+            source = item.get("_source")
+            prefix_id = item.get("_prefix_id")
+            dict_label = item.get("name") or item.get("title")
+            if isinstance(dict_label, dict):
+                dict_label = dict_label.get("romaji") or dict_label.get("english") or dict_label.get("en")
+        else:
+            source = getattr(getattr(item, "source_tag", None), "backend", None)
+            prefix_id = getattr(item, "_prefix_id", None)
+        label = None
+        score = None
+        status = None
+        if isinstance(common, Anime):
+            label = common.title.romaji
+            if common.score is not None:
+                score = f"{common.score.score}/{common.score.scale}"
+            status = common.status
+        elif isinstance(common, Character):
+            label = common.name
+        elif isinstance(common, Staff):
+            label = common.name
+        elif isinstance(common, Studio):
+            label = common.name
+        if label is None:
+            label = dict_label or getattr(item, "name", None) or getattr(item, "title", None) or type(item).__name__
+        bits = [label]
+        if prefix_id:
+            bits.append(f"({prefix_id})")
+        if source:
+            bits.append(f"[src: {source}]")
+        print("  " + " ".join(bits), file=out)
+        details = []
+        if score:
+            details.append(f"Score: {score}")
+        if status:
+            details.append(f"Status: {status}")
+        if details:
+            print("    " + "  ·  ".join(details), file=out)
+    return out.getvalue()
+
+
 def render_tty(model: AnimedexModel) -> str:
     """Render a model into the human-friendly TTY form.
 
@@ -321,6 +380,8 @@ def render_tty(model: AnimedexModel) -> str:
         return _format_trace_hit_tty(model)
     if isinstance(model, TraceQuota):
         return _format_trace_quota_tty(model)
+    if isinstance(model, AggregateResult):
+        return _format_aggregate_result_tty(model)
     # Rich per-backend dataclass (AnilistAnime / AnilistCharacter /
     # AnilistStaff / AnilistStudio / JikanAnime / JikanCharacter /
     # ...) — project to the common type and re-render. The common

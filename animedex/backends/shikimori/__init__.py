@@ -256,20 +256,54 @@ def club_show(club_id: int, *, config: Optional[Config] = None, **kw) -> Shikimo
     return ShikimoriClub.model_validate({**payload, "source_tag": src})
 
 
+def character_search(
+    q: Optional[str] = None,
+    *,
+    limit: Optional[int] = None,
+    config: Optional[Config] = None,
+    **kw,
+) -> List[ShikimoriCharacter]:
+    """Search top-level characters via ``/api/characters/search``."""
+    payload, src = _fetch("/api/characters/search", params=_params(search=q, limit=limit), config=config, **kw)
+    return [ShikimoriCharacter.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def character(character_id: int, *, config: Optional[Config] = None, **kw) -> ShikimoriCharacter:
+    """Fetch one top-level character by Shikimori ID."""
+    payload, src = _fetch(f"/api/characters/{character_id}", config=config, **kw)
+    if not isinstance(payload, dict):
+        raise ApiError(
+            "shikimori character show did not return an object",
+            backend="shikimori",
+            reason="upstream-shape",
+        )
+    return ShikimoriCharacter.model_validate({**payload, "source_tag": src})
+
+
 def publishers(*, config: Optional[Config] = None, **kw) -> List[ShikimoriPublisher]:
     """List Shikimori manga publishers."""
     payload, src = _fetch("/api/publishers", config=config, **kw)
     return [ShikimoriPublisher.model_validate({**row, "source_tag": src}) for row in _list(payload)]
 
 
+def publisher(publisher_id: int, *, config: Optional[Config] = None, **kw) -> ShikimoriPublisher:
+    """Fetch one publisher from the Shikimori publisher catalogue."""
+    rows = publishers(config=config, **kw)
+    for row in rows:
+        if row.id == publisher_id:
+            return row
+    raise ApiError(f"shikimori publisher {publisher_id} not found", backend="shikimori", reason="not-found")
+
+
 def people_search(
     q: Optional[str] = None,
     *,
+    limit: Optional[int] = None,
     config: Optional[Config] = None,
     **kw,
 ) -> List[ShikimoriPerson]:
     """Search top-level people via ``/api/people/search``."""
-    payload, src = _fetch("/api/people/search", params=_params(search=q), config=config, **kw)
+    payload, src = _fetch("/api/people/search", params=_params(search=q, limit=limit), config=config, **kw)
     return [ShikimoriPerson.model_validate({**row, "source_tag": src}) for row in _list(payload)]
 
 
@@ -365,6 +399,15 @@ def studios(*, config: Optional[Config] = None, **kw) -> List[ShikimoriStudio]:
     """List Shikimori studios."""
     payload, src = _fetch("/api/studios", config=config, **kw)
     return [ShikimoriStudio.model_validate({**row, "source_tag": src}) for row in _list(payload)]
+
+
+def studio(studio_id: int, *, config: Optional[Config] = None, **kw) -> ShikimoriStudio:
+    """Fetch one studio from the Shikimori studio catalogue."""
+    rows = studios(config=config, **kw)
+    for row in rows:
+        if row.id == studio_id:
+            return row
+    raise ApiError(f"shikimori studio {studio_id} not found", backend="shikimori", reason="not-found")
 
 
 def genres(*, config: Optional[Config] = None, **kw) -> List[ShikimoriResource]:

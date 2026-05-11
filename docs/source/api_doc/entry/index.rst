@@ -21,7 +21,9 @@ animedex.entry
     mangadex
     nekos
     quote
+    search
     shikimori
+    show
     trace
     waifu
 
