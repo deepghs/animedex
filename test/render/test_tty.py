@@ -9,7 +9,7 @@ TTY path always emits ``[src: <backend>]`` annotations - there is no
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 import pytest
 
@@ -139,6 +139,131 @@ class TestRenderAggregateResult:
         from animedex.render.tty import render_tty
 
         assert render_tty(AggregateResult(items=["plain"])) == "plain"
+
+
+class TestRenderScheduleCalendar:
+    def test_empty_calendar_renders_header_only(self):
+        from animedex.models.aggregate import ScheduleCalendarResult
+        from animedex.render.tty import render_tty
+
+        out = render_tty(
+            ScheduleCalendarResult(
+                items=[],
+                sources={},
+                timezone="UTC",
+                window_start=date(2026, 5, 11),
+                window_end=date(2026, 5, 12),
+            )
+        )
+
+        assert out == "Schedule (UTC)\nWindow: 2026-05-11 to 2026-05-12 (exclusive)\n"
+
+    def test_calendar_renders_offsets_iana_unknowns_rich_rows_and_floating_items(self):
+        from animedex.models.aggregate import ScheduleCalendarResult
+        from animedex.models.anime import AiringScheduleRow
+        from animedex.models.common import BackendRichModel
+        from animedex.render.tty import render_tty
+
+        src = SourceTag(backend="jikan", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc))
+
+        class _RichSchedule(BackendRichModel):
+            source_tag: SourceTag
+
+            def to_common(self):
+                return AiringScheduleRow(title="Rich Row", weekday="monday", local_time="02:30", source=src)
+
+        class _BrokenRichSchedule(BackendRichModel):
+            source_tag: SourceTag
+
+            def to_common(self):
+                raise RuntimeError("bad mapper")
+
+        offset = render_tty(
+            ScheduleCalendarResult(
+                items=[
+                    AiringScheduleRow(title="Episode Row", weekday="monday", local_time="01:00", episode=7, source=src),
+                    AiringScheduleRow(title="Bad Clock", weekday="monday", local_time="bad", source=src),
+                    _RichSchedule(source_tag=src),
+                    _BrokenRichSchedule(source_tag=src),
+                    "floating text",
+                ],
+                sources={},
+                timezone="-02:30",
+                window_start=date(2026, 5, 11),
+                window_end=date(2026, 5, 12),
+            )
+        )
+
+        assert "Monday, 2026-05-11" in offset
+        assert "01:00  Episode Row  ep 7  [src: jikan]" in offset
+        assert "02:30  Rich Row  [src: jikan]" in offset
+        assert "Unscheduled" in offset
+        assert "bad  Bad Clock  [src: jikan]" in offset
+        assert '"source_tag"' in offset
+        assert "floating text" in offset
+
+        iana = render_tty(
+            ScheduleCalendarResult(
+                items=[
+                    AiringScheduleRow(
+                        title="Instant Row",
+                        airing_at=datetime(2026, 5, 11, 1, tzinfo=timezone.utc),
+                        source=src,
+                    )
+                ],
+                sources={},
+                timezone="Asia/Tokyo",
+                window_start=date(2026, 5, 11),
+                window_end=date(2026, 5, 12),
+            )
+        )
+        assert "10:00  Instant Row  [src: jikan]" in iana
+
+        utc = render_tty(
+            ScheduleCalendarResult(
+                items=[
+                    AiringScheduleRow(
+                        title="UTC Row",
+                        airing_at=datetime(2026, 5, 11, 1, tzinfo=timezone.utc),
+                        source=src,
+                    )
+                ],
+                sources={},
+                timezone="UTC",
+                window_start=date(2026, 5, 11),
+                window_end=date(2026, 5, 12),
+            )
+        )
+        assert "01:00  UTC Row  [src: jikan]" in utc
+
+        unknown = render_tty(
+            ScheduleCalendarResult(
+                items=[
+                    AiringScheduleRow(
+                        title="Naive Fallback",
+                        airing_at=datetime(2026, 5, 11, 1, tzinfo=timezone.utc),
+                        source=src,
+                    )
+                ],
+                sources={},
+                timezone="No/Such_Zone",
+                window_start=date(2026, 5, 11),
+                window_end=date(2026, 5, 12),
+            )
+        )
+        assert "01:00  Naive Fallback  [src: jikan]" in unknown
+
+        unscheduled = render_tty(
+            ScheduleCalendarResult(
+                items=[AiringScheduleRow(title="Loose Row", source=src)],
+                sources={},
+                timezone="UTC",
+                window_start=date(2026, 5, 11),
+                window_end=date(2026, 5, 12),
+            )
+        )
+        assert "Unscheduled" in unscheduled
+        assert "--:--  Loose Row  [src: jikan]" in unscheduled
 
 
 class TestRenderTtyNonAnime:

@@ -428,3 +428,16 @@ class TestSelftestRegistryCompleteness:
                 missing.append(label)
 
         assert not missing, f"runtime dependencies without dedicated selftest rows: {missing}"
+
+    def test_dependency_smoke_reports_individual_failures(self, monkeypatch):
+        from animedex.diag import selftest as diag
+
+        def broken_smoke():
+            raise RuntimeError("dependency unavailable")
+
+        monkeypatch.setattr(diag, "_DEPENDENCY_SMOKE_TESTS", (("brokenlib", broken_smoke),))
+
+        label, ok, detail = diag._check_dependency_smoke()[0]
+        assert label == "testing brokenlib library"
+        assert ok is False
+        assert "dependency unavailable" in detail

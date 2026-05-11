@@ -399,6 +399,14 @@ def _smoke_unidecode() -> None:
     assert unidecode("\u30bd\u30fc\u30c9\u30a2\u30fc\u30c8") == "so-doa-to"
 
 
+def _smoke_tzdata() -> None:
+    """Smoke-test the tzdata fallback used by zoneinfo on Windows."""
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+
+    assert ZoneInfo("Asia/Tokyo").utcoffset(datetime(2026, 5, 11)).total_seconds() == 9 * 3600
+
+
 _DEPENDENCY_SMOKE_TESTS: Tuple[Tuple[str, Callable[[], None]], ...] = (
     ("click", _smoke_click),
     ("requests", _smoke_requests),
@@ -410,6 +418,7 @@ _DEPENDENCY_SMOKE_TESTS: Tuple[Tuple[str, Callable[[], None]], ...] = (
     ("anyascii", _smoke_anyascii),
     ("jaconv", _smoke_jaconv),
     ("unidecode", _smoke_unidecode),
+    ("tzdata", _smoke_tzdata),
 )
 
 

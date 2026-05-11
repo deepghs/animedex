@@ -36,6 +36,7 @@ _OFFSET_RE = re.compile(r"^([+-])(\d{2}):?(\d{2})$")
 _TITLE_KEY_RE = re.compile(r"[^0-9a-z]+")
 _MERGE_THRESHOLD = 70
 _WEAK_TITLE_KEYS = frozenset({"x", "ii", "iii", "iv", "v"})
+_TOKYO_TZ_ALIASES = frozenset({"asia/tokyo", "jst", "utc+9", "utc+09:00"})
 
 
 def _now_local() -> datetime:
@@ -59,6 +60,23 @@ def _timezone_label(tz: tzinfo) -> str:
         return f"{sign}{hours:02d}:{minutes:02d}"
     name = tz.tzname(sample)
     return name or "local"
+
+
+def _jikan_source_timezone(name: Optional[str], *, target_tz: Optional[tzinfo] = None) -> Optional[tzinfo]:
+    if not isinstance(name, str):
+        return target_tz
+    normalized = name.strip().lower()
+    if not normalized:
+        return target_tz
+    if normalized in _TOKYO_TZ_ALIASES:
+        try:
+            return ZoneInfo("Asia/Tokyo")
+        except ZoneInfoNotFoundError:
+            return timezone(timedelta(hours=9), name="JST")
+    try:
+        return ZoneInfo(name)
+    except ZoneInfoNotFoundError:
+        return target_tz
 
 
 def _resolve_timezone(value: Optional[str]) -> Tuple[tzinfo, str]:
@@ -219,12 +237,7 @@ def _jikan_schedule_row(
         if isinstance(time_text, str):
             local_time = time_text
         source_tz_name = broadcast.get("timezone")
-        source_tz = None
-        if isinstance(source_tz_name, str):
-            try:
-                source_tz = ZoneInfo(source_tz_name)
-            except ZoneInfoNotFoundError:
-                source_tz = None
+        source_tz = _jikan_source_timezone(source_tz_name, target_tz=target_tz)
         clock = _parse_clock(time_text)
         if start is not None and target_tz is not None and weekday in WEEKDAYS and clock is not None:
             source_tz = source_tz or target_tz

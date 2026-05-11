@@ -104,6 +104,9 @@ PACKAGE_DATAS = [
     # resource files the binary imports successfully but selftest fails
     # when a non-ASCII title is transliterated.
     "anyascii",
+    # Required by ``zoneinfo.ZoneInfo`` on platforms that do not ship an
+    # IANA timezone database, most notably Windows.
+    "tzdata",
 ]
 
 
