@@ -28,12 +28,41 @@ def _emit_failure_lines(result: AggregateResult) -> None:
 def search_command(ctx, type, q, limit, source, json_flag, jq_expr, no_cache, cache_ttl, rate, no_source) -> None:
     """Search one entity type across every supporting catalogue.
 
+    TYPE controls which backend endpoints are queried.
+
+    \b
+    Types:
+      anime
+        Anime titles. Searches AniList anime media, ANN anime reports,
+        Jikan anime, Kitsu anime, and Shikimori anime.
+      manga
+        Manga titles. Searches AniList manga media, Jikan manga,
+        Kitsu manga, MangaDex manga, and Shikimori manga.
+      character
+        Character names. Searches AniList characters, Jikan characters,
+        Kitsu characters, and Shikimori characters.
+      person
+        Staff, creator, and voice-actor names. Searches AniList staff,
+        Jikan people, Kitsu people, and Shikimori people.
+      studio
+        Studio, producer, and production-company names. Searches AniList
+        studios, Jikan producers, Kitsu producers, and Shikimori studios.
+        Kitsu and Shikimori are fetched as catalogue lists and filtered locally.
+      publisher
+        Publisher names. Searches Shikimori publishers. The publisher
+        catalogue is fetched and filtered locally.
+
+    Use --source with the backend names listed for a type to restrict
+    fan-out. Unsupported source names fail before any network request.
+
     \b
     Examples:
-      animedex search anime Frieren
-      animedex search manga Berserk --source anilist,jikan
+      animedex search anime Frieren --limit 3
+      animedex search manga Berserk --source anilist,mangadex
+      animedex search character "Hatake Kakashi" --json
+      animedex search person "Hayao Miyazaki" --jq '.items[0]._prefix_id'
+      animedex search studio Ghibli --source anilist,jikan,kitsu,shikimori
       animedex search publisher Kodansha --json
-      animedex search person Miyazaki --jq '.items[0]._prefix_id'
     \f
 
     Backend: animedex aggregate search over AniList, Jikan, Kitsu,

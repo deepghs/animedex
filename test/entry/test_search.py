@@ -104,6 +104,31 @@ ANIME_SEARCH_FIXTURES = [
 
 
 class TestSearchCli:
+    def test_help_lists_types_sources_and_examples(self, cli_runner, cli):
+        result = cli_runner.invoke(cli, ["search", "--help"])
+
+        assert result.exit_code == 0, result.output
+        for entity_type in ("anime", "manga", "character", "person", "studio", "publisher"):
+            assert entity_type in result.output
+            assert f"animedex search {entity_type} " in result.output
+        for expected in (
+            "Searches AniList anime media, ANN anime reports",
+            "Jikan anime, Kitsu anime, and Shikimori anime.",
+            "Searches AniList manga media, Jikan manga",
+            "Kitsu manga, MangaDex manga, and Shikimori manga.",
+            "Searches AniList characters, Jikan characters",
+            "Kitsu characters, and Shikimori characters.",
+            "Searches AniList staff",
+            "Jikan people, Kitsu people, and Shikimori people.",
+            "Searches AniList",
+            "studios, Jikan producers, Kitsu producers, and Shikimori studios.",
+            "Kitsu and Shikimori are fetched as catalogue lists and filtered locally.",
+            "Searches Shikimori publishers.",
+            "catalogue is fetched and filtered locally.",
+        ):
+            assert expected in result.output
+        assert "Use --source with the backend names listed for a type" in result.output
+
     def test_anime_search_json_reports_every_source(self, cli_runner, cli, fake_clock):
         with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
             _register_many(rsps, ANIME_SEARCH_FIXTURES)
