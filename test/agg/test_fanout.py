@@ -9,6 +9,17 @@ pytestmark = pytest.mark.unittest
 
 
 class TestFanout:
+    def test_normalises_source_return_shapes(self):
+        from animedex.agg._fanout import _normalise_items
+
+        class Rows:
+            rows = [1, 2]
+
+        assert _normalise_items(None) == []
+        assert _normalise_items((1, 2)) == [1, 2]
+        assert _normalise_items(Rows()) == [1, 2]
+        assert _normalise_items("x") == ["x"]
+
     def test_empty_sources_return_empty_result(self):
         from animedex.agg._fanout import run_fanout
 

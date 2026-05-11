@@ -26,6 +26,8 @@ This repository is **English-only**. All tracked content must be written in Engl
 
 This rule also applies when using Codex, Claude Code, or any other agent. The conversation language with the user may be anything, but every repository-facing action must remain in English. That includes file edits, code comments, log messages, generated README content, commit messages, and any other text written into the repository or its git history.
 
+The English-only rule governs contributor-authored prose and interface text, not factual data. Fixture payloads, captured upstream response values, entity titles, names, slugs, user queries, JSON literals, and test strings that represent real upstream/user data may contain their original language and non-ASCII characters when that is the correct data. Do not translate, romanize, censor, or replace data values solely to satisfy the English-only rule; only translate contributor-authored explanations, comments, docs, and UI/help text.
+
 ### Markdown formatting (no hard wrapping in prose)
 
 In Markdown files (`*.md`) and in any GitHub-rendered content (issue and pull-request bodies, comments, release notes, discussion posts), do **not** hard-wrap natural paragraphs to a fixed column width. The renderers used in those contexts have no fixed max-width, so column-wrapping the source serves no purpose and only makes diffs noisier.

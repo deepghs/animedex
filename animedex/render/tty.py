@@ -320,7 +320,9 @@ def _format_aggregate_result_tty(result: AggregateResult) -> str:
             if isinstance(dict_label, dict):
                 dict_label = dict_label.get("romaji") or dict_label.get("english") or dict_label.get("en")
         else:
-            source = getattr(getattr(item, "source_tag", None), "backend", None)
+            source = getattr(getattr(item, "source_tag", None), "backend", None) or getattr(
+                getattr(item, "source", None), "backend", None
+            )
             prefix_id = getattr(item, "_prefix_id", None)
         label = None
         score = None

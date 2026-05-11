@@ -22,13 +22,16 @@ from animedex.backends.kitsu.models import (
     KitsuAnimeAttributes,
     KitsuCategory,
     KitsuCharacter,
+    KitsuCharacterAttributes,
     KitsuFranchise,
     KitsuGenre,
     KitsuManga,
     KitsuMangaAttributes,
     KitsuMapping,
     KitsuPerson,
+    KitsuPersonAttributes,
     KitsuProducer,
+    KitsuProducerAttributes,
     KitsuRelatedResource,
     KitsuStreamer,
     KitsuStreamingLinkAttributes,
@@ -377,6 +380,28 @@ class TestKitsuBoundaryBranches:
             id="s", attributes=KitsuStreamingLinkAttributes(url="https://video.example.invalid/x")
         ).to_common()
         assert custom.provider == "video.example.invalid"
+
+        character = KitsuCharacter(
+            id="c",
+            attributes=KitsuCharacterAttributes(
+                name="Frieren",
+                names={"ja_jp": "Frieren Native"},
+                otherNames=["Frieren the Slayer"],
+                image={"original": "https://img.example.invalid/frieren.png"},
+            ),
+        ).to_common()
+        assert character.id == "kitsu:char:c"
+        assert character.name == "Frieren"
+        assert character.name_native == "Frieren Native"
+        assert character.image_url == "https://img.example.invalid/frieren.png"
+
+        person = KitsuPerson(id="p", attributes=KitsuPersonAttributes(name="Hayao Miyazaki")).to_common()
+        assert person.id == "kitsu:person:p"
+        assert person.name == "Hayao Miyazaki"
+
+        producer = KitsuProducer(id="g", attributes=KitsuProducerAttributes(name="Studio Ghibli")).to_common()
+        assert producer.id == "kitsu:producer:g"
+        assert producer.name == "Studio Ghibli"
 
 
 # ---------- error paths ----------

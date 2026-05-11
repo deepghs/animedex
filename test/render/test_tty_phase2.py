@@ -171,3 +171,60 @@ class TestAggregateResultTty:
         assert "[src: jikan]" in out
         assert "mal:52991" in out
         assert "Score:" in out
+
+    def test_renders_failed_sources_dict_labels_and_common_shapes(self):
+        from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
+        from animedex.models.character import Character, Staff, Studio
+        from animedex.models.common import AnimedexModel, SourceTag
+        from animedex.render.tty import render_tty
+
+        class CommonProjection(AnimedexModel):
+            kind: str
+            name: str
+            source_tag: SourceTag
+
+            def to_common(self):
+                if self.kind == "character":
+                    return Character(id="character:1", name=self.name, source=self.source_tag)
+                if self.kind == "staff":
+                    return Staff(id="staff:1", name=self.name, source=self.source_tag)
+                return Studio(id="studio:1", name=self.name, source=self.source_tag)
+
+        result = AggregateResult(
+            items=[
+                {"title": {"english": "Plain Dict"}, "_source": "dict", "_prefix_id": "dict:1"},
+                CommonProjection(kind="character", name="Frieren", source_tag=_src("character")),
+                CommonProjection(kind="staff", name="Naoko Yamada", source_tag=_src("staff")),
+                CommonProjection(kind="studio", name="MADHOUSE", source_tag=_src("studio")),
+            ],
+            sources={
+                "dict": AggregateSourceStatus(backend="dict", status="ok", items=1),
+                "broken": AggregateSourceStatus(
+                    backend="broken", status="failed", reason="upstream-error", message="broken"
+                ),
+            },
+        )
+        out = render_tty(result)
+
+        assert "Failed sources: broken" in out
+        assert "Plain Dict (dict:1) [src: dict]" in out
+        assert "Frieren [src: character]" in out
+        assert "Naoko Yamada [src: staff]" in out
+        assert "MADHOUSE [src: studio]" in out
+
+    def test_renders_aggregate_item_when_to_common_raises(self):
+        from animedex.models.aggregate import AggregateResult
+        from animedex.models.common import AnimedexModel, SourceTag
+        from animedex.render.tty import render_tty
+
+        class BrokenProjection(AnimedexModel):
+            name: str
+            source_tag: SourceTag
+
+            def to_common(self):
+                raise RuntimeError("bad projection")
+
+        result = AggregateResult(items=[BrokenProjection(name="Raw Label", source_tag=_src("raw"))], sources={})
+        out = render_tty(result)
+
+        assert "Raw Label [src: raw]" in out
