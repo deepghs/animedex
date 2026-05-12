@@ -1,0 +1,655 @@
+metadata:
+  captured_at: '2026-05-11T11:32:40Z'
+  label: 2012-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2012
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:40 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '21'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 11111
+          idMal: 11111
+          title:
+            romaji: Another
+            english: Another
+            native: アナザー
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 10
+          endDate:
+            year: 2012
+            month: 3
+            day: 27
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 11617
+          idMal: 11617
+          title:
+            romaji: High School DxD
+            english: High School DxD
+            native: ハイスクールD×D
+          synonyms:
+          - תיכון די אקס די
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 6
+          endDate:
+            year: 2012
+            month: 3
+            day: 23
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 11843
+          idMal: 11843
+          title:
+            romaji: Danshi Koukousei no Nichijou
+            english: Daily Lives of High School Boys
+            native: 男子高校生の日常
+          synonyms:
+          - Nichibros
+          - La vie quotidienne de lycéens
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 10
+          endDate:
+            year: 2012
+            month: 3
+            day: 27
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 11597
+          idMal: 11597
+          title:
+            romaji: Nisemonogatari
+            english: Nisemonogatari
+            native: 偽物語
+          synonyms:
+          - Fake Tale
+          - Истории подделок
+          - ปกรณัมของเทียม
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 8
+          endDate:
+            year: 2012
+            month: 3
+            day: 18
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 10863
+          idMal: 10863
+          title:
+            romaji: 'Steins;Gate: Oukoubakko no Poriomania'
+            english: 'Steins;Gate: Egoistic Poriomania'
+            native: シュタインズ・ゲート 横行跋扈のポリオマニア
+          synonyms:
+          - Steins
+          - Gate Special
+          - Poriomanía del egoismo
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 2
+            day: 22
+          endDate:
+            year: 2012
+            month: 2
+            day: 22
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 11013
+          idMal: 11013
+          title:
+            romaji: Inu x Boku SS
+            english: Inu X Boku Secret Service
+            native: 妖狐×僕SS
+          synonyms:
+          - Youko x Boku SS
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 13
+          endDate:
+            year: 2012
+            month: 3
+            day: 30
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 11433
+          idMal: 11433
+          title:
+            romaji: Ano Natsu de Matteru
+            english: Waiting in the Summer
+            native: あの夏で待ってる
+          synonyms:
+          - Natsumachi
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 10
+          endDate:
+            year: 2012
+            month: 3
+            day: 27
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 11319
+          idMal: 11319
+          title:
+            romaji: Zero no Tsukaima F
+            english: The Familiar of Zero F
+            native: ゼロの使い魔F
+          synonyms:
+          - Zero no Tsukaima Final Series
+          - Zero's Familiar Final Series
+          - Zero no Tsukaima S4
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 7
+          endDate:
+            year: 2012
+            month: 3
+            day: 24
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 11285
+          idMal: 11285
+          title:
+            romaji: Black★Rock Shooter (TV)
+            english: Black Rock Shooter
+            native: ブラック★ロックシューター (TV)
+          synonyms:
+          - BRS TV
+          - Black Rock Shooter TV
+          status: FINISHED
+          format: TV
+          episodes: 8
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 2
+            day: 3
+          endDate:
+            year: 2012
+            month: 3
+            day: 23
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 10218
+          idMal: 10218
+          title:
+            romaji: 'Berserk: Ougon Jidai-hen I - Haou no Tamago'
+            english: 'Berserk: The Golden Age Arc I - The Egg of the King'
+            native: ベルセルク 黄金時代篇Ⅰ 覇王の卵
+          synonyms:
+          - Berserk Movie
+          - Berserk Saga
+          - 'Berserk: Golden Age Arc I - Egg of the Supreme Ruler'
+          - 'The Golden Age Arc I: The High King''s Egg'
+          - 'Berserk: La Edad de Oro I - El Huevo del Rey Conquistador'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 2
+            day: 4
+          endDate:
+            year: 2012
+            month: 2
+            day: 4
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 11665
+          idMal: 11665
+          title:
+            romaji: Natsume Yuujinchou Shi
+            english: Natsume's Book of Friends Season 4
+            native: 夏目友人帳 肆
+          synonyms:
+          - Natsume Yuujinchou Four
+          - Natsume Yuujinchou 4
+          - Natsume Yujincho 4
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 3
+          endDate:
+            year: 2012
+            month: 3
+            day: 27
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 11751
+          idMal: 11751
+          title:
+            romaji: Senki Zesshou Symphogear
+            english: Symphogear
+            native: 戦姫絶唱シンフォギア
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 7
+          endDate:
+            year: 2012
+            month: 3
+            day: 30
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 11179
+          idMal: 11179
+          title:
+            romaji: Papa no Iukoto wo Kikinasai!
+            english: Listen to Me, Girls. I Am Your Father!
+            native: パパのいうことを聞きなさい！
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 11
+          endDate:
+            year: 2012
+            month: 3
+            day: 28
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 11235
+          idMal: 11235
+          title:
+            romaji: Amagami SS+ plus
+            english: null
+            native: アマガミSS+ plus
+          synonyms:
+          - Amagami SS Dai Ni Ki
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 6
+          endDate:
+            year: 2012
+            month: 3
+            day: 30
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 11079
+          idMal: 11079
+          title:
+            romaji: Kill Me Baby
+            english: Kill Me Baby
+            native: キルミーベイベー
+          synonyms:
+          - Baby,  Please Kill Me.
+          - תהרוג אותי מותק
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 6
+          endDate:
+            year: 2012
+            month: 3
+            day: 30
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 11241
+          idMal: 11241
+          title:
+            romaji: Brave 10
+            english: null
+            native: ブレイブ・テン
+          synonyms:
+          - Brave10
+          - Brave Ten
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 8
+          endDate:
+            year: 2012
+            month: 3
+            day: 25
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 11227
+          idMal: 11227
+          title:
+            romaji: Rinne no Lagrange
+            english: 'Lagrange: The Flower of Rin-ne'
+            native: 輪廻のラグランジェ
+          synonyms:
+          - Flower declaration of your heart
+          - Lag-Rin
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 8
+          endDate:
+            year: 2012
+            month: 3
+            day: 25
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 10447
+          idMal: 10447
+          title:
+            romaji: Aquarion EVOL
+            english: Aquarion EVOL
+            native: アクエリオンEVOL
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 9
+          endDate:
+            year: 2012
+            month: 6
+            day: 25
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 12191
+          idMal: 12191
+          title:
+            romaji: Smile Precure!
+            english: Glitter Force
+            native: スマイルプリキュア
+          synonyms:
+          - Smile Pretty Cure!
+          status: FINISHED
+          format: TV
+          episodes: 48
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 2
+            day: 5
+          endDate:
+            year: 2013
+            month: 1
+            day: 27
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 8917
+          idMal: 8917
+          title:
+            romaji: Mouretsu Pirates
+            english: Bodacious Space Pirates
+            native: モーレツ宇宙海賊
+          synonyms:
+          - Mouretsu Uchuu Kaizoku
+          - Miniskirt Pirates
+          - Moretsu Uchuu Kaizoku
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 8
+          endDate:
+            year: 2012
+            month: 7
+            day: 1
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 10638
+          idMal: 10638
+          title:
+            romaji: 'Denpa Onna to Seishun Otoko: Mayonaka no Taiyou'
+            english: 'Ground Control to Psychoelectric Girl: The Nighttime Sun'
+            native: 電波女と青春男 真夜中の太陽
+          synonyms:
+          - Denpa Onna to Seishun Otoko Episode 13
+          - Electromagnetic Wave Woman and Adolescent Man Special
+          - 'Ground Control to Psychoelectric Girl: Episode 13'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 2
+            day: 8
+          endDate:
+            year: 2012
+            month: 2
+            day: 8
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 10417
+          idMal: 10417
+          title:
+            romaji: Gyo
+            english: 'GYO: Tokyo Fish Attack'
+            native: ギョ
+          synonyms:
+          - ปลามรณะ
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 2
+            day: 15
+          endDate:
+            year: 2012
+            month: 2
+            day: 15
+          averageScore: 47
+          nextAiringEpisode: null
+        - id: 11697
+          idMal: 11697
+          title:
+            romaji: Area no Kishi
+            english: The Knight in the Area
+            native: エリアの騎士
+          synonyms:
+          - Il cavaliere dell'area di rigore
+          status: FINISHED
+          format: TV
+          episodes: 37
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 7
+          endDate:
+            year: 2012
+            month: 9
+            day: 29
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 11491
+          idMal: 11491
+          title:
+            romaji: Recorder to Randoseru Do♪
+            english: Recorder and Randsell
+            native: リコーダーとランドセル　ド♪
+          synonyms:
+          - Recorder and Backpack Do
+          - Recorder and Satchel Do
+          - Recorder and Randsell Do
+          - Recorder and Ransel Do
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 13
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 6
+          endDate:
+            year: 2012
+            month: 3
+            day: 28
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 11371
+          idMal: 11371
+          title:
+            romaji: Shin Tennis no Ouji-sama
+            english: The Prince of Tennis II
+            native: 新テニスの王子様
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 1
+            day: 5
+          endDate:
+            year: 2012
+            month: 3
+            day: 29
+          averageScore: 72
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

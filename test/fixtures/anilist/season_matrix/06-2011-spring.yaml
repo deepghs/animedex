@@ -1,0 +1,689 @@
+metadata:
+  captured_at: '2026-05-11T11:32:32Z'
+  label: 2011-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2011
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:32 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '24'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 9253
+          idMal: 9253
+          title:
+            romaji: Steins;Gate
+            english: Steins;Gate
+            native: シュタインズ・ゲート
+          synonyms:
+          - S;G
+          - סטיינס;גייט
+          - 命运石之门
+          - Врата;Штейна
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 6
+          endDate:
+            year: 2011
+            month: 9
+            day: 14
+          averageScore: 89
+          nextAiringEpisode: null
+        - id: 9919
+          idMal: 9919
+          title:
+            romaji: Ao no Exorcist
+            english: Blue Exorcist
+            native: 青の祓魔師
+          synonyms:
+          - Ao no Futsumashi
+          - اللهب الأزرق
+          - 'Ο Γαλάζιος Εξορκιστής '
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 17
+          endDate:
+            year: 2011
+            month: 10
+            day: 2
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 9989
+          idMal: 9989
+          title:
+            romaji: Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.
+            english: 'Anohana: The Flower We Saw That Day'
+            native: あの日見た花の名前を僕達はまだ知らない。
+          synonyms:
+          - AnoHana
+          - We Still Don't Know the Name of the Flower We Saw That Day.
+          - 'אנוהאנה: הפרח שראינו ביום ההוא'
+          - อาโนะฮานะ ดอกไม้ ความทรงจำ และมิตรภาพ
+          - あの花
+          - 'AnoHana: ancora non conosciamo il nome del fiore che abbiamo visto quel giorno'
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 15
+          endDate:
+            year: 2011
+            month: 6
+            day: 24
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 6880
+          idMal: 6880
+          title:
+            romaji: Deadman Wonderland
+            english: Deadman Wonderland
+            native: デッドマン・ワンダーランド
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 17
+          endDate:
+            year: 2011
+            month: 7
+            day: 3
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 10165
+          idMal: 10165
+          title:
+            romaji: Nichijou
+            english: Nichijou - My Ordinary Life
+            native: 日常
+          synonyms:
+          - Everyday
+          - Мелочи Жизни
+          - Повсякденнощі
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 3
+          endDate:
+            year: 2011
+            month: 9
+            day: 25
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 9969
+          idMal: 9969
+          title:
+            romaji: Gintama'
+            english: Gintama Season 2
+            native: 銀魂’
+          synonyms:
+          - Gintama (2011)
+          status: FINISHED
+          format: TV
+          episodes: 51
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 4
+          endDate:
+            year: 2012
+            month: 3
+            day: 26
+          averageScore: 89
+          nextAiringEpisode: null
+        - id: 9289
+          idMal: 9289
+          title:
+            romaji: Hanasaku Iroha
+            english: Hanasaku Iroha ~Blossoms for Tomorrow~
+            native: 花咲くいろは
+          synonyms:
+          - Hana-Saku Iroha
+          - Hanairo
+          - 花开伊吕波
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 3
+          endDate:
+            year: 2011
+            month: 9
+            day: 25
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 10080
+          idMal: 10080
+          title:
+            romaji: Kami nomi zo Shiru Sekai II
+            english: The World God Only Knows II
+            native: 神のみぞ知るセカイⅡ
+          synonyms:
+          - Kami nomi zo Shiru Sekai 2
+          - Kaminomi II
+          - The World God Only Knows 2
+          - Que sa volonté soit faite II
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 12
+          endDate:
+            year: 2011
+            month: 6
+            day: 28
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 8630
+          idMal: 8630
+          title:
+            romaji: Hidan no Aria
+            english: Aria the Scarlet Ammo
+            native: 緋弾のアリア
+          synonyms:
+          - Aria da Bala Escarlate
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 15
+          endDate:
+            year: 2011
+            month: 7
+            day: 1
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 9379
+          idMal: 9379
+          title:
+            romaji: Denpa Onna to Seishun Otoko
+            english: Ground Control to Psychoelectric Girl
+            native: 電波女と青春男
+          synonyms:
+          - Electromagnetic Wave Woman and Adolescent Man
+          - หนุ่มสามัญกับสาวหลุดโลก
+          - 电波女与青春男
+          - 電波女與青春男
+          - 전파녀와 청춘남
+          - Дівчинка-Електромагнітна хвиля і хлопець-підліток
+          - Радиодевушка и юноша
+          - Радиосигнал от чудачки. Юноша на связи
+          - امرأة الموجة الكهرومغناطيسية والشاب المراهق, دختر الکترو مغناطیسی و پسر نوجوان
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 15
+          endDate:
+            year: 2011
+            month: 7
+            day: 1
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 9515
+          idMal: 9515
+          title:
+            romaji: 'Gakuen Mokushiroku: HIGHSCHOOL OF THE DEAD - Drifters of the Dead'
+            english: 'High School of the Dead: Drifters of the Dead'
+            native: 学園黙示録HIGHSCHOOL OF THE DEAD ドリフターズ・オブ・ザ・デッド
+          synonyms:
+          - High School of the Dead OVA
+          - HOTD
+          - HSOTD
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 26
+          endDate:
+            year: 2011
+            month: 4
+            day: 26
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 10163
+          idMal: 10163
+          title:
+            romaji: 'C: THE MONEY OF SOUL AND POSSIBILITY CONTROL'
+            english: '[C] - CONTROL - The Money and Soul of Possibility'
+            native: 「C」 THE MONEY OF SOUL AND POSSIBILITY CONTROL
+          synonyms:
+          - '[C] The Money of Soul and Possibility Control'
+          - '[C] - Control'
+          - C-Control
+          - The Money of Souland Possibility Controul
+          - Dusza na sprzedaż
+          - C
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 15
+          endDate:
+            year: 2011
+            month: 6
+            day: 24
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 9760
+          idMal: 9760
+          title:
+            romaji: Hoshi wo Ou Kodomo
+            english: Children who Chase Lost Voices
+            native: 星を追う子ども
+          synonyms:
+          - Children who Chase Lost Voices from Deep Below
+          - Journey to Agartha
+          - Viaje a Agartha
+          - Csillaghajsza
+          - Voyage vers Agartha
+          - Die Reise nach Agartha
+          - Viaggio verso Agartha
+          - I bambini che inseguono le stelle
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 5
+            day: 7
+          endDate:
+            year: 2011
+            month: 5
+            day: 7
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 10271
+          idMal: 10271
+          title:
+            romaji: 'Gyakkyou Burai Kaiji: Hakairoku-hen'
+            english: Kaiji - Against All Rules
+            native: 逆境無頼カイジ 破戒録篇
+          synonyms:
+          - 'The Suffering Pariah Kaiji: Backslide Arc'
+          - Kaiji 2
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 6
+          endDate:
+            year: 2011
+            month: 9
+            day: 28
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 10711
+          idMal: 10711
+          title:
+            romaji: Plastic Nee-san
+            english: Plastic Elder Sister
+            native: ＋チック姉さん
+          synonyms:
+          - +tic Nee-san
+          - +tic Elder Sister
+          - Plustic Neesan
+          - Plastic Nesan
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 5
+            day: 16
+          endDate:
+            year: 2012
+            month: 7
+            day: 26
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 9941
+          idMal: 9941
+          title:
+            romaji: TIGER & BUNNY
+            english: Tiger & Bunny
+            native: TIGER & BUNNY
+          synonyms:
+          - タイガー・アンド・バニー
+          - Tiger and Bunny
+          - Taibani
+          - Тигр та Кролик
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 3
+          endDate:
+            year: 2011
+            month: 9
+            day: 18
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 9863
+          idMal: 9863
+          title:
+            romaji: SKET DANCE
+            english: SKET Dance
+            native: SKET DANCE
+          synonyms:
+          - スケットダンス
+          status: FINISHED
+          format: TV
+          episodes: 77
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 7
+          endDate:
+            year: 2012
+            month: 9
+            day: 27
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 9734
+          idMal: 9734
+          title:
+            romaji: 'K-ON!!: Keikaku!'
+            english: 'K-ON! Season 2: Plan!'
+            native: けいおん!! 計画!
+          synonyms:
+          - Keion 2 Special
+          - K-On!! 2nd Season Special
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 3
+            day: 16
+          endDate:
+            year: 2011
+            month: 3
+            day: 16
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 10155
+          idMal: 10155
+          title:
+            romaji: Dog Days
+            english: Dog Days
+            native: ドッグデイズ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 2
+          endDate:
+            year: 2011
+            month: 6
+            day: 25
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 9982
+          idMal: 9982
+          title:
+            romaji: FAIRY TAIL OVA
+            english: null
+            native: FAIRY TAIL OVA
+          synonyms: []
+          status: FINISHED
+          format: OVA
+          episodes: 5
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 15
+          endDate:
+            year: 2013
+            month: 6
+            day: 17
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 10079
+          idMal: 10079
+          title:
+            romaji: Hoshizora e Kakaru Hashi
+            english: A Bridge to the Starry Skies
+            native: 星空へ架かる橋
+          synonyms:
+          - 星架か
+          - HoshiKaka
+          - Hoshizora - Ponte para o Céu Estrelado
+          - Un puente al cielo estrellado
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 11
+          endDate:
+            year: 2011
+            month: 6
+            day: 27
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 9926
+          idMal: 9926
+          title:
+            romaji: Sekaiichi Hatsukoi
+            english: Sekai Ichi Hatsukoi - The World's Greatest First Love
+            native: 世界一初恋 TV
+          synonyms:
+          - Sekai-ichi Hatsukoi
+          - Sekai'ichi Hatsukoi
+          - World's Greatest First Love
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 9
+          endDate:
+            year: 2011
+            month: 6
+            day: 25
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 9736
+          idMal: 9736
+          title:
+            romaji: Astarotte no Omocha!
+            english: Astarotte's Toy
+            native: アスタロッテのおもちゃ！
+          synonyms:
+          - Lotte no Omocha!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 11
+          endDate:
+            year: 2011
+            month: 6
+            day: 26
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 10119
+          idMal: 10119
+          title:
+            romaji: Seitokai Yakuindomo OVA
+            english: null
+            native: 生徒会役員共 OVA
+          synonyms:
+          - Seitokai Yakuindomo (2011)
+          - Seitokai Yakuindomo (2012)
+          status: FINISHED
+          format: OVA
+          episodes: 8
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 4
+            day: 15
+          endDate:
+            year: 2013
+            month: 10
+            day: 17
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 9366
+          idMal: 9366
+          title:
+            romaji: 'Kaichou wa Maid-sama!: Omake dayo!'
+            english: Maid-Sama! It's an extra!
+            native: 会長はメイド様！おまけだよ！
+          synonyms:
+          - Kaicho wa Maid-sama! Special
+          - Kaicho wa Maidsama! Special
+          - Kaichou wa Meido Sama Special
+          - Class President is a Maid! Special
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: SPRING
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 5
+            day: 11
+          endDate:
+            year: 2011
+            month: 5
+            day: 11
+          averageScore: 73
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

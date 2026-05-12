@@ -17,7 +17,21 @@ AggregateResult
 -----------------------------------------------------
 
 .. autoclass:: AggregateResult
-    :members: failed_sources,succeeded_count,all_failed,items,sources
+    :members: failed_sources,succeeded_count,all_failed,items,sources,merge_diagnostics
+
+
+ScheduleCalendarResult
+-----------------------------------------------------
+
+.. autoclass:: ScheduleCalendarResult
+    :members: timezone,window_start,window_end
+
+
+MergedAnime
+-----------------------------------------------------
+
+.. autoclass:: MergedAnime
+    :members: title,ids,sources,records,core,source_details,source_payloads,id_conflicts
 
 
 selftest

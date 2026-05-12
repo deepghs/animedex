@@ -1,0 +1,658 @@
+metadata:
+  captured_at: '2026-05-11T11:33:11Z'
+  label: 2014-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2014
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:11 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '10'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 20665
+          idMal: 23273
+          title:
+            romaji: Shigatsu wa Kimi no Uso
+            english: Your lie in April
+            native: 四月は君の嘘
+          synonyms:
+          - KimiUso
+          - השקר שלך באפריל
+          - Bugie d'aprile
+          - 四月是你的谎言
+          - YLIA
+          - Sekunden in Moll
+          - Твоя апрельская ложь
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 10
+          endDate:
+            year: 2015
+            month: 3
+            day: 20
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 20789
+          idMal: 23755
+          title:
+            romaji: Nanatsu no Taizai
+            english: The Seven Deadly Sins
+            native: 七つの大罪
+          synonyms:
+          - 七大罪
+          - ศึกตำนาน 7 อัศวิน
+          - 7DS
+          - Семь смертных грехов
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 5
+          endDate:
+            year: 2015
+            month: 3
+            day: 29
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20623
+          idMal: 22535
+          title:
+            romaji: 'Kiseijuu: Sei no Kakuritsu'
+            english: Parasyte -the maxim-
+            native: 寄生獣 セイの格率
+          synonyms:
+          - Kiseiju - L'ospite indesiderato
+          - 'Parasite : La Maxime'
+          - 'Паразит: Учение о жизни'
+          - Pasożyt
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 9
+          endDate:
+            year: 2015
+            month: 3
+            day: 26
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 19603
+          idMal: 22297
+          title:
+            romaji: 'Fate/stay night: Unlimited Blade Works'
+            english: 'Fate/stay night: Unlimited Blade Works'
+            native: Fate/stay night [Unlimited Blade Works]
+          synonyms:
+          - フェイト/ステイナイト Unlimited Blade Works
+          - Fate/UBW
+          - 'פייט/סטיי נייט: מלאכת חרבות אינסופית'
+          - 'Судьба/Ночь схватки: Бесконечный мир клинков'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 5
+          endDate:
+            year: 2014
+            month: 12
+            day: 28
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 20770
+          idMal: 25013
+          title:
+            romaji: Akatsuki no Yona
+            english: Yona of the Dawn
+            native: 暁のヨナ
+          synonyms:
+          - AkaYona
+          - Йона на заре
+          - Ёна на заре
+          - Рассвет Йоны
+          - Yona, princesse de l'aube
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 7
+          endDate:
+            year: 2015
+            month: 3
+            day: 24
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 20631
+          idMal: 25157
+          title:
+            romaji: Trinity Seven
+            english: TRINITY SEVEN
+            native: トリニティセブン
+          synonyms:
+          - 'Trinity Seven: 7-nin no Mahoutsukai'
+          - 'Trinity Seven: Shichinin no Mahoutsukai'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 8
+          endDate:
+            year: 2014
+            month: 12
+            day: 24
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20602
+          idMal: 22147
+          title:
+            romaji: Amagi Brilliant Park
+            english: Amagi Brilliant Park
+            native: 甘城ブリリアントパーク
+          synonyms:
+          - Amaburi
+          - 甘ブリ
+          - Cudowny park Amagi
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 7
+          endDate:
+            year: 2014
+            month: 12
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 17729
+          idMal: 17729
+          title:
+            romaji: Grisaia no Kajitsu
+            english: The Fruit of Grisaia
+            native: グリザイアの果実
+          synonyms:
+          - Le Fruit De La Grisaia
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 5
+          endDate:
+            year: 2014
+            month: 12
+            day: 28
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 16870
+          idMal: 16870
+          title:
+            romaji: 'THE LAST: NARUTO THE MOVIE'
+            english: 'The Last: Naruto the Movie'
+            native: THE LAST -NARUTO THE MOVIE-
+          synonyms:
+          - Naruto Movie 10
+          - 'Naruto Shippuden Movie 07: The Last'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 12
+            day: 6
+          endDate:
+            year: 2014
+            month: 12
+            day: 6
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 20513
+          idMal: 23281
+          title:
+            romaji: PSYCHO-PASS 2
+            english: PSYCHO-PASS 2
+            native: PSYCHO-PASS サイコパス2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 10
+          endDate:
+            year: 2014
+            month: 12
+            day: 19
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20671
+          idMal: 23321
+          title:
+            romaji: Log Horizon 2
+            english: Log Horizon 2
+            native: ログ・ホライズン 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 4
+          endDate:
+            year: 2015
+            month: 3
+            day: 28
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20918
+          idMal: 28025
+          title:
+            romaji: Tsukimonogatari
+            english: Tsukimonogatari
+            native: 憑物語
+          synonyms:
+          - Possession Tale
+          status: FINISHED
+          format: TV
+          episodes: 4
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 12
+            day: 31
+          endDate:
+            year: 2014
+            month: 12
+            day: 31
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 20729
+          idMal: 24405
+          title:
+            romaji: World Trigger
+            english: World Trigger
+            native: ワールドトリガー
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 73
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 5
+          endDate:
+            year: 2016
+            month: 4
+            day: 3
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 20812
+          idMal: 25835
+          title:
+            romaji: SHIROBAKO
+            english: SHIROBAKO
+            native: SHIROBAKO
+          synonyms:
+          - White Box
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 9
+          endDate:
+            year: 2015
+            month: 3
+            day: 26
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 20646
+          idMal: 25159
+          title:
+            romaji: Inou-Battle wa Nichijou-kei no Naka de
+            english: When Supernatural Battles Became Commonplace
+            native: 異能バトルは日常系のなかで
+          synonyms:
+          - InoBato
+          - Inou-Battle in the Usually Daze.
+          - Inou Battle Within Everyday Life
+          - พลังป่วนก๊วนเหนือธรรมชาติ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 7
+          endDate:
+            year: 2014
+            month: 12
+            day: 23
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 20701
+          idMal: 23673
+          title:
+            romaji: Ookami Shoujo to Kuro Ouji
+            english: Wolf Girl and Black Prince
+            native: オオカミ少女と黒王子
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 5
+          endDate:
+            year: 2014
+            month: 12
+            day: 21
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 20590
+          idMal: 21843
+          title:
+            romaji: 'Shingeki no Bahamut: GENESIS'
+            english: 'Rage of Bahamut: Genesis'
+            native: 神撃のバハムート GENESIS
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 6
+          endDate:
+            year: 2014
+            month: 12
+            day: 29
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20735
+          idMal: 26349
+          title:
+            romaji: Danna ga Nani wo Itteiru ka Wakaranai Ken
+            english: I Can't Understand What My Husband Is Saying
+            native: 旦那が何を言っているかわからない件
+          synonyms:
+          - Danna ga Nani o Itte Iruka Wakaranai Ken
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 13
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 3
+          endDate:
+            year: 2014
+            month: 12
+            day: 26
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 20809
+          idMal: 24455
+          title:
+            romaji: Madan no Ou to Vanadis
+            english: Lord Marksman and Vanadis
+            native: 魔弾の王と戦姫 (ヴァナディース)
+          synonyms:
+          - The King of the Magic Bullet and Vanadis
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 4
+          endDate:
+            year: 2014
+            month: 12
+            day: 27
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20751
+          idMal: 24701
+          title:
+            romaji: Mushishi Zoku Shou 2
+            english: MUSHI-SHI The Next Passage 2
+            native: 蟲師 続章 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 19
+          endDate:
+            year: 2014
+            month: 12
+            day: 22
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 20806
+          idMal: 25731
+          title:
+            romaji: 'Cross Ange: Tenshi to Ryuu no Rondo'
+            english: 'Cross Ange: Rondo of Angel and Dragon'
+            native: クロスアンジュ 天使と竜の輪舞
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 5
+          endDate:
+            year: 2015
+            month: 3
+            day: 29
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 20767
+          idMal: 22961
+          title:
+            romaji: 'Date A Live II: Kurumi Star Festival'
+            english: null
+            native: デート・ア・ライブ II 狂三スターフェスティバル
+          synonyms:
+          - ' Date A Live II Episode 11'
+          - ' Date A Live II OVA'
+          - 'Date A Live: Encore'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 12
+            day: 9
+          endDate:
+            year: 2014
+            month: 12
+            day: 9
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 20800
+          idMal: 25519
+          title:
+            romaji: Yuuki Yuuna wa Yuusha de Aru
+            english: Yuki Yuna is a Hero
+            native: 結城友奈は勇者である
+          synonyms:
+          - ' YuYuYu'
+          - สาวน้อยชมรมผู้กล้า
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 17
+          endDate:
+            year: 2014
+            month: 12
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 20670
+          idMal: 23317
+          title:
+            romaji: 'Kuroshitsuji: Book of Murder'
+            english: 'Black Butler: Book of Murder'
+            native: 黒執事 Book of Murder
+          synonyms:
+          - Phantomhive Manor Murder Case
+          - 'คนลึกไขปริศนาลับ: Book of Murder'
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 25
+          endDate:
+            year: 2014
+            month: 11
+            day: 15
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20719
+          idMal: 24231
+          title:
+            romaji: 'Hitsugi no Chaika: AVENGING BATTLE'
+            english: Chaika -The Coffin Princess- AVENGING BATTLE
+            native: 棺姫のチャイカ AVENGING BATTLE
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 10
+            day: 9
+          endDate:
+            year: 2014
+            month: 12
+            day: 11
+          averageScore: 69
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

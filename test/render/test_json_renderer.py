@@ -108,6 +108,17 @@ class TestMergedSources:
         decoded = json.loads(render_json(merged, include_source=True))
         assert decoded["_meta"]["sources_consulted"] == ["anilist", "jikan"]
 
+    def test_aggregate_sources_dict_aggregates_into_meta(self):
+        from animedex.models.common import AnimedexModel
+        from animedex.render.json_renderer import render_json
+
+        class MergedDict(AnimedexModel):
+            sources: dict
+
+        result = MergedDict(sources={"anilist": {"backend": "anilist", "status": "ok"}, "legacy": {"status": "ok"}})
+        decoded = json.loads(render_json(result, include_source=True))
+        assert decoded["_meta"]["sources_consulted"] == ["anilist", "legacy"]
+
 
 class TestAggregateResultSources:
     def test_aggregate_sources_map_reports_ok_sources_only(self):

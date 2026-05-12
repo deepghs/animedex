@@ -1,0 +1,740 @@
+metadata:
+  captured_at: '2026-05-11T11:34:25Z'
+  label: 2021-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2021
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:25 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '27'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 120120
+          idMal: 42249
+          title:
+            romaji: Tokyo Revengers
+            english: Tokyo Revengers
+            native: 東京リベンジャーズ
+          synonyms:
+          - 重生之道
+          - โตเกียวรีเวนเจอร์ส
+          - โตเกียว卍รีเวนเจอร์ส
+          - 东京复仇者
+          - נוקמי טוקיו
+          - Токийские мстители
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 11
+          endDate:
+            year: 2021
+            month: 9
+            day: 19
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 117193
+          idMal: 41587
+          title:
+            romaji: Boku no Hero Academia 5
+            english: My Hero Academia Season 5
+            native: 僕のヒーローアカデミア５
+          synonyms:
+          - BNHA 5
+          - MHA 5
+          - 我的英雄学院 5
+          - 我的英雄学院第五季
+          - มายฮีโร่ อคาเดเมีย ภาค 5
+          - أكاديميتي للأبطال
+          - Моя геройская академия 5
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 3
+            day: 27
+          endDate:
+            year: 2021
+            month: 9
+            day: 25
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 114535
+          idMal: 41025
+          title:
+            romaji: Fumetsu no Anata e
+            english: To Your Eternity
+            native: 不滅のあなたへ
+          synonyms:
+          - To You, the Immortal
+          - Uma vida imortal
+          - 致不灭的你
+          - A te, l'immortale
+          - Ku twej wieczności
+          - 불멸의 그대에게
+          - Untukmu yang Abadi
+          - Gửi em, người bất tử
+          - แด่เธอผู้เป็นนิรันดร์
+          status: FINISHED
+          format: TV
+          episodes: 20
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 12
+          endDate:
+            year: 2021
+            month: 8
+            day: 30
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 116589
+          idMal: 41457
+          title:
+            romaji: '86: Eighty Six'
+            english: 86 EIGHTY-SIX
+            native: 86－エイティシックス－
+          synonyms:
+          - 86--EIGHTY-SIX
+          - 86 -เอทตี้ซิกซ์-
+          - 86 ВОСЕМЬДЕСЯТ ШЕСТЬ
+          - 86 -不存在的战区-
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 11
+          endDate:
+            year: 2021
+            month: 6
+            day: 20
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 120697
+          idMal: 42361
+          title:
+            romaji: Ijiranaide, Nagatoro-san
+            english: DON'T TOY WITH ME, MISS NAGATORO
+            native: イジらないで、長瀞さん
+          synonyms:
+          - 不要欺负我、长瀞同学
+          - Arrête de me chauffer, Nagatoro!
+          - ยัยตัวแสบแอบน่ารัก นางาโทโระ
+          - Не издевайся надо мной, Нагаторо
+          - "괴롭히지 말아요, 나가토로 양\t"
+          - 'Jangan main-main denganku, Nona Nagatoro Serangan Ke-2 '
+          - No me rayes, Nagatoro
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 11
+          endDate:
+            year: 2021
+            month: 6
+            day: 27
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 114232
+          idMal: 40938
+          title:
+            romaji: Hige wo Soru. Soshite Joshikousei wo Hirou.
+            english: 'Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway'
+            native: ひげを剃る。そして女子高生を拾う。
+          synonyms:
+          - Higehiro
+          - I Shaved My Beard Then Picked Up a High School Girl.
+          - 剃须。然后捡到女高中生。
+          - 刮掉鬍子的我與撿到的女高中生
+          - โกนหนวดไปทำงาน แล้วกลับบ้านมาพบเธอ
+          - Я побрился. И приютил школьницу
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 5
+          endDate:
+            year: 2021
+            month: 6
+            day: 28
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 128546
+          idMal: 46095
+          title:
+            romaji: 'Vivy: Fluorite Eye’s Song'
+            english: Vivy -Fluorite Eye's Song-
+            native: Vivy -Fluorite Eye’s Song-
+          synonyms:
+          - ヴィヴィ -フローライトアイズソング-
+          - วีวี่ บทเพลงจักรกลกู้ศตวรรษ
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 3
+          endDate:
+            year: 2021
+            month: 6
+            day: 19
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 124194
+          idMal: 42938
+          title:
+            romaji: 'Fruits Basket: The Final'
+            english: Fruits Basket The Final Season
+            native: フルーツバスケットThe Final
+          synonyms:
+          - Furuba
+          - Fruba
+          - フルバ
+          - Fruits Basket Season 3
+          - 水果篮子 最终季
+          - เสน่ห์สาวข้าวปั้น ภาค 3
+          - เสน่ห์สาวข้าวปั้น ภาคสุดท้าย
+          - 'Корзинка фруктов: Финал'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 6
+          endDate:
+            year: 2021
+            month: 6
+            day: 29
+          averageScore: 89
+          nextAiringEpisode: null
+        - id: 125426
+          idMal: 43692
+          title:
+            romaji: Gokushufudou
+            english: The Way of the Househusband
+            native: 極主夫道
+          synonyms:
+          - La Via del Grembiule
+          - 'Gokushufudou: Tatsu Imortal'
+          - De yakuza a amo de casa
+          - La Voie du Tablier
+          - Yakuza w fartuszku. Kodeks perfekcyjnego pana domu
+          - على طريقة ربّ المنزل
+          - Gokushufudou Part 1
+          - The Way of the Househusband Part 1
+          - 'พ่อบ้านสุดเก๋า '
+          - พ่อบ้านสุดเก๋า พาร์ท 1
+          - Ο Καλός Νοικοκύρης
+          - Шлях домогосподаря
+          status: FINISHED
+          format: ONA
+          episodes: 5
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 8
+          endDate:
+            year: 2021
+            month: 4
+            day: 8
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 128547
+          idMal: 46102
+          title:
+            romaji: Odd Taxi
+            english: ODDTAXI
+            native: オッドタクシー
+          synonyms:
+          - Необычное такси
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 6
+          endDate:
+            year: 2021
+            month: 6
+            day: 29
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 112608
+          idMal: 40586
+          title:
+            romaji: Slime Taoshite 300-nen, Shiranai Uchi ni Level MAX ni Nattemashita
+            english: I've Been Killing Slimes for 300 Years and Maxed Out My Level
+            native: スライム倒して300年、知らないうちにレベルMAXになってました
+          synonyms:
+          - Slime 300
+          - 打了300年的史莱姆，不知不觉就练到了满级
+          - La Sorcière invincible tueuse de Slime depuis 300 ans
+          - ล่าสไลม์มา 300 ปีรู้ตัวอีกทีก็เลเวล MAX ซะแล้ว
+          - Tanpa Sadar Levelku Mentok Setelah Membasmi Slime Selama 300 Tahun
+          - Я 300 лет убивала слизь и прокачалась на максимум
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 10
+          endDate:
+            year: 2021
+            month: 6
+            day: 26
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 127399
+          idMal: 44942
+          title:
+            romaji: Shuumatsu no Valkyrie
+            english: Record of Ragnarok
+            native: 終末のワルキューレ
+          synonyms:
+          - Shuumatsu no Walkure
+          - معركة راغناروك
+          - Valkyrie Apocalypse
+          - มหาศึกคนชนเทพ
+          - Повесть о конце света
+          - Τα Χρονικά του Ράγκναροκ
+          - Хроніка Раґнароку
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 6
+            day: 17
+          endDate:
+            year: 2021
+            month: 6
+            day: 17
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 117448
+          idMal: 41623
+          title:
+            romaji: Isekai Maou to Shoukan Shoujo no Dorei Majutsu Ω
+            english: How NOT to Summon a Demon Lord Ω
+            native: 異世界魔王と召喚少女の奴隷魔術Ω
+          synonyms:
+          - Isekai Maou to Shoukan Shoujo no Dorei Majutsu 2
+          - Isekai Maou to Shoukan Shoujo no Dorei Majutsu Omega
+          - How NOT To Summon A Demon Lord Omega
+          - 异世界魔王与召唤少女的奴隶魔术Ω
+          - จอมมารต่างโลกกับ บริวารสาวนักอัญเชิญ ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 9
+          endDate:
+            year: 2021
+            month: 6
+            day: 11
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 116588
+          idMal: 41456
+          title:
+            romaji: Sentouin, Hakenshimasu!
+            english: Combatants Will Be Dispatched!
+            native: 戦闘員、派遣します！
+          synonyms:
+          - Kombattanten werden entsandt!
+          - 战斗员派遣中！
+          - 'นักรบสายป่วนออกปฏิบัติกวน '
+          - Les combattants seront déployés !
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 4
+          endDate:
+            year: 2021
+            month: 6
+            day: 20
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 116338
+          idMal: 41402
+          title:
+            romaji: Mairimashita! Iruma-kun 2
+            english: Welcome to Demon School! Iruma-kun Season 2
+            native: 魔入りました！入間くん 第2シリーズ
+          synonyms:
+          - Welcome to Demon School, Iruma-kun! Season 2
+          - 入间同学入魔了 第二季
+          - 入间同学入魔了！2
+          - อิรุมะคุง พจญในแดนปีศาจ! ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 21
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 17
+          endDate:
+            year: 2021
+            month: 9
+            day: 11
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 125038
+          idMal: 43439
+          title:
+            romaji: Shadows House
+            english: SHADOWS HOUSE
+            native: シャドーハウス
+          synonyms:
+          - Shadow House
+          - 影之宅
+          - 影宅
+          - Dinh Thự Bóng
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 11
+          endDate:
+            year: 2021
+            month: 7
+            day: 4
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 116741
+          idMal: 41488
+          title:
+            romaji: 'Tensei Shitara Slime Datta Ken: Tensura Nikki'
+            english: The Slime Diaries
+            native: 転生したらスライムだった件 転スラ日記
+          synonyms:
+          - 'The Slime Diaries: That Time I Got Reincarnated as a Slime'
+          - 'เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว : เดอะ สไลม์ ไดอารี่'
+          - 关于我转生变成史莱姆这档事 转生史莱姆日记
+          - เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว ไดอารี่ของสไลม์
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 6
+          endDate:
+            year: 2021
+            month: 6
+            day: 22
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 125368
+          idMal: 43609
+          title:
+            romaji: 'Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen OVA'
+            english: null
+            native: かぐや様は告らせたい～天才たちの恋愛頭脳戦～OVA
+          synonyms:
+          - 'Kaguya-sama: Love is War OVA'
+          - 'Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen OVA'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 5
+            day: 19
+          endDate:
+            year: 2021
+            month: 5
+            day: 19
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 119683
+          idMal: 42192
+          title:
+            romaji: EDENS ZERO
+            english: EDENS ZERO
+            native: EDENS ZERO
+          synonyms:
+          - エデンズゼロ
+          - إيدينز زيرو
+          - אדנס זירו
+          - เอเดนส์ซีโร่
+          - НУЛЕВОЙ ЭДЕМ
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 11
+          endDate:
+            year: 2021
+            month: 10
+            day: 3
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 124675
+          idMal: 43007
+          title:
+            romaji: Osananajimi ga Zettai ni Makenai Love Come
+            english: 'Osamake: Romcom Where The Childhood Friend Won''t Lose'
+            native: 幼なじみが絶対に負けないラブコメ
+          synonyms:
+          - Osananajimi ga Zettai ni Makenai Love Comedy
+          - OsaMake
+          - ความรักนี้เพื่อนสมัยเด็กไม่แพ้รักแรกหรอก
+          - เลิฟคอเมดี้เรื่องนี้ เพื่อนสมัยเด็กไม่มีวันแพ้
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 14
+          endDate:
+            year: 2021
+            month: 6
+            day: 30
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 124858
+          idMal: 43325
+          title:
+            romaji: Yuukoku no Moriarty Part 2
+            english: Moriarty the Patriot Part 2
+            native: 憂国のモリアーティ2クール
+          synonyms:
+          - มอริอาร์ตี้ผู้รักชาติ Part 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 4
+          endDate:
+            year: 2021
+            month: 6
+            day: 27
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 126791
+          idMal: 44276
+          title:
+            romaji: Kyuukyoku Shinka Shita Full Dive RPG ga Genjitsu yori mo Kusogee Dattara
+            english: 'Full Dive: This Ultimate Next-Gen Full Dive RPG Is Even Shittier than Real Life!'
+            native: 究極進化したフルダイブRPGが現実よりもクソゲーだったら
+          synonyms:
+          - What If the Ultimate in Fully Immersive VR RPGs Was a Crappier Game Than Reality Itself
+          - 如果究极进化的完全潜行 RPG 比现实还更像垃圾游戏的话
+          - 'Full Dive : L''ultime RPG est encore plus foireux que la réalité !'
+          - เมื่อ Full Dive RPG ได้กลายเป็นสิ่งที่แย่กว่าชีวิตจริง
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 7
+          endDate:
+            year: 2021
+            month: 6
+            day: 23
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 119675
+          idMal: 42205
+          title:
+            romaji: SHAMAN KING (2021)
+            english: SHAMAN KING (2021)
+            native: SHAMAN KING (2021)
+          synonyms:
+          - シャーマンキング (2021)
+          - ملك الشامان
+          - 通灵王
+          - שאמן קינג
+          - Король шаманов
+          - Βασιλιάς Σαμάνος
+          - Król szamanów
+          - Rey Chamán
+          - Король шаманів
+          status: FINISHED
+          format: TV
+          episodes: 52
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 1
+          endDate:
+            year: 2022
+            month: 4
+            day: 21
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 123802
+          idMal: 42826
+          title:
+            romaji: Seijo no Maryoku wa Bannou desu
+            english: The Saint's Magic Power is Omnipotent
+            native: 聖女の魔力は万能です
+          synonyms:
+          - The power of the saint is all around
+          - 圣女的魔力是万能的
+          - สตรีศักดิ์สิทธิ์อิทธิฤทธิ์สารพัดอย่าง
+          - Kekuatan Sihir Santa Sungguh Mahaguna
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 6
+          endDate:
+            year: 2021
+            month: 6
+            day: 22
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 110733
+          idMal: 40174
+          title:
+            romaji: 'Zombie Land Saga: Revenge'
+            english: ZOMBIE LAND SAGA REVENGE
+            native: ゾンビランドサガ リベンジ
+          synonyms:
+          - 'Zombieland Saga: Revenge'
+          - 佐贺偶像是传奇 Revenge
+          - 'ซอมบี้เเลนด์ซากะ Revenge '
+          - 'Зомбилэнд-Сага: Возмездие'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 4
+            day: 8
+          endDate:
+            year: 2021
+            month: 6
+            day: 24
+          averageScore: 79
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

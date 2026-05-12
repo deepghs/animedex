@@ -1,0 +1,660 @@
+metadata:
+  captured_at: '2026-05-11T11:33:33Z'
+  label: 2016-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2016
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:33 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '24'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 21698
+          idMal: 32935
+          title:
+            romaji: 'Haikyuu!!: Karasuno Koukou VS Shiratorizawa Gakuen Koukou'
+            english: HAIKYU!! 3rd Season
+            native: ハイキュー!! 烏野高校 VS 白鳥沢学園高校
+          synonyms:
+          - Haikyu!! Karasuno High vs Shiratorizawa Academy
+          - Haikyuu!! 3
+          - ไฮคิว!! คู่ตบฟ้าประทาน ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 8
+          endDate:
+            year: 2016
+            month: 12
+            day: 10
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 21679
+          idMal: 32867
+          title:
+            romaji: Bungou Stray Dogs 2nd Season
+            english: Bungo Stray Dogs 2
+            native: 文豪ストレイドッグス 第2シーズン
+          synonyms:
+          - Bungou Stray Dogs (2016)
+          - คณะประพันธกรจรจัด ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 6
+          endDate:
+            year: 2016
+            month: 12
+            day: 16
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 21709
+          idMal: 32995
+          title:
+            romaji: Yuuri!!! on ICE
+            english: Yuri!!! on ICE
+            native: ユーリ!!! on ICE
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 6
+          endDate:
+            year: 2016
+            month: 12
+            day: 22
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 21366
+          idMal: 31646
+          title:
+            romaji: 3-gatsu no Lion
+            english: March comes in like a lion
+            native: ３月のライオン
+          synonyms:
+          - Sangatsu no Lion
+          - Un marzo da leoni
+          - מרץ מגיע כאריה
+          - أسد آذار
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 8
+          endDate:
+            year: 2017
+            month: 3
+            day: 18
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 21123
+          idMal: 31339
+          title:
+            romaji: DRIFTERS
+            english: DRIFTERS
+            native: DRIFTERS
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 7
+          endDate:
+            year: 2016
+            month: 12
+            day: 23
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21639
+          idMal: 32686
+          title:
+            romaji: Keijo!!!!!!!!
+            english: Keijo!!!!!!!!
+            native: 競女!!!!!!!!
+          synonyms:
+          - Hip Whip Girl
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 6
+          endDate:
+            year: 2016
+            month: 12
+            day: 22
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 21686
+          idMal: 32899
+          title:
+            romaji: Watashi ga Motete Dousunda
+            english: Kiss Him, Not Me
+            native: 私がモテてどうすんだ
+          synonyms:
+          - 私モテ
+          - WatashiMote
+          - WataMote
+          - Bésalo a él, no a mí
+          - Aku Jadi Populer, Gimana Sih?
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 7
+          endDate:
+            year: 2016
+            month: 12
+            day: 23
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 21051
+          idMal: 30016
+          title:
+            romaji: Nanbaka
+            english: NANBAKA
+            native: ナンバカ
+          synonyms:
+          - Nambaka
+          - The Numbers
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 5
+          endDate:
+            year: 2016
+            month: 12
+            day: 28
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 21460
+          idMal: 31988
+          title:
+            romaji: Hibike! Euphonium 2
+            english: Sound! Euphonium 2
+            native: 響け！ユーフォニアム 2
+          synonyms:
+          - Résonne ! Euphonium 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 6
+          endDate:
+            year: 2016
+            month: 12
+            day: 29
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 21769
+          idMal: 33161
+          title:
+            romaji: 'Yahari Ore no Seishun Love Come wa Machigatteiru. Zoku: Kitto, Onnanoko wa Osatou to Spice to Suteki
+              na Nanika de Dekiteiru'
+            english: My Teen Romantic Comedy SNAFU TOO! OVA
+            native: やはり俺の青春ラブコメはまちがっている。 続 「きっと、女の子はお砂糖とスパイスと素敵な何かでできている。」
+          synonyms:
+          - Yahari Ore no Seishun Love Comedy wa Machigatteiru. Zoku OVA
+          - 'やはり俺の青春ラブコメはまちがっている。 続 OVA '
+          - Oregairu Zoku OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 27
+          endDate:
+            year: 2016
+            month: 10
+            day: 27
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 97815
+          idMal: 34321
+          title:
+            romaji: 'Fate/Grand Order: First Order'
+            english: 'Fate/Grand Order: First Order'
+            native: Fate/Grand Order -First Order-
+          synonyms:
+          - 'פייט/המסדר העליון: הפקודה הראשונה'
+          - 'Судьба/Великий приказ: Первый приказ'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 12
+            day: 31
+          endDate:
+            year: 2016
+            month: 12
+            day: 31
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 21714
+          idMal: 32979
+          title:
+            romaji: Flip Flappers
+            english: FLIP FLAPPERS
+            native: フリップフラッパーズ
+          synonyms:
+          - 轻拍翻转小魔女
+          - 'Flip Flappers: Fantazja kontra świat'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 6
+          endDate:
+            year: 2016
+            month: 12
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 15227
+          idMal: 15227
+          title:
+            romaji: Kono Sekai no Katasumi ni
+            english: In This Corner of the World
+            native: この世界の片隅に
+          synonyms:
+          - To All the Corners of the World
+          - En Este Rincón del Mundo
+          - Dans un recoin de ce monde
+          - Ở một góc nhân gian
+          - W tym zakątku świata
+          - In questo angolo di mondo
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 11
+            day: 12
+          endDate:
+            year: 2016
+            month: 11
+            day: 12
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 21799
+          idMal: 33253
+          title:
+            romaji: Ajin 2
+            english: 'AJIN: Demi-Human 2'
+            native: 亜人 2
+          synonyms:
+          - 'AJIN: Semihumano 2'
+          - อาจิน สายพันธุ์อมนุษย์ ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 8
+          endDate:
+            year: 2016
+            month: 12
+            day: 24
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 97672
+          idMal: 34103
+          title:
+            romaji: 'Danganronpa 3: The End of Kibougamine Gakuen - Kibou-hen'
+            english: 'Danganronpa 3: The End of Hope''s Peak High School - Hope Arc'
+            native: ダンガンロンパ３-The End of 希望ヶ峰学園-希望編
+          synonyms: []
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 9
+            day: 29
+          endDate:
+            year: 2016
+            month: 9
+            day: 29
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 21660
+          idMal: 32801
+          title:
+            romaji: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka: Dungeon ni Onsen wo Motomeru no wa Machigatteiru
+              Darou ka'
+            english: 'Is It Wrong to Try to Pick Up Girls in a Dungeon?: Is It Wrong to Expect a Hot Spring in a Dungeon?'
+            native: ダンジョンに出会いを求めるのは間違っているだろうか ダンジョンに温泉を求めるのは 間違っているだろうか
+          synonyms:
+          - Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka OVA
+          - Is It Wrong to Try to Pick Up Girls in a Dungeon? OVA
+          - ダンまち OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 12
+            day: 7
+          endDate:
+            year: 2016
+            month: 12
+            day: 7
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 21815
+          idMal: 33286
+          title:
+            romaji: Strike the Blood II
+            english: Strike the Blood Second
+            native: ストライク・ザ・ブラッド II
+          synonyms:
+          - ราชันย์โลหิตรัตติกาล ภาค 2
+          status: FINISHED
+          format: OVA
+          episodes: 8
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 11
+            day: 23
+          endDate:
+            year: 2017
+            month: 5
+            day: 24
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 97716
+          idMal: 34213
+          title:
+            romaji: Getsuyoubi no Tawawa
+            english: Tawawa on Monday
+            native: 月曜日のたわわ
+          synonyms:
+          - วันจันทร์คือวันดึ๋งดึ๋ง
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 10
+          endDate:
+            year: 2016
+            month: 12
+            day: 26
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 21708
+          idMal: 32962
+          title:
+            romaji: Occultic;Nine
+            english: Occultic;Nine
+            native: Occultic;Nine -オカルティック・ナイン-
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 9
+          endDate:
+            year: 2016
+            month: 12
+            day: 25
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 21838
+          idMal: 33433
+          title:
+            romaji: Shuumatsu no Izetta
+            english: 'Izetta: The Last Witch'
+            native: 終末のイゼッタ
+          synonyms:
+          - Izetta, die letzte Hexe
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 1
+          endDate:
+            year: 2016
+            month: 12
+            day: 17
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 21340
+          idMal: 33003
+          title:
+            romaji: Mahou Shoujo Ikusei Keikaku
+            english: Magical Girl Raising Project
+            native: 魔法少女育成計画
+          synonyms:
+          - まほいく
+          - MahoIku
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 2
+          endDate:
+            year: 2016
+            month: 12
+            day: 18
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 21803
+          idMal: 33263
+          title:
+            romaji: 'Kubikiri Cycle: Aoiro Savant to Zaregotozukai'
+            english: 'Kubikiri Cycle: The Blue Savant and the Nonsense User'
+            native: クビキリサイクル 青色サヴァンと戯言遣い
+          synonyms:
+          - Zaregoto Series
+          - Decapitation Cycle
+          - 'Kubikiri Cycle: Aoiro Savant to Zaregoto Tsukai'
+          status: FINISHED
+          format: OVA
+          episodes: 8
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 26
+          endDate:
+            year: 2017
+            month: 9
+            day: 27
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 97669
+          idMal: 34136
+          title:
+            romaji: 'orange: Mirai'
+            english: 'Orange: Future'
+            native: orange -未来-
+          synonyms:
+          - オレンジ -未来-
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 11
+            day: 18
+          endDate:
+            year: 2016
+            month: 11
+            day: 18
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21710
+          idMal: 32983
+          title:
+            romaji: Natsume Yuujinchou Go
+            english: Natsume's Book of Friends Season 5
+            native: 夏目友人帳 伍
+          synonyms:
+          - Natsume's Book of Friends Five
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 10
+            day: 5
+          endDate:
+            year: 2016
+            month: 12
+            day: 21
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 101102
+          idMal: 33513
+          title:
+            romaji: 'Ansatsu Kyoushitsu Movie: 365-Nichi no Jikan'
+            english: 'Assassination Classroom the Movie: 365 Days‘ Time'
+            native: 劇場版 暗殺教室 365日の時間
+          synonyms:
+          - 'Assassination Classroom the Movie: 365 Days'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2016
+          startDate:
+            year: 2016
+            month: 11
+            day: 19
+          endDate:
+            year: 2016
+            month: 11
+            day: 19
+          averageScore: 71
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

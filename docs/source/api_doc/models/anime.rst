@@ -52,6 +52,13 @@ NextAiringEpisode
     :members: airing_at,time_until_airing_seconds,episode
 
 
+AiringScheduleRow
+-----------------------------------------------------
+
+.. autoclass:: AiringScheduleRow
+    :members: title,airing_at,episode,weekday,local_time,source,core,details,source_payload
+
+
 Anime
 -----------------------------------------------------
 

@@ -1,0 +1,667 @@
+metadata:
+  captured_at: '2026-05-11T11:32:27Z'
+  label: 2010-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2010
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:27 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '26'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 8769
+          idMal: 8769
+          title:
+            romaji: Ore no Imouto ga Konna ni Kawaii Wake ga Nai
+            english: Oreimo
+            native: 俺の妹がこんなに可愛いわけがない
+          synonyms:
+          - My Little Sister Can't Be This Cute
+          - 我的妹妹哪有这么可爱！
+          - น้องสาวของผมไม่น่ารักขนาดนั้นหรอก
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 3
+          endDate:
+            year: 2010
+            month: 12
+            day: 19
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 8525
+          idMal: 8525
+          title:
+            romaji: Kami nomi zo Shiru Sekai
+            english: The World God Only Knows
+            native: 神のみぞ知るセカイ
+          synonyms:
+          - Kaminomi
+          - Que sa volonté soit faite
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 7
+          endDate:
+            year: 2010
+            month: 12
+            day: 23
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 7674
+          idMal: 7674
+          title:
+            romaji: Bakuman.
+            english: Bakuman.
+            native: バクマン。
+          synonyms:
+          - Бакуман.
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 2
+          endDate:
+            year: 2011
+            month: 4
+            day: 2
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 8795
+          idMal: 8795
+          title:
+            romaji: Panty & Stocking with Garterbelt
+            english: Panty & Stocking with Garterbelt
+            native: パンティ＆ストッキングwithガーターベルト
+          synonyms:
+          - PanSto
+          - PSG
+          - P&SWG
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 2
+          endDate:
+            year: 2010
+            month: 12
+            day: 25
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 8937
+          idMal: 8937
+          title:
+            romaji: Toaru Majutsu no Index II
+            english: A Certain Magical Index II
+            native: とある魔術の禁書目録II
+          synonyms:
+          - Toaru Majutsu no Index 2
+          - Toaru Majutsu no Kinsho Mokuroku 2
+          - 魔法禁书目录第二季
+          - 魔法禁书目录 2
+          - อินเดกซ์คัมภีร์คาถาต้องห้าม ภาค 2
+          - Cấm thư ma thuật Index II
+          - Daftar Sihir Terlarang II
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 8
+          endDate:
+            year: 2011
+            month: 4
+            day: 1
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 8861
+          idMal: 8861
+          title:
+            romaji: Yosuga no Sora
+            english: 'Yosuga no Sora: In Solitude Where We are Least Alone'
+            native: ヨスガノソラ
+          synonyms:
+          - Sky of Connection
+          - 缘之空
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 4
+          endDate:
+            year: 2010
+            month: 12
+            day: 20
+          averageScore: 56
+          nextAiringEpisode: null
+        - id: 9181
+          idMal: 9181
+          title:
+            romaji: Motto To LOVE-Ru
+            english: Motto To Love Ru
+            native: もっと To LOVEる -とらぶる-
+          synonyms:
+          - Motto To-Love-Ru
+          - More Trouble
+          - More ToLoveRu
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 6
+          endDate:
+            year: 2010
+            month: 12
+            day: 22
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 8129
+          idMal: 8129
+          title:
+            romaji: Kuragehime
+            english: Princess Jellyfish
+            native: 海月姫
+          synonyms:
+          - Princesa Água Viva
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 15
+          endDate:
+            year: 2010
+            month: 12
+            day: 31
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 9062
+          idMal: 9062
+          title:
+            romaji: Angel Beats! Specials
+            english: Angel Beats! Specials
+            native: エンジェルビーツ 特別篇
+          synonyms:
+          - 'Angel Beats!: Stairway to Heaven'
+          - 'Angel Beats!: Hell''s Kitchen'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 2
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 12
+            day: 22
+          endDate:
+            year: 2015
+            month: 6
+            day: 24
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 8407
+          idMal: 8407
+          title:
+            romaji: 'Sora no Otoshimono: Forte'
+            english: 'Heaven''s Lost Property: Forte'
+            native: そらのおとしものf（フォルテ）
+          synonyms:
+          - 'Sora no Otoshimono: f'
+          - Lost Property of the Sky 2
+          - Misplaced by Heaven 2
+          - Heaven's Lost Property 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 2
+          endDate:
+            year: 2010
+            month: 12
+            day: 18
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 10067
+          idMal: 10067
+          title:
+            romaji: 'Angel Beats!: Another Epilogue'
+            english: null
+            native: エンジェルビーツ! アナザーエピローグ
+          synonyms: []
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 12
+            day: 22
+          endDate:
+            year: 2010
+            month: 12
+            day: 22
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 8557
+          idMal: 8557
+          title:
+            romaji: Shinryaku! Ika Musume
+            english: Squid Girl
+            native: 侵略!イカ娘
+          synonyms:
+          - The Invader Comes From the Bottom of the Sea!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 5
+          endDate:
+            year: 2010
+            month: 12
+            day: 21
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 8460
+          idMal: 8460
+          title:
+            romaji: Mirai Nikki OVA
+            english: null
+            native: 未来日記
+          synonyms:
+          - The Future Diary OVA
+          - The Future Diary Pilot
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 12
+            day: 9
+          endDate:
+            year: 2010
+            month: 12
+            day: 9
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 8424
+          idMal: 8424
+          title:
+            romaji: MM!
+            english: MM!
+            native: えむえむっ!
+          synonyms:
+          - MM! Group
+          - Emu Emu!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 2
+          endDate:
+            year: 2010
+            month: 12
+            day: 18
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 8247
+          idMal: 8247
+          title:
+            romaji: 'BLEACH: Jigoku-hen'
+            english: 'Bleach the Movie: Hell Verse'
+            native: BLEACH 地獄篇
+          synonyms:
+          - Bleach Movie 4
+          - 'Bleach: The Hell Chapter'
+          - 'بليتش: قصيدة الجحيم'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 12
+            day: 4
+          endDate:
+            year: 2010
+            month: 12
+            day: 4
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 8277
+          idMal: 8277
+          title:
+            romaji: 'Hyakka Ryouran: Samurai Girls'
+            english: Samurai Girls
+            native: 百花繚乱 サムライガールズ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 9
+            day: 4
+          endDate:
+            year: 2010
+            month: 12
+            day: 20
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 9074
+          idMal: 9074
+          title:
+            romaji: Arakawa Under the Bridge x Bridge
+            english: Arakawa Under the Bridge x Bridge
+            native: 荒川アンダー ザ ブリッジ×ブリッジ
+          synonyms:
+          - Arakawa Under the Bridge*2
+          - Arakawa Under the Bridge x2
+          - Arakawa Under the Bridge 2nd Season
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 4
+          endDate:
+            year: 2010
+            month: 12
+            day: 27
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 9107
+          idMal: 9107
+          title:
+            romaji: Pocket Monsters Best Wishes!
+            english: 'Pokémon: Black & White'
+            native: ポケットモンスターベストウイッシュ
+          synonyms:
+          - 'Pokemon: Best Wishes!'
+          - Black & White
+          - 'Pokemon: Black & White'
+          - 'Pokemon: Bianco e Nero'
+          status: FINISHED
+          format: TV
+          episodes: 84
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 9
+            day: 23
+          endDate:
+            year: 2012
+            month: 6
+            day: 14
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 8934
+          idMal: 8934
+          title:
+            romaji: 'STAR DRIVER: Kagayaki no Takuto'
+            english: Star Driver
+            native: STAR DRIVER 輝きのタクト
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 3
+          endDate:
+            year: 2011
+            month: 4
+            day: 3
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 8726
+          idMal: 8726
+          title:
+            romaji: Soredemo Machi wa Mawatteiru
+            english: And Yet The Town Moves
+            native: それでも町は廻っている
+          synonyms:
+          - SoreMachi
+          - それ町
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 8
+          endDate:
+            year: 2010
+            month: 12
+            day: 24
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 7662
+          idMal: 7662
+          title:
+            romaji: Shinrei Tantei Yakumo
+            english: Psychic Detective Yakumo
+            native: 心霊探偵 八雲
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 3
+          endDate:
+            year: 2010
+            month: 12
+            day: 26
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 9136
+          idMal: 9136
+          title:
+            romaji: Kuroshitsuji II OVA
+            english: Black Butler II OVA
+            native: 黒執事II OVA
+          synonyms:
+          - Welcome to the Phantomhive Family
+          - Ciel in Wonderland
+          - คนลึกไขปริศนาลับ ภาค 2 OVA
+          - คนลึกไขปริศนาลับ II OVA
+          status: FINISHED
+          format: OVA
+          episodes: 6
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 27
+          endDate:
+            year: 2011
+            month: 5
+            day: 25
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 8876
+          idMal: 8876
+          title:
+            romaji: 'Koe de Oshigoto!: The ANIMATION'
+            english: Koe de Oshigoto
+            native: こえでおしごと! The ANIMATION
+          synonyms:
+          - Koe de Oshigoto! The Animation
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 11
+            day: 17
+          endDate:
+            year: 2011
+            month: 5
+            day: 11
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 8476
+          idMal: 8476
+          title:
+            romaji: Otome Youkai Zakuro
+            english: Zakuro
+            native: おとめ妖怪 ざくろ
+          synonyms:
+          - Otome Yokai Zakuro
+          - Girl Demon Zakuro
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 10
+            day: 5
+          endDate:
+            year: 2010
+            month: 12
+            day: 28
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 7858
+          idMal: 7858
+          title:
+            romaji: Sora no Otoshimono OVA
+            english: Heaven's Lost Property OVA
+            native: そらのおとしもの
+          synonyms:
+          - 'Sora no Otoshimono: Project Pink'
+          - Sora no Otoshimono Special
+          - Lost Property of the Sky OVA
+          - Misplaced by Heaven OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2010
+          startDate:
+            year: 2010
+            month: 9
+            day: 9
+          endDate:
+            year: 2010
+            month: 9
+            day: 9
+          averageScore: 69
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

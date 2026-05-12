@@ -12,6 +12,7 @@ animedex.agg
     _fanout
     _prefix_id
     _type_routes
+    calendar
     search
     show
 

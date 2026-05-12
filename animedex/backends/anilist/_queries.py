@@ -171,8 +171,15 @@ query ($year: Int, $season: MediaSeason, $perPage: Int) {
   Page(page: 1, perPage: $perPage) {
     pageInfo { total }
     media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
-      id title { romaji english } status format episodes season seasonYear
-      averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+      id idMal title { romaji english native } synonyms type format status episodes duration
+      season seasonYear startDate { year month day } endDate { year month day }
+      genres tags { name rank } averageScore meanScore popularity favourites trending
+      isAdult countryOfOrigin source description(asHtml: false)
+      coverImage { extraLarge large medium color } bannerImage
+      trailer { id site thumbnail }
+      studios { edges { isMain node { id name isAnimationStudio } } }
+      nextAiringEpisode { airingAt episode timeUntilAiring }
+      externalLinks { id site type url language } streamingEpisodes { title thumbnail url site }
     }
   }
 }
@@ -252,12 +259,28 @@ query ($mediaType: ExternalLinkMediaType, $type: ExternalLinkType) {
 
 
 Q_AIRING_SCHEDULE = """
-query ($mediaId: Int, $notYetAired: Boolean, $perPage: Int) {
+query ($mediaId: Int, $notYetAired: Boolean, $airingAtGreater: Int, $airingAtLesser: Int, $perPage: Int) {
   Page(page: 1, perPage: $perPage) {
     pageInfo { total hasNextPage }
-    airingSchedules(mediaId: $mediaId, notYetAired: $notYetAired, sort: TIME) {
+    airingSchedules(
+      mediaId: $mediaId,
+      notYetAired: $notYetAired,
+      airingAt_greater: $airingAtGreater,
+      airingAt_lesser: $airingAtLesser,
+      sort: TIME
+    ) {
       id airingAt episode timeUntilAiring
-      media { id title { romaji english } }
+      media {
+        id idMal title { romaji english native } synonyms type format status episodes duration
+        season seasonYear startDate { year month day } endDate { year month day }
+        genres tags { name rank } averageScore meanScore popularity favourites trending
+        isAdult countryOfOrigin source description(asHtml: false)
+        coverImage { extraLarge large medium color } bannerImage
+        trailer { id site thumbnail }
+        studios { edges { isMain node { id name isAnimationStudio } } }
+        nextAiringEpisode { airingAt episode timeUntilAiring }
+        externalLinks { id site type url language } streamingEpisodes { title thumbnail url site }
+      }
     }
   }
 }

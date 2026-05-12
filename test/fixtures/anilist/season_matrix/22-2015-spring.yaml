@@ -1,0 +1,665 @@
+metadata:
+  captured_at: '2026-05-11T11:33:17Z'
+  label: 2015-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2015
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:16 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '8'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 20923
+          idMal: 28171
+          title:
+            romaji: Shokugeki no Souma
+            english: Food Wars!
+            native: 食戟のソーマ
+          synonyms:
+          - لا سلام على طعام
+          - Food Wars! The First Plate
+          - 食戟之灵
+          - ยอดนักปรุงโซมะ
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 4
+          endDate:
+            year: 2015
+            month: 9
+            day: 26
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20920
+          idMal: 28121
+          title:
+            romaji: Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka
+            english: Is It Wrong to Try to Pick Up Girls in a Dungeon?
+            native: ダンジョンに出会いを求めるのは間違っているだろうか
+          synonyms:
+          - Danmachi
+          - 'Dungeon ni Deai o Motomeru no wa Machigatte Iru Darouka: Familia Myth'
+          - 'DanMachi: É Errado Tentar Pegar Garotas numa Masmorra?'
+          - 'DanMachi: Família Myth'
+          - 'Danmachi: ¿Qué Tiene de Malo Intentar Ligar en una Mazmorra?'
+          - 在地下城寻求邂逅是否搞错了什么
+          - فارسة أحلامي
+          - มันผิดรึไงถ้าใจอยากจะพบรักในดันเจี้ยน
+          - DanMachi - È sbagliato cercare di incontrare ragazze in un Dungeon?
+          - ダンまち
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 4
+          endDate:
+            year: 2015
+            month: 6
+            day: 27
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20829
+          idMal: 26243
+          title:
+            romaji: Owari no Seraph
+            english: 'Seraph of the End: Vampire Reign'
+            native: 終わりのセラフ
+          synonyms:
+          - OwaSera
+          - 'Seraph of the End: El Reino de los Vampiros'
+          - เทวทูตแห่งโลกมืด
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 4
+          endDate:
+            year: 2015
+            month: 6
+            day: 20
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20698
+          idMal: 23847
+          title:
+            romaji: Yahari Ore no Seishun Love Come wa Machigatteiru. Zoku
+            english: My Teen Romantic Comedy SNAFU TOO!
+            native: やはり俺の青春ラブコメはまちがっている。続
+          synonyms:
+          - Oregairu Zoku
+          - Oregairu 2
+          - 俺ガイル2
+          - 我的青春恋爱物语果然有问题 续
+          - กะแล้วชีวิตรักวัยรุ่นของผมมันต้องไม่สดใสเลยสักนิด ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 3
+          endDate:
+            year: 2015
+            month: 6
+            day: 26
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 20872
+          idMal: 27775
+          title:
+            romaji: Plastic Memories
+            english: Plastic Memories
+            native: プラスティックメモリーズ
+          synonyms:
+          - Plamemo
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 5
+          endDate:
+            year: 2015
+            month: 6
+            day: 28
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 20727
+          idMal: 24439
+          title:
+            romaji: Kekkai Sensen
+            english: Blood Blockade Battlefront
+            native: 血界戦線
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 5
+          endDate:
+            year: 2015
+            month: 10
+            day: 4
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20792
+          idMal: 28701
+          title:
+            romaji: 'Fate/stay night: Unlimited Blade Works 2nd Season'
+            english: 'Fate/stay night: Unlimited Blade Works 2nd Season'
+            native: Fate/stay night [Unlimited Blade Works] 2ndシーズン
+          synonyms:
+          - フェイト/ステイナイト Unlimited Blade Works 2ndシーズン
+          - 'Судьба/Ночь схватки: Бесконечный мир клинков 2'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 5
+          endDate:
+            year: 2015
+            month: 6
+            day: 28
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 20966
+          idMal: 28677
+          title:
+            romaji: Yamada-kun to 7-nin no Majo
+            english: Yamada and the Seven Witches
+            native: 山田くんと7人の魔女
+          synonyms:
+          - Yamadakun to Nananin no Majo
+          - Yamajo
+          - ยามาดะคุงกับแม่มดทั้ง 7
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 12
+          endDate:
+            year: 2015
+            month: 6
+            day: 28
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20745
+          idMal: 24703
+          title:
+            romaji: High School DxD BorN
+            english: null
+            native: ハイスクールD×D BorN
+          synonyms:
+          - Highschool DxD 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 4
+          endDate:
+            year: 2015
+            month: 6
+            day: 20
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20876
+          idMal: 27787
+          title:
+            romaji: 'Nisekoi:'
+            english: 'Nisekoi:'
+            native: ニセコイ：
+          synonyms:
+          - Nisekoi2 -False Love-
+          - ' รักลวงป่วนใจ ภาค 2'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 10
+          endDate:
+            year: 2015
+            month: 6
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20946
+          idMal: 28297
+          title:
+            romaji: Ore Monogatari!!
+            english: My Love Story!!
+            native: 俺物語!!
+          synonyms:
+          - Mon Histoire
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 9
+          endDate:
+            year: 2015
+            month: 9
+            day: 24
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 20912
+          idMal: 27989
+          title:
+            romaji: Hibike! Euphonium
+            english: Sound! Euphonium
+            native: 響け！ユーフォニアム
+          synonyms:
+          - Résonne ! Euphonium
+          - 吹响吧!上低音号
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 8
+          endDate:
+            year: 2015
+            month: 7
+            day: 1
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 20996
+          idMal: 28977
+          title:
+            romaji: Gintama°
+            english: Gintama Season 3
+            native: 銀魂゜
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 51
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 8
+          endDate:
+            year: 2016
+            month: 3
+            day: 30
+          averageScore: 90
+          nextAiringEpisode: null
+        - id: 21006
+          idMal: 29095
+          title:
+            romaji: Grisaia no Rakuen
+            english: The Eden of Grisaia
+            native: グリザイアの楽園
+          synonyms:
+          - Le Eden De La Grisaia
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 19
+          endDate:
+            year: 2015
+            month: 6
+            day: 21
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 20935
+          idMal: 28249
+          title:
+            romaji: Arslan Senki (TV)
+            english: The Heroic Legend of Arslan
+            native: アルスラーン戦記 (TV)
+          synonyms:
+          - La Heroica Leyenda de Arslan
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 5
+          endDate:
+            year: 2015
+            month: 9
+            day: 27
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20963
+          idMal: 28675
+          title:
+            romaji: 'Kyoukai no Kanata: I''LL BE HERE - Mirai-hen'
+            english: 'Beyond the Boundary -I''LL BE HERE-: Future'
+            native: 劇場版 境界の彼方 I'LL BE HERE 未来篇
+          synonyms:
+          - 'Kyoukai no Kanata: I’ll Be Here – przyszłość'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 25
+          endDate:
+            year: 2015
+            month: 4
+            day: 25
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 21005
+          idMal: 29093
+          title:
+            romaji: Grisaia no Meikyuu
+            english: The Labyrinth of Grisaia
+            native: グリザイアの迷宮
+          synonyms:
+          - Le Labyrinthe De La Grisaia
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 12
+          endDate:
+            year: 2015
+            month: 4
+            day: 12
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 20964
+          idMal: 28617
+          title:
+            romaji: Punch Line
+            english: PUNCH LINE
+            native: パンチライン
+          synonyms:
+          - Punchline
+          - Linea Final
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 10
+          endDate:
+            year: 2015
+            month: 6
+            day: 26
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 20778
+          idMal: 25389
+          title:
+            romaji: 'Dragon Ball Z: Fukkatsu no "F"'
+            english: 'Dragon Ball Z: Resurrection ''F'''
+            native: ドラゴンボールZ 復活の「F」
+          synonyms:
+          - 'Dragon Ball Z: La Resurrección de "F"'
+          - 龙珠Z：复活的弗利萨
+          - Dragon Ball Z - La resurrezione di 'F'
+          - “未来”トランクス特別編
+          - Future Trunks Special Edition
+          - 'Драконий жемчуг Зет: Воскрешение «Ф»'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 18
+          endDate:
+            year: 2015
+            month: 4
+            day: 18
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 21000
+          idMal: 29067
+          title:
+            romaji: Danna ga Nani wo Itteiru ka Wakaranai Ken 2-sure-me
+            english: I Can't Understand What My Husband is Saying 2nd Thread
+            native: 旦那が何を言っているかわからない件2スレ目
+          synonyms:
+          - Danna ga Nani o Itte Iruka Wakaranai Ken 2-sure-me
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 13
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 3
+          endDate:
+            year: 2015
+            month: 6
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20766
+          idMal: 24997
+          title:
+            romaji: Love Live! The School Idol Movie
+            english: Love Live! The School Idol Movie
+            native: ラブライブ！The School Idol Movie
+          synonyms:
+          - Gekijouban Love Live!
+          - Love Live! School Idol Project Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 6
+            day: 13
+          endDate:
+            year: 2015
+            month: 6
+            day: 13
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 20839
+          idMal: 26443
+          title:
+            romaji: Triage X
+            english: Triage X
+            native: トリアージX
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 9
+          endDate:
+            year: 2015
+            month: 6
+            day: 11
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 21247
+          idMal: 29027
+          title:
+            romaji: 'Shinmai Maou no Testament: Toujou Basara no Hard Sweet na Nichijou'
+            english: 'The Testament of Sister New Devil: Tojo Basara''s Hard, Sweet Daily Life'
+            native: 新妹魔王の契約者 東城刃更のハードスウィートな日常
+          synonyms:
+          - Shinmai Maou no Keiyakusha OVA
+          - The Testament of Sister New Devil OVA
+          - 'Shinmai Maou no Keiyakusha: Toujou Basara no Hard Sweet na Nichijou'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 6
+            day: 22
+          endDate:
+            year: 2015
+            month: 6
+            day: 22
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 20566
+          idMal: 26351
+          title:
+            romaji: Nagato Yuki-chan no Shoushitsu
+            english: The Disappearance of Nagato Yuki-chan
+            native: 長門有希ちゃんの消失
+          synonyms:
+          - La Disparition de Yuki Nagato
+          status: FINISHED
+          format: TV
+          episodes: 16
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 4
+          endDate:
+            year: 2015
+            month: 7
+            day: 18
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 21018
+          idMal: 29589
+          title:
+            romaji: Denpa Kyoushi
+            english: Ultimate Otaku Teacher
+            native: 電波教師
+          synonyms:
+          - He Is A Ultimate Teacher
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 4
+            day: 4
+          endDate:
+            year: 2015
+            month: 9
+            day: 26
+          averageScore: 63
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,648 @@
+metadata:
+  captured_at: '2026-05-11T11:32:30Z'
+  label: 2011-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2011
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:30 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '25'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 9756
+          idMal: 9756
+          title:
+            romaji: Mahou Shoujo Madoka☆Magica
+            english: Puella Magi Madoka Magica
+            native: 魔法少女まどか☆マギカ
+          synonyms:
+          - Mahou Shoujo Madoka Magika
+          - Magical Girl Madoka Magica
+          - PMMM
+          - MSMM
+          - הנערה הקסומה מאדוקה מאגיקה
+          - Девочка-волшебница Мадока☆Волшебство
+          - Μάντοκα, το Μαγικό Κορίτσι
+          - สาวน้อยเวทมนตร์ มาโดกะ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 7
+          endDate:
+            year: 2011
+            month: 4
+            day: 22
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 9041
+          idMal: 9041
+          title:
+            romaji: 'IS: Infinite Stratos'
+            english: Infinite Stratos
+            native: IS〈インフィニット・ストラトス〉
+          synonyms:
+          - IS ปฏิบัติการรักจักรกลทะยานฟ้า
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 7
+          endDate:
+            year: 2011
+            month: 4
+            day: 1
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 8425
+          idMal: 8425
+          title:
+            romaji: GOSICK
+            english: Gosick
+            native: GOSICK
+          synonyms:
+          - ゴシック
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 8
+          endDate:
+            year: 2011
+            month: 7
+            day: 2
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 9656
+          idMal: 9656
+          title:
+            romaji: Kimi ni Todoke 2ND SEASON
+            english: 'Kimi ni Todoke: From Me to You Season 2'
+            native: 君に届け 2ND SEASON
+          synonyms:
+          - Reaching You 2nd Season
+          - 'Llegando a ti: Temporada 2'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 12
+          endDate:
+            year: 2011
+            month: 3
+            day: 30
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 8841
+          idMal: 8841
+          title:
+            romaji: Kore wa Zombie desu ka?
+            english: Is this a Zombie?
+            native: これはゾンビですか?
+          synonyms:
+          - 'เจ้านี่เหรอซอมบี้ '
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 11
+          endDate:
+            year: 2011
+            month: 3
+            day: 30
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 9513
+          idMal: 9513
+          title:
+            romaji: Beelzebub
+            english: Beelzebub
+            native: べるぜバブ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 60
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 9
+          endDate:
+            year: 2012
+            month: 3
+            day: 25
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 9367
+          idMal: 9367
+          title:
+            romaji: Freezing
+            english: Freezing
+            native: フリージング
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 8
+          endDate:
+            year: 2011
+            month: 4
+            day: 7
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 11553
+          idMal: 11553
+          title:
+            romaji: 'Toradora!: Bentou no Gokui'
+            english: 'Toradora!: Bento Battle'
+            native: とらドラ！ 弁当の極意
+          synonyms:
+          - Toradora! Special
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 12
+            day: 21
+          endDate:
+            year: 2011
+            month: 12
+            day: 21
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 10020
+          idMal: 10020
+          title:
+            romaji: Ore no Imouto ga Konna ni Kawaii Wake ga Nai (ONA)
+            english: Oreimo (ONA)
+            native: 俺の妹がこんなに可愛いわけがない
+          synonyms:
+          - My Little Sister Can't Be This Cute Specials
+          - น้องสาวของผมไม่น่ารักขนาดนั้นหรอก ตอนพิเศษ
+          status: FINISHED
+          format: ONA
+          episodes: 4
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 2
+            day: 22
+          endDate:
+            year: 2011
+            month: 5
+            day: 31
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 6954
+          idMal: 6954
+          title:
+            romaji: 'Kara no Kyoukai: Shuushou'
+            english: 'the Garden of sinners Chapter 8: The Final Chapter'
+            native: 空の境界 終章
+          synonyms:
+          - 'The Garden of Sinners: Epilogue'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 2
+            day: 2
+          endDate:
+            year: 2011
+            month: 2
+            day: 2
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 8426
+          idMal: 8426
+          title:
+            romaji: Hourou Musuko
+            english: Wandering Son
+            native: 放浪息子
+          synonyms:
+          - The Transient Son
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 14
+          endDate:
+            year: 2011
+            month: 4
+            day: 1
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 9330
+          idMal: 9330
+          title:
+            romaji: Dragon Crisis!
+            english: Dragon Crisis
+            native: ドラゴンクライシス!
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 11
+          endDate:
+            year: 2011
+            month: 3
+            day: 29
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 10794
+          idMal: 10794
+          title:
+            romaji: 'IS: Infinite Stratos Encore - Koi ni Kogareru Sextet'
+            english: 'IS: Infinite Stratos Encore: A Sextet Yearning for Love'
+            native: IS ＜インフィニット・ストラトス＞ アンコール『恋に焦がれる六重奏』
+          synonyms:
+          - Infinite Stratos OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 12
+            day: 7
+          endDate:
+            year: 2011
+            month: 12
+            day: 7
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 9471
+          idMal: 9471
+          title:
+            romaji: 'Baka to Test to Shoukanjuu: Matsuri'
+            english: 'Baka and Test - Summon the Beasts: Matsuri'
+            native: バカとテストと召喚獣 ～祭～
+          synonyms:
+          - Baka to Test to Shoukanjuu OVA
+          - Baka to Test to Shokanju OVA
+          - The Idiot, the Tests, and the Summoned Creatures OVA
+          - 'Baka and Test: Summon the Beasts OVA'
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 2
+            day: 23
+          endDate:
+            year: 2011
+            month: 3
+            day: 30
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 9331
+          idMal: 9331
+          title:
+            romaji: Yumekui Merry
+            english: Dream Eater Merry
+            native: 夢喰いメリー
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 7
+          endDate:
+            year: 2011
+            month: 4
+            day: 8
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 9834
+          idMal: 9834
+          title:
+            romaji: Level E
+            english: Level E
+            native: レベルE
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 11
+          endDate:
+            year: 2011
+            month: 4
+            day: 5
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 10851
+          idMal: 10851
+          title:
+            romaji: euphoria
+            english: null
+            native: euphoria
+          synonyms: []
+          status: FINISHED
+          format: OVA
+          episodes: 6
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 12
+            day: 22
+          endDate:
+            year: 2016
+            month: 2
+            day: 26
+          averageScore: 53
+          nextAiringEpisode: null
+        - id: 9587
+          idMal: 9587
+          title:
+            romaji: Onii-chan no Koto nanka Zenzen Suki Janain Dakara ne!!
+            english: I don't like my big brother at all!!
+            native: お兄ちゃんのことなんかぜんぜん好きじゃないんだからねっ!!
+          synonyms:
+          - Oniichan no Koto Nanka Zenzen Suki Janain Dakara ne!!
+          - Onii-chan no Koto Nanka Zenzen Suki JanainDakara ne!!
+          - Onisuki
+          - Eu não gosto nem um pouco do meu maninho!!
+          - Definitivamente. ¡No me gusta mi hermano para nada!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 9
+          endDate:
+            year: 2011
+            month: 3
+            day: 27
+          averageScore: 55
+          nextAiringEpisode: null
+        - id: 9314
+          idMal: 9314
+          title:
+            romaji: Fractale
+            english: Fractale
+            native: フラクタル
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 14
+          endDate:
+            year: 2011
+            month: 4
+            day: 1
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 10893
+          idMal: 10893
+          title:
+            romaji: Kyousougiga
+            english: null
+            native: 京騒戯画
+          synonyms:
+          - Kyousogiga
+          - 第一弾
+          status: FINISHED
+          format: ONA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 12
+            day: 10
+          endDate:
+            year: 2011
+            month: 12
+            day: 10
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 9130
+          idMal: 9130
+          title:
+            romaji: 'Saint Seiya: THE LOST CANVAS - Meiou Shinwa 2'
+            english: 'Saint Seiya: The Lost Canvas 2'
+            native: 聖闘士星矢 THE LOST CANVAS 冥王神話 2
+          synonyms:
+          - 'Los Guerreros del Zodiaco: El lienzo perdido - Parte 2'
+          status: FINISHED
+          format: OVA
+          episodes: 13
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 2
+            day: 23
+          endDate:
+            year: 2011
+            month: 7
+            day: 20
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 9539
+          idMal: 9539
+          title:
+            romaji: Cardfight!! Vanguard
+            english: Cardfight Vanguard
+            native: カードファイト!! ヴァンガード
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 65
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 8
+          endDate:
+            year: 2012
+            month: 3
+            day: 31
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 10075
+          idMal: 10075
+          title:
+            romaji: NARUTO×UT
+            english: null
+            native: NARUTO×UT
+          synonyms:
+          - NARUTO x UT
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 1
+          endDate:
+            year: 2011
+            month: 1
+            day: 1
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 9510
+          idMal: 9510
+          title:
+            romaji: Mitsudomoe Zouryouchuu!
+            english: null
+            native: みつどもえ増量中！
+          synonyms:
+          - Mitsudomoe Dai Ni Ki
+          - Mitsudomoe 2-ki
+          status: FINISHED
+          format: TV
+          episodes: 8
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 1
+            day: 9
+          endDate:
+            year: 2011
+            month: 2
+            day: 27
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 10330
+          idMal: 10330
+          title:
+            romaji: 'Bakugan Battle Brawlers: Mechtanium Surge'
+            english: 'Bakugan: Mechtanium Surge'
+            native: 爆丸 バトルブローラーズ メクタニウムサージ
+          synonyms:
+          - 爆丸4 机械波涛
+          - 'Bakugan: Świat Mechtoganów'
+          - 'Bakugan: El Surgimiento de Mechtanium'
+          status: FINISHED
+          format: TV
+          episodes: 46
+          season: WINTER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 2
+            day: 13
+          endDate:
+            year: 2012
+            month: 1
+            day: 26
+          averageScore: 58
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

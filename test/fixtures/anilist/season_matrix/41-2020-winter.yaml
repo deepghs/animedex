@@ -1,0 +1,679 @@
+metadata:
+  captured_at: '2026-05-11T11:34:12Z'
+  label: 2020-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2020
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:12 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '11'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 106625
+          idMal: 38883
+          title:
+            romaji: Haikyuu!! TO THE TOP
+            english: HAIKYU!! TO THE TOP
+            native: ハイキュー!! TO THE TOP
+          synonyms:
+          - Haikyu!! Season 4
+          - Haikyuu!! Season 4
+          - ไฮคิว!! คู่ตบฟ้าประทาน ภาค 4 Part 1
+          - 排球少年!! 第四季
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 11
+          endDate:
+            year: 2020
+            month: 4
+            day: 4
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 108463
+          idMal: 39534
+          title:
+            romaji: Jibaku Shounen Hanako-kun
+            english: Toilet-bound Hanako-kun
+            native: 地縛少年 花子くん
+          synonyms:
+          - 지박소년 하나코 군
+          - 地缚少年花子君
+          - Туалетный мальчик Ханако
+          - Hanako-kun e os Mistérios do Colégio Kamone
+          - ฮานาโกะคุง วิญญาณติดที่
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 10
+          endDate:
+            year: 2020
+            month: 3
+            day: 27
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 105228
+          idMal: 38668
+          title:
+            romaji: Dorohedoro
+            english: Dorohedoro
+            native: ドロヘドロ
+          synonyms:
+          - دوروهيدورو
+          - สาปพันธุ์อสูร
+          - Дорохедоро
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 13
+          endDate:
+            year: 2020
+            month: 3
+            day: 30
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 106479
+          idMal: 38790
+          title:
+            romaji: Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu.
+            english: 'BOFURI: I Don''t Want to Get Hurt, so I''ll Max Out My Defense.'
+            native: 痛いのは嫌なので防御力に極振りしたいと思います。
+          synonyms:
+          - I hate being in pain, so I think I’ll make a full defense build
+          - bofuri
+          - 因为太怕痛就全点防御力了。
+          - 'Bofuri : Je suis pas venue ici pour souffrir alors j''ai tout mis en défense.'
+          - น้องโล่สายแทงก์แกร่งเกินร้อย
+          - 'Bofuri: Aku Tidak Ingin Terluka Jadi Seluruh Poin Status Kufokuskan ke Pertahanan'
+          - Бофури. Я боюсь боли, так что качаю только защиту
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 8
+          endDate:
+            year: 2020
+            month: 3
+            day: 25
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 105190
+          idMal: 38656
+          title:
+            romaji: Darwin's Game
+            english: Darwin's Game
+            native: ダーウィンズゲーム
+          synonyms:
+          - 达尔文游戏
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 4
+          endDate:
+            year: 2020
+            month: 3
+            day: 21
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 100643
+          idMal: 36862
+          title:
+            romaji: 'Made in Abyss: Fukaki Tamashii no Reimei'
+            english: 'Made in Abyss: Dawn of the Deep Soul'
+            native: メイドインアビス 深き魂の黎明
+          synonyms:
+          - 'Made in Abyss: Dawn of a Deep Soul'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 17
+          endDate:
+            year: 2020
+            month: 1
+            day: 17
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 107201
+          idMal: 39017
+          title:
+            romaji: Kyokou Suiri
+            english: In/Spectre
+            native: 虚構推理
+          synonyms:
+          - 虚构推理
+          - ไขปมปริศนาภูต
+          - Ложные выводы
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 12
+          endDate:
+            year: 2020
+            month: 3
+            day: 29
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 101168
+          idMal: 37345
+          title:
+            romaji: Plunderer
+            english: Plunderer
+            native: プランダラ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 9
+          endDate:
+            year: 2020
+            month: 6
+            day: 25
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 111790
+          idMal: 40262
+          title:
+            romaji: Haikyuu!! Riku VS Kuu
+            english: HAIKYU!! LAND VS. AIR
+            native: ハイキュー!! 陸 VS 空
+          synonyms:
+          - ボールの"道"
+          - Booru no "Michi"
+          - The "Path" of the Ball
+          - Haikyuu!! OVA
+          - ไฮคิว คู่ตบฟ้าประทาน Riku vs Kuu OVA
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 10
+          endDate:
+            year: 2020
+            month: 1
+            day: 10
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 110350
+          idMal: 40046
+          title:
+            romaji: 'ID: INVADED'
+            english: 'ID: INVADED'
+            native: イド：インヴェイデッド
+          synonyms:
+          - 异度侵入 ID:INVADED
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 6
+          endDate:
+            year: 2020
+            month: 3
+            day: 23
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 107067
+          idMal: 38992
+          title:
+            romaji: Rikei ga Koi ni Ochita no de Shoumei shitemita.
+            english: Science Fell in Love, So I Tried to Prove It
+            native: 理系が恋に落ちたので証明してみた。
+          synonyms:
+          - RikeKoi
+          - 理科生坠入情网，故尝试证明。
+          - พิสูจน์นิยามความรักด้วยหลักวิชาสายวิทย์
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 11
+          endDate:
+            year: 2020
+            month: 1
+            day: 11
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 109298
+          idMal: 39792
+          title:
+            romaji: Eizouken ni wa Te wo Dasu na!
+            english: Keep Your Hands Off Eizouken!
+            native: 映像研には手を出すな！
+          synonyms:
+          - Don't mess with the Motion Picture Club!
+          - Hands off the Motion Picture Club!
+          - 别对映像研出手！
+          - Ước mơ sản xuất anime
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 6
+          endDate:
+            year: 2020
+            month: 3
+            day: 23
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 110270
+          idMal: 40010
+          title:
+            romaji: Ishuzoku Reviewers
+            english: Interspecies Reviewers
+            native: 異種族レビュアーズ
+          synonyms:
+          - 异种族风俗娘评鉴指南
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 11
+          endDate:
+            year: 2020
+            month: 3
+            day: 28
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 108623
+          idMal: 39576
+          title:
+            romaji: 'Goblin Slayer: GOBLIN''S CROWN'
+            english: GOBLIN SLAYER -GOBLIN’S CROWN-
+            native: ゴブリンスレイヤー -GOBLIN'S CROWN-
+          synonyms:
+          - 'Goblin Slayer: Korona'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 2
+            day: 1
+          endDate:
+            year: 2020
+            month: 2
+            day: 1
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 108617
+          idMal: 39575
+          title:
+            romaji: Somali to Mori no Kamisama
+            english: Somali and the Forest Spirit
+            native: ソマリと森の神様
+          synonyms:
+          - Somari and the Guardian of the Forest
+          - ' Somali et l''esprit de la forêt'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 10
+          endDate:
+            year: 2020
+            month: 3
+            day: 27
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 104462
+          idMal: 38481
+          title:
+            romaji: Toaru Kagaku no Railgun T
+            english: A Certain Scientific Railgun T
+            native: とある科学の超電磁砲T
+          synonyms:
+          - Toaru Kagaku no Railgun 3
+          - とある科学の超電磁砲3
+          - A Certain Scientific Railgun 3
+          - เรลกัน แฟ้มลับคดีวิทยาศาสตร์ T
+          - เรลกัน แฟ้มลับคดีวิทยาศาสตร์ ภาค 3
+          - Siêu Railgun của khoa học nào đó
+          - Railgun T Ilmu Pengetahuan Tertentu
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 10
+          endDate:
+            year: 2020
+            month: 9
+            day: 25
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 110178
+          idMal: 39988
+          title:
+            romaji: Isekai Quartet 2
+            english: Isekai Quartet 2
+            native: 異世界かるてっと 2
+          synonyms:
+          - Квартет попаданцев 2
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 15
+          endDate:
+            year: 2020
+            month: 4
+            day: 1
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 106863
+          idMal: 38924
+          title:
+            romaji: Nekopara
+            english: Nekopara
+            native: ネコぱら
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 9
+          endDate:
+            year: 2020
+            month: 3
+            day: 26
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 112293
+          idMal: 40483
+          title:
+            romaji: Murenase! Seton Gakuen
+            english: 'Seton Academy: Join the Pack!'
+            native: 群れなせ！シートン学園
+          synonyms:
+          - Murenase! Shiiton Gakuen
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 7
+          endDate:
+            year: 2020
+            month: 3
+            day: 24
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 107420
+          idMal: 38909
+          title:
+            romaji: Infinite Dendrogram
+            english: Infinite Dendrogram
+            native: インフィニット・デンドログラム
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 9
+          endDate:
+            year: 2020
+            month: 4
+            day: 16
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 104051
+          idMal: 38256
+          title:
+            romaji: 'Magia Record: Mahou Shoujo Madoka☆Magica Gaiden'
+            english: 'Magia Record: Puella Magi Madoka Magica Side Story'
+            native: マギアレコード 魔法少女まどか☆マギカ外伝
+          synonyms:
+          - MagiReco
+          - Magia Record
+          - สาวน้อยเวทมนตร์ มาโดกะ
+          - สาวน้อยเวทมนตร์ มาโดกะ [บันทึกมากิอา]
+          - 'Записи о магии: Другая история девочки-волшебницы Мадоки'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 5
+          endDate:
+            year: 2020
+            month: 3
+            day: 29
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 111501
+          idMal: 40392
+          title:
+            romaji: Runway de Waratte
+            english: Smile Down the Runway
+            native: ランウェイで笑って
+          synonyms:
+          - Smile at the Runway
+          - ถักทอฝันสู่รันเวย์
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 11
+          endDate:
+            year: 2020
+            month: 3
+            day: 28
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 112125
+          idMal: 40453
+          title:
+            romaji: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II: Mujintou ni Yakusou wo Motomeru no wa Machigatteiru
+              Darou ka'
+            english: 'Is It Wrong to Try to Pick Up Girls in a Dungeon? II: Is It Wrong to Go Searching for Herbs on a Deserted
+              Island?'
+            native: ダンジョンに出会いを求めるのは間違っているだろうかⅡ 無人島に薬草を求めるのは間違っているだろうか
+          synonyms:
+          - Is It Wrong to Try to Pick Up Girls in a Dungeon? II OVA
+          - Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II OVA
+          - ダンまちⅡ OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 29
+          endDate:
+            year: 2020
+            month: 1
+            day: 29
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 108092
+          idMal: 39388
+          title:
+            romaji: Koisuru Asteroid
+            english: Asteroid in Love
+            native: 恋する小惑星〈アステロイド〉
+          synonyms:
+          - Koisuru Shouwakusei
+          - KoiAs
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 3
+          endDate:
+            year: 2020
+            month: 3
+            day: 27
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 113417
+          idMal: 40746
+          title:
+            romaji: Overflow
+            english: Overflow
+            native: おーばーふろぉ
+          synonyms:
+          - 오버플로우
+          - 'Overflow: Desbordándose'
+          - 'Overflow: Transbordando'
+          - Accident Dans Le Bain
+          status: FINISHED
+          format: ONA
+          episodes: 8
+          season: WINTER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 1
+            day: 6
+          endDate:
+            year: 2020
+            month: 2
+            day: 24
+          averageScore: 68
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

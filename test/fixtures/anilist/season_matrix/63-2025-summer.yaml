@@ -1,0 +1,673 @@
+metadata:
+  captured_at: '2026-05-11T11:35:16Z'
+  label: 2025-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2025
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:35:15 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '10'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 178025
+          idMal: 59062
+          title:
+            romaji: Gachiakuta
+            english: Gachiakuta
+            native: ガチアクタ
+          synonyms:
+          - Гачиакута
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 6
+          endDate:
+            year: 2025
+            month: 12
+            day: 21
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 185660
+          idMal: 60543
+          title:
+            romaji: Dandadan 2nd Season
+            english: DAN DA DAN Season 2
+            native: ダンダダン 第2期
+          synonyms:
+          - 'Dan Da Dan: Evil Eye'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 4
+          endDate:
+            year: 2025
+            month: 9
+            day: 19
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 171627
+          idMal: 57555
+          title:
+            romaji: 'Chainsaw Man: Reze-hen'
+            english: 'Chainsaw Man – The Movie: Reze Arc'
+            native: チェンソーマン レゼ篇
+          synonyms:
+          - 'CSM: Reze-hen'
+          - 'CSM – The Movie: Reze Arc'
+          - 'Chainsaw Man – O Filme: Arco da Reze'
+          - 'Chainsaw Man - La película: El arco de Reze'
+          - 'Chainsaw Man - Il Film: La Storia di Reze'
+          - 'Человек-бензопила: Фильм – История Резе'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 9
+            day: 19
+          endDate:
+            year: 2025
+            month: 9
+            day: 19
+          averageScore: 90
+          nextAiringEpisode: null
+        - id: 181444
+          idMal: 59845
+          title:
+            romaji: Kaoru Hana wa Rin to Saku
+            english: The Fragrant Flower Blooms With Dignity
+            native: 薫る花は凛と咲く
+          synonyms:
+          - 'Kaoru i Rin: Rozkwitając z tobą'
+          - BLOOM
+          - Благоухающий цветок расцветает с достоинством
+          - La nobleza de las flores
+          - Kaoru und Rin
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 6
+          endDate:
+            year: 2025
+            month: 9
+            day: 28
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 178788
+          idMal: 59192
+          title:
+            romaji: 'Kimetsu no Yaiba: Mugenjou-hen Movie 1 - Akaza Sairai'
+            english: 'Demon Slayer: Kimetsu no Yaiba Infinity Castle'
+            native: 劇場版「鬼滅の刃」無限城編 第一章 猗窩座再来
+          synonyms:
+          - 'Demon Slayer: Kimetsu no Yaiba La Forteresse infinie'
+          - 'Demon Slayer: Kimetsu no Yaiba Castelo Infinito'
+          - 'Клинок, Рассекающий Демонов: Бесконечный Замок'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 18
+          endDate:
+            year: 2025
+            month: 7
+            day: 18
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 154768
+          idMal: 53065
+          title:
+            romaji: Sono Bisque Doll wa Koi wo Suru Season 2
+            english: My Dress-Up Darling Season 2
+            native: その着せ替え人形は恋をする Season 2
+          synonyms:
+          - Sono Kisekae Ningyou wa Koi wo suru
+          - หนุ่มเย็บผ้ากับสาวนักคอสเพลย์ ภาค 2
+          - その着せ替え人形（ビスク・ドール）は恋をする
+          - Kisekoi 2
+          - Si Boneka Rias Sedang Jatuh Cinta
+          - 着せ恋 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 6
+          endDate:
+            year: 2025
+            month: 9
+            day: 21
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 178754
+          idMal: 59177
+          title:
+            romaji: Kaijuu 8-gou 2nd Season
+            english: Kaiju No. 8 Season 2
+            native: 怪獣８号 第２期
+          synonyms:
+          - KAIJU No. EIGHT 2
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 19
+          endDate:
+            year: 2025
+            month: 9
+            day: 27
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 177689
+          idMal: 58913
+          title:
+            romaji: Hikaru ga Shinda Natsu
+            english: The Summer Hikaru Died
+            native: 光が死んだ夏
+          synonyms:
+          - Lato, kiedy umarł Hikaru
+          - O Verão em que Hikaru Morreu
+          - صيف وفاة هيكارو
+          - 光死去的夏天
+          - 光逝去的夏天
+          - Der Sommer, in dem Hikaru starb
+          - L'estate in cui Hikaru è morto
+          - 히카루가 죽은 여름
+          - El verano en que Hikaru murió
+          - หน้าร้อนที่ฮิคารุจากไป
+          - Лето, когда погас свет
+          - Léto, kdy umřel Hikaru
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 6
+          endDate:
+            year: 2025
+            month: 9
+            day: 28
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 185407
+          idMal: 60489
+          title:
+            romaji: Takopii no Genzai
+            english: Takopi's Original Sin
+            native: タコピーの原罪
+          synonyms: []
+          status: FINISHED
+          format: ONA
+          episodes: 6
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 6
+            day: 28
+          endDate:
+            year: 2025
+            month: 8
+            day: 2
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 184237
+          idMal: 60285
+          title:
+            romaji: SAKAMOTO DAYS Part 2
+            english: SAKAMOTO DAYS Part 2
+            native: SAKAMOTO DAYS 第２クール
+          synonyms:
+          - サカモト デイズ 2クール
+          status: FINISHED
+          format: ONA
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 15
+          endDate:
+            year: 2025
+            month: 9
+            day: 16
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 175914
+          idMal: 58390
+          title:
+            romaji: Yofukashi no Uta Season 2
+            english: Call of the Night Season 2
+            native: よふかしのうた Season 2
+          synonyms:
+          - Zew nocy. Sezon 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 4
+          endDate:
+            year: 2025
+            month: 9
+            day: 19
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 179966
+          idMal: 59459
+          title:
+            romaji: 'Silent Witch: Chinmoku no Majo no Kakushigoto'
+            english: Secrets of the Silent Witch
+            native: サイレント・ウィッチ 沈黙の魔女の隠しごと
+          synonyms:
+          - 'ไซเลนต์วิตช์: ความลับของแม่มดแห่งความเงียบงัน'
+          - Silent Witch 沉默魔女的祕密
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 5
+          endDate:
+            year: 2025
+            month: 10
+            day: 5
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 186052
+          idMal: 60732
+          title:
+            romaji: Mizu Zokusei no Mahou Tsukai
+            english: The Water Magician
+            native: 水属性の魔法使い
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 4
+          endDate:
+            year: 2025
+            month: 9
+            day: 26
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 171046
+          idMal: 57433
+          title:
+            romaji: Seishun Buta Yarou wa Santa Claus no Yume wo Minai
+            english: Rascal Does Not Dream of Santa Claus
+            native: 青春ブタ野郎はサンタクロースの夢を見ない
+          synonyms:
+          - AoButa
+          - 青ブタ
+          - 'Rascal Does Not Dream: University Student Arc'
+          - 'Rascal Series: University Arc'
+          - 青春ブタ野郎 大学生編
+          - 'Seishun Buta Yarou: Daigakusei-hen'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 5
+          endDate:
+            year: 2025
+            month: 9
+            day: 27
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 189117
+          idMal: 61322
+          title:
+            romaji: 'Dr. STONE: SCIENCE FUTURE Part 2'
+            english: Dr. STONE SCIENCE FUTURE Cour 2
+            native: Dr.STONE SCIENCE FUTURE 2クール
+          synonyms:
+          - Dr.STONE Season 4 Part 2
+          - ドクターストーン
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 10
+          endDate:
+            year: 2025
+            month: 9
+            day: 25
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 178869
+          idMal: 59205
+          title:
+            romaji: 'Clevatess: Majuu no Ou to Akago to Kabane no Yuusha'
+            english: Clevatess
+            native: クレバテス-魔獣の王と赤子と屍の勇者
+          synonyms:
+          - 'Clevatess: The King of Devil Beasts'
+          - The Baby and the Brave of Undead
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 2
+          endDate:
+            year: 2025
+            month: 9
+            day: 17
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 177474
+          idMal: 58811
+          title:
+            romaji: Tougen Anki
+            english: TOUGEN ANKI
+            native: 桃源暗鬼
+          synonyms:
+          - 'Tougen Anki: Legend of the Cursed Blood'
+          - 'Tougen Anki: Dark Demon of Paradise'
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 11
+          endDate:
+            year: 2025
+            month: 12
+            day: 26
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 173780
+          idMal: 57907
+          title:
+            romaji: Tate no Yuusha no Nariagari Season 4
+            english: The Rising of the Shield Hero Season 4
+            native: 盾の勇者の成り上がり Season 4
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 9
+          endDate:
+            year: 2025
+            month: 9
+            day: 24
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 182309
+          idMal: 59986
+          title:
+            romaji: Grand Blue Season 2
+            english: Grand Blue Dreaming Season 2
+            native: ぐらんぶる Season 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 8
+          endDate:
+            year: 2025
+            month: 9
+            day: 23
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 178090
+          idMal: 59095
+          title:
+            romaji: Tensei Shitara Dai Nana Ouji Datta node, Kimamani Majutsu wo Kiwamemasu 2nd Season
+            english: I Was Reincarnated as the 7th Prince so I Can Take My Time Perfecting My Magical Ability Season 2
+            native: 転生したら第七王子だったので、気ままに魔術を極めます 第2期
+          synonyms:
+          - Dainanaoji 2
+          - 第七王子 第2期
+          - 轉生為第七王子，隨心所欲的魔法學習之路 第二季
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 10
+          endDate:
+            year: 2025
+            month: 9
+            day: 25
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 184591
+          idMal: 60326
+          title:
+            romaji: Watashi ga Koibito ni Nareru Wake Nai jan, Muri Muri! (※Muri ja Nakatta!?)
+            english: There's No Freaking Way I'll Be Your Lover! Unless…
+            native: わたしが恋人になれるわけないじゃん、ムリムリ! (※ムリじゃなかった!?)
+          synonyms:
+          - WataNare
+          - Um Amor Impossível! Ou não...
+          - ให้เป็นแฟนได้ไง ไม่เอาไม่ไหวหรอก (※หรือว่าจะไหวนะ!?)
+          - わたなれ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 8
+          endDate:
+            year: 2025
+            month: 9
+            day: 23
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 178433
+          idMal: 59130
+          title:
+            romaji: 'Isekai Mokushiroku Mynoghra: Hametsu no Bunmei de Hajimeru Sekai Seifuku'
+            english: 'Apocalypse Bringer Mynoghra: World Conquest Starts with the Civilization of Ruin'
+            native: 異世界黙示録マイノグーラ ～破滅の文明で始める世界征服～
+          synonyms:
+          - 'Khải huyền dị giới Mynoghra: Chinh phục thế giới từ nền văn minh suy tàn'
+          - 'Apokalips Dunia Lain Mynoghra: Menaklukkan Dunia Dimulai dari Peradaban Kehancuran'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 6
+          endDate:
+            year: 2025
+            month: 9
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 181841
+          idMal: 59898
+          title:
+            romaji: CITY THE ANIMATION
+            english: CITY THE ANIMATION
+            native: CITY THE ANIMATION
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 7
+          endDate:
+            year: 2025
+            month: 9
+            day: 29
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 178886
+          idMal: 59207
+          title:
+            romaji: Mikadono Sanshimai wa Angai, Choroi.
+            english: Dealing with Mikadono Sisters Is a Breeze
+            native: 帝乃三姉妹は案外、チョロい。
+          synonyms:
+          - The Mikadono sisters are surprisingly easy to deal with.
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 10
+          endDate:
+            year: 2025
+            month: 9
+            day: 18
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 180929
+          idMal: 59791
+          title:
+            romaji: Ruri no Houseki
+            english: Ruri Rocks
+            native: 瑠璃の宝石
+          synonyms:
+          - Introduction to Mineralogy
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 7
+            day: 6
+          endDate:
+            year: 2025
+            month: 9
+            day: 28
+          averageScore: 79
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

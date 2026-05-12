@@ -1,1 +1,1 @@
-"""Tests for aggregate command substrate modules."""
+"""Tests for aggregate orchestration helpers."""

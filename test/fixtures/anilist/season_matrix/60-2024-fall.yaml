@@ -1,0 +1,681 @@
+metadata:
+  captured_at: '2026-05-11T11:35:08Z'
+  label: 2024-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2024
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:35:08 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '13'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 171018
+          idMal: 57334
+          title:
+            romaji: Dandadan
+            english: DAN DA DAN
+            native: ダンダダン
+          synonyms:
+          - ดันดาดัน
+          - 膽大黨
+          - 'DAN DA DAN: FIRST ENCOUNTER'
+          - Дандадан
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 4
+          endDate:
+            year: 2024
+            month: 12
+            day: 20
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 163134
+          idMal: 54857
+          title:
+            romaji: Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season
+            english: Re:ZERO -Starting Life in Another World- Season 3
+            native: Re:ゼロから始める異世界生活 3rd season
+          synonyms:
+          - Re:ZERO – Жизнь с нуля в альтернативном мире 3
+          status: FINISHED
+          format: TV
+          episodes: 16
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 2
+          endDate:
+            year: 2025
+            month: 3
+            day: 26
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 170942
+          idMal: 57181
+          title:
+            romaji: Ao no Hako
+            english: Blue Box
+            native: アオのハコ
+          synonyms:
+          - الصندوق الأزرق
+          - 青之箱
+          - 푸른 상자
+          - La caja azul
+          - กล่องรักวัยใส
+          - Niebieskie pudełko
+          status: FINISHED
+          format: ONA
+          episodes: 25
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 3
+          endDate:
+            year: 2025
+            month: 3
+            day: 20
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 163146
+          idMal: 54865
+          title:
+            romaji: Blue Lock VS. U-20 JAPAN
+            english: BLUE LOCK Season 2
+            native: ブルーロック VS. U-20 JAPAN
+          synonyms:
+          - ブルーロック第2期
+          - Blue Lock 2nd Season
+          status: FINISHED
+          format: TV
+          episodes: 14
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 5
+          endDate:
+            year: 2024
+            month: 12
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 151514
+          idMal: 52215
+          title:
+            romaji: Chi. Chikyuu no Undou ni Tsuite
+            english: 'Orb: On the Movements of the Earth'
+            native: チ。-地球の運動について-
+          synonyms:
+          - 'Chi: About the Movement of the Earth'
+          - สุริยะปราชญ์ ทฤษฎีสีเลือด
+          - O ruchach Ziemi
+          - Du mouvement de la Terre
+          - 'Tierra, sangre, conocimiento: Sobre el movimiento de la Tierra'
+          - Ketzer - Tödliches Wissen über die Bewegung der Erde
+          - על תנועת כדור הארץ
+          - Il movimento della Terra
+          - Про рух Землі
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 5
+          endDate:
+            year: 2025
+            month: 3
+            day: 15
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 169755
+          idMal: 56784
+          title:
+            romaji: 'BLEACH: Sennen Kessen-hen - Soukoku-tan'
+            english: 'BLEACH: Thousand-Year Blood War - The Conflict'
+            native: BLEACH 千年血戦篇-相剋譚-
+          synonyms:
+          - 'BLEACH: Thousand Year Blood War Part 3'
+          - BLEACH 千年血戦篇 第3クール
+          - BLEACH TYBW
+          status: FINISHED
+          format: TV
+          episodes: 14
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 5
+          endDate:
+            year: 2024
+            month: 12
+            day: 28
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 176508
+          idMal: 58572
+          title:
+            romaji: Shangri-La Frontier 2nd Season
+            english: Shangri-La Frontier Season 2
+            native: シャングリラ・フロンティア 2nd season
+          synonyms:
+          - シャンフロ２
+          - シャングリラ・フロンティア〜クソゲーハンター, 神ゲーに挑まんとす〜 2nd season
+          - 'Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su 2nd Season'
+          - Рубеж Шангри-Ла 2
+          - Thợ săn Game rác thách thức Game cấp Thánh, Mùa 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 13
+          endDate:
+            year: 2025
+            month: 3
+            day: 30
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 111314
+          idMal: 40333
+          title:
+            romaji: Uzumaki
+            english: Uzumaki
+            native: うずまき
+          synonyms:
+          - The Spiral
+          - ' ก้นหอยมรณะ'
+          - أوزوماكي
+          - Uzumaki. Spirala
+          - 'UZUMAKI: Animated TV Series'
+          status: FINISHED
+          format: TV
+          episodes: 4
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 9
+            day: 29
+          endDate:
+            year: 2024
+            month: 10
+            day: 20
+          averageScore: 54
+          nextAiringEpisode: null
+        - id: 170732
+          idMal: 57066
+          title:
+            romaji: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka V: Houjou no Megami-hen'
+            english: Is It Wrong To Try To Pick Up Girls in a Dungeon? V
+            native: ダンジョンに出会いを求めるのは間違っているだろうかⅤ 豊穣の女神篇
+          synonyms:
+          - DanMachi V
+          - Familia Myth V
+          - ダンまちⅤ
+          - Is It Wrong to Try to Pick Up Girls in a Dungeon? Season 5
+          - Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka 5th Season
+          - 'Is It Wrong to Try to Pick Up Girls in a Dungeon? V: Goddess of Fertility Arc'
+          - 'Is It Wrong to Try to Pick Up Girls in a Dungeon? V: Goddess of the Harvest Arc'
+          status: FINISHED
+          format: ONA
+          episodes: 15
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 3
+          endDate:
+            year: 2025
+            month: 3
+            day: 5
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 154473
+          idMal: 52995
+          title:
+            romaji: Arifureta Shokugyou de Sekai Saikyou 3rd season
+            english: 'Arifureta: From Commonplace to World''s Strongest Season 3'
+            native: ありふれた職業で世界最強 3rd season
+          synonyms:
+          - อาชีพกระจอกแล้วทำไม ยังไงข้าก็เทพ ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 16
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 14
+          endDate:
+            year: 2025
+            month: 2
+            day: 17
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 141182
+          idMal: 50306
+          title:
+            romaji: Seirei Gensouki 2
+            english: 'Seirei Gensouki: Spirit Chronicles Season 2'
+            native: 精霊幻想記2
+          synonyms:
+          - ตำนานวิญญาณแฟนซี ภาค 2
+          - 精灵幻想记吧2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 8
+          endDate:
+            year: 2024
+            month: 12
+            day: 24
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 175019
+          idMal: 58172
+          title:
+            romaji: Nageki no Bourei wa Intai Shitai
+            english: Let This Grieving Soul Retire
+            native: '嘆きの亡霊は引退したい '
+          synonyms:
+          - Arwah Berduka yang Ingin Pensiun
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 9
+            day: 29
+          endDate:
+            year: 2024
+            month: 12
+            day: 22
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 178533
+          idMal: 59145
+          title:
+            romaji: Ranma 1/2 (2024)
+            english: Ranma1/2 (2024)
+            native: らんま1/2 (2024)
+          synonyms:
+          - Ranma 1/2 (New Anime)
+          - Ranma 1/2 (Shinsaku Anime)
+          - らんま1/2 (新作アニメ)
+          - 乱马 1/2
+          - 란마1/2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 6
+          endDate:
+            year: 2024
+            month: 12
+            day: 21
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 173693
+          idMal: 57891
+          title:
+            romaji: Hitoribocchi no Isekai Kouryaku
+            english: Loner Life in Another World
+            native: ひとりぼっちの異世界攻略
+          synonyms: []
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 9
+            day: 27
+          endDate:
+            year: 2024
+            month: 12
+            day: 13
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 170083
+          idMal: 56894
+          title:
+            romaji: Dragon Ball DAIMA
+            english: Dragon Ball DAIMA
+            native: ドラゴンボールDAIMA
+          synonyms:
+          - ドラゴンボール ダイマ
+          - Драконий жемчуг Дайма
+          status: FINISHED
+          format: TV
+          episodes: 20
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 11
+          endDate:
+            year: 2025
+            month: 2
+            day: 28
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 170468
+          idMal: 56964
+          title:
+            romaji: Raise wa Tanin ga Ii
+            english: 'Yakuza Fiancé: Raise wa Tanin ga Ii'
+            native: 来世は他人がいい
+          synonyms:
+          - 'Yakuza Fiancé: Raise wa Tanin ga Ii'
+          - รักอันตรายของเจ้าสาวยากูซ่า
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 7
+          endDate:
+            year: 2024
+            month: 12
+            day: 23
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 163135
+          idMal: 54853
+          title:
+            romaji: Maou 2099
+            english: DEMON LORD 2099
+            native: 魔王2099
+          synonyms:
+          - '魔王2099: THE LORD OF IMMORTALS BLOOMING IN THE ABYSS E.E. 2099'
+          - Maou 2099:THE LORD OF IMMORTALS BLOOMING IN THE ABYSS E.E. 2099
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 13
+          endDate:
+            year: 2024
+            month: 12
+            day: 29
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 172190
+          idMal: 57611
+          title:
+            romaji: Kimi wa Meido-sama.
+            english: You are Ms. Servant
+            native: 君は冥土様。
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 6
+          endDate:
+            year: 2024
+            month: 12
+            day: 22
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 182469
+          idMal: 60022
+          title:
+            romaji: ONE PIECE FAN LETTER
+            english: ONE PIECE FAN LETTER
+            native: ONE PIECE FAN LETTER
+          synonyms: []
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 20
+          endDate:
+            year: 2024
+            month: 10
+            day: 20
+          averageScore: 90
+          nextAiringEpisode: null
+        - id: 177104
+          idMal: 58714
+          title:
+            romaji: Saikyou no Shien-shoku [Wajutsushi] Dearu Ore wa Sekai Saikyou Clan wo Shitagaeru
+            english: The Most Notorious "Talker" Runs the World's Greatest Clan
+            native: 最凶の支援職【話術士】である俺は世界最強クランを従える
+          synonyms:
+          - Wajutsushi
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 1
+          endDate:
+            year: 2024
+            month: 12
+            day: 16
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 168139
+          idMal: 56228
+          title:
+            romaji: Rekishi ni Nokoru Akujo ni Naruzo
+            english: I’ll Become a Villainess Who Goes Down in History
+            native: 歴史に残る悪女になるぞ
+          synonyms:
+          - I'll Become a Villainess That Will Go Down in History
+          - I'll Become a Villainess That Will Go Down in History - The More of a Villainess I Become, the More the Prince
+            Will Dote on Me
+          - 'Rekishi ni Nokoru Akujo ni Naruzo: Akuyaku Reijou ni Naru hodo Ouji no Dekiai wa Kasoku Suru you desu!'
+          - 歴史に残る悪女になるぞ　悪役令嬢になるほど王子の溺愛は加速するようです！
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 1
+          endDate:
+            year: 2024
+            month: 12
+            day: 24
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 164172
+          idMal: 55071
+          title:
+            romaji: Amagami-san Chi no Enmusubi
+            english: Tying the Knot with an Amagami Sister
+            native: 甘神さんちの縁結び
+          synonyms:
+          - Matchmaking of the Amagami Household
+          - ด้ายแดงผูกรักบ้านอามากามิ
+          - 結緣甘神神社
+          - 甘神家的连理枝
+          - ربط العقد مع أخوات أماغامي
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 2
+          endDate:
+            year: 2025
+            month: 3
+            day: 26
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 165790
+          idMal: 55887
+          title:
+            romaji: Kekkon Suru tte, Hontou desu ka
+            english: 365 Days to the Wedding
+            native: 結婚するって、本当ですか
+          synonyms:
+          - Are You Really Getting Married?
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 3
+          endDate:
+            year: 2024
+            month: 12
+            day: 19
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 178434
+          idMal: 59131
+          title:
+            romaji: Tensei Kizoku, Kantei Skill de Nariagaru 2nd Season
+            english: As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 2
+            native: 転生貴族、鑑定スキルで成り上がる 第2期
+          synonyms:
+          - KanteiSkill 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 9
+            day: 29
+          endDate:
+            year: 2024
+            month: 12
+            day: 22
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 174043
+          idMal: 57944
+          title:
+            romaji: Party kara Tsuihou sareta Sono Chiyushi, Jitsu wa Saikyou ni Tsuki
+            english: The Healer Who Was Banished From His Party, Is, in Fact, the Strongest
+            native: パーティーから追放されたその治癒師、実は最強につき
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 10
+            day: 6
+          endDate:
+            year: 2024
+            month: 12
+            day: 22
+          averageScore: 56
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

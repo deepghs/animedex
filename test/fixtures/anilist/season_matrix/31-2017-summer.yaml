@@ -1,0 +1,677 @@
+metadata:
+  captured_at: '2026-05-11T11:33:41Z'
+  label: 2017-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2017
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:41 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '21'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 98314
+          idMal: 34933
+          title:
+            romaji: Kakegurui
+            english: Kakegurui
+            native: 賭ケグルイ
+          synonyms:
+          - Kakegurui - Compulsive Gambler
+          - 'Kakegurui: Das Leben ist ein Spiel'
+          - Gambling School
+          - 'โคตรเซียนโรงเรียนพนัน '
+          - Безумный Азарт
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 1
+          endDate:
+            year: 2017
+            month: 9
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 98659
+          idMal: 35507
+          title:
+            romaji: Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e
+            english: Classroom of the Elite
+            native: ようこそ実力至上主義の教室へ
+          synonyms:
+          - Youjitsu
+          - You-Zitsu
+          - ขอต้อนรับสู่ห้องเรียนนิยม (เฉพาะ) ยอดคน
+          - Cote
+          - 歡迎來到實力至上主義的教室
+          - Добро пожаловать в класс для особо одарённых
+          - فصل النخبة
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 12
+          endDate:
+            year: 2017
+            month: 9
+            day: 27
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 97986
+          idMal: 34599
+          title:
+            romaji: Made in Abyss
+            english: Made in Abyss
+            native: メイドインアビス
+          synonyms:
+          - صنع في الهاوية
+          - Созданный в Бездне
+          - ผ่าเหวนรก
+          - นักบุกเบิกหลุมยักษ์
+          - Đến từ Abyss
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 7
+          endDate:
+            year: 2017
+            month: 9
+            day: 29
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 21875
+          idMal: 33674
+          title:
+            romaji: No Game No Life Zero
+            english: No Game, No Life Zero
+            native: ノーゲーム・ノーライフ ゼロ
+          synonyms:
+          - NO GAME NO LIFE Movie
+          - 游戏人生 零
+          - โนเกม โนไลฟ์ เดอะมูฟวี่
+          - โนเกม โนไลฟ์ ซีโร่
+          - NGNL Zero
+          - ノゲノラ ゼロ
+          - nogenora 0
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 15
+          endDate:
+            year: 2017
+            month: 7
+            day: 15
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 98291
+          idMal: 34902
+          title:
+            romaji: Tsurezure Children
+            english: Tsuredure Children
+            native: 徒然チルドレン
+          synonyms:
+          - Tsure x dure children
+          - Признания
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 4
+          endDate:
+            year: 2017
+            month: 9
+            day: 19
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 97766
+          idMal: 34280
+          title:
+            romaji: Gamers!
+            english: GAMERS!
+            native: ゲーマーズ!
+          synonyms:
+          - Gamers! Amano Keita to Seishun Continue
+          - Gamers! Keita Amano and youth continue
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 13
+          endDate:
+            year: 2017
+            month: 9
+            day: 28
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 98491
+          idMal: 35203
+          title:
+            romaji: Isekai wa Smartphone to Tomo ni.
+            english: In Another World With My Smartphone
+            native: 異世界はスマートフォンとともに。
+          synonyms:
+          - IseSuma
+          - 'ไปต่างโลก! ก็ต้องไปกับสมาร์ทโฟนสิ!!! '
+          - 帶著智慧型手機闖蕩異世界。
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 11
+          endDate:
+            year: 2017
+            month: 9
+            day: 26
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 97863
+          idMal: 34403
+          title:
+            romaji: Hajimete no Gal
+            english: My First Girlfriend is a Gal
+            native: はじめてのギャル
+          synonyms:
+          - Hajimete no Gyaru
+          - First-Time Gal
+          - My First Gal
+          - แฟนผมเป็นสาวแกล
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 12
+          endDate:
+            year: 2017
+            month: 9
+            day: 13
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 98035
+          idMal: 34662
+          title:
+            romaji: Fate/Apocrypha
+            english: Fate/Apocrypha
+            native: Fate/Apocrypha
+          synonyms:
+          - פייט/אפוקריפה
+          - Судьба/Апокриф
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 2
+          endDate:
+            year: 2017
+            month: 12
+            day: 31
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 98251
+          idMal: 34881
+          title:
+            romaji: Aho-Girl
+            english: AHO-GIRL
+            native: アホガール
+          synonyms:
+          - 'Ahogaru: Clueless Girl'
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 4
+          endDate:
+            year: 2017
+            month: 9
+            day: 19
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 21745
+          idMal: 35247
+          title:
+            romaji: Owarimonogatari (Ge)
+            english: Owarimonogatari Second Season
+            native: 終物語（下）
+          synonyms:
+          - Owarimonogatari 2
+          - End Tale
+          status: FINISHED
+          format: TV
+          episodes: 7
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 8
+            day: 12
+          endDate:
+            year: 2017
+            month: 8
+            day: 13
+          averageScore: 89
+          nextAiringEpisode: null
+        - id: 98320
+          idMal: 34934
+          title:
+            romaji: Koi to Uso
+            english: LOVE and LIES
+            native: 恋と嘘
+          synonyms:
+          - Love & Lies
+          - จะรักหรือจะหลอก
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 4
+          endDate:
+            year: 2017
+            month: 9
+            day: 19
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 97996
+          idMal: 34626
+          title:
+            romaji: 'Kono Subarashii Sekai ni Shukufuku wo! 2: Kono Subarashii Geijutsu ni Shukufuku wo!'
+            english: 'KONOSUBA -God''s blessing on this wonderful world! 2: God''s Blessings on These Wonderful Works of Art!'
+            native: この素晴らしい世界に祝福を！ 2 この素晴らしい芸術に祝福を!
+          synonyms:
+          - Konosuba 2 OVA
+          - 'Konosuba! - As Bençãos de Deus Neste Mundo Maravilhoso 2!: As Bençãos de Deus Nestas Obras de Arte Maravilhosas!'
+          - 'Konosuba ¡Bendito sea este mundo maravilloso!: ¡Benditas sean estas maravillosas obras de arte!'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 24
+          endDate:
+            year: 2017
+            month: 7
+            day: 24
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 98005
+          idMal: 34636
+          title:
+            romaji: Ballroom e Youkoso
+            english: Welcome to the Ballroom
+            native: ボールルームへようこそ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 9
+          endDate:
+            year: 2017
+            month: 12
+            day: 17
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 97617
+          idMal: 34012
+          title:
+            romaji: Isekai Shokudou
+            english: Restaurant to Another World
+            native: 異世界食堂
+          synonyms:
+          - 异世界食堂
+          - ' ร้านอาหารต่างโลก'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 4
+          endDate:
+            year: 2017
+            month: 9
+            day: 19
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 98580
+          idMal: 35363
+          title:
+            romaji: 'Kobayashi-san Chi no Maidragon: Valentine, Soshite Onsen! (Amari Kitai Shinaide Kudasai)'
+            english: 'Miss Kobayashi''s Dragon Maid: Valentines and Hot Springs! (Please Don''t Get Your Hopes Up)'
+            native: 小林さんちのメイドラゴン バレンタイン, そして温泉! (あまり期待しないでください)
+          synonyms:
+          - Miss Kobayashi's Dragon Maid Episode 14
+          - 'Kobayashi-san Chi no Maid Dragon Episode 14 '
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 9
+            day: 20
+          endDate:
+            year: 2017
+            month: 9
+            day: 20
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 98292
+          idMal: 34914
+          title:
+            romaji: NEW GAME!!
+            english: NEW GAME!!
+            native: NEW GAME!!
+          synonyms:
+          - Новая игра!!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 11
+          endDate:
+            year: 2017
+            month: 9
+            day: 26
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 97908
+          idMal: 34498
+          title:
+            romaji: Uchiage Hanabi, Shita kara Miru ka? Yoko kara Miru ka?
+            english: Fireworks
+            native: 打ち上げ花火、下から見るか？横から見るか？
+          synonyms:
+          - ' Should We See It from the Side or the Bottom?'
+          - 升起的烟花，从下面看？还是从侧面看？
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 8
+            day: 18
+          endDate:
+            year: 2017
+            month: 8
+            day: 18
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 98505
+          idMal: 35240
+          title:
+            romaji: Princess Principal
+            english: Princess Principal
+            native: プリンセス・プリンシパル
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 9
+          endDate:
+            year: 2017
+            month: 9
+            day: 24
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 97663
+          idMal: 34104
+          title:
+            romaji: Knight's & Magic
+            english: Knight's & Magic
+            native: ナイツ&マジック
+          synonyms:
+          - Knight's and Magic
+          - Naitsuma
+          - ไนท์ & แมจิก
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 2
+          endDate:
+            year: 2017
+            month: 9
+            day: 24
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 98205
+          idMal: 34825
+          title:
+            romaji: Keppeki Danshi! Aoyama-kun
+            english: Clean Freak! Aoyama kun
+            native: 潔癖男子! 青山くん
+          synonyms:
+          - Cleanliness Boy! Aoyama-kun
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 3
+          endDate:
+            year: 2017
+            month: 9
+            day: 18
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 21778
+          idMal: 33191
+          title:
+            romaji: Kishibe Rohan wa Ugokanai
+            english: Thus Spoke Rohan Kishibe
+            native: 岸辺露伴は動かない
+          synonyms:
+          - Thus Spoke Kishibe Rohan
+          - Assim Falava Kishibe Rohan
+          - Así habló Kishibe Rohan
+          - على لسان كيشيبي روهان
+          - Αυτά Είπε ο Ρόχαν Κίσιμπε
+          status: FINISHED
+          format: OVA
+          episodes: 4
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 9
+            day: 20
+          endDate:
+            year: 2020
+            month: 3
+            day: 25
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 21791
+          idMal: 33071
+          title:
+            romaji: 'Bungou Stray Dogs: Hitori Ayumu'
+            english: 'Bungo Stray Dogs 2: Walking Alone'
+            native: 文豪ストレイドッグス 『独り歩む』;
+          synonyms:
+          - Bungou Stray Dogs 2 OVA
+          - 'Bungou Stray Dogs 2: Episode 13'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 8
+            day: 4
+          endDate:
+            year: 2017
+            month: 8
+            day: 4
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 87494
+          idMal: 33654
+          title:
+            romaji: Hitorijime My Hero
+            english: Hitorijime My Hero
+            native: ひとりじめマイヒーロー
+          synonyms:
+          - My Very Own Hero
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 8
+          endDate:
+            year: 2017
+            month: 9
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 97833
+          idMal: 34383
+          title:
+            romaji: 'Netsuzou Trap: NTR'
+            english: Netsuzou Trap -NTR-
+            native: 捏造トラップ―NTR―
+          synonyms:
+          - Netsuzou TRap
+          - กลรักกับดักลวง NTR
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 7
+            day: 5
+          endDate:
+            year: 2017
+            month: 9
+            day: 20
+          averageScore: 48
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

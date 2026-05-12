@@ -1,0 +1,656 @@
+metadata:
+  captured_at: '2026-05-11T11:32:46Z'
+  label: 2012-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2012
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:46 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '19'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 11757
+          idMal: 11757
+          title:
+            romaji: Sword Art Online
+            english: Sword Art Online
+            native: ソードアート・オンライン
+          synonyms:
+          - S.A.O
+          - SAO
+          - אומנות החרב אונליין
+          - 刀剑神域
+          - ซอร์ดอาร์ตออนไลน์
+          - Мастера меча онлайн
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 8
+          endDate:
+            year: 2012
+            month: 12
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 11887
+          idMal: 11887
+          title:
+            romaji: Kokoro Connect
+            english: Kokoro Connect
+            native: ココロコネクト
+          synonyms:
+          - Kokoroco
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 8
+          endDate:
+            year: 2012
+            month: 9
+            day: 30
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 13161
+          idMal: 13161
+          title:
+            romaji: Hagure Yuusha no Estetica
+            english: Aesthetica of a Rogue Hero
+            native: はぐれ勇者の鬼畜美学 (エステティカ)
+          synonyms:
+          - Hagure Yuusha no Aesthetica
+          - ชีวิตอันแสนรื่นรมย์ของผู้กล้านอกระบบ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 6
+          endDate:
+            year: 2012
+            month: 9
+            day: 21
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 12549
+          idMal: 12549
+          title:
+            romaji: Dakara Boku wa, H ga Dekinai.
+            english: So, I Can't Play H!
+            native: だから僕は、Hができない。
+          synonyms:
+          - Dakara boku-ha H ga Dekinai.
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 6
+          endDate:
+            year: 2012
+            month: 9
+            day: 25
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 12293
+          idMal: 12293
+          title:
+            romaji: 'Campione!: Matsurowanu Kamigami to Kamigoroshi no Maou'
+            english: Campione!
+            native: カンピオーネ！ ～まつろわぬ神々と神殺しの魔王～
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 6
+          endDate:
+            year: 2012
+            month: 9
+            day: 28
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 13667
+          idMal: 13667
+          title:
+            romaji: 'ROAD TO NINJA: NARUTO THE MOVIE'
+            english: 'Road to Ninja: Naruto the Movie'
+            native: ROAD TO NINJA -NARUTO THE MOVIE-
+          synonyms:
+          - Naruto Movie 9
+          - 'Naruto Shippūden la película: El camino Ninja'
+          - 'Naruto Shippuden Movie 06: La via del Ninja'
+          - 'Naruto Shippuden the Movie 6: Road to Ninja'
+          - 'Naruto Shippuden O Filme: Caminho do Ninja'
+          - 'Naruto Shippuden 6: O Caminho Ninja'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 28
+          endDate:
+            year: 2012
+            month: 7
+            day: 28
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 12729
+          idMal: 12729
+          title:
+            romaji: High School DxD OVA
+            english: null
+            native: ハイスクールD×D OVA
+          synonyms:
+          - High School DxD Episodes 13, 14 and 15
+          - Highschool DxD OVA
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 9
+            day: 6
+          endDate:
+            year: 2013
+            month: 5
+            day: 31
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 12679
+          idMal: 12679
+          title:
+            romaji: Joshiraku
+            english: Joshiraku
+            native: じょしらく
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 6
+          endDate:
+            year: 2012
+            month: 9
+            day: 28
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 11933
+          idMal: 11933
+          title:
+            romaji: Oda Nobuna no Yabou
+            english: The Ambition of Oda Nobuna
+            native: 織田信奈の野望
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 9
+          endDate:
+            year: 2012
+            month: 9
+            day: 24
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 10357
+          idMal: 10357
+          title:
+            romaji: Jinrui wa Suitai Shimashita
+            english: Humanity Has Declined
+            native: 人類は衰退しました
+          synonyms:
+          - Jintai
+          - ตัวฉันกับวันสิ้นโลก
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 2
+          endDate:
+            year: 2012
+            month: 9
+            day: 16
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 12031
+          idMal: 12031
+          title:
+            romaji: Kingdom
+            english: Kingdom
+            native: キングダム
+          synonyms:
+          - Царство
+          status: FINISHED
+          format: TV
+          episodes: 38
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 6
+            day: 4
+          endDate:
+            year: 2013
+            month: 2
+            day: 25
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 12175
+          idMal: 12175
+          title:
+            romaji: Koi to Senkyo to Chocolate
+            english: Love, Election and Chocolate
+            native: 恋と選挙とチョコレート
+          synonyms:
+          - Koichoco
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 6
+          endDate:
+            year: 2012
+            month: 9
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 13469
+          idMal: 13469
+          title:
+            romaji: 'Hyouka: Motsubeki Mono wa'
+            english: 'Hyouka: What Should Be Had'
+            native: 氷菓 持つべきものは
+          synonyms:
+          - Hyouka Episode 11.5
+          - Hyouka OVA
+          - Hyou-ka OVA
+          - 'Hyouka: You can''t escape OVA'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 8
+          endDate:
+            year: 2012
+            month: 7
+            day: 8
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 13535
+          idMal: 13535
+          title:
+            romaji: Binbougami ga!
+            english: Good Luck Girl!
+            native: 貧乏神が!
+          synonyms:
+          - Binbou Gami ga!
+          - Binboukami ga!
+          - Binbou Kami ga!
+          - The God Of Poverty is!
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 5
+          endDate:
+            year: 2012
+            month: 9
+            day: 27
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 12113
+          idMal: 12113
+          title:
+            romaji: 'Berserk: Ougon Jidai-hen II - Doldrey Kouryaku'
+            english: 'Berserk: The Golden Age Arc II - The Battle for Doldrey'
+            native: ベルセルク 黄金時代篇Ⅱ ドルドレイ攻略
+          synonyms:
+          - Berserk Movie
+          - Berserk Saga
+          - 'Berserk: La Edad de Oro II - La Batalla por Doldrey'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 6
+            day: 23
+          endDate:
+            year: 2012
+            month: 6
+            day: 23
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 12403
+          idMal: 12403
+          title:
+            romaji: Yuru Yuri♪♪
+            english: YuruYuri Season 2
+            native: ゆるゆり♪♪
+          synonyms:
+          - YRYR 2
+          - ゆるゆり 第２期
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 3
+          endDate:
+            year: 2012
+            month: 9
+            day: 18
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 12049
+          idMal: 12049
+          title:
+            romaji: 'FAIRY TAIL: Houou no Miko'
+            english: 'Fairy Tail: Phoenix Priestess'
+            native: 劇場版 FAIRY TAIL 鳳凰の巫女
+          synonyms:
+          - Fairy Tail - 1er Film - La prêtresse du Phoenix
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 8
+            day: 18
+          endDate:
+            year: 2012
+            month: 8
+            day: 18
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 13367
+          idMal: 13367
+          title:
+            romaji: Kono Naka ni Hitori, Imouto ga Iru!
+            english: NAKAIMO - My Little Sister Is Among Them!
+            native: この中に1人, 妹がいる！
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 6
+          endDate:
+            year: 2012
+            month: 9
+            day: 28
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 14753
+          idMal: 14753
+          title:
+            romaji: Hori-san to Miyamura-kun
+            english: null
+            native: 堀さんと宮村くん
+          synonyms:
+          - Horimiya
+          status: FINISHED
+          format: OVA
+          episodes: 6
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 9
+            day: 26
+          endDate:
+            year: 2021
+            month: 5
+            day: 25
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 13333
+          idMal: 13333
+          title:
+            romaji: TARI TARI
+            english: Tari Tari
+            native: TARI TARI
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 1
+          endDate:
+            year: 2012
+            month: 9
+            day: 23
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 8888
+          idMal: 8888
+          title:
+            romaji: 'Code Geass: Boukoku no Akito 1 - Yokuryuu wa Maiorita'
+            english: 'Code Geass: Akito the Exiled - The Wyvern Arrives'
+            native: コードギアス 亡国のアキト 第1章 翼竜は舞い降りた
+          synonyms:
+          - 'Code Geass: Akito the Exiled – Przybycie Wiwerny'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 8
+            day: 4
+          endDate:
+            year: 2012
+            month: 8
+            day: 4
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 12967
+          idMal: 12967
+          title:
+            romaji: 'Arcana Famiglia: La storia della Arcana Famiglia'
+            english: La Storia Della Arcana Famiglia
+            native: アルカナ・ファミリア －La storia della Arcana Famiglia－
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 7
+            day: 1
+          endDate:
+            year: 2012
+            month: 9
+            day: 16
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 13807
+          idMal: 13807
+          title:
+            romaji: 'Corpse Party: Missing Footage'
+            english: null
+            native: コープスパーティー Missing Footage
+          synonyms:
+          - Corpse Party OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 8
+            day: 2
+          endDate:
+            year: 2012
+            month: 8
+            day: 2
+          averageScore: 54
+          nextAiringEpisode: null
+        - id: 13851
+          idMal: 13851
+          title:
+            romaji: To LOVE-Ru Darkness OVA
+            english: null
+            native: To LOVEる -とらぶる- ダークネス
+          synonyms:
+          - To LOVE-Ru Trouble Darkness OVA
+          - To-Love-Ru Darkness OVA
+          - ToLoveRu Darkness OVA
+          - To Love Ru Darkness OVA
+          status: FINISHED
+          format: OVA
+          episodes: 6
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 8
+            day: 17
+          endDate:
+            year: 2015
+            month: 4
+            day: 3
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 13055
+          idMal: 13055
+          title:
+            romaji: Sankarea (OVA)
+            english: null
+            native: さんかれあ (OVA)
+          synonyms:
+          - Sankarea Episode 0
+          - Sankarea Episode 14
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: SUMMER
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 6
+            day: 8
+          endDate:
+            year: 2012
+            month: 11
+            day: 9
+          averageScore: 69
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

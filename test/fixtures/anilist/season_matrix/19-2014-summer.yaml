@@ -1,0 +1,670 @@
+metadata:
+  captured_at: '2026-05-11T11:33:08Z'
+  label: 2014-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2014
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:08 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '11'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 20605
+          idMal: 22319
+          title:
+            romaji: Tokyo Ghoul
+            english: Tokyo Ghoul
+            native: 東京喰種 トーキョーグール
+          synonyms:
+          - Tokyo Kushu
+          - שדי טוקיו
+          - 东京食种
+          - طوكيو غول
+          - Токийский гуль
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 4
+          endDate:
+            year: 2014
+            month: 9
+            day: 19
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 20613
+          idMal: 22199
+          title:
+            romaji: Akame ga Kill!
+            english: Akame ga Kill!
+            native: アカメが斬る！
+          synonyms:
+          - Akame ga Kiru!
+          - 'أكامي: قاتلة بالإكراه!'
+          - Red Eyes Sword
+          - 斬！赤紅之瞳
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 7
+          endDate:
+            year: 2014
+            month: 12
+            day: 15
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20594
+          idMal: 21881
+          title:
+            romaji: Sword Art Online II
+            english: Sword Art Online II
+            native: ソードアート・オンライン II
+          synonyms:
+          - SAO2
+          - GGO
+          - ซอร์ดอาร์ตออนไลน์ ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 5
+          endDate:
+            year: 2014
+            month: 12
+            day: 20
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 20661
+          idMal: 23283
+          title:
+            romaji: Zankyou no Terror
+            english: Terror in Resonance
+            native: 残響のテロル
+          synonyms:
+          - Terror in Tokyo
+          - Эхо террора
+          - Zagadkowi terroryści
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 11
+          endDate:
+            year: 2014
+            month: 9
+            day: 26
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20596
+          idMal: 21995
+          title:
+            romaji: Ao Haru Ride
+            english: Blue Spring Ride
+            native: アオハライド
+          synonyms:
+          - Aoharaido
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 8
+          endDate:
+            year: 2014
+            month: 9
+            day: 23
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 20668
+          idMal: 23289
+          title:
+            romaji: Gekkan Shoujo Nozaki-kun
+            english: Monthly Girls' Nozaki-kun
+            native: 月刊少女野崎くん
+          synonyms:
+          - Revista mensual para chicas Nozaki
+          - 月刊少女野崎君
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 7
+          endDate:
+            year: 2014
+            month: 9
+            day: 22
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 20722
+          idMal: 22789
+          title:
+            romaji: Barakamon
+            english: Barakamon
+            native: ばらかもん
+          synonyms:
+          - 元气囝仔
+          - 'บารากะมอน เกาะมีฮา คนมีเฮ '
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 6
+          endDate:
+            year: 2014
+            month: 9
+            day: 28
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 20593
+          idMal: 21855
+          title:
+            romaji: Hanamonogatari
+            english: Hanamonogatari
+            native: 花物語
+          synonyms:
+          - Monogatari Series Second Season +α
+          - ปกรณัมแห่งบุปผา
+          status: FINISHED
+          format: TV
+          episodes: 5
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 8
+            day: 16
+          endDate:
+            year: 2014
+            month: 8
+            day: 16
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20632
+          idMal: 22729
+          title:
+            romaji: Aldnoah.Zero
+            english: ALDNOAH.ZERO
+            native: アルドノア・ゼロ
+          synonyms:
+          - A/Z
+          - 'ALDNOAH.ZERO: Let Justice Be Done, Though The Heavens Fall.'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 6
+          endDate:
+            year: 2014
+            month: 9
+            day: 21
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 20614
+          idMal: 22265
+          title:
+            romaji: 'Free!: Eternal Summer'
+            english: Free! -Eternal Summer-
+            native: Free!-Eternal Summer-
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 3
+          endDate:
+            year: 2014
+            month: 9
+            day: 25
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 20555
+          idMal: 21557
+          title:
+            romaji: Omoide no Marnie
+            english: When Marnie Was There
+            native: 思い出のマーニー
+          synonyms:
+          - Souvenirs de Marnie
+          - Quando c'era Marnie
+          - Erinnerungen an Marnie
+          - El Recuerdo de Marnie
+          - Marnie - min hemmelige venninne
+          - När Marnie var där
+          - Marnie. Przyjaciółka ze snów
+          - As memórias de Marnie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 19
+          endDate:
+            year: 2014
+            month: 7
+            day: 19
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20606
+          idMal: 22145
+          title:
+            romaji: 'Kuroshitsuji: Book of Circus'
+            english: 'Black Butler: Book of Circus'
+            native: 黒執事 Book of Circus
+          synonyms:
+          - Black Butler 3
+          - Kuroshitsuji Circus Hen
+          - Kuroshitsuji Shin Series
+          - คนลึกไขปริศนาลับ ภาค 3
+          - 'คนลึกไขปริศนาลับ: Book of Circus'
+          - 'Hắc quản gia: Chương đoàn xiếc'
+          - 黑执事 Book of Circus 第3季
+          - 黑執事 Book of Circus 第3季
+          - Black Butler Book of Circus S3
+          - 'Hắc Quản Gia – Phần 3: Thách Đố Của Đoàn Xiếc Thú'
+          - 흑집사 Book of Circus
+          - 'Diácono Negro: Libro de circo temporada 3'
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 11
+          endDate:
+            year: 2014
+            month: 9
+            day: 12
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 20663
+          idMal: 22877
+          title:
+            romaji: Seirei Tsukai no Blade Dance
+            english: Blade Dance of the Elementalers
+            native: 精霊使いの剣舞【ブレイドダンス】
+          synonyms:
+          - 'Seirei Tsukai no Kenbu: Blade Dance'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 14
+          endDate:
+            year: 2014
+            month: 9
+            day: 29
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 20572
+          idMal: 21659
+          title:
+            romaji: Kill la Kill Tokubetsu-hen
+            english: 'Kill la Kill: GOODBYE AGAIN'
+            native: キルラキル 特別編
+          synonyms:
+          - Kill la Kill Episode 25
+          - Kill la Kill Special
+          - KLK
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 9
+            day: 3
+          endDate:
+            year: 2014
+            month: 9
+            day: 3
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 16904
+          idMal: 16904
+          title:
+            romaji: 'K: MISSING KINGS'
+            english: null
+            native: K MISSING KINGS
+          synonyms:
+          - K-Project Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 5
+          endDate:
+            year: 2014
+            month: 7
+            day: 5
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20520
+          idMal: 21105
+          title:
+            romaji: LOVE STAGE!!
+            english: null
+            native: LOVE STAGE!!
+          synonyms:
+          - ラブステージ
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 10
+          endDate:
+            year: 2014
+            month: 9
+            day: 11
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20583
+          idMal: 23309
+          title:
+            romaji: Rail Wars!
+            english: Rail Wars!
+            native: レールウォーズ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 4
+          endDate:
+            year: 2014
+            month: 9
+            day: 19
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 20769
+          idMal: 24991
+          title:
+            romaji: No Game No Life Specials
+            english: No Game No Life Specials
+            native: ノーゲーム・ノーライフ ミニ
+          synonyms:
+          - NGNL Specials
+          status: FINISHED
+          format: SPECIAL
+          episodes: 6
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 6
+            day: 25
+          endDate:
+            year: 2014
+            month: 11
+            day: 26
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 20467
+          idMal: 20509
+          title:
+            romaji: Fate/kaleid liner Prisma☆Illya 2wei!
+            english: Fate/kaleid liner Prisma☆Illya 2wei!
+            native: Fate/kaleid linerプリズマ☆イリヤ ツヴァイ！
+          synonyms:
+          - Fate/kaleid liner Prisma☆Illya Zwei!
+          - 'Судьба: Девочка-волшебница Иллия 2'
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 10
+          endDate:
+            year: 2014
+            month: 9
+            day: 11
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 20666
+          idMal: 23327
+          title:
+            romaji: Space☆Dandy 2
+            english: Space Dandy 2
+            native: スペース☆ダンディ 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 6
+          endDate:
+            year: 2014
+            month: 9
+            day: 25
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 20889
+          idMal: 27601
+          title:
+            romaji: 'Chuunibyou demo Koi ga Shitai! Ren: Saisei no... Jaou Shingan Mokushiroku'
+            english: 'Love, Chunibyo & Other Delusions - Heart Throb -: The Rikka Wars/ Apocalypse of the Wicked Lord Shingan
+              Reborn'
+            native: 中二病でも恋がしたい！戀 再生の･･･邪王真眼黙示録
+          synonyms: []
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 9
+            day: 16
+          endDate:
+            year: 2014
+            month: 9
+            day: 16
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20475
+          idMal: 20709
+          title:
+            romaji: Sabagebu!
+            english: Sabagebu! - Survival Game Club!
+            native: さばげぶっ!
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 6
+          endDate:
+            year: 2014
+            month: 9
+            day: 21
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20638
+          idMal: 22865
+          title:
+            romaji: Rokujouma no Shinryakusha!?
+            english: Invaders of the Rokujoma!?
+            native: 六畳間の侵略者!?
+          synonyms:
+          - ห้องเช่าป่วนก๊วนคนแปลก
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 12
+          endDate:
+            year: 2014
+            month: 9
+            day: 27
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 20779
+          idMal: 23385
+          title:
+            romaji: 'Kyoukai no Kanata #0 Shinonome'
+            english: 'Beyond the Boundary: Daybreak'
+            native: 境界の彼方＃0 東雲
+          synonyms:
+          - Beyond the Boundary OVA
+          - 'Beyond the Boundary: Daybreak'
+          - 'Kyokai no Kanat Episode 0: Shinonome'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 2
+          endDate:
+            year: 2014
+            month: 7
+            day: 2
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20711
+          idMal: 23421
+          title:
+            romaji: Re:_HAMATORA
+            english: 'Re: Hamatora'
+            native: Re:␣ハマトラ
+          synonyms:
+          - Hamatora The Animation Season 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 7
+            day: 8
+          endDate:
+            year: 2014
+            month: 9
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

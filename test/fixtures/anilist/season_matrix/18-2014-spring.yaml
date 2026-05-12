@@ -1,0 +1,669 @@
+metadata:
+  captured_at: '2026-05-11T11:33:06Z'
+  label: 2014-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2014
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:05 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '12'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 20464
+          idMal: 20583
+          title:
+            romaji: Haikyuu!!
+            english: HAIKYU!!
+            native: ハイキュー!!
+          synonyms:
+          - High Kyuu!!
+          - HAIKYÛ !!
+          - 排球少年！！
+          - Haikyu!! L'asso del volley
+          - ไฮคิว!! คู่ตบฟ้าประทาน
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 6
+          endDate:
+            year: 2014
+            month: 9
+            day: 21
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 19815
+          idMal: 19815
+          title:
+            romaji: No Game No Life
+            english: No Game, No Life
+            native: ノーゲーム・ノーライフ
+          synonyms:
+          - NGNL
+          - NO GAME NO LIFE游戏人生
+          - 游戏人生
+          - โนเกม โนไลฟ์
+          - 遊戲人生
+          - NO GAME NO LIFE 遊戲人生
+          - 'nogenora '
+          - ノゲノラ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 9
+          endDate:
+            year: 2014
+            month: 6
+            day: 25
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 20474
+          idMal: 20899
+          title:
+            romaji: 'JoJo no Kimyou na Bouken: Stardust Crusaders'
+            english: 'JoJo''s Bizarre Adventure: Stardust Crusaders'
+            native: ジョジョの奇妙な冒険 スターダストクルセイダース
+          synonyms:
+          - 'Dai San Bu Kujo Jotaro: Mirai e no Isan'
+          - 'JoJo no Kimyou na Bouken Part 3: Stardust Crusaders'
+          - 'JoJo''s Bizarre Adventure Part 3: Stardust Crusaders'
+          - 'ההרפתקה המוזרה של ג''וג''ו: צלבני אבק כוכבים '
+          - 'مغامرات جوجو العجيبة : فرسان غبار النجم'
+          - 'Le bizzarre avventure di JoJo: Stardust Crusaders'
+          - 'Невероятные приключения ДжоДжо: Крестоносцы звездной пыли'
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 5
+          endDate:
+            year: 2014
+            month: 9
+            day: 13
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 20458
+          idMal: 20785
+          title:
+            romaji: Mahouka Koukou no Rettousei
+            english: The Irregular at Magic High School
+            native: 魔法科高校の劣等生
+          synonyms:
+          - พี่น้องปริศนาโรงเรียนมหาเวท
+          - Непутёвый ученик в школе магии
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 6
+          endDate:
+            year: 2014
+            month: 9
+            day: 28
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 20457
+          idMal: 20787
+          title:
+            romaji: Black Bullet
+            english: Black Bullet
+            native: ブラック・ブレット
+          synonyms:
+          - 'แบล็ค บุลเลท '
+          - 黑色子彈
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 8
+          endDate:
+            year: 2014
+            month: 7
+            day: 1
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20626
+          idMal: 22043
+          title:
+            romaji: FAIRY TAIL (2014)
+            english: Fairy Tail Series 2
+            native: FAIRY TAIL (2014)
+          synonyms:
+          - Fairy Tail 2
+          - Fairy Tail Season 2
+          - フェアリーテイル (2014)
+          status: FINISHED
+          format: TV
+          episodes: 102
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 5
+          endDate:
+            year: 2016
+            month: 3
+            day: 26
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 19163
+          idMal: 19163
+          title:
+            romaji: Date A Live II
+            english: Date A Live II
+            native: デート・ア・ライブⅡ
+          synonyms:
+          - Date A Live 2
+          - พิชิตรัก พิทักษ์โลก ภาค 2
+          - Рандеву с жизнью
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 12
+          endDate:
+            year: 2014
+            month: 6
+            day: 14
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 20607
+          idMal: 22135
+          title:
+            romaji: Ping Pong THE ANIMATION
+            english: Ping Pong the Animation
+            native: ピンポン THE ANIMATION
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 11
+          endDate:
+            year: 2014
+            month: 6
+            day: 20
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 20519
+          idMal: 21647
+          title:
+            romaji: Tamako Love Story
+            english: Tamako -love story-
+            native: たまこラブストーリー
+          synonyms:
+          - Miłosna opowieść Tamako
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 26
+          endDate:
+            year: 2014
+            month: 4
+            day: 26
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20541
+          idMal: 21603
+          title:
+            romaji: Mekakucity Actors
+            english: null
+            native: メカクシティアクターズ
+          synonyms:
+          - Kagerou Days
+          - Heat-Haze Days
+          - Mekaku City Actors
+          - Kagerou Project
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 13
+          endDate:
+            year: 2014
+            month: 6
+            day: 29
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20462
+          idMal: 20853
+          title:
+            romaji: Hitsugi no Chaika
+            english: Chaika -The Coffin Princess-
+            native: 棺姫のチャイカ
+          synonyms:
+          - Hitsugi Hime no Chaika
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 10
+          endDate:
+            year: 2014
+            month: 6
+            day: 26
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 20529
+          idMal: 21405
+          title:
+            romaji: Bokura wa Minna Kawaisou
+            english: The Kawai Complex Guide to Manors and Hostel Behavior
+            native: 僕らはみんな河合荘
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 4
+          endDate:
+            year: 2014
+            month: 6
+            day: 20
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20527
+          idMal: 21327
+          title:
+            romaji: Isshuukan Friends.
+            english: One Week Friends
+            native: 一週間フレンズ。
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 7
+          endDate:
+            year: 2014
+            month: 6
+            day: 23
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20534
+          idMal: 21431
+          title:
+            romaji: Gokukoku no Brynhildr
+            english: Brynhildr in the Darkness
+            native: 極黒のブリュンヒルデ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 6
+          endDate:
+            year: 2014
+            month: 6
+            day: 29
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 20517
+          idMal: 21273
+          title:
+            romaji: Gochuumon wa Usagi desu ka?
+            english: Is the Order a Rabbit?
+            native: ご注文はうさぎですか？
+          synonyms:
+          - Gochiusa
+          - ごちうさ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 10
+          endDate:
+            year: 2014
+            month: 6
+            day: 26
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20599
+          idMal: 22101
+          title:
+            romaji: Soredemo Sekai wa Utsukushii
+            english: The World is Still Beautiful
+            native: それでも世界は美しい
+          synonyms:
+          - Sore demo Sekai wa Utsukushii
+          - Even so, the World is Beautiful
+          - Still, the World is Beautiful
+          - O Mundo Ainda é Belo
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 6
+          endDate:
+            year: 2014
+            month: 6
+            day: 29
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20595
+          idMal: 21939
+          title:
+            romaji: Mushishi Zoku Shou
+            english: MUSHI-SHI The Next Passage
+            native: 蟲師 続章
+          synonyms:
+          - Mushi-shi Zoku Shou
+          - Mushishi Zokushou
+          - 'Mushishi: The Next Chapter'
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 5
+          endDate:
+            year: 2014
+            month: 6
+            day: 21
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 19111
+          idMal: 19111
+          title:
+            romaji: Love Live! School idol project 2nd Season
+            english: Love Live! School Idol Project 2nd Season
+            native: ラブライブ! School idol project 2期
+          synonyms:
+          - 'Живая любовь: проект "Школьный идол". 2 сезон'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 6
+          endDate:
+            year: 2014
+            month: 6
+            day: 29
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 19429
+          idMal: 19429
+          title:
+            romaji: Akuma no Riddle
+            english: Riddle Story of Devil
+            native: 悪魔のリドル
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 4
+          endDate:
+            year: 2014
+            month: 6
+            day: 20
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 20537
+          idMal: 21863
+          title:
+            romaji: Mangaka-san to Assistant-san to THE ANIMATION
+            english: The Comic Artist & His Assistants
+            native: マンガ家さんとアシスタントさんと THE ANIMATION
+          synonyms:
+          - The Comic Artist and His Assistants
+          - The Manga Creator and the Assistant and
+          - Mangaka-san and Assistant-san and...
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 8
+          endDate:
+            year: 2014
+            month: 6
+            day: 24
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20556
+          idMal: 21561
+          title:
+            romaji: Ryuugajou Nanana no Maizoukin
+            english: Nanana's Buried Treasure
+            native: 龍ヶ嬢七々々の埋蔵金
+          synonyms:
+          - ล่าขุมสมบัติปริศนา นานานะ
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 11
+          endDate:
+            year: 2014
+            month: 6
+            day: 20
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 20635
+          idMal: 22777
+          title:
+            romaji: Dragon Ball Kai (2014)
+            english: 'Dragon Ball Z Kai: The Final Chapters'
+            native: ドラゴンボール改 (2014)
+          synonyms:
+          - Dragon Ball Kai
+          - DBK
+          - DB Kai
+          - DBZ Kai
+          - Драконий жемчуг Кай (2014)
+          status: FINISHED
+          format: TV
+          episodes: 69
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 6
+          endDate:
+            year: 2015
+            month: 6
+            day: 28
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 20592
+          idMal: 21033
+          title:
+            romaji: Seikoku no Dragonar
+            english: Dragonar Academy
+            native: 星刻の竜騎士
+          synonyms:
+          - อัศวินมือใหม่มังกรป้ายแดง
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 5
+          endDate:
+            year: 2014
+            month: 6
+            day: 21
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 19775
+          idMal: 19775
+          title:
+            romaji: Sidonia no Kishi
+            english: Knights of Sidonia
+            native: シドニアの騎士
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 11
+          endDate:
+            year: 2014
+            month: 6
+            day: 27
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 19685
+          idMal: 19685
+          title:
+            romaji: Kanojo ga Flag wo Oraretara
+            english: If Her Flag Breaks
+            native: 彼女がフラグをおられたら
+          synonyms:
+          - がをられ
+          - Gaworare
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2014
+          startDate:
+            year: 2014
+            month: 4
+            day: 7
+          endDate:
+            year: 2014
+            month: 6
+            day: 30
+          averageScore: 59
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

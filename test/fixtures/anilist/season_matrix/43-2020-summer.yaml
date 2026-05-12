@@ -1,0 +1,667 @@
+metadata:
+  captured_at: '2026-05-11T11:34:17Z'
+  label: 2020-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2020
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:17 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '9'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 108632
+          idMal: 39587
+          title:
+            romaji: Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season
+            english: Re:ZERO -Starting Life in Another World- Season 2
+            native: Re:ゼロから始める異世界生活 2nd Season
+          synonyms:
+          - Re:Zero kara Hajimeru Isekai Seikatsu (2020)
+          - 'Re: 제로부터 시작하는 이세계 생활 2기'
+          - Re:从零开始的异世界生活第二季（上半）
+          - Re:从零开始的异世界生活 2 上半
+          - Re:Zero รีเซทชีวิต ฝ่าวิกฤตต่างโลก ภาค 2
+          - Re:Zero — жизнь с нуля в другом мире. Второй сезон
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 8
+          endDate:
+            year: 2020
+            month: 9
+            day: 30
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 113813
+          idMal: 40839
+          title:
+            romaji: Kanojo, Okarishimasu
+            english: Rent-a-Girlfriend
+            native: 彼女、お借りします
+          synonyms:
+          - I'd like to Borrow a Girlfriend
+          - Kanokari
+          - สะดุดรักยัยแฟนเช่า
+          - Pacar Sewaan
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 11
+          endDate:
+            year: 2020
+            month: 9
+            day: 26
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 116006
+          idMal: 41353
+          title:
+            romaji: THE GOD OF HIGH SCHOOL
+            english: The God of High School
+            native: THE GOD OF HIGH SCHOOL ゴッド・オブ・ハイスクール
+          synonyms:
+          - GoH
+          - 갓 오브 하이스쿨
+          - Бог старшей школы
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 6
+          endDate:
+            year: 2020
+            month: 9
+            day: 28
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 114236
+          idMal: 40956
+          title:
+            romaji: 'Enen no Shouboutai: Ni no Shou'
+            english: Fire Force Season 2
+            native: 炎炎ノ消防隊 弐ノ章
+          synonyms:
+          - Enen no Shouboutai 2
+          - หน่วยผจญคนไฟลุก ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 4
+          endDate:
+            year: 2020
+            month: 12
+            day: 12
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 112301
+          idMal: 40496
+          title:
+            romaji: 'Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou'
+            english: 'The Misfit of Demon King Academy: History’s Strongest Demon King Reincarnates and Goes to School with
+              His Descendants'
+            native: 魔王学院の不適合者 ～史上最強の魔王の始祖、転生して子孫たちの学校へ通う～
+          synonyms:
+          - Maou Gakuin no Futekigousha
+          - The Misfit of Demon King Academy
+          - 魔王学院の不適合者
+          - 'ใครว่าข้าไม่เหมาะเป็นจอมมาร: ต้นตระกูลจอมมารที่เเกร่งที่สุดในประวัติศาสตร์เกิดใหม่ไปเรียนที่โรงเรียนลูกหลาน'
+          - 魔王学院的不适任者～史上最强的魔王始祖，转生就读子孙们的学校～
+          - Непригодный для Академии владыки тьмы
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 4
+          endDate:
+            year: 2020
+            month: 9
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 108489
+          idMal: 39547
+          title:
+            romaji: Yahari Ore no Seishun Love Come wa Machigatteiru. Kan
+            english: My Teen Romantic Comedy SNAFU Climax!
+            native: やはり俺の青春ラブコメはまちがっている。完
+          synonyms:
+          - Oregairu 3
+          - 俺ガイル3
+          - กะแล้วชีวิตรักวัยรุ่นของผมมันต้องไม่สดใสเลยสักนิด ภาค 3
+          - กะแล้วชีวิตรักวัยรุ่นของผมมันต้องไม่สดใสเลยสักนิด ภาคอวสาน
+          - Oregairu Kan
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 10
+          endDate:
+            year: 2020
+            month: 9
+            day: 25
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 103047
+          idMal: 37987
+          title:
+            romaji: Violet Evergarden Movie
+            english: 'Violet Evergarden: the Movie'
+            native: 劇場版 ヴァイオレット・エヴァーガーデン
+          synonyms:
+          - Виолетта Эвергарден
+          - Вайоллет Эвергарден
+          - 薇尔莉特·伊芙加登
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 9
+            day: 18
+          endDate:
+            year: 2020
+            month: 9
+            day: 18
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 114308
+          idMal: 40540
+          title:
+            romaji: 'Sword Art Online: Alicization - War of Underworld Part 2'
+            english: 'Sword Art Online: Alicization - War of Underworld Part 2'
+            native: ソードアート・オンライン アリシゼーション War of Underworld 最終章 (2nd Season)
+          synonyms:
+          - 'Sword Art Online: Alicization - War of Underworld Last Season'
+          - SAOV
+          - SAO5
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 12
+          endDate:
+            year: 2020
+            month: 9
+            day: 20
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 115113
+          idMal: 41226
+          title:
+            romaji: Uzaki-chan wa Asobitai!
+            english: Uzaki-chan Wants to Hang Out!
+            native: 宇崎ちゃんは遊びたい！
+          synonyms:
+          - 宇崎学妹想要玩！
+          - รุ่นน้องตัวป่วน อยากชวนเที่ยวเล่น
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 10
+          endDate:
+            year: 2020
+            month: 9
+            day: 25
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 21719
+          idMal: 33050
+          title:
+            romaji: Fate/stay night [Heaven's Feel] III. spring song
+            english: Fate/stay night [Heaven’s Feel] III. spring song
+            native: Fate/stay night[Heaven's Feel] ⅠⅠⅠ.spring song
+          synonyms:
+          - Fate/HF III
+          - 'Судьба/Ночь схватки: Прикосновение небес 3'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 8
+            day: 15
+          endDate:
+            year: 2020
+            month: 8
+            day: 15
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 110353
+          idMal: 40056
+          title:
+            romaji: Deca-Dence
+            english: DECA-DENCE
+            native: デカダンス
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 8
+          endDate:
+            year: 2020
+            month: 9
+            day: 23
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 111734
+          idMal: 40421
+          title:
+            romaji: Given Movie
+            english: Given The Movie
+            native: 映画 ギヴン
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 8
+            day: 22
+          endDate:
+            year: 2020
+            month: 8
+            day: 22
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 112788
+          idMal: 40615
+          title:
+            romaji: Umibe no Étranger
+            english: The Stranger by the Shore
+            native: 海辺のエトランゼ
+          synonyms:
+          - Seaside Stranger
+          - Umibe no Etranger
+          - L'Étranger de la plage
+          - The Stranger by the Beach
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 9
+            day: 11
+          endDate:
+            year: 2020
+            month: 9
+            day: 11
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 113286
+          idMal: 40708
+          title:
+            romaji: Monster Musume no Oisha-san
+            english: Monster Girl Doctor
+            native: モンスター娘のお医者さん
+          synonyms:
+          - MonIsha
+          - モン医者
+          - รักษาหนูหน่อยคุณหมอมอนสเตอร์
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 12
+          endDate:
+            year: 2020
+            month: 9
+            day: 27
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 111965
+          idMal: 40436
+          title:
+            romaji: Peter Grill to Kenja no Jikan
+            english: Peter Grill and the Philosopher's Time
+            native: ピーターグリルと賢者の時間
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 11
+          endDate:
+            year: 2020
+            month: 9
+            day: 26
+          averageScore: 53
+          nextAiringEpisode: null
+        - id: 122349
+          idMal: 42603
+          title:
+            romaji: 'Boku no Hero Academia: Ikinokore! Kesshi no Survival Kunren'
+            english: 'My Hero Academia: Make It! Do-or-Die Survival Training'
+            native: 僕のヒーローアカデミア 生き残れ！決死のサバイバル訓練
+          synonyms: []
+          status: FINISHED
+          format: ONA
+          episodes: 2
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 8
+            day: 16
+          endDate:
+            year: 2020
+            month: 8
+            day: 16
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 112357
+          idMal: 40515
+          title:
+            romaji: 'Nihon Chinbotsu: 2020'
+            english: 'Japan Sinks: 2020'
+            native: 日本沈没2020
+          synonyms:
+          - '2020: Japão Submerso'
+          - 'El Hundimiento de Japón: 2020'
+          - 'Japón se hunde: 2020'
+          status: FINISHED
+          format: ONA
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 9
+          endDate:
+            year: 2020
+            month: 7
+            day: 9
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 112818
+          idMal: 40623
+          title:
+            romaji: Dokyuu Hentai HxEros
+            english: SUPER HXEROS
+            native: ド級編隊エグゼロス
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 4
+          endDate:
+            year: 2020
+            month: 9
+            day: 26
+          averageScore: 54
+          nextAiringEpisode: null
+        - id: 114195
+          idMal: 40936
+          title:
+            romaji: 'Ore wo Suki nano wa Omae dake ka yo: Oretachi no Game Set'
+            english: 'ORESUKI: Are you the only one who loves me?: Our Playball / Our End Run / Our Game'
+            native: 俺を好きなのはお前だけかよ～俺たちのゲームセット～
+          synonyms: []
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 9
+            day: 2
+          endDate:
+            year: 2020
+            month: 9
+            day: 2
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 119113
+          idMal: 42091
+          title:
+            romaji: 'Shingeki no Kyojin: Chronicle'
+            english: Attack on Titan ~Chronicle~
+            native: 進撃の巨人 〜クロニクル〜
+          synonyms:
+          - ผ่าพิภพไททัน Chronicle
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 17
+          endDate:
+            year: 2020
+            month: 7
+            day: 17
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 111852
+          idMal: 40416
+          title:
+            romaji: 'Date A Bullet: Dead or Bullet'
+            english: 'Date A Bullet: Dead or Bullet & Nightmare or Queen'
+            native: デート・ア・バレット デッド・オア・バレット
+          synonyms:
+          - พิชิตรัก พิทักษ์โลก เดอะมูฟวี่ Date A Bullet
+          - 'Рандеву с пулей: Смерть или пуля'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 8
+            day: 14
+          endDate:
+            year: 2020
+            month: 8
+            day: 14
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 109125
+          idMal: 39753
+          title:
+            romaji: Omoi, Omoware, Furi, Furare
+            english: null
+            native: 思い、思われ、ふり、ふられ
+          synonyms:
+          - Love, Be Loved, Leave, Be Left
+          - Love Me, Love Me Not
+          - Любит — не любит
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 9
+            day: 18
+          endDate:
+            year: 2020
+            month: 9
+            day: 18
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 110857
+          idMal: 40215
+          title:
+            romaji: Aggressive Retsuko Season 3
+            english: 'Aggretsuko: Season 3'
+            native: アグレッシブ烈子 シーズン3
+          synonyms: []
+          status: FINISHED
+          format: ONA
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 8
+            day: 27
+          endDate:
+            year: 2020
+            month: 8
+            day: 27
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 112803
+          idMal: 40529
+          title:
+            romaji: No Guns Life 2
+            english: No Guns Life Season 2
+            native: ノー・ガンズ・ライフ 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 10
+          endDate:
+            year: 2020
+            month: 9
+            day: 25
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 110371
+          idMal: 40075
+          title:
+            romaji: 'Koi to Producer: EVOL×LOVE'
+            english: 'Mr Love: Queen''s Choice'
+            native: 恋とプロデューサー～EVOL×LOVE～
+          synonyms:
+          - Love and Producer
+          - 恋与制作人
+          - Lian Yu Zhizuoren
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 7
+            day: 16
+          endDate:
+            year: 2020
+            month: 9
+            day: 30
+          averageScore: 59
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

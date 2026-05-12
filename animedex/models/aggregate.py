@@ -1,21 +1,21 @@
 """Shared result envelope for multi-source aggregate commands.
 
-Aggregate commands such as ``animedex search``, ``animedex show``,
-``animedex season``, and ``animedex schedule`` fan out to one or more
-upstream backends and may receive a mix of successful rows and
-per-source failures. This module provides the stable envelope shape
-those commands return: ``items`` contains only rows from successful
-sources, while ``sources`` records one status row per selected
-backend.
+Aggregate commands such as ``animedex season`` and ``animedex
+schedule`` fan out to multiple upstream backends and may receive a
+mix of successful rows and per-source failures. This module provides
+the stable envelope shape those commands return: ``items`` contains
+only rows from successful sources, while ``sources`` records one
+status row per selected backend.
 """
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from pydantic import Field
 
+from animedex.models.anime import Anime, AnimeTitle
 from animedex.models.common import AnimedexModel, SourceTag
 
 
@@ -67,12 +67,16 @@ class AggregateResult(AnimedexModel):
 
     :ivar items: Successful rows from every healthy source.
     :vartype items: list
-    :ivar sources: Per-source status map.
+    :ivar sources: Per-backend status map.
     :vartype sources: dict[str, AggregateSourceStatus]
+    :ivar merge_diagnostics: Per-row diagnostics for rows that could
+                             not enter merge analysis.
+    :vartype merge_diagnostics: list of dict
     """
 
     items: List[Any] = Field(default_factory=list)
     sources: Dict[str, AggregateSourceStatus] = Field(default_factory=dict)
+    merge_diagnostics: List[Dict[str, Any]] = Field(default_factory=list)
 
     @property
     def failed_sources(self) -> Dict[str, AggregateSourceStatus]:
@@ -103,6 +107,65 @@ class AggregateResult(AnimedexModel):
         return bool(self.sources) and self.succeeded_count == 0
 
 
+class ScheduleCalendarResult(AggregateResult):
+    """Aggregate schedule envelope with display-time metadata.
+
+    The JSON renderer emits this as a normal structured aggregate
+    result. The TTY renderer uses the timezone and date window fields
+    to group schedule rows into a calendar-like view.
+
+    :ivar timezone: IANA timezone name, ``"UTC"``, ``"local"``, or a
+                    fixed-offset value such as ``"+08:00"``.
+    :vartype timezone: str
+    :ivar window_start: Inclusive local date for the schedule window.
+    :vartype window_start: datetime.date
+    :ivar window_end: Exclusive local date for the schedule window.
+    :vartype window_end: datetime.date
+    """
+
+    timezone: str
+    window_start: date
+    window_end: date
+
+
+class MergedAnime(AnimedexModel):
+    """One anime entry merged across aggregate season sources.
+
+    :ivar title: Canonical display title chosen from the contributing
+                 records.
+    :vartype title: AnimeTitle
+    :ivar ids: Combined external id map.
+    :vartype ids: dict[str, str]
+    :ivar sources: Provenance tags for every contributing backend.
+    :vartype sources: list[SourceTag]
+    :ivar records: Per-backend common anime projections.
+    :vartype records: dict[str, Anime]
+    :ivar core: Compact merged summary. The JSON output keeps this
+                next to the full per-backend records so consumers can
+                read the resolved item without recomputing it.
+    :vartype core: dict
+    :ivar source_details: Per-backend source-specific fields promoted
+                          from the contributing records.
+    :vartype source_details: dict[str, dict]
+    :ivar source_payloads: Full per-backend payloads for JSON
+                           consumers that need the complete upstream
+                           row shape.
+    :vartype source_payloads: dict[str, dict]
+    :ivar id_conflicts: External id conflicts found while building the
+                        merged id map.
+    :vartype id_conflicts: list of dict
+    """
+
+    title: AnimeTitle
+    ids: Dict[str, str] = Field(default_factory=dict)
+    sources: List[SourceTag] = Field(default_factory=list)
+    records: Dict[str, Anime] = Field(default_factory=dict)
+    core: Dict[str, Any] = Field(default_factory=dict)
+    source_details: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
+    source_payloads: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
+    id_conflicts: List[Dict[str, Any]] = Field(default_factory=list)
+
+
 def selftest() -> bool:
     """Smoke-test the aggregate envelope model.
 
@@ -114,6 +177,32 @@ def selftest() -> bool:
     :rtype: bool
     """
     src = SourceTag(backend="_selftest", fetched_at=datetime.now(timezone.utc))
+    a = Anime(id="_selftest:1", title=AnimeTitle(romaji="x"), ids={"_selftest": "1"}, source=src)
+    merged = MergedAnime(
+        title=AnimeTitle(romaji="x"),
+        ids={"_selftest": "1"},
+        sources=[src],
+        records={"_selftest": a},
+        core={"title": {"romaji": "x"}, "sources": ["_selftest"]},
+        source_details={"_selftest": {"score": "1.0/10.0"}},
+        source_payloads={"_selftest": {"id": "_selftest:1"}},
+        id_conflicts=[
+            {
+                "key": "_selftest",
+                "kept_value": "1",
+                "conflicting_value": "2",
+                "backend": "_selftest",
+                "source": "record.id",
+            }
+        ],
+    )
+    calendar = ScheduleCalendarResult(
+        items=[src],
+        sources={"ok": AggregateSourceStatus(backend="ok", status="ok", items=1)},
+        timezone="UTC",
+        window_start=datetime.now(timezone.utc).date(),
+        window_end=datetime.now(timezone.utc).date(),
+    )
     result = AggregateResult(
         items=[src],
         sources={
@@ -126,15 +215,25 @@ def selftest() -> bool:
                 http_status=500,
             ),
         },
+        merge_diagnostics=[
+            {
+                "backend": "_selftest",
+                "id": "_selftest:broken",
+                "reason": "to-common-failed",
+                "message": "ValueError: broken",
+            }
+        ],
     )
     decoded = result.model_dump(mode="json")
     assert decoded["items"][0]["backend"] == "_selftest"
+    assert decoded["merge_diagnostics"][0]["reason"] == "to-common-failed"
+    assert merged.records["_selftest"].id == "_selftest:1"
+    assert merged.core["sources"] == ["_selftest"]
+    assert merged.source_details["_selftest"]["score"] == "1.0/10.0"
+    assert merged.source_payloads["_selftest"]["id"] == "_selftest:1"
+    assert merged.id_conflicts[0]["source"] == "record.id"
+    assert calendar.timezone == "UTC"
     assert result.succeeded_count == 1
     assert list(result.failed_sources) == ["failed"]
     assert not result.all_failed
-    failed = AggregateResult(
-        items=[],
-        sources={"bad": AggregateSourceStatus(backend="bad", status="failed", reason="upstream-error")},
-    )
-    assert failed.all_failed
     return True

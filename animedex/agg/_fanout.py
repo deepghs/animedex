@@ -32,7 +32,17 @@ class FanoutSource:
     call: Callable[[], object]
 
 
-_HTTP_STATUS_RE = re.compile(r"\b(?:HTTP\s*)?([1-5][0-9]{2})\b", re.IGNORECASE)
+_HTTP_STATUS_RE = re.compile(
+    r"\b(?:"
+    r"HTTP(?:[/ ]?[0-9.]+)?\s+"
+    r"|status(?:\s+code)?\s*[:=]?\s*"
+    r"|returned\s+"
+    r"|response\s+"
+    r"|AniList\s+|Jikan\s+|Kitsu\s+|MangaDex\s+|Shikimori\s+|Danbooru\s+|ANN\s+|Trace\.moe\s+"
+    r")"
+    r"([1-5][0-9]{2})\b",
+    re.IGNORECASE,
+)
 
 
 def _duration_ms(t_start: float) -> float:
@@ -47,10 +57,26 @@ def _normalise_items(value: object) -> List[object]:
         return value
     if isinstance(value, tuple):
         return list(value)
+    if isinstance(value, dict):
+        for key in ("items", "data"):
+            rows = value.get(key)
+            if isinstance(rows, list):
+                return rows
+            if isinstance(rows, tuple):
+                return list(rows)
+        raise ApiError(
+            "aggregate source returned a dict without list-shaped items or data",
+            backend="aggregate",
+            reason="upstream-shape",
+        )
     rows = getattr(value, "rows", None)
     if isinstance(rows, list):
         return rows
-    return [value]
+    raise ApiError(
+        f"aggregate source returned unsupported shape: {type(value).__name__}",
+        backend="aggregate",
+        reason="upstream-shape",
+    )
 
 
 def _http_status_from_message(message: str) -> Optional[int]:
@@ -143,7 +169,7 @@ def selftest() -> bool:
         return []
 
     def _fail():
-        raise ApiError("upstream 500", backend="bad", reason="upstream-error")
+        raise ApiError("upstream returned 500", backend="bad", reason="upstream-error")
 
     result = run_fanout(
         [

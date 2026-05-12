@@ -1,0 +1,682 @@
+metadata:
+  captured_at: '2026-05-11T11:33:46Z'
+  label: 2018-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2018
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:46 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '19'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 21827
+          idMal: 33352
+          title:
+            romaji: Violet Evergarden
+            english: Violet Evergarden
+            native: ヴァイオレット・エヴァーガーデン
+          synonyms:
+          - ויולט אברגרדן
+          - فيوليت
+          - 紫罗兰永恒花园
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 11
+          endDate:
+            year: 2018
+            month: 4
+            day: 5
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 99423
+          idMal: 35849
+          title:
+            romaji: Darling in the Franxx
+            english: DARLING in the FRANXX
+            native: ダーリン・イン・ザ・フランキス
+          synonyms:
+          - DitF
+          - DarliFra
+          - Любимый во Франксе
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 13
+          endDate:
+            year: 2018
+            month: 7
+            day: 7
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 98460
+          idMal: 35120
+          title:
+            romaji: DEVILMAN crybaby
+            english: Devilman Crybaby
+            native: DEVILMAN crybaby
+          synonyms:
+          - デビルマン クライベイビー
+          - 'דווילמן: בכיין'
+          - طفل الشيطان
+          - เดวิลแมน ครายเบบี้
+          status: FINISHED
+          format: ONA
+          episodes: 10
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 5
+          endDate:
+            year: 2018
+            month: 1
+            day: 5
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 99539
+          idMal: 34577
+          title:
+            romaji: 'Nanatsu no Taizai: Imashime no Fukkatsu'
+            english: 'The Seven Deadly Sins: Revival of the Commandments'
+            native: 七つの大罪 戒めの復活
+          synonyms:
+          - 'The Seven Deadly Sins: Die Rückkehr der Gebote'
+          - ศึกตำนาน 7 อัศวิน ภาค 2 คืนชีพบัญญัติสิบประการ
+          - 'The Seven Deadly Sins: Odrodzenie przykazań'
+          - 'Семь смертных грехов: Возрождение Заповедей'
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 13
+          endDate:
+            year: 2018
+            month: 6
+            day: 30
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 98437
+          idMal: 35073
+          title:
+            romaji: Overlord II
+            english: Overlord II
+            native: オーバーロードⅡ
+          synonyms:
+          - Over Lord 2
+          - โอเวอร์ลอร์ด ภาค 2
+          - โอเวอร์ ลอร์ด จอมมารพิชิตโลก ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 9
+          endDate:
+            year: 2018
+            month: 4
+            day: 3
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 98034
+          idMal: 34612
+          title:
+            romaji: Saiki Kusuo no Ψ-nan 2
+            english: The Disastrous Life of Saiki K. Season 2
+            native: 斉木楠雄のΨ難 2
+          synonyms:
+          - Saiki Kusuo no Psi Nan 2
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 17
+          endDate:
+            year: 2018
+            month: 6
+            day: 27
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 99468
+          idMal: 35860
+          title:
+            romaji: Karakai Jouzu no Takagi-san
+            english: Teasing Master Takagi-san
+            native: からかい上手の高木さん
+          synonyms:
+          - Skilled Teaser Takagi-san
+          - 'Takagi-san: Experta en Bromas Pesadas'
+          - טאקאגי-סאן אלופת ההקנטות
+          - 擅长捉弄的高木同学
+          - سيد الدعابة تاكاجي-سان
+          - Nhất quỷ Nhì ma, Thứ ba Takagi
+          - Nicht schon wieder, Takagi-san
+          - 'แกล้งนัก รักนะ รู้ยัง '
+          - Τακάγκι-σαν, το Αρχιπειραχτήρι
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 8
+          endDate:
+            year: 2018
+            month: 3
+            day: 26
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 99426
+          idMal: 35839
+          title:
+            romaji: Sora yori mo Tooi Basho
+            english: A Place Further Than the Universe
+            native: 宇宙よりも遠い場所
+          synonyms:
+          - Uchuu Yorimo Toui Basho
+          - Sora yorimo Tooi Basho
+          - Uchuu yori mo Tooi Basho
+          - Yorimoi
+          - מקום רחוק יותר מהיקום
+          - ตามหัวใจไปสุดขอบฟ้า
+          - ดินแดนที่ห่างไกลยิ่งกว่าอวกาศ
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 2
+          endDate:
+            year: 2018
+            month: 3
+            day: 27
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 98444
+          idMal: 34798
+          title:
+            romaji: Yuru Camp△
+            english: Laid-Back Camp
+            native: ゆるキャン△
+          synonyms:
+          - Yurucamp
+          - Yurukyan△
+          - 摇曳露营△
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 4
+          endDate:
+            year: 2018
+            month: 3
+            day: 22
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 99457
+          idMal: 35851
+          title:
+            romaji: Sayonara no Asa ni Yakusoku no Hana wo Kazarou
+            english: 'Maquia: When the Promised Flower Blooms'
+            native: さよならの朝に約束の花をかざろう
+          synonyms:
+          - SayoAsa
+          - さよあさ
+          - ' Maquia - Decoriamo la mattina dell''addio con i fiori promessi'
+          - Maquia - Eine unsterbliche Liebesgeschichte
+          - Укрась прощальное утро цветами обещания
+          - 'Maquia: Una historia de amor eterno'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 2
+            day: 24
+          endDate:
+            year: 2018
+            month: 2
+            day: 24
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 97832
+          idMal: 34382
+          title:
+            romaji: citrus
+            english: Citrus
+            native: citrus
+          synonyms:
+          - Цитрус
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 6
+          endDate:
+            year: 2018
+            month: 3
+            day: 24
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 97907
+          idMal: 34497
+          title:
+            romaji: Death March Kara Hajimaru Isekai Kyousoukyoku
+            english: Death March to the Parallel World Rhapsody
+            native: デスマーチからはじまる異世界狂想曲
+          synonyms:
+          - โศกนาฏกรรมต่างโลกเริ่มต้นจากเดธมาร์ช
+          - Pawai Maut Berujung Rapsodi Dunia Lain
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 11
+          endDate:
+            year: 2018
+            month: 3
+            day: 29
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 98635
+          idMal: 35466
+          title:
+            romaji: 'ReLIFE: Kanketsu-hen'
+            english: 'ReLIFE: Final Arc'
+            native: ReLIFE 完結編
+          synonyms:
+          - ReLIFE OVA
+          - Повторная жизнь ОВА
+          status: FINISHED
+          format: OVA
+          episodes: 4
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 3
+            day: 21
+          endDate:
+            year: 2018
+            month: 3
+            day: 21
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 21665
+          idMal: 32827
+          title:
+            romaji: 'B: The Beginning'
+            english: 'B: The Beginning'
+            native: 'B: The Beginning'
+          synonyms:
+          - Perfect Bones
+          - 'بي: البداية'
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 3
+            day: 2
+          endDate:
+            year: 2018
+            month: 3
+            day: 2
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 98503
+          idMal: 35222
+          title:
+            romaji: Gakuen Babysitters
+            english: School Babysitters
+            native: 学園ベビーシッターズ
+          synonyms:
+          - 学园奶爸
+          - นักเรียนพี่เลี้ยงเด็ก
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 7
+          endDate:
+            year: 2018
+            month: 3
+            day: 25
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 98385
+          idMal: 34984
+          title:
+            romaji: Koi wa Ameagari no You ni
+            english: After the Rain
+            native: 恋は雨上がりのように
+          synonyms:
+          - KoiAme
+          - Love is Like after the Rain
+          - Depois da Chuva
+          - Dopo la pioggia
+          - Après la pluie
+          - เส้นทางชีวิต ลิขิตหัวใจ
+          - Después de la lluvia
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 10
+          endDate:
+            year: 2018
+            month: 3
+            day: 30
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 98384
+          idMal: 34944
+          title:
+            romaji: 'Bungou Stray Dogs: DEAD APPLE'
+            english: 'Bungo Stray Dogs: DEAD APPLE'
+            native: 文豪ストレイドッグス DEAD APPLE
+          synonyms:
+          - Bungou Stray Dogs Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 3
+            day: 3
+          endDate:
+            year: 2018
+            month: 3
+            day: 3
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 98762
+          idMal: 35608
+          title:
+            romaji: 'Chuunibyou demo Koi ga Shitai!: Take On Me'
+            english: 'Love, Chunibyo & Other Delusions: Take on Me'
+            native: 映画 中二病でも恋がしたい！ -Take On Me-
+          synonyms:
+          - Miłość, gimbaza i kosmiczna faza! Za mną leć
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 6
+          endDate:
+            year: 2018
+            month: 1
+            day: 6
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 97768
+          idMal: 34279
+          title:
+            romaji: Grancrest Senki
+            english: Record of Grancrest War
+            native: グランクレスト戦記
+          synonyms:
+          - บันทึกสงครามแกรนเครสท์
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 6
+          endDate:
+            year: 2018
+            month: 6
+            day: 23
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 98549
+          idMal: 35330
+          title:
+            romaji: Poputepipikku
+            english: Pop Team Epic
+            native: ポプテピピック
+          synonyms:
+          - PPTP
+          - PTE
+          - Poptepipic
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 7
+          endDate:
+            year: 2018
+            month: 3
+            day: 25
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 21717
+          idMal: 33047
+          title:
+            romaji: Fate/EXTRA Last Encore
+            english: Fate/EXTRA Last Encore
+            native: Fate/EXTRA Last Encore
+          synonyms:
+          - Oblitus Copernican Theory
+          - Illustrias Geocentric Theory
+          - פייט/אקסטרה ההדרן האחרון
+          - 'Судьба/Дополнение: Последний вызов на бис'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 28
+          endDate:
+            year: 2018
+            month: 7
+            day: 29
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 100784
+          idMal: 36838
+          title:
+            romaji: 'Gintama.: Shirogane no Tamashii-hen'
+            english: 'Gintama.: Silver Soul Arc'
+            native: 銀魂. 銀ノ魂篇
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 8
+          endDate:
+            year: 2018
+            month: 3
+            day: 26
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 99940
+          idMal: 36124
+          title:
+            romaji: 'Itou Junji: Collection'
+            english: Junji Ito Collection
+            native: 伊藤潤二「コレクション」
+          synonyms:
+          - จุนจิ อิโต้ คอลเลคชั่นสยอง
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 5
+          endDate:
+            year: 2018
+            month: 3
+            day: 23
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 99507
+          idMal: 35905
+          title:
+            romaji: Ryuuou no Oshigoto!
+            english: The Ryuo's Work is Never Done!
+            native: りゅうおうのおしごと!
+          synonyms:
+          - สอนหมากหนูที คุณพี่จ้าวมังกร!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 8
+          endDate:
+            year: 2018
+            month: 3
+            day: 26
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 100332
+          idMal: 36548
+          title:
+            romaji: Kokkoku
+            english: KOKKOKU
+            native: 刻刻
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 1
+            day: 8
+          endDate:
+            year: 2018
+            month: 3
+            day: 26
+          averageScore: 66
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

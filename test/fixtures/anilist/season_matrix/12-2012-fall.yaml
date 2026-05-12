@@ -1,0 +1,679 @@
+metadata:
+  captured_at: '2026-05-11T11:32:50Z'
+  label: 2012-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2012
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:49 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '18'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 14719
+          idMal: 14719
+          title:
+            romaji: JoJo no Kimyou na Bouken (TV)
+            english: JoJo's Bizarre Adventure (TV)
+            native: ジョジョの奇妙な冒険 (TV)
+          synonyms:
+          - JoJo no Kimyou na Bouken (2012)
+          - 'JoJo no Kimyou na Bouken: Sentou Chouryuu'
+          - 'JoJo''s Bizarre Adventure: Phantom Blood'
+          - 'JoJo''s Bizarre Adventure: Battle Tendency'
+          - مغامرات جوجو العجيبة
+          - مغامرات جوجو العجيبة:الدماء الوهمية
+          - مغامرات جوجو العجيبة:حمى القتال
+          - Le bizzarre avventure di JoJo (2012)
+          - 'Le bizzarre avventure di JoJo: Phantom Blood'
+          - 'Le bizzarre avventure di JoJo: Battle Tendency'
+          - 'Химерні пригоди ДжоДжо: Тяжіння до бою'
+          - 'Химерні пригоди ДжоДжо: Примарна кров'
+          - JJBA
+          - 'Невероятные приключения ДжоДжо: Призрачная кровь'
+          - 'Невероятные приключения ДжоДжо: Стремление к бою'
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 6
+          endDate:
+            year: 2013
+            month: 4
+            day: 6
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 13601
+          idMal: 13601
+          title:
+            romaji: PSYCHO-PASS
+            english: PSYCHO-PASS
+            native: PSYCHO-PASS サイコパス
+          synonyms:
+          - Психопаспорт
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 12
+          endDate:
+            year: 2013
+            month: 3
+            day: 22
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 14741
+          idMal: 14741
+          title:
+            romaji: Chuunibyou demo Koi ga Shitai!
+            english: Love, Chunibyo & Other Delusions
+            native: 中二病でも恋がしたい!
+          synonyms:
+          - Chu-2 Byo demo Koi ga Shitai!
+          - Regardless of My Adolescent Delusions of Grandeur, I Want a Date!
+          - Miłość, gimbaza i kosmiczna faza
+          - 中二病也要谈恋爱！
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 4
+          endDate:
+            year: 2012
+            month: 12
+            day: 20
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 13759
+          idMal: 13759
+          title:
+            romaji: Sakurasou no Pet na Kanojo
+            english: The Pet Girl of Sakurasou
+            native: さくら荘のペットな彼女
+          synonyms:
+          - Sakura-sou no Pet na Kanojo
+          - 樱花庄的宠物女孩
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 9
+          endDate:
+            year: 2013
+            month: 3
+            day: 26
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 14227
+          idMal: 14227
+          title:
+            romaji: Tonari no Kaibutsu-kun
+            english: My Little Monster
+            native: となりの怪物くん
+          synonyms:
+          - Tonari no Kaibutsukun
+          - The Monster Next Door
+          - My Neighbor Monster-kun
+          - Le Garçon d'à coté
+          - Bestia z ławki obok
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 2
+          endDate:
+            year: 2012
+            month: 12
+            day: 25
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 14513
+          idMal: 14513
+          title:
+            romaji: 'Magi: The labyrinth of magic'
+            english: 'Magi: The Labyrinth of Magic'
+            native: マギ The labyrinth of magic
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 7
+          endDate:
+            year: 2013
+            month: 3
+            day: 31
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 13125
+          idMal: 13125
+          title:
+            romaji: Shinsekai yori
+            english: From the New World
+            native: 新世界より
+          synonyms:
+          - Shin Sekai Yori
+          - Del nuevo mundo
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 9
+            day: 29
+          endDate:
+            year: 2013
+            month: 3
+            day: 23
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 14467
+          idMal: 14467
+          title:
+            romaji: K
+            english: K
+            native: K
+          synonyms:
+          - K-Project (K-プロジェクト)
+          - K -eine weitere Geschichte-
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 5
+          endDate:
+            year: 2012
+            month: 12
+            day: 28
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 14713
+          idMal: 14713
+          title:
+            romaji: Kamisama Hajimemashita
+            english: Kamisama Kiss
+            native: 神様はじめました
+          synonyms:
+          - Kami-sama Hajimemashita
+          - Kami-sama Kiss
+          - Soy Una Diosa ¿Y ahora qué?
+          - Приємно познайомитись, Бог
+          - Очень приятно, Бог
+          - The Girl In The World Of Spirit
+          - Jak zostałam bóstwem!?
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 2
+          endDate:
+            year: 2012
+            month: 12
+            day: 25
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 14345
+          idMal: 14345
+          title:
+            romaji: BTOOOM!
+            english: BTOOOM!
+            native: BTOOOM！
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 4
+          endDate:
+            year: 2012
+            month: 12
+            day: 20
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 14289
+          idMal: 14289
+          title:
+            romaji: Sukitte Ii na yo.
+            english: Say "I love you".
+            native: 好きっていいなよ。
+          synonyms:
+          - Sukinayo
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 7
+          endDate:
+            year: 2012
+            month: 12
+            day: 30
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 15689
+          idMal: 15689
+          title:
+            romaji: Nekomonogatari (Kuro)
+            english: Nekomonogatari Black
+            native: 猫物語（黒）
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 4
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 12
+            day: 31
+          endDate:
+            year: 2012
+            month: 12
+            day: 31
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 3785
+          idMal: 3785
+          title:
+            romaji: 'Evangelion Shin Movie: Kyuu'
+            english: 'Evangelion: 3.0 You Can (Not) Redo'
+            native: ヱヴァンゲリヲン新劇場版:Q
+          synonyms:
+          - Rebuild of Evangelion 3.33
+          - Rebuild of Evangelion 3.0 Q Quickening
+          - EVANGELION:3.33 VOCÊ (NÃO) PODE REFAZER
+          - 'EVANGELION: 3.33 TÚ (NO) LO PUEDES REHACER'
+          - Evangelion 3.33 (Nie) możesz powtórzyć
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 11
+            day: 17
+          endDate:
+            year: 2012
+            month: 11
+            day: 17
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 14075
+          idMal: 14075
+          title:
+            romaji: Zetsuen no Tempest
+            english: Blast of Tempest
+            native: 絶園のテンペスト
+          synonyms:
+          - 'Zetsuen no Tempest: The Civilization Blaster'
+          - 絶園のテンペスト ~THE CIVILIZATION BLASTER~
+          - Penghancuran Peradaban
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 5
+          endDate:
+            year: 2013
+            month: 3
+            day: 29
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 14131
+          idMal: 14131
+          title:
+            romaji: Girls und Panzer
+            english: Girls und Panzer
+            native: ガールズ&パンツァー
+          synonyms:
+          - Garupan
+          - 少女与战车
+          - GuP
+          - Девушки и танки
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 9
+          endDate:
+            year: 2013
+            month: 3
+            day: 25
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 15417
+          idMal: 15417
+          title:
+            romaji: 'Gintama'': Enchousen'
+            english: Gintama Season 2 Part 2
+            native: 銀魂’延長戦
+          synonyms:
+          - Gintama' (2012)
+          - Gintama' Overdrive
+          - Kintama
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 4
+          endDate:
+            year: 2013
+            month: 3
+            day: 28
+          averageScore: 89
+          nextAiringEpisode: null
+        - id: 13663
+          idMal: 13663
+          title:
+            romaji: To LOVE-Ru Darkness
+            english: To Love Ru Darkness
+            native: To LOVEる -とらぶる- ダークネス
+          synonyms:
+          - To LOVE-Ru Trouble Darkness
+          - To-Love-Ru Darkness
+          - ToLoveRu Darkness
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 6
+          endDate:
+            year: 2012
+            month: 12
+            day: 29
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 14199
+          idMal: 14199
+          title:
+            romaji: Onii-chan Dakedo Ai Sae Areba Kankeinai yo ne!
+            english: OniAi
+            native: お兄ちゃんだけど愛さえあれば関係ないよねっ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 5
+          endDate:
+            year: 2012
+            month: 12
+            day: 21
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 13655
+          idMal: 13655
+          title:
+            romaji: Little Busters!
+            english: Little Busters!
+            native: リトルバスターズ!
+          synonyms:
+          - LB!
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 6
+          endDate:
+            year: 2013
+            month: 4
+            day: 6
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 11703
+          idMal: 11703
+          title:
+            romaji: CØDE:BREAKER
+            english: Code:Breaker
+            native: CØDE:BREAKER
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 7
+          endDate:
+            year: 2012
+            month: 12
+            day: 23
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 12859
+          idMal: 12859
+          title:
+            romaji: 'ONE PIECE FILM: Z'
+            english: 'One Piece Film: Z'
+            native: ONE PIECE FILM Z
+          synonyms:
+          - 'One Piece Film 12: Z'
+          - 海贼王剧场版Z
+          - One Piece Gold - Il film
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 12
+            day: 15
+          endDate:
+            year: 2012
+            month: 12
+            day: 15
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 16001
+          idMal: 16001
+          title:
+            romaji: 'Kokoro Connect: Michi Random'
+            english: Kokoro Connect ~ The OVAs
+            native: ココロコネクト ミチランダム
+          synonyms:
+          - Kokoro Connect Episodes 14, 15, 16 and 17
+          - 'Kokoroco: Michi Random'
+          status: FINISHED
+          format: OVA
+          episodes: 4
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 11
+            day: 19
+          endDate:
+            year: 2012
+            month: 12
+            day: 10
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 12365
+          idMal: 12365
+          title:
+            romaji: Bakuman. 3
+            english: null
+            native: バクマン。3
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 6
+          endDate:
+            year: 2013
+            month: 3
+            day: 30
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 11737
+          idMal: 11737
+          title:
+            romaji: Ao no Exorcist Movie
+            english: 'Blue Exorcist: The Movie'
+            native: 青の祓魔師 -劇場版-
+          synonyms:
+          - Ao no Exorcist Gekijouban
+          - Ao no Futsumashi Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 12
+            day: 28
+          endDate:
+            year: 2012
+            month: 12
+            day: 28
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 11977
+          idMal: 11977
+          title:
+            romaji: 'Mahou Shoujo Madoka☆Magica: Hajimari no Monogatari'
+            english: 'Puella Magi Madoka Magica the Movie Part 1: Beginnings'
+            native: 劇場版 魔法少女まどか☆マギカ 始まりの物語
+          synonyms:
+          - Mahou Shoujo Madoka Magika Movie 1
+          - Magical Girl Madoka Magica Movie 1
+          - 'Puella Magi Madoka Magica the Movie Part I: Beginnings'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2012
+          startDate:
+            year: 2012
+            month: 10
+            day: 6
+          endDate:
+            year: 2012
+            month: 10
+            day: 6
+          averageScore: 80
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

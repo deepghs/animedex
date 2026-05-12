@@ -28,6 +28,7 @@ Per-backend tutorials
    backends/shikimori
    ghibli
    quote
+   aggregate
 
 Cross-cutting tutorials
 -----------------------

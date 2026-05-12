@@ -1,0 +1,681 @@
+metadata:
+  captured_at: '2026-05-11T11:33:38Z'
+  label: 2017-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2017
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:38 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '22'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 20958
+          idMal: 25777
+          title:
+            romaji: Shingeki no Kyojin Season 2
+            english: Attack on Titan Season 2
+            native: 進撃の巨人 Season２
+          synonyms:
+          - SnK 2
+          - AoT 2
+          - +מתקפת הטיטאנים עונה 2
+          - L'Attacco dei Giganti 2
+          - L'Attacco dei Giganti - Seconda Stagione
+          - ผ่าพิภพไททัน ภาค 2
+          - حمله به تایتان فصل 2
+          - Атака титанов 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 1
+          endDate:
+            year: 2017
+            month: 6
+            day: 17
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 21856
+          idMal: 33486
+          title:
+            romaji: Boku no Hero Academia 2
+            english: My Hero Academia Season 2
+            native: 僕のヒーローアカデミア２
+          synonyms:
+          - BNHA 2
+          - MHA 2
+          - 나의 히어로 아카데미아 2기
+          - 나히아 2기
+          - 我的英雄学院 2
+          - 我的英雄学院第二季
+          - มายฮีโร่ อคาเดเมีย ภาค 2
+          - أكاديميتي للأبطال2
+          - Моя геройская академия 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 1
+          endDate:
+            year: 2017
+            month: 9
+            day: 30
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 97938
+          idMal: 34566
+          title:
+            romaji: 'BORUTO: NARUTO NEXT GENERATIONS'
+            english: 'Boruto: Naruto Next Generations'
+            native: BORUTO-ボルト- NARUTO NEXT GENERATIONS
+          synonyms:
+          - 博人传 火影忍者新时代
+          - 'โบรูโตะ: นารูโตะ เน็กซ์ เจนเนเรชั่น'
+          - 'بوروتو: الأجيال القادمة من ناروتو'
+          status: FINISHED
+          format: TV
+          episodes: 293
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 5
+          endDate:
+            year: 2023
+            month: 3
+            day: 26
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 21700
+          idMal: 32951
+          title:
+            romaji: Rokudenashi Majutsu Koushi to Akashic Records
+            english: Akashic Records of Bastard Magic Instructor
+            native: ロクでなし魔術講師と禁忌教典(アカシックレコード)
+          synonyms:
+          - RokuAka
+          - 'อาจารย์เวทมนตร์ไม่เอาไหนกับตำนานปราสาทลอยฟ้า '
+          - 不正經的魔術講師與禁忌教典
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 4
+          endDate:
+            year: 2017
+            month: 6
+            day: 20
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 21685
+          idMal: 32901
+          title:
+            romaji: Eromanga Sensei
+            english: Eromanga Sensei
+            native: エロマンガ先生
+          synonyms:
+          - Ero Manga Sensei
+          - 情色漫画老师
+          - น้องสาวของผมคืออาจารย์เอโรมังงะ
+          - 埃罗芒阿老师
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 9
+          endDate:
+            year: 2017
+            month: 6
+            day: 25
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 98202
+          idMal: 34822
+          title:
+            romaji: Tsuki ga Kirei
+            english: Tsukigakirei
+            native: 月がきれい
+          synonyms:
+          - as the moon, so beautiful.
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 7
+          endDate:
+            year: 2017
+            month: 6
+            day: 30
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 97980
+          idMal: 34561
+          title:
+            romaji: Re:CREATORS
+            english: Re:CREATORS
+            native: Re:CREATORS
+          synonyms:
+          - レクリエイターズ
+          - Re:CRIADORES
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 8
+          endDate:
+            year: 2017
+            month: 9
+            day: 16
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21860
+          idMal: 33502
+          title:
+            romaji: Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?
+            english: 'WorldEnd: What are you doing at the end of the world? Are you busy? Will you save us?'
+            native: 終末なにしてますか? 忙しいですか? 救ってもらっていいですか?
+          synonyms:
+          - Do you have what THE END? Are you busy? Shall you save xxx?
+          - Sukasuka
+          - 末日时在做什么？有没有空？可以来拯救吗？
+          - 'WorldEnd: What do you do at the end of the world? Are you busy? Will you save us?'
+          - Apa yang Engkau Lakukan Saat Akhir Dunia? Apakah Engkau Sibuk? Bisakah Engkau Menolongku?
+          - 'เวิลด์เอนด์: วันสิ้นโลกนี้ทำอะไร ยุ่งหรือเปล่า มาช่วยเราได้ไหม'
+          - Конец человечества. Что ты будешь делать после того, как людей не стало?
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 11
+          endDate:
+            year: 2017
+            month: 6
+            day: 27
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21180
+          idMal: 30727
+          title:
+            romaji: Saenai Heroine no Sodatekata ♭
+            english: 'Saekano: How to Raise a Boring Girlfriend ♭'
+            native: 冴えない彼女の育てかた ♭
+          synonyms:
+          - Saekano 2
+          - Saekano ♭
+          - Saekano Flat
+          - Saenai Heroine no Sodatekata 2
+          - Saenai Heroine no Sodatekata Flat
+          - วิธีปั้นสาวบ้านให้มาเป็นนางเอกของผม ภาค 2
+          - 'Saekano: How to Raise a Boring Girlfriend Flat'
+          - Saekano Cómo criar a una novia aburrida
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 6
+          endDate:
+            year: 2017
+            month: 6
+            day: 23
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 21851
+          idMal: 33475
+          title:
+            romaji: Busou Shoujo Machiavellianism
+            english: Armed Girl's Machiavellism
+            native: 武装少女マキャヴェリズム
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 5
+          endDate:
+            year: 2017
+            month: 6
+            day: 21
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 21676
+          idMal: 32887
+          title:
+            romaji: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria'
+            english: 'Sword Oratoria: Is it Wrong to Try to Pick Up Girls in a Dungeon? On the Side'
+            native: ダンジョンに出会いを求めるのは間違っているだろうか外伝 ソード・オラトリア
+          synonyms:
+          - 'Is It Wrong to Hope to Meet a Girl in a Dungeon? On the Side: Sword Oratoria'
+          - Danmachi Sword Oratoria
+          - ¿Qué tiene de malo ligar en una mazmorra? Sword Oratoria
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 15
+          endDate:
+            year: 2017
+            month: 7
+            day: 1
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 21517
+          idMal: 32262
+          title:
+            romaji: Renai Boukun
+            english: Love Tyrant
+            native: 恋愛暴君
+          synonyms:
+          - The very lovely tyrant of love♥
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 7
+          endDate:
+            year: 2017
+            month: 6
+            day: 23
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 21377
+          idMal: 31658
+          title:
+            romaji: 'Kuroko no Basket: Last Game'
+            english: 'Kuroko''s Basketball: Last Game'
+            native: 劇場版 黒子のバスケ Last Game
+          synonyms:
+          - 'Kuroko no Basket: EXTRA GAME'
+          - 'Το Μπάσκετ του Κουρόκο: Το Τελευταίο Παιχνίδι'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 3
+            day: 18
+          endDate:
+            year: 2017
+            month: 3
+            day: 18
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 97682
+          idMal: 34176
+          title:
+            romaji: Zero kara Hajimeru Mahou no Sho
+            english: Grimoire of Zero
+            native: ゼロから始める魔法の書
+          synonyms:
+          - ปฐมมนตรา ตำราพลิกโลก
+          - Grymuar Zero
+          - El mágico libro de Zero
+          - 从零开始的魔法书
+          - 제로부터 시작하는 마법의 서
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 10
+          endDate:
+            year: 2017
+            month: 6
+            day: 26
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 87486
+          idMal: 33929
+          title:
+            romaji: 'Boku no Hero Academia: Sukue! Kyuujo Kunren!'
+            english: null
+            native: 僕のヒーローアカデミア救え!救助訓練!
+          synonyms:
+          - 'Boku no Hero Academia: Jump Festa 2016 Special'
+          - 'My Hero Academia: Rescue! Rescue Training'
+          - 'My Hero Academia: Save! Rescue Training'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 4
+          endDate:
+            year: 2017
+            month: 4
+            day: 4
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 97625
+          idMal: 34019
+          title:
+            romaji: Tsugumomo
+            english: Tsugumomo
+            native: つぐもも
+          synonyms:
+          - สึกุโมโมะ ภูตสาวแสบดุ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 2
+          endDate:
+            year: 2017
+            month: 6
+            day: 18
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 98702
+          idMal: 34480
+          title:
+            romaji: 'Shokugeki no Souma: Ni no Sara OVA'
+            english: Food Wars! The Second Plate OVA
+            native: 食戟のソーマ 弍ノ皿 OVA
+          synonyms:
+          - 'Food Wars! The Second Plate: A Fateful Encounter Under the Autumn Moon'
+          - 'Food Wars! The Second Plate: The Totsuki Elite Ten'
+          - ยอดนักปรุงโซมะ ภาค 2 OVA
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 5
+            day: 1
+          endDate:
+            year: 2017
+            month: 7
+            day: 4
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21184
+          idMal: 30736
+          title:
+            romaji: 'Shingeki no Bahamut: VIRGIN SOUL'
+            english: 'Rage of Bahamut: Virgin Soul'
+            native: 神撃のバハムート VIRGIN SOUL
+          synonyms:
+          - BahaSoul
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 8
+          endDate:
+            year: 2017
+            month: 9
+            day: 30
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 21684
+          idMal: 32900
+          title:
+            romaji: 'Mahouka Koukou no Rettousei: Hoshi wo Yobu Shoujo'
+            english: 'The Irregular at Magic High School The Movie: The Girl Who Summons the Stars'
+            native: 劇場版 魔法科高校の劣等生 星を呼ぶ少女
+          synonyms:
+          - พี่น้องปริศนาโรงเรียนมหาเวท เดอะมูฟวี่
+          - 'Непутёвый ученик в школе магии: Взывающая к звёздам'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 6
+            day: 17
+          endDate:
+            year: 2017
+            month: 6
+            day: 17
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 97917
+          idMal: 34537
+          title:
+            romaji: Yoru wa Mijikashi Arukeyo Otome
+            english: The Night is Short, Walk on Girl
+            native: 夜は短し歩けよ乙女
+          synonyms:
+          - 春宵苦短，少女前进吧！
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 7
+          endDate:
+            year: 2017
+            month: 4
+            day: 7
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 97903
+          idMal: 34494
+          title:
+            romaji: Sakura Quest
+            english: Sakura Quest
+            native: サクラクエスト
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 6
+          endDate:
+            year: 2017
+            month: 9
+            day: 21
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21361
+          idMal: 31629
+          title:
+            romaji: GRANBLUE FANTASY The Animation
+            english: 'Granblue Fantasy: The Animation'
+            native: GRANBLUE FANTASY The Animation
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 2
+          endDate:
+            year: 2017
+            month: 6
+            day: 25
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 21191
+          idMal: 30778
+          title:
+            romaji: 'FAIRY TAIL: DRAGON CRY'
+            english: 'Fairy Tail: Dragon Cry'
+            native: 劇場版 FAIRY TAIL -DRAGON CRY-
+          synonyms:
+          - 'Fairy Tail Movie 2: Dragon Cry'
+          - 'Fairy Tail the Movie: Dragon Cry'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 5
+            day: 6
+          endDate:
+            year: 2017
+            month: 5
+            day: 6
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20705
+          idMal: 33834
+          title:
+            romaji: 'sin: Nanatsu no Taizai'
+            english: Seven Mortal Sins
+            native: sin 七つの大罪
+          synonyms:
+          - 'Sin: The 7 Deadly Sins'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 15
+          endDate:
+            year: 2017
+            month: 7
+            day: 29
+          averageScore: 52
+          nextAiringEpisode: null
+        - id: 97643
+          idMal: 34055
+          title:
+            romaji: Berserk 2
+            english: Berserk 2
+            native: ベルセルク 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2017
+          startDate:
+            year: 2017
+            month: 4
+            day: 7
+          endDate:
+            year: 2017
+            month: 6
+            day: 23
+          averageScore: 60
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

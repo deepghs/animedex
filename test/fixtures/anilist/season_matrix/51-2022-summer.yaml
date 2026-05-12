@@ -1,0 +1,712 @@
+metadata:
+  captured_at: '2026-05-11T11:34:38Z'
+  label: 2022-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2022
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:38 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '22'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 120377
+          idMal: 42310
+          title:
+            romaji: 'Cyberpunk: Edgerunners'
+            english: 'Cyberpunk: Edgerunners'
+            native: サイバーパンク エッジランナーズ
+          synonyms:
+          - 'Cyberpunk: Mercenários'
+          - 電馭叛客：邊緣行者
+          - 'CYBERPUNK: อาชญากรแดนเถื่อน'
+          - 'Киберпанк: Бегущие по краю'
+          status: FINISHED
+          format: ONA
+          episodes: 10
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 9
+            day: 13
+          endDate:
+            year: 2022
+            month: 9
+            day: 13
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 141391
+          idMal: 50346
+          title:
+            romaji: Yofukashi no Uta
+            english: Call of the Night
+            native: よふかしのうた
+          synonyms:
+          - Song of the Night Walkers
+          - Night Owl Song
+          - เพลงรักมนุษย์ค้างคาว
+          - نداء الليل
+          - Zew nocy
+          - Il richiamo della notte
+          - Поклик ночі
+          - Песнь ночных сов
+          - El canto de la noche
+          - Canções da Noite
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 8
+          endDate:
+            year: 2022
+            month: 9
+            day: 30
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 145545
+          idMal: 51096
+          title:
+            romaji: Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 2nd Season
+            english: Classroom of the Elite Season 2
+            native: ようこそ実力至上主義の教室へ 2nd Season
+          synonyms:
+          - You-Zitsu 2
+          - Youjitsu 2
+          - ขอต้อนรับสู่ห้องเรียนนิยม (เฉพาะ) ยอดคน ภาค 2
+          - Cote 2
+          - Добро пожаловать в класс для особо одарённых 2
+          - 歡迎來到實力至上主義的教室 第二季
+          - فصل النخبة الموسم الثاني
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 4
+          endDate:
+            year: 2022
+            month: 9
+            day: 26
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 143270
+          idMal: 50709
+          title:
+            romaji: Lycoris Recoil
+            english: Lycoris Recoil
+            native: リコリス・リコイル
+          synonyms:
+          - ไลโคริส รีคอยล์
+          - LycoReco
+          - Ликорис Рекойл
+          - 莉可麗絲
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 2
+          endDate:
+            year: 2022
+            month: 9
+            day: 24
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 133844
+          idMal: 48895
+          title:
+            romaji: Overlord IV
+            english: Overlord IV
+            native: オーバーロードⅣ
+          synonyms:
+          - Overlord 4
+          - โอเวอร์ลอร์ด ภาค 4
+          - โอเวอร์ ลอร์ด จอมมารพิชิตโลก ภาค 4
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 5
+          endDate:
+            year: 2022
+            month: 9
+            day: 27
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 130592
+          idMal: 48413
+          title:
+            romaji: Hataraku Maou-sama!!
+            english: The Devil is a Part-Timer! Season 2
+            native: はたらく魔王さま！！
+          synonyms:
+          - ผู้กล้าซึนซ่าส์กับจอมมารสู้ชีวิต ภาค 2
+          - Hataraku Maou-sama! 2
+          - The Devil is a Part-Timer!!
+          - Hataraku Maou-sama 2nd Season
+          - 打工吧！魔王大人 第二季
+          - Raja Iblis Nyambi! Musim Kedua
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 14
+          endDate:
+            year: 2022
+            month: 9
+            day: 29
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 114745
+          idMal: 41084
+          title:
+            romaji: 'Made in Abyss: Retsujitsu no Ougonkyou'
+            english: 'Made in Abyss: The Golden City of the Scorching Sun'
+            native: メイドインアビス 烈日の黄金郷
+          synonyms:
+          - Made in Abyss Season 2
+          - ผ่าเหวนรก ภาค 2
+          - นักบุกเบิกหลุมยักษ์ ภาค 2
+          - صنع في الهاوية 2
+          - ผ่าเหวนรก นครทองคำแห่งอาทิตย์ที่เจิดจ้า
+          - Đến từ Vực Thẳm Mùa 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 6
+          endDate:
+            year: 2022
+            month: 9
+            day: 28
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 124410
+          idMal: 42963
+          title:
+            romaji: Kanojo, Okarishimasu 2nd Season
+            english: Rent-a-Girlfriend Season 2
+            native: 彼女、お借りします 第2期
+          synonyms:
+          - KanoKari 2
+          - สะดุดรักยัยแฟนเช่า ภาค 2
+          - Pacar Sewaan 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 2
+          endDate:
+            year: 2022
+            month: 9
+            day: 17
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 135806
+          idMal: 49220
+          title:
+            romaji: Isekai Oji-san
+            english: Uncle from Another World
+            native: 異世界おじさん
+          synonyms:
+          - Ojisan in Another World
+          - ยอดคุณน้าจากต่างโลก
+          - Mi tío es de otro mundo
+          - Coma héroïque dans un autre monde
+          - O Tio de Outro Mundo
+          - דוד מעולם אחר
+          - Θείος Από Άλλο Κόσμο
+          - Дядько з іншого світу
+          - Дядя из другого мира
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 6
+          endDate:
+            year: 2023
+            month: 3
+            day: 8
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 129196
+          idMal: 47164
+          title:
+            romaji: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka IV: Shin Shou Meikyuu-hen'
+            english: Is It Wrong to Try to Pick Up Girls in a Dungeon? IV
+            native: ダンジョンに出会いを求めるのは間違っているだろうかⅣ 新章 迷宮篇
+          synonyms:
+          - มันผิดรึไงถ้าใจอยากจะพบรักในดันเจี้ยน ภาค 4
+          - Danmachi IV
+          - Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka 4th Season
+          - Is It Wrong to Try to Pick Up Girls in a Dungeon? Season 4
+          - 'Liệu Có Sai Lầm Khi Tìm Kiếm Cuộc Gặp Gỡ Định Mệnh Trong Hầm Ngục? IV: Chương Mới Phần Mê Cung'
+          - ダンまちⅣ
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 21
+          endDate:
+            year: 2022
+            month: 9
+            day: 29
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 146722
+          idMal: 51367
+          title:
+            romaji: 'JoJo no Kimyou na Bouken: Stone Ocean Part 2'
+            english: 'JoJo''s Bizarre Adventure: STONE OCEAN Part 2'
+            native: ジョジョの奇妙な冒険 ストーンオーシャン 2クール
+          synonyms:
+          - JoJo's Bizarre Adventure Part 6 (Part 2)
+          - JoJo no Kimyou na Bouken Part 6 (Part 2)
+          - 'JoJo''s Bizarre Adventure: STONE OCEAN The Final Episodes'
+          status: FINISHED
+          format: ONA
+          episodes: 26
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 9
+            day: 1
+          endDate:
+            year: 2022
+            month: 12
+            day: 1
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 142876
+          idMal: 50612
+          title:
+            romaji: 'Dr. STONE: Ryuusui'
+            english: Dr. STONE Special Episode – RYUSUI
+            native: Dr.STONE 龍水
+          synonyms:
+          - 'Dr. STONE: Ryusui'
+          - 'Доктор Стоун: Рюсуй'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 10
+          endDate:
+            year: 2022
+            month: 7
+            day: 10
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 146210
+          idMal: 51213
+          title:
+            romaji: 'Kinsou no Vermeil: Gakeppuchi Majutsushi wa Saikyou no Yakusai to Mahou Sekai wo Tsuki Susumu'
+            english: Vermeil in Gold
+            native: 金装のヴェルメイユ～崖っぷち魔術師は最強の厄災と魔法世界を突き進む～
+          synonyms:
+          - 'Vermeil in Gold: A Desperate Magician Barges Into the Magical World Alongside the Strongest Calamity'
+          - 'เวอร์มีลแห่งเวทสีทอง: นักอาคมหวิดซิ่วกับอสูรรับใช้สุดแกร่งบุกตะลุยโลกเวทมนตร์'
+          - Vermeil in Gold - Il mago a rischio bocciatura e la calamità più forte si fanno strada nel mondo della magia
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 5
+          endDate:
+            year: 2022
+            month: 9
+            day: 20
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 136934
+          idMal: 49470
+          title:
+            romaji: Mamahaha no Tsurego ga Motokano datta
+            english: My Stepmom's Daughter is My Ex
+            native: 継母の連れ子が元カノだった
+          synonyms:
+          - Motokano
+          - Tsurekano
+          - My Stepsister is My Ex-Girlfriend
+          - เอาแล้วไง ยัยแฟนเก่าดันเป็นลูกสาวแม่ใหม่
+          - Step-Exes
+          - 繼母的拖油瓶是我的前女友
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 6
+          endDate:
+            year: 2022
+            month: 9
+            day: 21
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 142769
+          idMal: 50593
+          title:
+            romaji: Natsu e no Tunnel, Sayonara no Deguchi
+            english: The Tunnel to Summer, the Exit of Goodbyes
+            native: 夏へのトンネル、さよならの出口
+          synonyms:
+          - คำจากลาของคิมหันต์ ณ ปลายอุโมงค์
+          - Natsuton
+          - El túnel de los deseos
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 9
+            day: 9
+          endDate:
+            year: 2022
+            month: 9
+            day: 9
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 145260
+          idMal: 51064
+          title:
+            romaji: Kuro no Shoukanshi
+            english: Black Summoner
+            native: 黒の召喚士
+          synonyms:
+          - นักอัญเชิญทมิฬ
+          - 黑之召喚士
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 9
+          endDate:
+            year: 2022
+            month: 9
+            day: 24
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 146625
+          idMal: 51417
+          title:
+            romaji: Engage Kiss
+            english: Engage Kiss
+            native: Engage Kiss
+          synonyms:
+          - エンゲージ・キス
+          - Project Engage
+          - Клятвенный поцелуй
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 3
+          endDate:
+            year: 2022
+            month: 9
+            day: 25
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 138882
+          idMal: 49776
+          title:
+            romaji: Kumichou Musume to Sewagakari
+            english: The Yakuza's Guide to Babysitting
+            native: 組長娘と世話係
+          synonyms:
+          - Con Gái Ông Trùm Và Người Giám Hộ
+          - 組長女兒與保姆
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 7
+          endDate:
+            year: 2022
+            month: 9
+            day: 22
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 136707
+          idMal: 49438
+          title:
+            romaji: Isekai Yakkyoku
+            english: Parallel World Pharmacy
+            native: 異世界薬局
+          synonyms:
+          - เภสัชกรเทพสองโลก
+          - 奇幻世界药局
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 10
+          endDate:
+            year: 2022
+            month: 9
+            day: 25
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 129192
+          idMal: 47163
+          title:
+            romaji: 'Tensei Kenja no Isekai Life: Daini no Shokugyou wo Ete, Sekai Saikyou ni Narimashita'
+            english: 'My Isekai Life: I Gained a Second Character Class and Became the Strongest Sage in the World!'
+            native: 転生賢者の異世界ライフ ～第二の職業を得て、世界最強になりました～
+          synonyms:
+          - เกิดใหม่ในต่างโลกเป็นปราชญ์แกร่งสุดโดยไม่รู้ตัว
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 4
+          endDate:
+            year: 2022
+            month: 9
+            day: 12
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 127090
+          idMal: 44524
+          title:
+            romaji: Isekai Meikyuu de Harem wo
+            english: Harem in the Labyrinth of Another World
+            native: 異世界迷宮でハーレムを
+          synonyms:
+          - ฮาเร็มนี้พี่ขอสร้างที่ต่างโลก
+          - Harem in the fantasy world dungeon
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 6
+          endDate:
+            year: 2022
+            month: 9
+            day: 21
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 141902
+          idMal: 50410
+          title:
+            romaji: 'ONE PIECE FILM: RED'
+            english: 'One Piece Film: Red'
+            native: ONE PIECE FILM RED
+          synonyms:
+          - One Piece Film 15
+          - 'فيلم ون بيس: ريد'
+          - วันพีซ ฟิล์ม เรด
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 8
+            day: 6
+          endDate:
+            year: 2022
+            month: 8
+            day: 6
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 128223
+          idMal: 45653
+          title:
+            romaji: Soredemo Ayumu wa Yosetekuru
+            english: When Will Ayumu Make His Move?
+            native: それでも歩は寄せてくる
+          synonyms:
+          - Shogi Senpai
+          - Even so, Ayumu draws closer to the endgame
+          - ' ขอรุกเข้าไปใกล้ๆ ใจเธอ'
+          - À quoi tu joues, Ayumu ?!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 8
+          endDate:
+            year: 2022
+            month: 9
+            day: 23
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 141351
+          idMal: 50339
+          title:
+            romaji: Kakegurui Twin
+            english: Kakegurui Twin
+            native: 賭ケグルイ双
+          synonyms:
+          - โคตรเซียนโรงเรียนพนัน ภาค Twin
+          - Compulsive Gambler Twin
+          - Шалений азарт. Затятий двійник
+          - Двойной азарт
+          status: FINISHED
+          format: ONA
+          episodes: 6
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 8
+            day: 4
+          endDate:
+            year: 2022
+            month: 8
+            day: 4
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 149326
+          idMal: 51837
+          title:
+            romaji: Saikin Yatotta Maid ga Ayashii
+            english: The Maid I Hired Recently is Mysterious
+            native: 最近雇ったメイドが怪しい
+          synonyms:
+          - 'Cô Hầu Gái Tôi Mới Thuê Gần Đây Thật Đáng Ngờ '
+          - เมดคนนี้มีพิรุธ
+          - 新來的女傭有點怪
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 7
+            day: 24
+          endDate:
+            year: 2022
+            month: 10
+            day: 9
+          averageScore: 63
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

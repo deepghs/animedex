@@ -1,0 +1,706 @@
+metadata:
+  captured_at: '2026-05-11T11:34:31Z'
+  label: 2021-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2021
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:30 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '25'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 131573
+          idMal: 48561
+          title:
+            romaji: Jujutsu Kaisen 0
+            english: JUJUTSU KAISEN 0
+            native: 呪術廻戦 0
+          synonyms:
+          - JJK 0
+          - 咒术回战0
+          - 'มหาเวทย์ผนึกมาร : ซีโร่'
+          - ‎جوجوتسو كايسن 0
+          - Jujutsu Kaisen Movie
+          - Магическая битва 0
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 12
+            day: 24
+          endDate:
+            year: 2021
+            month: 12
+            day: 24
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 129874
+          idMal: 49926
+          title:
+            romaji: 'Kimetsu no Yaiba: Mugen Ressha-hen (TV)'
+            english: 'Demon Slayer: Kimetsu no Yaiba Mugen Train Arc'
+            native: 鬼滅の刃 無限列車編 (TV)
+          synonyms:
+          - KnY 2
+          - 'ดาบพิฆาตอสูร : ศึกรถไฟสู่นิรันดร์ (TV)'
+          - 鬼灭之刃 无限列车篇
+          - 'Demon Slayer: Kimetsu no Yaiba: Le train de l''Infini'
+          - 'Demon Slayer: Kimetsu no Yaiba season 2'
+          - 'Miecz zabójcy demonów – Kimetsu no Yaiba: Nieskończony Pociąg'
+          - '귀멸의 칼날: 무한열차편'
+          - 'Клинок, Рассекающий Демонов: Бесконечный Поезд'
+          status: FINISHED
+          format: TV
+          episodes: 7
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 10
+          endDate:
+            year: 2021
+            month: 11
+            day: 28
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 133965
+          idMal: 48926
+          title:
+            romaji: Komi-san wa, Komyushou desu.
+            english: Komi Can’t Communicate
+            native: 古見さんは、コミュ症です。
+          synonyms:
+          - Comi san ha Comyusho desu
+          - مشكلة كومي
+          - Komi-san wa, Comyushou desu.
+          - โฉมงามพูดไม่เก่งกับผองเพื่อนไม่เต็มเต็ง
+          - Komi cherche ses mots
+          - Komi không thể giao tiếp
+          - Komi-san no puede comunicarse
+          - У Коми проблемы с общением
+          - Η Κόμι Δεν Επικοινωνεί
+          - Комі не вміє спілкуватися
+          - המשאלה של קומי
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 7
+          endDate:
+            year: 2021
+            month: 12
+            day: 23
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 127720
+          idMal: 45576
+          title:
+            romaji: 'Mushoku Tensei: Isekai Ittara Honki Dasu Part 2'
+            english: 'Mushoku Tensei: Jobless Reincarnation Cour 2'
+            native: 無職転生 ～異世界行ったら本気だす～ 第2クール
+          synonyms:
+          - 'Mushoku Tensei: Jobless Reincarnation Part 2'
+          - เกิดชาตินี้พี่ต้องเทพ พาร์ท 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 4
+          endDate:
+            year: 2021
+            month: 12
+            day: 20
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 113717
+          idMal: 40834
+          title:
+            romaji: Ousama Ranking
+            english: Ranking of Kings
+            native: 王様ランキング
+          synonyms:
+          - King Ranking
+          - อันดับพระราชา
+          - تصنيف الملوك
+          - 國王排名
+          status: FINISHED
+          format: TV
+          episodes: 23
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 15
+          endDate:
+            year: 2022
+            month: 3
+            day: 25
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 129898
+          idMal: 47790
+          title:
+            romaji: Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru
+            english: The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat
+            native: 世界最高の暗殺者、異世界貴族に転生する
+          synonyms:
+          - Ansatsu Kizoku
+          - สุดยอดมือสังหาร อวตารมาต่างโลก
+          - 世界顶尖的暗杀者转生为异世界贵族
+          - Pembunuh Terhebat di Dunia Reinkarnasi Menjadi Bangsawan Dunia lain
+          - המתנקש הטוב ביותר נולד מחדש בעולם אחר בתור אריסטוקרט
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 6
+          endDate:
+            year: 2021
+            month: 12
+            day: 22
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 131586
+          idMal: 48569
+          title:
+            romaji: '86: Eighty Six Part 2'
+            english: 86 EIGHTY-SIX Part 2
+            native: 86－エイティシックス－ 第2クール
+          synonyms:
+          - 86－エイティシックス－ 2クール
+          - 86 -เอทตี้ซิกซ์- พาร์ท 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 3
+          endDate:
+            year: 2022
+            month: 3
+            day: 19
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 131942
+          idMal: 48661
+          title:
+            romaji: 'JoJo no Kimyou na Bouken: Stone Ocean'
+            english: 'JoJo''s Bizarre Adventure: STONE OCEAN'
+            native: ジョジョの奇妙な冒険 ストーンオーシャン
+          synonyms:
+          - 'JoJo''s Bizarre Adventure: Stone Ocean'
+          - JoJo's Bizarre Adventure Part 6
+          - JoJo no Kimyou na Bouken Part 6
+          - 'Le bizzarre avventure di JoJo: Stone Ocean'
+          - 'โจโจ้ ล่าข้ามศตวรรษ: สโตนโอเชียน '
+          - โจโจ้ ล่าข้ามศตวรรษ ภาค 6
+          - 'مغامرات جوجو العجيبة: محيط الأحجار'
+          - 'ההרפתקה המוזרה של ג''וג''ו: אוקיינוס האבן'
+          - 'Невероятные приключения ДжоДжо: Каменный океан '
+          - 'Химерні пригоди ДжоДжо: Кам''яний океан'
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 12
+            day: 1
+          endDate:
+            year: 2021
+            month: 12
+            day: 1
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 131565
+          idMal: 48556
+          title:
+            romaji: takt op.Destiny
+            english: takt op.Destiny
+            native: takt op.Destiny
+          synonyms:
+          - タクトオーパス
+          - แท็กต์ โอปัส. เดสตินี ~ลิขิตเสียง บรรเลงชะตา~
+          - 宿命回响：命运节拍
+          - Такт. Опус Дестини
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 6
+          endDate:
+            year: 2021
+            month: 12
+            day: 22
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 131083
+          idMal: 48483
+          title:
+            romaji: Mieruko-chan
+            english: Mieruko-chan
+            native: 見える子ちゃん
+          synonyms:
+          - มิเอรุโกะจัง ใครว่าหนูเห็นผี
+          - 'Mieruko: Gadis yang Bisa Melihat Hantu'
+          - Girl That Can See It
+          - Mieruko-chan. Dziewczyna, która widzi więcej
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 3
+          endDate:
+            year: 2021
+            month: 12
+            day: 19
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 128705
+          idMal: 46352
+          title:
+            romaji: Blue Period
+            english: Blue Period
+            native: ブルーピリオド
+          synonyms:
+          - Periodo Azul
+          - Голубой период
+          - Блакитний період
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 9
+            day: 25
+          endDate:
+            year: 2021
+            month: 12
+            day: 11
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 127401
+          idMal: 44961
+          title:
+            romaji: Platinum End
+            english: Platinum End
+            native: プラチナエンド
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 8
+          endDate:
+            year: 2022
+            month: 3
+            day: 25
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 126213
+          idMal: 44037
+          title:
+            romaji: Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node, Henkyou de Slow Life suru Koto ni shimashita
+            english: Banished from the Hero’s Party, I Decided to Live a Quiet Life in the Countryside
+            native: 真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました
+          synonyms:
+          - Banished from the Heroes' Party, I Decided to Live a Quiet Life in the Countryside
+          - ผมโดนกลุ่มผู้กล้าขับไส เลยต้องไปสโลว์ไลฟ์ที่ชายแดน
+          - Banished from the brave man's group, I decided to lead a slow life in the back country.
+          - I Was Kicked out of the Hero’s Party Because I Wasn’t a True Companion so I Decided to Have a Slow Life at the
+            Frontier
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 6
+          endDate:
+            year: 2021
+            month: 12
+            day: 29
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 120646
+          idMal: 42351
+          title:
+            romaji: Senpai ga Uzai Kouhai no Hanashi
+            english: My Senpai is Annoying
+            native: 先輩がうざい後輩の話
+          synonyms:
+          - ลุ้นรักรุ่นน้องตัวจิ๋วกับรุ่นพี่ตัวป่วน
+          - Seniorku yang Menyebalkan
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 10
+          endDate:
+            year: 2021
+            month: 12
+            day: 26
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 132473
+          idMal: 48761
+          title:
+            romaji: Saihate no Paladin
+            english: The Faraway Paladin
+            native: 最果てのパラディン
+          synonyms:
+          - พาลาดิน ยอดอัศวินจากแดนไกล
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 9
+          endDate:
+            year: 2022
+            month: 1
+            day: 3
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 124140
+          idMal: 42916
+          title:
+            romaji: 'Sword Art Online: Progressive - Hoshinaki Yoru no Aria'
+            english: Sword Art Online the Movie -Progressive- Aria of a Starless Night
+            native: 劇場版 ソードアート・オンライン プログレッシブ 星なき夜のアリア
+          synonyms:
+          - SAO Progressive
+          - 'Sword Art Online: Progressive - อาเรียแห่งคืนที่ไร้ดาว'
+          - 'Sword Art Online Progressive: Ária de Uma Noite Sem Estrelas'
+          - SAOP
+          - 'Sword Art Online: Progressive - Aria de una noche sin estrellas'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 30
+          endDate:
+            year: 2021
+            month: 10
+            day: 30
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 129068
+          idMal: 46985
+          title:
+            romaji: 'Shinka no Mi: Shiranai Uchi ni Kachigumi Jinsei'
+            english: 'The Fruit of Evolution: Before I Knew It, My Life Had It Made'
+            native: 進化の実～知らないうちに勝ち組人生～
+          synonyms:
+          - 'ผลไม้วิวัฒนาการ: ชีวิตผู้ชนะแบบไม่ทันตั้งตัว'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 5
+          endDate:
+            year: 2021
+            month: 12
+            day: 21
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 124195
+          idMal: 42940
+          title:
+            romaji: Hanma Baki
+            english: Baki Hanma
+            native: 範馬刃牙
+          synonyms:
+          - 'Baki: Son of Ogre'
+          - 'Hanma Baki: SON OF OGRE'
+          - ฮันมะ บากิ
+          - Баки Ханма
+          - Μπάκι Χάνμα
+          - Бакі Ханма
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 9
+            day: 30
+          endDate:
+            year: 2021
+            month: 9
+            day: 30
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 130050
+          idMal: 48171
+          title:
+            romaji: Summer Ghost
+            english: Summer Ghost
+            native: サマーゴースト
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 11
+            day: 12
+          endDate:
+            year: 2021
+            month: 11
+            day: 12
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 132193
+          idMal: 48707
+          title:
+            romaji: Gokushufudou Part 2
+            english: The Way of the Househusband Part 2
+            native: 極主夫道 パート2
+          synonyms:
+          - พ่อบ้านสุดเก๋า พาร์ท 2
+          - La Voie du Tablier Partie 2
+          - De yakuza a amo de casa parte 2
+          - Шлях домогосподаря 2
+          status: FINISHED
+          format: ONA
+          episodes: 5
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 7
+          endDate:
+            year: 2021
+            month: 10
+            day: 7
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 131019
+          idMal: 48471
+          title:
+            romaji: Tsuki to Laika to Nosferatu
+            english: 'Irina: The Vampire Cosmonaut'
+            native: 月とライカと吸血姫
+          synonyms:
+          - ノスフェラトゥ
+          - The Moon, Laika, and Nosferatu
+          - จันทรากับไลคร่าและเจ้าหญิงแวมไพร์
+          - จันทรากับไลก้าและนอสเฟราตู
+          - Луна, Лайка и Носферату
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 4
+          endDate:
+            year: 2021
+            month: 12
+            day: 20
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 127412
+          idMal: 45055
+          title:
+            romaji: Taishou Otome Otogibanashi
+            english: Taisho Otome Fairy Tale
+            native: 大正オトメ御伽話
+          synonyms:
+          - 'เรื่องเล่าของสาวน้อยยุคไทโช '
+          - Kisah Gadis Zaman Taisho
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 9
+          endDate:
+            year: 2021
+            month: 12
+            day: 25
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 123899
+          idMal: 42847
+          title:
+            romaji: Ai no Utagoe wo Kikasete
+            english: Sing a Bit of Harmony
+            native: アイの歌声を聴かせて
+          synonyms:
+          - Canta con una chispa de armonía
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 10
+            day: 29
+          endDate:
+            year: 2021
+            month: 10
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 137877
+          idMal: 49605
+          title:
+            romaji: Ganbare, Douki-chan
+            english: GANBARE DOUKICHAN
+            native: がんばれ同期ちゃん
+          synonyms:
+          - Senpai is Mine
+          - สู้เขาน้องหนูเพื่อนร่วมงาน
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 9
+            day: 20
+          endDate:
+            year: 2021
+            month: 12
+            day: 6
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 138060
+          idMal: 49357
+          title:
+            romaji: 'Star Wars: Visions'
+            english: 'Star Wars: Visions'
+            native: スター・ウォーズ：ビジョンズ
+          synonyms:
+          - Star Wars ビジョンズ
+          - 'Gwiezdne wojny: Wizje'
+          status: FINISHED
+          format: ONA
+          episodes: 9
+          season: FALL
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 9
+            day: 22
+          endDate:
+            year: 2021
+            month: 9
+            day: 22
+          averageScore: 70
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

@@ -45,11 +45,11 @@ def render_json(model: AnimedexModel, *, include_source: bool = True) -> str:
     payload = model.model_dump(mode="json", by_alias=True)
     if include_source:
         sources = []
-        aggregate_sources = payload.get("sources")
-        if isinstance(aggregate_sources, dict):
-            for name, status in aggregate_sources.items():
-                if not isinstance(status, dict) or status.get("status") == "ok":
-                    sources.append(name)
+
+        def add_source(name):
+            if name and name not in sources:
+                sources.append(name)
+
         # Single-source records keep the source on either ``.source``
         # (common projection types like :class:`Anime`,
         # :class:`Character`) or ``.source_tag`` (backend-rich types
@@ -65,13 +65,21 @@ def render_json(model: AnimedexModel, *, include_source: bool = True) -> str:
         for key in ("source", "source_tag"):
             candidate = payload.get(key)
             if isinstance(candidate, dict) and "backend" in candidate and "fetched_at" in candidate:
-                sources.append(candidate["backend"])
+                add_source(candidate["backend"])
                 break  # first SourceTag-shaped wins; don't double-count
         srcs = payload.get("sources")
         if isinstance(srcs, list):
             for entry in srcs:
                 if isinstance(entry, dict) and entry.get("backend"):
-                    sources.append(entry["backend"])
+                    add_source(entry["backend"])
+        elif isinstance(srcs, dict):
+            for backend, entry in srcs.items():
+                if isinstance(entry, dict):
+                    if entry.get("status") != "ok":
+                        continue
+                    add_source(entry.get("backend") or backend)
+                else:
+                    add_source(backend)
         payload["_meta"] = {"sources_consulted": sources}
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
