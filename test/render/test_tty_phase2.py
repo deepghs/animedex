@@ -228,3 +228,40 @@ class TestAggregateResultTty:
         out = render_tty(result)
 
         assert "Raw Label [src: raw]" in out
+
+    def test_renders_source_field_nested_labels_fallbacks_and_dict_scores(self):
+        from animedex.models.aggregate import AggregateResult
+        from animedex.models.common import AnimedexModel, SourceTag
+        from animedex.render.tty import render_tty
+
+        class DirectSourceProjection(AnimedexModel):
+            name: str
+            source: SourceTag
+
+        class NamelessProjection(AnimedexModel):
+            source_tag: SourceTag
+
+        class TitleObject:
+            romaji = "Nested Title"
+
+        class LabelObject:
+            def __str__(self):
+                return "Object Label"
+
+        result = AggregateResult(
+            items=[
+                DirectSourceProjection(name="Direct Source", source=_src("direct")),
+                {"title": TitleObject(), "score": {"score": 8.5, "scale": 10}, "_source": "nested"},
+                {"name": LabelObject(), "score": {"score": 7}, "_source": "object"},
+                NamelessProjection(source_tag=_src("nameless")),
+            ],
+            sources={},
+        )
+        out = render_tty(result)
+
+        assert "Direct Source [src: direct]" in out
+        assert "Nested Title [src: nested]" in out
+        assert "Score: 8.5/10" in out
+        assert "Object Label [src: object]" in out
+        assert "Score: 7" in out
+        assert "NamelessProjection [src: nameless]" in out

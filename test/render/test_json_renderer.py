@@ -137,6 +137,17 @@ class TestAggregateResultSources:
         assert decoded["_meta"]["sources_consulted"] == ["jikan"]
         assert decoded["sources"]["anilist"]["status"] == "failed"
 
+    def test_sources_map_keeps_legacy_scalar_entries(self):
+        from animedex.models.common import AnimedexModel
+        from animedex.render.json_renderer import render_json
+
+        class LegacyAggregate(AnimedexModel):
+            sources: dict
+
+        decoded = json.loads(render_json(LegacyAggregate(sources={"legacy": True}), include_source=True))
+
+        assert decoded["_meta"]["sources_consulted"] == ["legacy"]
+
 
 class TestRichModelSourceAttribution:
     """Reviewer review B1 (PR #6).
