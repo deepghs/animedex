@@ -9,6 +9,7 @@ Goal: lift coverage of ``animedex/backends/anilist/__init__.py`` and
 
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, List, Tuple
@@ -248,6 +249,25 @@ def test_anilist_api_round_trip(fixture_rel, fn, args, kwargs, expected, fake_cl
 
 
 class TestAiringScheduleProjection:
+    def test_omits_unset_optional_filters_from_graphql_variables(self, fake_clock):
+        fixture = _load_fixture("longtail/03-airing-schedule-not-yet-aired.yaml")
+        with responses.RequestsMock() as rsps:
+            _register(rsps, fixture)
+            result = anilist_api.airing_schedule(
+                airing_at_greater=1778515200,
+                airing_at_lesser=1779120000,
+                per_page=5,
+                no_cache=True,
+            )
+            sent = json.loads(rsps.calls[0].request.body.decode("utf-8"))
+
+        assert isinstance(result, list)
+        assert sent["variables"] == {
+            "airingAtGreater": 1778515200,
+            "airingAtLesser": 1779120000,
+            "perPage": 5,
+        }
+
     def test_to_common_projects_to_airing_schedule_row(self):
         row = AnilistAiringSchedule(
             id=1,

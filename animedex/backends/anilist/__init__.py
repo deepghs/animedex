@@ -279,15 +279,16 @@ def airing_schedule(
     **kw,
 ) -> List[AnilistAiringSchedule]:
     """Upcoming-episode schedule, optionally filtered."""
+    variables = {
+        "mediaId": media_id,
+        "notYetAired": not_yet_aired,
+        "airingAtGreater": airing_at_greater,
+        "airingAtLesser": airing_at_lesser,
+        "perPage": min(per_page, 50),
+    }
     payload, src = _gql(
         _q.Q_AIRING_SCHEDULE,
-        {
-            "mediaId": media_id,
-            "notYetAired": not_yet_aired,
-            "airingAtGreater": airing_at_greater,
-            "airingAtLesser": airing_at_lesser,
-            "perPage": min(per_page, 50),
-        },
+        {key: value for key, value in variables.items() if value is not None},
         config=config,
         **kw,
     )

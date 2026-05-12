@@ -122,8 +122,6 @@ def _anilist_schedule(
     fixture["request"]["json_body"] = {
         "query": Q_AIRING_SCHEDULE,
         "variables": {
-            "mediaId": None,
-            "notYetAired": None,
             "airingAtGreater": airing_at_greater,
             "airingAtLesser": airing_at_lesser,
             "perPage": limit,
@@ -275,12 +273,18 @@ def test_schedule_json_aggregates_and_projects_rows(runner, cli, fake_clock, mon
             _jikan_schedule_day("friday"),
         )
         result = runner.invoke(cli, ["schedule", "--day", "thursday", "--limit", "5", "--json", "--no-cache"])
+        anilist_request = json.loads(rsps.calls[0].request.body.decode("utf-8"))
 
     assert result.exit_code == 0, result.output
     payload = _json_payload(result)
     assert set(payload["sources"]) == {"anilist", "jikan"}
     assert payload["sources"]["anilist"]["items"] == 5
     assert payload["sources"]["jikan"]["items"] == 3
+    assert anilist_request["variables"] == {
+        "airingAtGreater": 1778112000,
+        "airingAtLesser": 1778198400,
+        "perPage": 5,
+    }
     assert payload["timezone"] == "UTC"
     assert payload["window_start"] == "2026-05-07"
     assert payload["window_end"] == "2026-05-08"
