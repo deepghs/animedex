@@ -120,11 +120,34 @@ class TestRenderAiringScheduleRow:
             title="Exact Airing",
             airing_at=datetime(2026, 5, 11, 1, tzinfo=timezone.utc),
             episode=3,
+            details={"score": 8.2, "source_material": "Manga", "genres": ["Action"]},
             source=SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
         )
         out = render_tty(row)
         assert "Airing:" in out
         assert "Episode:  3" in out
+        assert "Info:" in out
+        assert "Source material: Manga" in out
+        assert "Score: 8.2" in out
+
+    def test_renders_schedule_ids(self):
+        from animedex.models.anime import AiringScheduleRow
+        from animedex.render.tty import render_tty
+
+        row = AiringScheduleRow(
+            title="Exact Airing",
+            airing_at=datetime(2026, 5, 11, 1, tzinfo=timezone.utc),
+            episode=3,
+            core={"media_id": 181284},
+            details={"schedule_id": 12345, "media_id": 181284, "mal_id": 999},
+            source_payload={"id": 12345, "media": {"id": 181284, "idMal": 999}},
+            source=SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc)),
+        )
+        out = render_tty(row)
+        assert "IDs:" in out
+        assert "AniList airing: 12345" in out
+        assert "AniList media: 181284" in out
+        assert "MAL: 999" in out
 
 
 class TestRenderAggregateResult:
@@ -181,7 +204,14 @@ class TestRenderScheduleCalendar:
         offset = render_tty(
             ScheduleCalendarResult(
                 items=[
-                    AiringScheduleRow(title="Episode Row", weekday="monday", local_time="01:00", episode=7, source=src),
+                    AiringScheduleRow(
+                        title="Episode Row",
+                        weekday="monday",
+                        local_time="01:00",
+                        episode=7,
+                        source=src,
+                        details={"source_material": "Original", "rating": "G"},
+                    ),
                     AiringScheduleRow(title="Bad Clock", weekday="monday", local_time="bad", source=src),
                     _RichSchedule(source_tag=src),
                     _BrokenRichSchedule(source_tag=src),
@@ -196,6 +226,9 @@ class TestRenderScheduleCalendar:
 
         assert "Monday, 2026-05-11" in offset
         assert "01:00  Episode Row  ep 7  [src: jikan]" in offset
+        assert "Info:" in offset
+        assert "Source material: Original" in offset
+        assert "Rating: G" in offset
         assert "02:30  Rich Row  [src: jikan]" in offset
         assert "Unscheduled" in offset
         assert "bad  Bad Clock  [src: jikan]" in offset
@@ -264,6 +297,58 @@ class TestRenderScheduleCalendar:
         )
         assert "Unscheduled" in unscheduled
         assert "--:--  Loose Row  [src: jikan]" in unscheduled
+
+
+class TestRenderMergedAnime:
+    def test_renders_source_details(self):
+        from animedex.models.aggregate import MergedAnime
+        from animedex.models.anime import Anime, AnimeRating, AnimeTitle
+        from animedex.render.tty import render_tty
+
+        src = SourceTag(backend="anilist", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc))
+        anime = Anime(
+            id="anilist:1",
+            title=AnimeTitle(romaji="Merged"),
+            score=AnimeRating(score=81.0, scale=100.0),
+            ids={"anilist": "1"},
+            source=src,
+        )
+        out = render_tty(
+            MergedAnime(
+                title=AnimeTitle(romaji="Merged"),
+                sources=[src],
+                records={"anilist": anime},
+                source_details={
+                    "anilist": {
+                        "title": "Merged",
+                        "titles": {
+                            "romaji": "Merged",
+                            "english": "Merged English",
+                            "native": "統合",
+                            "by_language": {"japanese": ["統合"], "chinese": ["整合"], "korean": ["통합"]},
+                        },
+                        "score": {"score": 81.0, "scale": 100.0},
+                        "format": "TV",
+                        "episodes": 12,
+                        "season": "SPRING",
+                        "season_year": 2024,
+                        "studios": ["Studio A"],
+                        "genres": ["Action", "Fantasy"],
+                    }
+                },
+            )
+        )
+
+        assert "Names:" in out
+        assert "Japanese:" in out
+        assert "Chinese:" in out
+        assert "Korean:" in out
+        assert "IDs:" in out
+        assert "AniList: 1" in out
+        assert "Info:" in out
+        assert "Season: SPRING 2024" in out
+        assert "Scores:" in out
+        assert "Anilist:" in out and "81.0/100.0" in out
 
 
 class TestRenderTtyNonAnime:

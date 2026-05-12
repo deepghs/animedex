@@ -69,10 +69,14 @@ class AggregateResult(AnimedexModel):
     :vartype items: list
     :ivar sources: Per-backend status map.
     :vartype sources: dict[str, AggregateSourceStatus]
+    :ivar merge_diagnostics: Per-row diagnostics for rows that could
+                             not enter merge analysis.
+    :vartype merge_diagnostics: list of dict
     """
 
     items: List[Any] = Field(default_factory=list)
     sources: Dict[str, AggregateSourceStatus] = Field(default_factory=dict)
+    merge_diagnostics: List[Dict[str, Any]] = Field(default_factory=list)
 
     @property
     def failed_sources(self) -> Dict[str, AggregateSourceStatus]:
@@ -136,12 +140,26 @@ class MergedAnime(AnimedexModel):
     :vartype sources: list[SourceTag]
     :ivar records: Per-backend common anime projections.
     :vartype records: dict[str, Anime]
+    :ivar core: Compact merged summary. The JSON output keeps this
+                next to the full per-backend records so consumers can
+                read the resolved item without recomputing it.
+    :vartype core: dict
+    :ivar source_details: Per-backend source-specific fields promoted
+                          from the contributing records.
+    :vartype source_details: dict[str, dict]
+    :ivar source_payloads: Full per-backend payloads for JSON
+                           consumers that need the complete upstream
+                           row shape.
+    :vartype source_payloads: dict[str, dict]
     """
 
     title: AnimeTitle
     ids: Dict[str, str] = Field(default_factory=dict)
     sources: List[SourceTag] = Field(default_factory=list)
     records: Dict[str, Anime] = Field(default_factory=dict)
+    core: Dict[str, Any] = Field(default_factory=dict)
+    source_details: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
+    source_payloads: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
 
 
 def selftest() -> bool:
@@ -156,7 +174,15 @@ def selftest() -> bool:
     """
     src = SourceTag(backend="_selftest", fetched_at=datetime.now(timezone.utc))
     a = Anime(id="_selftest:1", title=AnimeTitle(romaji="x"), ids={"_selftest": "1"}, source=src)
-    merged = MergedAnime(title=AnimeTitle(romaji="x"), ids={"_selftest": "1"}, sources=[src], records={"_selftest": a})
+    merged = MergedAnime(
+        title=AnimeTitle(romaji="x"),
+        ids={"_selftest": "1"},
+        sources=[src],
+        records={"_selftest": a},
+        core={"title": {"romaji": "x"}, "sources": ["_selftest"]},
+        source_details={"_selftest": {"score": "1.0/10.0"}},
+        source_payloads={"_selftest": {"id": "_selftest:1"}},
+    )
     calendar = ScheduleCalendarResult(
         items=[src],
         sources={"ok": AggregateSourceStatus(backend="ok", status="ok", items=1)},
@@ -176,10 +202,22 @@ def selftest() -> bool:
                 http_status=500,
             ),
         },
+        merge_diagnostics=[
+            {
+                "backend": "_selftest",
+                "id": "_selftest:broken",
+                "reason": "to-common-failed",
+                "message": "ValueError: broken",
+            }
+        ],
     )
     decoded = result.model_dump(mode="json")
     assert decoded["items"][0]["backend"] == "_selftest"
+    assert decoded["merge_diagnostics"][0]["reason"] == "to-common-failed"
     assert merged.records["_selftest"].id == "_selftest:1"
+    assert merged.core["sources"] == ["_selftest"]
+    assert merged.source_details["_selftest"]["score"] == "1.0/10.0"
+    assert merged.source_payloads["_selftest"]["id"] == "_selftest:1"
     assert calendar.timezone == "UTC"
     assert result.succeeded_count == 1
     assert list(result.failed_sources) == ["failed"]

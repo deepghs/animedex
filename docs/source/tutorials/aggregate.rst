@@ -17,8 +17,8 @@ Seasonal listings
 
 .. code-block:: bash
 
-   animedex season 2024 spring --json --jq '.items[0] | {title: .title.romaji, sources: (.sources | map(.backend))}'
-   # => {"title":"Kaijuu 8-gou","sources":["anilist","jikan"]}
+   animedex season 2024 spring --json --jq '.items[0] | {title: .title.romaji, sources: (.sources | map(.backend)), jikan_score: .source_details.jikan.score.score}'
+   # => {"title":"Kaijuu 8-gou","sources":["anilist","jikan"],"jikan_score":8.21}
 
    animedex season 2024 spring --source jikan --limit 3 --json --jq '[.items[].title.romaji]'
    # => ["Kimetsu no Yaiba: Hashira Geiko-hen", "Kaijuu 8-gou", "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2"]
@@ -28,8 +28,8 @@ Weekly schedule
 
 .. code-block:: bash
 
-   animedex schedule --day monday --source jikan --timezone Asia/Tokyo --json --jq '.items[0] | {title, weekday, time: .local_time}'
-   # => {"title":"Shin Nippon History","weekday":"monday","time":"01:00"}
+   animedex schedule --day monday --source jikan --timezone Asia/Tokyo --json --jq '.items[0] | {title, weekday, time: .local_time, source: .details.source_material}'
+   # => {"title":"Shin Nippon History","weekday":"monday","time":"01:00","source":"Original"}
 
    animedex schedule --day monday --source jikan --timezone +08:00 --limit 3
    # Schedule (+08:00)
@@ -37,6 +37,14 @@ Weekly schedule
    #
    # Monday, 2026-05-11
    #   00:00  Shin Nippon History  [src: jikan]
+   #     Names:
+   #       Japanese: 新ニッポンヒストリー
+   #     Info:
+   #       Status: Currently Airing
+   #       Source material: Original
+   #       Rating: G - All Ages
+   #     Tags:
+   #       - TV
    #   17:25  Puzzle & Dragon  [src: jikan]
 
 Partial failure
@@ -54,5 +62,5 @@ Notes
 -----
 
 * ``season`` defaults to the AniList/MAL quarterly convention: winter = January-March, spring = April-June, summer = July-September, fall = October-December, and the merge path now combines likely identical AniList/Jikan rows into one item with per-backend records.
-* ``schedule`` uses ``--day all`` as the seven-day window starting today in the selected timezone, defaulting to local.
+* ``schedule`` uses ``--day all`` as the seven-day window starting today in the selected timezone, defaulting to local. ``--timezone`` accepts ``local``, ``UTC``/``Z``, IANA names, fixed offsets such as ``+08:00`` or ``UTC+8``, and dateutil timezone strings such as ``CST-8``.
 * The JSON envelope keeps both successful rows and per-source status entries.

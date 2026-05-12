@@ -13,7 +13,7 @@ Set Height 560
 Set Padding 14
 Set Framerate 24
 
-Type "python -m animedex season 2024 spring --limit 5 --json --no-cache --jq '{count: (.items | length), first: (.items[0] | {title: .title.romaji, sources: (.sources | map(.backend))})}'"
+Type "python -m animedex season 2024 spring --limit 5 --json --no-cache --jq '{count: (.items | length), first: (.items[0] | {title: .title.romaji, sources: (.sources | map(.backend)), jikan_score: .source_details.jikan.score.score})}'"
 Sleep 400ms
 Enter
 Sleep 3800ms

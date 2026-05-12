@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import date, datetime, timedelta, timezone, tzinfo
+from datetime import date, datetime, timedelta, timezone
 from typing import Optional
 
 import pytest
@@ -78,24 +78,13 @@ def test_timezone_helpers_cover_named_offset_and_errors(monkeypatch):
     from animedex.agg import calendar
     from animedex.models.common import ApiError
 
-    class NamedOnlyTimezone(tzinfo):
-        def utcoffset(self, dt):
-            return None
-
-        def tzname(self, dt):
-            return "named-only"
-
-        def dst(self, dt):
-            return None
-
     local_tz = timezone(timedelta(hours=-5), name="fixed-local")
     monkeypatch.setattr(calendar, "_now_local", lambda: datetime(2026, 5, 11, tzinfo=local_tz))
 
-    assert calendar._timezone_label(calendar.ZoneInfo("Asia/Tokyo")) == "Asia/Tokyo"
-    assert calendar._timezone_label(timezone(timedelta(hours=2), name="custom")) == "+02:00"
-    assert calendar._timezone_label(NamedOnlyTimezone()) == "named-only"
     assert calendar._resolve_timezone(None)[1] == "-05:00"
     assert calendar._resolve_timezone("-0230")[1] == "-02:30"
+    assert calendar._resolve_timezone("UTC+8")[1] == "+08:00"
+    assert calendar._resolve_timezone("CST-8")[0].utcoffset(datetime(2026, 1, 1)).total_seconds() == 8 * 3600
     assert calendar._jikan_source_timezone(None, target_tz=timezone.utc) is timezone.utc
     assert calendar._jikan_source_timezone("", target_tz=timezone.utc) is timezone.utc
     assert calendar._jikan_source_timezone("No/Such_Zone", target_tz=timezone.utc) is timezone.utc
@@ -110,10 +99,10 @@ def test_timezone_helpers_cover_named_offset_and_errors(monkeypatch):
 def test_jikan_source_timezone_falls_back_when_zoneinfo_data_is_missing(monkeypatch):
     from animedex.agg import calendar
 
-    def missing_zone(_name):
-        raise calendar.ZoneInfoNotFoundError
+    def missing_timezone(_name):
+        raise ValueError("missing")
 
-    monkeypatch.setattr(calendar, "ZoneInfo", missing_zone)
+    monkeypatch.setattr(calendar, "parse_timezone", missing_timezone)
 
     out = calendar._jikan_source_timezone("JST", target_tz=timezone.utc)
 
@@ -169,6 +158,8 @@ def test_jikan_schedule_row_uses_jst_timezone_data():
     assert out.weekday == "sunday"
     assert out.local_time == "16:00"
     assert out.airing_at == datetime(2026, 5, 10, 16, 0, tzinfo=timezone.utc)
+    assert out.details["backend"] == "jikan"
+    assert out.details["broadcast_timezone"] == "Asia/Tokyo"
 
 
 def test_jikan_schedule_row_without_conversion_keeps_broadcast_fields():
@@ -183,6 +174,7 @@ def test_jikan_schedule_row_without_conversion_keeps_broadcast_fields():
     assert out.weekday == "monday"
     assert out.local_time == "01:00"
     assert out.airing_at is None
+    assert out.details["backend"] == "jikan"
 
 
 def test_parse_clock_rejects_non_clock_values():
@@ -243,8 +235,11 @@ def test_to_common_anime_handles_failures_and_non_anime():
     from animedex.agg import calendar
 
     class BrokenRich:
+        id = "broken:1"
+        source_tag = _source("broken")
+
         def to_common(self):
-            raise RuntimeError("bad mapper")
+            raise ValueError("bad mapper")
 
     class NonAnimeRich:
         def to_common(self):
@@ -253,6 +248,53 @@ def test_to_common_anime_handles_failures_and_non_anime():
     assert calendar._to_common_anime(_anime("anilist", "anilist:1", "Title")) is not None
     assert calendar._to_common_anime(BrokenRich()) is None
     assert calendar._to_common_anime(NonAnimeRich()) is None
+
+
+def test_merge_season_items_reports_to_common_failures():
+    from animedex.agg import calendar
+
+    class BrokenRich:
+        id = "broken:1"
+        source_tag = _source("broken")
+
+        def to_common(self):
+            raise KeyError("bad mapper")
+
+    result = AggregateResult(items=[BrokenRich()])
+
+    merged = calendar._merge_season_items(result)
+
+    assert len(merged.items) == 1
+    assert len(merged.merge_diagnostics) == 1
+    assert merged.merge_diagnostics[0]["backend"] == "broken"
+    assert merged.merge_diagnostics[0]["id"] == "broken:1"
+    assert merged.merge_diagnostics[0]["reason"] == "to-common-failed"
+    assert "KeyError" in merged.merge_diagnostics[0]["message"]
+
+
+def test_schedule_projection_converts_rich_rows_to_common_rows():
+    from animedex.agg import calendar
+    from animedex.backends.anilist.models import AnilistAiringSchedule
+
+    rich = AnilistAiringSchedule(
+        id=99,
+        airingAt=1778457600,
+        episode=7,
+        timeUntilAiring=300,
+        media_id=123,
+        media_title_romaji="Projected",
+        source_tag=_source("anilist"),
+    )
+    result = AggregateResult(items=[rich])
+
+    projected = calendar._project_schedule_items(result, target_tz=timezone(timedelta(hours=8)))
+
+    row = projected.items[0]
+    assert isinstance(row, AiringScheduleRow)
+    assert row.title == "Projected"
+    assert row.airing_at == datetime(2026, 5, 11, 8, 0, tzinfo=timezone(timedelta(hours=8)))
+    assert row.details["backend"] == "anilist"
+    assert row.details["media_id"] == 123
 
 
 def test_title_and_context_scoring_cover_role_branches():
@@ -264,13 +306,29 @@ def test_title_and_context_scoring_cover_role_branches():
     old = _anime("jikan", "jikan:3", "Romaji", aired_from=date(2025, 1, 1))
     no_id = _anime("jikan", "plain-id", "Other", ids={"mal": "1"})
     with_id = _anime("anilist", "anilist:9", "Other", ids={"mal": "1"})
+    conflicting_id = _anime("jikan", "jikan:10", "Other", ids={"mal": "2"})
 
     assert calendar._anime_title_keys(left)
     assert calendar._title_match_score(left, right) >= 50
     assert calendar._title_match_score(left, fuzzy) >= 45
     assert calendar._context_match_score(left, old) < calendar._context_match_score(left, fuzzy)
     assert calendar._anime_match_score(with_id, no_id) == 1000
+    assert calendar._anime_match_score(with_id, conflicting_id) == 0
     assert "jikan" in calendar._merge_group({"jikan": no_id}).ids
+
+
+def test_merge_season_items_splits_external_id_conflicts():
+    from animedex.agg import calendar
+
+    anilist = _anime("anilist", "anilist:1", "Shared Title", ids={"mal": "1"})
+    jikan = _anime("jikan", "jikan:2", "Shared Title", ids={"mal": "2"})
+    result = AggregateResult(items=[anilist, jikan])
+
+    merged = calendar._merge_season_items(result)
+
+    assert len(merged.items) == 2
+    assert [item.ids["mal"] for item in merged.items] == ["1", "2"]
+    assert [{source.backend for source in item.sources} for item in merged.items] == [{"anilist"}, {"jikan"}]
 
 
 def test_merge_season_items_keeps_passthrough_items():
@@ -285,4 +343,6 @@ def test_merge_season_items_keeps_passthrough_items():
 
     assert len(merged.items) == 2
     assert merged.items[0].ids["mal"] == "1"
+    assert merged.items[0].source_details["anilist"]["title"] == "Shared"
+    assert merged.items[0].source_details["jikan"]["format"] == "TV"
     assert merged.items[1] is passthrough

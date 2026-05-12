@@ -56,7 +56,7 @@ AiringScheduleRow
 -----------------------------------------------------
 
 .. autoclass:: AiringScheduleRow
-    :members: title,airing_at,episode,weekday,local_time,source
+    :members: title,airing_at,episode,weekday,local_time,source,core,details,source_payload
 
 
 Anime

@@ -91,6 +91,8 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.transport.ratelimit",
     "animedex.transport.read_only",
     "animedex.transport.http",
+    "animedex.utils",
+    "animedex.utils.timezone",
     "animedex.cache",
     "animedex.cache.sqlite",
     "animedex.auth",
@@ -326,6 +328,19 @@ def _smoke_requests() -> None:
     assert issubclass(requests.RequestException, Exception)
 
 
+def _smoke_python_dateutil() -> None:
+    """Smoke-test python-dateutil timezone parsing."""
+    from datetime import datetime
+
+    from dateutil import tz
+
+    shanghai = tz.gettz("Asia/Shanghai")
+    cst = tz.gettz("CST-8")
+    assert shanghai is not None
+    assert cst is not None
+    assert cst.utcoffset(datetime(2026, 1, 1)).total_seconds() == 8 * 3600
+
+
 def _smoke_hbutils() -> None:
     """Smoke-test the hbutils package and config namespace."""
     import hbutils
@@ -410,6 +425,7 @@ def _smoke_tzdata() -> None:
 _DEPENDENCY_SMOKE_TESTS: Tuple[Tuple[str, Callable[[], None]], ...] = (
     ("click", _smoke_click),
     ("requests", _smoke_requests),
+    ("python_dateutil", _smoke_python_dateutil),
     ("hbutils", _smoke_hbutils),
     ("pydantic", _smoke_pydantic),
     ("platformdirs", _smoke_platformdirs),

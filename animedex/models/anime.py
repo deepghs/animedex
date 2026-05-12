@@ -22,7 +22,9 @@ survives every later hop (cache, render, JSON pipeline).
 from __future__ import annotations
 
 from datetime import date, datetime
-from typing import Dict, List, Literal, Optional
+from typing import Any, Dict, List, Literal, Optional
+
+from pydantic import Field
 
 from animedex.models.common import AnimedexModel, SourceTag
 
@@ -130,6 +132,16 @@ class AiringScheduleRow(AnimedexModel):
     :vartype local_time: str or None
     :ivar source: Provenance tag.
     :vartype source: SourceTag
+    :ivar core: Compact aggregate-facing summary. JSON consumers can
+                read this first and then inspect ``details`` /
+                ``source_payload`` for the full source-specific row.
+    :vartype core: dict
+    :ivar details: Additional source-specific schedule fields kept in
+                   a namespaced dictionary for aggregate consumers.
+    :vartype details: dict
+    :ivar source_payload: Full backend row payload when an aggregate
+                          command can preserve it.
+    :vartype source_payload: dict
     """
 
     title: str
@@ -138,6 +150,9 @@ class AiringScheduleRow(AnimedexModel):
     weekday: Optional[str] = None
     local_time: Optional[str] = None
     source: SourceTag
+    core: Dict[str, Any] = Field(default_factory=dict)
+    details: Dict[str, Any] = Field(default_factory=dict)
+    source_payload: Dict[str, Any] = Field(default_factory=dict)
 
 
 class Anime(AnimedexModel):
@@ -324,6 +339,9 @@ def selftest() -> bool:
             weekday="monday",
             local_time="01:00",
             source=src,
+            core={"title": "x"},
+            details={"provider": "selftest"},
+            source_payload={"provider": "selftest"},
         ).model_dump_json()
     )
     return True

@@ -171,9 +171,15 @@ query ($year: Int, $season: MediaSeason, $perPage: Int) {
   Page(page: 1, perPage: $perPage) {
     pageInfo { total }
     media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
-      id idMal title { romaji english native } synonyms status format episodes season seasonYear
-      startDate { year month day } endDate { year month day }
-      averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+      id idMal title { romaji english native } synonyms type format status episodes duration
+      season seasonYear startDate { year month day } endDate { year month day }
+      genres tags { name rank } averageScore meanScore popularity favourites trending
+      isAdult countryOfOrigin source description(asHtml: false)
+      coverImage { extraLarge large medium color } bannerImage
+      trailer { id site thumbnail }
+      studios { edges { isMain node { id name isAnimationStudio } } }
+      nextAiringEpisode { airingAt episode timeUntilAiring }
+      externalLinks { id site type url language } streamingEpisodes { title thumbnail url site }
     }
   }
 }
@@ -264,7 +270,17 @@ query ($mediaId: Int, $notYetAired: Boolean, $airingAtGreater: Int, $airingAtLes
       sort: TIME
     ) {
       id airingAt episode timeUntilAiring
-      media { id title { romaji english } }
+      media {
+        id idMal title { romaji english native } synonyms type format status episodes duration
+        season seasonYear startDate { year month day } endDate { year month day }
+        genres tags { name rank } averageScore meanScore popularity favourites trending
+        isAdult countryOfOrigin source description(asHtml: false)
+        coverImage { extraLarge large medium color } bannerImage
+        trailer { id site thumbnail }
+        studios { edges { isMain node { id name isAnimationStudio } } }
+        nextAiringEpisode { airingAt episode timeUntilAiring }
+        externalLinks { id site type url language } streamingEpisodes { title thumbnail url site }
+      }
     }
   }
 }

@@ -12,10 +12,8 @@ piped output remains parseable.
 from __future__ import annotations
 
 import io
-import re
-from datetime import date, datetime, time, timedelta, timezone
+from datetime import date, datetime, time, timedelta
 from typing import Any, Optional
-from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from animedex.models.anime import AiringScheduleRow, Anime
 from animedex.models.aggregate import AggregateResult, MergedAnime, ScheduleCalendarResult
@@ -23,8 +21,7 @@ from animedex.models.character import Character, Staff, Studio
 from animedex.models.common import AnimedexModel
 from animedex.models.trace import TraceHit, TraceQuota
 from animedex.render.json_renderer import render_json
-
-_OFFSET_RE = re.compile(r"^([+-])(\d{2}):?(\d{2})$")
+from animedex.utils.timezone import parse_timezone
 
 
 def is_terminal(stream: Any) -> bool:
@@ -316,23 +313,472 @@ def _format_airing_schedule_tty(row: AiringScheduleRow) -> str:
         print(f"  Schedule: {'  ·  '.join(detail)}", file=out)
     if row.episode is not None:
         print(f"  Episode:  {row.episode}", file=out)
+    for label, value in _schedule_tty_sections(row).items():
+        _render_tree(out, label, value, indent=2, limit=5)
     return out.getvalue()
 
 
 def _tzinfo_from_label(label: str):
-    if label == "UTC":
-        return timezone.utc
-    match = _OFFSET_RE.match(label)
-    if match is not None:
-        sign, hours_text, minutes_text = match.groups()
-        delta = timedelta(hours=int(hours_text), minutes=int(minutes_text))
-        if sign == "-":
-            delta = -delta
-        return timezone(delta, name=f"{sign}{int(hours_text):02d}:{int(minutes_text):02d}")
     try:
-        return ZoneInfo(label)
-    except (ZoneInfoNotFoundError, ValueError):
+        return parse_timezone(label).tzinfo
+    except ValueError:
         return None
+
+
+def _is_empty_tree_value(value: object) -> bool:
+    return value is None or value == "" or value == [] or value == {}
+
+
+def _tree_label(key: object) -> str:
+    text = str(key).replace("_", " ").strip()
+    if not text:
+        return "Value"
+    return text[:1].upper() + text[1:]
+
+
+def _tree_scalar(value: object) -> str:
+    if isinstance(value, (datetime, date, time)):
+        return value.isoformat()
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    return _truncate(str(value), 220) or ""
+
+
+def _render_tree(out: io.StringIO, label: str, value: object, *, indent: int = 2, limit: int = 8) -> None:
+    if _is_empty_tree_value(value):
+        return
+    prefix = " " * indent
+    if isinstance(value, dict):
+        print(f"{prefix}{label}:", file=out)
+        _render_tree_dict(out, value, indent=indent + 2, limit=limit)
+    elif isinstance(value, list):
+        print(f"{prefix}{label}:", file=out)
+        _render_tree_list(out, value, indent=indent + 2, limit=limit)
+    else:
+        print(f"{prefix}{label}: {_tree_scalar(value)}", file=out)
+
+
+def _render_tree_dict(out: io.StringIO, values: dict, *, indent: int, limit: int) -> None:
+    printed = 0
+    for key, value in values.items():
+        if _is_empty_tree_value(value):
+            continue
+        _render_tree(out, _tree_label(key), value, indent=indent, limit=limit)
+        printed += 1
+        if printed >= limit:
+            remaining = sum(1 for next_value in values.values() if not _is_empty_tree_value(next_value)) - printed
+            if remaining > 0:
+                print(f"{' ' * indent}(+{remaining} more)", file=out)
+            break
+
+
+def _render_tree_list(out: io.StringIO, values: list, *, indent: int, limit: int) -> None:
+    prefix = " " * indent
+    printed = 0
+    for value in values:
+        if _is_empty_tree_value(value):
+            continue
+        if isinstance(value, dict):
+            print(f"{prefix}-", file=out)
+            _render_tree_dict(out, value, indent=indent + 2, limit=limit)
+        elif isinstance(value, list):
+            print(f"{prefix}-", file=out)
+            _render_tree_list(out, value, indent=indent + 2, limit=limit)
+        else:
+            print(f"{prefix}- {_tree_scalar(value)}", file=out)
+        printed += 1
+        if printed >= limit:
+            remaining = sum(1 for next_value in values if not _is_empty_tree_value(next_value)) - printed
+            if remaining > 0:
+                print(f"{prefix}- (+{remaining} more)", file=out)
+            break
+
+
+def _compact_tree(values: dict) -> dict:
+    out = {}
+    for key, value in values.items():
+        if _is_empty_tree_value(value):
+            continue
+        if isinstance(value, dict):
+            nested = _compact_tree(value)
+            if nested:
+                out[key] = nested
+        elif isinstance(value, list):
+            nested_list = []
+            for item in value:
+                if isinstance(item, dict):
+                    nested = _compact_tree(item)
+                    if nested:
+                        nested_list.append(nested)
+                elif not _is_empty_tree_value(item):
+                    nested_list.append(item)
+            if nested_list:
+                out[key] = nested_list
+        else:
+            out[key] = value
+    return out
+
+
+def _limited_unique(values: object, *, limit: int = 4) -> list:
+    out = []
+    if not isinstance(values, list):
+        return out
+    for value in values:
+        if value and value not in out:
+            out.append(value)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _first_text(value: object) -> Optional[str]:
+    if isinstance(value, str):
+        text = value.strip()
+        return text or None
+    if isinstance(value, list):
+        for item in value:
+            if isinstance(item, str):
+                text = item.strip()
+                if text:
+                    return text
+    return None
+
+
+def _normalise_tty_token(value: object) -> Optional[str]:
+    text = _first_text(value)
+    return " ".join(text.casefold().split()) if text else None
+
+
+def _filtered_tags(values: object, *, excluded: tuple = (), limit: int = 3) -> object:
+    blocked = {_normalise_tty_token(value) for value in excluded}
+    blocked.update({"airing", "finished", "upcoming", "cancelled", "hiatus", "unknown"})
+    blocked.update({"winter", "spring", "summer", "fall"})
+    out = []
+    if not isinstance(values, list):
+        return out
+    for value in values:
+        token = _normalise_tty_token(value)
+        if not token or token in blocked:
+            continue
+        if value not in out:
+            out.append(value)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _join_summary(values: object, *, limit: int = 5, sep: str = ", ") -> Optional[str]:
+    if isinstance(values, str):
+        return values or None
+    if not isinstance(values, list):
+        return None
+    out = []
+    for value in values:
+        if value and value not in out:
+            out.append(str(value))
+        if len(out) >= limit:
+            break
+    return sep.join(out) if out else None
+
+
+_ID_LABELS = {
+    "anilist": "AniList",
+    "mal": "MAL",
+    "jikan": "Jikan",
+    "kitsu": "Kitsu",
+    "shikimori": "Shikimori",
+    "ann": "ANN",
+    "mangadex": "MangaDex",
+    "ghibli": "Ghibli",
+}
+_ID_ORDER = {name: idx for idx, name in enumerate(_ID_LABELS)}
+
+
+def _id_value(value: object) -> Optional[str]:
+    if value is None or value == "":
+        return None
+    return str(value)
+
+
+def _ids_tty_view(ids: object) -> dict:
+    if not isinstance(ids, dict):
+        return {}
+    out = {}
+    for key, value in sorted(ids.items(), key=lambda item: (_ID_ORDER.get(str(item[0]).casefold(), 999), str(item[0]))):
+        text = _id_value(value)
+        if text:
+            out[_ID_LABELS.get(str(key).casefold(), _tree_label(key))] = text
+    return out
+
+
+def _nested_mapping_value(values: object, *path: str) -> object:
+    current = values
+    for key in path:
+        if not isinstance(current, dict):
+            return None
+        current = current.get(key)
+    return current
+
+
+def _schedule_ids_tty_view(row: AiringScheduleRow, *, core: dict, details: dict) -> dict:
+    out = {}
+
+    def add(label: str, value: object) -> None:
+        text = _id_value(value)
+        if text:
+            out[label] = text
+
+    for label, value in _ids_tty_view(core.get("ids") or details.get("ids")).items():
+        add(label, value)
+
+    payload = row.source_payload or {}
+    if row.source.backend == "anilist":
+        add("AniList airing", details.get("schedule_id") or core.get("schedule_id") or payload.get("id"))
+        add(
+            "AniList media",
+            details.get("media_id") or core.get("media_id") or _nested_mapping_value(payload, "media", "id"),
+        )
+        add("MAL", details.get("mal_id") or core.get("mal_id") or _nested_mapping_value(payload, "media", "idMal"))
+    elif row.source.backend == "jikan":
+        add("Jikan/MAL", details.get("mal_id") or core.get("mal_id") or payload.get("mal_id"))
+    else:
+        backend_id = details.get("id") or core.get("id") or payload.get("id")
+        add(_ID_LABELS.get(row.source.backend, _tree_label(row.source.backend)), backend_id)
+    return _compact_tree(out)
+
+
+def _merged_ids_tty_view(item: MergedAnime) -> dict:
+    ids = dict(item.ids or {})
+    if not ids and isinstance(item.core.get("ids"), dict):
+        ids.update(item.core["ids"])
+    for backend, record in item.records.items():
+        record_ids = getattr(record, "ids", None)
+        if isinstance(record_ids, dict):
+            for key, value in record_ids.items():
+                ids.setdefault(key, value)
+        record_id = getattr(record, "id", None)
+        if isinstance(record_id, str) and ":" in record_id:
+            source_name, source_id = record_id.split(":", 1)
+            ids.setdefault(source_name, source_id)
+        elif record_id:
+            ids.setdefault(backend, record_id)
+    for backend, details in item.source_details.items():
+        if not isinstance(details, dict):
+            continue
+        for key, value in _ids_tty_view(details.get("ids")).items():
+            ids.setdefault(key.casefold(), value)
+        detail_id = details.get("id")
+        if isinstance(detail_id, str) and ":" in detail_id:
+            source_name, source_id = detail_id.split(":", 1)
+            ids.setdefault(source_name, source_id)
+        elif detail_id:
+            ids.setdefault(backend, detail_id)
+    return _ids_tty_view(ids)
+
+
+def _titles_tty_view(titles: object) -> dict:
+    if not isinstance(titles, dict):
+        return {}
+    languages = titles.get("by_language") if isinstance(titles.get("by_language"), dict) else {}
+    romaji = _first_text(titles.get("romaji") or titles.get("primary"))
+    seen = {_normalise_tty_token(romaji)}
+    out = {}
+
+    def add(key: str, value: object) -> None:
+        text = _first_text(value)
+        token = _normalise_tty_token(text)
+        if not text or token in seen:
+            return
+        out[key] = text
+        seen.add(token)
+
+    add("english", titles.get("english"))
+    add("japanese", languages.get("japanese") or titles.get("native"))
+    add("chinese", languages.get("chinese"))
+    add("korean", languages.get("korean"))
+    add("native", titles.get("native"))
+    return _compact_tree(out)
+
+
+def _score_text(score: object) -> object:
+    if isinstance(score, dict) and score.get("score") is not None:
+        text = str(score["score"])
+        if score.get("scale") is not None:
+            text = f"{text}/{score['scale']}"
+        return text
+    return score
+
+
+def _score_map(source_details: dict) -> dict:
+    out = {}
+    for backend, details in source_details.items():
+        if not isinstance(details, dict):
+            continue
+        score = _score_text(details.get("score"))
+        if score:
+            out[_tree_label(backend)] = score
+    return _compact_tree(out)
+
+
+def _first_source_detail(source_details: dict, key: str) -> object:
+    for details in source_details.values():
+        if isinstance(details, dict) and not _is_empty_tree_value(details.get(key)):
+            return details[key]
+    return None
+
+
+def _first_source_details(source_details: dict) -> dict:
+    for details in source_details.values():
+        if isinstance(details, dict):
+            return details
+    return {}
+
+
+def _collect_source_detail_values(source_details: dict, key: str, *, limit: int = 5) -> list:
+    out = []
+    for details in source_details.values():
+        if not isinstance(details, dict):
+            continue
+        values = details.get(key)
+        if not isinstance(values, list):
+            values = [values] if values is not None else []
+        for value in values:
+            if value and value not in out:
+                out.append(value)
+            if len(out) >= limit:
+                return out
+    return out
+
+
+def _season_text(airing: object, details: Optional[dict] = None) -> Optional[str]:
+    details = details or {}
+    if isinstance(airing, dict):
+        season = airing.get("season")
+        year = airing.get("season_year")
+        if season and year:
+            return f"{season} {year}"
+        if season:
+            return str(season)
+    season = details.get("season")
+    year = details.get("season_year")
+    if season and year:
+        return f"{season} {year}"
+    if season:
+        return str(season)
+    return None
+
+
+def _date_range_text(airing: object, details: Optional[dict] = None) -> Optional[str]:
+    details = details or {}
+    source = airing if isinstance(airing, dict) else details
+    start = source.get("aired_from")
+    end = source.get("aired_to")
+    if start and end:
+        return f"{start} to {end}"
+    if start:
+        return f"{start} to ongoing"
+    return None
+
+
+def _schedule_tty_sections(row: AiringScheduleRow) -> dict:
+    core = dict(row.core or {})
+    details = row.details or {}
+    if not core:
+        core = {
+            "title": row.title,
+            "airing_at": row.airing_at,
+            "episode": row.episode,
+            "weekday": row.weekday,
+            "local_time": row.local_time,
+        }
+    titles = _titles_tty_view(core.get("titles") or details.get("titles"))
+    status = core.get("status") or details.get("status")
+    source_material = core.get("source_material") or details.get("source_material")
+    rating = core.get("rating") or details.get("rating")
+    score = _score_text(core.get("score") or details.get("score"))
+    return _compact_tree(
+        {
+            "Names": titles,
+            "IDs": _schedule_ids_tty_view(row, core=core, details=details),
+            "Info": {
+                "status": status,
+                "source_material": source_material,
+                "rating": rating,
+                "score": score,
+            },
+            "Tags": {
+                "type": _join_summary(
+                    _filtered_tags(
+                        core.get("type_tags") or details.get("type_tags") or [],
+                        excluded=(status, source_material, rating),
+                        limit=3,
+                    ),
+                    limit=3,
+                ),
+                "genres": _join_summary(
+                    _limited_unique(core.get("genres") or details.get("genres") or [], limit=3), limit=3
+                ),
+            },
+        }
+    )
+
+
+def _merged_tty_sections(item: MergedAnime) -> dict:
+    core = item.core or {}
+    first_details = _first_source_details(item.source_details)
+    titles = _titles_tty_view(core.get("titles"))
+    if not titles:
+        merged_titles = {}
+        for details in item.source_details.values():
+            if not isinstance(details, dict):
+                continue
+            source_titles = _titles_tty_view(details.get("titles"))
+            for key, value in source_titles.items():
+                if isinstance(value, list):
+                    merged_titles.setdefault(key, [])
+                    for item_value in value:
+                        if item_value not in merged_titles[key]:
+                            merged_titles[key].append(item_value)
+                elif key not in merged_titles:
+                    merged_titles[key] = value
+        titles = _compact_tree(merged_titles)
+    format_text = core.get("format") or _first_source_detail(item.source_details, "format")
+    episodes = core.get("episodes") or _first_source_detail(item.source_details, "episodes")
+    season_text = _season_text(core.get("airing")) or _season_text({}, first_details)
+    source_text = core.get("source_material") or _first_source_detail(item.source_details, "source_material")
+    rating = core.get("age_rating") or _first_source_detail(item.source_details, "age_rating")
+    type_tags = _filtered_tags(
+        core.get("type_tags") or _collect_source_detail_values(item.source_details, "type_tags", limit=8),
+        excluded=(
+            (core.get("airing") or {}).get("status") if isinstance(core.get("airing"), dict) else None,
+            source_text,
+            rating,
+            *list(core.get("genres") or []),
+        ),
+        limit=3,
+    )
+    genres = _limited_unique(core.get("genres") or [], limit=3) or _collect_source_detail_values(
+        item.source_details, "genres", limit=3
+    )
+    return _compact_tree(
+        {
+            "Names": titles,
+            "IDs": _merged_ids_tty_view(item),
+            "Info": {
+                "format": format_text,
+                "episodes": episodes,
+                "season": season_text,
+                "aired": _date_range_text(core.get("airing")) or _date_range_text({}, first_details),
+                "source_material": source_text,
+                "rating": rating,
+            },
+            "Scores": _score_map(item.source_details),
+            "Tags": {
+                "type": _join_summary(type_tags, limit=3),
+                "genres": _join_summary(genres, limit=3),
+            },
+        }
+    )
 
 
 def _schedule_datetime(row: AiringScheduleRow, *, window_start: date, timezone_label: str) -> Optional[datetime]:
@@ -386,6 +832,8 @@ def _format_schedule_calendar_tty(result: ScheduleCalendarResult) -> str:
                 bits.append(f"ep {row.episode}")
             bits.append(f"[src: {row.source.backend}]")
             print("  ".join(bits), file=out)
+            for label, value in _schedule_tty_sections(row).items():
+                _render_tree(out, label, value, indent=4, limit=5)
 
     for item in floating:
         print("", file=out)
@@ -397,23 +845,8 @@ def _format_merged_anime_tty(item: MergedAnime) -> str:
     source_names = "+".join(source.backend for source in item.sources) or "?"
     out = io.StringIO()
     print(f"{item.title.romaji}  [src: {source_names}]", file=out)
-    if item.title.english and item.title.english != item.title.romaji:
-        print(f"  English: {item.title.english}", file=out)
-    if item.ids:
-        print(f"  IDs:     {' | '.join(f'{key}:{value}' for key, value in sorted(item.ids.items()))}", file=out)
-    for backend, anime in item.records.items():
-        bits = []
-        if anime.score is not None:
-            bits.append(f"score {anime.score.score}/{anime.score.scale}")
-        if anime.format:
-            bits.append(anime.format)
-        if anime.episodes is not None:
-            bits.append(f"{anime.episodes} ep")
-        if anime.status:
-            bits.append(anime.status)
-        detail = "  ·  ".join(bits) if bits else anime.id
-        title = anime.title.romaji
-        print(f"  {backend}: {title}  ({detail})", file=out)
+    for label, value in _merged_tty_sections(item).items():
+        _render_tree(out, label, value, indent=2, limit=6)
     return out.getvalue()
 
 

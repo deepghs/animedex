@@ -162,7 +162,7 @@ def season_command(
     "timezone_name",
     default="local",
     show_default=True,
-    help="Display/query timezone: local, UTC, IANA name, or offset like +08:00.",
+    help="Display/query timezone: local, UTC, IANA name, dateutil TZ string, or offset like +08:00.",
 )
 @_common_options
 @click.pass_context
@@ -182,6 +182,7 @@ def schedule_command(ctx, day, source, limit, timezone_name, json_flag, jq_expr,
     Examples:
       animedex schedule
       animedex schedule --day monday --timezone Asia/Tokyo --source jikan
+      animedex schedule --day today --timezone UTC+8
       animedex schedule --day today --jq '.items[:3]'
     \f
 
