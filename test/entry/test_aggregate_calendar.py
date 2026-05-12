@@ -389,7 +389,7 @@ def test_schedule_tty_renders_source_markers(runner, cli, fake_clock, force_tty,
     assert result.exit_code == 0, result.output
     assert "Schedule (+08:00)" in result.output
     assert "Monday, 2026-05-11" in result.output
-    assert "00:00  Shin Nippon History" in result.output
+    assert "00:00 \u2502 Shin Nippon History" in result.output
     assert "Info:" in result.output
     assert "IDs:" in result.output
     assert "Jikan/MAL: 54871" in result.output

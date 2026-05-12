@@ -23,6 +23,8 @@ from animedex.models.trace import TraceHit, TraceQuota
 from animedex.render.json_renderer import render_json
 from animedex.utils.timezone import parse_timezone
 
+_SCHEDULE_TIMELINE = "\u2502"
+
 
 def is_terminal(stream: Any) -> bool:
     """Return ``True`` when ``stream`` is connected to a terminal.
@@ -35,6 +37,21 @@ def is_terminal(stream: Any) -> bool:
     :rtype: bool
     """
     return bool(getattr(stream, "isatty", lambda: False)())
+
+
+def _stream_supports_text(stream: Any, text: str) -> bool:
+    encoding = getattr(stream, "encoding", None)
+    if stream is None or not encoding:
+        return True
+    try:
+        text.encode(encoding)
+    except (LookupError, UnicodeEncodeError):
+        return False
+    return True
+
+
+def _schedule_timeline_char(stream: Any = None) -> str:
+    return _SCHEDULE_TIMELINE if _stream_supports_text(stream, _SCHEDULE_TIMELINE) else "|"
 
 
 def _truncate(text: Optional[str], n: int = 280) -> Optional[str]:
@@ -392,6 +409,15 @@ def _render_tree_list(out: io.StringIO, values: list, *, indent: int, limit: int
             if remaining > 0:
                 print(f"{prefix}- (+{remaining} more)", file=out)
             break
+
+
+def _render_schedule_timeline_tree(out: io.StringIO, sections: dict, *, timeline: str, limit: int = 5) -> None:
+    gutter = " " * 6
+    rendered = io.StringIO()
+    for label, value in sections.items():
+        _render_tree(rendered, label, value, indent=0, limit=limit)
+    for line in rendered.getvalue().splitlines():
+        print(f"{gutter}{timeline} {line}", file=out)
 
 
 def _compact_tree(values: dict) -> dict:
@@ -792,8 +818,9 @@ def _schedule_datetime(row: AiringScheduleRow, *, window_start: date, timezone_l
     return None
 
 
-def _format_schedule_calendar_tty(result: ScheduleCalendarResult) -> str:
+def _format_schedule_calendar_tty(result: ScheduleCalendarResult, *, stream: Any = None) -> str:
     out = io.StringIO()
+    timeline = _schedule_timeline_char(stream)
     print(f"Schedule ({result.timezone})", file=out)
     print(f"Window: {result.window_start.isoformat()} to {result.window_end.isoformat()} (exclusive)", file=out)
     if not result.items:
@@ -820,19 +847,21 @@ def _format_schedule_calendar_tty(result: ScheduleCalendarResult) -> str:
         label = day.strftime("%A, %Y-%m-%d") if day is not None else "Unscheduled"
         print("", file=out)
         print(label, file=out)
-        for when, row in sorted(groups[day], key=lambda pair: ((pair[0] or datetime.max).time(), pair[1].title)):
+        rows = sorted(groups[day], key=lambda pair: ((pair[0] or datetime.max).time(), pair[1].title))
+        for index, (when, row) in enumerate(rows):
+            if index:
+                print(f"{' ' * 6}{timeline}", file=out)
             clock = when.strftime("%H:%M") if when is not None else (row.local_time or "--:--")
-            bits = [f"  {clock}", row.title]
+            bits = [row.title]
             if row.episode is not None:
                 bits.append(f"ep {row.episode}")
             bits.append(f"[src: {row.source.backend}]")
-            print("  ".join(bits), file=out)
-            for label, value in _schedule_tty_sections(row).items():
-                _render_tree(out, label, value, indent=4, limit=5)
+            print(f"{clock:<5} {timeline} {'  '.join(bits)}", file=out)
+            _render_schedule_timeline_tree(out, _schedule_tty_sections(row), timeline=timeline, limit=5)
 
     for item in floating:
         print("", file=out)
-        print(render_tty(item) if isinstance(item, AnimedexModel) else str(item), file=out)
+        print(render_tty(item, stream=stream) if isinstance(item, AnimedexModel) else str(item), file=out)
     return out.getvalue()
 
 
@@ -845,7 +874,7 @@ def _format_merged_anime_tty(item: MergedAnime) -> str:
     return out.getvalue()
 
 
-def render_tty(model: AnimedexModel) -> str:
+def render_tty(model: AnimedexModel, *, stream: Any = None) -> str:
     """Render a model into the human-friendly TTY form.
 
     Dispatches on type: :class:`Anime`, :class:`Character`,
@@ -856,15 +885,20 @@ def render_tty(model: AnimedexModel) -> str:
 
     :param model: The :class:`AnimedexModel` instance to render.
     :type model: AnimedexModel
+    :param stream: Optional destination stream used to pick terminal
+                   glyphs that the stream can encode.
+    :type stream: Any
     :return: The TTY-friendly string.
     :rtype: str
     """
     if isinstance(model, ScheduleCalendarResult):
-        return _format_schedule_calendar_tty(model)
+        return _format_schedule_calendar_tty(model, stream=stream)
     if isinstance(model, AggregateResult):
         if not model.items:
             return ""
-        return "\n\n".join(render_tty(item) if isinstance(item, AnimedexModel) else str(item) for item in model.items)
+        return "\n\n".join(
+            render_tty(item, stream=stream) if isinstance(item, AnimedexModel) else str(item) for item in model.items
+        )
     if isinstance(model, MergedAnime):
         return _format_merged_anime_tty(model)
     if isinstance(model, AiringScheduleRow):
@@ -895,7 +929,7 @@ def render_tty(model: AnimedexModel) -> str:
         except Exception:
             common = None
         if isinstance(common, (Anime, AiringScheduleRow, Character, Staff, Studio)):
-            return render_tty(common)
+            return render_tty(common, stream=stream)
     # Generic fallback: dump JSON with whichever SourceTag we can find.
     # Rich dataclasses store the SourceTag on ``source_tag`` because
     # their ``source`` field is already taken by upstream metadata
@@ -932,7 +966,7 @@ def render_for_stream(model: AnimedexModel, stream: Any) -> str:
     :rtype: str
     """
     if is_terminal(stream):
-        return render_tty(model)
+        return render_tty(model, stream=stream)
     return render_json(model, include_source=True)
 
 

@@ -300,13 +300,15 @@ class TestRenderScheduleCalendar:
         )
 
         assert "Monday, 2026-05-11" in offset
-        assert "01:00  Episode Row  ep 7  [src: jikan]" in offset
+        assert "01:00 \u2502 Episode Row  ep 7  [src: jikan]" in offset
+        assert "      \u2502 Info:" in offset
+        assert "      \u2502\n02:30 \u2502 Rich Row  [src: jikan]" in offset
         assert "Info:" in offset
         assert "Source material: Original" in offset
         assert "Rating: G" in offset
-        assert "02:30  Rich Row  [src: jikan]" in offset
+        assert "02:30 \u2502 Rich Row  [src: jikan]" in offset
         assert "Unscheduled" in offset
-        assert "bad  Bad Clock  [src: jikan]" in offset
+        assert "bad   \u2502 Bad Clock  [src: jikan]" in offset
         assert '"source_tag"' in offset
         assert "floating text" in offset
 
@@ -325,7 +327,7 @@ class TestRenderScheduleCalendar:
                 window_end=date(2026, 5, 12),
             )
         )
-        assert "10:00  Instant Row  [src: jikan]" in iana
+        assert "10:00 \u2502 Instant Row  [src: jikan]" in iana
 
         utc = render_tty(
             ScheduleCalendarResult(
@@ -342,7 +344,7 @@ class TestRenderScheduleCalendar:
                 window_end=date(2026, 5, 12),
             )
         )
-        assert "01:00  UTC Row  [src: jikan]" in utc
+        assert "01:00 \u2502 UTC Row  [src: jikan]" in utc
 
         unknown = render_tty(
             ScheduleCalendarResult(
@@ -359,7 +361,7 @@ class TestRenderScheduleCalendar:
                 window_end=date(2026, 5, 12),
             )
         )
-        assert "01:00  Naive Fallback  [src: jikan]" in unknown
+        assert "01:00 \u2502 Naive Fallback  [src: jikan]" in unknown
 
         unscheduled = render_tty(
             ScheduleCalendarResult(
@@ -371,7 +373,34 @@ class TestRenderScheduleCalendar:
             )
         )
         assert "Unscheduled" in unscheduled
-        assert "--:--  Loose Row  [src: jikan]" in unscheduled
+        assert "--:-- \u2502 Loose Row  [src: jikan]" in unscheduled
+
+    def test_calendar_falls_back_to_ascii_timeline_when_stream_cannot_encode_unicode(self):
+        from animedex.models.aggregate import ScheduleCalendarResult
+        from animedex.models.anime import AiringScheduleRow
+        from animedex.render.tty import render_tty
+
+        class AsciiStream:
+            encoding = "ascii"
+
+        src = SourceTag(backend="jikan", fetched_at=datetime(2026, 5, 7, tzinfo=timezone.utc))
+        out = render_tty(
+            ScheduleCalendarResult(
+                items=[
+                    AiringScheduleRow(title="First Row", weekday="monday", local_time="01:00", source=src),
+                    AiringScheduleRow(title="Second Row", weekday="monday", local_time="02:00", source=src),
+                ],
+                sources={},
+                timezone="UTC",
+                window_start=date(2026, 5, 11),
+                window_end=date(2026, 5, 12),
+            ),
+            stream=AsciiStream(),
+        )
+
+        assert "01:00 | First Row  [src: jikan]" in out
+        assert "      |\n02:00 | Second Row  [src: jikan]" in out
+        assert "\u2502" not in out
 
 
 class TestRenderMergedAnime:

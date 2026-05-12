@@ -51,7 +51,7 @@ def _emit(result: AggregateResult, *, json_flag: bool, jq_expr: Optional[str], n
         if jq_expr is not None:
             text = _apply_jq(text, jq_expr)
     else:
-        text = render_tty(result)
+        text = render_tty(result, stream=sys.stdout)
     click.echo(text.rstrip("\n"))
 
 
