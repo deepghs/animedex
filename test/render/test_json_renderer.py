@@ -120,6 +120,35 @@ class TestMergedSources:
         assert decoded["_meta"]["sources_consulted"] == ["anilist", "legacy"]
 
 
+class TestAggregateResultSources:
+    def test_aggregate_sources_map_reports_ok_sources_only(self):
+        from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
+        from animedex.render.json_renderer import render_json
+
+        result = AggregateResult(
+            items=[{"id": 1, "_source": "jikan", "_prefix_id": "mal:1"}],
+            sources={
+                "anilist": AggregateSourceStatus(backend="anilist", status="failed", reason="upstream-error"),
+                "jikan": AggregateSourceStatus(backend="jikan", status="ok", items=1),
+            },
+        )
+        decoded = json.loads(render_json(result, include_source=True))
+
+        assert decoded["_meta"]["sources_consulted"] == ["jikan"]
+        assert decoded["sources"]["anilist"]["status"] == "failed"
+
+    def test_sources_map_keeps_legacy_scalar_entries(self):
+        from animedex.models.common import AnimedexModel
+        from animedex.render.json_renderer import render_json
+
+        class LegacyAggregate(AnimedexModel):
+            sources: dict
+
+        decoded = json.loads(render_json(LegacyAggregate(sources={"legacy": True}), include_source=True))
+
+        assert decoded["_meta"]["sources_consulted"] == ["legacy"]
+
+
 class TestRichModelSourceAttribution:
     """Reviewer review B1 (PR #6).
 

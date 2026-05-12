@@ -56,6 +56,7 @@ def anilist_group() -> None:
 # ---------- core ----------
 register_subcommand(anilist_group, "show", _api.show, help="Show one Media (anime/manga) by AniList id.")
 register_subcommand(anilist_group, "search", _api.search, help="Search Media by title.")
+register_subcommand(anilist_group, "manga-search", _api.manga_search, help="Search manga by title.")
 register_subcommand(anilist_group, "character", _api.character, help="Show one Character by id.")
 register_subcommand(anilist_group, "character-search", _api.character_search, help="Search characters.")
 register_subcommand(anilist_group, "staff", _api.staff, help="Show one Staff by id.")

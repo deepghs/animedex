@@ -142,7 +142,25 @@ def search(q: str, *, page: int = 1, per_page: int = 10, config: Optional[Config
     :return: List of matching AniList records.
     :rtype: list[AnilistAnime]
     """
-    payload, src = _gql(_q.Q_MEDIA_SEARCH, {"q": q, "page": page, "perPage": min(per_page, 50)}, config=config, **kw)
+    payload, src = _gql(
+        _q.Q_MEDIA_SEARCH,
+        {"q": q, "page": page, "perPage": min(per_page, 50), "type": "ANIME"},
+        config=config,
+        **kw,
+    )
+    return _mp.map_media_list(payload, src)
+
+
+def manga_search(
+    q: str, *, page: int = 1, per_page: int = 10, config: Optional[Config] = None, **kw
+) -> List[AnilistAnime]:
+    """Search manga by title."""
+    payload, src = _gql(
+        _q.Q_MEDIA_SEARCH,
+        {"q": q, "page": page, "perPage": min(per_page, 50), "type": "MANGA"},
+        config=config,
+        **kw,
+    )
     return _mp.map_media_list(payload, src)
 
 

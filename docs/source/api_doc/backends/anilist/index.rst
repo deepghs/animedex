@@ -25,6 +25,12 @@ search
 .. autofunction:: search
 
 
+manga\_search
+-----------------------------------------------------
+
+.. autofunction:: manga_search
+
+
 character
 -----------------------------------------------------
 

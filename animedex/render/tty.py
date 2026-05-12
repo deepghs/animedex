@@ -874,6 +874,125 @@ def _format_merged_anime_tty(item: MergedAnime) -> str:
     return out.getvalue()
 
 
+def _aggregate_item_value(item: object, key: str) -> object:
+    if isinstance(item, dict):
+        return item.get(key)
+    return getattr(item, key, None)
+
+
+def _aggregate_item_source(item: object) -> Optional[str]:
+    source = _aggregate_item_value(item, "_source")
+    if source:
+        return str(source)
+    from animedex.models.common import SourceTag
+
+    tag = getattr(item, "source_tag", None)
+    if isinstance(tag, SourceTag):
+        return tag.backend
+    tag = getattr(item, "source", None)
+    if isinstance(tag, SourceTag):
+        return tag.backend
+    return None
+
+
+def _aggregate_item_label(item: object) -> str:
+    if hasattr(item, "to_common"):
+        try:
+            common = item.to_common()
+        except Exception:
+            common = None
+        if isinstance(common, Anime):
+            return common.title.romaji
+        if isinstance(common, (Character, Staff, Studio)):
+            return common.name
+    for attr in ("name", "title"):
+        value = _aggregate_item_value(item, attr)
+        if isinstance(value, dict):
+            for key in ("romaji", "english", "en"):
+                text = value.get(key)
+                if text:
+                    return str(text)
+        if isinstance(value, str) and value:
+            return value
+        if value:
+            nested = getattr(value, "romaji", None) or getattr(value, "english", None) or getattr(value, "en", None)
+            if nested:
+                return str(nested)
+            return str(value)
+    return type(item).__name__
+
+
+def _aggregate_item_score(item: object) -> Optional[str]:
+    score = _aggregate_item_value(item, "score")
+    if isinstance(score, dict):
+        value = score.get("score")
+        scale = score.get("scale")
+        if value is not None and scale is not None:
+            return f"{value}/{scale}"
+        if value is not None:
+            return str(value)
+    if score is not None:
+        return str(score)
+    if hasattr(item, "to_common"):
+        try:
+            common = item.to_common()
+        except Exception:
+            common = None
+        if isinstance(common, Anime) and common.score is not None:
+            return f"{common.score.score}/{common.score.scale}"
+    return None
+
+
+def _aggregate_item_status(item: object) -> Optional[str]:
+    value = _aggregate_item_value(item, "status")
+    if value:
+        return str(value)
+    if hasattr(item, "to_common"):
+        try:
+            common = item.to_common()
+        except Exception:
+            common = None
+        if isinstance(common, Anime) and common.status:
+            return common.status
+    return None
+
+
+def _is_search_result(item: object) -> bool:
+    return bool(_aggregate_item_value(item, "_prefix_id"))
+
+
+def _uses_compact_aggregate_tty(result: AggregateResult) -> bool:
+    return any(_is_search_result(item) or _aggregate_item_source(item) for item in result.items)
+
+
+def _format_search_aggregate_tty(result: AggregateResult) -> str:
+    out = io.StringIO()
+    print("Aggregate results", file=out)
+    if result.failed_sources:
+        failed = ", ".join(sorted(result.failed_sources))
+        print(f"  Failed sources: {failed}", file=out)
+    for item in result.items:
+        label = _aggregate_item_label(item)
+        bits = [label]
+        prefix_id = _aggregate_item_value(item, "_prefix_id")
+        if prefix_id:
+            bits.append(f"({prefix_id})")
+        source = _aggregate_item_source(item)
+        if source:
+            bits.append(f"[src: {source}]")
+        print("  " + " ".join(bits), file=out)
+        details = []
+        score = _aggregate_item_score(item)
+        status = _aggregate_item_status(item)
+        if score:
+            details.append(f"Score: {score}")
+        if status:
+            details.append(f"Status: {status}")
+        if details:
+            print("    " + "  ·  ".join(details), file=out)
+    return out.getvalue()
+
+
 def render_tty(model: AnimedexModel, *, stream: Any = None) -> str:
     """Render a model into the human-friendly TTY form.
 
@@ -896,6 +1015,8 @@ def render_tty(model: AnimedexModel, *, stream: Any = None) -> str:
     if isinstance(model, AggregateResult):
         if not model.items:
             return ""
+        if _uses_compact_aggregate_tty(model):
+            return _format_search_aggregate_tty(model)
         return "\n\n".join(
             render_tty(item, stream=stream) if isinstance(item, AnimedexModel) else str(item) for item in model.items
         )

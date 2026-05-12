@@ -8,8 +8,10 @@ wire logic.
 
 from animedex.agg.calendar import schedule, season
 from animedex.agg._fanout import FanoutSource, run_fanout
+from animedex.agg.search import search
+from animedex.agg.show import show
 
-__all__ = ["FanoutSource", "run_fanout", "schedule", "season"]
+__all__ = ["FanoutSource", "run_fanout", "schedule", "search", "season", "show"]
 
 
 def selftest() -> bool:
@@ -20,5 +22,7 @@ def selftest() -> bool:
     """
     assert callable(season)
     assert callable(schedule)
+    assert callable(search)
+    assert callable(show)
     assert callable(run_fanout)
     return True

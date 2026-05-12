@@ -129,21 +129,21 @@ KitsuCharacter
 -----------------------------------------------------
 
 .. autoclass:: KitsuCharacter
-    :members: id,type,attributes,relationships,links,source_tag
+    :members: to_common,id,type,attributes,relationships,links,source_tag
 
 
 KitsuPerson
 -----------------------------------------------------
 
 .. autoclass:: KitsuPerson
-    :members: id,type,attributes,relationships,links,source_tag
+    :members: to_common,id,type,attributes,relationships,links,source_tag
 
 
 KitsuProducer
 -----------------------------------------------------
 
 .. autoclass:: KitsuProducer
-    :members: id,type,attributes,relationships,links,source_tag
+    :members: to_common,id,type,attributes,relationships,links,source_tag
 
 
 KitsuGenre

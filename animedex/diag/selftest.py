@@ -75,6 +75,8 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.entry",
     "animedex.entry.aggregate",
     "animedex.entry.cli",
+    "animedex.entry.search",
+    "animedex.entry.show",
     "animedex.diag",
     "animedex.diag.selftest",
     "animedex.models",
@@ -135,6 +137,13 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.api.trace",
     "animedex.api.waifu",
     "animedex.render.raw",
+    # aggregate command layer.
+    "animedex.agg",
+    "animedex.agg._fanout",
+    "animedex.agg._prefix_id",
+    "animedex.agg._type_routes",
+    "animedex.agg.search",
+    "animedex.agg.show",
     # the high-level backend layer: backend-specific high-level Python APIs.
     "animedex.backends",
     "animedex.backends.anilist",

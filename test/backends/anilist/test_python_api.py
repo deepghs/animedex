@@ -84,6 +84,7 @@ CASES: List[Tuple[str, Callable, tuple, dict, Any]] = [
     # (fixture_rel, fn, args, kwargs, expected_type_or_list)
     ("media/01-media-frieren.yaml", anilist_api.show, (154587,), {}, AnilistAnime),
     ("search/01-search-frieren.yaml", anilist_api.search, ("Frieren",), {"per_page": 5}, list),
+    ("graphql/28-manga-search-berserk.yaml", anilist_api.manga_search, ("Berserk",), {"per_page": 5}, list),
     ("character/01-character-edward-elric.yaml", anilist_api.character, (11,), {}, AnilistCharacter),
     ("staff/01-staff-101572.yaml", anilist_api.staff, (101572,), {}, AnilistStaff),
     ("studio/01-studio-madhouse.yaml", anilist_api.studio, (11,), {}, AnilistStudio),

@@ -118,7 +118,9 @@ from animedex.entry.kitsu import kitsu_group as _kitsu_group  # noqa: E402
 from animedex.entry.mangadex import mangadex_group as _mangadex_group  # noqa: E402
 from animedex.entry.nekos import nekos_group as _nekos_group  # noqa: E402
 from animedex.entry.quote import quote_group as _quote_group  # noqa: E402
+from animedex.entry.search import search_command as _search_command  # noqa: E402
 from animedex.entry.shikimori import shikimori_group as _shikimori_group  # noqa: E402
+from animedex.entry.show import show_command as _show_command  # noqa: E402
 from animedex.entry.trace import trace_group as _trace_group  # noqa: E402
 from animedex.entry.waifu import waifu_group as _waifu_group  # noqa: E402
 
@@ -132,7 +134,9 @@ cli.add_command(_kitsu_group)
 cli.add_command(_mangadex_group)
 cli.add_command(_nekos_group)
 cli.add_command(_quote_group)
+cli.add_command(_search_command)
 cli.add_command(_shikimori_group)
+cli.add_command(_show_command)
 cli.add_command(_trace_group)
 cli.add_command(_waifu_group)
 cli.add_command(_season_command)
@@ -168,7 +172,7 @@ def status_command() -> None:
     """
     click.echo(f"{__TITLE__} v{__VERSION__}")
     click.echo(
-        "Wired groups: season, schedule, anilist, ann, danbooru, ghibli, jikan, kitsu, mangadex, nekos, quote, shikimori, trace, waifu, api (raw passthrough)."
+        "Wired groups: search, show, season, schedule, anilist, ann, danbooru, ghibli, jikan, kitsu, mangadex, nekos, quote, shikimori, trace, waifu, api (raw passthrough)."
     )
     click.echo("Run 'animedex --help' for the full command tree.")
 

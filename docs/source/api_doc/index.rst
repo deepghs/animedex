@@ -9,6 +9,7 @@ API Reference
 .. toctree::
     :maxdepth: 3
 
+    agg/index
     api/index
     auth/index
     backends/index
@@ -27,4 +28,3 @@ API Reference
 -----------------------------------------------------
 
 .. autodata:: __all__
-

@@ -1,0 +1,158 @@
+metadata:
+  captured_at: '2026-05-11T08:09:44Z'
+  label: frieren-limit2
+  backend: kitsu
+  path_slug: characters
+request:
+  method: GET
+  url: https://kitsu.io/api/edge/characters?filter[name]=Frieren&page[limit]=2&page[offset]=0
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 08:09:44 GMT
+    Content-Type: application/vnd.api+json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    alt-svc: h3=":443"; ma=86400
+    Cache-Control: max-age=0, private, must-revalidate
+    etag: W/"229593e178c38ed1c41a43c5506ecbf9"
+    referrer-policy: strict-origin-when-cross-origin
+    Server: cloudflare
+    strict-transport-security: max-age=31536000; preload
+    vary: Accept, Origin
+    x-content-type-options: nosniff
+    x-download-options: noopen
+    x-frame-options: SAMEORIGIN
+    x-permitted-cross-domain-policies: none
+    x-request-id: a44c0f6a-aad0-4ab0-85f0-c86e16c7ce6d
+    x-runtime: '0.071051'
+    x-xss-protection: 1; mode=block
+    Nel: <scrubbed-at-capture>
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+    - id: '85849'
+      type: characters
+      links:
+        self: https://kitsu.io/api/edge/characters/85849
+      attributes:
+        createdAt: '2017-01-22T11:30:37.242Z'
+        updatedAt: '2021-09-27T19:55:30.510Z'
+        slug: freezen
+        names:
+          en: Freezen
+          ja_jp: フリーズン
+        canonicalName: Freezen
+        otherNames: []
+        name: Freezen
+        malId: 92093
+        description: ''
+        image:
+          tiny: https://media.kitsu.app/character/85849/image/tiny-1901d28f3065cb3297a84d69841355fc.jpeg
+          large: https://media.kitsu.app/character/85849/image/large-8b56f32c21e94a847a998952678f00f0.jpeg
+          small: https://media.kitsu.app/character/85849/image/small-60aad7a29212e205037b6dcfba9cb327.jpeg
+          medium: https://media.kitsu.app/character/85849/image/medium-c922633dbeb67981153cf51907fcd378.jpeg
+          original: https://media.kitsu.app/characters/images/85849/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 100
+                height: 120
+              large:
+                width: 500
+                height: 600
+              small:
+                width: 200
+                height: 240
+              medium:
+                width: 300
+                height: 360
+      relationships:
+        primaryMedia:
+          links:
+            self: https://kitsu.io/api/edge/characters/85849/relationships/primary-media
+            related: https://kitsu.io/api/edge/characters/85849/primary-media
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/characters/85849/relationships/castings
+            related: https://kitsu.io/api/edge/characters/85849/castings
+        mediaCharacters:
+          links:
+            self: https://kitsu.io/api/edge/characters/85849/relationships/media-characters
+            related: https://kitsu.io/api/edge/characters/85849/media-characters
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/characters/85849/relationships/quotes
+            related: https://kitsu.io/api/edge/characters/85849/quotes
+    - id: '50095'
+      type: characters
+      links:
+        self: https://kitsu.io/api/edge/characters/50095
+      attributes:
+        createdAt: '2014-07-31T19:39:55.232Z'
+        updatedAt: '2021-09-26T19:28:04.702Z'
+        slug: frivelen
+        names:
+          en: Frivelen
+          ja_jp: null
+        canonicalName: Frivelen
+        otherNames:
+        - Goblin of the Brave Horn Clan
+        name: Frivelen
+        malId: 55485
+        description: A prideful women who usually appears as a luck charm and transforms into her true form when there is
+          danger. In truth shes a goblin, but would rather hide this fact due to the goblin's reputation of being weak, she
+          wants others to view her as a strong being.
+        image:
+          tiny: https://media.kitsu.app/character/50095/image/tiny-88353f922edf6168a71fd1fb26adbe2f.jpeg
+          large: https://media.kitsu.app/character/50095/image/large-1481c3aa4a58cffd4fc46d5503f700c1.jpeg
+          small: https://media.kitsu.app/character/50095/image/small-0b3b27072d95f0923197e3271ae0da39.jpeg
+          medium: https://media.kitsu.app/character/50095/image/medium-9f9042713340d5f645a423675f856d66.jpeg
+          original: https://media.kitsu.app/characters/images/50095/original.jpg
+          meta:
+            dimensions:
+              tiny:
+                width: 100
+                height: 120
+              large:
+                width: 500
+                height: 600
+              small:
+                width: 200
+                height: 240
+              medium:
+                width: 300
+                height: 360
+      relationships:
+        primaryMedia:
+          links:
+            self: https://kitsu.io/api/edge/characters/50095/relationships/primary-media
+            related: https://kitsu.io/api/edge/characters/50095/primary-media
+        castings:
+          links:
+            self: https://kitsu.io/api/edge/characters/50095/relationships/castings
+            related: https://kitsu.io/api/edge/characters/50095/castings
+        mediaCharacters:
+          links:
+            self: https://kitsu.io/api/edge/characters/50095/relationships/media-characters
+            related: https://kitsu.io/api/edge/characters/50095/media-characters
+        quotes:
+          links:
+            self: https://kitsu.io/api/edge/characters/50095/relationships/quotes
+            related: https://kitsu.io/api/edge/characters/50095/quotes
+    meta:
+      count: 23
+    links:
+      first: https://kitsu.io/api/edge/characters?filter%5Bname%5D=Frieren&page%5Blimit%5D=2&page%5Boffset%5D=0
+      next: https://kitsu.io/api/edge/characters?filter%5Bname%5D=Frieren&page%5Blimit%5D=2&page%5Boffset%5D=2
+      last: https://kitsu.io/api/edge/characters?filter%5Bname%5D=Frieren&page%5Blimit%5D=2&page%5Boffset%5D=21
+  body_text: null
+  body_b64: null

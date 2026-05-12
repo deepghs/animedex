@@ -1,0 +1,70 @@
+metadata:
+  captured_at: '2026-05-11T08:09:46Z'
+  label: frieren-limit2
+  backend: shikimori
+  path_slug: animes_search
+request:
+  method: GET
+  url: https://shikimori.io/api/animes?search=Frieren&limit=2
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: ddos-guard
+    Connection: keep-alive
+    Keep-Alive: timeout=60
+    Set-Cookie: <scrubbed-at-capture>
+    Content-Security-Policy: upgrade-insecure-requests;
+    Date: Mon, 11 May 2026 08:09:46 GMT
+    Content-Type: application/json; charset=utf-8
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: '0'
+    X-Content-Type-Options: nosniff
+    X-Permitted-Cross-Domain-Policies: none
+    Referrer-Policy: strict-origin-when-cross-origin
+    ETag: W/"7ffca2b389e49abd8a2ecf15fb7ea823"
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Request-Id: 927efb0e-5822-4127-9b37-59905cd331a5
+    X-Runtime: '0.014637'
+    vary: Accept, Origin
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body_json:
+  - id: 52991
+    name: Sousou no Frieren
+    russian: Провожающая в последний путь Фрирен
+    image:
+      original: /system/animes/original/52991.jpg?1710731127
+      preview: /system/animes/preview/52991.jpg?1710731127
+      x96: /system/animes/x96/52991.jpg?1710731127
+      x48: /system/animes/x48/52991.jpg?1710731127
+    url: /animes/52991-sousou-no-frieren
+    kind: tv
+    score: '9.27'
+    status: released
+    episodes: 28
+    episodes_aired: 27
+    aired_on: '2023-09-29'
+    released_on: '2024-03-22'
+  - id: 56885
+    name: 'Sousou no Frieren: ●● no Mahou'
+    russian: 'Провожающая в последний путь Фрирен: Магия ●●'
+    image:
+      original: /system/animes/original/56885.jpg?1718913269
+      preview: /system/animes/preview/56885.jpg?1718913269
+      x96: /system/animes/x96/56885.jpg?1718913269
+      x48: /system/animes/x48/56885.jpg?1718913269
+    url: /animes/56885-sousou-no-frieren-no-mahou
+    kind: ona
+    score: '7.37'
+    status: released
+    episodes: 23
+    episodes_aired: 23
+    aired_on: '2023-10-11'
+    released_on: '2026-03-16'
+  body_text: null
+  body_b64: null

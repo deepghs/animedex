@@ -1,0 +1,21 @@
+metadata:
+  captured_at: '2026-05-11T07:30:00Z'
+  label: synthetic-503
+  backend: ann
+  path_slug: substring_search
+  synthetic: true
+request:
+  method: GET
+  url: https://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=~Frieren
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 503
+  headers:
+    Content-Type: text/xml;charset=UTF-8
+  body_json: null
+  body_text: '<html>synthetic unavailable</html>'
+  body_b64: null

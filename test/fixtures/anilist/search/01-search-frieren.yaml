@@ -11,23 +11,12 @@ request:
     User-Agent: animedex/0.0.1
   params: null
   json_body:
-    query: |-
-      query ($q: String, $page: Int, $perPage: Int) {
-        Page(page: $page, perPage: $perPage) {
-          pageInfo { total currentPage hasNextPage perPage }
-          media(search: $q, type: ANIME, sort: SEARCH_MATCH) {
-            id idMal
-            title { romaji english native }
-            type format status episodes
-            season seasonYear averageScore popularity isAdult
-            coverImage { large color }
-          }
-        }
-      }
+    query: "query ($q: String, $page: Int, $perPage: Int, $type: MediaType) {\n  Page(page: $page, perPage: $perPage) {\n    pageInfo { total currentPage hasNextPage perPage }\n    media(search: $q, type: $type, sort: SEARCH_MATCH) {\n      id idMal\n      title { romaji english native }\n      type format status episodes\n      season seasonYear averageScore popularity isAdult\n      coverImage { large color }\n    }\n  }\n}"
     variables:
       q: Frieren
       page: 1
       perPage: 5
+      type: ANIME
   raw_body_b64: null
 response:
   status: 200

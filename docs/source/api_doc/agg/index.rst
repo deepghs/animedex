@@ -10,7 +10,11 @@ animedex.agg
     :maxdepth: 3
 
     _fanout
+    _prefix_id
+    _type_routes
     calendar
+    search
+    show
 
 \_\_all\_\_
 -----------------------------------------------------
@@ -22,5 +26,3 @@ selftest
 -----------------------------------------------------
 
 .. autofunction:: selftest
-
-

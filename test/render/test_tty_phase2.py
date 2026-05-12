@@ -143,3 +143,125 @@ class TestTraceQuotaTty:
         assert "[src: trace]" in out
         assert "100" in out
         assert "18" in out
+
+
+class TestAggregateResultTty:
+    def test_renders_compact_rows_with_prefix_and_source(self):
+        from animedex.backends.jikan.models import JikanAnime
+        from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
+        from animedex.render.tty import render_tty
+
+        result = AggregateResult(
+            items=[
+                JikanAnime.model_validate(
+                    {
+                        "mal_id": 52991,
+                        "title": "Sousou no Frieren",
+                        "score": 9.27,
+                        "status": "released",
+                        "source_tag": _src(backend="jikan"),
+                    }
+                ).model_copy(update={"_source": "jikan", "_prefix_id": "mal:52991"})
+            ],
+            sources={"jikan": AggregateSourceStatus(backend="jikan", status="ok", items=1)},
+        )
+        out = render_tty(result)
+
+        assert "Aggregate results" in out
+        assert "[src: jikan]" in out
+        assert "mal:52991" in out
+        assert "Score:" in out
+
+    def test_renders_failed_sources_dict_labels_and_common_shapes(self):
+        from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
+        from animedex.models.character import Character, Staff, Studio
+        from animedex.models.common import AnimedexModel, SourceTag
+        from animedex.render.tty import render_tty
+
+        class CommonProjection(AnimedexModel):
+            kind: str
+            name: str
+            source_tag: SourceTag
+
+            def to_common(self):
+                if self.kind == "character":
+                    return Character(id="character:1", name=self.name, source=self.source_tag)
+                if self.kind == "staff":
+                    return Staff(id="staff:1", name=self.name, source=self.source_tag)
+                return Studio(id="studio:1", name=self.name, source=self.source_tag)
+
+        result = AggregateResult(
+            items=[
+                {"title": {"english": "Plain Dict"}, "_source": "dict", "_prefix_id": "dict:1"},
+                CommonProjection(kind="character", name="Frieren", source_tag=_src("character")),
+                CommonProjection(kind="staff", name="Naoko Yamada", source_tag=_src("staff")),
+                CommonProjection(kind="studio", name="MADHOUSE", source_tag=_src("studio")),
+            ],
+            sources={
+                "dict": AggregateSourceStatus(backend="dict", status="ok", items=1),
+                "broken": AggregateSourceStatus(
+                    backend="broken", status="failed", reason="upstream-error", message="broken"
+                ),
+            },
+        )
+        out = render_tty(result)
+
+        assert "Failed sources: broken" in out
+        assert "Plain Dict (dict:1) [src: dict]" in out
+        assert "Frieren [src: character]" in out
+        assert "Naoko Yamada [src: staff]" in out
+        assert "MADHOUSE [src: studio]" in out
+
+    def test_renders_aggregate_item_when_to_common_raises(self):
+        from animedex.models.aggregate import AggregateResult
+        from animedex.models.common import AnimedexModel, SourceTag
+        from animedex.render.tty import render_tty
+
+        class BrokenProjection(AnimedexModel):
+            name: str
+            source_tag: SourceTag
+
+            def to_common(self):
+                raise RuntimeError("bad projection")
+
+        result = AggregateResult(items=[BrokenProjection(name="Raw Label", source_tag=_src("raw"))], sources={})
+        out = render_tty(result)
+
+        assert "Raw Label [src: raw]" in out
+
+    def test_renders_source_field_nested_labels_fallbacks_and_dict_scores(self):
+        from animedex.models.aggregate import AggregateResult
+        from animedex.models.common import AnimedexModel, SourceTag
+        from animedex.render.tty import render_tty
+
+        class DirectSourceProjection(AnimedexModel):
+            name: str
+            source: SourceTag
+
+        class NamelessProjection(AnimedexModel):
+            source_tag: SourceTag
+
+        class TitleObject:
+            romaji = "Nested Title"
+
+        class LabelObject:
+            def __str__(self):
+                return "Object Label"
+
+        result = AggregateResult(
+            items=[
+                DirectSourceProjection(name="Direct Source", source=_src("direct")),
+                {"title": TitleObject(), "score": {"score": 8.5, "scale": 10}, "_source": "nested"},
+                {"name": LabelObject(), "score": {"score": 7}, "_source": "object"},
+                NamelessProjection(source_tag=_src("nameless")),
+            ],
+            sources={},
+        )
+        out = render_tty(result)
+
+        assert "Direct Source [src: direct]" in out
+        assert "Nested Title [src: nested]" in out
+        assert "Score: 8.5/10" in out
+        assert "Object Label [src: object]" in out
+        assert "Score: 7" in out
+        assert "NamelessProjection [src: nameless]" in out

@@ -359,6 +359,7 @@ class TestErrorPaths:
             (shiki_api.manga_show, "/api/mangas/2", 2),
             (shiki_api.ranobe_show, "/api/ranobe/23751", 23751),
             (shiki_api.club_show, "/api/clubs/1", 1),
+            (shiki_api.character, "/api/characters/184947", 184947),
             (shiki_api.person, "/api/people/1870", 1870),
         ],
     )
@@ -388,3 +389,25 @@ class TestErrorPaths:
 
         assert len(out) == 1
         assert isinstance(out[0], ShikimoriAnime)
+
+    def test_publisher_not_found_raises_typed_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("publishers/01-all.yaml"))
+            with pytest.raises(ApiError) as ei:
+                shiki_api.publisher(999999999, no_cache=True)
+
+        assert ei.value.backend == "shikimori"
+        assert ei.value.reason == "not-found"
+
+    def test_studio_not_found_raises_typed_error(self, fake_clock):
+        from animedex.models.common import ApiError
+
+        with responses.RequestsMock() as rsps:
+            _register(rsps, _load("studios/01-all.yaml"))
+            with pytest.raises(ApiError) as ei:
+                shiki_api.studio(999999999, no_cache=True)
+
+        assert ei.value.backend == "shikimori"
+        assert ei.value.reason == "not-found"
