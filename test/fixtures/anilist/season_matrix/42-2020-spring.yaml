@@ -1,0 +1,682 @@
+metadata:
+  captured_at: '2026-05-11T11:34:15Z'
+  label: 2020-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2020
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:14 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '10'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 112641
+          idMal: 40591
+          title:
+            romaji: 'Kaguya-sama wa Kokurasetai?: Tensaitachi no Renai Zunousen'
+            english: 'Kaguya-sama: Love is War?'
+            native: かぐや様は告らせたい？～天才たちの恋愛頭脳戦～
+          synonyms:
+          - 'Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen 2'
+          - 'Kaguya-sama: Love is War Season 2'
+          - 辉夜大小姐想让我告白～天才们的恋爱头脑战～第二季
+          - 辉夜大小姐想让我告白～天才们的恋爱头脑战～ 2
+          - 'Kaguya-sama wa Kokurasetai?: Tensai-tachi no Renai Zunousen'
+          - สารภาพรักกับคุณคางุยะซะดีๆ ~สงครามประสาทความรักของเหล่าอัจฉริยะ~ ภาค 2
+          - 'Госпожа Кагуя: в любви как на войне. 2 сезон'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 11
+          endDate:
+            year: 2020
+            month: 6
+            day: 27
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 115230
+          idMal: 40221
+          title:
+            romaji: 'Kami no Tou: Tower of God'
+            english: Tower of God
+            native: 神之塔 -Tower of God-
+          synonyms:
+          - タワーオブ・ゴッド
+          - 신의 탑
+          - Sinui Tap
+          - Kami no Tou
+          - TOG
+          - Башня Бога
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 2
+          endDate:
+            year: 2020
+            month: 6
+            day: 25
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 110349
+          idMal: 40052
+          title:
+            romaji: GREAT PRETENDER
+            english: Great Pretender
+            native: GREAT PRETENDER
+          synonyms:
+          - 大欺诈师
+          - הנוכל
+          - المحتال العظيم
+          - El timador timado
+          - Великий притворщик
+          - Ο Μεγάλος Υποκριτής
+          - EL GRAN FARSANTE
+          - GrePre
+          - グレプリ
+          status: FINISHED
+          format: ONA
+          episodes: 23
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 6
+            day: 2
+          endDate:
+            year: 2020
+            month: 9
+            day: 21
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 114963
+          idMal: 41168
+          title:
+            romaji: Nakitai Watashi wa Neko wo Kaburu
+            english: A Whisker Away
+            native: 泣きたい私は猫をかぶる
+          synonyms:
+          - Nakineko
+          - Amor de Gata
+          - Loin de moi, près de toi
+          - Olhos de Gato
+          - Um ein Schnurrhaar
+          - Miyo - Un amore felino
+          - Для тебя я стану кошкой
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 6
+            day: 18
+          endDate:
+            year: 2020
+            month: 6
+            day: 18
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 111762
+          idMal: 40417
+          title:
+            romaji: 'Fruits Basket: 2nd Season'
+            english: Fruits Basket Season 2
+            native: フルーツバスケット 2nd Season
+          synonyms:
+          - Furuba
+          - Fruba
+          - フルバ
+          - 水果篮子 第二季
+          - เสน่ห์สาวข้าวปั้น ภาค 2
+          - Fruits Basket (2019) 2
+          - Корзинка фруктов 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 7
+          endDate:
+            year: 2020
+            month: 9
+            day: 22
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 114888
+          idMal: 41120
+          title:
+            romaji: 'Fugou Keiji: Balance:UNLIMITED'
+            english: 'The Millionaire Detective - Balance: UNLIMITED'
+            native: 富豪刑事 Balance:UNLIMITED
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 10
+          endDate:
+            year: 2020
+            month: 9
+            day: 25
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 108241
+          idMal: 39463
+          title:
+            romaji: Gleipnir
+            english: Gleipnir
+            native: グレイプニル
+          synonyms:
+          - 格莱普尼尔
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 5
+          endDate:
+            year: 2020
+            month: 6
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 114043
+          idMal: 40902
+          title:
+            romaji: 'Shokugeki no Souma: Gou no Sara'
+            english: Food Wars! The Fifth Plate
+            native: 食戟のソーマ 豪ノ皿
+          synonyms:
+          - 食戟之灵：豪之皿
+          - ยอดนักปรุงโซมะ ภาค 5
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 11
+          endDate:
+            year: 2020
+            month: 9
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 104647
+          idMal: 38555
+          title:
+            romaji: Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta…
+            english: 'My Next Life as a Villainess: All Routes Lead to Doom!'
+            native: 乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…
+          synonyms:
+          - I Reincarnated into an Otome Game as a Villainess With Only Destruction Flags..
+          - Hamefura
+          - Hamehura
+          - Bakarina
+          - 转生成为了只有乙女游戏破灭Flag的邪恶大小姐…
+          - เกิดใหม่เป็นนางร้ายจะเลือกทางไหนก็หายนะ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 5
+          endDate:
+            year: 2020
+            month: 6
+            day: 21
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 110354
+          idMal: 40060
+          title:
+            romaji: BNA
+            english: BNA
+            native: BNA ビー・エヌ・エー
+          synonyms:
+          - Brand New Animal
+          - 'BNA: Brand New Animal'
+          - יש חיה כזאת
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 3
+            day: 21
+          endDate:
+            year: 2020
+            month: 5
+            day: 6
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 113311
+          idMal: 40716
+          title:
+            romaji: Kakushigoto
+            english: Kakushigoto
+            native: かくしごと
+          synonyms:
+          - ความลับของคุณพ่อเลี้ยงเดี่ยว
+          - Тайная работа Какуси Гото
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 2
+          endDate:
+            year: 2020
+            month: 6
+            day: 18
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 109020
+          idMal: 39710
+          title:
+            romaji: Yesterday wo Utatte
+            english: SING "YESTERDAY" FOR ME
+            native: イエスタデイをうたって
+          synonyms:
+          - Sing Yesterday for Me
+          - Спой мне "Yesterday"
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 5
+          endDate:
+            year: 2020
+            month: 6
+            day: 21
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 107871
+          idMal: 39292
+          title:
+            romaji: Princess Connect! Re:Dive
+            english: Princess Connect! Re:Dive
+            native: プリンセスコネクト！Re:Dive
+          synonyms:
+          - Priconne
+          - 'ปรินเซส คอนเนค รี: ไดฟ์'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 7
+          endDate:
+            year: 2020
+            month: 6
+            day: 30
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 106319
+          idMal: 38830
+          title:
+            romaji: Hachi-nan tte, Sore wa Nai deshou!
+            english: The 8th Son? Are You Kidding Me?
+            native: 八男って、それはないでしょう！
+          synonyms:
+          - ผมเนี่ยนะ...ชายแปด!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 2
+          endDate:
+            year: 2020
+            month: 6
+            day: 18
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 113693
+          idMal: 40815
+          title:
+            romaji: 'Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 2nd Season'
+            english: Ascendance of a Bookworm Part 2
+            native: 本好きの下剋上 司書になるためには手段を選んでいられません 第2期
+          synonyms:
+          - Ascendance of a Bookworm Season 2
+          - 爱书的下克上：为了成为图书管理员不择手段！2
+          - หนอนหนังสือยึดอำนาจ ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 5
+          endDate:
+            year: 2020
+            month: 6
+            day: 21
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 108522
+          idMal: 39555
+          title:
+            romaji: 'Baki: Dai Raitaisai-hen'
+            english: 'Baki: The Great Raitai Tournament Saga'
+            native: バキ 大擂台賽編
+          synonyms:
+          - Baki 2nd Season
+          - 'Баки: Великий турнир Райтай'
+          - 'BAKI: La saga del gran torneo de Raitai'
+          - Baki. Saga Wielkiego Turnieju Raitai
+          status: FINISHED
+          format: ONA
+          episodes: 13
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 6
+            day: 4
+          endDate:
+            year: 2020
+            month: 6
+            day: 4
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 112444
+          idMal: 40532
+          title:
+            romaji: Appare-Ranman!
+            english: APPARE-RANMAN!
+            native: 天晴爛漫！
+          synonyms:
+          - Appare Ranman!
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 10
+          endDate:
+            year: 2020
+            month: 9
+            day: 25
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 110547
+          idMal: 40128
+          title:
+            romaji: Arte
+            english: Arte
+            native: アルテ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 4
+          endDate:
+            year: 2020
+            month: 6
+            day: 20
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 113917
+          idMal: 40858
+          title:
+            romaji: 'PSYCHO-PASS 3: FIRST INSPECTOR'
+            english: 'PSYCHO-PASS 3: First Inspector'
+            native: PSYCHO-PASS サイコパス 3 FIRST INSPECTOR
+          synonyms:
+          - 'PSYCHO-PASS 3: PRIMEIRO INSPETOR'
+          status: FINISHED
+          format: ONA
+          episodes: 3
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 3
+            day: 27
+          endDate:
+            year: 2020
+            month: 3
+            day: 27
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 110458
+          idMal: 38843
+          title:
+            romaji: 'Shironeko Project: ZERO CHRONICLE'
+            english: Shironeko Project ZERO CHRONICLE
+            native: 白猫プロジェクトZERO CHRONICLE
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 6
+          endDate:
+            year: 2020
+            month: 6
+            day: 22
+          averageScore: 52
+          nextAiringEpisode: null
+        - id: 108266
+          idMal: 39469
+          title:
+            romaji: Tsugu Tsugumomo
+            english: Tsugumomo2
+            native: 継つぐもも
+          synonyms:
+          - สึกุโมโมะ ภูตสาวแสบดุ ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 5
+          endDate:
+            year: 2020
+            month: 6
+            day: 21
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 112353
+          idMal: 40513
+          title:
+            romaji: Nami yo Kiitekure
+            english: Wave, Listen to Me!
+            native: 波よ聞いてくれ
+          synonyms:
+          - Born to Be On Air!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 4
+          endDate:
+            year: 2020
+            month: 6
+            day: 20
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 112296
+          idMal: 40485
+          title:
+            romaji: Strike the Blood IV
+            english: null
+            native: ストライク・ザ・ブラッド IV
+          synonyms:
+          - Strike the Blood Fourth
+          - ราชันย์โลหิตรัตติกาล ภาค 4
+          status: FINISHED
+          format: OVA
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 8
+          endDate:
+            year: 2021
+            month: 6
+            day: 30
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 109019
+          idMal: 39730
+          title:
+            romaji: Houkago Teibou Nisshi
+            english: Diary of Our Days at the Breakwater
+            native: 放課後ていぼう日誌
+          synonyms:
+          - Afterschool Embankment Journal
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 7
+          endDate:
+            year: 2020
+            month: 9
+            day: 22
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 113108
+          idMal: 40682
+          title:
+            romaji: Kingdom 3rd Season
+            english: Kingdom Season 3
+            native: キングダム 第3シリーズ
+          synonyms:
+          - สงครามบัลลังก์ผงาดจิ๋นซี ภาค 3
+          - Царство 3
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2020
+          startDate:
+            year: 2020
+            month: 4
+            day: 6
+          endDate:
+            year: 2021
+            month: 10
+            day: 18
+          averageScore: 86
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

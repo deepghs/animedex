@@ -64,6 +64,8 @@ def _fetch(path: str, *, params: Optional[Dict[str, Any]] = None, config: Option
         raise ApiError("Jikan returned a non-text body", backend="jikan", reason="upstream-decode")
     if raw.status == 404:
         raise ApiError(f"Jikan 404 on {path}", backend="jikan", reason="not-found")
+    if raw.status == 429:
+        raise ApiError(f"Jikan 429 on {path}", backend="jikan", reason="rate-limited")
     if raw.status >= 500:
         raise ApiError(f"Jikan {raw.status} on {path}", backend="jikan", reason="upstream-error")
     payload = _json.loads(raw.body_text)

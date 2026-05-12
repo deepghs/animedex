@@ -18,9 +18,10 @@ silently and round-trip through JSON cleanly.
 from __future__ import annotations
 
 from datetime import date, datetime, timezone
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 from animedex.models.anime import (
+    AiringScheduleRow,
     Anime,
     AnimeRating,
     AnimeStreamingLink,
@@ -28,6 +29,8 @@ from animedex.models.anime import (
     NextAiringEpisode,
 )
 from animedex.models.character import Character, Staff, Studio
+from pydantic import Field
+
 from animedex.models.common import BackendRichModel, PartialDate, SourceTag
 
 
@@ -440,7 +443,33 @@ class AnilistAiringSchedule(BackendRichModel):
     timeUntilAiring: int
     media_id: Optional[int] = None
     media_title_romaji: Optional[str] = None
+    raw_payload: Dict[str, Any] = Field(default_factory=dict)
     source_tag: SourceTag
+
+    def to_common(self) -> AiringScheduleRow:
+        """Project onto the common airing schedule row."""
+        title = self.media_title_romaji or f"AniList media {self.media_id or self.id}"
+        details = {
+            "backend": "anilist",
+            "schedule_id": self.id,
+            "media_id": self.media_id,
+            "time_until_airing_seconds": self.timeUntilAiring,
+        }
+        return AiringScheduleRow(
+            title=title,
+            airing_at=datetime.fromtimestamp(self.airingAt, tz=timezone.utc),
+            episode=self.episode,
+            source=self.source_tag,
+            core={
+                "title": title,
+                "airing_at": datetime.fromtimestamp(self.airingAt, tz=timezone.utc),
+                "episode": self.episode,
+                "source": self.source_tag.model_dump(mode="json"),
+                "media_id": self.media_id,
+            },
+            details=details,
+            source_payload=dict(self.raw_payload),
+        )
 
 
 class AnilistReview(BackendRichModel):

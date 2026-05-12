@@ -1,0 +1,698 @@
+metadata:
+  captured_at: '2026-05-11T11:35:02Z'
+  label: 2024-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2024
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:35:01 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '15'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 153288
+          idMal: 52588
+          title:
+            romaji: Kaijuu 8-gou
+            english: Kaiju No. 8
+            native: 怪獣８号
+          synonyms:
+          - 'Monster #8'
+          - 8Kaijuu
+          - KAIJU No. EIGHT
+          - Kaiju N°8
+          - 괴수 8호
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 13
+          endDate:
+            year: 2024
+            month: 6
+            day: 29
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 166240
+          idMal: 55701
+          title:
+            romaji: 'Kimetsu no Yaiba: Hashira Geiko-hen'
+            english: 'Demon Slayer: Kimetsu no Yaiba Hashira Training Arc'
+            native: 鬼滅の刃 柱稽古編
+          synonyms:
+          - KnY 4
+          - 'Demon Slayer: Kimetsu no Yaiba - L''entraînement des Piliers'
+          - 'Miecz zabójcy demonów – Kimetsu no Yaiba: Trening Filarów'
+          - 'Клинок, рассекающий демонов: Тренировка столпов'
+          status: FINISHED
+          format: TV
+          episodes: 8
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 5
+            day: 12
+          endDate:
+            year: 2024
+            month: 6
+            day: 30
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 166873
+          idMal: 55888
+          title:
+            romaji: 'Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2'
+            english: 'Mushoku Tensei: Jobless Reincarnation Season 2 Part 2'
+            native: 無職転生Ⅱ ～異世界行ったら本気だす～ 第2クール
+          synonyms:
+          - 'Mushoku Tensei: Jobless Reincarnation Season 2 Cour 2'
+          - เกิดชาตินี้พี่ต้องเทพ ซีซั่น 2 ครึ่งหลัง
+          - 'Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season Part 2'
+          - 'Mushoku Tensei II: Jobless Reincarnation Part 2'
+          - 'Mushoku Tensei II: Reencarnación desde cero'
+          - 无职转生～到了异世界就拿出真本事～第2季
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 8
+          endDate:
+            year: 2024
+            month: 7
+            day: 1
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 163270
+          idMal: 54900
+          title:
+            romaji: WIND BREAKER
+            english: WIND BREAKER
+            native: WIND BREAKER
+          synonyms:
+          - WB
+          - ウィンブレ
+          - WBK
+          - ウィンドブレイカー
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 5
+          endDate:
+            year: 2024
+            month: 6
+            day: 28
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 136804
+          idMal: 49458
+          title:
+            romaji: Kono Subarashii Sekai ni Shukufuku wo! 3
+            english: KONOSUBA -God's blessing on this wonderful world! 3
+            native: この素晴らしい世界に祝福を！３
+          synonyms:
+          - Konosuba 3
+          - ขอให้โชคดีมีชัยในโลกแฟนตาซี! ภาค 3
+          - 為美好的世界獻上祝福！3
+          - Да благословят боги сей расчудесный мир! 3
+          - Konosuba! Un mundo maravilloso 3
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 10
+          endDate:
+            year: 2024
+            month: 6
+            day: 19
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 163139
+          idMal: 54789
+          title:
+            romaji: Boku no Hero Academia 7
+            english: My Hero Academia Season 7
+            native: 僕のヒーローアカデミア 7
+          synonyms:
+          - BNHA 7
+          - MHA 7
+          - Моя геройская академия 7
+          status: FINISHED
+          format: TV
+          episodes: 21
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 5
+            day: 4
+          endDate:
+            year: 2024
+            month: 10
+            day: 12
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 156822
+          idMal: 53580
+          title:
+            romaji: Tensei Shitara Slime Datta Ken 3rd Season
+            english: That Time I Got Reincarnated as a Slime Season 3
+            native: 転生したらスライムだった件 第3期
+          synonyms:
+          - Tensura 3
+          - เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว ภาค 3
+          - Moi, quand je me réincarne en Slime Saison 3
+          - 転スラ 3
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 5
+          endDate:
+            year: 2024
+            month: 9
+            day: 27
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 174788
+          idMal: 58125
+          title:
+            romaji: Look Back
+            english: LOOK BACK
+            native: ルックバック
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 6
+            day: 28
+          endDate:
+            year: 2024
+            month: 6
+            day: 28
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 145728
+          idMal: 51122
+          title:
+            romaji: 'Ookami to Koushinryou: MERCHANT MEETS THE WISE WOLF'
+            english: 'Spice and Wolf: MERCHANT MEETS THE WISE WOLF'
+            native: 狼と香辛料 MERCHANT MEETS THE WISE WOLF
+          synonyms:
+          - Spice and Wolf (2024)
+          - Ookami to Koushinryou (2024)
+          - 'สาวหมาป่ากับนายเครื่องเทศ '
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 2
+          endDate:
+            year: 2024
+            month: 9
+            day: 24
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 156415
+          idMal: 53516
+          title:
+            romaji: Tensei Shitara Dai Nana Ouji Datta node, Kimamani Majutsu wo Kiwamemasu
+            english: I Was Reincarnated as the 7th Prince so I Can Take My Time Perfecting My Magical Ability
+            native: 転生したら第七王子だったので、気ままに魔術を極めます
+          synonyms:
+          - พอได้เกิดใหม่เป็นองค์ชายลำดับที่เจ็ด ก็เพื่อเรียนเวทย์ให้สนุก
+          - Dainanaoji
+          - 轉生為第七王子，隨心所欲的魔法學習之路
+          - Я перевоплотился в седьмого принца, так что буду совершенствовать свою магию как захочу
+          - Bereinkarnasi Malah Menjadi Pangeran Ketujuh, jadi Aku Bisa Menyempurnakan Kemampuan Sihirku Sepuasnya
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 2
+          endDate:
+            year: 2024
+            month: 6
+            day: 18
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 170130
+          idMal: 56923
+          title:
+            romaji: Lv2 Kara Cheat datta Moto Yuusha Kouho no Mattari Isekai Life
+            english: Chillin' in Another World with Level 2 Super Cheat Powers
+            native: Lv2からチートだった元勇者候補のまったり異世界ライフ
+          synonyms:
+          - Chillin Different World Life of the Ex-Brave Candidate Was Cheat from Lv2
+          - Cuộc sống thảnh thơi tại dị giới gian lận của cựu ứng viên dũng giả từ cấp độ hai
+          - Беззаботная жизнь в ином мире с читерскими способностями со второго уровня
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 8
+          endDate:
+            year: 2024
+            month: 6
+            day: 24
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 158417
+          idMal: 53770
+          title:
+            romaji: Sentai Daishikkaku
+            english: Go! Go! Loser Ranger!
+            native: 戦隊大失格
+          synonyms:
+          - Ranger Reject
+          - ขบวนการกำมะลอ
+          - No Longer Rangers
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 7
+          endDate:
+            year: 2024
+            month: 6
+            day: 30
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 156023
+          idMal: 53434
+          title:
+            romaji: Maou no Ore ga Dorei Elf wo Yome ni Shitanda ga, Dou Medereba Ii?
+            english: 'An Archdemon''s Dilemma: How to Love Your Elf Bride'
+            native: 魔王の俺が奴隷エルフを嫁にしたんだが、どう愛でればいい？
+          synonyms:
+          - Madome
+          - まどめ
+          - จอมมารอย่างข้า ควรรักภรรยาเอลฟ์อย่างไรดี
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 5
+          endDate:
+            year: 2024
+            month: 6
+            day: 14
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 164702
+          idMal: 55265
+          title:
+            romaji: Tensei Kizoku, Kantei Skill de Nariagaru
+            english: As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World
+            native: 転生貴族、鑑定スキルで成り上がる
+          synonyms:
+          - KanteiSkill
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 7
+          endDate:
+            year: 2024
+            month: 6
+            day: 23
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 158898
+          idMal: 53865
+          title:
+            romaji: Yozakura-san Chi no Daisakusen
+            english: 'Mission: Yozakura Family'
+            native: 夜桜さんちの大作戦
+          synonyms:
+          - 'Missão: Família Yozakura'
+          - 'Misión: Familia Yozakura'
+          - ปฏิบัติการลับบ้านโยซากุระ
+          - La misión de la familia Yozakura
+          - Миссия семьи Ёдзакура
+          - 'Misja: Rodzina Yozakura'
+          status: FINISHED
+          format: TV
+          episodes: 27
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 7
+          endDate:
+            year: 2024
+            month: 10
+            day: 6
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 130590
+          idMal: 48418
+          title:
+            romaji: 'Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou
+              II Part 2'
+            english: The Misfit of Demon King Academy II (Cour 2)
+            native: 魔王学院の不適合者 ～史上最強の魔王の始祖、転生して子孫たちの学校へ通う～ Ⅱ 2クール
+          synonyms:
+          - 'The Misfit of Demon King Academy: History’s Strongest Demon King Reincarnates and Goes to School with His Descendants
+            Season 2 Part 2'
+          - 'ใครว่าข้าไม่เหมาะเป็นจอมมาร: ต้นตระกูลจอมมารที่เเกร่งที่สุดในประวัติศาสตร์เกิดใหม่ไปเรียนที่โรงเรียนลูกหลาน ภาค
+            2 Part 2'
+          - Непригодный для Академии владыки тьмы II
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 12
+          endDate:
+            year: 2024
+            month: 7
+            day: 25
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 169417
+          idMal: 56690
+          title:
+            romaji: Re:Monster
+            english: Re:Monster
+            native: Re:Monster
+          synonyms:
+          - リ・モンスター
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 2
+          endDate:
+            year: 2024
+            month: 6
+            day: 18
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 164212
+          idMal: 55102
+          title:
+            romaji: GIRLS BAND CRY
+            english: Girls Band Cry
+            native: ガールズバンドクライ
+          synonyms:
+          - Garukura
+          - ガルクラ
+          - GBC
+          - Крик дівочого гурту
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 6
+          endDate:
+            year: 2024
+            month: 6
+            day: 29
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 163078
+          idMal: 54839
+          title:
+            romaji: Yoru no Kurage wa Oyogenai
+            english: Jellyfish Can’t Swim in the Night
+            native: 夜のクラゲは泳げない
+          synonyms:
+          - YoruKura
+          - ヨルクラ
+          - Meduzy nie pływają same
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 7
+          endDate:
+            year: 2024
+            month: 6
+            day: 23
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 158709
+          idMal: 53835
+          title:
+            romaji: Unnamed Memory
+            english: Unnamed Memory
+            native: Unnamed Memory
+          synonyms:
+          - アンネームドメモリー
+          - อันเนมด์ เมโมรี
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 9
+          endDate:
+            year: 2024
+            month: 6
+            day: 25
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 170890
+          idMal: 57100
+          title:
+            romaji: THE NEW GATE
+            english: THE NEW GATE
+            native: THE NEW GATE
+          synonyms:
+          - ザ・ニュー・ゲート
+          - TNG
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 14
+          endDate:
+            year: 2024
+            month: 6
+            day: 30
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 143271
+          idMal: 50713
+          title:
+            romaji: Mahouka Koukou no Rettousei 3rd Season
+            english: The Irregular at Magic High School Season 3
+            native: 魔法科高校の劣等生 第3シーズン
+          synonyms:
+          - พี่น้องปริศนาโรงเรียนมหาเวท ภาค 3
+          - Непутёвый ученик в школе магии 3
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 5
+          endDate:
+            year: 2024
+            month: 6
+            day: 28
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 165855
+          idMal: 55597
+          title:
+            romaji: Hananoi-kun to Koi no Yamai
+            english: A Condition Called Love
+            native: 花野井くんと恋の病
+          synonyms:
+          - ' I''m addicted to you'
+          - A tes côtés
+          - Ein Gefühl namens Liebe
+          - Adicto a ti
+          - รักติดหนึบของฮานาโนอิคุง
+          - Una enfermedad llamada amor
+          - 花野井同學與戀愛病
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 4
+          endDate:
+            year: 2024
+            month: 6
+            day: 20
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 155890
+          idMal: 53407
+          title:
+            romaji: 'Bartender: Kami no Glass'
+            english: BARTENDER Glass of God
+            native: バーテンダー 神のグラス
+          synonyms:
+          - Bartender (New Anime)
+          - 'Бармен: божественный стакан'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 4
+          endDate:
+            year: 2024
+            month: 6
+            day: 20
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 168138
+          idMal: 56230
+          title:
+            romaji: Jii-san Baa-san Wakagaeru
+            english: Grandpa and Grandma Turn Young Again
+            native: じいさんばあさん若返る
+          synonyms:
+          - A Story About a Grandpa and Grandma Who Returned Back to Their Youth
+          - おじいさんとおばあさんが若返った話。
+          - Ojiisan to Obaasan ga Wakagaetta Hanashi.
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2024
+          startDate:
+            year: 2024
+            month: 4
+            day: 7
+          endDate:
+            year: 2024
+            month: 6
+            day: 16
+          averageScore: 71
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,679 @@
+metadata:
+  captured_at: '2026-05-11T11:35:13Z'
+  label: 2025-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2025
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:35:13 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Content-Security-Policy-Report-Only: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '11'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 149118
+          idMal: 51818
+          title:
+            romaji: 'Enen no Shouboutai: San no Shou'
+            english: Fire Force Season 3
+            native: 炎炎ノ消防隊 参ノ章
+          synonyms:
+          - Enen no Shouboutai 3rd Season
+          - หน่วยผจญคนไฟลุก ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 5
+          endDate:
+            year: 2025
+            month: 6
+            day: 21
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 167336
+          idMal: 56038
+          title:
+            romaji: Lazarus
+            english: LAZARUS
+            native: ラザロ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 6
+          endDate:
+            year: 2025
+            month: 6
+            day: 29
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 178680
+          idMal: 59160
+          title:
+            romaji: WIND BREAKER Season 2
+            english: WIND BREAKER Season 2
+            native: WIND BREAKER Season 2
+          synonyms:
+          - WB 2
+          - ウィンブレ2
+          - ' WBK 2'
+          - ウィンドブレイカー Season 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 4
+          endDate:
+            year: 2025
+            month: 6
+            day: 20
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 180367
+          idMal: 59597
+          title:
+            romaji: Witch Watch
+            english: WITCH WATCH
+            native: ウィッチウォッチ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 6
+          endDate:
+            year: 2025
+            month: 10
+            day: 5
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 183161
+          idMal: 60146
+          title:
+            romaji: Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru?
+            english: The Beginning After the End
+            native: '最強の王様、二度目の人生は 何をする? '
+          synonyms:
+          - TBATE
+          - 終末起點
+          - Начало после конца
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 3
+          endDate:
+            year: 2025
+            month: 6
+            day: 19
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 179955
+          idMal: 59452
+          title:
+            romaji: Katainaka no Ossan, Kensei ni Naru
+            english: From Old Country Bumpkin to Master Swordsman
+            native: 片田舎のおっさん、剣聖になる
+          synonyms:
+          - 'Katainaka no Ossan, Kensei ni Naru: Tada no Inaka no Kenjutsu Shihan Datta noni, Taisei Shita Deshitachi ga Ore
+            wo Hanattekurenai Ken'
+          - 片田舎のおっさん、剣聖になる ～ただの田舎の剣術師範だったのに、大成した弟子たちが俺を放ってくれない件～
+          - Wieśniak mistrzem miecza
+          - De Caipira a Mestre Espadachim
+          - Pria Tua Pedesaan Menjadi Pendekar Pedang Elite
+          - Daripada Orang Kampung Biasa kepada Mahaguru Pedang
+          - Vom Landei zum Schwertheiligen
+          - De campesino cuarentón a espadachín legendario
+          - Da campagnolo stagionato a gran maestro di spada
+          - Sıradan Bir Köylü Hünerli Bir Kılıç Ustası Oluyor
+          - من ريفي كهل إلى معلّم مبارزة
+          - सामान्य ग्रामवासी से अज़ीम तलवारबाज़ तक
+          - ปรมาจารย์ดาบชั้นเซียนมาตบเกรียนถึงเมืองกรุง
+          - 乡下大叔成为剑圣
+          - 鄉下大叔成為劍聖
+          - 촌구석 아저씨, 검성이 되다
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 5
+          endDate:
+            year: 2025
+            month: 6
+            day: 22
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 185736
+          idMal: 60593
+          title:
+            romaji: 'Vigilante: Boku no Hero Academia ILLEGALS'
+            english: 'My Hero Academia: Vigilantes'
+            native: ヴィジランテ -僕のヒーローアカデミア ILLEGALS-
+          synonyms:
+          - MHA Vigilantes
+          - BNHA Vigilantes
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 7
+          endDate:
+            year: 2025
+            month: 6
+            day: 30
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 175872
+          idMal: 58359
+          title:
+            romaji: Isshun de Chiryou Shiteita no ni Yakutatazu to Tsuihou Sareta Tensai Chiyushi, Yami Healer Toshite Tanoshiku
+              Ikiru
+            english: The Brilliant Healer's New Life in the Shadows
+            native: 一瞬で治療していたのに役立たずと追放された天才治癒師、闇ヒーラーとして楽しく生きる
+          synonyms:
+          - 闇ヒーラー
+          - Cuộc Sống Mới Trong Bóng Tối Của Trị Liệu Sư Tài Ba
+          - 瞬間治癒卻被當成廢物踢出隊伍的天才治療師，改當無照治療師快樂過活
+          - Yami Healer
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 3
+          endDate:
+            year: 2025
+            month: 6
+            day: 19
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 182814
+          idMal: 60083
+          title:
+            romaji: Kowloon Generic Romance
+            english: KOWLOON GENERIC ROMANCE
+            native: 九龍ジェネリックロマンス
+          synonyms:
+          - 九龍GR
+          - เกาลูน อุบัติรักปริศนาลับ
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 5
+          endDate:
+            year: 2025
+            month: 6
+            day: 28
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 153554
+          idMal: 52709
+          title:
+            romaji: Danjo no Yuujou wa Seiritsu suru? (Iya, Shinai!!)
+            english: Can a Boy-Girl Friendship Survive?
+            native: 男女の友情は成立する？（いや、 しないっ!!）
+          synonyms:
+          - だんじょる
+          - Danjoru
+          - Can a Boy and Girl Friendship Hold Up? (No It Can't)
+          - เธอกับฉันเพื่อนกันใช่มั้ย (ไม่ใช่!!)
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 4
+          endDate:
+            year: 2025
+            month: 6
+            day: 20
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 143598
+          idMal: 49778
+          title:
+            romaji: Kijin Gentoushou
+            english: 'Sword of the Demon Hunter: Kijin Gentosho'
+            native: 鬼人幻燈抄
+          synonyms:
+          - 'Sword of the Demon Hunter: Kijin Gentosho'
+          - Le memorie del mezzo demone
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 3
+            day: 31
+          endDate:
+            year: 2025
+            month: 9
+            day: 30
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 179965
+          idMal: 59457
+          title:
+            romaji: Haite Kudasai, Takamine-san
+            english: Please Put Them On, Takamine-san
+            native: 履いてください、鷹峰さん
+          synonyms:
+          - Let Me Put Your Panties On, Takamine-san
+          - Please Put These On, Takamine
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 2
+          endDate:
+            year: 2025
+            month: 6
+            day: 18
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 174802
+          idMal: 58131
+          title:
+            romaji: Shiunji-ke no Kodomotachi
+            english: The Shiunji Family Children
+            native: 紫雲寺家の子供たち
+          synonyms:
+          - รักว้าวุ่นในบ้านชิอุนจิ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 8
+          endDate:
+            year: 2025
+            month: 6
+            day: 24
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 143337
+          idMal: 50738
+          title:
+            romaji: 'Slime Taoshite 300-nen, Shiranai Uchi ni Level MAX ni Nattemashita: Sono ni'
+            english: I've Been Killing Slimes For 300 Years And Maxed Out My Level Season 2
+            native: スライム倒して300年、知らないうちにレベルMAXになってました ～そのに～
+          synonyms:
+          - スライム倒して300年、知らないうちにレベルMAXになってました 第2期
+          - Slime Taoshite 300-nen, Shiranai Uchi ni Level MAX ni Nattemashita 2nd Season
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 5
+          endDate:
+            year: 2025
+            month: 6
+            day: 21
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 180516
+          idMal: 59636
+          title:
+            romaji: 'Uma Musume: Cinderella Gray'
+            english: 'Umamusume: Cinderella Gray'
+            native: ウマ娘 シンデレラグレイ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 6
+          endDate:
+            year: 2025
+            month: 6
+            day: 29
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 183133
+          idMal: 60140
+          title:
+            romaji: 'Kanchigai no Atelier Meister: Eiyuu Party no Moto Zatsuyougakari ga, Jitsu wa Sentou Igai ga SSS Rank
+              Datta to Iu Yoku Aru Hanashi'
+            english: The Unaware Atelier Meister
+            native: 勘違いの工房主～英雄パーティの元雑用係が、実は戦闘以外がSSSランクだったというよくある話～
+          synonyms:
+          - 使人誤解的工房主～關於原英雄隊伍的雜役人員，實際上除了戰鬥能力外全是SSS的故事～
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 3
+            day: 30
+          endDate:
+            year: 2025
+            month: 6
+            day: 15
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 181244
+          idMal: 59833
+          title:
+            romaji: 'Kono Subarashii Sekai ni Shukufuku wo! 3: BONUS STAGE'
+            english: KONOSUBA -God's Blessing on This Wonderful World! 3 -BONUS STAGE-
+            native: この素晴らしい世界に祝福を！３ーBONUS STAGEー
+          synonyms:
+          - KONOSUBA -God's blessing on this wonderful world! 3 OVA
+          - Kono Subarashii Sekai ni Shukufuku wo! 3 OVA
+          - この素晴らしい世界に祝福を！３ OVA
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 3
+            day: 14
+          endDate:
+            year: 2025
+            month: 3
+            day: 14
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 183274
+          idMal: 60154
+          title:
+            romaji: 'Ore wa Seikan Kokka no Akutoku Ryoushu! '
+            english: I'm the Evil Lord of an Intergalactic Empire!
+            native: 俺は星間国家の悪徳領主!
+          synonyms:
+          - OreAku
+          - 我是星際國家的惡德領主！
+          - Aku Bangsawan Korup di Kekaisaran Antargalaksi!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 6
+          endDate:
+            year: 2025
+            month: 6
+            day: 22
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 179694
+          idMal: 59360
+          title:
+            romaji: Rock wa Lady no Tashinami Deshite
+            english: Rock is a Lady’s Modesty
+            native: ロックは淑女の嗜みでして
+          synonyms:
+          - Rock wa Shukujo no Tashinami de shite
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 3
+          endDate:
+            year: 2025
+            month: 6
+            day: 26
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 180675
+          idMal: 59675
+          title:
+            romaji: Apocalypse Hotel
+            english: Apocalypse Hotel
+            native: アポカリプスホテル
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 9
+          endDate:
+            year: 2025
+            month: 6
+            day: 25
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 143200
+          idMal: 50694
+          title:
+            romaji: Summer Pockets
+            english: Summer Pockets
+            native: Summer Pockets
+          synonyms:
+          - サマーポケッツ
+          - Samapoke
+          - サマポケ
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 7
+          endDate:
+            year: 2025
+            month: 9
+            day: 29
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 185213
+          idMal: 60449
+          title:
+            romaji: Kidou Senshi Gundam GQuuuuuuX
+            english: Mobile Suit Gundam GQuuuuuuX
+            native: 機動戦士Gundam GQuuuuuuX
+          synonyms:
+          - 機動戦士Gundam ジークアクス
+          - Mobile Suit Gundam GQuuuuuuX -Beginning-
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 9
+          endDate:
+            year: 2025
+            month: 6
+            day: 25
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 183275
+          idMal: 60157
+          title:
+            romaji: Kanpeki Sugite Kawai-ge ga Nai to Konyaku Haki Sareta Seijo wa Ringoku ni Urareru
+            english: 'The Too-Perfect Saint: Tossed Aside by My Fiancé and Sold to Another Kingdom'
+            native: 完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる
+          synonyms:
+          - Kanpekiseijo
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 3
+          endDate:
+            year: 2025
+            month: 6
+            day: 19
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 179979
+          idMal: 59466
+          title:
+            romaji: Aharen-san wa Hakarenai Season 2
+            english: Aharen-san wa Hakarenai Season 2
+            native: 阿波連さんははかれない season2
+          synonyms:
+          - Aharen Is Indecipherable 2
+          - Aharen Is Unfathomable 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 7
+          endDate:
+            year: 2025
+            month: 6
+            day: 23
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 178781
+          idMal: 59189
+          title:
+            romaji: Sentai Daishikkaku 2nd Season
+            english: Go! Go! Loser Ranger! Season 2
+            native: 戦隊大失格 2nd season
+          synonyms:
+          - Ranger Reject
+          - ขบวนการกำมะลอ
+          - No Longer Rangers
+          - 戦隊大失格 2nd シーズン
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 4
+            day: 13
+          endDate:
+            year: 2025
+            month: 6
+            day: 29
+          averageScore: 69
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,695 @@
+metadata:
+  captured_at: '2026-05-11T11:34:07Z'
+  label: 2019-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2019
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:07 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '13'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 105333
+          idMal: 38691
+          title:
+            romaji: Dr. STONE
+            english: Dr. STONE
+            native: Dr.STONE
+          synonyms:
+          - Dcst
+          - 石纪元
+          - ドクターストーン
+          - ดร.สโตน เจ้าแห่งวิทยาศาสตร์กู้คืนอารยธรรมโลก
+          - Доктор Стоун
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 5
+          endDate:
+            year: 2019
+            month: 12
+            day: 13
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 101348
+          idMal: 37521
+          title:
+            romaji: VINLAND SAGA
+            english: Vinland Saga
+            native: ヴィンランド・サガ
+          synonyms:
+          - סאגת וינלנד
+          - فينلاند ساغا
+          - สงครามคนทมิฬ
+          - Сага о Винланде
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 8
+          endDate:
+            year: 2019
+            month: 12
+            day: 30
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 105310
+          idMal: 38671
+          title:
+            romaji: Enen no Shouboutai
+            english: Fire Force
+            native: 炎炎ノ消防隊
+          synonyms:
+          - หน่วยผจญคนไฟลุก
+          - כוח האש
+          - Полум'яні вогнеборці
+          - Пламенный отряд
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 6
+          endDate:
+            year: 2019
+            month: 12
+            day: 28
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 106286
+          idMal: 38826
+          title:
+            romaji: Tenki no Ko
+            english: Weathering With You
+            native: 天気の子
+          synonyms:
+          - El Tiempo Contigo
+          - Weathering With You - Das Mädchen, das die Sonne berührte
+          - Les enfants du temps
+          - O Tempo Com Você
+          - 天气之子
+          - La ragazza del tempo
+          - Дитя погоды
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 19
+          endDate:
+            year: 2019
+            month: 7
+            day: 19
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 101167
+          idMal: 37347
+          title:
+            romaji: Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II
+            english: Is It Wrong to Try to Pick Up Girls in a Dungeon? II
+            native: ダンジョンに出会いを求めるのは間違っているだろうかⅡ
+          synonyms:
+          - Danmachi II
+          - ダンジョンに出会いを求めるのは間違っているだろうか2
+          - Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka 2
+          - 'Dungeon ni Deai o Motomeru no wa Machigatte Iru Darouka: Familia Myth II'
+          - มันผิดรึไงถ้าใจอยากจะพบรักในดันเจี้ยน ภาค 2
+          - ダンまちⅡ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 13
+          endDate:
+            year: 2019
+            month: 9
+            day: 28
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 102976
+          idMal: 38040
+          title:
+            romaji: Kono Subarashii Sekai ni Shukufuku wo! Kurenai Densetsu
+            english: KONOSUBA -God's blessing on this wonderful world!- Legend of Crimson
+            native: この素晴らしい世界に祝福を！紅伝説
+          synonyms:
+          - Konosuba Movie
+          - このすば紅伝説
+          - ขอให้โชคดีมีชัยในโลกแฟนตาซี เดอะ มูฟวี่ ตำนานสีชาด
+          - Konosuba! Un mundo maravilloso. La leyenda del carmesí
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 8
+            day: 30
+          endDate:
+            year: 2019
+            month: 8
+            day: 30
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 100668
+          idMal: 36882
+          title:
+            romaji: Arifureta Shokugyou de Sekai Saikyou
+            english: 'Arifureta: From Commonplace to World''s Strongest'
+            native: ありふれた職業で世界最強
+          synonyms:
+          - 平凡职业造就世界最强
+          - อาชีพกระจอกแล้วทำไม ยังไงข้าก็เทพ
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 8
+          endDate:
+            year: 2019
+            month: 10
+            day: 7
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 108430
+          idMal: 39533
+          title:
+            romaji: Given
+            english: given
+            native: ギヴン
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 12
+          endDate:
+            year: 2019
+            month: 9
+            day: 20
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 109190
+          idMal: 39741
+          title:
+            romaji: 'Violet Evergarden Gaiden: Eien to Jidou Shuki Ningyou'
+            english: 'Violet Evergarden: Eternity and the Auto Memory Doll'
+            native: ヴァイオレット・エヴァーガーデン 外伝~永遠と自動手記人形~
+          synonyms:
+          - Violet Evergarden und das Band der Freundschaft
+          - 'Violet Evergarden Gaiden: La Eternidad y la Muñeca de Recuerdos Automáticos'
+          - 'Violet Evergarden Gaiden: Eternidade e a Boneca de Automemória'
+          - 'فيوليت: الأبدية وذكريات الدمية الآلية'
+          - 'Вайолет Эвергарден: Вечность и призрак пера'
+          - 'Violet Evergarden: Věčnost a Píšící panenka'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 9
+            day: 6
+          endDate:
+            year: 2019
+            month: 9
+            day: 6
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 107226
+          idMal: 39026
+          title:
+            romaji: Dumbbell Nan Kilo Moteru?
+            english: How Heavy Are the Dumbbells You Lift?
+            native: ダンベル何キロ持てる？
+          synonyms:
+          - How Many Kilograms are the Dumbbells You Lift?
+          - Danberu Nan Kiro Moteru?
+          - 'Dumbbell : Combien tu peux soulever ?'
+          - แก๊งสาวป่วน ก๊วนฟิตเนส
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 3
+          endDate:
+            year: 2019
+            month: 9
+            day: 18
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 105932
+          idMal: 38753
+          title:
+            romaji: Araburu Kisetsu no Otome-domo yo.
+            english: O Maidens in Your Savage Season
+            native: 荒ぶる季節の乙女どもよ。
+          synonyms:
+          - AraOto
+          - Nuestra Salvaje Juventud
+          - 'O maiden: Wahai Para Dara dalam Masa Beringas'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 6
+          endDate:
+            year: 2019
+            month: 9
+            day: 21
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 107663
+          idMal: 39198
+          title:
+            romaji: Kanata no Astra
+            english: ASTRA LOST IN SPACE
+            native: 彼方のアストラ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 3
+          endDate:
+            year: 2019
+            month: 9
+            day: 18
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 107961
+          idMal: 39326
+          title:
+            romaji: Kawaikereba Hentai demo Suki ni Natte Kuremasu ka?
+            english: 'Hensuki: Are you willing to fall in love with a pervert, as long as she’s a cutie?'
+            native: 可愛ければ変態でも好きになってくれますか？
+          synonyms:
+          - Would you even fall in love with a pervert as long as it's a cutie?
+          - Kawaiikereba Hentai demo Suki ni Natte Kuremasu ka?
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 8
+          endDate:
+            year: 2019
+            month: 9
+            day: 23
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 101547
+          idMal: 37744
+          title:
+            romaji: Isekai Cheat Magician
+            english: Isekai Cheat Magician
+            native: 異世界チート魔術師
+          synonyms:
+          - ผ่ามิติแหกกฎมนตรา
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 10
+          endDate:
+            year: 2019
+            month: 9
+            day: 25
+          averageScore: 52
+          nextAiringEpisode: null
+        - id: 106240
+          idMal: 38816
+          title:
+            romaji: HELLO WORLD
+            english: null
+            native: HELLO WORLD
+          synonyms:
+          - ハロー・ワールド
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 9
+            day: 20
+          endDate:
+            year: 2019
+            month: 9
+            day: 20
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 107068
+          idMal: 38993
+          title:
+            romaji: Karakai Jouzu no Takagi-san 2
+            english: Teasing Master Takagi-san Season 2
+            native: からかい上手の高木さん 2
+          synonyms:
+          - Skilled Teaser Takagi-san 2nd Season
+          - טאקאגי-סאן אלופת ההקנטות 2
+          - Nhất quỷ Nhì ma, Thứ ba Takagi 2
+          - แกล้งนัก รักนะ รู้ยัง ภาค 2
+          - Takagi-san, experta en bromas pesadas
+          - Nicht schon wieder, Takagi-san
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 7
+          endDate:
+            year: 2019
+            month: 9
+            day: 22
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 104723
+          idMal: 38573
+          title:
+            romaji: Tsuujou Kougeki ga Zentai Kougeki de Ni-kai Kougeki no Okaasan wa Suki desu ka?
+            english: Do You Love Your Mom and Her Two-Hit Multi-Target Attacks?
+            native: 通常攻撃が全体攻撃で二回攻撃のお母さんは好きですか？
+          synonyms:
+          - Do You Like Your Mom? Her Normal Attack is Two Attacks at Full Power
+          - Tsuujou Kougeki ga Zentai Kougeki de 2-kai Kougeki no Okaasan wa Suki desu ka?
+          - Okaa-san online
+          - Okaasuki
+          - คุณแม่ที่มีสกิลพื้นฐานเป็นการโจมตีหมู่แถมยังเบิ้ลได้แบบนี้ชอบไหมจ๊ะ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 13
+          endDate:
+            year: 2019
+            month: 9
+            day: 28
+          averageScore: 52
+          nextAiringEpisode: null
+        - id: 106509
+          idMal: 38793
+          title:
+            romaji: Tensei Shitara Slime Datta Ken OVA
+            english: That Time I Got Reincarnated as a Slime OAD
+            native: 転生したらスライムだった件 OVA
+          synonyms:
+          - ten·sura
+          - 転スラ
+          - Tensei Shitara Slime Datta Ken (2019)
+          - That Time I Got Reincarnated as a Slime OVA
+          - เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว OAD
+          - Moi, quand je me réincarne en Slime OAD
+          status: FINISHED
+          format: OVA
+          episodes: 5
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 9
+          endDate:
+            year: 2020
+            month: 11
+            day: 27
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 105074
+          idMal: 38610
+          title:
+            romaji: Tejina Senpai
+            english: Magical Sempai
+            native: 手品先輩
+          synonyms:
+          - Magical Senpai
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 2
+          endDate:
+            year: 2019
+            month: 9
+            day: 17
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 104252
+          idMal: 38297
+          title:
+            romaji: Maou-sama, Retry!
+            english: Demon Lord, Retry!
+            native: 魔王様、リトライ!
+          synonyms:
+          - จอมมารรีไทร์
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 4
+          endDate:
+            year: 2019
+            month: 9
+            day: 19
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 104463
+          idMal: 38480
+          title:
+            romaji: Toaru Kagaku no Accelerator
+            english: A Certain Scientific Accelerator
+            native: とある科学の一方通行【アクセラレータ】
+          synonyms:
+          - 科学一方通行
+          - แอคเซลเลอร์เรเตอร์ แฟ้มลับคดีวิทยาศาสตร์
+          - แฟ้มลับคดีเด็กหาย
+          - Máy gia tốc khoa học nhất định
+          - Akselerator Ilmu Pengetahuan Tertentu
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 12
+          endDate:
+            year: 2019
+            month: 9
+            day: 27
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 107956
+          idMal: 39324
+          title:
+            romaji: Uchi no Ko no Tame Naraba, Ore wa Moshikashitara Maou mo Taoseru Kamo Shirenai.
+            english: If It's for My Daughter, I'd Even Defeat a Demon Lord
+            native: うちの娘の為ならば、俺はもしかしたら魔王も倒せるかもしれない。
+          synonyms:
+          - For My Daughter, I'd Even Defeat a Demon Lord
+          - Uchinoko
+          - UchiMusume
+          - เพื่อลูกจ๋า ปะป๋าขอลุย
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 4
+          endDate:
+            year: 2019
+            month: 9
+            day: 19
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 107490
+          idMal: 39071
+          title:
+            romaji: Machikado Mazoku
+            english: The Demon Girl Next Door
+            native: まちカドまぞく
+          synonyms:
+          - Street Corner Demon
+          - 街角魔族
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 12
+          endDate:
+            year: 2019
+            month: 9
+            day: 27
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 105143
+          idMal: 38234
+          title:
+            romaji: ONE PIECE STAMPEDE
+            english: 'One Piece: Stampede'
+            native: ONE PIECE STAMPEDE
+          synonyms:
+          - ワンピース スタンピード
+          - 'One Piece: Estampida'
+          - 航海王：狂热行动
+          - One Piece Film 14
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 8
+            day: 9
+          endDate:
+            year: 2019
+            month: 8
+            day: 9
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 106918
+          idMal: 38959
+          title:
+            romaji: 'Lord El-Melloi II-sei no Jikenbo: "Rail Zeppelin" Grace note'
+            english: Lord El-Melloi II's Case Files {Rail Zeppelin} Grace note
+            native: ロード・エルメロイⅡ世の事件簿 {魔眼蒐集列車} Grace note
+          synonyms:
+          - Досье лорда Эль-Меллоя II
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 7
+            day: 7
+          endDate:
+            year: 2019
+            month: 9
+            day: 29
+          averageScore: 73
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

@@ -1,0 +1,724 @@
+metadata:
+  captured_at: '2026-05-11T11:34:22Z'
+  label: 2021-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2021
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:22 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '28'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 110277
+          idMal: 40028
+          title:
+            romaji: 'Shingeki no Kyojin: The Final Season'
+            english: Attack on Titan Final Season
+            native: 進撃の巨人 The Final Season
+          synonyms:
+          - SnK 4
+          - AoT 4
+          - Shingeki no Kyojin 4
+          - 進撃の巨人4
+          - Attack on Titan Season 4
+          - 진격의 거인 더 파이널 시즌
+          - מתקפת הטיטאנים העונה האחרונה
+          - L'Attaque des Titans Saison Finale
+          - L'Attacco dei Giganti 4
+          - L'Attacco dei Giganti - La Stagione Finale
+          - 'حمله به تایتان فصل 4 '
+          - ' ผ่าพิภพไททัน ไฟนอล ซีซั่น'
+          - ผ่าพิภพไททัน Final Season
+          - ผ่าพิภพไททัน ภาค 4
+          - هجوم العملاقة الجزء الأخير
+          - 'Атака Титанов: Финал'
+          status: FINISHED
+          format: TV
+          episodes: 16
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2020
+            month: 12
+            day: 7
+          endDate:
+            year: 2021
+            month: 3
+            day: 29
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 124080
+          idMal: 42897
+          title:
+            romaji: Horimiya
+            english: Horimiya
+            native: ホリミヤ
+          synonyms:
+          - 堀与宫村
+          - โฮริมิยะ สาวมั่นกับนายมืดมน
+          - Хоримия
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 10
+          endDate:
+            year: 2021
+            month: 4
+            day: 4
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 108465
+          idMal: 39535
+          title:
+            romaji: 'Mushoku Tensei: Isekai Ittara Honki Dasu'
+            english: 'Mushoku Tensei: Jobless Reincarnation'
+            native: 無職転生 ～異世界行ったら本気だす～
+          synonyms:
+          - 'Jobless Reincarnation: I Will Seriously Try If I Go To Another World'
+          - 无职转生 ~到了异世界就拿出真本事~
+          - เกิดชาตินี้พี่ต้องเทพ
+          - Thất nghiệp chuyển sinh
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 11
+          endDate:
+            year: 2021
+            month: 3
+            day: 22
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 113936
+          idMal: 40852
+          title:
+            romaji: 'Dr. STONE: STONE WARS'
+            english: 'Dr. STONE: STONE WARS'
+            native: Dr.STONE STONE WARS
+          synonyms:
+          - ドクターストーン STONE WARS
+          - Ｄｒ．ＳＴＯＮＥ第2期
+          - Dr. STONE 2
+          - 닥터 스톤 STONE WARS
+          - 石纪元第二季
+          - DR.STONE ภาค 2
+          - 'Доктор Стоун: Каменные войны'
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 14
+          endDate:
+            year: 2021
+            month: 3
+            day: 25
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 108725
+          idMal: 39617
+          title:
+            romaji: Yakusoku no Neverland 2
+            english: The Promised Neverland Season 2
+            native: 約束のネバーランド2
+          synonyms:
+          - YakuNeba
+          - TPN2
+          - พันธสัญญาเนเวอร์แลนด์ ภาค 2
+          - 約定的夢幻島 第二季
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 8
+          endDate:
+            year: 2021
+            month: 3
+            day: 26
+          averageScore: 52
+          nextAiringEpisode: null
+        - id: 108511
+          idMal: 39551
+          title:
+            romaji: Tensei Shitara Slime Datta Ken 2nd Season
+            english: That Time I Got Reincarnated as a Slime Season 2
+            native: 転生したらスライムだった件 第2期
+          synonyms:
+          - 転スラ2
+          - TenSura 2
+          - 关于我转生变成史莱姆这档事第二季（上半）
+          - เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว ภาค 2
+          - Moi, quand je me réincarne en Slime Saison 2
+          - Meine Wiedergeburt als Schleim in einer anderen Welt Staffel 2
+          - О моём перерождении в слизь 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 12
+          endDate:
+            year: 2021
+            month: 3
+            day: 30
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 119661
+          idMal: 42203
+          title:
+            romaji: Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season Part 2
+            english: Re:ZERO -Starting Life in Another World- Season 2 Part 2
+            native: Re:ゼロから始める異世界生活 2nd Season Part 2
+          synonyms:
+          - Re:Zero kara Hajimeru Isekai Seikatsu (2021)
+          - 'Re: 제로부터 시작하는 이세계 생활 2기 파트 2'
+          - Re:从零开始的异世界生活第二季（下半）
+          - Re:从零开始的异世界生活 2 下半
+          - Re:Zero รีเซทชีวิต ฝ่าวิกฤตต่างโลก ภาค 2 พาร์ท 2
+          - Re:Zero — жизнь с нуля в другом мире. Второй сезон
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 6
+          endDate:
+            year: 2021
+            month: 3
+            day: 24
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 124845
+          idMal: 43299
+          title:
+            romaji: Wonder Egg Priority
+            english: WONDER EGG PRIORITY
+            native: ワンダーエッグ・プライオリティ
+          synonyms:
+          - WonEgg
+          - WEP
+          - 奇蛋物语
+          - วันเดอร์เอ็ก ไพรออริตี
+          - Приоритет чудо-яйца
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 13
+          endDate:
+            year: 2021
+            month: 3
+            day: 31
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 124153
+          idMal: 42923
+          title:
+            romaji: SK∞
+            english: SK8 the Infinity
+            native: SK∞ エスケーエイト
+          synonyms:
+          - SK Eight
+          - เอสเคเอท สเกตบอร์ดล้างเมือง
+          - Hội Thanh Niên Lướt Ván SK∞
+          - Ski Tak Terbatas SK∞
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 10
+          endDate:
+            year: 2021
+            month: 4
+            day: 4
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 109261
+          idMal: 39783
+          title:
+            romaji: Go-toubun no Hanayome ∬
+            english: The Quintessential Quintuplets 2
+            native: 五等分の花嫁∬
+          synonyms:
+          - 5-toubun no Hanayome ∬
+          - Go-toubun no Hanayome 2nd Season
+          - The Five Wedded Brides 2nd Season
+          - 五等分的新娘∬
+          - เจ้าสาวผมเป็นแฝดห้า ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 8
+          endDate:
+            year: 2021
+            month: 3
+            day: 26
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 103632
+          idMal: 37984
+          title:
+            romaji: Kumo desu ga, Nani ka?
+            english: So I'm a Spider, So What?
+            native: 蜘蛛ですが、なにか？
+          synonyms:
+          - 转生成蜘蛛又怎样！
+          - حسنا أنا عنكبوت، ماذا في ذلك؟
+          - 'แมงมุมแล้วไง ข้องใจเหรอคะ '
+          - Tôi Là Nhện Đấy, Có Sao Không?
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 8
+          endDate:
+            year: 2021
+            month: 7
+            day: 3
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 113425
+          idMal: 40750
+          title:
+            romaji: Kaifuku Jutsushi no Yarinaoshi
+            english: Redo of Healer
+            native: 回復術士のやり直し
+          synonyms:
+          - 回复术士的重启人生
+          - La Venganza del Sanador
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 13
+          endDate:
+            year: 2021
+            month: 3
+            day: 31
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 114194
+          idMal: 40935
+          title:
+            romaji: BEASTARS 2nd Season
+            english: BEASTARS Season 2
+            native: BEASTARS 第2期
+          synonyms:
+          - บีสตาร์ ภาค 2
+          - Выдающиеся звери 2
+          - ビースターズ 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 7
+          endDate:
+            year: 2021
+            month: 3
+            day: 25
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 112443
+          idMal: 40530
+          title:
+            romaji: Jaku-Chara Tomozaki-kun
+            english: Bottom-Tier Character Tomozaki
+            native: 弱キャラ友崎くん
+          synonyms:
+          - เกมพลิกโฉมนายกระจอก
+          - Низкоуровневый Томодзаки
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 8
+          endDate:
+            year: 2021
+            month: 3
+            day: 26
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 116752
+          idMal: 41491
+          title:
+            romaji: 'Nanatsu no Taizai: Funnu no Shinpan'
+            english: 'The Seven Deadly Sins: Dragon''s Judgement'
+            native: 七つの大罪 憤怒の審判
+          synonyms:
+          - 七大罪：愤怒的审判
+          - 'The Seven Deadly Sins: Dragens dom'
+          - ศึกตำนาน 7 อัศวิน ภาค 4
+          - 'Сім смертних гріхів: Правосуддя Дракона'
+          - 'Семь смертных грехов: Яростное правосудие'
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 13
+          endDate:
+            year: 2021
+            month: 6
+            day: 23
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 125428
+          idMal: 43690
+          title:
+            romaji: Tenkuu Shinpan
+            english: High-Rise Invasion
+            native: 天空侵犯
+          synonyms:
+          - 'Sky-High Survival '
+          - Tenku Shinpan - Sem Saída
+          - غزاة ناطحات السحاب
+          - หน้ากากเดนนรก
+          - Invasión en las Alturas
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 2
+            day: 25
+          endDate:
+            year: 2021
+            month: 2
+            day: 25
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 114085
+          idMal: 40908
+          title:
+            romaji: Kemono Jihen
+            english: Kemono Jihen
+            native: 怪物事変
+          synonyms:
+          - けものじへん
+          - Monster Incidents
+          - Kemono Incidents
+          - คดีประหลาดคนปีศาจ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 10
+          endDate:
+            year: 2021
+            month: 3
+            day: 28
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 118375
+          idMal: 41899
+          title:
+            romaji: Ore dake Haireru Kakushi Dungeon
+            english: The Hidden Dungeon Only I Can Enter
+            native: 俺だけ入れる隠しダンジョン
+          synonyms:
+          - Special training in the Secret Dungeon!
+          - ดันเจี้ยนที่มีแต่ข้าเท่านั้นที่เข้าได้ ～แอบฝึกปรืนจนบรรลุสู่สุดแกร่ง～
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 9
+          endDate:
+            year: 2021
+            month: 3
+            day: 27
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 3786
+          idMal: 3786
+          title:
+            romaji: Shin Evangelion Movie:||
+            english: 'Evangelion: 3.0+1.0 Thrice Upon a Time'
+            native: シン・エヴァンゲリオン劇場版:||
+          synonyms:
+          - Rebuild of Evangelion 4.0
+          - 'EVANGELION:3.0+1.01 THRICE UPON A TIME '
+          - EVANGELION:3.0+1.01 A ESPERANÇA
+          - อีวานเกเลียน:3.0+1.01 สามครั้งก่อน เมื่อเนิ่นนานมาแล้ว
+          - Evangelion 3.0+1.11
+          - EVANGELION:3.0+1.01 TRIPLE
+          - Evangelion 3.0+1.01 Od-nowa
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 3
+            day: 8
+          endDate:
+            year: 2021
+            month: 3
+            day: 8
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 112649
+          idMal: 40594
+          title:
+            romaji: Tatoeba Last Dungeon Mae no Mura no Shounen ga Joban no Machi de Kurasu Youna Monogatari
+            english: Suppose a Kid from the Last Dungeon Boonies moved to a starter town?
+            native: たとえばラストダンジョン前の村の少年が序盤の街で暮らすような物語
+          synonyms:
+          - LASDAN
+          - Imagine, un cambrousard du dernier donjon dans la ville de départ !
+          - หนุ่มน้อยใสซื่อจากหมู่บ้านหน้าลาสท์ดันเจี้ยนมาเข้ากรุงแล้ว
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 4
+          endDate:
+            year: 2021
+            month: 3
+            day: 22
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 108631
+          idMal: 39586
+          title:
+            romaji: Hataraku Saibou!!
+            english: Cells at Work!!
+            native: はたらく細胞!!
+          synonyms:
+          - Les brigades immunitaires 2
+          - เซลล์ขยัน พันธุ์เดือด ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 8
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 8
+          endDate:
+            year: 2021
+            month: 2
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 104459
+          idMal: 38474
+          title:
+            romaji: Yuru Camp△ SEASON 2
+            english: LAID-BACK CAMP SEASON2
+            native: ゆるキャン△ SEASON２
+          synonyms:
+          - Yurucamp
+          - Yurukyan△
+          - 摇曳露营△第二季
+          - 摇曳露营△ 2
+          - โลลิตั้งแคมป์ ภาค 2
+          - แคมป์สบายสไตล์สาวๆ ภาค 2
+          - Laid-Back Camp Season 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 7
+          endDate:
+            year: 2021
+            month: 4
+            day: 1
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 114862
+          idMal: 41109
+          title:
+            romaji: 'Log Horizon: Entaku Houkai'
+            english: 'Log Horizon: Destruction of the Round Table'
+            native: ログ・ホライズン　円卓崩壊
+          synonyms:
+          - Log Horizon 3
+          - รวมพลคนติดอยู่ในเกมส์ ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 13
+          endDate:
+            year: 2021
+            month: 3
+            day: 31
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 117533
+          idMal: 41694
+          title:
+            romaji: Hataraku Saibou BLACK
+            english: Cells at Work! CODE BLACK
+            native: はたらく細胞BLACK
+          synonyms:
+          - Les brigades immunitaires BLACK
+          - เซลล์ขยันพันธุ์เดือด BLACK
+          - 'Клетки за работой! КОД: ТЬМА'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 8
+          endDate:
+            year: 2021
+            month: 3
+            day: 19
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 114129
+          idMal: 39486
+          title:
+            romaji: 'Gintama: THE FINAL'
+            english: 'Gintama: THE VERY FINAL'
+            native: 銀魂 THE FINAL
+          synonyms:
+          - กินทามะ THE FINAL
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2021
+          startDate:
+            year: 2021
+            month: 1
+            day: 8
+          endDate:
+            year: 2021
+            month: 1
+            day: 8
+          averageScore: 91
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

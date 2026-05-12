@@ -1,0 +1,684 @@
+metadata:
+  captured_at: '2026-05-11T11:32:55Z'
+  label: 2013-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2013
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:55 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '16'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 16498
+          idMal: 16498
+          title:
+            romaji: Shingeki no Kyojin
+            english: Attack on Titan
+            native: 進撃の巨人
+          synonyms:
+          - SnK
+          - AoT
+          - Ataque a los Titanes
+          - Ataque dos Titãs
+          - L'Attacco dei Giganti
+          - מתקפת הטיטאנים
+          - 进击的巨人
+          - L’Attaque des Titans
+          - الهجوم على العمالقة
+          - ผ่าพิภพไททัน
+          - حمله به تایتان
+          - Ataque de Titãs
+          - Atak Tytanów
+          - Атака титанов
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 7
+          endDate:
+            year: 2013
+            month: 9
+            day: 28
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 15809
+          idMal: 15809
+          title:
+            romaji: Hataraku Maou-sama!
+            english: The Devil is a Part-Timer!
+            native: はたらく魔王さま!
+          synonyms:
+          - ผู้กล้าซึนซ่าส์กับจอมมารสู้ชีวิต
+          - Raja Iblis Nyambi!
+          - 打工吧！魔王大人
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 4
+          endDate:
+            year: 2013
+            month: 6
+            day: 27
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 14813
+          idMal: 14813
+          title:
+            romaji: Yahari Ore no Seishun Love Come wa Machigatteiru.
+            english: My Teen Romantic Comedy SNAFU
+            native: やはり俺の青春ラブコメはまちがっている。
+          synonyms:
+          - Oregairu
+          - My youth romantic comedy is wrong as I expected.
+          - 俺ガイル
+          - 我的青春恋爱物语果然有问题
+          - กะแล้วชีวิตรักวัยรุ่นของผมมันต้องไม่สดใสเลยสักนิด
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 5
+          endDate:
+            year: 2013
+            month: 6
+            day: 28
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 16782
+          idMal: 16782
+          title:
+            romaji: Kotonoha no Niwa
+            english: The Garden of Words
+            native: 言の葉の庭
+          synonyms:
+          - Koto no Ha no Niwa
+          - The Garden of Kotonoha
+          - El Jardín de las Palabras
+          - A szavak kertje
+          - ยามสายฝนโปรยปราย
+          - Ogród słów
+          - Сад изящных слов
+          - Il giardino delle parole
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 5
+            day: 31
+          endDate:
+            year: 2013
+            month: 5
+            day: 31
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 15583
+          idMal: 15583
+          title:
+            romaji: Date A Live
+            english: Date A Live
+            native: デート・ア・ライブ
+          synonyms:
+          - พิชิตรัก พิทักษ์โลก
+          - ' Рандеву с жизнью'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 6
+          endDate:
+            year: 2013
+            month: 6
+            day: 22
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 11577
+          idMal: 11577
+          title:
+            romaji: 'Steins;Gate: Fuka Ryouiki no Déjà vu'
+            english: Steins;Gate The Movie – Load Region of Déjà Vu
+            native: 劇場版 シュタインズゲート 負荷領域のデジャヴ
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 20
+          endDate:
+            year: 2013
+            month: 4
+            day: 20
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 16049
+          idMal: 16049
+          title:
+            romaji: Toaru Kagaku no Railgun S
+            english: A Certain Scientific Railgun S
+            native: とある科学の超電磁砲S
+          synonyms:
+          - Toaru Kagaku no Railgun 2nd Season
+          - A Certain Scientific Railgun 2nd Season
+          - เรลกัน แฟ้มลับคดีวิทยาศาสตร์ ภาค 2
+          - Некий научный Рейлган 2
+          - Некий научный Рейлган С
+          - เรลกัน แฟ้มลับคดีวิทยาศาสตร์ ภาคที่ 2
+          - 'Cấm thư ma thuật Index ngoại truyện: Siêu Railgun khoa học Phần 2 '
+          - 魔法禁書目錄外傳 科學超電磁砲 第二季
+          - 科學超電磁砲 S
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 12
+          endDate:
+            year: 2013
+            month: 9
+            day: 27
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 15225
+          idMal: 15225
+          title:
+            romaji: Hentai Ouji to Warawanai Neko.
+            english: Hentai Prince & the Stony Cat
+            native: 変態王子と笑わない猫。
+          synonyms:
+          - HENNEKO
+          - El príncipe pervertido y el gato de piedra
+          - O príncipe pervertido e o gato inexpressivo
+          - The "Hentai" Prince and the Stony Cat.
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 13
+          endDate:
+            year: 2013
+            month: 6
+            day: 29
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 13659
+          idMal: 13659
+          title:
+            romaji: Ore no Imouto ga Konna ni Kawaii Wake ga Nai.
+            english: Oreimo 2
+            native: 俺の妹がこんなに可愛いわけがない。
+          synonyms:
+          - My Little Sister Can't Be This Cute 2
+          - Ore no Imouto ga Konna ni Kawaii Wake ga Nai 2
+          - น้องสาวของผมไม่น่ารักขนาดนั้นหรอก ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 7
+          endDate:
+            year: 2013
+            month: 6
+            day: 30
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 14837
+          idMal: 14837
+          title:
+            romaji: 'Dragon Ball Z: Kami to Kami'
+            english: 'Dragon Ball Z: Battle of Gods'
+            native: 'ドラゴンボールZ: 神と神'
+          synonyms:
+          - Dragon Ball Z 2013
+          - DBZ (2013)
+          - Saikyou Shidou
+          - 'Dragon Ball Z Movie 14: God & God'
+          - 'Bola de Drac Z: La Batalla dels Déus'
+          - Dragon Ball Z - Kampf der Götter
+          - 'Dragon Ball Z: A Batalha dos Deuses'
+          - 'Драконий жемчуг Зет: Битва богов'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 3
+            day: 30
+          endDate:
+            year: 2013
+            month: 3
+            day: 30
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 16524
+          idMal: 16524
+          title:
+            romaji: Suisei no Gargantia
+            english: Gargantia on the Verdurous Planet
+            native: 翠星のガルガンティア
+          synonyms:
+          - Suisei no Galgantia
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 7
+          endDate:
+            year: 2013
+            month: 6
+            day: 30
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 16201
+          idMal: 16201
+          title:
+            romaji: Aku no Hana
+            english: Flowers of Evil
+            native: 惡の華
+          synonyms:
+          - Kwiaty zła
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 5
+          endDate:
+            year: 2013
+            month: 6
+            day: 30
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 15699
+          idMal: 15699
+          title:
+            romaji: Haiyore! Nyaruko-san W
+            english: 'Nyaruko-san: Another Crawling Chaos W'
+            native: 這いよれ！ニャル子さん W
+          synonyms:
+          - Haiyore! Nyaruko-san 2
+          - Haiyoru! Nyaruko-san 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 8
+          endDate:
+            year: 2013
+            month: 7
+            day: 1
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 16035
+          idMal: 16035
+          title:
+            romaji: Karneval (TV)
+            english: Karneval (TV)
+            native: カーニヴァル (TV)
+          synonyms:
+          - ล่าทรชน
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 4
+          endDate:
+            year: 2013
+            month: 6
+            day: 27
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 16668
+          idMal: 16668
+          title:
+            romaji: Kakumeiki Valvrave
+            english: Valvrave the Liberator
+            native: 革命機ヴァルヴレイヴ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 12
+          endDate:
+            year: 2013
+            month: 6
+            day: 28
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 14669
+          idMal: 14669
+          title:
+            romaji: 'AURA: Maryuuinkouga Saigo no Tatakai'
+            english: Aura
+            native: AURA～魔竜院光牙最後の闘い～
+          synonyms:
+          - 'Aura: Maryuinkoga Saigo no Tatakai'
+          - 'Aura: Maryuin Kouga Saigo no Tatakai'
+          - 'Aura: Koga Maryuin''s Last War'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 13
+          endDate:
+            year: 2013
+            month: 4
+            day: 13
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 16528
+          idMal: 16528
+          title:
+            romaji: Hal
+            english: Hal
+            native: ハル
+          synonyms:
+          - Haru
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 6
+            day: 8
+          endDate:
+            year: 2013
+            month: 6
+            day: 8
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 15911
+          idMal: 15911
+          title:
+            romaji: Yuyushiki
+            english: Yuyushiki
+            native: ゆゆ式
+          synonyms:
+          - Yuyu-shiki
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 10
+          endDate:
+            year: 2013
+            month: 6
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 16397
+          idMal: 16397
+          title:
+            romaji: Photokano
+            english: Photo Kano
+            native: フォトカノ
+          synonyms:
+          - Foto Kano
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 5
+          endDate:
+            year: 2013
+            month: 6
+            day: 28
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 16512
+          idMal: 16512
+          title:
+            romaji: 'Devil Survivor 2: THE ANIMATION'
+            english: 'Devil Survivor 2: The Animation'
+            native: デビルサバイバー２ THE ANIMATION
+          synonyms:
+          - DS2A
+          - 'Shin Megami Tensei: Devil Survivor 2'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 5
+          endDate:
+            year: 2013
+            month: 6
+            day: 28
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 15771
+          idMal: 15771
+          title:
+            romaji: Saint☆Onii-san
+            english: null
+            native: 聖☆おにいさん
+          synonyms:
+          - Saint☆Oniisan (Movie)
+          - Saint☆Young Men
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 5
+            day: 10
+          endDate:
+            year: 2013
+            month: 5
+            day: 10
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 17082
+          idMal: 17082
+          title:
+            romaji: Aiura
+            english: AIURA
+            native: あいうら
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 10
+          endDate:
+            year: 2013
+            month: 6
+            day: 26
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 14175
+          idMal: 14175
+          title:
+            romaji: 'Hanasaku Iroha: HOME SWEET HOME'
+            english: Hanasaku Iroha the Movie ~ HOME SWEET HOME ~
+            native: 花咲くいろは HOME SWEET HOME
+          synonyms:
+          - 'Hana-Saku Iroha: Home Sweet Home'
+          - Hanairo Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 3
+            day: 9
+          endDate:
+            year: 2013
+            month: 3
+            day: 9
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 14921
+          idMal: 14921
+          title:
+            romaji: 'RDG: Red Data Girl'
+            english: Red Data Girl
+            native: RDG レッドデータガール
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 4
+          endDate:
+            year: 2013
+            month: 6
+            day: 20
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 16355
+          idMal: 16355
+          title:
+            romaji: Dansai Bunri no Crime Edge
+            english: The Severing Crime Edge
+            native: 断裁分離のクライムエッジ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 4
+            day: 4
+          endDate:
+            year: 2013
+            month: 6
+            day: 27
+          averageScore: 62
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

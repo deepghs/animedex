@@ -73,10 +73,12 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.config.buildmeta",
     "animedex.config.profile",
     "animedex.entry",
+    "animedex.entry.aggregate",
     "animedex.entry.cli",
     "animedex.diag",
     "animedex.diag.selftest",
     "animedex.models",
+    "animedex.models.aggregate",
     "animedex.models.common",
     "animedex.models.anime",
     "animedex.models.manga",
@@ -89,6 +91,8 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.transport.ratelimit",
     "animedex.transport.read_only",
     "animedex.transport.http",
+    "animedex.utils",
+    "animedex.utils.timezone",
     "animedex.cache",
     "animedex.cache.sqlite",
     "animedex.auth",
@@ -106,6 +110,9 @@ _SELFTEST_TARGETS: Tuple[str, ...] = (
     "animedex.mcp",
     "animedex.mcp.tool_decorator",
     "animedex.mcp.register",
+    "animedex.agg",
+    "animedex.agg._fanout",
+    "animedex.agg.calendar",
     # the substrate API layer: animedex api raw passthrough. Each per-backend module
     # ships a selftest() that checks its signature; the dispatcher and
     # envelope have their own end-to-end smokes; the raw renderer's
@@ -296,6 +303,159 @@ def _check_module_smoke() -> List[Tuple[str, bool, str]]:
     return results
 
 
+def _smoke_click() -> None:
+    """Smoke-test Click command parsing and in-process invocation."""
+    import click
+    from click.testing import CliRunner
+
+    @click.command()
+    @click.option("--value", type=click.Choice(["a", "b"]), required=True)
+    def _probe(value: str) -> None:
+        click.echo(value)
+
+    result = CliRunner().invoke(_probe, ["--value", "b"])
+    assert result.exit_code == 0, result.output
+    assert result.output == "b\n"
+
+
+def _smoke_requests() -> None:
+    """Smoke-test requests request preparation without network I/O."""
+    import requests
+
+    prepared = requests.Session().prepare_request(requests.Request("GET", "https://example.com"))
+    assert prepared.method == "GET"
+    assert prepared.url == "https://example.com/"
+    assert issubclass(requests.RequestException, Exception)
+
+
+def _smoke_python_dateutil() -> None:
+    """Smoke-test python-dateutil timezone parsing."""
+    from datetime import datetime
+
+    from dateutil import tz
+
+    shanghai = tz.gettz("Asia/Shanghai")
+    cst = tz.gettz("CST-8")
+    assert shanghai is not None
+    assert cst is not None
+    assert cst.utcoffset(datetime(2026, 1, 1)).total_seconds() == 8 * 3600
+
+
+def _smoke_hbutils() -> None:
+    """Smoke-test the hbutils package and config namespace."""
+    import hbutils
+    import hbutils.config
+
+    assert hbutils.__name__ == "hbutils"
+    assert hbutils.config.__name__ == "hbutils.config"
+
+
+def _smoke_pydantic() -> None:
+    """Smoke-test Pydantic v2 model validation and dumping."""
+    from pydantic import BaseModel, Field
+
+    class _Probe(BaseModel):
+        value: int = Field(default=3, ge=1)
+
+    assert _Probe().model_dump() == {"value": 3}
+    assert _Probe(value=5).model_dump() == {"value": 5}
+
+
+def _smoke_platformdirs() -> None:
+    """Smoke-test platformdirs path resolution without creating paths."""
+    from platformdirs import PlatformDirs, user_cache_dir
+
+    cache_dir = user_cache_dir("animedex", appauthor=False)
+    assert cache_dir
+    assert PlatformDirs("animedex", appauthor=False).user_cache_dir == cache_dir
+
+
+def _smoke_keyring() -> None:
+    """Smoke-test keyring import shape without touching the OS keyring."""
+    import keyring
+    import keyring.errors
+
+    assert callable(getattr(keyring, "set_password", None))
+    assert callable(getattr(keyring, "get_password", None))
+    assert callable(getattr(keyring, "delete_password", None))
+    assert issubclass(keyring.errors.PasswordDeleteError, keyring.errors.KeyringError)
+
+
+def _smoke_jq() -> None:
+    """Smoke-test the native jq binding with a small expression."""
+    import jq
+
+    assert jq.compile(". + 1").input(2).first() == 3
+    assert jq.first(".name", {"name": "Frieren"}) == "Frieren"
+
+
+def _smoke_anyascii() -> None:
+    """Smoke-test anyascii's resource-backed transliteration table."""
+    from anyascii import anyascii
+
+    assert anyascii("Pok\u00e9mon") == "Pokemon"
+    assert anyascii("\u602a\u7363\uff18\u53f7") == "GuaiShou8Hao"
+
+
+def _smoke_jaconv() -> None:
+    """Smoke-test jaconv width and kana conversion tables."""
+    import jaconv
+
+    assert jaconv.normalize("\u602a\u7363\uff18\u53f7") == "\u602a\u73638\u53f7"
+    assert jaconv.kata2hira("\u30bd\u30fc\u30c9\u30a2\u30fc\u30c8") == "\u305d\u30fc\u3069\u3042\u30fc\u3068"
+    assert jaconv.hira2kata("\u305d\u30fc\u3069\u3042\u30fc\u3068") == "\u30bd\u30fc\u30c9\u30a2\u30fc\u30c8"
+
+
+def _smoke_unidecode() -> None:
+    """Smoke-test Unidecode transliteration tables."""
+    from unidecode import unidecode
+
+    assert unidecode("Pok\u00e9mon") == "Pokemon"
+    assert unidecode("\u30bd\u30fc\u30c9\u30a2\u30fc\u30c8") == "so-doa-to"
+
+
+def _smoke_tzdata() -> None:
+    """Smoke-test the tzdata fallback used by zoneinfo on Windows."""
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+
+    assert ZoneInfo("Asia/Tokyo").utcoffset(datetime(2026, 5, 11)).total_seconds() == 9 * 3600
+
+
+_DEPENDENCY_SMOKE_TESTS: Tuple[Tuple[str, Callable[[], None]], ...] = (
+    ("click", _smoke_click),
+    ("requests", _smoke_requests),
+    ("python_dateutil", _smoke_python_dateutil),
+    ("hbutils", _smoke_hbutils),
+    ("pydantic", _smoke_pydantic),
+    ("platformdirs", _smoke_platformdirs),
+    ("keyring", _smoke_keyring),
+    ("jq", _smoke_jq),
+    ("anyascii", _smoke_anyascii),
+    ("jaconv", _smoke_jaconv),
+    ("unidecode", _smoke_unidecode),
+    ("tzdata", _smoke_tzdata),
+)
+
+
+def _check_dependency_smoke() -> List[Tuple[str, bool, str]]:
+    """Smoke-test each direct runtime dependency with a focused probe.
+
+    :return: A list of ``(label, ok, detail)`` triples.
+    :rtype: List[Tuple[str, bool, str]]
+    """
+    results: List[Tuple[str, bool, str]] = []
+    for package, smoke in _DEPENDENCY_SMOKE_TESTS:
+        label = f"testing {package} library"
+        try:
+            smoke()
+        except Exception:
+            results.append((label, False, traceback.format_exc().rstrip()))
+        else:
+            results.append((label, True, ""))
+    return results
+
+
 def _check_cli_subcommands() -> List[Tuple[str, bool, str]]:
     """Probe the registered Click subcommands with the in-process runner.
 
@@ -450,6 +610,7 @@ def run_selftest(stream: io.TextIOBase = None) -> int:
         failed_total = 0
 
         for title, fn, label in (
+            ("Runtime dependency checks", _check_dependency_smoke, "dependency-smoke runner"),
             ("Module smoke tests", _check_module_smoke, "module-smoke runner"),
             ("CLI subcommands", _check_cli_subcommands, "cli-subcommand runner"),
         ):

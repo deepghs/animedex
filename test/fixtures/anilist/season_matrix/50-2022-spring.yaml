@@ -1,0 +1,710 @@
+metadata:
+  captured_at: '2026-05-11T11:34:36Z'
+  label: 2022-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2022
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:35 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '23'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 140960
+          idMal: 50265
+          title:
+            romaji: SPY×FAMILY
+            english: SPY x FAMILY
+            native: SPY×FAMILY
+          synonyms:
+          - SxF
+          - 스파이 패밀리
+          - 间谍过家家
+          - Семья шпиона
+          - سباي إكس فاميلي
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 9
+          endDate:
+            year: 2022
+            month: 6
+            day: 25
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 125367
+          idMal: 43608
+          title:
+            romaji: 'Kaguya-sama wa Kokurasetai: Ultra Romantic'
+            english: 'Kaguya-sama: Love is War -Ultra Romantic-'
+            native: かぐや様は告らせたい-ウルトラロマンティック-
+          synonyms:
+          - 'Kaguya-sama: Love is War Season 3'
+          - 辉夜大小姐想让我告白～天才们的恋爱头脑战～ 3
+          - 辉夜大小姐想让我告白～天才们的恋爱头脑战～ 第三季
+          - 'Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen 3'
+          - สารภาพรักกับคุณคางุยะซะดี ๆ ~สงครามประสาทความรักของเหล่าอัจฉริยะ~ ภาค 3
+          - สารภาพรักกับคุณคางุยะ ซะดี ๆ -อุลตร้า โรแมนติก-
+          - Kaguya-sama wa Kokurasetai 3rd Season
+          - 'Kaguya-sama: Cuộc Chiến Tỏ Tình - Ultra Romantic'
+          - 'Госпожа Кагуя: в любви как на войне. Ультраромантика'
+          - 'Nona Kaguya Ingin Ditembak: Ultra Romantic'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 9
+          endDate:
+            year: 2022
+            month: 6
+            day: 25
+          averageScore: 89
+          nextAiringEpisode: null
+        - id: 111321
+          idMal: 40356
+          title:
+            romaji: Tate no Yuusha no Nariagari Season 2
+            english: The Rising of the Shield Hero Season 2
+            native: 盾の勇者の成り上がり Season 2
+          synonyms:
+          - ผู้กล้าโล่ผงาด ภาค 2
+          - Восхождение героя щита 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 6
+          endDate:
+            year: 2022
+            month: 6
+            day: 29
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 129201
+          idMal: 47194
+          title:
+            romaji: Summer Time Render
+            english: Summer Time Rendering
+            native: サマータイムレンダ
+          synonyms:
+          - Summertime Render
+          - ปริศนาบ้านเก่า เงามรณะ
+          - A Ilha das Sombras
+          - 夏日重现
+          - La Isla de las Sombras
+          - 'Tajemnica wyspy '
+          - לעבור את הקיץ
+          - Bright Sun – Dark Shadows
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 15
+          endDate:
+            year: 2022
+            month: 9
+            day: 30
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 127911
+          idMal: 45613
+          title:
+            romaji: Kawaii dake ja Nai Shikimori-san
+            english: Shikimori's Not Just a Cutie
+            native: 可愛いだけじゃない式守さん
+          synonyms:
+          - คุณชิกิโมริไม่ได้น่ารักแค่อย่างเดียวนะ
+          - Shikimori n'est pas juste mignonne
+          - Shikimori Không Chỉ Dễ Thương Thôi Đâu
+          - SHIKIMORI Tidak Hanya Manis
+          - Моя девушка не просто милашка
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 10
+          endDate:
+            year: 2022
+            month: 7
+            day: 10
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 142984
+          idMal: 50631
+          title:
+            romaji: Komi-san wa, Komyushou desu. 2
+            english: Komi Can't Communicate Part 2
+            native: 古見さんは、コミュ症です。2
+          synonyms:
+          - Komi Can't Communicate Season 2
+          - โฉมงามพูดไม่เก่งกับผองเพื่อนไม่เต็มเต็ง ภาค 2
+          - كومي لا تستطيع التواصل
+          - У Коми проблемы с общением 2
+          - Комі не вміє спілкуватися 2
+          - המשאלה של קומי
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 7
+          endDate:
+            year: 2022
+            month: 6
+            day: 23
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 141014
+          idMal: 50273
+          title:
+            romaji: Tomodachi Game
+            english: Tomodachi Game
+            native: トモダチゲーム
+          synonyms:
+          - Friend Game
+          - 친구게임
+          - โทโมดาจิ เกมมิตรภาพ
+          - لعبة الأصدقاء
+          - 'Tomodachi Game: Los juegos de la amistad'
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 6
+          endDate:
+            year: 2022
+            month: 6
+            day: 22
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 137281
+          idMal: 49520
+          title:
+            romaji: Aharen-san wa Hakarenai
+            english: Aharen-san wa Hakarenai
+            native: 阿波連さんははかれない
+          synonyms:
+          - Aharen Is Indecipherable
+          - Aharen Is Unfathomable
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 2
+          endDate:
+            year: 2022
+            month: 6
+            day: 18
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 142074
+          idMal: 50461
+          title:
+            romaji: Otomege Sekai wa Mob ni Kibishii Sekai desu
+            english: 'Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs'
+            native: 乙女ゲー世界はモブに厳しい世界です
+          synonyms:
+          - mobseka
+          - ชีวิตตัวประกอบอย่างตูช่างอยู่ยาก เมื่ออยู่ในโลกเกมจีบหนุ่ม
+          - 'Otome Game Sekai wa Mob ni Kibishii Sekai desu '
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 3
+          endDate:
+            year: 2022
+            month: 6
+            day: 19
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 131520
+          idMal: 48548
+          title:
+            romaji: Go-toubun no Hanayome Movie
+            english: The Quintessential Quintuplets Movie
+            native: 映画 五等分の花嫁
+          synonyms:
+          - 5-toubun no Hanayome Movie
+          - Eiga Go-toubun no Hanayome
+          - เจ้าสาวผมเป็นแฝดห้า The Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 5
+            day: 20
+          endDate:
+            year: 2022
+            month: 5
+            day: 20
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 132052
+          idMal: 48675
+          title:
+            romaji: Kakkou no Iinazuke
+            english: A Couple of Cuckoos
+            native: カッコウの許嫁
+          synonyms:
+          - รักอลวนคนสลับบ้าน
+          - Обручённые кукушками
+          - Kakkou no Iinazuke
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 24
+          endDate:
+            year: 2022
+            month: 10
+            day: 2
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 132474
+          idMal: 48760
+          title:
+            romaji: Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu
+            english: Skeleton Knight in Another World
+            native: 骸骨騎士様、只今異世界へお出掛け中
+          synonyms:
+          - บันทึกการเดินทางต่างโลกของท่านอัศวินกระดูก
+          - Kesatria Tengkorak Berkelana di Dunia Lain
+          - Hiệp Sĩ Xương Trên Đường Du Hành Đến Thế Giới Khác
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 7
+          endDate:
+            year: 2022
+            month: 6
+            day: 23
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 130586
+          idMal: 48415
+          title:
+            romaji: Shijou Saikyou no Daimaou, Murabito A ni Tensei suru
+            english: The Greatest Demon Lord Is Reborn as a Typical Nobody
+            native: 史上最強の大魔王、村人Aに転生する
+          synonyms:
+          - ชีวิตใหม่ไม่ธรรมดาของราชาปีศาจขี้เหงา
+          - Raja Iblis Terkuat Sepanjang Sejarah Terlahir Kembali Sebagai Figuran
+          - Đại Ma Vương Mạnh Nhất Lịch Sử Chuyển Sinh Thành Dân Làng A
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 6
+          endDate:
+            year: 2022
+            month: 6
+            day: 22
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 140457
+          idMal: 50175
+          title:
+            romaji: Yuusha, Yamemasu
+            english: I'm Quitting Heroing
+            native: 勇者、辞めます
+          synonyms:
+          - Yamemasu Tsugi No Shokuba Ha Mao Jo
+          - yuuyame
+          - 'I’m Quitting Heroing: Next Gig Is at the Demon Queen''s Castle'
+          - ผมน่ะเลิกเป็นผู้กล้าแล้วครับ
+          - 勇者、辭職不幹了
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 5
+          endDate:
+            year: 2022
+            month: 6
+            day: 21
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 141774
+          idMal: 50380
+          title:
+            romaji: Paripi Koumei
+            english: Ya Boy Kongming!
+            native: パリピ孔明
+          synonyms:
+          - Party People Kongming
+          - Paripi Kongming
+          - ขงเบ้งเจาะเวลามาปั้นดาว
+          - 派對咖孔明
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 3
+            day: 31
+          endDate:
+            year: 2022
+            month: 6
+            day: 16
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 142455
+          idMal: 50549
+          title:
+            romaji: Bubble
+            english: Bubble
+            native: バブル
+          synonyms:
+          - บับเบิ้ล
+          - Burbujas
+          - فقاعة
+          status: FINISHED
+          format: ONA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 28
+          endDate:
+            year: 2022
+            month: 4
+            day: 28
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 134732
+          idMal: 49052
+          title:
+            romaji: Aoashi
+            english: Aoashi
+            native: アオアシ
+          synonyms:
+          - AOASHI แข็งเด็กหัวใจนักสู้
+          - أواشي
+          - Ao Ashi - Playmaker
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 9
+          endDate:
+            year: 2022
+            month: 9
+            day: 24
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 132010
+          idMal: 48643
+          title:
+            romaji: Koi wa Sekai Seifuku no Ato de
+            english: Love After World Domination
+            native: 恋は世界征服のあとで
+          synonyms:
+          - รักเรานั้นไว้หลังครองโลก
+          - รักหลังครองโลก
+          - Koiseka
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 8
+          endDate:
+            year: 2022
+            month: 6
+            day: 24
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 116605
+          idMal: 41461
+          title:
+            romaji: Date A Live IV
+            english: Date A Live IV
+            native: デート・ア・ライブIV
+          synonyms:
+          - Date A Live Season 4
+          - พิชิตรัก พิทักษ์โลก ภาค 4
+          - Рандеву с Жизнью 4
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 8
+          endDate:
+            year: 2022
+            month: 6
+            day: 24
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 129193
+          idMal: 47162
+          title:
+            romaji: Shokei Shoujo no Virgin Road
+            english: The Executioner and Her Way of Life
+            native: 処刑少女の生きる道（バージンロード）
+          synonyms:
+          - เวอร์จินโร้ด เพชฌฆาตสาวบนเส้นทางพิสุทธิ์
+          - 處刑少女的生存之道
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 2
+          endDate:
+            year: 2022
+            month: 6
+            day: 18
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 121176
+          idMal: 42429
+          title:
+            romaji: 'Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 3rd Season'
+            english: Ascendance of a Bookworm Season 3
+            native: 本好きの下剋上 司書になるためには手段を選んでいられません 第3期
+          synonyms:
+          - 爱书的下克上：为了成为图书管理员不择手段！3
+          - หนอนหนังสือยึดอำนาจ ภาค 3
+          - การปฏิวัติของสาวน้อยหนอนหนังสือ ภาค 3
+          - 'Sự Nổi Dậy Của Cô Gái Mọt Sách: Mình Sẽ Làm Mọi Cách Để Trở Thành Thủ Thư 3'
+          - Власть книжного червя
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 12
+          endDate:
+            year: 2022
+            month: 6
+            day: 14
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 133175
+          idMal: 48842
+          title:
+            romaji: Mahoutsukai Reimeiki
+            english: The Dawn of the Witch
+            native: 魔法使い黎明期
+          synonyms:
+          - 魔法使黎明期
+          - จอมเวทแห่งรุ่งอรุณ
+          - Bình Minh Của Phù Thủy
+          - Purwa Fajar Si Penyihir
+          - Рассвет ведьмы
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 8
+          endDate:
+            year: 2022
+            month: 7
+            day: 1
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 133898
+          idMal: 48903
+          title:
+            romaji: 'Dragon Ball Super: Super Hero'
+            english: 'Dragon Ball Super: SUPER HERO'
+            native: ドラゴンボール超 スーパーヒーロー
+          synonyms:
+          - 'دراغون بول سوبر: البطل الخارق'
+          - Dragon Ball Super - Szuperhős
+          - 'Драконий жемчуг: Супер — Супергерой'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 6
+            day: 11
+          endDate:
+            year: 2022
+            month: 6
+            day: 11
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 125124
+          idMal: 43470
+          title:
+            romaji: Rikei ga Koi ni Ochita no de Shoumei shitemita. r=1-sinθ (Heart)
+            english: Science Fell in Love, So I Tried to Prove It r=1-sinθ
+            native: 理系が恋に落ちたので証明してみた。r=1-sinθ（ハート）
+          synonyms:
+          - พิสูจน์นิยามความรักด้วยหลักวิชาสายวิทย์ ภาค 2
+          - Rikei ga Koi ni Ochita no de Shoumei shitemita. 2nd Season
+          - พิสูจน์นิยามความรักด้วยหลักวิชาสายวิทย์ r=1-sinθ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 2
+          endDate:
+            year: 2022
+            month: 6
+            day: 18
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 132532
+          idMal: 48779
+          title:
+            romaji: Deaimon
+            english: 'Deaimon: Recipe for Happiness'
+            native: であいもん
+          synonyms:
+          - Kyoto & Wagashi & Family
+          - 相合之物
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2022
+          startDate:
+            year: 2022
+            month: 4
+            day: 6
+          endDate:
+            year: 2022
+            month: 6
+            day: 22
+          averageScore: 74
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

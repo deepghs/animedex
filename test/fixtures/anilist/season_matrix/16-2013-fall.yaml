@@ -1,0 +1,671 @@
+metadata:
+  captured_at: '2026-05-11T11:33:00Z'
+  label: 2013-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2013
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:00 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '14'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 18679
+          idMal: 18679
+          title:
+            romaji: Kill la Kill
+            english: Kill la Kill
+            native: キルラキル
+          synonyms:
+          - Kiru Ra Kiru
+          - KLK
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 4
+          endDate:
+            year: 2014
+            month: 3
+            day: 28
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 18153
+          idMal: 18153
+          title:
+            romaji: Kyoukai no Kanata
+            english: Beyond the Boundary
+            native: 境界の彼方
+          synonyms:
+          - Beyond the Horizon
+          - 境界的彼方
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 3
+          endDate:
+            year: 2013
+            month: 12
+            day: 18
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 17895
+          idMal: 17895
+          title:
+            romaji: Golden Time
+            english: Golden Time
+            native: ゴールデンタイム
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 4
+          endDate:
+            year: 2014
+            month: 3
+            day: 28
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 17265
+          idMal: 17265
+          title:
+            romaji: Log Horizon
+            english: Log Horizon
+            native: ログ・ホライズン
+          synonyms:
+          - รวมพลคนติดอยู่ในเกมส์
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 5
+          endDate:
+            year: 2014
+            month: 3
+            day: 22
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 16894
+          idMal: 16894
+          title:
+            romaji: Kuroko no Basket 2nd SEASON
+            english: Kuroko's Basketball 2
+            native: 黒子のバスケ 2nd SEASON
+          synonyms:
+          - Kuroko no Basuke 2
+          - הכדורסל של קורוקו 2
+          - Баскетбол Куроко 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 6
+          endDate:
+            year: 2014
+            month: 3
+            day: 30
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 18115
+          idMal: 18115
+          title:
+            romaji: 'Magi: The kingdom of magic'
+            english: 'Magi: The Kingdom of Magic'
+            native: マギ The kingdom of magic
+          synonyms:
+          - 'Magi: The Labyrinth of Magic 2'
+          - マギ The labyrinth of magic 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 7
+          endDate:
+            year: 2014
+            month: 3
+            day: 30
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 16067
+          idMal: 16067
+          title:
+            romaji: Nagi no Asukara
+            english: A Lull in the Sea
+            native: 凪のあすから
+          synonyms:
+          - NagiAsu
+          - 'Nagi no Asu Kara: Calmaria do Mar'
+          - 'Nagi no Asukara: Calma en el mar'
+          - From a calm tomorrow
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 3
+          endDate:
+            year: 2014
+            month: 4
+            day: 3
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 18397
+          idMal: 18397
+          title:
+            romaji: Shingeki no Kyojin OVA
+            english: Attack on Titan OVA
+            native: 進撃の巨人 OVA
+          synonyms:
+          - 'Attack on Titan: Ilse''s Journal'
+          - 'Attack on Titan: A Sudden Visitor'
+          - ผ่าพิภพไททัน OAD
+          - Атака титанов OVA
+          status: FINISHED
+          format: OVA
+          episodes: 3
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 12
+            day: 9
+          endDate:
+            year: 2014
+            month: 8
+            day: 8
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 18277
+          idMal: 18277
+          title:
+            romaji: Strike the Blood
+            english: Strike the Blood
+            native: ストライク・ザ・ブラッド
+          synonyms:
+          - ราชันย์โลหิตรัตติกาล
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 4
+          endDate:
+            year: 2014
+            month: 3
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 17549
+          idMal: 17549
+          title:
+            romaji: Non Non Biyori
+            english: Non Non Biyori
+            native: のんのんびより
+          synonyms:
+          - 悠哉日常大王
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 8
+          endDate:
+            year: 2013
+            month: 12
+            day: 24
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 11981
+          idMal: 11981
+          title:
+            romaji: 'Mahou Shoujo Madoka☆Magica: Hangyaku no Monogatari'
+            english: Puella Magi Madoka Magica the Movie -Rebellion-
+            native: 劇場版 魔法少女まどか☆マギカ 叛逆の物語
+          synonyms:
+          - Mahou Shoujo Madoka Magika Movie 3
+          - Magical Girl Madoka Magica Movie 3
+          - 'Puella Magi Madoka Magica the Movie Part III: Rebellion'
+          - 'Puella Magi Madoka Magica the Movie: Rebellion'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 26
+          endDate:
+            year: 2013
+            month: 10
+            day: 26
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 16011
+          idMal: 16011
+          title:
+            romaji: Tokyo Ravens
+            english: Tokyo Ravens
+            native: 東京レイヴンズ
+          synonyms:
+          - โตเกียว อนเมียวจิ
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 9
+          endDate:
+            year: 2014
+            month: 3
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 19221
+          idMal: 19221
+          title:
+            romaji: Ore no Nounai Sentakushi ga, Gakuen Love Comedy wo Zenryoku de Jama Shiteiru
+            english: My Mental Choices Are Completely Interfering With My School Romantic Comedy
+            native: 俺の脳内選択肢が、学園ラブコメを全力で邪魔している
+          synonyms:
+          - NouKome
+          - NouCome
+          - Ore no Nounai Sentakushi ga
+          - ' Gakuen Lovecome o Zenryoku de Jama Shite Iru'
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 10
+          endDate:
+            year: 2013
+            month: 12
+            day: 12
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 19369
+          idMal: 19369
+          title:
+            romaji: Outbreak Company
+            english: Outbreak Company
+            native: アウトブレイク・カンパニー
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 4
+          endDate:
+            year: 2013
+            month: 12
+            day: 20
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 12477
+          idMal: 12477
+          title:
+            romaji: Sakasama no Patema
+            english: Patema Inverted
+            native: サカサマのパテマ
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 11
+            day: 9
+          endDate:
+            year: 2013
+            month: 11
+            day: 9
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 18247
+          idMal: 18247
+          title:
+            romaji: 'IS: Infinite Stratos 2'
+            english: Infinite Stratos 2
+            native: IS〈インフィニット・ストラトス〉2
+          synonyms:
+          - IS2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 4
+          endDate:
+            year: 2013
+            month: 12
+            day: 20
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 20021
+          idMal: 20021
+          title:
+            romaji: 'Sword Art Online: Extra Edition'
+            english: Sword Art Online EXTRA EDITION
+            native: ソードアート・オンライン Extra Edition
+          synonyms:
+          - 'S.A.O: Extra Edition'
+          - 'SAO: Extra Edition'
+          - 'ซอร์ดอาร์ตออนไลน์: Extra Edition'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 12
+            day: 31
+          endDate:
+            year: 2013
+            month: 12
+            day: 31
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 18753
+          idMal: 18753
+          title:
+            romaji: 'Yahari Ore no Seishun Love Come wa Machigatteiru.: Kochira to Shite mo Karera Kanojora no Yukusue ni
+              Sachi Ookaran Koto wo Negawazaru wo Enai.'
+            english: My Teen Romantic Comedy SNAFU OVA
+            native: やはり俺の青春ラブコメはまちがっている。「こちらとしても彼ら彼女らの行く末に幸多からんことを願わざるを得ない。」
+          synonyms:
+          - Oregairu OVA
+          - My youth romantic comedy is wrong as I expected. OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 9
+            day: 19
+          endDate:
+            year: 2013
+            month: 9
+            day: 19
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 16664
+          idMal: 16664
+          title:
+            romaji: Kaguya-hime no Monogatari
+            english: The Tale of The Princess Kaguya
+            native: かぐや姫の物語
+          synonyms:
+          - Kaguyahime no Monogatari
+          - Princess Kaguya Story
+          - El Cuento de la Princesa Kaguya
+          - O Conto da Princesa Kaguya
+          - Księżniczka Kaguya
+          - La leyenda de la Princesa Kaguya
+          - حكاية اﻷميرة كاجويا
+          - Die Legende der Prinzessin Kaguya
+          - La storia della Principessa Splendente
+          - Le Conte de la princesse Kaguya
+          - Fortellingen om Prinsesse Kaguya
+          - Sagan om Prinsessan Kaguya
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 11
+            day: 23
+          endDate:
+            year: 2013
+            month: 11
+            day: 23
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 18677
+          idMal: 18677
+          title:
+            romaji: Yuusha ni Narenakatta Ore wa Shibushibu Shuushoku wo Ketsui Shimashita.
+            english: I Couldn’t Become a Hero, So I Reluctantly Decided to Get a Job.
+            native: 勇者になれなかった俺はしぶしぶ就職を決意しました。
+          synonyms:
+          - Yu-sibu
+          - Yusibu
+          - Yuushibu
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 5
+          endDate:
+            year: 2013
+            month: 12
+            day: 21
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 17513
+          idMal: 17513
+          title:
+            romaji: DIABOLIK LOVERS
+            english: Diabolik Lovers
+            native: DIABOLIK LOVERS
+          synonyms:
+          - ディアボリックラヴァーズ
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 9
+            day: 16
+          endDate:
+            year: 2013
+            month: 12
+            day: 9
+          averageScore: 47
+          nextAiringEpisode: null
+        - id: 17247
+          idMal: 17247
+          title:
+            romaji: Machine-Doll wa Kizutsukanai
+            english: Unbreakable Machine-Doll
+            native: 機巧少女は傷つかない
+          synonyms:
+          - Kikou Shoujo wa Kizutsukanai
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 7
+          endDate:
+            year: 2013
+            month: 12
+            day: 23
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 19703
+          idMal: 19703
+          title:
+            romaji: Kyousougiga (TV)
+            english: Kyousougiga
+            native: 京騒戯画 (TV)
+          synonyms:
+          - Kyousogiga
+          - Kyousou Giga
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 10
+          endDate:
+            year: 2013
+            month: 12
+            day: 19
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 18689
+          idMal: 18689
+          title:
+            romaji: Diamond no Ace
+            english: Ace of the Diamond
+            native: ダイヤのA
+          synonyms:
+          - Daiya no Ace
+          - Ace of Diamond
+          - Daiya no A
+          status: FINISHED
+          format: TV
+          episodes: 75
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 6
+          endDate:
+            year: 2015
+            month: 3
+            day: 29
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 18245
+          idMal: 18245
+          title:
+            romaji: WHITE ALBUM 2
+            english: White Album 2
+            native: WHITE ALBUM 2
+          synonyms:
+          - WA2
+          - ホワイトアルバム2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 10
+            day: 6
+          endDate:
+            year: 2013
+            month: 12
+            day: 29
+          averageScore: 74
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

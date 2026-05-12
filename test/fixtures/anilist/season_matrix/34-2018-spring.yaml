@@ -1,0 +1,674 @@
+metadata:
+  captured_at: '2026-05-11T11:33:49Z'
+  label: 2018-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2018
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:48 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '18'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 100166
+          idMal: 36456
+          title:
+            romaji: Boku no Hero Academia 3
+            english: My Hero Academia Season 3
+            native: 僕のヒーローアカデミア３
+          synonyms:
+          - BNHA 3
+          - MHA 3
+          - 我的英雄学院 3
+          - 我的英雄学院第三季
+          - มายฮีโร่ อคาเดเมีย ภาค 3
+          - 3أكاديميتي للأبطال
+          - Моя геройская академия 3
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 7
+          endDate:
+            year: 2018
+            month: 9
+            day: 29
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 99578
+          idMal: 35968
+          title:
+            romaji: Wotaku ni Koi wa Muzukashii
+            english: 'Wotakoi: Love is Hard for Otaku'
+            native: ヲタクに恋は難しい
+          synonyms:
+          - Otaku ni Koi wa Muzukashii
+          - WotaKoi
+          - It’s Difficult to Love an Otaku
+          - Love is Hard for an Otaku
+          - Love is Hard for Nerds
+          - 'ווטקוי: האהבה קשה לאוטאקו'
+          - 阿宅的恋爱真难
+          - ยากแท้จริงหนอรักของโอตาคุ
+          - الحب صعب على الأوتاكو
+          - 'Wotakoi: Keine Cheats für die Liebe'
+          - 'Уотаку: Непроста любовь для отаку'
+          - 'Wotakoi: O Amor é Difícil para Otaku'
+          - 'Wotakoi: El Amor es Duro para los Otakus'
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 13
+          endDate:
+            year: 2018
+            month: 6
+            day: 22
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 100240
+          idMal: 36511
+          title:
+            romaji: Tokyo Ghoul:re
+            english: Tokyo Ghoul:re
+            native: 東京喰種-トーキョーグール-:re
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 3
+          endDate:
+            year: 2018
+            month: 6
+            day: 19
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 21127
+          idMal: 30484
+          title:
+            romaji: Steins;Gate 0
+            english: Steins;Gate 0
+            native: シュタインズ・ゲート ゼロ
+          synonyms:
+          - s;g0
+          - 命运石之门0
+          status: FINISHED
+          format: TV
+          episodes: 23
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 12
+          endDate:
+            year: 2018
+            month: 9
+            day: 27
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 100773
+          idMal: 36949
+          title:
+            romaji: 'Shokugeki no Souma: San no Sara - Tootsuki Ressha-hen'
+            english: 'Food Wars! The Third Plate: Totsuki Train Arc'
+            native: 『食戟のソーマ 餐ノ皿』 遠月列車篇
+          synonyms:
+          - 食戟之灵 餐之皿 远月列车篇
+          - ยอดนักปรุงโซมะ ภาค 3 ครึ่งหลัง
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 9
+          endDate:
+            year: 2018
+            month: 6
+            day: 25
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 100183
+          idMal: 36475
+          title:
+            romaji: 'Sword Art Online Alternative: Gun Gale Online'
+            english: 'Sword Art Online Alternative: Gun Gale Online'
+            native: ソードアート・オンライン オルタナティブ ガンゲイル・オンライン
+          synonyms:
+          - 'SAO Alternative: Gun Gale Online'
+          - SAO GGO
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 8
+          endDate:
+            year: 2018
+            month: 7
+            day: 1
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 100077
+          idMal: 36296
+          title:
+            romaji: Hinamatsuri
+            english: HINAMATSURI
+            native: ヒナまつり
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 6
+          endDate:
+            year: 2018
+            month: 6
+            day: 22
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 100298
+          idMal: 36563
+          title:
+            romaji: Megalo Box
+            english: Megalobox
+            native: メガロボクス
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 6
+          endDate:
+            year: 2018
+            month: 6
+            day: 29
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 99699
+          idMal: 36028
+          title:
+            romaji: Golden Kamuy
+            english: Golden Kamuy
+            native: ゴールデンカムイ
+          synonyms:
+          - Golden Kamui
+          - 黄金神威
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 9
+          endDate:
+            year: 2018
+            month: 6
+            day: 25
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 97767
+          idMal: 34281
+          title:
+            romaji: High School DxD HERO
+            english: null
+            native: ハイスクールD×D HERO
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 10
+          endDate:
+            year: 2018
+            month: 7
+            day: 3
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 100526
+          idMal: 36793
+          title:
+            romaji: '3D Kanojo: Real Girl'
+            english: Real Girl
+            native: 3D彼女 リアルガール
+          synonyms:
+          - 3D Girlfriend
+          - Three D Kanojo Real Girl
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 4
+          endDate:
+            year: 2018
+            month: 6
+            day: 20
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 100179
+          idMal: 36470
+          title:
+            romaji: Tada-kun wa Koi wo Shinai
+            english: Tada Never Falls In Love
+            native: 多田くんは恋をしない
+          synonyms:
+          - Tadakun wa Koi wo Shinai
+          - Tadakoi
+          - Tada-kun Never Falls In Love
+          - ทาดะคุงไม่ตกหลุมรัก
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 5
+          endDate:
+            year: 2018
+            month: 6
+            day: 28
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 98514
+          idMal: 35249
+          title:
+            romaji: 'Uma Musume: Pretty Derby'
+            english: 'Umamusume: Pretty Derby'
+            native: ウマ娘 プリティーダービー
+          synonyms:
+          - สาวม้าโมเอะ
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 2
+          endDate:
+            year: 2018
+            month: 6
+            day: 18
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 99531
+          idMal: 35928
+          title:
+            romaji: Devils' Line
+            english: Devils' Line
+            native: デビルズライン
+          synonyms:
+          - Devil's Line
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 7
+          endDate:
+            year: 2018
+            month: 6
+            day: 23
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 99693
+          idMal: 36023
+          title:
+            romaji: PERSONA5 the Animation
+            english: PERSONA5 the Animation
+            native: PERSONA5 the Animation
+          synonyms:
+          - P5A
+          - ペルソナ5アニメーション
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 8
+          endDate:
+            year: 2018
+            month: 9
+            day: 30
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 100010
+          idMal: 36266
+          title:
+            romaji: Mahou Shoujo Site
+            english: MAGICAL GIRL SITE
+            native: 魔法少女サイト
+          synonyms:
+          - Garota Mágica .Com
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 7
+          endDate:
+            year: 2018
+            month: 6
+            day: 23
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 100178
+          idMal: 35677
+          title:
+            romaji: Liz to Aoi Tori
+            english: Liz and the Blue Bird
+            native: リズと青い鳥
+          synonyms:
+          - Liz und ein Blauer Vogel
+          - ' Liz et l''Oiseau bleu'
+          - 莉茲與青鳥
+          - Liz und der Blaue Vogel
+          - ליז והציפור הכחולה
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 21
+          endDate:
+            year: 2018
+            month: 4
+            day: 21
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 101571
+          idMal: 36904
+          title:
+            romaji: Aggressive Retsuko
+            english: Aggretsuko
+            native: アグレッシブ烈子
+          synonyms:
+          - Η Ρέτσουκο Έξω Φρενών
+          status: FINISHED
+          format: ONA
+          episodes: 10
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 20
+          endDate:
+            year: 2018
+            month: 4
+            day: 20
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 99916
+          idMal: 36214
+          title:
+            romaji: Asagao to Kase-san.
+            english: Kase-san and Morning Glories
+            native: あさがおと加瀬さん。
+          synonyms:
+          - คุณคาเซะกับดอกบานเช้า
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 6
+            day: 9
+          endDate:
+            year: 2018
+            month: 6
+            day: 9
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 100645
+          idMal: 36864
+          title:
+            romaji: Akkun to Kanojo
+            english: My Sweet Tyrant
+            native: あっくんとカノジョ
+          synonyms:
+          - Akkun and His Girlfriend
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 25
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 6
+          endDate:
+            year: 2018
+            month: 9
+            day: 21
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 100500
+          idMal: 36754
+          title:
+            romaji: Kakuriyo no Yadomeshi
+            english: Kakuriyo -Bed & Breakfast for Spirits-
+            native: かくりよの宿飯
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 2
+          endDate:
+            year: 2018
+            month: 9
+            day: 24
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 99131
+          idMal: 35756
+          title:
+            romaji: Comic Girls
+            english: Comic Girls
+            native: こみっくがーるず
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 5
+          endDate:
+            year: 2018
+            month: 6
+            day: 21
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 21746
+          idMal: 33010
+          title:
+            romaji: FLCL Progressive
+            english: FLCL Progressive
+            native: フリクリ プログレ
+          synonyms:
+          - FLCL 2
+          - Furi Kuri Progressive
+          - Fooly Cooly Progressive
+          status: FINISHED
+          format: TV
+          episodes: 6
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 6
+            day: 3
+          endDate:
+            year: 2018
+            month: 7
+            day: 8
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 100401
+          idMal: 36652
+          title:
+            romaji: Piano no Mori (TV)
+            english: Forest of Piano
+            native: ピアノの森 (TV)
+          synonyms:
+          - Piano Forest
+          - The Perfect World of Kai
+          - El Bosque del Piano
+          - יער הפסנתר
+          - بيانو
+          - Το Πιάνο στο Δάσος
+          - Il piano nella foresta
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 9
+          endDate:
+            year: 2018
+            month: 7
+            day: 1
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 100673
+          idMal: 36884
+          title:
+            romaji: Hisone to Maso-tan
+            english: 'Dragon Pilot: Hisone & Masotan'
+            native: ひそねとまそたん
+          synonyms:
+          - HisoMaso
+          - 'Hisone y Masotan: A Lomos del Dragón'
+          - Pilotos de Dragão - Hisone to Masotan
+          - هيسونا والتنين
+          - 'Smocza pilotka: Hisone i Masotan'
+          - Drachenflieger
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 4
+            day: 13
+          endDate:
+            year: 2018
+            month: 6
+            day: 29
+          averageScore: 71
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

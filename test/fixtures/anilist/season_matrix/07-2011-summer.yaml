@@ -1,0 +1,686 @@
+metadata:
+  captured_at: '2026-05-11T11:32:35Z'
+  label: 2011-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2011
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:35 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '23'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 10408
+          idMal: 10408
+          title:
+            romaji: Hotarubi no Mori e
+            english: Into the Forest of Fireflies' Light
+            native: 蛍火の杜へ
+          synonyms:
+          - To the Forest of Firefly Lights
+          - สู่ป่าแห่งแสงหิ่งห้อย
+          - Lạc Vào Khu Rừng Đom Đóm
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 9
+            day: 17
+          endDate:
+            year: 2011
+            month: 9
+            day: 17
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 10161
+          idMal: 10161
+          title:
+            romaji: NO.6
+            english: No.6
+            native: NO.6
+          synonyms:
+          - ナンバー・シックス
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 8
+          endDate:
+            year: 2011
+            month: 9
+            day: 16
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 10162
+          idMal: 10162
+          title:
+            romaji: Usagi Drop
+            english: Bunny Drop
+            native: うさぎドロップ
+          synonyms:
+          - 白兔糖
+          - Un drôle de père
+          - White Rabbit Candy
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 8
+          endDate:
+            year: 2011
+            month: 9
+            day: 16
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 10110
+          idMal: 10110
+          title:
+            romaji: Mayo Chiki!
+            english: Mayo Chiki!
+            native: まよチキ!
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 8
+          endDate:
+            year: 2011
+            month: 9
+            day: 30
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 10490
+          idMal: 10490
+          title:
+            romaji: BLOOD-C
+            english: Blood-C
+            native: BLOOD-C
+          synonyms:
+          - ブラッドシー
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 8
+          endDate:
+            year: 2011
+            month: 9
+            day: 30
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 10495
+          idMal: 10495
+          title:
+            romaji: Yuru Yuri
+            english: YuruYuri
+            native: ゆるゆり
+          synonyms:
+          - YRYR
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 5
+          endDate:
+            year: 2011
+            month: 9
+            day: 20
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 10721
+          idMal: 10721
+          title:
+            romaji: Mawaru Penguindrum
+            english: Penguindrum
+            native: 輪るピングドラム
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 8
+          endDate:
+            year: 2011
+            month: 12
+            day: 23
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 8516
+          idMal: 8516
+          title:
+            romaji: Baka to Test to Shoukanjuu Ni!
+            english: Baka and Test - Summon the Beasts 2
+            native: バカとテストと召喚獣 にっ！
+          synonyms:
+          - Baka to Test to Shoukanjuu 2
+          - The Idiot
+          - the Tests
+          - and the Summoned Creatures 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 8
+          endDate:
+            year: 2011
+            month: 9
+            day: 30
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 10029
+          idMal: 10029
+          title:
+            romaji: Coquelicot-zaka kara
+            english: From Up on Poppy Hill
+            native: コクリコ坂から
+          synonyms:
+          - Kokuriko-saka kara
+          - Kokuriko-zaka kara
+          - La Colina de las Amapolas
+          - Da Colina Kokuriko
+          - La collina dei papaveri
+          - A Colina das Papoilas
+          - La Colline aux coquelicots
+          - Der Mohnblumenberg
+          - Makowe wzgórze
+          - من أعلى تلة الخشخاش
+          - Møte på valmueåsen
+          - Uppe på vallmokullen
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 16
+          endDate:
+            year: 2011
+            month: 7
+            day: 16
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 10012
+          idMal: 10012
+          title:
+            romaji: Carnival Phantasm
+            english: null
+            native: カーニバル・ファンタズム
+          synonyms:
+          - Карнавальный Фантазм
+          status: FINISHED
+          format: OVA
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 8
+            day: 14
+          endDate:
+            year: 2011
+            month: 12
+            day: 31
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 10589
+          idMal: 10589
+          title:
+            romaji: 'NARUTO: Blood Prison'
+            english: 'Naruto Shippuden the Movie: Blood Prison'
+            native: 劇場版 NARUTO -ナルト- ブラッド・プリズン
+          synonyms:
+          - Naruto Movie 8
+          - Naruto Shippuuden Movie 5
+          - 'Naruto Shippūden la película: Prisión de sangre'
+          - 'Naruto Shippuden Movie 05: La prigione insanguinata'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 30
+          endDate:
+            year: 2011
+            month: 7
+            day: 30
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 10568
+          idMal: 10568
+          title:
+            romaji: Kamisama no Memochou
+            english: Heaven's Memo Pad
+            native: 神様のメモ帳
+          synonyms:
+          - It's the Only NEET Thing to Do
+          - Kami-sama no Memo-chou
+          - Kamisama no Memo-chou
+          - God's Notebook
+          - 'Kamisama no Memo-chou: It''s the Only NEET Thing to Do.'
+          - ผ่าคดีลับนักสืบนีท
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 2
+          endDate:
+            year: 2011
+            month: 9
+            day: 24
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 10379
+          idMal: 10379
+          title:
+            romaji: Natsume Yuujinchou San
+            english: Natsume's Book of Friends Season 3
+            native: 夏目友人帳 参
+          synonyms:
+          - Natsume Yuujinchou Three
+          - Natsume Yuujinchou 3
+          - Natsume Yujincho 3
+          - O Livro de Amigos de Natsume 3
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 5
+          endDate:
+            year: 2011
+            month: 9
+            day: 27
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 10278
+          idMal: 10278
+          title:
+            romaji: THE IDOLM@STER
+            english: The Idol Master
+            native: アイドルマスター
+          synonyms:
+          - The Idolmaster
+          - The iDOLM@STER
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 8
+          endDate:
+            year: 2011
+            month: 12
+            day: 23
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 9135
+          idMal: 9135
+          title:
+            romaji: 'Hagane no Renkinjutsushi: Milos no Seinaru Hoshi'
+            english: 'Fullmetal Alchemist: The Sacred Star of Milos'
+            native: 鋼の錬金術師 嘆きの丘の聖なる星
+          synonyms:
+          - Fullmetal Alchemist Movie 2
+          - Hagane no Renkinjutsushi Movie 2
+          - FMA Movie 2
+          - 'Fullmetal Alchemist: La Estrella Sagrada de Milos'
+          - 钢之炼金术师 叹息之丘的圣星
+          - Fullmetal Alchemist – Święta Gwiazda Milos
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 2
+          endDate:
+            year: 2011
+            month: 7
+            day: 2
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 8915
+          idMal: 8915
+          title:
+            romaji: Dantalian no Shoka
+            english: The Mystic Archives of Dantalian
+            native: ダンタリアンの書架
+          synonyms:
+          - Bibliotheca Mystica de Dantalian
+          - Dantalian's Bookshelf
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 16
+          endDate:
+            year: 2011
+            month: 10
+            day: 1
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 10321
+          idMal: 10321
+          title:
+            romaji: Uta no☆Prince-sama♪ Maji LOVE 1000%
+            english: Uta no Prince Sama
+            native: うたの☆プリンスさまっ♪ マジLOVE1000%
+          synonyms:
+          - 'Uta no Prince-sama: Maji Love 1000%'
+          - UtaPri
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 3
+          endDate:
+            year: 2011
+            month: 9
+            day: 24
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 10209
+          idMal: 10209
+          title:
+            romaji: Kore wa Zombie desu ka? OVA
+            english: Is this a Zombie? OVA
+            native: これはゾンビですか? OVA
+          synonyms:
+          - เจ้านี่เหรอซอมบี้ OVA
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 6
+            day: 10
+          endDate:
+            year: 2012
+            month: 4
+            day: 25
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 9790
+          idMal: 9790
+          title:
+            romaji: 'Sora no Otoshimono: Tokeijikake no Angeloid'
+            english: 'Heaven''s Lost Property the Movie: The Angeloid of Clockwork'
+            native: 劇場版 そらのおとしもの 時計じかけの哀女神（エンジェロイド）
+          synonyms:
+          - 'Gekijouban Sora no Otoshimono: Tokeijikake no Angeloid'
+          - 'Sora no Otoshimono: The Movie'
+          - Lost Property of the Sky Movie
+          - Misplaced by Heaven
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 6
+            day: 25
+          endDate:
+            year: 2011
+            month: 6
+            day: 25
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 10805
+          idMal: 10805
+          title:
+            romaji: 'Kami nomi zo Shiru Sekai: 4-nin to Idol'
+            english: 'The World God Only Knows: 4 Girls and an Idol'
+            native: 神のみぞ知るセカイ　４人とアイドル
+          synonyms:
+          - 'Kami nomi zo Shiru Sekai: Yonin to Idol'
+          - Kaminomi OVA
+          - Kami Nomi zo Shiru Sekai OVA
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 9
+            day: 16
+          endDate:
+            year: 2011
+            month: 9
+            day: 16
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 10049
+          idMal: 10049
+          title:
+            romaji: 'Nurarihyon no Mago: Sennen Makyou'
+            english: 'Nura: Rise of the Yokai Clan - Demon Capital'
+            native: ぬらりひょんの孫 千年魔京
+          synonyms:
+          - Nurarihyon no Mago 2
+          - The Grandson of Nurarihyon 2
+          - Grandchild of Nurarihyon 2
+          - 'Nura: Rise of the Yokai Clan: Demon Capital'
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 3
+          endDate:
+            year: 2011
+            month: 12
+            day: 18
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 9750
+          idMal: 9750
+          title:
+            romaji: Itsuka Tenma no Kuro Usagi
+            english: A Dark Rabbit has Seven Lives
+            native: いつか天魔の黒ウサギ
+          synonyms:
+          - Itsuka Tenma no Kuro-Usagi
+          - Itsuten
+          - Itsu-ten
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 9
+          endDate:
+            year: 2011
+            month: 9
+            day: 24
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 11077
+          idMal: 11077
+          title:
+            romaji: 'HELLSING: THE DAWN'
+            english: null
+            native: HELLSING：THE DAWN
+          synonyms:
+          - 'Hellsing: The Dawn: A supplementary of HELLSING'
+          - Hellsing OVA Specials
+          - Hellsing Ultimate Specials
+          - 漫画：THE DAWN
+          - 'ヘルシング: THE DAWN'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 3
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 27
+          endDate:
+            year: 2012
+            month: 12
+            day: 26
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 10686
+          idMal: 10686
+          title:
+            romaji: 'NARUTO: Honoo no Chuunin Shiken! Naruto vs Konohamaru!!'
+            english: null
+            native: NARUTO -ナルト- 炎の中忍試験! ナルトvs木ノ葉丸!!
+          synonyms:
+          - 'Naruto Shippuden: Chuunin Exam on Fire! Naruto vs. Konohamaru!'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 7
+            day: 30
+          endDate:
+            year: 2011
+            month: 7
+            day: 30
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 10389
+          idMal: 10389
+          title:
+            romaji: Momo e no Tegami
+            english: A Letter to Momo
+            native: ももへの手紙
+          synonyms:
+          - Una Carta para Momo
+          - Lettre à Momo
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2011
+          startDate:
+            year: 2011
+            month: 9
+            day: 10
+          endDate:
+            year: 2011
+            month: 9
+            day: 10
+          averageScore: 73
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

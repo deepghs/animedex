@@ -1,0 +1,680 @@
+metadata:
+  captured_at: '2026-05-11T11:34:09Z'
+  label: 2019-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2019
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:09 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '12'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 104276
+          idMal: 38408
+          title:
+            romaji: Boku no Hero Academia 4
+            english: My Hero Academia Season 4
+            native: 僕のヒーローアカデミア４
+          synonyms:
+          - BNHA 4
+          - MHA 4
+          - 我的英雄学院 4
+          - 我的英雄学院第四季
+          - มายฮีโร่ อคาเดเมีย ภาค 4
+          - أكاديميتي للأبطال
+          - Моя геройская академия 4
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 12
+          endDate:
+            year: 2020
+            month: 4
+            day: 4
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 107660
+          idMal: 39195
+          title:
+            romaji: BEASTARS
+            english: BEASTARS
+            native: BEASTARS
+          synonyms:
+          - ビースターズ
+          - BEASTARS - O Lobo Bom
+          - חייתיים
+          - บีสตาร์
+          - Выдающиеся звери
+          - براءة ذئب
+          - 비스타즈
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 10
+          endDate:
+            year: 2019
+            month: 12
+            day: 26
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 108759
+          idMal: 39597
+          title:
+            romaji: 'Sword Art Online: Alicization - War of Underworld'
+            english: 'Sword Art Online: Alicization - War of Underworld'
+            native: ソードアート・オンライン アリシゼーション War of Underworld
+          synonyms:
+          - SAOIV
+          - SAO4
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 13
+          endDate:
+            year: 2019
+            month: 12
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 108928
+          idMal: 39701
+          title:
+            romaji: 'Nanatsu no Taizai: Kamigami no Gekirin'
+            english: 'The Seven Deadly Sins: Imperial Wrath of the Gods'
+            native: 七つの大罪 神々の逆鱗
+          synonyms:
+          - 'The Seven Deadly Sins: Wrath of the Gods'
+          - ศึกตำนาน 7 อัศวิน ภาค 3 เพลิงพิโรธของเหล่าทวยเทพ
+          - 'Семь смертных грехов: Гнев богов'
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 9
+          endDate:
+            year: 2020
+            month: 3
+            day: 25
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 105156
+          idMal: 38659
+          title:
+            romaji: 'Shinchou Yuusha: Kono Yuusha ga Ore TUEEE Kuse ni Shinchou Sugiru'
+            english: 'Cautious Hero: The Hero Is Overpowered but Overly Cautious'
+            native: 慎重勇者～この勇者が俺ＴＵＥＥＥくせに慎重すぎる～
+          synonyms:
+          - This Hero is Invincible but "Too Cautious"
+          - Shinchou Yuusha
+          - 慎重勇者～这个勇者明明超强却过分慎重～
+          - ผู้กล้าสุดแกร่ง ขี้ระแวงขั้นวิกฤติ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 2
+          endDate:
+            year: 2019
+            month: 12
+            day: 27
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 109963
+          idMal: 39940
+          title:
+            romaji: 'Shokugeki no Souma: Shin no Sara'
+            english: Food Wars! The Fourth Plate
+            native: 食戟のソーマ 神ノ皿
+          synonyms:
+          - 食戟之灵：神之皿
+          - ยอดนักปรุงโซมะ ภาค 4
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 12
+          endDate:
+            year: 2019
+            month: 12
+            day: 28
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 108553
+          idMal: 39565
+          title:
+            romaji: 'Boku no Hero Academia THE MOVIE: Heroes:Rising'
+            english: 'My Hero Academia: Heroes Rising'
+            native: 僕のヒーローアカデミア THE MOVIE ヒーローズ:ライジング
+          synonyms:
+          - Boku no Hero Academia the Movie 2
+          - 'My Hero Academia: El Despertar de los Héroes'
+          - 'มายฮีโร่ อคาเดเมีย เดอะมูฟวี่: วีรบุรุษกู้โลก'
+          - 'มายฮีโร่ อคาเดเมีย เดอะมูฟวี่: วีรบุรุษกู้โลก'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 12
+            day: 20
+          endDate:
+            year: 2019
+            month: 12
+            day: 20
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 107693
+          idMal: 39196
+          title:
+            romaji: Mairimashita! Iruma-kun
+            english: Welcome to Demon School! Iruma-kun
+            native: 魔入りました！入間くん
+          synonyms:
+          - Welcome to Demon School, Iruma-kun!
+          - 入间同学入魔了！
+          - อิรุมะคุง พจญในแดนปีศาจ!
+          status: FINISHED
+          format: TV
+          episodes: 23
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 5
+          endDate:
+            year: 2020
+            month: 3
+            day: 7
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 104464
+          idMal: 38483
+          title:
+            romaji: Ore wo Suki nano wa Omae dake ka yo
+            english: 'ORESUKI: Are you the only one who loves me?'
+            native: 俺を好きなのはお前だけかよ
+          synonyms:
+          - อุตส่าห์มีคนมาชอบทั้งที ทำไมต้องเป็นยัยนี่ด้วยนะ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 3
+          endDate:
+            year: 2019
+            month: 12
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 108268
+          idMal: 39468
+          title:
+            romaji: 'Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen'
+            english: Ascendance of a Bookworm
+            native: 本好きの下剋上 司書になるためには手段を選んでいられません
+          synonyms:
+          - 'Ascendance of a Bookworm: I''ll do anything to become a librarian'
+          - 爱书的下克上：为了成为图书管理员不择手段！
+          - 'หนอนหนังสือยึดอำนาจ '
+          status: FINISHED
+          format: TV
+          episodes: 14
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 3
+          endDate:
+            year: 2019
+            month: 12
+            day: 26
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 104722
+          idMal: 38572
+          title:
+            romaji: Assassins Pride
+            english: ASSASSINS PRIDE
+            native: アサシンズプライド
+          synonyms:
+          - Assassin's Pride
+          - แอสแซสซินส์ ไพรด์)
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 10
+          endDate:
+            year: 2019
+            month: 12
+            day: 26
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 112625
+          idMal: 40542
+          title:
+            romaji: 'Saiki Kusuo no Ψ-nan: Ψ-shidou-hen'
+            english: 'The Disastrous Life of Saiki K.: Reawakened'
+            native: 斉木楠雄のΨ難 Ψ始動編
+          synonyms:
+          - The Disastrous Life of Saiki K.
+          - ' Starting Arc'
+          status: FINISHED
+          format: ONA
+          episodes: 6
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 12
+            day: 30
+          endDate:
+            year: 2019
+            month: 12
+            day: 30
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 108388
+          idMal: 39523
+          title:
+            romaji: Choujin Koukousei-tachi wa Isekai demo Yoyuu de Ikinuku you desu!
+            english: High School Prodigies Have It Easy Even In Another World
+            native: 超人高校生たちは異世界でも余裕で生き抜くようです!
+          synonyms:
+          - CHOYOYU!
+          - ¡Los prodigios de bachillerato han llegado a otro mundo!
+          - Les super lycéens arrivent dans un autre monde!
+          - I prodigi delle superiori sono arrivati in un altro mondo!
+          - Die Oberschul-Wunderkinder sind in einer anderen Welt eingetroffen!
+          - Сверходарённые школьники прибыли в другой мир
+          - เจ็ดเทพม.ปลายกับการใช้ชีวิตสบายๆในต่างโลก
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 3
+          endDate:
+            year: 2019
+            month: 12
+            day: 19
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 110229
+          idMal: 40004
+          title:
+            romaji: Bokutachi wa Benkyou ga Dekinai!
+            english: 'We Never Learn!: BOKUBEN Season 2'
+            native: ぼくたちは勉強ができない！
+          synonyms:
+          - BokuBen 2
+          - We Never Learn 2
+          - Boku-tachi wa Benkyou ga Dekinai 2nd Season
+          - Boku-tachi wa Benkyou ga Dekinai!
+          - เรื่องนี้ตําราไม่มีสอน ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 6
+          endDate:
+            year: 2019
+            month: 12
+            day: 29
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 103275
+          idMal: 38084
+          title:
+            romaji: 'Fate/Grand Order: Zettai Majuu Sensen Babylonia'
+            english: 'Fate/Grand Order Absolute Demonic Front: Babylonia'
+            native: Fate/Grand Order -絶対魔獣戦線バビロニア-
+          synonyms:
+          - 'FGO: Babylonia'
+          - フェイト/グランドオーダー -絶対魔獣戦線バビロニア-
+          - 'Судьба/Великий приказ: Вавилония'
+          status: FINISHED
+          format: TV
+          episodes: 21
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 5
+          endDate:
+            year: 2020
+            month: 3
+            day: 21
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 104052
+          idMal: 37972
+          title:
+            romaji: Hoshiai no Sora
+            english: Stars Align
+            native: 星合の空
+          synonyms:
+          - Star-Crossing Skies
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 11
+          endDate:
+            year: 2019
+            month: 12
+            day: 27
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 108307
+          idMal: 39491
+          title:
+            romaji: PSYCHO-PASS 3
+            english: PSYCHO-PASS 3
+            native: PSYCHO-PASS サイコパス3
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 8
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 24
+          endDate:
+            year: 2019
+            month: 12
+            day: 13
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 101227
+          idMal: 37393
+          title:
+            romaji: Watashi, Nouryoku wa Heikinchi de tte Itta yo ne!
+            english: Didn't I Say to Make My Abilities Average in the Next Life?!
+            native: 私、能力は平均値でって言ったよね！
+          synonyms:
+          - Noukin
+          - ก็บอกว่าขอแค่ค่าเฉลี่ยไงล่ะคะ!
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 7
+          endDate:
+            year: 2019
+            month: 12
+            day: 23
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 108478
+          idMal: 39539
+          title:
+            romaji: No Guns Life
+            english: No Guns Life
+            native: ノー・ガンズ・ライフ
+          synonyms:
+          - The Way of Life of a Man Loading a Magazine
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 11
+          endDate:
+            year: 2019
+            month: 12
+            day: 27
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 101239
+          idMal: 37403
+          title:
+            romaji: Ahiru no Sora
+            english: Ahiru no Sora
+            native: あひるの空
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 50
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 2
+          endDate:
+            year: 2020
+            month: 9
+            day: 30
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 100675
+          idMal: 36885
+          title:
+            romaji: Saenai Heroine no Sodatekata Fine
+            english: 'Saekano the Movie: Finale'
+            native: 冴えない彼女の育てかた Fine
+          synonyms:
+          - Saekano Movie
+          - Saekano Fine
+          - Saenai Heroine no Sodatekata Movie
+          - วิธีปั้นสาวบ้านให้มาเป็นนางเอกของผม เดอะ มูฟวี่
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 26
+          endDate:
+            year: 2019
+            month: 10
+            day: 26
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 107339
+          idMal: 39030
+          title:
+            romaji: Hataage! Kemono Michi
+            english: 'Kemono Michi: Rise Up'
+            native: 旗揚！けものみち
+          synonyms:
+          - Rise Up! Animal Road
+          - 旗扬！兽道
+          - เคโมโนมิจิ ร้านสัตว์เลี้ยงในโลกแฟนตาซี
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 2
+          endDate:
+            year: 2019
+            month: 12
+            day: 18
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 104159
+          idMal: 38328
+          title:
+            romaji: Azur Lane
+            english: AZUR LANE
+            native: アズールレーン
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 3
+          endDate:
+            year: 2020
+            month: 3
+            day: 20
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 101349
+          idMal: 37525
+          title:
+            romaji: Babylon
+            english: BABYLON
+            native: バビロン
+          synonyms:
+          - Babilonia
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 7
+          endDate:
+            year: 2020
+            month: 1
+            day: 27
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 108891
+          idMal: 38889
+          title:
+            romaji: Kono Oto Tomare! 2
+            english: 'Kono Oto Tomare!: Sounds of Life Season 2'
+            native: この音とまれ！2
+          synonyms:
+          - Stop at this Sound! 2
+          - ฝากฝันไว้ที่เสียงโคโตะ! ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 10
+            day: 6
+          endDate:
+            year: 2019
+            month: 12
+            day: 29
+          averageScore: 83
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

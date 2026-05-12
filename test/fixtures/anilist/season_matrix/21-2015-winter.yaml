@@ -1,0 +1,654 @@
+metadata:
+  captured_at: '2026-05-11T11:33:13Z'
+  label: 2015-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2015
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:13 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '9'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 20755
+          idMal: 24833
+          title:
+            romaji: Ansatsu Kyoushitsu
+            english: Assassination Classroom
+            native: 暗殺教室
+          synonyms:
+          - כיתת ההתנקשות
+          - فصل الاغتيال
+          - Klasa skrytobójców
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 10
+          endDate:
+            year: 2015
+            month: 6
+            day: 20
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 20931
+          idMal: 28223
+          title:
+            romaji: Death Parade
+            english: Death Parade
+            native: デス・パレード
+          synonyms:
+          - תהלוכת המוות
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 10
+          endDate:
+            year: 2015
+            month: 3
+            day: 28
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 20850
+          idMal: 27899
+          title:
+            romaji: Tokyo Ghoul √A
+            english: Tokyo Ghoul √A
+            native: 東京喰種[トーキョーグール]√A
+          synonyms:
+          - Tokyo Kushu 2
+          - Tokyo Ghoul Root A
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 9
+          endDate:
+            year: 2015
+            month: 3
+            day: 27
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20799
+          idMal: 26055
+          title:
+            romaji: 'JoJo no Kimyou na Bouken: Stardust Crusaders - Egypt-hen'
+            english: 'JoJo''s Bizarre Adventure: Stardust Crusaders - Battle in Egypt'
+            native: ジョジョの奇妙な冒険 スターダストクルセイダース エジプト編
+          synonyms:
+          - 'Dai San Bu Kujo Jotaro: Mirai e no Isan'
+          - 'JoJo''s Bizarre Adventure: Stardust Crusaders 2nd Season'
+          - 'JoJo no Kimyou na Bouken: Stardust Crusaders 2nd Season'
+          - 'JoJo''s Bizarre Adventure Part 3: Stardust Crusaders - Battle in Egypt'
+          - 'JoJo no Kimyou na Bouken Part 3: Stardust Crusaders - Egypt-hen'
+          - 'JoJo''s Bizarre Adventure: Stardust Crusaders - Egypt Arc'
+          - 'Le bizzarre avventure di JoJo: Stardust Crusaders'
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 11
+          endDate:
+            year: 2015
+            month: 6
+            day: 20
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 20657
+          idMal: 23277
+          title:
+            romaji: Saenai Heroine no Sodatekata
+            english: 'Saekano: How to Raise a Boring Girlfriend'
+            native: 冴えない彼女の育てかた
+          synonyms:
+          - Saekano
+          - 路人女主的养成方法
+          - วิธีปั้นสาวบ้านให้มาเป็นนางเอกของผม
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 9
+          endDate:
+            year: 2015
+            month: 3
+            day: 27
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20725
+          idMal: 24415
+          title:
+            romaji: Kuroko no Basket 3rd SEASON
+            english: Kuroko's Basketball 3
+            native: 黒子のバスケ 3rd SEASON
+          synonyms:
+          - Kuroko no Basuke 3
+          - הכדורסל של קורוקו 3
+          - Баскетбол Куроко 3
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 12
+          endDate:
+            year: 2015
+            month: 6
+            day: 30
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 20678
+          idMal: 23233
+          title:
+            romaji: Shinmai Maou no Testament
+            english: The Testament of Sister New Devil
+            native: 新妹魔王の契約者
+          synonyms:
+          - Shinmai Maou no Keiyakusha
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 8
+          endDate:
+            year: 2015
+            month: 3
+            day: 26
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 20811
+          idMal: 25781
+          title:
+            romaji: 'Shingeki no Kyojin Gaiden: Kuinaki Sentaku'
+            english: 'Attack on Titan: No Regrets'
+            native: 進撃の巨人 外伝 悔いなき選択
+          synonyms:
+          - SnK
+          - AoT
+          - ผ่าพิภพไททัน ภาค OAD No Regret
+          - 'ผ่าพิภพไททัน OAD '
+          - 'Атака титанов: Выбор без сожалений'
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2014
+            month: 12
+            day: 9
+          endDate:
+            year: 2015
+            month: 4
+            day: 9
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 20785
+          idMal: 25397
+          title:
+            romaji: Absolute Duo
+            english: Absolute Duo
+            native: アブソリュート・デュオ
+          synonyms:
+          - 'แอบโซลูท ดูโอ '
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 4
+          endDate:
+            year: 2015
+            month: 3
+            day: 22
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 20652
+          idMal: 23199
+          title:
+            romaji: Durarara!!x2 Shou
+            english: Durarara!! X2
+            native: デュラララ!!×２ 承
+          synonyms:
+          - DRRR!! 2 Shou
+          - דורארארה!!2x התפתחות
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 10
+          endDate:
+            year: 2015
+            month: 3
+            day: 28
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20801
+          idMal: 25681
+          title:
+            romaji: Kamisama Hajimemashita◎
+            english: Kamisama Kiss◎
+            native: 神様はじめました◎
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 6
+          endDate:
+            year: 2015
+            month: 3
+            day: 31
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 20627
+          idMal: 22663
+          title:
+            romaji: Seiken Tsukai no World Break
+            english: 'World Break: Aria of Curse for a Holy Swordsman'
+            native: 聖剣使いの禁呪詠唱＜ワールドブレイク＞
+          synonyms:
+          - World Break เทพนักดาบข้ามภพ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 12
+          endDate:
+            year: 2015
+            month: 3
+            day: 30
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 20514
+          idMal: 21339
+          title:
+            romaji: PSYCHO-PASS Movie
+            english: 'PSYCHO-PASS: The Movie'
+            native: 劇場版 PSYCHO-PASS サイコパス
+          synonyms:
+          - 'PSYCHO-PASS: La Película'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 9
+          endDate:
+            year: 2015
+            month: 1
+            day: 9
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 20853
+          idMal: 27655
+          title:
+            romaji: Aldnoah.Zero Part 2
+            english: ALDNOAH.ZERO Season 2
+            native: アルドノア・ゼロ 第2クール
+          synonyms:
+          - A/Z 2
+          - 'ALDNOAH.ZERO: Let Justice Be Done, Though The Heavens Fall.'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 11
+          endDate:
+            year: 2015
+            month: 3
+            day: 29
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 20553
+          idMal: 21511
+          title:
+            romaji: 'Kantai Collection: KanColle'
+            english: KanColle
+            native: 艦隊これくしょん -艦これ-
+          synonyms:
+          - KanKore
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 8
+          endDate:
+            year: 2015
+            month: 3
+            day: 26
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 21103
+          idMal: 30300
+          title:
+            romaji: High School DxD NEW OVA Oppai, Tsutsumimasu!
+            english: null
+            native: ハイスクールD×D NEW OVA おっぱい、包みます！
+          synonyms:
+          - High School DxD New Episode 13
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 3
+            day: 10
+          endDate:
+            year: 2015
+            month: 3
+            day: 10
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 20768
+          idMal: 25015
+          title:
+            romaji: 'Kyoukai no Kanata: I''LL BE HERE - Kako-hen'
+            english: 'Beyond the Boundary -I''LL BE HERE-: Past'
+            native: 劇場版 境界の彼方 I'LL BE HERE 過去篇
+          synonyms:
+          - 'Kyoukai no Kanata: I’ll Be Here – przeszłość'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 3
+            day: 14
+          endDate:
+            year: 2015
+            month: 3
+            day: 14
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 20840
+          idMal: 26441
+          title:
+            romaji: Junketsu no Maria
+            english: Maria the Virgin Witch
+            native: 純潔のマリア
+          synonyms:
+          - Sorcière de gré
+          - ' pucelle de force'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 11
+          endDate:
+            year: 2015
+            month: 3
+            day: 29
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 20758
+          idMal: 24873
+          title:
+            romaji: Juuou Mujin no Fafnir
+            english: Unlimited Fafnir
+            native: 銃皇無尽のファフニール
+          synonyms:
+          - Unlimited Fafnir School Battle
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 9
+          endDate:
+            year: 2015
+            month: 3
+            day: 27
+          averageScore: 57
+          nextAiringEpisode: null
+        - id: 21064
+          idMal: 28285
+          title:
+            romaji: 'Trinity Seven: Nanatsu no Taizai to Nana Madoushi'
+            english: null
+            native: トリニティセブン 七つの大罪と七魔道士
+          synonyms: []
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 3
+            day: 25
+          endDate:
+            year: 2015
+            month: 3
+            day: 25
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 20827
+          idMal: 26165
+          title:
+            romaji: Yuri Kuma Arashi
+            english: Yurikuma Arashi
+            native: ユリ熊嵐
+          synonyms:
+          - 'Love Bullet: Yuri Kuma Arashi'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 6
+          endDate:
+            year: 2015
+            month: 3
+            day: 31
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 20746
+          idMal: 25429
+          title:
+            romaji: Isuca
+            english: Isuca
+            native: イスカ
+          synonyms:
+          - Isuka
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 24
+          endDate:
+            year: 2015
+            month: 3
+            day: 28
+          averageScore: 54
+          nextAiringEpisode: null
+        - id: 20815
+          idMal: 25867
+          title:
+            romaji: Rolling☆Girls
+            english: The Rolling Girls
+            native: ローリング☆ガールズ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 11
+          endDate:
+            year: 2015
+            month: 3
+            day: 29
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 20740
+          idMal: 24627
+          title:
+            romaji: Yamada-kun to 7-nin no Majo (OVA)
+            english: Yamada and the Seven Witches (OVA)
+            native: 山田くんと7人の魔女 OAD
+          synonyms:
+          - Yamajo OVA
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2014
+            month: 12
+            day: 17
+          endDate:
+            year: 2015
+            month: 5
+            day: 15
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20693
+          idMal: 23587
+          title:
+            romaji: THE IDOLM@STER Cinderella Girls
+            english: THE IDOLM@STER CINDERELLA GIRLS
+            native: アイドルマスターシンデレラガールズ
+          synonyms:
+          - 'The Idolmaster: Cinderella Girls'
+          - The iDOLM@STER Cinderella Girls
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 1
+            day: 10
+          endDate:
+            year: 2015
+            month: 4
+            day: 11
+          averageScore: 70
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

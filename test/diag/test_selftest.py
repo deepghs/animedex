@@ -22,6 +22,7 @@ class TestRunSelftest:
         assert "Environment" in report
         assert "Package" in report
         assert "Build info" in report
+        assert "Runtime dependency checks" in report
         assert "Module smoke tests" in report
         assert "CLI subcommands" in report
         assert "Summary" in report
@@ -348,7 +349,7 @@ class TestSqliteSelftestCleanupBranch:
 
 @pytest.mark.unittest
 class TestSelftestRegistryCompleteness:
-    """Per review M4 + AGENTS §9.3: every module that defines a
+    """Per review M4 + AGENTS section 9.3: every module that defines a
     top-level :func:`selftest` callable must be registered in
     :data:`animedex.diag.selftest._SELFTEST_TARGETS`. Otherwise the
     runner never executes the smoke test, defeating the entire point
@@ -390,5 +391,53 @@ class TestSelftestRegistryCompleteness:
         assert not unregistered, (
             "These modules expose a top-level selftest() but are not in "
             f"animedex.diag.selftest._SELFTEST_TARGETS: {sorted(unregistered)}. "
-            "Add each one to the tuple per AGENTS §9.3."
+            "Add each one to the tuple per AGENTS section 9.3."
         )
+
+    def test_every_runtime_requirement_has_dependency_check_row(self):
+        """Every direct runtime dependency must have its own selftest row."""
+        import re
+        from pathlib import Path
+
+        from animedex.diag import selftest as diag
+
+        repo_root = Path(__file__).resolve().parents[2]
+        requirements = repo_root / "requirements.txt"
+        missing = []
+
+        actual_packages = [name for name, smoke in diag._DEPENDENCY_SMOKE_TESTS]
+        assert all(callable(smoke) for _name, smoke in diag._DEPENDENCY_SMOKE_TESTS)
+
+        expected_packages = []
+        for line in requirements.read_text(encoding="utf-8").splitlines():
+            text = line.strip()
+            if not text or text.startswith("#"):
+                continue
+            match = re.match(r"([A-Za-z0-9_.-]+)", text)
+            if match is None:
+                continue
+            package = match.group(1).replace("-", "_").replace(".", "_")
+            expected_packages.append(package)
+
+        assert actual_packages == expected_packages
+
+        labels = {label for label, _ok, _detail in diag._check_dependency_smoke()}
+        for package in expected_packages:
+            label = f"testing {package} library"
+            if label not in labels:
+                missing.append(label)
+
+        assert not missing, f"runtime dependencies without dedicated selftest rows: {missing}"
+
+    def test_dependency_smoke_reports_individual_failures(self, monkeypatch):
+        from animedex.diag import selftest as diag
+
+        def broken_smoke():
+            raise RuntimeError("dependency unavailable")
+
+        monkeypatch.setattr(diag, "_DEPENDENCY_SMOKE_TESTS", (("brokenlib", broken_smoke),))
+
+        label, ok, detail = diag._check_dependency_smoke()[0]
+        assert label == "testing brokenlib library"
+        assert ok is False
+        assert "dependency unavailable" in detail

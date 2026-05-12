@@ -1,0 +1,695 @@
+metadata:
+  captured_at: '2026-05-11T11:33:53Z'
+  label: 2018-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2018
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:53 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '17'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 99147
+          idMal: 35760
+          title:
+            romaji: Shingeki no Kyojin Season 3
+            english: Attack on Titan Season 3
+            native: 進撃の巨人 Season３
+          synonyms:
+          - SnK 3
+          - AoT 3
+          - Shingeki no Kyojin Season 3
+          - מתקפת הטיטאנים עונה 3
+          - L'Attacco dei Giganti 3
+          - L'Attacco dei Giganti - Terza Stagione
+          - ผ่าพิภพไททัน ภาค 3
+          - حمله به تایتان فصل 3
+          - ผ่าพิภพไททัน ภาค 3 Part 1
+          - Атака титанов 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 23
+          endDate:
+            year: 2018
+            month: 10
+            day: 15
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 99750
+          idMal: 36098
+          title:
+            romaji: Kimi no Suizou wo Tabetai
+            english: I Want to Eat Your Pancreas
+            native: 君の膵臓をたべたい
+          synonyms:
+          - Quiero Comerme tu Páncreas
+          - Voglio mangiare il tuo pancreas
+          - Je veux manger ton pancréas
+          - Vull menjar-me el teu pàncrees
+          - Kimisui
+          - Eu Quero Comer Seu Pâncreas
+          - Хочу съесть твою поджелудочную железу
+          - ตับอ่อนเธอนั้นขอฉันเถอะนะ
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 9
+            day: 1
+          endDate:
+            year: 2018
+            month: 9
+            day: 1
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 100388
+          idMal: 36649
+          title:
+            romaji: BANANA FISH
+            english: BANANA FISH
+            native: BANANA FISH
+          synonyms:
+          - バナナフィッシュ
+          - 香蕉鱼
+          - Банановая рыба
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 6
+          endDate:
+            year: 2018
+            month: 12
+            day: 21
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 101474
+          idMal: 37675
+          title:
+            romaji: Overlord III
+            english: Overlord III
+            native: オーバーロードⅢ
+          synonyms:
+          - Over Lord 3
+          - โอเวอร์ลอร์ด ภาค 3
+          - โอเวอร์ ลอร์ด จอมมารพิชิตโลก ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 10
+          endDate:
+            year: 2018
+            month: 10
+            day: 2
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 100922
+          idMal: 37105
+          title:
+            romaji: Grand Blue
+            english: Grand Blue Dreaming
+            native: ぐらんぶる
+          synonyms:
+          - ก๊วนป่วนชวนบุ๋งบุ๋ง
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 14
+          endDate:
+            year: 2018
+            month: 9
+            day: 29
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 100723
+          idMal: 36896
+          title:
+            romaji: 'Boku no Hero Academia THE MOVIE: Futari no Hero'
+            english: 'My Hero Academia: Two Heroes'
+            native: 僕のヒーローアカデミア THE MOVIE 〜2人の英雄〜
+          synonyms:
+          - My Hero Academia the Movie
+          - 我的英雄学院 ～两位英雄～
+          - มายฮีโร่ อคาเดเมีย กำเนิดใหม่ 2 วีรบุรุษ
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 8
+            day: 3
+          endDate:
+            year: 2018
+            month: 8
+            day: 3
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 99629
+          idMal: 35994
+          title:
+            romaji: Satsuriku no Tenshi
+            english: Angels of Death
+            native: 殺戮の天使
+          synonyms:
+          - Angel of Massacre
+          - Angel Slaughter
+          - ทูตสวรรค์ทัณฑ์อำมหิต
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 6
+          endDate:
+            year: 2018
+            month: 9
+            day: 21
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 100977
+          idMal: 37141
+          title:
+            romaji: Hataraku Saibou
+            english: Cells at Work!
+            native: はたらく細胞
+          synonyms:
+          - Les brigades immunitaires
+          - เซลล์ขยัน พันธุ์เดือด
+          - Lavori in corpo
+          - Клетки за работой!
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 8
+          endDate:
+            year: 2018
+            month: 9
+            day: 30
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 101004
+          idMal: 37210
+          title:
+            romaji: Isekai Maou to Shoukan Shoujo no Dorei Majutsu
+            english: How NOT to Summon a Demon Lord
+            native: 異世界魔王と召喚少女の奴隷魔術
+          synonyms:
+          - The King of Darkness Another World Story
+          - 异世界魔王与召唤少女的奴隶魔术
+          - จอมมารต่างโลกกับ บริวารสาวนักอัญเชิญ
+          - 異世界魔王與召喚少女的奴隸魔術
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 5
+          endDate:
+            year: 2018
+            month: 9
+            day: 20
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 101001
+          idMal: 37171
+          title:
+            romaji: Asobi Asobase
+            english: Asobi Asobase - workshop of fun -
+            native: あそびあそばせ
+          synonyms:
+          - 'Asobi Asobase: Workshop of Fun'
+          - 游戏3人娘
+          - 来玩游戏吧
+          - ชมรมสาวรักสนุก
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 8
+          endDate:
+            year: 2018
+            month: 9
+            day: 23
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 97888
+          idMal: 34443
+          title:
+            romaji: Baki
+            english: BAKI
+            native: バキ
+          synonyms:
+          - Baki - O Campeão
+          - Баки
+          - Μπάκι
+          status: FINISHED
+          format: ONA
+          episodes: 26
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 6
+            day: 25
+          endDate:
+            year: 2018
+            month: 12
+            day: 17
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 101432
+          idMal: 37095
+          title:
+            romaji: 'Violet Evergarden: Kitto "Ai" wo Shiru Hi ga Kuru no Darou'
+            english: 'Violet Evergarden: Special'
+            native: ヴァイオレット・エヴァーガーデン きっと"愛"を知る日が来るのだろう
+          synonyms:
+          - 'فيوليت: رسالة'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 4
+          endDate:
+            year: 2018
+            month: 7
+            day: 4
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 101351
+          idMal: 37517
+          title:
+            romaji: Happy Sugar Life
+            english: Happy Sugar Life
+            native: ハッピーシュガーライフ
+          synonyms:
+          - White Sugar Garden, Black Salt Cage
+          - 幸福甜蜜生活
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 14
+          endDate:
+            year: 2018
+            month: 9
+            day: 29
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 99540
+          idMal: 35946
+          title:
+            romaji: 'Nanatsu no Taizai Movie: Tenkuu no Torawarebito'
+            english: 'The Seven Deadly Sins the Movie: Prisoners of the Sky'
+            native: 劇場版 七つの大罪 天空の囚われ人
+          synonyms:
+          - 'ศึกตำนาน 7 อัศวิน: นักโทษแห่งท้องนภา '
+          - 'Семь смертных грехов: Узники небес'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 8
+            day: 18
+          endDate:
+            year: 2018
+            month: 8
+            day: 18
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 100483
+          idMal: 36726
+          title:
+            romaji: Yuragi-sou no Yuuna-san
+            english: Yuuna and the Haunted Hot Springs
+            native: ゆらぎ荘の幽奈さん
+          synonyms:
+          - Yuragisou no Yuuna-san
+          - Yuuna of Yuragi Manor
+          - Yunas Geisterhaus
+          - Yûna de la pension Yuragi
+          - 'ยูรากิโซ ที่นี่ผีน่ารักนะ '
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 14
+          endDate:
+            year: 2018
+            month: 9
+            day: 29
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 20574
+          idMal: 21877
+          title:
+            romaji: Hi Score Girl
+            english: Hi Score Girl
+            native: ハイスコアガール
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 14
+          endDate:
+            year: 2018
+            month: 9
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 101361
+          idMal: 37569
+          title:
+            romaji: 'Tenrou: Sirius the Jaeger'
+            english: Sirius the Jaeger
+            native: 天狼 Sirius the Jaeger
+          synonyms:
+          - Sirius
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 12
+          endDate:
+            year: 2018
+            month: 9
+            day: 27
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 101231
+          idMal: 37396
+          title:
+            romaji: Shikioriori
+            english: Flavors of Youth
+            native: 詩季織々
+          synonyms:
+          - 肆式青春
+          - Si Shi Qing Chun
+          - 'Shiki Oriori: O Sabor da Juventude'
+          status: FINISHED
+          format: MOVIE
+          episodes: 3
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 8
+            day: 4
+          endDate:
+            year: 2018
+            month: 8
+            day: 4
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 101117
+          idMal: 36704
+          title:
+            romaji: 'Free!: Dive to the Future'
+            english: Free! -Dive to the Future-
+            native: Free!-Dive to the Future-
+          synonyms:
+          - Free! 3rd Season
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 12
+          endDate:
+            year: 2018
+            month: 9
+            day: 27
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 101925
+          idMal: 37491
+          title:
+            romaji: 'Gintama.: Shirogane no Tamashii-hen - Kouhan-sen'
+            english: 'Gintama.: Silver Soul Arc - Second Half War'
+            native: 銀魂. 銀ノ魂篇2
+          synonyms:
+          - 'Gintama.: Silver Soul Arc 2'
+          - Gintama. Silver Soul Arc Season 2
+          - 'Gintama.: Shirogane no Tamashii-hen Season 2'
+          status: FINISHED
+          format: TV
+          episodes: 14
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 9
+          endDate:
+            year: 2018
+            month: 10
+            day: 8
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 101289
+          idMal: 37446
+          title:
+            romaji: Hyakuren no Haou to Seiyaku no Valkyria
+            english: The Master of Ragnarök & Blesser of Einherjar
+            native: 百錬の覇王と聖約の戦乙女
+          synonyms:
+          - The Master of Ragnarok & Blesser of Einherjar
+          - ราชาอาชาไนยกับวาลคิรีแห่งพันธสัญญา
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 8
+          endDate:
+            year: 2018
+            month: 9
+            day: 23
+          averageScore: 52
+          nextAiringEpisode: null
+        - id: 100749
+          idMal: 36936
+          title:
+            romaji: Mirai no Mirai
+            english: Mirai
+            native: 未来のミライ
+          synonyms:
+          - Mirai of the Future
+          - Miraï, ma petite sœur
+          - 未来的未来
+          - 'Mirai: Mi pequeña hermana'
+          - Μιράι, η μικρή μου αδελφή
+          - Мірай
+          - Мирай из будущего
+          - Mano mažoji sesutė Mirai
+          - Болашақтан келген Мирай
+          - Mirai tulevikust
+          - Gələcəkdən olan Miray
+          - Miraï, min lillasyster
+          - Mirai, min lillasyster
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 20
+          endDate:
+            year: 2018
+            month: 7
+            day: 20
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 98658
+          idMal: 35503
+          title:
+            romaji: Shoujo☆Kageki Revue Starlight
+            english: Revue Starlight
+            native: 少女☆歌劇 レヴュー・スタァライト
+          synonyms:
+          - Girls' Musical Revue Starlight
+          - 少女☆歌剧 Revue Starlight
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 13
+          endDate:
+            year: 2018
+            month: 9
+            day: 28
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 101045
+          idMal: 37259
+          title:
+            romaji: Hanebado!
+            english: HANEBADO!
+            native: はねバド!
+          synonyms:
+          - Hanebado! - The Badminton Play of Ayano Hanesaki!
+          - Hanebad!
+          - ฮาเนซากิ อายาโนะ นักแบดสาวเจ้าสนาม
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 2
+          endDate:
+            year: 2018
+            month: 10
+            day: 1
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 100556
+          idMal: 36817
+          title:
+            romaji: Sunoharasou no Kanrinin-san
+            english: Miss Caretaker of Sunohara-sou
+            native: すのはら荘の管理人さん
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 7
+            day: 5
+          endDate:
+            year: 2018
+            month: 9
+            day: 20
+          averageScore: 64
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

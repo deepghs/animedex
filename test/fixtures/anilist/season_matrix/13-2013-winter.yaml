@@ -1,0 +1,649 @@
+metadata:
+  captured_at: '2026-05-11T11:32:52Z'
+  label: 2013-winter
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2013
+      season: WINTER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:32:52 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '17'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 14749
+          idMal: 14749
+          title:
+            romaji: Ore no Kanojo to Osananajimi ga Shuraba Sugiru
+            english: Oreshura
+            native: 俺の彼女と幼なじみが修羅場すぎる
+          synonyms:
+          - My Girlfriend and Childhood Friend Fight Too Much
+          - สมรภูมิรักแฟนสาวกับเพื่อนข้างบ้าน
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 6
+          endDate:
+            year: 2013
+            month: 3
+            day: 31
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 16417
+          idMal: 16417
+          title:
+            romaji: Tamako Market
+            english: Tamako Market
+            native: たまこまーけっと
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 10
+          endDate:
+            year: 2013
+            month: 3
+            day: 28
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 15315
+          idMal: 15315
+          title:
+            romaji: Mondaiji-tachi ga Isekai kara Kuru Sou desu yo?
+            english: Problem Children Are Coming From Another World, Aren't They?
+            native: 問題児たちが異世界から来るそうですよ?
+          synonyms:
+          - ตัวป่วนชั้นเซียน มาตบเกรียนถึงต่างโลก
+          - 문제아들이 이세계에서 온다는 모양인데요?
+          - 문제아들이 다른 세계에서 온다는 모양인데요?
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 12
+          endDate:
+            year: 2013
+            month: 3
+            day: 16
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 15051
+          idMal: 15051
+          title:
+            romaji: Love Live! School idol project
+            english: Love Live! School Idol Project
+            native: ラブライブ! School idol project
+          synonyms:
+          - 'Живая любовь: проект "Школьный идол"'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 6
+          endDate:
+            year: 2013
+            month: 3
+            day: 31
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 14833
+          idMal: 14833
+          title:
+            romaji: Maoyuu Maou Yuusha
+            english: 'Maoyu: Archenemy & Hero'
+            native: まおゆう魔王勇者
+          synonyms:
+          - Maoyu Maou Yusha
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 5
+          endDate:
+            year: 2013
+            month: 3
+            day: 30
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 14967
+          idMal: 14967
+          title:
+            romaji: Boku wa Tomodachi ga Sukunai NEXT
+            english: Haganai NEXT
+            native: 僕は友達が少ない NEXT
+          synonyms:
+          - Boku wa Tomodachi ga Sukunai 2nd Season
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 11
+          endDate:
+            year: 2013
+            month: 3
+            day: 29
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 14349
+          idMal: 14349
+          title:
+            romaji: Little Witch Academia
+            english: Little Witch Academia
+            native: リトルウィッチアカデミア
+          synonyms:
+          - LWA
+          - Wakate Animator Ikusei Project
+          - 2012 Young Animator Training Project
+          - Anime Mirai 2012
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 3
+            day: 2
+          endDate:
+            year: 2013
+            month: 3
+            day: 2
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 15379
+          idMal: 15379
+          title:
+            romaji: Kotoura-san
+            english: The Troubled Life of Miss Kotoura
+            native: 琴浦さん
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 11
+          endDate:
+            year: 2013
+            month: 3
+            day: 29
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 13271
+          idMal: 13271
+          title:
+            romaji: 'HUNTER×HUNTER: Phantom Rouge'
+            english: 'Hunter x Hunter: Phantom Rouge'
+            native: 劇場版 HUNTER×HUNTER 緋色の幻影（ファントム・ルージュ）
+          synonyms:
+          - 'Gekijouban Hunter x Hunter: Hiiro no Genei'
+          - HxH Movie
+          - 'HxH: Phantom Rogue'
+          - 'Hunter x Hunter: Fantasma Vermelho'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 12
+          endDate:
+            year: 2013
+            month: 1
+            day: 12
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 14353
+          idMal: 14353
+          title:
+            romaji: Death Billiards
+            english: null
+            native: デス・ビリヤード
+          synonyms:
+          - Wakate Animator Ikusei Project
+          - 2012 Young Animator Training Project
+          - Anime Mirai 2012
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 3
+            day: 2
+          endDate:
+            year: 2013
+            month: 3
+            day: 2
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 14397
+          idMal: 14397
+          title:
+            romaji: Chihayafuru 2
+            english: Chihayafuru 2
+            native: ちはやふる 2
+          synonyms:
+          - Chihayafull 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 12
+          endDate:
+            year: 2013
+            month: 6
+            day: 29
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 12115
+          idMal: 12115
+          title:
+            romaji: 'Berserk: Ougon Jidai-hen III - Kourin'
+            english: 'Berserk: The Golden Age Arc III - The Advent'
+            native: ベルセルク 黄金時代篇Ⅲ 降臨
+          synonyms:
+          - Berserk Movie
+          - Berserk Saga
+          - 'Berserk: Golden Age Arc III - Descent'
+          - 'Berserk: La Edad de Oro III - El Advenimiento'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 2
+            day: 1
+          endDate:
+            year: 2013
+            month: 2
+            day: 1
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 15085
+          idMal: 15085
+          title:
+            romaji: AMNESIA
+            english: AMNESIA
+            native: AMNESIA
+          synonyms:
+          - アムネシア
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 7
+          endDate:
+            year: 2013
+            month: 3
+            day: 25
+          averageScore: 54
+          nextAiringEpisode: null
+        - id: 14811
+          idMal: 14811
+          title:
+            romaji: GJ-bu
+            english: GJ Club
+            native: GJ部
+          synonyms:
+          - Good Job-bu
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 10
+          endDate:
+            year: 2013
+            month: 3
+            day: 28
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 11743
+          idMal: 11743
+          title:
+            romaji: 'Toaru Majutsu no Index: Endymion no Kiseki'
+            english: 'A Certain Magical Index: The Miracle of Endymion'
+            native: 劇場版 とある魔術の禁書目録 エンデュミオンの奇蹟
+          synonyms:
+          - Gekijouban To Aru Majutsu no Kinsho Mokuroku
+          - 'อินเด็กซ์ คัมภีร์คาถาต้องห้าม เดอะ มูฟวี่ '
+          - Movie Cấm thư ma thuật Index
+          - Daftar Sihir Terlarang The Movie
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 2
+            day: 23
+          endDate:
+            year: 2013
+            month: 2
+            day: 23
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 14355
+          idMal: 14355
+          title:
+            romaji: Yama no Susume
+            english: Encouragement of Climb
+            native: ヤマノススメ
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 3
+          endDate:
+            year: 2013
+            month: 3
+            day: 21
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 15119
+          idMal: 15119
+          title:
+            romaji: Senran Kagura
+            english: 'Senran Kagura: Ninja Flash!'
+            native: 閃乱カグラ
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 6
+          endDate:
+            year: 2013
+            month: 3
+            day: 24
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 16005
+          idMal: 16005
+          title:
+            romaji: 'Zettai Karen Children: THE UNLIMITED - Hyoubu Kyousuke'
+            english: Unlimited Psychic Squad
+            native: 絶対可憐チルドレン THE UNLIMITED 兵部京介
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 8
+          endDate:
+            year: 2013
+            month: 3
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 15751
+          idMal: 15751
+          title:
+            romaji: Senyuu.
+            english: Senyuu
+            native: 戦勇.
+          synonyms:
+          - Senyu.
+          - Senyu
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 13
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 9
+          endDate:
+            year: 2013
+            month: 4
+            day: 3
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 16916
+          idMal: 16916
+          title:
+            romaji: 'Kuroko no Basket: Tip Off'
+            english: 'Kuroko''s Basketball: Tip Off'
+            native: 黒子のバスケ 第22.5Q 「Tip off」
+          synonyms:
+          - Kuroko no Basket Special
+          - Kuroko no Basket Episode 22.5
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 2
+            day: 22
+          endDate:
+            year: 2013
+            month: 2
+            day: 22
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 15879
+          idMal: 15879
+          title:
+            romaji: 'Chuunibyou demo Koi ga Shitai!: DEPTH OF FIELD - Ai to Nikushimi Gekijou'
+            english: 'Love, Chunibyo & Other Delusions: Depth of Field - Ai to Nikushimi Gekijou'
+            native: 中二病でも恋がしたい！DEPTH OF FIELD ～ 愛と憎しみ劇場
+          synonyms: []
+          status: FINISHED
+          format: SPECIAL
+          episodes: 7
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2012
+            month: 12
+            day: 19
+          endDate:
+            year: 2013
+            month: 6
+            day: 19
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 14515
+          idMal: 14515
+          title:
+            romaji: Sasami-san@Ganbaranai
+            english: null
+            native: ささみさん@がんばらない
+          synonyms:
+          - Sasami-san at Ganbaranai
+          - Sasami-san@Unmotivated
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 11
+          endDate:
+            year: 2013
+            month: 3
+            day: 29
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 15109
+          idMal: 15109
+          title:
+            romaji: Cuticle Tantei Inaba
+            english: Cuticle Detective Inaba
+            native: キューティクル探偵因幡
+          synonyms:
+          - Inaba, detective cuticular
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 4
+          endDate:
+            year: 2013
+            month: 3
+            day: 22
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 15613
+          idMal: 15613
+          title:
+            romaji: 'Hakkenden: Touhou Hakken Ibun'
+            english: 'Hakkenden: Eight Dogs of the East'
+            native: 八犬伝 -東方八犬異聞-
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 1
+            day: 6
+          endDate:
+            year: 2013
+            month: 3
+            day: 31
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 17121
+          idMal: 17121
+          title:
+            romaji: Dareka no Manazashi
+            english: null
+            native: だれかのまなざし
+          synonyms:
+          - Someone's Gaze
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: WINTER
+          seasonYear: 2013
+          startDate:
+            year: 2013
+            month: 2
+            day: 10
+          endDate:
+            year: 2013
+            month: 2
+            day: 10
+          averageScore: 70
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

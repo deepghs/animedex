@@ -1,0 +1,663 @@
+metadata:
+  captured_at: '2026-05-11T11:33:19Z'
+  label: 2015-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2015
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:19 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '29'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 20997
+          idMal: 28999
+          title:
+            romaji: Charlotte
+            english: null
+            native: Charlotte(シャーロット)
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 5
+          endDate:
+            year: 2015
+            month: 9
+            day: 27
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 20832
+          idMal: 29803
+          title:
+            romaji: Overlord
+            english: Overlord
+            native: オーバーロード
+          synonyms:
+          - Over Lord
+          - โอเวอร์ลอร์ด
+          - โอเวอร์ ลอร์ด จอมมารพิชิตโลก
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 7
+          endDate:
+            year: 2015
+            month: 9
+            day: 29
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 20807
+          idMal: 30240
+          title:
+            romaji: Prison School
+            english: Prison School
+            native: 監獄学園〈プリズンスクール〉
+          synonyms:
+          - โรงเรียนคุกนรก
+          - Kangoku Gakuen
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 11
+          endDate:
+            year: 2015
+            month: 9
+            day: 26
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21175
+          idMal: 30694
+          title:
+            romaji: Dragon Ball Super
+            english: Dragon Ball Super
+            native: ドラゴンボール超
+          synonyms:
+          - DBS
+          - Dragonball Super
+          - דרגון בול סופר
+          - 'Драконий жемчуг: Супер'
+          status: FINISHED
+          format: TV
+          episodes: 131
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 5
+          endDate:
+            year: 2018
+            month: 3
+            day: 25
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 20910
+          idMal: 29786
+          title:
+            romaji: Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai
+            english: 'SHIMONETA: A Boring World Where the Concept of Dirty Jokes Doesn’t Exist'
+            native: 下ネタという概念が存在しない退屈な世界
+          synonyms:
+          - Shimoseka
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 4
+          endDate:
+            year: 2015
+            month: 9
+            day: 19
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 20994
+          idMal: 28907
+          title:
+            romaji: 'GATE: Jieitai Kanochi nite, Kaku Tatakaeri'
+            english: Gate
+            native: GATE 自衛隊 彼の地にて、斯く戦えり
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 4
+          endDate:
+            year: 2015
+            month: 9
+            day: 19
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 21058
+          idMal: 30123
+          title:
+            romaji: Akagami no Shirayuki-hime
+            english: Snow White with the Red Hair
+            native: 赤髪の白雪姫
+          synonyms:
+          - Shirayuki aux cheveux rouges
+          - สโนว์ไวท์ผมแดง
+          - Красноволосая Белоснежка
+          - Красноволосая принцесса Белоснежка
+          - Die rothaarige Schneeprinzessin
+          - Blancanieves pelirroja
+          - 'Shirayuki: Śnieżka o czerwonych włosach'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 7
+          endDate:
+            year: 2015
+            month: 9
+            day: 22
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 20987
+          idMal: 28825
+          title:
+            romaji: Himouto! Umaru-chan
+            english: Himouto! Umaru-chan
+            native: 干物妹！うまるちゃん
+          synonyms:
+          - 干物妹！小埋
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 9
+          endDate:
+            year: 2015
+            month: 9
+            day: 24
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 21093
+          idMal: 30307
+          title:
+            romaji: Monster Musume no Iru Nichijou
+            english: 'Monster Musume: Everyday Life With Monster Girls'
+            native: モンスター娘のいる日常
+          synonyms:
+          - MonMusu
+          - Die Monster Mädchen
+          - บันทึกอุ่นรักสาวมอนสเตอร์
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 8
+          endDate:
+            year: 2015
+            month: 9
+            day: 23
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 20773
+          idMal: 25183
+          title:
+            romaji: GANGSTA.
+            english: GANGSTA.
+            native: GANGSTA.
+          synonyms:
+          - ギャングスタ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 2
+          endDate:
+            year: 2015
+            month: 9
+            day: 24
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20955
+          idMal: 28497
+          title:
+            romaji: Rokka no Yuusha
+            english: Rokka -Braves of the Six Flowers-
+            native: 六花の勇者
+          synonyms:
+          - ผู้กล้าแห่งบุปผา
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 5
+          endDate:
+            year: 2015
+            month: 9
+            day: 20
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 20754
+          idMal: 24765
+          title:
+            romaji: Gakkou Gurashi!
+            english: SCHOOL-LIVE!
+            native: がっこうぐらし!
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 9
+          endDate:
+            year: 2015
+            month: 9
+            day: 24
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 20849
+          idMal: 27631
+          title:
+            romaji: GOD EATER
+            english: God Eater
+            native: GOD EATER
+          synonyms:
+          - ゴッドイーター
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 12
+          endDate:
+            year: 2016
+            month: 3
+            day: 26
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 20981
+          idMal: 28805
+          title:
+            romaji: Bakemono no Ko
+            english: The Boy and The Beast
+            native: バケモノの子
+          synonyms:
+          - El niño y la bestia
+          - O Rapaz e o Monstro
+          - El nen i la bèstia
+          - Учень чудовиська
+          - Ученик чудовища
+          - Berniukas ir Pabaisa
+          - Құбыжықтың шәкірті
+          - Băiatul și bestia
+          - Əjdahanın şagirdi
+          - Odjuret och hans lärling
+          - Le Garçon et la Bête
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 11
+          endDate:
+            year: 2015
+            month: 7
+            day: 11
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 21220
+          idMal: 28755
+          title:
+            romaji: 'BORUTO: NARUTO THE MOVIE'
+            english: 'Boruto: Naruto the Movie'
+            native: BORUTO -NARUTO THE MOVIE-
+          synonyms: []
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 8
+            day: 7
+          endDate:
+            year: 2015
+            month: 8
+            day: 7
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20968
+          idMal: 28725
+          title:
+            romaji: Kokoro ga Sakebitagatterun da.
+            english: The Anthem of the Heart
+            native: 心が叫びたがってるんだ。
+          synonyms:
+          - Kokosake
+          - El Himno del Corazón
+          - 'The Anthem of the Heart: Beautiful Word Beautiful World'
+          - Jun La voix du Coeur
+          - เมื่อใจกู่ร้องอยากบอกโลก
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 9
+            day: 19
+          endDate:
+            year: 2015
+            month: 9
+            day: 19
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 20879
+          idMal: 27831
+          title:
+            romaji: Durarara!!x2 Ten
+            english: Durarara!! X2 The Second Arc
+            native: デュラララ!!×２ 転
+          synonyms:
+          - DRRR!! 2 Ten
+          - דורארארה!!2x תפנית
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 4
+          endDate:
+            year: 2015
+            month: 9
+            day: 26
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20984
+          idMal: 28819
+          title:
+            romaji: Okusama ga Seitokaichou!
+            english: My Wife is the Student Council President
+            native: おくさまが生徒会長!
+          synonyms:
+          - Okusama ga Seito Kaichou!
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 2
+          endDate:
+            year: 2015
+            month: 9
+            day: 17
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 21033
+          idMal: 29785
+          title:
+            romaji: Jitsu wa Watashi wa
+            english: Actually, I Am
+            native: 実は私は
+          synonyms:
+          - จุ๊จุ๊ จะบอกว่าฉันคือ…
+          - My Monster Secret
+          - Na verdade, eu sou...
+          - En realidad, soy...
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 7
+          endDate:
+            year: 2015
+            month: 9
+            day: 29
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 21132
+          idMal: 30458
+          title:
+            romaji: 'Tokyo Ghoul: [JACK]'
+            english: null
+            native: 東京喰種トーキョーグール [JACK]
+          synonyms:
+          - 'Tokyo Kushu: Jack'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 9
+            day: 30
+          endDate:
+            year: 2015
+            month: 9
+            day: 30
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 20995
+          idMal: 28979
+          title:
+            romaji: To LOVE-Ru Darkness 2nd
+            english: To Love Ru Darkness 2
+            native: To LOVEる -とらぶる- ダークネス2nd
+          synonyms:
+          - To LOVE-Ru Trouble Darkness 2nd
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 7
+          endDate:
+            year: 2015
+            month: 9
+            day: 29
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 20694
+          idMal: 23623
+          title:
+            romaji: 'Non Non Biyori: Repeat'
+            english: Non Non Biyori Repeat
+            native: のんのんびより りぴーと
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 7
+          endDate:
+            year: 2015
+            month: 9
+            day: 22
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 20774
+          idMal: 25283
+          title:
+            romaji: Kuusen Madoushi Kouhosei no Kyoukan
+            english: Sky Wizards Academy
+            native: 空戦魔導士候補生の教官
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 9
+          endDate:
+            year: 2015
+            month: 9
+            day: 24
+          averageScore: 58
+          nextAiringEpisode: null
+        - id: 20741
+          idMal: 24655
+          title:
+            romaji: 'Date A Live Movie: Mayuri Judgement'
+            english: Date A Live Mayuri Judgement
+            native: 劇場版デート・ア・ライブ 万由里ジャッジメント
+          synonyms:
+          - 'Date A Live Movie: Mayuri Judgment'
+          - 'พิชิตรัก พิทักษ์โลก : เดอะมูฟวี่ คำพิพากษาของมายูริ'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 8
+            day: 22
+          endDate:
+            year: 2015
+            month: 8
+            day: 22
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 20819
+          idMal: 25879
+          title:
+            romaji: WORKING!!!
+            english: Wagnaria!!3
+            native: WORKING!!!
+          synonyms:
+          - ワーキング!!!
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 7
+            day: 5
+          endDate:
+            year: 2015
+            month: 9
+            day: 27
+          averageScore: 78
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

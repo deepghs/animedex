@@ -1,0 +1,714 @@
+metadata:
+  captured_at: '2026-05-11T11:34:04Z'
+  label: 2019-spring
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2019
+      season: SPRING
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:04 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '14'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 101922
+          idMal: 38000
+          title:
+            romaji: Kimetsu no Yaiba
+            english: 'Demon Slayer: Kimetsu no Yaiba'
+            native: 鬼滅の刃
+          synonyms:
+          - KnY
+          - 'Kimetsu no Yaiba: Kyoudai no Kizuna'
+          - 'Demon Slayer: Kimetsu no Yaiba: Bonds of Siblings'
+          - 鬼滅の刃-兄妹の絆-
+          - 鬼灭之刃
+          - הלהב קוטל השדים
+          - قاتل الشياطين
+          - ดาบพิฆาตอสูร
+          - Miecz zabójcy demonów – Kimetsu no Yaiba
+          - ' Guardians de la nit: Kimetsu no Yaiba'
+          - İblis Keser
+          - 'ΚΥΝΗΓΟΣ ΔΑΙΜΟΝΩΝ: KIMETSU NO YAIBA'
+          - Zabiják démonů
+          - شیطان کش
+          - 귀멸의 칼날
+          - Истребитель демонов
+          - Клинок, рассекающий демонов
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 6
+          endDate:
+            year: 2019
+            month: 9
+            day: 28
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 104578
+          idMal: 38524
+          title:
+            romaji: Shingeki no Kyojin Season 3 Part 2
+            english: Attack on Titan Season 3 Part 2
+            native: 進撃の巨人 Season３ Part.2
+          synonyms:
+          - SnK 3
+          - AoT 3
+          - Shingeki no Kyojin Season 3 (2019)
+          - L'Attaco dei Giganti 3 Parte 2
+          - L'Attacco dei Giganti - Terza Stagione Parte 2
+          - מתקפת הטיטאנים עונה 3 חלק 2
+          - 'L''Attaque des Titans Saison 3 Partie 2 '
+          - ผ่าพิภพไททัน ภาค 3 Part 2
+          - ผ่าพิภพไททัน ภาค 3 พาร์ท 2
+          - حمله به تایتان فصل 3
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 29
+          endDate:
+            year: 2019
+            month: 7
+            day: 1
+          averageScore: 90
+          nextAiringEpisode: null
+        - id: 97668
+          idMal: 34134
+          title:
+            romaji: One Punch Man 2
+            english: One-Punch Man Season 2
+            native: ワンパンマン 2
+          synonyms:
+          - OPM2
+          - Wanpanman 2
+          - مرد تک مشتی
+          - วันพันช์แมน ภาคที่ 2
+          - One-Punch Man Phần 2
+          - 一拳超人 第二季
+          - Jagoan Sekali Pukul S2
+          - ون بنش مان 2
+          - رجل اللكمة الواحدة 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 10
+          endDate:
+            year: 2019
+            month: 7
+            day: 3
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 105334
+          idMal: 38680
+          title:
+            romaji: 'Fruits Basket: 1st Season'
+            english: Fruits Basket (2019)
+            native: フルーツバスケット 1st Season
+          synonyms:
+          - Fruits Basket (Zenpen)
+          - Furuba
+          - Fruba
+          - フルバ
+          - 水果篮子（第一季）
+          - 水果篮子（2019）
+          - เสน่ห์สาวข้าวปั้น
+          - Корзинка фруктов
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 6
+          endDate:
+            year: 2019
+            month: 9
+            day: 21
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 104157
+          idMal: 38329
+          title:
+            romaji: Seishun Buta Yarou wa Yumemiru Shoujo no Yume wo Minai
+            english: Rascal Does Not Dream of a Dreaming Girl
+            native: 青春ブタ野郎はゆめみる少女の夢を見ない
+          synonyms:
+          - 青ブタ
+          - 'Ao Buta '
+          - 青春猪头少年不会梦到怀梦美少女
+          - Этот глупый свин не понимает мечту девочки-зайки. Фильм
+          - Негодник, которому не снилась девушка-кролик. Фильм
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 6
+            day: 15
+          endDate:
+            year: 2019
+            month: 6
+            day: 15
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 103223
+          idMal: 38003
+          title:
+            romaji: Bungou Stray Dogs 3rd Season
+            english: Bungo Stray Dogs 3
+            native: 文豪ストレイドッグス 第3シーズン
+          synonyms:
+          - Bungou Stray Dogs (2019)
+          - BSD 3
+          - BungouSD 3
+          - คณะประพันธกรจรจัด ภาค 3
+          - 文豪野犬 第三季
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 12
+          endDate:
+            year: 2019
+            month: 6
+            day: 28
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 100112
+          idMal: 36407
+          title:
+            romaji: Kenja no Mago
+            english: Wise Man’s Grandchild
+            native: 賢者の孫
+          synonyms:
+          - The Wise Grandson
+          - The Sage's Grandson
+          - Philosopher's Grandson
+          - Magi's Grandson
+          - หลานจอมปราชญ์
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 10
+          endDate:
+            year: 2019
+            month: 6
+            day: 26
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 103900
+          idMal: 38186
+          title:
+            romaji: Bokutachi wa Benkyou ga Dekinai
+            english: 'We Never Learn: BOKUBEN'
+            native: ぼくたちは勉強ができない
+          synonyms:
+          - BokuBen
+          - We Can't Study
+          - Boku-tachi wa Benkyou ga Dekinai
+          - 'เรื่องนี้ตําราไม่มีสอน '
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 7
+          endDate:
+            year: 2019
+            month: 6
+            day: 30
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 99425
+          idMal: 35848
+          title:
+            romaji: Promare
+            english: Promare
+            native: プロメア
+          synonyms:
+          - 普罗米亚
+          - Промар
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 5
+            day: 24
+          endDate:
+            year: 2019
+            month: 5
+            day: 24
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 105914
+          idMal: 38759
+          title:
+            romaji: Sewayaki Kitsune no Senko-san
+            english: The Helpful Fox Senko-san
+            native: 世話やきキツネの仙狐さん
+          synonyms:
+          - 贤惠幼妻仙狐小姐
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 10
+          endDate:
+            year: 2019
+            month: 6
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 104325
+          idMal: 38397
+          title:
+            romaji: Nande Koko ni Sensei ga!?
+            english: Why the hell are you here, Teacher!?
+            native: なんでここに先生が!?
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 8
+          endDate:
+            year: 2019
+            month: 6
+            day: 24
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 104454
+          idMal: 38472
+          title:
+            romaji: Isekai Quartet
+            english: Isekai Quartet
+            native: 異世界かるてっと
+          synonyms:
+          - Квартет попаданцев
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 10
+          endDate:
+            year: 2019
+            month: 6
+            day: 26
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 101281
+          idMal: 37435
+          title:
+            romaji: Carole & Tuesday
+            english: Carole & Tuesday
+            native: キャロル＆チューズデイ
+          synonyms:
+          - C&T
+          - Carole y Tuesday
+          - عشق الموسيقى
+          - แครอลกับทูสเดย์
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 10
+          endDate:
+            year: 2019
+            month: 10
+            day: 3
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 103302
+          idMal: 38080
+          title:
+            romaji: Kono Oto Tomare!
+            english: 'Kono Oto Tomare!: Sounds of Life'
+            native: この音とまれ！
+          synonyms:
+          - Stop at this Sound!
+          - ฝากฝันไว้ที่เสียงโคโตะ!
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 7
+          endDate:
+            year: 2019
+            month: 6
+            day: 30
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 105018
+          idMal: 38594
+          title:
+            romaji: Kimi to, Nami ni Noretara
+            english: Ride Your Wave
+            native: きみと、波にのれたら
+          synonyms:
+          - El amor está en el agua
+          - Піймай свою хвилю
+          - На твоей волне
+          - Mėgaukis savo banga
+          - Uz tava viļņa
+          - Сенің толқыныңда
+          - Sənin dalğanda
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 6
+            day: 21
+          endDate:
+            year: 2019
+            month: 6
+            day: 21
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 105989
+          idMal: 38778
+          title:
+            romaji: Midara na Ao-chan wa Benkyou ga Dekinai
+            english: Ao-chan Can't Study!
+            native: 淫らな青ちゃんは勉強ができない
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 6
+          endDate:
+            year: 2019
+            month: 6
+            day: 22
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 101386
+          idMal: 37614
+          title:
+            romaji: Hitoribocchi no ○○ Seikatsu
+            english: Hitoribocchi no Marumaruseikatsu
+            native: ひとりぼっちの○○生活
+          synonyms:
+          - Hitoribocchi
+          - Bocchi Seikatsu
+          - 一个人的○○小日子
+          - Hitoribocchi no Marumaru Seikatsu
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 6
+          endDate:
+            year: 2019
+            month: 6
+            day: 22
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 104217
+          idMal: 38349
+          title:
+            romaji: Wotaku ni Koi wa Muzukashii OVA
+            english: null
+            native: ヲタクに恋は難しい OVA
+          synonyms:
+          - WotaKoi
+          - 'Wotaku ni Koi wa Muzukashii: Youth'
+          - 'Wotakoi: Love is Hard for Otaku OVA'
+          - 'WotaKoi: Sore wa, ikinari otozureta=koi'
+          - 'ヲタ恋: それは、いきなりおとづれた＝恋'
+          - ヲタクに恋は難しい OAD
+          status: FINISHED
+          format: OVA
+          episodes: 3
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 3
+            day: 29
+          endDate:
+            year: 2021
+            month: 10
+            day: 14
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 106051
+          idMal: 38787
+          title:
+            romaji: Senryuu Shoujo
+            english: Senryu Girl
+            native: 川柳少女
+          synonyms: []
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 6
+          endDate:
+            year: 2019
+            month: 6
+            day: 22
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 103221
+          idMal: 37981
+          title:
+            romaji: Kaijuu no Kodomo
+            english: Children of the Sea
+            native: 海獣の子供
+          synonyms:
+          - Los Niños del Mar
+          - Les enfants de la Mer
+          - 海兽之子
+          - Дети моря
+          - I figli del mare
+          - Dzieci morza
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 6
+            day: 7
+          endDate:
+            year: 2019
+            month: 6
+            day: 7
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 101261
+          idMal: 37426
+          title:
+            romaji: Sarazanmai
+            english: Sarazanmai
+            native: さらざんまい
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 12
+          endDate:
+            year: 2019
+            month: 6
+            day: 21
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 106967
+          idMal: 38935
+          title:
+            romaji: Miru Tights
+            english: null
+            native: みるタイツ
+          synonyms:
+          - 絲襪視界
+          - 丝袜视界
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 5
+            day: 11
+          endDate:
+            year: 2019
+            month: 7
+            day: 27
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 97918
+          idMal: 34544
+          title:
+            romaji: 'Koutetsujou no Kabaneri: Unato Kessen'
+            english: 'Kabaneri of the Iron Fortress: The Battle of Unato'
+            native: 甲鉄城のカバネリ 〜海門決戦〜
+          synonyms:
+          - 'Kabaneri de la Fortaleza de Hierro: La Batalla de Unato'
+          - 'Kabaneri da Fortaleza de Ferro: A Batalha de Unato'
+          - 'حماة الحصون المنيعة: معركة الحصن المهجور'
+          - 'Les Kabaneri de la Forteresse de fer : la bataille d''Unato'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 5
+            day: 10
+          endDate:
+            year: 2019
+            month: 5
+            day: 10
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 97995
+          idMal: 34620
+          title:
+            romaji: Kono Yo no Hate de Koi wo Utau Shoujo YU-NO
+            english: 'YU-NO: A Girl Who Chants Love at the Bound of This World'
+            native: この世の果てで恋を唄う少女YU-NO
+          synonyms:
+          - 'YU-NO: A girl who chants love at the bound of this world.'
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 2
+          endDate:
+            year: 2019
+            month: 10
+            day: 1
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 107418
+          idMal: 39063
+          title:
+            romaji: Fairy Gone
+            english: Fairy gone
+            native: フェアリーゴーン
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SPRING
+          seasonYear: 2019
+          startDate:
+            year: 2019
+            month: 4
+            day: 8
+          endDate:
+            year: 2019
+            month: 6
+            day: 24
+          averageScore: 53
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

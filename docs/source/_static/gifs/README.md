@@ -22,6 +22,7 @@ source tapes so future contributors can regenerate them.
 | `trace.gif` | `docs/source/tutorials/backends/trace.rst` header | `trace.tape` |
 | `nekos.gif` | `docs/source/tutorials/backends/nekos.rst` header | `nekos.tape` |
 | `shikimori.gif` | `docs/source/tutorials/backends/shikimori.rst` header | `shikimori.tape` |
+| `aggregate.gif` | `docs/source/tutorials/aggregate.rst` header | `aggregate.tape` |
 
 ## Regenerating
 
@@ -47,6 +48,7 @@ vhs quote.tape                # produces quote.gif
 vhs trace.tape                # produces trace.gif
 vhs nekos.tape                # produces nekos.gif
 vhs shikimori.tape            # produces shikimori.gif
+vhs aggregate.tape             # produces aggregate.gif
 ```
 
 vhs is available as a single-file binary at

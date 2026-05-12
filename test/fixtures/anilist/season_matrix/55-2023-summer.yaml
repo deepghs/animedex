@@ -1,0 +1,710 @@
+metadata:
+  captured_at: '2026-05-11T11:34:48Z'
+  label: 2023-summer
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2023
+      season: SUMMER
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:48 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '18'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 145064
+          idMal: 51009
+          title:
+            romaji: Jujutsu Kaisen 2nd Season
+            english: JUJUTSU KAISEN Season 2
+            native: 呪術廻戦 第2期
+          synonyms:
+          - '呪術廻戦 懐玉・玉折／渋谷事変 '
+          - 'Jujutsu Kaisen: Kaigyoku Gyokusetsu / Shibuya Jihen'
+          - 'Jujutsu Kaisen: Hidden Inventory / Premature Death'
+          - JJK2
+          - 咒術迴戰  第二季
+          - 'มหาเวทย์ผนึกมาร ภาค 2 '
+          - 咒术回战 2
+          - '2جوجوتسو كايسن '
+          - 'Jujutsu Kaisen: Shibuya Incident'
+          status: FINISHED
+          format: TV
+          episodes: 23
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 6
+          endDate:
+            year: 2023
+            month: 12
+            day: 28
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 146065
+          idMal: 51179
+          title:
+            romaji: 'Mushoku Tensei II: Isekai Ittara Honki Dasu'
+            english: 'Mushoku Tensei: Jobless Reincarnation Season 2'
+            native: 無職転生Ⅱ ～異世界行ったら本気だす～
+          synonyms:
+          - เกิดชาตินี้พี่ต้องเทพ ซีซั่น 2
+          - 'Mushoku Tensei: Isekai Ittara Honki Dasu 2nd Season'
+          - 'Mushoku Tensei II: Jobless Reincarnation'
+          - 'Mushoku Tensei II: Reencarnación desde cero'
+          - 无职转生～到了异世界就拿出真本事～第2季
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 3
+          endDate:
+            year: 2023
+            month: 9
+            day: 25
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 159831
+          idMal: 54112
+          title:
+            romaji: 'Zom 100: Zombie ni Naru Made ni Shitai 100 no Koto'
+            english: 'Zom 100: Bucket List of the Dead'
+            native: ゾン100～ゾンビになるまでにしたい100のこと～
+          synonyms:
+          - Zombie 100 ~100 Things I Want to do Before I Become a Zombie~
+          - Zombie 100 ~Zombie ni Naru Made ni Shitai 100 no Koto~
+          - 100 สิ่งที่อยากทำก่อนจะกลายเป็นซอมบี้
+          - Зомби-апокалипсис и 100 предсмертных дел
+          - 100 Coisas para Fazer Antes de Virar Zumbi
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 9
+          endDate:
+            year: 2023
+            month: 12
+            day: 26
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 163132
+          idMal: 54856
+          title:
+            romaji: 'Horimiya: piece'
+            english: 'Horimiya: The Missing Pieces'
+            native: ホリミヤ -piece-
+          synonyms:
+          - 'Хоримия: Фрагменты'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 1
+          endDate:
+            year: 2023
+            month: 9
+            day: 23
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 147103
+          idMal: 51552
+          title:
+            romaji: Watashi no Shiawase na Kekkon
+            english: My Happy Marriage
+            native: わたしの幸せな結婚
+          synonyms:
+          - WataKon
+          - ขอให้รักเรานี้ได้มีความสุข
+          - Moje szczęśliwe małżeństwo
+          - Hôn nhân hạnh phúc của tôi
+          - Meu Casamento Feliz
+          - Il mio matrimonio felice
+          - Мій щасливий шлюб
+          - Mi feliz matrimonio
+          - Meine ganz besondere Hochzeit
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 5
+          endDate:
+            year: 2023
+            month: 9
+            day: 20
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 159322
+          idMal: 53998
+          title:
+            romaji: 'BLEACH: Sennen Kessen-hen - Ketsubetsu-tan'
+            english: 'BLEACH: Thousand-Year Blood War - The Separation'
+            native: BLEACH 千年血戦篇-訣別譚-
+          synonyms:
+          - 'BLEACH: Thousand Year Blood War Part 2'
+          - BLEACH 千年血戦篇 第2クール
+          - BLEACH TYBW
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 8
+          endDate:
+            year: 2023
+            month: 9
+            day: 30
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 160188
+          idMal: 54234
+          title:
+            romaji: Suki na Ko ga Megane wo Wasureta
+            english: The Girl I Like Forgot Her Glasses
+            native: 好きな子がめがねを忘れた
+          synonyms:
+          - Sukinako ga Megane wo Wasureta
+          - สาวลืมแว่นแสนวุ่นละมุนรัก
+          - Cô bạn tôi thầm thích lại quên mang kính rồi
+          - Sukimega
+          - Minha Crush Esqueceu os Óculos
+          - La chica que me gusta olvidó sus lentes
+          - Любовь, не скрытая очками
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 4
+          endDate:
+            year: 2023
+            month: 9
+            day: 26
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 146953
+          idMal: 51498
+          title:
+            romaji: Masamune-kun no Revenge R
+            english: Masamune-kun's Revenge R
+            native: 政宗くんのリベンジR
+          synonyms:
+          - Masamune-kun’s Revenge Season 2
+          - Masamune-kun no Revenge 2nd Season
+          - การแก้แค้นของมาซามุเนะคุง ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 3
+          endDate:
+            year: 2023
+            month: 9
+            day: 18
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 157397
+          idMal: 53632
+          title:
+            romaji: Yumemiru Danshi wa Genjitsushugisha
+            english: The Dreaming Boy is a Realist
+            native: 夢見る男子は現実主義者
+          synonyms:
+          - เด็กหนุ่มจอมเพ้อฝัน ผู้ตื่นมามองความเป็นจริง
+          - My Dreamy Realist
+          - Il giovane sognatore è un realista
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 4
+          endDate:
+            year: 2023
+            month: 9
+            day: 19
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 163263
+          idMal: 54898
+          title:
+            romaji: Bungou Stray Dogs 5th Season
+            english: Bungo Stray Dogs 5
+            native: 文豪ストレイドッグス 第5シーズン
+          synonyms:
+          - BSD 5
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 12
+          endDate:
+            year: 2023
+            month: 9
+            day: 20
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 154391
+          idMal: 52969
+          title:
+            romaji: Jitsu wa Ore, Saikyou Deshita?
+            english: Am I Actually the Strongest?
+            native: 実は俺、最強でした？
+          synonyms:
+          - ผมเทพสุดจริงเหรอ?
+          - Я что, сильнейший?
+          - É Sério Que Eu Sou o Mais Forte?
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 2
+          endDate:
+            year: 2023
+            month: 10
+            day: 1
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 154745
+          idMal: 53050
+          title:
+            romaji: Kanojo, Okarishimasu 3rd Season
+            english: Rent-a-Girlfriend Season 3
+            native: 彼女、お借りします 第3期
+          synonyms:
+          - KanoKari 3
+          - สะดุดรักยัยแฟนเช่า ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 8
+          endDate:
+            year: 2023
+            month: 9
+            day: 30
+          averageScore: 68
+          nextAiringEpisode: null
+        - id: 142598
+          idMal: 50582
+          title:
+            romaji: Nanatsu no Maken ga Shihai Suru
+            english: Reign of the Seven Spellblades
+            native: 七つの魔剣が支配する
+          synonyms:
+          - Seven Magic Swords Rule
+          - ซ่อนคมเวทเจ็ดดาบมาร
+          - Nanatsuma
+          - ななつま
+          - O Reino das Sete Magilâminas
+          - Тирания семи разящих клинков
+          status: FINISHED
+          format: TV
+          episodes: 15
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 8
+          endDate:
+            year: 2023
+            month: 10
+            day: 13
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 153360
+          idMal: 52619
+          title:
+            romaji: Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou
+            english: Reborn as a Vending Machine, I Now Wander the Dungeon
+            native: 自動販売機に生まれ変わった俺は迷宮を彷徨う
+          synonyms:
+          - Переродившись в торговый автомат, я блуждаю по подземелью
+          - 自動販売機に生まれ変わった俺は迷宮を彷徨う
+          - Jidōhanbaiki ni Umarekawatta Ore wa Meikyū ni Samayō
+          - Reencarnado numa Máquina de Vendas, Agora Exploro a Masmorra
+          - Jihanki
+          - 自販機
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 5
+          endDate:
+            year: 2023
+            month: 9
+            day: 20
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 152802
+          idMal: 52505
+          title:
+            romaji: Dark Gathering
+            english: Dark Gathering
+            native: ダークギャザリング
+          synonyms:
+          - คู่หูต่างขั้วกับภารกิจกำจัดผี
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 10
+          endDate:
+            year: 2023
+            month: 12
+            day: 25
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 131863
+          idMal: 48633
+          title:
+            romaji: Liar Liar
+            english: Liar, Liar
+            native: ライアー・ライアー
+          synonyms:
+          - Ложь на лжи
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 8
+          endDate:
+            year: 2023
+            month: 9
+            day: 16
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 162983
+          idMal: 54790
+          title:
+            romaji: Undead Girl Murder Farce
+            english: Undead Murder Farce
+            native: アンデッドガール・マーダーファルス
+          synonyms:
+          - Фарс убитой нежити
+          - 不死少女的谋杀闹剧
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 6
+          endDate:
+            year: 2023
+            month: 9
+            day: 28
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 109979
+          idMal: 36699
+          title:
+            romaji: Kimitachi wa Dou Ikiru ka
+            english: The Boy and the Heron
+            native: 君たちはどう生きるか
+          synonyms:
+          - How Do You Live?
+          - Il ragazzo e l’airone
+          - Chłopiec i czapla
+          - Le Garçon et le Héron
+          - Gutten og hegren
+          - Pojken och hägern
+          - Poika ja haikara
+          - El chico y la garza
+          - El niño y la garza
+          - Der Junge und der Reiher
+          - เด็กชายกับนกกระสา
+          - '그대들은 어떻게 살 것인가 '
+          - הילד והאנפה
+          - O Menino e a Garça
+          - Drengen og hejren
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 14
+          endDate:
+            year: 2023
+            month: 7
+            day: 14
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 142877
+          idMal: 50613
+          title:
+            romaji: 'Rurouni Kenshin: Meiji Kenkaku Romantan (2023)'
+            english: Rurouni Kenshin (2023)
+            native: るろうに剣心 －明治剣客浪漫譚－(2023)
+          synonyms:
+          - Samurai X (2023)
+          - Kenshin le vagabond (2023)
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 7
+          endDate:
+            year: 2023
+            month: 12
+            day: 15
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 155168
+          idMal: 53200
+          title:
+            romaji: Hataraku Maou-sama!! 2nd Season
+            english: The Devil is a Part-Timer! Season 2 Part 2
+            native: はたらく魔王さま！！2nd Season
+          synonyms:
+          - The Devil is a Part-Timer! Season 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 13
+          endDate:
+            year: 2023
+            month: 9
+            day: 28
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 136149
+          idMal: 49303
+          title:
+            romaji: Alice to Therese no Maboroshi Koujou
+            english: maboroshi
+            native: アリスとテレスのまぼろし工場
+          synonyms:
+          - Alice and Therese's Illusion Factory
+          - Мабороси
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 9
+            day: 15
+          endDate:
+            year: 2023
+            month: 9
+            day: 15
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 139606
+          idMal: 49894
+          title:
+            romaji: Eiyuu Kyoushitsu
+            english: Classroom for Heroes
+            native: 英雄教室
+          synonyms:
+          - Класс героев
+          - Sala de Aula dos Heróis
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 9
+          endDate:
+            year: 2023
+            month: 9
+            day: 24
+          averageScore: 59
+          nextAiringEpisode: null
+        - id: 148465
+          idMal: 51764
+          title:
+            romaji: Level 1 dakedo Unique Skill de Saikyou desu
+            english: My Unique Skill Makes Me OP even at Level 1
+            native: レベル1だけどユニークスキルで最強です
+          synonyms:
+          - เลเวล 1 แล้วไง ผมมีสกิลแกร่งสุดล้ำไม่ซ้ำใคร
+          - Minha Habilidade Única Me Deixa Invencível no Nível 1
+          - Aku Level 1 Tapi Jadi Orang Terkuat Karena Skill Unik
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 8
+          endDate:
+            year: 2023
+            month: 9
+            day: 23
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 154966
+          idMal: 53127
+          title:
+            romaji: 'Fate/strange Fake: Whispers of Dawn'
+            english: Fate/strange Fake -Whispers of Dawn-
+            native: Fate/strange Fake -Whispers of Dawn-
+          synonyms:
+          - Судьба/Странная подделка. Шёпот рассвета
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 2
+          endDate:
+            year: 2023
+            month: 7
+            day: 2
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 155730
+          idMal: 53379
+          title:
+            romaji: Uchi no Kaisha no Chiisai Senpai no Hanashi
+            english: My Tiny Senpai
+            native: うちの会社の小さい先輩の話
+          synonyms:
+          - Story of a Small Senior in My Company
+          - My Company's Small Senpai
+          - My Tiny Senpai From Work
+          - A Veterana Pitica da Firma
+          - รุ่นพี่ตัวน้อยดูท่าจะตกหลุมรัก
+          - МОЯ НЕВЫСОКАЯ КОЛЛЕГА
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: SUMMER
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 7
+            day: 2
+          endDate:
+            year: 2023
+            month: 10
+            day: 1
+          averageScore: 67
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

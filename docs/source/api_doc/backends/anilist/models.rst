@@ -45,7 +45,7 @@ AnilistAiringSchedule
 -----------------------------------------------------
 
 .. autoclass:: AnilistAiringSchedule
-    :members: id,airingAt,episode,timeUntilAiring,media_id,media_title_romaji,source_tag
+    :members: to_common,id,airingAt,episode,timeUntilAiring,media_id,media_title_romaji,raw_payload,source_tag
 
 
 AnilistReview

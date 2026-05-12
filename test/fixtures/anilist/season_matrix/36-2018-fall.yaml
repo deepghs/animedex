@@ -1,0 +1,680 @@
+metadata:
+  captured_at: '2026-05-11T11:33:58Z'
+  label: 2018-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2018
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:57 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '16'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 101291
+          idMal: 37450
+          title:
+            romaji: Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai
+            english: Rascal Does Not Dream of Bunny Girl Senpai
+            native: 青春ブタ野郎はバニーガール先輩の夢を見ない
+          synonyms:
+          - AoButa
+          - 青春猪头少年不会梦到兔女郎学姐
+          - Негодник, которому не снилась девушка-кролик
+          - Этот глупый свин не понимает мечту девочки-зайки
+          - 青ブタ
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 4
+          endDate:
+            year: 2018
+            month: 12
+            day: 27
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 101280
+          idMal: 37430
+          title:
+            romaji: Tensei Shitara Slime Datta Ken
+            english: That Time I Got Reincarnated as a Slime
+            native: 転生したらスライムだった件
+          synonyms:
+          - 転スラ
+          - TenSura
+          - Vita da Slime
+          - Moi, quand je me réincarne en Slime
+          - 关于我转生变成史莱姆这档事
+          - เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว
+          - Meine Wiedergeburt als Schleim in einer anderen Welt
+          - О моём перерождении в слизь
+          - TTIGRAAS
+          - Lúc đó tôi đã chuyển sinh thành Slime
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 2
+          endDate:
+            year: 2019
+            month: 3
+            day: 19
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 101165
+          idMal: 37349
+          title:
+            romaji: Goblin Slayer
+            english: GOBLIN SLAYER
+            native: ゴブリンスレイヤー
+          synonyms:
+          - ก็อบลิน สเลเยอร์
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 7
+          endDate:
+            year: 2018
+            month: 12
+            day: 30
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 102883
+          idMal: 37991
+          title:
+            romaji: 'JoJo no Kimyou na Bouken: Ougon no Kaze'
+            english: 'JoJo''s Bizarre Adventure: Golden Wind'
+            native: ジョジョの奇妙な冒険 黄金の風
+          synonyms:
+          - JoJo's Bizarre Adventure Part 5
+          - 'JoJo''s Bizarre Adventure: Vento Aureo'
+          - 'Le Bizzarre Avventure Di GioGio: Vento Aureo'
+          - 'مغامرات جوجو العجيبة: الرياح الذهبية'
+          - 'Невероятные приключения ДжоДжо: Золотой ветер'
+          status: FINISHED
+          format: TV
+          episodes: 39
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 6
+          endDate:
+            year: 2019
+            month: 7
+            day: 28
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 100182
+          idMal: 36474
+          title:
+            romaji: 'Sword Art Online: Alicization'
+            english: 'Sword Art Online: Alicization'
+            native: ソードアート・オンライン アリシゼーション
+          synonyms:
+          - SAOIII
+          - SAO3
+          - Alicization
+          - Sword Art Online III
+          - 'ซอร์ดอาร์ตออนไลน์: Alicization'
+          - ซอร์ดอาร์ตออนไลน์ ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 7
+          endDate:
+            year: 2019
+            month: 3
+            day: 31
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 102351
+          idMal: 37799
+          title:
+            romaji: Tokyo Ghoul:re 2
+            english: Tokyo Ghoul:re 2
+            native: 東京喰種-トーキョーグール-:re 2
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 9
+          endDate:
+            year: 2018
+            month: 12
+            day: 25
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 103871
+          idMal: 37976
+          title:
+            romaji: Zombie Land Saga
+            english: ZOMBIE LAND SAGA
+            native: ゾンビランドサガ
+          synonyms:
+          - Zombieland Saga
+          - 佐贺偶像是传奇
+          - Зомбилэнд-Сага
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 4
+          endDate:
+            year: 2018
+            month: 12
+            day: 20
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 99749
+          idMal: 35972
+          title:
+            romaji: FAIRY TAIL (2018)
+            english: Fairy Tail Final Season
+            native: FAIRY TAIL (2018)
+          synonyms:
+          - Fairy Tail 3
+          - Fairy Tail Series 3
+          - フェアリーテイル (2018)
+          status: FINISHED
+          format: TV
+          episodes: 51
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 7
+          endDate:
+            year: 2019
+            month: 9
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 101573
+          idMal: 37786
+          title:
+            romaji: Yagate Kimi ni Naru
+            english: Bloom Into You
+            native: やがて君になる
+          synonyms:
+          - YagaKimi
+          - สุดท้ายก็คือเธอ
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 5
+          endDate:
+            year: 2018
+            month: 12
+            day: 28
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 101302
+          idMal: 36946
+          title:
+            romaji: 'Dragon Ball Super: Broly'
+            english: 'Dragon Ball Super: Broly'
+            native: ドラゴンボール超 ブロリー
+          synonyms:
+          - 'Драконий жемчуг: Супер — Броли'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 12
+            day: 14
+          endDate:
+            year: 2018
+            month: 12
+            day: 14
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 101310
+          idMal: 37475
+          title:
+            romaji: Kishuku Gakkou no Juliet
+            english: Boarding School Juliet
+            native: 寄宿学校のジュリエット
+          synonyms:
+          - To LOVE, or not to LOVE
+          - JULIET NO INTERNATO
+          - รักลับๆ ข้ามหอของนายหมากับน้องแมว
+          - Juliet en el internado
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 6
+          endDate:
+            year: 2018
+            month: 12
+            day: 22
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 100049
+          idMal: 36286
+          title:
+            romaji: Re:Zero kara Hajimeru Isekai Seikatsu OVAs
+            english: Re:ZERO -Starting Life in Another World- OVAs
+            native: Re:ゼロから始める異世界生活 OVAs
+          synonyms:
+          - Re:ZERO -Starting Life in Another World- Memory Snow
+          - Re:ZERO -Starting Life in Another World- The Frozen Bond
+          - Re:Zero kara Hajimeru Isekai Seikatsu - Memory Snow
+          - 'Re:Zero kara Hajimeru Isekai Seikatsu: Hyouketsu no Kizuna'
+          - Re:ゼロから始める異世界生活 Memory Snow
+          - Re:ゼロから始める異世界生活 氷結の絆
+          - Re:Zero รีเซทชีวิต ฝ่าวิกฤตต่างโลก Memory Snow
+          - Re:Zero รีเซทชีวิต ฝ่าวิกฤตต่างโลก The Frozen Bond
+          - Re:Zero — жизнь с нуля в другом мире OVA. Ледяные узы
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 6
+          endDate:
+            year: 2019
+            month: 11
+            day: 8
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 99424
+          idMal: 35847
+          title:
+            romaji: SSSS.GRIDMAN
+            english: SSSS.GRIDMAN
+            native: SSSS.GRIDMAN
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 7
+          endDate:
+            year: 2018
+            month: 12
+            day: 23
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 101316
+          idMal: 37497
+          title:
+            romaji: Irozuku Sekai no Ashita kara
+            english: 'IRODUKU: The World in Colors'
+            native: 色づく世界の明日から
+          synonyms:
+          - So Many Colors In The Future What A Wonderful World
+          - Iroduku
+          - 'IRODUKU: O Mundo em Cores'
+          - 'IRODUKU: Le Monde en couleur'
+          - 'IRODUKU: El mundo en colores'
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 6
+          endDate:
+            year: 2018
+            month: 12
+            day: 29
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 101903
+          idMal: 37965
+          title:
+            romaji: Kaze ga Tsuyoku Fuiteiru
+            english: Run with the Wind
+            native: 風が強く吹いている
+          synonyms:
+          - KazeTsuyo
+          - В ногу с ветром
+          status: FINISHED
+          format: TV
+          episodes: 23
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 3
+          endDate:
+            year: 2019
+            month: 3
+            day: 27
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 104580
+          idMal: 38249
+          title:
+            romaji: 'Saiki Kusuo no Ψ-nan: Kanketsu-hen'
+            english: The Disastrous Life of Saiki K. Season 3
+            native: 斉木楠雄のΨ難 完結編
+          synonyms:
+          - Saiki Kusuo no Psi Nan 3
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 12
+            day: 28
+          endDate:
+            year: 2018
+            month: 12
+            day: 28
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 100185
+          idMal: 36432
+          title:
+            romaji: Toaru Majutsu no Index III
+            english: A Certain Magical Index III
+            native: とある魔術の禁書目録III
+          synonyms:
+          - Toaru Majutsu no Index 3
+          - 魔法禁书目录第三季
+          - 魔法禁书目录 3
+          - อินเดกซ์คัมภีร์คาถาต้องห้าม ภาค 3
+          - Cấm thư ma thuật Index III
+          status: FINISHED
+          format: TV
+          episodes: 26
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 5
+          endDate:
+            year: 2019
+            month: 4
+            day: 5
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 101024
+          idMal: 37202
+          title:
+            romaji: Radiant
+            english: RADIANT
+            native: ラディアン
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 21
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 6
+          endDate:
+            year: 2019
+            month: 2
+            day: 23
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 102977
+          idMal: 37989
+          title:
+            romaji: Golden Kamuy 2nd Season
+            english: Golden Kamuy Season 2
+            native: ゴールデンカムイ 第二期
+          synonyms:
+          - Golden Kamui 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 8
+          endDate:
+            year: 2018
+            month: 12
+            day: 24
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 100402
+          idMal: 36653
+          title:
+            romaji: 'Tsurune: Kazemai Koukou Kyuudou-bu'
+            english: Tsurune
+            native: ツルネ ―風舞高校弓道部―
+          synonyms:
+          - Tsurune - Il tiro che unisce
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 22
+          endDate:
+            year: 2019
+            month: 1
+            day: 21
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 101381
+          idMal: 37597
+          title:
+            romaji: Dakaretai Otoko 1-i ni Odosarete Imasu.
+            english: DAKAICHI -I'm being harassed by the sexiest man of the year-
+            native: 抱かれたい男1位に脅されています。
+          synonyms:
+          - 我让最想被拥抱的男人给威胁了
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 6
+          endDate:
+            year: 2018
+            month: 12
+            day: 29
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 100382
+          idMal: 36632
+          title:
+            romaji: Ore ga Suki nano wa Imouto dakedo Imouto ja Nai
+            english: My Sister, My Writer
+            native: 俺が好きなのは妹だけど妹じゃない
+          synonyms:
+          - ImoImo
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 10
+          endDate:
+            year: 2018
+            month: 12
+            day: 19
+          averageScore: 44
+          nextAiringEpisode: null
+        - id: 100093
+          idMal: 36317
+          title:
+            romaji: Gaikotsu Shotenin Honda-san
+            english: Skull-face Bookseller Honda-san
+            native: ガイコツ書店員本田さん
+          synonyms:
+          - Gaikotsu Shotenin Honda san
+          - Gaikotsu Syotenin Honda san
+          status: FINISHED
+          format: TV_SHORT
+          episodes: 12
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 8
+          endDate:
+            year: 2018
+            month: 12
+            day: 24
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 104243
+          idMal: null
+          title:
+            romaji: Satsuriku no Tenshi (ONA)
+            english: Angels of Death (ONA)
+            native: 殺戮の天使 (ONA)
+          synonyms: []
+          status: FINISHED
+          format: ONA
+          episodes: 4
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 5
+          endDate:
+            year: 2018
+            month: 10
+            day: 26
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 101336
+          idMal: 37447
+          title:
+            romaji: Karakuri Circus
+            english: Karakuri Circus
+            native: からくりサーカス
+          synonyms:
+          - Le Cirque de Karakuri
+          status: FINISHED
+          format: TV
+          episodes: 36
+          season: FALL
+          seasonYear: 2018
+          startDate:
+            year: 2018
+            month: 10
+            day: 11
+          endDate:
+            year: 2019
+            month: 6
+            day: 27
+          averageScore: 67
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

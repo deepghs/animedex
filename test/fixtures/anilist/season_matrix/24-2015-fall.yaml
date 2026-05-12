@@ -1,0 +1,664 @@
+metadata:
+  captured_at: '2026-05-11T11:33:22Z'
+  label: 2015-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2015
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:33:22 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '28'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 21087
+          idMal: 30276
+          title:
+            romaji: One Punch Man
+            english: One-Punch Man
+            native: ワンパンマン
+          synonyms:
+          - OPM
+          - Wanpanman
+          - איש האגרוף הבודד
+          - 一拳超人
+          - วันพันช์แมน
+          - Jagoan Sekali Pukul S1
+          - رجل اللكمة الواحدة
+          - ون بنش مان
+          - Ванпанчмен
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 5
+          endDate:
+            year: 2015
+            month: 12
+            day: 21
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 20992
+          idMal: 28891
+          title:
+            romaji: Haikyuu!! 2nd Season
+            english: HAIKYU!! 2nd Season
+            native: ハイキュー!! セカンドシーズン
+          synonyms:
+          - ไฮคิว!! คู่ตบฟ้าประทาน ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 4
+          endDate:
+            year: 2016
+            month: 3
+            day: 26
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 21128
+          idMal: 30503
+          title:
+            romaji: Noragami ARAGOTO
+            english: Noragami Aragoto
+            native: ノラガミ ARAGOTO
+          synonyms:
+          - โนรางามิ เทวดาขาจร ภาค 2
+          - ノラガミ アラゴト
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 3
+          endDate:
+            year: 2015
+            month: 12
+            day: 26
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 21092
+          idMal: 30296
+          title:
+            romaji: Rakudai Kishi no Cavalry
+            english: Chivalry of a Failed Knight
+            native: 落第騎士の英雄譚（キャバルリィ）
+          synonyms:
+          - Rakudai Kishi no Eiyuutan
+          - A tale of worst one
+          - เจ้าหญิงสีชาดกับอัศวินดาบไร้เทียมทาน
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 3
+          endDate:
+            year: 2015
+            month: 12
+            day: 19
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 20993
+          idMal: 28927
+          title:
+            romaji: 'Owari no Seraph: Nagoya Kessen-hen'
+            english: 'Seraph of the End: Battle in Nagoya'
+            native: 終わりのセラフ　名古屋決戦編
+          synonyms:
+          - OwaSera 2
+          - 'Seraph of the End: El Reino de los Vampiros'
+          - เทวทูตแห่งโลกมืด ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 10
+          endDate:
+            year: 2015
+            month: 12
+            day: 26
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21131
+          idMal: 30544
+          title:
+            romaji: Gakusen Toshi Asterisk
+            english: The Asterisk War
+            native: 学戦都市アスタリスク
+          synonyms:
+          - Academy Battle City Asterisk
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 3
+          endDate:
+            year: 2015
+            month: 12
+            day: 19
+          averageScore: 65
+          nextAiringEpisode: null
+        - id: 21262
+          idMal: 31181
+          title:
+            romaji: Owarimonogatari
+            english: Owarimonogatari
+            native: 終物語
+          synonyms:
+          - End Tale
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 4
+          endDate:
+            year: 2015
+            month: 12
+            day: 20
+          averageScore: 85
+          nextAiringEpisode: null
+        - id: 21386
+          idMal: 31704
+          title:
+            romaji: 'One Punch Man: Road to Hero'
+            english: 'One-Punch Man: Road to Hero'
+            native: ワンパンマン「ロード・トゥ・ヒーロー」
+          synonyms:
+          - 'One Punch Man OVA 1 '
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 12
+            day: 4
+          endDate:
+            year: 2015
+            month: 12
+            day: 4
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21110
+          idMal: 30363
+          title:
+            romaji: 'Shinmai Maou no Testament: BURST'
+            english: The Testament of Sister New Devil BURST
+            native: 新妹魔王の契約者 BURST
+          synonyms:
+          - Shinmai Maou no Keiyakusha BURST
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 10
+          endDate:
+            year: 2015
+            month: 12
+            day: 12
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 21624
+          idMal: 32188
+          title:
+            romaji: 'Steins;Gate: Kyoukaimenjou no Missing Link - Divide By Zero'
+            english: 'Steins;Gate 0: 23β -Divide by Zero-'
+            native: シュタインズ・ゲート 境界面上のミッシングリンク -Divide By Zero-
+          synonyms:
+          - 'Steins;Gate: Episode 23 (β)'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 12
+            day: 3
+          endDate:
+            year: 2015
+            month: 12
+            day: 3
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 20704
+          idMal: 24133
+          title:
+            romaji: Taimadou Gakuen 35 Shiken Shoutai
+            english: 'Anti-Magic Academy: The 35th Test Platoon'
+            native: 対魔導学園35試験小隊
+          synonyms:
+          - หมวดเตรียม 35 ล่าทรชนเวท
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 8
+          endDate:
+            year: 2015
+            month: 12
+            day: 24
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 21281
+          idMal: 31374
+          title:
+            romaji: Shingeki! Kyojin Chuugakkou
+            english: 'Attack on Titan: Junior High'
+            native: 進撃！巨人中学校
+          synonyms:
+          - 'Ataque a los Titanes: Junior High'
+          - ผ่ามัธยมไททัน
+          - ผ่า! มัธยมไททัน
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 4
+          endDate:
+            year: 2015
+            month: 12
+            day: 20
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 21268
+          idMal: 31251
+          title:
+            romaji: 'Kidou Senshi Gundam: Tekketsu no Orphans'
+            english: Mobile Suit GUNDAM Iron Blooded Orphans
+            native: 機動戦士ガンダム 鉄血のオルフェンズ
+          synonyms:
+          - Gundam IBO
+          - G-Tekketsu
+          - 'Gundam: Sirotci s železnou krví'
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 4
+          endDate:
+            year: 2016
+            month: 3
+            day: 27
+          averageScore: 78
+          nextAiringEpisode: null
+        - id: 20771
+          idMal: 25099
+          title:
+            romaji: Ore ga Ojou-sama Gakkou ni "Shomin Sample" Toshite Gets-Sareta Ken
+            english: Shomin Sample
+            native: 俺がお嬢様学校に「庶民サンプル」としてゲッツされた件
+          synonyms:
+          - นายสามัญชนจอมกวน ป่วนหัวใจยัยคุณหนูไฮโซ
+          - Story in Which I Was Kidnapped by a Young Lady's School to be a "Sample of the Common People"
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 7
+          endDate:
+            year: 2015
+            month: 12
+            day: 23
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 20913
+          idMal: 27991
+          title:
+            romaji: 'K: RETURN OF KINGS'
+            english: null
+            native: K RETURN OF KINGS
+          synonyms:
+          - K-Project 2
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 3
+          endDate:
+            year: 2015
+            month: 12
+            day: 26
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21326
+          idMal: 31297
+          title:
+            romaji: 'Tokyo Ghoul: [PINTO]'
+            english: null
+            native: 東京喰種トーキョーグール【PINTO】
+          synonyms:
+          - 'Toukyou Kushu: Pinto'
+          status: FINISHED
+          format: OVA
+          episodes: 1
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 12
+            day: 25
+          endDate:
+            year: 2015
+            month: 12
+            day: 25
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 19489
+          idMal: 19489
+          title:
+            romaji: 'Little Witch Academia: Mahou-jikake no Parade'
+            english: 'Little Witch Academia: The Enchanted Parade'
+            native: リトルウィッチアカデミア 魔法仕掛けのパレード
+          synonyms:
+          - Little Witch Academia Movie
+          - Little Witch Academia 2
+          - LWA Movie
+          - LWA 2
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 9
+          endDate:
+            year: 2015
+            month: 10
+            day: 9
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 21066
+          idMal: 30187
+          title:
+            romaji: Sakurako-san no Ashimoto ni wa Shitai ga Umatteiru
+            english: Beautiful Bones -Sakurako's Investigation-
+            native: 櫻子さんの足下には死体が埋まっている
+          synonyms:
+          - A Corpse is Buried Under Sakurako's Feet.
+          - Труп под ногами Сакурако
+          - Трупи під ногами Сакурако
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 8
+          endDate:
+            year: 2015
+            month: 12
+            day: 24
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 21190
+          idMal: 28621
+          title:
+            romaji: 'Subete ga F ni Naru: THE PERFECT INSIDER'
+            english: The Perfect Insider
+            native: すべてがFになる THE PERFECT INSIDER
+          synonyms:
+          - 'Everything Becomes F: The Perfect Insider'
+          - O Infiltrado Perfeito
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 9
+          endDate:
+            year: 2015
+            month: 12
+            day: 18
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 119941
+          idMal: 30885
+          title:
+            romaji: Noragami ARAGOTO OVA
+            english: null
+            native: ノラガミ ARAGOTO OAD
+          synonyms:
+          - ノラガミ アラゴト OAD
+          status: FINISHED
+          format: OVA
+          episodes: 2
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 11
+            day: 17
+          endDate:
+            year: 2016
+            month: 3
+            day: 17
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21261
+          idMal: 31174
+          title:
+            romaji: Osomatsu-san
+            english: Mr. Osomatsu
+            native: おそ松さん
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 6
+          endDate:
+            year: 2016
+            month: 3
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 21356
+          idMal: 31592
+          title:
+            romaji: Pocket Monsters XY&Z
+            english: 'Pokémon the Series: XYZ'
+            native: ポケットモンスター XY&Z
+          synonyms:
+          - Pokémon Seria XYZ
+          status: FINISHED
+          format: TV
+          episodes: 47
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 29
+          endDate:
+            year: 2016
+            month: 10
+            day: 27
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 21138
+          idMal: 30370
+          title:
+            romaji: Akatsuki no Yona OVA
+            english: Yona of the Dawn OVA
+            native: 暁のヨナ OVA
+          synonyms:
+          - AkaYona OVA
+          - 'Akatsuki no Yona: Sono Se ni wa'
+          - 'Akatsuki no Yona: Zeno-hen'
+          - 暁のヨナ その背には
+          - Йона на заре
+          - Рассвет Йоны
+          - Ёна на заре
+          status: FINISHED
+          format: OVA
+          episodes: 3
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 9
+            day: 18
+          endDate:
+            year: 2016
+            month: 12
+            day: 20
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 21318
+          idMal: 31389
+          title:
+            romaji: 'Fate/stay night: Unlimited Blade Works 2nd Season - sunny day'
+            english: 'Fate/stay night: Unlimited Blade Works 2nd Season - sunny day'
+            native: Fate/stay night [Unlimited Blade Works] 2ndシーズン - sunny day
+          synonyms:
+          - フェイト/ステイナイト Unlimited Blade Works 2ndシーズン - sunny day
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 7
+          endDate:
+            year: 2015
+            month: 10
+            day: 7
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 21116
+          idMal: 30385
+          title:
+            romaji: 'Valkyrie Drive: Mermaid'
+            english: 'Valkyrie Drive: Mermaid'
+            native: ヴァルキリードライヴ マーメイド
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2015
+          startDate:
+            year: 2015
+            month: 10
+            day: 10
+          endDate:
+            year: 2015
+            month: 12
+            day: 26
+          averageScore: 55
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

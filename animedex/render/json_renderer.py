@@ -67,6 +67,12 @@ def render_json(model: AnimedexModel, *, include_source: bool = True) -> str:
             for entry in srcs:
                 if isinstance(entry, dict) and entry.get("backend"):
                     sources.append(entry["backend"])
+        elif isinstance(srcs, dict):
+            for backend, entry in srcs.items():
+                if isinstance(entry, dict) and entry.get("backend"):
+                    sources.append(entry["backend"])
+                elif backend:
+                    sources.append(backend)
         payload["_meta"] = {"sources_consulted": sources}
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 

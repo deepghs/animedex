@@ -1,0 +1,501 @@
+metadata:
+  captured_at: '2026-05-11T14:01:25Z'
+  label: schedule-sunday
+  backend: jikan
+  path_slug: schedules
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/schedules?filter=sunday&limit=5
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Mon, 11 May 2026 14:01:25 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:schedules:de896c98dcdeb4d8c1710c47a8a5801e289037da
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 5
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 5
+        total: 24
+        per_page: 5
+    data:
+    - mal_id: 63383
+      url: https://myanimelist.net/anime/63383/Kumarba_Season_3
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1148/155162.jpg
+          small_image_url: https://myanimelist.net/images/anime/1148/155162t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1148/155162l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1148/155162.webp
+          small_image_url: https://myanimelist.net/images/anime/1148/155162t.webp
+          large_image_url: https://myanimelist.net/images/anime/1148/155162l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/ZMbzOD0r_Us?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Kumarba Season 3
+      - type: Japanese
+        title: クマーバ シーズン3
+      title: Kumarba Season 3
+      title_english: null
+      title_japanese: クマーバ シーズン3
+      title_synonyms: []
+      type: TV
+      source: Other
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-12T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 12
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 12, 2026 to ?
+      duration: 1 min
+      rating: PG - Children
+      score: null
+      scored_by: null
+      rank: 18175
+      popularity: 25451
+      members: 141
+      favorites: 0
+      synopsis: Third season of Kumarba.
+      background: ''
+      season: spring
+      year: 2026
+      broadcast:
+        day: Sundays
+        time: 07:00
+        timezone: Asia/Tokyo
+        string: Sundays at 07:00 (JST)
+      producers: []
+      licensors: []
+      studios:
+      - mal_id: 3281
+        type: anime
+        name: Akatsuki Media Studio
+        url: https://myanimelist.net/anime/producer/3281/Akatsuki_Media_Studio
+      genres: []
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 15
+        type: anime
+        name: Kids
+        url: https://myanimelist.net/anime/genre/15/Kids
+    - mal_id: 62083
+      url: https://myanimelist.net/anime/62083/Tomica_to_Tom_TV
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1521/151096.jpg
+          small_image_url: https://myanimelist.net/images/anime/1521/151096t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1521/151096l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1521/151096.webp
+          small_image_url: https://myanimelist.net/images/anime/1521/151096t.webp
+          large_image_url: https://myanimelist.net/images/anime/1521/151096l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/Lgj9wFPjmEw?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Tomica to Tom (TV)
+      - type: Synonym
+        title: Tomica and Tom (TV)
+      - type: Japanese
+        title: トミカとトム
+      - type: English
+        title: Tomica & Tom (TV)
+      title: Tomica to Tom (TV)
+      title_english: Tomica & Tom (TV)
+      title_japanese: トミカとトム
+      title_synonyms:
+      - Tomica and Tom (TV)
+      type: TV
+      source: Other
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2025-07-20T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 20
+            month: 7
+            year: 2025
+          to:
+            day: null
+            month: null
+            year: null
+        string: Jul 20, 2025 to ?
+      duration: 2 min
+      rating: G - All Ages
+      score: null
+      scored_by: null
+      rank: 21090
+      popularity: 23806
+      members: 188
+      favorites: 0
+      synopsis: |-
+        After you fall asleep or while you're out, what are Tomica and Tom doing? Are they sleeping peacefully in the toy box? Are they just sitting there on the floor? Or maybe... No one knows the story of Tomica and Tom, but today we'll let you in on a special secret.
+
+        (Source: Official site, translated)
+      background: ''
+      season: summer
+      year: 2025
+      broadcast:
+        day: Sundays
+        time: 08:30
+        timezone: Asia/Tokyo
+        string: Sundays at 08:30 (JST)
+      producers: []
+      licensors: []
+      studios:
+      - mal_id: 3046
+        type: anime
+        name: Tsumupapa
+        url: https://myanimelist.net/anime/producer/3046/Tsumupapa
+      genres:
+      - mal_id: 36
+        type: anime
+        name: Slice of Life
+        url: https://myanimelist.net/anime/genre/36/Slice_of_Life
+      explicit_genres: []
+      themes:
+      - mal_id: 51
+        type: anime
+        name: Anthropomorphic
+        url: https://myanimelist.net/anime/genre/51/Anthropomorphic
+      demographics:
+      - mal_id: 15
+        type: anime
+        name: Kids
+        url: https://myanimelist.net/anime/genre/15/Kids
+    - mal_id: 62933
+      url: https://myanimelist.net/anime/62933/Shou_3_Ashibe_QQ_Goma-chan
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1899/155697.jpg
+          small_image_url: https://myanimelist.net/images/anime/1899/155697t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1899/155697l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1899/155697.webp
+          small_image_url: https://myanimelist.net/images/anime/1899/155697t.webp
+          large_image_url: https://myanimelist.net/images/anime/1899/155697l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Shou 3 Ashibe QQ Goma-chan
+      - type: Japanese
+        title: 小３アシベ QQゴマちゃん
+      title: Shou 3 Ashibe QQ Goma-chan
+      title_english: null
+      title_japanese: 小３アシベ QQゴマちゃん
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-12T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 12
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 12, 2026 to ?
+      duration: 2 min
+      rating: G - All Ages
+      score: null
+      scored_by: null
+      rank: 20444
+      popularity: 22155
+      members: 263
+      favorites: 1
+      synopsis: null
+      background: ''
+      season: spring
+      year: 2026
+      broadcast:
+        day: Sundays
+        time: 07:00
+        timezone: Asia/Tokyo
+        string: Sundays at 07:00 (JST)
+      producers: []
+      licensors: []
+      studios:
+      - mal_id: 276
+        type: anime
+        name: DLE
+        url: https://myanimelist.net/anime/producer/276/DLE
+      genres:
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      explicit_genres: []
+      themes:
+      - mal_id: 71
+        type: anime
+        name: Pets
+        url: https://myanimelist.net/anime/genre/71/Pets
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+    - mal_id: 63352
+      url: https://myanimelist.net/anime/63352/Onegai_AiPri
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1705/155680.jpg
+          small_image_url: https://myanimelist.net/images/anime/1705/155680t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1705/155680l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1705/155680.webp
+          small_image_url: https://myanimelist.net/images/anime/1705/155680t.webp
+          large_image_url: https://myanimelist.net/images/anime/1705/155680l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/j5MgjyhhUBc?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Onegai AiPri
+      - type: Synonym
+        title: +Himitsu no AiPri 3rd Season
+      - type: Japanese
+        title: おねがいアイプリ
+      title: Onegai AiPri
+      title_english: null
+      title_japanese: おねがいアイプリ
+      title_synonyms:
+      - +Himitsu no AiPri 3rd Season
+      type: TV
+      source: Game
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2026-04-05T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 5
+            month: 4
+            year: 2026
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 5, 2026 to ?
+      duration: 24 min
+      rating: PG - Children
+      score: null
+      scored_by: null
+      rank: 19316
+      popularity: 15164
+      members: 1032
+      favorites: 5
+      synopsis: "The new anime's story centers on Konomi Inori, a first year middle school student who just moved to the town\
+        \ of Onegai. At the town's plaza, Konomi prayed to the goddess statue to give her a chance to be an AiPri. After she\
+        \ prayed, she accidentally meets the famous AiPri Aoi Yumemiya and a mysterious talking stuffed toy with her named\
+        \ Fortu. It turns out that Fortu is looking for an AiPri who can make their wish come true, and when Konomi opened\
+        \ the special mirror pact that Aoi handed her, she gets the AiPri debut that she prayed for. \n\n(Source: ANN)"
+      background: ''
+      season: spring
+      year: 2026
+      broadcast:
+        day: Sundays
+        time: 09:30
+        timezone: Asia/Tokyo
+        string: Sundays at 09:30 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 1284
+        type: anime
+        name: Avex Pictures
+        url: https://myanimelist.net/anime/producer/1284/Avex_Pictures
+      - mal_id: 1430
+        type: anime
+        name: Shogakukan
+        url: https://myanimelist.net/anime/producer/1430/Shogakukan
+      licensors: []
+      studios:
+      - mal_id: 28
+        type: anime
+        name: OLM
+        url: https://myanimelist.net/anime/producer/28/OLM
+      - mal_id: 1025
+        type: anime
+        name: Dongwoo A&E
+        url: https://myanimelist.net/anime/producer/1025/Dongwoo_A_E
+      genres: []
+      explicit_genres: []
+      themes:
+      - mal_id: 60
+        type: anime
+        name: Idols (Female)
+        url: https://myanimelist.net/anime/genre/60/Idols_Female
+      - mal_id: 19
+        type: anime
+        name: Music
+        url: https://myanimelist.net/anime/genre/19/Music
+      demographics: []
+    - mal_id: 38776
+      url: https://myanimelist.net/anime/38776/Manul_no_Yuube
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1980/96936.jpg
+          small_image_url: https://myanimelist.net/images/anime/1980/96936t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1980/96936l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1980/96936.webp
+          small_image_url: https://myanimelist.net/images/anime/1980/96936t.webp
+          large_image_url: https://myanimelist.net/images/anime/1980/96936l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Manul no Yuube
+      - type: Japanese
+        title: マヌ～ルのゆうべ
+      title: Manul no Yuube
+      title_english: null
+      title_japanese: マヌ～ルのゆうべ
+      title_synonyms: []
+      type: TV
+      source: Web manga
+      episodes: null
+      status: Currently Airing
+      airing: true
+      aired:
+        from: '2018-11-11T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 11
+            month: 11
+            year: 2018
+          to:
+            day: null
+            month: null
+            year: null
+        string: Nov 11, 2018 to ?
+      duration: 1 min
+      rating: PG-13 - Teens 13 or older
+      score: null
+      scored_by: null
+      rank: 18527
+      popularity: 14896
+      members: 1112
+      favorites: 1
+      synopsis: Within the nature "Darwin Kita! Kikimono Shin Densetsu" program on NHK1.5 airs the short Manul no Yuube, based
+        on a web manga/comic of the same name. It following animal characters who visit the bar Manul no Yuube. The bar is
+        run by the Mama who is a Pallas's cat (Otocolobus manul) and serviced by the hostess Tsunomin who is a Brazilian treehopper
+        (Bocydium globulare).
+      background: ''
+      season: fall
+      year: 2018
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: Sundays at Unknown
+      producers:
+      - mal_id: 111
+        type: anime
+        name: NHK
+        url: https://myanimelist.net/anime/producer/111/NHK
+      licensors: []
+      studios: []
+      genres:
+      - mal_id: 36
+        type: anime
+        name: Slice of Life
+        url: https://myanimelist.net/anime/genre/36/Slice_of_Life
+      explicit_genres: []
+      themes: []
+      demographics: []
+  body_text: null
+  body_b64: null

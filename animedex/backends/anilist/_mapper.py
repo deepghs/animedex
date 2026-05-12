@@ -203,6 +203,7 @@ def map_airing_schedule(payload: Dict[str, Any], src: SourceTag) -> List[Anilist
                 timeUntilAiring=r.get("timeUntilAiring", 0),
                 media_id=media.get("id"),
                 media_title_romaji=title.get("romaji") or title.get("english"),
+                raw_payload=r,
                 source_tag=src,
             )
         )

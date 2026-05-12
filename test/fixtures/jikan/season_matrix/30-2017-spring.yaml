@@ -1,0 +1,3394 @@
+metadata:
+  captured_at: '2026-05-11T11:33:40Z'
+  label: 2017-spring
+  backend: jikan
+  path_slug: season_matrix
+request:
+  method: GET
+  url: https://api.jikan.moe/v4/seasons/2017/spring?limit=25
+  headers:
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body: null
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Server: nginx/1.24.0
+    Date: Mon, 11 May 2026 11:33:39 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: public, s-maxage=86400
+    x-request-fingerprint: request:seasons:63b89ae8b5784c6dbb0c46884ee30faec262d094
+    expires: Fri, 02 Jan 1970 00:00:00 GMT
+    last-modified: Thu, 01 Jan 1970 00:00:00 GMT
+    access-control-allow-origin: '*'
+    Content-Encoding: gzip
+    Vary: Accept-Encoding
+    X-Cache-Status: MISS
+    X-Powered-By: the-power-of-friendship
+  body_json:
+    pagination:
+      last_visible_page: 12
+      has_next_page: true
+      current_page: 1
+      items:
+        count: 25
+        total: 290
+        per_page: 25
+    data:
+    - mal_id: 25777
+      url: https://myanimelist.net/anime/25777/Shingeki_no_Kyojin_Season_2
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/4/84177.jpg
+          small_image_url: https://myanimelist.net/images/anime/4/84177t.jpg
+          large_image_url: https://myanimelist.net/images/anime/4/84177l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/4/84177.webp
+          small_image_url: https://myanimelist.net/images/anime/4/84177t.webp
+          large_image_url: https://myanimelist.net/images/anime/4/84177l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/zLaVP8IhIuc?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Shingeki no Kyojin Season 2
+      - type: Japanese
+        title: 進撃の巨人 Season2
+      - type: English
+        title: Attack on Titan Season 2
+      - type: German
+        title: Attack on Titan – 2. Staffel
+      - type: Spanish
+        title: Ataque a los Titanes Temporada 2
+      - type: French
+        title: L'Attaque des Titans Saison 2
+      title: Shingeki no Kyojin Season 2
+      title_english: Attack on Titan Season 2
+      title_japanese: 進撃の巨人 Season2
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-01T00:00:00+00:00'
+        to: '2017-06-17T00:00:00+00:00'
+        prop:
+          from:
+            day: 1
+            month: 4
+            year: 2017
+          to:
+            day: 17
+            month: 6
+            year: 2017
+        string: Apr 1, 2017 to Jun 17, 2017
+      duration: 24 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 8.54
+      scored_by: 2065392
+      rank: 145
+      popularity: 13
+      members: 3019635
+      favorites: 23098
+      synopsis: |-
+        For centuries, humanity has been hunted by giant, mysterious predators known as the Titans. Three mighty walls—Wall Maria, Rose, and Sheena—provided peace and protection for humanity for over a hundred years. That peace, however, was shattered when the Colossal Titan and Armored Titan appeared and destroyed the outermost wall, Wall Maria. Forced to retreat behind Wall Rose, humanity waited with bated breath for the Titans to reappear and destroy their safe haven once more.
+
+        In Shingeki no Kyojin Season 2, Eren Yeager and others of the 104th Training Corps have just begun to become full members of the Survey Corps. As they ready themselves to face the Titans once again, their preparations are interrupted by the invasion of Wall Rose—but all is not as it seems as more mysteries are unraveled. As the Survey Corps races to save the wall, they uncover more about the invading Titans and the dark secrets of their own members.
+
+        [Written by MAL Rewrite]
+      background: Shingeki no Kyojin Season 2 adapts content from volumes 9-12 of Hajime Isayama's award-winning manga.
+      season: spring
+      year: 2017
+      broadcast:
+        day: Saturdays
+        time: '22:00'
+        timezone: Asia/Tokyo
+        string: Saturdays at 22:00 (JST)
+      producers:
+      - mal_id: 10
+        type: anime
+        name: Production I.G
+        url: https://myanimelist.net/anime/producer/10/Production_IG
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 143
+        type: anime
+        name: Mainichi Broadcasting System
+        url: https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System
+      - mal_id: 144
+        type: anime
+        name: Pony Canyon
+        url: https://myanimelist.net/anime/producer/144/Pony_Canyon
+      - mal_id: 159
+        type: anime
+        name: Kodansha
+        url: https://myanimelist.net/anime/producer/159/Kodansha
+      - mal_id: 1499
+        type: anime
+        name: Techno Sound
+        url: https://myanimelist.net/anime/producer/1499/Techno_Sound
+      - mal_id: 1557
+        type: anime
+        name: Pony Canyon Enterprises
+        url: https://myanimelist.net/anime/producer/1557/Pony_Canyon_Enterprises
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 858
+        type: anime
+        name: Wit Studio
+        url: https://myanimelist.net/anime/producer/858/Wit_Studio
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 41
+        type: anime
+        name: Suspense
+        url: https://myanimelist.net/anime/genre/41/Suspense
+      explicit_genres: []
+      themes:
+      - mal_id: 58
+        type: anime
+        name: Gore
+        url: https://myanimelist.net/anime/genre/58/Gore
+      - mal_id: 38
+        type: anime
+        name: Military
+        url: https://myanimelist.net/anime/genre/38/Military
+      - mal_id: 76
+        type: anime
+        name: Survival
+        url: https://myanimelist.net/anime/genre/76/Survival
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 33486
+      url: https://myanimelist.net/anime/33486/Boku_no_Hero_Academia_2nd_Season
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/12/85221.jpg
+          small_image_url: https://myanimelist.net/images/anime/12/85221t.jpg
+          large_image_url: https://myanimelist.net/images/anime/12/85221l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/12/85221.webp
+          small_image_url: https://myanimelist.net/images/anime/12/85221t.webp
+          large_image_url: https://myanimelist.net/images/anime/12/85221l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/HoIOW6no_Ew?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Boku no Hero Academia 2nd Season
+      - type: Japanese
+        title: 僕のヒーローアカデミア
+      - type: English
+        title: My Hero Academia Season 2
+      - type: German
+        title: My Hero Academia – 2. Staffel
+      - type: Spanish
+        title: My Hero Academia Temporada 2
+      - type: French
+        title: My Hero Academia Saison 2
+      title: Boku no Hero Academia 2nd Season
+      title_english: My Hero Academia Season 2
+      title_japanese: 僕のヒーローアカデミア
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 25
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-01T00:00:00+00:00'
+        to: '2017-09-30T00:00:00+00:00'
+        prop:
+          from:
+            day: 1
+            month: 4
+            year: 2017
+          to:
+            day: 30
+            month: 9
+            year: 2017
+        string: Apr 1, 2017 to Sep 30, 2017
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.05
+      scored_by: 1854244
+      rank: 666
+      popularity: 16
+      members: 2733155
+      favorites: 16884
+      synopsis: |-
+        At UA Academy, not even a violent attack can disrupt their most prestigious event: the school sports festival. Renowned across Japan, this festival is an opportunity for aspiring heroes to showcase their abilities, both to the public and potential recruiters.
+
+        However, the path to glory is never easy, especially for Izuku Midoriya—whose quirk possesses great raw power but is also cripplingly inefficient. Pitted against his talented classmates, such as the fire and ice wielding Shouto Todoroki, Izuku must utilize his sharp wits and master his surroundings to achieve victory and prove to the world his worth.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Saturdays
+        time: '17:30'
+        timezone: Asia/Tokyo
+        string: Saturdays at 17:30 (JST)
+      producers:
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 76
+        type: anime
+        name: Yomiuri Telecasting
+        url: https://myanimelist.net/anime/producer/76/Yomiuri_Telecasting
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 757
+        type: anime
+        name: Sony Music Entertainment
+        url: https://myanimelist.net/anime/producer/757/Sony_Music_Entertainment
+      - mal_id: 1143
+        type: anime
+        name: TOHO animation
+        url: https://myanimelist.net/anime/producer/1143/TOHO_animation
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 4
+        type: anime
+        name: Bones
+        url: https://myanimelist.net/anime/producer/4/Bones
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      - mal_id: 31
+        type: anime
+        name: Super Power
+        url: https://myanimelist.net/anime/genre/31/Super_Power
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 34566
+      url: https://myanimelist.net/anime/34566/Boruto__Naruto_Next_Generations
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1091/99847.jpg
+          small_image_url: https://myanimelist.net/images/anime/1091/99847t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1091/99847l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1091/99847.webp
+          small_image_url: https://myanimelist.net/images/anime/1091/99847t.webp
+          large_image_url: https://myanimelist.net/images/anime/1091/99847l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Boruto: Naruto Next Generations'
+      - type: Japanese
+        title: BORUTO -NARUTO NEXT GENERATIONS-
+      - type: English
+        title: 'Boruto: Naruto Next Generations'
+      title: 'Boruto: Naruto Next Generations'
+      title_english: 'Boruto: Naruto Next Generations'
+      title_japanese: BORUTO -NARUTO NEXT GENERATIONS-
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 293
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-05T00:00:00+00:00'
+        to: '2023-03-26T00:00:00+00:00'
+        prop:
+          from:
+            day: 5
+            month: 4
+            year: 2017
+          to:
+            day: 26
+            month: 3
+            year: 2023
+        string: Apr 5, 2017 to Mar 26, 2023
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 5.98
+      scored_by: 478353
+      rank: 11079
+      popularity: 217
+      members: 931793
+      favorites: 7446
+      synopsis: |-
+        Following the successful end of the Fourth Shinobi World War, Konohagakure has been enjoying a period of peace, prosperity, and extraordinary technological advancement. This is all due to the efforts of the Allied Shinobi Forces and the village's Seventh Hokage, Naruto Uzumaki. Now resembling a modern metropolis, Konohagakure has changed, particularly the life of a shinobi. Under the watchful eye of Naruto and his old comrades, a new generation of shinobi has stepped up to learn the ways of the ninja.
+
+        Boruto Uzumaki is often the center of attention as the son of the Seventh Hokage. Despite having inherited Naruto's boisterous and stubborn demeanor, Boruto is considered a prodigy and is able to unleash his potential with the help of supportive friends and family. Unfortunately, this has only worsened his arrogance and his desire to surpass Naruto which, along with his father's busy lifestyle, has strained their relationship. However, a sinister force brewing within the village may threaten Boruto's carefree life.
+
+        New friends and familiar faces join Boruto as a new story begins.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Sundays
+        time: '17:30'
+        timezone: Asia/Tokyo
+        string: Sundays at 17:30 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 211
+        type: anime
+        name: Rakuonsha
+        url: https://myanimelist.net/anime/producer/211/Rakuonsha
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      licensors:
+      - mal_id: 119
+        type: anime
+        name: VIZ Media
+        url: https://myanimelist.net/anime/producer/119/VIZ_Media
+      studios:
+      - mal_id: 1
+        type: anime
+        name: Studio Pierrot
+        url: https://myanimelist.net/anime/producer/1/Studio_Pierrot
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes:
+      - mal_id: 17
+        type: anime
+        name: Martial Arts
+        url: https://myanimelist.net/anime/genre/17/Martial_Arts
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 32951
+      url: https://myanimelist.net/anime/32951/Rokudenashi_Majutsu_Koushi_to_Akashic_Records
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/8/85593.jpg
+          small_image_url: https://myanimelist.net/images/anime/8/85593t.jpg
+          large_image_url: https://myanimelist.net/images/anime/8/85593l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/8/85593.webp
+          small_image_url: https://myanimelist.net/images/anime/8/85593t.webp
+          large_image_url: https://myanimelist.net/images/anime/8/85593l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/nzlblisGahI?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Rokudenashi Majutsu Koushi to Akashic Records
+      - type: Synonym
+        title: RokuAka
+      - type: Japanese
+        title: ロクでなし魔術講師と禁忌教典
+      - type: English
+        title: Akashic Records of Bastard Magic Instructor
+      - type: German
+        title: Akashic Records of Bastard Magic Instructor
+      - type: Spanish
+        title: Akashic Records of Bastard Magical Instructor
+      - type: French
+        title: Akashic Records of Bastard Magic Instructor
+      title: Rokudenashi Majutsu Koushi to Akashic Records
+      title_english: Akashic Records of Bastard Magic Instructor
+      title_japanese: ロクでなし魔術講師と禁忌教典
+      title_synonyms:
+      - RokuAka
+      type: TV
+      source: Light novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-04T00:00:00+00:00'
+        to: '2017-06-20T00:00:00+00:00'
+        prop:
+          from:
+            day: 4
+            month: 4
+            year: 2017
+          to:
+            day: 20
+            month: 6
+            year: 2017
+        string: Apr 4, 2017 to Jun 20, 2017
+      duration: 24 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 7.11
+      scored_by: 458095
+      rank: 4538
+      popularity: 280
+      members: 813241
+      favorites: 3499
+      synopsis: |-
+        The Alzano Empire is home to one of the most distinguished magic schools in the world: the Alzano Imperial Magic Academy. Here, ambitious young students undergo training to become competent magicians. Sistine Fibel—a stern noble girl—and her bright-eyed best friend Rumia Tingel attend the Academy, determined to cultivate their magical skills.
+
+        However, their world is thrown for a loop when their favorite teacher suddenly retires and the enigmatic Glenn Radars replaces him. His lazy and indifferent attitude toward life and magic quickly puts him at odds with his class. What's more, nefarious forces hidden within the empire's walls start to become active, and Sistine, Rumia, and Glenn find themselves caught up in their schemes.
+
+        Rokudenashi Majutsu Koushi to Akashic Records follows Sistine, who is captivated by a mysterious floating Sky Castle; Rumia, who is haunted by a troubled past; and Glenn, who may be more than meets the eye. Though completely different on the surface, they are inexplicably bound together by a thread of fate.
+
+        [Written by MAL Rewrite]
+      background: Rokudenashi Majutsu Koushi to Akashic Records adapts the first 5 volumes of Tarou Hitsuji's light novel
+        series of the same title.
+      season: spring
+      year: 2017
+      broadcast:
+        day: Tuesdays
+        time: '20:30'
+        timezone: Asia/Tokyo
+        string: Tuesdays at 20:30 (JST)
+      producers:
+      - mal_id: 108
+        type: anime
+        name: Media Factory
+        url: https://myanimelist.net/anime/producer/108/Media_Factory
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 539
+        type: anime
+        name: Ultra Super Pictures
+        url: https://myanimelist.net/anime/producer/539/Ultra_Super_Pictures
+      - mal_id: 577
+        type: anime
+        name: Tohokushinsha Film Corporation
+        url: https://myanimelist.net/anime/producer/577/Tohokushinsha_Film_Corporation
+      - mal_id: 737
+        type: anime
+        name: Sony Music Communications
+        url: https://myanimelist.net/anime/producer/737/Sony_Music_Communications
+      - mal_id: 1664
+        type: anime
+        name: Fujimi Shobo
+        url: https://myanimelist.net/anime/producer/1664/Fujimi_Shobo
+      - mal_id: 1677
+        type: anime
+        name: Kanetsu Investment
+        url: https://myanimelist.net/anime/producer/1677/Kanetsu_Investment
+      - mal_id: 1696
+        type: anime
+        name: Kadokawa
+        url: https://myanimelist.net/anime/producer/1696/Kadokawa
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 839
+        type: anime
+        name: LIDENFILMS
+        url: https://myanimelist.net/anime/producer/839/LIDENFILMS
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics: []
+    - mal_id: 32901
+      url: https://myanimelist.net/anime/32901/Eromanga-sensei
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/2/86468.jpg
+          small_image_url: https://myanimelist.net/images/anime/2/86468t.jpg
+          large_image_url: https://myanimelist.net/images/anime/2/86468l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/2/86468.webp
+          small_image_url: https://myanimelist.net/images/anime/2/86468t.webp
+          large_image_url: https://myanimelist.net/images/anime/2/86468l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/TzBk9alIqPI?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Eromanga-sensei
+      - type: Japanese
+        title: エロマンガ先生
+      - type: English
+        title: Eromanga Sensei
+      - type: German
+        title: Eromanga Sensei
+      - type: Spanish
+        title: Eromanga Sensei
+      - type: French
+        title: Eromanga Sensei
+      title: Eromanga-sensei
+      title_english: Eromanga Sensei
+      title_japanese: エロマンガ先生
+      title_synonyms: []
+      type: TV
+      source: Light novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-09T00:00:00+00:00'
+        to: '2017-06-25T00:00:00+00:00'
+        prop:
+          from:
+            day: 9
+            month: 4
+            year: 2017
+          to:
+            day: 25
+            month: 6
+            year: 2017
+        string: Apr 9, 2017 to Jun 25, 2017
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 6.31
+      scored_by: 449132
+      rank: 9294
+      popularity: 303
+      members: 767483
+      favorites: 2756
+      synopsis: |-
+        One year ago, Sagiri Izumi became step-siblings with Masamune Izumi. But the sudden death of their parents tears their new family apart, resulting in Sagiri becoming a shut-in which cut her off from her brother and society.
+
+        While caring for what's left of his family, Masamune earns a living as a published light novel author with one small problem: he's never actually met his acclaimed illustrator, Eromanga-sensei, infamous for drawing the most lewd erotica. Through an embarrassing chain of events, he learns that his very own little sister was his partner the whole time!
+
+        As new characters and challenges appear, Masamune and Sagiri must now face the light novel industry together. Eromanga-Sensei follows the development of their relationship and their struggle to become successful; and as Sagiri slowly grows out of her shell, just how long will she be able to hide her true persona from the rest of the world?
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Sundays
+        time: 00:30
+        timezone: Asia/Tokyo
+        string: Sundays at 00:30 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 681
+        type: anime
+        name: ASCII Media Works
+        url: https://myanimelist.net/anime/producer/681/ASCII_Media_Works
+      - mal_id: 1416
+        type: anime
+        name: BS11
+        url: https://myanimelist.net/anime/producer/1416/BS11
+      - mal_id: 1653
+        type: anime
+        name: Kinoshita Group Holdings
+        url: https://myanimelist.net/anime/producer/1653/Kinoshita_Group_Holdings
+      licensors:
+      - mal_id: 493
+        type: anime
+        name: Aniplex of America
+        url: https://myanimelist.net/anime/producer/493/Aniplex_of_America
+      studios:
+      - mal_id: 56
+        type: anime
+        name: A-1 Pictures
+        url: https://myanimelist.net/anime/producer/56/A-1_Pictures
+      genres:
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 22
+        type: anime
+        name: Romance
+        url: https://myanimelist.net/anime/genre/22/Romance
+      - mal_id: 9
+        type: anime
+        name: Ecchi
+        url: https://myanimelist.net/anime/genre/9/Ecchi
+      explicit_genres: []
+      themes:
+      - mal_id: 69
+        type: anime
+        name: Otaku Culture
+        url: https://myanimelist.net/anime/genre/69/Otaku_Culture
+      demographics: []
+    - mal_id: 34822
+      url: https://myanimelist.net/anime/34822/Tsuki_ga_Kirei
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/2/85592.jpg
+          small_image_url: https://myanimelist.net/images/anime/2/85592t.jpg
+          large_image_url: https://myanimelist.net/images/anime/2/85592l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/2/85592.webp
+          small_image_url: https://myanimelist.net/images/anime/2/85592t.webp
+          large_image_url: https://myanimelist.net/images/anime/2/85592l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/HoEFpyDHZzw?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Tsuki ga Kirei
+      - type: Synonym
+        title: The Moon is Beautiful
+      - type: Synonym
+        title: As the Moon
+      - type: Synonym
+        title: So Beautiful
+      - type: Japanese
+        title: 月がきれい
+      - type: English
+        title: Tsukigakirei
+      - type: German
+        title: Tsukigakirei
+      - type: Spanish
+        title: Tsukigakirei
+      - type: French
+        title: Tsukigakirei
+      title: Tsuki ga Kirei
+      title_english: Tsukigakirei
+      title_japanese: 月がきれい
+      title_synonyms:
+      - The Moon is Beautiful
+      - As the Moon
+      - So Beautiful
+      type: TV
+      source: Original
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-07T00:00:00+00:00'
+        to: '2017-06-30T00:00:00+00:00'
+        prop:
+          from:
+            day: 7
+            month: 4
+            year: 2017
+          to:
+            day: 30
+            month: 6
+            year: 2017
+        string: Apr 7, 2017 to Jun 30, 2017
+      duration: 24 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.02
+      scored_by: 277548
+      rank: 728
+      popularity: 419
+      members: 597521
+      favorites: 8182
+      synopsis: |-
+        With a new school year comes a new crowd of classmates, and for their final year of junior high, aspiring writer Kotarou Azumi and track team member Akane Mizuno end up in the same class. Though initially complete strangers, a few chance encounters stir an innocent desire within their hearts. A yearning gaze, a fluttering heart—the hallmarks of young love slip into their lives as fate brings their paths to a cross.
+
+        However, though love is patient and love is kind, Kotarou and Akane discover it is not always straightforward. Despite the comfort they find in each other's company, heartache and anxiety come hand in hand with pursuing the feelings in their hearts. With the uncertainty of how the other truly feels as well as the competing affections of those around them, the road ahead is unclear. Even so, under the shining light of a beautiful full moon, Kotarou gathers his courage to ask Akane a single question, one that forever changes their quiet relationship.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Fridays
+        time: 00:00
+        timezone: Asia/Tokyo
+        string: Fridays at 00:00 (JST)
+      producers:
+      - mal_id: 64
+        type: anime
+        name: Sotsu
+        url: https://myanimelist.net/anime/producer/64/Sotsu
+      - mal_id: 143
+        type: anime
+        name: Mainichi Broadcasting System
+        url: https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System
+      - mal_id: 464
+        type: anime
+        name: flying DOG
+        url: https://myanimelist.net/anime/producer/464/flying_DOG
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      studios:
+      - mal_id: 91
+        type: anime
+        name: feel.
+        url: https://myanimelist.net/anime/producer/91/feel
+      genres:
+      - mal_id: 22
+        type: anime
+        name: Romance
+        url: https://myanimelist.net/anime/genre/22/Romance
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics: []
+    - mal_id: 34561
+      url: https://myanimelist.net/anime/34561/Re_Creators
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/11/85469.jpg
+          small_image_url: https://myanimelist.net/images/anime/11/85469t.jpg
+          large_image_url: https://myanimelist.net/images/anime/11/85469l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/11/85469.webp
+          small_image_url: https://myanimelist.net/images/anime/11/85469t.webp
+          large_image_url: https://myanimelist.net/images/anime/11/85469l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/5pWvM4JAM8M?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Re:Creators
+      - type: Japanese
+        title: Re:CREATORS 〈レクリエイターズ〉
+      - type: English
+        title: Re:CREATORS
+      - type: Spanish
+        title: 'Re: Creadores'
+      title: Re:Creators
+      title_english: Re:CREATORS
+      title_japanese: Re:CREATORS 〈レクリエイターズ〉
+      title_synonyms: []
+      type: TV
+      source: Original
+      episodes: 22
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-08T00:00:00+00:00'
+        to: '2017-09-16T00:00:00+00:00'
+        prop:
+          from:
+            day: 8
+            month: 4
+            year: 2017
+          to:
+            day: 16
+            month: 9
+            year: 2017
+        string: Apr 8, 2017 to Sep 16, 2017
+      duration: 24 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 7.55
+      scored_by: 210814
+      rank: 2030
+      popularity: 463
+      members: 543216
+      favorites: 3769
+      synopsis: |-
+        Humans have designed countless worlds—each one born from the unique imagination of its creator. Souta Mizushino is a high school student who aspires to be such a creator by writing and illustrating his own light novel. One day, while watching anime for inspiration, he is briefly transported into a fierce fight scene. When he returns to the real world, he realizes something is amiss: the anime's headstrong heroine, Selesia Yupitilia, has somehow returned with him.
+
+        Before long, other fictional characters appear in the world, carrying the hopes and scars of their home. A princely knight, a magical girl, a ruthless brawler, and many others now crowd the streets of Japan. However, the most mysterious one is a woman in full military regalia, dubbed "Gunpuku no Himegimi," who knows far more than she should about the creators' world. Despite this, no one knows her true name or the world she is from.
+
+        Meanwhile, Souta and Selesia work together with Meteora Österreich, a calm and composed librarian NPC, to uncover the meaning behind these unnatural events. With powerful forces at play, the once clear line between reality and imagination continues to blur, leading to a fateful meeting between creators and those they created.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Saturdays
+        time: '23:30'
+        timezone: Asia/Tokyo
+        string: Saturdays at 23:30 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 306
+        type: anime
+        name: Magic Capsule
+        url: https://myanimelist.net/anime/producer/306/Magic_Capsule
+      - mal_id: 1430
+        type: anime
+        name: Shogakukan
+        url: https://myanimelist.net/anime/producer/1430/Shogakukan
+      - mal_id: 1500
+        type: anime
+        name: ABC Animation
+        url: https://myanimelist.net/anime/producer/1500/ABC_Animation
+      licensors: []
+      studios:
+      - mal_id: 1103
+        type: anime
+        name: TROYCA
+        url: https://myanimelist.net/anime/producer/1103/TROYCA
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes:
+      - mal_id: 82
+        type: anime
+        name: Urban Fantasy
+        url: https://myanimelist.net/anime/genre/82/Urban_Fantasy
+      demographics: []
+    - mal_id: 32887
+      url: https://myanimelist.net/anime/32887/Dungeon_ni_Deai_wo_Motomeru_no_wa_Machigatteiru_Darou_ka_Gaiden__Sword_Oratoria
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1181/123312.jpg
+          small_image_url: https://myanimelist.net/images/anime/1181/123312t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1181/123312l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1181/123312.webp
+          small_image_url: https://myanimelist.net/images/anime/1181/123312t.webp
+          large_image_url: https://myanimelist.net/images/anime/1181/123312l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/_25Ar-rS-C4?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria'
+      - type: Synonym
+        title: Danmachi Sword Oratoria
+      - type: Japanese
+        title: ダンジョンに出会いを求めるのは間違っているだろうか外伝 ソード・オラトリア
+      - type: English
+        title: 'Sword Oratoria: Is It Wrong to Try to Pick Up Girls in a Dungeon? On the Side'
+      - type: German
+        title: 'DanMachi: Sword Oratoria'
+      - type: Spanish
+        title: '¿Qué tiene de Malo intentar ligar en una Mazmorra? Familia Myth: Sword Oratoria'
+      - type: French
+        title: 'DanMachi: Sword Oratoria'
+      title: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria'
+      title_english: 'Sword Oratoria: Is It Wrong to Try to Pick Up Girls in a Dungeon? On the Side'
+      title_japanese: ダンジョンに出会いを求めるのは間違っているだろうか外伝 ソード・オラトリア
+      title_synonyms:
+      - Danmachi Sword Oratoria
+      type: TV
+      source: Light novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-15T00:00:00+00:00'
+        to: '2017-07-01T00:00:00+00:00'
+        prop:
+          from:
+            day: 15
+            month: 4
+            year: 2017
+          to:
+            day: 1
+            month: 7
+            year: 2017
+        string: Apr 15, 2017 to Jul 1, 2017
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.09
+      scored_by: 244272
+      rank: 4645
+      popularity: 534
+      members: 489850
+      favorites: 771
+      synopsis: "After having descended upon this world, the gods have created guilds where adventurers can test their mettle.\
+        \ These guilds, known as \"familia,\" grant adventurers the chance to explore, gather, hunt, or simply enjoy themselves.\n\
+        \ \nDungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria begins in Orario, the lively city\
+        \ of adventures. The Sword Princess, Ais Wallenstein, and the novice mage, Lefiya Viridis, are members of the Loki\
+        \ Familia, who are experts at monster hunting. With the rest of their group, they journey to the tower of Babel in\
+        \ hopes of exploring the dungeon underneath. Home to powerful monsters, the dungeon will fulfill Ais's desire to master\
+        \ her sword skills, while bringing Lefiya closer to her dream of succeeding Riveria Ljos Alf, vice-captain of the\
+        \ Loki Familia, as the most powerful mage in the land.\n \n[Written by MAL Rewrite]"
+      background: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria adapts the first 4 volumes
+        of Fujino Omori''s light novel series of the same title.'
+      season: spring
+      year: 2017
+      broadcast:
+        day: Saturdays
+        time: 00:30
+        timezone: Asia/Tokyo
+        string: Saturdays at 00:30 (JST)
+      producers:
+      - mal_id: 79
+        type: anime
+        name: Genco
+        url: https://myanimelist.net/anime/producer/79/Genco
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 415
+        type: anime
+        name: Warner Bros. Japan
+        url: https://myanimelist.net/anime/producer/415/Warner_Bros_Japan
+      - mal_id: 460
+        type: anime
+        name: KlockWorx
+        url: https://myanimelist.net/anime/producer/460/KlockWorx
+      - mal_id: 621
+        type: anime
+        name: SoftBank Creative
+        url: https://myanimelist.net/anime/producer/621/SoftBank_Creative
+      - mal_id: 963
+        type: anime
+        name: MAGES.
+        url: https://myanimelist.net/anime/producer/963/MAGES
+      - mal_id: 1333
+        type: anime
+        name: Hakuhodo DY Music & Pictures
+        url: https://myanimelist.net/anime/producer/1333/Hakuhodo_DY_Music___Pictures
+      - mal_id: 1590
+        type: anime
+        name: FuRyu
+        url: https://myanimelist.net/anime/producer/1590/FuRyu
+      - mal_id: 2135
+        type: anime
+        name: Imagine
+        url: https://myanimelist.net/anime/producer/2135/Imagine
+      licensors:
+      - mal_id: 376
+        type: anime
+        name: Sentai Filmworks
+        url: https://myanimelist.net/anime/producer/376/Sentai_Filmworks
+      studios:
+      - mal_id: 7
+        type: anime
+        name: J.C.Staff
+        url: https://myanimelist.net/anime/producer/7/JCStaff
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics: []
+    - mal_id: 33502
+      url: https://myanimelist.net/anime/33502/Shuumatsu_Nani_Shitemasu_ka_Isogashii_desu_ka_Sukutte_Moratte_Ii_desu_ka
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/4/85260.jpg
+          small_image_url: https://myanimelist.net/images/anime/4/85260t.jpg
+          large_image_url: https://myanimelist.net/images/anime/4/85260l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/4/85260.webp
+          small_image_url: https://myanimelist.net/images/anime/4/85260t.webp
+          large_image_url: https://myanimelist.net/images/anime/4/85260l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/ZGfC2boki-I?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?
+      - type: Synonym
+        title: SukaSuka
+      - type: Synonym
+        title: What are you doing at the end? Are you busy? Can you save me?
+      - type: Japanese
+        title: 終末なにしてますか？忙しいですか？救ってもらっていいですか？
+      - type: English
+        title: 'WorldEnd: What do you do at the end of the world? Are you busy? Will you save us?'
+      - type: German
+        title: 'WorldEnd: What do you do at the end of the world? Are you busy? Will you save us?'
+      - type: Spanish
+        title: 'WorldEnd: What Do You Do at The End of The World? Are You Busy? Will You Save Us?'
+      - type: French
+        title: 'WorldEnd: What do you do at the end of the world? Are you busy? Will you save us?'
+      title: Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?
+      title_english: 'WorldEnd: What do you do at the end of the world? Are you busy? Will you save us?'
+      title_japanese: 終末なにしてますか？忙しいですか？救ってもらっていいですか？
+      title_synonyms:
+      - SukaSuka
+      - What are you doing at the end? Are you busy? Can you save me?
+      type: TV
+      source: Light novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-11T00:00:00+00:00'
+        to: '2017-06-27T00:00:00+00:00'
+        prop:
+          from:
+            day: 11
+            month: 4
+            year: 2017
+          to:
+            day: 27
+            month: 6
+            year: 2017
+        string: Apr 11, 2017 to Jun 27, 2017
+      duration: 24 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.67
+      scored_by: 208552
+      rank: 1569
+      popularity: 597
+      members: 446314
+      favorites: 4940
+      synopsis: "Putting his life on the line, Willem Kmetsch leaves his loved ones behind and sets out to battle a mysterious\
+        \ monster, and even though he is victorious, he is rendered frozen in ice. It is during his icy slumber that terrifying\
+        \ creatures known as \"Beasts\" emerge on the Earth's surface and threaten humanity's existence. Willem awakens 500\
+        \ years later, only to find himself the sole survivor of his race as mankind is wiped out.\n \nTogether with the other\
+        \ surviving races, Willem takes refuge on the floating islands in the sky, living in fear of the Beasts below. He\
+        \ lives a life of loneliness and only does odd jobs to get by. One day, he is tasked with being a weapon storehouse\
+        \ caretaker. Thinking nothing of it, Willem accepts, but he soon realizes that these weapons are actually a group\
+        \ of young Leprechauns. Though they bear every resemblance to humans, they have no regard for their own lives, identifying\
+        \ themselves as mere weapons of war. Among them is Chtholly Nota Seniorious, who is more than willing to sacrifice\
+        \ herself if it means defeating the Beasts and ensuring peace.\n \nWillem becomes something of a father figure for\
+        \ the young Leprechauns, watching over them fondly and supporting them in any way he can. He, who once fought so bravely\
+        \ on the frontlines, can now only hope that the ones being sent to battle return safely from the monsters that destroyed\
+        \ his kind.\n\n[Written by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Tuesdays
+        time: '23:30'
+        timezone: Asia/Tokyo
+        string: Tuesdays at 23:30 (JST)
+      producers:
+      - mal_id: 104
+        type: anime
+        name: Lantis
+        url: https://myanimelist.net/anime/producer/104/Lantis
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 315
+        type: anime
+        name: DAX Production
+        url: https://myanimelist.net/anime/producer/315/DAX_Production
+      - mal_id: 460
+        type: anime
+        name: KlockWorx
+        url: https://myanimelist.net/anime/producer/460/KlockWorx
+      - mal_id: 1551
+        type: anime
+        name: Kadokawa Media House
+        url: https://myanimelist.net/anime/producer/1551/Kadokawa_Media_House
+      - mal_id: 1651
+        type: anime
+        name: Production Ace
+        url: https://myanimelist.net/anime/producer/1651/Production_Ace
+      - mal_id: 1696
+        type: anime
+        name: Kadokawa
+        url: https://myanimelist.net/anime/producer/1696/Kadokawa
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 41
+        type: anime
+        name: Satelight
+        url: https://myanimelist.net/anime/producer/41/Satelight
+      - mal_id: 605
+        type: anime
+        name: C2C
+        url: https://myanimelist.net/anime/producer/605/C2C
+      genres:
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 22
+        type: anime
+        name: Romance
+        url: https://myanimelist.net/anime/genre/22/Romance
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      explicit_genres: []
+      themes: []
+      demographics: []
+    - mal_id: 33475
+      url: https://myanimelist.net/anime/33475/Busou_Shoujo_Machiavellianism
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/3/83995.jpg
+          small_image_url: https://myanimelist.net/images/anime/3/83995t.jpg
+          large_image_url: https://myanimelist.net/images/anime/3/83995l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/3/83995.webp
+          small_image_url: https://myanimelist.net/images/anime/3/83995t.webp
+          large_image_url: https://myanimelist.net/images/anime/3/83995l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/Ghi2R6-HcMA?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Busou Shoujo Machiavellianism
+      - type: Japanese
+        title: 武装少女マキャヴェリズム
+      - type: English
+        title: Armed Girl's Machiavellism
+      - type: German
+        title: Armed Girl's Machiavellism
+      - type: Spanish
+        title: Armed Girl's Machiavellism
+      - type: French
+        title: Armed Girl's Machiavellism
+      title: Busou Shoujo Machiavellianism
+      title_english: Armed Girl's Machiavellism
+      title_japanese: 武装少女マキャヴェリズム
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-05T00:00:00+00:00'
+        to: '2017-06-21T00:00:00+00:00'
+        prop:
+          from:
+            day: 5
+            month: 4
+            year: 2017
+          to:
+            day: 21
+            month: 6
+            year: 2017
+        string: Apr 5, 2017 to Jun 21, 2017
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 6.87
+      scored_by: 222278
+      rank: 5845
+      popularity: 643
+      members: 419976
+      favorites: 1072
+      synopsis: |-
+        After getting expelled from his previous school, Fudou Nomura decides to enroll in Aichi Coexistence Private Academy. However, the academy is far from ordinary: all female students are armed with weapons! Led by five girls dubbed the Supreme Five Swords, they aim to correct male students' behavior by making them crossdress and integrate into the female student body, or else leave the institution entirely.
+
+        On his first day, Fudou encounters one of the Swords, Rin Onigawara, who tells him to obey the dress code or quit the school. To everyone's surprise, he defies the orders and ends up in a fierce battle with her. With his fighting skills attracting the attention of the rest of the Swords, Fudou must stay vigilant and try his best to survive the girls' antics at his new school.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Wednesdays
+        time: '23:00'
+        timezone: Asia/Tokyo
+        string: Wednesdays at 23:00 (JST)
+      producers:
+      - mal_id: 108
+        type: anime
+        name: Media Factory
+        url: https://myanimelist.net/anime/producer/108/Media_Factory
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 323
+        type: anime
+        name: Nippon Columbia
+        url: https://myanimelist.net/anime/producer/323/Nippon_Columbia
+      - mal_id: 460
+        type: anime
+        name: KlockWorx
+        url: https://myanimelist.net/anime/producer/460/KlockWorx
+      - mal_id: 1255
+        type: anime
+        name: Glovision
+        url: https://myanimelist.net/anime/producer/1255/Glovision
+      - mal_id: 1551
+        type: anime
+        name: Kadokawa Media House
+        url: https://myanimelist.net/anime/producer/1551/Kadokawa_Media_House
+      - mal_id: 1685
+        type: anime
+        name: Toshiba Digital Frontiers
+        url: https://myanimelist.net/anime/producer/1685/Toshiba_Digital_Frontiers
+      - mal_id: 1686
+        type: anime
+        name: Tsukuru no Mori
+        url: https://myanimelist.net/anime/producer/1686/Tsukuru_no_Mori
+      - mal_id: 1696
+        type: anime
+        name: Kadokawa
+        url: https://myanimelist.net/anime/producer/1696/Kadokawa
+      licensors:
+      - mal_id: 376
+        type: anime
+        name: Sentai Filmworks
+        url: https://myanimelist.net/anime/producer/376/Sentai_Filmworks
+      studios:
+      - mal_id: 300
+        type: anime
+        name: SILVER LINK.
+        url: https://myanimelist.net/anime/producer/300/SILVER_LINK
+      - mal_id: 957
+        type: anime
+        name: Connect
+        url: https://myanimelist.net/anime/producer/957/Connect
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 9
+        type: anime
+        name: Ecchi
+        url: https://myanimelist.net/anime/genre/9/Ecchi
+      explicit_genres: []
+      themes:
+      - mal_id: 35
+        type: anime
+        name: Harem
+        url: https://myanimelist.net/anime/genre/35/Harem
+      - mal_id: 17
+        type: anime
+        name: Martial Arts
+        url: https://myanimelist.net/anime/genre/17/Martial_Arts
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 30727
+      url: https://myanimelist.net/anime/30727/Saenai_Heroine_no_Sodatekata_♭
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/2/84797.jpg
+          small_image_url: https://myanimelist.net/images/anime/2/84797t.jpg
+          large_image_url: https://myanimelist.net/images/anime/2/84797l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/2/84797.webp
+          small_image_url: https://myanimelist.net/images/anime/2/84797t.webp
+          large_image_url: https://myanimelist.net/images/anime/2/84797l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/JCcvmRduwiE?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Saenai Heroine no Sodatekata ♭
+      - type: Synonym
+        title: Saenai Heroine no Sodatekata Flat
+      - type: Japanese
+        title: 冴えない彼女〈ヒロイン〉の育てかた♭
+      - type: English
+        title: 'Saekano: How to Raise a Boring Girlfriend .flat'
+      - type: German
+        title: Saekano♭ How to Raise a Boring Girlfriend.flat
+      - type: French
+        title: Saekano♭ How to Raise a Boring Girlfriend.flat
+      title: Saenai Heroine no Sodatekata ♭
+      title_english: 'Saekano: How to Raise a Boring Girlfriend .flat'
+      title_japanese: 冴えない彼女〈ヒロイン〉の育てかた♭
+      title_synonyms:
+      - Saenai Heroine no Sodatekata Flat
+      type: TV
+      source: Light novel
+      episodes: 11
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-14T00:00:00+00:00'
+        to: '2017-06-23T00:00:00+00:00'
+        prop:
+          from:
+            day: 14
+            month: 4
+            year: 2017
+          to:
+            day: 23
+            month: 6
+            year: 2017
+        string: Apr 14, 2017 to Jun 23, 2017
+      duration: 22 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.76
+      scored_by: 204359
+      rank: 1290
+      popularity: 676
+      members: 399641
+      favorites: 1791
+      synopsis: "After finally completing the first route of his visual novel, Blessing Software's producer Tomoya Aki is\
+        \ optimistic about the future of his team and achieving their goal of creating the best game of the season.\n\nHowever,\
+        \ they still have a long way to go. For one, Megumi Katou still has an incredibly flat personality and is unable to\
+        \ fit the role of Tomoya's ideal heroine. The other members of Blessing Software, Eriri Spencer Sawamura, Utaha Kasumigaoka,\
+        \ and Michiru Hyoudou, often forget she is even there due to her lack of presence and character. \n\nThroughout the\
+        \ development of their game, Blessing Software learns the struggles of working in an industry where deadlines must\
+        \ be met and edits are made constantly, and the hardships of working in a group setting.\n\n[Written by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Fridays
+        time: 00:55
+        timezone: Asia/Tokyo
+        string: Fridays at 00:55 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 53
+        type: anime
+        name: Dentsu
+        url: https://myanimelist.net/anime/producer/53/Dentsu
+      - mal_id: 169
+        type: anime
+        name: Fuji TV
+        url: https://myanimelist.net/anime/producer/169/Fuji_TV
+      - mal_id: 619
+        type: anime
+        name: Cospa
+        url: https://myanimelist.net/anime/producer/619/Cospa
+      - mal_id: 1261
+        type: anime
+        name: Good Smile Company
+        url: https://myanimelist.net/anime/producer/1261/Good_Smile_Company
+      - mal_id: 1412
+        type: anime
+        name: Kansai TV
+        url: https://myanimelist.net/anime/producer/1412/Kansai_TV
+      - mal_id: 1664
+        type: anime
+        name: Fujimi Shobo
+        url: https://myanimelist.net/anime/producer/1664/Fujimi_Shobo
+      licensors: []
+      studios:
+      - mal_id: 56
+        type: anime
+        name: A-1 Pictures
+        url: https://myanimelist.net/anime/producer/56/A-1_Pictures
+      genres:
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 22
+        type: anime
+        name: Romance
+        url: https://myanimelist.net/anime/genre/22/Romance
+      - mal_id: 9
+        type: anime
+        name: Ecchi
+        url: https://myanimelist.net/anime/genre/9/Ecchi
+      explicit_genres: []
+      themes:
+      - mal_id: 35
+        type: anime
+        name: Harem
+        url: https://myanimelist.net/anime/genre/35/Harem
+      - mal_id: 69
+        type: anime
+        name: Otaku Culture
+        url: https://myanimelist.net/anime/genre/69/Otaku_Culture
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics: []
+    - mal_id: 32262
+      url: https://myanimelist.net/anime/32262/Renai_Boukun
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/9/84266.jpg
+          small_image_url: https://myanimelist.net/images/anime/9/84266t.jpg
+          large_image_url: https://myanimelist.net/images/anime/9/84266l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/9/84266.webp
+          small_image_url: https://myanimelist.net/images/anime/9/84266t.webp
+          large_image_url: https://myanimelist.net/images/anime/9/84266l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/ixAK3zJpbwE?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Renai Boukun
+      - type: Japanese
+        title: 恋愛暴君
+      - type: English
+        title: Love Tyrant
+      - type: German
+        title: Love Tyrant
+      - type: Spanish
+        title: Love Tyrant (Renai Bokun)
+      - type: French
+        title: Love Tyrant
+      title: Renai Boukun
+      title_english: Love Tyrant
+      title_japanese: 恋愛暴君
+      title_synonyms: []
+      type: TV
+      source: Web manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-07T00:00:00+00:00'
+        to: '2017-06-23T00:00:00+00:00'
+        prop:
+          from:
+            day: 7
+            month: 4
+            year: 2017
+          to:
+            day: 23
+            month: 6
+            year: 2017
+        string: Apr 7, 2017 to Jun 23, 2017
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 6.6
+      scored_by: 195310
+      rank: 7552
+      popularity: 683
+      members: 396942
+      favorites: 692
+      synopsis: |-
+        When a strange girl named Guri comes knocking at Seiji Aino's door, he quickly finds himself thrust into a world of romantic troubles. Claiming that she will die if he does not kiss someone within 24 hours, Guri's pleas of desperation are misunderstood as pleas for love, leading Seiji to kiss the cute stranger that came barging into his house. In actuality, it turns out that this cosplaying cupid is the wielder of a Kiss Note, in which any pairing of names she writes will kiss and become a couple. Guri explains that she misspelt and accidentally wrote Seiji's name while indulging in her yaoi fantasies, but because she had yet to pair him with anyone, their kiss was meaningless. Even worse, Guri reveals that if Seiji is not coupled with anyone soon, not only will she die, but Seiji will remain a virgin for eternity!
+
+        Eager to escape his fate, Seiji sets his sights on the beautiful and popular Akane Hiyama. But after Akane hears that he kissed Guri, she reveals the obsessive and psychopathic feelings that she holds for the unfortunate boy and proceeds to viciously attack them. In the ensuing confusion, Guri is able to pair Seiji with Akane in the Kiss Note, temporarily saving Seiji from any further bodily harm. But to complicate matters, Guri's newfound feelings lead her to also pair the two of them with herself. Just when the situation could not get any more convoluted, this new coupling with Guri has turned Seiji and Akane into temporary angels, forcing them into assisting the cupid with her work of pairing humans, lest they be cast into hell. With all semblance of normality snatched from his life, Seiji gets to work at matchmaking with these eccentric girls by his side.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Fridays
+        time: 02:35
+        timezone: Asia/Tokyo
+        string: Fridays at 02:35 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 64
+        type: anime
+        name: Sotsu
+        url: https://myanimelist.net/anime/producer/64/Sotsu
+      - mal_id: 213
+        type: anime
+        name: Half H.P Studio
+        url: https://myanimelist.net/anime/producer/213/Half_HP_Studio
+      - mal_id: 460
+        type: anime
+        name: KlockWorx
+        url: https://myanimelist.net/anime/producer/460/KlockWorx
+      - mal_id: 1039
+        type: anime
+        name: DIVE II Entertainment
+        url: https://myanimelist.net/anime/producer/1039/DIVE_II_Entertainment
+      - mal_id: 1284
+        type: anime
+        name: Avex Pictures
+        url: https://myanimelist.net/anime/producer/1284/Avex_Pictures
+      - mal_id: 1414
+        type: anime
+        name: bilibili
+        url: https://myanimelist.net/anime/producer/1414/bilibili
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 1264
+        type: anime
+        name: EMT Squared
+        url: https://myanimelist.net/anime/producer/1264/EMT_Squared
+      genres:
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 22
+        type: anime
+        name: Romance
+        url: https://myanimelist.net/anime/genre/22/Romance
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      explicit_genres: []
+      themes:
+      - mal_id: 35
+        type: anime
+        name: Harem
+        url: https://myanimelist.net/anime/genre/35/Harem
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics: []
+    - mal_id: 33926
+      url: https://myanimelist.net/anime/33926/Quanzhi_Gaoshou
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1534/104725.jpg
+          small_image_url: https://myanimelist.net/images/anime/1534/104725t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1534/104725l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1534/104725.webp
+          small_image_url: https://myanimelist.net/images/anime/1534/104725t.webp
+          large_image_url: https://myanimelist.net/images/anime/1534/104725l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/ef7GCI4Cdxg?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Quanzhi Gaoshou
+      - type: Synonym
+        title: Quan Zhi Gao Shou
+      - type: Synonym
+        title: Full-Time Expert
+      - type: Synonym
+        title: Expert of All Classes
+      - type: Synonym
+        title: マスターオブスキル
+      - type: Japanese
+        title: 全职高手
+      - type: English
+        title: The King's Avatar
+      title: Quanzhi Gaoshou
+      title_english: The King's Avatar
+      title_japanese: 全职高手
+      title_synonyms:
+      - Quan Zhi Gao Shou
+      - Full-Time Expert
+      - Expert of All Classes
+      - マスターオブスキル
+      type: ONA
+      source: Web novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-07T00:00:00+00:00'
+        to: '2017-06-16T00:00:00+00:00'
+        prop:
+          from:
+            day: 7
+            month: 4
+            year: 2017
+          to:
+            day: 16
+            month: 6
+            year: 2017
+        string: Apr 7, 2017 to Jun 16, 2017
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.85
+      scored_by: 184623
+      rank: 1063
+      popularity: 691
+      members: 393956
+      favorites: 4032
+      synopsis: |-
+        Widely regarded as a trailblazer and top-tier professional player in the online multiplayer game Glory, Ye Xiu is dubbed the "Battle God" for his skills and contributions to the game over the years. However, when forced to retire from the team and to leave his gaming career behind, he finds work at a nearby internet café. There, when Glory launches its tenth server, he throws himself into the game once more using a new character named "Lord Grim."
+
+        Ye Xiu's early achievements on the new server immediately catch the attention of many players, as well as the big guilds, leaving them to wonder about the identity of this exceptional player. However, while he possesses ten years of experience and in-depth knowledge, starting afresh with neither sponsors nor a team in a game that has changed over the years presents numerous challenges. Along with talented new comrades, Ye Xiu once again dedicates himself to traversing the path to Glory's summit!
+
+        [Written by MAL Rewrite]
+      background: Quanzhi Gaoshou is based on a Chinese serial web novel of the same title written by Butterfly Blue. It received
+        the title for Best Work in 2013 and is the first and only 1000 Pledged Work on Qidian.
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 1414
+        type: anime
+        name: bilibili
+        url: https://myanimelist.net/anime/producer/1414/bilibili
+      - mal_id: 1727
+        type: anime
+        name: Tencent Video
+        url: https://myanimelist.net/anime/producer/1727/Tencent_Video
+      - mal_id: 1728
+        type: anime
+        name: China Literature Limited
+        url: https://myanimelist.net/anime/producer/1728/China_Literature_Limited
+      licensors: []
+      studios:
+      - mal_id: 1350
+        type: anime
+        name: B.CMAY PICTURES
+        url: https://myanimelist.net/anime/producer/1350/BCMAY_PICTURES
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      explicit_genres: []
+      themes:
+      - mal_id: 79
+        type: anime
+        name: Video Game
+        url: https://myanimelist.net/anime/genre/79/Video_Game
+      demographics: []
+    - mal_id: 34176
+      url: https://myanimelist.net/anime/34176/Zero_kara_Hajimeru_Mahou_no_Sho
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/5/85224.jpg
+          small_image_url: https://myanimelist.net/images/anime/5/85224t.jpg
+          large_image_url: https://myanimelist.net/images/anime/5/85224l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/5/85224.webp
+          small_image_url: https://myanimelist.net/images/anime/5/85224t.webp
+          large_image_url: https://myanimelist.net/images/anime/5/85224l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/-6QDVRnxf9g?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Zero kara Hajimeru Mahou no Sho
+      - type: Japanese
+        title: ゼロから始める魔法の書
+      - type: English
+        title: Grimoire of Zero
+      - type: German
+        title: Grimoire of Zero
+      - type: Spanish
+        title: El Libro Mágico de Zero
+      - type: French
+        title: Grimoire of Zero
+      title: Zero kara Hajimeru Mahou no Sho
+      title_english: Grimoire of Zero
+      title_japanese: ゼロから始める魔法の書
+      title_synonyms: []
+      type: TV
+      source: Light novel
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-10T00:00:00+00:00'
+        to: '2017-06-26T00:00:00+00:00'
+        prop:
+          from:
+            day: 10
+            month: 4
+            year: 2017
+          to:
+            day: 26
+            month: 6
+            year: 2017
+        string: Apr 10, 2017 to Jun 26, 2017
+      duration: 24 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.07
+      scored_by: 135670
+      rank: 4780
+      popularity: 970
+      members: 290159
+      favorites: 638
+      synopsis: "In a world of constant war between humans and witches, there exist the \"beastfallen\"—cursed humans born\
+        \ with the appearance and strength of an animal. Their physical prowess and bestial nature cause them to be feared\
+        \ and shunned by both humans and witches. As a result, many beastfallen become sellswords, making their living through\
+        \ hunting witches.\n \nDespite the enmity between the races, a lighthearted witch named Zero enlists a beastfallen\
+        \ whom she refers to as \"Mercenary\" to act as her protector. He travels with Zero and Albus, a young magician, on\
+        \ their search for the Grimoire of Zero: a powerful spell book that could be extremely dangerous in the wrong hands.\
+        \ During their journey, his inner kindness is revealed as he starts to show compassion and sympathy towards humans\
+        \ and witches alike, and the unlikely companions grow together.\n \n[Written by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Mondays
+        time: '23:30'
+        timezone: Asia/Tokyo
+        string: Mondays at 23:30 (JST)
+      producers:
+      - mal_id: 64
+        type: anime
+        name: Sotsu
+        url: https://myanimelist.net/anime/producer/64/Sotsu
+      - mal_id: 104
+        type: anime
+        name: Lantis
+        url: https://myanimelist.net/anime/producer/104/Lantis
+      - mal_id: 213
+        type: anime
+        name: Half H.P Studio
+        url: https://myanimelist.net/anime/producer/213/Half_HP_Studio
+      - mal_id: 787
+        type: anime
+        name: Happinet Pictures
+        url: https://myanimelist.net/anime/producer/787/Happinet_Pictures
+      - mal_id: 1386
+        type: anime
+        name: Infinite
+        url: https://myanimelist.net/anime/producer/1386/Infinite
+      licensors:
+      - mal_id: 376
+        type: anime
+        name: Sentai Filmworks
+        url: https://myanimelist.net/anime/producer/376/Sentai_Filmworks
+      studios:
+      - mal_id: 314
+        type: anime
+        name: White Fox
+        url: https://myanimelist.net/anime/producer/314/White_Fox
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes:
+      - mal_id: 51
+        type: anime
+        name: Anthropomorphic
+        url: https://myanimelist.net/anime/genre/51/Anthropomorphic
+      demographics: []
+    - mal_id: 30736
+      url: https://myanimelist.net/anime/30736/Shingeki_no_Bahamut__Virgin_Soul
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/13/85564.jpg
+          small_image_url: https://myanimelist.net/images/anime/13/85564t.jpg
+          large_image_url: https://myanimelist.net/images/anime/13/85564l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/13/85564.webp
+          small_image_url: https://myanimelist.net/images/anime/13/85564t.webp
+          large_image_url: https://myanimelist.net/images/anime/13/85564l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/XSczPBZeNRc?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Shingeki no Bahamut: Virgin Soul'
+      - type: Japanese
+        title: 神撃のバハムート VIRGIN SOUL
+      - type: English
+        title: 'Rage of Bahamut: Virgin Soul'
+      - type: German
+        title: 'Rage of Bahamut: Virgin Soul'
+      - type: French
+        title: 'Rage of Bahamut: Virgin Soul'
+      title: 'Shingeki no Bahamut: Virgin Soul'
+      title_english: 'Rage of Bahamut: Virgin Soul'
+      title_japanese: 神撃のバハムート VIRGIN SOUL
+      title_synonyms: []
+      type: TV
+      source: Card game
+      episodes: 24
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-08T00:00:00+00:00'
+        to: '2017-09-30T00:00:00+00:00'
+        prop:
+          from:
+            day: 8
+            month: 4
+            year: 2017
+          to:
+            day: 30
+            month: 9
+            year: 2017
+        string: Apr 8, 2017 to Sep 30, 2017
+      duration: 24 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 7.44
+      scored_by: 95351
+      rank: 2546
+      popularity: 1084
+      members: 259807
+      favorites: 1077
+      synopsis: |-
+        A decade ago, humans, gods, and demons joined forces to stand against the threat of the colossal dragon, Bahamut.
+
+        Now, in the present, humans living in the capital city of Anatae have been enjoying lavish and prosperous lives. Their progress is largely due to the administration of the newly appointed king, Charioce XVII, who has stolen a power from the gods and allowed for the abuse and slavery of the demon race in the capital. As humans continue to immorally exploit demons, a sense of hostility against humans begins to build up within demon communities, threatening a revolt. Meanwhile, an atmosphere of uneasiness is spreading among the gods, as they scramble to regain their lost power.
+
+        Amidst it all, Nina Drango, a cheerful young bounty hunter, has arrived at the Royal Capital with hopes of settling down and earning a living. However, her peaceful life in the capital is quickly thrown into chaos when she crosses paths with the ominous Rag Demon who is determined to seek revenge against humans, and Kaisar Lidfard, a noble knight battling an internal moral conflict.
+
+        Shingeki no Bahamut: Virgin Soul continues the tale of the social and moral conflict between humans, gods, and demons, and their struggle for survival and dominance.
+
+        [Written by MAL Rewrite]
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Saturdays
+        time: 01:55
+        timezone: Asia/Tokyo
+        string: Saturdays at 01:55 (JST)
+      producers:
+      - mal_id: 1587
+        type: anime
+        name: Cygames
+        url: https://myanimelist.net/anime/producer/1587/Cygames
+      licensors: []
+      studios:
+      - mal_id: 569
+        type: anime
+        name: MAPPA
+        url: https://myanimelist.net/anime/producer/569/MAPPA
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics: []
+    - mal_id: 34019
+      url: https://myanimelist.net/anime/34019/Tsugumomo
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/13/84461.jpg
+          small_image_url: https://myanimelist.net/images/anime/13/84461t.jpg
+          large_image_url: https://myanimelist.net/images/anime/13/84461l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/13/84461.webp
+          small_image_url: https://myanimelist.net/images/anime/13/84461t.webp
+          large_image_url: https://myanimelist.net/images/anime/13/84461l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/ptCRrKccB0E?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Tsugumomo
+      - type: Japanese
+        title: つぐもも
+      - type: English
+        title: Tsugumomo
+      title: Tsugumomo
+      title_english: Tsugumomo
+      title_japanese: つぐもも
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-02T00:00:00+00:00'
+        to: '2017-06-18T00:00:00+00:00'
+        prop:
+          from:
+            day: 2
+            month: 4
+            year: 2017
+          to:
+            day: 18
+            month: 6
+            year: 2017
+        string: Apr 2, 2017 to Jun 18, 2017
+      duration: 23 min per ep
+      rating: R+ - Mild Nudity
+      score: 7.04
+      scored_by: 86861
+      rank: 4935
+      popularity: 1283
+      members: 219521
+      favorites: 525
+      synopsis: "In Japanese folklore, a \"tsukumogami\" is an object that has gained a soul, becoming alive and self-aware.\
+        \ There are two types of tsukumogami: the mature \"tsugumomo,\" who have developed through long years of harmony with\
+        \ their owners, and the aberrant \"amasogi,\" premature spirits that are only born to grant the destructive wishes\
+        \ of certain people.\n\nKazuya Kagami has never gone without his mother's obi after her death. Be it at home or school,\
+        \ he keeps it safe with him at all times. One day, he nearly loses his life when a wig amasogi attacks him. When all\
+        \ seems to be over, his treasured obi defends him, transforming into a beautiful girl. She introduces herself as Kiriha,\
+        \ a tsugumomo owned by Kazuya's mother. \n\nWith Kiriha's arrival, Kazuya enters a reality he has never seen before,\
+        \ a world with gods and tsukumogami.\n\n[Written by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Sundays
+        time: '23:30'
+        timezone: Asia/Tokyo
+        string: Sundays at 23:30 (JST)
+      producers:
+      - mal_id: 140
+        type: anime
+        name: Animax
+        url: https://myanimelist.net/anime/producer/140/Animax
+      - mal_id: 141
+        type: anime
+        name: Toei Video
+        url: https://myanimelist.net/anime/producer/141/Toei_Video
+      - mal_id: 144
+        type: anime
+        name: Pony Canyon
+        url: https://myanimelist.net/anime/producer/144/Pony_Canyon
+      - mal_id: 781
+        type: anime
+        name: Studio NOIX
+        url: https://myanimelist.net/anime/producer/781/Studio_NOIX
+      - mal_id: 1333
+        type: anime
+        name: Hakuhodo DY Music & Pictures
+        url: https://myanimelist.net/anime/producer/1333/Hakuhodo_DY_Music___Pictures
+      - mal_id: 1377
+        type: anime
+        name: Futabasha
+        url: https://myanimelist.net/anime/producer/1377/Futabasha
+      - mal_id: 1563
+        type: anime
+        name: Hakuhodo
+        url: https://myanimelist.net/anime/producer/1563/Hakuhodo
+      - mal_id: 1649
+        type: anime
+        name: Kakao Japan
+        url: https://myanimelist.net/anime/producer/1649/Kakao_Japan
+      - mal_id: 1744
+        type: anime
+        name: My Theater D.D.
+        url: https://myanimelist.net/anime/producer/1744/My_Theater_DD
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      studios:
+      - mal_id: 1379
+        type: anime
+        name: Zero-G
+        url: https://myanimelist.net/anime/producer/1379/Zero-G
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 4
+        type: anime
+        name: Comedy
+        url: https://myanimelist.net/anime/genre/4/Comedy
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      - mal_id: 9
+        type: anime
+        name: Ecchi
+        url: https://myanimelist.net/anime/genre/9/Ecchi
+      explicit_genres: []
+      themes:
+      - mal_id: 35
+        type: anime
+        name: Harem
+        url: https://myanimelist.net/anime/genre/35/Harem
+      - mal_id: 6
+        type: anime
+        name: Mythology
+        url: https://myanimelist.net/anime/genre/6/Mythology
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics: []
+    - mal_id: 31629
+      url: https://myanimelist.net/anime/31629/Granblue_Fantasy_The_Animation
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/2/81630.jpg
+          small_image_url: https://myanimelist.net/images/anime/2/81630t.jpg
+          large_image_url: https://myanimelist.net/images/anime/2/81630l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/2/81630.webp
+          small_image_url: https://myanimelist.net/images/anime/2/81630t.webp
+          large_image_url: https://myanimelist.net/images/anime/2/81630l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/yGZoqzMWRuU?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Granblue Fantasy The Animation
+      - type: Japanese
+        title: GRANBLUE FANTASY The Animation
+      - type: English
+        title: 'Granblue Fantasy: The Animation'
+      - type: German
+        title: GRANBLUE FANTASY The Animation
+      - type: Spanish
+        title: GRANBLUE FANTASY The Animation
+      - type: French
+        title: 'GRANBLUE FANTASY: The Animation'
+      title: Granblue Fantasy The Animation
+      title_english: 'Granblue Fantasy: The Animation'
+      title_japanese: GRANBLUE FANTASY The Animation
+      title_synonyms: []
+      type: TV
+      source: Game
+      episodes: 13
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-02T00:00:00+00:00'
+        to: '2017-06-25T00:00:00+00:00'
+        prop:
+          from:
+            day: 2
+            month: 4
+            year: 2017
+          to:
+            day: 25
+            month: 6
+            year: 2017
+        string: Apr 2, 2017 to Jun 25, 2017
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 6.64
+      scored_by: 79374
+      rank: 7298
+      popularity: 1301
+      members: 215861
+      favorites: 370
+      synopsis: |-
+        This is a world of the skies, where many islands drift in the sky. A boy named Gran and a talking winged lizard named Vyrn lived in Zinkenstill, an island which yields mysteries. One day, they come across a girl named Lyria. Lyria had escaped from the Erste Empire, a military government that is trying to rule over this world using powerful military prowess. In order to escape from the Empire, Gran and Lyria head out into the vast skies, holding the letter Gran's father left behind—which said, "I will be waiting at Estalucia, Island of Stars."
+
+        (Source: Aniplex of America)
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Sundays
+        time: 00:00
+        timezone: Asia/Tokyo
+        string: Sundays at 00:00 (JST)
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 577
+        type: anime
+        name: Tohokushinsha Film Corporation
+        url: https://myanimelist.net/anime/producer/577/Tohokushinsha_Film_Corporation
+      - mal_id: 1587
+        type: anime
+        name: Cygames
+        url: https://myanimelist.net/anime/producer/1587/Cygames
+      licensors:
+      - mal_id: 493
+        type: anime
+        name: Aniplex of America
+        url: https://myanimelist.net/anime/producer/493/Aniplex_of_America
+      studios:
+      - mal_id: 56
+        type: anime
+        name: A-1 Pictures
+        url: https://myanimelist.net/anime/producer/56/A-1_Pictures
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics: []
+    - mal_id: 35459
+      url: https://myanimelist.net/anime/35459/Boku_no_Hero_Academia__Training_of_the_Dead
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1624/111683.jpg
+          small_image_url: https://myanimelist.net/images/anime/1624/111683t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1624/111683l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1624/111683.webp
+          small_image_url: https://myanimelist.net/images/anime/1624/111683t.webp
+          large_image_url: https://myanimelist.net/images/anime/1624/111683l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/qDKb6Rqwi0k?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Boku no Hero Academia: Training of the Dead'
+      - type: Japanese
+        title: 僕のヒーローアカデミア トレーニング・オブ・ザ・デッド
+      - type: English
+        title: 'My Hero Academia: Training of the Dead'
+      title: 'Boku no Hero Academia: Training of the Dead'
+      title_english: 'My Hero Academia: Training of the Dead'
+      title_japanese: 僕のヒーローアカデミア トレーニング・オブ・ザ・デッド
+      title_synonyms: []
+      type: OVA
+      source: Manga
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-06-02T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 2
+            month: 6
+            year: 2017
+          to:
+            day: null
+            month: null
+            year: null
+        string: Jun 2, 2017
+      duration: 25 min
+      rating: PG-13 - Teens 13 or older
+      score: 7.21
+      scored_by: 109925
+      rank: 3861
+      popularity: 1312
+      members: 213131
+      favorites: 210
+      synopsis: "Returning from their internships, the students of Class 1-A are immediately thrown into more training by\
+        \ their homeroom teacher, Shouta Aizawa. For this exercise, the class will be joining four students from Isamu Academy\
+        \ High School to compete in a survival game. Split up into groups of four, students must either eliminate each other\
+        \ or stay hidden until time runs out to win. \n\nThe training also acts as a reunion between Tsuyu Asui and her friend\
+        \ from middle school, Habuko Mongoose. However, not all the students from Isamu are friendly—Katsuki Bakugou almost\
+        \ instantly picks a fight with Romero Fujimi. The conflict between the two leads Romero to angrily release his Quirk,\
+        \ a gas which zombifies anyone it comes in contact with. How will the remaining students deal with the situation after\
+        \ most of the people around them turn into zombies?\n\n[Written by MAL Rewrite]"
+      background: 'Boku no Hero Academia: Training of the Dead was bundled with the 14th volume of the Boku no Hero Academia
+        manga.'
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers: []
+      licensors: []
+      studios:
+      - mal_id: 4
+        type: anime
+        name: Bones
+        url: https://myanimelist.net/anime/producer/4/Bones
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      - mal_id: 31
+        type: anime
+        name: Super Power
+        url: https://myanimelist.net/anime/genre/31/Super_Power
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 34055
+      url: https://myanimelist.net/anime/34055/Berserk_2nd_Season
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/12/85296.jpg
+          small_image_url: https://myanimelist.net/images/anime/12/85296t.jpg
+          large_image_url: https://myanimelist.net/images/anime/12/85296l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/12/85296.webp
+          small_image_url: https://myanimelist.net/images/anime/12/85296t.webp
+          large_image_url: https://myanimelist.net/images/anime/12/85296l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/tbx0PAsWiKw?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Berserk 2nd Season
+      - type: Japanese
+        title: ベルセルク
+      - type: English
+        title: 'Berserk: Season II'
+      - type: German
+        title: Berserk Staffel 2
+      - type: Spanish
+        title: Berserk Temporada 2
+      - type: French
+        title: Berserk Saison 2
+      title: Berserk 2nd Season
+      title_english: 'Berserk: Season II'
+      title_japanese: ベルセルク
+      title_synonyms: []
+      type: TV
+      source: Manga
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-07T00:00:00+00:00'
+        to: '2017-06-23T00:00:00+00:00'
+        prop:
+          from:
+            day: 7
+            month: 4
+            year: 2017
+          to:
+            day: 23
+            month: 6
+            year: 2017
+        string: Apr 7, 2017 to Jun 23, 2017
+      duration: 24 min per ep
+      rating: R - 17+ (violence & profanity)
+      score: 6.59
+      scored_by: 112322
+      rank: 7588
+      popularity: 1331
+      members: 210215
+      favorites: 556
+      synopsis: "Demons have now become commonplace around the kingdom of Midland, which has fallen into chaos. The swordsman\
+        \ Guts still cannot stay in one place for long due to his demonic brand. He could always manage to protect himself\
+        \ when he was alone, but now he has the added challenge of protecting former Commander Casca, a shell of her former\
+        \ self who neither remembers nor trusts him. They never have a moment's rest with the constant threat of demons, and\
+        \ they need a place where Casca will be safe till they find a way to heal her. Their elf ally, Puck, tells of the\
+        \ mystical land of Elfhelm, which is supposed to be a safe haven from the demons that ravage the lands. Tired and\
+        \ with only a vague hope, they struggle on to find a place to live—and they still need to find those responsible for\
+        \ the madness they are forced to endure. \n\n[Written by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Fridays
+        time: '22:30'
+        timezone: Asia/Tokyo
+        string: Fridays at 22:30 (JST)
+      producers:
+      - mal_id: 33
+        type: anime
+        name: WOWOW
+        url: https://myanimelist.net/anime/producer/33/WOWOW
+      - mal_id: 143
+        type: anime
+        name: Mainichi Broadcasting System
+        url: https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System
+      - mal_id: 148
+        type: anime
+        name: Hakusensha
+        url: https://myanimelist.net/anime/producer/148/Hakusensha
+      - mal_id: 539
+        type: anime
+        name: Ultra Super Pictures
+        url: https://myanimelist.net/anime/producer/539/Ultra_Super_Pictures
+      - mal_id: 839
+        type: anime
+        name: LIDENFILMS
+        url: https://myanimelist.net/anime/producer/839/LIDENFILMS
+      - mal_id: 1113
+        type: anime
+        name: NBCUniversal Entertainment Japan
+        url: https://myanimelist.net/anime/producer/1113/NBCUniversal_Entertainment_Japan
+      - mal_id: 1123
+        type: anime
+        name: Lucent Pictures Entertainment
+        url: https://myanimelist.net/anime/producer/1123/Lucent_Pictures_Entertainment
+      - mal_id: 1334
+        type: anime
+        name: Docomo Anime Store
+        url: https://myanimelist.net/anime/producer/1334/Docomo_Anime_Store
+      - mal_id: 1498
+        type: anime
+        name: Koei Tecmo Games
+        url: https://myanimelist.net/anime/producer/1498/Koei_Tecmo_Games
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      - mal_id: 1468
+        type: anime
+        name: Crunchyroll
+        url: https://myanimelist.net/anime/producer/1468/Crunchyroll
+      studios:
+      - mal_id: 1237
+        type: anime
+        name: Millepensee
+        url: https://myanimelist.net/anime/producer/1237/Millepensee
+      - mal_id: 1381
+        type: anime
+        name: GEMBA
+        url: https://myanimelist.net/anime/producer/1381/GEMBA
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 8
+        type: anime
+        name: Drama
+        url: https://myanimelist.net/anime/genre/8/Drama
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 14
+        type: anime
+        name: Horror
+        url: https://myanimelist.net/anime/genre/14/Horror
+      explicit_genres: []
+      themes:
+      - mal_id: 58
+        type: anime
+        name: Gore
+        url: https://myanimelist.net/anime/genre/58/Gore
+      - mal_id: 38
+        type: anime
+        name: Military
+        url: https://myanimelist.net/anime/genre/38/Military
+      - mal_id: 40
+        type: anime
+        name: Psychological
+        url: https://myanimelist.net/anime/genre/40/Psychological
+      demographics:
+      - mal_id: 42
+        type: anime
+        name: Seinen
+        url: https://myanimelist.net/anime/genre/42/Seinen
+    - mal_id: 30778
+      url: https://myanimelist.net/anime/30778/Fairy_Tail_Movie_2__Dragon_Cry
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/13/85391.jpg
+          small_image_url: https://myanimelist.net/images/anime/13/85391t.jpg
+          large_image_url: https://myanimelist.net/images/anime/13/85391l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/13/85391.webp
+          small_image_url: https://myanimelist.net/images/anime/13/85391t.webp
+          large_image_url: https://myanimelist.net/images/anime/13/85391l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/9Yk5cBOTcZ8?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Fairy Tail Movie 2: Dragon Cry'
+      - type: Synonym
+        title: 'Gekijouban Fairy Tail: Dragon Cry'
+      - type: Japanese
+        title: 劇場版 FAIRY TAIL 『DRAGON CRY』
+      - type: English
+        title: 'Fairy Tail the Movie 2: Dragon Cry'
+      - type: German
+        title: 'Fairy Tale: Dragon Cry Movie 2'
+      - type: Spanish
+        title: 'Fairy Tail: Dragon Cry'
+      - type: French
+        title: 'Fairy Tail Le Film: Dragon Cry'
+      title: 'Fairy Tail Movie 2: Dragon Cry'
+      title_english: 'Fairy Tail the Movie 2: Dragon Cry'
+      title_japanese: 劇場版 FAIRY TAIL 『DRAGON CRY』
+      title_synonyms:
+      - 'Gekijouban Fairy Tail: Dragon Cry'
+      type: Movie
+      source: Manga
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-05-06T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 6
+            month: 5
+            year: 2017
+          to:
+            day: null
+            month: null
+            year: null
+        string: May 6, 2017
+      duration: 1 hr 24 min
+      rating: PG-13 - Teens 13 or older
+      score: 7.56
+      scored_by: 105832
+      rank: 1961
+      popularity: 1353
+      members: 207026
+      favorites: 792
+      synopsis: "Dragon Cry is a magical artifact of deadly power, formed into a staff by the fury and despair of dragons\
+        \ long gone. Now, this power has been stolen from the hands of the Fiore kingdom by the nefarious traitor Zash Caine,\
+        \ who flees with it to the small island nation of Stella. Frightened that the power has fallen into the wrong hands,\
+        \ the King of Fiore hastily sends Fairy Tail to retrieve the staff. But this task proves frightening as a shadowy\
+        \ secret lies in the heart of the kingdom of Stella. Dragon Cry follows their story as they muster up all their strength\
+        \ to recover the stolen staff and save both kingdoms.\n \n[Written by MAL Rewrite]"
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers: []
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 56
+        type: anime
+        name: A-1 Pictures
+        url: https://myanimelist.net/anime/producer/56/A-1_Pictures
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      explicit_genres: []
+      themes: []
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 34591
+      url: https://myanimelist.net/anime/34591/Natsume_Yuujinchou_Roku
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/6/84416.jpg
+          small_image_url: https://myanimelist.net/images/anime/6/84416t.jpg
+          large_image_url: https://myanimelist.net/images/anime/6/84416l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/6/84416.webp
+          small_image_url: https://myanimelist.net/images/anime/6/84416t.webp
+          large_image_url: https://myanimelist.net/images/anime/6/84416l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: null
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: Natsume Yuujinchou Roku
+      - type: Synonym
+        title: Natsume Yuujinchou Season 6
+      - type: Synonym
+        title: Natsume's Book of Friends Six
+      - type: Japanese
+        title: 夏目友人帳 陸
+      - type: English
+        title: Natsume's Book of Friends Season 6
+      - type: German
+        title: Natsume Yujin-cho 6
+      - type: Spanish
+        title: Natsume Yujin-cho 6
+      - type: French
+        title: Natsume Yujin-cho 6
+      title: Natsume Yuujinchou Roku
+      title_english: Natsume's Book of Friends Season 6
+      title_japanese: 夏目友人帳 陸
+      title_synonyms:
+      - Natsume Yuujinchou Season 6
+      - Natsume's Book of Friends Six
+      type: TV
+      source: Manga
+      episodes: 11
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-12T00:00:00+00:00'
+        to: '2017-06-21T00:00:00+00:00'
+        prop:
+          from:
+            day: 12
+            month: 4
+            year: 2017
+          to:
+            day: 21
+            month: 6
+            year: 2017
+        string: Apr 12, 2017 to Jun 21, 2017
+      duration: 23 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 8.61
+      scored_by: 76804
+      rank: 111
+      popularity: 1359
+      members: 206293
+      favorites: 1160
+      synopsis: "Takashi Natsume has grown accustomed to his encounters with youkai through the Book of Friends, which contains\
+        \ the names of youkai whom his grandmother, Reiko Natsume, has sealed in contracts. These encounters allow Natsume\
+        \ to better understand the youkai, Reiko, and himself. \n\nThe Book of Friends is a powerful tool that can be used\
+        \ to control youkai; it is sought after by both youkai and exorcists alike. Natsume just wants to live out his daily\
+        \ life in peace but is constantly disrupted by these experiences. If he is to end this torment, Natsume must explore\
+        \ more about the book and the world of exorcism, as well as begin to open his heart to those who can help him.\n\n\
+        [Written by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Wednesdays
+        time: 01:35
+        timezone: Asia/Tokyo
+        string: Wednesdays at 01:35 (JST)
+      producers:
+      - mal_id: 16
+        type: anime
+        name: TV Tokyo
+        url: https://myanimelist.net/anime/producer/16/TV_Tokyo
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 139
+        type: anime
+        name: Nihon Ad Systems
+        url: https://myanimelist.net/anime/producer/139/Nihon_Ad_Systems
+      - mal_id: 148
+        type: anime
+        name: Hakusensha
+        url: https://myanimelist.net/anime/producer/148/Hakusensha
+      licensors: []
+      studios:
+      - mal_id: 1119
+        type: anime
+        name: Shuka
+        url: https://myanimelist.net/anime/producer/1119/Shuka
+      genres:
+      - mal_id: 36
+        type: anime
+        name: Slice of Life
+        url: https://myanimelist.net/anime/genre/36/Slice_of_Life
+      - mal_id: 37
+        type: anime
+        name: Supernatural
+        url: https://myanimelist.net/anime/genre/37/Supernatural
+      explicit_genres: []
+      themes:
+      - mal_id: 63
+        type: anime
+        name: Iyashikei
+        url: https://myanimelist.net/anime/genre/63/Iyashikei
+      - mal_id: 6
+        type: anime
+        name: Mythology
+        url: https://myanimelist.net/anime/genre/6/Mythology
+      demographics:
+      - mal_id: 25
+        type: anime
+        name: Shoujo
+        url: https://myanimelist.net/anime/genre/25/Shoujo
+    - mal_id: 32900
+      url: https://myanimelist.net/anime/32900/Mahouka_Koukou_no_Rettousei_Movie__Hoshi_wo_Yobu_Shoujo
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/8/85524.jpg
+          small_image_url: https://myanimelist.net/images/anime/8/85524t.jpg
+          large_image_url: https://myanimelist.net/images/anime/8/85524l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/8/85524.webp
+          small_image_url: https://myanimelist.net/images/anime/8/85524t.webp
+          large_image_url: https://myanimelist.net/images/anime/8/85524l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/FbdcdsmoSfg?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Mahouka Koukou no Rettousei Movie: Hoshi wo Yobu Shoujo'
+      - type: Synonym
+        title: Gekijouban Mahouka Koukou no Rettousei
+      - type: Japanese
+        title: 劇場版 魔法科高校の劣等生 星を呼ぶ少女
+      - type: English
+        title: The Irregular at Magic High School The Movie - The Girl Who Summons The Stars
+      - type: German
+        title: 'The Irregular at Magic High School: The Girl who summons the Stars, The Movie'
+      title: 'Mahouka Koukou no Rettousei Movie: Hoshi wo Yobu Shoujo'
+      title_english: The Irregular at Magic High School The Movie - The Girl Who Summons The Stars
+      title_japanese: 劇場版 魔法科高校の劣等生 星を呼ぶ少女
+      title_synonyms:
+      - Gekijouban Mahouka Koukou no Rettousei
+      type: Movie
+      source: Light novel
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-06-17T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 17
+            month: 6
+            year: 2017
+          to:
+            day: null
+            month: null
+            year: null
+        string: Jun 17, 2017
+      duration: 1 hr 30 min
+      rating: R - 17+ (violence & profanity)
+      score: 7.45
+      scored_by: 98679
+      rank: 2484
+      popularity: 1369
+      members: 204260
+      favorites: 449
+      synopsis: |-
+        In the story, the seasons have changed and it will soon be the second spring. Tatsuya and Miyuki have finished their first year at First Magic High School and are on their spring break. The two go to their villa on the Ogasawara Island archipelago. After only a small moment of peace a lone young woman named Kokoa appears before them. She has abandoned the Naval base and she tells Tatsuya her one wish.
+
+        (Source: ANN)
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 17
+        type: anime
+        name: Aniplex
+        url: https://myanimelist.net/anime/producer/17/Aniplex
+      - mal_id: 58
+        type: anime
+        name: Square Enix
+        url: https://myanimelist.net/anime/producer/58/Square_Enix
+      - mal_id: 166
+        type: anime
+        name: Movic
+        url: https://myanimelist.net/anime/producer/166/Movic
+      - mal_id: 681
+        type: anime
+        name: ASCII Media Works
+        url: https://myanimelist.net/anime/producer/681/ASCII_Media_Works
+      - mal_id: 719
+        type: anime
+        name: Studio Mausu
+        url: https://myanimelist.net/anime/producer/719/Studio_Mausu
+      licensors:
+      - mal_id: 493
+        type: anime
+        name: Aniplex of America
+        url: https://myanimelist.net/anime/producer/493/Aniplex_of_America
+      studios:
+      - mal_id: 441
+        type: anime
+        name: 8bit
+        url: https://myanimelist.net/anime/producer/441/8bit
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 24
+        type: anime
+        name: Sci-Fi
+        url: https://myanimelist.net/anime/genre/24/Sci-Fi
+      explicit_genres: []
+      themes:
+      - mal_id: 82
+        type: anime
+        name: Urban Fantasy
+        url: https://myanimelist.net/anime/genre/82/Urban_Fantasy
+      demographics: []
+    - mal_id: 33929
+      url: https://myanimelist.net/anime/33929/Boku_no_Hero_Academia__Sukue_Kyuujo_Kunren
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1812/111684.jpg
+          small_image_url: https://myanimelist.net/images/anime/1812/111684t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1812/111684l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1812/111684.webp
+          small_image_url: https://myanimelist.net/images/anime/1812/111684t.webp
+          large_image_url: https://myanimelist.net/images/anime/1812/111684l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/-vBvKpRSers?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Boku no Hero Academia: Sukue! Kyuujo Kunren!'
+      - type: Synonym
+        title: Boku no Hero Academia Jump Festa 2016 Special
+      - type: Japanese
+        title: 僕のヒーローアカデミア救え!救助訓練!
+      - type: English
+        title: 'My Hero Academia: Rescue! Rescue Training'
+      title: 'Boku no Hero Academia: Sukue! Kyuujo Kunren!'
+      title_english: 'My Hero Academia: Rescue! Rescue Training'
+      title_japanese: 僕のヒーローアカデミア救え!救助訓練!
+      title_synonyms:
+      - Boku no Hero Academia Jump Festa 2016 Special
+      type: OVA
+      source: Manga
+      episodes: 1
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-04T00:00:00+00:00'
+        to: null
+        prop:
+          from:
+            day: 4
+            month: 4
+            year: 2017
+          to:
+            day: null
+            month: null
+            year: null
+        string: Apr 4, 2017
+      duration: 26 min
+      rating: PG-13 - Teens 13 or older
+      score: 7.21
+      scored_by: 97488
+      rank: 3863
+      popularity: 1430
+      members: 194936
+      favorites: 162
+      synopsis: "UA High School must regain the public's confidence after the surprise villain attack during class 1-A's training\
+        \ session. Although some of the teachers were gravely injured in the attack, Izuku \"Deku\" Midoriya and his classmates\
+        \ must continue to learn and train, and utilize their quirks in varying environments and circumstances. \n\nBoku no\
+        \ Hero Academia: Sukue! Kyuujo Kunren! follows class 1-A as they attempt to finally complete their training. However,\
+        \ there's a masked figure roaming around the training center. Have the villains responsible for the previous incident\
+        \ returned to finish the job? If so, are the students ready to fight back?\n\n[Written by MAL Rewrite]"
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers: []
+      licensors: []
+      studios:
+      - mal_id: 4
+        type: anime
+        name: Bones
+        url: https://myanimelist.net/anime/producer/4/Bones
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      - mal_id: 31
+        type: anime
+        name: Super Power
+        url: https://myanimelist.net/anime/genre/31/Super_Power
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 34480
+      url: https://myanimelist.net/anime/34480/Shokugeki_no_Souma__Ni_no_Sara_OVA
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/1032/96640.jpg
+          small_image_url: https://myanimelist.net/images/anime/1032/96640t.jpg
+          large_image_url: https://myanimelist.net/images/anime/1032/96640l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/1032/96640.webp
+          small_image_url: https://myanimelist.net/images/anime/1032/96640t.webp
+          large_image_url: https://myanimelist.net/images/anime/1032/96640l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/Asx0p5uCn4U?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Shokugeki no Souma: Ni no Sara OVA'
+      - type: Synonym
+        title: 'Shokugeki no Souma: Ni no Sara - Jump Festa 2016 Special'
+      - type: Synonym
+        title: 'Shokugeki no Soma: Ni no Sara OVA'
+      - type: Synonym
+        title: Shokugeki no Souma 2nd Season OVA
+      - type: Japanese
+        title: 食戟のソーマ 弍ノ皿
+      - type: English
+        title: Food Wars! The Second Plate OVA
+      title: 'Shokugeki no Souma: Ni no Sara OVA'
+      title_english: Food Wars! The Second Plate OVA
+      title_japanese: 食戟のソーマ 弍ノ皿
+      title_synonyms:
+      - 'Shokugeki no Souma: Ni no Sara - Jump Festa 2016 Special'
+      - 'Shokugeki no Soma: Ni no Sara OVA'
+      - Shokugeki no Souma 2nd Season OVA
+      type: OVA
+      source: Manga
+      episodes: 2
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-05-01T00:00:00+00:00'
+        to: '2017-07-04T00:00:00+00:00'
+        prop:
+          from:
+            day: 1
+            month: 5
+            year: 2017
+          to:
+            day: 4
+            month: 7
+            year: 2017
+        string: May 1, 2017 to Jul 4, 2017
+      duration: 25 min per ep
+      rating: PG-13 - Teens 13 or older
+      score: 7.45
+      scored_by: 89320
+      rank: 2492
+      popularity: 1568
+      members: 176826
+      favorites: 112
+      synopsis: "Having completed their Stagiaire assignments, the residents of Polar Star Dormitory and their friends visit\
+        \ a hot springs inn. Though they planned on relaxing, these young chefs step up to the plate when the inn's entire\
+        \ kitchen staff suffer accidents. Unbeknownst to them, they will not be cooking for any ordinary patrons.\n\nSometime\
+        \ after this trip, Souma Yukihira's desire for worthy opponents is stoked when he, Megumi Tadokoro, and the other\
+        \ Autumn Election quarter-finalists are invited to the annual Autumn Leaves Viewing event. The eight Tootsuki freshmen\
+        \ have a special opportunity to enjoy tea with the Elite Ten Council—including the Tenth Seat Erina Nakiri, who participates\
+        \ alongside her first-year classmates. Though it is framed as a friendly introduction between nine promising underclassmen\
+        \ and nine prestigious upperclassmen, Director Senzaemon Nakiri sees this meeting for what it is: a first encounter\
+        \ between the current reigning elite and their eventual usurpers. \n\n[Written by MAL Rewrite]"
+      background: ''
+      season: null
+      year: null
+      broadcast:
+        day: null
+        time: null
+        timezone: null
+        string: null
+      producers:
+      - mal_id: 104
+        type: anime
+        name: Lantis
+        url: https://myanimelist.net/anime/producer/104/Lantis
+      - mal_id: 143
+        type: anime
+        name: Mainichi Broadcasting System
+        url: https://myanimelist.net/anime/producer/143/Mainichi_Broadcasting_System
+      - mal_id: 415
+        type: anime
+        name: Warner Bros. Japan
+        url: https://myanimelist.net/anime/producer/415/Warner_Bros_Japan
+      - mal_id: 460
+        type: anime
+        name: KlockWorx
+        url: https://myanimelist.net/anime/producer/460/KlockWorx
+      - mal_id: 1333
+        type: anime
+        name: Hakuhodo DY Music & Pictures
+        url: https://myanimelist.net/anime/producer/1333/Hakuhodo_DY_Music___Pictures
+      - mal_id: 1365
+        type: anime
+        name: Shueisha
+        url: https://myanimelist.net/anime/producer/1365/Shueisha
+      licensors: []
+      studios:
+      - mal_id: 7
+        type: anime
+        name: J.C.Staff
+        url: https://myanimelist.net/anime/producer/7/JCStaff
+      genres:
+      - mal_id: 47
+        type: anime
+        name: Gourmet
+        url: https://myanimelist.net/anime/genre/47/Gourmet
+      - mal_id: 9
+        type: anime
+        name: Ecchi
+        url: https://myanimelist.net/anime/genre/9/Ecchi
+      explicit_genres: []
+      themes:
+      - mal_id: 23
+        type: anime
+        name: School
+        url: https://myanimelist.net/anime/genre/23/School
+      demographics:
+      - mal_id: 27
+        type: anime
+        name: Shounen
+        url: https://myanimelist.net/anime/genre/27/Shounen
+    - mal_id: 33834
+      url: https://myanimelist.net/anime/33834/Sin__Nanatsu_no_Taizai
+      images:
+        jpg:
+          image_url: https://myanimelist.net/images/anime/7/86621.jpg
+          small_image_url: https://myanimelist.net/images/anime/7/86621t.jpg
+          large_image_url: https://myanimelist.net/images/anime/7/86621l.jpg
+        webp:
+          image_url: https://myanimelist.net/images/anime/7/86621.webp
+          small_image_url: https://myanimelist.net/images/anime/7/86621t.webp
+          large_image_url: https://myanimelist.net/images/anime/7/86621l.webp
+      trailer:
+        youtube_id: null
+        url: null
+        embed_url: https://www.youtube-nocookie.com/embed/KQH6l2UPhao?enablejsapi=1&wmode=opaque&autoplay=1
+        images:
+          image_url: null
+          small_image_url: null
+          medium_image_url: null
+          large_image_url: null
+          maximum_image_url: null
+      approved: true
+      titles:
+      - type: Default
+        title: 'Sin: Nanatsu no Taizai'
+      - type: Japanese
+        title: sin 七つの大罪
+      - type: English
+        title: Seven Mortal Sins
+      - type: German
+        title: Seven Mortal Sins
+      - type: Spanish
+        title: Seven Mortal Sins
+      - type: French
+        title: Sin Nanatsu no Taizai
+      title: 'Sin: Nanatsu no Taizai'
+      title_english: Seven Mortal Sins
+      title_japanese: sin 七つの大罪
+      title_synonyms: []
+      type: TV
+      source: Other
+      episodes: 12
+      status: Finished Airing
+      airing: false
+      aired:
+        from: '2017-04-15T00:00:00+00:00'
+        to: '2017-07-29T00:00:00+00:00'
+        prop:
+          from:
+            day: 15
+            month: 4
+            year: 2017
+          to:
+            day: 29
+            month: 7
+            year: 2017
+        string: Apr 15, 2017 to Jul 29, 2017
+      duration: 23 min per ep
+      rating: R+ - Mild Nudity
+      score: 5.76
+      scored_by: 56284
+      rank: null
+      popularity: 1610
+      members: 171302
+      favorites: 369
+      synopsis: "Lucifer, an Archangel and former head of the Seven Heavenly Virtues, is banished from Heaven after revolting\
+        \ against the Lord's will. While plummeting from the skies, she is halted halfway between Heaven and Hell after crashing\
+        \ through the roof of a high school church. Though she is witnessed by Maria Totsuka, a soft-spoken student at the\
+        \ academy, Lucifer swiftly continues her descent into the depths of Hell.\n\nSoon after her arrival, Lucifer is found\
+        \ by aspiring Demon Lord and fangirl Leviathan. The two decide to overthrow the Seven Sins, the authorities of Hell\
+        \ under the leadership of Belial. But with their combined powers, the Seven Sins are able to repel Lucifer and contain\
+        \ her divine powers by placing a Garb of Punishment over her body, transforming Lucifer into a Demon Lord. \n\nLonging\
+        \ for revenge and accompanied by Leviathan, Lucifer makes her way back to Earth, where she forces Maria to become\
+        \ her immortal slave. Together with her new accomplices, Lucifer sets out on a mission to subdue the Seven Sins so\
+        \ she may be free of the curse brought upon by her Garb.\n\n[Written by MAL Rewrite]"
+      background: ''
+      season: spring
+      year: 2017
+      broadcast:
+        day: Saturdays
+        time: 00:00
+        timezone: Asia/Tokyo
+        string: Saturdays at 00:00 (JST)
+      producers:
+      - mal_id: 79
+        type: anime
+        name: Genco
+        url: https://myanimelist.net/anime/producer/79/Genco
+      - mal_id: 104
+        type: anime
+        name: Lantis
+        url: https://myanimelist.net/anime/producer/104/Lantis
+      - mal_id: 238
+        type: anime
+        name: AT-X
+        url: https://myanimelist.net/anime/producer/238/AT-X
+      - mal_id: 547
+        type: anime
+        name: Hobby Japan
+        url: https://myanimelist.net/anime/producer/547/Hobby_Japan
+      - mal_id: 1113
+        type: anime
+        name: NBCUniversal Entertainment Japan
+        url: https://myanimelist.net/anime/producer/1113/NBCUniversal_Entertainment_Japan
+      - mal_id: 1494
+        type: anime
+        name: Kanon Sound
+        url: https://myanimelist.net/anime/producer/1494/Kanon_Sound
+      - mal_id: 1654
+        type: anime
+        name: Orchid Seed
+        url: https://myanimelist.net/anime/producer/1654/Orchid_Seed
+      licensors:
+      - mal_id: 102
+        type: anime
+        name: Funimation
+        url: https://myanimelist.net/anime/producer/102/Funimation
+      studios:
+      - mal_id: 8
+        type: anime
+        name: Artland
+        url: https://myanimelist.net/anime/producer/8/Artland
+      - mal_id: 120
+        type: anime
+        name: TNK
+        url: https://myanimelist.net/anime/producer/120/TNK
+      genres:
+      - mal_id: 1
+        type: anime
+        name: Action
+        url: https://myanimelist.net/anime/genre/1/Action
+      - mal_id: 2
+        type: anime
+        name: Adventure
+        url: https://myanimelist.net/anime/genre/2/Adventure
+      - mal_id: 10
+        type: anime
+        name: Fantasy
+        url: https://myanimelist.net/anime/genre/10/Fantasy
+      - mal_id: 49
+        type: anime
+        name: Erotica
+        url: https://myanimelist.net/anime/genre/49/Erotica
+      explicit_genres: []
+      themes: []
+      demographics: []
+  body_text: null
+  body_b64: null

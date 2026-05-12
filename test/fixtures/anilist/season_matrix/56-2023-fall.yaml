@@ -1,0 +1,728 @@
+metadata:
+  captured_at: '2026-05-11T11:34:53Z'
+  label: 2023-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2023
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:34:53 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Content-Security-Policy-Report-Only: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '17'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Nel: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 154587
+          idMal: 52991
+          title:
+            romaji: Sousou no Frieren
+            english: 'Frieren: Beyond Journey’s End'
+            native: 葬送のフリーレン
+          synonyms:
+          - Frieren at the Funeral
+          - 장송의 프리렌
+          - Frieren - Oltre la Fine del Viaggio
+          - คำอธิษฐานในวันที่จากลา Frieren
+          - Frieren e a Jornada para o Além
+          - Frieren – Nach dem Ende der Reise
+          - 葬送的芙莉蓮
+          - 'Frieren: Más allá del final del viaje'
+          - Frieren en el funeral
+          - Sōsō no Furīren
+          - Frieren. U kresu drogi
+          - Frieren - Pháp sư tiễn táng
+          - Фрирен, провожающая в последний путь
+          - 'فريرن: ما وراء نهاية الرحلة'
+          - 'Frieren: Tras finalizar el viaje'
+          status: FINISHED
+          format: TV
+          episodes: 28
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 9
+            day: 29
+          endDate:
+            year: 2024
+            month: 3
+            day: 22
+          averageScore: 91
+          nextAiringEpisode: null
+        - id: 161645
+          idMal: 54492
+          title:
+            romaji: Kusuriya no Hitorigoto
+            english: The Apothecary Diaries
+            native: 薬屋のひとりごと
+          synonyms:
+          - Drugstore Soliloquy
+          - Les Carnets de l'Apothicaire
+          - Zapiski zielarki
+          - Diários de uma Apotecária
+          - Il monologo della Speziale
+          - Los diarios de la boticaria
+          - สืบคดีปริศนา หมอยาตำรับโคมแดง
+          - Записки аптекаря
+          - Die Tagebücher der Apothekerin
+          - يوميات الصيدلانيّة
+          - 藥師少女的獨語
+          - 药屋少女的呢喃
+          - Монолог фармацевта
+          - 약사의 혼잣말
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 22
+          endDate:
+            year: 2024
+            month: 3
+            day: 24
+          averageScore: 88
+          nextAiringEpisode: null
+        - id: 158927
+          idMal: 53887
+          title:
+            romaji: SPY×FAMILY Season 2
+            english: SPY x FAMILY Season 2
+            native: SPY×FAMILY Season 2
+          synonyms:
+          - SxF 2
+          - 스파이 패밀리
+          - Семья шпиона
+          - スパイファミリー 2
+          - Spy x Family – Sezon 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 7
+          endDate:
+            year: 2023
+            month: 12
+            day: 23
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 161964
+          idMal: 54595
+          title:
+            romaji: Kage no Jitsuryokusha ni Naritakute! 2nd season
+            english: The Eminence in Shadow Season 2
+            native: 陰の実力者になりたくて！ 2nd season
+          synonyms:
+          - To Be a Power in the Shadows! 2
+          - ชีวิตไม่ต้องเด่น ขอแค่เป็นเทพในเงา 2
+          - Un giorno sarò l'eminenza grigia 2
+          - TEIS 2
+          - Кардинал теней 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 4
+          endDate:
+            year: 2023
+            month: 12
+            day: 20
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 151970
+          idMal: 52347
+          title:
+            romaji: Shangri-La Frontier
+            english: Shangri-La Frontier
+            native: シャングリラ・フロンティア
+          synonyms:
+          - ShanFro
+          - シャンフロ
+          - シャングリラ・フロンティア〜クソゲーハンター, 神ゲーに挑まんとす〜
+          - 'Shangri-La Frontier: Kusoge Hunter, Kami ge ni Idoman to su'
+          - SHANGRI-LA FRONTIER ～เมื่อนักล่าเกมขยะท้าสู้ในเกมเทพ～
+          - Рубеж Шангри-Ла
+          - Thợ săn Game rác thách thức Game cấp Thánh
+          status: FINISHED
+          format: TV
+          episodes: 25
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 1
+          endDate:
+            year: 2024
+            month: 3
+            day: 31
+          averageScore: 80
+          nextAiringEpisode: null
+        - id: 162314
+          idMal: null
+          title:
+            romaji: 'Shingeki no Kyojin: The Final Season - Kanketsu-hen Kouhen'
+            english: Attack on Titan Final Season THE FINAL CHAPTERS Special 2
+            native: 進撃の巨人 The Final Season完結編 後編
+          synonyms:
+          - 'Shingeki no Kyojin: The Final Season Final Edition'
+          - Attack on Titan Final Season Part 3 Final Arc Part 2
+          - 'Attack on Titan: The Final Season Part 4'
+          - 'Shingeki no Kyojin: The Final Season Part 4'
+          - SnK 4
+          - AoT 4
+          status: FINISHED
+          format: SPECIAL
+          episodes: 1
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 11
+            day: 5
+          endDate:
+            year: 2023
+            month: 11
+            day: 5
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 111322
+          idMal: 40357
+          title:
+            romaji: Tate no Yuusha no Nariagari Season 3
+            english: The Rising of the Shield Hero Season 3
+            native: 盾の勇者の成り上がり Season 3
+          synonyms:
+          - ผู้กล้าโล่ผงาด ภาค 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 6
+          endDate:
+            year: 2023
+            month: 12
+            day: 22
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 162670
+          idMal: 55644
+          title:
+            romaji: 'Dr. STONE: NEW WORLD Part 2'
+            english: Dr. STONE New World Part 2
+            native: Dr.STONE NEW WORLD 第2クール
+          synonyms:
+          - 石纪元第三季
+          - Dr.STONE Season 3 Part 2
+          - DR.STONE ภาค 3
+          - Dr.STONE 第3期 第2クール
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 12
+          endDate:
+            year: 2023
+            month: 12
+            day: 21
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 154116
+          idMal: 52741
+          title:
+            romaji: Undead Unluck
+            english: Undead Unluck
+            native: アンデッドアンラック
+          synonyms:
+          - אל-מת ובלי מזל
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 7
+          endDate:
+            year: 2024
+            month: 3
+            day: 23
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 162694
+          idMal: 54714
+          title:
+            romaji: Kimi no Koto ga Dai Dai Dai Dai Daisuki na 100-nin no Kanojo
+            english: The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You
+            native: 君のことが大大大大大好きな100人の彼女
+          synonyms:
+          - 100 Kanojo
+          - 100Kano
+          - Hyakkano
+          - 100 Namoradas Que Te Amam Muuuuuito
+          - Les 100 petites amies qui t'aiiiment à en mourir
+          - 100 Pacar yang Sungguh Sangat Amat Benar-benar Mencintaimu
+          - 100 девушек, которые очень-очень-очень-очень-очень сильно тебя любят
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 8
+          endDate:
+            year: 2023
+            month: 12
+            day: 24
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 129188
+          idMal: 47160
+          title:
+            romaji: Goblin Slayer II
+            english: GOBLIN SLAYER II
+            native: ゴブリンスレイヤーⅡ
+          synonyms:
+          - ก็อบลิน สเลเยอร์ ภาค 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 6
+          endDate:
+            year: 2023
+            month: 12
+            day: 22
+          averageScore: 71
+          nextAiringEpisode: null
+        - id: 146493
+          idMal: 51297
+          title:
+            romaji: Ragna Crimson
+            english: Ragna Crimson
+            native: ラグナクリムゾン
+          synonyms:
+          - ตำนานนักล่ามังกร
+          - Рагна Багровый
+          status: FINISHED
+          format: TV
+          episodes: 24
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 1
+          endDate:
+            year: 2024
+            month: 3
+            day: 31
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 158928
+          idMal: 53888
+          title:
+            romaji: 'SPY×FAMILY CODE: White'
+            english: 'SPY x FAMILY CODE: White'
+            native: 'SPY×FAMILY CODE: White'
+          synonyms:
+          - SxF Movie
+          - 劇場版 スパイファミリー
+          - 'SPY x FAMILY CÓDIGO: Branco'
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 12
+            day: 22
+          endDate:
+            year: 2023
+            month: 12
+            day: 22
+          averageScore: 81
+          nextAiringEpisode: null
+        - id: 99088
+          idMal: 35737
+          title:
+            romaji: PLUTO
+            english: PLUTO
+            native: PLUTO
+          synonyms:
+          - プルートウ
+          - ПЛУТОН
+          status: FINISHED
+          format: ONA
+          episodes: 8
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 26
+          endDate:
+            year: 2023
+            month: 10
+            day: 26
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 156039
+          idMal: 53439
+          title:
+            romaji: Boushoku no Berserk
+            english: Berserk of Gluttony
+            native: 暴食のベルセルク
+          synonyms:
+          - จอมตะกละดาบคลั่ง
+          - Bousyoku
+          - O Berserker da Gula
+          - Berserk nan Rakus
+          - Ненасытный берсерк
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 2
+          endDate:
+            year: 2023
+            month: 12
+            day: 18
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 163329
+          idMal: 54918
+          title:
+            romaji: 'Tokyo Revengers: Tenjiku-hen'
+            english: Tokyo Revengers Season 2 Part 2
+            native: 東京リベンジャーズ 天竺編
+          synonyms:
+          - 'Tokyo Revengers: Tenjiku Arc'
+          - Tokyo Revengers Season 3
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 4
+          endDate:
+            year: 2023
+            month: 12
+            day: 27
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 154459
+          idMal: 52990
+          title:
+            romaji: Keikenzumi na Kimi to, Keiken Zero na Ore ga, Otsukiai suru Hanashi.
+            english: 'Our Dating Story: The Experienced You and The Inexperienced Me'
+            native: 経験済みなキミと、経験ゼロなオレが、お付き合いする話。
+          synonyms:
+          - หนุ่มซิงกับสาวฮอต เดตนี้จะรอดมั้ยนะ
+          - Kimizero
+          - キミゼロ
+          - 'Kisah Asmara Kita: Kamu yang Berpengalaman dan Aku yang Polos'
+          - Искушённая ты и незрелый я
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 6
+          endDate:
+            year: 2023
+            month: 12
+            day: 22
+          averageScore: 67
+          nextAiringEpisode: null
+        - id: 160900
+          idMal: 54362
+          title:
+            romaji: Hametsu no Oukoku
+            english: The Kingdoms of Ruin
+            native: はめつのおうこく
+          synonyms:
+          - Os Reinos da Ruína
+          - 破滅的王國
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 7
+          endDate:
+            year: 2023
+            month: 12
+            day: 23
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 161474
+          idMal: 54870
+          title:
+            romaji: Seishun Buta Yarou wa Randoseru Girl no Yume wo Minai
+            english: Rascal Does Not Dream of a Knapsack Kid
+            native: 青春ブタ野郎はランドセルガールの夢を見ない
+          synonyms:
+          - Rascal Does Not Dream of a Knapsack Kid
+          - Ao Buta
+          - 青ブタ
+          status: FINISHED
+          format: MOVIE
+          episodes: 1
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 12
+            day: 1
+          endDate:
+            year: 2023
+            month: 12
+            day: 1
+          averageScore: 83
+          nextAiringEpisode: null
+        - id: 163142
+          idMal: 54852
+          title:
+            romaji: Kikansha no Mahou wa Tokubetsu desu
+            english: A Returner's Magic Should Be Special
+            native: 帰還者の魔法は特別です
+          synonyms:
+          - Gwihwanjaui Mabeobeun Teukbyeolhaeya Hamnida
+          - 귀환자의 마법은 특별해야 합니다
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 8
+          endDate:
+            year: 2023
+            month: 12
+            day: 24
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 158704
+          idMal: 53833
+          title:
+            romaji: Watashi no Oshi wa Akuyaku Reijou.
+            english: I'm in Love with the Villainess
+            native: 私の推しは悪役令嬢。
+          synonyms:
+          - WataOshi
+          - わたおし
+          - ทำไงดีเกมนี้นางร้ายน่ารัก
+          - Me Enamoré de la Villana
+          - Me Apaixonei pela Vilã!
+          - Я влюблена в злодейку
+          - 我的推是壞人大小姐。
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 3
+          endDate:
+            year: 2023
+            month: 12
+            day: 19
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 140501
+          idMal: 50184
+          title:
+            romaji: Seiken Gakuin no Maken Tsukai
+            english: The Demon Sword Master of Excalibur Academy
+            native: 聖剣学院の魔剣使い
+          synonyms:
+          - Demon's Sword Master of Excalibur School
+          - จอมมารเกิดใหม่ วิทยาลัยผู้พิทักษ์
+          - Lo spadaccino demoniaco all'accademia delle arti sacre
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 9
+            day: 26
+          endDate:
+            year: 2023
+            month: 12
+            day: 12
+          averageScore: 61
+          nextAiringEpisode: null
+        - id: 158926
+          idMal: 53879
+          title:
+            romaji: Kamonohashi Ron no Kindan Suiri
+            english: Ron Kamonohashi's Forbidden Deductions
+            native: 鴨乃橋ロンの禁断推理
+          synonyms:
+          - 'Ron Kamonohashi: Deranged Detective'
+          - El misterio prohibido de Ron Kamonohashi
+          - สืบลับฉบับคาโมโนะฮาชิ รอน
+          - Meisterdetektiv Ron Kamonohashi
+          - 鸭乃桥论的禁忌推理
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 2
+          endDate:
+            year: 2023
+            month: 12
+            day: 25
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 159808
+          idMal: 54103
+          title:
+            romaji: Hikikomari Kyuuketsuki no Monmon
+            english: The Vexations of a Shut-In Vampire Princess
+            native: ひきこまり吸血姫の悶々
+          synonyms:
+          - สารพันปัญหาวุ่นวาย ของยัยแวมไพร์ขี้จุ๊
+          - ' I tormenti della vampira reclusa'
+          - 家裡蹲吸血姬的鬱悶
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 7
+          endDate:
+            year: 2023
+            month: 12
+            day: 30
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 143085
+          idMal: 50664
+          title:
+            romaji: 'Saihate no Paladin: Tetsusabi no Yama no Ou'
+            english: 'The Faraway Paladin: The Lord of Rust Mountains'
+            native: 最果てのパラディン 鉄錆の山の王
+          synonyms:
+          - The Faraway Paladin Season 2
+          - พาลาดิน ยอดอัศวินจากแดนไกล ภาค 2
+          - Saihate no Paladin 2nd Season
+          - 'The Faraway Paladin: O Senhor das Montanhas de Ferrugem'
+          - 世界盡頭的聖騎士 鐵鏽之山的君王
+          - 'The Faraway Paladin : Le Seigneur des Montagnes de Rouille'
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2023
+          startDate:
+            year: 2023
+            month: 10
+            day: 7
+          endDate:
+            year: 2023
+            month: 12
+            day: 23
+          averageScore: 73
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null

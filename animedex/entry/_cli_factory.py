@@ -68,16 +68,16 @@ def _to_json_text(model_or_list, *, include_source: bool) -> str:
     return json.dumps(model_or_list, indent=2, ensure_ascii=False, default=str)
 
 
-def _to_tty_text(model_or_list) -> str:
+def _to_tty_text(model_or_list, *, stream=None) -> str:
     """Render a model (or list) as TTY text. Calls
     :func:`animedex.render.tty.render_tty` directly so the ``emit``
     caller's ``use_json`` decision is honoured — going through
     ``render_for_stream`` would re-check isatty(stdout) and bounce
     list[Anime] into the JSON branch when stdout isn't a real TTY."""
     if isinstance(model_or_list, list):
-        return "\n".join(_to_tty_text(item) for item in model_or_list)
+        return "\n".join(_to_tty_text(item, stream=stream) for item in model_or_list)
     if isinstance(model_or_list, AnimedexModel):
-        return render_tty(model_or_list)
+        return render_tty(model_or_list, stream=stream)
     return str(model_or_list)
 
 
@@ -112,7 +112,7 @@ def emit(
         if jq_expr is not None:
             text = _apply_jq(text, jq_expr)
     else:
-        text = _to_tty_text(result)
+        text = _to_tty_text(result, stream=sys.stdout)
 
     click.echo(text.rstrip("\n"))
 

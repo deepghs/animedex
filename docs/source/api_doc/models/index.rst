@@ -9,6 +9,7 @@ animedex.models
 .. toctree::
     :maxdepth: 3
 
+    aggregate
     anime
     art
     character

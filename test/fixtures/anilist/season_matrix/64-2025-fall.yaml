@@ -1,0 +1,698 @@
+metadata:
+  captured_at: '2026-05-11T11:35:18Z'
+  label: 2025-fall
+  backend: anilist
+  path_slug: season_matrix
+request:
+  method: POST
+  url: https://graphql.anilist.co/
+  headers:
+    Content-Type: application/json
+    User-Agent: animedex/0.0.1
+  params: null
+  json_body:
+    query: |-
+      query ($year: Int, $season: MediaSeason, $perPage: Int) {
+        Page(page: 1, perPage: $perPage) {
+          pageInfo { total }
+          media(seasonYear: $year, season: $season, type: ANIME, sort: POPULARITY_DESC) {
+            id idMal title { romaji english native } synonyms status format episodes season seasonYear
+            startDate { year month day } endDate { year month day }
+            averageScore nextAiringEpisode { airingAt episode timeUntilAiring }
+          }
+        }
+      }
+    variables:
+      year: 2025
+      season: FALL
+      perPage: 25
+  raw_body_b64: null
+response:
+  status: 200
+  headers:
+    Date: Mon, 11 May 2026 11:35:18 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Server: cloudflare
+    Nel: <scrubbed-at-capture>
+    Cache-Control: no-cache, private
+    X-RateLimit-Limit: '30'
+    X-RateLimit-Remaining: '9'
+    Set-Cookie: <scrubbed-at-capture>
+    X-Frame-Options: SAMEORIGIN
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Headers: Authorization,Accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+    Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Content-Length, Content-Range
+    cf-cache-status: DYNAMIC
+    Report-To: <scrubbed-at-capture>
+    Content-Encoding: gzip
+    CF-RAY: <scrubbed-at-capture>
+  body_json:
+    data:
+      Page:
+        pageInfo:
+          total: 5000
+        media:
+        - id: 153800
+          idMal: 52807
+          title:
+            romaji: One Punch Man 3
+            english: One-Punch Man Season 3
+            native: ワンパンマン３
+          synonyms:
+          - OPM3
+          - ون بنش مان 3
+          - رجل اللكمة الواحدة 3
+          - วันพันช์แมน ซีซั่น 3
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 12
+          endDate:
+            year: 2025
+            month: 12
+            day: 28
+          averageScore: 50
+          nextAiringEpisode: null
+        - id: 177937
+          idMal: 59027
+          title:
+            romaji: SPY×FAMILY Season 3
+            english: SPY x FAMILY Season 3
+            native: SPY×FAMILY Season 3
+          synonyms:
+          - SxF 3
+          - スパイファミリー 3
+          - SPY×FAMILY ซีซั่น 3
+          - SPY×FAMILY 間諜家家酒 Season 3
+          - 間諜家家酒 Season 3
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 4
+          endDate:
+            year: 2025
+            month: 12
+            day: 27
+          averageScore: 82
+          nextAiringEpisode: null
+        - id: 182896
+          idMal: 60098
+          title:
+            romaji: Boku no Hero Academia FINAL SEASON
+            english: My Hero Academia FINAL SEASON
+            native: 僕のヒーローアカデミア FINAL SEASON
+          synonyms:
+          - Boku no Hero Academia 8
+          - My Hero Academia 8
+          - BNHA 8
+          - MHA 8
+          - Моя геройская академия 8
+          - ヒロアカ 8
+          - มายฮีโร่ อคาเดเมีย ไฟนอลซีซัน
+          status: FINISHED
+          format: TV
+          episodes: 11
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 4
+          endDate:
+            year: 2025
+            month: 12
+            day: 13
+          averageScore: 87
+          nextAiringEpisode: null
+        - id: 186794
+          idMal: 61026
+          title:
+            romaji: Ansatsusha de Aru Ore no Status ga Yuusha yori mo Akiraka ni Tsuyoi no da ga
+            english: My Status as an Assassin Obviously Exceeds the Hero’s
+            native: 暗殺者である俺のステータスが 勇者よりも明らかに強いのだが
+          synonyms:
+          - Sutetsuyo
+          - ステつよ
+          - ถึงเป็นแค่นักฆ่า แต่ดูยังไงข้าก็เทพกว่าผู้กล้าซะอีก
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 7
+          endDate:
+            year: 2025
+            month: 12
+            day: 23
+          averageScore: 66
+          nextAiringEpisode: null
+        - id: 181447
+          idMal: 59846
+          title:
+            romaji: Saigo ni Hitotsu dake Onegai Shite mo Yoroshii Deshou ka
+            english: May I Ask for One Final Thing?
+            native: 最後にひとつだけお願いしてもよろしいでしょうか
+          synonyms:
+          - さいひと
+          - SaiHito
+          - สุดท้ายนี้ขอเพียงอย่างหนึ่งได้ไหมคะ
+          status: FINISHED
+          format: ONA
+          episodes: 13
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 4
+          endDate:
+            year: 2025
+            month: 12
+            day: 20
+          averageScore: 73
+          nextAiringEpisode: null
+        - id: 162669
+          idMal: 54703
+          title:
+            romaji: Fumetsu no Anata e Season 3
+            english: To Your Eternity Season 3
+            native: 不滅のあなたへ Season 3
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 22
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 4
+          endDate:
+            year: 2026
+            month: 3
+            day: 29
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 184322
+          idMal: 60303
+          title:
+            romaji: Shinjiteita Nakamatachi ni Dungeon Okuchi de Korosarekaketa ga Gift "Mugen Gacha" de Level 9999 no Nakamatachi
+              wo Te ni Irete Moto Party Member to Sekai ni Fukushuu & "Zamaa!" Shimasu!
+            english: 'My Gift Lvl 9999 Unlimited Gacha: Backstabbed in a Backwater Dungeon, I''m Out for Revenge!'
+            native: 信じていた仲間達にダンジョン奥地で殺されかけたがギフト『無限ガチャ』でレベル9999の仲間達を手に入れて元パーティーメンバーと世界に復讐＆『ざまぁ！』します！
+          synonyms:
+          - 'Backstabbed in a Backwater Dungeon: My Trusted Companions Tried to Kill Me, But Thanks to the Gift of an Unlimited
+            Gacha I Got LVL 9999 Friends'
+          - My Gift LVL 9999 Unlimited Gacha
+          - ผมถูกเพื่อนที่เชื่อใจหลอกไปฆ่า เลยใช้กิฟต์สุ่มกาชาพาพวกพ้องเลเวล 9999 กลับมาล้างแค้น
+          - Mugen Gacha
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 3
+          endDate:
+            year: 2025
+            month: 12
+            day: 19
+          averageScore: 70
+          nextAiringEpisode: null
+        - id: 170577
+          idMal: 57025
+          title:
+            romaji: Tondemo Skill de Isekai Hourou Meshi 2
+            english: Campfire Cooking in Another World with my Absurd Skill Season 2
+            native: とんでもスキルで異世界放浪メシ2
+          synonyms:
+          - とんでもスキルで異世界放浪メシ 第2期
+          - Tondemo Skill de Isekai Hourou Meshi 2nd Season
+          - สกิลสุดพิสดารกับมื้ออาหารในต่างโลก ซีซั่น 2
+          - Кулинар со странными навыками в параллельном мире 2
+          - 擁有超常技能的異世界流浪美食家 S2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 8
+          endDate:
+            year: 2025
+            month: 12
+            day: 24
+          averageScore: 76
+          nextAiringEpisode: null
+        - id: 179302
+          idMal: 59267
+          title:
+            romaji: SANDA
+            english: SANDA
+            native: SANDA
+          synonyms:
+          - サンダ
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 4
+          endDate:
+            year: 2025
+            month: 12
+            day: 20
+          averageScore: 75
+          nextAiringEpisode: null
+        - id: 129195
+          idMal: 47158
+          title:
+            romaji: Tomodachi no Imouto ga Ore ni dake Uzai
+            english: My Friend's Little Sister Has It In for Me!
+            native: 友達の妹が俺にだけウザい
+          synonyms:
+          - ImoUza
+          - いもウザ
+          - น้องสาวเพื่อนตัวร้ายกับนายจืดจาง
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 5
+          endDate:
+            year: 2025
+            month: 12
+            day: 21
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 194884
+          idMal: 61903
+          title:
+            romaji: 'Kaguya-sama wa Kokurasetai: Otona e no Kaidan'
+            english: 'Kaguya-sama: Love Is War -Stairway to Adulthood-'
+            native: かぐや様は告らせたい 大人への階段
+          synonyms:
+          - 'Kaguya-sama: Love Is War - The Grown-Up Staircase'
+          status: FINISHED
+          format: SPECIAL
+          episodes: 2
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 12
+            day: 31
+          endDate:
+            year: 2025
+            month: 12
+            day: 31
+          averageScore: 84
+          nextAiringEpisode: null
+        - id: 198188
+          idMal: 62405
+          title:
+            romaji: Fujimoto Tatsuki 17-26
+            english: Tatsuki Fujimoto 17-26
+            native: 藤本タツキ 17-26
+          synonyms:
+          - A Couple Clucking Chickens Were Still Kickin' in the Schoolyard
+          - Sasaki Stopped a Bullet
+          - Love is Blind
+          - Shikaku
+          - Mermaid Rhapsody
+          - Woke-Up-as-a-Girl Syndrome
+          - Nayuta of the Prophecy
+          - Sisters
+          - ' 庭には二羽 ニワトリがいた。'
+          - 佐々木くんが 銃弾止めた
+          - 恋は盲目
+          - シカク
+          - 人魚ラプソディ
+          - '目が覚めたら 女の子になっていた病 '
+          - 予言のナユタ
+          - 妹の姉
+          status: FINISHED
+          format: MOVIE
+          episodes: 8
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 17
+          endDate:
+            year: 2025
+            month: 10
+            day: 17
+          averageScore: 79
+          nextAiringEpisode: null
+        - id: 180523
+          idMal: 59644
+          title:
+            romaji: Yasei no Last Boss ga Arawareta!
+            english: A Wild Last Boss Appeared!
+            native: 野生のラスボスが現れた！
+          synonyms:
+          - A Wild Last Boss Appears!
+          - อุบัติการณ์ลาสบอสสุดแกร่ง
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 9
+            day: 27
+          endDate:
+            year: 2025
+            month: 12
+            day: 13
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 180082
+          idMal: 59517
+          title:
+            romaji: Chitose-kun wa Ramune Bin no Naka
+            english: Chitose Is in the Ramune Bottle
+            native: 千歳くんはラムネ瓶のなか
+          synonyms:
+          - Ramune no Bin ni Shizunda Biidama no Tsuki
+          - ラムネの瓶に沈んだビー玉の月
+          - Chiramune
+          - チラムネ
+          - ชีวิตรสโซดาของจิโตะเสะคุง
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 7
+          endDate:
+            year: 2026
+            month: 3
+            day: 31
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 183385
+          idMal: 60168
+          title:
+            romaji: Watashi wo Tabetai, Hitodenashi
+            english: This Monster Wants to Eat Me
+            native: 私を喰べたい、ひとでなし
+          synonyms:
+          - A Monster Wants to Eat Me
+          - WataTabe
+          - わたたべ
+          - หากวันใดใครตนนั้นใคร่กลืนกิน
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 2
+          endDate:
+            year: 2025
+            month: 12
+            day: 25
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 169969
+          idMal: 56854
+          title:
+            romaji: 'Mushoku no Eiyuu: Betsu ni Skill nanka Ira Nakattan Daga'
+            english: 'Hero Without a Class: Who Even Needs Skills?!'
+            native: 無職の英雄 別にスキルなんか要らなかったんだが
+          synonyms:
+          - The Hero Who Has No Class. I Don't Need Any Skills, It's Okay. The hero who has no class.
+          - The Unemployed Hero Does Not Need Something Like Skills
+          - ผู้กล้าไร้อาชีพ
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 9
+            day: 24
+          endDate:
+            year: 2025
+            month: 12
+            day: 10
+          averageScore: 62
+          nextAiringEpisode: null
+        - id: 195153
+          idMal: 61917
+          title:
+            romaji: Towa no Yuugure
+            english: Dusk Beyond the End of the World
+            native: 永久のユウグレ
+          synonyms:
+          - ยามอัสดงกัลปาวสาน
+          - Bersamamu Kala Senjanya Dunia
+          status: FINISHED
+          format: TV
+          episodes: 13
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 9
+            day: 26
+          endDate:
+            year: 2025
+            month: 12
+            day: 19
+          averageScore: 64
+          nextAiringEpisode: null
+        - id: 188487
+          idMal: 61276
+          title:
+            romaji: Mikata ga Yowa Sugite Hojo Mahou ni Toushite Ita Kyuutei Mahoushi, Tsuihou Sarete Saikyou wo Mezasu
+            english: The Banished Court Magician Aims to Become the Strongest
+            native: 味方が弱すぎて補助魔法に徹していた宮廷魔法師、追放されて最強を目指す
+          synonyms:
+          - Story of Lasting Period A Court Magician, Who Was Focused On Supportive Magic Because His Allies Were Too Weak,
+            Aims To Become The Strongest After Being Banished
+          - Story of Lasting Period
+          - Hojo Maho
+          - จอมเวทสายซัพพอร์ตมันไม่รุ่ง ก็มุ่งสู่จอมเวทสุดแกร่งมันซะเลย
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 4
+          endDate:
+            year: 2025
+            month: 12
+            day: 20
+          averageScore: 63
+          nextAiringEpisode: null
+        - id: 187663
+          idMal: 61174
+          title:
+            romaji: Sozai Saishuka no Isekai Ryokouki
+            english: A Gatherer's Adventure in Isekai
+            native: 素材採取家の異世界旅行記
+          synonyms:
+          - Material Collector's Another World Travels
+          status: FINISHED
+          format: ONA
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 9
+            day: 30
+          endDate:
+            year: 2025
+            month: 12
+            day: 16
+          averageScore: 60
+          nextAiringEpisode: null
+        - id: 185731
+          idMal: 60564
+          title:
+            romaji: Ranma 1/2 (2024) 2nd Season
+            english: Ranma1/2 (2024) Season 2
+            native: らんま1/2 (2024) 第2期
+          synonyms:
+          - Ranma1/2 – sezon 2
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 5
+          endDate:
+            year: 2025
+            month: 12
+            day: 20
+          averageScore: 77
+          nextAiringEpisode: null
+        - id: 185801
+          idMal: 60619
+          title:
+            romaji: Nageki no Bourei wa Intai Shitai 2
+            english: Let This Grieving Soul Retire Cour 2
+            native: 嘆きの亡霊は引退したい 2
+          synonyms:
+          - Let This Grieving Soul Retire! Woe is the Weakling Who Leads the Strongest Party 2
+          - Let This Grieving Soul Retire Sequel
+          - 嘆きの亡霊は引退したい 2クール
+          status: FINISHED
+          format: ONA
+          episodes: 11
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 4
+          endDate:
+            year: 2025
+            month: 12
+            day: 13
+          averageScore: 74
+          nextAiringEpisode: null
+        - id: 185575
+          idMal: 60531
+          title:
+            romaji: Bukiyou na Senpai.
+            english: My Awkward Senpai
+            native: 不器用な先輩。
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 2
+          endDate:
+            year: 2025
+            month: 12
+            day: 18
+          averageScore: 69
+          nextAiringEpisode: null
+        - id: 183965
+          idMal: 60254
+          title:
+            romaji: Yano-kun no Futsuu no Hibi
+            english: Yano-kun's Ordinary Days
+            native: 矢野くんの普通の日々
+          synonyms: []
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 1
+          endDate:
+            year: 2025
+            month: 12
+            day: 17
+          averageScore: 72
+          nextAiringEpisode: null
+        - id: 195240
+          idMal: 61930
+          title:
+            romaji: 'Uma Musume: Cinderella Gray Part 2'
+            english: 'Umamusume: Cinderella Gray 2nd Cour'
+            native: ウマ娘 シンデレラグレイ 第2クール
+          synonyms:
+          - 'Umamusume: Cinderella Gray Cour 2'
+          status: FINISHED
+          format: TV
+          episodes: 10
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 5
+          endDate:
+            year: 2025
+            month: 12
+            day: 21
+          averageScore: 86
+          nextAiringEpisode: null
+        - id: 173692
+          idMal: 57888
+          title:
+            romaji: Chichi wa Eiyuu, Haha wa Seirei, Musume no Watashi wa Tenseisha.
+            english: Dad is a Hero, Mom is a Spirit, I'm a Reincarnator
+            native: 父は英雄、母は精霊、娘の私は転生者。
+          synonyms:
+          - Reincarnated as the Daughter of the Legendary Hero and the Queen of Spirits
+          - My Father is a Hero, my Mother is a Spirit and the Daughter (Me) is a Reincarnator.
+          - Dad Is a Hero, Mom Is a Spirit, I'm a Reincarnator
+          - ははのは
+          - Hahanoha
+          - ป๊ะป๋าผู้กล้า มาม้าเป็นเทพธิดา ส่วนหนูกลับมาเกิดใหม่พลังแต้มพิกัด
+          status: FINISHED
+          format: TV
+          episodes: 12
+          season: FALL
+          seasonYear: 2025
+          startDate:
+            year: 2025
+            month: 10
+            day: 5
+          endDate:
+            year: 2025
+            month: 12
+            day: 21
+          averageScore: 66
+          nextAiringEpisode: null
+  body_text: null
+  body_b64: null
