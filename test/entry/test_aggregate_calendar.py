@@ -82,6 +82,23 @@ def _json_payload(result) -> dict:
     raise AssertionError(f"no JSON object found in output: {_stdout(result)!r}")
 
 
+def _request_json_body(request) -> dict:
+    body = request.body
+    if isinstance(body, bytes):
+        body = body.decode("utf-8")
+    if body is None:
+        raise AssertionError(f"request has no JSON body: {request.method} {request.url}")
+    return json.loads(body)
+
+
+def _anilist_graphql_requests(rsps) -> list[dict]:
+    return [
+        _request_json_body(call.request)
+        for call in rsps.calls
+        if call.request.method == "POST" and call.request.url == "https://graphql.anilist.co/"
+    ]
+
+
 def _register(rsps, *fixtures):
     for fixture in fixtures:
         register_fixture_with_responses(rsps, fixture)
@@ -273,9 +290,11 @@ def test_schedule_json_aggregates_and_projects_rows(runner, cli, fake_clock, mon
             _jikan_schedule_day("friday"),
         )
         result = runner.invoke(cli, ["schedule", "--day", "thursday", "--limit", "5", "--json", "--no-cache"])
-        anilist_request = json.loads(rsps.calls[0].request.body.decode("utf-8"))
+        anilist_requests = _anilist_graphql_requests(rsps)
 
     assert result.exit_code == 0, result.output
+    assert len(anilist_requests) == 1
+    anilist_request = anilist_requests[0]
     payload = _json_payload(result)
     assert set(payload["sources"]) == {"anilist", "jikan"}
     assert payload["sources"]["anilist"]["items"] == 5
