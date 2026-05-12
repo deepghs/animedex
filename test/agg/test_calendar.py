@@ -8,7 +8,7 @@ from typing import Optional
 import pytest
 
 from animedex.models.aggregate import AggregateResult, AggregateSourceStatus
-from animedex.models.anime import AiringScheduleRow, Anime, AnimeTitle
+from animedex.models.anime import AiringScheduleRow, Anime, AnimeRating, AnimeTitle, NextAiringEpisode
 from animedex.models.common import SourceTag
 
 pytestmark = pytest.mark.unittest
@@ -56,6 +56,18 @@ def test_title_key_variants_use_multiple_transliterators():
 
     accented_keys = calendar._title_key_variants("Pok\u00e9mon")
     assert "pokemon" in accented_keys
+
+
+def test_payload_and_title_language_helpers_cover_fallbacks():
+    from animedex.agg import calendar
+
+    payload = {"id": "raw:1"}
+
+    assert calendar._model_payload(payload) == payload
+    assert calendar._model_payload(payload) is not payload
+    assert calendar._model_payload(object()) == {}
+    assert calendar._language_from_title_type("Mandarin") == "chinese"
+    assert calendar._language_from_title_type("KO") == "korean"
 
 
 def test_short_transliteration_keys_are_not_strong():
@@ -184,6 +196,96 @@ def test_parse_clock_rejects_non_clock_values():
     assert calendar._parse_clock("bad") is None
 
 
+def test_raw_source_detail_helpers_cover_edge_and_empty_shapes():
+    from animedex.agg import calendar
+
+    class Named:
+        def __init__(self, name, rank=None):
+            self.name = name
+            self.rank = rank
+
+    class Edge:
+        def __init__(self, node):
+            self.node = node
+
+    class Connection:
+        edges = [Edge(Named("Edge Studio"))]
+
+    class Raw:
+        tags = [Named("", 1), Named("Magic", 80)]
+        studios = [Named("Direct Studio")]
+
+    class EdgeRaw:
+        studios = Connection()
+
+    record = _anime(
+        "anilist",
+        "anilist:adult",
+        "Adult Title",
+        ids={"anilist": "adult"},
+    ).model_copy(
+        update={
+            "genres": ["Drama"],
+            "tags": ["Slow Burn"],
+            "is_adult": True,
+            "score": AnimeRating(score=81.0, scale=100.0),
+            "next_airing_episode": NextAiringEpisode(
+                episode=4,
+                airing_at=datetime(2026, 5, 11, 1, tzinfo=timezone.utc),
+                time_until_airing_seconds=3600,
+            ),
+        }
+    )
+
+    details = calendar._anime_source_details(record, Raw())
+
+    assert calendar._raw_tag_details(Raw()) == [{"name": "Magic", "rank": 80}]
+    assert calendar._raw_studio_names(Raw()) == ["Direct Studio"]
+    assert calendar._raw_studio_names(EdgeRaw()) == ["Edge Studio"]
+    assert "adult" in details["type_tags"]
+    assert details["next_airing_episode"]["episode"] == 4
+
+
+def test_jikan_and_anilist_detail_helpers_keep_source_specific_tags():
+    from animedex.agg import calendar
+
+    class Named:
+        def __init__(self, name):
+            self.name = name
+
+    class JikanRow:
+        type = "TV"
+        status = "Currently Airing"
+        source = "Manga"
+        rating = "PG-13"
+        season = "spring"
+        genres = [Named("Action")]
+        explicit_genres = []
+        themes = [Named("School")]
+        demographics = [Named("Shounen")]
+
+    media = {
+        "type": "ANIME",
+        "format": "TV",
+        "status": "RELEASING",
+        "season": "SPRING",
+        "source": "MANGA",
+        "genres": ["Action"],
+        "tags": [{"name": "School", "rank": 80}, "bad-tag"],
+        "isAdult": True,
+        "studios": {"edges": [{"node": {"name": "Studio A"}}, {"node": {}}]},
+    }
+
+    assert {"Action", "School", "Shounen"} <= set(calendar._jikan_row_type_tags(JikanRow()))
+    assert calendar._media_studio_names(media) == ["Studio A"]
+    assert {"Action", "School", "adult"} <= set(calendar._anilist_media_type_tags(media))
+
+    enriched = calendar._anilist_schedule_details_from_payload({"media": media}, {"media_id": 1})
+
+    assert enriched["studios"] == ["Studio A"]
+    assert "adult" in enriched["type_tags"]
+
+
 def test_item_datetime_covers_epoch_weekday_and_bad_time():
     from animedex.agg import calendar
 
@@ -297,23 +399,63 @@ def test_schedule_projection_converts_rich_rows_to_common_rows():
     assert row.details["media_id"] == 123
 
 
+def test_schedule_projection_keeps_passthrough_items_and_drops_bad_common_rows():
+    from animedex.agg import calendar
+
+    class BrokenRich:
+        def to_common(self):
+            raise RuntimeError("bad mapper")
+
+    class NonScheduleRich:
+        def to_common(self):
+            return object()
+
+    passthrough = object()
+    result = AggregateResult(items=[BrokenRich(), NonScheduleRich(), passthrough])
+
+    assert calendar._to_common_schedule_row(BrokenRich()) is None
+    assert calendar._to_common_schedule_row(NonScheduleRich()) is None
+
+    projected = calendar._project_schedule_items(result, target_tz=timezone.utc)
+
+    assert projected.items == result.items
+
+
 def test_title_and_context_scoring_cover_role_branches():
     from animedex.agg import calendar
 
-    left = _anime("anilist", "anilist:1", "Romaji", english="Shared English", native="共通")
-    right = _anime("jikan", "jikan:1", "Different", english="Shared English", native="共通")
+    left = _anime("anilist", "anilist:1", "Romaji", english="Shared English", native="\u5171\u901a")
+    right = _anime("jikan", "jikan:1", "Different", english="Shared English", native="\u5171\u901a")
     fuzzy = _anime("jikan", "jikan:2", "Romaji!")
     old = _anime("jikan", "jikan:3", "Romaji", aired_from=date(2025, 1, 1))
     no_id = _anime("jikan", "plain-id", "Other", ids={"mal": "1"})
     with_id = _anime("anilist", "anilist:9", "Other", ids={"mal": "1"})
     conflicting_id = _anime("jikan", "jikan:10", "Other", ids={"mal": "2"})
+    synonym = _anime("jikan", "jikan:11", "Shared Nickname")
+    synonym_source = _anime("anilist", "anilist:11", "Official Title").model_copy(
+        update={"title_synonyms": ["Shared Nickname"]}
+    )
+    fuzzy_92 = _anime("jikan", "jikan:12", "abcdefghijklmnopqrsu")
+    fuzzy_92_source = _anime("anilist", "anilist:12", "abcdefghijklmnopqrst")
+    episode_mismatch = _anime("jikan", "jikan:13", "Romaji", episodes=20)
 
     assert calendar._anime_title_keys(left)
     assert calendar._title_match_score(left, right) >= 50
     assert calendar._title_match_score(left, fuzzy) >= 45
+    assert calendar._title_match_score(synonym_source, synonym) >= 35
+    assert calendar._title_match_score(fuzzy_92_source, fuzzy_92) >= 35
     assert calendar._context_match_score(left, old) < calendar._context_match_score(left, fuzzy)
+    assert calendar._context_match_score(left, episode_mismatch) < calendar._context_match_score(left, fuzzy)
     assert calendar._anime_match_score(with_id, no_id) == 1000
     assert calendar._anime_match_score(with_id, conflicting_id) == 0
+    assert calendar._anime_match_score(left, fuzzy) >= 70
+    assert (
+        calendar._external_id_conflicts(
+            with_id.model_copy(update={"ids": {"mal": None}}),
+            no_id,
+        )
+        == []
+    )
     assert "jikan" in calendar._merge_group({"jikan": no_id}).ids
 
 
@@ -346,3 +488,32 @@ def test_merge_season_items_keeps_passthrough_items():
     assert merged.items[0].source_details["anilist"]["title"] == "Shared"
     assert merged.items[0].source_details["jikan"]["format"] == "TV"
     assert merged.items[1] is passthrough
+
+
+def test_merged_detail_helpers_keep_multilingual_and_conflict_guards():
+    from animedex.agg import calendar
+
+    title = AnimeTitle(romaji="Merged", english="Merged English", native="\u7d71\u5408")
+    details = {
+        "bad": {"titles": "not-a-dict"},
+        "anilist": {
+            "titles": {
+                "typed": ["bad-entry", {"type": "Korean", "title": "\ud1b5\ud569"}],
+                "by_language": {"chinese": ["\u6574\u5408"]},
+            },
+            "genres": ["Action", "Fantasy"],
+        },
+        "jikan": {"genres": ["Drama"]},
+    }
+    sparse = _anime("anilist", "anilist:sparse", "Sparse").model_copy(update={"ids": {"mal": None, "empty": ""}})
+    left = _anime("anilist", "anilist:1", "Conflict", ids={"mal": "1"})
+    right = _anime("jikan", "jikan:2", "Conflict", ids={"mal": "2"})
+
+    titles = calendar._merged_title_details(title, details)
+
+    assert titles["by_language"]["korean"] == ["\ud1b5\ud569"]
+    assert titles["by_language"]["chinese"] == ["\u6574\u5408"]
+    assert calendar._collect_unique_field(details, "genres", limit=2) == ["Action", "Fantasy"]
+    assert "mal" not in calendar._merge_group({"anilist": sparse}).ids
+    with pytest.raises(ValueError):
+        calendar._merge_group({"anilist": left, "jikan": right})

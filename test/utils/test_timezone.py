@@ -43,13 +43,25 @@ def test_parse_timezone_handles_local_and_errors():
     with pytest.raises(ValueError):
         parse_timezone("+24:00")
     with pytest.raises(ValueError):
+        parse_timezone("UTC+25")
+    with pytest.raises(ValueError):
         parse_timezone("No/Such_Zone")
 
 
 def test_timezone_label_falls_back_to_name():
     from animedex.utils.timezone import timezone_label
 
+    class Keyed(tzinfo):
+        key = "Etc/Test"
+
+        def utcoffset(self, dt):
+            return timedelta(hours=3)
+
+        def dst(self, dt):
+            return None
+
     assert timezone_label(timezone(timedelta(hours=2), name="custom")) == "+02:00"
+    assert timezone_label(Keyed()) == "Etc/Test"
     assert timezone_label(NamedOnlyTimezone()) == "named-only"
 
 

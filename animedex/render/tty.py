@@ -734,12 +734,7 @@ def _merged_tty_sections(item: MergedAnime) -> dict:
                 continue
             source_titles = _titles_tty_view(details.get("titles"))
             for key, value in source_titles.items():
-                if isinstance(value, list):
-                    merged_titles.setdefault(key, [])
-                    for item_value in value:
-                        if item_value not in merged_titles[key]:
-                            merged_titles[key].append(item_value)
-                elif key not in merged_titles:
+                if key not in merged_titles:
                     merged_titles[key] = value
         titles = _compact_tree(merged_titles)
     format_text = core.get("format") or _first_source_detail(item.source_details, "format")
