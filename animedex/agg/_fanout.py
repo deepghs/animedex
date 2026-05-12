@@ -72,7 +72,11 @@ def _normalise_items(value: object) -> List[object]:
     rows = getattr(value, "rows", None)
     if isinstance(rows, list):
         return rows
-    return [value]
+    raise ApiError(
+        f"aggregate source returned unsupported shape: {type(value).__name__}",
+        backend="aggregate",
+        reason="upstream-shape",
+    )
 
 
 def _http_status_from_message(message: str) -> Optional[int]:

@@ -473,6 +473,36 @@ def test_merge_season_items_splits_external_id_conflicts():
     assert [{source.backend for source in item.sources} for item in merged.items] == [{"anilist"}, {"jikan"}]
 
 
+def test_merge_season_items_reports_internal_id_conflicts_without_traceback():
+    from animedex.agg import calendar
+
+    inconsistent = _anime("anilist", "anilist:154587", "Inconsistent", ids={"anilist": "999"})
+    result = AggregateResult(items=[inconsistent])
+
+    merged = calendar._merge_season_items(result)
+
+    assert len(merged.items) == 1
+    assert merged.items[0].ids["anilist"] == "999"
+    assert merged.items[0].id_conflicts == [
+        {
+            "key": "anilist",
+            "kept_value": "999",
+            "conflicting_value": "154587",
+            "backend": "anilist",
+            "source": "record.id",
+        }
+    ]
+    assert merged.merge_diagnostics == [
+        {
+            "backend": "anilist",
+            "id": "anilist:154587",
+            "reason": "external-id-conflict",
+            "message": "conflicting external id for 'anilist': '999' != '154587'",
+            "conflicts": merged.items[0].id_conflicts,
+        }
+    ]
+
+
 def test_merge_season_items_keeps_passthrough_items():
     from animedex.agg import calendar
 
@@ -515,5 +545,13 @@ def test_merged_detail_helpers_keep_multilingual_and_conflict_guards():
     assert titles["by_language"]["chinese"] == ["\u6574\u5408"]
     assert calendar._collect_unique_field(details, "genres", limit=2) == ["Action", "Fantasy"]
     assert "mal" not in calendar._merge_group({"anilist": sparse}).ids
-    with pytest.raises(ValueError):
-        calendar._merge_group({"anilist": left, "jikan": right})
+    merged = calendar._merge_group({"anilist": left, "jikan": right})
+    assert merged.id_conflicts == [
+        {
+            "key": "mal",
+            "kept_value": "1",
+            "conflicting_value": "2",
+            "backend": "jikan",
+            "source": "record.ids",
+        }
+    ]

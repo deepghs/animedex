@@ -151,6 +151,9 @@ class MergedAnime(AnimedexModel):
                            consumers that need the complete upstream
                            row shape.
     :vartype source_payloads: dict[str, dict]
+    :ivar id_conflicts: External id conflicts found while building the
+                        merged id map.
+    :vartype id_conflicts: list of dict
     """
 
     title: AnimeTitle
@@ -160,6 +163,7 @@ class MergedAnime(AnimedexModel):
     core: Dict[str, Any] = Field(default_factory=dict)
     source_details: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
     source_payloads: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
+    id_conflicts: List[Dict[str, Any]] = Field(default_factory=list)
 
 
 def selftest() -> bool:
@@ -182,6 +186,15 @@ def selftest() -> bool:
         core={"title": {"romaji": "x"}, "sources": ["_selftest"]},
         source_details={"_selftest": {"score": "1.0/10.0"}},
         source_payloads={"_selftest": {"id": "_selftest:1"}},
+        id_conflicts=[
+            {
+                "key": "_selftest",
+                "kept_value": "1",
+                "conflicting_value": "2",
+                "backend": "_selftest",
+                "source": "record.id",
+            }
+        ],
     )
     calendar = ScheduleCalendarResult(
         items=[src],
@@ -218,6 +231,7 @@ def selftest() -> bool:
     assert merged.core["sources"] == ["_selftest"]
     assert merged.source_details["_selftest"]["score"] == "1.0/10.0"
     assert merged.source_payloads["_selftest"]["id"] == "_selftest:1"
+    assert merged.id_conflicts[0]["source"] == "record.id"
     assert calendar.timezone == "UTC"
     assert result.succeeded_count == 1
     assert list(result.failed_sources) == ["failed"]

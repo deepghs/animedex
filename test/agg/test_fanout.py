@@ -9,7 +9,7 @@ pytestmark = pytest.mark.unittest
 
 
 class TestFanoutBranches:
-    def test_normalises_none_tuple_dict_rows_object_and_scalar(self):
+    def test_normalises_none_tuple_dict_and_rows_object(self):
         from animedex.agg._fanout import _normalise_items
         from animedex.models.common import ApiError
 
@@ -21,10 +21,13 @@ class TestFanoutBranches:
         assert _normalise_items({"items": [3, 4]}) == [3, 4]
         assert _normalise_items({"data": (5, 6)}) == [5, 6]
         assert _normalise_items(Rows()) == [1, 2]
-        assert _normalise_items("x") == ["x"]
         with pytest.raises(ApiError) as err:
             _normalise_items({"meta": {"total": 2}})
         assert err.value.reason == "upstream-shape"
+        with pytest.raises(ApiError) as err:
+            _normalise_items("x")
+        assert err.value.reason == "upstream-shape"
+        assert "unsupported shape: str" in err.value.message
 
     def test_http_status_requires_status_context(self):
         from animedex.agg._fanout import _http_status_from_message

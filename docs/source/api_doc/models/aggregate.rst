@@ -31,7 +31,7 @@ MergedAnime
 -----------------------------------------------------
 
 .. autoclass:: MergedAnime
-    :members: title,ids,sources,records,core,source_details,source_payloads
+    :members: title,ids,sources,records,core,source_details,source_payloads,id_conflicts
 
 
 selftest

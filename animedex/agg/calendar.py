@@ -1209,42 +1209,56 @@ def _anime_source_details(record: Anime, raw: object = None) -> Dict[str, Any]:
 
 def _merge_group(records: Dict[str, Anime], raw_records: Optional[Dict[str, object]] = None) -> MergedAnime:
     ids = {}
+    id_conflicts = []
     sources = []
     source_details = {}
     source_payloads = {}
     raw_records = raw_records or {}
 
-    def _set_id(key: str, value: object) -> None:
+    def _set_id(key: str, value: object, *, backend: str, source: str) -> None:
         if value is None:
             return
         text = str(value)
         if not text:
             return
         if key in ids and str(ids[key]) != text:
-            raise ValueError(f"conflicting external id for {key!r}: {ids[key]!r} != {text!r}")
+            id_conflicts.append(
+                {
+                    "key": str(key),
+                    "kept_value": str(ids[key]),
+                    "conflicting_value": text,
+                    "backend": backend,
+                    "source": source,
+                }
+            )
+            return
         ids.setdefault(key, text)
 
     for backend, record in records.items():
         raw = raw_records.get(backend, record)
         for key, value in (record.ids or {}).items():
-            _set_id(key, value)
+            _set_id(key, value, backend=backend, source="record.ids")
         sources.append(record.source)
         source_details[backend] = _anime_source_details(record, raw)
         source_payloads[backend] = _model_payload(raw)
         if ":" in record.id:
             source_name, source_id = record.id.split(":", 1)
-            _set_id(source_name, source_id)
+            _set_id(source_name, source_id, backend=backend, source="record.id")
         else:
-            _set_id(backend, record.id)
+            _set_id(backend, record.id, backend=backend, source="record.id")
     title = _choose_merged_title(records)
+    core = _merged_core(title=title, ids=ids, sources=sources, records=records, source_details=source_details)
+    if id_conflicts:
+        core["id_conflicts"] = id_conflicts
     return MergedAnime(
         title=title,
         ids=ids,
         sources=sources,
         records=records,
-        core=_merged_core(title=title, ids=ids, sources=sources, records=records, source_details=source_details),
+        core=core,
         source_details=source_details,
         source_payloads=source_payloads,
+        id_conflicts=id_conflicts,
     )
 
 
@@ -1280,7 +1294,23 @@ def _merge_season_items(result: AggregateResult) -> AggregateResult:
         groups[best_group][backend] = anime
         raw_groups[best_group][backend] = item
 
-    merged = [_merge_group(group, raw_groups[idx]) for idx, group in enumerate(groups)]
+    merged = []
+    for idx, group in enumerate(groups):
+        item = _merge_group(group, raw_groups[idx])
+        merged.append(item)
+        for conflict in item.id_conflicts:
+            diagnostics.append(
+                {
+                    "backend": conflict.get("backend"),
+                    "id": next(iter(item.records.values())).id if item.records else None,
+                    "reason": "external-id-conflict",
+                    "message": (
+                        f"conflicting external id for {conflict.get('key')!r}: "
+                        f"{conflict.get('kept_value')!r} != {conflict.get('conflicting_value')!r}"
+                    ),
+                    "conflicts": item.id_conflicts,
+                }
+            )
     return result.model_copy(update={"items": [*merged, *passthrough], "merge_diagnostics": diagnostics})
 
 

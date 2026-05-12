@@ -63,8 +63,28 @@ def _report_failures(result: AggregateResult) -> None:
         click.echo(f"source {name!r} failed: {detail}; continuing with other sources", err=True)
 
 
+def _report_merge_diagnostics(result: AggregateResult) -> None:
+    for diagnostic in result.merge_diagnostics or []:
+        backend = diagnostic.get("backend") or "?"
+        ident = diagnostic.get("id") or "?"
+        reason = diagnostic.get("reason") or "unknown"
+        message = diagnostic.get("message") or ""
+        if reason == "external-id-conflict":
+            click.echo(
+                f"merge diagnostic: {backend}:{ident} kept with external id conflict ({message})",
+                err=True,
+            )
+            continue
+        click.echo(
+            f"merge diagnostic: {backend}:{ident} dropped from merge analysis "
+            f"({reason}: {message}); kept as passthrough row",
+            err=True,
+        )
+
+
 def _finish(ctx: click.Context, result: AggregateResult, *, json_flag: bool, jq_expr: Optional[str], no_source: bool):
     _report_failures(result)
+    _report_merge_diagnostics(result)
     _emit(result, json_flag=json_flag, jq_expr=jq_expr, no_source=no_source)
     if result.all_failed:
         ctx.exit(1)

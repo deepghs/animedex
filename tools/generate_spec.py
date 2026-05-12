@@ -97,6 +97,11 @@ HIDDEN_IMPORTS = [
     # ``anyascii`` keeps transliteration tables under a resource-only
     # package that is loaded through importlib.resources at runtime.
     "anyascii._data",
+    # ``unidecode`` lazy-loads per-codepoint transliteration blocks via
+    # dynamic imports. Keep the package explicit so frozen builds do not
+    # depend on PyInstaller's current collection heuristics.
+    "unidecode",
+    "unidecode.util",
 ]
 
 PACKAGE_DATAS = [
@@ -104,6 +109,9 @@ PACKAGE_DATAS = [
     # resource files the binary imports successfully but selftest fails
     # when a non-ASCII title is transliterated.
     "anyascii",
+    # Required by ``unidecode.unidecode`` after freezing; the package's
+    # transliteration tables are loaded lazily by code-point block.
+    "unidecode",
     # Required by ``zoneinfo.ZoneInfo`` on platforms that do not ship an
     # IANA timezone database, most notably Windows.
     "tzdata",

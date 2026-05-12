@@ -9,6 +9,7 @@ from pathlib import Path
 import pytest
 import responses
 import yaml
+import click
 from click.testing import CliRunner
 
 from animedex.backends.anilist._queries import Q_AIRING_SCHEDULE, Q_SCHEDULE
@@ -423,6 +424,78 @@ def test_partial_failure_returns_success_with_stderr(runner, cli, fake_clock):
     assert payload["sources"]["anilist"]["reason"] == "rate-limited"
     assert payload["sources"]["jikan"]["status"] == "ok"
     assert "source 'anilist' failed: rate-limited (HTTP 429)" in _stderr(result)
+
+
+def test_merge_diagnostics_are_reported_to_stderr(runner):
+    from animedex.entry import aggregate as aggregate_entry
+    from animedex.models.aggregate import AggregateResult
+
+    result = AggregateResult(
+        items=[],
+        merge_diagnostics=[
+            {
+                "backend": "anilist",
+                "id": "154587",
+                "reason": "to-common-failed",
+                "message": "ValueError: broken mapper",
+            }
+        ],
+    )
+
+    @click.command()
+    def probe():
+        aggregate_entry._finish(
+            click.Context(click.Command("probe")),
+            result,
+            json_flag=True,
+            jq_expr=None,
+            no_source=False,
+        )
+
+    invoked = runner.invoke(probe)
+
+    assert invoked.exit_code == 0, invoked.output
+    payload = _json_payload(invoked)
+    assert payload["merge_diagnostics"][0]["reason"] == "to-common-failed"
+    assert (
+        "merge diagnostic: anilist:154587 dropped from merge analysis "
+        "(to-common-failed: ValueError: broken mapper); kept as passthrough row"
+    ) in _stderr(invoked)
+
+
+def test_external_id_conflict_diagnostics_are_reported_to_stderr(runner):
+    from animedex.entry import aggregate as aggregate_entry
+    from animedex.models.aggregate import AggregateResult
+
+    result = AggregateResult(
+        items=[],
+        merge_diagnostics=[
+            {
+                "backend": "anilist",
+                "id": "anilist:154587",
+                "reason": "external-id-conflict",
+                "message": "conflicting external id for 'anilist': '999' != '154587'",
+            }
+        ],
+    )
+
+    @click.command()
+    def probe():
+        aggregate_entry._finish(
+            click.Context(click.Command("probe")),
+            result,
+            json_flag=True,
+            jq_expr=None,
+            no_source=False,
+        )
+
+    invoked = runner.invoke(probe)
+
+    assert invoked.exit_code == 0, invoked.output
+    assert (
+        "merge diagnostic: anilist:anilist:154587 kept with external id conflict "
+        "(conflicting external id for 'anilist': '999' != '154587')"
+    ) in _stderr(invoked)
 
 
 def test_total_failure_exits_nonzero_with_empty_envelope(runner, cli, fake_clock):
